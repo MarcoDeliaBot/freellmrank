@@ -186,7 +186,7 @@ const URL_SITO = (process.env.SITO_URL || 'https://freellmrank.pages.dev').repla
 fs.writeFileSync(path.join(SITO, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${URL_SITO}/sitemap.xml\n`);
 fs.writeFileSync(path.join(SITO, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${['', 'compare.html', 'home.html'].map((p) => `<url><loc>${URL_SITO}/${p}</loc><lastmod>${dati.aggiornato}</lastmod></url>`).join('\n')}
+${['', 'compare', 'home'].map((p) => `<url><loc>${URL_SITO}/${p}</loc><lastmod>${dati.aggiornato}</lastmod></url>`).join('\n')}
 </urlset>
 `);
 console.log('pagine scritte in', SITO, fs.readdirSync(SITO).join(' '));
