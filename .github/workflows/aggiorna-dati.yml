@@ -1,0 +1,32 @@
+# Ogni notte: nuovi voti Arena, nuovi modelli gratis OpenRouter, nuove dimensioni da Hugging Face.
+# Se i dati cambiano, fa un commit: Cloudflare Pages vede il push e ripubblica il sito.
+name: Aggiorna dati
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  dati:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - run: mkdir -p dati/arena && npm run dati
+      - name: Commit se i dati sono cambiati
+        run: |
+          git add sito/dati.json dati/pesi.json
+          if git diff --cached --quiet; then echo "Nessun cambiamento"; exit 0; fi
+          git config user.name "freellmrank-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Dati aggiornati $(date -u +%F)"
+          git push

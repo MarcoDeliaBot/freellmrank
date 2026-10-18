@@ -1,0 +1,15 @@
+node_modules/
+# privato: non va nel repository pubblico
+lettere/
+contratti/
+anteprima/
+dossier.html
+.ai/
+.claude/
+# scaricati a ogni aggiornamento
+dati/arena/
+dati/or.json
+# generati dalla build (tranne i dati)
+sito/*
+!sito/dati.json
+script/costruisci-anteprima.mjs

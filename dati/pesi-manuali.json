@@ -1,0 +1,22 @@
+{
+ "glm-5.3-max": {"repo":"zai-org/GLM-5.3","parametri":753300000000,"fonte":"hf-manuale"},
+ "GLM-5.3 (Max)": {"repo":"zai-org/GLM-5.3","parametri":753300000000,"fonte":"hf-manuale"},
+ "glm-5": {"repo":"zai-org/GLM-5","parametri":753900000000,"fonte":"hf-manuale"},
+ "GLM-5": {"repo":"zai-org/GLM-5","parametri":753900000000,"fonte":"hf-manuale"},
+ "glm-4.6": {"repo":"zai-org/GLM-4.6","parametri":356800000000,"fonte":"hf-manuale"},
+ "GLM-4.6": {"repo":"zai-org/GLM-4.6","parametri":356800000000,"fonte":"hf-manuale"},
+ "glm-4.7": {"repo":"zai-org/GLM-4.7","parametri":358300000000,"fonte":"hf-manuale"},
+ "GLM-4.7": {"repo":"zai-org/GLM-4.7","parametri":358300000000,"fonte":"hf-manuale"},
+ "glm-4.5": {"repo":"zai-org/GLM-4.5","parametri":358300000000,"fonte":"hf-manuale"},
+ "deepseek-r1-0528": {"repo":"deepseek-ai/DeepSeek-R1-0528","parametri":684500000000,"fonte":"hf-manuale"},
+ "deepseek-v3.2-exp-thinking": {"repo":"deepseek-ai/DeepSeek-V3.2-Exp","parametri":685400000000,"fonte":"hf-manuale"},
+ "deepseek-v3.2-thinking": {"repo":"deepseek-ai/DeepSeek-V3.2","parametri":685400000000,"fonte":"hf-manuale"},
+ "longcat-flash-chat": {"repo":"meituan-longcat/LongCat-Flash-Chat","parametri":561900000000,"fonte":"hf-manuale"},
+ "MiMo-V2-Flash (Non-Thinking)": {"repo":"XiaomiMiMo/MiMo-V2-Flash","parametri":309800000000,"fonte":"hf-manuale"},
+ "nvidia-nemotron-3-ultra-550b-a55b-nvfp4": {"repo":"nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16","parametri":560500000000,"fonte":"hf-manuale"},
+ "ltx-2-19b": {"repo":"Lightricks/LTX-2","parametri":18900000000,"fonte":"hf-manuale"},
+ "mochi-v1": {"repo":"genmo/mochi-1-preview","parametri":10000000000,"fonte":"hf-manuale"},
+ "stable-diffusion-v35-large": {"repo":"stabilityai/stable-diffusion-3.5-large","parametri":8100000000,"fonte":"hf-manuale"},
+ "wan-v2.2-a14b": {"repo":"Wan-AI/Wan2.2-T2V-A14B","parametri":27000000000,"fonte":"nome: due esperti da 14B"},
+ "hunyuan-video-1.5": {"repo":"tencent/HunyuanVideo-1.5","parametri":8300000000,"fonte":"annuncio Tencent"}
+}

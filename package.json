@@ -1,0 +1,15 @@
+{
+  "name": "freellmrank",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Best free AI models ranked by Arena votes: free online and on your own GPUs.",
+  "scripts": {
+    "dati": "node script/costruisci-dati.mjs && node script/costruisci-pesi.mjs && node script/costruisci-dati.mjs --offline",
+    "build": "node script/costruisci-sito.mjs"
+  },
+  "dependencies": {
+    "hyparquet": "1.31.4"
+  },
+  "engines": { "node": ">=20" }
+}

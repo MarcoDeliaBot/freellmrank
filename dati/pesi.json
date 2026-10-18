@@ -1,0 +1,512 @@
+{
+ "mimo-v2.6-pro": {
+  "repo": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+  "parametri": 1024216603392,
+  "fonte": "hf-auto"
+ },
+ "Kimi K3 (Max)": {
+  "repo": "moonshotai/Kimi-K3",
+  "parametri": 2779931837184,
+  "fonte": "hf-auto"
+ },
+ "glm-5.3-max": {
+  "repo": "zai-org/GLM-5.3",
+  "parametri": 753300000000,
+  "fonte": "hf-manuale"
+ },
+ "glm-5.3-flash": {
+  "repo": "zai-org/GLM-5.3-Flash",
+  "parametri": 321323031390,
+  "fonte": "hf-auto"
+ },
+ "glm-5.2-max": {
+  "repo": "zai-org/GLM-5.2",
+  "parametri": 753329940480,
+  "fonte": "hf-auto"
+ },
+ "mimo-v2.5-pro": {
+  "repo": "XiaomiMiMo/MiMo-V2.5-Pro",
+  "parametri": 1023182841600,
+  "fonte": "hf-auto"
+ },
+ "deepseek-v4.1-flash-max": {
+  "repo": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "parametri": 763205315794,
+  "fonte": "hf-auto"
+ },
+ "glm-5.1": {
+  "repo": "zai-org/GLM-5.1",
+  "parametri": 753864139008,
+  "fonte": "hf-auto"
+ },
+ "kimi-k2.6": {
+  "repo": "moonshotai/Kimi-K2.6",
+  "parametri": 1026879376368,
+  "fonte": "hf-auto"
+ },
+ "mimo-v2.6-flash": {
+  "repo": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+  "parametri": 310756322688,
+  "fonte": "hf-auto"
+ },
+ "deepseek-v4-pro": {
+  "repo": "deepseek-ai/DeepSeek-V4-Pro",
+  "parametri": 1598839674782,
+  "fonte": "hf-auto"
+ },
+ "glm-5": {
+  "repo": "zai-org/GLM-5",
+  "parametri": 753900000000,
+  "fonte": "hf-manuale"
+ },
+ "nvidia-nemotron-3-ultra-550b-a55b-nvfp4": {
+  "repo": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+  "parametri": 560500000000,
+  "fonte": "hf-manuale"
+ },
+ "gemma-4-31b": {
+  "repo": "google/gemma-4-31B-it",
+  "parametri": 31273088876,
+  "fonte": "hf-auto"
+ },
+ "qwen3.8-27b": {
+  "repo": "Qwen/Qwen3.8-27B",
+  "parametri": 27781427952,
+  "fonte": "hf-auto"
+ },
+ "glm-4.6": {
+  "repo": "zai-org/GLM-4.6",
+  "parametri": 356800000000,
+  "fonte": "hf-manuale"
+ },
+ "hy3": {
+  "repo": "tencent/Hy3",
+  "parametri": 298786155776,
+  "fonte": "hf-auto"
+ },
+ "qwen3.5-397b-a17b": {
+  "repo": "Qwen/Qwen3.5-397B-A17B",
+  "parametri": 403397928944,
+  "fonte": "hf-auto"
+ },
+ "glm-4.7": {
+  "repo": "zai-org/GLM-4.7",
+  "parametri": 358300000000,
+  "fonte": "hf-manuale"
+ },
+ "gemma-4-26b-a4b": {
+  "repo": "google/gemma-4-26B-A4B-it",
+  "parametri": 25805936206,
+  "fonte": "hf-auto"
+ },
+ "minimax-m3": {
+  "repo": "MiniMaxAI/MiniMax-M3",
+  "parametri": 427040140160,
+  "fonte": "hf-auto"
+ },
+ "deepseek-v4-flash": {
+  "repo": "deepseek-ai/DeepSeek-V4-Flash",
+  "parametri": 290944616402,
+  "fonte": "hf-auto"
+ },
+ "glm-4.5": {
+  "repo": "zai-org/GLM-4.5",
+  "parametri": 358300000000,
+  "fonte": "hf-manuale"
+ },
+ "mimo-v2.5": {
+  "repo": "XiaomiMiMo/MiMo-V2.5",
+  "parametri": 310775040000,
+  "fonte": "hf-auto"
+ },
+ "deepseek-r1-0528": {
+  "repo": "deepseek-ai/DeepSeek-R1-0528",
+  "parametri": 684500000000,
+  "fonte": "hf-manuale"
+ },
+ "deepseek-v3.2": {
+  "repo": "deepseek-ai/DeepSeek-V3.2",
+  "parametri": 685355329792,
+  "fonte": "hf-auto"
+ },
+ "deepseek-v3.2-exp": {
+  "repo": "deepseek-ai/DeepSeek-V3.2-Exp",
+  "parametri": 685396921376,
+  "fonte": "hf-auto"
+ },
+ "qwen3-vl-235b-a22b-instruct": {
+  "repo": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+  "parametri": 235670022896,
+  "fonte": "hf-auto"
+ },
+ "deepseek-v3.1": {
+  "repo": "deepseek-ai/DeepSeek-V3.1",
+  "parametri": 684531386000,
+  "fonte": "hf-auto"
+ },
+ "qwen3-235b-a22b-instruct-2507": {
+  "repo": "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8",
+  "parametri": 235107904512,
+  "fonte": "hf-auto"
+ },
+ "MiMo-V2.6-Flash": {
+  "repo": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+  "parametri": 310756322688,
+  "fonte": "hf-auto"
+ },
+ "Qwen3.8-Flash-Next": {
+  "repo": "Qwen/Qwen3.8-Flash-Next",
+  "parametri": 179999981459,
+  "fonte": "hf-auto"
+ },
+ "MiMo-V2.6-Pro": {
+  "repo": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+  "parametri": 1024216603392,
+  "fonte": "hf-auto"
+ },
+ "GLM-5.3 (Max)": {
+  "repo": "zai-org/GLM-5.3",
+  "parametri": 753300000000,
+  "fonte": "hf-manuale"
+ },
+ "DeepSeek-V4.1-Flash (Max)": {
+  "repo": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "parametri": 763205315794,
+  "fonte": "hf-auto"
+ },
+ "GLM-5.3-Flash": {
+  "repo": "zai-org/GLM-5.3-Flash",
+  "parametri": 321323031390,
+  "fonte": "hf-auto"
+ },
+ "GLM-5.2 (Max)": {
+  "repo": "zai-org/GLM-5.2",
+  "parametri": 753329940480,
+  "fonte": "hf-auto"
+ },
+ "Qwen3.8-27B": {
+  "repo": "Qwen/Qwen3.8-27B",
+  "parametri": 27781427952,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V4-Pro (High, 20260813)": {
+  "repo": "deepseek-ai/DeepSeek-V4-Pro",
+  "parametri": 1598839674782,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V4-Flash (High)": {
+  "repo": "deepseek-ai/DeepSeek-V4-Flash",
+  "parametri": 290944616402,
+  "fonte": "hf-auto"
+ },
+ "Kimi K2.6": {
+  "repo": "moonshotai/Kimi-K2.6",
+  "parametri": 1026879376368,
+  "fonte": "hf-auto"
+ },
+ "GLM-5.1": {
+  "repo": "zai-org/GLM-5.1",
+  "parametri": 753864139008,
+  "fonte": "hf-auto"
+ },
+ "Hy3": {
+  "repo": "tencent/Hy3",
+  "parametri": 298786155776,
+  "fonte": "hf-auto"
+ },
+ "MiniMax-M3": {
+  "repo": "MiniMaxAI/MiniMax-M3",
+  "parametri": 427040140160,
+  "fonte": "hf-auto"
+ },
+ "MiMo-V2.5-Pro": {
+  "repo": "XiaomiMiMo/MiMo-V2.5-Pro",
+  "parametri": 1023182841600,
+  "fonte": "hf-auto"
+ },
+ "Kimi K2.7 Code": {
+  "repo": "moonshotai/Kimi-K2.7-Code",
+  "parametri": 1026879376368,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V4-Pro Preview (High)": {
+  "repo": "deepseek-ai/DeepSeek-V4-Pro",
+  "parametri": 1598839674782,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V4-Pro": {
+  "repo": "deepseek-ai/DeepSeek-V4-Pro",
+  "parametri": 1598839674782,
+  "fonte": "hf-auto"
+ },
+ "MiMo-V2.5": {
+  "repo": "XiaomiMiMo/MiMo-V2.5",
+  "parametri": 310775040000,
+  "fonte": "hf-auto"
+ },
+ "Kimi K2.5 (Thinking)": {
+  "repo": "moonshotai/Kimi-K2.5",
+  "parametri": 1026879376368,
+  "fonte": "hf-auto"
+ },
+ "GLM-5": {
+  "repo": "zai-org/GLM-5",
+  "parametri": 753900000000,
+  "fonte": "hf-manuale"
+ },
+ "GLM-4.7": {
+  "repo": "zai-org/GLM-4.7",
+  "parametri": 358300000000,
+  "fonte": "hf-manuale"
+ },
+ "DeepSeek-V4-Flash Preview (High)": {
+  "repo": "deepseek-ai/DeepSeek-V4-Flash",
+  "parametri": 290944616402,
+  "fonte": "hf-auto"
+ },
+ "Kimi K2.5 (Instant)": {
+  "repo": "moonshotai/Kimi-K2.5",
+  "parametri": 1026879376368,
+  "fonte": "hf-auto"
+ },
+ "Qwen3.5-397B-A17B": {
+  "repo": "Qwen/Qwen3.5-397B-A17B",
+  "parametri": 403397928944,
+  "fonte": "hf-auto"
+ },
+ "MiniMax-M2.7": {
+  "repo": "MiniMaxAI/MiniMax-M2.7",
+  "parametri": 228689764864,
+  "fonte": "hf-auto"
+ },
+ "MiniMax-M2.5": {
+  "repo": "MiniMaxAI/MiniMax-M2.5",
+  "parametri": 228703644928,
+  "fonte": "hf-auto"
+ },
+ "MiniMax-M2.1 Preview": {
+  "repo": "MiniMaxAI/MiniMax-M2.1",
+  "parametri": 228689764864,
+  "fonte": "hf-auto"
+ },
+ "Gemma 4 31B": {
+  "repo": "google/gemma-4-31B-it",
+  "parametri": 31273088876,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V3.2 (Thinking)": {
+  "repo": "deepseek-ai/DeepSeek-V3.2",
+  "parametri": 685355329792,
+  "fonte": "hf-auto"
+ },
+ "Qwen3.5-122B-A10B": {
+  "repo": "Qwen/Qwen3.5-122B-A10B",
+  "parametri": 125086497008,
+  "fonte": "hf-auto"
+ },
+ "Gemma 4 26B A4B": {
+  "repo": "google/gemma-4-26B-A4B-it",
+  "parametri": 25805936206,
+  "fonte": "hf-auto"
+ },
+ "Qwen3.5-27B": {
+  "repo": "Qwen/Qwen3.5-27B",
+  "parametri": 27781427952,
+  "fonte": "hf-auto"
+ },
+ "Hy3 preview": {
+  "repo": "tencent/Hy3",
+  "parametri": 298786155776,
+  "fonte": "hf-auto"
+ },
+ "GLM-4.6": {
+  "repo": "zai-org/GLM-4.6",
+  "parametri": 356800000000,
+  "fonte": "hf-manuale"
+ },
+ "qwen3.5-122b-a10b": {
+  "repo": "Qwen/Qwen3.5-122B-A10B",
+  "parametri": 125086497008,
+  "fonte": "hf-auto"
+ },
+ "qwen3.5-27b": {
+  "repo": "Qwen/Qwen3.5-27B",
+  "parametri": 27781427952,
+  "fonte": "hf-auto"
+ },
+ "qwen3-vl-235b-a22b-thinking": {
+  "repo": "Qwen/Qwen3-VL-235B-A22B-Thinking",
+  "parametri": 235670022896,
+  "fonte": "hf-auto"
+ },
+ "step-3": {
+  "repo": "stepfun-ai/step3",
+  "parametri": 320969912832,
+  "fonte": "hf-auto"
+ },
+ "gemma-3-27b-it": {
+  "repo": "google/gemma-3-27b-it",
+  "parametri": 27432406640,
+  "fonte": "hf-auto"
+ },
+ "glm-4.6v": {
+  "repo": "zai-org/GLM-4.6V",
+  "parametri": 107710933120,
+  "fonte": "hf-auto"
+ },
+ "glm-4.5v": {
+  "repo": "zai-org/GLM-4.5V",
+  "parametri": 107710933120,
+  "fonte": "hf-auto"
+ },
+ "qwen2.5-vl-32b-instruct": {
+  "repo": "Qwen/Qwen2.5-VL-32B-Instruct",
+  "parametri": 33452718336,
+  "fonte": "hf-auto"
+ },
+ "llama-4-maverick-17b-128e-instruct": {
+  "repo": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+  "parametri": 401649841664,
+  "fonte": "hf-auto"
+ },
+ "qwen-image-2.1": {
+  "repo": "Qwen/Qwen-Image-2.1",
+  "parametri": 7115124736,
+  "fonte": "hf-auto"
+ },
+ "Cosmos3-Super-Text2Image": {
+  "repo": "nvidia/Cosmos3-Super-Text2Image",
+  "parametri": 64593861104,
+  "fonte": "hf-auto"
+ },
+ "hunyuan-image-3.0": {
+  "repo": "tencent/HunyuanImage-3.0-Instruct",
+  "parametri": 83009199459,
+  "fonte": "hf-auto"
+ },
+ "flux-2-dev": {
+  "repo": "black-forest-labs/FLUX.2-dev",
+  "parametri": 32223281152,
+  "fonte": "hf-auto"
+ },
+ "qwen-image-2512": {
+  "repo": "Qwen/Qwen-Image-2512",
+  "parametri": 20430401088,
+  "fonte": "hf-auto"
+ },
+ "hidream-o1-image": {
+  "repo": "HiDream-ai/HiDream-O1-Image",
+  "parametri": 8804887792,
+  "fonte": "hf-auto"
+ },
+ "krea-2-turbo": {
+  "repo": "krea/Krea-2-Turbo",
+  "parametri": 12820073036,
+  "fonte": "hf-auto"
+ },
+ "z-image-turbo": {
+  "repo": "Tongyi-MAI/Z-Image-Turbo",
+  "parametri": 6154908736,
+  "fonte": "hf-auto"
+ },
+ "flux-2-klein-9b": {
+  "repo": "black-forest-labs/FLUX.2-klein-9B",
+  "parametri": 9078581248,
+  "fonte": "hf-auto"
+ },
+ "qwen-image": {
+  "repo": "Qwen/Qwen-Image",
+  "parametri": 20430401088,
+  "fonte": "hf-auto"
+ },
+ "flux-2-klein-4b": {
+  "repo": "black-forest-labs/FLUX.2-klein-4B",
+  "parametri": 3875544576,
+  "fonte": "hf-auto"
+ },
+ "glm-image": {
+  "repo": "zai-org/GLM-Image",
+  "parametri": 6926882880,
+  "fonte": "hf-auto"
+ },
+ "flux-1-kontext-dev": {
+  "repo": "black-forest-labs/FLUX.1-Kontext-dev",
+  "parametri": 11901408320,
+  "fonte": "hf-auto"
+ },
+ "minimax-h3": {
+  "repo": "MiniMaxAI/MiniMax-H3",
+  "parametri": 33122992896,
+  "fonte": "hf-auto"
+ },
+ "kandinsky-5.0-t2v-pro": {
+  "repo": "kandinskylab/Kandinsky-5.0-T2V-Pro-sft-5s-Diffusers",
+  "parametri": 19311325248,
+  "fonte": "hf-auto"
+ },
+ "kandinsky-5.0-t2v-lite": {
+  "repo": "kandinskylab/Kandinsky-5.0-T2V-Lite-sft-5s-Diffusers",
+  "parametri": 2007702848,
+  "fonte": "hf-auto"
+ },
+ "hunyuan-image-3.0-instruct": {
+  "repo": "tencent/HunyuanImage-3.0-Instruct",
+  "parametri": 83009199459,
+  "fonte": "hf-auto"
+ },
+ "qwen-image-edit": {
+  "repo": "Qwen/Qwen-Image-Edit",
+  "parametri": 20430401088,
+  "fonte": "hf-auto"
+ },
+ "qwen-image-edit-2511": {
+  "repo": "Qwen/Qwen-Image-Edit-2511",
+  "parametri": 20430401088,
+  "fonte": "hf-auto"
+ },
+ "deepseek-v3.2-exp-thinking": {
+  "repo": "deepseek-ai/DeepSeek-V3.2-Exp",
+  "parametri": 685400000000,
+  "fonte": "hf-manuale"
+ },
+ "deepseek-v3.2-thinking": {
+  "repo": "deepseek-ai/DeepSeek-V3.2",
+  "parametri": 685400000000,
+  "fonte": "hf-manuale"
+ },
+ "longcat-flash-chat": {
+  "repo": "meituan-longcat/LongCat-Flash-Chat",
+  "parametri": 561900000000,
+  "fonte": "hf-manuale"
+ },
+ "MiMo-V2-Flash (Non-Thinking)": {
+  "repo": "XiaomiMiMo/MiMo-V2-Flash",
+  "parametri": 309800000000,
+  "fonte": "hf-manuale"
+ },
+ "ltx-2-19b": {
+  "repo": "Lightricks/LTX-2",
+  "parametri": 18900000000,
+  "fonte": "hf-manuale"
+ },
+ "mochi-v1": {
+  "repo": "genmo/mochi-1-preview",
+  "parametri": 10000000000,
+  "fonte": "hf-manuale"
+ },
+ "stable-diffusion-v35-large": {
+  "repo": "stabilityai/stable-diffusion-3.5-large",
+  "parametri": 8100000000,
+  "fonte": "hf-manuale"
+ },
+ "wan-v2.2-a14b": {
+  "repo": "Wan-AI/Wan2.2-T2V-A14B",
+  "parametri": 27000000000,
+  "fonte": "nome: due esperti da 14B"
+ },
+ "hunyuan-video-1.5": {
+  "repo": "tencent/HunyuanVideo-1.5",
+  "parametri": 8300000000,
+  "fonte": "annuncio Tencent"
+ }
+}
