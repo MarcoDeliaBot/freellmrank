@@ -26,7 +26,7 @@ const pagine = []; // per la sitemap
 export const pagineScritte = () => pagine;
 
 export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog = [] }) {
-  const voci = [['/', 'Leaderboard'], ['/models.html', 'Models'], ['/compare.html', 'Try & compare'], ['/home.html', 'Run at home'], ['/blog/', 'Blog']];
+  const voci = [['/', 'Free leaderboard'], ['/models.html', 'Models'], ['/compare.html', 'Try & compare'], ['/home.html', 'Run at home'], ['/blog/', 'Blog']];
   const canonico = URL_SITO + '/' + file.replace(/index\.html$/, '').replace(/\.html$/, '');
   const colonne = [
     ['Leaderboards', dati.categorie.map((c) => [`/#${c.id}`, `Best free ${c.nome.toLowerCase()} models`])],
