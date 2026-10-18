@@ -65,6 +65,30 @@ ${[...etichette].map((p) => `<span class="disp-et${X(p.x) > 70 ? ' sx' : ''}" st
 <p class="small muted">Each dot is an open model; up is better, left is smaller. The line joins the models that beat every smaller one. Parameters on a log scale.</p>`;
 }
 
+// Chi batte chi: probabilità attesa che il modello della riga vinca contro quello della colonna,
+// dai punteggi Arena (scala Elo/Bradley-Terry, base 10 e 400). Blu = vince, rosso = perde.
+export function matrice(voci) {
+  if (voci.length < 3) return '';
+  const p = (a, b) => 1 / (1 + 10 ** ((b.valore - a.valore) / 400));
+  // intensità relativa allo scarto più grande della tabella, così le differenze si vedono
+  const tutti = voci.flatMap((a) => voci.filter((b) => b !== a).map((b) => p(a, b)));
+  const scarto = Math.max(0.05, ...tutti.map((v) => Math.abs(v - 0.5)));
+  const lo = Math.min(...tutti), hi = Math.max(...tutti);
+  const cella = (a, b) => {
+    if (a === b) return '<td class="mx-diag"></td>';
+    const v = p(a, b);
+    const forza = Math.min(1, Math.abs(v - 0.5) / scarto); // 0.5 → neutro, lo scarto massimo → pieno
+    const cls = v >= 0.5 ? 'mx-vince' : 'mx-perde';
+    return `<td class="${cls}${forza > 0.55 ? ' forte' : ''}" style="--f:${Math.round(forza * 80)}%" title="${esc(a.nome)} vs ${esc(b.nome)}: expected to win ${Math.round(v * 100)}% of battles">${v.toFixed(2)}</td>`;
+  };
+  return `<div class="tw mx"><table aria-label="Expected win rate of each model against each other model">
+<thead><tr><th class="mx-angolo"><span class="small muted">Model A ↓ · Model B →</span></th>${voci.map((v) => `<th class="mx-col"><span>${esc(v.nome)}${v.pagato ? ' (paid)' : ''}</span></th>`).join('')}</tr></thead>
+<tbody>${voci.map((a) => `<tr><th class="mx-riga">${a.href ? `<a href="${a.href}">${esc(a.nome)}</a>` : esc(a.nome)}${a.pagato ? ' <span class="tag novoti">paid</span>' : ''}</th>${voci.map((b) => cella(a, b)).join('')}</tr>`).join('')}</tbody>
+</table></div>
+<div class="legenda small"><span><i class="mx-chiave mx-perde forte" style="--f:80%"></i>A usually loses (down to ${lo.toFixed(2)})</span><span><i class="mx-chiave mx-neutro"></i>Even (0.50)</span><span><i class="mx-chiave mx-vince forte" style="--f:80%"></i>A usually wins (up to ${hi.toFixed(2)})</span></div>
+<p class="small muted">Each cell: how often the model on the row is expected to beat the model in the column, from their Arena scores (1 / (1 + 10^((B − A) / 400)), the Elo formula behind Arena's ratings). Arena does not publish every single battle, so these are expected rates, not counted ones.</p>`;
+}
+
 // Andamento nel tempo: fino a 5 modelli + miglior modello a pagamento (tratteggiato).
 const COLORI = ['s1', 's2', 's3', 's4', 's5'];
 export function linee(date, serie, pagato) {

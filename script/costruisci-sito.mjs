@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { RADICE, SITO, URL_SITO, NOME_PIENO, CHAT_WEB, esc, fmtData, pagina, pagineScritte } from './sito/comune.mjs';
-import { barre, dispersione, linee } from './sito/grafici.mjs';
+import { barre, dispersione, linee, matrice } from './sito/grafici.mjs';
 import { unisci, paginaCatalogo, pagineModelli } from './sito/modelli.mjs';
 import { preparaBlog, pagineBlog } from './sito/blog.mjs';
 
@@ -91,6 +91,7 @@ const sezioni = dati.categorie.map((c, i) => {
 <div class="panel"><h2>Top 15 free ${esc(c.nome.toLowerCase())} models</h2>${graficoBarre}</div>
 ${graficoDisp ? `<div class="panel"><h2>Score against size</h2>${graficoDisp}</div>` : ''}
 ${graficoLinee ? `<div class="panel largo"><h2>Top free models over the last six months</h2>${graficoLinee}</div>` : ''}
+<div class="panel largo"><h2>Who beats whom</h2>${matrice([...(pagato ? [{ nome: pagato.nome, valore: pagato.punti, pagato: true }] : []), ...prime.slice(0, 12).map((m) => ({ nome: m.nome, valore: m.punti, href: hrefDi(m.nome) }))])}</div>
 </div>
 ${parteSenzaVoti}
 </section>`;

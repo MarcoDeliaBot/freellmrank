@@ -158,6 +158,25 @@ a.vg-riga:hover .vg-nome{text-decoration:underline}
 .disp-assey span{position:absolute;right:.3rem;transform:translateY(-50%);font:.72rem var(--mono);color:var(--muted)}
 .disp-assex{position:absolute;left:2.6rem;right:0;bottom:0;height:1.4rem}
 .disp-assex span{position:absolute;transform:translateX(-50%);font:.72rem var(--mono);color:var(--muted)}
+/* chi batte chi: divergente blu/rosso con centro grigio (palette validata) */
+:root{--mx-vince:#2a78d6;--mx-perde:#e34948;--mx-neutro:#f0efec}
+@media (prefers-color-scheme:dark){:root{--mx-vince:#3987e5;--mx-perde:#e66767;--mx-neutro:#383835}}
+.mx table{font-size:.8rem;width:auto}
+.mx td{text-align:center;padding:.35rem .4rem;min-width:2.9rem;border:2px solid var(--surface);font-family:var(--mono)}
+.mx td.mx-vince{background:color-mix(in srgb,var(--mx-vince) var(--f),var(--mx-neutro))}
+.mx td.mx-perde{background:color-mix(in srgb,var(--mx-perde) var(--f),var(--mx-neutro))}
+.mx td.forte{color:#fff}
+.mx td.mx-diag{background:var(--soft)}
+.mx th{background:var(--surface);text-transform:none;letter-spacing:0;font:600 .75rem/1.2 var(--sans);color:var(--ink)}
+.mx th.mx-col{vertical-align:bottom;padding:.3rem .2rem;height:9rem}
+.mx th.mx-col span{display:inline-block;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;max-height:8.5rem;overflow:hidden;text-overflow:ellipsis}
+.mx th.mx-riga{text-align:right;white-space:nowrap;position:sticky;left:0;z-index:1;max-width:11rem;overflow:hidden;text-overflow:ellipsis}
+.mx th.mx-riga a{color:var(--ink);text-decoration:none}
+.mx th.mx-riga a:hover{text-decoration:underline}
+.mx-chiave{display:inline-block;width:.8rem;height:.8rem;border-radius:3px;margin-right:.35rem;vertical-align:-.1rem}
+.mx-chiave.mx-vince{background:color-mix(in srgb,var(--mx-vince) var(--f),var(--mx-neutro))}
+.mx-chiave.mx-perde{background:color-mix(in srgb,var(--mx-perde) var(--f),var(--mx-neutro))}
+.mx-chiave.mx-neutro{background:var(--mx-neutro);border:1px solid var(--line)}
 .rileva{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem}
 .spiega-testo{display:grid;gap:.5rem;max-width:68ch}
 tr.consigliato td{background:color-mix(in srgb,var(--c-gpu) 9%,transparent)}
