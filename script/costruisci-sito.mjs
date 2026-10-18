@@ -202,6 +202,7 @@ pagina({
 <p class="lead">Pick your graphics card, how many you have, and your system RAM. See which top-voted open models fit, how the memory splits, and how fast they will write.</p>
 </div>
 <div class="panel sim">
+<div class="rileva"><button class="btn primary" type="button" id="rileva">Detect my graphics card</button><span class="small" id="rileva-esito">Or pick it from the list. Your browser cannot tell us your system RAM, so set that yourself.</span></div>
 <div class="campi">
 <label>Graphics card<select id="scheda">${(() => {
     const gruppi = {};
@@ -225,6 +226,7 @@ pagina({
 </div>
 <div class="tiles" id="tiles"></div>
 <div id="migliore"></div>
+<div id="spiega"></div>
 <div id="grafico"></div>
 <div id="tabella"></div>
 <details class="panel small"><summary><b>How we estimate</b></summary>

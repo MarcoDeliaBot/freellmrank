@@ -158,6 +158,10 @@ a.vg-riga:hover .vg-nome{text-decoration:underline}
 .disp-assey span{position:absolute;right:.3rem;transform:translateY(-50%);font:.72rem var(--mono);color:var(--muted)}
 .disp-assex{position:absolute;left:2.6rem;right:0;bottom:0;height:1.4rem}
 .disp-assex span{position:absolute;transform:translateX(-50%);font:.72rem var(--mono);color:var(--muted)}
+.rileva{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem}
+.spiega-testo{display:grid;gap:.5rem;max-width:68ch}
+tr.consigliato td{background:color-mix(in srgb,var(--c-gpu) 9%,transparent)}
+.btn.piccolo{font-size:.8rem;padding:.25rem .6rem}
 .l-punto{position:absolute;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;box-shadow:0 0 0 2px var(--surface);z-index:2}
 .faq details{border-top:1px solid var(--line);padding:.7rem 0}
 .faq summary{cursor:pointer;font-weight:600}

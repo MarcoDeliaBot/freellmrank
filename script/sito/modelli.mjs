@@ -1,7 +1,7 @@
 // Catalogo dei modelli gratuiti e una pagina per ciascuno.
 import { esc, fmtNum, fmtData, pagina, CHAT_WEB, NOME_PIENO } from './comune.mjs';
 import { linee } from './grafici.mjs';
-import { simula, daScheda, kvGB, PRECISIONI, slug } from '../../sorgente/calcolo.mjs';
+import { simula, daScheda, kvGB, QUANTI, perditaQualita, giudizio, slug } from '../../sorgente/calcolo.mjs';
 
 const SOLO_PESI = new Set(['image', 'video', 'edit']);
 const usabileGratis = (m) => m.aperto || m.or?.gratis;
@@ -146,9 +146,9 @@ ${cats.map((c) => `<tr><td><a href="/#${c}">${esc(nomiCat[c])}</a></td><td class
     let memoria = '', velocita = '';
     if (m.hf) {
       const ctxs = testo ? [8192, 32768, 131072].filter((c) => !m.hf.ctx || c <= m.hf.ctx) : [0];
-      memoria = `<div class="panel"><h2>GPU memory needed</h2><div class="tw"><table><thead><tr><th>Precision</th>${ctxs.map((c) => `<th>${c ? Math.round(c / 1024) + 'K context' : 'Total'}</th>`).join('')}</tr></thead><tbody>
-${PRECISIONI.map((p) => `<tr><td>${p.nome}</td>${ctxs.map((c) => `<td class="n">${fmtGB(m.hf.b * p.bpp + (c ? kvGB(m.hf, c) : 3) + 0.6)}</td>`).join('')}</tr>`).join('')}
-</tbody></table></div><p class="small muted">Weights + ${testo ? 'context cache (from the model\'s architecture)' : 'text encoders and decoder (about 3 GB)'} + runtime. <a href="/home.html">Simulate your own setup</a>.</p></div>`;
+      memoria = `<div class="panel"><h2>GPU memory needed</h2><div class="tw"><table><thead><tr><th>Level</th>${ctxs.map((c) => `<th>${c ? Math.round(c / 1024) + 'K context' : 'Total'}</th>`).join('')}${testo ? '<th>Quality vs full</th>' : ''}</tr></thead><tbody>
+${QUANTI.filter((p) => p.id !== 'Q2_K').map((p) => { const pq = perditaQualita(p, m.hf.b); return `<tr><td class="n">${p.id}</td>${ctxs.map((c) => `<td class="n">${fmtGB(m.hf.b * p.bpp + (c ? kvGB(m.hf, c) : 3) + 0.6)}</td>`).join('')}${testo ? `<td><span class="n">${pq < 0.1 ? '≈ 0%' : '+' + pq.toFixed(1) + '%'}</span> <span class="small muted">${giudizio(pq)}</span></td>` : ''}</tr>`; }).join('')}
+</tbody></table></div><p class="small muted">Weights + ${testo ? 'context cache (from the model\'s architecture)' : 'text encoders and decoder (about 3 GB)'} + runtime.${testo ? ' Quality: increase in perplexity against the full model, from <a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/perplexity/README.md" rel="noopener">llama.cpp tests</a>, scaled by model size.' : ''} <a href="/home.html">Simulate your own setup</a>.</p></div>`;
       const righe = HARDWARE.map(([id, n]) => {
         const s = schede[id]; if (!s) return '';
         const h = daScheda(s, { n, ram: 64, bandaRam: 96, ctx: 32768 });

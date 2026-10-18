@@ -1,6 +1,6 @@
 // Simulatore "in casa": quali modelli aperti entrano nell'hardware scelto,
 // come si divide la memoria e quanto vanno veloci. Tutto nel browser.
-import { simula as simulaHf } from './calcolo.mjs';
+import { simula as simulaHf, QUANTI, perditaQualita, giudizio } from './calcolo.mjs';
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const CONTESTI = [2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144];
@@ -9,6 +9,58 @@ const SOLO_PESI = new Set(['image', 'video', 'edit']); // modelli di immagini e 
 
 let dati = null;
 let categoria = 'chat';
+let fuoco = null; // repository del modello da spiegare (clic su "Explain")
+const PAROLE = 500, TOKEN_PER_PAROLA = 1.3; // una risposta lunga: circa 650 token
+
+// Spiegazione a parole + tabella di tutti i livelli di quantizzazione per un modello
+function spiega(m, h, cat) {
+  const soloPesi = SOLO_PESI.has(categoria);
+  const righe = QUANTI.map((q) => {
+    const r = simulaHf(m.hf, { ...h, bpp: q.bpp }, soloPesi);
+    const perdita = perditaQualita(q, m.hf.b);
+    return { q, r, perdita };
+  });
+  // consigliato: il più fedele che entra tutto nella GPU e scrive più veloce della lettura;
+  // altrimenti il più fedele che va almeno a velocità di lettura; altrimenti il più veloce che entra
+  // se deve usare la RAM, conviene il più veloce fra quelli con perdita piccola (di solito Q4_K_M)
+  const ok = righe.filter((x) => x.r.dove !== 'no');
+  const consigliato = [...ok].reverse().find((x) => x.r.dove === 'gpu' && (soloPesi || x.r.vel >= LETTURA))
+    || ok.find((x) => x.perdita < 3.5 && (soloPesi || x.r.vel >= LETTURA))
+    || [...ok].sort((a, b) => (b.r.vel || 0) - (a.r.vel || 0))[0];
+  const secondi = (v) => (PAROLE * TOKEN_PER_PAROLA) / v;
+  const fmtTempo = (s) => (s < 60 ? `${Math.round(s)} seconds` : `${Math.round(s / 60)} min ${Math.round(s % 60)} s`);
+  const hw = h.n > 1 ? `${h.n} × ${h.nome}` : h.nome;
+
+  let testo;
+  if (!consigliato) {
+    const minimo = righe[0];
+    testo = `<p><b>${esc(m.nome)}</b> does not fit on ${esc(hw)}${h.ram ? ` even with ${h.ram} GB of system RAM` : ''}. At the smallest level (${minimo.q.id}) it still needs about ${fmtGB(minimo.r.serve)}. Use it free online instead, or pick a smaller model.</p>`;
+  } else {
+    const { q, r, perdita } = consigliato;
+    const i = righe.indexOf(consigliato);
+    const su = righe.slice(i + 1).find((x) => x.r.dove !== 'no') || righe[i + 1];
+    const giu = righe[i - 1];
+    const dove = r.dove === 'gpu' ? 'fits entirely in GPU memory' : `fits only with ${fmtGB(r.inRam)} in system RAM, which is much slower`;
+    const parti = [`<p>On <b>${esc(hw)}</b>, the best choice for <b>${esc(m.nome)}</b> is <b>${q.id}</b>. It needs ${fmtGB(r.serve)} and ${dove}.</p>`];
+    if (!soloPesi) parti.push(`<p>It writes about <b>${fmtVel(r.vel)} tokens per second</b>: a ${PAROLE}-word answer takes about <b>${fmtTempo(secondi(r.vel))}</b>, ${r.vel >= LETTURA ? `${(r.vel / LETTURA).toFixed(1)}× faster than you read` : 'slower than you read'}. Quality: ${giudizio(perdita)} compared with the full model (${perdita < 0.1 ? 'under 0.1' : '+' + perdita.toFixed(1)}% perplexity).</p>`);
+    else parti.push(`<p>${q.id === 'F16' ? 'The full 16-bit model fits, so you get its best quality.' : 'For image and video models, 8-bit is the usual choice when memory is tight; lower levels lose fine detail.'} We have no measured quality numbers for these models, so we do not show a score.</p>`);
+    if (su) parti.push(`<p>One level up, ${su.q.id} would ${su.r.dove === 'no' ? `need ${fmtGB(su.r.serve)}: it does not fit` : su.r.dove === 'ram' && r.dove === 'gpu' ? `spill ${fmtGB(su.r.inRam)} into system RAM${soloPesi ? '' : ` and drop to about ${fmtVel(su.r.vel)} tokens per second`}` : `need ${fmtGB(su.r.serve)}${soloPesi ? '' : ` and run at about ${fmtVel(su.r.vel)} tokens per second`}`}${soloPesi ? '' : `, and quality would improve by only ${(perdita - su.perdita).toFixed(1)} percentage points`}.</p>`);
+    if (giu && giu.r.dove !== 'no') parti.push(`<p>One level down, ${giu.q.id} saves ${fmtGB(r.serve - giu.r.serve)}${soloPesi ? '' : ` and runs at about ${fmtVel(giu.r.vel)} tokens per second`}${soloPesi ? '' : `; quality ${giudizio(giu.perdita) === giudizio(perdita) ? 'stays at' : 'goes down to'} ${giudizio(giu.perdita)} (+${giu.perdita.toFixed(1)}%)`}.</p>`);
+    testo = parti.join('');
+  }
+
+  return `<div class="panel spiega" id="spiega-pannello">
+<h2>What you get with ${esc(m.nome)}</h2>
+<div class="spiega-testo">${testo}</div>
+<div class="tw"><table><thead><tr><th>Level</th><th>Memory</th><th>Where</th>${soloPesi ? '' : `<th>Speed</th><th>${PAROLE}-word answer</th>`}<th>Quality vs full</th></tr></thead><tbody>
+${righe.map((x) => `<tr class="${x === consigliato ? 'consigliato' : ''}${x.r.dove === 'no' ? ' spento' : ''}"><td class="n"><b>${x.q.id}</b>${x === consigliato ? ' <span class="tag chip-gpu">Best for you</span>' : ''}</td>
+<td class="n">${fmtGB(x.r.serve)}</td><td>${chip(x.r)}</td>
+${soloPesi ? '' : `<td class="n">${x.r.vel != null ? fmtVel(x.r.vel) + ' tok/s' : '—'}</td><td class="n">${x.r.vel != null ? fmtTempo(secondi(x.r.vel)) : '—'}</td>`}
+<td>${soloPesi ? '<span class="small muted">not measured</span>' : `<span class="n">${x.perdita < 0.1 ? '≈ 0%' : '+' + x.perdita.toFixed(1) + '%'}</span> <span class="small muted">${giudizio(x.perdita)}</span>`}</td></tr>`).join('')}
+</tbody></table></div>
+<p class="small muted">Quality loss is the increase in perplexity against the full 16-bit model, measured by <a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/perplexity/README.md" rel="noopener">llama.cpp</a> on Llama 3 8B and Llama 2 70B; bigger models lose less, so we scale it by size. It is a guide, not a test of this exact model. ${PAROLE} words ≈ ${Math.round(PAROLE * TOKEN_PER_PAROLA)} tokens. Reading a long document before answering takes extra time that we do not estimate.</p>
+</div>`;
+}
 
 const fmtGB = (g) => (g >= 100 ? Math.round(g) : g >= 10 ? g.toFixed(0) : g.toFixed(1)) + ' GB';
 const fmtCtx = (t) => (t >= 1024 ? Math.round(t / 1024) + 'K' : t) + ' tokens';
@@ -120,6 +172,10 @@ ${schede}
     $('migliore').innerHTML = `<div class="panel"><h2>Nothing fits in ${fmtGB(h.vram)}${h.ram ? ' plus RAM' : ''}</h2><p class="small">Try 4-bit, a shorter context, more system RAM, or a free model online: <a href="/#${categoria}">free ranking</a>.</p></div>`;
   }
 
+  // spiegazione automatica: il modello scelto (clic nella tabella) o il migliore
+  const scelto = (fuoco && lista.find((x) => x.m.hf.repo === fuoco)) || best;
+  $('spiega').innerHTML = scelto ? spiega(scelto.m, h, cat) : '';
+
   // grafico della velocità (solo testo)
   // prima i votati; se sono pochi, si completa con i piccoli senza voti (segnati nel nome)
   const votatiVel = entrano.filter((x) => x.r.vel != null && !x.m.senzaVoti).slice(0, 10);
@@ -154,13 +210,13 @@ ${conVel.map(({ m, r }) => `<div class="vg-riga" tabindex="0" data-tip="${esc(m.
     : `${m.punti}<span class="punti"><i style="width:${Math.round((100 * (m.punti - minPunti + 20)) / (maxPunti - minPunti + 20))}%"></i></span>`);
   $('tabella').innerHTML = `<div class="panel"><h2>Open models for your setup</h2>
 <p class="small muted">Arena-voted models first, by score. Then small models from the labs' official Hugging Face pages, which Arena has not voted on: they are ordered by size, biggest first, among the 25 most downloaded.</p>
-<div class="tw"><table><thead><tr><th>Model</th><th>Arena score</th><th>Size</th><th>Memory needed</th><th>Speed</th><th>Where</th></tr></thead><tbody>
+<div class="tw"><table><thead><tr><th>Model</th><th>Arena score</th><th>Size</th><th>Memory needed</th><th>Speed</th><th>Where</th><th></th></tr></thead><tbody>
 ${righe.map(({ m, r }) => `<tr${r.dove === 'no' ? ' class="spento"' : ''}><td class="m"><b>${esc(m.nome)}</b><div class="org">${esc(m.org)} · <a href="https://huggingface.co/${esc(m.hf.repo)}" rel="noopener">model</a>${m.gated ? ' · license to accept' : ''}</div></td>
 <td class="n">${cellaPunti(m)}</td>
 <td class="n">${m.hf.b} B${m.hf.att && m.hf.att < m.hf.b ? `<div class="org">${m.hf.att} B active</div>` : ''}</td>
 <td class="cella-mem"><span class="n">${fmtGB(r.serve)}</span>${barraMemoria(r, h, false)}</td>
 <td class="n">${r.vel != null ? fmtVel(r.vel) + ' tok/s' : '—'}</td>
-<td>${chip(r)}</td></tr>`).join('')}
+<td>${chip(r)}</td><td><button type="button" class="btn piccolo" data-spiega="${esc(m.hf.repo)}">Explain</button></td></tr>`).join('')}
 </tbody></table></div></div>`;
 }
 
@@ -183,7 +239,63 @@ document.addEventListener('pointerover', mostraTip);
 document.addEventListener('focusin', mostraTip);
 document.addEventListener('pointerout', (e) => { if (!e.relatedTarget?.closest?.('[data-tip]')) tip.hidden = true; });
 
+// ---------- riconoscimento della scheda video ----------
+// Il browser dichiara il nome della GPU attraverso WebGL (es. "ANGLE (AMD, AMD Radeon RX 7900 XTX ...)").
+// Chiediamo la GPU potente: sui PC con grafica integrata altrimenti risponde quella.
+function nomeGpu() {
+  try {
+    const c = document.createElement('canvas');
+    const gl = c.getContext('webgl', { powerPreference: 'high-performance' }) || c.getContext('experimental-webgl');
+    if (!gl) return null;
+    const ext = gl.getExtension('WEBGL_debug_renderer_info');
+    return ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER);
+  } catch { return null; }
+}
+const norma = (s) => s.toLowerCase().replace(/geforce|radeon|nvidia|amd|intel|\(tm\)|graphics/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
+function trovaScheda(nome) {
+  const n = ' ' + norma(nome) + ' ';
+  const codici = [
+    /\b(rtx\s?(?:pro\s)?\d{4}(?:\s?ti)?(?:\s?super)?(?:\sada)?)\b/, /\b(rtx\s?a\d{4})\b/, /\b(rx\s?\d{4}(?:\s?(?:xtx|xt|gre))?)\b/,
+    /\b(arc\s?[ab]\d{3})\b/, /\b(m\d\s?(?:pro|max|ultra)?)\b/, /\b([ah]\d{3})\b/,
+  ];
+  for (const re of codici) {
+    const k = re.exec(n);
+    if (!k) continue;
+    // la scheda del catalogo il cui nome contiene il codice; se non c'è, si accorcia il codice
+    // ("rtx 4070 super" → "rtx 4070", che nel catalogo è "RTX 4070 / 4070 Super", stessi dati)
+    const parole = k[1].split(/\s+/);
+    for (let fine = parole.length; fine >= Math.min(2, parole.length); fine--) {
+      const codice = parole.slice(0, fine).join(' ');
+      const cand = dati.schede.schede.filter((s) => (' ' + norma(s.nome) + ' ').includes(' ' + codice + ' ') || norma(s.nome).replace(/ /g, '').includes(codice.replace(/ /g, '')));
+      // vince chi aggiunge meno varianti (ti, super, xt…) che il browser non ha dichiarato
+      const extra = (s) => (norma(s.nome).match(/\b(ti|super|xtx|xt|gre|ada|pro|max|ultra)\b/g) || []).filter((w) => !parole.includes(w)).length;
+      if (cand.length) return cand.sort((a, b) => extra(a) - extra(b) || a.nome.length - b.nome.length)[0];
+    }
+  }
+  return null;
+}
+$('rileva').addEventListener('click', () => {
+  const nome = nomeGpu();
+  const esito = $('rileva-esito');
+  if (!nome) { esito.textContent = 'Your browser does not share the graphics card name. Pick it from the list.'; return; }
+  const s = dati && trovaScheda(nome);
+  if (s) {
+    $('scheda').value = s.id;
+    aggiornaCampi(); calcola();
+    esito.innerHTML = `Found <b>${esc(s.nome)}</b> (${s.gb} GB). If you have more than one, set “How many”. Now set your system RAM.`;
+  } else {
+    esito.innerHTML = `Your browser reports <b>${esc(nome)}</b>, which is not in our list${/integrated|radeon\(tm\) graphics|uhd|iris|apple gpu/i.test(nome) ? ' (it looks like built-in graphics, not a separate card)' : ''}. Pick your card from the list, or choose “Custom card”.`;
+  }
+});
+
 // ---------- comandi ----------
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-spiega]');
+  if (!b) return;
+  fuoco = b.dataset.spiega;
+  calcola();
+  $('spiega').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+});
 function aggiornaCampi() {
   const custom = $('scheda').value === 'custom';
   $('campo-gb').hidden = !custom;
