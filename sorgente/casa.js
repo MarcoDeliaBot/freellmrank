@@ -12,6 +12,7 @@ let categoria = 'chat';
 
 const fmtGB = (g) => (g >= 100 ? Math.round(g) : g >= 10 ? g.toFixed(0) : g.toFixed(1)) + ' GB';
 const fmtCtx = (t) => (t >= 1024 ? Math.round(t / 1024) + 'K' : t) + ' tokens';
+const fmtDownload = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(n));
 const fmtVel = (v) => (v >= 100 ? Math.round(v) : v >= 10 ? v.toFixed(0) : v.toFixed(1));
 
 function hardware() {
@@ -110,8 +111,20 @@ function calcola() {
     visti.add(m.hf.repo);
     lista.push({ m, r: simula(m, h) });
   }
+  // modelli piccoli senza voti Arena: dopo quelli votati, in ordine di download su Hugging Face
+  // senza voti non sappiamo chi è meglio: fra i 25 più scaricati, prima i più grandi
+  // (nella stessa famiglia, più parametri di solito vuol dire più qualità)
+  const ammessi = (p) => p.cat.includes(categoria) || (categoria === 'code' && p.cat.includes('chat'));
+  const popolari = (dati.piccoli || []).filter((p) => ammessi(p) && !visti.has(p.hf.repo)).slice(0, 25)
+    .sort((a, b) => b.hf.b - a.hf.b);
+  for (const p of popolari) {
+    visti.add(p.hf.repo);
+    const m = { ...p, senzaVoti: true, licenza: '' };
+    lista.push({ m, r: simula(m, h) });
+  }
   const entrano = lista.filter((x) => x.r.dove !== 'no');
-  const best = entrano.find((x) => x.r.dove === 'gpu') || entrano[0];
+  const best = entrano.find((x) => x.r.dove === 'gpu' && !x.m.senzaVoti)
+    || entrano.find((x) => x.r.dove === 'gpu') || entrano[0];
 
   // il migliore
   if (best) {
@@ -124,8 +137,8 @@ function calcola() {
     $('migliore').innerHTML = `<div class="panel best">
 <div class="best-testa"><div><span class="small muted">Best ${esc(cat.nome.toLowerCase())} model for your setup</span>
 <h2>${esc(m.nome)}</h2>
-<p class="small">${esc(m.org)} · Arena score <b>${m.punti}</b> (#${m.pos} of ${cat.totale}, paid models included) · ${m.hf.b} B parameters${m.hf.att && m.hf.att < m.hf.b ? `, ${m.hf.att} B active` : ''}</p>
-${chip(r)}</div>${vel}</div>
+<p class="small">${esc(m.org)} · ${m.senzaVoti ? `<b>No Arena votes yet</b>: no voted model fits, so we show the biggest of the 25 most downloaded small models that does (${fmtDownload(m.download)} downloads a month on Hugging Face)` : `Arena score <b>${m.punti}</b> (#${m.pos} of ${cat.totale}, paid models included)`} · ${m.hf.b} B parameters${m.hf.att && m.hf.att < m.hf.b ? `, ${m.hf.att} B active` : ''}</p>
+${chip(r)}${m.senzaVoti ? ' <span class="tag novoti">No Arena votes</span>' : ''}</div>${vel}</div>
 ${barraMemoria(r, h, true)}
 <div class="legenda small">${[['p-gpu', 'Weights on GPU'], ['p-kv', 'Context cache'], ['p-extra', 'Runtime'], ['p-ram', 'Weights in system RAM']].map(([c, t]) => `<span><i class="${c}"></i>${t}</span>`).join('')}</div>
 <p class="small">Needs <b>${fmtGB(r.serve)}</b>: weights ${fmtGB(r.pesi)}${r.kv ? `, context ${fmtGB(r.kv)}` : ''}, runtime ${fmtGB(r.extra)}.${r.dove === 'ram' ? ` ${fmtGB(r.inRam)} goes to system RAM, which slows it down.` : ''}</p>
@@ -137,19 +150,22 @@ ${schede}
   }
 
   // grafico della velocità (solo testo)
-  const conVel = entrano.filter((x) => x.r.vel != null).slice(0, 10);
+  // prima i votati; se sono pochi, si completa con i piccoli senza voti (segnati nel nome)
+  const votatiVel = entrano.filter((x) => x.r.vel != null && !x.m.senzaVoti).slice(0, 10);
+  const conVel = votatiVel.length >= 6 ? votatiVel
+    : votatiVel.concat(entrano.filter((x) => x.r.vel != null && x.m.senzaVoti).slice(0, 10 - votatiVel.length));
   if (conVel.length) {
     const max = Math.max(LETTURA * 1.5, ...conVel.map((x) => x.r.vel));
     const passo = max > 200 ? 50 : max > 80 ? 20 : max > 40 ? 10 : 5;
     const fine = Math.ceil(max / passo) * passo;
     const tacche = []; for (let v = 0; v <= fine; v += passo) tacche.push(v);
     const x = (v) => (100 * v) / fine;
-    $('grafico').innerHTML = `<div class="panel"><h2>Writing speed of the top-voted models that fit</h2>
-<p class="small muted">Ordered by Arena score, best first. Tokens per second on your setup, estimated.</p>
+    $('grafico').innerHTML = `<div class="panel"><h2>Writing speed of the models that fit</h2>
+<p class="small muted">Arena-voted models first, by score; then popular small models, biggest first, marked “no votes”. Tokens per second on your setup, estimated.</p>
 <div class="legenda small"><span><i class="p-gpu"></i>Fits in GPU</span><span><i class="p-ram"></i>GPU + system RAM</span></div>
 <div class="vel-grafico">
-${conVel.map(({ m, r }) => `<div class="vg-riga" tabindex="0" data-tip="${esc(m.nome)}: ${fmtVel(r.vel)} tok/s · needs ${fmtGB(r.serve)} · Arena ${m.punti}">
-<span class="vg-nome">${esc(m.nome)}</span>
+${conVel.map(({ m, r }) => `<div class="vg-riga" tabindex="0" data-tip="${esc(m.nome)}: ${fmtVel(r.vel)} tok/s · needs ${fmtGB(r.serve)} · ${m.senzaVoti ? 'no Arena votes' : 'Arena ' + m.punti}">
+<span class="vg-nome">${esc(m.nome)}${m.senzaVoti ? ' <small class="muted">(no votes)</small>' : ''}</span>
 <span class="vg-pista"><span class="vg-l" style="left:${x(LETTURA)}%"></span><span class="vg-barra ${r.dove === 'gpu' ? 'p-gpu' : 'p-ram'}" style="width:${x(r.vel)}%"></span><span class="vg-val" style="left:${x(r.vel)}%">${fmtVel(r.vel)}</span></span></div>`).join('')}
 <div class="vg-asse"><span class="vg-nome"></span><span class="vg-pista">${tacche.map((v) => `<span style="left:${x(v)}%">${v}</span>`).join('')}</span></div>
 <p class="small muted">Dashed line: reading speed, about ${LETTURA} tokens per second.</p>
@@ -157,12 +173,19 @@ ${conVel.map(({ m, r }) => `<div class="vg-riga" tabindex="0" data-tip="${esc(m.
   } else $('grafico').innerHTML = '';
 
   // tabella completa
-  const righe = lista.filter((x) => x.r.dove !== 'no').slice(0, 30).concat(lista.filter((x) => x.r.dove === 'no').slice(0, 5));
-  const maxPunti = Math.max(...lista.map((x) => x.m.punti)), minPunti = Math.min(...lista.map((x) => x.m.punti));
-  $('tabella').innerHTML = `<div class="panel"><h2>All open models, ranked by Arena score</h2>
+  const votati = lista.filter((x) => !x.m.senzaVoti), senza = lista.filter((x) => x.m.senzaVoti);
+  const righe = votati.filter((x) => x.r.dove !== 'no').slice(0, 30)
+    .concat(senza.filter((x) => x.r.dove !== 'no').slice(0, 20))
+    .concat(votati.filter((x) => x.r.dove === 'no').slice(0, 5));
+  const maxPunti = Math.max(...votati.map((x) => x.m.punti)), minPunti = Math.min(...votati.map((x) => x.m.punti));
+  const cellaPunti = (m) => (m.senzaVoti
+    ? `<span class="tag novoti">No Arena votes</span><div class="org">${fmtDownload(m.download)} downloads/month</div>`
+    : `${m.punti}<span class="punti"><i style="width:${Math.round((100 * (m.punti - minPunti + 20)) / (maxPunti - minPunti + 20))}%"></i></span>`);
+  $('tabella').innerHTML = `<div class="panel"><h2>Open models for your setup</h2>
+<p class="small muted">Arena-voted models first, by score. Then small models from the labs' official Hugging Face pages, which Arena has not voted on: they are ordered by size, biggest first, among the 25 most downloaded.</p>
 <div class="tw"><table><thead><tr><th>Model</th><th>Arena score</th><th>Size</th><th>Memory needed</th><th>Speed</th><th>Where</th></tr></thead><tbody>
-${righe.map(({ m, r }) => `<tr${r.dove === 'no' ? ' class="spento"' : ''}><td class="m"><b>${esc(m.nome)}</b><div class="org">${esc(m.org)} · <a href="https://huggingface.co/${esc(m.hf.repo)}" rel="noopener">model</a></div></td>
-<td class="n">${m.punti}<span class="punti"><i style="width:${Math.round((100 * (m.punti - minPunti + 20)) / (maxPunti - minPunti + 20))}%"></i></span></td>
+${righe.map(({ m, r }) => `<tr${r.dove === 'no' ? ' class="spento"' : ''}><td class="m"><b>${esc(m.nome)}</b><div class="org">${esc(m.org)} · <a href="https://huggingface.co/${esc(m.hf.repo)}" rel="noopener">model</a>${m.gated ? ' · license to accept' : ''}</div></td>
+<td class="n">${cellaPunti(m)}</td>
 <td class="n">${m.hf.b} B${m.hf.att && m.hf.att < m.hf.b ? `<div class="org">${m.hf.att} B active</div>` : ''}</td>
 <td class="cella-mem"><span class="n">${fmtGB(r.serve)}</span>${barraMemoria(r, h, false)}</td>
 <td class="n">${r.vel != null ? fmtVel(r.vel) + ' tok/s' : '—'}</td>

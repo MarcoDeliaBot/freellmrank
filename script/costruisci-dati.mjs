@@ -111,6 +111,15 @@ uscita.openrouterGratis = orModelli.filter((m) => libero(m) && !SCARTA.test(m.id
 
 uscita.schede = leggiJson('schede.json', { schede: [], ram: [] });
 
+// modelli piccoli senza voti Arena (script/costruisci-piccoli.mjs), esclusi quelli già votati
+const giaVotati = new Set(uscita.categorie.flatMap((c) => c.modelli.map((m) => m.hf?.repo)).filter(Boolean));
+uscita.piccoli = leggiJson('piccoli.json', []).filter((p) => !giaVotati.has(p.repo)).map((p) => {
+  const a = arch[p.repo];
+  const hf = { repo: p.repo, b: +(p.parametri / 1e9).toFixed(1) };
+  if (a) Object.assign(hf, { att: +(a.attivi / 1e9).toFixed(1), kv: a.kvPerStrato, pf: a.pieni, fw: a.finestra, w: a.larghezzaFinestra, ctx: a.contestoMax });
+  return { nome: p.nome, org: p.org, download: p.download, cat: p.cat, gated: p.gated, creato: p.creato, hf };
+});
+
 fs.mkdirSync(path.join(RADICE, 'sito'), { recursive: true });
 fs.writeFileSync(path.join(RADICE, 'sito', 'dati.json'), JSON.stringify(uscita));
 for (const c of uscita.categorie) {

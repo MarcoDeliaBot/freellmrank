@@ -35,7 +35,7 @@ export function analizza(cfg, totale, nomeRepo) {
   if (Array.isArray(tipi) && tipi.length) {
     finestra = tipi.filter((t) => /sliding|local|chunk/.test(t)).length;
     // lineari, mamba e strati senza attenzione non tengono un KV che cresce
-    pieni = tipi.filter((t) => !/sliding|local|chunk|linear|mamba|moe|mlp|ssm/.test(t)).length;
+    pieni = tipi.filter((t) => !/sliding|local|chunk|linear|mamba|moe|mlp|ssm|conv/.test(t)).length;
   } else if (Array.isArray(c.hybrid_layer_pattern)) { // MiMo: 0 = pieno, 1 = a finestra
     pieni = c.hybrid_layer_pattern.filter((x) => x === 0).length;
     finestra = c.hybrid_layer_pattern.length - pieni;
@@ -74,12 +74,20 @@ export function analizza(cfg, totale, nomeRepo) {
 }
 
 let nuovi = 0, falliti = [];
-const repos = [...new Set(Object.values(pesi).map((p) => p.repo))];
+// modelli votati da Arena + modelli piccoli (script/costruisci-piccoli.mjs)
+const filePiccoli = path.join(RADICE, 'dati', 'piccoli.json');
+const piccoli = fs.existsSync(filePiccoli) ? JSON.parse(fs.readFileSync(filePiccoli, 'utf8')) : [];
+const totali = new Map();
+for (const p of Object.values(pesi)) totali.set(p.repo, p.parametri);
+for (const p of piccoli) if (!totali.has(p.repo)) totali.set(p.repo, p.parametri);
+const repos = [...totali.keys()];
 for (const repo of repos) {
   if (out[repo]) continue;
-  const totale = Object.values(pesi).find((p) => p.repo === repo).parametri;
+  const totale = totali.get(repo);
   try {
-    const r = await fetch(`https://huggingface.co/${repo}/resolve/main/config.json`);
+    let r = await fetch(`https://huggingface.co/${repo}/resolve/main/config.json`);
+    // repository con licenza da accettare: la copia pubblica di Unsloth ha la stessa configurazione
+    if (r.status === 401 || r.status === 403) r = await fetch(`https://huggingface.co/unsloth/${repo.split('/')[1]}/resolve/main/config.json`);
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     const a = analizza(await r.json(), totale, repo);
     if (!a) throw new Error('config senza dati di attenzione');

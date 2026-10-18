@@ -81,11 +81,22 @@ const sezioni = dati.categorie.map((c, i) => {
 <td>${cellaGratis(m)}</td>
 <td>${cellaCasa(m)}</td></tr>`).join('');
   const migliore = lista[0];
+  // modelli piccoli senza voti Arena, in una tabella a parte
+  const piccoli = (dati.piccoli || []).filter((p) => p.cat.includes(c.id)).slice(0, 20);
+  const fmtD = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : Math.round(n / 1e3) + 'K');
+  const parteSenzaVoti = piccoli.length ? `<h2 style="margin-top:1rem">Small models, no Arena votes yet</h2>
+<p class="small muted">Official models from the labs' Hugging Face pages, 0.5 to 16 billion parameters. Arena has not voted on them, so they are ordered by downloads, which shows popularity, not quality. They run on 4 to 12 GB of GPU memory.</p>
+<div class="tw"><table>
+<thead><tr><th>Model</th><th>Downloads/month</th><th>Size</th><th>Run at home</th></tr></thead>
+<tbody>${piccoli.map((p) => `<tr><td class="m"><b>${esc(p.nome)}</b><div class="org">${esc(p.org)} · <a href="https://huggingface.co/${esc(p.hf.repo)}" rel="noopener">model</a>${p.gated ? ' · license to accept' : ''}</div></td>
+<td class="n">${fmtD(p.download)}</td><td class="n">${p.hf.b} B${p.hf.att && p.hf.att < p.hf.b ? `<div class="org">${p.hf.att} B active</div>` : ''}</td>
+<td><span class="small">~${gb(p.hf.b, 0.6)} GB at 4-bit</span> · <a class="small" href="home.html">simulate</a></td></tr>`).join('')}</tbody></table></div>` : '';
   return `<section class="cat" id="${c.id}" ${i ? 'hidden' : ''}>
 <p class="small muted">${lista.length} of ${c.totale} models in Arena's ${esc(c.nome)} ranking are free to use. Votes as of ${esc(c.data)}. Best free: <b>${esc(migliore?.nome)}</b>, #${migliore?.pos} overall.</p>
 <div class="tw"><table>
 <thead><tr><th>Free rank</th><th>Model</th><th>Arena score</th><th>Use free online</th><th>Run at home</th></tr></thead>
 <tbody>${righe}</tbody></table></div>
+${parteSenzaVoti}
 </section>`;
 }).join('\n');
 
