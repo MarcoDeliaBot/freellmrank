@@ -80,6 +80,9 @@ const piccoli = fs.existsSync(filePiccoli) ? JSON.parse(fs.readFileSync(filePicc
 const totali = new Map();
 for (const p of Object.values(pesi)) totali.set(p.repo, p.parametri);
 for (const p of piccoli) if (!totali.has(p.repo)) totali.set(p.repo, p.parametri);
+const fileNuovi = path.join(RADICE, 'dati', 'nuovi.json');
+const modelliNuovi = fs.existsSync(fileNuovi) ? JSON.parse(fs.readFileSync(fileNuovi, 'utf8')) : [];
+for (const p of modelliNuovi) if (p.repo && !totali.has(p.repo)) totali.set(p.repo, p.parametri);
 const repos = [...totali.keys()];
 for (const repo of repos) {
   if (out[repo]) continue;

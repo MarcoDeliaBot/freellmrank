@@ -112,7 +112,22 @@ if (storia) {
 const vistiN = new Set();
 const ultimi = nuovi.filter((x) => { const k = perNome.get(x.m.nome)?.chiave || x.m.nome; if (vistiN.has(k)) return false; vistiN.add(k); return true; }).slice(0, 4);
 
+// modelli nuovi che Arena non vota ancora
+const NOMI_CAT = Object.fromEntries(dati.categorie.map((c) => [c.id, c.nome]));
+const inAttesa = modelli.filter((m) => m.nuovo).sort((a, b) => (b.primo || '').localeCompare(a.primo || ''));
+const sezioneNuovi = inAttesa.length ? `<div class="panel" id="new"><h2>New, waiting for Arena votes</h2>
+<p class="small muted">Released in the last 60 days by the labs' official Hugging Face pages, or new free models on OpenRouter, that Arena has not voted on yet. We check every night; once Arena votes, a model moves into the ranking above.</p>
+<div class="tw"><table><thead><tr><th>Released</th><th>Model</th><th>Type</th><th>Size</th><th>4-bit needs</th><th>Use it free</th></tr></thead><tbody>
+${inAttesa.map((m) => `<tr><td class="n">${m.primo ? fmtData(m.primo) : 'free API'}</td>
+<td class="m"><a class="nome-modello" href="${m.href}">${esc(m.nome)}</a><div class="org">${esc(m.org)}</div></td>
+<td class="small">${[...new Set(m.catPiccoli || [])].map((c) => esc(NOMI_CAT[c] || c)).join(', ')}</td>
+<td class="n">${m.hf ? m.hf.b + ' B' : '—'}${m.hf?.att && m.hf.att < m.hf.b ? `<div class="org">${m.hf.att} B active</div>` : ''}</td>
+<td class="n">${m.hf ? Math.ceil(m.hf.b * 0.606 * 1.1 + 1.5) + ' GB' : '—'}</td>
+<td>${m.or?.gratis ? `<a class="tag free" href="/compare.html#${encodeURIComponent(m.or.id)}">Free API · try it</a>` : ''}${m.hf ? '<span class="tag home">Download</span>' : ''}</td></tr>`).join('')}
+</tbody></table></div></div>` : '';
+
 const FAQ = [
+  ['What about brand-new models?', 'Arena takes a few days or weeks to collect enough votes. Meanwhile, new models from the labs’ official pages appear in “New, waiting for Arena votes”, with their size, memory needs and speed. When Arena votes, they move into the ranking automatically.'],
   ['What counts as a free model?', 'A model with open weights that you can download and run yourself, or a model you can call through a free API today (we check OpenRouter every night). Paid-only models are left out of the rankings, but we show the best paid score as a reference line.'],
   ['Where do the scores come from?', 'From Arena (formerly LMSYS Chatbot Arena), where people compare two anonymous answers and vote for the better one. Arena publishes its leaderboard as an open dataset under the CC BY 4.0 license; we filter it to free models. We are not affiliated with Arena.'],
   ['How often is it updated?', 'Every night. A scheduled job downloads the latest Arena data, the free model list from OpenRouter and model sizes from Hugging Face, then rebuilds the whole site, including the weekly report on the blog.'],
@@ -140,6 +155,7 @@ ${ultimi.length ? `<div class="nuovi"><span class="small muted">New on the free 
 </div>
 </div>
 ${sezioni}
+${sezioneNuovi}
 ${faqHtml()}`,
   script: 'classifica.js',
 });

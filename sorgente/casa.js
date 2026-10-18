@@ -145,6 +145,13 @@ function calcola() {
     const m = { ...p, senzaVoti: true, licenza: '' };
     lista.push({ m, r: simula(m, h) });
   }
+  // modelli nuovi, non ancora votati da Arena (solo quelli scaricabili)
+  for (const p of dati.nuovi || []) {
+    if (!p.hf || !ammessi(p) || visti.has(p.hf.repo)) continue;
+    visti.add(p.hf.repo);
+    const m = { ...p, senzaVoti: true, nuovo: true, licenza: '' };
+    lista.push({ m, r: simula(m, h) });
+  }
   const entrano = lista.filter((x) => x.r.dove !== 'no');
   const best = entrano.find((x) => x.r.dove === 'gpu' && !x.m.senzaVoti)
     || entrano.find((x) => x.r.dove === 'gpu') || entrano[0];
@@ -192,7 +199,7 @@ ${schede}
 <div class="legenda small"><span><i class="p-gpu"></i>Fits in GPU</span><span><i class="p-ram"></i>GPU + system RAM</span></div>
 <div class="vel-grafico">
 ${conVel.map(({ m, r }) => `<div class="vg-riga" tabindex="0" data-tip="${esc(m.nome)}: ${fmtVel(r.vel)} tok/s · needs ${fmtGB(r.serve)} · ${m.senzaVoti ? 'no Arena votes' : 'Arena ' + m.punti}">
-<span class="vg-nome">${esc(m.nome)}${m.senzaVoti ? ' <small class="muted">(no votes)</small>' : ''}</span>
+<span class="vg-nome">${esc(m.nome)}${m.nuovo ? ' <small class="muted">(new, no votes yet)</small>' : m.senzaVoti ? ' <small class="muted">(no votes)</small>' : ''}</span>
 <span class="vg-pista"><span class="vg-l" style="left:${x(LETTURA)}%"></span><span class="vg-barra ${r.dove === 'gpu' ? 'p-gpu' : 'p-ram'}" style="width:${x(r.vel)}%"></span><span class="vg-val" style="left:${x(r.vel)}%">${fmtVel(r.vel)}</span></span></div>`).join('')}
 <div class="vg-asse"><span class="vg-nome"></span><span class="vg-pista">${tacche.map((v) => `<span style="left:${x(v)}%">${v}</span>`).join('')}</span></div>
 <p class="small muted">Dashed line: reading speed, about ${LETTURA} tokens per second.</p>
@@ -200,12 +207,16 @@ ${conVel.map(({ m, r }) => `<div class="vg-riga" tabindex="0" data-tip="${esc(m.
   } else $('grafico').innerHTML = '';
 
   // tabella completa
-  const votati = lista.filter((x) => !x.m.senzaVoti), senza = lista.filter((x) => x.m.senzaVoti);
+  const votati = lista.filter((x) => !x.m.senzaVoti), senza = lista.filter((x) => x.m.senzaVoti && !x.m.nuovo);
+  const nuoviOk = lista.filter((x) => x.m.nuovo && x.r.dove !== 'no');
   const righe = votati.filter((x) => x.r.dove !== 'no').slice(0, 30)
-    .concat(senza.filter((x) => x.r.dove !== 'no').slice(0, 20))
+    .concat(nuoviOk.slice(0, 12))
+    .concat(senza.filter((x) => x.r.dove !== 'no').slice(0, 15))
     .concat(votati.filter((x) => x.r.dove === 'no').slice(0, 5));
   const maxPunti = Math.max(...votati.map((x) => x.m.punti)), minPunti = Math.min(...votati.map((x) => x.m.punti));
-  const cellaPunti = (m) => (m.senzaVoti
+  const cellaPunti = (m) => (m.nuovo
+    ? `<span class="tag nuovo">New · waiting for votes</span>${m.creato ? `<div class="org">released ${m.creato}</div>` : ''}`
+    : m.senzaVoti
     ? `<span class="tag novoti">No Arena votes</span><div class="org">${fmtDownload(m.download)} downloads/month</div>`
     : `${m.punti}<span class="punti"><i style="width:${Math.round((100 * (m.punti - minPunti + 20)) / (maxPunti - minPunti + 20))}%"></i></span>`);
   $('tabella').innerHTML = `<div class="panel"><h2>Open models for your setup</h2>

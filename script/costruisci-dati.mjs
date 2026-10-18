@@ -120,6 +120,17 @@ uscita.piccoli = leggiJson('piccoli.json', []).filter((p) => !giaVotati.has(p.re
   return { nome: p.nome, org: p.org, download: p.download, cat: p.cat, gated: p.gated, creato: p.creato, hf };
 });
 
+// modelli nuovi che Arena non vota ancora (script/costruisci-nuovi.mjs)
+uscita.nuovi = leggiJson('nuovi.json', []).filter((p) => !p.repo || !giaVotati.has(p.repo)).map((p) => {
+  let hf = null;
+  if (p.repo) {
+    const a = arch[p.repo];
+    hf = { repo: p.repo, b: +(p.parametri / 1e9).toFixed(1) };
+    if (a) Object.assign(hf, { att: +(a.attivi / 1e9).toFixed(1), kv: a.kvPerStrato, pf: a.pieni, fw: a.finestra, w: a.larghezzaFinestra, ctx: a.contestoMax });
+  }
+  return { nome: p.nome, org: p.org, creato: p.creato || null, download: p.download || 0, cat: p.cat, gated: !!p.gated, or: p.or ? { id: p.or, gratis: true } : null, hf };
+});
+
 fs.mkdirSync(path.join(RADICE, 'sito'), { recursive: true });
 fs.writeFileSync(path.join(RADICE, 'sito', 'dati.json'), JSON.stringify(uscita));
 for (const c of uscita.categorie) {

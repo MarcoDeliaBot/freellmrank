@@ -24,7 +24,7 @@ jobs:
       - run: npm run dati
       - name: Commit se i dati sono cambiati
         run: |
-          git add sito/dati.json dati/pesi.json dati/architettura.json dati/piccoli.json sito/storia.json
+          git add sito/dati.json dati/pesi.json dati/architettura.json dati/piccoli.json dati/nuovi.json sito/storia.json
           if git diff --cached --quiet; then echo "Nessun cambiamento"; exit 0; fi
           git config user.name "freellmrank-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

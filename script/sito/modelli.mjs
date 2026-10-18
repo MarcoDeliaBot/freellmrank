@@ -32,6 +32,12 @@ export function unisci(dati, storia) {
     if (mappa.has(p.hf.repo)) continue;
     mappa.set(p.hf.repo, { chiave: p.hf.repo, nome: p.nome, org: p.org, licenza: p.gated ? 'license to accept' : 'open', aperto: true, hf: p.hf, cat: {}, nomi: {}, senzaVoti: true, download: p.download, catPiccoli: p.cat, primo: p.creato });
   }
+  // modelli nuovi che Arena non vota ancora
+  for (const p of dati.nuovi || []) {
+    const chiave = p.hf?.repo || p.or?.id;
+    if (!chiave || mappa.has(chiave)) continue;
+    mappa.set(chiave, { chiave, nome: p.nome, org: p.org, licenza: p.gated ? 'license to accept' : '', aperto: !!p.hf, or: p.or, hf: p.hf, cat: {}, nomi: {}, senzaVoti: true, nuovo: true, download: p.download, catPiccoli: p.cat, primo: p.creato });
+  }
   const usati = new Set();
   const lista = [...mappa.values()];
   for (const u of lista) {
@@ -59,7 +65,8 @@ function etichetteGratis(m, piccolo = false) {
   if (m.or?.gratis) t.push(et('free', 'Free API', `/compare.html#${encodeURIComponent(m.or.id)}`));
   if (m.aperto && CHAT_WEB[m.org]) t.push(et('web', 'Lab chat', CHAT_WEB[m.org]));
   if (m.aperto) t.push(et('home', 'Download'));
-  if (m.senzaVoti) t.push(et('novoti', 'No Arena votes'));
+  if (m.nuovo) t.push(et('nuovo', 'New · waiting for Arena votes'));
+  else if (m.senzaVoti) t.push(et('novoti', 'No Arena votes'));
   return t.join(piccolo ? '' : ' ');
 }
 
@@ -136,7 +143,9 @@ export function pagineModelli(dati, storia, modelli, blog) {
 
     const punteggi = cats.length ? `<div class="panel"><h2>Arena scores</h2><div class="tw"><table><thead><tr><th>Arena</th><th>Score</th><th>Rank</th><th>Votes</th></tr></thead><tbody>
 ${cats.map((c) => `<tr><td><a href="/#${c}">${esc(nomiCat[c])}</a></td><td class="n">${m.cat[c].punti}</td><td class="n">#${m.cat[c].pos} of ${m.cat[c].totale}</td><td class="n">${fmtNum(m.cat[c].voti)}</td></tr>`).join('')}
-</tbody></table></div><p class="small muted">Rank among all models, paid ones included. Source: Arena leaderboard dataset.</p></div>` : `<div class="panel"><h2>No Arena votes yet</h2><p class="small">Arena has not voted on this model. It is listed because it is a popular small model on its lab's official Hugging Face page (${fmtNum(m.download || 0)} downloads a month).</p></div>`;
+</tbody></table></div><p class="small muted">Rank among all models, paid ones included. Source: Arena leaderboard dataset.</p></div>` : m.nuovo
+      ? `<div class="panel"><h2>New: waiting for Arena votes</h2><p class="small">${m.primo ? `Released on ${fmtData(m.primo)}. ` : ''}Arena has not voted on this model yet. As soon as it does, the model moves into the ranking automatically, usually the next night. Until then you can still check its size, memory needs and speed below${m.or?.gratis ? ', and try it for free' : ''}.</p></div>`
+      : `<div class="panel"><h2>No Arena votes yet</h2><p class="small">Arena has not voted on this model. It is listed because it is a popular small model on its lab's official Hugging Face page (${fmtNum(m.download || 0)} downloads a month).</p></div>`;
 
     const gratis = [];
     if (m.or?.gratis) gratis.push(`<li><b>Free API on OpenRouter</b>: model id <code>${esc(m.or.id)}</code>. <a href="/compare.html#${encodeURIComponent(m.or.id)}">Try it side by side</a> · <a href="https://openrouter.ai/${esc(m.or.id.replace(/:free$/, ''))}" rel="noopener">OpenRouter page</a></li>`);
