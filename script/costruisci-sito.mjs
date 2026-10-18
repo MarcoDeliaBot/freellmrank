@@ -72,10 +72,12 @@ const usabileGratis = (m) => m.aperto || m.or?.gratis;
 
 const sezioni = dati.categorie.map((c, i) => {
   const lista = c.modelli.filter(usabileGratis);
+  const alto = c.modelli[0]?.punti || 1, basso = Math.min(...lista.slice(0, 60).map((m) => m.punti)) - 20;
+  const barra = (p) => `<span class="punti" title="Best paid model: ${alto}"><i style="width:${Math.round((100 * (p - basso)) / (alto - basso))}%"></i></span>`;
   const righe = lista.slice(0, 60).map((m, j) => `<tr data-api="${m.or?.gratis ? 1 : 0}" data-open="${m.aperto ? 1 : 0}">
 <td class="n">${j + 1}</td>
 <td class="m"><b>${esc(m.nome)}</b><div class="org">${esc(m.org || '—')} · ${esc(m.licenza)}</div></td>
-<td class="n">${m.punti}<div class="org">#${m.pos} of ${c.totale}</div></td>
+<td class="n">${m.punti}${barra(m.punti)}<div class="org">#${m.pos} of ${c.totale}</div></td>
 <td>${cellaGratis(m)}</td>
 <td>${cellaCasa(m)}</td></tr>`).join('');
   const migliore = lista[0];
@@ -162,20 +164,39 @@ pagina({
   descr: 'Pick how many GPUs you have and how much memory each one has. See the best free open-weight models that fit, ranked by Arena votes, for chat, coding, vision, image and video.',
   corpo: `<div style="display:grid;gap:.5rem">
 <h1>The best model your hardware can run</h1>
-<p class="lead">Choose your GPUs. We show the highest-voted open models that fit, from one card up to ten.</p>
+<p class="lead">Pick your graphics card, how many you have, and your system RAM. See which top-voted open models fit, how the memory splits, and how fast they will write.</p>
 </div>
-<div class="panel">
-<div class="row">
-<label class="small">GPUs <select id="n-gpu">${[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => `<option${n === 1 ? ' selected' : ''}>${n}</option>`).join('')}</select></label>
-<label class="small">Memory per GPU <select id="gb-gpu">${[4, 6, 8, 10, 12, 16, 20, 24, 32, 48, 80, 96, 141, 192].map((g) => `<option value="${g}"${g === 24 ? ' selected' : ''}>${g} GB</option>`).join('')}</select></label>
-<label class="small">Precision <select id="quant"><option value="0.6" selected>4-bit (Q4_K_M)</option><option value="0.75">5-bit (Q5_K_M)</option><option value="1.07">8-bit (Q8_0)</option><option value="2.0">16-bit (full)</option></select></label>
-<label class="small">System RAM for offload <select id="ram"><option value="0" selected>None</option><option>32</option><option>64</option><option>128</option><option>256</option><option>512</option></select></label>
+<div class="panel sim">
+<div class="campi">
+<label>Graphics card<select id="scheda">${(() => {
+    const gruppi = {};
+    for (const s of dati.schede.schede) (gruppi[s.marca] ||= []).push(s);
+    return Object.entries(gruppi).map(([m, l]) => `<optgroup label="${esc(m)}">${l.map((s) => `<option value="${s.id}"${s.id === 'rtx4090' ? ' selected' : ''}>${esc(s.nome)} · ${s.gb} GB</option>`).join('')}</optgroup>`).join('') + '<optgroup label="Other"><option value="custom">Custom card…</option></optgroup>';
+  })()}</select></label>
+<label>How many<select id="n-gpu">${[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => `<option${n === 1 ? ' selected' : ''}>${n}</option>`).join('')}</select></label>
+<label id="campo-gb" hidden>Memory per card (GB)<input type="number" id="gb-custom" min="2" max="512" value="24" inputmode="numeric"></label>
+<label id="campo-banda" hidden>Bandwidth (GB/s)<input type="number" id="banda-custom" min="50" max="8000" value="1000" inputmode="numeric"></label>
+<label>System RAM<select id="ram">${[0, 16, 32, 64, 96, 128, 192, 256, 512].map((g) => `<option value="${g}"${g === 64 ? ' selected' : ''}>${g ? g + ' GB' : 'Do not use'}</option>`).join('')}</select></label>
+<label>RAM type<select id="ram-tipo">${dati.schede.ram.map((r) => `<option value="${r.banda}"${r.id === 'ddr5' ? ' selected' : ''}>${esc(r.nome)}</option>`).join('')}</select></label>
+<label>Precision<select id="quant"><option value="0.606" selected>4-bit · Q4_K_M</option><option value="0.711">5-bit · Q5_K_M</option><option value="0.82">6-bit · Q6_K</option><option value="1.0625">8-bit · Q8_0</option><option value="2">16-bit · full</option></select></label>
+<label>Context cache<select id="kvq"><option value="1" selected>16-bit (default)</option><option value="0.53">8-bit</option><option value="0.28">4-bit</option></select></label>
+</div>
+<div class="contesto" id="riga-contesto">
+<label for="ctx">Context length <b id="ctx-val">32K tokens</b></label>
+<input type="range" id="ctx" min="0" max="7" step="1" value="4">
+<div class="scala small muted">${['2K', '4K', '8K', '16K', '32K', '64K', '128K', '256K'].map((t, i) => `<span style="left:${(100 * i) / 7}%">${t}</span>`).join('')}</div>
 </div>
 <div class="tabs" role="group" aria-label="Category">${dati.categorie.map((c, i) => `<button type="button" data-cat="${c.id}" aria-pressed="${i === 0}">${esc(c.nome)}</button>`).join('')}</div>
-<p class="small muted" id="totale"></p>
 </div>
-<div id="esito-casa"></div>
-<p class="small muted">Estimate: parameters × bytes per weight, plus 10% and 1.5 GB for context and runtime. Long contexts need more. Splitting across GPUs works with llama.cpp, vLLM and Ollama, but each card adds some overhead. Image and video models also load text encoders: add a few GB.</p>`,
+<div class="tiles" id="tiles"></div>
+<div id="migliore"></div>
+<div id="grafico"></div>
+<div id="tabella"></div>
+<details class="panel small"><summary><b>How we estimate</b></summary>
+<p><b>Memory</b> = weights (parameters × bytes per weight at the chosen precision) + context cache (computed from each model's real architecture on Hugging Face: layers, attention heads, sliding windows) + about 0.6 GB per card for the runtime. Image and video models get 3 GB more for text encoders and decoders.</p>
+<p><b>Speed</b>: writing a token reads the active weights and the cache once, so tokens per second ≈ memory bandwidth × 70% ÷ data read. Mixture-of-experts models read only their active experts. With several cards (llama.cpp and Ollama split layers across them), speed stays near one card's speed; with weights in system RAM, the RAM part is far slower. Real numbers vary by about ±30%.</p>
+<p>Apple, AMD Ryzen AI Max and DGX Spark share memory with the system: we count 75% of it.</p>
+</details>`,
   script: 'casa.js',
 });
 

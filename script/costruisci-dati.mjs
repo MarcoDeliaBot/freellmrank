@@ -67,6 +67,17 @@ for (const m of orModelli) {
 // parametri letti da Hugging Face con script/costruisci-pesi.mjs
 const filePesi = path.join(RADICE, 'dati', 'pesi.json');
 const pesi = fs.existsSync(filePesi) ? JSON.parse(fs.readFileSync(filePesi, 'utf8')) : {};
+// architettura (strati, KV cache, parametri attivi) da script/costruisci-architettura.mjs
+const leggiJson = (nome, vuoto) => { const f = path.join(RADICE, 'dati', nome); return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : vuoto; };
+const arch = leggiJson('architettura.json', {});
+const infoHf = (nome) => {
+  const p = pesi[nome];
+  if (!p) return null;
+  const a = arch[p.repo];
+  const info = { repo: p.repo, b: +(p.parametri / 1e9).toFixed(1) };
+  if (a) Object.assign(info, { att: +(a.attivi / 1e9).toFixed(1), kv: a.kvPerStrato, pf: a.pieni, fw: a.finestra, w: a.larghezzaFinestra, ctx: a.contestoMax });
+  return info;
+};
 
 const uscita = { aggiornato: new Date().toISOString().slice(0, 10), fonte: 'Arena leaderboard dataset (CC-BY-4.0) + OpenRouter', categorie: [] };
 const nonCollegati = [];
@@ -87,7 +98,7 @@ for (const c of CATEGORIE) {
       punti: Math.round(r.rating),
       voti: Number(r.vote_count),
       or: or ? { id: or.id, gratis: libero(or) } : null,
-      hf: aperto && pesi[r.model_name] ? { repo: pesi[r.model_name].repo, b: +(pesi[r.model_name].parametri / 1e9).toFixed(1) } : null,
+      hf: aperto ? infoHf(r.model_name) : null,
     };
   });
   uscita.categorie.push({ id: c.id, nome: c.nome, data: righe[0]?.leaderboard_publish_date, totale: modelli.length, modelli });
@@ -97,6 +108,8 @@ for (const c of CATEGORIE) {
 const SCARTA = /^openrouter\/free$|lyria|content-safety/;
 uscita.openrouterGratis = orModelli.filter((m) => libero(m) && !SCARTA.test(m.id))
   .map((m) => ({ id: m.id, nome: m.name, contesto: m.context_length }));
+
+uscita.schede = leggiJson('schede.json', { schede: [], ram: [] });
 
 fs.mkdirSync(path.join(RADICE, 'sito'), { recursive: true });
 fs.writeFileSync(path.join(RADICE, 'sito', 'dati.json'), JSON.stringify(uscita));
