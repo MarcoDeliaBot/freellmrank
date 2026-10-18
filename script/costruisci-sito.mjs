@@ -1,112 +1,135 @@
-// Genera le pagine statiche in sito/ a partire da sito/dati.json.
+// Genera il sito statico in sito/ da sito/dati.json e sito/storia.json.
 // Uso: node script/costruisci-sito.mjs
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { RADICE, SITO, URL_SITO, NOME_PIENO, CHAT_WEB, esc, fmtData, pagina, pagineScritte } from './sito/comune.mjs';
+import { barre, dispersione, linee } from './sito/grafici.mjs';
+import { unisci, paginaCatalogo, pagineModelli } from './sito/modelli.mjs';
+import { preparaBlog, pagineBlog } from './sito/blog.mjs';
 
-const RADICE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const SITO = path.join(RADICE, 'sito');
 const SORGENTE = path.join(RADICE, 'sorgente');
 const dati = JSON.parse(fs.readFileSync(path.join(SITO, 'dati.json'), 'utf8'));
+const fileStoria = path.join(SITO, 'storia.json');
+const storia = fs.existsSync(fileStoria) ? JSON.parse(fs.readFileSync(fileStoria, 'utf8')) : null;
 
-// Nome di lavoro: si cambia qui e basta.
-const NOME = { testa: 'FreeLLM', coda: 'Rank' };
-const NOME_PIENO = NOME.testa + NOME.coda;
+// pulizia delle cartelle generate
+for (const d of ['model', 'blog']) fs.rmSync(path.join(SITO, d), { recursive: true, force: true });
 
-// Chat web ufficiali dei laboratori (raggiungibili il 18/10/2026).
-export const CHAT_WEB = {
-  deepseek: 'https://chat.deepseek.com', moonshot: 'https://www.kimi.com', zai: 'https://chat.z.ai',
-  alibaba: 'https://chat.qwen.ai', minimax: 'https://agent.minimax.io', tencent: 'https://yuanbao.tencent.com',
-  google: 'https://aistudio.google.com', nvidia: 'https://build.nvidia.com',
-};
-
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const gb = (b, bpp) => Math.ceil(b * bpp * 1.1 + 1.5);
-
-function pagina({ file, titolo, descr, attiva, corpo, script }) {
-  const voci = [['index.html', 'Free ranking'], ['compare.html', 'Try & compare'], ['home.html', 'Run at home']];
-  const html = `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>${esc(titolo)}</title>
-<meta name="description" content="${esc(descr)}">
-<link rel="stylesheet" href="stile.css">
-</head>
-<body>
-<header class="top"><div class="wrap">
-  <a class="logo" href="index.html">${NOME.testa}<span>${NOME.coda}</span></a>
-  <nav>${voci.map(([h, t]) => `<a href="${h}"${h === attiva ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav>
-</div></header>
-<main class="wrap">
-${corpo}
-</main>
-<footer><div class="wrap">
-  <p>Rankings: <a href="https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset">Arena leaderboard dataset</a> by Arena Intelligence, licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. We filtered it to models you can use for free and added sizes from Hugging Face. ${esc(NOME_PIENO)} is not affiliated with Arena.</p>
-  <p>Free models: <a href="https://openrouter.ai/models">OpenRouter</a> public list. Data updated ${esc(dati.aggiornato)}.</p>
-</div></footer>
-${script ? `<script src="${script}" defer></script>` : ''}
-</body>
-</html>
-`;
-  fs.writeFileSync(path.join(SITO, file), html);
-}
+const modelli = unisci(dati, storia);
+const perNome = new Map();
+for (const m of modelli) for (const n of Object.values(m.nomi)) perNome.set(n, m);
+const blog = preparaBlog(dati, storia, modelli);
+const usabileGratis = (m) => m.aperto || m.or?.gratis;
 
 // ---------- classifica ----------
 function cellaGratis(m) {
   const t = [];
-  if (m.or?.gratis) t.push(`<a class="tag free" href="compare.html#${encodeURIComponent(m.or.id)}">Free API · try it</a>`);
+  if (m.or?.gratis) t.push(`<a class="tag free" href="/compare.html#${encodeURIComponent(m.or.id)}">Free API · try it</a>`);
   if (m.aperto && CHAT_WEB[m.org]) t.push(`<a class="tag web" href="${CHAT_WEB[m.org]}" rel="noopener">Lab chat</a>`);
   return t.join('') || '<span class="muted small">—</span>';
 }
 function cellaCasa(m) {
   if (!m.aperto) return '<span class="muted small">Not downloadable</span>';
   if (!m.hf) return '<span class="muted small">Size unknown</span>';
-  const q4 = gb(m.hf.b, 0.6);
+  const q4 = Math.ceil(m.hf.b * 0.606 * 1.1 + 1.5);
   const schede = Math.ceil(q4 / 24);
   const dove = schede === 1 ? '1 GPU of 24 GB' : schede <= 10 ? `${schede} GPUs of 24 GB` : `server: ${Math.ceil(q4 / 80)} GPUs of 80 GB`;
   return `<span class="tag home">${m.hf.b} B</span><span class="small">~${q4} GB at 4-bit · ${dove}</span>`;
 }
-const usabileGratis = (m) => m.aperto || m.or?.gratis;
+const hrefDi = (nome) => perNome.get(nome)?.href || '/models.html';
 
 const sezioni = dati.categorie.map((c, i) => {
   const lista = c.modelli.filter(usabileGratis);
+  const pagato = c.modelli.find((m) => !usabileGratis(m));
   const alto = c.modelli[0]?.punti || 1, basso = Math.min(...lista.slice(0, 60).map((m) => m.punti)) - 20;
-  const barra = (p) => `<span class="punti" title="Best paid model: ${alto}"><i style="width:${Math.round((100 * (p - basso)) / (alto - basso))}%"></i></span>`;
+  const barra = (p) => `<span class="punti" title="Best model overall: ${alto}"><i style="width:${Math.round((100 * (p - basso)) / (alto - basso))}%"></i></span>`;
   const righe = lista.slice(0, 60).map((m, j) => `<tr data-api="${m.or?.gratis ? 1 : 0}" data-open="${m.aperto ? 1 : 0}">
 <td class="n">${j + 1}</td>
-<td class="m"><b>${esc(m.nome)}</b><div class="org">${esc(m.org || '—')} · ${esc(m.licenza)}</div></td>
+<td class="m"><a class="nome-modello" href="${hrefDi(m.nome)}">${esc(m.nome)}</a><div class="org">${esc(m.org || '—')} · ${esc(m.licenza)}</div></td>
 <td class="n">${m.punti}${barra(m.punti)}<div class="org">#${m.pos} of ${c.totale}</div></td>
 <td>${cellaGratis(m)}</td>
 <td>${cellaCasa(m)}</td></tr>`).join('');
   const migliore = lista[0];
-  // modelli piccoli senza voti Arena, in una tabella a parte
+
+  // grafico 1: le prime 15 gratis, con il miglior modello a pagamento come riferimento
+  const prime = [];
+  const visti = new Set();
+  for (const m of lista) { const k = perNome.get(m.nome)?.chiave || m.nome; if (visti.has(k)) continue; visti.add(k); prime.push(m); if (prime.length === 15) break; }
+  const graficoBarre = barre(prime.map((m) => ({ nome: m.nome, valore: m.punti, href: hrefDi(m.nome), nota: `#${m.pos} of ${c.totale}` })), pagato ? { riferimento: { valore: pagato.punti, nome: pagato.nome } } : {});
+
+  // grafico 2: punteggio contro dimensione (modelli aperti con dimensione nota)
+  const punti = [];
+  const vistiD = new Set();
+  for (const m of lista) { if (!m.aperto || !m.hf || vistiD.has(m.hf.repo)) continue; vistiD.add(m.hf.repo); punti.push({ x: m.hf.b, y: m.punti, nome: m.nome, href: hrefDi(m.nome) }); }
+  const graficoDisp = dispersione(punti);
+
+  // grafico 3: andamento delle prime 5 aperte negli ultimi sei mesi
+  const st = storia?.categorie[c.id];
+  let graficoLinee = '';
+  if (st) {
+    const cinque = prime.filter((m) => m.aperto && st.serie[m.nome]).slice(0, 5);
+    graficoLinee = linee(st.date, cinque.map((m) => ({ nome: m.nome, valori: st.serie[m.nome], href: hrefDi(m.nome) })), st.pagato);
+  }
+
   const piccoli = (dati.piccoli || []).filter((p) => p.cat.includes(c.id)).slice(0, 20);
   const fmtD = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : Math.round(n / 1e3) + 'K');
-  const parteSenzaVoti = piccoli.length ? `<h2 style="margin-top:1rem">Small models, no Arena votes yet</h2>
+  const parteSenzaVoti = piccoli.length ? `<div class="panel"><h2>Small models, no Arena votes yet</h2>
 <p class="small muted">Official models from the labs' Hugging Face pages, 0.5 to 16 billion parameters. Arena has not voted on them, so they are ordered by downloads, which shows popularity, not quality. They run on 4 to 12 GB of GPU memory.</p>
 <div class="tw"><table>
 <thead><tr><th>Model</th><th>Downloads/month</th><th>Size</th><th>Run at home</th></tr></thead>
-<tbody>${piccoli.map((p) => `<tr><td class="m"><b>${esc(p.nome)}</b><div class="org">${esc(p.org)} · <a href="https://huggingface.co/${esc(p.hf.repo)}" rel="noopener">model</a>${p.gated ? ' · license to accept' : ''}</div></td>
+<tbody>${piccoli.map((p) => { const u = modelli.find((x) => x.chiave === p.hf.repo); return `<tr><td class="m"><a class="nome-modello" href="${u?.href || '#'}">${esc(p.nome)}</a><div class="org">${esc(p.org)}${p.gated ? ' · license to accept' : ''}</div></td>
 <td class="n">${fmtD(p.download)}</td><td class="n">${p.hf.b} B${p.hf.att && p.hf.att < p.hf.b ? `<div class="org">${p.hf.att} B active</div>` : ''}</td>
-<td><span class="small">~${gb(p.hf.b, 0.6)} GB at 4-bit</span> · <a class="small" href="home.html">simulate</a></td></tr>`).join('')}</tbody></table></div>` : '';
+<td><span class="small">~${Math.ceil(p.hf.b * 0.606 * 1.1 + 1.5)} GB at 4-bit</span> · <a class="small" href="/home.html">simulate</a></td></tr>`; }).join('')}</tbody></table></div></div>` : '';
+
   return `<section class="cat" id="${c.id}" ${i ? 'hidden' : ''}>
-<p class="small muted">${lista.length} of ${c.totale} models in Arena's ${esc(c.nome)} ranking are free to use. Votes as of ${esc(c.data)}. Best free: <b>${esc(migliore?.nome)}</b>, #${migliore?.pos} overall.</p>
+<p class="small muted">${lista.length} of ${c.totale} models in Arena's ${esc(c.nome)} ranking are free to use. Votes as of ${fmtData(c.data)}. Best free: <a href="${hrefDi(migliore?.nome)}"><b>${esc(migliore?.nome)}</b></a>, #${migliore?.pos} overall.</p>
+<div class="grafici">
+<div class="panel"><h2>Top 15 free ${esc(c.nome.toLowerCase())} models</h2>${graficoBarre}</div>
+${graficoDisp ? `<div class="panel"><h2>Score against size</h2>${graficoDisp}</div>` : ''}
+${graficoLinee ? `<div class="panel largo"><h2>Top free models over the last six months</h2>${graficoLinee}</div>` : ''}
+</div>
+<div class="panel"><h2>Full free ranking</h2>
 <div class="tw"><table>
 <thead><tr><th>Free rank</th><th>Model</th><th>Arena score</th><th>Use free online</th><th>Run at home</th></tr></thead>
-<tbody>${righe}</tbody></table></div>
+<tbody>${righe}</tbody></table></div></div>
 ${parteSenzaVoti}
 </section>`;
 }).join('\n');
 
+// nuovi arrivi: modelli gratis entrati di recente nelle classifiche Arena
+const nuovi = [];
+if (storia) {
+  for (const c of dati.categorie) {
+    const st = storia.categorie[c.id];
+    for (const m of c.modelli.filter(usabileGratis)) {
+      const d = st?.primo[m.nome];
+      if (d) nuovi.push({ m, c, d });
+    }
+  }
+  nuovi.sort((a, b) => b.d.localeCompare(a.d) || a.m.pos - b.m.pos);
+}
+const vistiN = new Set();
+const ultimi = nuovi.filter((x) => { const k = perNome.get(x.m.nome)?.chiave || x.m.nome; if (vistiN.has(k)) return false; vistiN.add(k); return true; }).slice(0, 4);
+
+const FAQ = [
+  ['What counts as a free model?', 'A model with open weights that you can download and run yourself, or a model you can call through a free API today (we check OpenRouter every night). Paid-only models are left out of the rankings, but we show the best paid score as a reference line.'],
+  ['Where do the scores come from?', 'From Arena (formerly LMSYS Chatbot Arena), where people compare two anonymous answers and vote for the better one. Arena publishes its leaderboard as an open dataset under the CC BY 4.0 license; we filter it to free models. We are not affiliated with Arena.'],
+  ['How often is it updated?', 'Every night. A scheduled job downloads the latest Arena data, the free model list from OpenRouter and model sizes from Hugging Face, then rebuilds the whole site, including the weekly report on the blog.'],
+  ['Can I run these models on my computer?', 'Open models, yes, if they fit in your GPU memory. The Run at home page estimates memory and speed for your exact card, from one to ten cards, using each model\'s real architecture.'],
+  ['Why do small models have no score?', 'Arena votes mostly on large models. We list the most popular small models from the labs\' official Hugging Face pages separately and mark them “No Arena votes”, so you can still find something that runs on a 4 to 12 GB card.'],
+];
+const faqHtml = (titolo = 'Frequently asked questions') => `<div class="panel faq" id="faq"><h2>${titolo}</h2>${FAQ.map(([d, r]) => `<details><summary>${esc(d)}</summary><p>${esc(r)}</p></details>`).join('')}</div>`;
+
 pagina({
-  file: 'index.html', attiva: 'index.html',
-  titolo: `Best Free LLMs, Ranked by Real Votes · ${NOME_PIENO}`,
+  file: 'index.html', attiva: '/', dati, blog,
+  titolo: `Best Free AI Models, Ranked by Real Votes · ${NOME_PIENO}`,
   descr: 'The best free and open-weight AI models for chat, coding, vision, image and video, ranked by millions of human votes from Arena. See where to use each one free and what GPU you need.',
-  corpo: `<div style="display:grid;gap:.5rem">
+  corpo: `<div class="eroe">
+<div style="display:grid;gap:.5rem">
 <h1>The best free AI models, ranked by real votes</h1>
-<p class="lead">Only models you can use without paying: free online, or downloaded to your own GPU. Scores come from millions of blind human votes on Arena.</p>
+<p class="lead">Only models you can use without paying: free online, or downloaded to your own GPU. Scores come from millions of blind human votes on Arena, updated every night.</p>
+</div>
+${ultimi.length ? `<div class="nuovi"><span class="small muted">New on the free leaderboard</span>${ultimi.map((x) => `<a href="${hrefDi(x.m.nome)}"><b>${esc(x.m.nome)}</b><span class="small muted">#${x.m.pos} in ${esc(x.c.nome)} · ${fmtData(x.d)}</span></a>`).join('')}</div>` : ''}
 </div>
 <div class="panel">
 <div class="tabs" role="group" aria-label="Category">${dati.categorie.map((c, i) => `<button type="button" data-cat="${c.id}" aria-pressed="${i === 0}">${esc(c.nome)}</button>`).join('')}</div>
@@ -115,14 +138,15 @@ pagina({
 <label class="chk"><input type="checkbox" id="f-open"> Downloadable (open weights)</label>
 </div>
 </div>
-${sezioni}`,
+${sezioni}
+${faqHtml()}`,
   script: 'classifica.js',
 });
 
 // ---------- prova a confronto ----------
 pagina({
-  file: 'compare.html', attiva: 'compare.html',
-  titolo: `Try Free LLMs Side by Side · ${NOME_PIENO}`,
+  file: 'compare.html', attiva: '/compare.html', dati, blog,
+  titolo: `Try Free AI Models Side by Side · ${NOME_PIENO}`,
   descr: 'Send one prompt to two free AI models and compare the answers. Blind mode hides the names until you vote. Runs on your own free OpenRouter account.',
   corpo: `<div style="display:grid;gap:.5rem">
 <h1>Try two free models side by side</h1>
@@ -170,9 +194,9 @@ pagina({
 
 // ---------- in casa ----------
 pagina({
-  file: 'home.html', attiva: 'home.html',
-  titolo: `Best Free LLM for Your GPUs (1 to 10 cards) · ${NOME_PIENO}`,
-  descr: 'Pick how many GPUs you have and how much memory each one has. See the best free open-weight models that fit, ranked by Arena votes, for chat, coding, vision, image and video.',
+  file: 'home.html', attiva: '/home.html', dati, blog,
+  titolo: `Best Free AI Model for Your GPUs (1 to 10 cards) · ${NOME_PIENO}`,
+  descr: 'Pick your graphics card, how many you have and your RAM. See the best free open-weight models that fit, how the memory splits and how fast they run.',
   corpo: `<div style="display:grid;gap:.5rem">
 <h1>The best model your hardware can run</h1>
 <p class="lead">Pick your graphics card, how many you have, and your system RAM. See which top-voted open models fit, how the memory splits, and how fast they will write.</p>
@@ -211,14 +235,46 @@ pagina({
   script: 'casa.js',
 });
 
+// ---------- metodo, fonti, FAQ ----------
+pagina({
+  file: 'about.html', attiva: '', dati, blog,
+  titolo: `How We Rank Free AI Models · ${NOME_PIENO}`,
+  descr: `How ${NOME_PIENO} works: where the votes, free models, sizes and speed estimates come from, and how often they update.`,
+  corpo: `<article class="articolo">
+<h1>How we rank free AI models</h1>
+<p class="lead">${NOME_PIENO} shows the best AI models you can use without paying, ranked by real human votes, with what you need to run them.</p>
+<h2>The ranking</h2>
+<p>Scores come from <a href="https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset">Arena's public leaderboard dataset</a>. On Arena, people send a prompt, get two anonymous answers and vote for the better one; the votes become a score with the Bradley-Terry model. We keep only the models you can use for free: open weights, or a free API today. Rank numbers (“#11 of 416”) count all models, paid ones included.</p>
+<h2>Sizes and memory</h2>
+<p>Parameter counts come from the official Hugging Face repositories (safetensors metadata). Context memory comes from each model's configuration file: layers, attention heads, sliding windows and compressed attention. For repositories that require accepting a license, we read the same configuration from Unsloth's public copy.</p>
+<h2>Speed</h2>
+<p>Speed is an estimate: memory bandwidth × 70% ÷ the data read for each token (active weights plus context). It matches real llama.cpp results within about ±30%. Graphics card specifications come from the manufacturers' data sheets.</p>
+<h2>Small models without votes</h2>
+<p>Arena votes mostly on large models. We also list popular small models (0.5 to 16 billion parameters) from the labs' official Hugging Face pages, marked “No Arena votes”. They are ordered by downloads or size, never presented as ranked by quality.</p>
+<h2 id="sources">Data sources</h2>
+<ul>
+<li><a href="https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset">Arena leaderboard dataset</a>, CC BY 4.0, by Arena Intelligence. We filter it and add sizes; we are not affiliated with Arena.</li>
+<li><a href="https://openrouter.ai/api/v1/models">OpenRouter model list</a>, to find models with a free API.</li>
+<li><a href="https://huggingface.co/docs/hub/api">Hugging Face Hub API</a>, for parameter counts, configurations and downloads.</li>
+</ul>
+<h2>Updates</h2>
+<p>Everything updates every night: rankings, free APIs, sizes, model pages and the weekly report on the blog. Last update: ${fmtData(dati.aggiornato)}. The code is <a href="https://github.com/MarcoDeliaBot/freellmrank">open source</a>.</p>
+</article>
+${faqHtml()}`,
+});
+
+paginaCatalogo(dati, modelli, blog);
+pagineModelli(dati, storia, modelli, blog);
+pagineBlog(dati, blog);
+
 for (const f of fs.readdirSync(SORGENTE)) fs.copyFileSync(path.join(SORGENTE, f), path.join(SITO, f));
 
-// Per Google: robots.txt e sitemap.xml. Indirizzo del sito: variabile SITO_URL, oppure quello di Cloudflare Pages.
-const URL_SITO = (process.env.SITO_URL || 'https://freellmrank.pages.dev').replace(/\/$/, '');
+// robots.txt e sitemap.xml con tutte le pagine
 fs.writeFileSync(path.join(SITO, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${URL_SITO}/sitemap.xml\n`);
+const indirizzi = pagineScritte().map((f) => URL_SITO + '/' + f.replace(/index\.html$/, '').replace(/\.html$/, ''));
 fs.writeFileSync(path.join(SITO, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${['', 'compare', 'home'].map((p) => `<url><loc>${URL_SITO}/${p}</loc><lastmod>${dati.aggiornato}</lastmod></url>`).join('\n')}
+${indirizzi.map((u) => `<url><loc>${u}</loc><lastmod>${dati.aggiornato}</lastmod></url>`).join('\n')}
 </urlset>
 `);
-console.log('pagine scritte in', SITO, fs.readdirSync(SITO).join(' '));
+console.log(`pagine: ${pagineScritte().length} (modelli ${modelli.length}, articoli ${blog.length})`);

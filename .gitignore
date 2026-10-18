@@ -8,8 +8,10 @@ dossier.html
 .claude/
 # scaricati a ogni aggiornamento
 dati/arena/
+dati/arena-storia/
 dati/or.json
 # generati dalla build (tranne i dati)
 sito/*
 !sito/dati.json
+!sito/storia.json
 script/costruisci-anteprima.mjs

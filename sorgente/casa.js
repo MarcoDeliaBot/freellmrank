@@ -1,10 +1,10 @@
 // Simulatore "in casa": quali modelli aperti entrano nell'hardware scelto,
 // come si divide la memoria e quanto vanno veloci. Tutto nel browser.
+import { simula as simulaHf } from './calcolo.mjs';
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const CONTESTI = [2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144];
 const LETTURA = 8; // token al secondo: una persona legge comoda più o meno a questa velocità
-const EFF_GPU = 0.7, EFF_RAM = 0.8, RUNTIME = 0.6, ENCODER = 3;
 const SOLO_PESI = new Set(['image', 'video', 'edit']); // modelli di immagini e video: niente contesto testuale
 
 let dati = null;
@@ -32,36 +32,7 @@ function hardware() {
   };
 }
 
-// memoria del contesto in GB, dalla vera architettura quando c'è
-function kvGB(hf, ctx, kvq) {
-  if (hf.kv) {
-    const tok = hf.pf * ctx + hf.fw * Math.min(ctx, hf.w || ctx);
-    return (hf.kv * tok * kvq) / 1e9;
-  }
-  return 0.000004 * hf.b * ctx * kvq; // stima grezza se la configurazione non c'è
-}
-
-function simula(m, h) {
-  const hf = m.hf;
-  const pesi = hf.b * h.bpp;
-  const kv = SOLO_PESI.has(categoria) ? 0 : kvGB(hf, h.ctx, h.kvq);
-  const extra = RUNTIME * h.n + (SOLO_PESI.has(categoria) ? ENCODER : 0);
-  const serve = pesi + kv + extra;
-  let dove, inRam = 0;
-  if (serve <= h.vram) dove = 'gpu';
-  else if (h.ram && serve <= h.vram + h.ram * 0.8 && pesi > serve - h.vram) { dove = 'ram'; inRam = serve - h.vram; }
-  else dove = 'no';
-  let vel = null;
-  if (!SOLO_PESI.has(categoria) && dove !== 'no') {
-    const attivi = (hf.att || hf.b) * h.bpp;
-    const quotaRam = inRam / pesi;
-    const daGpu = attivi * (1 - quotaRam) + kv;
-    const daRam = attivi * quotaRam;
-    const t = daGpu / (h.banda * EFF_GPU) + (daRam ? daRam / (h.bandaRam * EFF_RAM) : 0);
-    vel = (1 / t) / (1 + 0.03 * (h.n - 1));
-  }
-  return { pesi, kv, extra, serve, dove, inRam, vel };
-}
+const simula = (m, h) => simulaHf(m.hf, h, SOLO_PESI.has(categoria));
 
 // ---------- disegno ----------
 function barraMemoria(r, h, grande) {
@@ -146,7 +117,7 @@ ${schede}
 <p class="small"><a href="https://huggingface.co/${esc(m.hf.repo)}" rel="noopener">Model page</a> · <a href="https://huggingface.co/models?search=${encodeURIComponent(m.hf.repo.split('/')[1] + ' gguf')}" rel="noopener">GGUF files for Ollama and LM Studio</a></p>
 </div>`;
   } else {
-    $('migliore').innerHTML = `<div class="panel"><h2>Nothing fits in ${fmtGB(h.vram)}${h.ram ? ' plus RAM' : ''}</h2><p class="small">Try 4-bit, a shorter context, more system RAM, or a free model online: <a href="index.html#${categoria}">free ranking</a>.</p></div>`;
+    $('migliore').innerHTML = `<div class="panel"><h2>Nothing fits in ${fmtGB(h.vram)}${h.ram ? ' plus RAM' : ''}</h2><p class="small">Try 4-bit, a shorter context, more system RAM, or a free model online: <a href="/#${categoria}">free ranking</a>.</p></div>`;
   }
 
   // grafico della velocità (solo testo)
