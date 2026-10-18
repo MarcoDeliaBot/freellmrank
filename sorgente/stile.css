@@ -10,6 +10,8 @@
   --bg:#0e1419; --surface:#161e26; --ink:#e7edf2; --muted:#9aa7b3; --line:#2a3642; --soft:#1c2630;
   --accent:#7fa8ff; --free:#4ccb8b; --home:#f0a45f; --bad:#ff8b7b; color-scheme:dark}}
 *{box-sizing:border-box}
+/* hidden vince sempre: senza questa riga display:grid/flex lo annulla */
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}
 a{color:var(--accent)}
