@@ -83,15 +83,15 @@ const sezioni = dati.categorie.map((c, i) => {
 
   return `<section class="cat" id="${c.id}" ${i ? 'hidden' : ''}>
 <p class="small muted">${lista.length} of ${c.totale} models in Arena's ${esc(c.nome)} ranking are free to use. Votes as of ${fmtData(c.data)}. Best free: <a href="${hrefDi(migliore?.nome)}"><b>${esc(migliore?.nome)}</b></a>, #${migliore?.pos} overall.</p>
+<div class="panel"><h2>Full free ranking</h2>
+<div class="tw"><table>
+<thead><tr><th>Free rank</th><th>Model</th><th>Arena score</th><th>Use free online</th><th>Run at home</th></tr></thead>
+<tbody>${righe}</tbody></table></div></div>
 <div class="grafici">
 <div class="panel"><h2>Top 15 free ${esc(c.nome.toLowerCase())} models</h2>${graficoBarre}</div>
 ${graficoDisp ? `<div class="panel"><h2>Score against size</h2>${graficoDisp}</div>` : ''}
 ${graficoLinee ? `<div class="panel largo"><h2>Top free models over the last six months</h2>${graficoLinee}</div>` : ''}
 </div>
-<div class="panel"><h2>Full free ranking</h2>
-<div class="tw"><table>
-<thead><tr><th>Free rank</th><th>Model</th><th>Arena score</th><th>Use free online</th><th>Run at home</th></tr></thead>
-<tbody>${righe}</tbody></table></div></div>
 ${parteSenzaVoti}
 </section>`;
 }).join('\n');
