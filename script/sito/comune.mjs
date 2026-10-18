@@ -26,7 +26,22 @@ const pagine = []; // per la sitemap
 export const pagineScritte = () => pagine;
 
 export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog = [] }) {
-  const voci = [['/', 'Free leaderboard'], ['/models.html', 'Models'], ['/compare.html', 'Try & compare'], ['/home.html', 'Run at home'], ['/blog/', 'Blog']];
+  // icone a linea, disegnate qui (niente librerie esterne)
+  const ICONE = {
+    classifica: '<path d="M5 20v-7M12 20V5M19 20v-10"/>',
+    modelli: '<rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/>',
+    confronto: '<rect x="3.5" y="5" width="7" height="14" rx="1.5"/><rect x="13.5" y="5" width="7" height="14" rx="1.5"/>',
+    casa: '<rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 3.5V7M14 3.5V7M10 17v3.5M14 17v3.5M3.5 10H7M3.5 14H7M17 10h3.5M17 14h3.5"/>',
+    blog: '<path d="M6.5 3.5h8l3 3v14h-11z"/><path d="M9.5 11.5h5M9.5 15h5"/>',
+  };
+  const icona = (k) => `<svg class="icona" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONE[k]}</svg>`;
+  const voci = [
+    ['/', `${icona('classifica')}Leaderboard <span class="badge-free">free</span>`],
+    ['/models.html', `${icona('modelli')}Models`],
+    ['/compare.html', `${icona('confronto')}Try & compare`],
+    ['/home.html', `${icona('casa')}Run at home`],
+    ['/blog/', `${icona('blog')}Blog`],
+  ];
   const canonico = URL_SITO + '/' + file.replace(/index\.html$/, '').replace(/\.html$/, '');
   const colonne = [
     ['Leaderboards', dati.categorie.map((c) => [`/#${c.id}`, `Best free ${c.nome.toLowerCase()} models`])],

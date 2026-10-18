@@ -23,7 +23,12 @@ header.top .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.5rem
 .logo span{color:var(--free)}
 nav{display:flex;flex-wrap:wrap;gap:.25rem}
 nav a{padding:.35rem .7rem;border-radius:6px;text-decoration:none;color:var(--ink)}
-nav a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+nav a[aria-current="page"]{background:var(--soft);color:var(--ink);font-weight:600}
+nav a{display:inline-flex;align-items:center;gap:.4rem}
+nav a:hover{background:var(--soft)}
+.icona{width:1.05rem;height:1.05rem;flex:none;color:var(--muted)}
+nav a[aria-current="page"] .icona{color:var(--ink)}
+.badge-free{display:inline-block;font-size:.68rem;line-height:1;font-weight:600;padding:.2rem .4rem;border-radius:4px;background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent)}
 main{padding-block:1.5rem 3rem;display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem}
 section.cat{display:grid;gap:.6rem;min-width:0}
 h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.15;margin:0;letter-spacing:-.02em;text-wrap:balance}
