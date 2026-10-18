@@ -263,6 +263,14 @@ pagina({
 ${faqHtml()}`,
 });
 
+// pagina non trovata: Cloudflare Pages la serve con codice 404 (senza, risponde con la home)
+pagina({
+  file: '404.html', attiva: '', dati, blog,
+  titolo: `Page not found · ${NOME_PIENO}`, descr: 'This page does not exist.',
+  corpo: `<div style="display:grid;gap:.6rem"><h1>Page not found</h1><p class="lead">This page does not exist, or the model was renamed.</p>
+<p><a href="/">Free leaderboard</a> · <a href="/models.html">All free models</a> · <a href="/home.html">Run at home</a></p></div>`,
+});
+
 paginaCatalogo(dati, modelli, blog);
 pagineModelli(dati, storia, modelli, blog);
 pagineBlog(dati, blog);
@@ -271,7 +279,7 @@ for (const f of fs.readdirSync(SORGENTE)) fs.copyFileSync(path.join(SORGENTE, f)
 
 // robots.txt e sitemap.xml con tutte le pagine
 fs.writeFileSync(path.join(SITO, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${URL_SITO}/sitemap.xml\n`);
-const indirizzi = pagineScritte().map((f) => URL_SITO + '/' + f.replace(/index\.html$/, '').replace(/\.html$/, ''));
+const indirizzi = pagineScritte().filter((f) => f !== '404.html').map((f) => URL_SITO + '/' + f.replace(/index\.html$/, '').replace(/\.html$/, ''));
 fs.writeFileSync(path.join(SITO, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${indirizzi.map((u) => `<url><loc>${u}</loc><lastmod>${dati.aggiornato}</lastmod></url>`).join('\n')}
