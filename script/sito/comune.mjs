@@ -11,8 +11,8 @@ export const URL_SITO = (process.env.SITO_URL || 'https://freellmarena.com').rep
 export const GA_ID = 'G-D4DK3X1MQJ';
 // versione dei file statici: cambia a ogni build, così i browser non usano lo stile vecchio
 export const VER = Date.now().toString(36);
-// contatto del titolare per la pagina privacy: DA INSERIRE (deciso da Marco)
-export const CONTATTO_PRIVACY = '';
+// contatto del titolare per la pagina privacy (scelto da Marco il 19/10, casella su Server Plan)
+export const CONTATTO_PRIVACY = 'info@freellmarena.com';
 
 // Nome di lavoro: si cambia qui e basta.
 export const NOME = { testa: 'FreeLLM', coda: 'Arena' };

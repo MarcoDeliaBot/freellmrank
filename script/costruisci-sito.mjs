@@ -314,7 +314,7 @@ pagina({
 <h1>Privacy and cookies</h1>
 <p class="lead">Short version: we count visits with Google Analytics only if you say yes. We do not show ads, we do not sell data, and we never see what you type into the comparison page.</p>
 <h2>Who is responsible</h2>
-<p>${esc(NOME_PIENO)} (${esc(URL_SITO.replace('https://', ''))}).${CONTATTO_PRIVACY ? ` Contact: ${esc(CONTATTO_PRIVACY)}.` : ''}</p>
+<p>${esc(NOME_PIENO)} (${esc(URL_SITO.replace('https://', ''))}).${CONTATTO_PRIVACY ? ` Contact: <a href="mailto:${esc(CONTATTO_PRIVACY)}">${esc(CONTATTO_PRIVACY)}</a>.` : ''}</p>
 <h2>Google Analytics (only with your consent)</h2>
 <p>If you click “Accept”, Google Analytics 4 sets cookies (names starting with <code>_ga</code>, kept up to 2 years) to count visits and see which pages are used. Google Ireland Ltd processes this data; it may be transferred to the United States under the EU–US Data Privacy Framework. Legal basis: your consent (GDPR art. 6.1.a). If you click “Reject” or do nothing, Analytics sets no cookies. You can change your choice at any time with “Cookie settings” at the bottom of every page; rejecting also deletes the Analytics cookies already set.</p>
 <h2>Hosting</h2>
