@@ -7,6 +7,11 @@ export const RADICE = path.resolve(path.dirname(fileURLToPath(import.meta.url)),
 export const SITO = path.join(RADICE, 'sito');
 export const URL_SITO = (process.env.SITO_URL || 'https://freellmarena.com').replace(/\/$/, '');
 
+// Google Analytics 4 (si attiva solo dopo il consenso, vedi sorgente/consenso.js)
+export const GA_ID = 'G-D4DK3X1MQJ';
+// contatto del titolare per la pagina privacy: DA INSERIRE (deciso da Marco)
+export const CONTATTO_PRIVACY = '';
+
 // Nome di lavoro: si cambia qui e basta.
 export const NOME = { testa: 'FreeLLM', coda: 'Arena' };
 export const NOME_PIENO = NOME.testa + NOME.coda;
@@ -54,6 +59,21 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
   const html = `<!doctype html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js), con Consent Mode v2: niente cookie finché il visitatore non accetta -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+  // lo script di Google si carica SOLO dopo "Accept": prima del consenso non parte nessuna richiesta
+  window.caricaGa = function () {
+    if (window.gaCaricato) return; window.gaCaricato = true;
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=${GA_ID}';
+    document.head.appendChild(s);
+    gtag('js', new Date()); gtag('config', '${GA_ID}');
+  };
+  try { if (localStorage.getItem('consenso') === 'si') window.caricaGa(); } catch (e) {}
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>${esc(titolo)}</title>
@@ -80,7 +100,13 @@ ${corpo}
     ${colonne.map(([t, l]) => `<div><h3>${t}</h3><ul>${l.map(([h, x]) => `<li><a href="${h}"${h.startsWith('http') ? ' rel="noopener"' : ''}>${esc(x)}</a></li>`).join('')}</ul></div>`).join('')}
   </div>
   <p>Rankings: <a href="https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset">Arena leaderboard dataset</a> by Arena Intelligence, licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. We filtered it to models you can use for free and added sizes from Hugging Face. ${esc(NOME_PIENO)} is not affiliated with Arena. Data updated ${esc(dati.aggiornato)}.</p>
+  <p><a href="/privacy.html">Privacy and cookies</a> · <button type="button" class="link-btn" id="consenso-cambia">Cookie settings</button></p>
 </div></footer>
+<div class="consenso" id="consenso" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+  <p>We use Google Analytics to count visits, only if you agree. No ads, no tracking for advertising. <a href="/privacy.html">Details</a></p>
+  <div class="row"><button type="button" class="btn" id="consenso-no">Reject</button><button type="button" class="btn" id="consenso-si">Accept</button></div>
+</div>
+<script src="/consenso.js" defer></script>
 ${script ? `<script type="module" src="/${script}"></script>` : ''}
 </body>
 </html>
