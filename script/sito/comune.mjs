@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 export const RADICE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const SITO = path.join(RADICE, 'sito');
-export const URL_SITO = (process.env.SITO_URL || 'https://freellmrank.pages.dev').replace(/\/$/, '');
+export const URL_SITO = (process.env.SITO_URL || 'https://freellmarena.com').replace(/\/$/, '');
 
 // Nome di lavoro: si cambia qui e basta.
 export const NOME = { testa: 'FreeLLM', coda: 'Arena' };
