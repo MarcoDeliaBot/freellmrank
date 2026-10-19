@@ -52,6 +52,10 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
     ['/blog/', `${icona('blog')}Blog`],
   ];
   const canonico = URL_SITO + '/' + file.replace(/index\.html$/, '').replace(/\.html$/, '');
+  // un'immagine di anteprima per sezione (disegnate da script/immagini.py)
+  const ANTEPRIMA = { '/models.html': 'anteprima-modelli.png', '/decision.html': 'anteprima-decisioni.png', '/compare.html': 'anteprima-confronto.png', '/home.html': 'anteprima-casa.png', '/blog/': 'anteprima-blog.png' };
+  const anteprima = ANTEPRIMA[attiva] || 'anteprima.png';
+  const condividi = encodeURIComponent(canonico), testoCond = encodeURIComponent(titolo);
   const colonne = [
     ['Leaderboards', dati.categorie.map((c) => [`/#${c.id}`, `Best free ${c.nome.toLowerCase()} models`])],
     ['Tools', [['/home.html', 'Run at home: GPU simulator'], ['/compare.html', 'Try two free models'], ['/models.html', 'All free models'], ['/decision.html', 'Decision models (Jev-style)']]],
@@ -86,7 +90,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
 <meta property="og:type" content="website">
 <meta property="og:url" content="${canonico}">
 <meta property="og:site_name" content="${NOME_PIENO}">
-<meta property="og:image" content="${URL_SITO}/anteprima.png">
+<meta property="og:image" content="${URL_SITO}/${anteprima}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="${NOME_PIENO}: the best AI models you can use for free">
@@ -101,11 +105,12 @@ ${(Array.isArray(jsonld) ? jsonld : [jsonld]).filter(Boolean).map((o) => `<scrip
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="logo" href="/">${NOME.testa}<span>${NOME.coda}</span></a>
+  <a class="logo" href="/"><img src="/favicon.svg" alt="" width="26" height="26">${NOME.testa}<span>${NOME.coda}</span></a>
   <nav>${voci.map(([h, t]) => `<a href="${h}"${h === attiva ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav>
 </div></header>
 <main class="wrap">
 ${corpo}
+<p class="condividi small"><span class="muted">Share this page:</span><a href="https://x.com/intent/post?url=${condividi}&amp;text=${testoCond}" rel="noopener" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=${condividi}" rel="noopener" target="_blank">LinkedIn</a><a href="https://www.reddit.com/submit?url=${condividi}&amp;title=${testoCond}" rel="noopener" target="_blank">Reddit</a><a href="https://wa.me/?text=${testoCond}%20${condividi}" rel="noopener" target="_blank">WhatsApp</a><button type="button" class="link-btn" data-copia="${canonico}">Copy link</button></p>
 </main>
 <footer><div class="wrap">
   <div class="piede">

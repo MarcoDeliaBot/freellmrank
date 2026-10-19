@@ -29,6 +29,7 @@ jobs:
       - run: npm ci
       - run: npm run dati
       - name: Commit se i dati sono cambiati
+        id: commit
         run: |
           git add sito/dati.json dati/pesi.json dati/architettura.json dati/piccoli.json dati/nuovi.json dati/decisioni.json dati/decisioni-licenze.json sito/storia.json
           if git diff --cached --quiet; then echo "Nessun cambiamento"; exit 0; fi
@@ -36,3 +37,11 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Dati aggiornati $(date -u +%F)"
           git push
+          echo "spinto=si" >> "$GITHUB_OUTPUT"
+      # Cloudflare ripubblica in 1-3 minuti; poi si avvisano i motori di ricerca (IndexNow, gratis)
+      - name: Avvisa i motori di ricerca
+        if: steps.commit.outputs.spinto == 'si'
+        continue-on-error: true
+        run: |
+          sleep 240
+          node script/indexnow.mjs

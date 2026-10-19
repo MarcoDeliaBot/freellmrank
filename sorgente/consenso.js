@@ -32,3 +32,12 @@
   if (cambia) cambia.addEventListener('click', function () { banner.hidden = false; });
   if (!leggi()) banner.hidden = false;
 })();
+
+// tasto "Copy link" della riga di condivisione
+document.addEventListener('click', function (e) {
+  var b = e.target.closest && e.target.closest('[data-copia]');
+  if (!b) return;
+  var fatto = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy link'; }, 1500); };
+  if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.copia).then(fatto, function () { prompt('Copy this link:', b.dataset.copia); });
+  else prompt('Copy this link:', b.dataset.copia);
+});
