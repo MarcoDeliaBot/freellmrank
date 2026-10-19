@@ -1,4 +1,5 @@
 // Free Arena nel browser: chiede il duello, mostra le due risposte, manda il voto, rivela i nomi.
+import { salvaMio, mostraMia } from './arena-mia.mjs';
 const $ = (id) => document.getElementById(id);
 const NOMI = JSON.parse($('arena-nomi').textContent);
 const form = $('arena-form'), stato = $('arena-stato'), invia = $('arena-invia');
@@ -58,7 +59,9 @@ voti.addEventListener('click', async (e) => {
     biglietto = null;
     mostraNome($('arena-nome-a'), d.a, b.dataset.esito === 'a');
     mostraNome($('arena-nome-b'), d.b, b.dataset.esito === 'b');
-    esitoTesto.textContent = d.contato ? 'Thanks, your vote is saved.' : d.nota;
+    esitoTesto.innerHTML = d.contato ? 'Thanks, your vote is saved. <a href="/arena/leaderboard.html">See the leaderboard</a>' : d.nota;
+    if (d.contato) salvaMio({ a: d.a, b: d.b, esito: b.dataset.esito }); // la tua classifica, solo in questo browser
+    mostraMia(NOMI);
     ancora.hidden = false;
     if (window.gtag) window.gtag('event', 'arena_voto', { esito: b.dataset.esito });
   } catch {
@@ -66,6 +69,8 @@ voti.addEventListener('click', async (e) => {
     voti.querySelectorAll('button').forEach((x) => { x.disabled = false; });
   }
 });
+
+mostraMia(NOMI);
 
 ancora.addEventListener('click', () => {
   duello.hidden = true;

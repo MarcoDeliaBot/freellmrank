@@ -332,7 +332,7 @@ pagina({
 <h2>Links to Amazon</h2>
 <p>The GPU page links to Amazon. We are an Amazon Associate and earn from qualifying purchases. When you click one of these links, Amazon may set its own cookies to record that you came from us, under <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201909150" rel="noopener">Amazon’s privacy notice</a>. We do not receive your name or what you buy, only a total of sales.</p>
 <h2>Stored in your browser</h2>
-<p>We keep a few settings in your browser’s local storage: your cookie choice, your catalogue filters and, if you use them, your OpenRouter key and votes. They never leave your device.</p>
+<p>We keep a few settings in your browser’s local storage: your cookie choice, your catalogue filters, your own Free Arena votes (for “Your ranking”) and, if you use them, your OpenRouter key and votes. They never leave your device.</p>
 <h2>Your rights</h2>
 <p>You can ask for access, correction or deletion of your data, object to processing, and complain to your data protection authority (in Italy: Garante per la protezione dei dati personali, garanteprivacy.it). For Google Analytics data, you can also use Google’s own tools.</p>
 <p class="small muted">Last updated ${fmtData(dati.aggiornato)}.</p>
