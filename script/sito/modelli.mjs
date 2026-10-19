@@ -210,7 +210,7 @@ ${QUANTI.filter((p) => p.id !== 'Q2_K').map((p) => { const pq = perditaQualita(p
       corpo: `<p class="briciole small"><a href="/models.html">All models</a> › ${esc(m.org)}</p>
 <div style="display:grid;gap:.4rem">
 <h1>${esc(m.nome)}</h1>
-<p class="lead">${esc(m.org)}${m.licenza ? ' · ' + esc(m.licenza) + ' license' : ''}${m.primo ? ` · on Arena since ${fmtData(m.primo)}` : ''}</p>
+<p class="lead">${esc(m.org)}${m.licenza ? ' · ' + esc(m.licenza) + ' license' : ''}${m.primo ? ` · ${m.senzaVoti ? 'released' : 'on Arena since'} ${fmtData(m.primo)}` : ''}</p>
 <div>${etichetteGratis(m)}</div>
 </div>
 <div class="tiles">${tessere.map(([a, b, c]) => `<div class="tile"><span class="small muted">${a}</span><b>${b}</b><span class="small muted">${esc(c)}</span></div>`).join('')}</div>
