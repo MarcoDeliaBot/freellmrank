@@ -1,0 +1,136 @@
+{
+  "name": "FreeLLMArena · sveglia aggiornamento dati",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "cronExpression", "expression": "17 5,17 * * *" }
+          ]
+        }
+      },
+      "id": "a1b2c3d4-0001-4000-8000-000000000001",
+      "name": "Ogni giorno 5:17 e 17:17",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/actions/workflows/aggiorna-dati.yml/dispatches",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Accept", "value": "application/vnd.github+json" },
+            { "name": "X-GitHub-Api-Version", "value": "2022-11-28" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{ \"ref\": \"main\" }",
+        "options": {
+          "response": { "response": { "fullResponse": true } }
+        }
+      },
+      "id": "a1b2c3d4-0002-4000-8000-000000000002",
+      "name": "Fai partire GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [240, 0],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 60000,
+      "credentials": {
+        "httpHeaderAuth": { "id": "", "name": "GitHub freellmrank (Actions)" }
+      }
+    },
+    {
+      "parameters": { "amount": 5, "unit": "minutes" },
+      "id": "a1b2c3d4-0003-4000-8000-000000000003",
+      "name": "Aspetta 5 minuti",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [480, 0],
+      "webhookId": "a1b2c3d4-0003-4000-8000-0000000000aa"
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/actions/workflows/aggiorna-dati.yml/runs?per_page=1&event=workflow_dispatch",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Accept", "value": "application/vnd.github+json" },
+            { "name": "X-GitHub-Api-Version", "value": "2022-11-28" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1b2c3d4-0004-4000-8000-000000000004",
+      "name": "Leggi esito ultima corsa",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [720, 0],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000,
+      "credentials": {
+        "httpHeaderAuth": { "id": "", "name": "GitHub freellmrank (Actions)" }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "a1b2c3d4-0005-4000-8000-0000000000c1",
+              "leftValue": "={{ $json.workflow_runs[0].conclusion }}",
+              "rightValue": "success",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a1b2c3d4-0005-4000-8000-000000000005",
+      "name": "È andata bene?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [960, 0]
+    },
+    {
+      "parameters": {},
+      "id": "a1b2c3d4-0006-4000-8000-000000000006",
+      "name": "Tutto ok",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1200, -100]
+    },
+    {
+      "parameters": {
+        "errorMessage": "=Aggiornamento FreeLLMArena non riuscito o non finito: stato {{ $json.workflow_runs[0].status }}, esito {{ $json.workflow_runs[0].conclusion }}. Dettagli: {{ $json.workflow_runs[0].html_url }}"
+      },
+      "id": "a1b2c3d4-0007-4000-8000-000000000007",
+      "name": "Segnala errore",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [1200, 100]
+    }
+  ],
+  "connections": {
+    "Ogni giorno 5:17 e 17:17": { "main": [[{ "node": "Fai partire GitHub", "type": "main", "index": 0 }]] },
+    "Fai partire GitHub": { "main": [[{ "node": "Aspetta 5 minuti", "type": "main", "index": 0 }]] },
+    "Aspetta 5 minuti": { "main": [[{ "node": "Leggi esito ultima corsa", "type": "main", "index": 0 }]] },
+    "Leggi esito ultima corsa": { "main": [[{ "node": "È andata bene?", "type": "main", "index": 0 }]] },
+    "È andata bene?": { "main": [[{ "node": "Tutto ok", "type": "main", "index": 0 }], [{ "node": "Segnala errore", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1", "timezone": "Europe/Rome", "saveExecutionProgress": true },
+  "pinData": {},
+  "active": false
+}

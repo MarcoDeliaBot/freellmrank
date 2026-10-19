@@ -11,6 +11,11 @@ on:
 permissions:
   contents: write
 
+# la sveglia di n8n e la corsa programmata possono partire vicine: una alla volta, mai annullate
+concurrency:
+  group: aggiorna-dati
+  cancel-in-progress: false
+
 jobs:
   dati:
     runs-on: ubuntu-latest
