@@ -16,3 +16,4 @@ sito/*
 !sito/storia.json
 script/costruisci-anteprima.mjs
 dati/decision-index.json
+dati/decision-vision.json

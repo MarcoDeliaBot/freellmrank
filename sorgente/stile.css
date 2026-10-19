@@ -183,6 +183,10 @@ a.vg-riga:hover .vg-nome{text-decoration:underline}
 .mx-chiave.mx-vince{background:color-mix(in srgb,var(--mx-vince) var(--f),var(--mx-neutro))}
 .mx-chiave.mx-perde{background:color-mix(in srgb,var(--mx-perde) var(--f),var(--mx-neutro))}
 .mx-chiave.mx-neutro{background:var(--mx-neutro);border:1px solid var(--line)}
+/* mini-barre delle 6 aree dei modelli decisionali */
+.mini-aree{display:inline-flex;align-items:flex-end;gap:2px;height:28px;padding:2px;background:var(--soft);border-radius:4px}
+.mini-aree i{display:block;width:7px;background:var(--c-gpu);border-radius:2px 2px 0 0}
+.mini-aree i.vuota{height:100%!important;background:transparent;border:1px dashed var(--line)}
 .rileva{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem}
 .spiega-testo{display:grid;gap:.5rem;max-width:68ch}
 tr.consigliato td{background:color-mix(in srgb,var(--c-gpu) 9%,transparent)}

@@ -28,24 +28,35 @@ export function paginaDecisioni(dati, blog) {
   const punti = lista.filter((m) => m.b && m.b >= 0.05).map((m) => ({ x: m.b, y: m.punti, nome: m.nome, href: hrefHf(m) }));
   const disp = dispersione(punti);
 
+  // licenza: per lavoro servono licenze permissive; le "nc" (non commerciali) no
+  const PERMISSIVE = /^(apache-2\.0|mit|bsd|bsd-3-clause|cc-by-4\.0|cc-by-sa-4\.0|openrail|gemma|llama3\.\d|qwen)$/i;
+  const usoLavoro = (l) => (!l ? 'unknown' : /nc/i.test(l) ? 'no' : PERMISSIVE.test(l) ? 'yes' : 'check');
+  const AREE = d.aree || [];
+  const miniAree = (a) => `<span class="mini-aree" role="img" aria-label="${AREE.map((x) => `${x.nome}: ${a[x.id] ?? 'not measured'}`).join(', ')}">${AREE.map((x) => `<i title="${esc(x.nome)}: ${a[x.id] != null ? a[x.id] : 'not measured'}" style="height:${a[x.id] != null ? Math.max(2, a[x.id]) : 0}%"${a[x.id] == null ? ' class="vuota"' : ''}></i>`).join('')}</span>`;
+  const forte = (a) => { const e = Object.entries(a); if (!e.length) return ''; const [id, v] = e.sort((p, q) => q[1] - p[1])[0]; return `${esc(AREE.find((x) => x.id === id)?.nome || id)} ${v}`; };
+
   const righe = lista.map((m, i) => {
     const dif = m.punti - jev.punti;
     const g = gb(m);
-    return `<tr${m.punti > jev.punti ? ' class="consigliato"' : ''}>
+    const lavoro = usoLavoro(m.licenza);
+    const entra = g != null && g <= 24 - 1.5; // weights + runtime, poco contesto per una decisione
+    return `<tr data-lavoro="${lavoro}" data-img="${m.vision ? 1 : 0}" data-casa="${entra ? 1 : 0}"${m.punti > jev.punti ? ' class="consigliato"' : ''}>
 <td class="n">${i + 1}</td>
 <td class="m"><a class="nome-modello" href="${hrefHf(m)}" rel="noopener">${esc(m.nome)}</a><div class="org">${esc(m.org)}${m.base ? ' · based on ' + esc(m.base.split('/')[1] || m.base) : ''}</div></td>
-<td class="n"><b>${m.punti.toFixed(1)}</b></td>
-<td class="n">${dif >= 0 ? '+' : ''}${dif.toFixed(1)}</td>
-<td class="small">${esc(TIPI[m.tipo] || m.tipo)}</td>
-<td class="n">${m.b ? m.b + ' B' + (m.stimato ? ' <span class="org">est.</span>' : '') : '—'}</td>
-<td>${m.repo ? '<span class="tag home">Yes</span>' : `<span class="muted small">${esc(m.nota || 'No')}</span>`}</td>
-<td class="n">${g ? (g >= 10 ? g.toFixed(0) : g.toFixed(1)) + ' GB' : '—'}</td>
-<td class="n">${m.ms != null ? Math.round(m.ms) + ' ms' : '—'}</td>
-<td class="n">${m.ece != null ? (m.ece * 100).toFixed(1) + '%' : '—'}</td></tr>`;
+<td class="n"><b>${m.punti.toFixed(1)}</b><div class="org">${dif >= 0 ? '+' : ''}${dif.toFixed(1)} vs Jev</div></td>
+<td>${miniAree(m.aree || {})}<div class="org">best: ${forte(m.aree || {})}</div></td>
+<td class="n">${m.ms != null ? `<b>${Math.round(m.ms)} ms</b><div class="org">${(1000 / m.ms).toFixed(m.ms > 100 ? 1 : 0)} per second${m.p95 != null ? ` · slow case ${Math.round(m.p95)} ms` : ''}</div>` : '—'}</td>
+<td>${m.vision ? `<span class="tag home">Yes</span><div class="org">vision score ${m.vision.punti}${m.vision.ms != null ? ` · ${Math.round(m.vision.ms)} ms` : ''}</div>` : '<span class="muted small">text only</span>'}</td>
+<td class="n">${m.ece != null ? (m.ece * 100).toFixed(1) + '%' : '—'}</td>
+<td class="n">${m.b ? m.b + ' B' + (m.stimato ? ' <span class="org">est.</span>' : '') : '—'}<div class="org">${g ? (g >= 10 ? g.toFixed(0) : g.toFixed(1)) + ' GB at 4-bit' : ''}${g ? (entra ? ' · fits RTX 4090' : ' · needs more than 24 GB') : ''}</div></td>
+<td>${m.repo ? '<span class="tag home">Yes</span>' : `<span class="muted small">${esc(m.nota || 'No')}</span>`}<div class="org">${esc(m.licenza || '')}</div></td>
+<td>${{ yes: '<span class="tag free">Yes</span>', no: '<span class="tag bad">No (non-commercial)</span>', check: '<span class="tag web">Check license</span>', unknown: '<span class="muted small">—</span>' }[lavoro]}</td>
+<td class="small">${esc(TIPI[m.tipo] || m.tipo)}</td></tr>`;
   }).join('');
 
   pagina({
     file: 'decision.html', attiva: '/decision.html', dati, blog,
+    script: 'decisioni.js',
     jsonld: { '@type': 'ItemList', name: 'Best open decision models (Jev-style)', itemListOrder: 'https://schema.org/ItemListOrderDescending', itemListElement: lista.slice(0, 20).map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.nome, url: hrefHf(m) })) },
     titolo: `Best Free Decision Models (Jev-Style), Ranked · ${NOME_PIENO}`,
     descr: `${lista.length} open decision models that pick an option, a score or a yes/no with a probability, like TypeSafe’s Jev. ${sopra.length} beat Jev on the Decision Index; ${scaricabili.length} can be downloaded.`,
@@ -58,11 +69,18 @@ export function paginaDecisioni(dati, blog) {
 <div class="tile"><span class="small muted">Best open model</span><b>${migliore.punti.toFixed(1)}</b><span class="small muted">${esc(migliore.nome)}</span></div>
 <div class="tile"><span class="small muted">${esc(jev.nome)} (TypeSafe)</span><b>${jev.punti.toFixed(1)}</b><span class="small muted">closed model, the reference</span></div>
 <div class="tile"><span class="small muted">Beat Jev</span><b>${sopra.length}</b><span class="small muted">open models score higher</span></div>
+${(() => { const b = lista.find((m) => usoLavoro(m.licenza) === 'yes'); return b ? `<div class="tile"><span class="small muted">Best for business use</span><b>${b.punti.toFixed(1)}</b><span class="small muted">${esc(b.nome)} · ${esc(b.licenza)}</span></div>` : ''; })()}
 </div>
 <div class="panel"><h2>Full ranking</h2>
-<div class="tw"><table><thead><tr><th>Rank</th><th>Model</th><th>Decision Index</th><th>vs Jev</th><th>Type</th><th>Size</th><th>Download</th><th>4-bit needs</th><th>Time per decision</th><th>Calibration error</th></tr></thead>
+<div class="row">
+<label class="chk"><input type="checkbox" id="f-lavoro"> Commercial use allowed</label>
+<label class="chk"><input type="checkbox" id="f-img"> Understands images</label>
+<label class="chk"><input type="checkbox" id="f-casa"> Fits one RTX 4090 (24 GB)</label>
+<span class="small muted" id="conta-dec"></span>
+</div>
+<div class="tw"><table><thead><tr><th>Rank</th><th>Model</th><th>Decision Index</th><th>Areas</th><th>Speed</th><th>Images</th><th>Calibration error</th><th>Size</th><th>Download</th><th>Commercial use</th><th>Type</th></tr></thead>
 <tbody>${righe}</tbody></table></div>
-<p class="small muted">Decision Index: chance-corrected score from 0 (random guessing) to 100 (perfect), mixing public benchmarks (20%), private tests of the same skills (50%) and private tasks from new domains (30%). Time per decision: median, measured by the board on one ${esc(d.suite.hardware || 'GPU')}. Calibration error (ECE): how far the model’s stated probabilities are from how often it is right; lower is better. 4-bit needs: our estimate for the weights at Q4_K_M plus runtime. Highlighted rows beat Jev.</p></div>
+<p class="small muted">Decision Index: chance-corrected score from 0 (random guessing) to 100 (perfect), mixing public benchmarks (20%), private tests of the same skills (50%) and private tasks from new domains (30%). Areas, left to right: ${AREE.map((x) => esc(x.nome)).join(', ')} (empty bar: not measured yet). Speed: median time per decision and the slow case (95th percentile), measured by the board on one ${esc(d.suite.hardware || 'GPU')}; a decision model returns one answer, so tokens per second do not apply. Images: score on the board’s separate Vision ranking (${esc(d.visionEdizione || '')}). Calibration error (ECE): how far stated probabilities are from how often the model is right; lower is better. Commercial use: from the license on the model’s Hugging Face page; “non-commercial” licenses (NC) forbid business use. 4-bit size and RTX 4090 fit are our estimates. Highlighted rows beat Jev.</p></div>
 <div class="grafici">
 <div class="panel"><h2>Top 15 decision models</h2>${grafico}</div>
 ${disp ? `<div class="panel"><h2>Score against size</h2>${disp}</div>` : ''}
