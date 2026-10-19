@@ -343,3 +343,5 @@ footer .wrap{display:grid;gap:.4rem}
 .arena-voti{display:flex;flex-wrap:wrap;gap:.5rem}
 .arena-voti .btn.scelto{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 @media (max-width:40rem){.arena-risposte{grid-template-columns:minmax(0,1fr)}.arena-voti .btn{flex:1 1 45%}}
+.gpu-tabella .nome-gpu{color:var(--ink);text-decoration:none}
+.gpu-tabella .nome-gpu:hover b{text-decoration:underline}

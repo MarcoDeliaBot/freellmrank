@@ -5,6 +5,7 @@ import { esc, pagina, NOME_PIENO, URL_SITO, linkAmazon } from './comune.mjs';
 import { barre } from './grafici.mjs';
 import { simula, daScheda } from '../../sorgente/calc.mjs';
 import { valuta, ordina, celle, massimiDi, COLONNA_PREDEFINITA } from '../../sorgente/gpu-table.mjs';
+import { pagineGpu } from './gpu-pagine.mjs';
 
 const CTX = 8192; // contesto delle stime: una chat normale
 const RAM = 64; // RAM di sistema per l'offload
@@ -27,6 +28,7 @@ const cercaAmazon = (s) => (s.marca === 'Data center' ? null : CERCA[s.id] || `$
 
 export function paginaGpu(dati, modelli, blog) {
   const schede = dati.schede.schede;
+  pagineGpu(dati, modelli, blog, { cercaAmazon });
   // modelli aperti con dimensione nota, dal più votato in chat
   const classificati = modelli.filter((m) => m.hf && m.cat.chat).sort((a, b) => b.cat.chat.punti - a.cat.chat.punti);
   const rif = RIFERIMENTI.map(([repo, tipo]) => ({ m: modelli.find((x) => x.hf?.repo === repo), tipo })).filter((r) => r.m);
@@ -44,7 +46,7 @@ export function paginaGpu(dati, modelli, blog) {
     const c = celle(v, massimi);
     return `<tr id="gpu-${esc(s.id)}" data-id="${esc(s.id)}" data-marca="${esc(s.marca)}"${nascosta ? ' hidden' : ''}>
 <td class="n c-pos">${nascosta ? '' : ++pos}</td>
-<td class="c-nome"><b>${esc(s.nome)}</b><br><span class="small muted">${esc(s.marca)}${s.unificata ? ' · shared memory' : ''}</span><br><span class="small c-link"><a href="/home.html?gpu=${encodeURIComponent(s.id)}">Simulate</a>${cercaAmazon(s) ? ` · <a class="amazon" data-q="${esc(cercaAmazon(s))}" href="${esc(linkAmazon(cercaAmazon(s)))}" rel="sponsored nofollow noopener" target="_blank">Amazon ↗</a>` : ''}</span></td>
+<td class="c-nome"><a class="nome-gpu" href="/gpu/${esc(s.id)}.html"><b>${esc(s.nome)}</b></a><br><span class="small muted">${esc(s.marca)}${s.unificata ? ' · shared memory' : ''}</span><br><span class="small c-link"><a href="/home.html?gpu=${encodeURIComponent(s.id)}">Simulate</a>${cercaAmazon(s) ? ` · <a class="amazon" data-q="${esc(cercaAmazon(s))}" href="${esc(linkAmazon(cercaAmazon(s)))}" rel="sponsored nofollow noopener" target="_blank">Amazon ↗</a>` : ''}</span></td>
 <td class="n c-gb">${c.gb}</td>
 ${c.vel.map((x) => `<td class="c-vel">${x}</td>`).join('')}
 <td class="n c-max">${c.max}</td>
