@@ -1,0 +1,10 @@
+# Sveglia dell'aggiornamento notturno di FreeLLMArena (Worker gratuito con cron).
+# Pubblicazione: npx wrangler deploy (da questa cartella). Segreto: GITHUB_TOKEN, dal pannello Cloudflare.
+name = "freellmarena-sveglia"
+main = "index.js"
+compatibility_date = "2026-10-18"
+workers_dev = true
+
+[triggers]
+# 04:30 e 16:30 UTC: un'ora e un quarto dopo le corse programmate di GitHub (03:17 e 15:17)
+crons = ["30 4 * * *", "30 16 * * *"]
