@@ -1,6 +1,7 @@
 // Catalogo dei modelli gratuiti e una pagina per ciascuno.
 import { esc, fmtNum, fmtData, pagina, CHAT_WEB, NOME_PIENO, URL_SITO } from './comune.mjs';
 import { linee } from './grafici.mjs';
+import { perNomeArena, DOMANDE_PER_VISITATORE } from '../cf-modelli.mjs';
 import { simula, daScheda, kvGB, QUANTI, perditaQualita, giudizio, slug } from '../../sorgente/calcolo.mjs';
 
 const SOLO_PESI = new Set(['image', 'video', 'edit']);
@@ -147,7 +148,10 @@ ${cats.map((c) => `<tr><td><a href="/#${c}">${esc(nomiCat[c])}</a></td><td class
       ? `<div class="panel"><h2>New: waiting for Arena votes</h2><p class="small">${m.primo ? `Released on ${fmtData(m.primo)}. ` : ''}Arena has not voted on this model yet. As soon as it does, the model moves into the ranking automatically, usually the next night. Until then you can still check its size, memory needs and speed below${m.or?.gratis ? ', and try it for free' : ''}.</p></div>`
       : `<div class="panel"><h2>No Arena votes yet</h2><p class="small">Arena has not voted on this model. It is listed because it is a popular small model on its lab's official Hugging Face page (${fmtNum(m.download || 0)} downloads a month).</p></div>`;
 
+    // si prova qui, senza account, se Cloudflare Workers AI ha lo stesso modello
+    const cf = [m.nome, ...Object.values(m.nomi || {})].map(perNomeArena).find(Boolean);
     const gratis = [];
+    if (cf) gratis.push(`<li><b>Right here, no account</b>: <a href="#prova">ask it a question below</a> (${DOMANDE_PER_VISITATORE} free questions a day)</li>`);
     if (m.or?.gratis) gratis.push(`<li><b>Free API on OpenRouter</b>: model id <code>${esc(m.or.id)}</code>. <a href="/compare.html#${encodeURIComponent(m.or.id)}">Try it side by side</a> · <a href="https://openrouter.ai/${esc(m.or.id.replace(/:free$/, ''))}" rel="noopener">OpenRouter page</a></li>`);
     if (m.aperto && CHAT_WEB[m.org]) gratis.push(`<li><b>The lab's own chat</b>: <a href="${CHAT_WEB[m.org]}" rel="noopener">${esc(CHAT_WEB[m.org].replace('https://', ''))}</a> (free with daily limits)</li>`);
     if (m.aperto && m.hf) gratis.push(`<li><b>Download and run it at home</b>: <a href="https://huggingface.co/${esc(m.hf.repo)}" rel="noopener">official weights</a> · <a href="https://huggingface.co/models?search=${encodeURIComponent(m.hf.repo.split('/')[1] + ' gguf')}" rel="noopener">GGUF files for Ollama and LM Studio</a>${m.licenza === 'license to accept' ? ' (you accept the license on Hugging Face first)' : ''}</li>`);
@@ -187,7 +191,7 @@ ${QUANTI.filter((p) => p.id !== 'Q2_K').map((p) => { const pq = perditaQualita(p
     const titoloPagina = `${m.nome}: Free? GPU Memory, Speed and Arena Score · ${NOME_PIENO}`;
     const descr = `${m.nome} by ${m.org}${c0 ? `, Arena score ${c0.punti} (#${c0.pos} in ${nomiCat[m.categoriaMigliore]})` : ''}${m.hf ? `, ${m.hf.b} B parameters, about ${fmtGB(m.hf.b * 0.606 + 1.2)} at 4-bit` : ''}. Where to use it free and how fast it runs on your GPU.`;
     pagina({
-      file: `model/${m.slug}.html`, attiva: '/models.html', dati, blog,
+      file: `model/${m.slug}.html`, attiva: '/models.html', dati, blog, script: cf ? 'prova.js' : undefined,
       jsonld: [
         {
           '@type': 'SoftwareApplication', name: m.nome, applicationCategory: 'AI model', operatingSystem: 'Any',
@@ -211,6 +215,12 @@ ${QUANTI.filter((p) => p.id !== 'Q2_K').map((p) => { const pq = perditaQualita(p
 </div>
 <div class="tiles">${tessere.map(([a, b, c]) => `<div class="tile"><span class="small muted">${a}</span><b>${b}</b><span class="small muted">${esc(c)}</span></div>`).join('')}</div>
 ${gratis.length ? `<div class="panel"><h2>Where to use it for free</h2><ul class="dove">${gratis.join('')}</ul></div>` : ''}
+${cf ? `<div class="panel prova" id="prova" data-modello="${esc(cf.id)}"><h2>Try ${esc(m.nome)} now</h2>
+<p class="small muted">No account, no payment. ${DOMANDE_PER_VISITATORE} questions a day per visitor, short answers. It runs on <a href="https://developers.cloudflare.com/workers-ai/" rel="noopener">Cloudflare Workers AI</a> (<code>${esc(cf.id)}</code>). We do not store your question. Do not write personal data.</p>
+<form class="prova-form"><label for="prova-domanda" class="small">Your question</label>
+<textarea id="prova-domanda" rows="3" maxlength="1500" required placeholder="Example: Explain what a context window is, in three short sentences."></textarea>
+<div class="row"><button type="submit" class="btn">Ask</button><span class="small muted prova-stato" aria-live="polite"></span></div></form>
+<div class="prova-risposta" hidden></div></div>` : ''}
 ${punteggi}
 ${velocita}
 ${memoria}

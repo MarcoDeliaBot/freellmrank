@@ -323,6 +323,8 @@ pagina({
 <p>The site is served by Cloudflare. Like any web server, it processes your IP address to deliver pages and stop attacks. This is needed to run the site (legitimate interest, art. 6.1.f) and uses no tracking cookies.</p>
 <h2>Try &amp; compare</h2>
 <p>If you connect an OpenRouter account, your prompts go from your browser directly to OpenRouter, under OpenRouter’s own privacy policy and your account. They never pass through our servers. Your OpenRouter key and your votes are stored only in your browser (local storage) and you can delete them by disconnecting or clearing site data.</p>
+<h2>“Try it now” on model pages</h2>
+<p>When you ask a question in the “Try it now” box, your question goes through our server to Cloudflare Workers AI, which runs the model and sends back the answer. We do not store the question or the answer. To keep the free service fair (5 questions a day), we store a daily counter linked to a one-way fingerprint of your IP address, which changes every day and is deleted automatically after about 26 hours. Legal basis: legitimate interest in preventing abuse (art. 6.1.f). Cloudflare processes the request under its own <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">privacy policy</a>. Do not write personal data in your questions.</p>
 <h2>Stored in your browser</h2>
 <p>We keep a few settings in your browser’s local storage: your cookie choice, your catalogue filters and, if you use them, your OpenRouter key and votes. They never leave your device.</p>
 <h2>Your rights</h2>

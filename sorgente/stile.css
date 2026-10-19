@@ -161,6 +161,10 @@ a.vg-riga:hover .vg-nome{text-decoration:underline}
 .disp-punto{position:absolute;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:color-mix(in srgb,var(--c-gpu) 45%,var(--surface));box-shadow:0 0 0 2px var(--surface);z-index:1}
 .disp-punto.fronte{background:var(--c-gpu);width:11px;height:11px;margin:-5.5px 0 0 -5.5px;z-index:2}
 .disp-punto:hover,.disp-punto:focus-visible{transform:scale(1.5)}
+/* riquadro "prova subito" nelle pagine dei modelli */
+.prova-form{display:grid;gap:.5rem}
+.prova-form textarea{width:100%;font:inherit;font-size:16px;padding:.6rem .7rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);resize:vertical}
+.prova-risposta{white-space:pre-wrap;background:var(--soft);border-radius:8px;padding:.8rem .9rem;margin-top:.7rem;line-height:1.55;overflow-wrap:anywhere}
 .disp-punto.evid{width:13px;height:13px;margin:-6.5px 0 0 -6.5px;z-index:3}.disp-punto.evid.sw-s1{background:var(--s1)}.disp-punto.evid.sw-s2{background:var(--s2)}.disp-punto.evid.sw-s3{background:var(--s3)}.disp-punto.evid.sw-s4{background:var(--s4)}.disp-punto.evid.sw-s5{background:var(--s5)}
 .vg-altro{background:color-mix(in srgb,var(--c-gpu) 35%,var(--surface))}
 .disp-et{position:absolute;transform:translate(8px,-50%);font-size:.75rem;white-space:nowrap;pointer-events:none;z-index:3;text-shadow:0 0 3px var(--surface),0 0 3px var(--surface)}
