@@ -272,7 +272,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 163840,
   "moe": true,
-  "attivi": 51881208064
+  "attivi": 51925878272
  },
  "deepseek-ai/DeepSeek-V3.2-Exp": {
   "strati": 61,
@@ -283,7 +283,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 163840,
   "moe": true,
-  "attivi": 51922799648
+  "attivi": 51925878272
  },
  "Qwen/Qwen3-VL-235B-A22B-Instruct": {
   "strati": 94,
@@ -1151,8 +1151,8 @@
   "finestra": 0,
   "larghezzaFinestra": null,
   "contestoMax": 1048576,
-  "moe": false,
-  "attivi": 401649841664
+  "moe": true,
+  "attivi": 17000000000
  },
  "google/gemma-3-1b-it": {
   "strati": 26,

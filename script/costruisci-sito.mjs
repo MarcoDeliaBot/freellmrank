@@ -326,6 +326,8 @@ pagina({
 <p>If you connect an OpenRouter account, your prompts go from your browser directly to OpenRouter, under OpenRouter’s own privacy policy and your account. They never pass through our servers. Your OpenRouter key and your votes are stored only in your browser (local storage) and you can delete them by disconnecting or clearing site data.</p>
 <h2>“Try it now” on model pages</h2>
 <p>When you ask a question in the “Try it now” box, your question goes through our server to Cloudflare Workers AI, which runs the model and sends back the answer. We do not store the question or the answer. To keep the free service fair (5 questions a day), we store a daily counter linked to a one-way fingerprint of your IP address, which changes every day and is deleted automatically after about 26 hours. Legal basis: legitimate interest in preventing abuse (art. 6.1.f). Cloudflare processes the request under its own <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">privacy policy</a>. Do not write personal data in your questions.</p>
+<h2>Links to Amazon</h2>
+<p>The GPU page links to Amazon. We are an Amazon Associate and earn from qualifying purchases. When you click one of these links, Amazon may set its own cookies to record that you came from us, under <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201909150" rel="noopener">Amazon’s privacy notice</a>. We do not receive your name or what you buy, only a total of sales.</p>
 <h2>Stored in your browser</h2>
 <p>We keep a few settings in your browser’s local storage: your cookie choice, your catalogue filters and, if you use them, your OpenRouter key and votes. They never leave your device.</p>
 <h2>Your rights</h2>

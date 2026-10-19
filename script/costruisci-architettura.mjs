@@ -50,7 +50,8 @@ export function analizza(cfg, totale, nomeRepo) {
   const esperti = c.n_routed_experts || c.num_experts || c.num_local_experts || c.moe_num_experts;
   const perTok = c.num_experts_per_tok || c.moe_top_k || c.num_experts_per_token || c.moe_topk;
   let attivi = totale;
-  const dalNome = /-A(\d+(?:\.\d+)?)B\b/i.exec(nomeRepo || '');
+  // dal nome: "-A3B" (Qwen, Gemma) oppure "-17B-128E" (Llama 4: 17 B attivi, 128 esperti)
+  const dalNome = /-A(\d+(?:\.\d+)?)B\b/i.exec(nomeRepo || '') || /-(\d+(?:\.\d+)?)B-\d+E\b/i.exec(nomeRepo || '');
   if (dalNome) attivi = Number(dalNome[1]) * 1e9;
   else if (esperti && perTok && esperti > perTok) {
     const inter = c.moe_intermediate_size || c.expert_ffn_hidden_size || c.expert_intermediate_size || c.intermediate_size;
@@ -59,7 +60,7 @@ export function analizza(cfg, totale, nomeRepo) {
     if (Array.isArray(c.moe_layer_freq)) stratiMoe = c.moe_layer_freq.filter(Boolean).length;
     else if (Array.isArray(c.mlp_layer_types)) stratiMoe = c.mlp_layer_types.filter((t) => t !== 'dense').length;
     else if (Array.isArray(tipi) && tipi.some((t) => t === 'moe')) stratiMoe = tipi.filter((t) => t === 'moe').length;
-    else stratiMoe = Math.floor((strati - (c.first_k_dense_replace || 0)) / (c.moe_layer_freq || c.decoder_sparse_step || 1));
+    else stratiMoe = Math.floor((strati - (c.first_k_dense_replace || 0)) / (c.moe_layer_freq || c.decoder_sparse_step || c.interleave_moe_layer_step || 1));
     const spenti = stratiMoe * (esperti - perTok) * 3 * larghezza * inter;
     if (spenti > 0 && spenti < totale) attivi = totale - spenti;
   }
@@ -85,7 +86,7 @@ const modelliNuovi = fs.existsSync(fileNuovi) ? JSON.parse(fs.readFileSync(fileN
 for (const p of modelliNuovi) if (p.repo && !totali.has(p.repo)) totali.set(p.repo, p.parametri);
 const repos = [...totali.keys()];
 for (const repo of repos) {
-  if (out[repo]) continue;
+  if (out[repo] && !process.argv.includes('--rifai')) continue; // --rifai: ricalcola anche quelli già fatti
   const totale = totali.get(repo);
   try {
     let r = await fetch(`https://huggingface.co/${repo}/resolve/main/config.json`);

@@ -1,7 +1,7 @@
 // Pagina /gpus: tutte le schede del catalogo a confronto per gli LLM in casa.
 // Memoria, banda, velocità stimata su quattro modelli veri della classifica, il miglior modello gratis che ci sta.
 // La tabella è scritta nel file (leggibile da Google); sorgente/gpus.js la ricalcola per 2 o 4 schede.
-import { esc, pagina, NOME_PIENO, URL_SITO } from './comune.mjs';
+import { esc, pagina, NOME_PIENO, URL_SITO, linkAmazon } from './comune.mjs';
 import { barre } from './grafici.mjs';
 import { simula, daScheda } from '../../sorgente/calc.mjs';
 
@@ -14,6 +14,14 @@ const RIFERIMENTI = [
   ['google/gemma-4-31B-it', 'dense: 31 B'],
   ['zai-org/GLM-4.6V', 'large MoE: 108 B, 14 B active'],
 ];
+
+// cosa cercare su Amazon per ogni scheda (nomi del catalogo troppo vaghi o doppi)
+const CERCA = {
+  rtx4070: 'RTX 4070 Super graphics card', rx9070xt: 'RX 9070 XT graphics card',
+  'm4pro-64': 'Mac mini M4 Pro 64GB', 'm4max-128': 'Mac Studio M4 Max 128GB', 'm3ultra-512': 'Mac Studio M3 Ultra',
+  'strixhalo-128': 'Ryzen AI Max+ 395 128GB mini PC', dgxspark: 'NVIDIA DGX Spark',
+};
+const cercaAmazon = (s) => (s.marca === 'Data center' ? null : CERCA[s.id] || `${s.nome} ${s.marca === 'Workstation' ? 'workstation GPU' : 'graphics card'}`);
 
 const fmtVel = (v) => (v >= 100 ? Math.round(v) : v >= 10 ? v.toFixed(0) : v.toFixed(1));
 
@@ -45,7 +53,7 @@ export function paginaGpu(dati, modelli, blog) {
 ${c.vel.map((r) => `<td class="c-vel">${cella(r)}</td>`).join('')}
 <td class="n c-max">~${Math.round(c.maxB)} B</td>
 <td class="c-best">${c.migliore ? `<a href="${c.migliore.href}">${esc(c.migliore.nome)}</a><br><span class="small muted">Arena ${c.migliore.cat.chat.punti}</span>${c.conRam ? ' <span class="tag chip-ram">+RAM</span>' : ''}` : '—'}</td>
-<td><a class="small" href="/home.html?gpu=${encodeURIComponent(s.id)}">Simulate</a></td></tr>`;
+<td class="small"><a href="/home.html?gpu=${encodeURIComponent(s.id)}">Simulate</a>${cercaAmazon(s) ? `<br><a class="amazon" data-q="${esc(cercaAmazon(s))}" href="${esc(linkAmazon(cercaAmazon(s)))}" rel="sponsored nofollow noopener" target="_blank">Amazon ↗</a>` : ''}</td></tr>`;
   }).join('\n');
 
   // grafico: velocità sul modello denso di riferimento, solo le schede dove sta tutto in GPU
@@ -109,6 +117,7 @@ ${piuMemoria ? `<div class="tile"><span class="small muted">Most memory on one c
 ${righe}
 </tbody></table></div>
 <p class="small muted">Estimates at 4-bit (Q4_K_M), ${CTX / 1024}K context. Speed ≈ memory bandwidth × 70% ÷ data read per token; real numbers vary by about ±30%. “+RAM”: part of the model sits in system memory, which is much slower. Unified memory (Apple, Ryzen AI Max, DGX Spark): about 75% can be used by the GPU. “Best free model that fits”: the highest Arena chat score among open models that fit entirely in GPU memory.</p>
+<p class="small muted"><b>Affiliate links:</b> as an Amazon Associate, ${NOME_PIENO} earns from qualifying purchases made through the “Amazon ↗” links. The links do not change the order, the numbers or the estimates on this page, and the price is the same for you.</p>
 </div>
 ${grafico ? `<div class="panel"><h2>Speed on ${esc(denso.m.nome)}</h2>${grafico}</div>` : ''}
 <div class="panel" id="faq"><h2>Questions</h2>

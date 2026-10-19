@@ -11,6 +11,11 @@ export const URL_SITO = (process.env.SITO_URL || 'https://freellmarena.com').rep
 export const GA_ID = 'G-D4DK3X1MQJ';
 // versione dei file statici: cambia a ogni build, così i browser non usano lo stile vecchio
 export const VER = Date.now().toString(36);
+// Affiliazione Amazon: un codice per negozio. Oggi solo amazon.it (codice di Marco, 19/10/2026).
+// Per gli altri negozi il link va su amazon.com senza codice finché non arriva il loro.
+export const AMAZON = { it: { host: 'www.amazon.it', tag: 'comecosa-21' } };
+export const AMAZON_ALTRI = 'www.amazon.com';
+export const linkAmazon = (q, negozio = 'it') => { const n = AMAZON[negozio]; return `https://${n ? n.host : AMAZON_ALTRI}/s?k=${encodeURIComponent(q)}${n ? `&tag=${n.tag}` : ''}`; };
 // contatto del titolare per la pagina privacy (scelto da Marco il 19/10, casella su Server Plan)
 export const CONTATTO_PRIVACY = 'info@freellmarena.com';
 
