@@ -8,7 +8,7 @@ export const SITO = path.join(RADICE, 'sito');
 export const URL_SITO = (process.env.SITO_URL || 'https://freellmrank.pages.dev').replace(/\/$/, '');
 
 // Nome di lavoro: si cambia qui e basta.
-export const NOME = { testa: 'FreeLLM', coda: 'Rank' };
+export const NOME = { testa: 'FreeLLM', coda: 'Arena' };
 export const NOME_PIENO = NOME.testa + NOME.coda;
 
 // Chat web ufficiali dei laboratori (raggiungibili il 18/10/2026).
@@ -33,11 +33,13 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
     confronto: '<rect x="3.5" y="5" width="7" height="14" rx="1.5"/><rect x="13.5" y="5" width="7" height="14" rx="1.5"/>',
     casa: '<rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 3.5V7M14 3.5V7M10 17v3.5M14 17v3.5M3.5 10H7M3.5 14H7M17 10h3.5M17 14h3.5"/>',
     blog: '<path d="M6.5 3.5h8l3 3v14h-11z"/><path d="M9.5 11.5h5M9.5 15h5"/>',
+    decisioni: '<path d="M12 3.5v6M12 9.5l-6 5M12 9.5l6 5"/><circle cx="6" cy="17" r="2.5"/><circle cx="18" cy="17" r="2.5"/>',
   };
   const icona = (k) => `<svg class="icona" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONE[k]}</svg>`;
   const voci = [
     ['/', `${icona('classifica')}Leaderboard <span class="badge-free">free</span>`],
     ['/models.html', `${icona('modelli')}Models`],
+    ['/decision.html', `${icona('decisioni')}Decision models`],
     ['/compare.html', `${icona('confronto')}Try & compare`],
     ['/home.html', `${icona('casa')}Run at home`],
     ['/blog/', `${icona('blog')}Blog`],
@@ -45,7 +47,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
   const canonico = URL_SITO + '/' + file.replace(/index\.html$/, '').replace(/\.html$/, '');
   const colonne = [
     ['Leaderboards', dati.categorie.map((c) => [`/#${c.id}`, `Best free ${c.nome.toLowerCase()} models`])],
-    ['Tools', [['/home.html', 'Run at home: GPU simulator'], ['/compare.html', 'Try two free models'], ['/models.html', 'All free models']]],
+    ['Tools', [['/home.html', 'Run at home: GPU simulator'], ['/compare.html', 'Try two free models'], ['/models.html', 'All free models'], ['/decision.html', 'Decision models (Jev-style)']]],
     ['Blog', [...blog.slice(0, 4).map((p) => [`/blog/${p.slug}.html`, p.titolo]), ['/blog/', 'All posts']]],
     ['About', [['/about.html', 'How we rank'], ['/about.html#faq', 'FAQ'], ['/about.html#sources', 'Data sources'], ['https://github.com/MarcoDeliaBot/freellmrank', 'Source code']]],
   ];

@@ -6,6 +6,8 @@ import { RADICE, SITO, URL_SITO, NOME_PIENO, CHAT_WEB, esc, fmtData, pagina, pag
 import { barre, dispersione, linee, matrice } from './sito/grafici.mjs';
 import { unisci, paginaCatalogo, pagineModelli } from './sito/modelli.mjs';
 import { preparaBlog, pagineBlog } from './sito/blog.mjs';
+import { paginaDecisioni } from './sito/decisioni.mjs';
+import { simula, daScheda, kvGB, perditaQualita, giudizio, QUANTI } from '../sorgente/calcolo.mjs';
 
 const SORGENTE = path.join(RADICE, 'sorgente');
 const dati = JSON.parse(fs.readFileSync(path.join(SITO, 'dati.json'), 'utf8'));
@@ -20,6 +22,10 @@ const perNome = new Map();
 for (const m of modelli) for (const n of Object.values(m.nomi)) perNome.set(n, m);
 const blog = preparaBlog(dati, storia, modelli);
 const usabileGratis = (m) => m.aperto || m.or?.gratis;
+// riferimento per la colonna velocità: RTX 4090, 4 bit, 8K di contesto, 64 GB di DDR5
+const RIF = daScheda(dati.schede.schede.find((x) => x.id === 'rtx4090'), { n: 1, ram: 64, bandaRam: 96, ctx: 8192 });
+const Q4 = QUANTI.find((q) => q.id === 'Q4_K_M');
+const fmtVel = (v) => (v >= 100 ? Math.round(v) : v >= 10 ? v.toFixed(0) : v.toFixed(1));
 
 // ---------- classifica ----------
 function cellaGratis(m) {
@@ -28,14 +34,6 @@ function cellaGratis(m) {
   if (m.aperto && CHAT_WEB[m.org]) t.push(`<a class="tag web" href="${CHAT_WEB[m.org]}" rel="noopener">Lab chat</a>`);
   return t.join('') || '<span class="muted small">—</span>';
 }
-function cellaCasa(m) {
-  if (!m.aperto) return '<span class="muted small">Not downloadable</span>';
-  if (!m.hf) return '<span class="muted small">Size unknown</span>';
-  const q4 = Math.ceil(m.hf.b * 0.606 * 1.1 + 1.5);
-  const schede = Math.ceil(q4 / 24);
-  const dove = schede === 1 ? '1 GPU of 24 GB' : schede <= 10 ? `${schede} GPUs of 24 GB` : `server: ${Math.ceil(q4 / 80)} GPUs of 80 GB`;
-  return `<span class="tag home">${m.hf.b} B</span><span class="small">~${q4} GB at 4-bit · ${dove}</span>`;
-}
 const hrefDi = (nome) => perNome.get(nome)?.href || '/models.html';
 
 const sezioni = dati.categorie.map((c, i) => {
@@ -43,12 +41,24 @@ const sezioni = dati.categorie.map((c, i) => {
   const pagato = c.modelli.find((m) => !usabileGratis(m));
   const alto = c.modelli[0]?.punti || 1, basso = Math.min(...lista.slice(0, 60).map((m) => m.punti)) - 20;
   const barra = (p) => `<span class="punti" title="Best model overall: ${alto}"><i style="width:${Math.round((100 * (p - basso)) / (alto - basso))}%"></i></span>`;
-  const righe = lista.slice(0, 60).map((m, j) => `<tr data-api="${m.or?.gratis ? 1 : 0}" data-open="${m.aperto ? 1 : 0}">
+  const soloPesi = ['image', 'video', 'edit'].includes(c.id);
+  const righe = lista.slice(0, 60).map((m, j) => {
+    // colonne calcolate: tutto quello che serve per scegliere, nella stessa riga
+    const q4 = m.hf ? m.hf.b * 0.606 + (soloPesi ? 3 : kvGB(m.hf, 8192)) + 0.6 : null;
+    const sim = m.hf ? simula(m.hf, { ...RIF, bpp: 0.606 }, soloPesi) : null;
+    const perdita = m.hf && !soloPesi ? perditaQualita(Q4, m.hf.b) : null;
+    const dove = !sim ? '—' : sim.dove === 'gpu' ? `<b>${soloPesi ? 'fits' : fmtVel(sim.vel) + ' tok/s'}</b>` : sim.dove === 'ram' ? `${soloPesi ? 'with RAM' : fmtVel(sim.vel) + ' tok/s'}<div class="org">GPU + RAM</div>` : '<span class="muted">does not fit</span>';
+    return `<tr data-api="${m.or?.gratis ? 1 : 0}" data-open="${m.aperto ? 1 : 0}">
 <td class="n">${j + 1}</td>
-<td class="m"><a class="nome-modello" href="${hrefDi(m.nome)}">${esc(m.nome)}</a><div class="org">${esc(m.org || '—')} · ${esc(m.licenza)}</div></td>
+<td class="m"><a class="nome-modello" href="${hrefDi(m.nome)}">${esc(m.nome)}</a><div class="org">${esc(m.org || '—')}</div></td>
 <td class="n">${m.punti}${barra(m.punti)}<div class="org">#${m.pos} of ${c.totale}</div></td>
-<td>${cellaGratis(m)}</td>
-<td>${cellaCasa(m)}</td></tr>`).join('');
+<td class="n">${m.hf ? `${m.hf.b} B${m.hf.att && m.hf.att < m.hf.b ? `<div class="org">${m.hf.att} B active</div>` : ''}` : '—'}</td>
+<td>${m.aperto ? '<span class="tag home">Yes</span>' : '<span class="muted small">No</span>'}<div class="org">${esc(m.licenza)}</div></td>
+<td class="n">${q4 ? (q4 >= 100 ? Math.round(q4) : q4.toFixed(q4 >= 10 ? 0 : 1)) + ' GB' : '—'}</td>
+<td class="n">${perdita != null ? '+' + perdita.toFixed(1) + '%' : '—'}${perdita != null ? `<div class="org">${giudizio(perdita)}</div>` : ''}</td>
+<td class="n">${dove}</td>
+<td>${cellaGratis(m)}</td></tr>`;
+  }).join('');
   const migliore = lista[0];
 
   // grafico 1: le prime 15 gratis, con il miglior modello a pagamento come riferimento
@@ -85,8 +95,9 @@ const sezioni = dati.categorie.map((c, i) => {
 <p class="small muted">${lista.length} of ${c.totale} models in Arena's ${esc(c.nome)} ranking are free to use. Votes as of ${fmtData(c.data)}. Best free: <a href="${hrefDi(migliore?.nome)}"><b>${esc(migliore?.nome)}</b></a>, #${migliore?.pos} overall.</p>
 <div class="panel"><h2>Full free ranking</h2>
 <div class="tw"><table>
-<thead><tr><th>Free rank</th><th>Model</th><th>Arena score</th><th>Use free online</th><th>Run at home</th></tr></thead>
-<tbody>${righe}</tbody></table></div></div>
+<thead><tr><th>Free rank</th><th>Model</th><th>Arena score</th><th>Size</th><th>Download</th><th>4-bit needs</th><th>Quality at 4-bit</th><th>Speed on RTX 4090</th><th>Use free online</th></tr></thead>
+<tbody>${righe}</tbody></table></div>
+<p class="small muted">Size: parameters (and active parameters for mixture-of-experts). 4-bit needs: GPU memory at Q4_K_M${soloPesi ? ' plus about 3 GB for encoders' : ' with 8K of context'}. ${soloPesi ? '' : 'Quality at 4-bit: perplexity increase against the full model, from llama.cpp tests scaled by size. '}Speed: estimate on one RTX 4090 (24 GB) with 64 GB of DDR5, at 4-bit. <a href="/home.html">Simulate your own hardware</a>.</p></div>
 <div class="grafici">
 <div class="panel"><h2>Top 15 free ${esc(c.nome.toLowerCase())} models</h2>${graficoBarre}</div>
 ${graficoDisp ? `<div class="panel"><h2>Score against size</h2>${graficoDisp}</div>` : ''}
@@ -291,6 +302,7 @@ pagina({
 });
 
 paginaCatalogo(dati, modelli, blog);
+paginaDecisioni(dati, blog);
 pagineModelli(dati, storia, modelli, blog);
 pagineBlog(dati, blog);
 

@@ -5,6 +5,7 @@ name: Aggiorna dati
 on:
   schedule:
     - cron: '17 3 * * *'
+    - cron: '17 15 * * *' # seconda corsa: GitHub a volte salta o ritarda quella notturna
   workflow_dispatch:
 
 permissions:
@@ -24,9 +25,9 @@ jobs:
       - run: npm run dati
       - name: Commit se i dati sono cambiati
         run: |
-          git add sito/dati.json dati/pesi.json dati/architettura.json dati/piccoli.json dati/nuovi.json sito/storia.json
+          git add sito/dati.json dati/pesi.json dati/architettura.json dati/piccoli.json dati/nuovi.json dati/decisioni.json sito/storia.json
           if git diff --cached --quiet; then echo "Nessun cambiamento"; exit 0; fi
-          git config user.name "freellmrank-bot"
+          git config user.name "freellmarena-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Dati aggiornati $(date -u +%F)"
           git push

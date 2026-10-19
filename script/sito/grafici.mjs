@@ -14,8 +14,11 @@ const tacche = (min, max, quante = 5) => {
 // Barre orizzontali in classifica, con linea di riferimento (es. miglior modello a pagamento).
 export function barre(voci, { riferimento, titoloAsse = 'Arena score' } = {}) {
   const valori = voci.map((v) => v.valore).concat(riferimento ? [riferimento.valore] : []);
-  const min = Math.floor((Math.min(...valori) - 40) / 50) * 50;
-  const max = Math.max(...valori);
+  // l'asse parte un po' sotto il valore più basso, con un passo adatto alla scala dei numeri
+  const max = Math.max(...valori), minv = Math.min(...valori);
+  const passo = max - minv > 60 ? 50 : 10;
+  const margine = Math.min(Math.max((max - minv) * 0.6, 5), passo * 1.2);
+  const min = Math.max(0, Math.floor((minv - margine) / passo) * passo);
   const x = (v) => (100 * (v - min)) / (max - min);
   const ticks = tacche(min, max);
   return `<div class="vel-grafico barre-arena" role="img" aria-label="${esc(titoloAsse)} of the top ${voci.length} free models">
