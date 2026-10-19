@@ -75,7 +75,7 @@ function hardware() {
   const n = unificata ? 1 : +$('n-gpu').value;
   const perScheda = unificata ? s.gb * 0.75 : s.gb;
   return {
-    nome: s.nome, n, unificata, perScheda, banda: s.banda,
+    nome: s.nome, n, unificata, apple: s.marca === 'Apple', perScheda, banda: s.banda,
     vram: n * perScheda,
     ram: unificata ? 0 : +$('ram').value,
     bandaRam: +$('ram-tipo').value,

@@ -83,7 +83,7 @@ ${c.vel.map((r) => `<td class="c-vel">${cella(r)}</td>`).join('')}
     ['Is a used RTX 3090 still worth it for AI?', 'For local LLMs it is often the best value: 24 GB and high bandwidth. It uses a lot of power (350 W) and has no warranty when bought used. Check the price against a new 16 GB card: 16 GB is not enough for 27–32 B models at 4-bit with a useful context.'],
     ['NVIDIA, AMD or Apple?', 'NVIDIA has the widest software support (CUDA). AMD cards work well with llama.cpp, Ollama and LM Studio (ROCm or Vulkan) and often give more memory for the money. Apple Silicon and AMD Ryzen AI Max machines share memory between CPU and GPU, so they can load very large models, but they write more slowly than a big desktop GPU.'],
     ['Two cards or one bigger card?', 'Two cards add up their memory, so a 70 B model fits on two 24 GB cards. Speed does not double: the cards take turns, so you get about the speed of one card, a little less. Choose “2 cards” above to see the numbers.'],
-    ['How accurate are these speeds?', 'They are estimates: memory bandwidth × 70% ÷ data read per word, at 4-bit (Q4_K_M) with an 8K context. Real numbers depend on the software, drivers and settings, and are usually within about ±30%. Use them to compare cards, not as exact figures.'],
+    ['How accurate are these speeds?', 'They are estimates: memory bandwidth × 78% ÷ data read per word, plus a fixed cost per word (about 1 ms, 2.8 ms for mixture-of-experts models, more on Apple), at 4-bit (Q4_K_M) with an 8K context. We checked the formula against 44 real llama.cpp tests: the median error is 9%, and 42 of 44 are within ±30%. Real numbers also depend on the software version, drivers (on AMD, Vulkan is often faster than ROCm) and settings. Use them to compare cards, not as exact figures.'],
   ];
 
   pagina({
@@ -116,7 +116,7 @@ ${piuMemoria ? `<div class="tile"><span class="small muted">Most memory on one c
 <tbody>
 ${righe}
 </tbody></table></div>
-<p class="small muted">Estimates at 4-bit (Q4_K_M), ${CTX / 1024}K context. Speed ≈ memory bandwidth × 70% ÷ data read per token; real numbers vary by about ±30%. “+RAM”: part of the model sits in system memory, which is much slower. Unified memory (Apple, Ryzen AI Max, DGX Spark): about 75% can be used by the GPU. “Best free model that fits”: the highest Arena chat score among open models that fit entirely in GPU memory.</p>
+<p class="small muted">Estimates at 4-bit (Q4_K_M), ${CTX / 1024}K context. Speed ≈ memory bandwidth × 78% ÷ data read per token, plus a fixed cost per token, calibrated on 44 real llama.cpp tests (<a href="https://github.com/MarcoDeliaBot/freellmrank/blob/main/dati/misure-velocita.json" rel="noopener">list with sources</a>); typical error about ±10%. “+RAM”: part of the model sits in system memory, which is much slower. Unified memory (Apple, Ryzen AI Max, DGX Spark): about 75% can be used by the GPU. “Best free model that fits”: the highest Arena chat score among open models that fit entirely in GPU memory.</p>
 <p class="small muted"><b>Affiliate links:</b> as an Amazon Associate, ${NOME_PIENO} earns from qualifying purchases made through the “Amazon ↗” links. The links do not change the order, the numbers or the estimates on this page, and the price is the same for you.</p>
 </div>
 ${grafico ? `<div class="panel"><h2>Speed on ${esc(denso.m.nome)}</h2>${grafico}</div>` : ''}

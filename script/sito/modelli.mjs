@@ -170,7 +170,7 @@ ${QUANTI.filter((p) => p.id !== 'Q2_K').map((p) => { const pq = perditaQualita(p
         return `<tr${r.dove === 'no' ? ' class="spento"' : ''}><td>${n > 1 ? n + ' × ' : ''}${esc(s.nome)}</td><td class="n">${fmtGB(h.vram)}</td><td>${dove}</td>${testo ? `<td class="n">${r.vel != null ? fmtVel(r.vel) + ' tok/s' : '—'}</td>` : ''}</tr>`;
       }).join('');
       velocita = `<div class="panel"><h2>${testo ? 'Speed on popular hardware' : 'Does it fit on popular hardware?'}</h2><div class="tw"><table><thead><tr><th>Hardware</th><th>GPU memory</th><th>Fits?</th>${testo ? '<th>Speed</th>' : ''}</tr></thead><tbody>${righe}</tbody></table></div>
-<p class="small muted">Estimate at 4-bit${testo ? ' with 32K context' : ''}, 64 GB of DDR5 for offload. Speed ≈ memory bandwidth × 70% ÷ data read per token; real numbers vary by about ±30%. <a href="/gpus.html">Compare all GPUs</a>.</p></div>`;
+<p class="small muted">Estimate at 4-bit${testo ? ' with 32K context' : ''}, 64 GB of DDR5 for offload. Speed ≈ memory bandwidth × 78% ÷ data read per token, plus a fixed cost per token, calibrated on 44 real llama.cpp tests; typical error about ±10%. <a href="/gpus.html">Compare all GPUs</a>.</p></div>`;
     }
 
     const andamenti = cats.map((c) => {

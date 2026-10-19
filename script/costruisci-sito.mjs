@@ -274,7 +274,7 @@ pagina({
 <div id="tabella"></div>
 <details class="panel small"><summary><b>How we estimate</b></summary>
 <p><b>Memory</b> = weights (parameters × bytes per weight at the chosen precision) + context cache (computed from each model's real architecture on Hugging Face: layers, attention heads, sliding windows) + about 0.6 GB per card for the runtime. Image and video models get 3 GB more for text encoders and decoders.</p>
-<p><b>Speed</b>: writing a token reads the active weights and the cache once, so tokens per second ≈ memory bandwidth × 70% ÷ data read. Mixture-of-experts models read only their active experts. With several cards (llama.cpp and Ollama split layers across them), speed stays near one card's speed; with weights in system RAM, the RAM part is far slower. Real numbers vary by about ±30%.</p>
+<p><b>Speed</b>: writing a token reads the active weights and the cache once, so tokens per second ≈ memory bandwidth × 78% ÷ data read, plus a fixed cost for every token (about 1 ms; 2.8 ms for mixture-of-experts models, which also pick their experts; more on Apple). Mixture-of-experts models read only their active experts. With several cards (llama.cpp and Ollama split layers across them), speed stays near one card's speed; with weights in system RAM, the RAM part is far slower. The formula is calibrated on 44 real llama.cpp tests (<a href="https://github.com/MarcoDeliaBot/freellmrank/blob/main/dati/misure-velocita.json" rel="noopener">list with sources</a>): typical error about ±10%, a few cases up to ±40%.</p>
 <p>Apple, AMD Ryzen AI Max and DGX Spark share memory with the system: we count 75% of it.</p>
 </details>`,
   script: 'run-at-home.js',
@@ -294,7 +294,7 @@ pagina({
 <h2>Sizes and memory</h2>
 <p>Parameter counts come from the official Hugging Face repositories (safetensors metadata). Context memory comes from each model's configuration file: layers, attention heads, sliding windows and compressed attention. For repositories that require accepting a license, we read the same configuration from Unsloth's public copy.</p>
 <h2>Speed</h2>
-<p>Speed is an estimate: memory bandwidth × 70% ÷ the data read for each token (active weights plus context). It matches real llama.cpp results within about ±30%. Graphics card specifications come from the manufacturers' data sheets.</p>
+<p>Speed is an estimate: memory bandwidth × 78% ÷ the data read for each token (active weights plus context), plus a fixed cost per token (about 1 ms, or 2.8 ms for mixture-of-experts models; 3.5 and 6.5 ms on Apple). It is calibrated on 44 real llama.cpp tests (<a href="https://github.com/MarcoDeliaBot/freellmrank/blob/main/dati/misure-velocita.json" rel="noopener">list with sources</a>): median error 9%, and 42 of 44 tests within ±30%. The biggest misses are new mixture-of-experts models on AMD cards, where we are too optimistic. Graphics card specifications come from the manufacturers’ data sheets.</p>
 <h2>Small models without votes</h2>
 <p>Arena votes mostly on large models. We also list popular small models (0.5 to 16 billion parameters) from the labs' official Hugging Face pages, marked “No Arena votes”. They are ordered by downloads or size, never presented as ranked by quality.</p>
 <h2 id="sources">Data sources</h2>

@@ -1,6 +1,14 @@
 // Formule del simulatore: memoria e velocità. Usate dal browser (run-at-home.js) e dalla build
 // (pagine dei modelli), così le cifre sono le stesse ovunque.
-export const EFF_GPU = 0.7, EFF_RAM = 0.8, RUNTIME = 0.6, ENCODER = 3;
+export const EFF_GPU = 0.78, EFF_RAM = 0.8, RUNTIME = 0.6, ENCODER = 3;
+// Costo fisso per token (millisecondi): avvio dei calcoli sulla GPU e, nei MoE, scelta degli esperti.
+// Tarato il 19/10/2026 su 44 misure llama.cpp (dati/misure-velocita.json, script/calibra-velocita.mjs):
+// errore mediano 9%, 42 misure su 44 entro ±30%. Prima (solo 70% della banda): 17% e 30 su 44.
+export const COSTO_MS = { gpu: { denso: 1.0, moe: 2.8 }, apple: { denso: 3.5, moe: 6.5 } };
+export const eMoe = (hf) => !!hf.att && hf.att < hf.b * 0.6;
+// tempo per token in GPU: dati letti ÷ banda utile + costo fisso
+export const tempoGpu = ({ attiviGB, banda, moe, apple }) => attiviGB / (banda * EFF_GPU) + COSTO_MS[apple ? 'apple' : 'gpu'][moe ? 'moe' : 'denso'] / 1000;
+export const velocitaGpu = ({ attiviGB, banda, n = 1, moe, apple }) => 1 / tempoGpu({ attiviGB, banda, moe, apple }) / (1 + 0.03 * (n - 1));
 export const PRECISIONI = [
   { id: 'q4', nome: '4-bit (Q4_K_M)', bpp: 0.606 },
   { id: 'q5', nome: '5-bit (Q5_K_M)', bpp: 0.711 },
@@ -50,7 +58,7 @@ export function simula(hf, h, soloPesi = false) {
   if (!soloPesi && dove !== 'no') {
     const attivi = (hf.att || hf.b) * h.bpp;
     const quotaRam = inRam / pesi;
-    const t = (attivi * (1 - quotaRam) + kv) / (h.banda * EFF_GPU) + (quotaRam ? (attivi * quotaRam) / (h.bandaRam * EFF_RAM) : 0);
+    const t = tempoGpu({ attiviGB: attivi * (1 - quotaRam) + kv, banda: h.banda, moe: eMoe(hf), apple: h.apple }) + (quotaRam ? (attivi * quotaRam) / (h.bandaRam * EFF_RAM) : 0);
     vel = (1 / t) / (1 + 0.03 * (h.n - 1));
   }
   return { pesi, kv, extra, serve, dove, inRam, vel };
@@ -61,7 +69,7 @@ export function daScheda(s, { n = 1, ram = 0, bandaRam = 96, bpp = 0.606, kvq = 
   const unificata = !!s.unificata;
   const quanti = unificata ? 1 : n;
   const perScheda = unificata ? s.gb * 0.75 : s.gb;
-  return { nome: s.nome, n: quanti, unificata, perScheda, banda: s.banda, vram: quanti * perScheda, ram: unificata ? 0 : ram, bandaRam, bpp, kvq, ctx };
+  return { nome: s.nome, n: quanti, unificata, apple: s.marca === 'Apple', perScheda, banda: s.banda, vram: quanti * perScheda, ram: unificata ? 0 : ram, bandaRam, bpp, kvq, ctx };
 }
 
 export const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
