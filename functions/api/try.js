@@ -1,4 +1,4 @@
-// POST /api/prova  {modello: '@cf/...', domanda: '...'}  →  {risposta, neurons, rimaste}
+// POST /api/try  {modello: '@cf/...', domanda: '...'}  →  {risposta, neurons, rimaste}
 // Il visitatore prova un modello senza account. Paga la quota gratis di Cloudflare Workers AI del sito,
 // e ci fermiamo prima della fine: tetto giornaliero sui neurons e 5 domande al giorno per visitatore.
 // Legami (impostati nel progetto Pages): AI = Workers AI, PROVA = KV per i contatori, SALE = segreto.

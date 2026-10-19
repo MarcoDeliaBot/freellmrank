@@ -55,7 +55,7 @@ export function paginaDecisioni(dati, blog) {
 
   pagina({
     file: 'decision.html', attiva: '/decision.html', dati, blog,
-    script: 'decisioni.js',
+    script: 'decision.js',
     jsonld: { '@type': 'ItemList', name: 'Best open decision models (Jev-style)', itemListOrder: 'https://schema.org/ItemListOrderDescending', itemListElement: lista.slice(0, 20).map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.nome, url: hrefHf(m) })) },
     titolo: `Best Free Decision Models (Jev-Style), Ranked · ${NOME_PIENO}`,
     descr: `${lista.length} open decision models that pick an option, a score or a yes/no with a probability, like TypeSafe’s Jev. ${sopra.length} score better than Jev on the Decision Index; ${scaricabili.length} can be downloaded.`,

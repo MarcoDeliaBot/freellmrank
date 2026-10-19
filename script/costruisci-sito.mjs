@@ -1,4 +1,4 @@
-// Genera il sito statico in sito/ da sito/dati.json e sito/storia.json.
+// Genera il sito statico in sito/ da sito/data.json e sito/history.json.
 // Uso: node script/costruisci-sito.mjs
 import fs from 'node:fs';
 import path from 'node:path';
@@ -7,12 +7,13 @@ import { barre, dispersione, linee, matrice, COLORI as COLORI_SERIE } from './si
 import { unisci, paginaCatalogo, pagineModelli } from './sito/modelli.mjs';
 import { preparaBlog, pagineBlog } from './sito/blog.mjs';
 import { paginaDecisioni } from './sito/decisioni.mjs';
+import { paginaGpu } from './sito/gpus.mjs';
 import { scriviLlms } from './sito/llms.mjs';
-import { simula, daScheda, kvGB, perditaQualita, giudizio, QUANTI } from '../sorgente/calcolo.mjs';
+import { simula, daScheda, kvGB, perditaQualita, giudizio, QUANTI } from '../sorgente/calc.mjs';
 
 const SORGENTE = path.join(RADICE, 'sorgente');
-const dati = JSON.parse(fs.readFileSync(path.join(SITO, 'dati.json'), 'utf8'));
-const fileStoria = path.join(SITO, 'storia.json');
+const dati = JSON.parse(fs.readFileSync(path.join(SITO, 'data.json'), 'utf8'));
+const fileStoria = path.join(SITO, 'history.json');
 const storia = fs.existsSync(fileStoria) ? JSON.parse(fs.readFileSync(fileStoria, 'utf8')) : null;
 
 // pulizia delle cartelle generate
@@ -159,7 +160,7 @@ pagina({
       '@type': 'ItemList', name: `Best free ${c.nome.toLowerCase()} models`, itemListOrder: 'https://schema.org/ItemListOrderDescending',
       itemListElement: c.modelli.filter(usabileGratis).slice(0, 10).map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.nome, url: URL_SITO + hrefDi(m.nome).replace(/\.html$/, '') })),
     })),
-    { '@type': 'Dataset', name: `${NOME_PIENO} free AI model rankings`, description: 'Free and open-weight AI models with Arena scores, sizes, GPU memory needs and where to use them free. Updated nightly.', url: URL_SITO + '/', dateModified: dati.aggiornato, isBasedOn: 'https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset', license: 'https://creativecommons.org/licenses/by/4.0/', creditText: 'Rankings from the Arena leaderboard dataset by Arena Intelligence (CC BY 4.0); sizes from Hugging Face.', creator: { '@type': 'Organization', name: NOME_PIENO, url: URL_SITO + '/' }, distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: URL_SITO + '/dati.json' }, { '@type': 'DataDownload', encodingFormat: 'text/markdown', contentUrl: URL_SITO + '/llms-full.txt' }] },
+    { '@type': 'Dataset', name: `${NOME_PIENO} free AI model rankings`, description: 'Free and open-weight AI models with Arena scores, sizes, GPU memory needs and where to use them free. Updated nightly.', url: URL_SITO + '/', dateModified: dati.aggiornato, isBasedOn: 'https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset', license: 'https://creativecommons.org/licenses/by/4.0/', creditText: 'Rankings from the Arena leaderboard dataset by Arena Intelligence (CC BY 4.0); sizes from Hugging Face.', creator: { '@type': 'Organization', name: NOME_PIENO, url: URL_SITO + '/' }, distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: URL_SITO + '/data.json' }, { '@type': 'DataDownload', encodingFormat: 'text/markdown', contentUrl: URL_SITO + '/llms-full.txt' }] },
   ],
   titolo: `Best Free AI Models, Ranked by Real Votes · ${NOME_PIENO}`,
   descr: 'The best free and open-weight AI models for chat, coding, vision, image and video, ranked by millions of human votes from Arena. See where to use each one free and what GPU you need.',
@@ -180,7 +181,7 @@ ${ultimi.length ? `<div class="nuovi"><span class="small muted">New on the free 
 ${sezioni}
 ${sezioneNuovi}
 ${faqHtml()}`,
-  script: 'classifica.js',
+  script: 'leaderboard.js',
 });
 
 // ---------- prova a confronto ----------
@@ -230,7 +231,7 @@ pagina({
 <p id="esito" class="small"></p>
 </div>
 <div class="panel"><h2>Your votes</h2><div id="miei-voti" class="small muted">No votes yet.</div></div>`,
-  script: 'confronto.js',
+  script: 'compare.js',
 });
 
 // ---------- in casa ----------
@@ -276,7 +277,7 @@ pagina({
 <p><b>Speed</b>: writing a token reads the active weights and the cache once, so tokens per second ≈ memory bandwidth × 70% ÷ data read. Mixture-of-experts models read only their active experts. With several cards (llama.cpp and Ollama split layers across them), speed stays near one card's speed; with weights in system RAM, the RAM part is far slower. Real numbers vary by about ±30%.</p>
 <p>Apple, AMD Ryzen AI Max and DGX Spark share memory with the system: we count 75% of it.</p>
 </details>`,
-  script: 'casa.js',
+  script: 'run-at-home.js',
 });
 
 // ---------- metodo, fonti, FAQ ----------
@@ -343,6 +344,7 @@ pagina({
 
 paginaCatalogo(dati, modelli, blog);
 paginaDecisioni(dati, blog);
+paginaGpu(dati, modelli, blog);
 pagineModelli(dati, storia, modelli, blog);
 pagineBlog(dati, blog);
 const llms = scriviLlms(dati, modelli, blog);

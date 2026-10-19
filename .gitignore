@@ -12,8 +12,8 @@ dati/arena-storia/
 dati/or.json
 # generati dalla build (tranne i dati)
 sito/*
-!sito/dati.json
-!sito/storia.json
+!sito/data.json
+!sito/history.json
 script/costruisci-anteprima.mjs
 dati/decision-index.json
 dati/decision-vision.json

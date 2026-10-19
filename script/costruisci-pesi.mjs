@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const RADICE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const dati = JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', 'dati.json'), 'utf8'));
+const dati = JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', 'data.json'), 'utf8'));
 const fileOut = path.join(RADICE, 'dati', 'pesi.json');
 const vecchi = fs.existsSync(fileOut) ? JSON.parse(fs.readFileSync(fileOut, 'utf8')) : {};
 

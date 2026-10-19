@@ -1,5 +1,5 @@
 // Scarica i voti di Arena (Hugging Face, CC-BY-4.0) e il listino OpenRouter,
-// li collega per nome e scrive sito/dati.json.
+// li collega per nome e scrive sito/data.json.
 // Uso: node script/costruisci-dati.mjs [--offline]
 import fs from 'node:fs';
 import path from 'node:path';
@@ -132,7 +132,7 @@ uscita.nuovi = leggiJson('nuovi.json', []).filter((p) => !p.repo || !giaVotati.h
 });
 
 fs.mkdirSync(path.join(RADICE, 'sito'), { recursive: true });
-fs.writeFileSync(path.join(RADICE, 'sito', 'dati.json'), JSON.stringify(uscita));
+fs.writeFileSync(path.join(RADICE, 'sito', 'data.json'), JSON.stringify(uscita));
 for (const c of uscita.categorie) {
   const ap = c.modelli.filter((m) => m.aperto);
   console.log(`${c.id}: ${c.totale} modelli, ${ap.length} aperti, ${c.modelli.filter((m) => m.or?.gratis).length} gratis su OpenRouter, ${c.modelli.filter((m) => m.or).length} collegati a OpenRouter`);

@@ -7,7 +7,7 @@ export const RADICE = path.resolve(path.dirname(fileURLToPath(import.meta.url)),
 export const SITO = path.join(RADICE, 'sito');
 export const URL_SITO = (process.env.SITO_URL || 'https://freellmarena.com').replace(/\/$/, '');
 
-// Google Analytics 4 (si attiva solo dopo il consenso, vedi sorgente/consenso.js)
+// Google Analytics 4 (si attiva solo dopo il consenso, vedi sorgente/consent.js)
 export const GA_ID = 'G-D4DK3X1MQJ';
 // versione dei file statici: cambia a ogni build, così i browser non usano lo stile vecchio
 export const VER = Date.now().toString(36);
@@ -40,6 +40,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
     confronto: '<rect x="3.5" y="5" width="7" height="14" rx="1.5"/><rect x="13.5" y="5" width="7" height="14" rx="1.5"/>',
     casa: '<rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 3.5V7M14 3.5V7M10 17v3.5M14 17v3.5M3.5 10H7M3.5 14H7M17 10h3.5M17 14h3.5"/>',
     blog: '<path d="M6.5 3.5h8l3 3v14h-11z"/><path d="M9.5 11.5h5M9.5 15h5"/>',
+    gpus: '<rect x="2.5" y="6.5" width="19" height="10" rx="2"/><circle cx="8.5" cy="11.5" r="2.6"/><circle cx="15.5" cy="11.5" r="2.6"/><path d="M5 16.5v2.5M9 16.5v2.5"/>',
     decisioni: '<path d="M12 3.5v6M12 9.5l-6 5M12 9.5l6 5"/><circle cx="6" cy="17" r="2.5"/><circle cx="18" cy="17" r="2.5"/>',
   };
   const icona = (k) => `<svg class="icona" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONE[k]}</svg>`;
@@ -49,16 +50,17 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
     ['/decision.html', `${icona('decisioni')}Decision models`],
     ['/compare.html', `${icona('confronto')}Try & compare`],
     ['/home.html', `${icona('casa')}Run at home`],
+    ['/gpus.html', `${icona('gpus')}GPUs`],
     ['/blog/', `${icona('blog')}Blog`],
   ];
   const canonico = URL_SITO + '/' + file.replace(/index\.html$/, '').replace(/\.html$/, '');
   // un'immagine di anteprima per sezione (disegnate da script/immagini.py)
-  const ANTEPRIMA = { '/models.html': 'anteprima-modelli.png', '/decision.html': 'anteprima-decisioni.png', '/compare.html': 'anteprima-confronto.png', '/home.html': 'anteprima-casa.png', '/blog/': 'anteprima-blog.png' };
-  const anteprima = ANTEPRIMA[attiva] || 'anteprima.png';
+  const ANTEPRIMA = { '/models.html': 'og-models.png', '/decision.html': 'og-decision.png', '/compare.html': 'og-compare.png', '/home.html': 'og-run-at-home.png', '/blog/': 'og-blog.png', '/gpus.html': 'og-gpus.png' };
+  const anteprima = ANTEPRIMA[attiva] || 'og-default.png';
   const condividi = encodeURIComponent(canonico), testoCond = encodeURIComponent(titolo);
   const colonne = [
     ['Leaderboards', dati.categorie.map((c) => [`/#${c.id}`, `Best free ${c.nome.toLowerCase()} models`])],
-    ['Tools', [['/home.html', 'Run at home: GPU simulator'], ['/compare.html', 'Try two free models'], ['/models.html', 'All free models'], ['/decision.html', 'Decision models (Jev-style)']]],
+    ['Tools', [['/home.html', 'Run at home: GPU simulator'], ['/gpus.html', 'GPUs for local AI, compared'], ['/compare.html', 'Try two free models'], ['/models.html', 'All free models'], ['/decision.html', 'Decision models (Jev-style)']]],
     ['Blog', [...blog.slice(0, 4).map((p) => [`/blog/${p.slug}.html`, p.titolo]), ['/blog/', 'All posts']]],
     ['About', [['/about.html', 'How we rank'], ['/about.html#faq', 'FAQ'], ['/about.html#sources', 'Data sources'], ['https://github.com/MarcoDeliaBot/freellmrank', 'Source code']]],
   ];
@@ -99,7 +101,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/stile.css?v=${VER}">
+<link rel="stylesheet" href="/style.css?v=${VER}">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
 ${(Array.isArray(jsonld) ? jsonld : [jsonld]).filter(Boolean).map((o) => `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', ...o }).replace(/</g, '\\u003c')}</script>`).join('\n')}
 </head>
@@ -124,8 +126,8 @@ ${corpo}
   <p>We use Google Analytics to count visits, only if you agree. No ads, no tracking for advertising. <a href="/privacy.html">Details</a></p>
   <div class="row"><button type="button" class="btn" id="consenso-no">Reject</button><button type="button" class="btn" id="consenso-si">Accept</button></div>
 </div>
-<script src="/consenso.js?v=${VER}" defer></script>
-<script src="/tabelle.js?v=${VER}" defer></script>
+<script src="/consent.js?v=${VER}" defer></script>
+<script src="/tables.js?v=${VER}" defer></script>
 ${script ? `<script type="module" src="/${script}?v=${VER}"></script>` : ''}
 </body>
 </html>

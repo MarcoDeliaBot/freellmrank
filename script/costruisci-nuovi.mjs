@@ -10,7 +10,7 @@ const RADICE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const leggi = (f, vuoto) => { const p = path.join(RADICE, f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : vuoto; };
 const pesi = leggi('dati/pesi.json', {});
 const piccoli = leggi('dati/piccoli.json', []);
-const dati = leggi('sito/dati.json', { categorie: [], openrouterGratis: [] });
+const dati = leggi('sito/data.json', { categorie: [], openrouterGratis: [] });
 
 const AUTORI = ['Qwen', 'google', 'meta-llama', 'mistralai', 'microsoft', 'deepseek-ai', 'ibm-granite', 'HuggingFaceTB',
   'allenai', 'nvidia', 'LiquidAI', 'zai-org', 'XiaomiMiMo', 'tencent', 'CohereLabs', 'ServiceNow-AI', 'baidu', 'swiss-ai',

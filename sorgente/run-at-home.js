@@ -1,6 +1,6 @@
 // Simulatore "in casa": quali modelli aperti entrano nell'hardware scelto,
 // come si divide la memoria e quanto vanno veloci. Tutto nel browser.
-import { simula as simulaHf, QUANTI, perditaQualita, giudizio } from './calcolo.mjs';
+import { simula as simulaHf, QUANTI, perditaQualita, giudizio } from './calc.mjs';
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const CONTESTI = [2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144];
@@ -322,5 +322,11 @@ document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('cli
   calcola();
 }));
 ['scheda', 'n-gpu', 'gb-custom', 'banda-custom', 'ram', 'ram-tipo', 'quant', 'kvq', 'ctx'].forEach((id) => $(id).addEventListener('input', () => { aggiornaCampi(); calcola(); }));
-fetch('dati.json').then((r) => r.json()).then((d) => { dati = d; aggiornaCampi(); calcola(); })
+fetch('data.json').then((r) => r.json()).then((d) => {
+  dati = d;
+  // arrivo dalla pagina /gpus: ?gpu=<id> sceglie la scheda
+  const scelta = new URLSearchParams(location.search).get('gpu');
+  if (scelta && d.schede.schede.some((s) => s.id === scelta)) $('scheda').value = scelta;
+  aggiornaCampi(); calcola();
+})
   .catch(() => { $('migliore').innerHTML = '<div class="panel"><p>Could not load the model list. Reload the page.</p></div>'; });

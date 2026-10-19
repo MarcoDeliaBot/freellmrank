@@ -130,16 +130,18 @@ def anteprima(file, righe, sotto, disegno):
 icona(32).save(os.path.join(SORGENTE, 'favicon-32.png'))
 icona(180).save(os.path.join(SORGENTE, 'apple-touch-icon.png'))
 
-anteprima('anteprima.png', ['The best AI models', 'you can use for free'],
+anteprima('og-default.png', ['The best AI models', 'you can use for free'],
           ['Ranked by real human votes.', 'Free online  ·  Run at home on your GPUs'], barre)
-anteprima('anteprima-modelli.png', ['Every free AI model,', 'one page each'],
+anteprima('og-models.png', ['Every free AI model,', 'one page each'],
           ['Votes, size, license, where to use it.', 'Free online or on your own GPUs'], griglia)
-anteprima('anteprima-decisioni.png', ['Decision models,', 'ranked'],
+anteprima('og-decision.png', ['Decision models,', 'ranked'],
           ['Open models that pick, score or say yes/no', 'with a probability. Speed and license.'], albero)
-anteprima('anteprima-confronto.png', ['Try two free AI models', 'side by side'],
+anteprima('og-compare.png', ['Try two free AI models', 'side by side'],
           ['Same question, two answers.', 'Pick the better one. No payment.'], chat)
-anteprima('anteprima-casa.png', ['The best model', 'your GPU can run'],
+anteprima('og-run-at-home.png', ['The best model', 'your GPU can run'],
           ['Pick your card and how many you have.', 'See what fits and how fast it writes.'], gpu)
-anteprima('anteprima-blog.png', ['Free AI models:', 'guides and weekly reports'],
+anteprima('og-blog.png', ['Free AI models:', 'guides and weekly reports'],
           ['What changed in the rankings this week,', 'and how to use the best ones for free.'], foglio)
+anteprima('og-gpus.png', ['GPUs for local AI,', 'compared'],
+          ['Memory, speed on real models, and the', 'best free model each card can run.'], gpu)
 print('ok')

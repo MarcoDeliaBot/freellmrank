@@ -1,4 +1,4 @@
-// Formule del simulatore: memoria e velocità. Usate dal browser (casa.js) e dalla build
+// Formule del simulatore: memoria e velocità. Usate dal browser (run-at-home.js) e dalla build
 // (pagine dei modelli), così le cifre sono le stesse ovunque.
 export const EFF_GPU = 0.7, EFF_RAM = 0.8, RUNTIME = 0.6, ENCODER = 3;
 export const PRECISIONI = [

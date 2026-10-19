@@ -1,7 +1,7 @@
 // Modelli che il visitatore prova senza account, su Cloudflare Workers AI (quota gratis del sito).
 // arena: i nomi Arena della pagina del modello · pin/pout: dollari per milione di token (listino Cloudflare, 19/10/2026)
 // max: token massimi della risposta · extra: opzioni per spegnere il "ragionamento", che consuma token
-// Lo usano sia la build (quali pagine hanno il riquadro) sia functions/api/prova.js (il tetto giornaliero).
+// Lo usano sia la build (quali pagine hanno il riquadro) sia functions/api/try.js (il tetto giornaliero).
 export const CF_MODELLI = [
   { arena: ['glm-5.3-flash'], id: '@cf/zai-org/glm-5.3-flash', pin: 0.15, pout: 0.5, max: 700, extra: { thinking: { type: 'disabled' } } },
   { arena: ['glm-4.7-flash'], id: '@cf/zai-org/glm-4.7-flash', pin: 0.0605, pout: 0.4, max: 700, extra: { thinking: { type: 'disabled' } } },

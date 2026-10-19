@@ -1,5 +1,5 @@
-// Riquadro "Try it now" nelle pagine dei modelli: manda la domanda a /api/prova e mostra la risposta.
-const box = document.getElementById('prova');
+// Riquadro "Try it now" nelle pagine dei modelli: manda la domanda a /api/try e mostra la risposta.
+const box = document.getElementById('try');
 if (box) {
   const form = box.querySelector('form');
   const campo = box.querySelector('textarea');
@@ -14,7 +14,7 @@ if (box) {
     stato.textContent = 'Thinking…';
     uscita.hidden = true;
     try {
-      const r = await fetch('/api/prova', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ modello: box.dataset.modello, domanda }) });
+      const r = await fetch('/api/try', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ modello: box.dataset.modello, domanda }) });
       const d = await r.json().catch(() => ({}));
       if (!r.ok) {
         stato.textContent = d.errore || 'Something went wrong. Try again in a minute.';

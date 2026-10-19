@@ -1,6 +1,6 @@
 // Storico dei voti Arena (split "full" del dataset, CC-BY-4.0): andamento dei punteggi,
 // data del primo arrivo di ogni modello, miglior modello a pagamento a ogni data.
-// Scrive sito/storia.json. Uso: node script/costruisci-storia.mjs [--offline]
+// Scrive sito/history.json. Uso: node script/costruisci-storia.mjs [--offline]
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -47,5 +47,5 @@ for (const [id, config] of Object.entries(CATEGORIE)) {
   console.log(`${id}: ${date.length} aggiornamenti in tutto, ${recenti.length} negli ultimi ${GIORNI} giorni, ${Object.keys(serie).length} modelli aperti con andamento`);
 }
 fs.mkdirSync(path.join(RADICE, 'sito'), { recursive: true });
-fs.writeFileSync(path.join(RADICE, 'sito', 'storia.json'), JSON.stringify(uscita));
-console.log('storia.json', (fs.statSync(path.join(RADICE, 'sito', 'storia.json')).size / 1e3).toFixed(0), 'KB');
+fs.writeFileSync(path.join(RADICE, 'sito', 'history.json'), JSON.stringify(uscita));
+console.log('history.json', (fs.statSync(path.join(RADICE, 'sito', 'history.json')).size / 1e3).toFixed(0), 'KB');
