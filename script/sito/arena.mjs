@@ -3,7 +3,9 @@
 import { esc, pagina, NOME_PIENO, URL_SITO } from './comune.mjs';
 import { CF_MODELLI, ARENA_MODELLI, DUELLI_PER_VISITATORE, perNomeArena } from '../cf-modelli.mjs';
 
-export const TURNSTILE_SITEKEY = ''; // chiave pubblica di Cloudflare Turnstile: DA INSERIRE quando Marco crea il widget
+// chiave pubblica di Cloudflare Turnstile (widget "Free Arena" creato da Marco il 19/10/2026);
+// la chiave segreta sta solo nei segreti del progetto Pages (TURNSTILE_SECRET)
+export const TURNSTILE_SITEKEY = '0x4AAAAAAFcGDDrezmabhzth';
 
 export function paginaArena(dati, modelli, blog) {
   // per ogni modello dell'arena: nome da mostrare e pagina del modello sul sito
