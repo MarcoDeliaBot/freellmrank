@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { marked } from 'marked';
-import { RADICE, esc, fmtData, pagina, NOME_PIENO } from './comune.mjs';
+import { RADICE, esc, fmtData, pagina, NOME_PIENO, URL_SITO } from './comune.mjs';
 
 const DIR = path.join(RADICE, 'contenuti', 'blog');
 const SETTIMANE = 8;
@@ -100,6 +100,10 @@ export function pagineBlog(dati, post) {
   for (const p of post) {
     pagina({
       file: `blog/${p.slug}.html`, attiva: '/blog/', dati, blog: post,
+      jsonld: [
+        { '@type': 'BlogPosting', headline: p.titolo, description: p.descr, datePublished: p.data, dateModified: dati.aggiornato, url: `${URL_SITO}/blog/${p.slug}`, author: { '@type': 'Organization', name: NOME_PIENO, url: URL_SITO + '/' }, publisher: { '@type': 'Organization', name: NOME_PIENO, url: URL_SITO + '/' } },
+        { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Blog', item: `${URL_SITO}/blog/` }, { '@type': 'ListItem', position: 2, name: p.titolo, item: `${URL_SITO}/blog/${p.slug}` }] },
+      ],
       titolo: `${p.titolo} · ${NOME_PIENO}`, descr: p.descr,
       corpo: `<p class="briciole small"><a href="/blog/">Blog</a> › ${esc(p.tipo)}</p>
 <article class="articolo">

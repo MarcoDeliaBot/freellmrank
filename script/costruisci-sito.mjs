@@ -7,6 +7,7 @@ import { barre, dispersione, linee, matrice } from './sito/grafici.mjs';
 import { unisci, paginaCatalogo, pagineModelli } from './sito/modelli.mjs';
 import { preparaBlog, pagineBlog } from './sito/blog.mjs';
 import { paginaDecisioni } from './sito/decisioni.mjs';
+import { scriviLlms } from './sito/llms.mjs';
 import { simula, daScheda, kvGB, perditaQualita, giudizio, QUANTI } from '../sorgente/calcolo.mjs';
 
 const SORGENTE = path.join(RADICE, 'sorgente');
@@ -149,6 +150,15 @@ const faqHtml = (titolo = 'Frequently asked questions') => `<div class="panel fa
 
 pagina({
   file: 'index.html', attiva: '/', dati, blog,
+  jsonld: [
+    { '@type': 'WebSite', name: NOME_PIENO, url: URL_SITO + '/', description: 'The best AI models you can use for free, ranked by real human votes from Arena.' },
+    { '@type': 'FAQPage', mainEntity: FAQ.map(([d, r]) => ({ '@type': 'Question', name: d, acceptedAnswer: { '@type': 'Answer', text: r } })) },
+    ...dati.categorie.slice(0, 3).map((c) => ({
+      '@type': 'ItemList', name: `Best free ${c.nome.toLowerCase()} models`, itemListOrder: 'https://schema.org/ItemListOrderDescending',
+      itemListElement: c.modelli.filter(usabileGratis).slice(0, 10).map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.nome, url: URL_SITO + hrefDi(m.nome).replace(/\.html$/, '') })),
+    })),
+    { '@type': 'Dataset', name: `${NOME_PIENO} free AI model rankings`, description: 'Free and open-weight AI models with Arena scores, sizes, GPU memory needs and where to use them free. Updated nightly.', url: URL_SITO + '/', dateModified: dati.aggiornato, isBasedOn: 'https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset', license: 'https://creativecommons.org/licenses/by/4.0/', creditText: 'Rankings from the Arena leaderboard dataset by Arena Intelligence (CC BY 4.0); sizes from Hugging Face.', creator: { '@type': 'Organization', name: NOME_PIENO, url: URL_SITO + '/' }, distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: URL_SITO + '/dati.json' }, { '@type': 'DataDownload', encodingFormat: 'text/markdown', contentUrl: URL_SITO + '/llms-full.txt' }] },
+  ],
   titolo: `Best Free AI Models, Ranked by Real Votes · ${NOME_PIENO}`,
   descr: 'The best free and open-weight AI models for chat, coding, vision, image and video, ranked by millions of human votes from Arena. See where to use each one free and what GPU you need.',
   corpo: `<div class="eroe">
@@ -174,6 +184,7 @@ ${faqHtml()}`,
 // ---------- prova a confronto ----------
 pagina({
   file: 'compare.html', attiva: '/compare.html', dati, blog,
+  jsonld: { '@type': 'WebApplication', name: `${NOME_PIENO} Try & compare`, url: URL_SITO + '/compare', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any (web browser)', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, description: 'Send one prompt to two free AI models and vote blind for the better answer.' },
   titolo: `Try Free AI Models Side by Side · ${NOME_PIENO}`,
   descr: 'Send one prompt to two free AI models and compare the answers. Blind mode hides the names until you vote. Runs on your own free OpenRouter account.',
   corpo: `<div style="display:grid;gap:.5rem">
@@ -223,6 +234,7 @@ pagina({
 // ---------- in casa ----------
 pagina({
   file: 'home.html', attiva: '/home.html', dati, blog,
+  jsonld: { '@type': 'WebApplication', name: `${NOME_PIENO} Run at home`, url: URL_SITO + '/home', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any (web browser)', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, description: 'Pick your graphics card, number of cards and RAM to see which free AI models fit, how fast they run and which quantization to use.' },
   titolo: `Best Free AI Model for Your GPUs (1 to 10 cards) · ${NOME_PIENO}`,
   descr: 'Pick your graphics card, how many you have and your RAM. See the best free open-weight models that fit, how the memory splits and how fast they run.',
   corpo: `<div style="display:grid;gap:.5rem">
@@ -268,6 +280,7 @@ pagina({
 // ---------- metodo, fonti, FAQ ----------
 pagina({
   file: 'about.html', attiva: '', dati, blog,
+  jsonld: { '@type': 'FAQPage', mainEntity: FAQ.map(([d, r]) => ({ '@type': 'Question', name: d, acceptedAnswer: { '@type': 'Answer', text: r } })) },
   titolo: `How We Rank Free AI Models · ${NOME_PIENO}`,
   descr: `How ${NOME_PIENO} works: where the votes, free models, sizes and speed estimates come from, and how often they update.`,
   corpo: `<article class="articolo">
@@ -305,6 +318,7 @@ paginaCatalogo(dati, modelli, blog);
 paginaDecisioni(dati, blog);
 pagineModelli(dati, storia, modelli, blog);
 pagineBlog(dati, blog);
+const llms = scriviLlms(dati, modelli, blog);
 
 for (const f of fs.readdirSync(SORGENTE)) fs.copyFileSync(path.join(SORGENTE, f), path.join(SITO, f));
 

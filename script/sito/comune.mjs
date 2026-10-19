@@ -25,7 +25,7 @@ export const fmtData = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-
 const pagine = []; // per la sitemap
 export const pagineScritte = () => pagine;
 
-export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog = [] }) {
+export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog = [], jsonld = [] }) {
   // icone a linea, disegnate qui (niente librerie esterne)
   const ICONE = {
     classifica: '<path d="M5 20v-7M12 20V5M19 20v-10"/>',
@@ -63,6 +63,8 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
 <meta property="og:description" content="${esc(descr)}">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="/stile.css">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+${(Array.isArray(jsonld) ? jsonld : [jsonld]).filter(Boolean).map((o) => `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', ...o }).replace(/</g, '\\u003c')}</script>`).join('\n')}
 </head>
 <body>
 <header class="top"><div class="wrap">

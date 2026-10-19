@@ -1,5 +1,5 @@
 // Catalogo dei modelli gratuiti e una pagina per ciascuno.
-import { esc, fmtNum, fmtData, pagina, CHAT_WEB, NOME_PIENO } from './comune.mjs';
+import { esc, fmtNum, fmtData, pagina, CHAT_WEB, NOME_PIENO, URL_SITO } from './comune.mjs';
 import { linee } from './grafici.mjs';
 import { simula, daScheda, kvGB, QUANTI, perditaQualita, giudizio, slug } from '../../sorgente/calcolo.mjs';
 
@@ -188,6 +188,20 @@ ${QUANTI.filter((p) => p.id !== 'Q2_K').map((p) => { const pq = perditaQualita(p
     const descr = `${m.nome} by ${m.org}${c0 ? `, Arena score ${c0.punti} (#${c0.pos} in ${nomiCat[m.categoriaMigliore]})` : ''}${m.hf ? `, ${m.hf.b} B parameters, about ${fmtGB(m.hf.b * 0.606 + 1.2)} at 4-bit` : ''}. Where to use it free and how fast it runs on your GPU.`;
     pagina({
       file: `model/${m.slug}.html`, attiva: '/models.html', dati, blog,
+      jsonld: [
+        {
+          '@type': 'SoftwareApplication', name: m.nome, applicationCategory: 'AI model', operatingSystem: 'Any',
+          url: `${URL_SITO}/model/${m.slug}`, description: descr,
+          author: { '@type': 'Organization', name: m.org || 'unknown' },
+          ...(m.licenza ? { license: m.licenza } : {}),
+          ...(m.hf ? { sameAs: `https://huggingface.co/${m.hf.repo}`, downloadUrl: `https://huggingface.co/${m.hf.repo}` } : {}),
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        },
+        { '@type': 'BreadcrumbList', itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'All free models', item: `${URL_SITO}/models` },
+          { '@type': 'ListItem', position: 2, name: m.nome, item: `${URL_SITO}/model/${m.slug}` },
+        ] },
+      ],
       titolo: titoloPagina, descr,
       corpo: `<p class="briciole small"><a href="/models.html">All models</a> › ${esc(m.org)}</p>
 <div style="display:grid;gap:.4rem">
