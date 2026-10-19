@@ -124,6 +124,13 @@ td.m{min-width:12rem}
   .vel{justify-items:start;text-align:left}
 }
 .vg-l{position:absolute;top:-4px;bottom:-4px;border-left:1px dashed var(--muted);z-index:1}
+/* barra di riferimento (Jev): scura e a righe, così si vede subito */
+.vg-rif{background:repeating-linear-gradient(135deg,var(--ink) 0 6px,color-mix(in srgb,var(--ink) 70%,var(--surface)) 6px 12px)}
+.vg-riga.rif .vg-nome b{color:var(--ink)}
+.vg-riga.rif .vg-val{font-weight:800}
+/* linea di riferimento orizzontale nel grafico punteggio/dimensione */
+.disp-rif{position:absolute;left:0;right:0;border-top:2px dashed var(--ink);z-index:2;pointer-events:none}
+.disp-rif em{position:absolute;left:4px;top:3px;font:600 .75rem/1.2 var(--sans);font-style:normal;color:var(--ink);background:color-mix(in srgb,var(--surface) 85%,transparent);padding:0 .25rem;border-radius:3px}
 .punti{display:block;height:4px;width:5rem;background:var(--soft);border-radius:2px;margin-top:.3rem}
 .punti i{display:block;height:100%;background:var(--muted);border-radius:2px}
 tr.spento td{opacity:.55}

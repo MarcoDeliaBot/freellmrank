@@ -22,11 +22,18 @@ export function paginaDecisioni(dati, blog) {
   const hrefHf = (m) => (m.repo ? `https://huggingface.co/${m.repo}` : `${SPACE}?model=${encodeURIComponent(m.id)}`);
   const gb = (m) => (m.b ? m.b * 0.606 + 1.2 : null);
 
-  const prime = lista.slice(0, 15).map((m) => ({ nome: m.nome, valore: m.punti, href: hrefHf(m), nota: `${m.punti > jev.punti ? '+' : ''}${(m.punti - jev.punti).toFixed(1)} vs Jev` }));
-  const grafico = barre(prime, { riferimento: { valore: jev.punti, nome: jev.nome }, titoloAsse: 'Decision Index score' })
-    .replace('Dashed line: best paid model', 'Dashed line: TypeSafe’s own model');
-  const punti = lista.filter((m) => m.b && m.b >= 0.05).map((m) => ({ x: m.b, y: m.punti, nome: m.nome, href: hrefHf(m) }));
-  const disp = dispersione(punti);
+  // colori: i primi cinque hanno lo stesso colore nei due grafici; Jev ha una barra sua, scura, al suo posto in classifica
+  const COLORI = ['s1', 's2', 's3', 's4', 's5'];
+  const coloreDi = new Map(lista.slice(0, 5).map((m, i) => [m.nome, COLORI[i]]));
+  const prime = lista.slice(0, 15).map((m) => ({ nome: m.nome, valore: m.punti, href: hrefHf(m), colore: coloreDi.get(m.nome), nota: `${m.punti > jev.punti ? '+' : ''}${(m.punti - jev.punti).toFixed(1)} vs Jev` }));
+  const voceJev = { nome: `${jev.nome} (TypeSafe)`, valore: jev.punti, href: `${SPACE}`, rif: true, nota: 'the reference: TypeSafe’s own decision model, closed' };
+  const dove = prime.findIndex((v) => v.valore < jev.punti);
+  if (dove < 0) prime.push(voceJev); else prime.splice(dove, 0, voceJev);
+  const grafico = barre(prime, { riferimento: { valore: jev.punti, nome: jev.nome }, titoloAsse: 'Decision Index score',
+    testoColori: 'The five best models have the same color in both charts.',
+    testoRif: `Dark bar and dashed line: ${esc(jev.nome)}, TypeSafe’s own model (${jev.punti}). Bars that reach past the line score better than Jev.` });
+  const punti = lista.filter((m) => m.b && m.b >= 0.05).map((m) => ({ x: m.b, y: m.punti, nome: m.nome, href: hrefHf(m), colore: coloreDi.get(m.nome) }));
+  const disp = dispersione(punti, { riferimento: { valore: jev.punti, nome: jev.nome }, testoColori: 'Colored dots: the five best models, same colors as the bars. Dots above the dashed line beat Jev.' });
 
   // licenza: per lavoro servono licenze permissive; le "nc" (non commerciali) no
   const PERMISSIVE = /^(apache-2\.0|mit|bsd|bsd-3-clause|cc-by-4\.0|cc-by-sa-4\.0|openrail|gemma|llama3\.\d|qwen)$/i;
