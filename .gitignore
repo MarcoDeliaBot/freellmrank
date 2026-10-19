@@ -17,3 +17,5 @@ sito/*
 script/costruisci-anteprima.mjs
 dati/decision-index.json
 dati/decision-vision.json
+# video generati (si pubblicano altrove, non nel repository)
+video/
