@@ -45,12 +45,14 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
     confronto: '<rect x="3.5" y="5" width="7" height="14" rx="1.5"/><rect x="13.5" y="5" width="7" height="14" rx="1.5"/>',
     casa: '<rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 3.5V7M14 3.5V7M10 17v3.5M14 17v3.5M3.5 10H7M3.5 14H7M17 10h3.5M17 14h3.5"/>',
     blog: '<path d="M6.5 3.5h8l3 3v14h-11z"/><path d="M9.5 11.5h5M9.5 15h5"/>',
+    arena: '<path d="M5 19 19 5M15 5h4v4M19 19 5 5M9 5H5v4"/>',
     gpus: '<rect x="2.5" y="6.5" width="19" height="10" rx="2"/><circle cx="8.5" cy="11.5" r="2.6"/><circle cx="15.5" cy="11.5" r="2.6"/><path d="M5 16.5v2.5M9 16.5v2.5"/>',
     decisioni: '<path d="M12 3.5v6M12 9.5l-6 5M12 9.5l6 5"/><circle cx="6" cy="17" r="2.5"/><circle cx="18" cy="17" r="2.5"/>',
   };
   const icona = (k) => `<svg class="icona" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONE[k]}</svg>`;
   const voci = [
     ['/', `${icona('classifica')}Leaderboard <span class="badge-free">free</span>`],
+    ['/arena.html', `${icona('arena')}Free Arena`],
     ['/models.html', `${icona('modelli')}Models`],
     ['/decision.html', `${icona('decisioni')}Decision models`],
     ['/compare.html', `${icona('confronto')}Try & compare`],
@@ -65,7 +67,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
   const condividi = encodeURIComponent(canonico), testoCond = encodeURIComponent(titolo);
   const colonne = [
     ['Leaderboards', dati.categorie.map((c) => [`/#${c.id}`, `Best free ${c.nome.toLowerCase()} models`])],
-    ['Tools', [['/home.html', 'Run at home: GPU simulator'], ['/gpus.html', 'GPUs for local AI, compared'], ['/compare.html', 'Try two free models'], ['/models.html', 'All free models'], ['/decision.html', 'Decision models (Jev-style)']]],
+    ['Tools', [['/home.html', 'Run at home: GPU simulator'], ['/gpus.html', 'GPUs for local AI, compared'], ['/arena.html', 'Free Arena: vote blind'], ['/compare.html', 'Try two free models'], ['/models.html', 'All free models'], ['/decision.html', 'Decision models (Jev-style)']]],
     ['Blog', [...blog.slice(0, 4).map((p) => [`/blog/${p.slug}.html`, p.titolo]), ['/blog/', 'All posts']]],
     ['About', [['/about.html', 'How we rank'], ['/about.html#faq', 'FAQ'], ['/about.html#sources', 'Data sources'], ['https://github.com/MarcoDeliaBot/freellmrank', 'Source code']]],
   ];

@@ -327,3 +327,19 @@ footer .wrap{display:grid;gap:.4rem}
 .gpu-tabella .c-best{min-width:8rem}
 .gpu-tabella .c-best a{overflow-wrap:anywhere}
 .gpu-tabella{font-size:.93rem}
+
+/* Free Arena */
+.arena-form{display:grid;gap:.5rem}
+.arena-form textarea{width:100%;font:inherit;font-size:16px;padding:.6rem .7rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);resize:vertical}
+.arena-form select{font:inherit;font-size:16px}
+#arena-duello{display:grid;gap:.8rem;margin-top:1rem}
+#arena-duello[hidden]{display:none}
+.arena-risposte{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.arena-risp{border:1px solid var(--line);border-radius:10px;padding:.8rem .9rem;display:grid;gap:.5rem;align-content:start;min-width:0;background:var(--surface)}
+.arena-lettera{margin:0;font-size:1rem;font-family:var(--mono)}
+.arena-lettera.a{color:var(--s1)}.arena-lettera.b{color:var(--s2)}
+.arena-testo{white-space:pre-wrap;line-height:1.55;overflow-wrap:anywhere;max-height:28rem;overflow:auto}
+.arena-nome{margin:0;padding-top:.4rem;border-top:1px solid var(--line);font-weight:600}
+.arena-voti{display:flex;flex-wrap:wrap;gap:.5rem}
+.arena-voti .btn.scelto{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (max-width:40rem){.arena-risposte{grid-template-columns:minmax(0,1fr)}.arena-voti .btn{flex:1 1 45%}}

@@ -57,6 +57,7 @@ export function scriviLlms(dati, modelli, blog) {
     '## Tools',
     '',
     `- [Run at home](${URL_SITO}/home): pick your graphics card (1 to 10 cards) and RAM; shows which models fit, memory split, tokens per second and the best quantization level`,
+    `- [Free Arena](${URL_SITO}/arena): ask a question, two anonymous free models answer, vote for the better one; votes become an open ranking of free models`,
     `- [GPUs for local AI, compared](${URL_SITO}/gpus): every graphics card and AI computer in our catalogue with memory, bandwidth, estimated tokens per second on real open models, and the best free model that fits`,
     `- [Try & compare](${URL_SITO}/compare): one prompt to two free models side by side, blind voting, on your own free OpenRouter account`,
     '',

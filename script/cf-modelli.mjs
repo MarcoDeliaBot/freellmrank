@@ -20,8 +20,18 @@ export const CF_MODELLI = [
   { arena: ['llama-3.1-8b-instruct'], id: '@cf/meta/llama-3.1-8b-instruct-fp8', pin: 0.152, pout: 0.287, max: 600 },
 ];
 
-// Quota gratis Cloudflare: 10.000 neurons al giorno (UTC). Ci fermiamo prima, con margine.
-export const TETTO_NEURONS = 7000;
+// Quota gratis Cloudflare: 10.000 neurons al giorno (UTC). Ci fermiamo prima, con margine,
+// e la dividiamo (decisione del 19/10/2026): 2.000 per "Try it now", 5.000 per Free Arena.
+export const TETTO_NEURONS = 2000;
+export const TETTO_ARENA = 5000;
+export const DUELLI_PER_VISITATORE = 10;
+export const SECONDI_MINIMI = 4; // un voto dato prima di leggere le due risposte non conta
+// Free Arena: solo modelli veloci (rispondono in pochi secondi), così il visitatore non aspetta
+export const ARENA_MODELLI = [
+  '@cf/openai/gpt-oss-20b', '@cf/openai/gpt-oss-120b', '@cf/google/gemma-4-26b-a4b-it', '@cf/mistralai/mistral-small-3.1-24b-instruct',
+  '@cf/meta/llama-3.1-8b-instruct-fp8', '@cf/meta/llama-4-scout-17b-16e-instruct', '@cf/qwen/qwen3-30b-a3b-fp8', '@cf/deepseek-ai/deepseek-v4-flash-0731',
+];
+export const ARENA_CATEGORIE = ['chat', 'code', 'writing', 'other'];
 export const DOMANDE_PER_VISITATORE = 5;
 export const LUNGHEZZA_DOMANDA = 1500; // caratteri
 // 1.000 neurons = 0,011 $  →  neurons = dollari × 90.909

@@ -8,6 +8,7 @@ import { unisci, paginaCatalogo, pagineModelli } from './sito/modelli.mjs';
 import { preparaBlog, pagineBlog } from './sito/blog.mjs';
 import { paginaDecisioni } from './sito/decisioni.mjs';
 import { paginaGpu } from './sito/gpus.mjs';
+import { paginaArena } from './sito/arena.mjs';
 import { scriviLlms } from './sito/llms.mjs';
 import { simula, daScheda, kvGB, perditaQualita, giudizio, QUANTI } from '../sorgente/calc.mjs';
 
@@ -326,6 +327,8 @@ pagina({
 <p>If you connect an OpenRouter account, your prompts go from your browser directly to OpenRouter, under OpenRouter’s own privacy policy and your account. They never pass through our servers. Your OpenRouter key and your votes are stored only in your browser (local storage) and you can delete them by disconnecting or clearing site data.</p>
 <h2>“Try it now” on model pages</h2>
 <p>When you ask a question in the “Try it now” box, your question goes through our server to Cloudflare Workers AI, which runs the model and sends back the answer. We do not store the question or the answer. To keep the free service fair (5 questions a day), we store a daily counter linked to a one-way fingerprint of your IP address, which changes every day and is deleted automatically after about 26 hours. Legal basis: legitimate interest in preventing abuse (art. 6.1.f). Cloudflare processes the request under its own <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">privacy policy</a>. Do not write personal data in your questions.</p>
+<h2 id="arena">Free Arena</h2>
+<p>When you use Free Arena, your question goes through our server to Cloudflare Workers AI, which runs the two models. We do not store your question or the answers. We store only your vote: which model was A, which was B, which one you preferred, the type you picked (general, coding, writing, other), your browser language (two letters) and how many seconds you took to vote. These votes contain no personal data and will be published as an open ranking. To keep the service free and fair (10 duels a day), we keep a daily counter linked to a one-way fingerprint of your IP address that changes every day and is deleted after the day ends. Legal basis: legitimate interest in running and protecting the service (art. 6.1.f).</p>
 <h2>Links to Amazon</h2>
 <p>The GPU page links to Amazon. We are an Amazon Associate and earn from qualifying purchases. When you click one of these links, Amazon may set its own cookies to record that you came from us, under <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201909150" rel="noopener">Amazon’s privacy notice</a>. We do not receive your name or what you buy, only a total of sales.</p>
 <h2>Stored in your browser</h2>
@@ -347,6 +350,7 @@ pagina({
 paginaCatalogo(dati, modelli, blog);
 paginaDecisioni(dati, blog);
 paginaGpu(dati, modelli, blog);
+paginaArena(dati, modelli, blog);
 pagineModelli(dati, storia, modelli, blog);
 pagineBlog(dati, blog);
 const llms = scriviLlms(dati, modelli, blog);
