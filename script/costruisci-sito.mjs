@@ -2,7 +2,7 @@
 // Uso: node script/costruisci-sito.mjs
 import fs from 'node:fs';
 import path from 'node:path';
-import { RADICE, SITO, URL_SITO, NOME_PIENO, CHAT_WEB, CONTATTO_PRIVACY, esc, fmtData, pagina, pagineScritte } from './sito/comune.mjs';
+import { RADICE, SITO, URL_SITO, NOME_PIENO, CHAT_WEB, CONTATTO_PRIVACY, VER, esc, fmtData, pagina, pagineScritte } from './sito/comune.mjs';
 import { barre, dispersione, linee, matrice } from './sito/grafici.mjs';
 import { unisci, paginaCatalogo, pagineModelli } from './sito/modelli.mjs';
 import { preparaBlog, pagineBlog } from './sito/blog.mjs';
@@ -343,7 +343,11 @@ pagineModelli(dati, storia, modelli, blog);
 pagineBlog(dati, blog);
 const llms = scriviLlms(dati, modelli, blog);
 
-for (const f of fs.readdirSync(SORGENTE)) fs.copyFileSync(path.join(SORGENTE, f), path.join(SITO, f));
+// copia di sorgente/: gli import fra moduli prendono la stessa versione delle pagine
+for (const f of fs.readdirSync(SORGENTE)) {
+  const testo = fs.readFileSync(path.join(SORGENTE, f), 'utf8');
+  fs.writeFileSync(path.join(SITO, f), /\.m?js$/.test(f) ? testo.replace(/from '\.\/([\w-]+\.mjs)'/g, (_, nome) => `from './${nome}?v=${VER}'`) : testo);
+}
 
 // robots.txt e sitemap.xml con tutte le pagine
 fs.writeFileSync(path.join(SITO, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${URL_SITO}/sitemap.xml\n`);

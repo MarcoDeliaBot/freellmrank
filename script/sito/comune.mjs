@@ -9,6 +9,8 @@ export const URL_SITO = (process.env.SITO_URL || 'https://freellmarena.com').rep
 
 // Google Analytics 4 (si attiva solo dopo il consenso, vedi sorgente/consenso.js)
 export const GA_ID = 'G-D4DK3X1MQJ';
+// versione dei file statici: cambia a ogni build, così i browser non usano lo stile vecchio
+export const VER = Date.now().toString(36);
 // contatto del titolare per la pagina privacy: DA INSERIRE (deciso da Marco)
 export const CONTATTO_PRIVACY = '';
 
@@ -82,7 +84,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
 <meta property="og:title" content="${esc(titolo)}">
 <meta property="og:description" content="${esc(descr)}">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="/stile.css">
+<link rel="stylesheet" href="/stile.css?v=${VER}">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
 ${(Array.isArray(jsonld) ? jsonld : [jsonld]).filter(Boolean).map((o) => `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', ...o }).replace(/</g, '\\u003c')}</script>`).join('\n')}
 </head>
@@ -106,8 +108,9 @@ ${corpo}
   <p>We use Google Analytics to count visits, only if you agree. No ads, no tracking for advertising. <a href="/privacy.html">Details</a></p>
   <div class="row"><button type="button" class="btn" id="consenso-no">Reject</button><button type="button" class="btn" id="consenso-si">Accept</button></div>
 </div>
-<script src="/consenso.js" defer></script>
-${script ? `<script type="module" src="/${script}"></script>` : ''}
+<script src="/consenso.js?v=${VER}" defer></script>
+<script src="/tabelle.js?v=${VER}" defer></script>
+${script ? `<script type="module" src="/${script}?v=${VER}"></script>` : ''}
 </body>
 </html>
 `;

@@ -39,8 +39,7 @@ export function paginaDecisioni(dati, blog) {
     const dif = m.punti - jev.punti;
     const g = gb(m);
     const lavoro = usoLavoro(m.licenza);
-    const entra = g != null && g <= 24 - 1.5; // weights + runtime, poco contesto per una decisione
-    return `<tr data-lavoro="${lavoro}" data-img="${m.vision ? 1 : 0}" data-casa="${entra ? 1 : 0}"${m.punti > jev.punti ? ' class="consigliato"' : ''}>
+    return `<tr data-lavoro="${lavoro}" data-img="${m.vision ? 1 : 0}" data-gb="${g != null ? g.toFixed(1) : ''}"${m.punti > jev.punti ? ' class="consigliato"' : ''}>
 <td class="n">${i + 1}</td>
 <td class="m"><a class="nome-modello" href="${hrefHf(m)}" rel="noopener">${esc(m.nome)}</a><div class="org">${esc(m.org)}${m.base ? ' · based on ' + esc(m.base.split('/')[1] || m.base) : ''}</div></td>
 <td class="n"><b>${m.punti.toFixed(1)}</b><div class="org">${dif >= 0 ? '+' : ''}${dif.toFixed(1)} vs Jev</div></td>
@@ -48,7 +47,7 @@ export function paginaDecisioni(dati, blog) {
 <td class="n">${m.ms != null ? `<b>${Math.round(m.ms)} ms</b><div class="org">${(1000 / m.ms).toFixed(m.ms > 100 ? 1 : 0)} per second${m.p95 != null ? ` · slow case ${Math.round(m.p95)} ms` : ''}</div>` : '—'}</td>
 <td>${m.vision ? `<span class="tag home">Yes</span><div class="org">vision score ${m.vision.punti}${m.vision.ms != null ? ` · ${Math.round(m.vision.ms)} ms` : ''}</div>` : '<span class="muted small">text only</span>'}</td>
 <td class="n">${m.ece != null ? (m.ece * 100).toFixed(1) + '%' : '—'}</td>
-<td class="n">${m.b ? m.b + ' B' + (m.stimato ? ' <span class="org">est.</span>' : '') : '—'}<div class="org">${g ? (g >= 10 ? g.toFixed(0) : g.toFixed(1)) + ' GB at 4-bit' : ''}${g ? (entra ? ' · fits RTX 4090' : ' · needs more than 24 GB') : ''}</div></td>
+<td class="n">${m.b ? m.b + ' B' + (m.stimato ? ' <span class="org">est.</span>' : '') : '—'}<div class="org">${g ? (g >= 10 ? g.toFixed(0) : g.toFixed(1)) + ' GB at 4-bit' : ''}</div></td>
 <td>${m.repo ? '<span class="tag home">Yes</span>' : `<span class="muted small">${esc(m.nota || 'No')}</span>`}<div class="org">${esc(m.licenza || '')}</div></td>
 <td>${{ yes: '<span class="tag free">Yes</span>', no: '<span class="tag bad">No (non-commercial)</span>', check: '<span class="tag web">Check license</span>', unknown: '<span class="muted small">—</span>' }[lavoro]}</td>
 <td class="small">${esc(TIPI[m.tipo] || m.tipo)}</td></tr>`;
@@ -75,7 +74,8 @@ ${(() => { const b = lista.find((m) => usoLavoro(m.licenza) === 'yes'); return b
 <div class="row">
 <label class="chk"><input type="checkbox" id="f-lavoro"> Commercial use allowed</label>
 <label class="chk"><input type="checkbox" id="f-img"> Understands images</label>
-<label class="chk"><input type="checkbox" id="f-casa"> Fits one RTX 4090 (24 GB)</label>
+<label class="small">Fits my hardware <select id="f-scheda"><option value="">Any hardware</option>${(() => { const gr = {}; for (const s of dati.schede.schede) (gr[s.marca] ||= []).push(s); return Object.entries(gr).map(([mk, l]) => `<optgroup label="${esc(mk)}">${l.map((s) => `<option value="${esc(s.nome)}" data-gb="${s.unificata ? (s.gb * 0.75).toFixed(1) : s.gb}">${esc(s.nome)} · ${s.gb} GB</option>`).join('')}</optgroup>`).join(''); })()}</select></label>
+<label class="small">× <select id="f-quante">${[1, 2, 3, 4, 8].map((n) => `<option>${n}</option>`).join('')}</select> cards</label>
 <span class="small muted" id="conta-dec"></span>
 </div>
 <div class="tw"><table><thead><tr><th>Rank</th><th>Model</th><th>Decision Index</th><th>Areas</th><th>Speed</th><th>Images</th><th>Calibration error</th><th>Size</th><th>Download</th><th>Commercial use</th><th>Type</th></tr></thead>
