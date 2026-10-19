@@ -9,6 +9,7 @@ import { preparaBlog, pagineBlog } from './sito/blog.mjs';
 import { paginaDecisioni } from './sito/decisioni.mjs';
 import { paginaGpu } from './sito/gpus.mjs';
 import { paginaArena } from './sito/arena.mjs';
+import { preparaConfronti, pagineConfronti } from './sito/confronti.mjs';
 import { scriviLlms } from './sito/llms.mjs';
 import { simula, daScheda, kvGB, perditaQualita, giudizio, QUANTI } from '../sorgente/calc.mjs';
 
@@ -21,6 +22,7 @@ const storia = fs.existsSync(fileStoria) ? JSON.parse(fs.readFileSync(fileStoria
 for (const d of ['model', 'blog']) fs.rmSync(path.join(SITO, d), { recursive: true, force: true });
 
 const modelli = unisci(dati, storia);
+const coppie = preparaConfronti(modelli); // prima delle pagine dei modelli: le linkano
 const perNome = new Map();
 for (const m of modelli) for (const n of Object.values(m.nomi)) perNome.set(n, m);
 const blog = preparaBlog(dati, storia, modelli);
@@ -352,6 +354,7 @@ paginaDecisioni(dati, blog);
 paginaGpu(dati, modelli, blog);
 paginaArena(dati, modelli, blog);
 pagineModelli(dati, storia, modelli, blog);
+pagineConfronti(dati, coppie, blog);
 pagineBlog(dati, blog);
 const llms = scriviLlms(dati, modelli, blog);
 

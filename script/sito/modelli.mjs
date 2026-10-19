@@ -225,7 +225,8 @@ ${punteggi}
 ${velocita}
 ${memoria}
 ${andamenti}
-${vicini}`,
+${vicini}
+${m.confronti?.length ? `<div class="panel"><h2>Compare ${esc(m.nome)} with</h2><ul class="vicini">${m.confronti.map((c) => `<li><a href="${c.href}">${esc(c.altro.nome)}</a></li>`).join('')}</ul></div>` : ''}`,
     });
   }
 }
