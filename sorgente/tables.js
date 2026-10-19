@@ -11,6 +11,7 @@
     if (!t || tw.classList.contains('mx') || t.dataset.schede) return;
     // etichetta: solo la prima riga del titolo di colonna (prima del primo a capo), la spiegazione sotto è troppo lunga
     var titoli = [].map.call(t.querySelectorAll('thead th'), function (th) {
+      if (th.hasAttribute('data-etichetta')) return th.getAttribute('data-etichetta');
       var testo = '';
       for (var n = th.firstChild; n && n.nodeName !== 'BR'; n = n.nextSibling) testo += n.textContent;
       return testo.replace(/\s+/g, ' ').trim();

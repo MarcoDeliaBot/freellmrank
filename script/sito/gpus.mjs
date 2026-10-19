@@ -4,15 +4,16 @@
 import { esc, pagina, NOME_PIENO, URL_SITO, linkAmazon } from './comune.mjs';
 import { barre } from './grafici.mjs';
 import { simula, daScheda } from '../../sorgente/calc.mjs';
+import { valuta, ordina, celle, massimiDi, COLONNA_PREDEFINITA } from '../../sorgente/gpu-table.mjs';
 
 const CTX = 8192; // contesto delle stime: una chat normale
 const RAM = 64; // RAM di sistema per l'offload
 // modelli di riferimento, dal più piccolo al più grande (repository Hugging Face)
 const RIFERIMENTI = [
-  ['google/gemma-4-26B-A4B-it', 'small MoE: 26 B, 4 B active'],
-  ['Qwen/Qwen3.8-27B', 'dense: 28 B'],
-  ['google/gemma-4-31B-it', 'dense: 31 B'],
-  ['zai-org/GLM-4.6V', 'large MoE: 108 B, 14 B active'],
+  ['google/gemma-4-26B-A4B-it', 'MoE, 4 B active'],
+  ['Qwen/Qwen3.8-27B', 'dense'],
+  ['google/gemma-4-31B-it', 'dense'],
+  ['zai-org/GLM-4.6V', 'MoE, 14 B active'],
 ];
 
 // cosa cercare su Amazon per ogni scheda (nomi del catalogo troppo vaghi o doppi)
@@ -23,7 +24,6 @@ const CERCA = {
 };
 const cercaAmazon = (s) => (s.marca === 'Data center' ? null : CERCA[s.id] || `${s.nome} ${s.marca === 'Workstation' ? 'workstation GPU' : 'graphics card'}`);
 
-const fmtVel = (v) => (v >= 100 ? Math.round(v) : v >= 10 ? v.toFixed(0) : v.toFixed(1));
 
 export function paginaGpu(dati, modelli, blog) {
   const schede = dati.schede.schede;
@@ -31,29 +31,24 @@ export function paginaGpu(dati, modelli, blog) {
   const classificati = modelli.filter((m) => m.hf && m.cat.chat).sort((a, b) => b.cat.chat.punti - a.cat.chat.punti);
   const rif = RIFERIMENTI.map(([repo, tipo]) => ({ m: modelli.find((x) => x.hf?.repo === repo), tipo })).filter((r) => r.m);
 
-  const calcola = (s, n) => {
-    const h = daScheda(s, { n, ram: RAM, ctx: CTX });
-    const vel = rif.map((r) => simula(r.m.hf, h));
-    // il più votato che sta tutto in GPU; se nessuno ci sta, il più votato che gira con l'aiuto della RAM
-    const tutto = classificati.find((m) => simula(m.hf, h).dove === 'gpu');
-    const migliore = tutto || classificati.find((m) => simula(m.hf, h).dove === 'ram');
-    const conRam = !tutto;
-    // il modello denso più grande che sta tutto in GPU a 4-bit (pesi + cache + runtime)
-    const maxB = Math.max(0, (h.vram - 0.6 * h.n - 1) / (h.bpp + 0.000004 * CTX));
-    return { h, vel, migliore, conRam, maxB };
-  };
-  const cella = (r) => (r.dove === 'gpu' ? `<span class="n">${fmtVel(r.vel)}</span>` : r.dove === 'ram' ? `<span class="n">${fmtVel(r.vel)}</span> <span class="tag chip-ram" title="Part of the model sits in system RAM">+RAM</span>` : '<span class="muted">does not fit</span>');
-
-  const righe = [...schede].sort((a, b) => b.gb - a.gb || b.banda - a.banda).map((s) => {
-    const c = calcola(s, 1);
-    return `<tr id="gpu-${esc(s.id)}" data-id="${esc(s.id)}" data-marca="${esc(s.marca)}">
-<td><b>${esc(s.nome)}</b><br><span class="small muted">${esc(s.marca)}${s.unificata ? ' · unified memory' : ''}</span></td>
-<td class="n c-gb">${s.unificata ? `${s.gb} GB<br><span class="small muted">~${Math.round(s.gb * 0.75)} GB for AI</span>` : `${s.gb} GB`}</td>
-<td class="n">${s.banda} GB/s</td>
-${c.vel.map((r) => `<td class="c-vel">${cella(r)}</td>`).join('')}
-<td class="n c-max">~${Math.round(c.maxB)} B</td>
-<td class="c-best">${c.migliore ? `<a href="${c.migliore.href}">${esc(c.migliore.nome)}</a><br><span class="small muted">Arena ${c.migliore.cat.chat.punti}</span>${c.conRam ? ' <span class="tag chip-ram">+RAM</span>' : ''}` : '—'}</td>
-<td class="small"><a href="/home.html?gpu=${encodeURIComponent(s.id)}">Simulate</a>${cercaAmazon(s) ? `<br><a class="amazon" data-q="${esc(cercaAmazon(s))}" href="${esc(linkAmazon(cercaAmazon(s)))}" rel="sponsored nofollow noopener" target="_blank">Amazon ↗</a>` : ''}</td></tr>`;
+  // righe in ordine di velocità sul modello denso da 27 B, con la posizione; le schede da centro dati
+  // (A100, H100, H200) sono nascoste finché non si sceglie "Data center": nessuno le ha in casa
+  const opzioni = { n: 1, ram: RAM, ctx: CTX, rif: rif.map((r) => r.m.hf), classificati };
+  const valutate = ordina(schede.map((s) => valuta(s, opzioni)), COLONNA_PREDEFINITA);
+  const mostrate = valutate.filter((v) => v.s.marca !== 'Data center');
+  const massimi = massimiDi(mostrate, rif.length);
+  let pos = 0;
+  const righe = valutate.map((v) => {
+    const { s } = v;
+    const nascosta = s.marca === 'Data center';
+    const c = celle(v, massimi);
+    return `<tr id="gpu-${esc(s.id)}" data-id="${esc(s.id)}" data-marca="${esc(s.marca)}"${nascosta ? ' hidden' : ''}>
+<td class="n c-pos">${nascosta ? '' : ++pos}</td>
+<td class="c-nome"><b>${esc(s.nome)}</b><br><span class="small muted">${esc(s.marca)}${s.unificata ? ' · shared memory' : ''}</span><br><span class="small c-link"><a href="/home.html?gpu=${encodeURIComponent(s.id)}">Simulate</a>${cercaAmazon(s) ? ` · <a class="amazon" data-q="${esc(cercaAmazon(s))}" href="${esc(linkAmazon(cercaAmazon(s)))}" rel="sponsored nofollow noopener" target="_blank">Amazon ↗</a>` : ''}</span></td>
+<td class="n c-gb">${c.gb}</td>
+${c.vel.map((x) => `<td class="c-vel">${x}</td>`).join('')}
+<td class="n c-max">${c.max}</td>
+<td class="c-best">${c.best}</td></tr>`;
   }).join('\n');
 
   // grafico: velocità sul modello denso di riferimento, solo le schede dove sta tutto in GPU
@@ -109,10 +104,11 @@ ${piuMemoria ? `<div class="tile"><span class="small muted">Most memory on one c
 <div class="row gpu-filtri">
 <label class="small">How many cards <select id="g-quante">${[1, 2, 4].map((n) => `<option value="${n}">${n}</option>`).join('')}</select></label>
 <label class="small"><input type="checkbox" id="g-ram" checked> Use ${RAM} GB of system RAM when the GPU is full</label>
-<span class="tabs" role="group" aria-label="Brand">${['All', ...new Set(schede.map((s) => s.marca))].map((m, i) => `<button type="button" aria-pressed="${i ? 'false' : 'true'}" data-marca="${esc(m)}">${esc(m)}</button>`).join('')}</span>
+<span class="tabs" role="group" aria-label="Brand">${['All', ...new Set(schede.map((s) => s.marca))].map((m, i) => `<button type="button" aria-pressed="${i ? 'false' : 'true'}" data-marca="${esc(m)}">${m === 'All' ? 'All for home and office' : esc(m)}</button>`).join('')}</span>
 </div>
+<p class="small muted gpu-aiuto">Ranked by speed on ${esc(denso.m.nome)}. The four model columns are <b>tokens per second</b>: higher is faster, and about 10 is reading speed. Click a column title to sort by it.</p>
 <div class="tw"><table class="gpu-tabella">
-<thead><tr><th>GPU</th><th>Memory</th><th>Bandwidth</th>${rif.map((r) => `<th><a href="${r.m.href}">${esc(r.m.nome)}</a><br><span class="small muted">${esc(r.tipo)} · tokens/s</span></th>`).join('')}<th>Largest model<br><span class="small muted">dense, 4-bit</span></th><th>Best free model that fits</th><th></th></tr></thead>
+<thead><tr><th>#</th><th>GPU</th><th data-ordina="gb" data-etichetta="Memory">Memory<br><span class="th-sub">and bandwidth</span></th>${rif.map((r, i) => `<th data-ordina="v${i}" data-etichetta="${esc(r.m.nome)}"${`v${i}` === COLONNA_PREDEFINITA ? ' aria-sort="descending"' : ''}><a href="${r.m.href}">${esc(r.m.nome)}</a><br><span class="th-sub">${esc(r.tipo)}</span></th>`).join('')}<th data-ordina="max" data-etichetta="Largest model">Largest model<br><span class="th-sub">dense, 4-bit</span></th><th>Best free model that fits</th></tr></thead>
 <tbody>
 ${righe}
 </tbody></table></div>
