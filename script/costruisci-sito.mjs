@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { RADICE, SITO, URL_SITO, NOME_PIENO, CHAT_WEB, CONTATTO_PRIVACY, VER, esc, fmtData, pagina, pagineScritte } from './sito/comune.mjs';
-import { barre, dispersione, linee, matrice } from './sito/grafici.mjs';
+import { barre, dispersione, linee, matrice, COLORI as COLORI_SERIE } from './sito/grafici.mjs';
 import { unisci, paginaCatalogo, pagineModelli } from './sito/modelli.mjs';
 import { preparaBlog, pagineBlog } from './sito/blog.mjs';
 import { paginaDecisioni } from './sito/decisioni.mjs';
@@ -66,19 +66,21 @@ const sezioni = dati.categorie.map((c, i) => {
   const prime = [];
   const visti = new Set();
   for (const m of lista) { const k = perNome.get(m.nome)?.chiave || m.nome; if (visti.has(k)) continue; visti.add(k); prime.push(m); if (prime.length === 15) break; }
-  const graficoBarre = barre(prime.map((m) => ({ nome: m.nome, valore: m.punti, href: hrefDi(m.nome), nota: `#${m.pos} of ${c.totale}` })), pagato ? { riferimento: { valore: pagato.punti, nome: pagato.nome } } : {});
+  // colori: i cinque modelli del grafico nel tempo hanno lo stesso colore in tutti e tre i grafici
+  const st = storia?.categorie[c.id];
+  const cinque = st ? prime.filter((m) => m.aperto && st.serie[m.nome]).slice(0, 5) : [];
+  const coloreDi = new Map(cinque.map((m, i) => [m.nome, COLORI_SERIE[i]]));
+  const graficoBarre = barre(prime.map((m) => ({ nome: m.nome, valore: m.punti, href: hrefDi(m.nome), nota: `#${m.pos} of ${c.totale}`, colore: coloreDi.get(m.nome) })), pagato ? { riferimento: { valore: pagato.punti, nome: pagato.nome } } : {});
 
   // grafico 2: punteggio contro dimensione (modelli aperti con dimensione nota)
   const punti = [];
   const vistiD = new Set();
-  for (const m of lista) { if (!m.aperto || !m.hf || vistiD.has(m.hf.repo)) continue; vistiD.add(m.hf.repo); punti.push({ x: m.hf.b, y: m.punti, nome: m.nome, href: hrefDi(m.nome) }); }
+  for (const m of lista) { if (!m.aperto || !m.hf || vistiD.has(m.hf.repo)) continue; vistiD.add(m.hf.repo); punti.push({ x: m.hf.b, y: m.punti, nome: m.nome, href: hrefDi(m.nome), colore: coloreDi.get(m.nome) }); }
   const graficoDisp = dispersione(punti);
 
   // grafico 3: andamento delle prime 5 aperte negli ultimi sei mesi
-  const st = storia?.categorie[c.id];
   let graficoLinee = '';
   if (st) {
-    const cinque = prime.filter((m) => m.aperto && st.serie[m.nome]).slice(0, 5);
     graficoLinee = linee(st.date, cinque.map((m) => ({ nome: m.nome, valori: st.serie[m.nome], href: hrefDi(m.nome) })), st.pagato);
   }
 

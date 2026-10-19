@@ -21,13 +21,15 @@ export function barre(voci, { riferimento, titoloAsse = 'Arena score' } = {}) {
   const min = Math.max(0, Math.floor((minv - margine) / passo) * passo);
   const x = (v) => (100 * (v - min)) / (max - min);
   const ticks = tacche(min, max);
+  const colorate = voci.some((v) => v.colore);
+  const classe = (v) => (v.colore ? `sw-${v.colore}` : colorate ? 'vg-altro' : 'p-gpu');
   return `<div class="vel-grafico barre-arena" role="img" aria-label="${esc(titoloAsse)} of the top ${voci.length} free models">
 ${voci.map((v) => `<a class="vg-riga" href="${v.href}" title="${esc(v.nome)}: ${v.valore}${v.nota ? ' · ' + esc(v.nota) : ''}">
 <span class="vg-nome">${esc(v.nome)}</span>
-<span class="vg-pista">${riferimento ? `<span class="vg-l" style="left:${x(riferimento.valore)}%"></span>` : ''}<span class="vg-barra p-gpu" style="width:${x(v.valore)}%"></span><span class="vg-val" style="left:${x(v.valore)}%">${v.valore}</span></span></a>`).join('')}
+<span class="vg-pista">${riferimento ? `<span class="vg-l" style="left:${x(riferimento.valore)}%"></span>` : ''}<span class="vg-barra ${classe(v)}" style="width:${x(v.valore)}%"></span><span class="vg-val" style="left:${x(v.valore)}%">${v.valore}</span></span></a>`).join('')}
 <div class="vg-asse"><span class="vg-nome"></span><span class="vg-pista">${ticks.map((t) => `<span style="left:${x(t)}%">${t}</span>`).join('')}</span></div>
 </div>
-<p class="small muted">${esc(titoloAsse)}, axis starts at ${min}.${riferimento ? ` Dashed line: best paid model, ${esc(riferimento.nome)} (${riferimento.valore}).` : ''}</p>`;
+<p class="small muted">${esc(titoloAsse)}, axis starts at ${min}.${colorate ? ' Colored bars: the models in the time chart, same color in every chart.' : ''}${riferimento ? ` Dashed line: best paid model, ${esc(riferimento.nome)} (${riferimento.valore}).` : ''}</p>`;
 }
 
 // Punteggio contro dimensione (scala logaritmica), con la frontiera: il punteggio più alto
@@ -59,13 +61,13 @@ export function dispersione(punti, { etichetteMax = 7 } = {}) {
 <span class="disp-quadrante" style="left:0;top:0;width:${X(10 ** ((x0 + x1) / 2))}%;height:50%"><em>Small and strong</em></span>
 ${xt.map((e) => `<span class="disp-gx" style="left:${X(10 ** e)}%"></span>`).join('')}
 <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="${fronte.map((p) => `${X(p.x).toFixed(2)},${Y(p.y).toFixed(2)}`).join(' ')}" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></svg>
-${punti.map((p) => `<a class="disp-punto${setFronte.has(p) ? ' fronte' : ''}" href="${p.href}" style="left:${X(p.x)}%;top:${Y(p.y)}%" title="${esc(p.nome)}: score ${p.y}, ${p.x} B parameters"></a>`).join('')}
+${punti.map((p) => `<a class="disp-punto${setFronte.has(p) ? ' fronte' : ''}${p.colore ? ` evid sw-${p.colore}` : ''}" href="${p.href}" style="left:${X(p.x)}%;top:${Y(p.y)}%" title="${esc(p.nome)}: score ${p.y}, ${p.x} B parameters"></a>`).join('')}
 ${[...etichette].map((p) => `<span class="disp-et${X(p.x) > 70 ? ' sx' : ''}" style="left:${X(p.x)}%;top:${Y(p.y)}%">${esc(p.nome)}</span>`).join('')}
 </div>
 <div class="disp-assey">${tacche(y0, y1, 4).map((t) => `<span style="top:${Y(t)}%">${t}</span>`).join('')}</div>
 <div class="disp-assex">${xt.map((e) => `<span style="left:${X(10 ** e)}%">${etichettaB(e)}</span>`).join('')}</div>
 </div>
-<p class="small muted">Each dot is an open model; up is better, left is smaller. The line joins the models that beat every smaller one. Parameters on a log scale.</p>`;
+<p class="small muted">Each dot is an open model; up is better, left is smaller.${punti.some((p) => p.colore) ? ' Colored dots: the models in the time chart.' : ''} The line joins the models that beat every smaller one. Parameters on a log scale.</p>`;
 }
 
 // Chi batte chi: probabilità attesa che il modello della riga vinca contro quello della colonna,
@@ -93,7 +95,7 @@ export function matrice(voci) {
 }
 
 // Andamento nel tempo: fino a 5 modelli + miglior modello a pagamento (tratteggiato).
-const COLORI = ['s1', 's2', 's3', 's4', 's5'];
+export const COLORI = ['s1', 's2', 's3', 's4', 's5'];
 export function linee(date, serie, pagato) {
   const tutti = serie.flatMap((s) => s.valori).concat(pagato).filter((v) => v != null);
   if (!tutti.length || date.length < 2) return '';

@@ -161,6 +161,8 @@ a.vg-riga:hover .vg-nome{text-decoration:underline}
 .disp-punto{position:absolute;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:color-mix(in srgb,var(--c-gpu) 45%,var(--surface));box-shadow:0 0 0 2px var(--surface);z-index:1}
 .disp-punto.fronte{background:var(--c-gpu);width:11px;height:11px;margin:-5.5px 0 0 -5.5px;z-index:2}
 .disp-punto:hover,.disp-punto:focus-visible{transform:scale(1.5)}
+.disp-punto.evid{width:13px;height:13px;margin:-6.5px 0 0 -6.5px;z-index:3}.disp-punto.evid.sw-s1{background:var(--s1)}.disp-punto.evid.sw-s2{background:var(--s2)}.disp-punto.evid.sw-s3{background:var(--s3)}.disp-punto.evid.sw-s4{background:var(--s4)}.disp-punto.evid.sw-s5{background:var(--s5)}
+.vg-altro{background:color-mix(in srgb,var(--c-gpu) 35%,var(--surface))}
 .disp-et{position:absolute;transform:translate(8px,-50%);font-size:.75rem;white-space:nowrap;pointer-events:none;z-index:3;text-shadow:0 0 3px var(--surface),0 0 3px var(--surface)}
 .disp-et.sx{transform:translate(calc(-100% - 8px),-50%)}
 .disp-assey{position:absolute;left:0;top:.6rem;bottom:1.6rem;width:2.3rem}
