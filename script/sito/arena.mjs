@@ -35,7 +35,7 @@ export function paginaArena(dati, modelli, blog) {
 <button type="submit" class="btn primary" id="arena-invia">Ask both models</button>
 <span class="small muted" id="arena-stato" aria-live="polite"></span>
 </div>
-${TURNSTILE_SITEKEY ? `<div class="cf-turnstile" data-sitekey="${esc(TURNSTILE_SITEKEY)}" data-size="flexible"></div>` : ''}
+${TURNSTILE_SITEKEY ? `<div class="cf-turnstile" data-sitekey="${esc(TURNSTILE_SITEKEY)}" data-size="flexible" data-language="en"></div>` : ''}
 </form>
 <div id="arena-duello" hidden>
 <div class="arena-risposte">
