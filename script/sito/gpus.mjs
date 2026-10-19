@@ -108,7 +108,7 @@ ${piuMemoria ? `<div class="tile"><span class="small muted">Most memory on one c
 <label class="small"><input type="checkbox" id="g-ram" checked> Use ${RAM} GB of system RAM when the GPU is full</label>
 <span class="tabs" role="group" aria-label="Brand">${['All', ...new Set(schede.map((s) => s.marca))].map((m, i) => `<button type="button" aria-pressed="${i ? 'false' : 'true'}" data-marca="${esc(m)}">${m === 'All' ? 'All for home and office' : esc(m)}</button>`).join('')}</span>
 </div>
-<p class="small muted gpu-aiuto">Ranked by speed on ${esc(denso.m.nome)}. The four model columns are <b>tokens per second</b>: higher is faster, and about 10 is reading speed. Click a column title to sort by it.</p>
+<p class="small muted gpu-aiuto">Ranked by speed on ${esc(denso.m.nome)}. The four model columns are <b>tokens per second</b>: higher is faster, and about 10 is reading speed. Click a column title to sort by it. No graphics card? See <a href="/phone.html">AI models on your phone</a>.</p>
 <div class="tw"><table class="gpu-tabella">
 <thead><tr><th>#</th><th>GPU</th><th data-ordina="gb" data-etichetta="Memory">Memory<br><span class="th-sub">and bandwidth</span></th>${rif.map((r, i) => `<th data-ordina="v${i}" data-etichetta="${esc(r.m.nome)}"${`v${i}` === COLONNA_PREDEFINITA ? ' aria-sort="descending"' : ''}><a href="${r.m.href}">${esc(r.m.nome)}</a><br><span class="th-sub">${esc(r.tipo)}</span></th>`).join('')}<th data-ordina="max" data-etichetta="Largest model">Largest model<br><span class="th-sub">dense, 4-bit</span></th><th>Best free model that fits</th></tr></thead>
 <tbody>

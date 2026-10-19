@@ -1,0 +1,8 @@
+/widget/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+/widget.js
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+/blog/feed.xml
+  Content-Type: application/rss+xml; charset=utf-8

@@ -345,3 +345,4 @@ footer .wrap{display:grid;gap:.4rem}
 @media (max-width:40rem){.arena-risposte{grid-template-columns:minmax(0,1fr)}.arena-voti .btn{flex:1 1 45%}}
 .gpu-tabella .nome-gpu{color:var(--ink);text-decoration:none}
 .gpu-tabella .nome-gpu:hover b{text-decoration:underline}
+pre.codice{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:.8rem .9rem;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 var(--mono)}
