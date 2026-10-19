@@ -195,9 +195,11 @@ a.vg-riga:hover .vg-nome{text-decoration:underline}
 .tw::-webkit-scrollbar{height:10px}
 .tw::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--ink) 30%,transparent);border-radius:5px}
 /* banner del consenso: in basso, i due tasti uguali (nessuna scelta spinta) */
-.consenso{position:fixed;z-index:50;left:max(16px,env(safe-area-inset-left));right:max(16px,env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));max-width:40rem;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem;display:grid;gap:.7rem;box-shadow:0 6px 24px rgba(0,0,0,.18)}
-.consenso p{font-size:.92rem}
-.consenso .btn{min-width:7rem}
+/* una striscia sottile a tutta larghezza, che non copre le tabelle */
+.consenso{position:fixed;z-index:50;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:.55rem max(16px,env(safe-area-inset-right)) calc(.55rem + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.4rem 1rem;box-shadow:0 -4px 16px rgba(0,0,0,.15)}
+.consenso p{font-size:.85rem;margin:0}
+.consenso .row{gap:.5rem;flex-wrap:nowrap}
+.consenso .btn{min-width:5.5rem;padding:.35rem .8rem;font-size:.85rem}
 .link-btn{font:inherit;background:none;border:0;padding:0;color:var(--accent);text-decoration:underline;cursor:pointer}
 /* mini-barre delle 6 aree dei modelli decisionali */
 .mini-aree{display:inline-flex;align-items:flex-end;gap:2px;height:28px;padding:2px;background:var(--soft);border-radius:4px}

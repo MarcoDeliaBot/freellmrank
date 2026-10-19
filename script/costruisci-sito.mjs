@@ -345,6 +345,8 @@ const llms = scriviLlms(dati, modelli, blog);
 
 // copia di sorgente/: gli import fra moduli prendono la stessa versione delle pagine
 for (const f of fs.readdirSync(SORGENTE)) {
+  // immagini e altri file binari: copia esatta
+  if (!/\.(m?js|css|svg|txt)$/.test(f)) { fs.copyFileSync(path.join(SORGENTE, f), path.join(SITO, f)); continue; }
   const testo = fs.readFileSync(path.join(SORGENTE, f), 'utf8');
   fs.writeFileSync(path.join(SITO, f), /\.m?js$/.test(f) ? testo.replace(/from '\.\/([\w-]+\.mjs)'/g, (_, nome) => `from './${nome}?v=${VER}'`) : testo);
 }

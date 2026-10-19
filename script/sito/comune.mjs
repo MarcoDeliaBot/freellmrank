@@ -84,6 +84,17 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
 <meta property="og:title" content="${esc(titolo)}">
 <meta property="og:description" content="${esc(descr)}">
 <meta property="og:type" content="website">
+<meta property="og:url" content="${canonico}">
+<meta property="og:site_name" content="${NOME_PIENO}">
+<meta property="og:image" content="${URL_SITO}/anteprima.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${NOME_PIENO}: the best AI models you can use for free">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1419">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/stile.css?v=${VER}">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
 ${(Array.isArray(jsonld) ? jsonld : [jsonld]).filter(Boolean).map((o) => `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', ...o }).replace(/</g, '\\u003c')}</script>`).join('\n')}

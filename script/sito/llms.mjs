@@ -50,7 +50,7 @@ export function scriviLlms(dati, modelli, blog) {
     '## Rankings',
     '',
     ...dati.categorie.map((c) => `- [Best free ${c.nome.toLowerCase()} models](${URL_SITO}/#${c.id}): ${c.modelli.filter(usabileGratis).length} free models of ${c.totale} in Arena's ${c.nome} ranking`),
-    `- [Decision models (Jev-style)](${URL_SITO}/decision): ${dec ? `${dec.modelli.length} open decision models ranked by the Jev Decision Index; ${dec.modelli.filter((m) => m.punti > dec.jev.punti).length} beat ${dec.jev.nome}` : 'open decision models ranked'}`,
+    `- [Decision models (Jev-style)](${URL_SITO}/decision): ${dec ? `${dec.modelli.length} open decision models ranked by the Jev Decision Index; ${dec.modelli.filter((m) => m.punti > dec.jev.punti).length} score better than ${dec.jev.nome}` : 'open decision models ranked'}`,
     `- [New models waiting for Arena votes](${URL_SITO}/#new): released in the last 60 days by the labs' official Hugging Face pages`,
     `- [All free models](${URL_SITO}/models): ${modelli.length} models with size, memory needs and where to use them free`,
     '',

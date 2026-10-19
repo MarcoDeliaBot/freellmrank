@@ -58,7 +58,7 @@ export function paginaDecisioni(dati, blog) {
     script: 'decisioni.js',
     jsonld: { '@type': 'ItemList', name: 'Best open decision models (Jev-style)', itemListOrder: 'https://schema.org/ItemListOrderDescending', itemListElement: lista.slice(0, 20).map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.nome, url: hrefHf(m) })) },
     titolo: `Best Free Decision Models (Jev-Style), Ranked · ${NOME_PIENO}`,
-    descr: `${lista.length} open decision models that pick an option, a score or a yes/no with a probability, like TypeSafe’s Jev. ${sopra.length} beat Jev on the Decision Index; ${scaricabili.length} can be downloaded.`,
+    descr: `${lista.length} open decision models that pick an option, a score or a yes/no with a probability, like TypeSafe’s Jev. ${sopra.length} score better than Jev on the Decision Index; ${scaricabili.length} can be downloaded.`,
     corpo: `<div style="display:grid;gap:.5rem">
 <h1>Decision models, ranked</h1>
 <p class="lead">A decision model does not write text. It picks one option, gives a score, or answers yes or no with a probability, in a fraction of a second. TypeSafe AI released the first one, Jev, in September 2026; dozens of open models now copy the idea.</p>
@@ -67,7 +67,7 @@ export function paginaDecisioni(dati, blog) {
 <div class="tile"><span class="small muted">Models ranked</span><b>${lista.length}</b><span class="small muted">${scaricabili.length} with a Hugging Face page</span></div>
 <div class="tile"><span class="small muted">Best open model</span><b>${migliore.punti.toFixed(1)}</b><span class="small muted">${esc(migliore.nome)}</span></div>
 <div class="tile"><span class="small muted">${esc(jev.nome)} (TypeSafe)</span><b>${jev.punti.toFixed(1)}</b><span class="small muted">closed model, the reference</span></div>
-<div class="tile"><span class="small muted">Beat Jev</span><b>${sopra.length}</b><span class="small muted">open models score higher</span></div>
+<div class="tile"><span class="small muted">Better than Jev</span><b>${sopra.length}</b><span class="small muted">open models score higher than Jev, the first decision model</span></div>
 ${(() => { const b = lista.find((m) => usoLavoro(m.licenza) === 'yes'); return b ? `<div class="tile"><span class="small muted">Best for business use</span><b>${b.punti.toFixed(1)}</b><span class="small muted">${esc(b.nome)} · ${esc(b.licenza)}</span></div>` : ''; })()}
 </div>
 <div class="panel"><h2>Full ranking</h2>
@@ -80,7 +80,7 @@ ${(() => { const b = lista.find((m) => usoLavoro(m.licenza) === 'yes'); return b
 </div>
 <div class="tw"><table><thead><tr><th>Rank</th><th>Model</th><th>Decision Index</th><th>Areas</th><th>Speed</th><th>Images</th><th>Calibration error</th><th>Size</th><th>Download</th><th>Commercial use</th><th>Type</th></tr></thead>
 <tbody>${righe}</tbody></table></div>
-<p class="small muted">Decision Index: chance-corrected score from 0 (random guessing) to 100 (perfect), mixing public benchmarks (20%), private tests of the same skills (50%) and private tasks from new domains (30%). Areas, left to right: ${AREE.map((x) => esc(x.nome)).join(', ')} (empty bar: not measured yet). Speed: median time per decision and the slow case (95th percentile), measured by the board on one ${esc(d.suite.hardware || 'GPU')}; a decision model returns one answer, so tokens per second do not apply. Images: score on the board’s separate Vision ranking (${esc(d.visionEdizione || '')}). Calibration error (ECE): how far stated probabilities are from how often the model is right; lower is better. Commercial use: from the license on the model’s Hugging Face page; “non-commercial” licenses (NC) forbid business use. 4-bit size and RTX 4090 fit are our estimates. Highlighted rows beat Jev.</p></div>
+<p class="small muted">Decision Index: chance-corrected score from 0 (random guessing) to 100 (perfect), mixing public benchmarks (20%), private tests of the same skills (50%) and private tasks from new domains (30%). Areas, left to right: ${AREE.map((x) => esc(x.nome)).join(', ')} (empty bar: not measured yet). Speed: median time per decision and the slow case (95th percentile), measured by the board on one ${esc(d.suite.hardware || 'GPU')}; a decision model returns one answer, so tokens per second do not apply. Images: score on the board’s separate Vision ranking (${esc(d.visionEdizione || '')}). Calibration error (ECE): how far stated probabilities are from how often the model is right; lower is better. Commercial use: from the license on the model’s Hugging Face page; “non-commercial” licenses (NC) forbid business use. 4-bit size and “fits my hardware” are our estimates. Highlighted rows score better than Jev.</p></div>
 <div class="grafici">
 <div class="panel"><h2>Top 15 decision models</h2>${grafico}</div>
 ${disp ? `<div class="panel"><h2>Score against size</h2>${disp}</div>` : ''}
