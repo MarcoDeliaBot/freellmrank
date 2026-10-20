@@ -12,7 +12,7 @@ const RADICE = path.join(QUI, '..', '..');
 const OUT = path.join(RADICE, 'video', 'brag');
 fs.mkdirSync(OUT, { recursive: true });
 const dati = JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', 'data.json'), 'utf8'));
-const css = fs.readFileSync(path.join(RADICE, 'sito', 'style.css'), 'utf8');
+const css = fs.readFileSync(path.join(RADICE, 'sorgente', 'style.css'), 'utf8');
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const gratis = (m) => m.aperto || m.or?.gratis;
 
