@@ -37,9 +37,17 @@ if (box) {
   async function nelCloud(testo) {
     const lento = setTimeout(() => { stato.textContent = 'Waking up the free voice server, the first time can take 30 seconds…'; }, 3000);
     try {
-      const r = await fetch(`${SPACE}/tts`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: testo.slice(0, 600), voice: voce.value }), signal: AbortSignal.timeout(60000) });
-      if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || `HTTP ${r.status}`);
-      return await r.blob();
+      // API di Gradio dello Space (ZeroGPU gratuito, voci sulla CPU): si chiede, poi si legge l'esito e si scarica il WAV
+      const segnale = AbortSignal.timeout(90000);
+      const r = await fetch(`${SPACE}/gradio_api/call/parla`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ data: [testo.slice(0, 600), voce.value] }), signal: segnale });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const { event_id: id } = await r.json();
+      const flusso = await (await fetch(`${SPACE}/gradio_api/call/parla/${id}`, { signal: segnale })).text();
+      if (/^event: error/m.test(flusso)) throw new Error('Space error');
+      const riga = flusso.split('\n').filter((l) => l.startsWith('data:')).pop();
+      const url = JSON.parse(riga.slice(5))?.[0]?.url;
+      if (!url) throw new Error('No audio');
+      return await (await fetch(url, { signal: segnale })).blob();
     } finally { clearTimeout(lento); }
   }
   riserva.addEventListener('click', () => { nelBrowser = true; riserva.hidden = true; form.requestSubmit(); });

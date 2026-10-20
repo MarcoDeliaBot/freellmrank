@@ -4,7 +4,8 @@ emoji: 🔊
 colorFrom: green
 colorTo: gray
 sdk: gradio
-sdk_version: 5.9.1
+sdk_version: 6.29.1
+python_version: "3.12"
 app_file: app.py
 pinned: false
 license: mit
@@ -17,6 +18,6 @@ Text to speech for [freellmarena.com/audio](https://freellmarena.com/audio) with
 [Piper](https://github.com/rhasspy/piper) voices (MIT license, from
 [rhasspy/piper-voices](https://huggingface.co/rhasspy/piper-voices)): Italian, German and Portuguese.
 
-Runs on the free CPU of Hugging Face. Text is not stored. Limit: 600 characters, 10 requests a minute per visitor.
+Runs on free ZeroGPU hardware, but the voices use only the CPU: no GPU quota is used. Text is not stored. Limit: 600 characters.
 
-`POST /tts` with `{"text": "...", "voice": "it_IT-paola-medium"}` returns a WAV file.
+API: `POST /gradio_api/call/parla` with `{"data": ["text", "it_IT-paola-medium"]}`, then `GET /gradio_api/call/parla/<event_id>` for the WAV link.
