@@ -18,20 +18,13 @@ a{color:var(--accent)}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .wrap{max-width:72rem;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left)) max(16px,env(safe-area-inset-right))}
 header.top{border-bottom:1px solid var(--line);background:var(--surface)}
-header.top .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.5rem;padding-block:.8rem}
 .logo{font-weight:800;font-size:1.15rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;display:inline-flex;align-items:center}
 .logo img{display:block;flex:none;margin-right:.45rem}
 /* riga "condividi" in fondo a ogni pagina */
 .condividi{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1rem;margin:2.5rem 0 0;padding-top:1rem;border-top:1px solid var(--line)}
 .logo span{color:var(--free)}
-nav{display:flex;flex-wrap:wrap;gap:.25rem}
-nav a{padding:.35rem .7rem;border-radius:6px;text-decoration:none;color:var(--ink)}
-nav a[aria-current="page"]{background:var(--soft);color:var(--ink);font-weight:600}
-nav a{display:inline-flex;align-items:center;gap:.4rem}
 /* evidenziazione al passaggio solo con il mouse: sui tablet resta accesa dopo il tocco e sembra una voce scelta */
-@media (hover:hover){nav a:hover{background:var(--soft)}}
 .icona{width:1.05rem;height:1.05rem;flex:none;color:var(--muted)}
-nav a[aria-current="page"] .icona{color:var(--ink)}
 .badge-free{display:inline-block;font-size:.68rem;line-height:1;font-weight:600;padding:.2rem .4rem;border-radius:4px;background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent)}
 main{padding-block:1.5rem 3rem;display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem}
 section.cat{display:grid;gap:.6rem;min-width:0}
@@ -343,10 +336,33 @@ footer .wrap{display:grid;gap:.4rem}
 .gpu-tabella .nome-gpu:hover b{text-decoration:underline}
 pre.codice{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:.8rem .9rem;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 var(--mono)}
 
-/* telefono e tablet (fino a 1024 px): il menu è una sola riga che scorre di lato, invece di due o tre righe */
+
+/* ---------- struttura a F (20/10/2026): barra in alto a tutta larghezza, colonna a sinistra, contenuto a tutto schermo ---------- */
+header.top{position:relative;z-index:30}
+.barra{display:flex;align-items:center;gap:1rem;padding:.6rem max(16px,env(safe-area-inset-right)) .6rem max(16px,env(safe-area-inset-left))}
+.barra-spazio{flex:1}
+.barra-link{font-size:.92rem;font-weight:600;color:var(--accent);text-decoration:none;white-space:nowrap}
+.impianto{display:grid;grid-template-columns:15rem minmax(0,1fr);min-height:100vh}
+.lato{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;border-right:1px solid var(--line);background:var(--surface);padding:.75rem .6rem 2rem}
+main.contenuto{padding:1.5rem clamp(16px,3vw,2.75rem) 3rem;min-width:0}
+main.contenuto .lead,main.contenuto>p{max-width:72ch}
+.menu-lato,.menu-pannello{display:grid;gap:.1rem}
+.menu-gruppo{margin:.9rem .65rem .25rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.menu-gruppo:first-child{margin-top:.2rem}
+.menu-lato a,.menu-pannello a{display:flex;align-items:center;gap:.55rem;padding:.45rem .65rem;border-radius:7px;text-decoration:none;color:var(--ink);font-size:.95rem}
+.menu-lato a[aria-current="page"],.menu-pannello a[aria-current="page"]{background:var(--soft);font-weight:600}
+.menu-lato a[aria-current="page"] .icona,.menu-pannello a[aria-current="page"] .icona{color:var(--ink)}
+@media (hover:hover){.menu-lato a:hover,.menu-pannello a:hover{background:var(--soft)}}
+.menu-mobile{display:none;position:relative}
+.menu-mobile summary{list-style:none;cursor:pointer;font-weight:600;padding:.4rem .8rem;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.menu-mobile summary::-webkit-details-marker{display:none}
+.menu-mobile summary::before{content:"\2630  "}
+.menu-mobile[open] summary{background:var(--soft)}
+.menu-pannello{position:absolute;right:0;top:calc(100% + 6px);width:min(20rem,calc(100vw - 32px));max-height:calc(100vh - 80px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.5rem;box-shadow:0 12px 32px rgba(0,0,0,.18)}
+footer .wrap{max-width:none;padding-inline:clamp(16px,3vw,2.75rem)}
 @media (max-width:64rem){
-  header.top .wrap{flex-wrap:nowrap;flex-direction:column;align-items:stretch;gap:.35rem;padding-block:.55rem .35rem}
-  nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-.3rem;padding-bottom:.2rem;-webkit-mask-image:linear-gradient(to right,#000 88%,transparent);mask-image:linear-gradient(to right,#000 88%,transparent)}
-  nav::-webkit-scrollbar{display:none}
-  nav a{flex:none;padding:.4rem .6rem;font-size:.92rem}
+  .impianto{display:block}
+  .lato{display:none}
+  .menu-mobile{display:block}
 }
+@media (max-width:30rem){.barra-link{display:none}}

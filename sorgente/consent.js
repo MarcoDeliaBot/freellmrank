@@ -42,9 +42,8 @@ document.addEventListener('click', function (e) {
   else prompt('Copy this link:', b.dataset.copia);
 });
 
-// menu su una riga (telefono e tablet): la voce della pagina aperta resta visibile
-(function () {
-  var nav = document.querySelector('header.top nav');
-  var qui = nav && nav.querySelector('[aria-current="page"]');
-  if (qui && nav.scrollWidth > nav.clientWidth) nav.scrollLeft = qui.offsetLeft - nav.clientWidth / 2 + qui.offsetWidth / 2;
-})();
+// menu del telefono: si chiude toccando fuori o scegliendo una voce
+document.addEventListener('click', function (e) {
+  var m = document.querySelector('.menu-mobile[open]');
+  if (m && (!m.contains(e.target) || e.target.closest('a'))) m.removeAttribute('open');
+});

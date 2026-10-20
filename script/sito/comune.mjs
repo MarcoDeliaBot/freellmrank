@@ -48,20 +48,35 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
     audio: '<path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 11v2"/>',
     arena: '<path d="M5 19 19 5M15 5h4v4M19 19 5 5M9 5H5v4"/>',
     gpus: '<rect x="2.5" y="6.5" width="19" height="10" rx="2"/><circle cx="8.5" cy="11.5" r="2.6"/><circle cx="15.5" cy="11.5" r="2.6"/><path d="M5 16.5v2.5M9 16.5v2.5"/>',
+    telefono: '<rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/>',
+    info: '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/>',
     decisioni: '<path d="M12 3.5v6M12 9.5l-6 5M12 9.5l6 5"/><circle cx="6" cy="17" r="2.5"/><circle cx="18" cy="17" r="2.5"/>',
   };
   const icona = (k) => `<svg class="icona" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONE[k]}</svg>`;
-  const voci = [
-    ['/', `${icona('classifica')}Leaderboard <span class="badge-free">free</span>`],
-    ['/arena.html', `${icona('arena')}Free Arena`],
-    ['/audio.html', `${icona('audio')}Audio`],
-    ['/models.html', `${icona('modelli')}Models`],
-    ['/decision.html', `${icona('decisioni')}Decision models`],
-    ['/compare.html', `${icona('confronto')}Try & compare`],
-    ['/home.html', `${icona('casa')}Run at home`],
-    ['/gpus.html', `${icona('gpus')}GPUs`],
-    ['/blog/', `${icona('blog')}Blog`],
+  // menu a gruppi (struttura a F, scelta di Marco il 20/10/2026): colonna a sinistra sul computer, pulsante Menu sotto i 1024 px
+  const GRUPPI = [
+    ['Rankings', [
+      ['/', `${icona('classifica')}Free leaderboard <span class="badge-free">free</span>`],
+      ['/arena.html', `${icona('arena')}Free Arena`],
+      ['/audio.html', `${icona('audio')}Audio`],
+      ['/decision.html', `${icona('decisioni')}Decision models`],
+    ]],
+    ['Models', [
+      ['/models.html', `${icona('modelli')}All free models`],
+      ['/compare.html', `${icona('confronto')}Try and compare`],
+    ]],
+    ['Run it yourself', [
+      ['/home.html', `${icona('casa')}Run at home`],
+      ['/gpus.html', `${icona('gpus')}GPUs`],
+      ['/phone.html', `${icona('telefono')}On your phone`],
+    ]],
+    ['Read', [
+      ['/blog/', `${icona('blog')}Blog`],
+      ['/about.html', `${icona('info')}How we rank`],
+    ]],
   ];
+  const voceMenu = ([h, t]) => `<a href="${h}"${h === attiva ? ' aria-current="page"' : ''}>${t}</a>`;
+  const menuGruppi = GRUPPI.map(([g, v]) => `<p class="menu-gruppo">${g}</p>${v.map(voceMenu).join('')}`).join('');
   const canonico = URL_SITO + '/' + file.replace(/index\.html$/, '').replace(/\.html$/, '');
   // un'immagine di anteprima per sezione (disegnate da script/immagini.py)
   const ANTEPRIMA = { '/models.html': 'og-models.png', '/decision.html': 'og-decision.png', '/compare.html': 'og-compare.png', '/home.html': 'og-run-at-home.png', '/blog/': 'og-blog.png', '/gpus.html': 'og-gpus.png' };
@@ -116,14 +131,19 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
 ${(Array.isArray(jsonld) ? jsonld : [jsonld]).filter(Boolean).map((o) => `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', ...o }).replace(/</g, '\\u003c')}</script>`).join('\n')}
 </head>
 <body>
-<header class="top"><div class="wrap">
+<header class="top"><div class="barra">
   <a class="logo" href="/"><img src="/favicon.svg" alt="" width="26" height="26">${NOME.testa}<span>${NOME.coda}</span></a>
-  <nav>${voci.map(([h, t]) => `<a href="${h}"${h === attiva ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav>
+  <span class="barra-spazio"></span>
+  <a class="barra-link" href="/arena.html">Vote in Free Arena</a>
+  <details class="menu-mobile"><summary aria-label="Open the menu">Menu</summary><nav class="menu-pannello" aria-label="Site sections">${menuGruppi}</nav></details>
 </div></header>
-<main class="wrap">
+<div class="impianto">
+<aside class="lato"><nav class="menu-lato" aria-label="Site sections">${menuGruppi}</nav></aside>
+<main class="contenuto">
 ${corpo}
 <p class="condividi small"><span class="muted">Share this page:</span><a href="https://x.com/intent/post?url=${condividi}&amp;text=${testoCond}" rel="noopener" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=${condividi}" rel="noopener" target="_blank">LinkedIn</a><a href="https://www.reddit.com/submit?url=${condividi}&amp;title=${testoCond}" rel="noopener" target="_blank">Reddit</a><a href="https://wa.me/?text=${testoCond}%20${condividi}" rel="noopener" target="_blank">WhatsApp</a><button type="button" class="link-btn" data-copia="${canonico}">Copy link</button></p>
 </main>
+</div>
 <footer><div class="wrap">
   <div class="piede">
     <div class="piede-marca"><a class="logo" href="/">${NOME.testa}<span>${NOME.coda}</span></a><p>The best AI models you can use for free, ranked by real human votes.</p></div>
