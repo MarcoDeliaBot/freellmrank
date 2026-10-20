@@ -15,6 +15,7 @@ import { paginaAudio } from './sito/audio.mjs';
 import { paginaApp } from './sito/app.mjs';
 import { paginaSegnala } from './sito/segnala.mjs';
 import { paginaMusica } from './sito/musica.mjs';
+import { paginaRam } from './sito/ram.mjs';
 import { coloreLab, nomeLab, chiaveLab, laboratoriDi } from './sito/laboratori.mjs';
 import { scriviLlms } from './sito/llms.mjs';
 import { simula, daScheda, kvGB, perditaQualita, giudizio, QUANTI } from '../sorgente/calc.mjs';
@@ -419,6 +420,7 @@ pagina({
 paginaCatalogo(dati, modelli, blog);
 paginaDecisioni(dati, blog);
 paginaGpu(dati, modelli, blog);
+paginaRam(dati, modelli, blog);
 paginaArena(dati, modelli, blog);
 pagineModelli(dati, storia, modelli, blog);
 pagineConfronti(dati, coppie, blog);

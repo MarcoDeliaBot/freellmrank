@@ -1,0 +1,17 @@
+{
+  "nota": "Kit di RAM per far girare modelli più grandi della scheda video (pagina /ram, 20/10/2026). mts = velocità reale tipica: con 4 moduli DDR5 le schede madri di casa di solito scendono sotto i 6000. canali = 2 su PC e portatili di casa. q = ricerca su Amazon (nessun prezzo inventato: Amazon mostra quello del giorno).",
+  "kit": [
+    { "id": "ddr4-32", "tipo": "DDR4", "formato": "Desktop", "gb": 32, "moduli": "2 × 16 GB", "mts": 3200, "canali": 2, "q": "DDR4 32GB 2x16GB 3200 kit" },
+    { "id": "ddr4-64", "tipo": "DDR4", "formato": "Desktop", "gb": 64, "moduli": "2 × 32 GB", "mts": 3200, "canali": 2, "q": "DDR4 64GB 2x32GB 3200 kit" },
+    { "id": "ddr4-128", "tipo": "DDR4", "formato": "Desktop", "gb": 128, "moduli": "4 × 32 GB", "mts": 3200, "canali": 2, "q": "DDR4 128GB 4x32GB 3200 kit", "nota": "4 modules: check that your board supports 128 GB" },
+    { "id": "ddr5-32", "tipo": "DDR5", "formato": "Desktop", "gb": 32, "moduli": "2 × 16 GB", "mts": 6000, "canali": 2, "q": "DDR5 32GB 2x16GB 6000 kit" },
+    { "id": "ddr5-64", "tipo": "DDR5", "formato": "Desktop", "gb": 64, "moduli": "2 × 32 GB", "mts": 6000, "canali": 2, "q": "DDR5 64GB 2x32GB 6000 kit" },
+    { "id": "ddr5-96", "tipo": "DDR5", "formato": "Desktop", "gb": 96, "moduli": "2 × 48 GB", "mts": 6000, "canali": 2, "q": "DDR5 96GB 2x48GB 6000 kit" },
+    { "id": "ddr5-128", "tipo": "DDR5", "formato": "Desktop", "gb": 128, "moduli": "2 × 64 GB", "mts": 5600, "canali": 2, "q": "DDR5 128GB 2x64GB 5600 kit" },
+    { "id": "ddr5-192", "tipo": "DDR5", "formato": "Desktop", "gb": 192, "moduli": "4 × 48 GB", "mts": 5200, "canali": 2, "q": "DDR5 192GB 4x48GB 5200 kit", "nota": "4 modules: most home boards run them at 5200 or less" },
+    { "id": "ddr5-256", "tipo": "DDR5", "formato": "Desktop", "gb": 256, "moduli": "4 × 64 GB", "mts": 4800, "canali": 2, "q": "DDR5 256GB 4x64GB kit", "nota": "4 modules: needs a recent board that supports 256 GB" },
+    { "id": "so5-32", "tipo": "DDR5", "formato": "Laptop / mini PC", "gb": 32, "moduli": "2 × 16 GB SO-DIMM", "mts": 5600, "canali": 2, "q": "DDR5 SO-DIMM 32GB 2x16GB 5600 kit" },
+    { "id": "so5-64", "tipo": "DDR5", "formato": "Laptop / mini PC", "gb": 64, "moduli": "2 × 32 GB SO-DIMM", "mts": 5600, "canali": 2, "q": "DDR5 SO-DIMM 64GB 2x32GB 5600 kit" },
+    { "id": "so5-96", "tipo": "DDR5", "formato": "Laptop / mini PC", "gb": 96, "moduli": "2 × 48 GB SO-DIMM", "mts": 5600, "canali": 2, "q": "DDR5 SO-DIMM 96GB 2x48GB 5600 kit" }
+  ]
+}

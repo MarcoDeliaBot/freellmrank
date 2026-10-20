@@ -533,9 +533,9 @@ h2{font-size:1.25rem;font-weight:700;letter-spacing:-.025em}
 .panel h2{font-size:.875rem;font-weight:700;letter-spacing:0}
 .lead{font-size:1rem;line-height:1.625;color:var(--testo)}
 /* su schermo largo il marchio sta nel menu, come nel disegno: la barra in alto resta solo da telefono e tablet */
-@media (min-width:64rem){header.top{display:none}}
+@media (min-width:64.0625rem){header.top{display:none}}
 .logo-lato{display:none}
-@media (min-width:64rem){
+@media (min-width:64.0625rem){
   .logo-lato{display:flex;align-items:center;margin:.1rem .5rem 1.5rem;font-size:1.125rem;font-weight:700;letter-spacing:-.025em;color:var(--ink-forte);text-decoration:none}
   .logo-lato img{margin-right:.5rem;border-radius:6px}
   .logo-lato .badge-free{margin-left:.4rem;font:600 .625rem/1 var(--sans);padding:.2rem .35rem;border-radius:4px;background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
@@ -543,7 +543,7 @@ h2{font-size:1.25rem;font-weight:700;letter-spacing:-.025em}
 /* menu laterale: w-64, bg slate-50/70, bordo slate-200, p-5 */
 .impianto{grid-template-columns:16rem minmax(0,1fr)}
 .lato{background:var(--lato-bg);border-right:1px solid var(--line);padding:1.25rem}
-@media (min-width:64rem){.lato{display:flex;flex-direction:column}}
+@media (min-width:64.0625rem){.lato{display:flex;flex-direction:column}}
 .menu-gruppo{margin:1rem .5rem .5rem;font-size:.6875rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted2)}
 .menu-gruppo:first-child{margin-top:0}
 .menu-lato{display:grid;gap:.25rem}
@@ -880,3 +880,15 @@ footer{font-size:.75rem;color:var(--muted);border-top:1px solid var(--line);padd
 .ar-modelli{display:flex;flex-wrap:wrap;gap:.375rem}
 .ar-modelli a,.ar-modelli span{font:400 .75rem/1.4 var(--mono);padding:.125rem .5rem;border-radius:.25rem;background:var(--soft2);border:1px solid var(--line);color:var(--ink-medio);text-decoration:none}
 @media (hover:hover){.ar-modelli a:hover{border-color:var(--free-bordo);color:var(--free-forte)}}
+
+/* pagina /ram (20/10/2026) */
+.verde-testo{color:var(--free-forte);font-weight:600}
+/* schede da telefono: l'etichetta lunga va su due righe senza coprire la riga dopo (prima era fuori flusso) */
+@media (max-width:40rem){
+  .tw.carte td[data-label]{display:flow-root}
+  .tw.carte td[data-label]::before{position:static;float:left;margin-left:-8.8rem;padding-top:.28rem}
+}
+/* filtri a schede (GPU, app…) vanno a capo; solo le categorie della home scorrono di lato (20/10/2026) */
+.tabs{flex-wrap:wrap;overflow-x:visible;min-width:0;max-width:100%}
+#rankings>.tabs{flex-wrap:nowrap;overflow-x:auto}
+.disp{overflow-x:clip}
