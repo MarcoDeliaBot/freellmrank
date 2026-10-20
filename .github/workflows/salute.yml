@@ -1,0 +1,26 @@
+# Ogni mattina: controllo del sito online (script/controlla-salute.mjs). Se qualcosa non va apre un'issue «salute»,
+# che n8n manda a Marco per mail (n8n/avvisi-github.json), e la corsa risulta fallita.
+name: Salute del sito
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  actions: read
+
+jobs:
+  controllo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - run: node script/controlla-salute.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

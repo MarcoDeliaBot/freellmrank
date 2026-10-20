@@ -1,0 +1,32 @@
+# Ogni lunedì un articolo del blog in bozza (script/bozza-blog.mjs): ramo «bozza/<slug>» e issue «bozza» da approvare.
+# Il testo lo scrive GitHub Models, gratis con il token di questo lavoro. Niente si pubblica senza Marco.
+name: Bozza blog
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  models: read
+
+concurrency:
+  group: bozza-blog
+  cancel-in-progress: false
+
+jobs:
+  bozza:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - run: node script/bozza-blog.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

@@ -1,0 +1,13 @@
+{
+  "nota": "Coda degli articoli che il blog scrive in bozza, uno a settimana (script/bozza-blog.mjs). Si prende la prima idea che non ha ancora un file in contenuti/blog/ né una bozza aperta. dati: quali dati del sito dare al modello (categoria:<id>, schede, audio, app, telefono, nuovi, velocita).",
+  "idee": [
+    { "slug": "best-free-coding-models", "idea": "The best free AI models for coding right now, and which ones you can run at home", "dati": ["categoria:code", "categoria:agent", "app"], "link": ["/", "/apps", "/gpus"] },
+    { "slug": "best-gpu-for-local-llm", "idea": "Which GPU to buy to run AI models at home, by memory and speed, from cheap to high end", "dati": ["schede", "velocita", "categoria:chat"], "link": ["/gpus", "/"] },
+    { "slug": "run-ai-models-on-a-mac", "idea": "Running AI models on a Mac: how much unified memory you need and which free models fit", "dati": ["schede", "velocita", "categoria:chat"], "link": ["/gpus", "/models"] },
+    { "slug": "free-speech-to-text-and-text-to-speech", "idea": "The best free and open speech-to-text and text-to-speech models, and how to try them", "dati": ["audio"], "link": ["/audio"] },
+    { "slug": "best-free-vision-models", "idea": "Free AI models that understand images: the best open vision models on Arena", "dati": ["categoria:vision", "categoria:document"], "link": ["/", "/models"] },
+    { "slug": "free-ai-coding-agents", "idea": "Free AI coding agents and editors: which apps cost nothing and what their free plans include", "dati": ["app", "categoria:code"], "link": ["/apps"] },
+    { "slug": "ai-models-on-your-phone", "idea": "AI models small enough to run on a phone, and how much RAM they need", "dati": ["telefono"], "link": ["/phone"] },
+    { "slug": "new-open-models-this-month", "idea": "The new open-weight AI models released recently, with size and memory needs", "dati": ["nuovi", "schede"], "link": ["/#new", "/gpus"] }
+  ]
+}

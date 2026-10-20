@@ -1,0 +1,135 @@
+{
+  "name": "FreeLLMArena · report mensile",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "cronExpression", "expression": "30 9 1 * *" }
+          ]
+        }
+      },
+      "id": "b8c9d0e1-0001-4000-8000-000000000001",
+      "name": "Il primo del mese alle 9:30",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ===== DA CAMBIARE UNA VOLTA SOLA =====\nconst GA4_PROPRIETA = '000000000';                 // Google Analytics → Amministrazione → Dettagli proprietà → ID PROPRIETÀ (solo numeri)\nconst SEARCH_CONSOLE = 'sc-domain:freellmarena.com'; // se in Search Console la proprietà è «Prefisso URL», scrivi 'https://freellmarena.com/'\n// =======================================\nconst oggi = new Date();\nconst inizio = new Date(Date.UTC(oggi.getUTCFullYear(), oggi.getUTCMonth() - 1, 1));\nconst fine = new Date(Date.UTC(oggi.getUTCFullYear(), oggi.getUTCMonth(), 0));\nconst g = (d) => d.toISOString().slice(0, 10);\nreturn [{ json: { ga4: GA4_PROPRIETA, gsc: encodeURIComponent(SEARCH_CONSOLE), inizio: g(inizio), fine: g(fine), mese: inizio.toLocaleDateString('it-IT', { month: 'long', year: 'numeric', timeZone: 'UTC' }) } }];"
+      },
+      "id": "b8c9d0e1-0002-4000-8000-000000000002",
+      "name": "Mese scorso",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [240, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://analyticsdata.googleapis.com/v1beta/properties/{{ $json.ga4 }}:runReport",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleAnalyticsOAuth2",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ dateRanges: [{ startDate: $json.inizio, endDate: $json.fine }], dimensions: [{ name: 'pagePath' }], metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }], orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }], limit: 10, metricAggregations: ['TOTAL'] }) }}",
+        "options": {}
+      },
+      "id": "b8c9d0e1-0003-4000-8000-000000000003",
+      "name": "Visite (Google Analytics)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 0],
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "googleAnalyticsOAuth2": { "id": "", "name": "Google Analytics FreeLLMArena" }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://www.googleapis.com/webmasters/v3/sites/{{ $('Mese scorso').item.json.gsc }}/searchAnalytics/query",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ startDate: $('Mese scorso').item.json.inizio, endDate: $('Mese scorso').item.json.fine, dimensions: ['query'], rowLimit: 10 }) }}",
+        "options": {}
+      },
+      "id": "b8c9d0e1-0004-4000-8000-000000000004",
+      "name": "Ricerche Google (Search Console)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [720, 0],
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "googleOAuth2Api": { "id": "", "name": "Google Search Console FreeLLMArena" }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://freellmarena.com/api/arena/ranking",
+        "options": {}
+      },
+      "id": "b8c9d0e1-0005-4000-8000-000000000005",
+      "name": "Voti della Free Arena",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [960, 0],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "https://freellmarena.com/data.json",
+        "options": {}
+      },
+      "id": "b8c9d0e1-0006-4000-8000-000000000006",
+      "name": "Dati del sito",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1200, 0],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const m = $('Mese scorso').first().json;\nconst ga = $('Visite (Google Analytics)').first().json;\nconst sc = $('Ricerche Google (Search Console)').first().json;\nconst ar = $('Voti della Free Arena').first().json;\nconst d = $input.first().json;\nconst esc = (s) => String(s ?? '').replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));\nconst n = (x) => Number(x || 0).toLocaleString('it-IT');\nconst tot = ga?.totals?.[0]?.metricValues || [];\nconst pagine = (ga?.rows || []).map((r) => `<tr><td>${esc(r.dimensionValues[0].value)}</td><td style=\"text-align:right\">${n(r.metricValues[0].value)}</td></tr>`).join('');\nconst ricerche = (sc?.rows || []).map((r) => `<tr><td>${esc(r.keys[0])}</td><td style=\"text-align:right\">${n(r.clicks)}</td><td style=\"text-align:right\">${n(r.impressions)}</td><td style=\"text-align:right\">${(r.position || 0).toFixed(1)}</td></tr>`).join('');\nconst gratisChat = (d?.categorie || []).find((c) => c.id === 'chat')?.modelli.filter((x) => x.aperto || x.or?.gratis).length;\nconst tabella = (testa, righe) => righe ? `<table cellpadding=\"6\" style=\"border-collapse:collapse;font-size:14px\"><tr>${testa.map((t) => `<th align=\"left\">${t}</th>`).join('')}</tr>${righe}</table>` : '<p><i>Nessun dato (controlla la credenziale in n8n).</i></p>';\nconst html = `<h2>FreeLLMArena, ${esc(m.mese)}</h2>\n<h3>Visite</h3><p>Pagine viste: <b>${n(tot[0]?.value)}</b> · Utenti: <b>${n(tot[1]?.value)}</b></p>${tabella(['Pagina', 'Viste'], pagine)}\n<h3>Ricerche Google</h3>${tabella(['Ricerca', 'Clic', 'Comparse', 'Posizione'], ricerche)}\n<h3>Free Arena</h3><p>Voti totali: <b>${n(ar?.voti)}</b> (la classifica pubblica parte da ${n(ar?.soglia)} voti per modello).</p>\n<h3>Sito</h3><p>Modelli gratis di chat in classifica: <b>${n(gratisChat)}</b> · Modelli nuovi seguiti: <b>${n(d?.nuovi?.length)}</b> · Dati aggiornati al ${esc(d?.aggiornato)}.</p>`;\nreturn [{ json: { oggetto: `FreeLLMArena: report di ${m.mese}`, html } }];"
+      },
+      "id": "b8c9d0e1-0007-4000-8000-000000000007",
+      "name": "Componi il report",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1440, 0]
+    },
+    {
+      "parameters": {
+        "fromEmail": "info@freellmarena.com",
+        "toEmail": "info@freellmarena.com",
+        "subject": "={{ $json.oggetto }}",
+        "emailFormat": "html",
+        "html": "={{ $json.html }}",
+        "options": {}
+      },
+      "id": "b8c9d0e1-0008-4000-8000-000000000008",
+      "name": "Mandami la mail",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [1680, 0],
+      "credentials": {
+        "smtp": { "id": "", "name": "SMTP info@freellmarena.com" }
+      }
+    }
+  ],
+  "connections": {
+    "Il primo del mese alle 9:30": { "main": [[{ "node": "Mese scorso", "type": "main", "index": 0 }]] },
+    "Mese scorso": { "main": [[{ "node": "Visite (Google Analytics)", "type": "main", "index": 0 }]] },
+    "Visite (Google Analytics)": { "main": [[{ "node": "Ricerche Google (Search Console)", "type": "main", "index": 0 }]] },
+    "Ricerche Google (Search Console)": { "main": [[{ "node": "Voti della Free Arena", "type": "main", "index": 0 }]] },
+    "Voti della Free Arena": { "main": [[{ "node": "Dati del sito", "type": "main", "index": 0 }]] },
+    "Dati del sito": { "main": [[{ "node": "Componi il report", "type": "main", "index": 0 }]] },
+    "Componi il report": { "main": [[{ "node": "Mandami la mail", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1", "timezone": "Europe/Rome" },
+  "pinData": {},
+  "active": false
+}

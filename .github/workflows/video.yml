@@ -17,6 +17,8 @@ on:
 
 permissions:
   contents: write
+  issues: write
+  models: read
 
 concurrency:
   group: video
@@ -45,6 +47,7 @@ jobs:
       - name: Video e release
         env:
           GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           node script/brag/genera.mjs
           tipi="nuovo"
@@ -58,4 +61,6 @@ jobs:
             titolo=$(python -c "import json; print(json.load(open('$d/$nome.json', encoding='utf-8'))['titolo'])")
             gh release create "video-$nome" "$d/$nome.mp4" "$d/$nome.jpg" "$d/$nome.json" --title "$titolo" --notes-file "$d/share-copy.txt" --latest=false
             echo "Pubblicato: $nome"
+            # bozze dei post social per questo video (issue «bozza»): se non riescono, il video resta comunque
+            node script/bozze-social.mjs "$tipo" || echo "Bozze social non riuscite per $nome"
           done

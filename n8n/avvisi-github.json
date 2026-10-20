@@ -1,0 +1,76 @@
+{
+  "name": "FreeLLMArena · bozze e problemi da GitHub",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "cronExpression", "expression": "15 8-22 * * *" }
+          ]
+        }
+      },
+      "id": "a7b8c9d0-0001-4000-8000-000000000001",
+      "name": "Ogni ora dalle 8 alle 22",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/issues?state=open&sort=created&direction=desc&per_page=50",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Accept", "value": "application/vnd.github+json" },
+            { "name": "X-GitHub-Api-Version", "value": "2022-11-28" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a7b8c9d0-0002-4000-8000-000000000002",
+      "name": "Leggi le issue aperte",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [240, 0],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 60000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Bozze da approvare (etichetta «bozza») e problemi del sito («salute») mai mandati: una mail per ciascuno.\n// La memoria resta solo quando il flusso è ATTIVO: le prove a mano con «Esegui» non la salvano.\nconst memoria = $getWorkflowStaticData('global');\nconst viste = new Set(memoria.viste || []);\nconst esc = (s) => String(s ?? '').replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));\nconst out = [];\nfor (const it of $input.all()) {\n  const i = it.json;\n  const etichette = (i.labels || []).map((l) => l.name);\n  if (i.pull_request || viste.has(i.number) || !etichette.some((l) => l === 'bozza' || l === 'salute')) continue;\n  viste.add(i.number);\n  const tipo = etichette.includes('salute') ? 'PROBLEMA' : etichette.includes('blog') ? 'Articolo da approvare' : 'Post da approvare';\n  out.push({ json: {\n    oggetto: `FreeLLMArena · ${tipo}: ${i.title.replace(/^(Articolo|Post social) da approvare: /, '')}`,\n    html: `<p><a href=\"${esc(i.html_url)}\">Apri su GitHub</a></p><pre style=\"white-space:pre-wrap;font-family:Arial,sans-serif;font-size:14px;line-height:1.5\">${esc(i.body).slice(0, 12000)}</pre>`\n  } });\n}\nmemoria.viste = [...viste].slice(-500);\nreturn out;"
+      },
+      "id": "a7b8c9d0-0003-4000-8000-000000000003",
+      "name": "Solo quelle nuove",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 0]
+    },
+    {
+      "parameters": {
+        "fromEmail": "info@freellmarena.com",
+        "toEmail": "info@freellmarena.com",
+        "subject": "={{ $json.oggetto }}",
+        "emailFormat": "html",
+        "html": "={{ $json.html }}",
+        "options": {}
+      },
+      "id": "a7b8c9d0-0004-4000-8000-000000000004",
+      "name": "Mandami la mail",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [720, 0],
+      "credentials": {
+        "smtp": { "id": "", "name": "SMTP info@freellmarena.com" }
+      }
+    }
+  ],
+  "connections": {
+    "Ogni ora dalle 8 alle 22": { "main": [[{ "node": "Leggi le issue aperte", "type": "main", "index": 0 }]] },
+    "Leggi le issue aperte": { "main": [[{ "node": "Solo quelle nuove", "type": "main", "index": 0 }]] },
+    "Solo quelle nuove": { "main": [[{ "node": "Mandami la mail", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1", "timezone": "Europe/Rome" },
+  "pinData": {},
+  "active": false
+}
