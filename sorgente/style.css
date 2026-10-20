@@ -454,3 +454,61 @@ tr.casa>td{background:color-mix(in srgb,var(--home) 6%,transparent)}
 .riassunto .vg-nome{font-size:.78rem}
 .riassunto .vg-pista{margin-right:2.4rem}
 .riassunto .vg-asse .vg-pista>span{font-size:.62rem;white-space:nowrap}
+/* ---------- aspetto del disegno Stitch scelto da Marco (20/10/2026), con i nostri caratteri e dati ---------- */
+/* titoli: grassetto senza grazie, come nel disegno (prende il posto dei titoli con le grazie) */
+h1,h2,.panel h2{font-family:var(--sans);font-weight:800;letter-spacing:-.02em}
+h1{font-size:clamp(1.9rem,3.3vw,2.6rem);line-height:1.12}
+.panel h2{font-size:1.05rem;letter-spacing:-.01em}
+/* testata: titolo e testo a sinistra, novità a destra */
+.eroe{align-items:start;padding-bottom:1.2rem;border-bottom:1px solid var(--line)}
+.su-pagina-in{margin:.2rem 0 0;color:var(--muted)}
+.su-pagina-in b{color:var(--ink)}
+.su-pagina-in a{color:var(--free);text-decoration:none;font-weight:600}
+.su-pagina-in a:hover{text-decoration:underline}
+.nuovi{gap:0;border:1px solid var(--line);border-radius:12px;background:var(--soft);padding:.75rem .9rem;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.nuovi-testa{display:flex;justify-content:space-between;align-items:center;margin:0 0 .35rem;font-size:.78rem;font-weight:700;color:var(--muted)}
+.punto-vivo{width:.5rem;height:.5rem;border-radius:50%;background:var(--free);animation:vivo 2s ease-in-out infinite}
+@keyframes vivo{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.punto-vivo{animation:none}}
+.nuovi a{border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;padding:.5rem 0;gap:.1rem}
+.nuovi a:first-of-type{border-top:0}
+.nuovi a b{font-size:.9rem}
+.nuovi a span{font-size:.75rem;color:var(--muted)}
+.nuovi a:hover b{color:var(--free);text-decoration:underline}
+/* menu laterale: voce attiva verde con bordo, etichette piccole in carattere a spaziatura fissa */
+.menu-lato a[aria-current="page"],.menu-pannello a[aria-current="page"]{background:color-mix(in srgb,var(--free) 10%,var(--surface));color:var(--free);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--free) 30%,transparent);font-weight:700}
+.menu-lato a[aria-current="page"] .icona,.menu-pannello a[aria-current="page"] .icona{color:var(--free)}
+.menu-lato .badge-free,.menu-lato .badge-new,.menu-pannello .badge-free,.menu-pannello .badge-new{margin-left:auto;font:500 .66rem/1 var(--mono);padding:.22rem .4rem;border-radius:4px}
+.menu-lato .badge-free,.menu-pannello .badge-free{background:color-mix(in srgb,var(--free) 16%,transparent);color:var(--free)}
+.menu-lato .badge-new,.menu-pannello .badge-new{background:color-mix(in srgb,#eab308 22%,transparent);color:var(--ink)}
+/* tre grafici in cima: nome e valore sopra, barra arrotondata sotto */
+.riassunto .panel.mini{display:flex;flex-direction:column;gap:.15rem;border-radius:12px}
+.mini .sotto{margin:0 0 .6rem}
+.mini-righe{display:grid;gap:.6rem}
+.mini-riga{display:grid;gap:.25rem;text-decoration:none;color:var(--ink)}
+.mini-testa{display:flex;justify-content:space-between;gap:.6rem;font-size:.8rem}
+.mini-nome{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mini-val{font:600 .78rem/1.3 var(--mono);white-space:nowrap}
+.mini-val.ok,.mini-piede .ok{color:var(--free)}
+.mini-val.no,.mini-piede .no{color:var(--bad)}
+.mini-pista{display:block;height:.75rem;border-radius:999px;background:var(--soft);overflow:hidden}
+.mini-pista i{display:block;height:100%;border-radius:999px;background:var(--c)}
+.mini-riga:hover .mini-nome{text-decoration:underline}
+.mini-piede{margin:auto 0 0;padding-top:.7rem;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+/* schede delle categorie: pastiglie senza bordo, l'attiva piena */
+.tabs{gap:.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--line)}
+.tabs button{border-color:transparent;background:transparent;color:var(--muted);font-weight:600;font-size:.88rem;padding:.4rem .75rem;border-radius:8px}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (hover:hover){.tabs button[aria-pressed="false"]:hover{background:var(--soft);color:var(--ink)}}
+.chk input{accent-color:var(--free);width:1rem;height:1rem;vertical-align:-.15em}
+.chk{font-weight:600;font-size:.88rem}
+/* interruttore tabella/grafici: grigio chiaro con la scelta in bianco */
+.comandi-cat{justify-content:flex-end}
+.vista{border:0;background:var(--soft);padding:.15rem;border-radius:8px;gap:.1rem}
+.vista button{background:transparent;border-radius:6px;font-weight:600;color:var(--muted)}
+.vista button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+/* riquadro riassunto della categoria con il filtro dei laboratori */
+.riepilogo-cat{display:grid;gap:.5rem;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:.6rem .85rem}
+.riepilogo-cat p{margin:0}
+.riepilogo-cat .filtro-lab button{background:color-mix(in srgb,var(--ink) 7%,transparent);border-color:transparent;border-radius:5px;font-size:.76rem;padding:.18rem .5rem}
+.meglio.su{background:color-mix(in srgb,var(--free) 13%,transparent);color:var(--free)}

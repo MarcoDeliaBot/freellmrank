@@ -114,10 +114,11 @@ const sezioni = dati.categorie.map((c, i) => {
 <td><span class="small">~${Math.ceil(p.hf.b * 0.606 * 1.1 + 1.5)} GB at 4-bit</span> · <a class="small" href="/home.html">simulate</a></td></tr>`; }).join('')}</tbody></table></div></div>` : '';
 
   return `<section class="cat" id="${c.id}" ${i ? 'hidden' : ''}>
-<p class="small muted">${lista.length} of ${c.totale} models in Arena's ${esc(c.nome)} ranking are free to use.${c.scala === 'agent' ? ' Agents are scored differently from the other rankings: Arena’s agent score comes from real agent sessions (shown ×100, higher is better) and cannot be compared with chat points.' : ''} Votes as of ${fmtData(c.data)}. Best free: <a href="${hrefDi(migliore?.nome)}"><b>${esc(migliore?.nome)}</b></a>, #${migliore?.pos} overall.</p>
 <div class="comandi-cat">
-<div class="filtro-lab" role="group" aria-label="Labs"><span class="small muted">Labs:</span>${laboratoriDi(lista.slice(0, 60)).map((l) => `<button type="button" aria-pressed="true" data-lab="${l.k}"><i class="lab-punto" style="--c:${l.colore}"></i>${esc(l.nome)}</button>`).join('')}<span class="conta"></span></div>
 <div class="vista" role="group" aria-label="Show"><button type="button" aria-pressed="true" data-vista="">Both</button><button type="button" aria-pressed="false" data-vista="solo-tabella">Table</button><button type="button" aria-pressed="false" data-vista="solo-grafici">Charts</button></div>
+</div>
+<div class="riepilogo-cat"><p class="small">${lista.length} of ${c.totale} models in Arena's ${esc(c.nome)} ranking are free to use.${c.scala === 'agent' ? ' Agents are scored differently from the other rankings: Arena’s agent score comes from real agent sessions (shown ×100, higher is better) and cannot be compared with chat points.' : ''} Votes as of ${fmtData(c.data)}. Best free: <a href="${hrefDi(migliore?.nome)}"><b>${esc(migliore?.nome)}</b></a>, #${migliore?.pos} overall.</p>
+<div class="filtro-lab" role="group" aria-label="Labs"><span class="small muted">Filter by lab:</span>${laboratoriDi(lista.slice(0, 60)).map((l) => `<button type="button" aria-pressed="true" data-lab="${l.k}"><i class="lab-punto" style="--c:${l.colore}"></i>${esc(l.nome)}</button>`).join('')}<span class="conta"></span></div>
 </div>
 <div class="panel pannello-tabella"><h2>Full free ranking</h2>
 <div class="tw"><table>
@@ -152,11 +153,19 @@ for (const m of chatCat.modelli.filter((x) => x.aperto)) {
   if (casaMigliori.length === 8) break;
 }
 const laboDi = (m) => ({ lab: coloreLab(m.org), chiaveLab: chiaveLab(m.org), nomeLab: nomeLab(m.org) });
-const pannelloRiassunto = (titolo, meglio, sotto, voci, opz) => `<div class="panel"><div class="testa-g"><h2>${titolo}</h2><span class="meglio ${meglio}">${meglio === 'su' ? 'Higher is better' : 'Lower is better'}</span></div><p class="sotto">${sotto}</p>${barre(voci, opz)}</div>`;
+// tre grafici in cima, nello stile del disegno Stitch scelto da Marco (20/10/2026): nome e valore sopra,
+// barra larga e arrotondata sotto, colore del laboratorio; per la memoria il valore dice se entra in 24 GB
+const miniGrafico = (titolo, meglio, sotto, righe, piede) => `<div class="panel mini"><div class="testa-g"><h2>${titolo}</h2><span class="meglio ${meglio}">${meglio === 'su' ? 'Higher is better' : 'Lower is better'}</span></div><p class="sotto">${sotto}</p>
+<div class="mini-righe">${righe.map((r) => `<a class="mini-riga" href="${r.href}" data-lab="${r.chiaveLab}"><span class="mini-testa"><span class="mini-nome">${esc(r.nome)}</span><span class="mini-val${r.classe ? ' ' + r.classe : ''}">${esc(r.testo)}</span></span><span class="mini-pista"><i style="width:${Math.max(3, Math.min(100, r.larga)).toFixed(1)}%;--c:${r.colore}"></i></span></a>`).join('')}</div>
+<p class="mini-piede">${piede}</p></div>`;
+const maxPunti = Math.max(...casaMigliori.map(({ m }) => m.punti));
+const maxVel = Math.max(...casaMigliori.map(({ s }) => s.vel));
+const maxMem = Math.max(...casaMigliori.map(({ s }) => s.serve));
+const riga0 = (m, u) => ({ nome: u.nome, href: u.href, chiaveLab: chiaveLab(m.org), colore: coloreLab(m.org) });
 const riassunto = casaMigliori.length >= 3 ? `<div id="glance"><div class="riassunto">
-${pannelloRiassunto('Arena score', 'su', 'Blind human votes on Arena', casaMigliori.map(({ m, u }) => ({ nome: u.nome, valore: m.punti, href: u.href, ...laboDi(m) })), { titoloAsse: 'Arena chat score' })}
-${pannelloRiassunto('Speed on one RTX 4090', 'su', 'Tokens per second at 4-bit', [...casaMigliori].sort((a, b) => b.s.vel - a.s.vel).map(({ m, u, s }) => ({ nome: u.nome, valore: Math.round(s.vel), href: u.href, nota: s.dove === 'ram' ? 'part in system RAM' : 'fully on the GPU', ...laboDi(m) })), { titoloAsse: 'Tokens per second at 4-bit', daZero: true })}
-${pannelloRiassunto('Memory at 4-bit', 'giu', 'GB to load it, with 8K context', [...casaMigliori].sort((a, b) => a.s.serve - b.s.serve).map(({ m, u, s }) => ({ nome: u.nome, valore: Math.round(s.serve), href: u.href, ...laboDi(m) })), { titoloAsse: 'GB of memory, 8K context', daZero: true, riferimento: { valore: 24, nome: 'one RTX 4090' }, testoRif: 'Dashed line: 24 GB, one RTX 4090. Bars that stop before it fit fully on the card; longer ones also use system RAM.', formato: (v) => `${v} GB` })}
+${miniGrafico('Arena score', 'su', 'Blind human votes on Arena, chat', casaMigliori.map(({ m, u }) => ({ ...riga0(m, u), testo: String(m.punti), larga: ((m.punti - 1000) / (maxPunti - 1000)) * 100 })), 'Bars start at 1000. On Arena, 10 points is a small gap and 50 a clear one.')}
+${miniGrafico('Speed on one RTX 4090', 'su', 'Tokens per second at 4-bit, estimated', [...casaMigliori].sort((a, b) => b.s.vel - a.s.vel).map(({ m, u, s }) => ({ ...riga0(m, u), testo: `${Math.round(s.vel)} tok/s`, classe: s.dove === 'gpu' ? 'ok' : '', larga: (s.vel / maxVel) * 100 })), 'Estimate calibrated on 44 real llama.cpp runs. About 10 tok/s is reading speed.')}
+${miniGrafico('Memory at 4-bit', 'giu', 'GB to load it, with 8K context', [...casaMigliori].sort((a, b) => a.s.serve - b.s.serve).map(({ m, u, s }) => ({ ...riga0(m, u), testo: `${Math.round(s.serve)} GB ${s.dove === 'gpu' ? '(fits 24 GB)' : '(GPU + RAM)'}`, classe: s.dove === 'gpu' ? 'ok' : 'no', larga: (s.serve / maxMem) * 100 })), '<span class="ok">Green: fits fully on one 24 GB card.</span> <span class="no">Red: also needs system RAM, so it runs slower.</span>')}
 </div>${spiega('The 8 best free chat models that run on a home PC with one RTX 4090 (24 GB) and 64 GB of RAM, compared three ways: how good they are, how fast they write, and how much memory they need.', 'Same models, same colors in all three charts, so you can follow one model across them. A model can be the best but slow, or small and fast: pick the balance you need, then check your own card in Run at home.')}</div>` : '';
 
 // nuovi arrivi: modelli gratis entrati di recente nelle classifiche Arena
@@ -215,10 +224,10 @@ pagina({
 <div style="display:grid;gap:.5rem">
 <h1>The best free AI models, ranked by real votes</h1>
 <p class="lead">Only models you can use without paying: free online, or downloaded to your own GPU. Scores come from millions of blind human votes on Arena, updated every night.</p>
+<p class="su-pagina-in small"><b>On this page:</b> <a href="#glance">3 charts</a> · <a href="#rankings">Rankings</a> · <a href="#new">New models</a> · <a href="#faq">FAQ</a></p>
 </div>
-${ultimi.length ? `<div class="nuovi"><span class="small muted">New on the free leaderboard</span>${ultimi.map((x) => `<a href="${hrefDi(x.m.nome)}"><b>${esc(x.m.nome)}</b><span class="small muted">#${x.m.pos} in ${esc(x.c.nome)} · ${fmtData(x.d)}</span></a>`).join('')}</div>` : ''}
+${ultimi.length ? `<div class="nuovi"><p class="nuovi-testa"><span>New on the free leaderboard</span><i class="punto-vivo" aria-hidden="true"></i></p>${ultimi.map((x) => `<a href="${hrefDi(x.m.nome)}"><b>${esc(x.m.nome)}</b><span>#${x.m.pos} in ${esc(x.c.nome)} · ${fmtData(x.d)}</span></a>`).join('')}</div>` : ''}
 </div>
-${barraSezioni([['glance', 'At a glance'], ['rankings', 'Rankings'], ['new', 'New models'], ['faq', 'FAQ']])}
 ${riassunto}
 <div class="panel" id="rankings">
 <div class="tabs" role="group" aria-label="Category">${dati.categorie.map((c, i) => `<button type="button" data-cat="${c.id}" aria-pressed="${i === 0}">${esc(c.nome)}</button>`).join('')}</div>
