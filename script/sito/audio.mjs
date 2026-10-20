@@ -55,14 +55,14 @@ export function paginaAudio(dati, blog) {
 <p class="small muted prova-stato" aria-live="polite"></p><audio controls hidden></audio></div>
 </div>
 <div class="panel piper" id="piper"><h3>Text to speech in Italian, German and Portuguese${nuovo('2026-10-20')}</h3>
-<p class="small">Piper voices (open source, MIT license) that run entirely in your browser: your text never leaves your device and there is no daily limit. The first time, your browser downloads the voice from Hugging Face, plus about 10 MB for the speech engine; then both stay saved.</p>
+<p class="small">Piper voices (open source, MIT license), on our free voice server at Hugging Face: nothing to download, no account. Your text is not stored. If the server is busy, you can run the same voice in your browser instead.</p>
 <form class="prova-form"><label for="piper-voce" class="small">Voice</label>
-<select id="piper-voce">${VOCI_PIPER.map(([id, nome, lingua, mb]) => `<option value="${id}" data-lingua="${lingua}" data-mb="${mb}">${nome} · ${mb} MB</option>`).join('')}</select>
+<select id="piper-voce">${VOCI_PIPER.map(([id, nome, lingua, mb]) => `<option value="${id}" data-lingua="${lingua}" data-mb="${mb}">${nome}</option>`).join('')}</select>
 <label for="piper-testo" class="small">Your text</label>
 <textarea id="piper-testo" rows="3" maxlength="1000" required></textarea>
-<div class="row"><button type="submit" class="btn primary">Speak</button></div></form>
+<div class="row"><button type="submit" class="btn primary">Speak</button><button type="button" class="btn piper-riserva" hidden>Run it in my browser</button></div></form>
 <p class="small muted prova-stato" aria-live="polite"></p><audio controls hidden></audio>
-<p class="small muted">Works best on a computer with an up-to-date Chrome, Edge or Firefox. On a phone it can be slow, and the download uses your data plan.</p></div>
+<p class="small muted">Up to 600 characters. The free server wakes up after a quiet period, so the first try can take about 30 seconds. Running in your browser downloads the voice once (28 to 64 MB, plus about 10 MB for the engine) and works best on a computer.</p></div>
 <script type="module" src="/audio-piper.js?v=${VER}"></script>
 <p class="small muted">These two are the open audio models Cloudflare runs for free; the top of the rankings below is better, but has to run on your own computer or on Hugging Face.</p></div>`;
 

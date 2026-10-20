@@ -1,11 +1,12 @@
-// Voci Piper nel browser (italiano, tedesco, portoghese), decise da Marco il 20/10/2026.
-// Tutto gira qui, nel browser del visitatore: la libreria arriva da jsDelivr, la voce da Hugging Face
-// (una volta sola, poi resta salvata nel browser). Il testo non passa dal nostro server e non c'è un tetto.
-// Libreria: @mintplex-labs/piper-tts-web 1.0.5 (MIT); voci rhasspy/piper-voices (MIT).
+// Voci Piper in italiano, tedesco, portoghese (decise da Marco il 20/10/2026).
+// 1° modo: il nostro Space gratuito su Hugging Face (space-voci/), così il visitatore non scarica niente.
+// 2° modo, di riserva: la voce gira nel browser (libreria @mintplex-labs/piper-tts-web 1.0.5, MIT; voci rhasspy/piper-voices, MIT),
+// se lo Space dorme troppo a lungo o è occupato. Il testo non passa dal nostro server.
 const box = document.getElementById('piper');
 const LIBRERIA = 'https://cdn.jsdelivr.net/npm/@mintplex-labs/piper-tts-web@1.0.5/+esm';
 // la libreria si aspetta onnxruntime 1.18 su cdnjs, ma jsDelivr le dà la 1.27: i file wasm devono essere della stessa versione
 const ONNX = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.27.0/dist/';
+const SPACE = 'https://marcodelia-freellmarena-voices.hf.space';
 
 if (box) {
   const form = box.querySelector('form');
@@ -17,12 +18,31 @@ if (box) {
   let tts = null, voceCaricata = null, sessione = null;
 
   // esempio nella lingua scelta, finché il visitatore non scrive il suo testo
-  const ESEMPI = { it: 'Ciao! Questa voce è gratuita e gira tutta nel tuo browser.', de: 'Hallo! Diese Stimme ist kostenlos und läuft komplett in deinem Browser.', pt: 'Olá! Esta voz é gratuita e funciona toda no teu navegador.' };
+  const ESEMPI = { it: 'Ciao! Questa voce è aperta e gratuita: scrivi una frase e ascoltala.', de: 'Hallo! Diese Stimme ist offen und kostenlos: schreib einen Satz und hör ihn dir an.', pt: 'Olá! Esta voz é aberta e gratuita: escreve uma frase e ouve-a.' };
   let scritto = false;
   campo.addEventListener('input', () => { scritto = true; });
   const esempio = () => { if (!scritto) campo.value = ESEMPI[voce.selectedOptions[0].dataset.lingua] || ''; };
   voce.addEventListener('change', esempio);
   esempio();
+
+  const riserva = box.querySelector('.piper-riserva');
+  let nelBrowser = false;
+  const suona = (wav) => {
+    if (lettore.src) URL.revokeObjectURL(lettore.src);
+    lettore.src = URL.createObjectURL(wav);
+    lettore.hidden = false;
+    lettore.play().catch(() => {});
+  };
+  // nel cloud: lo Space gratuito può dormire; il primo avvio può chiedere mezzo minuto
+  async function nelCloud(testo) {
+    const lento = setTimeout(() => { stato.textContent = 'Waking up the free voice server, the first time can take 30 seconds…'; }, 3000);
+    try {
+      const r = await fetch(`${SPACE}/tts`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: testo.slice(0, 600), voice: voce.value }), signal: AbortSignal.timeout(60000) });
+      if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || `HTTP ${r.status}`);
+      return await r.blob();
+    } finally { clearTimeout(lento); }
+  }
+  riserva.addEventListener('click', () => { nelBrowser = true; riserva.hidden = true; form.requestSubmit(); });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -30,6 +50,21 @@ if (box) {
     if (!testo) return;
     tasto.disabled = true;
     lettore.hidden = true;
+    if (!nelBrowser) {
+      try {
+        stato.textContent = 'Speaking…';
+        suona(await nelCloud(testo));
+        stato.textContent = 'Done. It ran on our free voice server: nothing was downloaded.';
+        if (window.gtag) window.gtag('event', 'prova_audio', { tipo: 'piper-cloud', voce: voce.value });
+      } catch (err) {
+        console.warn(err);
+        stato.textContent = 'The free voice server is busy or asleep. Try again in a minute, or run the voice in your browser.';
+        riserva.hidden = false;
+        riserva.textContent = `Run it in my browser (downloads ${voce.selectedOptions[0].dataset.mb} MB once)`;
+      }
+      tasto.disabled = false;
+      return;
+    }
     try {
       stato.textContent = 'Loading the speech engine…';
       tts = tts || await import(LIBRERIA);
@@ -46,11 +81,7 @@ if (box) {
         voceCaricata = voce.value;
       }
       stato.textContent = 'Speaking…';
-      const wav = await sessione.predict(testo.slice(0, 1000));
-      if (lettore.src) URL.revokeObjectURL(lettore.src);
-      lettore.src = URL.createObjectURL(wav);
-      lettore.hidden = false;
-      lettore.play().catch(() => {});
+      suona(await sessione.predict(testo.slice(0, 1000)));
       stato.textContent = 'Done. It ran on your device: try another sentence, it is instant now.';
       if (window.gtag) window.gtag('event', 'prova_audio', { tipo: 'piper', voce: voce.value });
     } catch (err) {
