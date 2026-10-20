@@ -19,3 +19,5 @@ dati/decision-index.json
 dati/decision-vision.json
 # video generati (si pubblicano altrove, non nel repository)
 video/
+# scaricati per le classifiche audio (il risultato è dati/audio.json)
+dati/audio/

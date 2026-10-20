@@ -31,7 +31,7 @@ jobs:
       - name: Commit se i dati sono cambiati
         id: commit
         run: |
-          git add sito/data.json dati/pesi.json dati/architettura.json dati/piccoli.json dati/nuovi.json dati/decisioni.json dati/decisioni-licenze.json sito/history.json
+          git add sito/data.json dati/pesi.json dati/architettura.json dati/piccoli.json dati/nuovi.json dati/decisioni.json dati/decisioni-licenze.json dati/audio.json sito/history.json
           if git diff --cached --quiet; then echo "Nessun cambiamento"; exit 0; fi
           git config user.name "freellmarena-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

@@ -11,6 +11,7 @@ import { paginaGpu } from './sito/gpus.mjs';
 import { paginaArena } from './sito/arena.mjs';
 import { preparaConfronti, pagineConfronti } from './sito/confronti.mjs';
 import { paginaTelefono, feedRss, widget } from './sito/extra.mjs';
+import { paginaAudio } from './sito/audio.mjs';
 import { scriviLlms } from './sito/llms.mjs';
 import { simula, daScheda, kvGB, perditaQualita, giudizio, QUANTI } from '../sorgente/calc.mjs';
 
@@ -359,6 +360,7 @@ pagineConfronti(dati, coppie, blog);
 pagineBlog(dati, blog);
 feedRss(blog);
 paginaTelefono(dati, modelli, blog);
+paginaAudio(dati, blog);
 widget(dati, modelli, blog);
 const llms = scriviLlms(dati, modelli, blog);
 

@@ -1,0 +1,900 @@
+{
+ "aggiornato": "2026-10-20",
+ "fonti": {
+  "asr": {
+   "nome": "Open ASR Leaderboard (Hugging Face)",
+   "url": "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard",
+   "dati": "https://huggingface.co/datasets/hf-audio/open-asr-leaderboard-results/resolve/main/english_short_latest.csv",
+   "prove": [
+    "AMI-Cleaned",
+    "Earnings22-Cleaned-AA-chunked",
+    "Gigaspeech-Cleaned",
+    "LS Clean",
+    "LS Other",
+    "SPGISpeech",
+    "Voice Arena Monsoon",
+    "Voxpopuli-AA-Cleaned"
+   ]
+  },
+  "tts": {
+   "nome": "TTS Spaces Arena (Pendrokar)",
+   "url": "https://huggingface.co/spaces/Pendrokar/TTS-Spaces-Arena",
+   "dati": "https://huggingface.co/datasets/Pendrokar/TTS_Arena/resolve/main/database.db"
+  },
+  "v2": {
+   "nome": "TTS Arena V2",
+   "url": "https://huggingface.co/spaces/TTS-AGI/TTS-Arena-V2"
+  }
+ },
+ "asr": [
+  {
+   "repo": "Qwen/Qwen3-ASR-1.7B-hf",
+   "wer": 4.31,
+   "b": 2.04,
+   "lingue": 52,
+   "rtfx": 835.62,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "HojoAI/Hojo-ASR-V1",
+   "wer": 4.33,
+   "b": 5.18,
+   "lingue": 2,
+   "rtfx": 73.39,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "bosonai/higgs-audio-v3-stt",
+   "wer": 4.39,
+   "b": 2.68,
+   "lingue": 1,
+   "rtfx": 109.65,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "ibm-granite/granite-speech-5.0-2b",
+   "wer": 4.42,
+   "b": 2.31,
+   "lingue": 6,
+   "rtfx": 544.52,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "nvidia/canary-qwen-2.5b",
+   "wer": 4.43,
+   "b": 2.5,
+   "lingue": null,
+   "rtfx": 881.67,
+   "licenza": "cc-by-4.0",
+   "commerciale": true
+  },
+  {
+   "repo": "Edge0/ARK-ASR-3B",
+   "wer": 4.47,
+   "b": 3.75,
+   "lingue": 19,
+   "rtfx": 480.07,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "TheStageAI/thewhisper-large-v3-turbo",
+   "wer": 4.54,
+   "b": 0.8,
+   "lingue": 28,
+   "rtfx": 1183.92,
+   "licenza": "cc-by-4.0",
+   "commerciale": true
+  },
+  {
+   "repo": "Edge0/ARK-ASR-0.6B",
+   "wer": 4.56,
+   "b": 1.15,
+   "lingue": 19,
+   "rtfx": 673.02,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "ibm-granite/granite-speech-4.1-2b",
+   "wer": 4.62,
+   "b": 2,
+   "lingue": 6,
+   "rtfx": 546.84,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "OpenMOSS-Team/MOSS-Transcribe-Diarize",
+   "wer": 4.64,
+   "b": 0.91,
+   "lingue": 50,
+   "rtfx": 387.46,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "CohereLabs/cohere-transcribe-03-2026",
+   "wer": 4.67,
+   "b": 2,
+   "lingue": 14,
+   "rtfx": 923.71,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "nvidia/parakeet-tdt-0.6b-v2 (fast-gpu-asr)",
+   "wer": 4.67,
+   "b": 0.6,
+   "lingue": null,
+   "rtfx": 16942.54,
+   "licenza": "cc-by-4.0",
+   "commerciale": true
+  },
+  {
+   "repo": "ibm-granite/granite-speech-4.1-2b-nar",
+   "wer": 4.68,
+   "b": 2,
+   "lingue": 5,
+   "rtfx": 2112.58,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "nvidia/parakeet-tdt-0.6b-v2",
+   "wer": 4.7,
+   "b": 0.6,
+   "lingue": null,
+   "rtfx": 6148.32,
+   "licenza": "cc-by-4.0",
+   "commerciale": true
+  },
+  {
+   "repo": "nvidia/parakeet-tdt-0.6b-v3 (fast-gpu-asr)",
+   "wer": 4.71,
+   "b": 0.6,
+   "lingue": 26,
+   "rtfx": 14125.69,
+   "licenza": "cc-by-4.0",
+   "commerciale": true
+  },
+  {
+   "repo": "ibm-granite/granite-speech-5.0-470m-turboctc-nc",
+   "wer": 4.84,
+   "b": 0.47,
+   "lingue": null,
+   "rtfx": 20801.33,
+   "licenza": "cc-by-nc-sa-4.0",
+   "commerciale": false
+  },
+  {
+   "repo": "nvidia/parakeet-tdt-0.6b-v3",
+   "wer": 4.84,
+   "b": 0.6,
+   "lingue": 26,
+   "rtfx": 6227.73,
+   "licenza": "cc-by-4.0",
+   "commerciale": true
+  },
+  {
+   "repo": "mistralai/Voxtral-Small-24B-2507",
+   "wer": 4.99,
+   "b": 24,
+   "lingue": 8,
+   "rtfx": 101.45,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "microsoft/Phi-4-multimodal-instruct",
+   "wer": 5.02,
+   "b": 6,
+   "lingue": 8,
+   "rtfx": 162.53,
+   "licenza": "mit",
+   "commerciale": true
+  },
+  {
+   "repo": "ibm-granite/granite-speech-5.0-470m-turboctc",
+   "wer": 5.03,
+   "b": 0.47,
+   "lingue": null,
+   "rtfx": 21134.31,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "Qwen/Qwen3-ASR-0.6B-hf",
+   "wer": 5.05,
+   "b": 0.78,
+   "lingue": 52,
+   "rtfx": 749.52,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "ibm-granite/granite-4.0-1b-speech",
+   "wer": 5.1,
+   "b": 2,
+   "lingue": 6,
+   "rtfx": 666.99,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "FermionResearch/Phonon-2",
+   "wer": 5.17,
+   "b": 0.6,
+   "lingue": 1,
+   "rtfx": 1976.52,
+   "licenza": "cc-by-4.0",
+   "commerciale": true
+  },
+  {
+   "repo": "nvidia/nemotron-speech-streaming-en-0.6b",
+   "wer": 5.24,
+   "b": 0.62,
+   "lingue": null,
+   "rtfx": 1114.14,
+   "licenza": "nvidia-open-model-license",
+   "commerciale": true
+  },
+  {
+   "repo": "ibm-granite/granite-speech-3.3-8b",
+   "wer": 5.26,
+   "b": 9,
+   "lingue": 5,
+   "rtfx": 262.79,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "soundsgoodai/Zipformer-cr-ctc-transducer-XL-290M (fast-gpu-asr, transducer_modified_beam_search)",
+   "wer": 5.29,
+   "b": 0.29,
+   "lingue": null,
+   "rtfx": 21814.05,
+   "licenza": "cc-by-nc-4.0",
+   "commerciale": false
+  },
+  {
+   "repo": "ibm-granite/granite-speech-3.3-2b",
+   "wer": 5.36,
+   "b": 3,
+   "lingue": 5,
+   "rtfx": 509.35,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "distil-whisper/distil-large-v3.5",
+   "wer": 5.4,
+   "b": 0.8,
+   "lingue": 1,
+   "rtfx": 898.21,
+   "licenza": "mit",
+   "commerciale": true
+  },
+  {
+   "repo": "mistralai/Voxtral-Mini-3B-2507",
+   "wer": 5.54,
+   "b": 5,
+   "lingue": 8,
+   "rtfx": 179.78,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "microsoft/VibeVoice-ASR-HF",
+   "wer": 5.58,
+   "b": 8,
+   "lingue": 50,
+   "rtfx": 217.89,
+   "licenza": "mit",
+   "commerciale": true
+  },
+  {
+   "repo": "nvidia/canary-1b-v2",
+   "wer": 5.71,
+   "b": 1,
+   "lingue": 25,
+   "rtfx": 1853.68,
+   "licenza": "cc-by-4.0",
+   "commerciale": true
+  },
+  {
+   "repo": "FunAudioLLM/Fun-ASR-Nano-2512-hf",
+   "wer": 5.74,
+   "b": 0.83,
+   "lingue": 4,
+   "rtfx": 506.37,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "openai/whisper-large-v3",
+   "wer": 5.78,
+   "b": 2,
+   "lingue": 99,
+   "rtfx": 470.73,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "nvidia/parakeet-ctc-1.1b",
+   "wer": 5.92,
+   "b": 1.1,
+   "lingue": null,
+   "rtfx": 5137.41,
+   "licenza": "cc-by-4.0",
+   "commerciale": true
+  },
+  {
+   "repo": "espnet/owsm_ctc_v4_1B",
+   "wer": 6.28,
+   "b": 1,
+   "lingue": 75,
+   "rtfx": 783.3,
+   "licenza": "cc-by-4.0",
+   "commerciale": true
+  },
+  {
+   "repo": "openai/whisper-large-v3-turbo",
+   "wer": 6.36,
+   "b": 0.8,
+   "lingue": 99,
+   "rtfx": 810.5,
+   "licenza": "mit",
+   "commerciale": true
+  },
+  {
+   "repo": "soundsgoodai/Zipformer-cr-ctc-transducer-XL-290M (fast-gpu-asr, ctc_greedy_search)",
+   "wer": 6.38,
+   "b": 0.29,
+   "lingue": null,
+   "rtfx": 24148.36,
+   "licenza": "cc-by-nc-4.0",
+   "commerciale": false
+  },
+  {
+   "repo": "facebook/omniASR-LLM-7B-v2",
+   "wer": 6.4,
+   "b": 7.8,
+   "lingue": 1676,
+   "rtfx": 129.8,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "mistralai/Voxtral-Mini-4B-Realtime-2602",
+   "wer": 6.46,
+   "b": 4,
+   "lingue": 13,
+   "rtfx": 103.48,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "Edge0/Audio8-ASR-0.1B",
+   "wer": 6.95,
+   "b": 0.324,
+   "lingue": 7,
+   "rtfx": 725.77,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "abr-ai/niagara-84m-batch.en",
+   "wer": 7.46,
+   "b": 0.084,
+   "lingue": 1,
+   "rtfx": 1940.83,
+   "licenza": "applied-brain-research-open-license",
+   "commerciale": true
+  },
+  {
+   "repo": "nvidia/nemotron-3.5-asr-streaming-0.6b",
+   "wer": 7.88,
+   "b": 0.64,
+   "lingue": 40,
+   "rtfx": 1348.36,
+   "licenza": "OpenMDW-1.1",
+   "commerciale": true
+  },
+  {
+   "repo": "abr-ai/niagara-38m-batch.en",
+   "wer": 8.74,
+   "b": 0.038,
+   "lingue": 1,
+   "rtfx": 4561.35,
+   "licenza": "applied-brain-research-open-license",
+   "commerciale": true
+  },
+  {
+   "repo": "facebook/omniASR-CTC-7B-v2",
+   "wer": 9.07,
+   "b": 6.5,
+   "lingue": 1676,
+   "rtfx": 522.26,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "google/gemma-4-E4B-it",
+   "wer": 9.51,
+   "b": 7.94,
+   "lingue": 140,
+   "rtfx": 160.69,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "abr-ai/niagara-19m-batch.en",
+   "wer": 10.41,
+   "b": 0.02,
+   "lingue": 1,
+   "rtfx": 4348.44,
+   "licenza": "applied-brain-research-open-license",
+   "commerciale": true
+  },
+  {
+   "repo": "google/gemma-4-E2B-it",
+   "wer": 11.65,
+   "b": null,
+   "lingue": 140,
+   "rtfx": 190.75,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  },
+  {
+   "repo": "abr-ai/niagara-9m-batch.en",
+   "wer": 13.49,
+   "b": 0.009,
+   "lingue": 1,
+   "rtfx": 7217.02,
+   "licenza": "applied-brain-research-open-license",
+   "commerciale": true
+  },
+  {
+   "repo": "google/gemma-4-12B-it",
+   "wer": 20.87,
+   "b": null,
+   "lingue": 140,
+   "rtfx": 106.08,
+   "licenza": "apache-2.0",
+   "commerciale": true
+  }
+ ],
+ "tts": [
+  {
+   "space": "hexgrad/kokoro",
+   "punteggio": 1211,
+   "ic": 4,
+   "voti": 34174,
+   "vinte": 23896,
+   "ultimo": "2026-10-20"
+  },
+  {
+   "space": "MohamedRashad/Orpheus-TTS",
+   "punteggio": 1198,
+   "ic": 5,
+   "voti": 18654,
+   "vinte": 11941,
+   "ultimo": "2026-10-20"
+  },
+  {
+   "space": "Qwen/Qwen3-TTS-Voice-Design",
+   "punteggio": 1189,
+   "ic": 16,
+   "voti": 1930,
+   "vinte": 1180,
+   "ultimo": "2026-06-19"
+  },
+  {
+   "space": "Qwen/Qwen3-TTS",
+   "punteggio": 1125,
+   "ic": 8,
+   "voti": 8403,
+   "vinte": 4311,
+   "ultimo": "2026-10-20"
+  },
+  {
+   "space": "parler-tts/parler_tts_mini",
+   "punteggio": 1125,
+   "ic": 199,
+   "voti": 20,
+   "vinte": 20,
+   "ultimo": "2024-08-02"
+  },
+  {
+   "space": "NeuralFalcon/Pocket-TTS",
+   "punteggio": 1115,
+   "ic": 59,
+   "voti": 142,
+   "vinte": 71,
+   "ultimo": "2026-02-18"
+  },
+  {
+   "space": "coqui/xtts",
+   "punteggio": 1114,
+   "ic": 7,
+   "voti": 10822,
+   "vinte": 6167,
+   "ultimo": "2026-02-20"
+  },
+  {
+   "space": "ResembleAI/Chatterbox",
+   "punteggio": 1099,
+   "ic": 10,
+   "voti": 5597,
+   "vinte": 2870,
+   "ultimo": "2026-03-10"
+  },
+  {
+   "space": "OpenMOSS-Team/MOSS-TTS",
+   "punteggio": 1099,
+   "ic": 17,
+   "voti": 1614,
+   "vinte": 773,
+   "ultimo": "2026-10-20"
+  },
+  {
+   "space": "IndexTeam/IndexTTS",
+   "punteggio": 1076,
+   "ic": 16,
+   "voti": 2067,
+   "vinte": 926,
+   "ultimo": "2025-07-15"
+  },
+  {
+   "space": "ByteDance/MegaTTS3",
+   "punteggio": 1072,
+   "ic": 14,
+   "voti": 2601,
+   "vinte": 1186,
+   "ultimo": "2025-11-30"
+  },
+  {
+   "space": "parler-tts/parler_tts",
+   "punteggio": 1058,
+   "ic": 7,
+   "voti": 10778,
+   "vinte": 5519,
+   "ultimo": "2025-04-23"
+  },
+  {
+   "space": "thunnai/SparkTTS",
+   "punteggio": 1052,
+   "ic": 15,
+   "voti": 2386,
+   "vinte": 1009,
+   "ultimo": "2025-07-15"
+  },
+  {
+   "space": "fishaudio/fish-speech-1",
+   "punteggio": 1051,
+   "ic": 9,
+   "voti": 5761,
+   "vinte": 2935,
+   "ultimo": "2025-04-08"
+  },
+  {
+   "space": "ResembleAI/chatterbox-turbo-demo",
+   "punteggio": 1051,
+   "ic": 7,
+   "voti": 9901,
+   "vinte": 3691,
+   "ultimo": "2026-10-19"
+  },
+  {
+   "space": "sesame/csm-1b",
+   "punteggio": 1050,
+   "ic": 18,
+   "voti": 1502,
+   "vinte": 622,
+   "ultimo": "2025-07-15"
+  },
+  {
+   "space": "Svngoku/maskgct-audio-lab",
+   "punteggio": 1042,
+   "ic": 12,
+   "voti": 3450,
+   "vinte": 1643,
+   "ultimo": "2025-02-23"
+  },
+  {
+   "space": "parler-tts/parler_tts/large",
+   "punteggio": 1041,
+   "ic": 13,
+   "voti": 3052,
+   "vinte": 1526,
+   "ultimo": "2025-03-08"
+  },
+  {
+   "space": "fishaudio/openaudio-s1-mini",
+   "punteggio": 1037,
+   "ic": 16,
+   "voti": 2140,
+   "vinte": 907,
+   "ultimo": "2026-02-06"
+  },
+  {
+   "space": "nineninesix/KaniTTS",
+   "punteggio": 1036,
+   "ic": 29,
+   "voti": 639,
+   "vinte": 234,
+   "ultimo": "2026-02-27"
+  },
+  {
+   "space": "srinivasbilla/llasa-3b-tts",
+   "punteggio": 1031,
+   "ic": 11,
+   "voti": 4024,
+   "vinte": 1792,
+   "ultimo": "2026-02-20"
+  },
+  {
+   "space": "Steveeeeeeen/Zonos",
+   "punteggio": 1028,
+   "ic": 21,
+   "voti": 1167,
+   "vinte": 525,
+   "ultimo": "2025-08-06"
+  },
+  {
+   "space": "mrfakename/MetaVoice-1B-v0.1",
+   "punteggio": 1021,
+   "ic": 27,
+   "voti": 706,
+   "vinte": 417,
+   "ultimo": "2024-10-25"
+  },
+  {
+   "space": "Steveeeeeeen/Zonos/hybrid",
+   "punteggio": 1015,
+   "ic": 18,
+   "voti": 1516,
+   "vinte": 649,
+   "ultimo": "2025-04-09"
+  },
+  {
+   "space": "srinivasbilla/llasa-8b-tts",
+   "punteggio": 1015,
+   "ic": 23,
+   "voti": 936,
+   "vinte": 450,
+   "ultimo": "2025-02-23"
+  },
+  {
+   "space": "mrfakename/E2-F5-TTS",
+   "punteggio": 1001,
+   "ic": 5,
+   "voti": 19971,
+   "vinte": 7431,
+   "ultimo": "2026-10-20"
+  },
+  {
+   "space": "mrfakename/MeloTTS",
+   "punteggio": 1000,
+   "ic": 8,
+   "voti": 8281,
+   "vinte": 3618,
+   "ultimo": "2025-03-08"
+  },
+  {
+   "space": "parler-tts/parler-tts-expresso",
+   "punteggio": 980,
+   "ic": 13,
+   "voti": 3113,
+   "vinte": 1370,
+   "ultimo": "2025-02-09"
+  },
+  {
+   "space": "lj1995/GPT-SoVITS-v2",
+   "punteggio": 975,
+   "ic": 17,
+   "voti": 1773,
+   "vinte": 742,
+   "ultimo": "2025-04-04"
+  },
+  {
+   "space": "Pendrokar/style-tts-2",
+   "punteggio": 974,
+   "ic": 14,
+   "voti": 2565,
+   "vinte": 1086,
+   "ultimo": "2025-02-09"
+  },
+  {
+   "space": "PHBJT/multi_parler_tts",
+   "punteggio": 973,
+   "ic": 28,
+   "voti": 719,
+   "vinte": 226,
+   "ultimo": "2025-07-15"
+  },
+  {
+   "space": "nineninesix/kanitts-2-en",
+   "punteggio": 947,
+   "ic": 29,
+   "voti": 680,
+   "vinte": 191,
+   "ultimo": "2026-03-10"
+  },
+  {
+   "space": "HKUST-Audio/Llasa-1B-finetuned-for-two-speakers",
+   "punteggio": 930,
+   "ic": 25,
+   "voti": 878,
+   "vinte": 267,
+   "ultimo": "2025-03-21"
+  },
+  {
+   "space": "Flux9665/MassivelyMultilingualTTS",
+   "punteggio": 921,
+   "ic": 58,
+   "voti": 153,
+   "vinte": 59,
+   "ultimo": "2024-10-25"
+  },
+  {
+   "space": "Flux9665/EnglishToucan",
+   "punteggio": 896,
+   "ic": 26,
+   "voti": 814,
+   "vinte": 277,
+   "ultimo": "2024-12-16"
+  },
+  {
+   "space": "OuteAI/OuteTTS-0.3-1B-Demo",
+   "punteggio": 896,
+   "ic": 21,
+   "voti": 1282,
+   "vinte": 436,
+   "ultimo": "2025-01-25"
+  },
+  {
+   "space": "myshell-ai/OpenVoiceV2",
+   "punteggio": 888,
+   "ic": 35,
+   "voti": 424,
+   "vinte": 159,
+   "ultimo": "2024-10-25"
+  },
+  {
+   "space": "myshell-ai/OpenVoice",
+   "punteggio": 876,
+   "ic": 37,
+   "voti": 378,
+   "vinte": 145,
+   "ultimo": "2024-10-06"
+  },
+  {
+   "space": "Pendrokar/xVASynth-TTS",
+   "punteggio": 860,
+   "ic": 14,
+   "voti": 2909,
+   "vinte": 892,
+   "ultimo": "2026-02-15"
+  },
+  {
+   "space": "LeeSangHoon/HierSpeech_TTS",
+   "punteggio": 859,
+   "ic": 22,
+   "voti": 1154,
+   "vinte": 359,
+   "ultimo": "2025-01-05"
+  },
+  {
+   "space": "collabora/WhisperSpeech",
+   "punteggio": 844,
+   "ic": 22,
+   "voti": 1131,
+   "vinte": 340,
+   "ultimo": "2024-11-15"
+  },
+  {
+   "space": "Pendrokar/xVASynth-TTS/NoDeepMoji",
+   "punteggio": 843,
+   "ic": 32,
+   "voti": 659,
+   "vinte": 145,
+   "ultimo": "2025-04-04"
+  },
+  {
+   "space": "lj1995/GPT-SoVITS-ProPlus",
+   "punteggio": 840,
+   "ic": 12,
+   "voti": 6315,
+   "vinte": 1024,
+   "ultimo": "2026-02-15"
+  },
+  {
+   "space": "ameerazam08/OuteTTS-0.2-500M-Demo",
+   "punteggio": 840,
+   "ic": 20,
+   "voti": 1644,
+   "vinte": 402,
+   "ultimo": "2025-01-25"
+  },
+  {
+   "space": "amphion/Text-to-Speech",
+   "punteggio": 704,
+   "ic": 115,
+   "voti": 43,
+   "vinte": 5,
+   "ultimo": "2024-04-11"
+  }
+ ],
+ "v2": [
+  {
+   "nome": "Tontaube V1 (pre-filter-fix)",
+   "repo": null,
+   "elo": 1608,
+   "ic": 205,
+   "voti": 4,
+   "attivo": true
+  },
+  {
+   "nome": "Chatterbox",
+   "repo": "ResembleAI/chatterbox",
+   "elo": 1476,
+   "ic": 20,
+   "voti": 1784,
+   "attivo": true
+  },
+  {
+   "nome": "Kokoro v1.0",
+   "repo": "hexgrad/Kokoro-82M",
+   "elo": 1473,
+   "ic": 23,
+   "voti": 1033,
+   "attivo": false
+  },
+  {
+   "nome": "CosyVoice 2.0",
+   "repo": null,
+   "elo": 1443,
+   "ic": 83,
+   "voti": 58,
+   "attivo": false
+  },
+  {
+   "nome": "Maya 1",
+   "repo": "maya-research/maya1",
+   "elo": 1406,
+   "ic": 36,
+   "voti": 467,
+   "attivo": false
+  },
+  {
+   "nome": "Tontaube V1",
+   "repo": null,
+   "elo": 1392,
+   "ic": 99,
+   "voti": 51,
+   "attivo": true
+  },
+  {
+   "nome": "Fluxions Vui",
+   "repo": null,
+   "elo": 1364,
+   "ic": 92,
+   "voti": 69,
+   "attivo": true
+  },
+  {
+   "nome": "Veena",
+   "repo": "maya-research/Veena",
+   "elo": 1360,
+   "ic": 34,
+   "voti": 510,
+   "attivo": false
+  }
+ ]
+}
