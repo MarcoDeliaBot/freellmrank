@@ -1305,7 +1305,6 @@
  "Over {0} B": "Sopra {0} B",
  "Paid": "A pagamento",
  "Parameter counts come from the official Hugging Face repositories (safetensors metadata). Context memory comes from each model's configuration file: layers, attention heads, sliding windows and compressed attention. For repositories that require accepting a license, we read the same configuration from Unsloth's public copy.": "Il numero di parametri viene dai repository ufficiali su Hugging Face (metadati safetensors). La memoria del contesto viene dal file di configurazione di ogni modello: livelli, teste di attenzione, finestre scorrevoli e attenzione compressa. Per i repository che richiedono di accettare una licenza, leggiamo la stessa configurazione dalla copia pubblica di Unsloth.",
- "Part of the model sits in system RAM, which is much slower": "Una parte del modello sta nella RAM di sistema, che è molto più lenta",
  "Part of the model sits in system memory, which is much slower than video memory.": "Una parte del modello resta nella memoria di sistema, che è molto più lenta della memoria video.",
  "Paste it where you want the box. Change <0/> to <1/>, <2/>, <3/>, <4/>, <5/>, <6/>, <7/>, <8/>, <9/>, <10/>, <11/> for another category.": "Incollalo dove vuoi il riquadro. Cambia <0/> con <1/>, <2/>, <3/>, <4/>, <5/>, <6/>, <7/>, <8/>, <9/>, <10/>, <11/> per un'altra categoria.",
  "PelaAI · based on {0}": "PelaAI · basato su {0}",
