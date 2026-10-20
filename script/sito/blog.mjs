@@ -102,6 +102,41 @@ export function preparaBlog(dati, storia, modelli) {
   return [...guide, ...resoconti(dati, storia, hrefPerNome)].sort((a, b) => b.data.localeCompare(a.data));
 }
 
+// Grafica del disegno Stitch per OGNI articolo (richiesta di Marco, 20/10/2026), applicata all'HTML di marked:
+// introduzione nel riquadro informativo, indice delle sezioni, elenchi e tabelle dentro schede, riquadro finale per tema.
+const ICONA_INFO = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="16" y2="12"/><line x1="12" x2="12.01" y1="8" y2="8"/></svg>';
+const ancora = (s) => s.replace(/<[^>]+>/g, '').toLowerCase().replace(/&[a-z]+;|&#\d+;/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
+function riquadroFinale(p, dati) {
+  const primo = dati.categorie.find((c) => c.id === 'chat')?.modelli.find((m) => m.aperto || m.or?.gratis);
+  if (p.tipo !== 'Guide') return ['Free Arena', 'Which free model would you pick?', 'Ask one question to two free models, without seeing their names, and vote. Your votes build our own free ranking.', '/arena.html', 'Vote in Free Arena →'];
+  if (/hardware/i.test(p.tema)) return ['Free hardware tool', 'What can your GPU run?', 'Pick your card and see how much memory each model needs, whether it fits and the estimated speed.', '/home.html', 'Open the simulator →'];
+  if (/api|online|cloud/i.test(p.tema)) return ['Try it now', 'Try two free models side by side', 'Send one prompt to two free models at once and compare the answers.', '/compare.html', 'Compare models →'];
+  return ['Free leaderboard', primo ? `Is ${primo.nome} the right model for you?` : 'Find the right free model', 'See every free model ranked by blind human votes, with size, memory and speed on a home GPU.', '/', 'Open the leaderboard →'];
+}
+function abbellisci(html, p, dati) {
+  const finale = (h) => {
+    if (h.includes('cta-scura')) return h;
+    const [occhiello, titolo, testo, href, tasto] = riquadroFinale(p, dati);
+    return `${h}\n<div class="cta-scura"><div><span class="cta-occhiello">${esc(occhiello)}</span><h3>${esc(titolo)}</h3><p>${esc(testo)}</p></div><a href="${href}">${esc(tasto)}</a></div>`;
+  };
+  if (html.includes('cat-guida')) return finale(html); // guida già disegnata a mano
+  const pezzi = html.split(/(?=<h2[ >])/);
+  const intro = pezzi[0].startsWith('<h2') ? '' : pezzi.shift();
+  const sezioni = pezzi.map((s) => {
+    const m = /^<h2[^>]*>([\s\S]*?)<\/h2>/.exec(s);
+    const titolo = m ? m[1] : '';
+    const corpo = m ? s.slice(m[0].length) : s;
+    const id = ancora(titolo) || 'section';
+    const nuovi = /New free models this week/.test(corpo) ? (corpo.split('Biggest moves')[0].match(/<li>/g) || []).length : 0;
+    const chip = nuovi ? `<span class="cat-conta">${nuovi} new</span>` : '';
+    const dati_ = /<(ul|ol|table)[ >]/.test(corpo);
+    return { id, titolo, html: `<section class="cat-guida" id="${id}"><div class="cat-testa"><h2>${titolo}</h2>${chip}</div>${dati_ ? `<div class="cat-scheda">${corpo}</div>` : `<div class="art-sezione">${corpo}</div>`}</section>` };
+  });
+  const indice = sezioni.length >= 3 ? `<nav class="salta" aria-label="Jump to section"><span>Jump to section</span>${sezioni.map((s) => `<a href="#${s.id}">${s.titolo.replace(/<[^>]+>/g, '')}</a>`).join('')}</nav>` : '';
+  const riquadro = intro.trim() ? `<div class="riquadro-info">${ICONA_INFO}<div>${intro}</div></div>` : '';
+  return finale(`${riquadro}\n${indice}\n${sezioni.map((s) => s.html).join('\n')}`);
+}
+
 export function pagineBlog(dati, post) {
   for (const p of post) {
     pagina({
@@ -114,7 +149,7 @@ export function pagineBlog(dati, post) {
       corpo: `<article class="articolo">
 <nav class="art-briciole" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span>/</span><span>${esc(p.tipo === 'Guide' ? 'Guide' : 'Weekly report')}</span></nav>
 <header class="art-testa"><p class="art-meta"><span class="art-tipo">${esc(p.tipo === 'Guide' ? 'Guide' : 'Weekly report')}</span><span>·</span><time datetime="${p.data}">${fmtData(p.data)}</time><span>·</span><span>${Math.max(1, Math.round(p.corpo.split(/\s+/).length / 220))} min read</span>${p.tipo !== 'Guide' || /\{\{|Data as of/.test(p.corpo) || p.automatico ? '<span>·</span><span class="art-vivo"><i class="punto-vivo" aria-hidden="true"></i>Data updated automatically</span>' : ''}</p><h1>${esc(p.titolo)}</h1><p class="lead">${esc(p.descr)}</p></header>
-${marked.parse(p.corpo)}
+${abbellisci(marked.parse(p.corpo), p, dati)}
 </article>`,
     });
   }
