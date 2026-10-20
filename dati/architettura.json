@@ -1494,5 +1494,16 @@
   "contestoMax": 262144,
   "moe": false,
   "attivi": 4539265536
+ },
+ "allenai/Bolmo-1B-Stage1": {
+  "strati": 16,
+  "tipo": "MHA",
+  "kvPerStrato": 8192,
+  "pieni": 16,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 4096,
+  "moe": false,
+  "attivi": 1468911776
  }
 }

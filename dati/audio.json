@@ -474,16 +474,16 @@
    "space": "hexgrad/kokoro",
    "punteggio": 1211,
    "ic": 4,
-   "voti": 34175,
-   "vinte": 23897,
+   "voti": 34185,
+   "vinte": 23904,
    "ultimo": "2026-10-20"
   },
   {
    "space": "MohamedRashad/Orpheus-TTS",
    "punteggio": 1198,
    "ic": 5,
-   "voti": 18654,
-   "vinte": 11941,
+   "voti": 18665,
+   "vinte": 11947,
    "ultimo": "2026-10-20"
   },
   {
@@ -498,8 +498,8 @@
    "space": "Qwen/Qwen3-TTS",
    "punteggio": 1125,
    "ic": 8,
-   "voti": 8404,
-   "vinte": 4312,
+   "voti": 8419,
+   "vinte": 4320,
    "ultimo": "2026-10-20"
   },
   {
@@ -527,20 +527,20 @@
    "ultimo": "2026-02-20"
   },
   {
+   "space": "OpenMOSS-Team/MOSS-TTS",
+   "punteggio": 1100,
+   "ic": 17,
+   "voti": 1633,
+   "vinte": 785,
+   "ultimo": "2026-10-20"
+  },
+  {
    "space": "ResembleAI/Chatterbox",
    "punteggio": 1099,
    "ic": 10,
    "voti": 5597,
    "vinte": 2870,
    "ultimo": "2026-03-10"
-  },
-  {
-   "space": "OpenMOSS-Team/MOSS-TTS",
-   "punteggio": 1099,
-   "ic": 17,
-   "voti": 1616,
-   "vinte": 774,
-   "ultimo": "2026-10-20"
   },
   {
    "space": "IndexTeam/IndexTTS",
@@ -586,8 +586,8 @@
    "space": "ResembleAI/chatterbox-turbo-demo",
    "punteggio": 1051,
    "ic": 7,
-   "voti": 9903,
-   "vinte": 3691,
+   "voti": 9916,
+   "vinte": 3694,
    "ultimo": "2026-10-20"
   },
   {
@@ -674,8 +674,8 @@
    "space": "mrfakename/E2-F5-TTS",
    "punteggio": 1001,
    "ic": 5,
-   "voti": 19971,
-   "vinte": 7431,
+   "voti": 19979,
+   "vinte": 7433,
    "ultimo": "2026-10-20"
   },
   {
@@ -743,20 +743,20 @@
    "ultimo": "2024-10-25"
   },
   {
-   "space": "Flux9665/EnglishToucan",
-   "punteggio": 896,
-   "ic": 26,
-   "voti": 814,
-   "vinte": 277,
-   "ultimo": "2024-12-16"
-  },
-  {
    "space": "OuteAI/OuteTTS-0.3-1B-Demo",
    "punteggio": 896,
    "ic": 21,
    "voti": 1282,
    "vinte": 436,
    "ultimo": "2025-01-25"
+  },
+  {
+   "space": "Flux9665/EnglishToucan",
+   "punteggio": 895,
+   "ic": 26,
+   "voti": 814,
+   "vinte": 277,
+   "ultimo": "2024-12-16"
   },
   {
    "space": "myshell-ai/OpenVoiceV2",
@@ -800,7 +800,7 @@
   },
   {
    "space": "Pendrokar/xVASynth-TTS/NoDeepMoji",
-   "punteggio": 843,
+   "punteggio": 842,
    "ic": 32,
    "voti": 659,
    "vinte": 145,
