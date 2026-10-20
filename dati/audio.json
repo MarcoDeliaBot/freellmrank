@@ -474,8 +474,8 @@
    "space": "hexgrad/kokoro",
    "punteggio": 1211,
    "ic": 4,
-   "voti": 34174,
-   "vinte": 23896,
+   "voti": 34175,
+   "vinte": 23897,
    "ultimo": "2026-10-20"
   },
   {
@@ -498,8 +498,8 @@
    "space": "Qwen/Qwen3-TTS",
    "punteggio": 1125,
    "ic": 8,
-   "voti": 8403,
-   "vinte": 4311,
+   "voti": 8404,
+   "vinte": 4312,
    "ultimo": "2026-10-20"
   },
   {
@@ -538,8 +538,8 @@
    "space": "OpenMOSS-Team/MOSS-TTS",
    "punteggio": 1099,
    "ic": 17,
-   "voti": 1614,
-   "vinte": 773,
+   "voti": 1616,
+   "vinte": 774,
    "ultimo": "2026-10-20"
   },
   {
@@ -586,9 +586,9 @@
    "space": "ResembleAI/chatterbox-turbo-demo",
    "punteggio": 1051,
    "ic": 7,
-   "voti": 9901,
+   "voti": 9903,
    "vinte": 3691,
-   "ultimo": "2026-10-19"
+   "ultimo": "2026-10-20"
   },
   {
    "space": "sesame/csm-1b",
