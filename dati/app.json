@@ -1,0 +1,108 @@
+{
+ "nota": "AI apps catalogue, checked by hand on official pages on 2026-10-20. prezzo: free = free, no account needed for the app; byok = the app is free, you plug in a model (your own API key, a free model, or a local model); tier = free plan with limits; paid = paid only; unknown = not verified. verificato:false = some detail could not be checked on an official page.",
+ "controllato": "2026-10-20",
+ "gruppi": [
+  {"id": "agents", "nome": "Coding agents in the terminal", "app": [
+   {"nome": "OpenCode", "url": "https://opencode.ai", "oss": "MIT", "repo": "https://github.com/anomalyco/opencode", "prezzo": "byok", "limiti": "Free app. Its Zen gateway lists free models “for a limited time”.", "locale": true},
+   {"nome": "Codex CLI", "url": "https://github.com/openai/codex", "oss": "Apache-2.0", "repo": "https://github.com/openai/codex", "prezzo": "tier", "limiti": "Works with ChatGPT Free (limits not published), ChatGPT Go from $8, or your own API key.", "locale": true},
+   {"nome": "Aider", "url": "https://aider.chat", "oss": "Apache-2.0", "repo": "https://github.com/Aider-AI/aider", "prezzo": "byok", "limiti": "Free app; you pay only the model, or use a local one.", "locale": true},
+   {"nome": "Goose", "url": "https://github.com/aaif-goose/goose", "oss": "Apache-2.0", "repo": "https://github.com/aaif-goose/goose", "prezzo": "byok", "limiti": "Free app; desktop and terminal.", "locale": true},
+   {"nome": "Qwen Code", "url": "https://github.com/QwenLM/qwen-code", "oss": "Apache-2.0", "repo": "https://github.com/QwenLM/qwen-code", "prezzo": "byok", "limiti": "Its free sign-in tier ended on 15 Apr 2026: now your own key or a local model.", "locale": true},
+   {"nome": "Crush", "url": "https://github.com/charmbracelet/crush", "oss": "FSL-1.1-MIT (source-available)", "repo": "https://github.com/charmbracelet/crush", "prezzo": "byok", "limiti": "Free app; its Hyper provider has a free tier (limits not published).", "locale": true},
+   {"nome": "Kilo Code", "url": "https://kilo.ai", "oss": "MIT", "repo": "https://github.com/Kilo-Org/kilocode", "prezzo": "byok", "limiti": "Free plan with your own key and an “Auto Free” mode that picks free models; Kilo Pass $19 a month.", "locale": true},
+   {"nome": "Cline", "url": "https://github.com/cline/cline", "oss": "Apache-2.0", "repo": "https://github.com/cline/cline", "prezzo": "byok", "limiti": "Free app for VS Code, JetBrains and the terminal.", "locale": true},
+   {"nome": "Kimi Code", "url": "https://github.com/MoonshotAI/kimi-code", "oss": "MIT", "repo": "https://github.com/MoonshotAI/kimi-code", "prezzo": "unknown", "limiti": "Open source; pricing not verified.", "locale": false, "verificato": false},
+   {"nome": "Gemini CLI", "url": "https://geminicli.com", "oss": "Apache-2.0", "repo": "https://github.com/google-gemini/gemini-cli", "prezzo": "byok", "limiti": "Free Google sign-in use ended on 18 Jun 2026; Google points to Antigravity CLI instead. Whether a free API key still works is unclear.", "locale": false, "verificato": false},
+   {"nome": "Antigravity CLI", "url": "https://antigravity.google", "oss": null, "prezzo": "tier", "limiti": "$0 plan with weekly limits (numbers not published).", "locale": false, "verificato": false},
+   {"nome": "GitHub Copilot CLI", "url": "https://github.com/github/copilot-cli", "oss": null, "prezzo": "tier", "limiti": "Included in Copilot Free; Copilot Pro $10 a month.", "locale": false},
+   {"nome": "Amp", "url": "https://ampcode.com", "oss": null, "prezzo": "tier", "limiti": "Free Hobby plan with pay-as-you-go; $20 plan.", "locale": false, "verificato": false},
+   {"nome": "Cursor CLI", "url": "https://cursor.com", "oss": null, "prezzo": "tier", "limiti": "Free tier “limited” (no numbers); Plus $8 a month.", "locale": false},
+   {"nome": "Claude Code", "url": "https://claude.com/pricing", "oss": null, "prezzo": "paid", "limiti": "From Claude Pro, $20 a month ($17 billed yearly). Works only with Claude models.", "locale": false}
+  ]},
+  {"id": "editors", "nome": "AI code editors", "app": [
+   {"nome": "Zed", "url": "https://zed.dev", "oss": "GPL-3.0 / Apache-2.0", "repo": "https://github.com/zed-industries/zed", "prezzo": "byok", "limiti": "Personal plan $0, unlimited with your own key or local models; Pro $10 a month.", "locale": true},
+   {"nome": "VS Code + GitHub Copilot", "url": "https://github.com/features/copilot/plans", "oss": "VS Code MIT, Copilot closed", "prezzo": "tier", "limiti": "Copilot Free: 2,000 completions and a limited number of chats a month; Pro $10. Chat and agent also work with Ollama or your own key.", "locale": true},
+   {"nome": "Trae", "url": "https://www.trae.ai", "oss": null, "prezzo": "tier", "limiti": "Free: 5,000 autocompletions a month and a limited Auto mode; Pro $20.", "locale": true},
+   {"nome": "Cursor", "url": "https://cursor.com", "oss": null, "prezzo": "tier", "limiti": "Free: “limited” requests (no numbers); Plus $8, Premium $30. Own keys only for chat.", "locale": false},
+   {"nome": "JetBrains AI (Junie)", "url": "https://www.jetbrains.com/ai/", "oss": null, "prezzo": "tier", "limiti": "AI Free: 3 credits every 30 days; works with your own key, Ollama or LM Studio.", "locale": true},
+   {"nome": "Kiro", "url": "https://kiro.dev", "oss": null, "prezzo": "tier", "limiti": "Free: 50 credits a month; Pro $20 (1,000 credits). Managed models only.", "locale": false},
+   {"nome": "Google Antigravity", "url": "https://antigravity.google", "oss": null, "prezzo": "tier", "limiti": "$0 with weekly limits (numbers not published); Gemini-centric.", "locale": false, "verificato": false},
+   {"nome": "Devin Desktop (ex Windsurf)", "url": "https://devin.ai", "oss": null, "prezzo": "tier", "limiti": "Free “light” quota (numbers not published); Pro $20. Renamed from Windsurf on 2 Jun 2026.", "locale": false, "verificato": false}
+  ]},
+  {"id": "local", "nome": "Run models at home", "app": [
+   {"nome": "LM Studio", "url": "https://lmstudio.ai", "oss": null, "prezzo": "free", "limiti": "Free for personal and internal business use; paid plans add cloud models. Easiest app to start with.", "locale": true},
+   {"nome": "Ollama", "url": "https://ollama.com", "oss": "MIT", "repo": "https://github.com/ollama/ollama", "prezzo": "free", "limiti": "Free on your own computer; optional cloud plans (Pro $20).", "locale": true},
+   {"nome": "Jan", "url": "https://jan.ai", "oss": "Apache-2.0", "repo": "https://github.com/janhq/jan", "prezzo": "free", "limiti": "Free desktop app, works offline.", "locale": true},
+   {"nome": "llama.cpp", "url": "https://github.com/ggml-org/llama.cpp", "oss": "MIT", "repo": "https://github.com/ggml-org/llama.cpp", "prezzo": "free", "limiti": "The engine most other apps use; for technical users.", "locale": true},
+   {"nome": "AnythingLLM", "url": "https://anythingllm.com", "oss": "MIT", "repo": "https://github.com/Mintplex-Labs/anything-llm", "prezzo": "free", "limiti": "Free; chat with your own documents.", "locale": true},
+   {"nome": "Open WebUI", "url": "https://openwebui.com", "oss": "Custom license (source-available)", "repo": "https://github.com/open-webui/open-webui", "prezzo": "free", "limiti": "Free web interface for Ollama and others; branding rules above 50 users.", "locale": true},
+   {"nome": "KoboldCpp", "url": "https://github.com/LostRuins/koboldcpp", "oss": "AGPL-3.0", "repo": "https://github.com/LostRuins/koboldcpp", "prezzo": "free", "limiti": "Free; popular for stories and role-play.", "locale": true},
+   {"nome": "LocalAI", "url": "https://localai.io", "oss": "MIT", "repo": "https://github.com/mudler/LocalAI", "prezzo": "free", "limiti": "Free; an OpenAI-compatible server on your machine.", "locale": true},
+   {"nome": "vLLM", "url": "https://github.com/vllm-project/vllm", "oss": "Apache-2.0", "repo": "https://github.com/vllm-project/vllm", "prezzo": "free", "limiti": "Free; fast serving for servers and many users.", "locale": true},
+   {"nome": "Lemonade", "url": "https://github.com/lemonade-sdk/lemonade", "oss": "Apache-2.0", "repo": "https://github.com/lemonade-sdk/lemonade", "prezzo": "free", "limiti": "Free; optimised for AMD hardware.", "locale": true},
+   {"nome": "Msty Studio", "url": "https://msty.ai", "oss": null, "prezzo": "tier", "limiti": "Free with feature limits; Aurum $149 a year.", "locale": true, "verificato": false},
+   {"nome": "GPT4All", "url": "https://www.nomic.ai/gpt4all", "oss": "MIT", "repo": "https://github.com/nomic-ai/gpt4all", "prezzo": "free", "limiti": "Free, but the last release is from Feb 2025.", "locale": true}
+  ]},
+  {"id": "train", "nome": "Fine-tune models at home", "app": [
+   {"nome": "Unsloth Studio", "url": "https://unsloth.ai/docs/new/studio", "oss": "AGPL-3.0 (core Apache-2.0)", "repo": "https://github.com/unslothai/unsloth", "prezzo": "free", "limiti": "Free no-code web app (beta) to train, run and export models (GGUF, MLX) on your computer.", "locale": true},
+   {"nome": "Unsloth", "url": "https://github.com/unslothai/unsloth", "oss": "Apache-2.0", "repo": "https://github.com/unslothai/unsloth", "prezzo": "free", "limiti": "Free library: faster fine-tuning with less memory.", "locale": true},
+   {"nome": "LLaMA-Factory", "url": "https://github.com/hiyouga/LlamaFactory", "oss": "Apache-2.0", "repo": "https://github.com/hiyouga/LlamaFactory", "prezzo": "free", "limiti": "Free, with a web interface.", "locale": true},
+   {"nome": "Axolotl", "url": "https://github.com/axolotl-ai-cloud/axolotl", "oss": "Apache-2.0", "repo": "https://github.com/axolotl-ai-cloud/axolotl", "prezzo": "free", "limiti": "Free; Linux with NVIDIA or AMD.", "locale": true},
+   {"nome": "TRL", "url": "https://github.com/huggingface/trl", "oss": "Apache-2.0", "repo": "https://github.com/huggingface/trl", "prezzo": "free", "limiti": "Free Hugging Face library; for developers.", "locale": true}
+  ]},
+  {"id": "builders", "nome": "App and design builders", "app": [
+   {"nome": "Open Design", "url": "https://open-design.ai", "oss": "Apache-2.0", "repo": "https://github.com/nexu-io/open-design", "prezzo": "free", "limiti": "Free; drives the coding agents you already have.", "locale": true},
+   {"nome": "bolt.diy", "url": "https://github.com/stackblitz-labs/bolt.diy", "oss": "MIT", "repo": "https://github.com/stackblitz-labs/bolt.diy", "prezzo": "byok", "limiti": "Free, open version of Bolt; your key or a local model.", "locale": true},
+   {"nome": "Dyad", "url": "https://www.dyad.sh", "oss": "Apache-2.0 (except Pro parts)", "repo": "https://github.com/dyad-sh/dyad", "prezzo": "byok", "limiti": "Free with your own key; Pro $20 a month.", "locale": true},
+   {"nome": "Onlook", "url": "https://onlook.com", "oss": "Apache-2.0", "repo": "https://github.com/onlook-dev/onlook", "prezzo": "unknown", "limiti": "Open source, can be self-hosted; hosted price not verified.", "locale": false, "verificato": false},
+   {"nome": "Bolt.new", "url": "https://bolt.new", "oss": null, "prezzo": "tier", "limiti": "Free: 1M tokens a month (300K a day); Pro from $18.", "locale": false},
+   {"nome": "v0", "url": "https://v0.app", "oss": null, "prezzo": "tier", "limiti": "Free: 7 messages a day plus a one-time $5 credit; Plus $30.", "locale": false},
+   {"nome": "Lovable", "url": "https://lovable.dev", "oss": null, "prezzo": "tier", "limiti": "Free: 5 credits a day, up to 30 a month; Pro $25.", "locale": false},
+   {"nome": "Replit Agent", "url": "https://replit.com", "oss": null, "prezzo": "tier", "limiti": "Free daily credits (numbers not published); Core $20.", "locale": false},
+   {"nome": "Google AI Studio Build", "url": "https://aistudio.google.com", "oss": null, "prezzo": "tier", "limiti": "Free quota (limits not published); Gemini models only.", "locale": false, "verificato": false}
+  ]}
+ ],
+ "chiusi": [
+  {"nome": "Roo Code", "nota": "closed on 15 May 2026, repository archived"},
+  {"nome": "Continue", "nota": "no longer maintained"},
+  {"nome": "Void", "nota": "archived on 2 Jun 2026"},
+  {"nome": "Kimi CLI", "nota": "archived; replaced by Kimi Code"}
+ ],
+ "risultati": {
+  "nome": "Terminal-Bench 2.0",
+  "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0",
+  "nota": "Real terminal tasks, success rate. Each row is an app with a specific model, so it scores the pair, not the app alone. Submissions closed in May 2026, so newer models are missing.",
+  "righe": [
+   {"app": "Codex CLI", "modello": "GPT-5.5", "punti": 82.2},
+   {"app": "Droid", "modello": "GPT-5.3-Codex", "punti": 77.3},
+   {"app": "Junie CLI", "modello": "several models", "punti": 71.0},
+   {"app": "Gemini CLI", "modello": "Gemini 3.1 Pro", "punti": 61.4},
+   {"app": "Warp", "modello": "several models", "punti": 61.2},
+   {"app": "Claude Code", "modello": "Opus 4.6", "punti": 58.0},
+   {"app": "Grok CLI", "modello": "Grok", "punti": 57.3},
+   {"app": "Goose", "modello": "Opus 4.5", "punti": 54.3},
+   {"app": "OpenHands", "modello": "Opus 4.5", "punti": 51.9},
+   {"app": "OpenCode", "modello": "Opus 4.5", "punti": 51.7}
+  ],
+  "stessoModello": "With the same model (Opus 4.6), the app changes the score by up to 17 points: Terminus-KIRA 74.7%, Terminus 2 62.9%, Claude Code 58.0%."
+ },
+ "token": {
+  "nome": "Artificial Analysis Coding Agent Index",
+  "url": "https://artificialanalysis.ai/agents/coding-agents",
+  "nota": "Coding tasks from three benchmarks. Tokens and dollars per task at pay-per-token API prices; on a subscription your real cost is different. Effort level matters a lot: the same app can use 20 times more tokens at maximum effort.",
+  "righe": [
+   {"app": "Claude Code", "modello": "Sonnet 5.5 (max)", "indice": 68.4, "token_m": 27.7, "dollari": 14.19},
+   {"app": "Devin Fusion CLI", "modello": "", "indice": 68.1, "token_m": 12.8, "dollari": 9.01},
+   {"app": "Claude Code", "modello": "Opus 5.5 (max)", "indice": 66.0, "token_m": 15.6, "dollari": 13.04},
+   {"app": "Antigravity CLI", "modello": "Gemini 4 Argon", "indice": 63.8, "token_m": 13.7, "dollari": 5.84},
+   {"app": "Claude Code", "modello": "Sonnet 5.5 (xhigh)", "indice": 62.9, "token_m": 7.1, "dollari": 3.33},
+   {"app": "Codex", "modello": "GPT-6.1 Sol (xhigh)", "indice": 62.9, "token_m": 3.2, "dollari": 1.04},
+   {"app": "Codex", "modello": "GPT-6.1 Sol (medium)", "indice": 61.4, "token_m": 2.3, "dollari": 0.70},
+   {"app": "Grok Build", "modello": "Grok 4.7", "indice": 56.3, "token_m": 14.3, "dollari": 8.82},
+   {"app": "OpenCode", "modello": "GLM-5.3", "indice": 53.6, "token_m": 14.3, "dollari": 4.24},
+   {"app": "Kimi Code CLI", "modello": "Kimi K3", "indice": 51.9, "token_m": 8.5, "dollari": 5.05},
+   {"app": "Claude Code", "modello": "Sonnet 5.5 (medium)", "indice": 45.9, "token_m": 1.3, "dollari": 0.62},
+   {"app": "Codex", "modello": "DeepSeek V4 Flash", "indice": 38.7, "token_m": 15.4, "dollari": 0.09}
+  ]
+ }
+}

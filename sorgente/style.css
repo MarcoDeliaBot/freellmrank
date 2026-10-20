@@ -366,3 +366,13 @@ footer .wrap{max-width:none;padding-inline:clamp(16px,3vw,2.75rem)}
   .menu-mobile{display:block}
 }
 @media (max-width:30rem){.barra-link{display:none}}
+
+/* pagina /apps: etichette di prezzo */
+.prezzo{display:inline-block;font-size:.78rem;font-weight:600;padding:.15rem .5rem;border-radius:5px;white-space:nowrap}
+.prezzo-free{background:color-mix(in srgb,var(--free) 18%,transparent);color:var(--free)}
+.prezzo-byok{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.prezzo-tier{background:color-mix(in srgb,var(--home) 18%,transparent);color:var(--home)}
+.prezzo-paid{background:var(--soft);color:var(--muted)}
+.prezzo-unknown{background:var(--soft);color:var(--muted);font-weight:400}
+.app-legenda{list-style:none;padding:0;display:grid;gap:.35rem;margin:.6rem 0}
+.tab-app td:nth-child(3){min-width:16rem}
