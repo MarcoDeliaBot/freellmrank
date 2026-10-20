@@ -2,10 +2,18 @@
 // Dati da script/costruisci-audio.mjs (dati/audio.json). Arena non ha classifiche audio: le fonti sono altre, citate.
 import fs from 'node:fs';
 import path from 'node:path';
-import { esc, pagina, NOME_PIENO, RADICE, fmtNum, fmtData, spiega, barraSezioni, nuovo } from './comune.mjs';
+import { esc, pagina, NOME_PIENO, RADICE, fmtNum, fmtData, spiega, barraSezioni, nuovo, VER } from './comune.mjs';
 import { barre } from './grafici.mjs';
 import { AUDIO_STT, AUDIO_TTS, AUDIO_PER_VISITATORE } from '../cf-modelli.mjs';
 
+// voci Piper per il browser: id, nome mostrato, lingua dell'esempio, MB da scaricare (elenco della libreria, 20/10/2026)
+const VOCI_PIPER = [
+  ['it_IT-riccardo-x_low', 'Italian · Riccardo (lighter)', 'it', 28],
+  ['it_IT-paola-medium', 'Italian · Paola', 'it', 64],
+  ['de_DE-thorsten-medium', 'German · Thorsten', 'de', 63],
+  ['pt_BR-faber-medium', 'Portuguese (Brazil) · Faber', 'pt', 63],
+  ['pt_PT-tugão-medium', 'Portuguese (Portugal) · Tugão', 'pt', 63],
+];
 const SOGLIA_TTS = 300; // sotto questi voti un modello testo→voce non entra in classifica
 const COLORI = ['s1', 's2', 's3', 's4', 's5'];
 const nomeBreve = (x) => String(x).split('/').pop().replace(/[-_]/g, ' ').replace(/\b(api|demo|hf)\b/gi, '').replace(/\s+/g, ' ').trim();
@@ -46,6 +54,16 @@ export function paginaAudio(dati, blog) {
 <div class="row"><select aria-label="Language">${AUDIO_TTS.lingue.map((l) => `<option value="${l}">${NOMI_LINGUE[l]}</option>`).join('')}</select><button type="submit" class="btn primary">Speak</button></div></form>
 <p class="small muted prova-stato" aria-live="polite"></p><audio controls hidden></audio></div>
 </div>
+<div class="panel piper" id="piper"><h3>Text to speech in Italian, German and Portuguese${nuovo('2026-10-20')}</h3>
+<p class="small">Piper voices (open source, MIT license) that run entirely in your browser: your text never leaves your device and there is no daily limit. The first time, your browser downloads the voice from Hugging Face, plus about 10 MB for the speech engine; then both stay saved.</p>
+<form class="prova-form"><label for="piper-voce" class="small">Voice</label>
+<select id="piper-voce">${VOCI_PIPER.map(([id, nome, lingua, mb]) => `<option value="${id}" data-lingua="${lingua}" data-mb="${mb}">${nome} · ${mb} MB</option>`).join('')}</select>
+<label for="piper-testo" class="small">Your text</label>
+<textarea id="piper-testo" rows="3" maxlength="1000" required></textarea>
+<div class="row"><button type="submit" class="btn primary">Speak</button></div></form>
+<p class="small muted prova-stato" aria-live="polite"></p><audio controls hidden></audio>
+<p class="small muted">Works best on a computer with an up-to-date Chrome, Edge or Firefox. On a phone it can be slow, and the download uses your data plan.</p></div>
+<script type="module" src="/audio-piper.js?v=${VER}"></script>
 <p class="small muted">These two are the open audio models Cloudflare runs for free; the top of the rankings below is better, but has to run on your own computer or on Hugging Face.</p></div>`;
 
   pagina({
