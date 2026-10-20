@@ -21,10 +21,14 @@ export function paginaApp(dati, blog) {
   const tutte = d.gruppi.flatMap((g) => g.app);
   const conta = (p) => tutte.filter((a) => a.prezzo === p).length;
   const COLORI = ['s1', 's2', 's3', 's4', 's5'];
+  // le barre portano alla riga dell'app su questa pagina, non al sito della fonte (citato una volta in fondo)
+  const ancora = (nome) => 'app-' + String(nome).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const nomi = new Set(tutte.map((a) => ancora(a.nome)));
+  const versoRiga = (app, riserva) => { const k = ancora(app === 'Codex' ? 'Codex CLI' : app); return nomi.has(k) ? `#${k}` : riserva; };
 
   const tabella = (g) => `<div class="panel" id="${g.id}"><h2>${esc(g.nome)}</h2>
 <div class="tw"><table class="tab-app"><thead><tr><th>App</th><th>Price</th><th>What is free</th><th>Open source</th><th>Free or local models</th></tr></thead><tbody>
-${g.app.map((a) => `<tr data-prezzo="${a.prezzo}"><td><a href="${esc(a.url)}" rel="noopener"><b>${esc(a.nome)}</b></a></td>
+${g.app.map((a) => `<tr id="${ancora(a.nome)}" data-prezzo="${a.prezzo}"><td><a href="${esc(a.url)}" rel="noopener"><b>${esc(a.nome)}</b></a></td>
 <td><span class="prezzo prezzo-${a.prezzo}">${PREZZI[a.prezzo][0]}</span></td>
 <td class="small">${esc(a.limiti)}${a.verificato === false ? ' <span class="muted">(partly unverified)</span>' : ''}</td>
 <td class="small">${a.oss ? `${a.repo ? `<a href="${esc(a.repo)}" rel="noopener">${esc(a.oss)}</a>` : esc(a.oss)}` : '<span class="muted">closed</span>'}</td>
@@ -32,9 +36,9 @@ ${g.app.map((a) => `<tr data-prezzo="${a.prezzo}"><td><a href="${esc(a.url)}" re
 </tbody></table></div></div>`;
 
   const r = d.risultati, t = d.token;
-  const graficoRisultati = barre(r.righe.map((x, i) => ({ nome: `${x.app} · ${x.modello}`, valore: x.punti, href: r.url, colore: i < 5 ? COLORI[i] : undefined })),
+  const graficoRisultati = barre(r.righe.map((x, i) => ({ nome: `${x.app} · ${x.modello}`, valore: x.punti, href: versoRiga(x.app, '#best'), colore: i < 5 ? COLORI[i] : undefined })),
     { titoloAsse: `${r.nome}: tasks solved (%)`, testoColori: 'Higher is better.', formato: (v) => `${v}%`, daZero: true });
-  const graficoToken = barre([...t.righe].sort((a, b) => a.token_m - b.token_m).map((x) => ({ nome: `${x.app}${x.modello ? ' · ' + x.modello : ''}`, valore: x.token_m, href: t.url, nota: `index ${x.indice}, $${x.dollari} per task` })),
+  const graficoToken = barre([...t.righe].sort((a, b) => a.token_m - b.token_m).map((x) => ({ nome: `${x.app}${x.modello ? ' · ' + x.modello : ''}`, valore: x.token_m, href: versoRiga(x.app, '#tokens'), nota: `index ${x.indice}, $${x.dollari} per task` })),
     { titoloAsse: 'Million tokens used per coding task', testoColori: 'Shorter is better: fewer tokens for each task.', formato: (v) => `${v}M`, daZero: true });
 
   pagina({
