@@ -1,0 +1,71 @@
+{
+  "name": "FreeLLMArena · avviso modelli gratis nuovi",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "cronExpression", "expression": "0 9,19 * * *" }
+          ]
+        }
+      },
+      "id": "e5f6a7b8-0001-4000-8000-000000000001",
+      "name": "Alle 9 e alle 19",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "url": "https://freellmarena.com/data.json",
+        "options": {
+          "response": { "response": { "responseFormat": "json" } }
+        }
+      },
+      "id": "e5f6a7b8-0002-4000-8000-000000000002",
+      "name": "Leggi i dati del sito",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [240, 0],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 60000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Confronta i modelli nuovi del sito con quelli già visti. La prima volta li segna tutti come visti, senza mail.\n// La memoria resta solo quando il flusso è ATTIVO: le prove a mano con «Esegui» non la salvano.\nconst memoria = $getWorkflowStaticData('global');\nconst d = $input.first().json;\nconst nuovi = d.nuovi || [];\nconst primaVolta = !Array.isArray(memoria.visti);\nconst visti = new Set(memoria.visti || []);\nconst arrivati = nuovi.filter((m) => !visti.has(m.nome));\nmemoria.visti = [...new Set([...visti, ...nuovi.map((m) => m.nome)])].slice(-500);\nif (primaVolta || !arrivati.length) return [];\nconst esc = (s) => String(s ?? '').replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));\nconst riga = (m) => {\n  const b = m.hf?.b ? `${m.hf.b} B parametri` : 'dimensione non pubblicata';\n  const gb = m.hf?.b ? `, circa ${Math.round(m.hf.b * 0.606 + 2.7)} GB a 4 bit` : '';\n  const dove = m.hf?.repo ? `<a href=\"https://huggingface.co/${esc(m.hf.repo)}\">Hugging Face</a>` : m.or ? 'API gratis su OpenRouter' : '';\n  return `<li><b>${esc(m.nome)}</b> di ${esc(m.org || '?')}, uscito il ${esc(m.creato || '?')}: ${b}${gb}. ${dove}</li>`;\n};\nreturn [{ json: {\n  oggetto: `FreeLLMArena: ${arrivati.length} modell${arrivati.length === 1 ? 'o gratis nuovo' : 'i gratis nuovi'}`,\n  html: `<p>Entrati nel sito dall'ultimo controllo:</p><ul>${arrivati.map(riga).join('')}</ul><p>Il video del primo esce da solo su GitHub dopo l'aggiornamento dei dati. Elenco completo: <a href=\"https://freellmarena.com/#new\">freellmarena.com</a></p>`\n} }];"
+      },
+      "id": "e5f6a7b8-0003-4000-8000-000000000003",
+      "name": "Solo quelli mai visti",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 0]
+    },
+    {
+      "parameters": {
+        "fromEmail": "info@freellmarena.com",
+        "toEmail": "info@freellmarena.com",
+        "subject": "={{ $json.oggetto }}",
+        "emailFormat": "html",
+        "html": "={{ $json.html }}",
+        "options": {}
+      },
+      "id": "e5f6a7b8-0004-4000-8000-000000000004",
+      "name": "Mandami la mail",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [720, 0],
+      "credentials": {
+        "smtp": { "id": "", "name": "SMTP info@freellmarena.com" }
+      }
+    }
+  ],
+  "connections": {
+    "Alle 9 e alle 19": { "main": [[{ "node": "Leggi i dati del sito", "type": "main", "index": 0 }]] },
+    "Leggi i dati del sito": { "main": [[{ "node": "Solo quelli mai visti", "type": "main", "index": 0 }]] },
+    "Solo quelli mai visti": { "main": [[{ "node": "Mandami la mail", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1", "timezone": "Europe/Rome" },
+  "pinData": {},
+  "active": false
+}

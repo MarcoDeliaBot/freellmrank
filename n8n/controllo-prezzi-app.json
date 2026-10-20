@@ -1,0 +1,196 @@
+{
+  "name": "FreeLLMArena · controllo mensile dei prezzi delle app",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 1 * *"
+            }
+          ]
+        }
+      },
+      "id": "f6a7b8c9-0001-4000-8000-000000000001",
+      "name": "Il primo del mese alle 9",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://raw.githubusercontent.com/MarcoDeliaBot/freellmrank/main/dati/app.json",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "f6a7b8c9-0002-4000-8000-000000000002",
+      "name": "Leggi l'elenco delle app",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 60000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Una riga per app: la pagina dei prezzi è il campo «prezzi» se c'è, altrimenti <sito>/pricing per le app a pagamento e la home per quelle gratis\nconst d = $input.first().json;\nconst out = [];\nfor (const g of d.gruppi || []) for (const a of g.app || []) {\n  const base = String(a.url || '').replace(/\\/$/, '');\n  out.push({ json: { nome: a.nome, gruppo: g.nome, sito: a.url, pagina: a.prezzi || (a.prezzo === 'free' || a.prezzo === 'byok' || /github\\.com|pricing|\\/ai$/.test(base) ? base : `${base}/pricing`), scritto: a.limiti || '' } });\n}\nreturn out;"
+      },
+      "id": "f6a7b8c9-0003-4000-8000-000000000003",
+      "name": "Una riga per app",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.pagina }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 1500
+            }
+          },
+          "redirect": {
+            "redirect": {
+              "followRedirects": true,
+              "maxRedirects": 5
+            }
+          },
+          "response": {
+            "response": {
+              "responseFormat": "text",
+              "outputPropertyName": "testo"
+            }
+          },
+          "timeout": 20000
+        }
+      },
+      "id": "f6a7b8c9-0004-4000-8000-000000000004",
+      "name": "Apri la pagina dei prezzi",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        0
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Tiene solo le frasi che parlano di prezzi e piani gratis, ne fa un'impronta e la confronta con quella del mese prima.\n// La prima volta salva le impronte senza mandare mail. La memoria resta solo quando il flusso è ATTIVO.\nconst memoria = $getWorkflowStaticData('global');\nconst prima = memoria.impronte || null;\nconst app = $('Una riga per app').all();\nconst pagine = $input.all();\nconst impronta = (s) => { let h = 5381; for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0; return h.toString(36); };\nconst nuove = {}, cambiate = [], irraggiungibili = [];\napp.forEach((it, i) => {\n  const a = it.json;\n  const html = String(pagine[i]?.json?.testo || '');\n  if (!html || pagine[i]?.json?.error) { irraggiungibili.push(a); if (prima?.[a.nome]) nuove[a.nome] = prima[a.nome]; return; }\n  const testo = html.replace(/<script[\\s\\S]*?<\\/script>|<style[\\s\\S]*?<\\/style>/gi, ' ').replace(/<[^>]+>/g, '\\n').replace(/&nbsp;|&#160;/g, ' ').replace(/&amp;/g, '&');\n  const frasi = testo.split(/\\n+/).map((r) => r.replace(/\\s+/g, ' ').trim()).filter((r) => r.length > 2 && r.length < 200 && /([$€£]\\s?\\d|\\d\\s?[$€£]|\\bfree\\b|\\/\\s?mo\\b|per month|\\/month|credits?\\b|requests?\\b|tokens?\\b|trial)/i.test(r));\n  const k = impronta([...new Set(frasi)].sort().join('|'));\n  nuove[a.nome] = k;\n  if (prima && prima[a.nome] && prima[a.nome] !== k) cambiate.push({ ...a, frasi: [...new Set(frasi)].slice(0, 12) });\n});\nmemoria.impronte = nuove;\nif (!prima || (!cambiate.length && !irraggiungibili.length)) return [];\nconst esc = (s) => String(s ?? '').replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));\nconst html = `${cambiate.length ? `<p><b>Pagine dei prezzi cambiate dal mese scorso</b> (da ricontrollare a mano):</p><ul>${cambiate.map((a) => `<li><a href=\"${esc(a.pagina)}\">${esc(a.nome)}</a> (${esc(a.gruppo)}). Sul sito scriviamo: «${esc(a.scritto)}»<br><small>${a.frasi.map(esc).join(' · ')}</small></li>`).join('')}</ul>` : ''}${irraggiungibili.length ? `<p><b>Pagine che non si aprono</b> (forse hanno cambiato indirizzo):</p><ul>${irraggiungibili.map((a) => `<li><a href=\"${esc(a.pagina)}\">${esc(a.nome)}</a></li>`).join('')}</ul>` : ''}<p>Per correggere la pagina <a href=\"https://freellmarena.com/apps\">AI apps</a>, scrivi a Claude «aggiorna i prezzi delle app» con questo elenco.</p>`;\nreturn [{ json: { oggetto: `FreeLLMArena: prezzi app, ${cambiate.length} cambiat${cambiate.length === 1 ? 'a' : 'e'}`, html } }];"
+      },
+      "id": "f6a7b8c9-0005-4000-8000-000000000005",
+      "name": "Cosa è cambiato",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "info@freellmarena.com",
+        "toEmail": "info@freellmarena.com",
+        "subject": "={{ $json.oggetto }}",
+        "emailFormat": "html",
+        "html": "={{ $json.html }}",
+        "options": {}
+      },
+      "id": "f6a7b8c9-0006-4000-8000-000000000006",
+      "name": "Mandami la mail",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        1200,
+        0
+      ],
+      "credentials": {
+        "smtp": {
+          "id": "",
+          "name": "SMTP info@freellmarena.com"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Il primo del mese alle 9": {
+      "main": [
+        [
+          {
+            "node": "Leggi l'elenco delle app",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leggi l'elenco delle app": {
+      "main": [
+        [
+          {
+            "node": "Una riga per app",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Una riga per app": {
+      "main": [
+        [
+          {
+            "node": "Apri la pagina dei prezzi",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apri la pagina dei prezzi": {
+      "main": [
+        [
+          {
+            "node": "Cosa è cambiato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cosa è cambiato": {
+      "main": [
+        [
+          {
+            "node": "Mandami la mail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Rome"
+  },
+  "pinData": {},
+  "active": false
+}
