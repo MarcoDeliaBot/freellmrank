@@ -21,7 +21,10 @@ export const REGOLE_SCRITTURA = `Writing rules (strict):
 - Never use: em dashes; "It's not X, it's Y" or "Not because X. Because Y."; self-answered questions ("The result? ..."); colon reveals ("The best part: ..."); negation lists ("No X, no Y, no Z").
 - Never use stock phrases: "unlock", "game-changer", "revolutionary", "delve", "leverage", "say goodbye to", "take it to the next level", "here's the thing", "in today's fast-paced world", "worth noting".
 - No emoji. No hashtags. No engagement bait ("Thoughts?", "Agree?", "Let that sink in").
-- Do not write one sentence per line for a whole post. Write paragraphs.`;
+- Do not write one sentence per line for a whole post. Write paragraphs.
+- Never work out yourself which hardware runs which model: use only the "fits fully on" field in DATA. If it says "no single home machine", say so.
+- Describe apps and tools only with the text given in DATA. Do not add features, integrations, commands, ports, settings or install steps that are not in DATA.
+- Do not claim how many models the site ranks unless that exact number is in DATA.`;
 
 export async function chiediModello(messaggi, { json = false, max = 2500 } = {}) {
   // GitHub Models è stato chiuso il 30/7/2026: si scrive con Workers AI attraverso la funzione protetta del sito
@@ -38,8 +41,27 @@ export async function chiediModello(messaggi, { json = false, max = 2500 } = {})
   return JSON.parse(m[0]);
 }
 
+// secondo passaggio: il modello rilegge la bozza contro i dati e toglie o corregge ciò che non è sostenuto
+export async function rivedi(testo, contesto, max = 3000) {
+  return chiediModello([
+    { role: 'system', content: `You are a strict fact checker for FreeLLMArena. Compare the DRAFT with DATA. Remove or fix every sentence, table cell or claim that DATA does not support: hardware that fits a model, numbers, app features, commands, ports, install steps, counts. Keep everything that DATA supports, keep the Markdown format and headings, and do not add new content. ${REGOLE_SCRITTURA}` },
+    { role: 'user', content: `DATA:
+${contesto}
+
+DRAFT:
+${testo}
+
+Return only the corrected Markdown.` },
+  ], { max });
+}
+
 // pulizia di sicurezza: anche se il modello sbaglia, niente lineette lunghe
-export const senzaLineette = (s) => String(s).replace(/\s*—\s*/g, ', ').replace(/\s*–\s*/g, ' to ');
+export const senzaLineette = (s) => String(s)
+  .replace(/[‐‑‒]/g, '-')                 // trattini speciali nei nomi dei modelli
+  .replace(/(\d)\s*[–—]\s*(\d)/g, '$1 to $2')           // 5–10 → 5 to 10
+  .replace(/\|\s*[–—-]\s*(?=\|)/g, '| n/a ')           // celle vuote delle tabelle
+  .replace(/\*\*([^*]+)\*\*\s*[–—]\s*/g, '**$1**: ')   // **Nome** – testo
+  .replace(/\s*[—–]\s*/g, ', ');
 
 // numeri del testo che non compaiono nei dati: Marco li controlla prima di approvare
 export function numeriDaControllare(testo, contesto) {

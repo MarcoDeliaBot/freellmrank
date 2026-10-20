@@ -49,5 +49,5 @@ export const AUDIO_TTS = { id: '@cf/myshell-ai/melotts', neuronsMinuto: 18.63, c
 export const TETTO_AUDIO = 1000; // 2.000 + 5.000 + 1.000: restano 2.000 di margine sui 10.000 gratis
 export const AUDIO_PER_VISITATORE = 6;
 // Bozze automatiche (functions/api/scrivi.js, 20/10/2026): articolo del blog una volta a settimana e post social per i video.
-// 2.000 + 5.000 + 1.000 + 1.000 = 9.000 sui 10.000 neurons gratis al giorno.
-export const TETTO_SCRIVI = 1000;
+// 2.000 + 5.000 + 1.000 + 1.500 = 9.500 sui 10.000 neurons gratis al giorno.
+export const TETTO_SCRIVI = 1500;
