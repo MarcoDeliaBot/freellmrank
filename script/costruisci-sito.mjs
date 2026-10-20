@@ -52,18 +52,24 @@ const sezioni = dati.categorie.map((c, i) => {
   const alto = c.modelli[0]?.punti || 1, basso = Math.min(...lista.slice(0, 60).map((m) => m.punti)) - 20;
   const barra = (p) => `<span class="punti" title="Best model overall: ${alto}"><i style="width:${Math.round((100 * (p - basso)) / (alto - basso))}%"></i></span>`;
   const soloPesi = ['image', 'video', 'edit', 'i2v', 'vedit'].includes(c.id);
+  // simulazioni su una RTX 4090 prima delle righe: servono per i segni «Best on one 4090» e «Fastest on one 4090»
+  const simDi = new Map(lista.slice(0, 60).map((m) => [m, m.hf ? simula(m.hf, { ...RIF, bpp: 0.606 }, soloPesi) : null]));
+  const entrano = lista.slice(0, 60).filter((m) => simDi.get(m)?.dove === 'gpu');
+  const eroe = entrano[0];
+  const veloce = soloPesi ? null : [...entrano].sort((a, b) => (simDi.get(b).vel || 0) - (simDi.get(a).vel || 0))[0];
   const righe = lista.slice(0, 60).map((m, j) => {
     // colonne calcolate: tutto quello che serve per scegliere, nella stessa riga
     const q4 = m.hf ? m.hf.b * 0.606 + (soloPesi ? 3 : kvGB(m.hf, 8192)) + 0.6 : null;
-    const sim = m.hf ? simula(m.hf, { ...RIF, bpp: 0.606 }, soloPesi) : null;
+    const sim = simDi.get(m);
     const perdita = m.hf && !soloPesi ? perditaQualita(Q4, m.hf.b) : null;
-    const dove = !sim ? '—' : sim.dove === 'gpu' ? `<b>${soloPesi ? 'fits' : fmtVel(sim.vel) + ' tok/s'}</b>` : sim.dove === 'ram' ? `${soloPesi ? 'with RAM' : fmtVel(sim.vel) + ' tok/s'}<div class="org">GPU + RAM</div>` : '<span class="muted">does not fit</span>';
-    return `<tr data-api="${m.or?.gratis ? 1 : 0}" data-open="${m.aperto ? 1 : 0}" data-lab="${chiaveLab(m.org)}">
+    const dove = !sim ? '—' : sim.dove === 'gpu' ? `<span class="tag home">${soloPesi ? 'fits' : fmtVel(sim.vel) + ' tok/s · fits'}</span>` : sim.dove === 'ram' ? `${soloPesi ? 'with RAM' : fmtVel(sim.vel) + ' tok/s'}<div class="org">GPU + RAM</div>` : '<span class="muted">does not fit</span>';
+    const segni = `${m === eroe ? '<span class="segno-casa">Best on one 4090</span>' : ''}${m === veloce && m !== eroe ? '<span class="segno-casa veloce">Fastest on one 4090</span>' : ''}`;
+    return `<tr data-api="${m.or?.gratis ? 1 : 0}" data-open="${m.aperto ? 1 : 0}" data-lab="${chiaveLab(m.org)}"${sim?.dove === 'gpu' ? ' class="casa"' : ''}>
 <td class="n">${j + 1}</td>
-<td class="m"><a class="nome-modello" href="${hrefDi(m.nome)}">${esc(m.nome)}</a><div class="org"><i class="lab-punto" style="--c:${coloreLab(m.org)}"></i>${esc(nomeLab(m.org))}</div></td>
+<td class="m"><a class="nome-modello" href="${hrefDi(m.nome)}">${esc(m.nome)}</a>${segni}<div class="org"><i class="lab-punto" style="--c:${coloreLab(m.org)}"></i>${esc(nomeLab(m.org))}</div></td>
 <td class="n">${m.punti}${barra(m.punti)}<div class="org">#${m.pos} of ${c.totale}</div></td>
 <td class="n">${m.hf ? `${m.hf.b} B${m.hf.att && m.hf.att < m.hf.b ? `<div class="org">${m.hf.att} B active</div>` : ''}` : '—'}</td>
-<td>${m.aperto ? '<span class="tag home">Yes</span>' : '<span class="muted small">No</span>'}<div class="org">${esc(m.licenza)}</div></td>
+<td>${m.aperto ? `<span class="tag home">${esc(m.licenza && m.licenza.length <= 18 ? m.licenza : 'Open weights')}</span>` : '<span class="tag api">API only</span>'}${m.aperto && m.licenza && m.licenza.length > 18 ? `<div class="org">${esc(m.licenza)}</div>` : ''}</td>
 <td class="n">${q4 ? (q4 >= 100 ? Math.round(q4) : q4.toFixed(q4 >= 10 ? 0 : 1)) + ' GB' : '—'}</td>
 <td class="n">${perdita != null ? '+' + perdita.toFixed(1) + '%' : '—'}${perdita != null ? `<div class="org">${giudizio(perdita)}</div>` : ''}</td>
 <td class="n">${dove}</td>
@@ -146,11 +152,11 @@ for (const m of chatCat.modelli.filter((x) => x.aperto)) {
   if (casaMigliori.length === 8) break;
 }
 const laboDi = (m) => ({ lab: coloreLab(m.org), chiaveLab: chiaveLab(m.org), nomeLab: nomeLab(m.org) });
-const pannelloRiassunto = (titolo, sotto, voci, opz) => `<div class="panel"><h2>${titolo}</h2><p class="sotto">${sotto}</p>${barre(voci, opz)}</div>`;
+const pannelloRiassunto = (titolo, meglio, sotto, voci, opz) => `<div class="panel"><div class="testa-g"><h2>${titolo}</h2><span class="meglio ${meglio}">${meglio === 'su' ? 'Higher is better' : 'Lower is better'}</span></div><p class="sotto">${sotto}</p>${barre(voci, opz)}</div>`;
 const riassunto = casaMigliori.length >= 3 ? `<div id="glance"><div class="riassunto">
-${pannelloRiassunto('Arena score', 'Higher is better', casaMigliori.map(({ m, u }) => ({ nome: u.nome, valore: m.punti, href: u.href, ...laboDi(m) })), { titoloAsse: 'Arena chat score' })}
-${pannelloRiassunto('Speed on one RTX 4090', 'Tokens per second, higher is better', [...casaMigliori].sort((a, b) => b.s.vel - a.s.vel).map(({ m, u, s }) => ({ nome: u.nome, valore: Math.round(s.vel), href: u.href, nota: s.dove === 'ram' ? 'part in system RAM' : 'fully on the GPU', ...laboDi(m) })), { titoloAsse: 'Tokens per second at 4-bit', daZero: true })}
-${pannelloRiassunto('Memory at 4-bit', 'GB to load it, lower is better', [...casaMigliori].sort((a, b) => a.s.serve - b.s.serve).map(({ m, u, s }) => ({ nome: u.nome, valore: Math.round(s.serve), href: u.href, ...laboDi(m) })), { titoloAsse: 'GB of memory, 8K context', daZero: true, formato: (v) => `${v} GB` })}
+${pannelloRiassunto('Arena score', 'su', 'Blind human votes on Arena', casaMigliori.map(({ m, u }) => ({ nome: u.nome, valore: m.punti, href: u.href, ...laboDi(m) })), { titoloAsse: 'Arena chat score' })}
+${pannelloRiassunto('Speed on one RTX 4090', 'su', 'Tokens per second at 4-bit', [...casaMigliori].sort((a, b) => b.s.vel - a.s.vel).map(({ m, u, s }) => ({ nome: u.nome, valore: Math.round(s.vel), href: u.href, nota: s.dove === 'ram' ? 'part in system RAM' : 'fully on the GPU', ...laboDi(m) })), { titoloAsse: 'Tokens per second at 4-bit', daZero: true })}
+${pannelloRiassunto('Memory at 4-bit', 'giu', 'GB to load it, with 8K context', [...casaMigliori].sort((a, b) => a.s.serve - b.s.serve).map(({ m, u, s }) => ({ nome: u.nome, valore: Math.round(s.serve), href: u.href, ...laboDi(m) })), { titoloAsse: 'GB of memory, 8K context', daZero: true, riferimento: { valore: 24, nome: 'one RTX 4090' }, testoRif: 'Dashed line: 24 GB, one RTX 4090. Bars that stop before it fit fully on the card; longer ones also use system RAM.', formato: (v) => `${v} GB` })}
 </div>${spiega('The 8 best free chat models that run on a home PC with one RTX 4090 (24 GB) and 64 GB of RAM, compared three ways: how good they are, how fast they write, and how much memory they need.', 'Same models, same colors in all three charts, so you can follow one model across them. A model can be the best but slow, or small and fast: pick the balance you need, then check your own card in Run at home.')}</div>` : '';
 
 // nuovi arrivi: modelli gratis entrati di recente nelle classifiche Arena
@@ -190,7 +196,7 @@ const FAQ = [
   ['Can I run these models on my computer?', 'Open models, yes, if they fit in your GPU memory. The Run at home page estimates memory and speed for your exact card, from one to ten cards, using each model\'s real architecture.'],
   ['Why do small models have no score?', 'Arena votes mostly on large models. We list the most popular small models from the labs\' official Hugging Face pages separately and mark them “No Arena votes”, so you can still find something that runs on a 4 to 12 GB card.'],
 ];
-const faqHtml = (titolo = 'Frequently asked questions') => `<div class="panel faq" id="faq"><h2>${titolo}</h2>${FAQ.map(([d, r]) => `<details><summary>${esc(d)}</summary><p>${esc(r)}</p></details>`).join('')}</div>`;
+const faqHtml = (titolo = 'Frequently asked questions') => `<div class="panel faq" id="faq"><h2>${titolo}</h2><div class="faq-griglia">${FAQ.map(([d, r]) => `<div class="faq-voce"><h3>${esc(d)}</h3><p>${esc(r)}</p></div>`).join('')}</div></div>`;
 
 pagina({
   file: 'index.html', attiva: '/', dati, blog,

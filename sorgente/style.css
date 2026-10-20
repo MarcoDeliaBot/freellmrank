@@ -433,3 +433,24 @@ section.cat.solo-tabella .grafici,section.cat.solo-grafici .pannello-tabella{dis
 .segnala input[type=text]{width:100%;font:inherit;font-size:16px;padding:.55rem .7rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
 .segnala .cf-turnstile{min-height:65px}
 .copiabile{user-select:all;font-weight:600}
+/* idee prese dal disegno Stitch (20/10/2026), con i nostri dati */
+.testa-g{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.3rem .6rem}
+.testa-g h2{margin:0}
+.meglio{font:600 .7rem/1 var(--sans);padding:.28rem .5rem;border-radius:999px;white-space:nowrap}
+.meglio.su{background:color-mix(in srgb,var(--home) 15%,transparent);color:var(--home)}
+.meglio.giu{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
+.tag.api{background:color-mix(in srgb,#d97706 16%,transparent);color:#b45309}
+@media (prefers-color-scheme:dark){.tag.api{color:#f3b453}}
+tr.casa>td{background:color-mix(in srgb,var(--home) 6%,transparent)}
+.segno-casa{display:inline-block;margin-left:.4rem;font:600 .64rem/1 var(--sans);padding:.2rem .4rem;border-radius:4px;background:color-mix(in srgb,var(--home) 18%,transparent);color:var(--home);vertical-align:.1em;white-space:nowrap}
+.segno-casa.veloce{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.faq-griglia{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+@media (max-width:48rem){.faq-griglia{grid-template-columns:minmax(0,1fr)}}
+.faq-voce{border:1px solid var(--line);border-radius:10px;padding:.8rem .9rem;background:var(--soft)}
+.faq-voce h3{margin:0 0 .35rem;font-size:1rem}
+.faq-voce p{margin:0;color:var(--muted);font-size:.92rem}
+/* tre grafici in cima: i nomi si stringono, così le barre hanno spazio (prima la pista era larga 31 px a 1400) */
+.riassunto .vg-riga,.riassunto .vg-asse{grid-template-columns:minmax(4.5rem,8.5rem) minmax(0,1fr);gap:.45rem}
+.riassunto .vg-nome{font-size:.78rem}
+.riassunto .vg-pista{margin-right:2.4rem}
+.riassunto .vg-asse .vg-pista>span{font-size:.62rem;white-space:nowrap}
