@@ -34,6 +34,13 @@ export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&a
 export const fmtNum = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(n));
 export const fmtData = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 
+// sotto ogni grafico: cosa mostra e come si legge (idea presa da Artificial Analysis)
+export const spiega = (cosa, come) => `<details class="spiega"><summary>What this shows · How to read it</summary><p><b>What it shows.</b> ${cosa}</p><p><b>How to read it.</b> ${come}</p></details>`;
+// barra delle sezioni della pagina, che resta in alto mentre si scorre
+export const barraSezioni = (voci) => `<nav class="su-pagina" aria-label="On this page"><span class="small muted">On this page</span>${voci.map(([id, t]) => `<a href="#${id}">${t}</a>`).join('')}</nav>`;
+// etichetta «New» per 45 giorni dalla data di uscita di una sezione
+export const nuovo = (dal) => (Date.now() - Date.parse(dal) < 45 * 864e5 ? ' <span class="badge-new">New</span>' : '');
+
 const pagine = []; // per la sitemap
 export const pagineScritte = () => pagine;
 
@@ -58,8 +65,8 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
   const GRUPPI = [
     ['Rankings', [
       ['/', `${icona('classifica')}Free leaderboard <span class="badge-free">free</span>`],
-      ['/arena.html', `${icona('arena')}Free Arena`],
-      ['/audio.html', `${icona('audio')}Audio`],
+      ['/arena.html', `${icona('arena')}Free Arena${nuovo('2026-10-20')}`],
+      ['/audio.html', `${icona('audio')}Audio${nuovo('2026-10-20')}`],
       ['/decision.html', `${icona('decisioni')}Decision models`],
     ]],
     ['Models', [
@@ -70,7 +77,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
       ['/home.html', `${icona('casa')}Run at home`],
       ['/gpus.html', `${icona('gpus')}GPUs`],
       ['/phone.html', `${icona('telefono')}On your phone`],
-      ['/apps.html', `${icona('app')}AI apps`],
+      ['/apps.html', `${icona('app')}AI apps${nuovo('2026-10-20')}`],
     ]],
     ['Read', [
       ['/blog/', `${icona('blog')}Blog`],

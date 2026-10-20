@@ -1,7 +1,7 @@
 // Tre pezzi piccoli: la pagina "sul telefono", il feed RSS del blog (per newsletter e n8n) e il widget per altri siti.
 import fs from 'node:fs';
 import path from 'node:path';
-import { esc, pagina, NOME_PIENO, URL_SITO, SITO, fmtNum } from './comune.mjs';
+import { esc, pagina, NOME_PIENO, URL_SITO, SITO, fmtNum, spiega } from './comune.mjs';
 import { barre } from './grafici.mjs';
 
 const gb4 = (b) => b * 0.606 + 0.4; // file a 4-bit più il minimo per farlo girare
@@ -36,7 +36,7 @@ export function paginaTelefono(dati, modelli, blog) {
 <h1>Free AI models on your phone</h1>
 <p class="lead">A phone can run a small AI model offline, with no account and no internet. What fits depends on its memory (RAM). Here is what to expect, and which free apps to use.</p>
 </div>
-<div class="panel"><h2>The most used models that fit a phone</h2>${grafico}</div>
+<div class="panel"><h2>The most used models that fit a phone</h2>${grafico}${spiega('The 12 small open models downloaded most each month from Hugging Face that fit in a phone’s memory.', 'Longer bar, more popular, which is not the same as better: these models have no Arena votes yet. The color tells you the smallest phone that runs it: green 8 GB of RAM, blue 12 GB, orange 16 GB.')}</div>
 <div class="panel"><h2>What fits in your phone’s memory</h2>
 <p class="small muted">Rule of thumb: the model can use about 40% of the phone’s RAM; the system and your apps need the rest. Sizes are 4-bit files from the labs’ official Hugging Face pages, ordered by downloads (popularity, not quality).</p>
 ${perTaglio.map((t) => `<h3>${t.ram} GB of RAM <span class="small muted">· ${esc(t.chi)} · ${t.prima ? `everything above, plus models up to about ${fmtGB(t.ram * 0.4)}` : `models up to about ${fmtGB(t.ram * 0.4)}`}</span></h3>

@@ -23,19 +23,23 @@ export function barre(voci, { riferimento, titoloAsse = 'Arena score', testoColo
   const x = (v) => (100 * (v - min)) / (max - min);
   const ticks = tacche(min, max);
   const colorate = voci.some((v) => v.colore);
-  const classe = (v) => (v.rif ? 'vg-rif' : v.colore ? `sw-${v.colore}` : colorate ? 'vg-altro' : 'p-gpu');
+  const perLab = voci.some((v) => v.lab);
+  const classe = (v) => (v.rif ? 'vg-rif' : v.lab ? 'lab' : v.colore ? `sw-${v.colore}` : colorate ? 'vg-altro' : 'p-gpu');
+  const stile = (v) => (v.lab ? `;--c:${v.lab}` : '');
   return `<div class="vel-grafico barre-arena" role="img" aria-label="${esc(titoloAsse)} of the top ${voci.length} free models">
-${voci.map((v) => `<a class="vg-riga${v.rif ? ' rif' : ''}" href="${v.href}" title="${esc(v.nome)}: ${esc(formato(v.valore))}${v.nota ? ' · ' + esc(v.nota) : ''}">
-<span class="vg-nome">${v.rif ? `<b>${esc(v.nome)}</b>` : esc(v.nome)}</span>
-<span class="vg-pista">${riferimento ? `<span class="vg-l" style="left:${x(riferimento.valore)}%"></span>` : ''}<span class="vg-barra ${classe(v)}" style="width:${x(v.valore)}%"></span><span class="vg-val" style="left:${x(v.valore)}%">${esc(formato(v.valore))}</span></span></a>`).join('')}
+${voci.map((v) => `<a class="vg-riga${v.rif ? ' rif' : ''}"${v.chiaveLab ? ` data-lab="${v.chiaveLab}"` : ''} href="${v.href}" title="${esc(v.nome)}: ${esc(formato(v.valore))}${v.nota ? ' · ' + esc(v.nota) : ''}">
+<span class="vg-nome">${v.lab ? `<i class="lab-punto" style="--c:${v.lab}" title="${esc(v.nomeLab || '')}"></i>` : ''}${v.rif ? `<b>${esc(v.nome)}</b>` : esc(v.nome)}</span>
+<span class="vg-pista">${riferimento ? `<span class="vg-l" style="left:${x(riferimento.valore)}%"></span>` : ''}<span class="vg-barra ${classe(v)}" style="width:${x(v.valore)}%${stile(v)}"></span><span class="vg-val" style="left:${x(v.valore)}%">${esc(formato(v.valore))}</span></span></a>`).join('')}
 <div class="vg-asse"><span class="vg-nome"></span><span class="vg-pista">${ticks.map((t) => `<span style="left:${x(t)}%">${esc(formato(t))}</span>`).join('')}</span></div>
 </div>
-<p class="small muted">${esc(titoloAsse)}${daZero ? '.' : `, axis starts at ${min}.`}${colorate ? ' ' + testoColori : ''}${testoRif ? ' ' + testoRif : riferimento ? ` Dashed line: best paid model, ${esc(riferimento.nome)} (${riferimento.valore}).` : ''}</p>`;
+<p class="small muted">${esc(titoloAsse)}${daZero ? '.' : `, axis starts at ${min}.`}${colorate || perLab ? ' ' + (perLab && !colorate ? 'Color = the lab that made the model, the same in every chart.' : testoColori) : ''}${testoRif ? ' ' + testoRif : riferimento ? ` Dashed line: best paid model, ${esc(riferimento.nome)} (${riferimento.valore}).` : ''}</p>`;
 }
 
 // Punteggio contro dimensione (scala logaritmica), con la frontiera: il punteggio più alto
 // raggiungibile a ogni dimensione. In alto a sinistra: piccoli e forti.
-export function dispersione(punti, { etichetteMax = 7, riferimento, testoColori = '' } = {}) {
+// asse: 'size' (parametri, a sinistra meglio) oppure 'speed' (parole al secondo, a destra meglio)
+export function dispersione(punti, { etichetteMax = 7, riferimento, testoColori = '', asse = 'size' } = {}) {
+  const veloce = asse === 'speed';
   if (punti.length < 3) return '';
   const lx = (b) => Math.log10(b);
   const xs = punti.map((p) => lx(p.x)), ys = punti.map((p) => p.y).concat(riferimento ? [riferimento.valore] : []);
@@ -43,8 +47,9 @@ export function dispersione(punti, { etichetteMax = 7, riferimento, testoColori 
   const y0 = Math.floor((Math.min(...ys) - 10) / 25) * 25, y1 = Math.ceil((Math.max(...ys) + 10) / 25) * 25;
   const X = (b) => (100 * (lx(b) - x0)) / (x1 - x0);
   const Y = (v) => 100 - (100 * (v - y0)) / (y1 - y0);
-  // frontiera: scorrendo per dimensione, tiene chi supera tutti i più piccoli
-  const ord = [...punti].sort((a, b) => a.x - b.x);
+  // frontiera: scorrendo dal lato buono dell'asse, tiene chi supera tutti quelli già visti
+  // (dimensione: dal più piccolo; velocità: dal più veloce)
+  const ord = [...punti].sort((a, b) => (veloce ? b.x - a.x : a.x - b.x));
   let meglio = -Infinity;
   const fronte = ord.filter((p) => (p.y > meglio ? ((meglio = p.y), true) : false));
   const setFronte = new Set(fronte);
@@ -56,20 +61,21 @@ export function dispersione(punti, { etichetteMax = 7, riferimento, testoColori 
     if (!vicina) etichette.add(p);
   }
   const xt = []; for (let e = Math.ceil(x0); e <= x1; e += 1) xt.push(e);
-  const etichettaB = (e) => (10 ** e >= 1000 ? 10 ** e / 1000 + 'T' : 10 ** e + 'B');
-  return `<div class="disp" role="img" aria-label="Arena score against model size for ${punti.length} open models">
+  const etichettaB = (e) => (veloce ? `${10 ** e} tok/s` : 10 ** e >= 1000 ? 10 ** e / 1000 + 'T' : 10 ** e + 'B');
+  const meta = X(10 ** ((x0 + x1) / 2));
+  return `<div class="disp" role="img" aria-label="Arena score against ${veloce ? 'speed at home' : 'model size'} for ${punti.length} open models">
 <div class="disp-area">
-<span class="disp-quadrante" style="left:0;top:0;width:${X(10 ** ((x0 + x1) / 2))}%;height:50%"><em>Small and strong</em></span>
+${veloce ? `<span class="disp-quadrante dx" style="left:${meta}%;top:0;width:${100 - meta}%;height:50%"><em>Fast and strong</em></span>` : `<span class="disp-quadrante" style="left:0;top:0;width:${meta}%;height:50%"><em>Small and strong</em></span>`}
 ${xt.map((e) => `<span class="disp-gx" style="left:${X(10 ** e)}%"></span>`).join('')}
 ${riferimento ? `<span class="disp-rif" style="top:${Y(riferimento.valore)}%"><em>${esc(riferimento.nome)} · ${riferimento.valore}</em></span>` : ''}
 <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="${fronte.map((p) => `${X(p.x).toFixed(2)},${Y(p.y).toFixed(2)}`).join(' ')}" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></svg>
-${punti.map((p) => `<a class="disp-punto${setFronte.has(p) ? ' fronte' : ''}${p.colore ? ` evid sw-${p.colore}` : ''}" href="${p.href}" style="left:${X(p.x)}%;top:${Y(p.y)}%" title="${esc(p.nome)}: score ${p.y}, ${p.x} B parameters"></a>`).join('')}
-${[...etichette].map((p) => `<span class="disp-et${X(p.x) > 70 ? ' sx' : ''}" style="left:${X(p.x)}%;top:${Y(p.y)}%">${esc(p.nome)}</span>`).join('')}
+${punti.map((p) => `<a class="disp-punto${setFronte.has(p) ? ' fronte' : ''}${p.lab ? ' lab' : p.colore ? ` evid sw-${p.colore}` : ''}"${p.chiaveLab ? ` data-lab="${p.chiaveLab}"` : ''} href="${p.href}" style="left:${X(p.x)}%;top:${Y(p.y)}%${p.lab ? `;--c:${p.lab}` : ''}" title="${esc(p.nome)}: score ${p.y}, ${veloce ? `${p.x} tokens per second` : `${p.x} B parameters`}"></a>`).join('')}
+${[...etichette].map((p) => `<span class="disp-et${X(p.x) > 70 ? ' sx' : ''}"${p.chiaveLab ? ` data-lab="${p.chiaveLab}"` : ''} style="left:${X(p.x)}%;top:${Y(p.y)}%">${esc(p.nome)}</span>`).join('')}
 </div>
 <div class="disp-assey">${tacche(y0, y1, 4).map((t) => `<span style="top:${Y(t)}%">${t}</span>`).join('')}</div>
 <div class="disp-assex">${xt.map((e) => `<span style="left:${X(10 ** e)}%">${etichettaB(e)}</span>`).join('')}</div>
 </div>
-<p class="small muted">Each dot is an open model; up is better, left is smaller.${punti.some((p) => p.colore) && !testoColori ? ' Colored dots: the models in the time chart.' : ''} The line joins the models that beat every smaller one. Parameters on a log scale.${riferimento ? ` Dashed line: ${esc(riferimento.nome)}.` : ''}${testoColori ? ' ' + testoColori : ''}</p>`;
+<p class="small muted">${veloce ? 'Each dot is an open model; up is better, right is faster on one RTX 4090 at 4-bit. The line joins the models that beat every faster one. Speed on a log scale.' : `Each dot is an open model; up is better, left is smaller.${punti.some((p) => p.colore) && !testoColori ? ' Colored dots: the models in the time chart.' : ''} The line joins the models that beat every smaller one. Parameters on a log scale.`}${punti.some((p) => p.lab) ? ' Color = the lab that made the model.' : ''}${riferimento ? ` Dashed line: ${esc(riferimento.nome)}.` : ''}${testoColori ? ' ' + testoColori : ''}</p>`;
 }
 
 // Chi batte chi: probabilità attesa che il modello della riga vinca contro quello della colonna,
@@ -99,6 +105,10 @@ export function matrice(voci) {
 // Andamento nel tempo: fino a 5 modelli + miglior modello a pagamento (tratteggiato).
 export const COLORI = ['s1', 's2', 's3', 's4', 's5'];
 export function linee(date, serie, pagato) {
+  const giaVisti = {};
+  const tratteggio = serie.map((s) => (s.lab ? (giaVisti[s.lab] = (giaVisti[s.lab] || 0) + 1) > 1 : false));
+  const tinta = (s, i) => (s.lab ? ` stroke="${s.lab}"${tratteggio[i] ? ' stroke-dasharray="5 3"' : ''}` : '');
+  const classeL = (s, i) => (s.lab ? '' : `l-${COLORI[i]}`);
   const tutti = serie.flatMap((s) => s.valori).concat(pagato).filter((v) => v != null);
   if (!tutti.length || date.length < 2) return '';
   const y0 = Math.floor((Math.min(...tutti) - 10) / 25) * 25, y1 = Math.ceil((Math.max(...tutti) + 10) / 25) * 25;
@@ -118,17 +128,17 @@ export function linee(date, serie, pagato) {
 ${mesi.map((m) => `<span class="disp-gx" style="left:${X(m)}%"></span>`).join('')}
 <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
 ${tratto(pagato).map((p) => `<polyline class="l-pagato" points="${p.join(' ')}" fill="none" stroke-width="1.5" stroke-dasharray="4 3" vector-effect="non-scaling-stroke"/>`).join('')}
-${serie.map((s, i) => tratto(s.valori).map((p) => `<polyline class="l-${COLORI[i]}" points="${p.join(' ')}" fill="none" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>`).join('')).join('')}
+${serie.map((s, i) => tratto(s.valori).map((p) => `<polyline class="${classeL(s, i)}"${tinta(s, i)} points="${p.join(' ')}" fill="none" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>`).join('')).join('')}
 </svg>
 ${serie.map((s, i) => {
     const k = s.valori.findLastIndex((v) => v != null);
     if (k < 0) return '';
-    return `<span class="l-punto sw-${COLORI[i]}" style="left:${X(date[k])}%;top:${Y(s.valori[k])}%" title="${esc(s.nome)}: ${s.valori[k]} on ${fmtData(date[k])}"></span>`;
+    return `<span class="l-punto${s.lab ? '' : ` sw-${COLORI[i]}`}" style="left:${X(date[k])}%;top:${Y(s.valori[k])}%${s.lab ? `;background:${s.lab}` : ''}" title="${esc(s.nome)}: ${s.valori[k]} on ${fmtData(date[k])}"></span>`;
   }).join('')}
 </div>
 <div class="disp-assey">${tacche(y0, y1, 4).map((t) => `<span style="top:${Y(t)}%">${t}</span>`).join('')}</div>
 <div class="disp-assex">${mesi.map((m) => `<span style="left:${X(m)}%">${new Date(m).toLocaleDateString('en-GB', { month: 'short', timeZone: 'UTC' })}</span>`).join('')}</div>
 </div>
-<div class="legenda small">${serie.map((s, i) => `<span><i class="sw-${COLORI[i]}"></i>${s.href ? `<a href="${s.href}">${esc(s.nome)}</a>` : esc(s.nome)} <b>${s.valori.filter((v) => v != null).at(-1) ?? ''}</b></span>`).join('')}<span><i class="sw-pagato"></i>Best paid model</span></div>
+<div class="legenda small">${serie.map((s, i) => `<span><i class="${s.lab ? (tratteggio[i] ? 'lab-tratto' : '') : `sw-${COLORI[i]}`}"${s.lab ? ` style="background:${s.lab};--c:${s.lab}"` : ''}></i>${s.href ? `<a href="${s.href}">${esc(s.nome)}</a>` : esc(s.nome)} <b>${s.valori.filter((v) => v != null).at(-1) ?? ''}</b></span>`).join('')}<span><i class="sw-pagato"></i>Best paid model</span></div>
 <p class="small muted">Arena score from ${fmtData(date[0])} to ${fmtData(date.at(-1))}.</p>`;
 }

@@ -1,7 +1,7 @@
 // Pagina /gpus: tutte le schede del catalogo a confronto per gli LLM in casa.
 // Memoria, banda, velocità stimata su quattro modelli veri della classifica, il miglior modello gratis che ci sta.
 // La tabella è scritta nel file (leggibile da Google); sorgente/gpus.js la ricalcola per 2 o 4 schede.
-import { esc, pagina, NOME_PIENO, URL_SITO, linkAmazon } from './comune.mjs';
+import { esc, pagina, NOME_PIENO, URL_SITO, linkAmazon, spiega, barraSezioni } from './comune.mjs';
 import { barre } from './grafici.mjs';
 import { simula, daScheda } from '../../sorgente/calc.mjs';
 import { valuta, ordina, celle, massimiDi, COLONNA_PREDEFINITA } from '../../sorgente/gpu-table.mjs';
@@ -101,7 +101,8 @@ ${economica ? `<div class="tile"><span class="small muted">Smallest card for 27 
 ${piuMemoria ? `<div class="tile"><span class="small muted">Most memory on one card</span><b>${esc(piuMemoria.nome)}</b><span class="small muted">${piuMemoria.gb} GB</span></div>` : ''}
 <div class="tile"><span class="small muted">Cards compared</span><b>${schede.length}</b><span class="small muted">NVIDIA, AMD, Intel, Apple and AI mini PCs</span></div>
 </div>
-<div class="panel">
+${barraSezioni([['cards', 'All cards'], ['speed', 'Speed chart'], ['faq', 'Questions']])}
+<div class="panel" id="cards">
 <h2>All cards</h2>
 <div class="row gpu-filtri">
 <label class="small">How many cards <select id="g-quante">${[1, 2, 4].map((n) => `<option value="${n}">${n}</option>`).join('')}</select></label>
@@ -117,7 +118,7 @@ ${righe}
 <p class="small muted">Estimates at 4-bit (Q4_K_M), ${CTX / 1024}K context. Speed ≈ memory bandwidth × 78% ÷ data read per token, plus a fixed cost per token, calibrated on 44 real llama.cpp tests (<a href="https://github.com/MarcoDeliaBot/freellmrank/blob/main/dati/misure-velocita.json" rel="noopener">list with sources</a>); typical error about ±10%. “+RAM”: part of the model sits in system memory, which is much slower. Unified memory (Apple, Ryzen AI Max, DGX Spark): about 75% can be used by the GPU. “Best free model that fits”: the highest Arena chat score among open models that fit entirely in GPU memory.</p>
 <p class="small muted"><b>Affiliate links:</b> as an Amazon Associate, ${NOME_PIENO} earns from qualifying purchases made through the “Amazon ↗” links. The links do not change the order, the numbers or the estimates on this page, and the price is the same for you.</p>
 </div>
-${grafico ? `<div class="panel"><h2>Speed on ${esc(denso.m.nome)}</h2>${grafico}</div>` : ''}
+${grafico ? `<div class="panel" id="speed"><h2>Speed on ${esc(denso.m.nome)}</h2>${grafico}${spiega(`Estimated words per second for ${esc(denso.m.nome)}, a 28 B model, at 4-bit, on every card where it fits fully in GPU memory.`, 'Longer bar, faster card. About 10 tokens per second is reading speed. Cards missing from the chart cannot hold this model alone: see the table above for how they do with system RAM.')}</div>` : ''}
 <div class="panel" id="faq"><h2>Questions</h2>
 ${domande.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('\n')}
 </div>

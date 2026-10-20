@@ -2,7 +2,7 @@
 // Dati da script/costruisci-audio.mjs (dati/audio.json). Arena non ha classifiche audio: le fonti sono altre, citate.
 import fs from 'node:fs';
 import path from 'node:path';
-import { esc, pagina, NOME_PIENO, RADICE, fmtNum, fmtData } from './comune.mjs';
+import { esc, pagina, NOME_PIENO, RADICE, fmtNum, fmtData, spiega, barraSezioni } from './comune.mjs';
 import { barre } from './grafici.mjs';
 
 const SOGLIA_TTS = 300; // sotto questi voti un modello testo→voce non entra in classifica
@@ -42,15 +42,16 @@ export function paginaAudio(dati, blog) {
 <div class="tile"><span class="small muted">Best text to speech</span><b>${esc(nomeBreve(tts[0]?.space))}</b><span class="small muted">score ${tts[0]?.punteggio} · ${fmtNum(tts[0]?.voti || 0)} votes</span></div>
 <div class="tile"><span class="small muted">Open models ranked</span><b>${asr.length + tts.length}</b><span class="small muted">${asr.length} speech to text, ${tts.length} text to speech</span></div>
 </div>
-<div class="panel" id="in"><h2>Speech to text (audio in)</h2>${graficoAsr}
+${barraSezioni([['in', 'Speech to text'], ['out', 'Text to speech'], ['v2', 'TTS Arena V2']])}
+<div class="panel" id="in"><h2>Speech to text (audio in)</h2>${graficoAsr}${spiega('The 12 open speech-to-text models that make the fewest mistakes on English recordings: meetings, phone calls, read books, accented speech.', 'Longer bar, more words right. Differences under half a point are small; pick by size and speed too, in the table below.')}
 <div class="tw"><table><thead><tr><th>#</th><th>Model</th><th>Words wrong</th><th>Size</th><th>Languages</th><th>Speed</th><th>License</th></tr></thead><tbody>${righeAsr}</tbody></table></div>
 <p class="small muted">Word error rate: the share of words the model gets wrong, lower is better; average over ${a.fonti.asr.prove.length} English test sets (${a.fonti.asr.prove.map(esc).join(', ')}). Speed: how many times faster than real time on the leaderboard’s GPU. Source: <a href="${a.fonti.asr.url}" rel="noopener">${esc(a.fonti.asr.nome)}</a>, open models only; we recompute the average on the test sets all of them share, so the order can differ slightly from the original page.</p></div>
-<div class="panel" id="out"><h2>Text to speech (audio out)</h2>${graficoTts}
+<div class="panel" id="out"><h2>Text to speech (audio out)</h2>${graficoTts}${spiega('The 12 open voice models people preferred most in blind listening tests.', 'Longer bar, preferred more often. 1000 is the average voice; 100 points more means it wins about 64% of the time against an average one.')}
 <div class="tw"><table><thead><tr><th>#</th><th>Voice model</th><th>Score</th><th>±</th><th>Votes</th><th>Last vote</th></tr></thead><tbody>${righeTts(tts)}</tbody></table></div>
 <p class="small muted">People hear two voices reading the same text, without names, and pick the better one. Source: <a href="${a.fonti.tts.url}" rel="noopener">${esc(a.fonti.tts.nome)}</a>, ${fmtNum(a.tts.reduce((s, m) => s + m.voti, 0) / 2)} votes on open models running on Hugging Face Spaces; paid cloud voices are left out. Models need ${SOGLIA_TTS} votes to be ranked. Many votes are from 2024–2025: “last vote” shows how recent each model’s votes are.</p>
 ${ttsPochi.length ? `<details><summary class="small">${ttsPochi.length} models with fewer than ${SOGLIA_TTS} votes</summary><div class="tw"><table><thead><tr><th>#</th><th>Voice model</th><th>Score</th><th>±</th><th>Votes</th><th>Last vote</th></tr></thead><tbody>${righeTts(ttsPochi)}</tbody></table></div></details>` : ''}
 </div>
-${a.v2.length ? `<div class="panel"><h2>Open voices on TTS Arena V2</h2><p class="small muted">TTS Arena V2 ranks mostly paid voices; these are the open ones it lists, with its own scores (a different scale from the table above). Source: <a href="${a.fonti.v2.url}" rel="noopener">${esc(a.fonti.v2.nome)}</a>.</p>
+${a.v2.length ? `<div class="panel" id="v2"><h2>Open voices on TTS Arena V2</h2><p class="small muted">TTS Arena V2 ranks mostly paid voices; these are the open ones it lists, with its own scores (a different scale from the table above). Source: <a href="${a.fonti.v2.url}" rel="noopener">${esc(a.fonti.v2.nome)}</a>.</p>
 <div class="tw"><table><thead><tr><th>Voice model</th><th>TTS Arena V2 score</th><th>±</th><th>Votes</th><th>Still in the arena</th></tr></thead><tbody>${a.v2.map((m) => `<tr><td>${m.repo ? `<a href="https://huggingface.co/${esc(m.repo)}" rel="noopener">${esc(m.nome)}</a>` : esc(m.nome)}</td><td class="n">${m.elo}</td><td class="n">±${m.ic}</td><td class="n">${fmtNum(m.voti)}</td><td>${m.attivo ? 'yes' : 'retired'}</td></tr>`).join('')}</tbody></table></div></div>` : ''}
 <div class="panel"><h2>About these rankings</h2><p class="small">These leaderboards are run by others, not by Arena and not by us. None of them states a license for reusing its results, so we show them with credit and a link to the original. Data updated ${fmtData(a.aggiornato)}. Want to compare text models instead? See the <a href="/">free leaderboard</a> or vote in <a href="/arena.html">Free Arena</a>.</p></div>`,
   });

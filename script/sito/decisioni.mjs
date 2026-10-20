@@ -1,7 +1,7 @@
 // Pagina dei modelli decisionali (stile Jev): classifica dal Jev Decision Index.
 import fs from 'node:fs';
 import path from 'node:path';
-import { RADICE, esc, fmtData, pagina, NOME_PIENO } from './comune.mjs';
+import { RADICE, esc, fmtData, pagina, NOME_PIENO, spiega, barraSezioni } from './comune.mjs';
 import { barre, dispersione } from './grafici.mjs';
 
 const SPACE = 'https://huggingface.co/spaces/multimodalart/jev-decision-index';
@@ -77,7 +77,8 @@ export function paginaDecisioni(dati, blog) {
 <div class="tile"><span class="small muted">Better than Jev</span><b>${sopra.length}</b><span class="small muted">open models score higher than Jev, the first decision model</span></div>
 ${(() => { const b = lista.find((m) => usoLavoro(m.licenza) === 'yes'); return b ? `<div class="tile"><span class="small muted">Best for business use</span><b>${b.punti.toFixed(1)}</b><span class="small muted">${esc(b.nome)} · ${esc(b.licenza)}</span></div>` : ''; })()}
 </div>
-<div class="panel"><h2>Full ranking</h2>
+${barraSezioni([['ranking', 'Full ranking'], ['charts', 'Charts'], ['about', 'About decision models']])}
+<div class="panel" id="ranking"><h2>Full ranking</h2>
 <div class="row">
 <label class="chk"><input type="checkbox" id="f-lavoro"> Commercial use allowed</label>
 <label class="chk"><input type="checkbox" id="f-img"> Understands images</label>
@@ -89,10 +90,10 @@ ${(() => { const b = lista.find((m) => usoLavoro(m.licenza) === 'yes'); return b
 <tbody>${righe}</tbody></table></div>
 <p class="small muted">Decision Index: chance-corrected score from 0 (random guessing) to 100 (perfect), mixing public benchmarks (20%), private tests of the same skills (50%) and private tasks from new domains (30%). Areas, left to right: ${AREE.map((x) => esc(x.nome)).join(', ')} (empty bar: not measured yet). Speed: median time per decision and the slow case (95th percentile), measured by the board on one ${esc(d.suite.hardware || 'GPU')}; a decision model returns one answer, so tokens per second do not apply. Images: score on the board’s separate Vision ranking (${esc(d.visionEdizione || '')}). Calibration error (ECE): how far stated probabilities are from how often the model is right; lower is better. Commercial use: from the license on the model’s Hugging Face page; “non-commercial” licenses (NC) forbid business use. 4-bit size and “fits my hardware” are our estimates. Highlighted rows score better than Jev.</p></div>
 <div class="grafici">
-<div class="panel"><h2>Top 15 decision models</h2>${grafico}</div>
-${disp ? `<div class="panel"><h2>Score against size</h2>${disp}</div>` : ''}
+<div class="panel" id="charts"><h2>Top 15 decision models</h2>${grafico}${spiega('The 15 best open decision models on the Jev Decision Index, with Jev itself (the dark striped bar) as the reference.', 'Longer bar, better model. Bars that reach past the dashed line score better than Jev. The five best have the same colors in both charts.')}</div>
+${disp ? `<div class="panel"><h2>Score against size</h2>${disp}${spiega('Every decision model with a known size: Decision Index score against its number of parameters.', 'Up is better, left is smaller. Dots above the dashed Jev line beat Jev; the green corner holds the small and strong ones, cheapest to run.')}</div>` : ''}
 </div>
-<div class="panel faq"><h2>About decision models</h2>
+<div class="panel faq" id="about"><h2>About decision models</h2>
 <details open><summary>What is it good for?</summary><p>Routing a request to the right model, classifying tickets or emails, yes/no checks, picking the next action of an agent, scoring answers. Anywhere an LLM would write a long reply just to say “B”.</p></details>
 <details><summary>Is Jev free?</summary><p>Jev itself is a closed, hosted model from TypeSafe AI. The models in this ranking are open reproductions; most have weights on Hugging Face that you can download and run for free.</p></details>
 <details><summary>Where do these scores come from?</summary><p>From the <a href="${SPACE}" rel="noopener">Jev Decision Index</a>, a community leaderboard on Hugging Face (Decision Index ${esc(d.suite.versione || '')}, ${d.suite.test || ''} public benchmarks plus private tests), last updated ${fmtData(d.aggiornato)}. It is unofficial and not affiliated with TypeSafe AI; neither are we. We copy its scores once a night and link every model to its page.</p></details>

@@ -2,7 +2,7 @@
 // Uso: node script/costruisci-sito.mjs
 import fs from 'node:fs';
 import path from 'node:path';
-import { RADICE, SITO, URL_SITO, NOME_PIENO, CHAT_WEB, CONTATTO_PRIVACY, VER, esc, fmtData, pagina, pagineScritte } from './sito/comune.mjs';
+import { RADICE, SITO, URL_SITO, NOME_PIENO, CHAT_WEB, CONTATTO_PRIVACY, VER, esc, fmtData, pagina, pagineScritte, spiega, barraSezioni } from './sito/comune.mjs';
 import { barre, dispersione, linee, matrice, COLORI as COLORI_SERIE } from './sito/grafici.mjs';
 import { unisci, paginaCatalogo, pagineModelli } from './sito/modelli.mjs';
 import { preparaBlog, pagineBlog } from './sito/blog.mjs';
@@ -13,6 +13,7 @@ import { preparaConfronti, pagineConfronti } from './sito/confronti.mjs';
 import { paginaTelefono, feedRss, widget } from './sito/extra.mjs';
 import { paginaAudio } from './sito/audio.mjs';
 import { paginaApp } from './sito/app.mjs';
+import { coloreLab, nomeLab, chiaveLab, laboratoriDi } from './sito/laboratori.mjs';
 import { scriviLlms } from './sito/llms.mjs';
 import { simula, daScheda, kvGB, perditaQualita, giudizio, QUANTI } from '../sorgente/calc.mjs';
 
@@ -56,9 +57,9 @@ const sezioni = dati.categorie.map((c, i) => {
     const sim = m.hf ? simula(m.hf, { ...RIF, bpp: 0.606 }, soloPesi) : null;
     const perdita = m.hf && !soloPesi ? perditaQualita(Q4, m.hf.b) : null;
     const dove = !sim ? '—' : sim.dove === 'gpu' ? `<b>${soloPesi ? 'fits' : fmtVel(sim.vel) + ' tok/s'}</b>` : sim.dove === 'ram' ? `${soloPesi ? 'with RAM' : fmtVel(sim.vel) + ' tok/s'}<div class="org">GPU + RAM</div>` : '<span class="muted">does not fit</span>';
-    return `<tr data-api="${m.or?.gratis ? 1 : 0}" data-open="${m.aperto ? 1 : 0}">
+    return `<tr data-api="${m.or?.gratis ? 1 : 0}" data-open="${m.aperto ? 1 : 0}" data-lab="${chiaveLab(m.org)}">
 <td class="n">${j + 1}</td>
-<td class="m"><a class="nome-modello" href="${hrefDi(m.nome)}">${esc(m.nome)}</a><div class="org">${esc(m.org || '—')}</div></td>
+<td class="m"><a class="nome-modello" href="${hrefDi(m.nome)}">${esc(m.nome)}</a><div class="org"><i class="lab-punto" style="--c:${coloreLab(m.org)}"></i>${esc(nomeLab(m.org))}</div></td>
 <td class="n">${m.punti}${barra(m.punti)}<div class="org">#${m.pos} of ${c.totale}</div></td>
 <td class="n">${m.hf ? `${m.hf.b} B${m.hf.att && m.hf.att < m.hf.b ? `<div class="org">${m.hf.att} B active</div>` : ''}` : '—'}</td>
 <td>${m.aperto ? '<span class="tag home">Yes</span>' : '<span class="muted small">No</span>'}<div class="org">${esc(m.licenza)}</div></td>
@@ -73,22 +74,26 @@ const sezioni = dati.categorie.map((c, i) => {
   const prime = [];
   const visti = new Set();
   for (const m of lista) { const k = perNome.get(m.nome)?.chiave || m.nome; if (visti.has(k)) continue; visti.add(k); prime.push(m); if (prime.length === 15) break; }
-  // colori: i cinque modelli del grafico nel tempo hanno lo stesso colore in tutti e tre i grafici
+  // i cinque modelli aperti del grafico nel tempo (colore: il loro laboratorio, come in tutti i grafici)
   const st = storia?.categorie[c.id];
   const cinque = st ? prime.filter((m) => m.aperto && st.serie[m.nome]).slice(0, 5) : [];
   const coloreDi = new Map(cinque.map((m, i) => [m.nome, COLORI_SERIE[i]]));
-  const graficoBarre = barre(prime.map((m) => ({ nome: m.nome, valore: m.punti, href: hrefDi(m.nome), nota: `#${m.pos} of ${c.totale}`, colore: coloreDi.get(m.nome) })), { ...(pagato ? { riferimento: { valore: pagato.punti, nome: pagato.nome } } : {}), ...(c.scala === 'agent' ? { titoloAsse: 'Arena agent score (×100)' } : {}) });
+  const lab = (m) => ({ lab: coloreLab(m.org), chiaveLab: chiaveLab(m.org), nomeLab: nomeLab(m.org) });
+  const graficoBarre = barre(prime.map((m) => ({ nome: m.nome, valore: m.punti, href: hrefDi(m.nome), nota: `#${m.pos} of ${c.totale}`, ...lab(m) })), { ...(pagato ? { riferimento: { valore: pagato.punti, nome: pagato.nome } } : {}), ...(c.scala === 'agent' ? { titoloAsse: 'Arena agent score (×100)' } : {}) });
 
   // grafico 2: punteggio contro dimensione (modelli aperti con dimensione nota)
   const punti = [];
   const vistiD = new Set();
-  for (const m of lista) { if (!m.aperto || !m.hf || vistiD.has(m.hf.repo)) continue; vistiD.add(m.hf.repo); punti.push({ x: m.hf.b, y: m.punti, nome: m.nome, href: hrefDi(m.nome), colore: coloreDi.get(m.nome) }); }
+  for (const m of lista) { if (!m.aperto || !m.hf || vistiD.has(m.hf.repo)) continue; vistiD.add(m.hf.repo); punti.push({ x: m.hf.b, y: m.punti, nome: m.nome, href: hrefDi(m.nome), ...lab(m) }); }
   const graficoDisp = dispersione(punti);
+  // 5. punteggio contro velocità in casa (RTX 4090, 4-bit): l'angolo in alto a destra è il miglior affare
+  const puntiVel = soloPesi ? [] : punti.map((p) => { const m = perNome.get(p.nome); const s = m?.hf ? simula(m.hf, { ...RIF, bpp: 0.606 }) : null; return s && s.dove !== 'no' && s.vel ? { ...p, x: Math.round(s.vel * 10) / 10 } : null; }).filter(Boolean);
+  const graficoVel = puntiVel.length >= 3 ? dispersione(puntiVel, { asse: 'speed' }) : '';
 
   // grafico 3: andamento delle prime 5 aperte negli ultimi sei mesi
   let graficoLinee = '';
   if (st) {
-    graficoLinee = linee(st.date, cinque.map((m) => ({ nome: m.nome, valori: st.serie[m.nome], href: hrefDi(m.nome) })), st.pagato);
+    graficoLinee = linee(st.date, cinque.map((m) => ({ nome: m.nome, valori: st.serie[m.nome], href: hrefDi(m.nome), lab: coloreLab(m.org) })), st.pagato);
   }
 
   const piccoli = (dati.piccoli || []).filter((p) => p.cat.includes(c.id)).slice(0, 20);
@@ -103,20 +108,49 @@ const sezioni = dati.categorie.map((c, i) => {
 
   return `<section class="cat" id="${c.id}" ${i ? 'hidden' : ''}>
 <p class="small muted">${lista.length} of ${c.totale} models in Arena's ${esc(c.nome)} ranking are free to use.${c.scala === 'agent' ? ' Agents are scored differently from the other rankings: Arena’s agent score comes from real agent sessions (shown ×100, higher is better) and cannot be compared with chat points.' : ''} Votes as of ${fmtData(c.data)}. Best free: <a href="${hrefDi(migliore?.nome)}"><b>${esc(migliore?.nome)}</b></a>, #${migliore?.pos} overall.</p>
-<div class="panel"><h2>Full free ranking</h2>
+<div class="comandi-cat">
+<div class="filtro-lab" role="group" aria-label="Labs"><span class="small muted">Labs:</span>${laboratoriDi(lista.slice(0, 60)).map((l) => `<button type="button" aria-pressed="true" data-lab="${l.k}"><i class="lab-punto" style="--c:${l.colore}"></i>${esc(l.nome)}</button>`).join('')}<span class="conta"></span></div>
+<div class="vista" role="group" aria-label="Show"><button type="button" aria-pressed="true" data-vista="">Both</button><button type="button" aria-pressed="false" data-vista="solo-tabella">Table</button><button type="button" aria-pressed="false" data-vista="solo-grafici">Charts</button></div>
+</div>
+<div class="panel pannello-tabella"><h2>Full free ranking</h2>
 <div class="tw"><table>
 <thead><tr><th>Free rank</th><th>Model</th><th>${c.scala === 'agent' ? 'Agent score' : 'Arena score'}</th><th>Size</th><th>Download</th><th>4-bit needs</th><th>Quality at 4-bit</th><th>Speed on RTX 4090</th><th>Use free online</th></tr></thead>
 <tbody>${righe}</tbody></table></div>
 <p class="small muted">Size: parameters (and active parameters for mixture-of-experts). 4-bit needs: GPU memory at Q4_K_M${soloPesi ? ' plus about 3 GB for encoders' : ' with 8K of context'}. ${soloPesi ? '' : 'Quality at 4-bit: perplexity increase against the full model, from llama.cpp tests scaled by size. '}Speed: estimate on one RTX 4090 (24 GB) with 64 GB of DDR5, at 4-bit. <a href="/home.html">Simulate your own hardware</a>.</p></div>
-<div class="grafici">
-<div class="panel"><h2>Top 15 free ${esc(c.nome.toLowerCase())} models</h2>${graficoBarre}</div>
-${graficoDisp ? `<div class="panel"><h2>Score against size</h2>${graficoDisp}</div>` : ''}
-${graficoLinee ? `<div class="panel largo"><h2>Top free models over the last six months</h2>${graficoLinee}</div>` : ''}
-${c.scala === 'agent' ? '' : `<div class="panel largo"><h2>Who beats whom</h2>${matrice([...(pagato ? [{ nome: pagato.nome, valore: pagato.punti, pagato: true }] : []), ...prime.slice(0, 12).map((m) => ({ nome: m.nome, valore: m.punti, href: hrefDi(m.nome) }))])}</div>`}
+<div class="grafici" id="${c.id}-grafici">
+<div class="panel"><h2>Top 15 free ${esc(c.nome.toLowerCase())} models</h2>${graficoBarre}${spiega(
+  c.scala === 'agent' ? 'The 15 best free models in Arena’s agent ranking, scored from real agent sessions.' : `The 15 best free models for ${esc(c.nome.toLowerCase())}, by their score from blind human votes on Arena. The dashed line is the best paid model, for reference.`,
+  'Longer bar, better model. The axis does not start at zero, so small gaps look bigger than they are: on Arena, 10 points is a small difference, 50 is a clear one. Each color is a lab; use the lab buttons above to show only some.')}</div>
+${graficoDisp ? `<div class="panel"><h2>Score against size</h2>${graficoDisp}${spiega('Every open model with a known size: its Arena score against its number of parameters. Size decides how much memory you need to run it.', 'Up is better, left is smaller. Models in the green corner are small and strong: the best value to run at home. The line links the models that beat everything smaller than them.')}</div>` : ''}
+${graficoVel ? `<div class="panel"><h2>Score against speed at home</h2>${graficoVel}${spiega('Open models that run on one RTX 4090 (24 GB) with 64 GB of system RAM, at 4-bit: Arena score against the estimated words per second.', 'Up is better, right is faster. The green corner is fast and strong: the best value for a home PC. Around 10 tokens per second is reading speed; below 5 feels slow.')}</div>` : ''}
+${graficoLinee ? `<div class="panel largo"><h2>Top free models over the last six months</h2>${graficoLinee}${spiega('How the Arena score of the five best open models changed over six months, against the best paid model (dashed grey).', 'A line going up means the model won more votes over time. Lines start when a model joined Arena. Same color as its lab; a dashed line is a second model from the same lab.')}</div>` : ''}
+${c.scala === 'agent' ? '' : `<div class="panel largo"><h2>Who beats whom</h2>${matrice([...(pagato ? [{ nome: pagato.nome, valore: pagato.punti, pagato: true }] : []), ...prime.slice(0, 12).map((m) => ({ nome: m.nome, valore: m.punti, href: hrefDi(m.nome) }))])}${spiega('For each pair of top models, how often the one on the row is expected to beat the one in the column in a blind vote.', 'Read across a row: blue cells are matches that model usually wins, red ones it usually loses. 0.50 is a coin toss; 0.60 means it wins 6 times out of 10.')}</div>`}
 </div>
 ${parteSenzaVoti}
 </section>`;
 }).join('\n');
+
+// 4. in cima, tre grafici sullo stesso gruppo di modelli (idea da Artificial Analysis): i migliori modelli
+// di chat gratis che girano su un PC di casa (una RTX 4090 con 64 GB di RAM): punteggio, velocità, memoria
+const chatCat = dati.categorie.find((c) => c.id === 'chat');
+const casaMigliori = [];
+const vistiC = new Set();
+for (const m of chatCat.modelli.filter((x) => x.aperto)) {
+  const u = perNome.get(m.nome);
+  if (!u?.hf || vistiC.has(u.chiave)) continue;
+  const s = simula(u.hf, { ...RIF, bpp: 0.606 });
+  if (s.dove === 'no' || !s.vel) continue;
+  vistiC.add(u.chiave);
+  casaMigliori.push({ m, u, s });
+  if (casaMigliori.length === 8) break;
+}
+const laboDi = (m) => ({ lab: coloreLab(m.org), chiaveLab: chiaveLab(m.org), nomeLab: nomeLab(m.org) });
+const pannelloRiassunto = (titolo, sotto, voci, opz) => `<div class="panel"><h2>${titolo}</h2><p class="sotto">${sotto}</p>${barre(voci, opz)}</div>`;
+const riassunto = casaMigliori.length >= 3 ? `<div id="glance"><div class="riassunto">
+${pannelloRiassunto('Arena score', 'Higher is better', casaMigliori.map(({ m, u }) => ({ nome: u.nome, valore: m.punti, href: u.href, ...laboDi(m) })), { titoloAsse: 'Arena chat score' })}
+${pannelloRiassunto('Speed on one RTX 4090', 'Tokens per second, higher is better', [...casaMigliori].sort((a, b) => b.s.vel - a.s.vel).map(({ m, u, s }) => ({ nome: u.nome, valore: Math.round(s.vel), href: u.href, nota: s.dove === 'ram' ? 'part in system RAM' : 'fully on the GPU', ...laboDi(m) })), { titoloAsse: 'Tokens per second at 4-bit', daZero: true })}
+${pannelloRiassunto('Memory at 4-bit', 'GB to load it, lower is better', [...casaMigliori].sort((a, b) => a.s.serve - b.s.serve).map(({ m, u, s }) => ({ nome: u.nome, valore: Math.round(s.serve), href: u.href, ...laboDi(m) })), { titoloAsse: 'GB of memory, 8K context', daZero: true, formato: (v) => `${v} GB` })}
+</div>${spiega('The 8 best free chat models that run on a home PC with one RTX 4090 (24 GB) and 64 GB of RAM, compared three ways: how good they are, how fast they write, and how much memory they need.', 'Same models, same colors in all three charts, so you can follow one model across them. A model can be the best but slow, or small and fast: pick the balance you need, then check your own card in Run at home.')}</div>` : '';
 
 // nuovi arrivi: modelli gratis entrati di recente nelle classifiche Arena
 const nuovi = [];
@@ -177,7 +211,9 @@ pagina({
 </div>
 ${ultimi.length ? `<div class="nuovi"><span class="small muted">New on the free leaderboard</span>${ultimi.map((x) => `<a href="${hrefDi(x.m.nome)}"><b>${esc(x.m.nome)}</b><span class="small muted">#${x.m.pos} in ${esc(x.c.nome)} · ${fmtData(x.d)}</span></a>`).join('')}</div>` : ''}
 </div>
-<div class="panel">
+${barraSezioni([['glance', 'At a glance'], ['rankings', 'Rankings'], ['new', 'New models'], ['faq', 'FAQ']])}
+${riassunto}
+<div class="panel" id="rankings">
 <div class="tabs" role="group" aria-label="Category">${dati.categorie.map((c, i) => `<button type="button" data-cat="${c.id}" aria-pressed="${i === 0}">${esc(c.nome)}</button>`).join('')}</div>
 <div class="row">
 <label class="chk"><input type="checkbox" id="f-api"> Free API right now</label>

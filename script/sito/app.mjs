@@ -3,7 +3,7 @@
 // e i token per compito. Dati scritti a mano e controllati sulle pagine ufficiali: dati/app.json.
 import fs from 'node:fs';
 import path from 'node:path';
-import { esc, pagina, NOME_PIENO, RADICE, fmtData } from './comune.mjs';
+import { esc, pagina, NOME_PIENO, RADICE, fmtData, spiega, barraSezioni, nuovo } from './comune.mjs';
 import { barre } from './grafici.mjs';
 
 export const PREZZI = {
@@ -46,7 +46,7 @@ ${g.app.map((a) => `<tr id="${ancora(a.nome)}" data-prezzo="${a.prezzo}"><td><a 
     titolo: `Free and Paid AI Apps: Coding Agents, Editors, Local Model Apps · ${NOME_PIENO}`,
     descr: `${tutte.length} AI apps checked: which are free, which are free with your own or a local model, which have a free plan, which are paid. Plus which give the best results and use the fewest tokens.`,
     corpo: `<div style="display:grid;gap:.4rem">
-<h1>AI apps: free and paid</h1>
+<h1>AI apps: free and paid${nuovo('2026-10-20')}</h1>
 <p class="lead">The apps people use with AI models: coding agents, code editors, apps to run models at home, to fine-tune them, and to build apps. For each one: what you can use free, whether it works with free or local models, and, where tests exist, which gives the best results and uses the fewest tokens.</p>
 </div>
 <div class="tiles">
@@ -58,11 +58,12 @@ ${g.app.map((a) => `<tr id="${ancora(a.nome)}" data-prezzo="${a.prezzo}"><td><a 
 <div class="panel"><div class="row app-filtri"><span class="small muted">Show:</span><span class="tabs" role="group" aria-label="Price">
 <button type="button" aria-pressed="true" data-prezzo="">All</button>${Object.entries(PREZZI).filter(([k]) => k !== 'unknown').map(([k, [n]]) => `<button type="button" aria-pressed="false" data-prezzo="${k}">${n}</button>`).join('')}</span></div>
 <ul class="small app-legenda">${Object.entries(PREZZI).filter(([k]) => k !== 'unknown').map(([k, [n, s]]) => `<li><span class="prezzo prezzo-${k}">${n}</span> ${esc(s)}</li>`).join('')}</ul>
-<p class="small muted">Jump to: ${d.gruppi.map((g) => `<a href="#${g.id}">${esc(g.nome)}</a>`).join(' · ')} · <a href="#best">Best results</a> · <a href="#tokens">Fewest tokens</a></p></div>
+</div>
+${barraSezioni([...d.gruppi.map((g) => [g.id, esc(g.nome)]), ['best', 'Best results'], ['tokens', 'Fewest tokens']])}
 ${d.gruppi.map(tabella).join('\n')}
-<div class="panel" id="best"><h2>Which coding agents give the best results</h2>${graficoRisultati}
+<div class="panel" id="best"><h2>Which coding agents give the best results</h2>${graficoRisultati}${spiega('The share of real terminal tasks each coding agent solved, with the model it was tested with.', 'Longer bar, more tasks solved. The same app can score very differently with another model, so read it as app plus model. Click a bar to see the app’s price and free plan above.')}
 <p class="small muted">${esc(r.nota)} ${esc(r.stessoModello)} Source: <a href="${r.url}" rel="noopener">${esc(r.nome)}</a>.</p></div>
-<div class="panel" id="tokens"><h2>Which use the fewest tokens</h2>${graficoToken}
+<div class="panel" id="tokens"><h2>Which use the fewest tokens</h2>${graficoToken}${spiega('How many tokens each coding agent used, on average, to do one coding task, and what that costs at API prices.', 'Shorter bar, fewer tokens. Fewer tokens means cheaper and usually faster, but check the score in the table: an agent that uses few tokens and fails the task is not a saving.')}
 <div class="tw"><table><thead><tr><th>App</th><th>Model</th><th>Score</th><th>Tokens per task</th><th>Cost per task</th></tr></thead><tbody>
 ${t.righe.map((x) => `<tr><td>${esc(x.app)}</td><td>${esc(x.modello || '—')}</td><td class="n"><b>${x.indice}</b></td><td class="n">${x.token_m}M</td><td class="n">$${x.dollari.toFixed(2)}</td></tr>`).join('')}
 </tbody></table></div>
