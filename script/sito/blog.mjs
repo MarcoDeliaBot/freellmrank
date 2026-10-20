@@ -91,8 +91,14 @@ export function preparaBlog(dati, storia, modelli) {
     apigratis: () => dati.openrouterGratis.length,
     piccoli: () => (dati.piccoli || []).length,
     data: () => fmtData(dati.aggiornato),
+    // pezzi delle guide nello stile del disegno Stitch: riga «Best free model» con punteggio e posizione, e nome semplice
+    riga: (cat) => {
+      const m = miglioreGratis(cat); const c = dati.categorie.find((x) => x.id === cat);
+      return m ? `<div class="cat-riga"><span class="cat-etichetta">Best free model:</span><a class="cat-nome" href="${hrefPerNome(m.nome) || '/'}">${esc(m.nome)}</a><span class="cat-chip">★ Score ${m.punti}</span><span class="cat-chip tenue">#${m.pos} of ${c.totale} overall</span></div>` : '';
+    },
+    nome: (cat) => esc(miglioreGratis(cat)?.nome || ''),
   };
-  const guide = leggiGuide().map((g) => ({ ...g, corpo: riempi(g.corpo, ctx), data: g.data || dati.aggiornato }));
+  const guide = leggiGuide().map((g) => ({ ...g, automatico: /\{\{\w+/.test(g.corpo), corpo: riempi(g.corpo, ctx), data: g.data || dati.aggiornato }));
   return [...guide, ...resoconti(dati, storia, hrefPerNome)].sort((a, b) => b.data.localeCompare(a.data));
 }
 
@@ -105,9 +111,9 @@ export function pagineBlog(dati, post) {
         { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Blog', item: `${URL_SITO}/blog/` }, { '@type': 'ListItem', position: 2, name: p.titolo, item: `${URL_SITO}/blog/${p.slug}` }] },
       ],
       titolo: `${p.titolo} · ${NOME_PIENO}`, descr: p.descr,
-      corpo: `<p class="briciole small"><a href="/blog/">Blog</a> › ${esc(p.tipo)}</p>
-<article class="articolo">
-<header><p class="small muted">${esc(p.tipo)} · ${fmtData(p.data)}</p><h1>${esc(p.titolo)}</h1><p class="lead">${esc(p.descr)}</p></header>
+      corpo: `<article class="articolo">
+<nav class="art-briciole" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span>/</span><span>${esc(p.tipo === 'Guide' ? 'Guide' : 'Weekly report')}</span></nav>
+<header class="art-testa"><p class="art-meta"><span class="art-tipo">${esc(p.tipo === 'Guide' ? 'Guide' : 'Weekly report')}</span><span>·</span><time datetime="${p.data}">${fmtData(p.data)}</time><span>·</span><span>${Math.max(1, Math.round(p.corpo.split(/\s+/).length / 220))} min read</span>${p.tipo !== 'Guide' || /\{\{|Data as of/.test(p.corpo) || p.automatico ? '<span>·</span><span class="art-vivo"><i class="punto-vivo" aria-hidden="true"></i>Data updated automatically</span>' : ''}</p><h1>${esc(p.titolo)}</h1><p class="lead">${esc(p.descr)}</p></header>
 ${marked.parse(p.corpo)}
 </article>`,
     });
