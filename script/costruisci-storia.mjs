@@ -11,7 +11,7 @@ const DIR = path.join(RADICE, 'dati', 'arena-storia');
 fs.mkdirSync(DIR, { recursive: true });
 const OFFLINE = process.argv.includes('--offline');
 const GIORNI = 182; // andamento degli ultimi sei mesi
-const CATEGORIE = { chat: 'text', code: 'webdev', vision: 'vision', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit' };
+const CATEGORIE = { chat: 'text', code: 'webdev', vision: 'vision', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit', document: 'document', search: 'search', i2v: 'image_to_video', vedit: 'video_edit', agent: 'agent' };
 
 async function righe(config) {
   const file = path.join(DIR, `${config}.parquet`);
@@ -21,8 +21,9 @@ async function righe(config) {
     fs.writeFileSync(file, Buffer.from(await r.arrayBuffer()));
   }
   const b = fs.readFileSync(file);
-  const tutte = await parquetReadObjects({ file: b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength), columns: ['model_name', 'license', 'rating', 'category', 'leaderboard_publish_date'] });
-  return tutte.filter((x) => x.category === 'overall');
+  const tutte = await parquetReadObjects({ file: b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength), columns: config === 'agent' ? ['model_name', 'license', 'score', 'category', 'leaderboard_publish_date'] : ['model_name', 'license', 'rating', 'category', 'leaderboard_publish_date'] });
+  // gli agenti hanno score da 0 a 1: ×100 con un decimale, come in costruisci-dati.mjs
+  return tutte.filter((x) => x.category === 'overall').map((x) => (config === 'agent' ? { ...x, rating: Number(x.score) * 100 } : x));
 }
 
 const uscita = { aggiornato: new Date().toISOString().slice(0, 10), categorie: {} };
@@ -39,7 +40,7 @@ for (const [id, config] of Object.entries(CATEGORIE)) {
     if (!primo[n] || d < primo[n]) primo[n] = d;
     const i = indice.get(d);
     if (i === undefined) continue;
-    const v = Math.round(x.rating);
+    const v = config === 'agent' ? Math.round(x.rating * 10) / 10 : Math.round(x.rating);
     if (x.license === 'Proprietary') { if (pagato[i] == null || v > pagato[i]) pagato[i] = v; continue; }
     (serie[n] ||= recenti.map(() => null))[i] = v;
   }

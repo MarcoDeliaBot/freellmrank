@@ -47,7 +47,7 @@ const sezioni = dati.categorie.map((c, i) => {
   const pagato = c.modelli.find((m) => !usabileGratis(m));
   const alto = c.modelli[0]?.punti || 1, basso = Math.min(...lista.slice(0, 60).map((m) => m.punti)) - 20;
   const barra = (p) => `<span class="punti" title="Best model overall: ${alto}"><i style="width:${Math.round((100 * (p - basso)) / (alto - basso))}%"></i></span>`;
-  const soloPesi = ['image', 'video', 'edit'].includes(c.id);
+  const soloPesi = ['image', 'video', 'edit', 'i2v', 'vedit'].includes(c.id);
   const righe = lista.slice(0, 60).map((m, j) => {
     // colonne calcolate: tutto quello che serve per scegliere, nella stessa riga
     const q4 = m.hf ? m.hf.b * 0.606 + (soloPesi ? 3 : kvGB(m.hf, 8192)) + 0.6 : null;
@@ -75,7 +75,7 @@ const sezioni = dati.categorie.map((c, i) => {
   const st = storia?.categorie[c.id];
   const cinque = st ? prime.filter((m) => m.aperto && st.serie[m.nome]).slice(0, 5) : [];
   const coloreDi = new Map(cinque.map((m, i) => [m.nome, COLORI_SERIE[i]]));
-  const graficoBarre = barre(prime.map((m) => ({ nome: m.nome, valore: m.punti, href: hrefDi(m.nome), nota: `#${m.pos} of ${c.totale}`, colore: coloreDi.get(m.nome) })), pagato ? { riferimento: { valore: pagato.punti, nome: pagato.nome } } : {});
+  const graficoBarre = barre(prime.map((m) => ({ nome: m.nome, valore: m.punti, href: hrefDi(m.nome), nota: `#${m.pos} of ${c.totale}`, colore: coloreDi.get(m.nome) })), { ...(pagato ? { riferimento: { valore: pagato.punti, nome: pagato.nome } } : {}), ...(c.scala === 'agent' ? { titoloAsse: 'Arena agent score (×100)' } : {}) });
 
   // grafico 2: punteggio contro dimensione (modelli aperti con dimensione nota)
   const punti = [];
@@ -100,17 +100,17 @@ const sezioni = dati.categorie.map((c, i) => {
 <td><span class="small">~${Math.ceil(p.hf.b * 0.606 * 1.1 + 1.5)} GB at 4-bit</span> · <a class="small" href="/home.html">simulate</a></td></tr>`; }).join('')}</tbody></table></div></div>` : '';
 
   return `<section class="cat" id="${c.id}" ${i ? 'hidden' : ''}>
-<p class="small muted">${lista.length} of ${c.totale} models in Arena's ${esc(c.nome)} ranking are free to use. Votes as of ${fmtData(c.data)}. Best free: <a href="${hrefDi(migliore?.nome)}"><b>${esc(migliore?.nome)}</b></a>, #${migliore?.pos} overall.</p>
+<p class="small muted">${lista.length} of ${c.totale} models in Arena's ${esc(c.nome)} ranking are free to use.${c.scala === 'agent' ? ' Agents are scored differently from the other rankings: Arena’s agent score comes from real agent sessions (shown ×100, higher is better) and cannot be compared with chat points.' : ''} Votes as of ${fmtData(c.data)}. Best free: <a href="${hrefDi(migliore?.nome)}"><b>${esc(migliore?.nome)}</b></a>, #${migliore?.pos} overall.</p>
 <div class="panel"><h2>Full free ranking</h2>
 <div class="tw"><table>
-<thead><tr><th>Free rank</th><th>Model</th><th>Arena score</th><th>Size</th><th>Download</th><th>4-bit needs</th><th>Quality at 4-bit</th><th>Speed on RTX 4090</th><th>Use free online</th></tr></thead>
+<thead><tr><th>Free rank</th><th>Model</th><th>${c.scala === 'agent' ? 'Agent score' : 'Arena score'}</th><th>Size</th><th>Download</th><th>4-bit needs</th><th>Quality at 4-bit</th><th>Speed on RTX 4090</th><th>Use free online</th></tr></thead>
 <tbody>${righe}</tbody></table></div>
 <p class="small muted">Size: parameters (and active parameters for mixture-of-experts). 4-bit needs: GPU memory at Q4_K_M${soloPesi ? ' plus about 3 GB for encoders' : ' with 8K of context'}. ${soloPesi ? '' : 'Quality at 4-bit: perplexity increase against the full model, from llama.cpp tests scaled by size. '}Speed: estimate on one RTX 4090 (24 GB) with 64 GB of DDR5, at 4-bit. <a href="/home.html">Simulate your own hardware</a>.</p></div>
 <div class="grafici">
 <div class="panel"><h2>Top 15 free ${esc(c.nome.toLowerCase())} models</h2>${graficoBarre}</div>
 ${graficoDisp ? `<div class="panel"><h2>Score against size</h2>${graficoDisp}</div>` : ''}
 ${graficoLinee ? `<div class="panel largo"><h2>Top free models over the last six months</h2>${graficoLinee}</div>` : ''}
-<div class="panel largo"><h2>Who beats whom</h2>${matrice([...(pagato ? [{ nome: pagato.nome, valore: pagato.punti, pagato: true }] : []), ...prime.slice(0, 12).map((m) => ({ nome: m.nome, valore: m.punti, href: hrefDi(m.nome) }))])}</div>
+${c.scala === 'agent' ? '' : `<div class="panel largo"><h2>Who beats whom</h2>${matrice([...(pagato ? [{ nome: pagato.nome, valore: pagato.punti, pagato: true }] : []), ...prime.slice(0, 12).map((m) => ({ nome: m.nome, valore: m.punti, href: hrefDi(m.nome) }))])}</div>`}
 </div>
 ${parteSenzaVoti}
 </section>`;

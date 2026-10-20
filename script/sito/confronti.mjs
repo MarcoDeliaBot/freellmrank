@@ -37,7 +37,7 @@ export function pagineConfronti(dati, coppie, blog) {
     const pa = vince(a.cat.chat.punti, b.cat.chat.punti);
     const [primo, secondo, p] = pa >= 0.5 ? [a, b, pa] : [b, a, 1 - pa];
     const vicino = Math.abs(a.cat.chat.punti - b.cat.chat.punti) < 10;
-    const cats = Object.keys(a.cat).filter((c) => b.cat[c]);
+    const cats = Object.keys(a.cat).filter((c) => b.cat[c] && c !== 'agent'); // gli agenti hanno un'altra scala: fuori dal confronto a punti
     const righeCat = cats.map((c) => {
       const x = a.cat[c].punti, y = b.cat[c].punti;
       return `<tr><td>${esc(nomiCat[c] || c)}</td><td class="n"${x > y ? ' style="font-weight:700"' : ''}>${x}</td><td class="n"${y > x ? ' style="font-weight:700"' : ''}>${y}</td><td>${Math.abs(x - y) < 10 ? 'about even' : esc((x > y ? a : b).nome)}</td></tr>`;

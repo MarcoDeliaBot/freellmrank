@@ -4,7 +4,7 @@ import { linee } from './grafici.mjs';
 import { perNomeArena, DOMANDE_PER_VISITATORE } from '../cf-modelli.mjs';
 import { simula, daScheda, kvGB, QUANTI, perditaQualita, giudizio, slug } from '../../sorgente/calc.mjs';
 
-const SOLO_PESI = new Set(['image', 'video', 'edit']);
+const SOLO_PESI = new Set(['image', 'video', 'edit', 'i2v', 'vedit']);
 const usabileGratis = (m) => m.aperto || m.or?.gratis;
 // nome più leggibile fra quelli usati nelle varie classifiche
 const piuBello = (a, b) => ((/[A-Z ]/.test(b) && !/[A-Z ]/.test(a)) ? b : a);
@@ -143,8 +143,8 @@ export function pagineModelli(dati, storia, modelli, blog) {
     ];
 
     const punteggi = cats.length ? `<div class="panel"><h2>Arena scores</h2><div class="tw"><table><thead><tr><th>Arena</th><th>Score</th><th>Rank</th><th>Votes</th></tr></thead><tbody>
-${cats.map((c) => `<tr><td><a href="/#${c}">${esc(nomiCat[c])}</a></td><td class="n">${m.cat[c].punti}</td><td class="n">#${m.cat[c].pos} of ${m.cat[c].totale}</td><td class="n">${fmtNum(m.cat[c].voti)}</td></tr>`).join('')}
-</tbody></table></div><p class="small muted">Rank among all models, paid ones included. Source: Arena leaderboard dataset.</p></div>` : m.nuovo
+${cats.map((c) => `<tr><td><a href="/#${c}">${esc(nomiCat[c])}</a></td><td class="n">${m.cat[c].punti}${c === 'agent' ? ' <span class="small muted">agent score</span>' : ''}</td><td class="n">#${m.cat[c].pos} of ${m.cat[c].totale}</td><td class="n">${fmtNum(m.cat[c].voti)}${c === 'agent' ? ' <span class="small muted">sessions</span>' : ''}</td></tr>`).join('')}
+</tbody></table></div><p class="small muted">Rank among all models, paid ones included. Source: Arena leaderboard dataset.${cats.includes('agent') ? ' The agent score is on a different scale (×100, from real agent sessions) and cannot be compared with the other scores.' : ''}</p></div>` : m.nuovo
       ? `<div class="panel"><h2>New: waiting for Arena votes</h2><p class="small">${m.primo ? `Released on ${fmtData(m.primo)}. ` : ''}Arena has not voted on this model yet. As soon as it does, the model moves into the ranking automatically, usually the next night. Until then you can still check its size, memory needs and speed below${m.or?.gratis ? ', and try it for free' : ''}.</p></div>`
       : `<div class="panel"><h2>No Arena votes yet</h2><p class="small">Arena has not voted on this model. It is listed because it is a popular small model on its lab's official Hugging Face page (${fmtNum(m.download || 0)} downloads a month).</p></div>`;
 

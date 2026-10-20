@@ -19,6 +19,13 @@ const CATEGORIE = [
   { id: 'image', arena: 'text_to_image', nome: 'Image' },
   { id: 'video', arena: 'text_to_video', nome: 'Video' },
   { id: 'edit', arena: 'image_edit', nome: 'Image edit' },
+  // aggiunte il 20/10/2026 («metti sempre tutto»)
+  { id: 'document', arena: 'document', nome: 'Documents' },
+  { id: 'search', arena: 'search', nome: 'Search' },
+  { id: 'i2v', arena: 'image_to_video', nome: 'Image to video' },
+  { id: 'vedit', arena: 'video_edit', nome: 'Video edit' },
+  // gli agenti hanno un'altra misura: un punteggio da 0 a 1 (score), non i punti Elo; lo mostriamo ×100
+  { id: 'agent', arena: 'agent', nome: 'Agents', scala: 'agent' },
 ];
 
 async function scaricaArena(config) {
@@ -95,13 +102,13 @@ for (const c of CATEGORIE) {
       licenza: r.license,
       aperto,
       pos: Number(r.rank),
-      punti: Math.round(r.rating),
-      voti: Number(r.vote_count),
+      punti: c.scala === 'agent' ? Math.round(Number(r.score) * 1000) / 10 : Math.round(r.rating),
+      voti: Number(c.scala === 'agent' ? r.session_count : r.vote_count),
       or: or ? { id: or.id, gratis: libero(or) } : null,
       hf: aperto ? infoHf(r.model_name) : null,
     };
   });
-  uscita.categorie.push({ id: c.id, nome: c.nome, data: righe[0]?.leaderboard_publish_date, totale: modelli.length, modelli });
+  uscita.categorie.push({ id: c.id, nome: c.nome, ...(c.scala ? { scala: c.scala } : {}), data: righe[0]?.leaderboard_publish_date, totale: modelli.length, modelli });
 }
 
 // modelli gratuiti di OpenRouter, anche quelli che Arena non vota

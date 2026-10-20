@@ -5,7 +5,7 @@ const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const CONTESTI = [2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144];
 const LETTURA = 8; // token al secondo: una persona legge comoda più o meno a questa velocità
-const SOLO_PESI = new Set(['image', 'video', 'edit']); // modelli di immagini e video: niente contesto testuale
+const SOLO_PESI = new Set(['image', 'video', 'edit', 'i2v', 'vedit']); // modelli di immagini e video: niente contesto testuale
 
 let dati = null;
 let categoria = 'chat';

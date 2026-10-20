@@ -1483,5 +1483,16 @@
   "contestoMax": 40960,
   "moe": false,
   "attivi": 14768307200
+ },
+ "microsoft/UserRepGen-4B": {
+  "strati": 32,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 8,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": false,
+  "attivi": 4539265536
  }
 }

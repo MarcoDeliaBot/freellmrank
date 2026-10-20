@@ -508,5 +508,35 @@
   "repo": "tencent/HunyuanVideo-1.5",
   "parametri": 8300000000,
   "fonte": "annuncio Tencent"
+ },
+ "Qwen3-VL-235B-A22B-Instruct": {
+  "repo": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+  "parametri": 235670022896,
+  "fonte": "hf-auto"
+ },
+ "Qwen3-VL-235B-A22B-Thinking": {
+  "repo": "Qwen/Qwen3-VL-235B-A22B-Thinking",
+  "parametri": 235670022896,
+  "fonte": "hf-auto"
+ },
+ "Step-3": {
+  "repo": "stepfun-ai/step3",
+  "parametri": 320969912832,
+  "fonte": "hf-auto"
+ },
+ "GLM-4.6V": {
+  "repo": "zai-org/GLM-4.6V",
+  "parametri": 107710933120,
+  "fonte": "hf-auto"
+ },
+ "GLM-4.5V": {
+  "repo": "zai-org/GLM-4.5V",
+  "parametri": 107710933120,
+  "fonte": "hf-auto"
+ },
+ "Qwen2.5-VL-32B-Instruct": {
+  "repo": "Qwen/Qwen2.5-VL-32B-Instruct",
+  "parametri": 33452718336,
+  "fonte": "hf-auto"
  }
 }
