@@ -133,6 +133,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
 <meta property="og:image:alt" content="${NOME_PIENO}: the best AI models you can use for free">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1419">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -144,13 +145,13 @@ ${(Array.isArray(jsonld) ? jsonld : [jsonld]).filter(Boolean).map((o) => `<scrip
 </head>
 <body>
 <header class="top"><div class="barra">
-  <a class="logo" href="/"><img src="/favicon.svg" alt="" width="26" height="26">${NOME.testa}<span>${NOME.coda}</span></a>
+  <a class="logo" href="/"><img src="/favicon.svg" alt="FreeLLMArena logo" width="26" height="26">${NOME.testa}<span>${NOME.coda}</span></a>
   <span class="barra-spazio"></span>
   <a class="barra-link" href="/arena.html">Vote in Free Arena</a>
   <details class="menu-mobile"><summary aria-label="Open the menu">Menu</summary><nav class="menu-pannello" aria-label="Site sections">${menuGruppi}</nav></details>
 </div></header>
 <div class="impianto">
-<aside class="lato"><a class="logo logo-lato" href="/"><img src="/favicon.svg" alt="" width="28" height="28">${NOME.testa}<span>${NOME.coda}</span><b class="badge-free">free</b></a><nav class="menu-lato" aria-label="Site sections">${menuGruppi}</nav><p class="lato-piede"><b>${esc(NOME_PIENO)}</b><br>Data updated ${esc(dati.aggiornato)}<br>Blind human votes from Arena</p></aside>
+<aside class="lato"><a class="logo logo-lato" href="/"><img src="/favicon.svg" alt="FreeLLMArena logo" width="28" height="28">${NOME.testa}<span>${NOME.coda}</span><b class="badge-free">free</b></a><nav class="menu-lato" aria-label="Site sections">${menuGruppi}</nav><p class="lato-piede"><b>${esc(NOME_PIENO)}</b><br>Data updated ${esc(dati.aggiornato)}<br>Blind human votes from Arena</p></aside>
 <main class="contenuto">
 ${corpo}
 <p class="condividi small"><span class="muted">Share this page:</span><a href="https://x.com/intent/post?url=${condividi}&amp;text=${testoCond}" rel="noopener" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=${condividi}" rel="noopener" target="_blank">LinkedIn</a><a href="https://www.reddit.com/submit?url=${condividi}&amp;title=${testoCond}" rel="noopener" target="_blank">Reddit</a><a href="https://wa.me/?text=${testoCond}%20${condividi}" rel="noopener" target="_blank">WhatsApp</a><button type="button" class="link-btn" data-copia="${canonico}">Copy link</button></p>

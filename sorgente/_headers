@@ -1,3 +1,5 @@
+/*
+  Strict-Transport-Security: max-age=31536000
 /widget/*
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=3600
@@ -10,3 +12,5 @@
   Cache-Control: public, max-age=31536000, immutable
 /jetbrains-mono.woff2
   Cache-Control: public, max-age=31536000, immutable
+/cat/*
+  X-Robots-Tag: noindex

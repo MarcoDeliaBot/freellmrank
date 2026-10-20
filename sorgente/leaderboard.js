@@ -3,8 +3,25 @@ const bottoni = document.querySelectorAll('.tabs button');
 const fApi = document.getElementById('f-api');
 const fOpen = document.getElementById('f-open');
 
+// le categorie dopo la prima arrivano da /cat/<id>.html al primo clic (la home resta leggera)
+async function carica(sez) {
+  if (!sez?.dataset.frammento || sez.dataset.caricata) return;
+  sez.dataset.caricata = '1';
+  try {
+    const r = await fetch(sez.dataset.frammento);
+    if (!r.ok) throw new Error(r.status);
+    sez.innerHTML = await r.text();
+    prepara(sez);
+    filtra();
+  } catch {
+    delete sez.dataset.caricata;
+    sez.innerHTML = '<p class="small">This ranking did not load. Check your connection and click the tab again.</p>';
+  }
+}
+
 function mostra(cat) {
   document.querySelectorAll('section.cat').forEach((s) => { s.hidden = s.id !== cat; });
+  carica(document.getElementById(cat));
   bottoni.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cat === cat)));
   try { history.replaceState(null, '', '#' + cat); } catch {}
 }
@@ -18,11 +35,9 @@ function filtra() {
 bottoni.forEach((b) => b.addEventListener('click', () => mostra(b.dataset.cat)));
 fApi.addEventListener('change', filtra);
 fOpen.addEventListener('change', filtra);
-const iniziale = location.hash.slice(1);
-if (document.getElementById(iniziale)?.classList.contains('cat')) mostra(iniziale);
 
 // 6. filtro per laboratorio: spegne barre, punti, etichette e righe della tabella dei laboratori tolti
-document.querySelectorAll('section.cat').forEach((sez) => {
+function prepara(sez) {
   const tasti = [...sez.querySelectorAll('.filtro-lab button')];
   const conta = sez.querySelector('.filtro-lab .conta');
   const aggiorna = () => {
@@ -47,4 +62,7 @@ document.querySelectorAll('section.cat').forEach((sez) => {
     sez.classList.remove('solo-tabella', 'solo-grafici');
     if (b.dataset.vista) sez.classList.add(b.dataset.vista);
   }));
-});
+}
+document.querySelectorAll('section.cat:not([data-frammento])').forEach(prepara);
+const iniziale = location.hash.slice(1);
+if (document.getElementById(iniziale)?.classList.contains('cat')) mostra(iniziale);

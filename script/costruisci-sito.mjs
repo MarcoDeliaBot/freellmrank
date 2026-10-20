@@ -47,7 +47,7 @@ function cellaGratis(m) {
 }
 const hrefDi = (nome) => perNome.get(nome)?.href || '/models.html';
 
-const sezioni = dati.categorie.map((c, i) => {
+const sezioniTutte = dati.categorie.map((c, i) => {
   const lista = c.modelli.filter(usabileGratis);
   const pagato = c.modelli.find((m) => !usabileGratis(m));
   const alto = c.modelli[0]?.punti || 1, basso = Math.min(...lista.slice(0, 60).map((m) => m.punti)) - 20;
@@ -137,6 +137,16 @@ ${c.scala === 'agent' ? '' : `<div class="panel largo"><h2>Who beats whom</h2>${
 </div>
 ${parteSenzaVoti}
 </section>`;
+});
+// home più leggera (controllo SEO del 20/10/2026: 518 KB e ~9.900 elementi): nella pagina c'è solo la prima
+// categoria; le altre stanno in sito/cat/<id>.html e sorgente/leaderboard.js le carica al clic sulla scheda
+fs.mkdirSync(path.join(SITO, 'cat'), { recursive: true });
+const sezioni = sezioniTutte.map((html, i) => {
+  if (!i) return html;
+  const c = dati.categorie[i];
+  const interno = /^<section[^>]*>([\s\S]*)<\/section>$/.exec(html)[1];
+  fs.writeFileSync(path.join(SITO, 'cat', `${c.id}.html`), interno);
+  return `<section class="cat" id="${c.id}" hidden data-frammento="/cat/${c.id}.html?v=${VER}"><p class="small muted carica-cat">Loading the ${esc(c.nome)} ranking…</p></section>`;
 }).join('\n');
 
 // 4. in cima, tre grafici sullo stesso gruppo di modelli (idea da Artificial Analysis): i migliori modelli
@@ -220,7 +230,7 @@ pagina({
     { '@type': 'Dataset', name: `${NOME_PIENO} free AI model rankings`, description: 'Free and open-weight AI models with Arena scores, sizes, GPU memory needs and where to use them free. Updated nightly.', url: URL_SITO + '/', dateModified: dati.aggiornato, isBasedOn: 'https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset', license: 'https://creativecommons.org/licenses/by/4.0/', creditText: 'Rankings from the Arena leaderboard dataset by Arena Intelligence (CC BY 4.0); sizes from Hugging Face.', creator: { '@type': 'Organization', name: NOME_PIENO, url: URL_SITO + '/' }, distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: URL_SITO + '/data.json' }, { '@type': 'DataDownload', encodingFormat: 'text/markdown', contentUrl: URL_SITO + '/llms-full.txt' }] },
   ],
   titolo: `Best Free AI Models, Ranked by Real Votes · ${NOME_PIENO}`,
-  descr: 'The best free and open-weight AI models for chat, coding, vision, image and video, ranked by millions of human votes from Arena. See where to use each one free and what GPU you need.',
+  descr: 'Free and open AI models for chat, coding, vision, image and video, ranked by millions of blind votes. Where to use them free and which GPU you need.',
   corpo: `<div class="eroe">
 <div style="display:grid;gap:.5rem">
 <h1>The best free AI models, ranked by real votes</h1>
