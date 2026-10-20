@@ -2,8 +2,9 @@
 // Dati da script/costruisci-audio.mjs (dati/audio.json). Arena non ha classifiche audio: le fonti sono altre, citate.
 import fs from 'node:fs';
 import path from 'node:path';
-import { esc, pagina, NOME_PIENO, RADICE, fmtNum, fmtData, spiega, barraSezioni } from './comune.mjs';
+import { esc, pagina, NOME_PIENO, RADICE, fmtNum, fmtData, spiega, barraSezioni, nuovo } from './comune.mjs';
 import { barre } from './grafici.mjs';
+import { AUDIO_STT, AUDIO_TTS, AUDIO_PER_VISITATORE } from '../cf-modelli.mjs';
 
 const SOGLIA_TTS = 300; // sotto questi voti un modello testo→voce non entra in classifica
 const COLORI = ['s1', 's2', 's3', 's4', 's5'];
@@ -29,8 +30,26 @@ export function paginaAudio(dati, blog) {
   const righeTts = (lista) => lista.map((m, i) => `<tr><td class="n">${i + 1}</td><td><a href="${space(m.space)}" rel="noopener">${esc(nomeBreve(m.space))}</a><br><span class="small muted">${esc(m.space)}</span></td>
 <td class="n"><b>${m.punteggio}</b></td><td class="n">±${m.ic ?? '—'}</td><td class="n">${fmtNum(m.voti)}</td><td class="n">${m.ultimo ? fmtData(m.ultimo) : '—'}</td></tr>`).join('');
 
+  // riquadro «Try it now»: due modelli aperti su Cloudflare Workers AI, con la loro posizione nelle nostre classifiche
+  const posAsr = asr.findIndex((m) => m.repo === 'openai/whisper-large-v3-turbo') + 1;
+  const posTts = a.tts.findIndex((m) => /melotts/i.test(m.space)) + 1;
+  const NOMI_LINGUE = { en: 'English', es: 'Spanish', fr: 'French', zh: 'Chinese', ja: 'Japanese', ko: 'Korean' };
+  const prova = `<div class="panel prova" id="try-audio" data-secondi="${AUDIO_STT.secondiMax}"><h2>Try it now${nuovo('2026-10-20')}</h2>
+<p class="small muted">No account, no payment. ${AUDIO_PER_VISITATORE} tries a day per visitor. It runs on <a href="https://developers.cloudflare.com/workers-ai/" rel="noopener">Cloudflare Workers AI</a>. We do not store your voice or your text. Do not record personal data.</p>
+<div class="prova-audio">
+<div data-parte="stt"><h3>Speech to text</h3><p class="small">Whisper Large v3 Turbo by OpenAI${posAsr ? `, #${posAsr} in the ranking below` : ''}. Speak up to ${AUDIO_STT.secondiMax} seconds, in any language.</p>
+<div class="row"><button type="button" class="btn primary reg">Record</button><label class="btn">Upload a file<input type="file" accept="audio/*" hidden></label></div>
+<p class="small muted prova-stato" aria-live="polite"></p><div class="prova-risposta" hidden></div></div>
+<div data-parte="tts"><h3>Text to speech</h3><p class="small">MeloTTS by MyShell${posTts ? `, #${posTts} in the ranking below` : ''}. Up to ${AUDIO_TTS.caratteriMax} characters.</p>
+<form class="prova-form"><label for="tts-text" class="small">Your text</label>
+<textarea id="tts-text" rows="3" maxlength="${AUDIO_TTS.caratteriMax}" required placeholder="Example: Free models can now read text aloud on your own computer."></textarea>
+<div class="row"><select aria-label="Language">${AUDIO_TTS.lingue.map((l) => `<option value="${l}">${NOMI_LINGUE[l]}</option>`).join('')}</select><button type="submit" class="btn primary">Speak</button></div></form>
+<p class="small muted prova-stato" aria-live="polite"></p><audio controls hidden></audio></div>
+</div>
+<p class="small muted">These two are the open audio models Cloudflare runs for free; the top of the rankings below is better, but has to run on your own computer or on Hugging Face.</p></div>`;
+
   pagina({
-    file: 'audio.html', attiva: '/audio.html', dati, blog,
+    file: 'audio.html', attiva: '/audio.html', dati, blog, script: 'audio-try.js',
     titolo: `Best Free Speech-to-Text and Text-to-Speech Models · ${NOME_PIENO}`,
     descr: `Free, open audio AI models ranked: ${asr.length} speech-to-text models by word error rate and ${tts.length} text-to-speech voices by blind votes. Best now: ${nomeBreve(asr[0]?.repo)} and ${nomeBreve(tts[0]?.space)}.`,
     corpo: `<div style="display:grid;gap:.4rem">
@@ -42,7 +61,8 @@ export function paginaAudio(dati, blog) {
 <div class="tile"><span class="small muted">Best text to speech</span><b>${esc(nomeBreve(tts[0]?.space))}</b><span class="small muted">score ${tts[0]?.punteggio} · ${fmtNum(tts[0]?.voti || 0)} votes</span></div>
 <div class="tile"><span class="small muted">Open models ranked</span><b>${asr.length + tts.length}</b><span class="small muted">${asr.length} speech to text, ${tts.length} text to speech</span></div>
 </div>
-${barraSezioni([['in', 'Speech to text'], ['out', 'Text to speech'], ['v2', 'TTS Arena V2']])}
+${barraSezioni([['try-audio', 'Try it now'], ['in', 'Speech to text'], ['out', 'Text to speech'], ['v2', 'TTS Arena V2']])}
+${prova}
 <div class="panel" id="in"><h2>Speech to text (audio in)</h2>${graficoAsr}${spiega('The 12 open speech-to-text models that make the fewest mistakes on English recordings: meetings, phone calls, read books, accented speech.', 'Longer bar, more words right. Differences under half a point are small; pick by size and speed too, in the table below.')}
 <div class="tw"><table><thead><tr><th>#</th><th>Model</th><th>Words wrong</th><th>Size</th><th>Languages</th><th>Speed</th><th>License</th></tr></thead><tbody>${righeAsr}</tbody></table></div>
 <p class="small muted">Word error rate: the share of words the model gets wrong, lower is better; average over ${a.fonti.asr.prove.length} English test sets (${a.fonti.asr.prove.map(esc).join(', ')}). Speed: how many times faster than real time on the leaderboard’s GPU. Source: <a href="${a.fonti.asr.url}" rel="noopener">${esc(a.fonti.asr.nome)}</a>, open models only; we recompute the average on the test sets all of them share, so the order can differ slightly from the original page.</p></div>

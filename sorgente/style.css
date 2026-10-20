@@ -417,3 +417,14 @@ h1{font-size:clamp(1.7rem,3.2vw,2.4rem)}
 section.cat.solo-tabella .grafici,section.cat.solo-grafici .pannello-tabella{display:none}
 [data-lab].spento{display:none!important}
 @media (max-width:40rem){.su-pagina>span{display:none}}
+/* riquadro "Try it now" della pagina /audio (20/10/2026) */
+.prova-audio{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;margin:.6rem 0}
+@media (max-width:48rem){.prova-audio{grid-template-columns:minmax(0,1fr)}}
+.prova-audio>div{display:grid;gap:.5rem;align-content:start;border:1px solid var(--line);border-radius:10px;padding:.8rem .9rem}
+.prova-audio h3{margin:0;font-size:1.05rem}
+.prova-audio p{margin:0}
+.prova-audio select{font:inherit;font-size:16px;padding:.4rem .5rem;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}
+.prova-audio audio{width:100%}
+.prova-audio .prova-risposta{margin-top:0}
+.btn.reg.in-corso{background:#dc2626;border-color:#dc2626}
+.btn:disabled{opacity:.5;cursor:not-allowed}

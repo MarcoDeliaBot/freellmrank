@@ -40,3 +40,11 @@ export const neuronsDa = (dollari) => dollari * 90909;
 export const peggioreNeurons = (m, caratteri) => neuronsDa(((caratteri / 3 + 100) * m.pin + m.max * m.pout) / 1e6);
 
 export const perNomeArena = (nome) => CF_MODELLI.find((m) => m.arena.includes(String(nome).toLowerCase()));
+
+// Prova audio sulla pagina /audio (decisione del 20/10/2026): voce → testo e testo → voce, modelli aperti.
+// Listino Cloudflare 20/10/2026: whisper-large-v3-turbo 46,63 neurons al minuto di audio, melotts 18,63.
+// Il browser converte la registrazione in WAV 16 kHz mono, così il server conosce la durata esatta.
+export const AUDIO_STT = { id: '@cf/openai/whisper-large-v3-turbo', neuronsMinuto: 46.63, secondiMax: 30 };
+export const AUDIO_TTS = { id: '@cf/myshell-ai/melotts', neuronsMinuto: 18.63, caratteriMax: 300, lingue: ['en', 'es', 'fr', 'zh', 'ja', 'ko'] };
+export const TETTO_AUDIO = 1000; // 2.000 + 5.000 + 1.000: restano 2.000 di margine sui 10.000 gratis
+export const AUDIO_PER_VISITATORE = 6;
