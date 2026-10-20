@@ -2,6 +2,7 @@
 titolo: The best free AI models right now, by category
 descr: Which free model wins in chat, coding, vision, image and video, using millions of blind human votes from Arena. Updated automatically.
 data: 2026-10-18
+tema: Rankings
 ---
 
 "Free" means two things here: models with open weights, which you can download and run yourself, and models with a free API you can call today. Paid-only models are left out. Every score comes from Arena, where people compare two anonymous answers and vote for the better one.

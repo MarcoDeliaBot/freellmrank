@@ -2,6 +2,7 @@
 titolo: How to use top AI models for free online, without a GPU
 descr: Free APIs, the labs' own chat apps, and what the limits mean. No credit card needed.
 data: 2026-10-18
+tema: Cloud APIs
 ---
 
 You do not need a graphics card to use a strong free model. There are three ways.

@@ -2,6 +2,7 @@
 titolo: How much GPU memory do you need to run an AI model at home?
 descr: A plain explanation of model size, 4-bit files, context memory and speed, with the numbers our simulator uses.
 data: 2026-10-18
+tema: Hardware
 ---
 
 Three things decide whether a model runs on your computer: the size of its weights, the memory its context needs, and the speed of your graphics card's memory.
