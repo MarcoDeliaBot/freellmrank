@@ -31,3 +31,12 @@ CREATE TABLE IF NOT EXISTS segnalazioni (
   letta   INTEGER NOT NULL DEFAULT 0    -- 1 quando il riassunto di n8n l'ha già mandata
 );
 CREATE INDEX IF NOT EXISTS segnalazioni_letta ON segnalazioni (letta);
+
+-- test alla cieca della pagina /music (20/10/2026): solo la coppia di Music Arena e l'esito
+CREATE TABLE IF NOT EXISTS voti_musica (
+  id     INTEGER PRIMARY KEY AUTOINCREMENT,
+  coppia TEXT NOT NULL,                 -- battle_uuid della coppia nel dataset di Music Arena
+  esito  TEXT NOT NULL CHECK (esito IN ('a', 'b', 'pari')),
+  giorno TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS voti_musica_coppia ON voti_musica (coppia);

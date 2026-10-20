@@ -219,5 +219,1589 @@
    "ultimo": "2025-10-15",
    "lentezza": 0.29
   }
+ ],
+ "esempi": {
+  "acestep-1.5-turbo-1.7b": [
+   {
+    "prompt": "Traditional Japanese koto and shakuhachi duet",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-ef4e7be545004b157b7a7ba6105f13cf-026f5173-deb7-4318-a3db-cfb0b4ac4fc3-a.mp3",
+    "durata": 30,
+    "data": "2026-07-20"
+   },
+   {
+    "prompt": "Indie folk harmonies around campfire stories",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-979f99b38b0c0d0e94a9702e59478067-c628d818-842e-4d75-9372-d7e1e0d791eb-a.mp3",
+    "durata": 110,
+    "data": "2026-07-20"
+   },
+   {
+    "prompt": "Cinematic trailer music",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-808c4e7d6bb61a66438a5b9f1a0ebd3c-e88212c3-3e75-4b92-a559-8a76bac703ff-b.mp3",
+    "durata": 30,
+    "data": "2026-07-20"
+   }
+  ],
+  "musicgen-medium": [
+   {
+    "prompt": "Traditional Japanese koto and shakuhachi duet",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-ef4e7be545004b157b7a7ba6105f13cf-026f5173-deb7-4318-a3db-cfb0b4ac4fc3-b.mp3",
+    "durata": 30,
+    "data": "2026-07-20"
+   },
+   {
+    "prompt": "Hardstyle kicks pumping at crazy fast tempo",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-daedd9034cab45e2b863d3bf1d974277-9eb0e142-a804-4021-8e92-ffd8776618d0-b.mp3",
+    "durata": 30,
+    "data": "2026-07-14"
+   },
+   {
+    "prompt": "Trap beat production featuring 808s and hi-hats",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-df834fd8692f88865bc6d1ed739eb6d8-b4f6682a-baf6-4b94-ba48-2d89e933eb26-a.mp3",
+    "durata": 30,
+    "data": "2026-07-14"
+   }
+  ],
+  "sonauto-v2-2": [
+   {
+    "prompt": "Indie folk harmonies around campfire stories",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-979f99b38b0c0d0e94a9702e59478067-c628d818-842e-4d75-9372-d7e1e0d791eb-b.mp3",
+    "durata": 95,
+    "data": "2026-07-20"
+   },
+   {
+    "prompt": "Trap beat production featuring 808s and hi-hats",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-df834fd8692f88865bc6d1ed739eb6d8-b4f6682a-baf6-4b94-ba48-2d89e933eb26-b.mp3",
+    "durata": 95,
+    "data": "2026-07-14"
+   },
+   {
+    "prompt": "Delta blues gravelly voice and slide guitar",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-ade1e4f3be311fc44ca0cbdb44e3bda5-c4bbc0e5-9838-47fa-99a8-9dd196f83427-a.mp3",
+    "durata": 95,
+    "data": "2026-07-06"
+   }
+  ],
+  "magenta-rt-2-base": [
+   {
+    "prompt": "Cinematic trailer music",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-808c4e7d6bb61a66438a5b9f1a0ebd3c-e88212c3-3e75-4b92-a559-8a76bac703ff-a.mp3",
+    "durata": 20,
+    "data": "2026-07-20"
+   },
+   {
+    "prompt": "Spanish flamenco guitar",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-ab2e8ecc845204885e35f14110e63df0-aed33f91-c55b-4614-8f8b-3725c1909e50-b.mp3",
+    "durata": 20,
+    "data": "2026-06-26"
+   },
+   {
+    "prompt": "A large Taiko drumming ensemble",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-c627221fcb8b13a7044c36e1fed90c84-c811c008-d7ae-4103-a957-3bd00e703b79-b.mp3",
+    "durata": 20,
+    "data": "2026-06-26"
+   }
+  ],
+  "lyria-3-pro-preview": [
+   {
+    "prompt": "Bubblegum pop teenager singing about crushes",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-51a07efcbe63f0c9d9b4c14c84ee7f0c-2aaadf3e-f7e0-4c8d-bc6a-c169de3381ed-b.mp3",
+    "durata": 147,
+    "data": "2026-07-12"
+   },
+   {
+    "prompt": "Delta blues gravelly voice and slide guitar",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-ade1e4f3be311fc44ca0cbdb44e3bda5-c4bbc0e5-9838-47fa-99a8-9dd196f83427-b.mp3",
+    "durata": 158,
+    "data": "2026-07-06"
+   },
+   {
+    "prompt": "Qawwali devotional singing",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-cfb0b2b89580c0559c46b0c5a81277af-26f3e367-dbd6-4309-9e31-36e6741f8e5d-a.mp3",
+    "durata": 179,
+    "data": "2026-07-04"
+   }
+  ],
+  "magenta-rt-large": [
+   {
+    "prompt": "Spanish flamenco guitar",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-ab2e8ecc845204885e35f14110e63df0-aed33f91-c55b-4614-8f8b-3725c1909e50-a.mp3",
+    "durata": 20,
+    "data": "2026-06-26"
+   },
+   {
+    "prompt": "Progressive metal instrumental with complex time signatures",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-3420234e0754af676b1d34ecab184238-6b26933c-2065-455a-9ee8-e28c78e3cf33-a.mp3",
+    "durata": 20,
+    "data": "2026-06-12"
+   },
+   {
+    "prompt": "Orchestral film score building to epic climax",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-4501e2afbb19528b538d63204bc45a06-7cc4c2cd-26c6-4c52-aff9-a10cd4ad7326-b.mp3",
+    "durata": 20,
+    "data": "2026-05-31"
+   }
+  ],
+  "elevenlabs-music-v1": [
+   {
+    "prompt": "Funk with guitar scratching and slap bass grooves",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-ab827f6388e9a5afd1091e01abd46d7a-74d748f5-4e1b-464e-bddb-185136ae2bd1-b.mp3",
+    "durata": 20,
+    "data": "2026-05-21"
+   },
+   {
+    "prompt": "Spoken word slam poetry over jazz instrumentation",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-54cd725439683ebb4251ae0f7478295b-b058ffd9-6117-4e18-af6d-def09ff85dd4-a.mp3",
+    "durata": 20,
+    "data": "2026-05-11"
+   },
+   {
+    "prompt": "Soul singer belting a powerful anthem",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-93fe9245b470e2ee69f77ff141c9cda2-5b995c87-d852-472a-aed2-929af0900051-a.mp3",
+    "durata": 20,
+    "data": "2026-05-04"
+   }
+  ],
+  "lyria-3-30s": [
+   {
+    "prompt": "Death metal growling vocals over blast beats",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-a5baecd3e1299fa601dd0dcc0ee6b16b-00ab604e-2810-4019-8c65-490a27b40ca7-b.mp3",
+    "durata": 31,
+    "data": "2026-04-13"
+   },
+   {
+    "prompt": "Bluegrass banjo breakdown in rapid-fire style",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-8dca442f9d6167d004c6b31fc0c56465-d97d89a8-2acd-42bd-9c2c-d4270c214a04-b.mp3",
+    "durata": 31,
+    "data": "2026-03-28"
+   },
+   {
+    "prompt": "Reggae dub echoes",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-ecdf18a921819d87b6f9a0e25233bb86-c256e528-08e3-4b97-b849-cfcd58dcec56-b.mp3",
+    "durata": 31,
+    "data": "2026-03-27"
+   }
+  ],
+  "sonauto-v3-preview": [
+   {
+    "prompt": "Rap battle aggressive wordplay and punchlines",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-c6aeca71ef5842b1ecc5d4d459382bdd-9f2db00d-5384-47ed-96ef-b19d7359f0be-b.mp3",
+    "durata": 183,
+    "data": "2026-03-28"
+   },
+   {
+    "prompt": "Reggae dub echoes",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-ecdf18a921819d87b6f9a0e25233bb86-c256e528-08e3-4b97-b849-cfcd58dcec56-a.mp3",
+    "durata": 124,
+    "data": "2026-03-27"
+   },
+   {
+    "prompt": "Celtic harp meditation with gentle arpeggios",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-d2126e9f1535ed0caefbe939a485a569-f3b7a2dc-9e39-4220-90d1-4eed840d820f-b.mp3",
+    "durata": 163,
+    "data": "2026-03-17"
+   }
+  ],
+  "riffusion-fuzz-1-0": [
+   {
+    "prompt": "Yodeling alpine folk songs echoing in the mountains",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/07-2026FEB/prebaked-ee26846e6c4995e740fb5c35bfc54f8f-6f7e4519-6a8d-4b3e-a1a4-f430a2ac5df3-b.mp3",
+    "durata": 212,
+    "data": "2026-02-19"
+   },
+   {
+    "prompt": "Minimalist piano composition exploring silence and space",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/07-2026FEB/prebaked-59840d561de3fae76a7acfb52cb02a2a-1ce3ad17-72fb-4556-9a87-cd8305007c8c-b.mp3",
+    "durata": 83,
+    "data": "2026-02-18"
+   },
+   {
+    "prompt": "Neo-soul vocalist improvising over jazz chords",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/07-2026FEB/prebaked-37b164cf1948127686ab42af8a20388c-bfd0563c-b3ed-488e-8d11-3b8c7b5c7303-b.mp3",
+    "durata": 215,
+    "data": "2026-02-03"
+   }
+  ],
+  "musicgen-small": [
+   {
+    "prompt": "Nordic folk fiddle dancing melodies",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/07-2026FEB/prebaked-90e712996470cd72e590815227b5bd8a-3a2106ae-e744-4d28-afee-dc6d17aa7b21-a.mp3",
+    "durata": 30,
+    "data": "2026-02-10"
+   },
+   {
+    "prompt": "Ethereal new age synthesizer meditation",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/06-2026JAN/prebaked-990042470df6e01c11cb5e0d98bdb945-8936e304-d0a8-41db-b742-61448891cb5a-b.mp3",
+    "durata": 30,
+    "data": "2026-01-24"
+   },
+   {
+    "prompt": "Pysch rock improvisation",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/06-2026JAN/prebaked-7e4996457fa50309f50d34e8afd4b229-9bf4b734-54eb-48a8-9001-f73eb0821070-a.mp3",
+    "durata": 30,
+    "data": "2026-01-17"
+   }
+  ],
+  "riffusion-fuzz-1-1": [
+   {
+    "prompt": "Neo-soul vocalist improvising over jazz chords",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/07-2026FEB/prebaked-37b164cf1948127686ab42af8a20388c-bfd0563c-b3ed-488e-8d11-3b8c7b5c7303-a.mp3",
+    "durata": 219,
+    "data": "2026-02-03"
+   },
+   {
+    "prompt": "Synth-pop vocalist robotic processed effects",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/06-2026JAN/prebaked-a604b4d32cdf94de58c346b6c78d72c8-5f9a6eb5-9b58-471c-ae3b-d5db8b6d7b02-b.mp3",
+    "durata": 208,
+    "data": "2026-01-29"
+   },
+   {
+    "prompt": "Fado singer, Portuguese lyrics, melancholy",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/06-2026JAN/prebaked-9412d55b99f74fe3cbb3ed5ebaf9708b-f9e21366-6a65-4716-9b36-55b42b1aed6a-b.mp3",
+    "durata": 221,
+    "data": "2026-01-26"
+   }
+  ],
+  "acestep": [
+   {
+    "prompt": "Delta blues gravelly voice and slide guitar",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/03-2025OCT/prebaked-ade1e4f3be311fc44ca0cbdb44e3bda5-28a72db0-4072-4891-8672-0ef8a4020b5e-a.mp3",
+    "durata": 30,
+    "data": "2025-10-15"
+   },
+   {
+    "prompt": "Irish traditional sean-nós vocals, no backing track",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/02-2025SEP/prebaked-1af732b8bce3577de3eef21c22ebc04d-2352b3b7-5293-43a4-a8fe-d67499bff337-a.mp3",
+    "durata": 30,
+    "data": "2025-09-28"
+   },
+   {
+    "prompt": "Bossa nova with whispered Portuguese vocals",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/02-2025SEP/prebaked-f6e41173167e3c6b9fe324f030729161-031d591c-bb06-4234-aaf1-c1f3759cbdc0-b.mp3",
+    "durata": 30,
+    "data": "2025-09-25"
+   }
+  ],
+  "preview-ocelot": [
+   {
+    "prompt": "Ska punk with upstroke guitars and shouted choruses",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/02-2025SEP/prebaked-47352260778b7ff3cb388fd57bfc2f99-63e9ed25-27fa-4c98-850a-6f82d386c85a-a.mp3",
+    "durata": 143,
+    "data": "2025-09-24"
+   },
+   {
+    "prompt": "Afropop vocals with fast rhythms",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/02-2025SEP/prebaked-bd2d3e18ac77120273f6f9780aa699ca-732a488a-25c1-4a81-baed-30208ce4b20f-b.mp3",
+    "durata": 177,
+    "data": "2025-09-24"
+   },
+   {
+    "prompt": "Power metal soaring vocals about epic battles",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/02-2025SEP/prebaked-e18cdb45400642896036e52d743658e9-32bc9901-a684-477d-a0e9-37638c6d4987-a.mp3",
+    "durata": 224,
+    "data": "2025-09-18"
+   }
+  ],
+  "preview-jerboa": [
+   {
+    "prompt": "Alternative rock angst-filled teenage rebellion",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/02-2025SEP/prebaked-cf7baa5fdc00212a298dfd65097c8f82-b05c5f84-79a7-4261-9322-62a0d3413656-a.mp3",
+    "durata": 203,
+    "data": "2025-09-21"
+   },
+   {
+    "prompt": "Power metal soaring vocals about epic battles",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/02-2025SEP/prebaked-e18cdb45400642896036e52d743658e9-32bc9901-a684-477d-a0e9-37638c6d4987-b.mp3",
+    "durata": 236,
+    "data": "2025-09-18"
+   },
+   {
+    "prompt": "Chanson française poetic lyrics and accordion",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/02-2025SEP/prebaked-936e266b3c542ca9022bf16f158cba5b-32b9de24-9ad8-47a2-b71d-69b6a38680d8-b.mp3",
+    "durata": 220,
+    "data": "2025-09-17"
+   }
+  ]
+ },
+ "coppie": [
+  {
+   "id": "026f5173-deb7-4318-a3db-cfb0b4ac4fc3",
+   "data": "2026-07-20",
+   "prompt": "Traditional Japanese koto and shakuhachi duet",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-ef4e7be545004b157b7a7ba6105f13cf-026f5173-deb7-4318-a3db-cfb0b4ac4fc3-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "musicgen-medium",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-ef4e7be545004b157b7a7ba6105f13cf-026f5173-deb7-4318-a3db-cfb0b4ac4fc3-b.mp3",
+    "d": 30
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "c628d818-842e-4d75-9372-d7e1e0d791eb",
+   "data": "2026-07-20",
+   "prompt": "Indie folk harmonies around campfire stories",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-979f99b38b0c0d0e94a9702e59478067-c628d818-842e-4d75-9372-d7e1e0d791eb-a.mp3",
+    "d": 110
+   },
+   "b": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-979f99b38b0c0d0e94a9702e59478067-c628d818-842e-4d75-9372-d7e1e0d791eb-b.mp3",
+    "d": 95
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "e88212c3-3e75-4b92-a559-8a76bac703ff",
+   "data": "2026-07-20",
+   "prompt": "Cinematic trailer music",
+   "a": {
+    "s": "magenta-rt-2-base",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-808c4e7d6bb61a66438a5b9f1a0ebd3c-e88212c3-3e75-4b92-a559-8a76bac703ff-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-808c4e7d6bb61a66438a5b9f1a0ebd3c-e88212c3-3e75-4b92-a559-8a76bac703ff-b.mp3",
+    "d": 30
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "9eb0e142-a804-4021-8e92-ffd8776618d0",
+   "data": "2026-07-14",
+   "prompt": "Hardstyle kicks pumping at crazy fast tempo",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-daedd9034cab45e2b863d3bf1d974277-9eb0e142-a804-4021-8e92-ffd8776618d0-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "musicgen-medium",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-daedd9034cab45e2b863d3bf1d974277-9eb0e142-a804-4021-8e92-ffd8776618d0-b.mp3",
+    "d": 30
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "b4f6682a-baf6-4b94-ba48-2d89e933eb26",
+   "data": "2026-07-14",
+   "prompt": "Trap beat production featuring 808s and hi-hats",
+   "a": {
+    "s": "musicgen-medium",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-df834fd8692f88865bc6d1ed739eb6d8-b4f6682a-baf6-4b94-ba48-2d89e933eb26-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-df834fd8692f88865bc6d1ed739eb6d8-b4f6682a-baf6-4b94-ba48-2d89e933eb26-b.mp3",
+    "d": 95
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "2aaadf3e-f7e0-4c8d-bc6a-c169de3381ed",
+   "data": "2026-07-12",
+   "prompt": "Bubblegum pop teenager singing about crushes",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-51a07efcbe63f0c9d9b4c14c84ee7f0c-2aaadf3e-f7e0-4c8d-bc6a-c169de3381ed-a.mp3",
+    "d": 140
+   },
+   "b": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-51a07efcbe63f0c9d9b4c14c84ee7f0c-2aaadf3e-f7e0-4c8d-bc6a-c169de3381ed-b.mp3",
+    "d": 147
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "c4bbc0e5-9838-47fa-99a8-9dd196f83427",
+   "data": "2026-07-06",
+   "prompt": "Delta blues gravelly voice and slide guitar",
+   "a": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-ade1e4f3be311fc44ca0cbdb44e3bda5-c4bbc0e5-9838-47fa-99a8-9dd196f83427-a.mp3",
+    "d": 95
+   },
+   "b": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-ade1e4f3be311fc44ca0cbdb44e3bda5-c4bbc0e5-9838-47fa-99a8-9dd196f83427-b.mp3",
+    "d": 158
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "26f3e367-dbd6-4309-9e31-36e6741f8e5d",
+   "data": "2026-07-04",
+   "prompt": "Qawwali devotional singing",
+   "a": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-cfb0b2b89580c0559c46b0c5a81277af-26f3e367-dbd6-4309-9e31-36e6741f8e5d-a.mp3",
+    "d": 179
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/12-2026JUL/prebaked-cfb0b2b89580c0559c46b0c5a81277af-26f3e367-dbd6-4309-9e31-36e6741f8e5d-b.mp3",
+    "d": 140
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "0b75751e-6187-4b86-8321-ff00717e2981",
+   "data": "2026-06-27",
+   "prompt": "Progressive metal instrumental with complex time signatures",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-3420234e0754af676b1d34ecab184238-0b75751e-6187-4b86-8321-ff00717e2981-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-3420234e0754af676b1d34ecab184238-0b75751e-6187-4b86-8321-ff00717e2981-b.mp3",
+    "d": 156
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "243b9dcf-bd25-4ae8-bc47-204e88c241e5",
+   "data": "2026-06-27",
+   "prompt": "Reggaeton Latin vocals and dembow rhythm",
+   "a": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-5e732a1ce8e07e0afa5045042448146a-243b9dcf-bd25-4ae8-bc47-204e88c241e5-a.mp3",
+    "d": 95
+   },
+   "b": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-5e732a1ce8e07e0afa5045042448146a-243b9dcf-bd25-4ae8-bc47-204e88c241e5-b.mp3",
+    "d": 177
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "71e84d8b-e845-4f4b-9dd2-0412a0bffe2f",
+   "data": "2026-06-27",
+   "prompt": "Mariachi trumpet and violin celebration",
+   "a": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-d635766a188793fb67389e5a66706922-71e84d8b-e845-4f4b-9dd2-0412a0bffe2f-a.mp3",
+    "d": 95
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-d635766a188793fb67389e5a66706922-71e84d8b-e845-4f4b-9dd2-0412a0bffe2f-b.mp3",
+    "d": 30
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "aed33f91-c55b-4614-8f8b-3725c1909e50",
+   "data": "2026-06-26",
+   "prompt": "Spanish flamenco guitar",
+   "a": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-ab2e8ecc845204885e35f14110e63df0-aed33f91-c55b-4614-8f8b-3725c1909e50-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "magenta-rt-2-base",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-ab2e8ecc845204885e35f14110e63df0-aed33f91-c55b-4614-8f8b-3725c1909e50-b.mp3",
+    "d": 20
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "c811c008-d7ae-4103-a957-3bd00e703b79",
+   "data": "2026-06-26",
+   "prompt": "A large Taiko drumming ensemble",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-c627221fcb8b13a7044c36e1fed90c84-c811c008-d7ae-4103-a957-3bd00e703b79-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "magenta-rt-2-base",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-c627221fcb8b13a7044c36e1fed90c84-c811c008-d7ae-4103-a957-3bd00e703b79-b.mp3",
+    "d": 20
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "82cc746b-746d-4293-80f0-b3380c4d848d",
+   "data": "2026-06-20",
+   "prompt": "Industrial techno pounding at warehouse raves",
+   "a": {
+    "s": "musicgen-medium",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-b374770614bbac9dec76f328103beb26-82cc746b-746d-4293-80f0-b3380c4d848d-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-b374770614bbac9dec76f328103beb26-82cc746b-746d-4293-80f0-b3380c4d848d-b.mp3",
+    "d": 95
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "69678836-ec07-4105-8ac5-7fea41d81310",
+   "data": "2026-06-15",
+   "prompt": "Celtic punk song with prominent vocals and lyrics about a rowdy evening",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-4a6db5345f375a79454287466ddf8f42-69678836-ec07-4105-8ac5-7fea41d81310-a.mp3",
+    "d": 163
+   },
+   "b": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-4a6db5345f375a79454287466ddf8f42-69678836-ec07-4105-8ac5-7fea41d81310-b.mp3",
+    "d": 165
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "63c8bd88-5d69-45cb-be88-77f31be6c491",
+   "data": "2026-06-14",
+   "prompt": "Chanson française poetic lyrics and accordion",
+   "a": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-936e266b3c542ca9022bf16f158cba5b-63c8bd88-5d69-45cb-be88-77f31be6c491-a.mp3",
+    "d": 95
+   },
+   "b": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-936e266b3c542ca9022bf16f158cba5b-63c8bd88-5d69-45cb-be88-77f31be6c491-b.mp3",
+    "d": 153
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "6b26933c-2065-455a-9ee8-e28c78e3cf33",
+   "data": "2026-06-12",
+   "prompt": "Progressive metal instrumental with complex time signatures",
+   "a": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-3420234e0754af676b1d34ecab184238-6b26933c-2065-455a-9ee8-e28c78e3cf33-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "musicgen-medium",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-3420234e0754af676b1d34ecab184238-6b26933c-2065-455a-9ee8-e28c78e3cf33-b.mp3",
+    "d": 30
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "feffc070-9c9c-465e-90e0-7448a568fbe5",
+   "data": "2026-06-10",
+   "prompt": "Deep house grooves for late night dancing",
+   "a": {
+    "s": "musicgen-medium",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-b66c3aea28e06dd8b25015c3e821f03c-feffc070-9c9c-465e-90e0-7448a568fbe5-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/11-2026JUN/prebaked-b66c3aea28e06dd8b25015c3e821f03c-feffc070-9c9c-465e-90e0-7448a568fbe5-b.mp3",
+    "d": 95
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "7cc4c2cd-26c6-4c52-aff9-a10cd4ad7326",
+   "data": "2026-05-31",
+   "prompt": "Orchestral film score building to epic climax",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-4501e2afbb19528b538d63204bc45a06-7cc4c2cd-26c6-4c52-aff9-a10cd4ad7326-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-4501e2afbb19528b538d63204bc45a06-7cc4c2cd-26c6-4c52-aff9-a10cd4ad7326-b.mp3",
+    "d": 20
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "ca549abe-1d45-4aa4-a590-7a37cd2f7b98",
+   "data": "2026-05-31",
+   "prompt": "Motown ballad",
+   "a": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-d1605c1163269f38b27ae0b67e2c3c8e-ca549abe-1d45-4aa4-a590-7a37cd2f7b98-a.mp3",
+    "d": 95
+   },
+   "b": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-d1605c1163269f38b27ae0b67e2c3c8e-ca549abe-1d45-4aa4-a590-7a37cd2f7b98-b.mp3",
+    "d": 175
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "46889621-eed0-4ed6-94bb-1708d7ffd773",
+   "data": "2026-05-26",
+   "prompt": "Rap battle aggressive wordplay and punchlines",
+   "a": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-c6aeca71ef5842b1ecc5d4d459382bdd-46889621-eed0-4ed6-94bb-1708d7ffd773-a.mp3",
+    "d": 183
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-c6aeca71ef5842b1ecc5d4d459382bdd-46889621-eed0-4ed6-94bb-1708d7ffd773-b.mp3",
+    "d": 168
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "a1b2e5e1-a53b-4931-ab9b-0e3610796082",
+   "data": "2026-05-26",
+   "prompt": "Bubblegum pop teenager singing about crushes",
+   "a": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-51a07efcbe63f0c9d9b4c14c84ee7f0c-a1b2e5e1-a53b-4931-ab9b-0e3610796082-a.mp3",
+    "d": 146
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-51a07efcbe63f0c9d9b4c14c84ee7f0c-a1b2e5e1-a53b-4931-ab9b-0e3610796082-b.mp3",
+    "d": 180
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "65d77019-c129-4079-b07b-9cfedf628fe5",
+   "data": "2026-05-25",
+   "prompt": "Synth-pop vocalist robotic processed effects",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-a604b4d32cdf94de58c346b6c78d72c8-65d77019-c129-4079-b07b-9cfedf628fe5-a.mp3",
+    "d": 200
+   },
+   "b": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-a604b4d32cdf94de58c346b6c78d72c8-65d77019-c129-4079-b07b-9cfedf628fe5-b.mp3",
+    "d": 95
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "74d748f5-4e1b-464e-bddb-185136ae2bd1",
+   "data": "2026-05-21",
+   "prompt": "Funk with guitar scratching and slap bass grooves",
+   "a": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-ab827f6388e9a5afd1091e01abd46d7a-74d748f5-4e1b-464e-bddb-185136ae2bd1-a.mp3",
+    "d": 95
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-ab827f6388e9a5afd1091e01abd46d7a-74d748f5-4e1b-464e-bddb-185136ae2bd1-b.mp3",
+    "d": 20
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "905d6f7a-a142-45c4-b407-9945ae9678d8",
+   "data": "2026-05-21",
+   "prompt": "Industrial techno pounding at warehouse raves",
+   "a": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-b374770614bbac9dec76f328103beb26-905d6f7a-a142-45c4-b407-9945ae9678d8-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-b374770614bbac9dec76f328103beb26-905d6f7a-a142-45c4-b407-9945ae9678d8-b.mp3",
+    "d": 30
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "ffbc1450-21d3-4f5e-b0f7-149f09e3b572",
+   "data": "2026-05-13",
+   "prompt": "Didgeridoo drone",
+   "a": {
+    "s": "musicgen-medium",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-6deb49cf1ee267c636cbd00da62ed7f6-ffbc1450-21d3-4f5e-b0f7-149f09e3b572-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-6deb49cf1ee267c636cbd00da62ed7f6-ffbc1450-21d3-4f5e-b0f7-149f09e3b572-b.mp3",
+    "d": 30
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "b058ffd9-6117-4e18-af6d-def09ff85dd4",
+   "data": "2026-05-11",
+   "prompt": "Spoken word slam poetry over jazz instrumentation",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-54cd725439683ebb4251ae0f7478295b-b058ffd9-6117-4e18-af6d-def09ff85dd4-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-54cd725439683ebb4251ae0f7478295b-b058ffd9-6117-4e18-af6d-def09ff85dd4-b.mp3",
+    "d": 148
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "5b995c87-d852-472a-aed2-929af0900051",
+   "data": "2026-05-04",
+   "prompt": "Soul singer belting a powerful anthem",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-93fe9245b470e2ee69f77ff141c9cda2-5b995c87-d852-472a-aed2-929af0900051-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/10-2026MAY/prebaked-93fe9245b470e2ee69f77ff141c9cda2-5b995c87-d852-472a-aed2-929af0900051-b.mp3",
+    "d": 149
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "f4db19ac-b555-4b2a-b432-e0975b75f296",
+   "data": "2026-04-16",
+   "prompt": "Neoclassical violin concerto movement",
+   "a": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-8ba2f6f42c63bad370c4a0a21d6332b6-f4db19ac-b555-4b2a-b432-e0975b75f296-a.mp3",
+    "d": 176
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-8ba2f6f42c63bad370c4a0a21d6332b6-f4db19ac-b555-4b2a-b432-e0975b75f296-b.mp3",
+    "d": 20
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "f54af36e-2333-46a8-9d47-02c58093140e",
+   "data": "2026-04-16",
+   "prompt": "Rap battle aggressive wordplay and punchlines",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-c6aeca71ef5842b1ecc5d4d459382bdd-f54af36e-2333-46a8-9d47-02c58093140e-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-c6aeca71ef5842b1ecc5d4d459382bdd-f54af36e-2333-46a8-9d47-02c58093140e-b.mp3",
+    "d": 120
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "00ab604e-2810-4019-8c65-490a27b40ca7",
+   "data": "2026-04-13",
+   "prompt": "Death metal growling vocals over blast beats",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-a5baecd3e1299fa601dd0dcc0ee6b16b-00ab604e-2810-4019-8c65-490a27b40ca7-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-a5baecd3e1299fa601dd0dcc0ee6b16b-00ab604e-2810-4019-8c65-490a27b40ca7-b.mp3",
+    "d": 31
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "2389c838-a538-45b5-8f90-28dca716b15e",
+   "data": "2026-04-07",
+   "prompt": "Indian sitar raga on a rainy evening",
+   "a": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-5e423ad83d0c93ca441e6b9dae82360d-2389c838-a538-45b5-8f90-28dca716b15e-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "musicgen-medium",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-5e423ad83d0c93ca441e6b9dae82360d-2389c838-a538-45b5-8f90-28dca716b15e-b.mp3",
+    "d": 30
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "85e932d9-ed7c-4820-993f-e5bf21ccb3be",
+   "data": "2026-04-07",
+   "prompt": "Neo-soul vocalist improvising over jazz chords",
+   "a": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-37b164cf1948127686ab42af8a20388c-85e932d9-ed7c-4820-993f-e5bf21ccb3be-a.mp3",
+    "d": 95
+   },
+   "b": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-37b164cf1948127686ab42af8a20388c-85e932d9-ed7c-4820-993f-e5bf21ccb3be-b.mp3",
+    "d": 148
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "4ab8627a-e37d-43b7-a624-78472e2d5b8b",
+   "data": "2026-04-01",
+   "prompt": "Disco strings and brass",
+   "a": {
+    "s": "musicgen-medium",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-ad7240e2ea98937a404e73c05320f076-4ab8627a-e37d-43b7-a624-78472e2d5b8b-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-ad7240e2ea98937a404e73c05320f076-4ab8627a-e37d-43b7-a624-78472e2d5b8b-b.mp3",
+    "d": 20
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "b0a7bdcb-40ce-4275-b79e-bf1402743646",
+   "data": "2026-04-01",
+   "prompt": "Traditional Japanese koto and shakuhachi duet",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-ef4e7be545004b157b7a7ba6105f13cf-b0a7bdcb-40ce-4275-b79e-bf1402743646-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "musicgen-medium",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-ef4e7be545004b157b7a7ba6105f13cf-b0a7bdcb-40ce-4275-b79e-bf1402743646-b.mp3",
+    "d": 30
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "c57190ad-78c3-4fde-bddc-774d00a9a11b",
+   "data": "2026-04-01",
+   "prompt": "Chanson française poetic lyrics and accordion",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-936e266b3c542ca9022bf16f158cba5b-c57190ad-78c3-4fde-bddc-774d00a9a11b-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "lyria-3-pro-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/09-2026APR/prebaked-936e266b3c542ca9022bf16f158cba5b-c57190ad-78c3-4fde-bddc-774d00a9a11b-b.mp3",
+    "d": 165
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "44bf49fe-fe04-446b-a8f2-9d6653aacfcc",
+   "data": "2026-03-30",
+   "prompt": "Sultry blues with vocals lamenting lost love",
+   "a": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-fdc878cb3f63222451df78fd5d0537d7-44bf49fe-fe04-446b-a8f2-9d6653aacfcc-a.mp3",
+    "d": 95
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-fdc878cb3f63222451df78fd5d0537d7-44bf49fe-fe04-446b-a8f2-9d6653aacfcc-b.mp3",
+    "d": 20
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "9f2db00d-5384-47ed-96ef-b19d7359f0be",
+   "data": "2026-03-28",
+   "prompt": "Rap battle aggressive wordplay and punchlines",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-c6aeca71ef5842b1ecc5d4d459382bdd-9f2db00d-5384-47ed-96ef-b19d7359f0be-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "sonauto-v3-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-c6aeca71ef5842b1ecc5d4d459382bdd-9f2db00d-5384-47ed-96ef-b19d7359f0be-b.mp3",
+    "d": 183
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "d97d89a8-2acd-42bd-9c2c-d4270c214a04",
+   "data": "2026-03-28",
+   "prompt": "Bluegrass banjo breakdown in rapid-fire style",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-8dca442f9d6167d004c6b31fc0c56465-d97d89a8-2acd-42bd-9c2c-d4270c214a04-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-8dca442f9d6167d004c6b31fc0c56465-d97d89a8-2acd-42bd-9c2c-d4270c214a04-b.mp3",
+    "d": 31
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "c256e528-08e3-4b97-b849-cfcd58dcec56",
+   "data": "2026-03-27",
+   "prompt": "Reggae dub echoes",
+   "a": {
+    "s": "sonauto-v3-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-ecdf18a921819d87b6f9a0e25233bb86-c256e528-08e3-4b97-b849-cfcd58dcec56-a.mp3",
+    "d": 124
+   },
+   "b": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-ecdf18a921819d87b6f9a0e25233bb86-c256e528-08e3-4b97-b849-cfcd58dcec56-b.mp3",
+    "d": 31
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "3ce8a7e1-6333-45cf-96d3-9765fe27283f",
+   "data": "2026-03-26",
+   "prompt": "Surf rock reverb-soaked guitar instrumentals",
+   "a": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-b0a1a502229c6ec71b6123e6ee700f30-3ce8a7e1-6333-45cf-96d3-9765fe27283f-a.mp3",
+    "d": 31
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-b0a1a502229c6ec71b6123e6ee700f30-3ce8a7e1-6333-45cf-96d3-9765fe27283f-b.mp3",
+    "d": 20
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "124d6c1c-0c8f-4f26-bb47-2fa455aff6a7",
+   "data": "2026-03-23",
+   "prompt": "Grime MC spitting bars over dark production",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-9ee611e2ac4b09b3ddcfeed4783f4232-124d6c1c-0c8f-4f26-bb47-2fa455aff6a7-a.mp3",
+    "d": 138
+   },
+   "b": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-9ee611e2ac4b09b3ddcfeed4783f4232-124d6c1c-0c8f-4f26-bb47-2fa455aff6a7-b.mp3",
+    "d": 95
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "544ec51c-856d-444e-b90f-2cd6283846dd",
+   "data": "2026-03-23",
+   "prompt": "Conscious hip hop confronting social issues",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-2c3d5a57082c418109af6a6f4dbaa5e9-544ec51c-856d-444e-b90f-2cd6283846dd-a.mp3",
+    "d": 138
+   },
+   "b": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-2c3d5a57082c418109af6a6f4dbaa5e9-544ec51c-856d-444e-b90f-2cd6283846dd-b.mp3",
+    "d": 95
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "ad6f0a25-b604-45d9-949a-711ebb4ece5d",
+   "data": "2026-03-19",
+   "prompt": "Death metal growling vocals over blast beats",
+   "a": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-a5baecd3e1299fa601dd0dcc0ee6b16b-ad6f0a25-b604-45d9-949a-711ebb4ece5d-a.mp3",
+    "d": 95
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-a5baecd3e1299fa601dd0dcc0ee6b16b-ad6f0a25-b604-45d9-949a-711ebb4ece5d-b.mp3",
+    "d": 250
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "a3593f05-9370-4a94-8964-dc702b4981e1",
+   "data": "2026-03-17",
+   "prompt": "Shoegaze with walls of guitar reverb and delay",
+   "a": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-9823466756d0b15ec456cbdb7fda984c-a3593f05-9370-4a94-8964-dc702b4981e1-a.mp3",
+    "d": 31
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-9823466756d0b15ec456cbdb7fda984c-a3593f05-9370-4a94-8964-dc702b4981e1-b.mp3",
+    "d": 30
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "f3b7a2dc-9e39-4220-90d1-4eed840d820f",
+   "data": "2026-03-17",
+   "prompt": "Celtic harp meditation with gentle arpeggios",
+   "a": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-d2126e9f1535ed0caefbe939a485a569-f3b7a2dc-9e39-4220-90d1-4eed840d820f-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "sonauto-v3-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-d2126e9f1535ed0caefbe939a485a569-f3b7a2dc-9e39-4220-90d1-4eed840d820f-b.mp3",
+    "d": 163
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "fda843a3-cf33-4695-ad3b-6c499b255c1a",
+   "data": "2026-03-17",
+   "prompt": "Indie folk harmonies around campfire stories",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-979f99b38b0c0d0e94a9702e59478067-fda843a3-cf33-4695-ad3b-6c499b255c1a-a.mp3",
+    "d": 195
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-979f99b38b0c0d0e94a9702e59478067-fda843a3-cf33-4695-ad3b-6c499b255c1a-b.mp3",
+    "d": 20
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "994c0bc4-d9c8-455a-922f-1968a3c589db",
+   "data": "2026-03-16",
+   "prompt": "Europop dance vocals and synthesized beats",
+   "a": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-b9d905e606c32ba78533ab7cf14678a6-994c0bc4-d9c8-455a-922f-1968a3c589db-a.mp3",
+    "d": 31
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-b9d905e606c32ba78533ab7cf14678a6-994c0bc4-d9c8-455a-922f-1968a3c589db-b.mp3",
+    "d": 188
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "d21c1996-50d6-49f8-85f0-165aebde29bf",
+   "data": "2026-03-16",
+   "prompt": "Funk with guitar scratching and slap bass grooves",
+   "a": {
+    "s": "sonauto-v3-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-ab827f6388e9a5afd1091e01abd46d7a-d21c1996-50d6-49f8-85f0-165aebde29bf-a.mp3",
+    "d": 152
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-ab827f6388e9a5afd1091e01abd46d7a-d21c1996-50d6-49f8-85f0-165aebde29bf-b.mp3",
+    "d": 20
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "df1d8eb7-5966-43b0-b8b1-791c1041f171",
+   "data": "2026-03-16",
+   "prompt": "Bubblegum pop teenager singing about crushes",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-51a07efcbe63f0c9d9b4c14c84ee7f0c-df1d8eb7-5966-43b0-b8b1-791c1041f171-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "sonauto-v3-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-51a07efcbe63f0c9d9b4c14c84ee7f0c-df1d8eb7-5966-43b0-b8b1-791c1041f171-b.mp3",
+    "d": 126
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "8bedc3e6-327d-4904-b188-fc19f81a0b4d",
+   "data": "2026-03-14",
+   "prompt": "Reggaeton Latin vocals and dembow rhythm",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-5e732a1ce8e07e0afa5045042448146a-8bedc3e6-327d-4904-b188-fc19f81a0b4d-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-5e732a1ce8e07e0afa5045042448146a-8bedc3e6-327d-4904-b188-fc19f81a0b4d-b.mp3",
+    "d": 95
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "08ddd3fb-1de9-4fc4-bf74-0fd5a2d90b95",
+   "data": "2026-03-12",
+   "prompt": "Trap rapper with auto-tuned melodic flows",
+   "a": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-da7c90d1339ae66f1781ee36fa7ab267-08ddd3fb-1de9-4fc4-bf74-0fd5a2d90b95-a.mp3",
+    "d": 31
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-da7c90d1339ae66f1781ee36fa7ab267-08ddd3fb-1de9-4fc4-bf74-0fd5a2d90b95-b.mp3",
+    "d": 20
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "655b845c-a7fa-495c-b4cf-3b54f015c9cb",
+   "data": "2026-03-12",
+   "prompt": "Orchestral film score building to epic climax",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-4501e2afbb19528b538d63204bc45a06-655b845c-a7fa-495c-b4cf-3b54f015c9cb-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-4501e2afbb19528b538d63204bc45a06-655b845c-a7fa-495c-b4cf-3b54f015c9cb-b.mp3",
+    "d": 20
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "e455fbfc-99bf-469f-bf4e-ebf055cb8d26",
+   "data": "2026-03-10",
+   "prompt": "Barbershop quartet, rich harmonies",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-52167a2083a19fb7db8fb382195ddace-e455fbfc-99bf-469f-bf4e-ebf055cb8d26-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-52167a2083a19fb7db8fb382195ddace-e455fbfc-99bf-469f-bf4e-ebf055cb8d26-b.mp3",
+    "d": 105
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "f0a7c830-d07e-448b-981b-22912d930ea0",
+   "data": "2026-03-10",
+   "prompt": "Trap beat production featuring 808s and hi-hats",
+   "a": {
+    "s": "musicgen-medium",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-df834fd8692f88865bc6d1ed739eb6d8-f0a7c830-d07e-448b-981b-22912d930ea0-a.mp3",
+    "d": 30
+   },
+   "b": {
+    "s": "sonauto-v3-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-df834fd8692f88865bc6d1ed739eb6d8-f0a7c830-d07e-448b-981b-22912d930ea0-b.mp3",
+    "d": 150
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "562a37d9-1d83-4ff1-a453-ac3aea4db758",
+   "data": "2026-03-09",
+   "prompt": "Fado singer, Portuguese lyrics, melancholy",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-9412d55b99f74fe3cbb3ed5ebaf9708b-562a37d9-1d83-4ff1-a453-ac3aea4db758-a.mp3",
+    "d": 114
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-9412d55b99f74fe3cbb3ed5ebaf9708b-562a37d9-1d83-4ff1-a453-ac3aea4db758-b.mp3",
+    "d": 20
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "79cccfde-b640-4be5-93c9-c31e99c7adb5",
+   "data": "2026-03-09",
+   "prompt": "Qawwali devotional singing",
+   "a": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-cfb0b2b89580c0559c46b0c5a81277af-79cccfde-b640-4be5-93c9-c31e99c7adb5-a.mp3",
+    "d": 95
+   },
+   "b": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-cfb0b2b89580c0559c46b0c5a81277af-79cccfde-b640-4be5-93c9-c31e99c7adb5-b.mp3",
+    "d": 31
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "92894c53-7a5c-4dfb-ad31-a6c860d161b7",
+   "data": "2026-03-09",
+   "prompt": "K-pop group with five singers and a catchy hook",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-4e92756a5a0138ef95a4efe3027cd7f9-92894c53-7a5c-4dfb-ad31-a6c860d161b7-a.mp3",
+    "d": 128
+   },
+   "b": {
+    "s": "sonauto-v3-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-4e92756a5a0138ef95a4efe3027cd7f9-92894c53-7a5c-4dfb-ad31-a6c860d161b7-b.mp3",
+    "d": 163
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "51a21967-4a1c-4320-8838-265cf4ba9e08",
+   "data": "2026-03-07",
+   "prompt": "Alternative rock angst-filled teenage rebellion",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-cf7baa5fdc00212a298dfd65097c8f82-51a21967-4a1c-4320-8838-265cf4ba9e08-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-cf7baa5fdc00212a298dfd65097c8f82-51a21967-4a1c-4320-8838-265cf4ba9e08-b.mp3",
+    "d": 240
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "f73045ad-f1c4-47a0-b348-1b93638a7f18",
+   "data": "2026-03-07",
+   "prompt": "Disco strings and brass",
+   "a": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-ad7240e2ea98937a404e73c05320f076-f73045ad-f1c4-47a0-b348-1b93638a7f18-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-ad7240e2ea98937a404e73c05320f076-f73045ad-f1c4-47a0-b348-1b93638a7f18-b.mp3",
+    "d": 20
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "7934c2c3-bcfb-4786-86ab-5d2ab810e9f1",
+   "data": "2026-03-06",
+   "prompt": "Nordic folk fiddle dancing melodies",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-90e712996470cd72e590815227b5bd8a-7934c2c3-bcfb-4786-86ab-5d2ab810e9f1-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-90e712996470cd72e590815227b5bd8a-7934c2c3-bcfb-4786-86ab-5d2ab810e9f1-b.mp3",
+    "d": 95
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "9f435069-f07f-4e83-a1a4-20cf9f379f8a",
+   "data": "2026-03-06",
+   "prompt": "Bubblegum pop teenager singing about crushes",
+   "a": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-51a07efcbe63f0c9d9b4c14c84ee7f0c-9f435069-f07f-4e83-a1a4-20cf9f379f8a-a.mp3",
+    "d": 31
+   },
+   "b": {
+    "s": "sonauto-v3-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-51a07efcbe63f0c9d9b4c14c84ee7f0c-9f435069-f07f-4e83-a1a4-20cf9f379f8a-b.mp3",
+    "d": 133
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "cd6e0c20-4adf-4208-b46f-388c08a639d0",
+   "data": "2026-03-06",
+   "prompt": "Chamber music string quartet in romantic style",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-c4cc1f5decfb0f0a52d0d7954363ea51-cd6e0c20-4adf-4208-b46f-388c08a639d0-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-c4cc1f5decfb0f0a52d0d7954363ea51-cd6e0c20-4adf-4208-b46f-388c08a639d0-b.mp3",
+    "d": 30
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "70205020-4169-4d95-8116-cebcc42dbafa",
+   "data": "2026-03-05",
+   "prompt": "Trap beat production featuring 808s and hi-hats",
+   "a": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-df834fd8692f88865bc6d1ed739eb6d8-70205020-4169-4d95-8116-cebcc42dbafa-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-df834fd8692f88865bc6d1ed739eb6d8-70205020-4169-4d95-8116-cebcc42dbafa-b.mp3",
+    "d": 20
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "70daa996-2e09-4cd1-82d2-7de7669f8d3a",
+   "data": "2026-03-05",
+   "prompt": "Folk singer-songwriter making an intimate confession",
+   "a": {
+    "s": "sonauto-v3-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-cd7fba87f19c84bb249dd75b98bcea57-70daa996-2e09-4cd1-82d2-7de7669f8d3a-a.mp3",
+    "d": 166
+   },
+   "b": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-cd7fba87f19c84bb249dd75b98bcea57-70daa996-2e09-4cd1-82d2-7de7669f8d3a-b.mp3",
+    "d": 31
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "1b123cf5-40ef-4c87-ab4c-48f2d7574313",
+   "data": "2026-03-04",
+   "prompt": "Experimental glitch music deconstructing digital sounds",
+   "a": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-0141265f335a49fc4601bfe93eb80155-1b123cf5-40ef-4c87-ab4c-48f2d7574313-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-0141265f335a49fc4601bfe93eb80155-1b123cf5-40ef-4c87-ab4c-48f2d7574313-b.mp3",
+    "d": 31
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "41d245ae-8245-43f8-a04f-91db9554bbd8",
+   "data": "2026-03-04",
+   "prompt": "Cabaret singer performing theatrical show tunes",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-2f51b9753cd459ad1af6682c9815c1ca-41d245ae-8245-43f8-a04f-91db9554bbd8-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-2f51b9753cd459ad1af6682c9815c1ca-41d245ae-8245-43f8-a04f-91db9554bbd8-b.mp3",
+    "d": 31
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "428f0b1f-d781-408b-8d4f-8a9905105c3d",
+   "data": "2026-03-04",
+   "prompt": "Deep house grooves for late night dancing",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-b66c3aea28e06dd8b25015c3e821f03c-428f0b1f-d781-408b-8d4f-8a9905105c3d-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-b66c3aea28e06dd8b25015c3e821f03c-428f0b1f-d781-408b-8d4f-8a9905105c3d-b.mp3",
+    "d": 31
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "49f41897-67c3-4228-baf7-4efb520add09",
+   "data": "2026-03-04",
+   "prompt": "Mongolian throat singing overtone harmonics",
+   "a": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-19797a41a4b0b701b150c6f7149ce330-49f41897-67c3-4228-baf7-4efb520add09-a.mp3",
+    "d": 95
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-19797a41a4b0b701b150c6f7149ce330-49f41897-67c3-4228-baf7-4efb520add09-b.mp3",
+    "d": 20
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "824f6614-2e86-48bf-bde9-f29c2b82802c",
+   "data": "2026-03-04",
+   "prompt": "Funk with guitar scratching and slap bass grooves",
+   "a": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-ab827f6388e9a5afd1091e01abd46d7a-824f6614-2e86-48bf-bde9-f29c2b82802c-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-ab827f6388e9a5afd1091e01abd46d7a-824f6614-2e86-48bf-bde9-f29c2b82802c-b.mp3",
+    "d": 31
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "839b8968-3d9d-4958-8631-0913e314ec62",
+   "data": "2026-03-04",
+   "prompt": "Neoclassical violin concerto movement",
+   "a": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-8ba2f6f42c63bad370c4a0a21d6332b6-839b8968-3d9d-4958-8631-0913e314ec62-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-8ba2f6f42c63bad370c4a0a21d6332b6-839b8968-3d9d-4958-8631-0913e314ec62-b.mp3",
+    "d": 20
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "9732a699-b91f-4e88-897b-45efe7167667",
+   "data": "2026-03-04",
+   "prompt": "Delta blues gravelly voice and slide guitar",
+   "a": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-ade1e4f3be311fc44ca0cbdb44e3bda5-9732a699-b91f-4e88-897b-45efe7167667-a.mp3",
+    "d": 31
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-ade1e4f3be311fc44ca0cbdb44e3bda5-9732a699-b91f-4e88-897b-45efe7167667-b.mp3",
+    "d": 140
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "a3af935a-8524-4a2a-9746-0fc8cac6f36d",
+   "data": "2026-03-04",
+   "prompt": "Grunge vocalist raw and unpolished delivery",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-36f4c780bf82ee378625b31f0d866d94-a3af935a-8524-4a2a-9746-0fc8cac6f36d-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-36f4c780bf82ee378625b31f0d866d94-a3af935a-8524-4a2a-9746-0fc8cac6f36d-b.mp3",
+    "d": 95
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "c4c9fd98-e4d8-495f-8961-1f2ac4e3cd4e",
+   "data": "2026-03-04",
+   "prompt": "Hardstyle kicks pumping at crazy fast tempo",
+   "a": {
+    "s": "sonauto-v3-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-daedd9034cab45e2b863d3bf1d974277-c4c9fd98-e4d8-495f-8961-1f2ac4e3cd4e-a.mp3",
+    "d": 142
+   },
+   "b": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-daedd9034cab45e2b863d3bf1d974277-c4c9fd98-e4d8-495f-8961-1f2ac4e3cd4e-b.mp3",
+    "d": 95
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "d06a2442-5af0-4f8a-8697-9d400db12abd",
+   "data": "2026-03-04",
+   "prompt": "Mongolian throat singing overtone harmonics",
+   "a": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-19797a41a4b0b701b150c6f7149ce330-d06a2442-5af0-4f8a-8697-9d400db12abd-a.mp3",
+    "d": 31
+   },
+   "b": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-19797a41a4b0b701b150c6f7149ce330-d06a2442-5af0-4f8a-8697-9d400db12abd-b.mp3",
+    "d": 190
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "de5de237-5f20-41c6-96aa-79632a9c918f",
+   "data": "2026-03-04",
+   "prompt": "Americana storytelling dusty highway narratives",
+   "a": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-4d05f24423bfabbb39bc51508e6ccbbc-de5de237-5f20-41c6-96aa-79632a9c918f-a.mp3",
+    "d": 95
+   },
+   "b": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-4d05f24423bfabbb39bc51508e6ccbbc-de5de237-5f20-41c6-96aa-79632a9c918f-b.mp3",
+    "d": 31
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "4c0a85c4-41e8-4471-8cf8-1af746878f20",
+   "data": "2026-03-03",
+   "prompt": "Sultry blues with vocals lamenting lost love",
+   "a": {
+    "s": "sonauto-v3-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-fdc878cb3f63222451df78fd5d0537d7-4c0a85c4-41e8-4471-8cf8-1af746878f20-a.mp3",
+    "d": 165
+   },
+   "b": {
+    "s": "sonauto-v2-2",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-fdc878cb3f63222451df78fd5d0537d7-4c0a85c4-41e8-4471-8cf8-1af746878f20-b.mp3",
+    "d": 95
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "8aeb6e4d-c6ed-49c7-926d-de7211869346",
+   "data": "2026-03-03",
+   "prompt": "Mariachi trumpet and violin celebration",
+   "a": {
+    "s": "magenta-rt-large",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-d635766a188793fb67389e5a66706922-8aeb6e4d-c6ed-49c7-926d-de7211869346-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-d635766a188793fb67389e5a66706922-8aeb6e4d-c6ed-49c7-926d-de7211869346-b.mp3",
+    "d": 20
+   },
+   "vinse": "b"
+  },
+  {
+   "id": "3cc5a94e-ad8c-43ee-b0bd-7439d8c1c3c2",
+   "data": "2026-03-02",
+   "prompt": "Cabaret singer performing theatrical show tunes",
+   "a": {
+    "s": "acestep-1.5-turbo-1.7b",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-2f51b9753cd459ad1af6682c9815c1ca-3cc5a94e-ad8c-43ee-b0bd-7439d8c1c3c2-a.mp3",
+    "d": 124
+   },
+   "b": {
+    "s": "sonauto-v3-preview",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-2f51b9753cd459ad1af6682c9815c1ca-3cc5a94e-ad8c-43ee-b0bd-7439d8c1c3c2-b.mp3",
+    "d": 129
+   },
+   "vinse": "a"
+  },
+  {
+   "id": "eba6cd6e-83eb-434b-bf3a-7eda34efe45d",
+   "data": "2026-03-02",
+   "prompt": "Celtic punk song with prominent vocals and lyrics about a rowdy evening",
+   "a": {
+    "s": "elevenlabs-music-v1",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-4a6db5345f375a79454287466ddf8f42-eba6cd6e-83eb-434b-bf3a-7eda34efe45d-a.mp3",
+    "d": 20
+   },
+   "b": {
+    "s": "lyria-3-30s",
+    "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset/resolve/main/audio_files/08-2026MAR/prebaked-4a6db5345f375a79454287466ddf8f42-eba6cd6e-83eb-434b-bf3a-7eda34efe45d-b.mp3",
+    "d": 31
+   },
+   "vinse": "b"
+  }
  ]
 }
