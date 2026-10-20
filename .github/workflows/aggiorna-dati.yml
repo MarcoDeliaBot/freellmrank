@@ -28,10 +28,16 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run dati
+      # frasi nuove del sito (modelli nuovi, articoli approvati) tradotte nelle altre lingue, sulla quota gratis del sito
+      - name: Traduci le frasi nuove
+        continue-on-error: true
+        env:
+          BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
+        run: node script/costruisci-sito.mjs > /dev/null && node script/traduci.mjs && node script/traduci-mancanti.mjs --max 10
       - name: Commit se i dati sono cambiati
         id: commit
         run: |
-          git add sito/data.json dati/pesi.json dati/architettura.json dati/piccoli.json dati/nuovi.json dati/decisioni.json dati/decisioni-licenze.json dati/audio.json dati/musica.json sito/history.json
+          git add sito/data.json dati/pesi.json dati/architettura.json dati/piccoli.json dati/nuovi.json dati/decisioni.json dati/decisioni-licenze.json dati/audio.json dati/musica.json sito/history.json traduzioni/*.json
           if git diff --cached --quiet; then echo "Nessun cambiamento"; exit 0; fi
           git config user.name "freellmarena-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

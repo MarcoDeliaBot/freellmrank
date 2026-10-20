@@ -893,3 +893,9 @@ footer{font-size:.75rem;color:var(--muted);border-top:1px solid var(--line);padd
 #rankings>.tabs{flex-wrap:nowrap;overflow-x:auto}
 .disp{overflow-x:clip}
 .c-link .tag.amazon{margin:.25rem 0 0;display:inline-block}
+
+/* lingue (21/10/2026): avviso in cima se il browser parla un'altra lingua, riga «Language» in fondo */
+.avviso-lingua{margin:0 0 .8rem;padding:.55rem .8rem;border:1px solid var(--line);border-radius:.6rem;background:var(--surface);font-size:.9rem;display:flex;flex-wrap:wrap;gap:.3rem .8rem;align-items:center}
+.avviso-lingua a{font-weight:600}
+.lingue{margin:.4rem 0}
+.lingue a,.lingue b{white-space:nowrap}

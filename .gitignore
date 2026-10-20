@@ -21,3 +21,7 @@ dati/decision-vision.json
 video/
 # scaricati per le classifiche audio (il risultato è dati/audio.json)
 dati/audio/
+# traduzioni: si tengono solo i dizionari traduzioni/<lingua>.json
+traduzioni/mancanti/
+traduzioni/da-tradurre/
+traduzioni/parti/
