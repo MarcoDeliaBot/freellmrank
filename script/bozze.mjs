@@ -86,7 +86,7 @@ async function gh(metodo, percorso, corpo) {
 }
 
 export async function apriIssue(titolo, corpo, etichette = ['bozza']) {
-  const esistenti = await gh('GET', `/issues?state=all&labels=${etichette[0]}&per_page=100`);
+  const esistenti = await gh('GET', `/issues?state=open&labels=${etichette[0]}&per_page=100`);
   const gia = esistenti.find((i) => i.title === titolo);
   if (gia) { console.log('Già aperta:', gia.html_url); return gia; }
   const i = await gh('POST', '/issues', { title: titolo, body: corpo, labels: etichette });
