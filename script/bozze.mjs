@@ -97,9 +97,25 @@ export async function apriIssue(titolo, corpo, etichette = ['bozza']) {
 // post per X e Reddit, con le regole delle skill «social» (X) e «reddit-posts» (Reddit)
 export async function postSocial({ argomento, dati, link }) {
   const p = await chiediModello([
-    { role: 'system', content: `You write social posts for FreeLLMArena (freellmarena.com), a free site that ranks only the AI models you can use for free, using Arena's blind human votes, and checks which models fit your GPU. The owner posts from his own account.\n${REGOLE_SCRITTURA}\nX rules: state a specific claim in the first 8 words and name the topic in the first 10 words. Write something a reader would send to a friend. Max 270 characters. Do NOT put a link in the post: the link goes in the first reply.\nReddit rules (r/LocalLLaMA): factual title with no clickbait; body leads with value or a real experience; markdown allowed (one small table is fine); end with one genuine question you want answered; add a one-line disclosure that it is the poster's own free site with no ads.` },
+    { role: 'system', content: `You write social posts for FreeLLMArena (freellmarena.com), a free site that ranks only the AI models you can use for free, using Arena's blind human votes, and checks which models fit your GPU. The owner posts from his own account.\n${REGOLE_SCRITTURA}\nTwo examples of the style Marco approved (match the tone, not the facts):
+X: "Gemini 4 Argon leads Arena's chat ranking at 1532. The best model you can download for free, Xiaomi's mimo-v2.6-pro, sits at 1491, and the next four free ones are within 21 points of it. On Arena a 50-point gap is clear and 10 is noise."
+Reddit title: "The top 5 open models on Arena chat are within 21 points of each other". Body: a short intro, a table from the data, one paragraph on what the numbers mean, one genuine question, a one-line disclosure.
+Never start an X post with "Check out", "New guide", "We just" or "Excited".
+X rules: state a specific claim in the first 8 words and name the topic in the first 10 words. Write something a reader would send to a friend. Max 270 characters. Do NOT put a link in the post: the link goes in the first reply.\nReddit rules (r/LocalLLaMA): factual title with no clickbait; body leads with the most useful finding from DATA (never invent a personal experience, never write \"I tried\" or \"I tested\"); markdown allowed (one small table is fine); end with one genuine question you want answered; add a one-line disclosure that it is the poster's own free site with no ads.` },
     { role: 'user', content: `TOPIC: ${argomento}\nLINK: ${link}\nDATA:\n${dati}\n\nReturn JSON: {"x": "...", "x_reply": "one short line with the link", "reddit_title": "...", "reddit_body": "...", "reddit_flair": "Discussion or Resources or News"}` },
   ], { json: true, max: 1500 });
+  // verifica: stesse regole del fact check degli articoli, sul testo dei due post
+  const v = await chiediModello([
+    { role: 'system', content: `You are a strict fact checker and editor. Fix every claim in these posts that DATA does not support (numbers, counts like "top 10", hardware fits, experiences the author never had). Keep the meaning, the JSON keys and the X limit of 270 characters. ${REGOLE_SCRITTURA}` },
+    { role: 'user', content: `DATA:
+${dati}
+
+POSTS JSON:
+${JSON.stringify(p)}
+
+Return the corrected JSON with the same keys.` },
+  ], { json: true, max: 1500 }).catch(() => p);
+  Object.assign(p, v);
   for (const k of Object.keys(p)) p[k] = senzaLineette(p[k]);
   return p;
 }

@@ -14,6 +14,10 @@ on:
         description: 'Fai anche il report settimanale'
         type: boolean
         default: false
+      solo_social:
+        description: 'Rifai solo le bozze social di un video già pubblicato (nuovo o settimana)'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -50,6 +54,7 @@ jobs:
           BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
         run: |
           node script/brag/genera.mjs
+          if [ -n "${{ inputs.solo_social }}" ]; then node script/bozze-social.mjs "${{ inputs.solo_social }}"; exit 0; fi
           tipi="nuovo"
           if [ "$(date -u +%u)" = "7" ] || [ "${{ inputs.settimana }}" = "true" ]; then tipi="nuovo settimana"; fi
           for tipo in $tipi; do
