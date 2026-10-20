@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { esc, pagina, NOME_PIENO, URL_SITO, SITO, fmtNum } from './comune.mjs';
+import { barre } from './grafici.mjs';
 
 const gb4 = (b) => b * 0.606 + 0.4; // file a 4-bit più il minimo per farlo girare
 const fmtGB = (g) => (g >= 10 ? g.toFixed(0) : g.toFixed(1)) + ' GB';
@@ -21,6 +22,12 @@ export function paginaTelefono(dati, modelli, blog) {
   // per ogni taglio solo i modelli in più rispetto al taglio prima (quelli più grandi che ora ci stanno)
   const perTaglio = TAGLI.map(([ram, chi], i) => ({ ram, chi, prima: i ? TAGLI[i - 1][0] : 0,
     lista: piccoli.filter((m) => gb4(m.hf.b) <= ram * 0.4 && gb4(m.hf.b) > (i ? TAGLI[i - 1][0] : 0) * 0.4).slice(0, 8) }));
+  // classifica visiva: i più scaricati che stanno in un telefono da 16 GB, colorati secondo il telefono che serve
+  const COLORE = { 8: 's3', 12: 's1', 16: 's2' };
+  const serve = (m) => TAGLI.find(([ram]) => gb4(m.hf.b) <= ram * 0.4)?.[0];
+  const grafico = barre(piccoli.filter((m) => serve(m)).slice(0, 12).map((m) => ({ nome: m.nome, valore: m.download, href: m.href, colore: COLORE[serve(m)], nota: `${fmtGB(gb4(m.hf.b))} at 4-bit, needs a ${serve(m)} GB phone` })),
+    { titoloAsse: 'Downloads per month on Hugging Face', formato: fmtNum, daZero: true,
+      testoColori: 'Color = the phone it needs: green 8 GB of RAM, blue 12 GB, orange 16 GB. Popularity, not quality: these models have no Arena votes yet.' });
   pagina({
     file: 'phone.html', attiva: '/gpus.html', dati, blog,
     titolo: `Free AI Models That Run on Your Phone (Offline) · ${NOME_PIENO}`,
@@ -29,6 +36,7 @@ export function paginaTelefono(dati, modelli, blog) {
 <h1>Free AI models on your phone</h1>
 <p class="lead">A phone can run a small AI model offline, with no account and no internet. What fits depends on its memory (RAM). Here is what to expect, and which free apps to use.</p>
 </div>
+<div class="panel"><h2>The most used models that fit a phone</h2>${grafico}</div>
 <div class="panel"><h2>What fits in your phone’s memory</h2>
 <p class="small muted">Rule of thumb: the model can use about 40% of the phone’s RAM; the system and your apps need the rest. Sizes are 4-bit files from the labs’ official Hugging Face pages, ordered by downloads (popularity, not quality).</p>
 ${perTaglio.map((t) => `<h3>${t.ram} GB of RAM <span class="small muted">· ${esc(t.chi)} · ${t.prima ? `everything above, plus models up to about ${fmtGB(t.ram * 0.4)}` : `models up to about ${fmtGB(t.ram * 0.4)}`}</span></h3>

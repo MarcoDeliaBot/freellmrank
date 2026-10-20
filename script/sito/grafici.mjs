@@ -12,24 +12,25 @@ const tacche = (min, max, quante = 5) => {
 };
 
 // Barre orizzontali in classifica, con linea di riferimento (es. miglior modello a pagamento).
-export function barre(voci, { riferimento, titoloAsse = 'Arena score', testoColori = 'Colored bars: the models in the time chart, same color in every chart.', testoRif } = {}) {
+// formato: come scrivere i numeri (es. 11.8M); daZero: l'asse parte da 0 (per i conteggi, non per i punteggi)
+export function barre(voci, { riferimento, titoloAsse = 'Arena score', testoColori = 'Colored bars: the models in the time chart, same color in every chart.', testoRif, formato = String, daZero = false } = {}) {
   const valori = voci.map((v) => v.valore).concat(riferimento ? [riferimento.valore] : []);
   // l'asse parte un po' sotto il valore più basso, con un passo adatto alla scala dei numeri
   const max = Math.max(...valori), minv = Math.min(...valori);
   const passo = max - minv > 60 ? 50 : 10;
   const margine = Math.min(Math.max((max - minv) * 0.6, 5), passo * 1.2);
-  const min = Math.max(0, Math.floor((minv - margine) / passo) * passo);
+  const min = daZero ? 0 : Math.max(0, Math.floor((minv - margine) / passo) * passo);
   const x = (v) => (100 * (v - min)) / (max - min);
   const ticks = tacche(min, max);
   const colorate = voci.some((v) => v.colore);
   const classe = (v) => (v.rif ? 'vg-rif' : v.colore ? `sw-${v.colore}` : colorate ? 'vg-altro' : 'p-gpu');
   return `<div class="vel-grafico barre-arena" role="img" aria-label="${esc(titoloAsse)} of the top ${voci.length} free models">
-${voci.map((v) => `<a class="vg-riga${v.rif ? ' rif' : ''}" href="${v.href}" title="${esc(v.nome)}: ${v.valore}${v.nota ? ' · ' + esc(v.nota) : ''}">
+${voci.map((v) => `<a class="vg-riga${v.rif ? ' rif' : ''}" href="${v.href}" title="${esc(v.nome)}: ${esc(formato(v.valore))}${v.nota ? ' · ' + esc(v.nota) : ''}">
 <span class="vg-nome">${v.rif ? `<b>${esc(v.nome)}</b>` : esc(v.nome)}</span>
-<span class="vg-pista">${riferimento ? `<span class="vg-l" style="left:${x(riferimento.valore)}%"></span>` : ''}<span class="vg-barra ${classe(v)}" style="width:${x(v.valore)}%"></span><span class="vg-val" style="left:${x(v.valore)}%">${v.valore}</span></span></a>`).join('')}
-<div class="vg-asse"><span class="vg-nome"></span><span class="vg-pista">${ticks.map((t) => `<span style="left:${x(t)}%">${t}</span>`).join('')}</span></div>
+<span class="vg-pista">${riferimento ? `<span class="vg-l" style="left:${x(riferimento.valore)}%"></span>` : ''}<span class="vg-barra ${classe(v)}" style="width:${x(v.valore)}%"></span><span class="vg-val" style="left:${x(v.valore)}%">${esc(formato(v.valore))}</span></span></a>`).join('')}
+<div class="vg-asse"><span class="vg-nome"></span><span class="vg-pista">${ticks.map((t) => `<span style="left:${x(t)}%">${esc(formato(t))}</span>`).join('')}</span></div>
 </div>
-<p class="small muted">${esc(titoloAsse)}, axis starts at ${min}.${colorate ? ' ' + testoColori : ''}${testoRif ? ' ' + testoRif : riferimento ? ` Dashed line: best paid model, ${esc(riferimento.nome)} (${riferimento.valore}).` : ''}</p>`;
+<p class="small muted">${esc(titoloAsse)}${daZero ? '.' : `, axis starts at ${min}.`}${colorate ? ' ' + testoColori : ''}${testoRif ? ' ' + testoRif : riferimento ? ` Dashed line: best paid model, ${esc(riferimento.nome)} (${riferimento.valore}).` : ''}</p>`;
 }
 
 // Punteggio contro dimensione (scala logaritmica), con la frontiera: il punteggio più alto
