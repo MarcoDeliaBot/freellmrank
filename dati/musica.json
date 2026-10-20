@@ -1,0 +1,223 @@
+{
+ "aggiornato": "2026-10-20",
+ "fonte": {
+  "nome": "Music Arena",
+  "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset",
+  "licenza": "CC BY 4.0",
+  "mesi": [
+   "2025_07-08",
+   "2025_09",
+   "2025_10",
+   "2025_11",
+   "2025_12",
+   "2026_01",
+   "2026_02",
+   "2026_03",
+   "2026_04",
+   "2026_05",
+   "2026_06",
+   "2026_07"
+  ]
+ },
+ "sfide": 8117,
+ "modelli": [
+  {
+   "id": "sa3-medium",
+   "punteggio": 1226,
+   "ic": 39,
+   "voti": 496,
+   "vinte": 336,
+   "perse": 37,
+   "pari": 123,
+   "ultimo": "2026-07-30",
+   "lentezza": 0.02
+  },
+  {
+   "id": "lyria-3-pro-preview",
+   "punteggio": 1183,
+   "ic": 24,
+   "voti": 1142,
+   "vinte": 736,
+   "perse": 180,
+   "pari": 226,
+   "ultimo": "2026-07-29",
+   "lentezza": 0.2
+  },
+  {
+   "id": "riffusion-fuzz-1-0",
+   "punteggio": 1181,
+   "ic": 28,
+   "voti": 863,
+   "vinte": 567,
+   "perse": 122,
+   "pari": 174,
+   "ultimo": "2026-02-20",
+   "lentezza": 0.09
+  },
+  {
+   "id": "riffusion-fuzz-1-1",
+   "punteggio": 1132,
+   "ic": 22,
+   "voti": 1261,
+   "vinte": 755,
+   "perse": 234,
+   "pari": 272,
+   "ultimo": "2026-02-19",
+   "lentezza": 0.13
+  },
+  {
+   "id": "sonauto-v3-preview",
+   "punteggio": 1081,
+   "ic": 40,
+   "voti": 308,
+   "vinte": 147,
+   "perse": 78,
+   "pari": 83,
+   "ultimo": "2026-04-15",
+   "lentezza": 0.99
+  },
+  {
+   "id": "preview-jerboa",
+   "punteggio": 1077,
+   "ic": 61,
+   "voti": 127,
+   "vinte": 45,
+   "perse": 53,
+   "pari": 29,
+   "ultimo": "2025-09-23",
+   "lentezza": 0.12
+  },
+  {
+   "id": "preview-ocelot",
+   "punteggio": 1075,
+   "ic": 59,
+   "voti": 134,
+   "vinte": 47,
+   "perse": 57,
+   "pari": 30,
+   "ultimo": "2025-09-25",
+   "lentezza": 0.14
+  },
+  {
+   "id": "lyria-3-30s",
+   "punteggio": 1054,
+   "ic": 32,
+   "voti": 470,
+   "vinte": 231,
+   "perse": 158,
+   "pari": 81,
+   "ultimo": "2026-04-15",
+   "lentezza": 0.29
+  },
+  {
+   "id": "sonauto-v2-2",
+   "punteggio": 1028,
+   "ic": 16,
+   "voti": 2100,
+   "vinte": 790,
+   "perse": 718,
+   "pari": 592,
+   "ultimo": "2026-07-31",
+   "lentezza": 0.35
+  },
+  {
+   "id": "elevenlabs-music-v1",
+   "punteggio": 1009,
+   "ic": 16,
+   "voti": 2121,
+   "vinte": 689,
+   "perse": 765,
+   "pari": 667,
+   "ultimo": "2026-07-31",
+   "lentezza": 0.4
+  },
+  {
+   "id": "acestep-1.5-turbo-1.7b",
+   "punteggio": 953,
+   "ic": 19,
+   "voti": 1499,
+   "vinte": 328,
+   "perse": 651,
+   "pari": 520,
+   "ultimo": "2026-07-31",
+   "lentezza": 0.36
+  },
+  {
+   "id": "magenta-rt-large",
+   "punteggio": 918,
+   "ic": 20,
+   "voti": 1352,
+   "vinte": 298,
+   "perse": 482,
+   "pari": 572,
+   "ultimo": "2026-07-31",
+   "lentezza": 0.9
+  },
+  {
+   "id": "magenta-rt-2-base",
+   "punteggio": 883,
+   "ic": 36,
+   "voti": 443,
+   "vinte": 18,
+   "perse": 171,
+   "pari": 254,
+   "ultimo": "2026-07-31",
+   "lentezza": 1.13
+  },
+  {
+   "id": "sao",
+   "punteggio": 882,
+   "ic": 22,
+   "voti": 1091,
+   "vinte": 212,
+   "perse": 443,
+   "pari": 436,
+   "ultimo": "2026-06-04",
+   "lentezza": 0.34
+  },
+  {
+   "id": "musicgen-medium",
+   "punteggio": 880,
+   "ic": 23,
+   "voti": 1051,
+   "vinte": 118,
+   "perse": 425,
+   "pari": 508,
+   "ultimo": "2026-07-31",
+   "lentezza": 2.21
+  },
+  {
+   "id": "musicgen-small",
+   "punteggio": 853,
+   "ic": 27,
+   "voti": 726,
+   "vinte": 129,
+   "perse": 310,
+   "pari": 287,
+   "ultimo": "2026-02-18",
+   "lentezza": 1.14
+  },
+  {
+   "id": "sao-small",
+   "punteggio": 800,
+   "ic": 29,
+   "voti": 703,
+   "vinte": 69,
+   "perse": 353,
+   "pari": 281,
+   "ultimo": "2026-02-13",
+   "lentezza": 0.03
+  },
+  {
+   "id": "acestep",
+   "punteggio": 784,
+   "ic": 59,
+   "voti": 347,
+   "vinte": 16,
+   "perse": 294,
+   "pari": 37,
+   "ultimo": "2025-10-15",
+   "lentezza": 0.29
+  }
+ ]
+}

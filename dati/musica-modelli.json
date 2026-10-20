@@ -1,0 +1,24 @@
+{
+  "nota": "Modelli di Music Arena, controllati a mano su Hugging Face e sulle pagine ufficiali il 2026-10-20. aperto: pesi scaricabili. commerciale: la licenza permette l'uso commerciale (con eventuali condizioni in 'condizioni'). b: miliardi di parametri dai file del modello (null = non pubblicato o non letto). vram: solo se lo dice la scheda ufficiale.",
+  "controllato": "2026-10-20",
+  "modelli": {
+    "sa3-medium": { "nome": "Stable Audio 3 Medium", "lab": "Stability AI", "aperto": true, "licenza": "Stability AI Community License", "commerciale": true, "condizioni": "free for individuals and companies under $1M a year in revenue", "repo": "stabilityai/stable-audio-3-medium", "b": 2.31 },
+    "lyria-3-pro-preview": { "nome": "Lyria 3 Pro (preview)", "lab": "Google", "aperto": false },
+    "riffusion-fuzz-1-0": { "nome": "Riffusion FUZZ 1.0", "lab": "Riffusion", "aperto": false },
+    "riffusion-fuzz-1-1": { "nome": "Riffusion FUZZ 1.1", "lab": "Riffusion", "aperto": false },
+    "sonauto-v3-preview": { "nome": "Sonauto v3 (preview)", "lab": "Sonauto", "aperto": false },
+    "preview-jerboa": { "nome": "Anonymous preview (jerboa)", "lab": "Undisclosed", "aperto": false, "anonimo": true },
+    "preview-ocelot": { "nome": "Anonymous preview (ocelot)", "lab": "Undisclosed", "aperto": false, "anonimo": true },
+    "lyria-3-30s": { "nome": "Lyria 3 (30 s)", "lab": "Google", "aperto": false },
+    "sonauto-v2-2": { "nome": "Sonauto v2.2", "lab": "Sonauto", "aperto": false },
+    "elevenlabs-music-v1": { "nome": "Eleven Music v1", "lab": "ElevenLabs", "aperto": false },
+    "acestep-1.5-turbo-1.7b": { "nome": "ACE-Step 1.5 Turbo", "lab": "ACE-Step", "aperto": true, "licenza": "MIT", "commerciale": true, "repo": "ACE-Step/Ace-Step1.5", "b": 1.7, "vram": "under 4 GB of VRAM, says the official card" },
+    "magenta-rt-large": { "nome": "Magenta RealTime (large)", "lab": "Google", "aperto": true, "licenza": "CC BY 4.0", "commerciale": true, "condizioni": "credit Google", "repo": "google/magenta-realtime", "b": null },
+    "magenta-rt-2-base": { "nome": "Magenta RealTime 2 (base)", "lab": "Google", "aperto": true, "licenza": "CC BY 4.0", "commerciale": true, "condizioni": "credit Google", "repo": "google/magenta-realtime-2", "b": 2.4 },
+    "sao": { "nome": "Stable Audio Open 1.0", "lab": "Stability AI", "aperto": true, "licenza": "Stability AI Community License", "commerciale": true, "condizioni": "free under $1M a year in revenue", "repo": "stabilityai/stable-audio-open-1.0", "b": 1.21 },
+    "sao-small": { "nome": "Stable Audio Open Small", "lab": "Stability AI", "aperto": true, "licenza": "Stability AI Community License", "commerciale": true, "condizioni": "free under $1M a year in revenue", "repo": "stabilityai/stable-audio-open-small", "b": 0.5 },
+    "musicgen-medium": { "nome": "MusicGen Medium", "lab": "Meta", "aperto": true, "licenza": "CC BY-NC 4.0", "commerciale": false, "repo": "facebook/musicgen-medium", "b": null },
+    "musicgen-small": { "nome": "MusicGen Small", "lab": "Meta", "aperto": true, "licenza": "CC BY-NC 4.0", "commerciale": false, "repo": "facebook/musicgen-small", "b": 0.59 },
+    "acestep": { "nome": "ACE-Step v1 (3.5B)", "lab": "ACE-Step", "aperto": true, "licenza": "Apache 2.0", "commerciale": true, "repo": "ACE-Step/ACE-Step-v1-3.5B", "b": 3.5 }
+  }
+}

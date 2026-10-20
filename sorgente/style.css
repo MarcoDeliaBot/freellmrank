@@ -656,3 +656,4 @@ footer{font-size:.75rem;color:var(--muted);border-top:1px solid var(--line);padd
 .piede a:hover{color:var(--ink);text-decoration:underline}
 .piper{margin-top:.4rem}.piper h3{margin:0;font-size:1rem}.piper select{font:inherit;font-size:16px;padding:.45rem .55rem;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);max-width:100%}.piper audio{width:100%}
 .piper select,.piper textarea{width:100%;box-sizing:border-box;min-width:0}.piper .prova-form{min-width:0}
+.menu-lato a,.menu-pannello a{white-space:nowrap}
