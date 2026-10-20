@@ -1,5 +1,5 @@
 # Ogni lunedì un articolo del blog in bozza (script/bozza-blog.mjs): ramo «bozza/<slug>» e issue «bozza» da approvare.
-# Il testo lo scrive GitHub Models, gratis con il token di questo lavoro. Niente si pubblica senza Marco.
+# Il testo lo scrive Workers AI attraverso /api/scrivi (segreto BOZZE_KEY), sulla quota gratis del sito. Niente si pubblica senza Marco.
 name: Bozza blog
 
 on:
@@ -10,7 +10,6 @@ on:
 permissions:
   contents: write
   issues: write
-  models: read
 
 concurrency:
   group: bozza-blog
@@ -30,3 +29,4 @@ jobs:
       - run: node script/bozza-blog.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          BOZZE_KEY: ${{ secrets.BOZZE_KEY }}

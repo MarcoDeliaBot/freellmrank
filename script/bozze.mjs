@@ -1,5 +1,5 @@
 // Pezzi comuni delle bozze automatiche (articoli del blog e post social), 20/10/2026.
-// Il testo lo scrive un modello di GitHub Models, gratis con il token di GitHub Actions (permesso «models: read»).
+// Il testo lo scrive gpt-oss-120b su Workers AI (quota gratis del sito) tramite /api/scrivi, protetta dal segreto BOZZE_KEY.
 // Le bozze diventano issue con l'etichetta «bozza»: n8n le manda a Marco per mail (n8n/bozze-da-approvare.json).
 // Nessuna bozza si pubblica da sola.
 import fs from 'node:fs';
@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 export const RADICE = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const REPO = process.env.GITHUB_REPOSITORY || 'MarcoDeliaBot/freellmrank';
 const TOKEN = () => process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
-export const MODELLO = process.env.BOZZE_MODELLO || 'openai/gpt-4.1';
+export const MODELLO = 'gpt-oss-120b (Workers AI)';
 
 export const leggiDati = () => JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', 'data.json'), 'utf8'));
 export const gratis = (m) => m.aperto || m.or?.gratis;
@@ -24,15 +24,18 @@ export const REGOLE_SCRITTURA = `Writing rules (strict):
 - Do not write one sentence per line for a whole post. Write paragraphs.`;
 
 export async function chiediModello(messaggi, { json = false, max = 2500 } = {}) {
-  const r = await fetch('https://models.github.ai/inference/chat/completions', {
+  // GitHub Models è stato chiuso il 30/7/2026: si scrive con Workers AI attraverso la funzione protetta del sito
+  const r = await fetch(`${process.env.SCRIVI_URL || 'https://freellmarena.com'}/api/scrivi`, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${TOKEN()}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: MODELLO, messages: messaggi, max_tokens: max, temperature: 0.4, ...(json ? { response_format: { type: 'json_object' } } : {}) }),
+    headers: { Authorization: `Bearer ${process.env.BOZZE_KEY || ''}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ messaggi: json ? [...messaggi, { role: 'user', content: 'Reply with only the JSON object, no other text.' }] : messaggi, max }),
   });
-  if (!r.ok) throw new Error(`GitHub Models ${r.status}: ${(await r.text()).slice(0, 300)}`);
-  const d = await r.json();
-  const testo = d.choices?.[0]?.message?.content || '';
-  return json ? JSON.parse(testo) : testo;
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(`/api/scrivi ${r.status}: ${d.errore || ''}`);
+  if (!json) return d.testo;
+  const m = d.testo.match(/\{[\s\S]*\}/);
+  if (!m) throw new Error(`Risposta senza JSON: ${d.testo.slice(0, 200)}`);
+  return JSON.parse(m[0]);
 }
 
 // pulizia di sicurezza: anche se il modello sbaglia, niente lineette lunghe

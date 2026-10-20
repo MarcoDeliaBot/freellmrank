@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { RADICE, REPO, leggiDati, gratis, chiediModello, REGOLE_SCRITTURA, senzaLineette, numeriDaControllare, apriIssue, postSocial, testoPost } from './bozze.mjs';
+import { RADICE, REPO, MODELLO, leggiDati, gratis, chiediModello, REGOLE_SCRITTURA, senzaLineette, numeriDaControllare, apriIssue, postSocial, testoPost } from './bozze.mjs';
 
 const PROVA = process.argv.includes('--prova');
 const dati = leggiDati();
@@ -64,7 +64,7 @@ fs.writeFileSync(path.join(RADICE, 'contenuti', 'blog', `${idea.slug}.md`), md);
 git('add', `contenuti/blog/${idea.slug}.md`);
 git('-c', 'user.name=freellmarena-bot', '-c', 'user.email=41898282+github-actions[bot]@users.noreply.github.com', 'commit', '-m', `Bozza blog: ${meta.titolo}`);
 git('push', 'origin', ramo);
-await apriIssue(`Articolo da approvare: ${meta.titolo}`, `Bozza scritta da ${process.env.BOZZE_MODELLO || 'openai/gpt-4.1'} con i soli dati del sito (${dati.aggiornato}). **Non è pubblicata.**
+await apriIssue(`Articolo da approvare: ${meta.titolo}`, `Bozza scritta da ${MODELLO} con i soli dati del sito (${dati.aggiornato}). **Non è pubblicata.**
 
 **Per pubblicarla:** apri https://github.com/${REPO}/compare/main...${ramo}?expand=1, premi «Create pull request» e poi «Merge». Il sito la pubblica in 2 minuti, a https://freellmarena.com/blog/${idea.slug}
 **Per correggerla:** modifica il file sul ramo: https://github.com/${REPO}/edit/${ramo}/contenuti/blog/${idea.slug}.md
