@@ -58,7 +58,7 @@ export function pagineGpu(dati, modelli, blog, { cercaAmazon }) {
 <div style="display:grid;gap:.4rem">
 <h1>Best free AI models for the ${esc(s.nome)}</h1>
 <p class="lead">${esc(s.nome)}: ${s.gb} GB${s.unificata ? ' of shared memory (about ' + Math.round(s.gb * 0.75) + ' GB usable by the GPU)' : ' of video memory'}, ${s.banda} GB/s. These are the free models it runs, ranked by Arena votes, with the speed you can expect.</p>
-<p class="small"><a href="/home.html?gpu=${encodeURIComponent(s.id)}">Simulate your setup</a>${amazon ? ` · <a class="amazon" data-q="${esc(amazon)}" href="${esc(linkAmazon(amazon))}" rel="sponsored nofollow noopener" target="_blank">Check the price on Amazon ↗</a>` : ''} · <a href="/gpus.html">Compare all GPUs</a></p>
+<p class="small"><a href="/home.html?gpu=${encodeURIComponent(s.id)}">Simulate your setup</a>${amazon ? ` · <a class="tag free amazon" data-q="${esc(amazon)}" href="${esc(linkAmazon(amazon))}" rel="sponsored nofollow noopener" target="_blank">Check the price on Amazon ↗</a>` : ''} · <a href="/gpus.html">Compare all GPUs</a></p>
 </div>
 <div class="tiles">
 ${migliore ? `<div class="tile"><span class="small muted">Best voted model that fits</span><b>${esc(migliore.m.nome)}</b><span class="small muted">Arena ${migliore.m.cat.chat.punti} · ~${fmtVel(migliore.r.vel)} tokens/s</span></div>`

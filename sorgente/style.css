@@ -892,3 +892,4 @@ footer{font-size:.75rem;color:var(--muted);border-top:1px solid var(--line);padd
 .tabs{flex-wrap:wrap;overflow-x:visible;min-width:0;max-width:100%}
 #rankings>.tabs{flex-wrap:nowrap;overflow-x:auto}
 .disp{overflow-x:clip}
+.c-link .tag.amazon{margin:.25rem 0 0;display:inline-block}

@@ -46,7 +46,7 @@ export function paginaGpu(dati, modelli, blog) {
     const c = celle(v, massimi);
     return `<tr id="gpu-${esc(s.id)}" data-id="${esc(s.id)}" data-marca="${esc(s.marca)}"${nascosta ? ' hidden' : ''}>
 <td class="n c-pos">${nascosta ? '' : ++pos}</td>
-<td class="c-nome"><a class="nome-gpu" href="/gpu/${esc(s.id)}.html"><b>${esc(s.nome)}</b></a><br><span class="small muted">${esc(s.marca)}${s.unificata ? ' · shared memory' : ''}</span><br><span class="small c-link"><a href="/home.html?gpu=${encodeURIComponent(s.id)}">Simulate</a>${cercaAmazon(s) ? ` · <a class="amazon" data-q="${esc(cercaAmazon(s))}" href="${esc(linkAmazon(cercaAmazon(s)))}" rel="sponsored nofollow noopener" target="_blank">Amazon ↗</a>` : ''}</span></td>
+<td class="c-nome"><a class="nome-gpu" href="/gpu/${esc(s.id)}.html"><b>${esc(s.nome)}</b></a><br><span class="small muted">${esc(s.marca)}${s.unificata ? ' · shared memory' : ''}</span><br><span class="small c-link"><a href="/home.html?gpu=${encodeURIComponent(s.id)}">Simulate</a>${cercaAmazon(s) ? ` · <a class="tag free amazon" data-q="${esc(cercaAmazon(s))}" href="${esc(linkAmazon(cercaAmazon(s)))}" rel="sponsored nofollow noopener" target="_blank">Amazon ↗</a>` : ''}</span></td>
 <td class="n c-gb">${c.gb}</td>
 ${c.vel.map((x) => `<td class="c-vel">${x}</td>`).join('')}
 <td class="n c-max">${c.max}</td>

@@ -58,7 +58,7 @@ ${per.map((x) => `<td>${cella(x)}</td>`).join('')}
 
   const r3060 = i3060 >= 0 ? righe.find(({ k }) => k.id === 'ddr5-32')?.per[i3060]?.veloce : null;
   pagina({
-    file: 'ram.html', attiva: '/ram.html', dati, blog,
+    file: 'ram.html', attiva: '/ram.html', dati, blog, script: 'amazon.js',
     titolo: `How Much RAM for Local AI? Best Free Models by RAM Kit · ${NOME_PIENO}`,
     descr: `How much system RAM you need to run bigger free AI models at home, with ${kit.length} RAM kits, memory bandwidth and the best model each one runs with an RTX 3060 or 4090.`,
     corpo: `<div style="display:grid;gap:.4rem">
