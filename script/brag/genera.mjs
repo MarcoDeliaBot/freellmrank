@@ -65,6 +65,11 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--b
 .serve{font:700 52px/1.2 var(--sans)}
 .serve span{color:var(--v-verde)}
 .url{font:800 104px/1 var(--sans);color:var(--v-verde);letter-spacing:-.02em}
+.gancio{display:grid;gap:14px;margin-top:18px}
+.gancio>span:not(.pista){font:700 40px/1.2 var(--sans);color:var(--muted)}
+.gancio .pista{position:relative;height:56px;border-radius:12px;background:var(--line);overflow:hidden}
+.gancio .pista i{position:absolute;left:0;top:0;bottom:0;border-radius:12px;background:var(--v-verde)}
+.gancio .pista i.pagato{background:repeating-linear-gradient(135deg,var(--ink) 0 14px,var(--muted) 14px 28px)}
 `;
 
 // ---------- motore: ogni elemento ha [entra, esce] in secondi; tutto si calcola da t ----------
@@ -121,11 +126,13 @@ const scena = (da, a, corpo) => `<section class="scena" data-da="${da}" data-a="
 // ---------- video 1: la settimana ----------
 const distacco = pagato.punti - top5[0].punti;
 const settimana = pagina([
-  scena(0, 3.6, `<p class="grande riga" data-in="0.1">Free AI is</p><p class="grande riga verde" data-in="0.5">${distacco} points</p><p class="medio riga" data-in="0.9">behind the best paid model.</p>`),
-  scena(3.6, 7.0, `<p class="medio riga" data-in="0">We rank every AI model you can use for free.</p><p class="piccolo riga" data-in="0.5">By blind human votes on Arena.</p><span class="chip riga" data-in="0.9"><span data-conta="${contaGratis}" data-da="0.9">0</span> free chat models ranked</span>`),
-  scena(7.0, 13.4, `<p class="medio riga" data-in="0">Top 5 free chat models</p><p class="piccolo riga" data-in="0.2">This week, ${esc(dati.aggiornato)}</p><div class="grafico-v" data-luce="3.6">${grafico}</div><p class="etichetta-rif riga" data-in="2.6">Dashed line: the best paid model, <b>${esc(pagato.nome)}</b> (${pagato.punti}).</p>`),
-  scena(13.4, 16.8, `<p class="grande riga" data-in="0.1">All five</p><p class="grande riga verde" data-in="0.4">are open.</p><p class="medio riga" data-in="0.9">Download them. Run them. Free.</p>`),
-  scena(16.8, 20.0, `<p class="medio riga" data-in="0.1">Which one runs on your GPU?</p><p class="url riga" data-in="0.6">freellmarena.com</p><p class="piccolo riga" data-in="1.0">Updated every night.</p>`),
+  // regole della skill «video» (coreyhaines31): gancio visivo e testo entro il primo secondo, al massimo 2 righe corte per frase,
+  // parole chiave in colore, invito finale chiaro. Il gancio mostra il distacco con due barre vere sulla scala del grafico (da 1400).
+  scena(0, 3.6, `<p class="grande riga" data-in="0">Free AI is</p><p class="grande riga verde" data-in="0.15">${distacco} points</p><p class="medio riga" data-in="0.3">behind paid AI.</p><div class="gancio riga" data-in="0.2"><span>Best paid · ${pagato.punti}</span><span class="pista"><i class="pagato" data-pista="${((pagato.punti - 1400) / (pagato.punti - 1390) * 100).toFixed(1)}" data-da="0.25"></i></span><span>Best free · ${top5[0].punti}</span><span class="pista"><i data-pista="${((top5[0].punti - 1400) / (pagato.punti - 1390) * 100).toFixed(1)}" data-da="0.35"></i></span><span style="font-size:30px">Scale starts at 1400, like on the site.</span></div>`),
+  scena(3.6, 7.0, `<p class="medio riga" data-in="0">Every free AI model,</p><p class="medio riga" data-in="0.3">ranked by <span class="verde">blind votes</span>.</p><span class="chip riga" data-in="0.8"><span data-conta="${contaGratis}" data-da="0.8">0</span> free chat models</span>`),
+  scena(7.0, 13.4, `<p class="medio riga" data-in="0">Top 5 free chat models</p><p class="piccolo riga" data-in="0.2">This week, ${esc(dati.aggiornato)}</p><div class="grafico-v" data-luce="3.6">${grafico}</div><p class="etichetta-rif riga" data-in="2.6">Dashed line = best paid: <b>${esc(pagato.nome)}</b></p>`),
+  scena(13.4, 16.8, `<p class="grande riga" data-in="0.1">All five</p><p class="grande riga verde" data-in="0.4">are open.</p><p class="medio riga" data-in="0.9">Download. Run. Free.</p>`),
+  scena(16.8, 20.0, `<p class="medio riga" data-in="0.1">Which one runs on <span class="verde">your GPU</span>?</p><p class="url riga" data-in="0.5">freellmarena.com</p><p class="piccolo riga" data-in="0.9">Free · updated every night</p>`),
 ], 20);
 
 // ---------- video 2: il modello nuovo ----------
@@ -147,11 +154,11 @@ const righeSchede = mostrate.map((s, i) => {
 const esito = chiTiene ? `The ${esc(chiTiene.nome)} runs it fully on the GPU.` : `Not even a ${esc(schede.at(-1)?.nome || 'top home machine')} holds it.`;
 const nomeLungo = nomeCorto.length > 22 ? 84 : nomeCorto.length > 16 ? 96 : 112;
 const nuovoV = pagina([
-  scena(0, 3.4, `<p class="grande riga verde" data-in="0.1">${Math.round(nuovo.hf.b)} billion</p><p class="grande riga" data-in="0.4">parameters.</p><p class="medio riga" data-in="1.0">Free to download.</p>`),
-  scena(3.4, 6.6, `<span class="chip riga" data-in="0">NEW · ${esc(giorno)}</span><p class="grande riga" data-in="0.3" style="font-size:${nomeLungo}px;overflow-wrap:anywhere">${esc(nomeCorto)}</p><p class="piccolo riga" data-in="0.8">by ${esc(nomeLab(nuovo.org))} · open weights on Hugging Face</p>`),
-  scena(6.6, 12.2, `<p class="medio riga" data-in="0">Can your PC run it?</p><p class="serve riga" data-in="0.4">It needs <span>${gb4} GB</span> at 4-bit.</p>${righeSchede}<p class="piccolo riga" data-in="${0.9 + mostrate.length * 0.5}">${esito}</p>`),
-  scena(12.2, 16.2, `<p class="grande riga" data-in="0.1">${ctxTesto}</p><p class="medio riga" data-in="0.4">tokens of context.</p><p class="piccolo riga" data-in="1.1">Arena has not voted on it yet. When it does, it joins our free leaderboard the next night.</p>`),
-  scena(16.2, 20.0, `<p class="medio riga" data-in="0.1">Compare it with every free model</p><p class="url riga" data-in="0.6">freellmarena.com</p>`),
+  scena(0, 3.4, `<p class="grande riga verde" data-in="0">${Math.round(nuovo.hf.b)}B parameters.</p><p class="medio riga" data-in="0.2">Free to download.</p><div class="gancio riga" data-in="0.25"><span>It needs · ${gb4} GB</span><span class="pista"><i class="pagato" data-pista="100" data-da="0.3"></i></span><span>RTX 4090 · 24 GB</span><span class="pista"><i data-pista="${Math.min(100, 24 / gb4 * 100).toFixed(1)}" data-da="0.4"></i></span></div>`),
+  scena(3.4, 6.6, `<span class="chip riga" data-in="0">NEW · ${esc(giorno)}</span><p class="grande riga" data-in="0.2" style="font-size:${nomeLungo}px;overflow-wrap:anywhere">${esc(nomeCorto)}</p><p class="piccolo riga" data-in="0.6">by ${esc(nomeLab(nuovo.org))} · open weights</p>`),
+  scena(6.6, 12.2, `<p class="medio riga" data-in="0">Can <span class="verde">your PC</span> run it?</p><p class="serve riga" data-in="0.3">It needs <span>${gb4} GB</span> at 4-bit.</p>${righeSchede}<p class="piccolo riga" data-in="${0.9 + mostrate.length * 0.5}">${esito}</p>`),
+  scena(12.2, 16.2, `<p class="grande riga verde" data-in="0.1">${ctxTesto}</p><p class="medio riga" data-in="0.3">tokens of context.</p><p class="piccolo riga" data-in="1.0">Ranked as soon as Arena votes on it.</p>`),
+  scena(16.2, 20.0, `<p class="medio riga" data-in="0.1">Compare it with <span class="verde">every free model</span></p><p class="url riga" data-in="0.5">freellmarena.com</p>`),
 ], 20);
 
 fs.writeFileSync(path.join(OUT, 'scena-settimana.html'), settimana);
