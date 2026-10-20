@@ -28,7 +28,8 @@ nav{display:flex;flex-wrap:wrap;gap:.25rem}
 nav a{padding:.35rem .7rem;border-radius:6px;text-decoration:none;color:var(--ink)}
 nav a[aria-current="page"]{background:var(--soft);color:var(--ink);font-weight:600}
 nav a{display:inline-flex;align-items:center;gap:.4rem}
-nav a:hover{background:var(--soft)}
+/* evidenziazione al passaggio solo con il mouse: sui tablet resta accesa dopo il tocco e sembra una voce scelta */
+@media (hover:hover){nav a:hover{background:var(--soft)}}
 .icona{width:1.05rem;height:1.05rem;flex:none;color:var(--muted)}
 nav a[aria-current="page"] .icona{color:var(--ink)}
 .badge-free{display:inline-block;font-size:.68rem;line-height:1;font-weight:600;padding:.2rem .4rem;border-radius:4px;background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent)}
@@ -269,11 +270,6 @@ footer .wrap{display:grid;gap:.4rem}
 
 /* ---------- telefono ---------- */
 @media (max-width:40rem){
-  /* menu: una sola riga che scorre di lato, invece di tre righe */
-  header.top .wrap{flex-wrap:nowrap;flex-direction:column;align-items:stretch;gap:.35rem;padding-block:.55rem .35rem}
-  nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-.3rem;padding-bottom:.2rem;-webkit-mask-image:linear-gradient(to right,#000 85%,transparent);mask-image:linear-gradient(to right,#000 85%,transparent)}
-  nav::-webkit-scrollbar{display:none}
-  nav a{flex:none;padding:.4rem .6rem;font-size:.92rem}
   /* tabelle grandi: una scheda per riga */
   .tw.carte{overflow:visible;background:none;border:0;border-radius:0}
   .tw.carte table,.tw.carte tbody{display:block;width:100%}
@@ -346,3 +342,11 @@ footer .wrap{display:grid;gap:.4rem}
 .gpu-tabella .nome-gpu{color:var(--ink);text-decoration:none}
 .gpu-tabella .nome-gpu:hover b{text-decoration:underline}
 pre.codice{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:.8rem .9rem;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 var(--mono)}
+
+/* telefono e tablet (fino a 1024 px): il menu è una sola riga che scorre di lato, invece di due o tre righe */
+@media (max-width:64rem){
+  header.top .wrap{flex-wrap:nowrap;flex-direction:column;align-items:stretch;gap:.35rem;padding-block:.55rem .35rem}
+  nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-.3rem;padding-bottom:.2rem;-webkit-mask-image:linear-gradient(to right,#000 88%,transparent);mask-image:linear-gradient(to right,#000 88%,transparent)}
+  nav::-webkit-scrollbar{display:none}
+  nav a{flex:none;padding:.4rem .6rem;font-size:.92rem}
+}

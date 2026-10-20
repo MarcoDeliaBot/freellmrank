@@ -41,3 +41,10 @@ document.addEventListener('click', function (e) {
   if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.copia).then(fatto, function () { prompt('Copy this link:', b.dataset.copia); });
   else prompt('Copy this link:', b.dataset.copia);
 });
+
+// menu su una riga (telefono e tablet): la voce della pagina aperta resta visibile
+(function () {
+  var nav = document.querySelector('header.top nav');
+  var qui = nav && nav.querySelector('[aria-current="page"]');
+  if (qui && nav.scrollWidth > nav.clientWidth) nav.scrollLeft = qui.offsetLeft - nav.clientWidth / 2 + qui.offsetWidth / 2;
+})();
