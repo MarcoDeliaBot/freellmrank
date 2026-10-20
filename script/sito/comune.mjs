@@ -151,6 +151,7 @@ ${(Array.isArray(jsonld) ? jsonld : [jsonld]).filter(Boolean).map((o) => `<scrip
 <main class="contenuto">
 ${corpo}
 <p class="condividi small"><span class="muted">Share this page:</span><a href="https://x.com/intent/post?url=${condividi}&amp;text=${testoCond}" rel="noopener" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=${condividi}" rel="noopener" target="_blank">LinkedIn</a><a href="https://www.reddit.com/submit?url=${condividi}&amp;title=${testoCond}" rel="noopener" target="_blank">Reddit</a><a href="https://wa.me/?text=${testoCond}%20${condividi}" rel="noopener" target="_blank">WhatsApp</a><button type="button" class="link-btn" data-copia="${canonico}">Copy link</button></p>
+${file === 'report.html' ? '' : `<p class="small segnala-link">Spotted a wrong number or a broken link? <a href="/report?from=${encodeURIComponent('/' + file.replace(/(index)?\.html$/, ''))}" rel="nofollow">Report a mistake</a></p>`}
 </main>
 </div>
 <footer><div class="wrap">

@@ -13,6 +13,7 @@ import { preparaConfronti, pagineConfronti } from './sito/confronti.mjs';
 import { paginaTelefono, feedRss, widget } from './sito/extra.mjs';
 import { paginaAudio } from './sito/audio.mjs';
 import { paginaApp } from './sito/app.mjs';
+import { paginaSegnala } from './sito/segnala.mjs';
 import { coloreLab, nomeLab, chiaveLab, laboratoriDi } from './sito/laboratori.mjs';
 import { scriviLlms } from './sito/llms.mjs';
 import { simula, daScheda, kvGB, perditaQualita, giudizio, QUANTI } from '../sorgente/calc.mjs';
@@ -370,6 +371,7 @@ pagina({
 <p>When you ask a question in the “Try it now” box, your question goes through our server to Cloudflare Workers AI, which runs the model and sends back the answer. We do not store the question or the answer. To keep the free service fair (5 questions a day), we store a daily counter linked to a one-way fingerprint of your IP address, which changes every day and is deleted automatically after about 26 hours. Legal basis: legitimate interest in preventing abuse (art. 6.1.f). Cloudflare processes the request under its own <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">privacy policy</a>. Do not write personal data in your questions.</p>
 <h2 id="arena">Free Arena</h2>
 <p>When you use Free Arena, your question goes through our server to Cloudflare Workers AI, which runs the two models. We do not store your question or the answers. We store only your vote: which model was A, which was B, which one you preferred, the type you picked (general, coding, writing, other), your browser language (two letters) and how many seconds you took to vote. These votes contain no personal data and will be published as an open ranking. To keep the service free and fair (10 duels a day), we keep a daily counter linked to a one-way fingerprint of your IP address that changes every day and is deleted after the day ends. Legal basis: legitimate interest in running and protecting the service (art. 6.1.f).</p>
+<p>On the audio page, your recording or text goes to Cloudflare Workers AI and back; we do not store it. When you send a report with “Report a mistake”, we store only the page address and your text, with no name, email or IP address, until the mistake is fixed. The same daily IP fingerprint limits how many reports and audio tries one visitor can send.</p>
 <h2>Links to Amazon</h2>
 <p>The GPU page links to Amazon. We are an Amazon Associate and earn from qualifying purchases. When you click one of these links, Amazon may set its own cookies to record that you came from us, under <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201909150" rel="noopener">Amazon’s privacy notice</a>. We do not receive your name or what you buy, only a total of sales.</p>
 <h2>Stored in your browser</h2>
@@ -399,6 +401,7 @@ feedRss(blog);
 paginaTelefono(dati, modelli, blog);
 paginaAudio(dati, blog);
 paginaApp(dati, blog);
+paginaSegnala(dati, blog);
 widget(dati, modelli, blog);
 const llms = scriviLlms(dati, modelli, blog);
 

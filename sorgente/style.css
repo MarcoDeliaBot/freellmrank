@@ -428,3 +428,8 @@ section.cat.solo-tabella .grafici,section.cat.solo-grafici .pannello-tabella{dis
 .prova-audio .prova-risposta{margin-top:0}
 .btn.reg.in-corso{background:#dc2626;border-color:#dc2626}
 .btn:disabled{opacity:.5;cursor:not-allowed}
+/* «Report a mistake» (20/10/2026) */
+.segnala-link{color:var(--muted);margin-top:-.4rem}
+.segnala input[type=text]{width:100%;font:inherit;font-size:16px;padding:.55rem .7rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.segnala .cf-turnstile{min-height:65px}
+.copiabile{user-select:all;font-weight:600}

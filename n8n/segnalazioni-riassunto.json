@@ -1,0 +1,74 @@
+{
+  "name": "FreeLLMArena · riassunto delle segnalazioni",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "cronExpression", "expression": "30 8 * * *" }
+          ]
+        }
+      },
+      "id": "d4e5f6a7-0001-4000-8000-000000000001",
+      "name": "Ogni mattina alle 8:30",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "url": "https://freellmarena.com/api/report",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "d4e5f6a7-0002-4000-8000-000000000002",
+      "name": "Leggi le segnalazioni nuove",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [240, 0],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 60000,
+      "credentials": {
+        "httpHeaderAuth": { "id": "", "name": "FreeLLMArena segnalazioni" }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Una sola mail con tutte le segnalazioni nuove; se non ce ne sono, nessuna mail\nconst lista = $input.first().json.segnalazioni || [];\nif (!lista.length) return [];\nconst esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));\nconst righe = lista.map((s) => `<li><a href=\"https://freellmarena.com${esc(s.pagina)}\">${esc(s.pagina)}</a> · ${esc(s.creato.slice(0, 16).replace('T', ' '))} UTC<br>${esc(s.testo).replace(/\\n/g, '<br>')}</li>`).join('');\nreturn [{ json: {\n  oggetto: `FreeLLMArena: ${lista.length} segnalazion${lista.length === 1 ? 'e' : 'i'} nuov${lista.length === 1 ? 'a' : 'e'}`,\n  html: `<p>Segnalazioni arrivate con «Report a mistake»:</p><ol>${righe}</ol><p>Rispondi a Claude con «controlla le segnalazioni» per farle correggere.</p>`\n} }];"
+      },
+      "id": "d4e5f6a7-0003-4000-8000-000000000003",
+      "name": "Prepara il riassunto",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 0]
+    },
+    {
+      "parameters": {
+        "fromEmail": "info@freellmarena.com",
+        "toEmail": "info@freellmarena.com",
+        "subject": "={{ $json.oggetto }}",
+        "emailFormat": "html",
+        "html": "={{ $json.html }}",
+        "options": {}
+      },
+      "id": "d4e5f6a7-0004-4000-8000-000000000004",
+      "name": "Mandami la mail",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [720, 0],
+      "credentials": {
+        "smtp": { "id": "", "name": "SMTP info@freellmarena.com" }
+      }
+    }
+  ],
+  "connections": {
+    "Ogni mattina alle 8:30": { "main": [[{ "node": "Leggi le segnalazioni nuove", "type": "main", "index": 0 }]] },
+    "Leggi le segnalazioni nuove": { "main": [[{ "node": "Prepara il riassunto", "type": "main", "index": 0 }]] },
+    "Prepara il riassunto": { "main": [[{ "node": "Mandami la mail", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1", "timezone": "Europe/Rome" },
+  "pinData": {},
+  "active": false
+}

@@ -21,3 +21,13 @@ CREATE TABLE IF NOT EXISTS contatori (
   valore REAL NOT NULL,
   scade  TEXT NOT NULL                  -- AAAA-MM-GG: dopo questo giorno la riga si cancella
 );
+
+-- «Report a mistake» (20/10/2026): segnalazioni di dati sbagliati. Solo pagina e testo, niente email né IP.
+CREATE TABLE IF NOT EXISTS segnalazioni (
+  id      INTEGER PRIMARY KEY AUTOINCREMENT,
+  creato  TEXT NOT NULL,                -- data e ora UTC
+  pagina  TEXT NOT NULL,                -- percorso della pagina del sito, es. /model/qwen3-30b-a3b
+  testo   TEXT NOT NULL,                -- cosa è sbagliato, al massimo 1000 caratteri
+  letta   INTEGER NOT NULL DEFAULT 0    -- 1 quando il riassunto di n8n l'ha già mandata
+);
+CREATE INDEX IF NOT EXISTS segnalazioni_letta ON segnalazioni (letta);
