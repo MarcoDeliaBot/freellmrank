@@ -28,6 +28,21 @@ export function mostraMia(nomi) {
   const vuota = document.getElementById('arena-mia-vuota');
   const tab = document.getElementById('arena-mia-tabella');
   const canc = document.getElementById('arena-mia-cancella');
+  // solo sulla pagina /arena: conteggio, barra verso i 2 voti, scarica i voti
+  const conto = document.getElementById('arena-mia-conto'), barra = document.getElementById('arena-mia-barra');
+  const esporta = document.getElementById('arena-mia-esporta');
+  if (conto) conto.textContent = `${miei.length} vote${miei.length === 1 ? '' : 's'} in this browser`;
+  if (barra) barra.style.width = `${Math.max(4, Math.min(100, miei.length * 50))}%`;
+  if (esporta) {
+    esporta.hidden = miei.length === 0;
+    esporta.onclick = () => {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([JSON.stringify(miei, null, 2)], { type: 'application/json' }));
+      a.download = 'free-arena-my-votes.json';
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    };
+  }
   if (miei.length < 2) { vuota.hidden = false; tab.hidden = true; canc.hidden = true; return; }
   vuota.hidden = true;
   tab.innerHTML = `${tabella(classifica(miei), nomi, { conIc: false })}<p class="small muted" style="padding:.5rem .8rem;margin:0">From your ${miei.length} votes. Few votes give rough scores: the more you vote, the more it means.</p>`;
