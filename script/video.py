@@ -1,9 +1,9 @@
 # Video verticali automatici (1080x1920, per Shorts, TikTok, Reels) dai dati del sito.
 # Uso: python script/video.py nuovo        → il modello nuovo più recente
 #      python script/video.py settimana    → il report settimanale (i primi 5 in chat)
-# Esce un MP4 senza voce in video/<nome>.mp4. Costo zero: Pillow per le immagini, ffmpeg per montarle.
+# Esce un MP4 senza voce in video/<nome>.mp4, con video/<nome>.json (titolo e descrizione per YouTube). Costo zero: Pillow per le immagini, ffmpeg per montarle.
 # In GitHub Actions ffmpeg c'è già; sul PC si usa quello di imageio-ffmpeg.
-import json, os, shutil, subprocess, sys, tempfile
+import json, os, re, shutil, subprocess, sys, tempfile
 from PIL import Image, ImageDraw, ImageFont
 
 QUI = os.path.dirname(os.path.abspath(__file__))
@@ -79,7 +79,10 @@ def diapositive_nuovo(dati):
     y = scrivi(d, y + 60, 'Yes: open weights on Hugging Face.' if m.get('hf') else 'Yes: free API on OpenRouter.', 72, VERDE)
     scrivi(d, y + 60, 'Arena has not voted on it yet. When it does, it enters our free leaderboard the next night.', 52, INK, False); s.append((im, 4.5))
     im, d = uno(3, n); y = scrivi(d, 620, 'Compare it with every free model', 72); scrivi(d, y + 60, 'freellmarena.com', 96, VERDE); s.append((im, 3.2))
-    return f"nuovo-{nome.lower().replace('/', '-').replace(' ', '-')}", s
+    info = {'titolo': f"{nome}: new free AI model #Shorts"[:100],
+            'descrizione': f"{nome} by {m.get('org') or 'an open lab'} is a new free AI model" + (f", {b:.1f} B parameters, about {gb4:.0f} GB at 4-bit" if b else '') + (f". Smallest GPU that runs it fully: {scheda}" if scheda else '') + ".\nCompare it with every free model: https://freellmarena.com/#new",
+            'tag': ['free AI', 'open source AI', 'local LLM', nome]}
+    return f"nuovo-{nome.lower().replace('/', '-').replace(' ', '-')}", s, info
 
 def diapositive_settimana(dati):
     chat = next(c for c in dati['categorie'] if c['id'] == 'chat')
@@ -97,7 +100,10 @@ def diapositive_settimana(dati):
         d.text((190 + larga, y + 86), str(m['punti']), font=font(True, 46), fill=INK)
     s.append((im, 6.0))
     im, d = tela(2, 3); y = scrivi(d, 620, 'Which one runs on your GPU?', 76); scrivi(d, y + 60, 'freellmarena.com', 96, VERDE); s.append((im, 3.2))
-    return f"settimana-{dati.get('aggiornato', '')}", s
+    info = {'titolo': f"The 5 best free AI models this week ({dati.get('aggiornato', '')}) #Shorts"[:100],
+            'descrizione': 'The 5 best free AI models for chat, from blind human votes on Arena:\n' + '\n'.join(f"{i + 1}. {m['nome']} ({m['punti']})" for i, m in enumerate(gratis)) + '\nWhich one runs on your GPU? https://freellmarena.com',
+            'tag': ['free AI', 'AI leaderboard', 'local LLM']}
+    return f"settimana-{dati.get('aggiornato', '')}", s, info
 
 def monta(nome, diapositive):
     uscita = os.path.join(RADICE, 'video'); os.makedirs(uscita, exist_ok=True)
@@ -124,5 +130,9 @@ def monta(nome, diapositive):
 if __name__ == '__main__':
     tipo = sys.argv[1] if len(sys.argv) > 1 else 'nuovo'
     dati = json.load(open(os.path.join(RADICE, 'sito', 'data.json'), encoding='utf-8'))
-    nome, diap = (diapositive_settimana if tipo == 'settimana' else diapositive_nuovo)(dati)
-    print(monta(nome, diap))
+    nome, diap, info = (diapositive_settimana if tipo == 'settimana' else diapositive_nuovo)(dati)
+    nome = re.sub(r'[^a-z0-9.-]+', '-', nome.lower()).strip('-')
+    mp4 = monta(nome, diap)
+    # titolo e descrizione per YouTube: li legge n8n dalla release di GitHub (vedi .github/workflows/video.yml)
+    json.dump({'nome': nome, **info}, open(mp4[:-4] + '.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    print(mp4)

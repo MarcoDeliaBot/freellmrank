@@ -1,0 +1,45 @@
+# Dopo ogni aggiornamento dei dati: video verticale del modello nuovo più recente (e la domenica il report
+# settimanale), pubblicato come release di GitHub "video-<nome>". n8n legge le release e carica su YouTube
+# (n8n/video-youtube.json). Un video già fatto non si rifà: la release con lo stesso nome esiste già.
+name: Video
+
+on:
+  workflow_run:
+    workflows: ['Aggiorna dati']
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: video
+  cancel-in-progress: false
+
+jobs:
+  video:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow imageio-ffmpeg
+      - name: Video e release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tipi="nuovo"
+          if [ "$(date -u +%u)" = "7" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then tipi="nuovo settimana"; fi
+          for tipo in $tipi; do
+            mp4=$(python script/video.py "$tipo" | tail -n 1)
+            nome=$(basename "$mp4" .mp4)
+            if gh release view "video-$nome" >/dev/null 2>&1; then echo "Già fatto: $nome"; continue; fi
+            titolo=$(python -c "import json,sys; print(json.load(open(sys.argv[1], encoding='utf-8'))['titolo'])" "${mp4%.mp4}.json")
+            gh release create "video-$nome" "$mp4" "${mp4%.mp4}.jpg" "${mp4%.mp4}.json" --title "$titolo" --notes "Video automatico per YouTube Shorts. Lo carica n8n." --latest=false
+            echo "Pubblicato: $nome"
+          done
