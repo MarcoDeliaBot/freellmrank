@@ -146,7 +146,7 @@ const sezioni = sezioniTutte.map((html, i) => {
   const c = dati.categorie[i];
   const interno = /^<section[^>]*>([\s\S]*)<\/section>$/.exec(html)[1];
   fs.writeFileSync(path.join(SITO, 'cat', `${c.id}.html`), interno);
-  return `<section class="cat" id="${c.id}" hidden data-frammento="/cat/${c.id}.html?v=${VER}"><p class="small muted carica-cat">Loading the ${esc(c.nome)} ranking…</p></section>`;
+  return `<section class="cat" id="${c.id}" hidden data-frammento="/cat/${c.id}?v=${VER}"><p class="small muted carica-cat">Loading the ${esc(c.nome)} ranking…</p></section>`;
 }).join('\n');
 
 // 4. in cima, tre grafici sullo stesso gruppo di modelli (idea da Artificial Analysis): i migliori modelli
