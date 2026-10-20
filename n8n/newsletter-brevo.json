@@ -1,0 +1,72 @@
+{
+  "name": "FreeLLMArena · newsletter dal blog (Brevo)",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": { "item": [{ "mode": "everyHour" }] },
+        "feedUrl": "https://freellmarena.com/blog/feed.xml"
+      },
+      "id": "c3d4e5f6-0001-4000-8000-000000000001",
+      "name": "Nuovo articolo nel blog",
+      "type": "n8n-nodes-base.rssFeedReadTrigger",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// ===== DA CAMBIARE UNA VOLTA SOLA =====\nconst LISTA_BREVO = 2;                       // numero della lista in Brevo (Contatti → Liste)\nconst MITTENTE = { name: 'FreeLLMArena', email: 'info@freellmarena.com' }; // deve essere verificato in Brevo\n// =======================================\nconst a = $json;\nconst esc = (s) => String(s || '').replace(/[&<>\"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;' }[c]));\nconst link = `${a.link}?utm_source=newsletter&utm_medium=email`;\nconst testo = a.contentSnippet || a.content || '';\nconst html = `<!doctype html><html><body style=\"margin:0;background:#f4f6f8;font-family:Arial,Helvetica,sans-serif;color:#14202b\">\n<div style=\"max-width:560px;margin:0 auto;padding:24px\">\n<p style=\"font-size:13px;color:#5b6b7a;margin:0 0 12px\">FreeLLMArena · the free AI leaderboard</p>\n<h1 style=\"font-size:24px;line-height:1.25;margin:0 0 12px\">${esc(a.title)}</h1>\n<p style=\"font-size:16px;line-height:1.5;margin:0 0 20px\">${esc(testo)}</p>\n<p style=\"margin:0 0 28px\"><a href=\"${esc(link)}\" style=\"display:inline-block;background:#0d7a47;color:#fff;text-decoration:none;padding:12px 20px;border-radius:6px;font-weight:bold\">Read it on FreeLLMArena</a></p>\n<p style=\"font-size:12px;color:#5b6b7a;line-height:1.5\">You get this because you signed up on freellmarena.com. <a href=\"{{ unsubscribe }}\" style=\"color:#5b6b7a\">Unsubscribe</a> · <a href=\"{{ mirror }}\" style=\"color:#5b6b7a\">View in browser</a></p>\n</div></body></html>`;\nreturn { json: {\n  name: `Blog · ${String(a.title).slice(0, 80)} · ${new Date().toISOString().slice(0, 10)}`,\n  subject: String(a.title).slice(0, 150),\n  previewText: String(testo).slice(0, 140),\n  sender: MITTENTE,\n  type: 'classic',\n  htmlContent: html,\n  recipients: { listIds: [LISTA_BREVO] }\n} };"
+      },
+      "id": "c3d4e5f6-0002-4000-8000-000000000002",
+      "name": "Prepara la mail",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [240, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.brevo.com/v3/emailCampaigns",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "id": "c3d4e5f6-0003-4000-8000-000000000003",
+      "name": "Crea la campagna in Brevo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 0],
+      "credentials": {
+        "httpHeaderAuth": { "id": "", "name": "Brevo API" }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.brevo.com/v3/emailCampaigns/{{ $json.id }}/sendNow",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "c3d4e5f6-0004-4000-8000-000000000004",
+      "name": "Mandala subito",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [720, 0],
+      "credentials": {
+        "httpHeaderAuth": { "id": "", "name": "Brevo API" }
+      }
+    }
+  ],
+  "connections": {
+    "Nuovo articolo nel blog": { "main": [[{ "node": "Prepara la mail", "type": "main", "index": 0 }]] },
+    "Prepara la mail": { "main": [[{ "node": "Crea la campagna in Brevo", "type": "main", "index": 0 }]] },
+    "Crea la campagna in Brevo": { "main": [[{ "node": "Mandala subito", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1", "timezone": "Europe/Rome" },
+  "pinData": {},
+  "active": false
+}
