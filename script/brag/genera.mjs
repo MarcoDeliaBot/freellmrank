@@ -10,6 +10,7 @@ import path from 'node:path';
 import { barre } from '../../script/sito/grafici.mjs';
 import { coloreLab, nomeLab, chiaveLab } from '../../script/sito/laboratori.mjs';
 import { simula, daScheda } from '../../sorgente/calc.mjs';
+import { MOTORE } from './motore.mjs';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
 const RADICE = path.join(QUI, '..', '..');
@@ -19,7 +20,9 @@ const dati = JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', 'data.json'), 
 const css = fs.readFileSync(path.join(RADICE, 'sorgente', 'style.css'), 'utf8');
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const gratis = (m) => m.aperto || m.or?.gratis;
-export const LINGUE_VIDEO = ['en', 'it'];
+// 22/10/2026, deciso da Marco: i video escono solo in inglese (come i canali che segue); YouTube traduce titoli, sottotitoli e audio.
+// Titoli e descrizioni in 5 lingue vanno nel .json («localizzazioni»). BRAG_LINGUE=en,it rifà anche la versione italiana.
+export const LINGUE_VIDEO = (process.env.BRAG_LINGUE || 'en').split(',');
 
 // ---------- dati veri ----------
 const chat = dati.categorie.find((c) => c.id === 'chat');
@@ -108,54 +111,6 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--b
 .fine .bio{font:800 64px/1.1 var(--sans);padding:26px 44px;border-radius:999px;background:var(--v-verde);color:#04130b}
 `;
 
-// ---------- motore: ogni elemento ha [entra, esce] in secondi; tutto si calcola da t ----------
-// SOTTO (da registra.py): [{da, a, parole: [[testo, quando], …]}]; senza, niente sottotitoli
-const MOTORE = `
-const ease = (x) => x <= 0 ? 0 : x >= 1 ? 1 : 1 - Math.pow(1 - x, 3);
-const fin = (t, a, d) => ease((t - a) / d);
-const escH = (s) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
-function render(t) {
-  for (const s of document.querySelectorAll('.scena')) {
-    const a = +s.dataset.da, b = +s.dataset.a;
-    // la scena entra dopo che la precedente è uscita: si passa dallo sfondo, niente doppia esposizione
-    const o = Math.min(fin(t, a, 0.35), 1 - fin(t, b - 0.3, 0.3));
-    s.style.opacity = o;
-    s.style.visibility = o > 0 ? 'visible' : 'hidden';
-    for (const r of s.querySelectorAll('[data-in]')) {
-      const k = fin(t, a + +r.dataset.in, 0.5);
-      r.style.opacity = k;
-      r.style.transform = 'translateY(' + (1 - k) * 60 + 'px)';
-    }
-    for (const r of s.querySelectorAll('[data-conta]')) {
-      const k = fin(t, a + +r.dataset.da, 1.2);
-      r.textContent = Math.round(+r.dataset.conta * k);
-    }
-    // barre del grafico vero: crescono una dopo l'altra fino alla larghezza del sito
-    s.querySelectorAll('.vg-riga:not(.rif)').forEach((riga, i) => {
-      const barra = riga.querySelector('.vg-barra'), val = riga.querySelector('.vg-val');
-      if (!barra.dataset.w) barra.dataset.w = parseFloat(barra.style.width);
-      const k = fin(t, a + 0.9 + i * 0.35, 0.9);
-      barra.style.width = barra.dataset.w * k + '%';
-      val.style.left = barra.dataset.w * k + '%';
-      val.style.opacity = k;
-      riga.style.opacity = Math.min(1, fin(t, a + 0.7 + i * 0.35, 0.4));
-    });
-    for (const r of s.querySelectorAll('[data-pista]')) {
-      const k = fin(t, a + +r.dataset.da, 0.8);
-      r.style.width = +r.dataset.pista * k + '%';
-    }
-    for (const r of s.querySelectorAll('[data-luce]')) {
-      const x = t - (a + +r.dataset.luce);
-      r.style.boxShadow = x > 0 && x < 1.6 ? '0 0 0 ' + (6 * Math.sin(Math.PI * x / 1.6)) + 'px color-mix(in srgb, var(--v-verde) 55%, transparent)' : 'none';
-      r.style.borderRadius = '8px';
-    }
-  }
-  const pezzo = (window.SOTTO || []).find((p) => t >= p.da && t < p.a);
-  const riga = document.querySelector('.sotto p');
-  if (riga) riga.innerHTML = pezzo ? pezzo.parole.map(([w, q], i) => { const ora = t >= q && (i === pezzo.parole.length - 1 || t < pezzo.parole[i + 1][1]); return ora ? '<b>' + escH(w) + '</b>' : escH(w); }).join(' ') : '';
-  document.querySelector('.avanza i').style.width = (t / DURATA * 100) + '%';
-}
-`;
 
 // scene: [{min, voce, corpo}]. data-da/data-a provvisori (dalle durate minime): registra.py li rimette dalla voce.
 function pagina(scene, l) {
@@ -295,13 +250,42 @@ const INFO = {
   },
 };
 
+// ---------- titoli e descrizioni tradotti per YouTube Studio («Lingue»: si incollano, o li carica l'API dopo l'audit) ----------
+const LOC = ['it', 'es', 'de', 'fr', 'pt'];
+const LOCALE = { it: 'it-IT', es: 'es-ES', de: 'de-DE', fr: 'fr-FR', pt: 'pt-BR' };
+const data = (d, l) => new Date(d + 'T12:00:00Z').toLocaleDateString(LOCALE[l], { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const sitoL = (l) => `https://freellmarena.com/${l}`;
+const PAROLE = {
+  it: { pagato: 'Miglior modello a pagamento', classifica: 'Classifica dei modelli gratis, aggiornata ogni notte', confronta: 'Confrontalo con tutti i modelli gratis', stime: 'Stime del nostro simulatore. Prova la tua scheda', gpu: 'tutto sulla GPU' },
+  es: { pagato: 'Mejor modelo de pago', classifica: 'Clasificación de modelos gratis, actualizada cada noche', confronta: 'Compáralo con todos los modelos gratis', stime: 'Estimaciones de nuestro simulador. Prueba tu tarjeta', gpu: 'todo en la GPU' },
+  de: { pagato: 'Bestes bezahltes Modell', classifica: 'Rangliste der kostenlosen Modelle, jede Nacht aktualisiert', confronta: 'Vergleiche es mit allen kostenlosen Modellen', stime: 'Schätzungen unseres Simulators. Teste deine Karte', gpu: 'komplett auf der GPU' },
+  fr: { pagato: 'Meilleur modèle payant', classifica: 'Classement des modèles gratuits, mis à jour chaque nuit', confronta: 'Comparez-le à tous les modèles gratuits', stime: 'Estimations de notre simulateur. Testez votre carte', gpu: 'entièrement sur le GPU' },
+  pt: { pagato: 'Melhor modelo pago', classifica: 'Ranking dos modelos grátis, atualizado toda noite', confronta: 'Compare com todos os modelos grátis', stime: 'Estimativas do nosso simulador. Teste sua placa', gpu: 'tudo na GPU' },
+};
+const dueP = (l) => (l === 'fr' ? ' :' : ':');
+const TRADOTTI = {
+  settimana: (l) => ({
+    titolo: { it: `La miglior AI gratis è a ${distacco} punti da quella a pagamento`, es: `La mejor IA gratis está a ${distacco} puntos de la de pago`, de: `Die beste kostenlose KI liegt ${distacco} Punkte hinter der besten bezahlten`, fr: `La meilleure IA gratuite est à ${distacco} points de la meilleure payante`, pt: `A melhor IA grátis está ${distacco} pontos atrás da melhor paga` }[l] + ' #Shorts',
+    descrizione: `${{ it: `I 5 migliori modelli di chat gratis su Arena questa settimana (${data(dati.aggiornato, l)}), con voti alla cieca di persone vere`, es: `Los 5 mejores modelos de chat gratis en Arena esta semana (${data(dati.aggiornato, l)}), por votos a ciegas de personas reales`, de: `Die 5 besten kostenlosen Chat-Modelle auf Arena diese Woche (${data(dati.aggiornato, l)}), nach Blindabstimmungen echter Menschen`, fr: `Les 5 meilleurs modèles de chat gratuits sur Arena cette semaine (${data(dati.aggiornato, l)}), selon des votes à l'aveugle de vraies personnes`, pt: `Os 5 melhores modelos de chat grátis no Arena nesta semana (${data(dati.aggiornato, l)}), por votos às cegas de pessoas reais` }[l]}${dueP(l)}\n${top5.map((m, i) => `${i + 1}. ${m.nome} (${m.punti})`).join('\n')}\n${PAROLE[l].pagato}${dueP(l)} ${pagato.nome} (${pagato.punti}).\n${PAROLE[l].classifica}${dueP(l)} ${sitoL(l)}`,
+  }),
+  nuovo: (l) => ({
+    titolo: `${{ it: `${nomeCorto}: ${miliardi} miliardi di parametri, gratis`, es: `${nomeCorto}: ${miliardi} mil millones de parámetros, gratis`, de: `${nomeCorto}: ${miliardi} Mrd. Parameter, kostenlos`, fr: `${nomeCorto} : ${miliardi} milliards de paramètres, gratuit`, pt: `${nomeCorto}: ${miliardi} bilhões de parâmetros, grátis` }[l]} #Shorts`.slice(0, 100),
+    descrizione: `${{ it: `${nuovo.nome} di ${nomeLab(nuovo.org)} è uscito il ${data(nuovo.creato, l)}, con i pesi aperti su Hugging Face. A 4 bit servono circa ${gb4} GB di memoria.`, es: `${nuovo.nome} de ${nomeLab(nuovo.org)} salió el ${data(nuovo.creato, l)}, con pesos abiertos en Hugging Face. A 4 bits necesita unos ${gb4} GB de memoria.`, de: `${nuovo.nome} von ${nomeLab(nuovo.org)} ist am ${data(nuovo.creato, l)} erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa ${gb4} GB Speicher.`, fr: `${nuovo.nome} de ${nomeLab(nuovo.org)} est sorti le ${data(nuovo.creato, l)}, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ ${gb4} Go de mémoire.`, pt: `${nuovo.nome} da ${nomeLab(nuovo.org)} saiu em ${data(nuovo.creato, l)}, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de ${gb4} GB de memória.` }[l]}\n${PAROLE[l].confronta}${dueP(l)} ${sitoL(l)}`,
+  }),
+  gpu: (l) => ({
+    titolo: `${{ it: `La miglior AI gratis per ${gpu.nome}`, es: `La mejor IA gratis para la ${gpu.nome}`, de: `Die beste kostenlose KI für die ${gpu.nome}`, fr: `La meilleure IA gratuite pour la ${gpu.nome}`, pt: `A melhor IA grátis para a ${gpu.nome}` }[l]} #Shorts`.slice(0, 100),
+    descrizione: `${{ it: `I migliori modelli AI gratis su ${gpu.nome} (${gpu.gb} GB, ${gpu.banda} GB/s) con 32 GB di RAM DDR5, a 4 bit con 8K di contesto`, es: `Los mejores modelos de IA gratis en la ${gpu.nome} (${gpu.gb} GB, ${gpu.banda} GB/s) con 32 GB de RAM DDR5, a 4 bits con 8K de contexto`, de: `Die besten kostenlosen KI-Modelle auf der ${gpu.nome} (${gpu.gb} GB, ${gpu.banda} GB/s) mit 32 GB DDR5-RAM, in 4 Bit mit 8K Kontext`, fr: `Les meilleurs modèles d'IA gratuits sur la ${gpu.nome} (${gpu.gb} Go, ${gpu.banda} Go/s) avec 32 Go de RAM DDR5, en 4 bits avec 8K de contexte`, pt: `Os melhores modelos de IA grátis na ${gpu.nome} (${gpu.gb} GB, ${gpu.banda} GB/s) com 32 GB de RAM DDR5, em 4 bits com 8K de contexto` }[l]}${dueP(l)}\n${sullaScheda.map((x, i) => `${i + 1}. ${x.m.nome}: ~${fmtVel(x.r.vel)} tok/s (Arena ${x.m.punti}, ${x.r.dove === 'gpu' ? PAROLE[l].gpu : 'GPU + RAM'})`).join('\n')}\n${PAROLE[l].stime}${dueP(l)} ${sitoL(l)}/home`,
+  }),
+};
+const localizzazioni = (tipo) => Object.fromEntries(LOC.map((l) => [l, TRADOTTI[tipo](l)]));
+
 const VIDEO = { settimana: videoSettimana, nuovo: videoNuovo, gpu: videoGpu };
 for (const [tipo, fai] of Object.entries(VIDEO)) {
   for (const l of LINGUE_VIDEO) {
     const coda = l === 'en' ? '' : `-${l}`;
     const { html, scene } = fai(l);
     fs.writeFileSync(path.join(OUT, `scena-${tipo}${coda}.html`), html);
-    fs.writeFileSync(path.join(OUT, `info-${tipo}${coda}.json`), JSON.stringify({ ...INFO[tipo](l), lingua: l, scene }, null, 1));
+    fs.writeFileSync(path.join(OUT, `info-${tipo}${coda}.json`), JSON.stringify({ ...INFO[tipo](l), lingua: l, ...(l === 'en' ? { localizzazioni: localizzazioni(tipo) } : {}), scene }, null, 1));
   }
 }
 console.log('ok', { distacco, contaGratis, top5: top5.map((m) => m.nome), pagato: pagato.nome, nuovo: nuovo.nome, gb4, chiTiene: chiTiene?.nome, gpu: gpu.nome, sullaScheda: sullaScheda.map((x) => `${x.m.nome} ${fmtVel(x.r.vel)} ${x.r.dove}`) });

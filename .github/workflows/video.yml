@@ -1,8 +1,11 @@
-# Dopo ogni aggiornamento dei dati: video verticali (stile /brag, approvato da Marco il 20/10/2026), in inglese e in italiano:
-# il modello nuovo più recente ogni volta, il report settimanale la domenica, la scheda video della settimana il mercoledì.
-# Dal 21/10/2026 con voce (Piper, gratis, gira qui), sottotitoli e chiusura «link in bio».
-# Si pubblica come release di GitHub "video-<nome>" con <nome>.mp4, <nome>.jpg e <nome>.json (titolo, descrizione, tag,
-# testo da condividere). n8n la carica su YouTube (n8n/video-youtube.json). Un video già fatto non si rifà.
+# Dopo ogni aggiornamento dei dati: video verticali (stile /brag, approvato da Marco il 20/10/2026), solo in inglese
+# (deciso da Marco il 22/10/2026: YouTube traduce titoli, sottotitoli e audio, come fanno i canali che segue):
+# il modello nuovo più recente ogni volta, il report settimanale la domenica, la scheda video della settimana il mercoledì,
+# e la domenica anche il video lungo orizzontale della settimana (script/brag/lungo.mjs).
+# Con voce (Piper, gratis, gira qui), sottotitoli e chiusura «link in bio».
+# Si pubblica come release di GitHub "video-<nome>" con <nome>.mp4, <nome>.jpg, <nome>.srt (sottotitoli col testo esatto
+# della voce) e <nome>.json (titolo, descrizione, tag, testo da condividere e «localizzazioni»: titolo e descrizione
+# in it, es, de, fr, pt). n8n la carica su YouTube (n8n/video-youtube.json). Un video già fatto non si rifà.
 name: Video
 
 on:
@@ -17,6 +20,10 @@ on:
         default: false
       gpu:
         description: 'Fai anche il video della scheda video della settimana'
+        type: boolean
+        default: false
+      lungo:
+        description: 'Fai anche il video lungo della settimana (orizzontale, 2-3 minuti)'
         type: boolean
         default: false
       solo_social:
@@ -36,7 +43,7 @@ jobs:
   video:
     if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
         with:
@@ -64,22 +71,24 @@ jobs:
           BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
         run: |
           node script/brag/genera.mjs
+          node script/brag/lungo.mjs
           if [ -n "${{ inputs.solo_social }}" ]; then node script/bozze-social.mjs "${{ inputs.solo_social }}"; exit 0; fi
           tipi="nuovo"
           if [ "$(date -u +%u)" = "7" ] || [ "${{ inputs.settimana }}" = "true" ]; then tipi="$tipi settimana"; fi
           if [ "$(date -u +%u)" = "3" ] || [ "${{ inputs.gpu }}" = "true" ]; then tipi="$tipi gpu"; fi
+          if [ "$(date -u +%u)" = "7" ] || [ "${{ inputs.lungo }}" = "true" ]; then tipi="$tipi lungo"; fi
           for tipo in $tipi; do
-            for lingua in "" "-it"; do
+            for lingua in ""; do
               v="$tipo$lingua"
               nome=$(python -c "import json; print(json.load(open('video/brag/info-$v.json', encoding='utf-8'))['nome'])")
               if gh release view "video-$nome" >/dev/null 2>&1; then echo "Già fatto: $nome"; continue; fi
               python script/brag/registra.py video "$v"
               d="video/brag/brag-output-$v"
-              cp "$d/brag.mp4" "$d/$nome.mp4"; cp "$d/brag.jpg" "$d/$nome.jpg"; cp "video/brag/info-$v.json" "$d/$nome.json"
+              cp "$d/brag.mp4" "$d/$nome.mp4"; cp "$d/brag.jpg" "$d/$nome.jpg"; cp "$d/brag.srt" "$d/$nome.srt"; cp "video/brag/info-$v.json" "$d/$nome.json"
               titolo=$(python -c "import json; print(json.load(open('$d/$nome.json', encoding='utf-8'))['titolo'])")
-              gh release create "video-$nome" "$d/$nome.mp4" "$d/$nome.jpg" "$d/$nome.json" --title "$titolo" --notes-file "$d/share-copy.txt" --latest=false
+              gh release create "video-$nome" "$d/$nome.mp4" "$d/$nome.jpg" "$d/$nome.srt" "$d/$nome.json" --title "$titolo" --notes-file "$d/share-copy.txt" --latest=false
               echo "Pubblicato: $nome"
               # bozze dei post social (issue «bozza»), solo per la versione inglese: se non riescono, il video resta comunque
-              if [ -z "$lingua" ]; then node script/bozze-social.mjs "$tipo" || echo "Bozze social non riuscite per $nome"; fi
+              if [ "$tipo" != "lungo" ]; then node script/bozze-social.mjs "$tipo" || echo "Bozze social non riuscite per $nome"; fi
             done
           done

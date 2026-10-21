@@ -1,9 +1,11 @@
-# Registra le scene di genera.mjs (in video/brag/) in MP4 verticali 1080x1920 a 30 fotogrammi.
+# Registra le scene di genera.mjs (in video/brag/) in MP4 verticali 1080x1920 a 30 fotogrammi, e quelle di lungo.mjs
+# (il video lungo della settimana) in orizzontale 1920x1080: il formato lo dice il .json («formato»).
+# Dal 22/10/2026 scrive anche brag.srt, i sottotitoli con il testo esatto della voce: YouTube li traduce nelle altre lingue.
 # Dal 21/10/2026: voce fuori campo con Piper (gratis, gira qui, nessun servizio esterno), tempi delle scene presi dalla voce,
 # sottotitoli parola per parola, musica fatta qui (numpy) che si abbassa quando parla la voce.
 # Uso: python registra.py foto <video> t1 t2 ...   → solo fotogrammi di controllo in brag-output-<video>/work/
 #      python registra.py video <video>              → brag-output-<video>/brag.mp4, brag.jpg, share-copy.txt
-#      (<video> = nuovo | settimana | gpu, con -it per l'italiano: nuovo-it, …)
+#      (<video> = nuovo | settimana | gpu | lungo, con -it per l'italiano: nuovo-it, …)
 import os, sys, wave, subprocess, shutil, json, re, urllib.request
 import numpy as np
 from playwright.sync_api import sync_playwright
@@ -17,8 +19,10 @@ FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 VOCI = {'en': 'en/en_US/lessac/high/en_US-lessac-high', 'it': 'it/it_IT/paola/medium/it_IT-paola-medium'}
 
 def pagina(p, nome):
+    info = json.load(open(os.path.join(QUI, f'info-{nome}.json'), encoding='utf-8'))
+    f = info.get('formato', {'w': 1080, 'h': 1920})
     b = p.chromium.launch()
-    pg = b.new_page(viewport={'width': 1080, 'height': 1920}, color_scheme='dark')
+    pg = b.new_page(viewport={'width': f['w'], 'height': f['h']}, color_scheme='dark')
     pg.goto('file:///' + os.path.join(QUI, f'scena-{nome}.html').replace('\\', '/'))
     pg.evaluate('document.fonts.ready')
     return b, pg
@@ -68,6 +72,25 @@ def sottotitoli(testo, inizio, durata):
         da = quando[idx[0]]; a = quando[pezzi[k + 1][0]] if k + 1 < len(pezzi) else inizio + durata + 0.35
         out.append({'da': round(da, 3), 'a': round(a, 3), 'parole': [[parole[i], round(quando[i], 3)] for i in idx]})
     return out
+
+def ora_srt(s):
+    ms = int(round(s * 1000)); h, ms = divmod(ms, 3600000); m, ms = divmod(ms, 60000); sec, ms = divmod(ms, 1000)
+    return f'{h:02d}:{m:02d}:{sec:02d},{ms:03d}'
+
+def srt(frasi_testo):
+    """Una voce per frase (al massimo circa 90 caratteri: le frasi lunghe si spezzano dopo una virgola o a metà)."""
+    righe, n = [], 0
+    for da, a, testo in frasi_testo:
+        pezzi = [testo]
+        if len(testo) > 90:
+            m = re.search(r'[,:;] ', testo[len(testo) // 3: 2 * len(testo) // 3 + 1])
+            k = (len(testo) // 3 + m.end()) if m else testo.rfind(' ', 0, len(testo) // 2 + 10)
+            pezzi = [testo[:k].strip(), testo[k:].strip()]
+        tot = sum(len(x) for x in pezzi); t0 = da
+        for x in pezzi:
+            t1 = t0 + (a - da) * len(x) / tot
+            n += 1; righe.append(f'{n}\n{ora_srt(t0)} --> {ora_srt(t1)}\n{x}\n'); t0 = t1
+    return '\n'.join(righe)
 
 # ---------- musica: 112 bpm, la minore, Am F C G; effetti nella stessa tonalità, sotto la musica ----------
 def nota(f, dur, forma='sin', att=0.01, rel=0.2):
@@ -125,22 +148,24 @@ def video(nome):
     info = json.load(open(os.path.join(QUI, f'info-{nome}.json'), encoding='utf-8'))
     voce = PiperVoice.load(modello_voce(info.get('lingua', 'en')))
     # tempi: ogni scena dura quanto la sua frase più una pausa, mai meno della durata minima delle animazioni
-    frasi, inizi, durate, sotto = [], [], [], []
+    frasi, inizi, durate, sotto, testi = [], [], [], [], []
     t = 0.0
     for s in info['scene']:
         a = parla(voce, s['voce']); lv = len(a) / SR
         d = max(s['min'], lv + 0.9)
         frasi.append((t + 0.3, a)); inizi.append(t); durate.append(d)
         sotto += sottotitoli(s['voce'], t + 0.3, lv)
+        testi.append((t + 0.3, t + 0.3 + lv + 0.2, s['voce']))
         t += d
     durata = round(t, 2)
+    fps = info.get('fps', FPS)
     base = os.path.join(QUI, f'brag-output-{nome}'); work = os.path.join(base, 'work', 'fotogrammi')
     shutil.rmtree(work, ignore_errors=True); os.makedirs(work)
     with sync_playwright() as p:
         b, pg = pagina(p, nome)
         pg.evaluate('([inizi, durate, sotto, tot]) => { document.querySelectorAll(".scena").forEach((s, i) => { s.dataset.da = inizi[i]; s.dataset.a = inizi[i] + durate[i]; }); window.SOTTO = sotto; DURATA = tot; }', [inizi, durate, sotto, durata])
-        for i in range(int(durata * FPS)):
-            pg.evaluate(f'render({i / FPS})'); pg.screenshot(path=os.path.join(work, f'{i:04d}.png'))
+        for i in range(int(durata * fps)):
+            pg.evaluate(f'render({i / fps})'); pg.screenshot(path=os.path.join(work, f'{i:05d}.png'))
         b.close()
     # copertina: la terza scena (grafico o schede), a testo fermo e senza sottotitolo, anche come fotogramma 0
     k = min(2, len(inizi) - 1); poster = inizi[k] + min(durate[k] - 0.4, 3.6)
@@ -148,7 +173,7 @@ def video(nome):
         b, pg = pagina(p, nome)
         pg.evaluate('([inizi, durate, tot]) => { document.querySelectorAll(".scena").forEach((s, i) => { s.dataset.da = inizi[i]; s.dataset.a = inizi[i] + durate[i]; }); DURATA = tot; }', [inizi, durate, durata])
         pg.evaluate(f'render({poster})'); pg.screenshot(path=os.path.join(work, 'copertina.png')); b.close()
-    shutil.copy(os.path.join(work, 'copertina.png'), os.path.join(work, '0000.png'))
+    shutil.copy(os.path.join(work, 'copertina.png'), os.path.join(work, '00000.png'))
     subprocess.run([FFMPEG, '-y', '-loglevel', 'error', '-i', os.path.join(work, 'copertina.png'), '-q:v', '3', os.path.join(base, 'brag.jpg')], check=True)
     # audio: voce davanti, musica sotto; quando la voce parla la musica scende (con salite e discese morbide)
     n = int(SR * durata)
@@ -166,10 +191,11 @@ def video(nome):
     wav = os.path.join(base, 'work', 'audio.wav')
     with wave.open(wav, 'wb') as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(audio.tobytes())
-    subprocess.run([FFMPEG, '-y', '-loglevel', 'error', '-framerate', str(FPS), '-i', os.path.join(work, '%04d.png'), '-i', wav,
+    subprocess.run([FFMPEG, '-y', '-loglevel', 'error', '-framerate', str(fps), '-i', os.path.join(work, '%05d.png'), '-i', wav,
                     '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-preset', 'medium', '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart',
                     os.path.join(base, 'brag.mp4')], check=True)
     open(os.path.join(base, 'share-copy.txt'), 'w', encoding='utf-8').write(info['condividi'] + '\n')
+    open(os.path.join(base, 'brag.srt'), 'w', encoding='utf-8').write(srt(testi))
     print(os.path.join(base, 'brag.mp4'), f'{durata} s')
 
 if __name__ == '__main__':
