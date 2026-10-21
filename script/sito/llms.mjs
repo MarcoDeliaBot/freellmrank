@@ -61,6 +61,10 @@ export function scriviLlms(dati, modelli, blog) {
     `- [Free audio AI models](${URL_SITO}/audio): open speech-to-text models ranked by word error rate (Open ASR Leaderboard) and open text-to-speech voices ranked by blind votes (TTS Spaces Arena)`,
     `- [AI apps, free and paid](${URL_SITO}/apps): coding agents, AI code editors, apps to run and fine-tune models at home, app builders; which are free, free with your own or local model, free plan with limits, or paid; best results (Terminal-Bench 2.0) and tokens per task (Artificial Analysis)`,
     `- [AI models on your phone](${URL_SITO}/phone): free models that run offline on phones with 8, 12 or 16 GB of RAM, apps to use, expert streaming explained`,
+    `- [Free AI music generators](${URL_SITO}/music): text-to-music models ranked by Music Arena blind votes (CC BY 4.0), with licenses, sizes, example tracks and a blind test`,
+    `- [Free AI 3D model generators](${URL_SITO}/3d-models): free models that turn an image or text into a 3D object (TRELLIS.2, Hunyuan3D, TripoSR...), ordered by Hugging Face downloads because Arena has no 3D votes; licenses and official demos`,
+    `- [AI PCs](${URL_SITO}/ai-pcs): Mac Studio, MacBook Pro, NVIDIA DGX Spark and Ryzen AI Max+ 395 mini PCs compared on memory, bandwidth and the best free model each runs`,
+    `- [How much RAM for local AI](${URL_SITO}/ram): DDR4 and DDR5 kits, how RAM speed changes tokens per second when a model spills out of the graphics card`,
     `- [Blog RSS feed](${URL_SITO}/blog/feed.xml): guides and weekly reports`,
     `- [GPUs for local AI, compared](${URL_SITO}/gpus): every graphics card and AI computer in our catalogue with memory, bandwidth, estimated tokens per second on real open models, and the best free model that fits`,
     `- [Try & compare](${URL_SITO}/compare): one prompt to two free models side by side, blind voting, on your own free OpenRouter account`,
@@ -74,6 +78,7 @@ export function scriviLlms(dati, modelli, blog) {
     `- [Full rankings in Markdown](${URL_SITO}/llms-full.txt): every free model in every category with score, size, memory, quality at 4-bit and where to use it`,
     `- [Raw data (JSON)](${URL_SITO}/data.json): rankings, sizes, architectures, GPU catalogue`,
     `- [How we rank](${URL_SITO}/about): method, sources and FAQ`,
+    `- Translated versions of every page: ${['it', 'es', 'de', 'fr', 'pt', 'ja'].map((l) => `${URL_SITO}/${l}/`).join(', ')}`,
     `- [Weekly reports](${URL_SITO}/blog/): what changed among free models each week`,
     '',
   ].join('\n');
@@ -97,6 +102,19 @@ export function scriviLlms(dati, modelli, blog) {
   if (dec) parti.push(`## Decision models (Jev-style)`, '', `Source: Jev Decision Index (community leaderboard, ${dec.suite.versione}, updated ${dec.aggiornato}). ${dec.jev.nome} by TypeSafe AI scores ${dec.jev.punti}.`, '',
     '| Rank | Model | Lab | Decision Index | vs Jev | Type | Parameters | Downloadable | Time per decision |', '|---|---|---|---|---|---|---|---|---|',
     ...dec.modelli.map((m, i) => `| ${i + 1} | ${cella(m.nome)} | ${cella(m.org)} | ${m.punti} | ${(m.punti - dec.jev.punti).toFixed(1)} | ${cella(m.tipo)} | ${m.b ? m.b + ' B' : '—'} | ${m.repo ? 'https://huggingface.co/' + m.repo : 'no'} | ${m.ms != null ? Math.round(m.ms) + ' ms' : '—'} |`), '');
+  // musica (Music Arena, voti ciechi) e 3D (download Hugging Face): stessi dati delle pagine /music e /3d-models
+  const leggiDati = (n) => { const f = path.join(RADICE, 'dati', n); return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null; };
+  const mus = leggiDati('musica.json'), musInfo = leggiDati('musica-modelli.json');
+  if (mus && musInfo) {
+    const righe = mus.modelli.map((m) => ({ ...m, ...(musInfo.modelli[m.id] || { nome: m.id, lab: '?' }) })).filter((m) => m.voti >= 200);
+    parti.push('## Music (text to music)', '', `Source: Music Arena blind votes (CC BY 4.0), ${mus.sfide} battles; Bradley-Terry score computed by us, 1000 = average. Updated ${mus.aggiornato}.`, '',
+      '| Rank | Model | Lab | Score | Votes | Open weights | License | Page |', '|---|---|---|---|---|---|---|---|',
+      ...righe.map((m, i) => `| ${i + 1} | ${cella(m.nome)} | ${cella(m.lab)} | ${m.punteggio} | ${m.voti} | ${m.aperto ? 'yes' : 'no'} | ${cella(m.aperto ? m.licenza : 'closed')} | ${URL_SITO}/music |`), '');
+  }
+  const tre = leggiDati('3d.json');
+  if (tre) parti.push('## 3D models (image or text to 3D)', '', `Arena has no blind votes for 3D models: ordered by Hugging Face downloads in the last 30 days, not by quality. Updated ${tre.aggiornato}.`, '',
+    '| Rank | Model | Lab | Makes 3D from | Downloads (30 days) | License | Demo | Weights |', '|---|---|---|---|---|---|---|---|',
+    ...tre.modelli.map((m, i) => `| ${i + 1} | ${cella(m.nome)} | ${cella(m.lab)} | ${cella(m.da)} | ${m.download} | ${cella(tre.licenze[m.licenza].nome)}${tre.licenze[m.licenza].avviso ? ' (not valid in the EU, UK, South Korea)' : ''} | ${m.demo ? 'https://huggingface.co/spaces/' + m.demo : '—'} | https://huggingface.co/${m.repo} |`), '');
   fs.writeFileSync(path.join(SITO, 'llms-full.txt'), parti.join('\n'));
   return { breve: breve.length, pieno: parti.join('\n').length };
 }
