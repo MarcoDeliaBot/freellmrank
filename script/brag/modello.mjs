@@ -47,7 +47,7 @@ async function scheda(repo) {
 }
 const { testo: readme, licenza: licenzaGrezza } = await scheda(m.hf.repo);
 const LICENZE = { mit: 'MIT', 'apache-2.0': 'Apache 2.0', 'gpl-3.0': 'GPL 3.0', 'cc-by-4.0': 'CC BY 4.0', 'cc-by-nc-4.0': 'CC BY-NC 4.0', 'bsd-3-clause': 'BSD 3-Clause' };
-const licenza = LICENZE[licenzaGrezza.toLowerCase()] || licenzaGrezza;
+const licenza = /^(other|unknown|custom|)$/i.test(licenzaGrezza) ? '' : LICENZE[licenzaGrezza.toLowerCase()] || licenzaGrezza;
 if (readme.length < 400) { console.log(`Scheda troppo corta o assente per ${m.hf.repo}: nessun video`); process.exit(0); }
 
 // ---------- 3. i dati del sito ----------
@@ -91,14 +91,15 @@ else copione = await chiediModello([{ role: 'system', content: REGOLE }, { role:
 // ---------- 5. controllo dei fatti, in codice: via ogni frase con un numero che non sta nelle fonti ----------
 const FONTI = `${readme}\n${FATTI}\n${m.nome}\n${m.hf.repo}`;
 const ammessi = numeri(FONTI);
-const frasiDi = (t) => String(t || '').replace(/\s+/g, ' ').trim().split(/(?<=[.!?])\s+(?=[A-Z0-9"“])/);
+const semplice = (t) => String(t || '').replace(/[\u2010\u2011\u2012]/g, '-').replace(/\s*[\u2013\u2014]\s*/g, ', ').replace(/[\u00a0\u202f\u2009]/g, ' ');
+const frasiDi = (t) => semplice(t).replace(/\s+/g, ' ').trim().split(/(?<=[.!?])\s+(?=[A-Z0-9"“])/);
 const pulita = (t) => frasiDi(t).filter((f) => [...numeri(f)].every((n) => ammessi.has(n))).join(' ').trim();
 const tolte = [];
-const filtra = (t) => { const p = pulita(t); if (p !== String(t || '').replace(/\s+/g, ' ').trim()) tolte.push(t); return p; };
+const filtra = (t) => { const p = pulita(t); if (p !== semplice(t).replace(/\s+/g, ' ').trim()) tolte.push(t); return p; };
 const gancio = filtra(copione.hook);
 const sezioni = (copione.sezioni || []).slice(0, 6).map((s) => ({
-  titolo: String(s.titolo || '').slice(0, 60),
-  punti: (s.punti || []).map((p) => String(p).slice(0, 90)).filter((p) => [...numeri(p)].every((n) => ammessi.has(n))).slice(0, 4),
+  titolo: semplice(s.titolo).slice(0, 60),
+  punti: (s.punti || []).map((p) => semplice(p).slice(0, 90)).filter((p) => [...numeri(p)].every((n) => ammessi.has(n))).slice(0, 4),
   voce: filtra(s.voce),
 })).filter((s) => s.titolo && s.voce.split(' ').length >= 25);
 const descrizioneAI = filtra(copione.descrizione);
@@ -116,7 +117,7 @@ const scene = [
     voce: `What do you need to run it at home? At 4-bit it takes about ${gb4} gigabytes of memory. ${piccola ? `The smallest home machine that holds it fully is ${/^(Mac|NVIDIA)/.test(piccola.nome) ? 'the' : 'an'} ${voceNome(piccola.nome)}.` : 'No single home machine on our list holds it fully.'} ${veloci.length ? `${veloci.slice(0, 2).map((x) => `On ${/^(Mac|NVIDIA)/.test(x.s.nome) ? 'the' : 'an'} ${voceNome(x.s.nome)}${x.ram ? ` with ${x.ram} gigabytes of RAM` : ''} it writes about ${fmtVel(x.r.vel)} tokens per second.`).join(' ')}` : casa.length ? `It runs, but slowly: about ${fmtVel(casa[0].r.vel)} tokens per second on ${/^(Mac|NVIDIA)/.test(casa[0].s.nome) ? 'the' : 'an'} ${voceNome(casa[0].s.nome)}.` : ''}`,
     corpo: `<p class="titolo riga" data-in="0">Hardware: ~${gb4} GB at 4-bit</p><div class="griglia">${(casa.length ? casa.slice(0, 6) : []).map((x, i) => carta(esc(x.s.nome) + (x.ram ? ` + ${x.ram} GB RAM` : ''), `~${fmtVel(x.r.vel)} tok/s`, x.r.dove === 'gpu' ? 'fully in memory' : 'part in system RAM', i)).join('') || carta('Home machines', 'Too big', 'no single home machine on our list holds it', 0)}</div><p class="sotto-titolo riga" data-in="2">${piccola ? `Smallest machine that holds it: ${esc(piccola.nome)}` : 'Needs a data center or several GPUs'} · estimates from our simulator</p>` },
   { min: 8,
-    voce: `${api ? `You can try it for free through OpenRouter, without a GPU.` : 'There is no free API for it yet.'} The weights are open: you can download them from Hugging Face${licenza ? ` under the ${licenza} license` : ''}.${voto ? ` On the Arena leaderboard it scores ${voto.x.punti}.` : ' Arena has not ranked it yet: we add the score as soon as the votes arrive.'}`,
+    voce: `${api ? `You can try it for free through OpenRouter, without a GPU.` : 'There is no free API for it yet.'} The weights are open: you can download them from Hugging Face${licenza ? ` under the ${licenza} license` : ', under the license written in its model card'}.${voto ? ` On the Arena leaderboard it scores ${voto.x.punti}.` : ' Arena has not ranked it yet: we add the score as soon as the votes arrive.'}`,
     corpo: `<p class="titolo riga" data-in="0">Where to use it for free</p><div class="griglia">${carta('Free API', api ? 'OpenRouter' : 'Not yet', api ? esc(api) : 'we check every night', 0)}${carta('Open weights', 'Hugging Face', esc(m.hf.repo), 1)}${carta('Arena', voto ? `${voto.x.punti} points` : 'Not ranked yet', voto ? `#${voto.x.pos} in ${esc(voto.c.nome)}` : 'waiting for votes', 2)}</div>` },
   { min: 7, voce: `Compare ${voceNome(m.nome)} with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description.`,
     corpo: `<p class="titolo riga" data-in="0">Every free AI model, updated every night</p><p class="url riga" data-in="0.3">freellmarena.com</p><p class="sotto-titolo riga" data-in="0.6">Link in the description</p>` },
