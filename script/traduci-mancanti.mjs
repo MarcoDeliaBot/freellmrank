@@ -22,16 +22,24 @@ Page titles ending in " · FreeLLMArena" keep that ending. A string made only of
 Input: a JSON object {"0": "English", "1": "English", …}. Output: only a JSON object with the same keys and the translations.`;
 
 let aggiunte = 0;
-fuori: for (const [l, nome] of Object.entries(LINGUE_NOMI)) {
+// a turno fra le lingue (22/10/2026): prima un pacco per lingua, poi il secondo… così quando il tetto del giorno
+// finisce nessuna lingua resta sempre ultima
+const code = [];
+for (const [l, nome] of Object.entries(LINGUE_NOMI)) {
   const fileM = path.join(CARTELLA, 'mancanti', `${l}.json`);
   if (!fs.existsSync(fileM)) continue;
-  const mancanti = JSON.parse(fs.readFileSync(fileM, 'utf8'));
   const fileD = path.join(CARTELLA, `${l}.json`);
   const diz = fs.existsSync(fileD) ? JSON.parse(fs.readFileSync(fileD, 'utf8')) : {};
-  const da = mancanti.filter((k) => diz[k] == null);
-  for (let a = 0; a < da.length; a += PER_RICHIESTA) {
+  const da = JSON.parse(fs.readFileSync(fileM, 'utf8')).filter((k) => diz[k] == null);
+  const pacchi = [];
+  for (let a = 0; a < da.length; a += PER_RICHIESTA) pacchi.push(da.slice(a, a + PER_RICHIESTA));
+  code.push({ l, nome, fileD, diz, pacchi });
+}
+fuori: for (let giro = 0; code.some((c) => c.pacchi[giro]); giro++) {
+  for (const { l, nome, fileD, diz, pacchi } of code) {
+    const pacco = pacchi[giro];
+    if (!pacco) continue;
     if (richieste-- <= 0) break fuori;
-    const pacco = da.slice(a, a + PER_RICHIESTA);
     let r;
     try {
       r = await chiediModello([{ role: 'system', content: REGOLE(nome) }, { role: 'user', content: JSON.stringify(Object.fromEntries(pacco.map((k, j) => [j, k]))) }], { json: true, max: 4000 });
@@ -42,8 +50,8 @@ fuori: for (const [l, nome] of Object.entries(LINGUE_NOMI)) {
     }
     let buone = 0;
     pacco.forEach((k, j) => {
-      const t = r?.[j];
-      if (typeof t === 'string' && t.trim() && segni(t) === segni(k)) { diz[k] = t; buone++; }
+      const tr = r?.[j];
+      if (typeof tr === 'string' && tr.trim() && segni(tr) === segni(k)) { diz[k] = tr; buone++; }
     });
     aggiunte += buone;
     console.log(`${l}: ${buone}/${pacco.length} tradotte`);

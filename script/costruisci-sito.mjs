@@ -2,7 +2,7 @@
 // Uso: node script/costruisci-sito.mjs
 import fs from 'node:fs';
 import path from 'node:path';
-import { RADICE, SITO, URL_SITO, NOME_PIENO, CHAT_WEB, CONTATTO_PRIVACY, VER, esc, fmtData, pagina, pagineScritte, spiega, barraSezioni } from './sito/comune.mjs';
+import { RADICE, SITO, URL_SITO, NOME_PIENO, CHAT_WEB, CONTATTO_PRIVACY, VER, esc, fmtData, pagina, pagineScritte, indiceRicerca, spiega, barraSezioni } from './sito/comune.mjs';
 import { barre, dispersione, linee, matrice, COLORI as COLORI_SERIE } from './sito/grafici.mjs';
 import { unisci, paginaCatalogo, pagineModelli } from './sito/modelli.mjs';
 import { preparaBlog, pagineBlog } from './sito/blog.mjs';
@@ -442,6 +442,8 @@ for (const f of fs.readdirSync(SORGENTE)) {
   fs.writeFileSync(path.join(SITO, f), /\.m?js$/.test(f) ? testo.replace(/from '\.\/([\w-]+\.mjs)'/g, (_, nome) => `from './${nome}?v=${VER}'`) : testo);
 }
 
+// indice per la ricerca nel sito (sorgente/cerca.js lo scarica alla prima ricerca)
+fs.writeFileSync(path.join(SITO, 'cerca.json'), JSON.stringify(indiceRicerca()));
 // robots.txt e sitemap.xml con tutte le pagine
 fs.writeFileSync(path.join(SITO, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${URL_SITO}/sitemap.xml\n`);
 const indirizzi = pagineScritte().filter((f) => f !== '404.html').map((f) => URL_SITO + '/' + f.replace(/index\.html$/, '').replace(/\.html$/, ''));

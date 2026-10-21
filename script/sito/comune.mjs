@@ -46,6 +46,11 @@ export const nuovo = (dal) => (Date.now() - Date.parse(dal) < 45 * 864e5 ? ' <sp
 
 const ARTE = arteAscii(); // uguale in tutte le pagine
 const pagine = []; // per la sitemap
+const indice = []; // per la ricerca nel sito (cerca.json)
+export const indiceRicerca = () => indice;
+const SVG = (d) => `<svg class="icona" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const ICONA_CERCA = SVG('<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/>');
+const ICONA_PANNELLO = SVG('<rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M9.5 4.5v15"/>');
 export const pagineScritte = () => pagine;
 
 export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog = [], jsonld = [] }) {
@@ -157,11 +162,11 @@ ${(Array.isArray(jsonld) ? jsonld : [jsonld]).filter(Boolean).map((o) => `<scrip
   <a class="logo" href="/"><img src="/favicon.svg" alt="FreeLLMArena logo" width="26" height="26">${NOME.testa}<span>${NOME.coda}</span></a>
   <span class="barra-spazio"></span>
   <a class="barra-link" href="/arena.html">Vote in Free Arena</a>
-  <!--lingue-->
-  <details class="menu-mobile"><summary aria-label="Open the menu">Menu</summary><nav class="menu-pannello" aria-label="Site sections">${menuGruppi}</nav></details>
+  <button type="button" class="icona-btn cerca-apri" aria-label="Search the site" title="Search the site">${ICONA_CERCA}</button>
+  <details class="menu-mobile"><summary aria-label="Open the menu">Menu</summary><nav class="menu-pannello" aria-label="Site sections">${menuGruppi}<div class="menu-lingua"><!--lingue--></div></nav></details>
 </div></header>
 <div class="impianto">
-<aside class="lato"><a class="logo logo-lato" href="/"><img src="/favicon.svg" alt="FreeLLMArena logo" width="28" height="28">${NOME.testa}<span>${NOME.coda}</span><b class="badge-free">free</b></a><div class="lato-strumenti"><!--lingue--><button type="button" class="lato-chiudi" aria-label="Collapse the menu" title="Collapse the menu" data-apri="Expand the menu" aria-expanded="true"><svg class="icona" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17-5-5 5-5M18 17l-5-5 5-5"/></svg></button></div><nav class="menu-lato" aria-label="Site sections">${menuGruppi}</nav><p class="lato-piede"><b>${esc(NOME_PIENO)}</b><br>Data updated ${esc(dati.aggiornato)}<br>Blind human votes from Arena</p></aside>
+<aside class="lato"><div class="lato-testa"><a class="logo logo-lato" href="/"><img src="/favicon.svg" alt="FreeLLMArena logo" width="28" height="28">${NOME.testa}<span>${NOME.coda}</span><b class="badge-free">free</b></a><span class="lato-icone"><button type="button" class="icona-btn cerca-apri" aria-label="Search the site" title="Search the site">${ICONA_CERCA}</button><button type="button" class="icona-btn lato-chiudi" aria-label="Collapse the menu" title="Collapse the menu" data-apri="Expand the menu" aria-expanded="true">${ICONA_PANNELLO}</button></span></div><nav class="menu-lato" aria-label="Site sections">${menuGruppi}</nav><div class="lato-lingua"><!--lingue--></div><p class="lato-piede"><b>${esc(NOME_PIENO)}</b><br>Data updated ${esc(dati.aggiornato)}<br>Blind human votes from Arena</p></aside>
 <main class="contenuto">
 ${corpo}
 <p class="condividi small"><span class="muted">Share this page:</span><a href="https://x.com/intent/post?url=${condividi}&amp;text=${testoCond}" rel="noopener" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=${condividi}" rel="noopener" target="_blank">LinkedIn</a><a href="https://www.reddit.com/submit?url=${condividi}&amp;title=${testoCond}" rel="noopener" target="_blank">Reddit</a><a href="https://wa.me/?text=${testoCond}%20${condividi}" rel="noopener" target="_blank">WhatsApp</a><button type="button" class="link-btn" data-copia="${canonico}">Copy link</button></p>
@@ -177,6 +182,7 @@ ${file === 'report.html' ? '' : `<p class="small segnala-link">Spotted a wrong n
   <p>Rankings: <a href="https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset">Arena leaderboard dataset</a> by Arena Intelligence, licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. We filtered it to models you can use for free and added sizes from Hugging Face. ${esc(NOME_PIENO)} is not affiliated with Arena. Data updated ${esc(dati.aggiornato)}.</p>
   <p><a href="/privacy.html">Privacy and cookies</a> · <button type="button" class="link-btn" id="consenso-cambia">Cookie settings</button></p>
 </div></footer>
+<dialog class="cerca" id="cerca" aria-label="Search the site"><form method="dialog" class="cerca-testa"><span class="cerca-lente">${ICONA_CERCA}</span><input type="search" id="cerca-campo" placeholder="Search models, GPUs, guides…" aria-label="Search models, GPUs, guides" autocomplete="off" spellcheck="false"><button type="submit" class="icona-btn" aria-label="Close search" title="Close search">✕</button></form><ul class="cerca-risultati" id="cerca-risultati" role="listbox" aria-label="Results"></ul><p class="cerca-vuoto small muted" id="cerca-vuoto" hidden>No results. Try a model name, a GPU or a topic.</p><p class="cerca-aiuto small muted">Press / or Ctrl+K to search from any page.</p></dialog>
 <div class="consenso" id="consenso" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
   <p>We use Google Analytics to count visits, only if you agree. No ads, no tracking for advertising. <a href="/privacy.html">Details</a></p>
   <div class="row"><button type="button" class="btn" id="consenso-no">Reject</button><button type="button" class="btn" id="consenso-si">Accept</button></div>
@@ -185,6 +191,7 @@ ${file === 'report.html' ? '' : `<p class="small segnala-link">Spotted a wrong n
 <script src="/tables.js?v=${VER}" defer></script>
 <script src="/menu.js?v=${VER}" defer></script>
 <script src="/onda.js?v=${VER}" defer></script>
+<script src="/cerca.js?v=${VER}" defer></script>
 ${script ? `<script type="module" src="/${script}?v=${VER}"></script>` : ''}
 </body>
 </html>
@@ -193,4 +200,9 @@ ${script ? `<script type="module" src="/${script}?v=${VER}"></script>` : ''}
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, html);
   pagine.push(file);
+  // ricerca: titolo senza il nome del sito, una riga di descrizione, il tipo di pagina
+  if (!/^(404|report|embed)\.html$/.test(file)) {
+    const tipo = file.startsWith('model/') ? 'Model' : file.startsWith('gpu/') || file === 'gpus.html' ? 'GPU' : file.startsWith('compare/') ? 'Comparison' : file.startsWith('blog/') ? (file.startsWith('blog/video-') ? 'Video' : 'Blog') : 'Page';
+    indice.push({ u: '/' + file.replace(/(^|\/)index\.html$/, '$1').replace(/\.html$/, ''), t: titolo.replace(/\s*·\s*FreeLLMArena$/, ''), d: String(descr || '').slice(0, 140), k: tipo });
+  }
 }

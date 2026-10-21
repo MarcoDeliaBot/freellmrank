@@ -910,29 +910,55 @@ footer{font-size:.75rem;color:var(--muted);border-top:1px solid var(--line);padd
 .bandiere-elenco a{display:flex;align-items:center;gap:.6rem;padding:.5rem .6rem;border-radius:7px;color:var(--ink);text-decoration:none;font-size:.9rem}
 .bandiere-elenco a:hover{background:var(--soft2)}
 .bandiere-elenco a[aria-current]{background:var(--free-tenue);color:var(--free-forte);font-weight:600}
-.lato .bandiere-elenco{left:0;right:auto}
+/* lingua in fondo al menu (22/10/2026): la tendina si apre verso l'alto */
+.lato .bandiere-elenco,.menu-lingua .bandiere-elenco{left:0;right:auto;top:auto;bottom:calc(100% + 6px)}
+.lato-lingua{margin:auto .25rem 0;padding-top:1rem}
+.lato-lingua .bandiere summary,.menu-lingua .bandiere summary{width:100%;box-sizing:border-box}
+.lato-lingua+.lato-piede{margin-top:.75rem}
+.menu-lingua{margin:.5rem .25rem .25rem;padding-top:.5rem;border-top:1px solid var(--line)}
 
-/* menu laterale che si chiude con un clic: restano le icone (21/10/2026) */
-.lato-strumenti{display:none}
+/* pulsanti a icona come in ChatGPT (22/10/2026): lente per cercare, pannello per chiudere il menu */
+.icona-btn{display:inline-grid;place-items:center;width:2.25rem;height:2.25rem;padding:0;border:0;border-radius:8px;background:transparent;color:var(--muted);cursor:pointer;font:inherit;flex:none}
+.icona-btn:hover{background:var(--soft2);color:var(--ink)}
+.icona-btn .icona{width:1.3rem;height:1.3rem;color:inherit}
+.lato-testa{display:none}
 @media (min-width:64.0625rem){
-  .lato-strumenti{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin:-.75rem .25rem 1rem}
-  .lato-chiudi{display:grid;place-items:center;width:2rem;height:2rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;margin-left:auto}
-  .lato-chiudi:hover{color:var(--ink)}
-  .lato-chiudi .icona{transition:transform .2s}
+  .lato-testa{display:flex;align-items:center;justify-content:space-between;gap:.25rem;margin:0 0 1.25rem}
+  .lato-testa .logo-lato{margin:0 .25rem;min-width:0}
+  .lato-icone{display:flex;gap:.1rem}
   .impianto{transition:grid-template-columns .2s}
   html.menu-chiuso .impianto{grid-template-columns:4.5rem minmax(0,1fr)}
   html.menu-chiuso .lato{padding:1.25rem .6rem;overflow-x:hidden}
-  html.menu-chiuso .lato-chiudi .icona{transform:rotate(180deg)}
-  html.menu-chiuso .lato-strumenti{flex-direction:column-reverse;margin:0 0 1rem}
-  html.menu-chiuso .lato-chiudi{margin:0}
-  html.menu-chiuso .lato .bandiere-elenco{position:fixed;left:4.9rem;top:5.6rem}
+  html.menu-chiuso .lato-testa,html.menu-chiuso .lato-icone{flex-direction:column;gap:.35rem}
+  html.menu-chiuso .lato .bandiere-elenco{position:fixed;left:4.9rem;bottom:1rem;top:auto}
   html.menu-chiuso .bandiere-codice,html.menu-chiuso .menu-gruppo,html.menu-chiuso .lato-piede,html.menu-chiuso .menu-lato .badge-free,html.menu-chiuso .menu-lato .badge-new,html.menu-chiuso .logo-lato .badge-free{display:none}
-  html.menu-chiuso .logo-lato{font-size:0;justify-content:center;margin:.1rem 0 1rem}
+  html.menu-chiuso .lato-lingua{margin-left:0;margin-right:0;display:flex;justify-content:center}
+  html.menu-chiuso .lato-lingua .bandiere summary{width:auto}
+  html.menu-chiuso .logo-lato{font-size:0;justify-content:center;margin:.1rem 0 .25rem}
   html.menu-chiuso .logo-lato img{margin:0}
   html.menu-chiuso .menu-lato a{font-size:0;justify-content:center;padding:.6rem 0}
   html.menu-chiuso .menu-lato .icona{width:1.15rem;height:1.15rem}
   html.menu-chiuso .menu-lato{gap:.35rem}
 }
+
+/* ricerca nel sito (22/10/2026) */
+dialog.cerca{width:min(40rem,calc(100vw - 32px));max-height:min(36rem,calc(100vh - 64px));margin:8vh auto auto;padding:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);box-shadow:0 24px 64px rgba(0,0,0,.35);overflow:hidden}
+dialog.cerca[open]{display:flex;flex-direction:column}
+dialog.cerca::backdrop{background:rgba(2,6,23,.55)}
+.cerca-testa{display:flex;align-items:center;gap:.5rem;padding:.4rem .5rem .4rem .9rem;border-bottom:1px solid var(--line)}
+.cerca-lente{display:grid;color:var(--muted)}
+.cerca-lente .icona{width:1.2rem;height:1.2rem}
+.cerca-testa input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font:inherit;font-size:16px;padding:.55rem 0}
+.cerca-testa input::-webkit-search-cancel-button{display:none}
+.cerca-risultati{list-style:none;margin:0;padding:.35rem;overflow:auto;flex:1}
+.cerca-risultati:empty{display:none}
+.cerca-risultati a{display:grid;gap:.15rem;padding:.55rem .7rem;border-radius:8px;color:var(--ink);text-decoration:none}
+.cerca-risultati a:hover,.cerca-risultati a.scelto{background:var(--soft2)}
+.cerca-risultati b{font-weight:600}
+.cerca-risultati .small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cerca-tipo{font:600 .66rem/1 var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--free-forte)}
+.cerca-vuoto,.cerca-aiuto{margin:.6rem 1rem}
+@media (hover:none){.cerca-aiuto{display:none}}
 
 /* disegno in caratteri nel piè di pagina (21/10/2026), solo decorazione */
 .arte{margin:.4rem 0 .8rem;overflow:hidden;white-space:pre;user-select:none;pointer-events:none;font:600 11px/11px var(--mono);letter-spacing:3px;background:linear-gradient(180deg,var(--muted) 0%,var(--free) 70%,var(--free-forte) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.9;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
@@ -950,3 +976,10 @@ footer{font-size:.75rem;color:var(--muted);border-top:1px solid var(--line);padd
 .post-copertina{display:block;margin:-.25rem -.25rem .75rem;border-radius:10px;overflow:hidden;background:#000;aspect-ratio:16/9}
 .post-copertina img{display:block;width:100%;height:100%;object-fit:cover}
 @media (prefers-color-scheme:dark){.post-tipo.video{background:rgba(239,68,68,.18);color:#fca5a5}}
+/* testata del menu: senza l'etichetta «free» accanto al logo (non entra con le due icone); voci lunghe tradotte vanno a capo */
+.lato-testa .logo-lato .badge-free{display:none}
+.menu-lato a{min-width:0;overflow-wrap:anywhere}
+.menu-lato .badge-free,.menu-lato .badge-new{flex:none}
+@media (min-width:64.0625rem){.lato-testa .logo-lato{font-size:1rem}.lato-testa .logo-lato img{width:24px;height:24px}}
+.menu-lato a{white-space:normal}
+.menu-lingua summary::before{content:none}
