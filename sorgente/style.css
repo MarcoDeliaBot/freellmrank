@@ -1000,3 +1000,10 @@ dialog.cerca::backdrop{background:rgba(2,6,23,.55)}
   .lato-icone .icona-btn .icona{width:1.2rem;height:1.2rem}
   html.menu-chiuso .lato-testa .logo-lato{flex:none;overflow:visible;margin:0}
 }
+/* tasto tema sole/luna in fondo al menu (sorgente/tema.js): accanto alla lingua, mostra l'icona dello stato */
+.lato-lingua,.menu-lingua{display:flex;align-items:center;gap:.4rem}
+.lato-lingua>.bandiere,.menu-lingua>.bandiere{flex:1;min-width:0}
+.tema-btn .tema-chiaro,.tema-btn .tema-scuro{display:none}
+:root[data-tema="chiaro"] .tema-btn .tema-auto,:root[data-tema="scuro"] .tema-btn .tema-auto{display:none}
+:root[data-tema="chiaro"] .tema-btn .tema-chiaro,:root[data-tema="scuro"] .tema-btn .tema-scuro{display:block}
+@media (min-width:64rem){html.menu-chiuso .lato-lingua{flex-direction:column}}

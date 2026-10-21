@@ -440,12 +440,30 @@ paginaSegnala(dati, blog);
 widget(dati, modelli, blog);
 const llms = scriviLlms(dati, modelli, blog);
 
+// tema scelto a mano (sorgente/tema.js): ogni @media (prefers-color-scheme:dark){…} diventa due copie, una che vale
+// col sistema scuro se il visitatore non ha scelto "chiaro" e una che vale sempre con data-tema="scuro"
+function temaManuale(css) {
+  const APRI = '@media (prefers-color-scheme:dark){';
+  const prefissa = (dentro, p) => dentro.replace(/([^{}]+)\{([^{}]*)\}/g, (_, sel, decl) =>
+    sel.split(',').map((s) => { s = s.trim(); return s.startsWith(':root') ? p + s.slice(5) : `${p} ${s}`; }).join(',') + '{' + decl + '}');
+  let out = '', i = 0;
+  for (;;) {
+    const a = css.indexOf(APRI, i);
+    if (a < 0) return out + css.slice(i);
+    let j = a + APRI.length, prof = 1;
+    while (prof && j < css.length) { if (css[j] === '{') prof++; else if (css[j] === '}') prof--; j++; }
+    const dentro = css.slice(a + APRI.length, j - 1);
+    out += css.slice(i, a) + APRI + prefissa(dentro, ':root:not([data-tema="chiaro"])') + '}' + prefissa(dentro, ':root[data-tema="scuro"]');
+    i = j;
+  }
+}
+
 // copia di sorgente/: gli import fra moduli prendono la stessa versione delle pagine
 for (const f of fs.readdirSync(SORGENTE)) {
   // immagini e altri file binari: copia esatta
   if (!/\.(m?js|css|svg|txt)$/.test(f)) { fs.copyFileSync(path.join(SORGENTE, f), path.join(SITO, f)); continue; }
   const testo = fs.readFileSync(path.join(SORGENTE, f), 'utf8');
-  fs.writeFileSync(path.join(SITO, f), /\.m?js$/.test(f) ? testo.replace(/from '\.\/([\w-]+\.mjs)'/g, (_, nome) => `from './${nome}?v=${VER}'`) : testo);
+  fs.writeFileSync(path.join(SITO, f), /\.m?js$/.test(f) ? testo.replace(/from '\.\/([\w-]+\.mjs)'/g, (_, nome) => `from './${nome}?v=${VER}'`) : f === 'style.css' ? temaManuale(testo) : testo);
 }
 
 // indice per la ricerca nel sito (sorgente/cerca.js lo scarica alla prima ricerca)

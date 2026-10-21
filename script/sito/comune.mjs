@@ -52,6 +52,9 @@ const indice = []; // per la ricerca nel sito (cerca.json)
 export const indiceRicerca = () => indice;
 const SVG = (d) => `<svg class="icona" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
 const ICONA_CERCA = SVG('<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/>');
+// tasto tema: tre icone, il CSS mostra quella dello stato (automatico, chiaro, scuro)
+const ICONA_TEMA = `<svg class="icona tema-auto" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg><svg class="icona tema-chiaro" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg><svg class="icona tema-scuro" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>`;
+const TASTO_TEMA = `<button type="button" class="icona-btn tema-btn" aria-label="Theme: automatic, like your device. Click for light." title="Theme: automatic, like your device. Click for light.">${ICONA_TEMA}</button>`;
 const ICONA_PANNELLO = SVG('<rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M9.5 4.5v15"/>');
 export const pagineScritte = () => pagine;
 
@@ -136,6 +139,8 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
   try { if (localStorage.getItem('consenso') === 'si') window.caricaGa(); } catch (e) {}
   // menu laterale chiuso dal visitatore (sorgente/menu.js): si applica prima di disegnare, senza salti
   try { if (localStorage.getItem('menu') === 'chiuso') document.documentElement.classList.add('menu-chiuso'); } catch (e) {}
+  // tema scelto col tasto sole/luna (sorgente/tema.js): prima di disegnare, così la pagina non lampeggia
+  try { var tema = localStorage.getItem('tema'); if (tema === 'chiaro' || tema === 'scuro') document.documentElement.setAttribute('data-tema', tema); } catch (e) {}
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -169,10 +174,10 @@ ${(Array.isArray(jsonld) ? jsonld : [jsonld]).filter(Boolean).map((o) => `<scrip
   <span class="barra-spazio"></span>
   <a class="barra-link" href="/arena.html">Vote in Free Arena</a>
   <button type="button" class="icona-btn cerca-apri" aria-label="Search the site" title="Search the site">${ICONA_CERCA}</button>
-  <details class="menu-mobile"><summary aria-label="Open the menu">Menu</summary><nav class="menu-pannello" aria-label="Site sections">${menuGruppi}<div class="menu-lingua"><!--lingue--></div></nav></details>
+  <details class="menu-mobile"><summary aria-label="Open the menu">Menu</summary><nav class="menu-pannello" aria-label="Site sections">${menuGruppi}<div class="menu-lingua"><!--lingue-->${TASTO_TEMA}</div></nav></details>
 </div></header>
 <div class="impianto">
-<aside class="lato"><div class="lato-testa"><a class="logo logo-lato" href="/"><img src="/favicon.svg" alt="FreeLLMArena logo" width="28" height="28">${NOME.testa}<span>${NOME.coda}</span><b class="badge-free">free</b></a><span class="lato-icone"><button type="button" class="icona-btn cerca-apri" aria-label="Search the site" title="Search the site">${ICONA_CERCA}</button><button type="button" class="icona-btn lato-chiudi" aria-label="Collapse the menu" title="Collapse the menu" data-apri="Expand the menu" aria-expanded="true">${ICONA_PANNELLO}</button></span></div><nav class="menu-lato" aria-label="Site sections">${menuGruppi}</nav><div class="lato-lingua"><!--lingue--></div><p class="lato-piede"><b>${esc(NOME_PIENO)}</b><br>Data updated ${esc(dati.aggiornato)}<br>Blind human votes from Arena</p></aside>
+<aside class="lato"><div class="lato-testa"><a class="logo logo-lato" href="/"><img src="/favicon.svg" alt="FreeLLMArena logo" width="28" height="28">${NOME.testa}<span>${NOME.coda}</span><b class="badge-free">free</b></a><span class="lato-icone"><button type="button" class="icona-btn cerca-apri" aria-label="Search the site" title="Search the site">${ICONA_CERCA}</button><button type="button" class="icona-btn lato-chiudi" aria-label="Collapse the menu" title="Collapse the menu" data-apri="Expand the menu" aria-expanded="true">${ICONA_PANNELLO}</button></span></div><nav class="menu-lato" aria-label="Site sections">${menuGruppi}</nav><div class="lato-lingua"><!--lingue-->${TASTO_TEMA}</div><p class="lato-piede"><b>${esc(NOME_PIENO)}</b><br>Data updated ${esc(dati.aggiornato)}<br>Blind human votes from Arena</p></aside>
 <main class="contenuto">
 ${corpo}
 <p class="condividi small"><span class="muted">Share this page:</span><a href="https://x.com/intent/post?url=${condividi}&amp;text=${testoCond}" rel="noopener" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=${condividi}" rel="noopener" target="_blank">LinkedIn</a><a href="https://www.reddit.com/submit?url=${condividi}&amp;title=${testoCond}" rel="noopener" target="_blank">Reddit</a><a href="https://wa.me/?text=${testoCond}%20${condividi}" rel="noopener" target="_blank">WhatsApp</a><button type="button" class="link-btn" data-copia="${canonico}">Copy link</button></p>
@@ -197,6 +202,7 @@ ${file === 'report.html' ? '' : `<p class="small segnala-link">Spotted a wrong n
 <script src="/tables.js?v=${VER}" defer></script>
 <script src="/menu.js?v=${VER}" defer></script>
 <script src="/onda.js?v=${VER}" defer></script>
+<script src="/tema.js?v=${VER}" defer></script>
 <script src="/cerca.js?v=${VER}" defer></script>
 ${script ? `<script type="module" src="/${script}?v=${VER}"></script>` : ''}
 </body>
