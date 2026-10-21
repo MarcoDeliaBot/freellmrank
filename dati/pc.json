@@ -1,0 +1,63 @@
+{
+  "nota": "PC nati per l'AI (pagina /ai-pcs, richiesta di Marco il 22/10/2026). Ogni piattaforma rimanda a una scheda di dati/schede.json (memoria e banda vere, usate dal simulatore); i prodotti sono macchine in vendita con quella piattaforma. Nessun prezzo scritto a mano: Amazon mostra quello del giorno. q = ricerca su Amazon.",
+  "piattaforme": [
+    {
+      "scheda": "m3ultra-512",
+      "titolo": "Apple Mac Studio with M3 Ultra",
+      "chip": "Apple M3 Ultra",
+      "memoria": "up to 512 GB unified memory",
+      "software": "macOS: LM Studio, Ollama, llama.cpp and MLX all run on the Apple GPU.",
+      "prodotti": [
+        { "nome": "Mac Studio M3 Ultra", "forma": "Desktop", "q": "Mac Studio M3 Ultra" }
+      ]
+    },
+    {
+      "scheda": "m4max-128",
+      "titolo": "Apple M4 Max: Mac Studio and MacBook Pro",
+      "chip": "Apple M4 Max",
+      "memoria": "up to 128 GB unified memory",
+      "software": "macOS: LM Studio, Ollama, llama.cpp and MLX all run on the Apple GPU.",
+      "prodotti": [
+        { "nome": "Mac Studio M4 Max", "forma": "Desktop", "q": "Mac Studio M4 Max 128GB" },
+        { "nome": "MacBook Pro 16 M4 Max", "forma": "Laptop", "q": "MacBook Pro 16 M4 Max 128GB" }
+      ]
+    },
+    {
+      "scheda": "dgxspark",
+      "titolo": "NVIDIA DGX Spark and other GB10 machines",
+      "chip": "NVIDIA GB10 Grace Blackwell",
+      "memoria": "128 GB unified memory",
+      "software": "Linux with the NVIDIA CUDA stack: Ollama, llama.cpp, vLLM and most AI tools work as on an NVIDIA graphics card.",
+      "prodotti": [
+        { "nome": "NVIDIA DGX Spark", "forma": "Mini PC", "q": "NVIDIA DGX Spark" },
+        { "nome": "ASUS Ascent GX10", "forma": "Mini PC", "q": "ASUS Ascent GX10" },
+        { "nome": "Dell Pro Max with GB10", "forma": "Mini PC", "q": "Dell Pro Max GB10" },
+        { "nome": "Lenovo ThinkStation PGX", "forma": "Mini PC", "q": "Lenovo ThinkStation PGX" }
+      ]
+    },
+    {
+      "scheda": "strixhalo-128",
+      "titolo": "AMD Ryzen AI Max+ 395 mini PCs and laptops",
+      "chip": "AMD Ryzen AI Max+ 395 (Strix Halo)",
+      "memoria": "up to 128 GB unified memory",
+      "software": "Windows or Linux: LM Studio, Ollama and llama.cpp run on the built-in Radeon GPU (Vulkan or ROCm).",
+      "prodotti": [
+        { "nome": "Framework Desktop", "forma": "Mini PC", "q": "Framework Desktop Ryzen AI Max+ 395" },
+        { "nome": "GMKtec EVO-X2", "forma": "Mini PC", "q": "GMKtec EVO-X2 Ryzen AI Max+ 395 128GB" },
+        { "nome": "HP Z2 Mini G1a", "forma": "Mini PC", "q": "HP Z2 Mini G1a Ryzen AI Max" },
+        { "nome": "ASUS ROG Flow Z13", "forma": "Laptop / tablet", "q": "ASUS ROG Flow Z13 Ryzen AI Max+ 395" }
+      ]
+    },
+    {
+      "scheda": "m4pro-64",
+      "titolo": "Apple Mac mini with M4 Pro",
+      "chip": "Apple M4 Pro",
+      "memoria": "up to 64 GB unified memory",
+      "software": "macOS: LM Studio, Ollama, llama.cpp and MLX all run on the Apple GPU.",
+      "prodotti": [
+        { "nome": "Mac mini M4 Pro", "forma": "Mini PC", "q": "Mac mini M4 Pro 64GB" }
+      ]
+    }
+  ],
+  "confronto": { "scheda": "rtx5090", "titolo": "For comparison: a desktop PC with an RTX 5090", "ram": 64 }
+}

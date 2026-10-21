@@ -983,3 +983,9 @@ dialog.cerca::backdrop{background:rgba(2,6,23,.55)}
 @media (min-width:64.0625rem){.lato-testa .logo-lato{font-size:1rem}.lato-testa .logo-lato img{width:24px;height:24px}}
 .menu-lato a{white-space:normal}
 .menu-lingua summary::before{content:none}
+
+/* pagina AI PCs (22/10/2026): le macchine in vendita, una per riga, il bottone Amazon sempre visibile */
+.pc-prodotti{list-style:none;margin:.75rem 0 0;padding:0;display:grid;gap:.4rem}
+.pc-prodotti li{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .75rem;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.pc-prodotti b{flex:1 1 12rem}
+.pc-prodotti .tag{margin:0}

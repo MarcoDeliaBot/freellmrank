@@ -390,6 +390,8 @@
  "AGPL-{0}": "AGPL-{0}",
  "AGPL-{0} (core Apache-{1})": "AGPL-{0} (Kern Apache-{1})",
  "AI Free: {0} credits every {1} days; works with your own key, Ollama or LM Studio.": "AI Free: {0} Credits alle {1} Tage; funktioniert mit deinem eigenen Schlüssel, Ollama oder LM Studio.",
+ "AI PCs": "KI-PCs",
+ "AI PCs: Mac Studio, DGX Spark, Ryzen AI Max": "KI-PCs: Mac Studio, DGX Spark, Ryzen AI Max",
  "AI apps": "KI-Apps",
  "AI apps: free and paid <0>New</0>": "KI-Apps: kostenlos und kostenpflichtig <0>Neu</0>",
  "AI code editors": "KI-Code-Editoren",
