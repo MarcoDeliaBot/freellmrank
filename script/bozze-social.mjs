@@ -1,5 +1,5 @@
 // Post social in bozza per un video appena pubblicato (automatismo 10, deciso da Marco il 20/10/2026).
-// Uso: node script/bozze-social.mjs <tipo>   (tipo = nuovo | settimana; legge video/brag/info-<tipo>.json)
+// Uso: node script/bozze-social.mjs <tipo>   (tipo = nuovo | settimana | gpu; legge video/brag/info-<tipo>.json)
 // Apre un'issue «bozza» con il post per X e quello per Reddit; n8n la manda a Marco per mail. Si pubblica a mano.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -16,6 +16,6 @@ const p = await postSocial({ argomento: info.titolo.replace(/ #Shorts$/, ''), da
 const video = `https://github.com/${REPO}/releases/tag/video-${info.nome}`;
 await apriIssue(`Post social da approvare: ${info.titolo.replace(/ #Shorts$/, '')}`, `Bozze per il video appena pubblicato su GitHub: ${video} (il file mp4 è lì). **Nulla è stato pubblicato.**
 
-Su X conviene allegare il video al post: dura 20 secondi, oltre la soglia minima per contare come video.
+Su X conviene allegare il video al post: dura fra 20 e 40 secondi, oltre la soglia minima per contare come video.
 
 ${testoPost(p, contesto)}`, ['bozza', 'social']);
