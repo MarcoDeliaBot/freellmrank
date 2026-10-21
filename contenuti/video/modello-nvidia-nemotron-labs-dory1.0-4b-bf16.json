@@ -1,0 +1,155 @@
+{
+ "nome": "modello-nvidia-nemotron-labs-dory1.0-4b-bf16",
+ "titolo": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "NVIDIA’s Dory1.0‑4B‑BF16 offers 256 K token context and loop‑based compute scaling, all under an open license. Ideal for home‑lab users who want long‑context reasoning without paying for a cloud API.\n\nSize: 4B parameters · context 256K · memory at 4-bit about 5 GB.\nRTX 3060 12 GB + 32 GB RAM: about 90 tokens/s\nRTX 4090 + 64 GB RAM: about 217 tokens/s\nRTX 5090 + 64 GB RAM: about 330 tokens/s\nMac M4 Max 128 GB: about 98 tokens/s\nNVIDIA DGX Spark 128 GB: about 70 tokens/s\nRyzen AI Max+ 395 128 GB: about 66 tokens/s\nMac Studio M3 Ultra 512 GB: about 126 tokens/s\nModel card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+  "NVIDIA"
+ ],
+ "condividi": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 by NVIDIA: 4B parameters, about 5 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+    "gb": 5,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+    "vel": 90,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+    "vel": 217,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+    "vel": 330,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+    "vel": 98,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+    "vel": 70,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+    "vel": 66,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+    "vel": 126,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "NVIDIA’s Dory model can handle up to 256 K tokens in a single prompt. It lets you trade extra compute for higher accuracy without swapping models.",
+  "NVIDIA‑Nemotron‑Labs‑Dory1.0‑4B‑BF16 is a 4 billion‑parameter language model released on October 16, 2026. It follows a looped, latent‑recurrent architecture where a shared recurrent block is applied repeatedly between input and output layers. The model runs in BF16 precision and supports a context length of up to 256 K tokens, making it suitable for very long prompts. It is licensed under the OpenMDW 1.1 agreement, allowing both commercial and non‑commercial use.",
+  "According to NVIDIA, Dory introduces elastic inference compute: a single checkpoint can run with one, two, or four loops, letting you balance speed and accuracy on the fly. Looping lets the model think more in latent space, so it needs fewer generated tokens to solve a task. Memory‑efficient looping is achieved with last‑loop KV caching, which keeps only one cache per recurrent layer regardless of loop count. The model was pre‑trained first in NVIDIA’s 4‑bit NVFP4 format before continuing in BF16.",
+  "The model card lists several benchmark scores measured by NVIDIA under a consistent harness. With two loops, Dory scores 59.5 on the SWE‑bench Verified coding benchmark, outperforming its one‑loop score of 50.3. On Terminal‑Bench 2.1, four loops reach 43, compared with 12.5 at one loop. In reasoning, the GPQA Diamond test gives 69.19 with a single loop. General knowledge measured by AA‑Omniscience shows an accuracy of 10.03 at one loop. These numbers illustrate how additional loops improve performance on agentic and coding tasks.",
+  "Dory’s biggest strength is its 256 K token context, allowing extensive prompts or documents. The elastic looping gives you fine‑grained control: one loop minimizes compute, while two or four loops boost accuracy for harder tasks. However, the model is trained only for English, so multilingual use is limited. Adding loops also increases per‑token latency, so real‑time applications may prefer the single‑loop setting.",
+  "If you need to work with very long documents, or you want to experiment with elastic inference compute, Dory is a good fit. It is also useful for developers building coding assistants, because the benchmarks show strong performance on agentic tasks when using two or four loops. Since the weights are freely available on Hugging Face, anyone can download and run the model locally.",
+  "What do you need to run it at home? At 4-bit it takes about 5 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 90 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 217 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the other license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare NVIDIA Nemotron Labs Dory1.0 4B BF16 with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-nvidia-nemotron-labs-dory1.0-4b-bf16",
+ "pubblicato": "2026-10-21"
+}
