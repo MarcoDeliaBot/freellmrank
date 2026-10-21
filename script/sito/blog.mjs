@@ -49,7 +49,7 @@ function leggiVideo(hrefPerNome, dati) {
     // nel post non servono gli inviti del video («Link in bio», «link in the description»)
     const voce = v.voce.map((p) => p.replace(/\s*(The link is in the description\.|Link in (the )?bio\.)\s*/gi, ' ').trim()).filter(Boolean);
     const corpo = `${player}\n\n## What the video says\n\n${voce.map((p) => p.replace(/\b(RTX|GTX) (\d\d) (\d\d)\b/g, '$1 $2$3')).join('\n\n')}\n\n## The data\n\n${elenco.join('\n')}${hardware(v.hardware)}\n\nEvery number in this post comes from the ${NOME_PIENO} data on ${fmtData(v.pubblicato)}: Arena votes, Hugging Face sizes and our speed simulator. [Download the video and its subtitles](https://github.com/${REPO}/releases/tag/${v.release}).\n`;
-    return { slug: `video-${v.nome.replace(/[^a-z0-9-]+/gi, '-').toLowerCase()}`, titolo, descr: intro.slice(0, 158), data: v.pubblicato, tema: TIPO_VIDEO[tipo] || 'Video', corpo, tipo: 'Video', amazon: /class="tag free amazon"/.test(hardware(v.hardware)), copertina: `/video/${v.nome}.jpg`, fileCopertina: path.join(DIR_VIDEO, `${v.nome}.jpg`) };
+    return { slug: `video-${v.nome.replace(/[^a-z0-9-]+/gi, '-').toLowerCase()}`, titolo, descr: intro.length <= 158 ? intro : intro.slice(0, 157).replace(/\s+\S*$/, '').replace(/[,;:]$/, '') + '…', data: v.pubblicato, tema: TIPO_VIDEO[tipo] || 'Video', corpo, tipo: 'Video', amazon: /class="tag free amazon"/.test(hardware(v.hardware)), copertina: `/video/${v.nome}.jpg`, fileCopertina: path.join(DIR_VIDEO, `${v.nome}.jpg`) };
   });
 }
 const SETTIMANE = 8;

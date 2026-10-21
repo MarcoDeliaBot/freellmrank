@@ -64,6 +64,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
     audio: '<path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 11v2"/>',
     pc: '<rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/>',
     ram: '<rect x="3" y="7" width="18" height="10" rx="1.5"/><path d="M7 17v3M11 17v3M15 17v3M7 7V4M17 7V4"/>',
+    tred: '<path d="M12 3 20 7.5v9L12 21l-8-4.5v-9z"/><path d="M12 12 20 7.5M12 12v9M12 12 4 7.5"/>',
     musica: '<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>',
     arena: '<path d="M5 19 19 5M15 5h4v4M19 19 5 5M9 5H5v4"/>',
     gpus: '<rect x="2.5" y="6.5" width="19" height="10" rx="2"/><circle cx="8.5" cy="11.5" r="2.6"/><circle cx="15.5" cy="11.5" r="2.6"/><path d="M5 16.5v2.5M9 16.5v2.5"/>',
@@ -85,6 +86,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
     ['Models', [
       ['/models.html', `${icona('modelli')}All free models`],
       ['/compare.html', `${icona('confronto')}Try and compare`],
+      ['/3d-models.html', `${icona('tred')}3D models${nuovo('2026-10-21')}`],
     ]],
     ['Run it yourself', [
       ['/home.html', `${icona('casa')}Run at home`],
@@ -109,7 +111,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
   const condividi = encodeURIComponent(canonico), testoCond = encodeURIComponent(titolo);
   const colonne = [
     ['Leaderboards', dati.categorie.map((c) => [`/#${c.id}`, `Best free ${c.nome.toLowerCase()} models`])],
-    ['Tools', [['/home.html', 'Run at home: GPU simulator'], ['/gpus.html', 'GPUs for local AI, compared'], ['/ram.html', 'How much RAM for local AI'], ['/ai-pcs.html', 'AI PCs: Mac Studio, DGX Spark, Ryzen AI Max'], ['/phone.html', 'AI models on your phone'], ['/audio.html', 'Speech to text and text to speech'], ['/music.html', 'Free AI music generators'], ['/apps.html', 'Free and paid AI apps'], ['/embed.html', 'Widget for your site'], ['/arena.html', 'Free Arena: vote blind'], ['/compare.html', 'Try two free models'], ['/models.html', 'All free models'], ['/decision.html', 'Decision models (Jev-style)']]],
+    ['Tools', [['/home.html', 'Run at home: GPU simulator'], ['/gpus.html', 'GPUs for local AI, compared'], ['/ram.html', 'How much RAM for local AI'], ['/ai-pcs.html', 'AI PCs: Mac Studio, DGX Spark, Ryzen AI Max'], ['/phone.html', 'AI models on your phone'], ['/audio.html', 'Speech to text and text to speech'], ['/music.html', 'Free AI music generators'], ['/3d-models.html', 'Free AI 3D model generators'], ['/apps.html', 'Free and paid AI apps'], ['/embed.html', 'Widget for your site'], ['/arena.html', 'Free Arena: vote blind'], ['/compare.html', 'Try two free models'], ['/models.html', 'All free models'], ['/decision.html', 'Decision models (Jev-style)']]],
     ['Blog', [...blog.slice(0, 4).map((p) => [`/blog/${p.slug}.html`, p.titolo]), ['/blog/', 'All posts']]],
     ['About', [['/about.html', 'How we rank'], ['/about.html#faq', 'FAQ'], ['/about.html#sources', 'Data sources'], ['/blog/feed.xml', 'RSS feed'], ['https://github.com/MarcoDeliaBot/freellmrank', 'Source code']]],
   ];

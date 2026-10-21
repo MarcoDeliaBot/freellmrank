@@ -1,0 +1,24 @@
+{
+ "nota": "Modelli gratis che creano oggetti 3D (pagina /3d-models, decisa da Marco il 21/10/2026). Solo i repository ufficiali, niente copie o conversioni GGUF di terzi, niente modelli che ricostruiscono scene da foto (VGGT, DUSt3R). Licenze lette su Hugging Face il 21/10/2026. I numeri (download, like) li scarica ogni notte script/costruisci-3d.mjs.",
+ "licenze": {
+  "mit": { "nome": "MIT", "nota": "Free for any use, also commercial." },
+  "apache": { "nome": "Apache 2.0", "nota": "Free for any use, also commercial." },
+  "stability": { "nome": "Stability Community", "nota": "Free for people and companies with less than 1 million dollars of revenue a year. You accept the license on Hugging Face before downloading.", "avviso": false },
+  "tencent": { "nome": "Tencent Hunyuan 3D", "nota": "The license does not apply in the European Union, the United Kingdom and South Korea: you cannot use these models there.", "avviso": true }
+ },
+ "modelli": [
+  { "repo": "microsoft/TRELLIS.2-4B", "nome": "TRELLIS.2", "lab": "Microsoft", "da": "Image", "licenza": "mit", "demo": "microsoft/TRELLIS.2" },
+  { "repo": "microsoft/TRELLIS-image-large", "nome": "TRELLIS (image)", "lab": "Microsoft", "da": "Image", "licenza": "mit", "demo": "microsoft/TRELLIS" },
+  { "repo": "microsoft/TRELLIS-text-xlarge", "nome": "TRELLIS (text)", "lab": "Microsoft", "da": "Text", "licenza": "mit", "demo": null },
+  { "repo": "stabilityai/TripoSR", "nome": "TripoSR", "lab": "Stability AI and Tripo", "da": "Image", "licenza": "mit", "demo": "stabilityai/TripoSR" },
+  { "repo": "stabilityai/stable-fast-3d", "nome": "Stable Fast 3D", "lab": "Stability AI", "da": "Image", "licenza": "stability", "demo": "stabilityai/stable-fast-3d" },
+  { "repo": "stabilityai/stable-point-aware-3d", "nome": "Stable Point Aware 3D", "lab": "Stability AI", "da": "Image", "licenza": "stability", "demo": "stabilityai/stable-point-aware-3d" },
+  { "repo": "tencent/Hunyuan3D-2.1", "nome": "Hunyuan3D 2.1", "lab": "Tencent", "da": "Image", "licenza": "tencent", "demo": "tencent/Hunyuan3D-2.1" },
+  { "repo": "tencent/Hunyuan3D-2", "nome": "Hunyuan3D 2", "lab": "Tencent", "da": "Image", "licenza": "tencent", "demo": "tencent/Hunyuan3D-2" },
+  { "repo": "tencent/Hunyuan3D-2mini", "nome": "Hunyuan3D 2 mini", "lab": "Tencent", "da": "Image", "licenza": "tencent", "demo": "tencent/Hunyuan3D-2mini-Turbo" },
+  { "repo": "tencent/Hunyuan3D-2mv", "nome": "Hunyuan3D 2 multi-view", "lab": "Tencent", "da": "Several photos", "licenza": "tencent", "demo": "tencent/Hunyuan3D-2mv" },
+  { "repo": "TencentARC/InstantMesh", "nome": "InstantMesh", "lab": "Tencent ARC", "da": "Image", "licenza": "apache", "demo": "TencentARC/InstantMesh" },
+  { "repo": "VAST-AI/TripoSG", "nome": "TripoSG", "lab": "VAST (Tripo)", "da": "Image", "licenza": "mit", "demo": "VAST-AI/TripoSG" },
+  { "repo": "openai/shap-e", "nome": "Shap-E", "lab": "OpenAI", "da": "Text or image", "licenza": "mit", "demo": null }
+ ]
+}
