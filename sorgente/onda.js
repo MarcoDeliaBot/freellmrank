@@ -6,7 +6,7 @@
   var pre = document.querySelector('pre.arte');
   if (!pre || !window.requestAnimationFrame) return;
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var RAMPA = ' .:-~=+*#%@';
+
   var colonne = 0, righe = 0;
   // quante colonne entrano: si misura un carattere con lo stesso stile del disegno
   function misura() {
@@ -31,25 +31,30 @@
     var p = a + (b - a) * tx, q = c + (d - c) * tx;
     return p + (q - p) * ty;
   }
+  // Come seomator.com (studiato il 21/10/2026): onde alte e veloci che corrono di lato, caratteri pesanti sulla
+  // cresta e leggeri sotto, scelti di nuovo a ogni fotogramma (l'acqua "brilla"), spruzzi sopra le creste.
+  var CRESTA = '@#%*&', MEZZO = '*+=~%#', FONDO = ':.-~:.=';
+  function scegli(set) { return set.charAt((Math.random() * set.length) | 0); }
   function disegna(t) {
     var out = [];
+    var sup = [];
+    for (var x = 0; x < colonne; x++) {
+      // somma di tre onde che viaggiano in versi e a velocità diverse + un'ondulazione lenta: la cresta sale
+      // e scende di metà altezza in meno di un secondo, come nel riferimento
+      sup.push(righe * (0.56 + 0.2 * Math.sin(x * 0.105 - t * 2.4) + 0.11 * Math.sin(x * 0.047 + t * 1.6)
+        + 0.07 * Math.sin(x * 0.23 - t * 3.9) + 0.06 * (rumore(x * 0.05 - t * 0.6, 3) - 0.5)));
+    }
     for (var y = 0; y < righe; y++) {
       var r = '';
-      for (var x = 0; x < colonne; x++) {
-        // superficie: tre onde che viaggiano a velocità diverse, più alta ai lati come le colline del disegno fisso
-        var u = x / colonne;
-        var sup = righe * (0.5 + 0.11 * Math.sin(x * 0.075 - t * 1.3) + 0.07 * Math.sin(x * 0.16 + t * 0.9) + 0.05 * Math.sin(x * 0.031 - t * 0.45) - 0.1 * Math.exp(-((u - 0.12) * (u - 0.12)) / 0.02) - 0.12 * Math.exp(-((u - 0.82) * (u - 0.82)) / 0.03));
-        var d;
-        if (y >= sup) {
-          d = 0.26 + 0.55 * Math.min(1, (y - sup) / 7) + (rumore(x * 0.35 - t * 2.2, y * 0.6 + t * 0.3) - 0.5) * 0.5;
-        } else if (y > sup - 1.2) {
-          d = 0.12 + rumore(x * 0.6 - t * 3, y) * 0.22; // schiuma sulla cresta
-        } else {
-          var n = rumore(x * 0.16 - t * 0.7, y * 0.35);
-          d = n > 0.7 && y > 1 ? (n - 0.7) * 2.2 : 0; // spruzzi e nuvole rade
-        }
-        var k = Math.round(d * (RAMPA.length - 1));
-        r += RAMPA.charAt(k < 0 ? 0 : k > RAMPA.length - 1 ? RAMPA.length - 1 : k);
+      for (var x2 = 0; x2 < colonne; x2++) {
+        var d = y - sup[x2];
+        var c = ' ';
+        if (d >= 0) {
+          if (d < 1.6) c = Math.random() < 0.92 ? scegli(CRESTA) : ' ';
+          else if (d < 4) c = Math.random() < 0.85 ? scegli(MEZZO) : ' ';
+          else c = Math.random() < 0.9 - 0.02 * (d - 4) ? scegli(FONDO) : ' ';
+        } else if (d > -3 && Math.random() < 0.09 * (3 + d)) c = scegli(MEZZO); // spruzzi sopra la cresta
+        r += c;
       }
       out.push(r);
     }
@@ -58,7 +63,7 @@
   var visibile = false, ultimo = 0, partenza = performance.now();
   function giro(ora) {
     if (!visibile) return;
-    if (ora - ultimo >= 50) { ultimo = ora; disegna((ora - partenza) / 1000); }
+    if (ora - ultimo >= 60) { ultimo = ora; disegna((ora - partenza) / 1000); }
     requestAnimationFrame(giro);
   }
   misura();
