@@ -60,22 +60,25 @@
     }
     pre.textContent = out.join('\n');
   }
-  var visibile = false, ultimo = 0, partenza = performance.now();
+  // gira solo se il disegno è sullo schermo E la scheda è in primo piano. Le due cose si seguono separate:
+  // prima, tornando sulla scheda (o sbloccando il telefono) l'onda restava ferma finché non si scorreva la pagina
+  var inVista = !('IntersectionObserver' in window), inCorsa = false, ultimo = 0, partenza = performance.now();
   function giro(ora) {
-    if (!visibile) return;
-    if (ora - ultimo >= 60) { ultimo = ora; disegna((ora - partenza) / 1000); }
+    if (!inVista || document.hidden) { inCorsa = false; return; }
+    if (ora - ultimo >= 60) {
+      ultimo = ora;
+      try { disegna((ora - partenza) / 1000); } catch (e) {} // un fotogramma sbagliato non ferma l'onda
+    }
     requestAnimationFrame(giro);
   }
+  function parti() { if (!inCorsa && inVista && !document.hidden) { inCorsa = true; requestAnimationFrame(giro); } }
   misura();
-  var ferma = function () { visibile = false; };
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (voci) {
-      var era = visibile;
-      visibile = voci[0].isIntersecting && !document.hidden;
-      if (visibile && !era) requestAnimationFrame(giro);
-    }).observe(pre);
-  } else { visibile = true; requestAnimationFrame(giro); }
-  document.addEventListener('visibilitychange', function () { if (document.hidden) ferma(); });
+    new IntersectionObserver(function (voci) { inVista = voci[voci.length - 1].isIntersecting; parti(); }).observe(pre);
+  }
+  document.addEventListener('visibilitychange', parti);
+  window.addEventListener('pageshow', parti); // ritorno con il tasto Indietro (pagina tenuta in memoria dal browser)
+  parti();
   var attesa;
   window.addEventListener('resize', function () { clearTimeout(attesa); attesa = setTimeout(misura, 150); });
 })();
