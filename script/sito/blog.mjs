@@ -4,14 +4,32 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { marked } from 'marked';
-import { RADICE, SITO, REPO, esc, fmtData, pagina, NOME_PIENO, URL_SITO } from './comune.mjs';
+import { RADICE, SITO, REPO, esc, fmtData, pagina, NOME_PIENO, URL_SITO, linkAmazon } from './comune.mjs';
+import { cercaAmazon } from './gpus.mjs';
 
 const DIR = path.join(RADICE, 'contenuti', 'blog');
 const DIR_VIDEO = path.join(RADICE, 'contenuti', 'video');
 const TIPO_VIDEO = { nuovo: 'New model', settimana: 'Weekly ranking', gpu: 'GPU of the week', lungo: 'Weekly video report' };
 
 // un post per video: il video (da YouTube quando c'è l'indirizzo, se no l'MP4 della release di GitHub), cosa dice la voce, i dati
-function leggiVideo(hrefPerNome) {
+function leggiVideo(hrefPerNome, dati) {
+  const schede = new Map(dati.schede.schede.map((s) => [s.id, s]));
+  const amazon = (id) => { const s = schede.get(id); const q = s && cercaAmazon(s); return q ? ` · <a class="tag free amazon" data-q="${esc(q)}" href="${esc(linkAmazon(q))}" rel="sponsored nofollow noopener" target="_blank">Amazon ↗</a>` : ''; };
+  const nomeScheda = (s) => `<a href="/gpu/${esc(s.id)}.html">${esc(s.nome)}</a>${/\bGB\b/.test(s.nome) ? '' : ` (${s.gb} GB)`}`;
+  const modello = (n) => (hrefPerNome(n) ? `[${n}](${hrefPerNome(n)})` : n);
+  // l'hardware del video, in parole: memoria a 4 bit, la scheda di casa più piccola che lo regge, i link per comprarla
+  const hardware = (h) => {
+    if (!h) return '';
+    const r = [];
+    for (const s of h.schede || []) if (!(h.modelli || []).some((m) => m.scheda?.id === s.id)) r.push(`- ${nomeScheda(s)}: ${s.tiene ? 'holds it fully in memory' : 'too small to hold it'}${amazon(s.id)}`);
+    for (const m of h.modelli || []) {
+      if (m.vel != null) r.push(`- ${modello(m.nome)}: about ${m.vel} tokens/s${m.gb ? `, about ${m.gb} GB at 4-bit` : ''} (${m.dove === 'gpu' ? 'fully on the GPU' : 'GPU + system RAM'})`);
+      else if (m.gb) r.push(`- ${modello(m.nome)}: about ${m.gb} GB at 4-bit · ${m.scheda ? `smallest home machine that holds it: ${nomeScheda(m.scheda)}${amazon(m.scheda.id)}` : 'no single home machine on our list holds it'}`);
+      else r.push(`- ${modello(m.nome)}: size not published, so we cannot say which card runs it`);
+    }
+    for (const c of h.casa || []) r.push(`- ${nomeScheda(c.scheda)}${c.ram ? ` + ${c.ram} GB RAM` : ''}: ${modello(c.modello)}, about ${c.vel} tokens/s (${c.dove === 'gpu' ? 'fully on the GPU' : 'GPU + system RAM'})${amazon(c.scheda.id)}`);
+    return r.length ? `\n\n## Hardware\n\nMemory at 4-bit with an 8K context, from our simulator. To check your own setup, use the [Run at home simulator](/home.html).\n\n${r.join('\n')}\n\n<small>As an Amazon Associate, ${NOME_PIENO} earns from qualifying purchases; the links do not change the numbers.</small>` : '';
+  };
   if (!fs.existsSync(DIR_VIDEO)) return [];
   return fs.readdirSync(DIR_VIDEO).filter((f) => f.endsWith('.json')).map((f) => {
     const v = JSON.parse(fs.readFileSync(path.join(DIR_VIDEO, f), 'utf8'));
@@ -29,8 +47,8 @@ function leggiVideo(hrefPerNome) {
     const intro = righe[0].replace(/\s*:$/, '.');
     // nel post non servono gli inviti del video («Link in bio», «link in the description»)
     const voce = v.voce.map((p) => p.replace(/\s*(The link is in the description\.|Link in (the )?bio\.)\s*/gi, ' ').trim()).filter(Boolean);
-    const corpo = `${player}\n\n## What the video says\n\n${voce.map((p) => p.replace(/\b(RTX|GTX) (\d\d) (\d\d)\b/g, '$1 $2$3')).join('\n\n')}\n\n## The data\n\n${elenco.join('\n')}\n\nEvery number in this post comes from the ${NOME_PIENO} data on ${fmtData(v.pubblicato)}: Arena votes, Hugging Face sizes and our speed simulator. [Download the video and its subtitles](https://github.com/${REPO}/releases/tag/${v.release}).\n`;
-    return { slug: `video-${v.nome.replace(/[^a-z0-9-]+/gi, '-').toLowerCase()}`, titolo, descr: intro.slice(0, 158), data: v.pubblicato, tema: TIPO_VIDEO[tipo] || 'Video', corpo, tipo: 'Video', copertina: `/video/${v.nome}.jpg`, fileCopertina: path.join(DIR_VIDEO, `${v.nome}.jpg`) };
+    const corpo = `${player}\n\n## What the video says\n\n${voce.map((p) => p.replace(/\b(RTX|GTX) (\d\d) (\d\d)\b/g, '$1 $2$3')).join('\n\n')}\n\n## The data\n\n${elenco.join('\n')}${hardware(v.hardware)}\n\nEvery number in this post comes from the ${NOME_PIENO} data on ${fmtData(v.pubblicato)}: Arena votes, Hugging Face sizes and our speed simulator. [Download the video and its subtitles](https://github.com/${REPO}/releases/tag/${v.release}).\n`;
+    return { slug: `video-${v.nome.replace(/[^a-z0-9-]+/gi, '-').toLowerCase()}`, titolo, descr: intro.slice(0, 158), data: v.pubblicato, tema: TIPO_VIDEO[tipo] || 'Video', corpo, tipo: 'Video', amazon: /class="tag free amazon"/.test(hardware(v.hardware)), copertina: `/video/${v.nome}.jpg`, fileCopertina: path.join(DIR_VIDEO, `${v.nome}.jpg`) };
   });
 }
 const SETTIMANE = 8;
@@ -126,7 +144,7 @@ export function preparaBlog(dati, storia, modelli) {
     nome: (cat) => esc(miglioreGratis(cat)?.nome || ''),
   };
   const guide = leggiGuide().map((g) => ({ ...g, automatico: /\{\{\w+/.test(g.corpo), corpo: riempi(g.corpo, ctx), data: g.data || dati.aggiornato }));
-  return [...guide, ...resoconti(dati, storia, hrefPerNome), ...leggiVideo(hrefPerNome)].sort((a, b) => b.data.localeCompare(a.data));
+  return [...guide, ...resoconti(dati, storia, hrefPerNome), ...leggiVideo(hrefPerNome, dati)].sort((a, b) => b.data.localeCompare(a.data));
 }
 
 // Grafica del disegno Stitch per OGNI articolo (richiesta di Marco, 20/10/2026), applicata all'HTML di marked:
@@ -177,7 +195,7 @@ export function pagineBlog(dati, post) {
   const etichetta = (p) => (p.tipo === 'Guide' ? 'Guide' : p.tipo === 'Video' ? 'Video' : 'Weekly report');
   for (const p of post) {
     pagina({
-      file: `blog/${p.slug}.html`, attiva: '/blog/', dati, blog: post,
+      file: `blog/${p.slug}.html`, attiva: '/blog/', dati, blog: post, script: p.amazon ? 'amazon.js' : undefined,
       jsonld: [
         { '@type': 'BlogPosting', headline: p.titolo, description: p.descr, datePublished: p.data, dateModified: dati.aggiornato, url: `${URL_SITO}/blog/${p.slug}`, author: { '@type': 'Organization', name: NOME_PIENO, url: URL_SITO + '/' }, publisher: { '@type': 'Organization', name: NOME_PIENO, url: URL_SITO + '/' } },
         { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Blog', item: `${URL_SITO}/blog/` }, { '@type': 'ListItem', position: 2, name: p.titolo, item: `${URL_SITO}/blog/${p.slug}` }] },

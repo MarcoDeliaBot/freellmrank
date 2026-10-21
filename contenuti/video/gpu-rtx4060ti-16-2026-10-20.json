@@ -40,5 +40,35 @@
   "Find it all on FreeLLMArena. Link in bio."
  ],
  "release": "video-gpu-rtx4060ti-16-2026-10-20",
- "pubblicato": "2026-10-20"
+ "pubblicato": "2026-10-20",
+ "hardware": {
+  "schede": [
+   {
+    "id": "rtx4060ti-16",
+    "nome": "RTX 4060 Ti 16 GB",
+    "gb": 16,
+    "tiene": true
+   }
+  ],
+  "modelli": [
+   {
+    "nome": "Qwen3.8-27B",
+    "gb": 20,
+    "vel": 10,
+    "dove": "ram"
+   },
+   {
+    "nome": "Gemma 4 26B A4B",
+    "gb": 18,
+    "vel": 59,
+    "dove": "ram"
+   },
+   {
+    "nome": "Qwen3.5-27B",
+    "gb": 20,
+    "vel": 10,
+    "dove": "ram"
+   }
+  ]
+ }
 }

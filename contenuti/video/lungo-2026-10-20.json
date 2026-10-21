@@ -41,5 +41,45 @@
   "Every free model, with sizes and speeds, is on FreeLLMArena, updated every night. The link is in the description. See you next week."
  ],
  "release": "video-lungo-2026-10-20",
- "pubblicato": "2026-10-20"
+ "pubblicato": "2026-10-20",
+ "hardware": {
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "Gemma 4 26B A4B",
+    "vel": 49,
+    "dove": "ram"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Gemma 4 31B",
+    "vel": 36,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Gemma 4 31B",
+    "vel": 19,
+    "dove": "gpu"
+   }
+  ]
+ }
 }

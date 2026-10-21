@@ -41,5 +41,40 @@
   "Find it all on FreeLLMArena. Link in bio."
  ],
  "release": "video-nuovo-deepseek-v4.1-flash-1017",
- "pubblicato": "2026-10-20"
+ "pubblicato": "2026-10-20",
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "DeepSeek-V4.1-Flash-1017",
+    "gb": 465,
+    "scheda": null
+   }
+  ],
+  "schede": [
+   {
+    "id": "rtx4090",
+    "nome": "RTX 4090",
+    "gb": 24,
+    "tiene": false
+   },
+   {
+    "id": "rtx5090",
+    "nome": "RTX 5090",
+    "gb": 32,
+    "tiene": false
+   },
+   {
+    "id": "rtxpro6000",
+    "nome": "RTX PRO 6000 Blackwell",
+    "gb": 96,
+    "tiene": false
+   },
+   {
+    "id": "m3ultra-512",
+    "nome": "Mac Studio M3 Ultra 512 GB",
+    "gb": 512,
+    "tiene": false
+   }
+  ]
+ }
 }

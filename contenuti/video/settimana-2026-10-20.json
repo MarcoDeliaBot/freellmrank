@@ -41,5 +41,39 @@
   "Find it all on FreeLLMArena. Link in bio."
  ],
  "release": "video-settimana-2026-10-20",
- "pubblicato": "2026-10-20"
+ "pubblicato": "2026-10-20",
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "MiMo-V2.6-Pro",
+    "gb": 623,
+    "scheda": null
+   },
+   {
+    "nome": "Kimi K3 (Max)",
+    "gb": 1687,
+    "scheda": null
+   },
+   {
+    "nome": "GLM-5.3 (Max)",
+    "gb": 459,
+    "scheda": null
+   },
+   {
+    "nome": "GLM-5.3-Flash",
+    "gb": 197,
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    }
+   },
+   {
+    "nome": "GLM-5.2 (Max)",
+    "gb": 459,
+    "scheda": null
+   }
+  ]
+ }
 }

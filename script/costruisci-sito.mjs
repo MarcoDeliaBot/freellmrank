@@ -26,7 +26,7 @@ const fileStoria = path.join(SITO, 'history.json');
 const storia = fs.existsSync(fileStoria) ? JSON.parse(fs.readFileSync(fileStoria, 'utf8')) : null;
 
 // pulizia delle cartelle generate
-for (const d of ['model', 'blog']) fs.rmSync(path.join(SITO, d), { recursive: true, force: true });
+for (const d of ['model', 'blog', 'compare', 'video']) fs.rmSync(path.join(SITO, d), { recursive: true, force: true });
 
 const modelli = unisci(dati, storia);
 const coppie = preparaConfronti(modelli); // prima delle pagine dei modelli: le linkano

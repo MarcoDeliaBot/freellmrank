@@ -184,6 +184,7 @@ ${file === 'report.html' ? '' : `<p class="small segnala-link">Spotted a wrong n
 <script src="/consent.js?v=${VER}" defer></script>
 <script src="/tables.js?v=${VER}" defer></script>
 <script src="/menu.js?v=${VER}" defer></script>
+<script src="/onda.js?v=${VER}" defer></script>
 ${script ? `<script type="module" src="/${script}?v=${VER}"></script>` : ''}
 </body>
 </html>

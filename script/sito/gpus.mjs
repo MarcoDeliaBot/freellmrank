@@ -23,7 +23,7 @@ const CERCA = {
   'm4pro-64': 'Mac mini M4 Pro 64GB', 'm4max-128': 'Mac Studio M4 Max 128GB', 'm3ultra-512': 'Mac Studio M3 Ultra',
   'strixhalo-128': 'Ryzen AI Max+ 395 128GB mini PC', dgxspark: 'NVIDIA DGX Spark',
 };
-const cercaAmazon = (s) => (s.marca === 'Data center' ? null : CERCA[s.id] || `${s.nome} ${s.marca === 'Workstation' ? 'workstation GPU' : 'graphics card'}`);
+export const cercaAmazon = (s) => (s.marca === 'Data center' ? null : CERCA[s.id] || `${s.nome} ${s.marca === 'Workstation' ? 'workstation GPU' : 'graphics card'}`);
 
 
 export function paginaGpu(dati, modelli, blog) {

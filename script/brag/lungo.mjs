@@ -147,6 +147,8 @@ const info = {
   tag: ['free AI', 'open source AI', 'AI leaderboard', 'local LLM', 'best AI models'],
   condividi: `Free AI this week: ${top10[0].nome} leads the free models at ${top10[0].punti}, ${distacco} points behind ${pagato.nome}. Full report: https://freellmarena.com`,
   lingua: 'en', formato: { w: 1920, h: 1080 }, fps: 24,
+  // hardware (22/10/2026): i tre computer di casa e il miglior modello che ci gira
+  hardware: { casa: casa.map((x) => ({ scheda: { id: x.s.id, nome: x.s.nome, gb: x.s.gb, tiene: true }, ram: x.ram, modello: x.m.nome, vel: Number(fmtVel(x.r.vel)), dove: x.r.dove })) },
   scene: scene.map((s) => ({ min: s.min, voce: s.voce })),
   titoli: scene.map((s) => s.corpo.match(/class="titolo[^>]*>([^<]+)/)?.[1] || 'Intro'),
 };

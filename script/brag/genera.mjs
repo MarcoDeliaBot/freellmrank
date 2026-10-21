@@ -153,6 +153,15 @@ function videoSettimana(l) {
         corpo: `<p class="grande riga" data-in="0.1">${it ? 'Tutti e cinque' : 'All five'}</p><p class="grande riga verde" data-in="0.4">${it ? 'sono aperti.' : 'are open.'}</p><p class="medio riga" data-in="0.9">${it ? 'Scarica. Usa. Gratis.' : 'Download. Run. Free.'}</p>` }
       : { min: 3.4, voce: it ? 'Puoi provarli tutti gratis, online o sul tuo computer.' : 'You can try all of them for free, online or on your own computer.',
         corpo: `<p class="grande riga" data-in="0.1">${it ? 'Tutti' : 'All of them'}</p><p class="grande riga verde" data-in="0.4">${it ? 'gratis.' : 'free.'}</p>` },
+    (() => {
+      const conCasa = top5.map((m) => ({ m, gb: m.hf ? Math.round(m.hf.b * 0.606 + 1.2 + 1.5) : null })).map((x) => ({ ...x, s: x.gb ? casa.find((s) => usa(s) >= x.gb) : null }));
+      const aCasa = conCasa.filter((x) => x.s);
+      const righe = conCasa.filter((x) => x.gb).slice(0, 4).map((x, i) => `<div class="scheda-v riga" data-in="${0.6 + i * 0.4}"><b>${esc(x.m.nome)}</b><span class="${x.s ? 'si' : 'no'}">${x.s ? '✓' : '✕'}</span><small>${x.gb} GB${it ? ' a 4 bit' : ' at 4-bit'} · ${x.s ? esc(x.s.nome) : (it ? 'nessun computer di casa' : 'no home machine')}</small></div>`).join('');
+      const voce = aCasa.length
+        ? (it ? `A casa? ${aCasa.length === 1 ? 'Solo uno' : `${aCasa.length}`} su cinque entra in un computer di casa: ${voceScheda(aCasa[0].s.nome)}.` : `At home? ${aCasa.length === 1 ? 'Only one of the five fits' : `${aCasa.length} of the five fit`} a single home machine: ${aCasa[0].s.nome.startsWith('Mac') ? 'a' : 'an'} ${voceScheda(aCasa[0].s.nome)}.`)
+        : (it ? 'A casa? Nessuno dei cinque entra in un computer di casa: si usano online, gratis.' : 'At home? None of the five fits a single home machine: you use them online, for free.');
+      return { min: 4.2, voce, corpo: `<p class="medio riga" data-in="0">${it ? 'Girano <span class="verde">a casa</span>?' : 'Do they run <span class="verde">at home</span>?'}</p>${righe}` };
+    })(),
     { min: 3.0, voce: it ? 'Quale gira sulla tua scheda video?' : 'Which one runs on your GPU?',
       corpo: `<p class="medio riga" data-in="0.1">${it ? 'Quale gira sulla <span class="verde">tua GPU</span>?' : 'Which one runs on <span class="verde">your GPU</span>?'}</p><p class="piccolo riga" data-in="0.5">${it ? 'Gratis · aggiornato ogni notte' : 'Free · updated every night'}</p>` },
   ], l);
@@ -279,13 +288,23 @@ const TRADOTTI = {
 };
 const localizzazioni = (tipo) => Object.fromEntries(LOC.map((l) => [l, TRADOTTI[tipo](l)]));
 
+// ---------- hardware (richiesta di Marco, 22/10/2026): per ogni video, che scheda serve, dai dati ----------
+const gbA4 = (m) => (m.hf ? Math.round(m.hf.b * 0.606 + 1.2 + 1.5) : null);
+const primaCheTiene = (gb) => casa.find((s) => usa(s) >= gb) || null;
+const scheda = (s, gb) => ({ id: s.id, nome: s.nome, gb: s.gb, tiene: gb ? usa(s) >= gb : true });
+const HARDWARE = {
+  nuovo: () => ({ modelli: [{ nome: nuovo.nome, gb: gb4, scheda: chiTiene ? scheda(chiTiene, gb4) : null }], schede: mostrate.map((s) => scheda(s, gb4)) }),
+  settimana: () => ({ modelli: top5.map((m) => { const gb = gbA4(m); const s = gb ? primaCheTiene(gb) : null; return { nome: m.nome, gb, scheda: s ? scheda(s, gb) : null }; }) }),
+  gpu: () => ({ schede: [scheda(gpu, null)], modelli: sullaScheda.map((x) => ({ nome: x.m.nome, gb: gbA4(x.m), vel: Number(fmtVel(x.r.vel)), dove: x.r.dove })) }),
+};
+
 const VIDEO = { settimana: videoSettimana, nuovo: videoNuovo, gpu: videoGpu };
 for (const [tipo, fai] of Object.entries(VIDEO)) {
   for (const l of LINGUE_VIDEO) {
     const coda = l === 'en' ? '' : `-${l}`;
     const { html, scene } = fai(l);
     fs.writeFileSync(path.join(OUT, `scena-${tipo}${coda}.html`), html);
-    fs.writeFileSync(path.join(OUT, `info-${tipo}${coda}.json`), JSON.stringify({ ...INFO[tipo](l), lingua: l, ...(l === 'en' ? { localizzazioni: localizzazioni(tipo) } : {}), scene }, null, 1));
+    fs.writeFileSync(path.join(OUT, `info-${tipo}${coda}.json`), JSON.stringify({ ...INFO[tipo](l), lingua: l, ...(l === 'en' ? { localizzazioni: localizzazioni(tipo) } : {}), hardware: HARDWARE[tipo](), scene }, null, 1));
   }
 }
 console.log('ok', { distacco, contaGratis, top5: top5.map((m) => m.nome), pagato: pagato.nome, nuovo: nuovo.nome, gb4, chiTiene: chiTiene?.nome, gpu: gpu.nome, sullaScheda: sullaScheda.map((x) => `${x.m.nome} ${fmtVel(x.r.vel)} ${x.r.dove}`) });
