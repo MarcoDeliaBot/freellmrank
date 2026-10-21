@@ -1,8 +1,8 @@
-// POST /api/scrivi  (Authorization: Bearer <BOZZE_KEY>)  {messaggi: [...], max: 2500}  →  {testo}
+// POST /api/scrivi  (Authorization: Bearer <BOZZE_KEY>)  {messaggi: [...], max: 2500, scopo: 'bozze'|'traduzioni'|'video'}  →  {testo}
 // Solo per le bozze automatiche di GitHub Actions (script/bozze.mjs): articoli del blog e post social da approvare.
 // Usa Workers AI sulla quota gratis del sito, con un tetto giornaliero a parte. Senza BOZZE_KEY risponde 503.
 // Legami del progetto Pages: AI (Workers AI), PROVA (KV per il contatore), BOZZE_KEY (segreto).
-import { neuronsDa, TETTO_SCRIVI } from '../../script/cf-modelli.mjs';
+import { neuronsDa, TETTI_SCRIVI } from '../../script/cf-modelli.mjs';
 
 const MODELLO = { id: '@cf/openai/gpt-oss-120b', pin: 0.35, pout: 0.75 };
 const json = (dati, stato = 200) => new Response(JSON.stringify(dati), { status: stato, headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' } });
@@ -16,8 +16,11 @@ export async function onRequestPost({ request, env }) {
   if (!messaggi.length) return json({ errore: 'No messages.' }, 400);
   const max = Math.min(4000, Math.max(100, Number(corpo?.max) || 2500));
 
+  // ogni uso ha il suo tetto (bozze, traduzioni, video): le traduzioni non tolgono spazio ai copioni
+  const scopo = TETTI_SCRIVI[corpo?.scopo] ? corpo.scopo : 'bozze';
+  const TETTO_SCRIVI = TETTI_SCRIVI[scopo];
   const giorno = new Date().toISOString().slice(0, 10);
-  const chiave = `scrivi-spesa:${giorno}`;
+  const chiave = scopo === 'bozze' ? `scrivi-spesa:${giorno}` : `scrivi-spesa-${scopo}:${giorno}`;
   const spesa = Number(await env.PROVA.get(chiave)) || 0;
   const caratteri = messaggi.reduce((s, m) => s + m.content.length, 0);
   const peggiore = neuronsDa(((caratteri / 3 + 200) * MODELLO.pin + max * MODELLO.pout) / 1e6);

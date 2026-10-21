@@ -21,9 +21,10 @@ export const CF_MODELLI = [
 ];
 
 // Quota gratis Cloudflare: 10.000 neurons al giorno (UTC). Ci fermiamo prima, con margine,
-// e la dividiamo (decisione del 19/10/2026): 2.000 per "Try it now", 5.000 per Free Arena.
-export const TETTO_NEURONS = 2000;
-export const TETTO_ARENA = 5000;
+// e la dividiamo (decisione del 19/10/2026, rivista il 22/10/2026 quando sono arrivati i video lunghi: misurato il consumo
+// vero, «Try it now» ~45 al giorno, audio ~3, Arena 0). Totale dei tetti: 1.500 + 2.500 + 1.000 + 1.500 + 1.500 + 2.000 = 10.000.
+export const TETTO_NEURONS = 1500;
+export const TETTO_ARENA = 2500;
 export const DUELLI_PER_VISITATORE = 10;
 export const SECONDI_MINIMI = 4; // un voto dato prima di leggere le due risposte non conta
 // Free Arena: solo modelli veloci (rispondono in pochi secondi), così il visitatore non aspetta
@@ -46,8 +47,9 @@ export const perNomeArena = (nome) => CF_MODELLI.find((m) => m.arena.includes(St
 // Il browser converte la registrazione in WAV 16 kHz mono, così il server conosce la durata esatta.
 export const AUDIO_STT = { id: '@cf/openai/whisper-large-v3-turbo', neuronsMinuto: 46.63, secondiMax: 30 };
 export const AUDIO_TTS = { id: '@cf/myshell-ai/melotts', neuronsMinuto: 18.63, caratteriMax: 300, lingue: ['en', 'es', 'fr', 'zh', 'ja', 'ko'] };
-export const TETTO_AUDIO = 1000; // 2.000 + 5.000 + 1.000: restano 2.000 di margine sui 10.000 gratis
+export const TETTO_AUDIO = 1000;
 export const AUDIO_PER_VISITATORE = 6;
-// Bozze automatiche (functions/api/scrivi.js, 20/10/2026): articolo del blog una volta a settimana e post social per i video.
-// 2.000 + 5.000 + 1.000 + 1.500 = 9.500 sui 10.000 neurons gratis al giorno.
-export const TETTO_SCRIVI = 1500;
+// Scrittura automatica (functions/api/scrivi.js): un tetto per uso, ognuno col suo contatore.
+// bozze: articolo del blog e post social (20/10/2026); traduzioni: frasi nuove del sito (21/10); video: copioni dei video lunghi (22/10).
+export const TETTI_SCRIVI = { bozze: 1500, traduzioni: 1500, video: 2000 };
+export const TETTO_SCRIVI = TETTI_SCRIVI.bozze;

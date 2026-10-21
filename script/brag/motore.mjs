@@ -47,3 +47,42 @@ function render(t) {
   document.querySelector('.avanza i').style.width = (t / DURATA * 100) + '%';
 }
 `;
+
+// aspetto dei video orizzontali 1920x1080 (video lungo della settimana e video del modello), dal 22/10/2026 in comune
+export const STILE_ORIZZONTALE = `
+:root{--v-verde:#4ccb8b;--serif:"Palatino Linotype","P052","Book Antiqua",Georgia,serif;--sans:"Segoe UI","Noto Sans","DejaVu Sans",sans-serif}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--bg);color:var(--ink)}
+.tela{position:relative;width:1920px;height:1080px;overflow:hidden;font-family:var(--sans)}
+.marchio{position:absolute;left:80px;top:56px;display:flex;align-items:center;gap:16px;font:700 34px/1 var(--sans);z-index:5}
+.marchio b span{color:var(--v-verde)}
+.segno{display:flex;align-items:flex-end;gap:6px;width:56px;height:56px;padding:0 9px 10px;box-sizing:border-box;border-radius:14px;background:#0d7a47}
+.segno i{display:block;width:10px;border-radius:2px;background:#fff}
+.data-sett{position:absolute;right:80px;top:66px;font:600 28px/1 var(--sans);color:var(--muted);z-index:5}
+.avanza{position:absolute;left:80px;right:80px;bottom:40px;height:6px;border-radius:3px;background:var(--line);z-index:5}
+.avanza i{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:var(--v-verde)}
+.scena{position:absolute;inset:0;padding:150px 120px 190px;display:flex;flex-direction:column;justify-content:center;gap:26px;opacity:0}
+.titolo{font:700 72px/1.08 var(--serif);margin:0;letter-spacing:-.015em}
+.grande{font:700 150px/1 var(--serif);margin:0;letter-spacing:-.02em}
+.sotto-titolo{font:400 36px/1.35 var(--sans);color:var(--muted);margin:0}
+.verde{color:var(--v-verde)}
+.riga{will-change:transform,opacity}
+.chip{align-self:flex-start;font:700 28px/1 var(--sans);padding:14px 22px;border-radius:999px;background:color-mix(in srgb,var(--v-verde) 18%,transparent);color:var(--v-verde)}
+.grafico-v{zoom:2.05;margin:0 -4px}
+.grafico-v .vg-riga{pointer-events:none}
+.grafico-v .vg-riga,.grafico-v .vg-asse{grid-template-columns:minmax(9rem,12rem) 1fr!important;gap:.5rem!important}
+.grafico-v .vg-nome{text-align:right!important}
+.griglia{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.griglia.due{grid-template-columns:repeat(2,minmax(0,1fr))}
+.griglia.quattro{grid-template-columns:repeat(4,minmax(0,1fr))}
+.carta{display:grid;gap:8px;padding:24px 28px;border:2px solid var(--line);border-radius:20px;background:var(--surface)}
+.carta small{font:600 24px/1.2 var(--sans);color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.carta b{font:700 36px/1.15 var(--sans);overflow-wrap:anywhere}
+.carta span{font:500 26px/1.3 var(--sans);color:var(--muted)}
+.carta .su{color:var(--v-verde);font-weight:800}
+.carta .giu{color:#ef4444;font-weight:800}
+.url{font:800 84px/1 var(--sans);color:var(--v-verde);letter-spacing:-.02em}
+.sotto{position:absolute;left:160px;right:160px;bottom:74px;min-height:90px;display:flex;align-items:center;justify-content:center;z-index:6}
+.sotto p{margin:0;padding:12px 24px;border-radius:16px;background:rgba(2,6,23,.8);color:#fff;font:700 40px/1.2 var(--sans);text-align:center}
+.sotto p:empty{display:none}
+.sotto b{color:var(--v-verde)}
+`;

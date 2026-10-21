@@ -5,7 +5,7 @@
 # sottotitoli parola per parola, musica fatta qui (numpy) che si abbassa quando parla la voce.
 # Uso: python registra.py foto <video> t1 t2 ...   → solo fotogrammi di controllo in brag-output-<video>/work/
 #      python registra.py video <video>              → brag-output-<video>/brag.mp4, brag.jpg, share-copy.txt
-#      (<video> = nuovo | settimana | gpu | lungo, con -it per l'italiano: nuovo-it, …)
+#      (<video> = nuovo | settimana | gpu | lungo | modello, con -it per l'italiano: nuovo-it, …)
 import os, sys, wave, subprocess, shutil, json, re, urllib.request
 import numpy as np
 from playwright.sync_api import sync_playwright
@@ -168,7 +168,7 @@ def video(nome):
             pg.evaluate(f'render({i / fps})'); pg.screenshot(path=os.path.join(work, f'{i:05d}.png'))
         b.close()
     # copertina: la terza scena (grafico o schede), a testo fermo e senza sottotitolo, anche come fotogramma 0
-    k = min(2, len(inizi) - 1); poster = inizi[k] + min(durate[k] - 0.4, 3.6)
+    k = min(info.get('copertina', 2), len(inizi) - 1); poster = inizi[k] + min(durate[k] - 0.4, 3.6)
     with sync_playwright() as p:
         b, pg = pagina(p, nome)
         pg.evaluate('([inizi, durate, tot]) => { document.querySelectorAll(".scena").forEach((s, i) => { s.dataset.da = inizi[i]; s.dataset.a = inizi[i] + durate[i]; }); DURATA = tot; }', [inizi, durate, durata])

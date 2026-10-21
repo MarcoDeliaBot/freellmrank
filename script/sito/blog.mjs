@@ -9,7 +9,8 @@ import { cercaAmazon } from './gpus.mjs';
 
 const DIR = path.join(RADICE, 'contenuti', 'blog');
 const DIR_VIDEO = path.join(RADICE, 'contenuti', 'video');
-const TIPO_VIDEO = { nuovo: 'New model', settimana: 'Weekly ranking', gpu: 'GPU of the week', lungo: 'Weekly video report' };
+const TIPO_VIDEO = { nuovo: 'New model', settimana: 'Weekly ranking', gpu: 'GPU of the week', lungo: 'Weekly video report', modello: 'Model review' };
+const ORIZZONTALI = ['lungo', 'modello'];
 
 // un post per video: il video (da YouTube quando c'è l'indirizzo, se no l'MP4 della release di GitHub), cosa dice la voce, i dati
 function leggiVideo(hrefPerNome, dati) {
@@ -37,7 +38,7 @@ function leggiVideo(hrefPerNome, dati) {
     const titolo = v.titolo.replace(/\s*#Shorts$/, '');
     const righe = v.descrizione.split('\n').filter(Boolean);
     const mp4 = `https://github.com/${REPO}/releases/download/${v.release}/${v.nome}.mp4`;
-    const verticale = tipo !== 'lungo';
+    const verticale = !ORIZZONTALI.includes(tipo);
     const player = v.youtube
       ? `<div class="video-post${verticale ? ' verticale' : ''}"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.youtube)}" title="${esc(titolo)}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
       : `<div class="video-post${verticale ? ' verticale' : ''}"><video controls preload="none" playsinline poster="/video/${v.nome}.jpg" src="${mp4}"></video></div>`;
@@ -220,7 +221,7 @@ ${abbellisci(marked.parse(p.corpo), p, dati)}
   const video = post.filter((p) => p.tipo === 'Video');
   const capi = [['chat', 'Chat'], ['code', 'Code'], ['vision', 'Vision']].map(([c, n]) => [n, primo(c)]).filter(([, m]) => m);
   const scheda = (p, grande) => `<article class="post-scheda${grande ? ' evidenza' : ''}" data-filtro="${filtro(p)}">
-${p.copertina ? `<a class="post-copertina" href="/blog/${p.slug}.html" tabindex="-1" aria-hidden="true"><img src="${p.copertina}" alt="" loading="lazy" width="320" height="${p.tema === 'Weekly video report' ? 180 : 569}"></a>` : ''}<p class="post-meta">${p.tipo === 'Guide' ? `<span class="post-tipo${grande ? ' pillola' : ''}">Guide</span>` : p.tipo === 'Video' ? '<span class="post-tipo video">Video</span>' : '<span class="post-tipo settimana">Weekly report</span>'}<span>•</span><time datetime="${p.data}">${fmtData(p.data)}</time>${p.tema ? `<span>•</span><span class="tenue">${esc(p.tema)}</span>` : ''}${grande ? `<span>•</span><span class="tenue">${lettura(p)} min read</span><span class="post-destra verde">Featured</span>` : ''}${p.nuovi != null ? `<span class="post-destra conta-nuovi${p.nuovi >= 10 ? ' molti' : ''}">${p.nuovi} new model${p.nuovi === 1 ? '' : 's'}</span>` : ''}</p>
+${p.copertina ? `<a class="post-copertina" href="/blog/${p.slug}.html" tabindex="-1" aria-hidden="true"><img src="${p.copertina}" alt="" loading="lazy" width="320" height="${['Weekly video report', 'Model review'].includes(p.tema) ? 180 : 569}"></a>` : ''}<p class="post-meta">${p.tipo === 'Guide' ? `<span class="post-tipo${grande ? ' pillola' : ''}">Guide</span>` : p.tipo === 'Video' ? '<span class="post-tipo video">Video</span>' : '<span class="post-tipo settimana">Weekly report</span>'}<span>•</span><time datetime="${p.data}">${fmtData(p.data)}</time>${p.tema ? `<span>•</span><span class="tenue">${esc(p.tema)}</span>` : ''}${grande ? `<span>•</span><span class="tenue">${lettura(p)} min read</span><span class="post-destra verde">Featured</span>` : ''}${p.nuovi != null ? `<span class="post-destra conta-nuovi${p.nuovi >= 10 ? ' molti' : ''}">${p.nuovi} new model${p.nuovi === 1 ? '' : 's'}</span>` : ''}</p>
 <h2><a href="/blog/${p.slug}.html">${esc(p.titolo)}</a></h2>
 <p class="post-descr">${esc(p.descr)}</p>
 ${grande && capi.length ? `<p class="post-capi"><span class="tenue">Arena #1 free:</span>${capi.map(([n, m]) => `<span>${n}: <b>${esc(m.nome)}</b></span>`).join('')}</p>` : ''}</article>`;

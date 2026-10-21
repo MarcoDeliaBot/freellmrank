@@ -4,7 +4,8 @@
 // (script/sito/blog.mjs) ne fa la pagina. Prima controlla i fatti: ogni numero detto dalla voce o scritto nella
 // descrizione deve comparire nelle scene del video, che sono costruite dai dati del sito. Se un numero non torna,
 // il post NON si scrive e lo script esce con errore (il video resta su GitHub).
-// Uso: node script/video-post.mjs <info.json> <copertina.jpg> <scena.html> [release]
+// Uso: node script/video-post.mjs <info.json> <copertina.jpg> <scena.html> [release] [fonti.txt]
+// (fonti.txt: per il video del modello, la scheda di Hugging Face e i dati usati per il copione: anche loro valgono come fonte)
 import fs from 'node:fs';
 import path from 'node:path';
 import { RADICE } from './sito/comune.mjs';
@@ -20,7 +21,7 @@ export function numeriSenzaFonte(testo, fonti) {
 }
 
 if (process.argv[1] && import.meta.url.endsWith(path.basename(process.argv[1]))) {
-  const [fileInfo, copertina, scena, release] = process.argv.slice(2);
+  const [fileInfo, copertina, scena, release, fileFonti] = process.argv.slice(2);
   const info = JSON.parse(fs.readFileSync(fileInfo, 'utf8'));
   const html = fs.readFileSync(scena, 'utf8');
   // le scene: il testo visibile (senza stile e codice) più i contatori animati, che nel file partono da 0 (data-conta)
@@ -31,7 +32,7 @@ if (process.argv[1] && import.meta.url.endsWith(path.basename(process.argv[1])))
   const descrizione = info.descrizione.replace(/^\s*\d+\.\s/gm, '');
   // le date si scrivono in parole nella voce («20 October 2026»): valgono come fonte anche la data dei dati e i nomi dei modelli
   const dati = JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', 'data.json'), 'utf8'));
-  const fonti = [visibile, contatori, info.nome, JSON.stringify(dati.aggiornato), info.titolo];
+  const fonti = [visibile, contatori, info.nome, JSON.stringify(dati.aggiornato), info.titolo, fileFonti && fs.existsSync(fileFonti) ? fs.readFileSync(fileFonti, 'utf8') : ''];
   const senza = numeriSenzaFonte(`${voce}\n${descrizione}`, fonti);
   if (senza.length) {
     console.error(`Controllo dei fatti NON superato per ${info.nome}: numeri senza fonte nelle scene: ${senza.join(', ')}`);

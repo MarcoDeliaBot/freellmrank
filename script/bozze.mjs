@@ -26,12 +26,12 @@ export const REGOLE_SCRITTURA = `Writing rules (strict):
 - Describe apps and tools only with the text given in DATA. Do not add features, integrations, commands, ports, settings or install steps that are not in DATA.
 - Do not claim how many models the site ranks unless that exact number is in DATA.`;
 
-export async function chiediModello(messaggi, { json = false, max = 2500 } = {}) {
+export async function chiediModello(messaggi, { json = false, max = 2500, scopo = 'bozze' } = {}) {
   // GitHub Models è stato chiuso il 30/7/2026: si scrive con Workers AI attraverso la funzione protetta del sito
   const r = await fetch(`${process.env.SCRIVI_URL || 'https://freellmarena.com'}/api/scrivi`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${process.env.BOZZE_KEY || ''}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ messaggi: json ? [...messaggi, { role: 'user', content: 'Reply with only the JSON object, no other text.' }] : messaggi, max }),
+    body: JSON.stringify({ messaggi: json ? [...messaggi, { role: 'user', content: 'Reply with only the JSON object, no other text.' }] : messaggi, max, scopo }),
   });
   const d = await r.json().catch(() => ({}));
   if (!r.ok) throw new Error(`/api/scrivi ${r.status}: ${d.errore || ''}`);

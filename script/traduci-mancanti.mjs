@@ -42,7 +42,7 @@ fuori: for (let giro = 0; code.some((c) => c.pacchi[giro]); giro++) {
     if (richieste-- <= 0) break fuori;
     let r;
     try {
-      r = await chiediModello([{ role: 'system', content: REGOLE(nome) }, { role: 'user', content: JSON.stringify(Object.fromEntries(pacco.map((k, j) => [j, k]))) }], { json: true, max: 4000 });
+      r = await chiediModello([{ role: 'system', content: REGOLE(nome) }, { role: 'user', content: JSON.stringify(Object.fromEntries(pacco.map((k, j) => [j, k]))) }], { json: true, max: 4000, scopo: 'traduzioni' });
     } catch (e) {
       console.log(`${l}: ${e.message}`);
       if (/429|budget/i.test(e.message)) break fuori;
