@@ -387,13 +387,15 @@ pagina({
   titolo: `Privacy and Cookies · ${NOME_PIENO}`, descr: `What data ${NOME_PIENO} collects, why, and how to change your choice.`,
   corpo: `<article class="articolo">
 <h1>Privacy and cookies</h1>
-<p class="lead">Short version: we count visits with Google Analytics only if you say yes. We do not show ads, we do not sell data, and we never see what you type into the comparison page.</p>
+<p class="lead">Short version: we count visits with Cloudflare Web Analytics, which uses no cookies, and with Google Analytics only if you say yes. We do not show ads, we do not sell data, and we never see what you type into the comparison page.</p>
 <h2>Who is responsible</h2>
 <p>${esc(NOME_PIENO)} (${esc(URL_SITO.replace('https://', ''))}).${CONTATTO_PRIVACY ? ` Contact: <a href="mailto:${esc(CONTATTO_PRIVACY)}">${esc(CONTATTO_PRIVACY)}</a>.` : ''}</p>
 <h2>Google Analytics (only with your consent)</h2>
 <p>If you click “Accept”, Google Analytics 4 sets cookies (names starting with <code>_ga</code>, kept up to 2 years) to count visits and see which pages are used. Google Ireland Ltd processes this data; it may be transferred to the United States under the EU–US Data Privacy Framework. Legal basis: your consent (GDPR art. 6.1.a). If you click “Reject” or do nothing, Analytics sets no cookies. You can change your choice at any time with “Cookie settings” at the bottom of every page; rejecting also deletes the Analytics cookies already set.</p>
 <h2>Hosting</h2>
 <p>The site is served by Cloudflare. Like any web server, it processes your IP address to deliver pages and stop attacks. This is needed to run the site (legitimate interest, art. 6.1.f) and uses no tracking cookies.</p>
+<h2>Cloudflare Web Analytics (no cookies)</h2>
+<p>We count visits with Cloudflare Web Analytics. It uses no cookies and no local storage, and it does not identify you by your IP address. It records which page you open, the site you came from, your country and your browser type, and shows them to us only as totals. Cloudflare, Inc. processes this data; it may be transferred to the United States under the EU–US Data Privacy Framework. Legal basis: our legitimate interest in knowing how many people use the site (art. 6.1.f).</p>
 <h2>Try &amp; compare</h2>
 <p>If you connect an OpenRouter account, your prompts go from your browser directly to OpenRouter, under OpenRouter’s own privacy policy and your account. They never pass through our servers. Your OpenRouter key and your votes are stored only in your browser (local storage) and you can delete them by disconnecting or clearing site data.</p>
 <h2>“Try it now” on model pages</h2>
