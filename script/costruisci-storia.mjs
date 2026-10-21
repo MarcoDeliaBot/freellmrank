@@ -35,8 +35,13 @@ for (const [id, config] of Object.entries(CATEGORIE)) {
   const recenti = date.filter((d) => d >= soglia);
   const indice = new Map(recenti.map((d, i) => [d, i]));
   const primo = {}, serie = {}, pagato = recenti.map(() => null);
+  // dal 20/10/2026 Arena scrive i nomi in un altro modo ("mimo-v2.6-pro" -> "MiMo-V2.6-Pro"):
+  // le righe vecchie e nuove dello stesso modello vanno sotto il nome dell'ultima data
+  const chiave = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g, '');
+  const nomeAttuale = new Map();
+  for (const x of ov) { const k = chiave(x.model_name), p = nomeAttuale.get(k); if (!p || x.leaderboard_publish_date >= p.d) nomeAttuale.set(k, { n: x.model_name, d: x.leaderboard_publish_date }); }
   for (const x of ov) {
-    const d = x.leaderboard_publish_date, n = x.model_name;
+    const d = x.leaderboard_publish_date, n = nomeAttuale.get(chiave(x.model_name)).n;
     if (!primo[n] || d < primo[n]) primo[n] = d;
     const i = indice.get(d);
     if (i === undefined) continue;
