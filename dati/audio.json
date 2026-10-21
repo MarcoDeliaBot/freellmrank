@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-10-20",
+ "aggiornato": "2026-10-21",
  "fonti": {
   "asr": {
    "nome": "Open ASR Leaderboard (Hugging Face)",
@@ -474,17 +474,17 @@
    "space": "hexgrad/kokoro",
    "punteggio": 1211,
    "ic": 4,
-   "voti": 34186,
+   "voti": 34187,
    "vinte": 23905,
-   "ultimo": "2026-10-20"
+   "ultimo": "2026-10-21"
   },
   {
    "space": "MohamedRashad/Orpheus-TTS",
    "punteggio": 1198,
    "ic": 5,
-   "voti": 18667,
-   "vinte": 11949,
-   "ultimo": "2026-10-20"
+   "voti": 18668,
+   "vinte": 11950,
+   "ultimo": "2026-10-21"
   },
   {
    "space": "Qwen/Qwen3-TTS-Voice-Design",
@@ -530,9 +530,9 @@
    "space": "OpenMOSS-Team/MOSS-TTS",
    "punteggio": 1100,
    "ic": 17,
-   "voti": 1637,
-   "vinte": 786,
-   "ultimo": "2026-10-20"
+   "voti": 1638,
+   "vinte": 787,
+   "ultimo": "2026-10-21"
   },
   {
    "space": "ResembleAI/Chatterbox",
@@ -586,9 +586,9 @@
    "space": "ResembleAI/chatterbox-turbo-demo",
    "punteggio": 1051,
    "ic": 7,
-   "voti": 9917,
+   "voti": 9918,
    "vinte": 3694,
-   "ultimo": "2026-10-20"
+   "ultimo": "2026-10-21"
   },
   {
    "space": "sesame/csm-1b",
@@ -835,7 +835,7 @@
   {
    "nome": "Tontaube V1 (pre-filter-fix)",
    "repo": null,
-   "elo": 1608,
+   "elo": 1609,
    "ic": 205,
    "voti": 4,
    "attivo": true
@@ -843,58 +843,58 @@
   {
    "nome": "Chatterbox",
    "repo": "ResembleAI/chatterbox",
-   "elo": 1476,
-   "ic": 20,
-   "voti": 1784,
+   "elo": 1477,
+   "ic": 22,
+   "voti": 1786,
    "attivo": true
   },
   {
    "nome": "Kokoro v1.0",
    "repo": "hexgrad/Kokoro-82M",
-   "elo": 1473,
-   "ic": 23,
+   "elo": 1474,
+   "ic": 28,
    "voti": 1033,
    "attivo": false
   },
   {
    "nome": "CosyVoice 2.0",
    "repo": null,
-   "elo": 1443,
-   "ic": 83,
+   "elo": 1445,
+   "ic": 86,
    "voti": 58,
    "attivo": false
   },
   {
    "nome": "Maya 1",
    "repo": "maya-research/maya1",
-   "elo": 1406,
-   "ic": 36,
+   "elo": 1408,
+   "ic": 37,
    "voti": 467,
    "attivo": false
   },
   {
    "nome": "Tontaube V1",
    "repo": null,
-   "elo": 1392,
-   "ic": 99,
-   "voti": 51,
-   "attivo": true
-  },
-  {
-   "nome": "Fluxions Vui",
-   "repo": null,
-   "elo": 1364,
-   "ic": 92,
-   "voti": 69,
+   "elo": 1383,
+   "ic": 96,
+   "voti": 56,
    "attivo": true
   },
   {
    "nome": "Veena",
    "repo": "maya-research/Veena",
-   "elo": 1360,
+   "elo": 1361,
    "ic": 34,
    "voti": 510,
    "attivo": false
+  },
+  {
+   "nome": "Fluxions Vui",
+   "repo": null,
+   "elo": 1344,
+   "ic": 90,
+   "voti": 75,
+   "attivo": true
   }
  ]
 }

@@ -538,5 +538,45 @@
   "repo": "Qwen/Qwen2.5-VL-32B-Instruct",
   "parametri": 33452718336,
   "fonte": "hf-auto"
+ },
+ "DeepSeek-V4-Flash": {
+  "repo": "deepseek-ai/DeepSeek-V4-Flash",
+  "parametri": 290944616402,
+  "fonte": "hf-auto"
+ },
+ "GLM-4.5": {
+  "repo": "zai-org/GLM-4.5",
+  "parametri": 358337791296,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V3.2-Exp (Thinking)": {
+  "repo": "deepseek-ai/DeepSeek-V3.2-Exp",
+  "parametri": 685396921376,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V3.2": {
+  "repo": "deepseek-ai/DeepSeek-V3.2",
+  "parametri": 685355329792,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V3.2-Exp": {
+  "repo": "deepseek-ai/DeepSeek-V3.2-Exp",
+  "parametri": 685396921376,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V3.1": {
+  "repo": "deepseek-ai/DeepSeek-V3.1",
+  "parametri": 684531386000,
+  "fonte": "hf-auto"
+ },
+ "Qwen-Image-2.1": {
+  "repo": "Qwen/Qwen-Image-2.1",
+  "parametri": 7115124736,
+  "fonte": "hf-auto"
+ },
+ "Qwen-Image-Edit": {
+  "repo": "Qwen/Qwen-Image-Edit",
+  "parametri": 20430401088,
+  "fonte": "hf-auto"
  }
 }
