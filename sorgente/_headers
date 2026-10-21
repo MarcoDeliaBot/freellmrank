@@ -14,3 +14,8 @@
   Cache-Control: public, max-age=31536000, immutable
 /cat/*
   X-Robots-Tag: noindex
+# sempre chiamati con ?v=<build>: il browser li tiene e non richiede più al server se sono cambiati
+/sito.js
+  Cache-Control: public, max-age=31536000, immutable
+/style.css
+  Cache-Control: public, max-age=31536000, immutable

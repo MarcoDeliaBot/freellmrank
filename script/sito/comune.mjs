@@ -198,12 +198,7 @@ ${file === 'report.html' ? '' : `<p class="small segnala-link">Spotted a wrong n
   <p>We use Google Analytics to count visits, only if you agree. No ads, no tracking for advertising. <a href="/privacy.html">Details</a></p>
   <div class="row"><button type="button" class="btn" id="consenso-no">Reject</button><button type="button" class="btn" id="consenso-si">Accept</button></div>
 </div>
-<script src="/consent.js?v=${VER}" defer></script>
-<script src="/tables.js?v=${VER}" defer></script>
-<script src="/menu.js?v=${VER}" defer></script>
-<script src="/onda.js?v=${VER}" defer></script>
-<script src="/tema.js?v=${VER}" defer></script>
-<script src="/cerca.js?v=${VER}" defer></script>
+<script src="/sito.js?v=${VER}" defer></script>
 ${script ? `<script type="module" src="/${script}?v=${VER}"></script>` : ''}
 </body>
 </html>

@@ -465,6 +465,11 @@ for (const f of fs.readdirSync(SORGENTE)) {
   const testo = fs.readFileSync(path.join(SORGENTE, f), 'utf8');
   fs.writeFileSync(path.join(SITO, f), /\.m?js$/.test(f) ? testo.replace(/from '\.\/([\w-]+\.mjs)'/g, (_, nome) => `from './${nome}?v=${VER}'`) : f === 'style.css' ? temaManuale(testo) : testo);
 }
+// Velocità (21/10/2026: dall'Italia, con Iliad, il dominio passa da Zurigo e ogni richiesta costa secondi):
+// gli script di ogni pagina in un solo file, nello stesso ordine; un errore in uno non ferma gli altri.
+// I file singoli restano copiati per le pagine tradotte ancora vecchie.
+const COMUNI = ['consent', 'tables', 'menu', 'onda', 'tema', 'cerca'];
+fs.writeFileSync(path.join(SITO, 'sito.js'), COMUNI.map((n) => `// ${n}.js\ntry {\n${fs.readFileSync(path.join(SORGENTE, n + '.js'), 'utf8')}\n} catch (e) { console.error('${n}.js', e); }\n`).join('\n'));
 
 // indice per la ricerca nel sito (sorgente/cerca.js lo scarica alla prima ricerca)
 fs.writeFileSync(path.join(SITO, 'cerca.json'), JSON.stringify(indiceRicerca()));
@@ -476,4 +481,12 @@ fs.writeFileSync(path.join(SITO, 'sitemap.xml'), `<?xml version="1.0" encoding="
 ${indirizzi.map((u) => `<url><loc>${u}</loc><lastmod>${dati.aggiornato}</lastmod></url>`).join('\n')}
 </urlset>
 `);
+// _routes.json: con functions/_middleware.js ogni richiesta (anche un'icona) passava da una Function, più lenta e
+// contata nelle 100.000 gratis al giorno. Le Functions restano per le pagine (rimando da www e pages.dev) e /api/;
+// i file statici della radice e le cartelle di soli file statici le saltano (massimo 100 regole).
+const statici = fs.readdirSync(SITO, { withFileTypes: true })
+  .filter((d) => d.isFile() && !d.name.startsWith('_') && !d.name.endsWith('.html')).map((d) => '/' + d.name);
+const esclusi = ['/cat/*', '/widget/*', ...statici];
+if (esclusi.length > 99) throw new Error(`_routes.json: ${esclusi.length} regole, il massimo è 100`);
+fs.writeFileSync(path.join(SITO, '_routes.json'), JSON.stringify({ version: 1, include: ['/*'], exclude: esclusi }, null, 1));
 console.log(`pagine: ${pagineScritte().length} (modelli ${modelli.length}, articoli ${blog.length})`);
