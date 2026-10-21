@@ -51,20 +51,25 @@ async function scaricaOpenRouter() {
 }
 
 // "Kimi K3 (Max)" -> "kimik3" ; "moonshotai/kimi-k3:free" -> "kimik3"
+// "NVIDIA-Nemotron-3-Ultra-550B-A55B (NVFP4)" -> "nemotron3ultra550ba55b" (Arena scrive la confezione, OpenRouter no)
 const norma = (s) => String(s).toLowerCase()
   .replace(/^[^/]+\//, '')
   .replace(/:free$/, '')
-  .replace(/\((max|high|xhigh|low|medium|thinking)\)/g, '')
+  .replace(/\((max|high|xhigh|low|medium|thinking|nvfp4|bf16|fp8)\)/g, '')
+  .replace(/-(nvfp4|bf16|fp8)$/g, '')
+  .replace(/^nvidia-/, '')
   .replace(/-(max|high|xhigh|instruct|it|preview)$/g, '')
   .replace(/[^a-z0-9.]/g, '')
   .replace(/\./g, '');
+// "Nemotron-3.5-Super-VL-120B-A12B" su OpenRouter è "nemotron-3.5-super-vl": seconda prova senza la taglia MoE
+const senzaTaglia = (s) => String(s).replace(/-\d+(\.\d+)?b-a\d+(\.\d+)?b/i, '');
 
 const libero = (m) => Number(m.pricing?.prompt) === 0 && Number(m.pricing?.completion) === 0;
 
 const orModelli = await scaricaOpenRouter();
 const indiceOR = new Map();
 for (const m of orModelli) {
-  for (const k of [norma(m.id), norma(m.name)]) {
+  for (const k of [norma(m.id), norma(m.name), ...(m.hugging_face_id ? [norma(m.hugging_face_id)] : [])]) {
     const prima = indiceOR.get(k);
     // a parità di nome tiene la variante gratuita
     if (!prima || (libero(m) && !libero(prima))) indiceOR.set(k, m);
@@ -93,7 +98,7 @@ for (const c of CATEGORIE) {
   const righe = (await scaricaArena(c.arena)).filter((r) => r.category === 'overall')
     .sort((a, b) => Number(a.rank) - Number(b.rank));
   const modelli = righe.map((r) => {
-    const or = indiceOR.get(norma(r.model_name));
+    const or = indiceOR.get(norma(r.model_name)) || indiceOR.get(norma(senzaTaglia(r.model_name)));
     const aperto = r.license !== 'Proprietary';
     if (aperto && !or && Number(r.rank) <= 80) nonCollegati.push(`${c.arena}: ${r.model_name}`);
     return {

@@ -578,5 +578,180 @@
   "repo": "Qwen/Qwen-Image-Edit",
   "parametri": 20430401088,
   "fonte": "hf-auto"
+ },
+ "NVIDIA-Nemotron-3-Ultra-550B-A55B (NVFP4)": {
+  "repo": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+  "parametri": 560524578816,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V3.1-Terminus (Thinking)": {
+  "repo": "deepseek-ai/DeepSeek-V3.1-Terminus",
+  "parametri": 684531386000,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V3.1-Terminus": {
+  "repo": "deepseek-ai/DeepSeek-V3.1-Terminus",
+  "parametri": 684531386000,
+  "fonte": "hf-auto"
+ },
+ "Qwen3-Next-80B-A3B-Instruct": {
+  "repo": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+  "parametri": 81324862720,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V3.1 (Thinking)": {
+  "repo": "deepseek-ai/DeepSeek-V3.1",
+  "parametri": 684531386000,
+  "fonte": "hf-auto"
+ },
+ "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)": {
+  "repo": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+  "parametri": 124453395976,
+  "fonte": "hf-auto"
+ },
+ "Step-3.5-Flash": {
+  "repo": "stepfun-ai/Step-3.5-Flash",
+  "parametri": 199384301376,
+  "fonte": "hf-auto"
+ },
+ "MiMo-V2-Flash (Thinking)": {
+  "repo": "XiaomiMiMo/MiMo-V2-Flash",
+  "parametri": 309766601088,
+  "fonte": "hf-auto"
+ },
+ "Qwen3.5-35B-A3B": {
+  "repo": "Qwen/Qwen3.5-35B-A3B",
+  "parametri": 35951822704,
+  "fonte": "hf-auto"
+ },
+ "GLM-4.5-Air": {
+  "repo": "zai-org/GLM-4.5-Air",
+  "parametri": 110468824832,
+  "fonte": "hf-auto"
+ },
+ "NVIDIA-Nemotron-3-Super-120B-A12B": {
+  "repo": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
+  "parametri": 123611012096,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-R1": {
+  "repo": "deepseek-ai/DeepSeek-R1",
+  "parametri": 684489845504,
+  "fonte": "hf-auto"
+ },
+ "Qwen3-Next-80B-A3B-Thinking": {
+  "repo": "Qwen/Qwen3-Next-80B-A3B-Thinking",
+  "parametri": 81324862720,
+  "fonte": "hf-auto"
+ },
+ "Qwen3-235B-A22B": {
+  "repo": "Qwen/Qwen3-235B-A22B",
+  "parametri": 235093634560,
+  "fonte": "hf-auto"
+ },
+ "gpt-oss-120b": {
+  "repo": "openai/gpt-oss-120b",
+  "parametri": 116829156672,
+  "fonte": "hf-auto"
+ },
+ "Granite 4.2 30B": {
+  "repo": "ibm-granite/granite-4.2-30b",
+  "parametri": 29276770304,
+  "fonte": "hf-auto"
+ },
+ "Qwen3-Coder-480B-A35B-Instruct": {
+  "repo": "Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8",
+  "parametri": 480154875392,
+  "fonte": "hf-auto"
+ },
+ "GLM-4.7-Flash": {
+  "repo": "zai-org/GLM-4.7-Flash",
+  "parametri": 31221488576,
+  "fonte": "hf-auto"
+ },
+ "Qwen3-32B": {
+  "repo": "Qwen/Qwen3-32B",
+  "parametri": 32762123264,
+  "fonte": "hf-auto"
+ },
+ "MiniMax-M2": {
+  "repo": "MiniMaxAI/MiniMax-M2",
+  "parametri": 228689764864,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V3": {
+  "repo": "deepseek-ai/DeepSeek-V3",
+  "parametri": 684489845504,
+  "fonte": "hf-auto"
+ },
+ "QwQ-32B": {
+  "repo": "Qwen/QwQ-32B",
+  "parametri": 32763876352,
+  "fonte": "hf-auto"
+ },
+ "Granite 4.2 8B": {
+  "repo": "ibm-granite/granite-4.2-8b",
+  "parametri": 8791592960,
+  "fonte": "hf-auto"
+ },
+ "Qwen3-30B-A3B": {
+  "repo": "Qwen/Qwen3-30B-A3B",
+  "parametri": 30532122624,
+  "fonte": "hf-auto"
+ },
+ "Granite 4.2 3B": {
+  "repo": "ibm-granite/granite-4.2-3b",
+  "parametri": 3659737600,
+  "fonte": "hf-auto"
+ },
+ "Granite 4.1 8B": {
+  "repo": "ibm-granite/granite-4.1-8b",
+  "parametri": 8791592960,
+  "fonte": "hf-auto"
+ },
+ "gpt-oss-20b": {
+  "repo": "openai/gpt-oss-20b",
+  "parametri": 20914757184,
+  "fonte": "hf-auto"
+ },
+ "DeepSeek-V2.5": {
+  "repo": "deepseek-ai/DeepSeek-V2.5",
+  "parametri": 235741434880,
+  "fonte": "hf-auto"
+ },
+ "Qwen2.5-VL-72B-Instruct": {
+  "repo": "Qwen/Qwen2.5-VL-72B-Instruct",
+  "parametri": 73410777344,
+  "fonte": "hf-auto"
+ },
+ "Qwen2-VL-72B": {
+  "repo": "Qwen/Qwen2-VL-72B-Instruct",
+  "parametri": 73405560320,
+  "fonte": "hf-auto"
+ },
+ "Aya Vision 32B": {
+  "repo": "CohereLabs/aya-vision-32b",
+  "parametri": 33137896688,
+  "fonte": "hf-auto"
+ },
+ "Qwen2-VL-7B-Instruct": {
+  "repo": "Qwen/Qwen2-VL-7B-Instruct",
+  "parametri": 8291375616,
+  "fonte": "hf-auto"
+ },
+ "CogVLM2 Llama3 Chat 19B": {
+  "repo": "zai-org/cogvlm2-llama3-chat-19B",
+  "parametri": 19503107328,
+  "fonte": "hf-auto"
+ },
+ "NVIDIA-Nemotron-3-Nano-30B-A3B (BF16)": {
+  "repo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+  "parametri": 31577937344,
+  "fonte": "hf-auto"
+ },
+ "NVIDIA-Nemotron-3.5-Lightning-30B-A3B (NVFP4)": {
+  "repo": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+  "parametri": 31577937344,
+  "fonte": "hf-auto"
  }
 }

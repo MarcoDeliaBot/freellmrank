@@ -21,7 +21,7 @@ const AUTORI = {
   hidream: ['HiDream-ai'], krea: ['krea'], genmo: ['genmo'], cohere: ['CohereLabs'], '': ['Lightricks'],
 };
 
-const pulisci = (n) => n.replace(/\((max|high|xhigh|low|thinking|instant)[^)]*\)/gi, '')
+const pulisci = (n) => n.replace(/\((max|high|xhigh|low|thinking|instant|nvfp4|bf16|fp8)[^)]*\)/gi, '')
   .replace(/-(max|high|xhigh)$/i, '').replace(/preview/i, '').trim();
 
 // nome repository senza autore e senza suffissi di confezione
@@ -37,7 +37,8 @@ async function cerca(autore, testo) {
 }
 
 const nomi = new Map();
-for (const c of dati.categorie) for (const m of c.modelli) if (m.aperto && m.pos <= 120) nomi.set(m.nome, m.org);
+// le prime 120 della classifica GRATIS (non di quella generale): il sito mostra quella
+for (const c of dati.categorie) for (const m of c.modelli.filter((x) => x.aperto).slice(0, 120)) nomi.set(m.nome, m.org);
 
 const out = { ...vecchi };
 let nuovi = 0;
@@ -47,7 +48,9 @@ for (const [nome, org] of nomi) {
   let trovato = null;
   for (const a of AUTORI[org] || []) {
     const ris = await cerca(a, testo);
-    const giusto = ris.find((m) => base(m.id) === base(testo));
+    // i pesi a 4 bit (NVFP4) mettono due parametri in un byte: safetensors ne conta la metà
+    const uguali = ris.filter((m) => base(m.id) === base(testo));
+    const giusto = uguali.find((m) => !/nvfp4/i.test(m.id));
     if (giusto) { trovato = giusto; break; }
   }
   if (trovato) {
