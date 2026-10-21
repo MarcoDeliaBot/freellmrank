@@ -18,6 +18,19 @@
       aggiorna();
     });
   });
+  // nome nella testata del menu: se il carattere del sistema è più largo di Inter e il nome non entra accanto alle icone,
+  // si rimpicciolisce un po' alla volta finché entra intero (mai sotto i 12 px)
+  var logo = document.querySelector('.lato-testa .logo-lato');
+  var adatta = function () {
+    if (!logo || html.classList.contains('menu-chiuso') || !logo.clientWidth) return;
+    logo.style.fontSize = '';
+    var px = parseFloat(getComputedStyle(logo).fontSize);
+    while (logo.scrollWidth > logo.clientWidth + 1 && px > 12) { px -= 0.5; logo.style.fontSize = px + 'px'; }
+  };
+  adatta();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(adatta);
+  window.addEventListener('resize', adatta);
+  document.querySelectorAll('.lato-chiudi').forEach(function (b) { b.addEventListener('click', function () { setTimeout(adatta, 250); }); });
   document.addEventListener('click', function (e) {
     document.querySelectorAll('details.bandiere[open]').forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute('open'); });
   });

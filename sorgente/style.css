@@ -989,3 +989,14 @@ dialog.cerca::backdrop{background:rgba(2,6,23,.55)}
 .pc-prodotti li{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .75rem;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
 .pc-prodotti b{flex:1 1 12rem}
 .pc-prodotti .tag{margin:0}
+/* testata del menu (22/10/2026, foto di Marco): il nome non deve mai finire sotto le icone, qualunque sia il carattere del sistema.
+   Le icone tengono la loro larghezza, il logo si stringe nello spazio che resta. */
+@media (min-width:64.0625rem){
+  .lato-testa{gap:.35rem}
+  .lato-testa .logo-lato{flex:1 1 auto;min-width:0;overflow:hidden;white-space:nowrap;margin:0 0 0 .15rem}
+  .lato-testa .logo-lato img{width:22px;height:22px;margin-right:.4rem}
+  .lato-icone{flex:none;gap:0}
+  .lato-icone .icona-btn{width:2rem;height:2rem}
+  .lato-icone .icona-btn .icona{width:1.2rem;height:1.2rem}
+  html.menu-chiuso .lato-testa .logo-lato{flex:none;overflow:visible;margin:0}
+}

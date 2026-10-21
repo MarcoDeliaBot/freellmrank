@@ -33,7 +33,7 @@ jobs:
         continue-on-error: true
         env:
           BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
-        run: node script/costruisci-sito.mjs > /dev/null && node script/traduci.mjs && node script/traduci-mancanti.mjs --max 10
+        run: node script/costruisci-sito.mjs > /dev/null && node script/traduci.mjs && node script/traduci-mancanti.mjs --max 16
       - name: Commit se i dati sono cambiati
         id: commit
         run: |
