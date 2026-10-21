@@ -35,7 +35,7 @@
     return tot - x.t.length / 200;
   }
   // tipo del risultato nella lingua della pagina
-  var TIPI = { it: { Model: 'Modello', GPU: 'GPU', Comparison: 'Confronto', Blog: 'Blog', Video: 'Video', Page: 'Pagina' }, es: { Model: 'Modelo', GPU: 'GPU', Comparison: 'Comparación', Blog: 'Blog', Video: 'Vídeo', Page: 'Página' }, de: { Model: 'Modell', GPU: 'GPU', Comparison: 'Vergleich', Blog: 'Blog', Video: 'Video', Page: 'Seite' }, fr: { Model: 'Modèle', GPU: 'GPU', Comparison: 'Comparaison', Blog: 'Blog', Video: 'Vidéo', Page: 'Page' }, pt: { Model: 'Modelo', GPU: 'GPU', Comparison: 'Comparação', Blog: 'Blog', Video: 'Vídeo', Page: 'Página' } };
+  var TIPI = { ja: { Model: 'モデル', GPU: 'GPU', Comparison: '比較', Blog: 'ブログ', Video: '動画', Page: 'ページ' }, it: { Model: 'Modello', GPU: 'GPU', Comparison: 'Confronto', Blog: 'Blog', Video: 'Video', Page: 'Pagina' }, es: { Model: 'Modelo', GPU: 'GPU', Comparison: 'Comparación', Blog: 'Blog', Video: 'Vídeo', Page: 'Página' }, de: { Model: 'Modell', GPU: 'GPU', Comparison: 'Vergleich', Blog: 'Blog', Video: 'Video', Page: 'Seite' }, fr: { Model: 'Modèle', GPU: 'GPU', Comparison: 'Comparaison', Blog: 'Blog', Video: 'Vidéo', Page: 'Page' }, pt: { Model: 'Modelo', GPU: 'GPU', Comparison: 'Comparação', Blog: 'Blog', Video: 'Vídeo', Page: 'Página' } };
   var tipo = function (k) { return (TIPI[lingua] && TIPI[lingua][k]) || k; };
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function mostra() {

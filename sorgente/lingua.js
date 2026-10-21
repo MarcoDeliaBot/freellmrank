@@ -7,6 +7,7 @@
     de: ['Diese Seite gibt es auch auf Deutsch', 'Auf Deutsch lesen', 'Nein, danke'],
     fr: ['Cette page existe aussi en français', 'Lire en français', 'Non, merci'],
     pt: ['Esta página também está em português', 'Ler em português', 'Não, obrigado'],
+    ja: ['このページは日本語でもご覧いただけます', '日本語で読む', '閉じる'],
   };
   var leggi = function () { try { return localStorage.getItem('lingua'); } catch (e) { return null; } };
   var scrivi = function (v) { try { localStorage.setItem('lingua', v); } catch (e) {} };

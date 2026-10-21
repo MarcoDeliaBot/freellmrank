@@ -240,7 +240,7 @@ const linkUrl = (f, l) => (l ? `/${l}` : '') + '/' + f.replace(/(^|\/)index\.htm
 const scelta = (f, attuale) => {
   const ll = lingueDi(f);
   if (!ll.length) return '';
-  return `<p class="lingue small"><span class="muted">${{ it: 'Lingua', es: 'Idioma', de: 'Sprache', fr: 'Langue', pt: 'Idioma' }[attuale] || 'Language'}:</span> ${[['', 'English'], ...ll.map((l) => [l, LINGUE[l]])].map(([l, n]) => (l === attuale ? `<b lang="${l || 'en'}">${n}</b>` : `<a href="${linkUrl(f, l)}" hreflang="${l || 'en'}" lang="${l || 'en'}" data-lingua="${l || 'en'}">${n}</a>`)).join(' · ')}</p>`;
+  return `<p class="lingue small"><span class="muted">${{ it: 'Lingua', es: 'Idioma', de: 'Sprache', fr: 'Langue', pt: 'Idioma', ja: '言語' }[attuale] || 'Language'}:</span> ${[['', 'English'], ...ll.map((l) => [l, LINGUE[l]])].map(([l, n]) => (l === attuale ? `<b lang="${l || 'en'}">${n}</b>` : `<a href="${linkUrl(f, l)}" hreflang="${l || 'en'}" lang="${l || 'en'}" data-lingua="${l || 'en'}">${n}</a>`)).join(' · ')}</p>`;
 };
 // bandierine (21/10/2026): disegnate qui, niente emoji (Windows le mostra come lettere). pt = Brasile, en = Regno Unito.
 const BANDIERE = {
@@ -249,10 +249,11 @@ const BANDIERE = {
   fr: '<path fill="#0055a4" d="M0 0h20v30H0z"/><path fill="#fff" d="M20 0h20v30H20z"/><path fill="#ef4135" d="M40 0h20v30H40z"/>',
   de: '<path fill="#000" d="M0 0h60v10H0z"/><path fill="#dd0000" d="M0 10h60v10H0z"/><path fill="#ffce00" d="M0 20h60v10H0z"/>',
   es: '<path fill="#aa151b" d="M0 0h60v30H0z"/><path fill="#f1bf00" d="M0 7.5h60v15H0z"/>',
+  ja: '<path fill="#fff" d="M0 0h60v30H0z"/><circle cx="30" cy="15" r="9" fill="#bc002d"/>',
   pt: '<path fill="#009b3a" d="M0 0h60v30H0z"/><path fill="#fedf00" d="m30 3 26 12-26 12L4 15z"/><circle cx="30" cy="15" r="7" fill="#002776"/>',
 };
 const bandiera = (l) => `<svg class="bandiera" viewBox="0 0 60 30" preserveAspectRatio="none" aria-hidden="true">${BANDIERE[l || 'en']}</svg>`;
-const PAROLA_LINGUA = { it: 'Lingua', es: 'Idioma', de: 'Sprache', fr: 'Langue', pt: 'Idioma' };
+const PAROLA_LINGUA = { it: 'Lingua', es: 'Idioma', de: 'Sprache', fr: 'Langue', pt: 'Idioma', ja: '言語' };
 const tendina = (f, attuale) => {
   const ll = lingueDi(f);
   if (!ll.length) return '';
