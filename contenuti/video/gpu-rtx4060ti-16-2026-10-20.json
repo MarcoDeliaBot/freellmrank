@@ -1,0 +1,44 @@
+{
+ "nome": "gpu-rtx4060ti-16-2026-10-20",
+ "titolo": "The best free AI for the RTX 4060 Ti 16 GB #Shorts",
+ "descrizione": "The best free AI models on the RTX 4060 Ti 16 GB (16 GB, 288 GB/s) with 32 GB of DDR5 RAM, at 4-bit with 8K context:\n1. qwen3.8-27b: about 10 tokens/s (Arena 1441, GPU + RAM)\n2. gemma-4-26b-a4b: about 59 tokens/s (Arena 1434, GPU + RAM)\n3. qwen3.5-27b: about 10 tokens/s (Arena 1409, GPU + RAM)\nEstimates from our simulator. Try your own card: https://freellmarena.com/home",
+ "tag": [
+  "free AI",
+  "local LLM",
+  "RTX 4060 Ti 16 GB",
+  "GPU for AI"
+ ],
+ "condividi": "On the RTX 4060 Ti 16 GB with 32 GB of RAM, the best free model is qwen3.8-27b, at about 10 tokens/s. https://freellmarena.com/home",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "La miglior AI gratis per RTX 4060 Ti 16 GB #Shorts",
+   "descrizione": "I migliori modelli AI gratis su RTX 4060 Ti 16 GB (16 GB, 288 GB/s) con 32 GB di RAM DDR5, a 4 bit con 8K di contesto:\n1. qwen3.8-27b: ~10 tok/s (Arena 1441, GPU + RAM)\n2. gemma-4-26b-a4b: ~59 tok/s (Arena 1434, GPU + RAM)\n3. qwen3.5-27b: ~10 tok/s (Arena 1409, GPU + RAM)\nStime del nostro simulatore. Prova la tua scheda: https://freellmarena.com/it/home"
+  },
+  "es": {
+   "titolo": "La mejor IA gratis para la RTX 4060 Ti 16 GB #Shorts",
+   "descrizione": "Los mejores modelos de IA gratis en la RTX 4060 Ti 16 GB (16 GB, 288 GB/s) con 32 GB de RAM DDR5, a 4 bits con 8K de contexto:\n1. qwen3.8-27b: ~10 tok/s (Arena 1441, GPU + RAM)\n2. gemma-4-26b-a4b: ~59 tok/s (Arena 1434, GPU + RAM)\n3. qwen3.5-27b: ~10 tok/s (Arena 1409, GPU + RAM)\nEstimaciones de nuestro simulador. Prueba tu tarjeta: https://freellmarena.com/es/home"
+  },
+  "de": {
+   "titolo": "Die beste kostenlose KI für die RTX 4060 Ti 16 GB #Shorts",
+   "descrizione": "Die besten kostenlosen KI-Modelle auf der RTX 4060 Ti 16 GB (16 GB, 288 GB/s) mit 32 GB DDR5-RAM, in 4 Bit mit 8K Kontext:\n1. qwen3.8-27b: ~10 tok/s (Arena 1441, GPU + RAM)\n2. gemma-4-26b-a4b: ~59 tok/s (Arena 1434, GPU + RAM)\n3. qwen3.5-27b: ~10 tok/s (Arena 1409, GPU + RAM)\nSchätzungen unseres Simulators. Teste deine Karte: https://freellmarena.com/de/home"
+  },
+  "fr": {
+   "titolo": "La meilleure IA gratuite pour la RTX 4060 Ti 16 GB #Shorts",
+   "descrizione": "Les meilleurs modèles d'IA gratuits sur la RTX 4060 Ti 16 GB (16 Go, 288 Go/s) avec 32 Go de RAM DDR5, en 4 bits avec 8K de contexte :\n1. qwen3.8-27b: ~10 tok/s (Arena 1441, GPU + RAM)\n2. gemma-4-26b-a4b: ~59 tok/s (Arena 1434, GPU + RAM)\n3. qwen3.5-27b: ~10 tok/s (Arena 1409, GPU + RAM)\nEstimations de notre simulateur. Testez votre carte : https://freellmarena.com/fr/home"
+  },
+  "pt": {
+   "titolo": "A melhor IA grátis para a RTX 4060 Ti 16 GB #Shorts",
+   "descrizione": "Os melhores modelos de IA grátis na RTX 4060 Ti 16 GB (16 GB, 288 GB/s) com 32 GB de RAM DDR5, em 4 bits com 8K de contexto:\n1. qwen3.8-27b: ~10 tok/s (Arena 1441, GPU + RAM)\n2. gemma-4-26b-a4b: ~59 tok/s (Arena 1434, GPU + RAM)\n3. qwen3.5-27b: ~10 tok/s (Arena 1409, GPU + RAM)\nEstimativas do nosso simulador. Teste sua placa: https://freellmarena.com/pt/home"
+  }
+ },
+ "voce": [
+  "What's the best free AI for an RTX 40 60 Ti?",
+  "It has 16 gigabytes of memory.",
+  "With 32 gigabytes of RAM, the best one is from Qwen (Alibaba), at about 10 tokens per second.",
+  "Try your own card in our free simulator.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-gpu-rtx4060ti-16-2026-10-20",
+ "pubblicato": "2026-10-20"
+}

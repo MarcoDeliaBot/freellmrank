@@ -6,6 +6,8 @@
 # Si pubblica come release di GitHub "video-<nome>" con <nome>.mp4, <nome>.jpg, <nome>.srt (sottotitoli col testo esatto
 # della voce) e <nome>.json (titolo, descrizione, tag, testo da condividere e «localizzazioni»: titolo e descrizione
 # in it, es, de, fr, pt). n8n la carica su YouTube (n8n/video-youtube.json). Un video già fatto non si rifà.
+# Ogni video ha il suo post nel blog (deciso da Marco il 22/10/2026), pubblicato da solo se passa il controllo dei fatti
+# (script/video-post.mjs: ogni numero detto o scritto deve stare nelle scene, costruite dai dati); poi commit e push.
 name: Video
 
 on:
@@ -88,7 +90,18 @@ jobs:
               titolo=$(python -c "import json; print(json.load(open('$d/$nome.json', encoding='utf-8'))['titolo'])")
               gh release create "video-$nome" "$d/$nome.mp4" "$d/$nome.jpg" "$d/$nome.srt" "$d/$nome.json" --title "$titolo" --notes-file "$d/share-copy.txt" --latest=false
               echo "Pubblicato: $nome"
+              # post del blog: solo se ogni numero torna con i dati; se no il video resta, il post no
+              node script/video-post.mjs "video/brag/info-$v.json" "$d/brag.jpg" "video/brag/scena-$v.html" "video-$nome" || echo "Post non scritto per $nome: controllo dei fatti non superato"
               # bozze dei post social (issue «bozza»), solo per la versione inglese: se non riescono, il video resta comunque
               if [ "$tipo" != "lungo" ]; then node script/bozze-social.mjs "$tipo" || echo "Bozze social non riuscite per $nome"; fi
             done
           done
+      - name: Post del blog dei video (commit)
+        run: |
+          git add contenuti/video
+          if git diff --cached --quiet; then echo "Nessun post nuovo"; exit 0; fi
+          git config user.name "freellmarena-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Post dei video $(date -u +%F)"
+          git pull --rebase
+          git push

@@ -7,6 +7,8 @@ import { arteAscii } from './arte.mjs';
 export const RADICE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const SITO = path.join(RADICE, 'sito');
 export const URL_SITO = (process.env.SITO_URL || 'https://freellmarena.com').replace(/\/$/, '');
+// repository pubblico: i video stanno nelle sue release
+export const REPO = 'MarcoDeliaBot/freellmrank';
 
 // Google Analytics 4 (si attiva solo dopo il consenso, vedi sorgente/consent.js)
 export const GA_ID = 'G-D4DK3X1MQJ';

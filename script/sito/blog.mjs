@@ -1,11 +1,38 @@
-// Blog: guide scritte a mano in contenuti/blog/*.md (con numeri aggiornati a ogni build)
-// e un resoconto settimanale generato dallo storico Arena.
+// Blog: guide scritte a mano in contenuti/blog/*.md (con numeri aggiornati a ogni build),
+// un resoconto settimanale generato dallo storico Arena e, dal 22/10/2026, un post per ogni video (contenuti/video/,
+// scritti da script/video-post.mjs dopo il controllo dei fatti).
 import fs from 'node:fs';
 import path from 'node:path';
 import { marked } from 'marked';
-import { RADICE, esc, fmtData, pagina, NOME_PIENO, URL_SITO } from './comune.mjs';
+import { RADICE, SITO, REPO, esc, fmtData, pagina, NOME_PIENO, URL_SITO } from './comune.mjs';
 
 const DIR = path.join(RADICE, 'contenuti', 'blog');
+const DIR_VIDEO = path.join(RADICE, 'contenuti', 'video');
+const TIPO_VIDEO = { nuovo: 'New model', settimana: 'Weekly ranking', gpu: 'GPU of the week', lungo: 'Weekly video report' };
+
+// un post per video: il video (da YouTube quando c'è l'indirizzo, se no l'MP4 della release di GitHub), cosa dice la voce, i dati
+function leggiVideo(hrefPerNome) {
+  if (!fs.existsSync(DIR_VIDEO)) return [];
+  return fs.readdirSync(DIR_VIDEO).filter((f) => f.endsWith('.json')).map((f) => {
+    const v = JSON.parse(fs.readFileSync(path.join(DIR_VIDEO, f), 'utf8'));
+    const tipo = v.nome.split('-')[0];
+    const titolo = v.titolo.replace(/\s*#Shorts$/, '');
+    const righe = v.descrizione.split('\n').filter(Boolean);
+    const mp4 = `https://github.com/${REPO}/releases/download/${v.release}/${v.nome}.mp4`;
+    const verticale = tipo !== 'lungo';
+    const player = v.youtube
+      ? `<div class="video-post${verticale ? ' verticale' : ''}"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.youtube)}" title="${esc(titolo)}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
+      : `<div class="video-post${verticale ? ' verticale' : ''}"><video controls preload="none" playsinline poster="/video/${v.nome}.jpg" src="${mp4}"></video></div>`;
+    // i nomi dei modelli nell'elenco dei dati portano alla loro pagina
+    const conLink = (r) => r.replace(/^(\d+\.\s)([^:(]+?)(?=[:(])/, (t, n, nome) => (hrefPerNome(nome.trim()) ? `${n}[${nome.trim()}](${hrefPerNome(nome.trim())})` : t));
+    const elenco = righe.slice(1).map((r) => (/^\d+\.\s/.test(r) ? conLink(r) : `- ${r}`));
+    const intro = righe[0].replace(/\s*:$/, '.');
+    // nel post non servono gli inviti del video («Link in bio», «link in the description»)
+    const voce = v.voce.map((p) => p.replace(/\s*(The link is in the description\.|Link in (the )?bio\.)\s*/gi, ' ').trim()).filter(Boolean);
+    const corpo = `${player}\n\n## What the video says\n\n${voce.map((p) => p.replace(/\b(RTX|GTX) (\d\d) (\d\d)\b/g, '$1 $2$3')).join('\n\n')}\n\n## The data\n\n${elenco.join('\n')}\n\nEvery number in this post comes from the ${NOME_PIENO} data on ${fmtData(v.pubblicato)}: Arena votes, Hugging Face sizes and our speed simulator. [Download the video and its subtitles](https://github.com/${REPO}/releases/tag/${v.release}).\n`;
+    return { slug: `video-${v.nome.replace(/[^a-z0-9-]+/gi, '-').toLowerCase()}`, titolo, descr: intro.slice(0, 158), data: v.pubblicato, tema: TIPO_VIDEO[tipo] || 'Video', corpo, tipo: 'Video', copertina: `/video/${v.nome}.jpg`, fileCopertina: path.join(DIR_VIDEO, `${v.nome}.jpg`) };
+  });
+}
 const SETTIMANE = 8;
 
 function leggiGuide() {
@@ -99,7 +126,7 @@ export function preparaBlog(dati, storia, modelli) {
     nome: (cat) => esc(miglioreGratis(cat)?.nome || ''),
   };
   const guide = leggiGuide().map((g) => ({ ...g, automatico: /\{\{\w+/.test(g.corpo), corpo: riempi(g.corpo, ctx), data: g.data || dati.aggiornato }));
-  return [...guide, ...resoconti(dati, storia, hrefPerNome)].sort((a, b) => b.data.localeCompare(a.data));
+  return [...guide, ...resoconti(dati, storia, hrefPerNome), ...leggiVideo(hrefPerNome)].sort((a, b) => b.data.localeCompare(a.data));
 }
 
 // Grafica del disegno Stitch per OGNI articolo (richiesta di Marco, 20/10/2026), applicata all'HTML di marked:
@@ -108,6 +135,7 @@ const ICONA_INFO = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stro
 const ancora = (s) => s.replace(/<[^>]+>/g, '').toLowerCase().replace(/&[a-z]+;|&#\d+;/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
 function riquadroFinale(p, dati) {
   const primo = dati.categorie.find((c) => c.id === 'chat')?.modelli.find((m) => m.aperto || m.or?.gratis);
+  if (p.tipo === 'Video') return ['Free leaderboard', 'Every free AI model, ranked', 'Sizes, memory, speed on your GPU and where to use each model for free. Updated every night.', '/', 'Open the leaderboard →'];
   if (p.tipo !== 'Guide') return ['Free Arena', 'Which free model would you pick?', 'Ask one question to two free models, without seeing their names, and vote. Your votes build our own free ranking.', '/arena.html', 'Vote in Free Arena →'];
   if (/hardware/i.test(p.tema)) return ['Free hardware tool', 'What can your GPU run?', 'Pick your card and see how much memory each model needs, whether it fits and the estimated speed.', '/home.html', 'Open the simulator →'];
   if (/api|online|cloud/i.test(p.tema)) return ['Try it now', 'Try two free models side by side', 'Send one prompt to two free models at once and compare the answers.', '/compare.html', 'Compare models →'];
@@ -120,6 +148,9 @@ function abbellisci(html, p, dati) {
     return `${h}\n<div class="cta-scura"><div><span class="cta-occhiello">${esc(occhiello)}</span><h3>${esc(titolo)}</h3><p>${esc(testo)}</p></div><a href="${href}">${esc(tasto)}</a></div>`;
   };
   if (html.includes('cat-guida')) return finale(html); // guida già disegnata a mano
+  // video: il player resta fuori dal riquadro dell'introduzione
+  let player = '';
+  html = html.replace(/^\s*(<div class="video-post[\s\S]*?<\/div>)\s*/, (t, p1) => { player = p1; return ''; });
   const pezzi = html.split(/(?=<h2[ >])/);
   const intro = pezzi[0].startsWith('<h2') ? '' : pezzi.shift();
   const sezioni = pezzi.map((s) => {
@@ -134,10 +165,16 @@ function abbellisci(html, p, dati) {
   });
   const indice = sezioni.length >= 3 ? `<nav class="salta" aria-label="Jump to section"><span>Jump to section</span>${sezioni.map((s) => `<a href="#${s.id}">${s.titolo.replace(/<[^>]+>/g, '')}</a>`).join('')}</nav>` : '';
   const riquadro = intro.trim() ? `<div class="riquadro-info">${ICONA_INFO}<div>${intro}</div></div>` : '';
-  return finale(`${riquadro}\n${indice}\n${sezioni.map((s) => s.html).join('\n')}`);
+  return finale(`${player}\n${riquadro}\n${indice}\n${sezioni.map((s) => s.html).join('\n')}`);
 }
 
 export function pagineBlog(dati, post) {
+  // copertine dei video, servite da /video/
+  for (const p of post.filter((x) => x.fileCopertina && fs.existsSync(x.fileCopertina))) {
+    fs.mkdirSync(path.join(SITO, 'video'), { recursive: true });
+    fs.copyFileSync(p.fileCopertina, path.join(SITO, 'video', path.basename(p.fileCopertina)));
+  }
+  const etichetta = (p) => (p.tipo === 'Guide' ? 'Guide' : p.tipo === 'Video' ? 'Video' : 'Weekly report');
   for (const p of post) {
     pagina({
       file: `blog/${p.slug}.html`, attiva: '/blog/', dati, blog: post,
@@ -147,8 +184,8 @@ export function pagineBlog(dati, post) {
       ],
       titolo: `${p.titolo} · ${NOME_PIENO}`, descr: p.descr,
       corpo: `<article class="articolo">
-<nav class="art-briciole" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span>/</span><span>${esc(p.tipo === 'Guide' ? 'Guide' : 'Weekly report')}</span></nav>
-<header class="art-testa"><p class="art-meta"><span class="art-tipo">${esc(p.tipo === 'Guide' ? 'Guide' : 'Weekly report')}</span><span>·</span><time datetime="${p.data}">${fmtData(p.data)}</time><span>·</span><span>${Math.max(1, Math.round(p.corpo.split(/\s+/).length / 220))} min read</span>${p.tipo !== 'Guide' || /\{\{|Data as of/.test(p.corpo) || p.automatico ? '<span>·</span><span class="art-vivo"><i class="punto-vivo" aria-hidden="true"></i>Data updated automatically</span>' : ''}</p><h1>${esc(p.titolo)}</h1><p class="lead">${esc(p.descr)}</p></header>
+<nav class="art-briciole" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span>/</span><span>${esc(etichetta(p))}</span></nav>
+<header class="art-testa"><p class="art-meta"><span class="art-tipo">${esc(etichetta(p))}</span><span>·</span><time datetime="${p.data}">${fmtData(p.data)}</time><span>·</span><span>${Math.max(1, Math.round(p.corpo.split(/\s+/).length / 220))} min read</span>${p.tipo !== 'Guide' || /\{\{|Data as of/.test(p.corpo) || p.automatico ? '<span>·</span><span class="art-vivo"><i class="punto-vivo" aria-hidden="true"></i>Data updated automatically</span>' : ''}</p><h1>${esc(p.titolo)}</h1><p class="lead">${esc(p.descr)}</p></header>
 ${abbellisci(marked.parse(p.corpo), p, dati)}
 </article>`,
     });
@@ -158,13 +195,14 @@ ${abbellisci(marked.parse(p.corpo), p, dati)}
   const lettura = (p) => Math.max(1, Math.round(p.corpo.split(/\s+/).length / 220));
   const primo = (cat) => dati.categorie.find((x) => x.id === cat)?.modelli.find((m) => m.aperto || m.or?.gratis);
   const guide = post.filter((p) => p.tipo === 'Guide');
-  const resoconti = post.filter((p) => p.tipo !== 'Guide');
+  const resoconti = post.filter((p) => p.tipo !== 'Guide' && p.tipo !== 'Video');
   const evidenza = guide.find((p) => p.slug === 'best-free-ai-models') || guide[0];
   const altre = guide.filter((p) => p !== evidenza);
-  const filtro = (p) => (p.tipo === 'Guide' ? `guide${/hardware/i.test(p.tema) ? ' hardware' : ''}` : 'week');
+  const filtro = (p) => (p.tipo === 'Guide' ? `guide${/hardware/i.test(p.tema) ? ' hardware' : ''}` : p.tipo === 'Video' ? 'video' : 'week');
+  const video = post.filter((p) => p.tipo === 'Video');
   const capi = [['chat', 'Chat'], ['code', 'Code'], ['vision', 'Vision']].map(([c, n]) => [n, primo(c)]).filter(([, m]) => m);
   const scheda = (p, grande) => `<article class="post-scheda${grande ? ' evidenza' : ''}" data-filtro="${filtro(p)}">
-<p class="post-meta">${p.tipo === 'Guide' ? `<span class="post-tipo${grande ? ' pillola' : ''}">Guide</span>` : '<span class="post-tipo settimana">Weekly report</span>'}<span>•</span><time datetime="${p.data}">${fmtData(p.data)}</time>${p.tema ? `<span>•</span><span class="tenue">${esc(p.tema)}</span>` : ''}${grande ? `<span>•</span><span class="tenue">${lettura(p)} min read</span><span class="post-destra verde">Featured</span>` : ''}${p.nuovi != null ? `<span class="post-destra conta-nuovi${p.nuovi >= 10 ? ' molti' : ''}">${p.nuovi} new model${p.nuovi === 1 ? '' : 's'}</span>` : ''}</p>
+${p.copertina ? `<a class="post-copertina" href="/blog/${p.slug}.html" tabindex="-1" aria-hidden="true"><img src="${p.copertina}" alt="" loading="lazy" width="320" height="${p.tema === 'Weekly video report' ? 180 : 569}"></a>` : ''}<p class="post-meta">${p.tipo === 'Guide' ? `<span class="post-tipo${grande ? ' pillola' : ''}">Guide</span>` : p.tipo === 'Video' ? '<span class="post-tipo video">Video</span>' : '<span class="post-tipo settimana">Weekly report</span>'}<span>•</span><time datetime="${p.data}">${fmtData(p.data)}</time>${p.tema ? `<span>•</span><span class="tenue">${esc(p.tema)}</span>` : ''}${grande ? `<span>•</span><span class="tenue">${lettura(p)} min read</span><span class="post-destra verde">Featured</span>` : ''}${p.nuovi != null ? `<span class="post-destra conta-nuovi${p.nuovi >= 10 ? ' molti' : ''}">${p.nuovi} new model${p.nuovi === 1 ? '' : 's'}</span>` : ''}</p>
 <h2><a href="/blog/${p.slug}.html">${esc(p.titolo)}</a></h2>
 <p class="post-descr">${esc(p.descr)}</p>
 ${grande && capi.length ? `<p class="post-capi"><span class="tenue">Arena #1 free:</span>${capi.map(([n, m]) => `<span>${n}: <b>${esc(m.nome)}</b></span>`).join('')}</p>` : ''}</article>`;
@@ -173,10 +211,11 @@ ${grande && capi.length ? `<p class="post-capi"><span class="tenue">Arena #1 fre
     titolo: `Blog: Free AI Models, Guides and Weekly Reports · ${NOME_PIENO}`,
     descr: 'Guides to free and local AI models, and a weekly report of what changed on the free leaderboard.',
     corpo: `<div class="blog-testa"><h1>Blog</h1><p class="lead">Guides to using AI models for free, and a weekly report of what changed, written automatically from the leaderboard data.</p>
-<nav class="blog-filtri" aria-label="Filter posts"><button type="button" aria-pressed="true" data-filtro="">All articles</button><button type="button" aria-pressed="false" data-filtro="guide">Guides</button><button type="button" aria-pressed="false" data-filtro="week">Weekly reports</button><button type="button" aria-pressed="false" data-filtro="hardware">Hardware and GPUs</button></nav></div>
+<nav class="blog-filtri" aria-label="Filter posts"><button type="button" aria-pressed="true" data-filtro="">All articles</button><button type="button" aria-pressed="false" data-filtro="guide">Guides</button><button type="button" aria-pressed="false" data-filtro="video">Videos</button><button type="button" aria-pressed="false" data-filtro="week">Weekly reports</button><button type="button" aria-pressed="false" data-filtro="hardware">Hardware and GPUs</button></nav></div>
 <section class="lista-blog" aria-label="Posts">
 ${evidenza ? scheda(evidenza, true) : ''}
 ${altre.map((p) => scheda(p)).join('\n')}
+${video.length ? `<div class="blog-sezione" data-filtro="video"><h3>Videos</h3><span>Every day</span></div><div class="griglia-video">${video.map((p) => scheda(p)).join('\n')}</div>` : ''}
 ${resoconti.length ? `<div class="blog-sezione" data-filtro="week"><h3>Automatic weekly Arena reports</h3><span>Every Sunday</span></div>${resoconti.map((p) => scheda(p)).join('\n')}` : ''}
 </section>`,
   });

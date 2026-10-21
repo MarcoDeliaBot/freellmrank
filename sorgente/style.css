@@ -940,3 +940,13 @@ footer{font-size:.75rem;color:var(--muted);border-top:1px solid var(--line);padd
 .menu-mobile summary{white-space:nowrap}
 @media (max-width:22rem){.bandiere-codice{display:none}}
 @media (max-width:30rem){.barra{gap:.5rem}}
+
+/* post dei video (22/10/2026): player in cima, copertine nell'elenco del blog */
+.video-post{margin:0 0 1.5rem;border-radius:14px;overflow:hidden;background:#000;aspect-ratio:16/9;max-width:960px}
+.video-post.verticale{aspect-ratio:9/16;max-width:360px}
+.video-post video,.video-post iframe{display:block;width:100%;height:100%;border:0}
+.post-tipo.video{background:#fee2e2;color:#991b1b}
+.griglia-video{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1rem}
+.post-copertina{display:block;margin:-.25rem -.25rem .75rem;border-radius:10px;overflow:hidden;background:#000;aspect-ratio:16/9}
+.post-copertina img{display:block;width:100%;height:100%;object-fit:cover}
+@media (prefers-color-scheme:dark){.post-tipo.video{background:rgba(239,68,68,.18);color:#fca5a5}}
