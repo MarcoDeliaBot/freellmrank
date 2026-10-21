@@ -1,7 +1,7 @@
 // Pagine "A vs B": i 15 modelli gratis più votati in chat, a coppie (105 pagine).
 // Rispondono alla ricerca "qwen vs gemma": chi vince secondo i voti di Arena, in quali categorie, quanto pesa,
 // quanto va veloce in casa e dove si usa gratis. Ogni coppia ha un solo indirizzo (nomi in ordine alfabetico).
-import { esc, pagina, NOME_PIENO, URL_SITO } from './comune.mjs';
+import { esc, pagina, NOME_PIENO, URL_SITO, conLicenza } from './comune.mjs';
 import { simula, daScheda } from '../../sorgente/calc.mjs';
 import { fmtVel } from '../../sorgente/gpu-table.mjs';
 
@@ -49,7 +49,7 @@ export function pagineConfronti(dati, coppie, blog) {
       const cella = (m) => { if (!m.hf) return '<span class="muted">online only</span>'; const r = simula(m.hf, h); return r.dove === 'no' ? '<span class="muted">does not fit</span>' : `${fmtVel(r.vel)} tok/s${r.dove === 'ram' ? ' <span class="tag chip-ram">+RAM</span>' : ''}`; };
       return `<tr><td><a href="/gpu/${id}.html">${esc(s.nome)}</a></td><td class="n">${cella(a)}</td><td class="n">${cella(b)}</td></tr>`;
     }).join('');
-    const gratis = (m) => [m.or?.gratis ? 'free API on OpenRouter' : '', m.aperto && m.hf ? 'download and run at home' : '', m.licenza ? `${m.licenza} license` : ''].filter(Boolean).join(' · ') || '—';
+    const gratis = (m) => [m.or?.gratis ? 'free API on OpenRouter' : '', m.aperto && m.hf ? 'download and run at home' : '', m.licenza ? conLicenza(m.licenza) : ''].filter(Boolean).join(' · ') || '—';
     const verdetto = vicino
       ? `${a.nome} and ${b.nome} are about even on Arena (${a.cat.chat.punti} vs ${b.cat.chat.punti}): in a blind vote each wins about half the time.`
       : `${primo.nome} is ahead on Arena (${primo.cat.chat.punti} vs ${secondo.cat.chat.punti}): in a blind vote people prefer it about ${Math.round(p * 100)}% of the time.`;

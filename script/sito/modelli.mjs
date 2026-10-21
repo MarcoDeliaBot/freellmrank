@@ -1,5 +1,5 @@
 // Catalogo dei modelli gratuiti e una pagina per ciascuno.
-import { esc, fmtNum, fmtData, pagina, CHAT_WEB, NOME_PIENO, URL_SITO } from './comune.mjs';
+import { esc, fmtNum, fmtData, pagina, CHAT_WEB, NOME_PIENO, URL_SITO, conLicenza } from './comune.mjs';
 import { linee } from './grafici.mjs';
 import { perNomeArena, DOMANDE_PER_VISITATORE } from '../cf-modelli.mjs';
 import { simula, daScheda, kvGB, QUANTI, perditaQualita, giudizio, slug } from '../../sorgente/calc.mjs';
@@ -12,12 +12,16 @@ const piuBello = (a, b) => ((/[A-Z ]/.test(b) && !/[A-Z ]/.test(a)) ? b : a);
 // Un modello per chiave (repository Hugging Face, poi id OpenRouter, poi nome)
 export function unisci(dati, storia) {
   const mappa = new Map();
+  // stesso modello scritto in modi diversi fra classifiche e fonti: "FLUX.2 [dev]" e flux-2-dev, "Molmo 2 8B" e allenai/Molmo2-8B
+  const norma = (s) => String(s || '').toLowerCase().replace(/:free$/, '').replace(/^[^:/]+[:/]\s*/, '').replace(/[^a-z0-9]/g, '');
+  const perNorma = new Map();
+  const ricorda = (u) => { for (const k of [norma(u.nome), norma(u.hf?.repo)]) if (k && !perNorma.has(k)) perNorma.set(k, u); };
   for (const c of dati.categorie) {
     for (const m of c.modelli) {
       if (!usabileGratis(m)) continue;
-      const chiave = m.hf?.repo || m.or?.id || slug(m.nome);
+      const chiave = m.hf?.repo || m.or?.id || perNorma.get(norma(m.nome))?.chiave || slug(m.nome);
       let u = mappa.get(chiave);
-      if (!u) { u = { chiave, nome: m.nome, org: m.org, licenza: m.licenza, aperto: m.aperto, or: m.or, hf: m.hf, cat: {}, nomi: {} }; mappa.set(chiave, u); }
+      if (!u) { u = { chiave, nome: m.nome, org: m.org, licenza: m.licenza, aperto: m.aperto, or: m.or, hf: m.hf, cat: {}, nomi: {} }; mappa.set(chiave, u); ricorda(u); }
       u.nome = piuBello(u.nome, m.nome);
       u.or ||= m.or; u.hf ||= m.hf;
       const prima = u.cat[c.id];
@@ -31,12 +35,20 @@ export function unisci(dati, storia) {
   }
   for (const p of dati.piccoli || []) {
     if (mappa.has(p.hf.repo)) continue;
+    // votato da Arena senza repository: il repository trovato qui va sulla pagina che c'è già
+    const votato = perNorma.get(norma(p.hf.repo)) || perNorma.get(norma(p.nome));
+    if (votato && !votato.hf) { votato.hf = p.hf; continue; }
     mappa.set(p.hf.repo, { chiave: p.hf.repo, nome: p.nome, org: p.org, licenza: p.gated ? 'license to accept' : 'open', aperto: true, hf: p.hf, cat: {}, nomi: {}, senzaVoti: true, download: p.download, catPiccoli: p.cat, primo: p.creato });
   }
-  // modelli nuovi che Arena non vota ancora
+  // modelli nuovi che Arena non vota ancora. Quelli che arrivano solo da OpenRouter ("LiquidAI: LFM2.5-2.6B",
+  // liquid/lfm-2.5-2.6b:free) spesso hanno già una pagina dal repository Hugging Face: lì si aggiunge l'API gratis,
+  // invece di fare una seconda pagina dello stesso modello
+  for (const u of mappa.values()) ricorda(u);
   for (const p of dati.nuovi || []) {
     const chiave = p.hf?.repo || p.or?.id;
     if (!chiave || mappa.has(chiave)) continue;
+    const stesso = !p.hf && (perNorma.get(norma(p.nome)) || perNorma.get(norma(p.or?.id)));
+    if (stesso) { stesso.or ||= p.or; continue; }
     mappa.set(chiave, { chiave, nome: p.nome, org: p.org, licenza: p.gated ? 'license to accept' : '', aperto: !!p.hf, or: p.or, hf: p.hf, cat: {}, nomi: {}, senzaVoti: true, nuovo: true, download: p.download, catPiccoli: p.cat, primo: p.creato });
   }
   const usati = new Set();
@@ -210,7 +222,7 @@ ${QUANTI.filter((p) => p.id !== 'Q2_K').map((p) => { const pq = perditaQualita(p
       corpo: `<p class="briciole small"><a href="/models.html">All models</a> › ${esc(m.org)}</p>
 <div style="display:grid;gap:.4rem">
 <h1>${esc(m.nome)}</h1>
-<p class="lead">${esc(m.org)}${m.licenza ? ' · ' + esc(m.licenza) + ' license' : ''}${m.primo ? ` · ${m.senzaVoti ? 'released' : 'on Arena since'} ${fmtData(m.primo)}` : ''}</p>
+<p class="lead">${esc(m.org)}${m.licenza ? ' · ' + esc(conLicenza(m.licenza)) : ''}${m.primo ? ` · ${m.senzaVoti ? 'released' : 'on Arena since'} ${fmtData(m.primo)}` : ''}</p>
 <div>${etichetteGratis(m)}</div>
 </div>
 <div class="tiles">${tessere.map(([a, b, c]) => `<div class="tile"><span class="small muted">${a}</span><b>${b}</b><span class="small muted">${esc(c)}</span></div>`).join('')}</div>

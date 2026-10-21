@@ -42,6 +42,8 @@ export const spiega = (cosa, come) => `<details class="spiega"><summary>What thi
 // barra delle sezioni della pagina, che resta in alto mentre si scorre
 export const barraSezioni = (voci) => `<nav class="su-pagina" aria-label="On this page"><span class="small muted">On this page</span>${voci.map(([id, t]) => `<a href="#${id}">${t}</a>`).join('')}</nav>`;
 // etichetta «New» per 45 giorni dalla data di uscita di una sezione
+// "Apache 2.0" → "Apache 2.0 license"; "Falcon-180B TII License" e "license to accept" restano come sono (niente "License license")
+export const conLicenza = (l) => (/licen[cs]e/i.test(l) ? l : `${l} license`);
 export const nuovo = (dal) => (Date.now() - Date.parse(dal) < 45 * 864e5 ? ' <span class="badge-new">New</span>' : '');
 
 const ARTE = arteAscii(); // uguale in tutte le pagine

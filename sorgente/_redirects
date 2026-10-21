@@ -7,3 +7,25 @@
 /dati.json /data.json 301
 /storia.json /history.json 301
 /stile.css /style.css 301
+
+# pagine modello doppie unite il 21/10/2026 (script/sito/modelli.mjs)
+/model/flux-1-kontext-dev-bfl /model/flux-1-kontext-dev 301
+/:lang/model/flux-1-kontext-dev-bfl /:lang/model/flux-1-kontext-dev 301
+/model/flux-2-dev-bfl /model/flux-2-dev 301
+/:lang/model/flux-2-dev-bfl /:lang/model/flux-2-dev 301
+/model/flux-2-klein-4b-bfl /model/flux-2-klein-4b 301
+/:lang/model/flux-2-klein-4b-bfl /:lang/model/flux-2-klein-4b 301
+/model/flux-2-klein-9b-bfl /model/flux-2-klein-9b 301
+/:lang/model/flux-2-klein-9b-bfl /:lang/model/flux-2-klein-9b 301
+/model/gemma-3-12b-it-google /model/gemma-3-12b-it 301
+/:lang/model/gemma-3-12b-it-google /:lang/model/gemma-3-12b-it 301
+/model/gemma-3-4b-it-google /model/gemma-3-4b-it 301
+/:lang/model/gemma-3-4b-it-google /:lang/model/gemma-3-4b-it 301
+/model/hunyuan-image-3-0 /model/hunyuanimage-3-0-instruct 301
+/:lang/model/hunyuan-image-3-0 /:lang/model/hunyuanimage-3-0-instruct 301
+/model/kimi-k2-5-thinking-moonshot /model/kimi-k2-5-thinking 301
+/:lang/model/kimi-k2-5-thinking-moonshot /:lang/model/kimi-k2-5-thinking 301
+/model/liquidai-lfm2-5-2-6b /model/lfm2-5-2-6b 301
+/:lang/model/liquidai-lfm2-5-2-6b /:lang/model/lfm2-5-2-6b 301
+/model/molmo2-8b /model/molmo-2-8b 301
+/:lang/model/molmo2-8b /:lang/model/molmo-2-8b 301
