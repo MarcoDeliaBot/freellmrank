@@ -20,7 +20,7 @@ const DENTRO = new Set(['a', 'abbr', 'b', 'bdi', 'cite', 'del', 'dfn', 'em', 'i'
 const VUOTI = new Set(['br', 'wbr', 'img']);
 // pezzi che non si traducono mai e restano interi: commenti, script, stili, icone, codice
 const PEZZI = /<!--[\s\S]*?-->|<(script|style|svg|code|pre|kbd|textarea)\b[\s\S]*?<\/\1>|<[^>]+>|[^<]+/gi;
-const ATTRIBUTI = /(\s(?:title|alt|aria-label|placeholder|data-label|data-etichetta)=")([^"]*)(")/g;
+const ATTRIBUTI = /(\s(?:title|alt|aria-label|placeholder|data-label|data-etichetta|data-apri)=")([^"]*)(")/g;
 const META = /^<meta\s+(?:name="description"|property="og:(?:title|description|image:alt)")/;
 const LETTERE = /\p{L}{2}/u;
 
@@ -198,7 +198,7 @@ function traduciPagina(html, dizionario, sistemaTag) {
 // ---------- main ----------
 const pagine = pagineInglesi();
 // si può rilanciare: via quello che un giro precedente aveva aggiunto alle pagine inglesi
-const pulisci = (h) => h.replace(/<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n/g, '').replace(/<p class="lingue small">[\s\S]*?<\/p>/, '').replace(/<script src="\/lingua\.js\?v=[^"]*" defer><\/script>\n/, '');
+const pulisci = (h) => h.replace(/<!--lingue-->[\s\S]*?<!--\/lingue-->/g, '<!--lingue-->').replace(/<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n/g, '').replace(/<p class="lingue small">[\s\S]*?<\/p>/, '').replace(/<script src="\/lingua\.js\?v=[^"]*" defer><\/script>\n/, '');
 const html = new Map(pagine.map((f) => [f, pulisci(fs.readFileSync(path.join(SITO, f), 'utf8'))]));
 
 const dizionari = {};
@@ -242,11 +242,31 @@ const scelta = (f, attuale) => {
   if (!ll.length) return '';
   return `<p class="lingue small"><span class="muted">${{ it: 'Lingua', es: 'Idioma', de: 'Sprache', fr: 'Langue', pt: 'Idioma' }[attuale] || 'Language'}:</span> ${[['', 'English'], ...ll.map((l) => [l, LINGUE[l]])].map(([l, n]) => (l === attuale ? `<b lang="${l || 'en'}">${n}</b>` : `<a href="${linkUrl(f, l)}" hreflang="${l || 'en'}" lang="${l || 'en'}" data-lingua="${l || 'en'}">${n}</a>`)).join(' · ')}</p>`;
 };
+// bandierine (21/10/2026): disegnate qui, niente emoji (Windows le mostra come lettere). pt = Brasile, en = Regno Unito.
+const BANDIERE = {
+  en: '<path fill="#012169" d="M0 0h60v30H0z"/><path stroke="#fff" stroke-width="6" d="m0 0 60 30M60 0 0 30"/><path stroke="#c8102e" stroke-width="2" d="m0 0 60 30M60 0 0 30"/><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"/><path stroke="#c8102e" stroke-width="6" d="M30 0v30M0 15h60"/>',
+  it: '<path fill="#009246" d="M0 0h20v30H0z"/><path fill="#fff" d="M20 0h20v30H20z"/><path fill="#ce2b37" d="M40 0h20v30H40z"/>',
+  fr: '<path fill="#0055a4" d="M0 0h20v30H0z"/><path fill="#fff" d="M20 0h20v30H20z"/><path fill="#ef4135" d="M40 0h20v30H40z"/>',
+  de: '<path fill="#000" d="M0 0h60v10H0z"/><path fill="#dd0000" d="M0 10h60v10H0z"/><path fill="#ffce00" d="M0 20h60v10H0z"/>',
+  es: '<path fill="#aa151b" d="M0 0h60v30H0z"/><path fill="#f1bf00" d="M0 7.5h60v15H0z"/>',
+  pt: '<path fill="#009b3a" d="M0 0h60v30H0z"/><path fill="#fedf00" d="m30 3 26 12-26 12L4 15z"/><circle cx="30" cy="15" r="7" fill="#002776"/>',
+};
+const bandiera = (l) => `<svg class="bandiera" viewBox="0 0 60 30" preserveAspectRatio="none" aria-hidden="true">${BANDIERE[l || 'en']}</svg>`;
+const PAROLA_LINGUA = { it: 'Lingua', es: 'Idioma', de: 'Sprache', fr: 'Langue', pt: 'Idioma' };
+const tendina = (f, attuale) => {
+  const ll = lingueDi(f);
+  if (!ll.length) return '';
+  const tutte = [['', 'English'], ...ll.map((l) => [l, LINGUE[l]])];
+  const nome = (attuale ? LINGUE[attuale] : 'English');
+  const parola = PAROLA_LINGUA[attuale] || 'Language';
+  return `<details class="bandiere"><summary aria-label="${parola}: ${nome}" title="${parola}">${bandiera(attuale)}<span class="bandiere-codice">${(attuale || 'en').toUpperCase()}</span></summary><div class="bandiere-elenco">${tutte.map(([l, n]) => `<a href="${linkUrl(f, l)}" hreflang="${l || 'en'}" lang="${l || 'en'}" data-lingua="${l || 'en'}"${l === attuale ? ' aria-current="true"' : ''}>${bandiera(l)}${n}</a>`).join('')}</div></details>`;
+};
 const conLingua = (h, f, l) => {
   if (!/<\/head>/.test(h)) return h; // frammenti /cat/
   const alt = alternative(f);
   h = h.replace('</head>', `${alt ? alt + '\n' : ''}</head>`);
   h = h.replace('</div></footer>', `${scelta(f, l)}</div></footer>`);
+  h = h.replaceAll('<!--lingue-->', `<!--lingue-->${tendina(f, l)}<!--/lingue-->`);
   return h.replace('</body>', `<script src="/lingua.js?v=${VER}" defer></script>\n</body>`);
 };
 

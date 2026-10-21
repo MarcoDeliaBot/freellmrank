@@ -899,3 +899,44 @@ footer{font-size:.75rem;color:var(--muted);border-top:1px solid var(--line);padd
 .avviso-lingua a{font-weight:600}
 .lingue{margin:.4rem 0}
 .lingue a,.lingue b{white-space:nowrap}
+
+/* bandierine per cambiare lingua (21/10/2026): nella barra in alto (telefono) e in cima al menu laterale (computer) */
+.bandiera{width:1.3rem;height:.875rem;flex:none;border-radius:2px;box-shadow:0 0 0 1px rgba(15,23,42,.15)}
+.bandiere{position:relative}
+.bandiere summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);font:600 .75rem/1 var(--mono);color:var(--muted)}
+.bandiere summary::-webkit-details-marker{display:none}
+.bandiere summary:hover{color:var(--ink)}
+.bandiere-elenco{position:absolute;z-index:40;top:calc(100% + 6px);right:0;min-width:11rem;display:grid;gap:.1rem;padding:.35rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.18)}
+.bandiere-elenco a{display:flex;align-items:center;gap:.6rem;padding:.5rem .6rem;border-radius:7px;color:var(--ink);text-decoration:none;font-size:.9rem}
+.bandiere-elenco a:hover{background:var(--soft2)}
+.bandiere-elenco a[aria-current]{background:var(--free-tenue);color:var(--free-forte);font-weight:600}
+.lato .bandiere-elenco{left:0;right:auto}
+
+/* menu laterale che si chiude con un clic: restano le icone (21/10/2026) */
+.lato-strumenti{display:none}
+@media (min-width:64.0625rem){
+  .lato-strumenti{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin:-.75rem .25rem 1rem}
+  .lato-chiudi{display:grid;place-items:center;width:2rem;height:2rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;margin-left:auto}
+  .lato-chiudi:hover{color:var(--ink)}
+  .lato-chiudi .icona{transition:transform .2s}
+  .impianto{transition:grid-template-columns .2s}
+  html.menu-chiuso .impianto{grid-template-columns:4.5rem minmax(0,1fr)}
+  html.menu-chiuso .lato{padding:1.25rem .6rem;overflow-x:hidden}
+  html.menu-chiuso .lato-chiudi .icona{transform:rotate(180deg)}
+  html.menu-chiuso .lato-strumenti{flex-direction:column-reverse;margin:0 0 1rem}
+  html.menu-chiuso .lato-chiudi{margin:0}
+  html.menu-chiuso .lato .bandiere-elenco{position:fixed;left:4.9rem;top:5.6rem}
+  html.menu-chiuso .bandiere-codice,html.menu-chiuso .menu-gruppo,html.menu-chiuso .lato-piede,html.menu-chiuso .menu-lato .badge-free,html.menu-chiuso .menu-lato .badge-new,html.menu-chiuso .logo-lato .badge-free{display:none}
+  html.menu-chiuso .logo-lato{font-size:0;justify-content:center;margin:.1rem 0 1rem}
+  html.menu-chiuso .logo-lato img{margin:0}
+  html.menu-chiuso .menu-lato a{font-size:0;justify-content:center;padding:.6rem 0}
+  html.menu-chiuso .menu-lato .icona{width:1.15rem;height:1.15rem}
+  html.menu-chiuso .menu-lato{gap:.35rem}
+}
+
+/* disegno in caratteri nel piè di pagina (21/10/2026), solo decorazione */
+.arte{margin:.4rem 0 .8rem;overflow:hidden;white-space:pre;user-select:none;pointer-events:none;font:600 11px/11px var(--mono);letter-spacing:3px;background:linear-gradient(180deg,var(--muted) 0%,var(--free) 70%,var(--free-forte) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.9;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+@media (max-width:40rem){.arte{font-size:7px;line-height:7px;letter-spacing:1px}}
+.menu-mobile summary{white-space:nowrap}
+@media (max-width:22rem){.bandiere-codice{display:none}}
+@media (max-width:30rem){.barra{gap:.5rem}}

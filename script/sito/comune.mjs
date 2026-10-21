@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { arteAscii } from './arte.mjs';
 
 export const RADICE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const SITO = path.join(RADICE, 'sito');
@@ -41,6 +42,7 @@ export const barraSezioni = (voci) => `<nav class="su-pagina" aria-label="On thi
 // etichetta «New» per 45 giorni dalla data di uscita di una sezione
 export const nuovo = (dal) => (Date.now() - Date.parse(dal) < 45 * 864e5 ? ' <span class="badge-new">New</span>' : '');
 
+const ARTE = arteAscii(); // uguale in tutte le pagine
 const pagine = []; // per la sitemap
 export const pagineScritte = () => pagine;
 
@@ -88,7 +90,8 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
       ['/about.html', `${icona('info')}How we rank`],
     ]],
   ];
-  const voceMenu = ([h, t]) => `<a href="${h}"${h === attiva ? ' aria-current="page"' : ''}>${t}</a>`;
+  // title: col menu chiuso restano solo le icone, il nome compare passandoci sopra
+  const voceMenu = ([h, t]) => `<a href="${h}" title="${esc(t.replace(/<[^>]+>/g, '').replace(/\s+(free|New)$/, '').trim())}"${h === attiva ? ' aria-current="page"' : ''}>${t}</a>`;
   const menuGruppi = GRUPPI.map(([g, v]) => `<p class="menu-gruppo">${g}</p>${v.map(voceMenu).join('')}`).join('');
   const canonico = URL_SITO + '/' + file.replace(/index\.html$/, '').replace(/\.html$/, '');
   // un'immagine di anteprima per sezione (disegnate da script/immagini.py)
@@ -118,6 +121,8 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
     gtag('js', new Date()); gtag('config', '${GA_ID}');
   };
   try { if (localStorage.getItem('consenso') === 'si') window.caricaGa(); } catch (e) {}
+  // menu laterale chiuso dal visitatore (sorgente/menu.js): si applica prima di disegnare, senza salti
+  try { if (localStorage.getItem('menu') === 'chiuso') document.documentElement.classList.add('menu-chiuso'); } catch (e) {}
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -150,10 +155,11 @@ ${(Array.isArray(jsonld) ? jsonld : [jsonld]).filter(Boolean).map((o) => `<scrip
   <a class="logo" href="/"><img src="/favicon.svg" alt="FreeLLMArena logo" width="26" height="26">${NOME.testa}<span>${NOME.coda}</span></a>
   <span class="barra-spazio"></span>
   <a class="barra-link" href="/arena.html">Vote in Free Arena</a>
+  <!--lingue-->
   <details class="menu-mobile"><summary aria-label="Open the menu">Menu</summary><nav class="menu-pannello" aria-label="Site sections">${menuGruppi}</nav></details>
 </div></header>
 <div class="impianto">
-<aside class="lato"><a class="logo logo-lato" href="/"><img src="/favicon.svg" alt="FreeLLMArena logo" width="28" height="28">${NOME.testa}<span>${NOME.coda}</span><b class="badge-free">free</b></a><nav class="menu-lato" aria-label="Site sections">${menuGruppi}</nav><p class="lato-piede"><b>${esc(NOME_PIENO)}</b><br>Data updated ${esc(dati.aggiornato)}<br>Blind human votes from Arena</p></aside>
+<aside class="lato"><a class="logo logo-lato" href="/"><img src="/favicon.svg" alt="FreeLLMArena logo" width="28" height="28">${NOME.testa}<span>${NOME.coda}</span><b class="badge-free">free</b></a><div class="lato-strumenti"><!--lingue--><button type="button" class="lato-chiudi" aria-label="Collapse the menu" title="Collapse the menu" data-apri="Expand the menu" aria-expanded="true"><svg class="icona" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17-5-5 5-5M18 17l-5-5 5-5"/></svg></button></div><nav class="menu-lato" aria-label="Site sections">${menuGruppi}</nav><p class="lato-piede"><b>${esc(NOME_PIENO)}</b><br>Data updated ${esc(dati.aggiornato)}<br>Blind human votes from Arena</p></aside>
 <main class="contenuto">
 ${corpo}
 <p class="condividi small"><span class="muted">Share this page:</span><a href="https://x.com/intent/post?url=${condividi}&amp;text=${testoCond}" rel="noopener" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=${condividi}" rel="noopener" target="_blank">LinkedIn</a><a href="https://www.reddit.com/submit?url=${condividi}&amp;title=${testoCond}" rel="noopener" target="_blank">Reddit</a><a href="https://wa.me/?text=${testoCond}%20${condividi}" rel="noopener" target="_blank">WhatsApp</a><button type="button" class="link-btn" data-copia="${canonico}">Copy link</button></p>
@@ -165,6 +171,7 @@ ${file === 'report.html' ? '' : `<p class="small segnala-link">Spotted a wrong n
     <div class="piede-marca"><a class="logo" href="/">${NOME.testa}<span>${NOME.coda}</span></a><p>The best AI models you can use for free, ranked by real human votes.</p></div>
     ${colonne.map(([t, l]) => `<div><h3>${t}</h3><ul>${l.map(([h, x]) => `<li><a href="${h}"${h.startsWith('http') ? ' rel="noopener"' : ''}>${esc(x)}</a></li>`).join('')}</ul></div>`).join('')}
   </div>
+  ${ARTE}
   <p>Rankings: <a href="https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset">Arena leaderboard dataset</a> by Arena Intelligence, licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. We filtered it to models you can use for free and added sizes from Hugging Face. ${esc(NOME_PIENO)} is not affiliated with Arena. Data updated ${esc(dati.aggiornato)}.</p>
   <p><a href="/privacy.html">Privacy and cookies</a> · <button type="button" class="link-btn" id="consenso-cambia">Cookie settings</button></p>
 </div></footer>
@@ -174,6 +181,7 @@ ${file === 'report.html' ? '' : `<p class="small segnala-link">Spotted a wrong n
 </div>
 <script src="/consent.js?v=${VER}" defer></script>
 <script src="/tables.js?v=${VER}" defer></script>
+<script src="/menu.js?v=${VER}" defer></script>
 ${script ? `<script type="module" src="/${script}?v=${VER}"></script>` : ''}
 </body>
 </html>
