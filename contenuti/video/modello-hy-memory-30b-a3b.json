@@ -1,0 +1,155 @@
+{
+ "nome": "modello-hy-memory-30b-a3b",
+ "titolo": "Hy-Memory-30B-A3B: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "Hy-Memory-30B-A3B is a compact, long-term-memory writer model with a 256 K token context and only about 3 B active parameters. It outperforms competitors on most memory benchmarks and runs on a single high-end GPU with 4-bit quantization.\n\nSize: 30.1B parameters (3B active) · context 256K · memory at 4-bit about 21 GB.\nRTX 3060 12 GB + 32 GB RAM: about 52 tokens/s\nRTX 4090 + 64 GB RAM: about 163 tokens/s\nRTX 5090 + 64 GB RAM: about 214 tokens/s\nMac M4 Max 128 GB: about 79 tokens/s\nNVIDIA DGX Spark 128 GB: about 66 tokens/s\nRyzen AI Max+ 395 128 GB: about 63 tokens/s\nMac Studio M3 Ultra 512 GB: about 94 tokens/s\nModel card: https://huggingface.co/tencent/Hy-Memory-30B-A3B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Hy-Memory-30B-A3B",
+  "Tencent"
+ ],
+ "condividi": "Hy-Memory-30B-A3B by Tencent: 30.1B parameters, about 21 GB at 4-bit; smallest home machine that holds it: RTX 3090. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "Hy-Memory-30B-A3B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Hy-Memory-30B-A3B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Hy-Memory-30B-A3B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Hy-Memory-30B-A3B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Hy-Memory-30B-A3B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Hy-Memory-30B-A3B",
+    "gb": 21,
+    "scheda": {
+     "id": "rtx3090",
+     "nome": "RTX 3090",
+     "gb": 24,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "Hy-Memory-30B-A3B",
+    "vel": 52,
+    "dove": "ram"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Hy-Memory-30B-A3B",
+    "vel": 163,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Hy-Memory-30B-A3B",
+    "vel": 214,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Hy-Memory-30B-A3B",
+    "vel": 79,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Hy-Memory-30B-A3B",
+    "vel": 66,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Hy-Memory-30B-A3B",
+    "vel": 63,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Hy-Memory-30B-A3B",
+    "vel": 94,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "Tencent’s Hy-Memory-30B-A3B packs a massive 256 K token context into a compact writer model. It runs with only about 3 B active parameters per token, making long-term memory feasible at home.",
+  "Hy-Memory-30B-A3B is a writer model created by Tencent Hunyuan. The full model contains 30.1 billion parameters, but only roughly three billion are active for each token thanks to a mixture-of-experts design. It can attend to a context of 256 K tokens, far larger than typical LLMs. The weights are released under an Apache 2.0 license, so anyone can download them from Hugging Face. Because of its expert routing, the model can fit on a single high-end GPU when quantized to 4-bit, using about 21 GB of memory for an 8 K context. This makes it one of the most capable open-source options for long-term memory tasks.",
+  "According to the model card, the model is trained in two distinct stages. First, Memory On-Policy Distillation provides dense teacher supervision on state chains that the model writes. Then, an Attributed Memory Reinforcement Learning phase evaluates the resulting memory banks, assigns credit at the chunk level, and carries the best bank forward across windows. The same harness configurations are used in both stages, ensuring the writer learns directly in the environments where it will be deployed. This training scheme lets Hy-Memory-30B-A3B generalise to memory frameworks it has never seen, such as EverMemOS, without additional fine-tuning.",
+  "The model card lists a cross-harness macro-average of 55.49 on a fixed 20 % benchmark subsample. Across the four harnesses, Mem0, Hy-Memory, MemOS, and EverMemOS, it achieves the highest overall average among the compared writers. Its strongest single harness is Hy-Memory, where it scores 60.55, slightly ahead of Claude Opus 5’s 60.53. On the held-out EverMemOS harness, Hy-Memory-30B-A3B records 56.89, again beating the next best model. These numbers come from six equally weighted metrics per harness, covering judgment, long-term memory evaluation, persona memory, travel, shopping, and code memory benchmarks.",
+  "The results show the model’s greatest strength is its ability to maintain and update a persistent memory bank, especially in the Hy-Memory harness where it leads all competitors. It also performs well on long-term memory and code memory benchmarks. However, its shopping scenario score is comparatively lower, indicating a weaker grasp of that domain. To run the full 256 K context the model must be quantized to 4-bit, which reduces memory usage to about 21 GB for an 8 K window. This quantization is a requirement for most consumer-grade GPUs, and it may affect precision on some tasks.",
+  "If you have a GPU like an RTX 3090, the model fits entirely in GPU memory when run at 4-bit precision, making it practical for personal machines. Developers building applications that require very long context, such as multi-turn chat, document analysis, or codebases, will find the 256 K token window valuable. Researchers exploring memory-augmented language models can use the two-stage training pipeline as a reference point. Finally, anyone who prefers fully open-source models under a permissive Apache 2.0 license can download the weights from Hugging Face and experiment without licensing hurdles.",
+  "What do you need to run it at home? At 4-bit it takes about 21 gigabytes of memory. The smallest home machine that holds it fully is an RTX 30 90. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 52 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 163 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the Apache 2.0 license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare Hy Memory 30B A3B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-hy-memory-30b-a3b",
+ "pubblicato": "2026-10-21"
+}

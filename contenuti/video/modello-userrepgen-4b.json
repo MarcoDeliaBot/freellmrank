@@ -1,0 +1,155 @@
+{
+ "nome": "modello-userrepgen-4b",
+ "titolo": "UserRepGen-4B: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "UserRepGen-4B is a free 4-billion-parameter model that turns chats into JSON user representations. Ideal for research on user simulation and conversation reconstruction.\n\nSize: 4.5B parameters · context 256K · memory at 4-bit about 5 GB.\nRTX 3060 12 GB + 32 GB RAM: about 86 tokens/s\nRTX 4090 + 64 GB RAM: about 208 tokens/s\nRTX 5090 + 64 GB RAM: about 318 tokens/s\nMac M4 Max 128 GB: about 95 tokens/s\nNVIDIA DGX Spark 128 GB: about 66 tokens/s\nRyzen AI Max+ 395 128 GB: about 62 tokens/s\nMac Studio M3 Ultra 512 GB: about 122 tokens/s\nModel card: https://huggingface.co/microsoft/UserRepGen-4B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "UserRepGen-4B",
+  "Microsoft"
+ ],
+ "condividi": "UserRepGen-4B by Microsoft: 4.5B parameters, about 5 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "UserRepGen-4B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "UserRepGen-4B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "UserRepGen-4B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "UserRepGen-4B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "UserRepGen-4B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "UserRepGen-4B",
+    "gb": 5,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "UserRepGen-4B",
+    "vel": 86,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "UserRepGen-4B",
+    "vel": 208,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "UserRepGen-4B",
+    "vel": 318,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "UserRepGen-4B",
+    "vel": 95,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "UserRepGen-4B",
+    "vel": 66,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "UserRepGen-4B",
+    "vel": 62,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "UserRepGen-4B",
+    "vel": 122,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "UserRepGen-4B turns a chat into a structured user profile. It’s a free, 4-billion-parameter model that writes JSON, not dialogue.",
+  "UserRepGen-4B is a fine-tuned version of the Qwen3.5-4B language model. According to Microsoft, it accepts English, multi-turn user-assistant chats and returns a JSON object containing two fields: `task` and `user_behavior`. The model’s backbone remains a conditional-generation transformer, but the fine-tune adds a rank-64 LoRA layer trained with online supervised fine-tuning. Its purpose is to create a compact, natural-language representation of a user that can later condition a separate LLM-based simulator.",
+  "Unlike earlier UserLM models that generate simulated user turns, UserRepGen-4B produces a description of the user’s task and behavior instead of dialogue. The model does this directly from the source conversation, so it does not require any simulation rollouts or hindsight feedback at inference time. Microsoft says the training used online supervised fine-tuning with hindsight distillation, letting the model learn from comparisons between simulated and original user behavior.",
+  "The model card highlights several capabilities. It can capture a user’s communication style, incremental constraint disclosure, feedback patterns, and termination behavior. When fed to an unseen LLM-based simulator, these representations improve conversation-reconstruction fidelity, according to the research. The training sequence length is 9,216 tokens, allowing fairly long multi-turn dialogs to be processed in a single pass.",
+  "UserRepGen-4B infers a user profile from just one conversation, so it can over-generalize occasional behavior into a stable rule. The model may include assumptions that are not grounded in the source text, and it does not anonymize the output. Microsoft warns that the generated representations can preserve identifying details and increase the ability to link conversations from the same user, posing a privacy risk.",
+  "According to the model card, the primary audience is academic and industry researchers working on LLM-based user simulation, conversation reconstruction, or behavioral diversity studies. Engineers who need a compact, natural-language description of a user to condition a separate simulator will find it useful. The model is free under an MIT license, downloadable from Hugging Face, and runs on modest hardware such as an RTX 4060.",
+  "What do you need to run it at home? At 4-bit it takes about 5 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 86 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 208 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the MIT license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare UserRepGen 4B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-userrepgen-4b",
+ "pubblicato": "2026-10-21"
+}
