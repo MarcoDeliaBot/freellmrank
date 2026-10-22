@@ -1824,5 +1824,16 @@
   "contestoMax": 32768,
   "moe": false,
   "attivi": 7241732096
+ },
+ "briaai/fibo-scene-analyzer": {
+  "strati": 40,
+  "tipo": "GQA",
+  "kvPerStrato": 2048,
+  "pieni": 10,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": true,
+  "attivi": 4746200944
  }
 }

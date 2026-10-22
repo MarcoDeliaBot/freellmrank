@@ -474,7 +474,7 @@
    "space": "hexgrad/kokoro",
    "punteggio": 1211,
    "ic": 4,
-   "voti": 34213,
+   "voti": 34216,
    "vinte": 23922,
    "ultimo": "2026-10-22"
   },
@@ -482,8 +482,8 @@
    "space": "MohamedRashad/Orpheus-TTS",
    "punteggio": 1198,
    "ic": 5,
-   "voti": 18694,
-   "vinte": 11965,
+   "voti": 18696,
+   "vinte": 11967,
    "ultimo": "2026-10-22"
   },
   {
@@ -498,8 +498,8 @@
    "space": "Qwen/Qwen3-TTS",
    "punteggio": 1125,
    "ic": 8,
-   "voti": 8450,
-   "vinte": 4337,
+   "voti": 8452,
+   "vinte": 4339,
    "ultimo": "2026-10-22"
   },
   {
@@ -530,7 +530,7 @@
    "space": "OpenMOSS-Team/MOSS-TTS",
    "punteggio": 1101,
    "ic": 17,
-   "voti": 1655,
+   "voti": 1656,
    "vinte": 797,
    "ultimo": "2026-10-22"
   },

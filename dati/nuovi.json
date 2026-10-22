@@ -1,5 +1,35 @@
 [
  {
+  "repo": "briaai/Fibo-2.0-edit-turbo",
+  "nome": "Fibo-2.0-edit-turbo",
+  "org": "briaai",
+  "parametri": 8127342213,
+  "download": 310,
+  "like": 90,
+  "tipo": "image-to-image",
+  "creato": "2026-10-19",
+  "gated": true,
+  "cat": [
+   "edit"
+  ],
+  "fonte": "hf"
+ },
+ {
+  "repo": "briaai/Fibo-2.0-dev",
+  "nome": "Fibo-2.0-dev",
+  "org": "briaai",
+  "parametri": 8127342213,
+  "download": 396,
+  "like": 106,
+  "tipo": "text-to-image",
+  "creato": "2026-10-18",
+  "gated": true,
+  "cat": [
+   "image"
+  ],
+  "fonte": "hf"
+ },
+ {
   "repo": "microsoft/Sentiment-Analysis-7B",
   "nome": "Sentiment-Analysis-7B",
   "org": "microsoft",
@@ -20,7 +50,7 @@
   "org": "deepseek-ai",
   "parametri": 763205315794,
   "download": 42122,
-  "like": 2217,
+  "like": 2220,
   "tipo": "image-text-to-text",
   "creato": "2026-10-17",
   "gated": false,
@@ -51,7 +81,7 @@
   "org": "tencent",
   "parametri": 30064725888,
   "download": 2682,
-  "like": 277,
+  "like": 278,
   "tipo": "text-generation",
   "creato": "2026-10-15",
   "gated": false,
@@ -81,7 +111,7 @@
   "org": "ibm-granite",
   "parametri": 8776400896,
   "download": 1483,
-  "like": 39,
+  "like": 40,
   "tipo": "text-generation",
   "creato": "2026-10-14",
   "gated": false,
@@ -96,7 +126,7 @@
   "org": "ibm-granite",
   "parametri": 29989814272,
   "download": 1133,
-  "like": 26,
+  "like": 27,
   "tipo": "text-generation",
   "creato": "2026-10-14",
   "gated": false,
@@ -291,6 +321,22 @@
   "gated": false,
   "cat": [
    "image"
+  ],
+  "fonte": "hf"
+ },
+ {
+  "repo": "briaai/fibo-scene-analyzer",
+  "nome": "fibo-scene-analyzer",
+  "org": "briaai",
+  "parametri": 35951822704,
+  "download": 648,
+  "like": 49,
+  "tipo": "image-text-to-text",
+  "creato": "2026-09-10",
+  "gated": false,
+  "cat": [
+   "chat",
+   "vision"
   ],
   "fonte": "hf"
  },
