@@ -15,7 +15,7 @@ const dati = leggi('sito/data.json', { categorie: [], openrouterGratis: [] });
 const AUTORI = ['Qwen', 'google', 'meta-llama', 'mistralai', 'microsoft', 'deepseek-ai', 'ibm-granite', 'HuggingFaceTB',
   'allenai', 'nvidia', 'LiquidAI', 'zai-org', 'XiaomiMiMo', 'tencent', 'CohereLabs', 'ServiceNow-AI', 'baidu', 'swiss-ai',
   'openbmb', 'moonshotai', 'stepfun-ai', 'inclusionAI', 'MiniMaxAI', 'meituan-longcat', 'ByteDance-Seed', 'openai',
-  'black-forest-labs', 'Lightricks', 'Wan-AI', 'Tongyi-MAI', 'HiDream-ai', 'kandinskylab', 'utter-project'];
+  'black-forest-labs', 'Lightricks', 'Wan-AI', 'Tongyi-MAI', 'HiDream-ai', 'kandinskylab', 'utter-project', 'briaai'];
 const GIORNI = 60;
 const TIPI = { 'text-generation': ['chat'], 'image-text-to-text': ['chat', 'vision'], 'text-to-image': ['image'], 'image-to-image': ['edit'], 'text-to-video': ['video'], 'image-to-video': ['video'] };
 const SCARTA = /awq|gptq|fp8|fp4|nvfp4|int4|int8|gguf|mlx|onnx|bnb|embed|rerank|guard|safety|reward|prm|-base$|base-|classifier|retriev|dflash|eagle|draft|mtp|-pt$|-sft|gsm8k|lora|dspark|staged|pretrain|midtrain|w8a8|w4a16|lilicorr|parse|parsing|ocr/i;
