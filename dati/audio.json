@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-10-21",
+ "aggiornato": "2026-10-22",
  "fonti": {
   "asr": {
    "nome": "Open ASR Leaderboard (Hugging Face)",
@@ -474,17 +474,17 @@
    "space": "hexgrad/kokoro",
    "punteggio": 1211,
    "ic": 4,
-   "voti": 34196,
-   "vinte": 23912,
-   "ultimo": "2026-10-21"
+   "voti": 34213,
+   "vinte": 23922,
+   "ultimo": "2026-10-22"
   },
   {
    "space": "MohamedRashad/Orpheus-TTS",
    "punteggio": 1198,
    "ic": 5,
-   "voti": 18679,
-   "vinte": 11955,
-   "ultimo": "2026-10-21"
+   "voti": 18694,
+   "vinte": 11965,
+   "ultimo": "2026-10-22"
   },
   {
    "space": "Qwen/Qwen3-TTS-Voice-Design",
@@ -498,9 +498,9 @@
    "space": "Qwen/Qwen3-TTS",
    "punteggio": 1125,
    "ic": 8,
-   "voti": 8431,
-   "vinte": 4326,
-   "ultimo": "2026-10-21"
+   "voti": 8450,
+   "vinte": 4337,
+   "ultimo": "2026-10-22"
   },
   {
    "space": "parler-tts/parler_tts_mini",
@@ -530,9 +530,9 @@
    "space": "OpenMOSS-Team/MOSS-TTS",
    "punteggio": 1101,
    "ic": 17,
-   "voti": 1643,
-   "vinte": 790,
-   "ultimo": "2026-10-21"
+   "voti": 1655,
+   "vinte": 797,
+   "ultimo": "2026-10-22"
   },
   {
    "space": "ResembleAI/Chatterbox",
@@ -586,9 +586,9 @@
    "space": "ResembleAI/chatterbox-turbo-demo",
    "punteggio": 1051,
    "ic": 7,
-   "voti": 9926,
-   "vinte": 3698,
-   "ultimo": "2026-10-21"
+   "voti": 9949,
+   "vinte": 3707,
+   "ultimo": "2026-10-22"
   },
   {
    "space": "sesame/csm-1b",
@@ -674,9 +674,9 @@
    "space": "mrfakename/E2-F5-TTS",
    "punteggio": 1001,
    "ic": 5,
-   "voti": 19988,
-   "vinte": 7435,
-   "ultimo": "2026-10-21"
+   "voti": 20000,
+   "vinte": 7437,
+   "ultimo": "2026-10-22"
   },
   {
    "space": "mrfakename/MeloTTS",
@@ -784,7 +784,7 @@
   },
   {
    "space": "LeeSangHoon/HierSpeech_TTS",
-   "punteggio": 859,
+   "punteggio": 858,
    "ic": 22,
    "voti": 1154,
    "vinte": 359,

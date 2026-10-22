@@ -188,5 +188,22 @@
  "codavidgarcia/mola-68m": "cc-by-nc-4.0",
  "Elfsong/jev-ettin-400m-20261013-v0": null,
  "tardellirs/prumo": "apache-2.0",
- "tardellirs/crivo-17m": "cc-by-nc-4.0"
+ "tardellirs/crivo-17m": "cc-by-nc-4.0",
+ "tattrongvu/Jeffan-31b-1710": "cc-by-nc-4.0",
+ "autotrust/AutoTrust-JEV-27B-v1.1": "apache-2.0",
+ "taoszhang/VisionJEV": "apache-2.0",
+ "h2oai/h2o-lightning-31b": "other",
+ "bespokelabs/Nimble-v4-max": "cc-by-nc-4.0",
+ "morriszjm/AnyJev-Tacitus-31B": "apache-2.0",
+ "plantwaterer/allec": "apache-2.0",
+ "PelaAI/KnowLine-26B-A4B-Gen2": "apache-2.0",
+ "FrontiersMind/Lumma-fev-27B": "apache-2.0",
+ "shisa-ai/shisa-de-2.1": "apache-2.0",
+ "matthewagi/Tern-35B-A3B": "apache-2.0",
+ "PelaAI/KnowLine-4B-Gen5": "apache-2.0",
+ "plantwaterer/muria": "apache-2.0",
+ "sky7350/Mica-v0.5-4B": "apache-2.0",
+ "MachineFi/Trio-Spark-DI": "cc-by-nc-4.0",
+ "AnamK/jdi-ptr14-0.8b": "cc-by-nc-4.0",
+ "lCREEl/pick-150m": "cc-by-nc-4.0"
 }

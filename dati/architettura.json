@@ -1813,5 +1813,16 @@
   "contestoMax": 262144,
   "moe": true,
   "attivi": 3000000000
+ },
+ "microsoft/Sentiment-Analysis-7B": {
+  "strati": 32,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 32,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 32768,
+  "moe": false,
+  "attivi": 7241732096
  }
 }
