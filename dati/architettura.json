@@ -1835,5 +1835,16 @@
   "contestoMax": 262144,
   "moe": true,
   "attivi": 4746200944
+ },
+ "inclusionAI/Ling-3.0-flash-Sante": {
+  "strati": 42,
+  "tipo": "MLA",
+  "kvPerStrato": 1152,
+  "pieni": 42,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": true,
+  "attivi": 8577887200
  }
 }

@@ -48,14 +48,14 @@
  "modelli": [
   {
    "id": "glide-v1.2",
-   "nome": "Fastino GLiDE V1.2",
+   "nome": "Fastino GLiDE 1.2",
    "org": "Fastino",
    "tipo": "full fine-tune",
    "b": 27.8,
    "stimato": false,
-   "repo": null,
-   "base": null,
-   "nota": "Open weights coming soon",
+   "repo": "fastino/GLiDE",
+   "base": "Qwen/Qwen3.8-27B",
+   "nota": null,
    "punti": 71.52,
    "pubblico": 71.99,
    "ms": 92.9,
@@ -73,7 +73,7 @@
     "punti": 71.5,
     "ms": 346.6
    },
-   "licenza": null
+   "licenza": "other"
   },
   {
    "id": "jeffan-31b-1710",

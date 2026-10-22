@@ -474,16 +474,16 @@
    "space": "hexgrad/kokoro",
    "punteggio": 1211,
    "ic": 4,
-   "voti": 34216,
-   "vinte": 23922,
+   "voti": 34226,
+   "vinte": 23930,
    "ultimo": "2026-10-22"
   },
   {
    "space": "MohamedRashad/Orpheus-TTS",
    "punteggio": 1198,
    "ic": 5,
-   "voti": 18696,
-   "vinte": 11967,
+   "voti": 18700,
+   "vinte": 11968,
    "ultimo": "2026-10-22"
   },
   {
@@ -498,8 +498,8 @@
    "space": "Qwen/Qwen3-TTS",
    "punteggio": 1125,
    "ic": 8,
-   "voti": 8452,
-   "vinte": 4339,
+   "voti": 8459,
+   "vinte": 4341,
    "ultimo": "2026-10-22"
   },
   {
@@ -528,10 +528,10 @@
   },
   {
    "space": "OpenMOSS-Team/MOSS-TTS",
-   "punteggio": 1101,
+   "punteggio": 1102,
    "ic": 17,
-   "voti": 1656,
-   "vinte": 797,
+   "voti": 1660,
+   "vinte": 801,
    "ultimo": "2026-10-22"
   },
   {
@@ -586,8 +586,8 @@
    "space": "ResembleAI/chatterbox-turbo-demo",
    "punteggio": 1051,
    "ic": 7,
-   "voti": 9949,
-   "vinte": 3707,
+   "voti": 9954,
+   "vinte": 3709,
    "ultimo": "2026-10-22"
   },
   {
@@ -674,7 +674,7 @@
    "space": "mrfakename/E2-F5-TTS",
    "punteggio": 1001,
    "ic": 5,
-   "voti": 20000,
+   "voti": 20004,
    "vinte": 7437,
    "ultimo": "2026-10-22"
   },
