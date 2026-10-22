@@ -1,0 +1,79 @@
+{
+ "nome": "nuovo-ling-3.0-flash-sante",
+ "titolo": "Ling-3.0-flash-Sante: 128B parameters, free to download #Shorts",
+ "descrizione": "Ling-3.0-flash-Sante by InclusionAI came out on 19 Oct 2026, with open weights on Hugging Face. At 4-bit it needs about 80 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Ling-3.0-flash-Sante"
+ ],
+ "condividi": "Ling-3.0-flash-Sante is out: 128B parameters and open weights. At 4-bit it needs about 80 GB, so the smallest card that holds it fully is the RTX PRO 6000 Blackwell. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "Ling-3.0-flash-Sante: 128 miliardi di parametri, gratis #Shorts",
+   "descrizione": "Ling-3.0-flash-Sante di InclusionAI è uscito il 19 ottobre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 80 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Ling-3.0-flash-Sante: 128 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "Ling-3.0-flash-Sante de InclusionAI salió el 19 de octubre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 80 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Ling-3.0-flash-Sante: 128 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "Ling-3.0-flash-Sante von InclusionAI ist am 19. Oktober 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 80 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Ling-3.0-flash-Sante : 128 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "Ling-3.0-flash-Sante de InclusionAI est sorti le 19 octobre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 80 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Ling-3.0-flash-Sante: 128 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "Ling-3.0-flash-Sante da InclusionAI saiu em 19 de outubro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 80 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Ling-3.0-flash-Sante",
+    "gb": 80,
+    "scheda": {
+     "id": "rtxpro6000",
+     "nome": "RTX PRO 6000 Blackwell",
+     "gb": 96,
+     "tiene": true
+    }
+   }
+  ],
+  "schede": [
+   {
+    "id": "rtx6000ada",
+    "nome": "RTX 6000 Ada",
+    "gb": 48,
+    "tiene": false
+   },
+   {
+    "id": "m4pro-64",
+    "nome": "Mac mini M4 Pro 64 GB",
+    "gb": 64,
+    "tiene": false
+   },
+   {
+    "id": "rtxpro6000",
+    "nome": "RTX PRO 6000 Blackwell",
+    "gb": 96,
+    "tiene": true
+   }
+  ]
+ },
+ "voce": [
+  "A new free AI model with 128 billion parameters.",
+  "It comes from InclusionAI, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 80 gigabytes. You need at least an RTX PRO 6000 Blackwell.",
+  "It reads up to 256 thousand tokens at once.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-ling-3.0-flash-sante",
+ "pubblicato": "2026-10-22"
+}

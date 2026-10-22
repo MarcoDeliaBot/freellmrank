@@ -1,0 +1,131 @@
+{
+ "nome": "modello-ling-3.0-flash-sante",
+ "titolo": "Ling-3.0-flash-Sante: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "Ling-3.0-flash-Sante is a healthcare-specialized, 124 billion-parameter model that can handle 256 K token contexts while activating only 5.1 B parameters per token. Ideal for researchers and developers working on medical QA, long-document analysis, and tool-assisted AI workflows.\n\nSize: 127.5B parameters (8.6B active) · context 256K · memory at 4-bit about 80 GB.\nRTX 5090 + 64 GB RAM: about 22 tokens/s\nMac M4 Max 128 GB: about 51 tokens/s\nNVIDIA DGX Spark 128 GB: about 34 tokens/s\nRyzen AI Max+ 395 128 GB: about 32 tokens/s\nMac Studio M3 Ultra 512 GB: about 65 tokens/s\nModel card: https://huggingface.co/inclusionAI/Ling-3.0-flash-Sante\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Ling-3.0-flash-Sante",
+  "InclusionAI"
+ ],
+ "condividi": "Ling-3.0-flash-Sante by InclusionAI: 127.5B parameters, about 80 GB at 4-bit; smallest home machine that holds it: RTX PRO 6000 Blackwell. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "Ling-3.0-flash-Sante: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Ling-3.0-flash-Sante: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Ling-3.0-flash-Sante: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Ling-3.0-flash-Sante : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Ling-3.0-flash-Sante: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Ling-3.0-flash-Sante",
+    "gb": 80,
+    "scheda": {
+     "id": "rtxpro6000",
+     "nome": "RTX PRO 6000 Blackwell",
+     "gb": 96,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Ling-3.0-flash-Sante",
+    "vel": 22,
+    "dove": "ram"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Ling-3.0-flash-Sante",
+    "vel": 51,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Ling-3.0-flash-Sante",
+    "vel": 34,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Ling-3.0-flash-Sante",
+    "vel": 32,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Ling-3.0-flash-Sante",
+    "vel": 65,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "Ling-3.0-flash-Sante can reason over 256 K tokens, letting it analyse whole medical documents in one go. It activates only 5.1 B of its 124 B parameters per token, keeping inference efficient.",
+  "Ling-3.0-flash-Sante is a research model built on the Ling-3.0-flash architecture. According to InclusionAI, it contains 124 billion total parameters, but only 5.1 billion are active for each token, thanks to its mixture-of-experts design. The model is tuned for medical reasoning, healthcare research, and tool-assisted workflows while keeping the general language abilities of its base. Model weights are publicly available on Hugging Face and ModelScope under an MIT license.",
+  "The model introduces a hybrid-linear mixture-of-experts architecture. It combines Kimi Delta Attention, gated MLA, and sparse MoE layers to activate a small slice of the full network per token. This design lets the model keep its reasoning capabilities while using fewer active parameters. Thinking mode, which enables chain-of-thought reasoning, is turned on by default, and tool calling is supported through compatible serving frameworks.",
+  "Evaluation on the model card shows strong performance across professional healthcare tasks, complex medical reasoning, and safety benchmarks. Its 256 K token context window allows analysis of long documents, evidence synthesis, and multi-step research without chopping the text. The architecture’s efficient activation of only 5.1 B parameters per token makes it practical for large-scale inference while still delivering deep reasoning. Built-in tool use and multi-agent collaboration further extend its applicability beyond simple question answering.",
+  "The model card warns that Ling-3.0-flash-Sante can generate incomplete, incorrect, or unsafe medical information. It is explicitly labeled a research model, not a medical device, so it must never be used to diagnose, prescribe, or make treatment decisions without professional oversight. Outputs for clinical or other high-risk scenarios need verification against authoritative sources, and privacy and regulatory compliance remain the user’s responsibility. Real-world performance may differ across languages, specialties, and institutions.",
+  "Ling-3.0-flash-Sante is aimed at researchers and developers exploring healthcare AI. If you need a model that can read and reason over entire medical papers, support evidence synthesis, or power multi-agent research pipelines, this model fits the bill. It is also suitable for anyone experimenting with tool-calling or chain-of-thought reasoning in a medical context, provided you apply human review and follow responsible-use guidelines. The MIT license and open weights make it accessible for academic and hobbyist projects.",
+  "What do you need to run it at home? At 4-bit it takes about 80 gigabytes of memory. The smallest home machine that holds it fully is an RTX PRO 6000 Blackwell. On an RTX 50 90 with 64 gigabytes of RAM it writes about 22 tokens per second. On the Mac M4 Max 128 GB it writes about 51 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the MIT license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare Ling 3.0 flash Sante with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-ling-3.0-flash-sante",
+ "pubblicato": "2026-10-22"
+}
