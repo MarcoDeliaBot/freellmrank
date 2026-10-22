@@ -1,0 +1,154 @@
+{
+ "nome": "modello-flux-3-image-klein-pup",
+ "titolo": "flux-3-image-klein-pup: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "FLUX 3 Image Klein Prompt Upsampler expands short requests into full prompts for the FLUX 3 image model, supporting reference images and bounding boxes. Ideal for home users who want precise, ready-to-use captions for text-to-image, editing or layout tasks.\n\nSize: 9.4B parameters · context 256K · memory at 4-bit about 8 GB.\nRTX 3060 12 GB + 32 GB RAM: about 45 tokens/s\nRTX 4090 + 64 GB RAM: about 116 tokens/s\nRTX 5090 + 64 GB RAM: about 190 tokens/s\nMac M4 Max 128 GB: about 57 tokens/s\nNVIDIA DGX Spark 128 GB: about 34 tokens/s\nRyzen AI Max+ 395 128 GB: about 32 tokens/s\nMac Studio M3 Ultra 512 GB: about 78 tokens/s\nModel card: https://huggingface.co/black-forest-labs/flux-3-image-klein-pup\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "flux-3-image-klein-pup",
+  "Black-forest"
+ ],
+ "condividi": "flux-3-image-klein-pup by Black-forest: 9.4B parameters, about 8 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "flux-3-image-klein-pup: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "flux-3-image-klein-pup: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "flux-3-image-klein-pup: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "flux-3-image-klein-pup : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "flux-3-image-klein-pup: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "flux-3-image-klein-pup",
+    "gb": 8,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "flux-3-image-klein-pup",
+    "vel": 45,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "flux-3-image-klein-pup",
+    "vel": 116,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "flux-3-image-klein-pup",
+    "vel": 190,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "flux-3-image-klein-pup",
+    "vel": 57,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "flux-3-image-klein-pup",
+    "vel": 34,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "flux-3-image-klein-pup",
+    "vel": 32,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "flux-3-image-klein-pup",
+    "vel": 78,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "FLUX 3 Image Klein Prompt Upsampler turns a short request into a full-length prompt for the FLUX 3 image model. It even accepts up to ten reference images and optional bounding boxes.",
+  "FLUX 3 Image Klein Prompt Upsampler is a 9.4 billion-parameter vision-language model. It takes a brief description, a set of reference pictures, and optionally a JSON list of bounding boxes, then returns a single caption that contains scene, lighting, camera angle, subject details and exact box references. The caption is ready to feed straight into the FLUX 3 Image Klein generator, whether you are doing text-to-image, image-to-image editing, or layout-guided generation.",
+  "According to Black-forest, the upsampler is a full fine-tune of Qwen3.5-9B with the vision tower frozen. Training happened in two stages: first on pairs of short requests and their expanded prompts, then on preference data where the model’s own prompts were ranked after rendering with FLUX 3 Image Klein. The result is a model that knows exactly which details the image generator needs, without extra system prompting.",
+  "The biggest strength is that the output prompt already contains medium, style, lighting, camera angle and per-subject attributes, so the image model can produce high-quality results without generic defaults. Bounding-box coordinates are kept verbatim, letting you control placement precisely. Limits include English-only prompts, and reference images are resized to at most one megapixel, which can cause loss of tiny details. The model does not refuse requests, so external safety checks are recommended.",
+  "If you already run FLUX 3 Image Klein locally, this upsampler is a natural companion. It fits on a RTX 4060 in 4-bit mode, using about 8 GB of memory, and runs at roughly 45 tokens per second on a RTX 3060 with 12 GB VRAM. Faster cards reach up to 190 tokens per second.",
+  "What do you need to run it at home? At 4-bit it takes about 8 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 45 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 116 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the Apache 2.0 license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare flux 3 image klein pup with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-flux-3-image-klein-pup",
+ "pubblicato": "2026-10-22"
+}

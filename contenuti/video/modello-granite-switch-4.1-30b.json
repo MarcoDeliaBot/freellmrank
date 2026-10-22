@@ -1,0 +1,155 @@
+{
+ "nome": "modello-granite-switch-4.1-30b",
+ "titolo": "granite-switch-4.1-30b: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "Granite Switch 4.1-30B merges chat, decision-making and speech-to-text in one 30 B model. Learn its architecture, benchmark scores, strengths and who can benefit.\n\nSize: 30B parameters · context 128K · memory at 4-bit about 21 GB.\nRTX 3060 12 GB + 32 GB RAM: about 6.3 tokens/s\nRTX 4090 + 64 GB RAM: about 37 tokens/s\nRTX 5090 + 64 GB RAM: about 64 tokens/s\nMac M4 Max 128 GB: about 19 tokens/s\nNVIDIA DGX Spark 128 GB: about 10 tokens/s\nRyzen AI Max+ 395 128 GB: about 9.6 tokens/s\nMac Studio M3 Ultra 512 GB: about 28 tokens/s\nModel card: https://huggingface.co/ibm-granite/granite-switch-4.1-30b\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "granite-switch-4.1-30b",
+  "Ibm-granite"
+ ],
+ "condividi": "granite-switch-4.1-30b by Ibm-granite: 30B parameters, about 21 GB at 4-bit; smallest home machine that holds it: RTX 3090. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "granite-switch-4.1-30b: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "granite-switch-4.1-30b: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "granite-switch-4.1-30b: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "granite-switch-4.1-30b : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "granite-switch-4.1-30b: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "granite-switch-4.1-30b",
+    "gb": 21,
+    "scheda": {
+     "id": "rtx3090",
+     "nome": "RTX 3090",
+     "gb": 24,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "granite-switch-4.1-30b",
+    "vel": 6.3,
+    "dove": "ram"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "granite-switch-4.1-30b",
+    "vel": 37,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "granite-switch-4.1-30b",
+    "vel": 64,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "granite-switch-4.1-30b",
+    "vel": 19,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "granite-switch-4.1-30b",
+    "vel": 10,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "granite-switch-4.1-30b",
+    "vel": 9.6,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "granite-switch-4.1-30b",
+    "vel": 28,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "Granite Switch 4.1 combines chat, decision-making and speech-to-text in a single 30 B model. It lets you switch tasks with a control token, no extra server needed.",
+  "Granite Switch 4.1-30B is a modular large language model built by IBM-Granite. The base has thirty billion parameters and can handle up to one hundred twenty-eight thousand tokens in a single prompt. It is released under the Apache 2.0 license, so you can download the weights from Hugging Face and run them locally.",
+  "According to the model card, Granite Switch composes a base model with two adapters, decision and guardian-core, plus an audio encoder. You activate an adapter by inserting a special control token in the chat template. The speech-to-text component is a 470 million-parameter non-autoregressive conformer that runs on the same endpoint, so you don’t need a separate ASR server. The decision adapter produces a calibrated probability distribution over option labels in a single forward pass.",
+  "The model card reports results on the public Decision Index fast subset, which contains 1,068 rows. The overall score is 50.1 out of 100. Per-area scores are 58.6 for language, 49.8 for retrieval, 76.5 for tools, 32.4 for knowledge, 26.4 for arts, and 58.6 for language again. Hosted and local serving numbers differ by about 0.6 points, confirming the endpoint behaves consistently.",
+  "A key strength is the ability to run chat, decision making and speech-to-text on a single vLLM server, simplifying deployment. The speech encoder is the fastest model on the OpenASR leaderboard for English, though it only outputs lower-case, unpunctuated text and is not jointly trained with the LLM. The decision adapter can handle up to 128 option tokens per request; larger sets require splitting into multiple calls.",
+  "If you run AI models at home and want a single model that can chat, make structured decisions and transcribe English speech, Granite Switch 4.1-30B is a good fit. It runs on a RTX 3090 with 4-bit quantization, and on higher-end GPUs like RTX 4090 you can reach about 37 tokens per second. Its Apache license lets you experiment without cost.",
+  "What do you need to run it at home? At 4-bit it takes about 21 gigabytes of memory. The smallest home machine that holds it fully is an RTX 30 90. On an RTX 40 90 with 64 gigabytes of RAM it writes about 37 tokens per second. On an RTX 50 90 with 64 gigabytes of RAM it writes about 64 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the Apache 2.0 license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare granite switch 4.1 30b with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-granite-switch-4.1-30b",
+ "pubblicato": "2026-10-22"
+}

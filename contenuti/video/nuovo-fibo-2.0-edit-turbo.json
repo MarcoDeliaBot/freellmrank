@@ -1,0 +1,66 @@
+{
+ "nome": "nuovo-fibo-2.0-edit-turbo",
+ "titolo": "Fibo-2.0-edit-turbo: 8B parameters, free to download #Shorts",
+ "descrizione": "Fibo-2.0-edit-turbo by Briaai came out on 19 Oct 2026, with open weights on Hugging Face. At 4-bit it needs about 8 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Fibo-2.0-edit-turbo"
+ ],
+ "condividi": "Fibo-2.0-edit-turbo is out: 8B parameters and open weights. At 4-bit it needs about 8 GB, so the smallest card that holds it fully is the RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "Fibo-2.0-edit-turbo: 8 miliardi di parametri, gratis #Shorts",
+   "descrizione": "Fibo-2.0-edit-turbo di Briaai è uscito il 19 ottobre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 8 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Fibo-2.0-edit-turbo: 8 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "Fibo-2.0-edit-turbo de Briaai salió el 19 de octubre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 8 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Fibo-2.0-edit-turbo: 8 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "Fibo-2.0-edit-turbo von Briaai ist am 19. Oktober 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 8 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Fibo-2.0-edit-turbo : 8 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "Fibo-2.0-edit-turbo de Briaai est sorti le 19 octobre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 8 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Fibo-2.0-edit-turbo: 8 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "Fibo-2.0-edit-turbo da Briaai saiu em 19 de outubro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 8 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Fibo-2.0-edit-turbo",
+    "gb": 8,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "schede": [
+   {
+    "id": "rtx4060",
+    "nome": "RTX 4060",
+    "gb": 8,
+    "tiene": true
+   }
+  ]
+ },
+ "voce": [
+  "A new free AI model with 8 billion parameters.",
+  "It comes from Briaai, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 8 gigabytes. You need at least an RTX 40 60.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-fibo-2.0-edit-turbo",
+ "pubblicato": "2026-10-22"
+}
