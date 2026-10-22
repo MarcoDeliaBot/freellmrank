@@ -1009,3 +1009,6 @@ dialog.cerca::backdrop{background:rgba(2,6,23,.55)}
 :root[data-tema="chiaro"] .tema-btn .tema-auto,:root[data-tema="scuro"] .tema-btn .tema-auto{display:none}
 :root[data-tema="chiaro"] .tema-btn .tema-chiaro,:root[data-tema="scuro"] .tema-btn .tema-scuro{display:block}
 @media (min-width:64rem){html.menu-chiuso .lato-lingua{flex-direction:column}}
+/* notizie del blog (22/10/2026) */
+.post-tipo.notizia{background:#dbeafe;color:#1e40af}
+@media (prefers-color-scheme:dark){.post-tipo.notizia{background:rgba(59,130,246,.2);color:#93c5fd}}

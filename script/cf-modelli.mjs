@@ -22,10 +22,10 @@ export const CF_MODELLI = [
 
 // Quota gratis Cloudflare: 10.000 neurons al giorno (UTC). Ci fermiamo prima, con margine,
 // e la dividiamo (decisione del 19/10/2026, rivista il 22/10/2026 quando sono arrivati i video lunghi: misurato il consumo
-// vero, «Try it now» ~45 al giorno, audio ~3, Arena 0). Totale dei tetti: 1.500 + 2.000 + 1.000 + 1.000 + 2.500 + 2.000 = 10.000
+// vero, «Try it now» ~45 al giorno, audio ~3, Arena 0). Totale dei tetti: 1.500 + 1.000 (Arena) + 1.000 (audio) + 1.000 + 2.500 + 2.000 + 1.000 (notizie) = 10.000
 // (22/10 sera: più spazio alle traduzioni, che non stavano dietro ai post quotidiani dei video).
 export const TETTO_NEURONS = 1500;
-export const TETTO_ARENA = 2000;
+export const TETTO_ARENA = 1000; // 22/10/2026: 1.000 passano alle notizie del blog (Arena usata ~0)
 export const DUELLI_PER_VISITATORE = 10;
 export const SECONDI_MINIMI = 4; // un voto dato prima di leggere le due risposte non conta
 // Free Arena: solo modelli veloci (rispondono in pochi secondi), così il visitatore non aspetta
@@ -52,5 +52,6 @@ export const TETTO_AUDIO = 1000;
 export const AUDIO_PER_VISITATORE = 6;
 // Scrittura automatica (functions/api/scrivi.js): un tetto per uso, ognuno col suo contatore.
 // bozze: articolo del blog e post social (20/10/2026); traduzioni: frasi nuove del sito (21/10); video: copioni dei video lunghi (22/10).
-export const TETTI_SCRIVI = { bozze: 1000, traduzioni: 2500, video: 2000 };
+// notizie: articoli del blog dai siti ufficiali e di notizie (22/10, ~230 neurons ad articolo)
+export const TETTI_SCRIVI = { bozze: 1000, traduzioni: 2500, video: 2000, notizie: 1000 };
 export const TETTO_SCRIVI = TETTI_SCRIVI.bozze;

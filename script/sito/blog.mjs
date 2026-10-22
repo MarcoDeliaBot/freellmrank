@@ -9,6 +9,7 @@ import { cercaAmazon } from './gpus.mjs';
 
 const DIR = path.join(RADICE, 'contenuti', 'blog');
 const DIR_VIDEO = path.join(RADICE, 'contenuti', 'video');
+const DIR_NOTIZIE = path.join(RADICE, 'contenuti', 'notizie');
 const TIPO_VIDEO = { nuovo: 'New model', settimana: 'Weekly ranking', gpu: 'GPU of the week', lungo: 'Weekly video report', modello: 'Model review' };
 const ORIZZONTALI = ['lungo', 'modello'];
 
@@ -50,6 +51,40 @@ function leggiVideo(hrefPerNome, dati) {
     const voce = v.voce.map((p) => p.replace(/\s*(The link is in the description\.|Link in (the )?bio\.)\s*/gi, ' ').trim()).filter(Boolean);
     const corpo = `${player}\n\n## What the video says\n\n${voce.map((p) => p.replace(/\b(RTX|GTX) (\d\d) (\d\d)\b/g, '$1 $2$3')).join('\n\n')}\n\n## The data\n\n${elenco.join('\n')}${hardware(v.hardware)}\n\nEvery number in this post comes from the ${NOME_PIENO} data on ${fmtData(v.pubblicato)}: Arena votes, Hugging Face sizes and our speed simulator. [Download the video and its subtitles](https://github.com/${REPO}/releases/tag/${v.release}).\n`;
     return { slug: `video-${v.nome.replace(/[^a-z0-9-]+/gi, '-').toLowerCase()}`, titolo, descr: intro.length <= 158 ? intro : intro.slice(0, 157).replace(/\s+\S*$/, '').replace(/[,;:]$/, '') + '…', data: v.pubblicato, tema: TIPO_VIDEO[tipo] || 'Video', corpo, tipo: 'Video', amazon: /class="tag free amazon"/.test(hardware(v.hardware)), copertina: `/video/${v.nome}.jpg`, fileCopertina: path.join(DIR_VIDEO, `${v.nome}.jpg`) };
+  });
+}
+// notizie (22/10/2026): tutto il mondo AI, scritte da script/notizie.mjs dalle fonti linkate e controllate in codice
+function leggiNotizie(perNome, dati) {
+  if (!fs.existsSync(DIR_NOTIZIE)) return [];
+  const md = (s) => String(s).replace(/([[\]*_`])/g, '\\$1');
+  // i modelli citati che sono nelle nostre classifiche: posizione e pagina vengono dai dati del sito, non dal testo scritto
+  const posizioni = new Map();
+  for (const c of dati.categorie) {
+    const gratis = c.modelli.filter((m) => m.aperto || m.or?.gratis);
+    for (const m of c.modelli) if (!posizioni.has(m.nome)) {
+      const i = gratis.indexOf(m);
+      posizioni.set(m.nome, i >= 0 ? `#${i + 1} among free ${c.nome.toLowerCase()} models` : `#${m.pos} of ${c.totale} in ${c.nome}, paid`);
+    }
+  }
+  const nomi = [...perNome.keys()].filter((n) => n.length >= 5).sort((a, b) => b.length - a.length);
+  const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return fs.readdirSync(DIR_NOTIZIE).filter((x) => x.endsWith('.json')).map((x) => {
+    const n = JSON.parse(fs.readFileSync(path.join(DIR_NOTIZIE, x), 'utf8'));
+    const testo = [...n.paragrafi, ...(n.perche || [])].join(' ');
+    const citati = [];
+    for (const nome of nomi) {
+      const base = nome.replace(/\s*\([^)]*\)\s*$/, '');
+      if (base.length >= 5 && !citati.some((c) => c.base === base) && new RegExp(`(^|[^\\w.-])${escRe(base)}(?![\\w-])`, 'i').test(testo)) citati.push({ nome, base });
+      if (citati.length >= 5) break;
+    }
+    const nostri = citati.map((c) => `- [${md(c.nome)}](${perNome.get(c.nome)}): ${posizioni.get(c.nome) || 'on our model list'}`);
+    const fonti = n.fonti.map((s) => `- [${md(s.titolo)}](${s.url}), ${md(s.nome)}${s.ufficiale ? ' (official)' : ''}, ${fmtData(s.data)}`);
+    const parti = [n.paragrafi.join('\n\n')];
+    if (n.perche?.length) parti.push(`## What it means for you\n\n${n.perche.join('\n\n')}`);
+    if (nostri.length) parti.push(`## On FreeLLMArena\n\nFrom our rankings on ${fmtData(dati.aggiornato)}, based on Arena's blind votes:\n\n${nostri.join('\n')}`);
+    parti.push(`## Sources\n\n${fonti.join('\n')}`);
+    parti.push(`<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-${n.nome}).</small>`);
+    return { slug: `news-${n.nome}`, titolo: n.titolo, descr: n.descr, data: n.pubblicato, tema: n.tema || 'AI', corpo: parti.join('\n\n') + '\n', tipo: 'News' };
   });
 }
 const SETTIMANE = 8;
@@ -126,6 +161,8 @@ export function preparaBlog(dati, storia, modelli) {
   const perNome = new Map();
   for (const m of modelli) for (const n of Object.values(m.nomi || {})) perNome.set(n, m.href);
   const hrefPerNome = (n) => perNome.get(n);
+  const perNomeTutti = new Map();
+  for (const m of modelli) for (const n of [m.nome, ...Object.values(m.nomi || {})]) if (!perNomeTutti.has(n)) perNomeTutti.set(n, m.href);
   const miglioreGratis = (cat) => {
     const c = dati.categorie.find((x) => x.id === cat);
     return c?.modelli.find((m) => m.aperto || m.or?.gratis);
@@ -145,7 +182,7 @@ export function preparaBlog(dati, storia, modelli) {
     nome: (cat) => esc(miglioreGratis(cat)?.nome || ''),
   };
   const guide = leggiGuide().map((g) => ({ ...g, automatico: /\{\{\w+/.test(g.corpo), corpo: riempi(g.corpo, ctx), data: g.data || dati.aggiornato }));
-  return [...guide, ...resoconti(dati, storia, hrefPerNome), ...leggiVideo(hrefPerNome, dati)].sort((a, b) => b.data.localeCompare(a.data));
+  return [...guide, ...resoconti(dati, storia, hrefPerNome), ...leggiVideo(hrefPerNome, dati), ...leggiNotizie(perNomeTutti, dati)].sort((a, b) => b.data.localeCompare(a.data));
 }
 
 // Grafica del disegno Stitch per OGNI articolo (richiesta di Marco, 20/10/2026), applicata all'HTML di marked:
@@ -155,6 +192,7 @@ const ancora = (s) => s.replace(/<[^>]+>/g, '').toLowerCase().replace(/&[a-z]+;|
 function riquadroFinale(p, dati) {
   const primo = dati.categorie.find((c) => c.id === 'chat')?.modelli.find((m) => m.aperto || m.or?.gratis);
   if (p.tipo === 'Video') return ['Free leaderboard', 'Every free AI model, ranked', 'Sizes, memory, speed on your GPU and where to use each model for free. Updated every night.', '/', 'Open the leaderboard →'];
+  if (p.tipo === 'News') return ['Free leaderboard', 'Which AI can you use for free today?', 'Every free AI model, ranked by blind human votes, with the memory and speed it needs on your own GPU.', '/', 'Open the leaderboard →'];
   if (p.tipo !== 'Guide') return ['Free Arena', 'Which free model would you pick?', 'Ask one question to two free models, without seeing their names, and vote. Your votes build our own free ranking.', '/arena.html', 'Vote in Free Arena →'];
   if (/hardware/i.test(p.tema)) return ['Free hardware tool', 'What can your GPU run?', 'Pick your card and see how much memory each model needs, whether it fits and the estimated speed.', '/home.html', 'Open the simulator →'];
   if (/api|online|cloud/i.test(p.tema)) return ['Try it now', 'Try two free models side by side', 'Send one prompt to two free models at once and compare the answers.', '/compare.html', 'Compare models →'];
@@ -193,7 +231,7 @@ export function pagineBlog(dati, post) {
     fs.mkdirSync(path.join(SITO, 'video'), { recursive: true });
     fs.copyFileSync(p.fileCopertina, path.join(SITO, 'video', path.basename(p.fileCopertina)));
   }
-  const etichetta = (p) => (p.tipo === 'Guide' ? 'Guide' : p.tipo === 'Video' ? 'Video' : 'Weekly report');
+  const etichetta = (p) => (p.tipo === 'Guide' ? 'Guide' : p.tipo === 'Video' ? 'Video' : p.tipo === 'News' ? 'News' : 'Weekly report');
   for (const p of post) {
     pagina({
       file: `blog/${p.slug}.html`, attiva: '/blog/', dati, blog: post, script: p.amazon ? 'amazon.js' : undefined,
@@ -214,25 +252,27 @@ ${abbellisci(marked.parse(p.corpo), p, dati)}
   const lettura = (p) => Math.max(1, Math.round(p.corpo.split(/\s+/).length / 220));
   const primo = (cat) => dati.categorie.find((x) => x.id === cat)?.modelli.find((m) => m.aperto || m.or?.gratis);
   const guide = post.filter((p) => p.tipo === 'Guide');
-  const resoconti = post.filter((p) => p.tipo !== 'Guide' && p.tipo !== 'Video');
+  const resoconti = post.filter((p) => p.tipo === 'Weekly report');
+  const notizie = post.filter((p) => p.tipo === 'News').slice(0, 30);
   const evidenza = guide.find((p) => p.slug === 'best-free-ai-models') || guide[0];
   const altre = guide.filter((p) => p !== evidenza);
-  const filtro = (p) => (p.tipo === 'Guide' ? `guide${/hardware/i.test(p.tema) ? ' hardware' : ''}` : p.tipo === 'Video' ? 'video' : 'week');
+  const filtro = (p) => (p.tipo === 'Guide' ? `guide${/hardware/i.test(p.tema) ? ' hardware' : ''}` : p.tipo === 'Video' ? 'video' : p.tipo === 'News' ? 'news' : 'week');
   const video = post.filter((p) => p.tipo === 'Video');
   const capi = [['chat', 'Chat'], ['code', 'Code'], ['vision', 'Vision']].map(([c, n]) => [n, primo(c)]).filter(([, m]) => m);
   const scheda = (p, grande) => `<article class="post-scheda${grande ? ' evidenza' : ''}" data-filtro="${filtro(p)}">
-${p.copertina ? `<a class="post-copertina" href="/blog/${p.slug}.html" tabindex="-1" aria-hidden="true"><img src="${p.copertina}" alt="" loading="lazy" width="320" height="${['Weekly video report', 'Model review'].includes(p.tema) ? 180 : 569}"></a>` : ''}<p class="post-meta">${p.tipo === 'Guide' ? `<span class="post-tipo${grande ? ' pillola' : ''}">Guide</span>` : p.tipo === 'Video' ? '<span class="post-tipo video">Video</span>' : '<span class="post-tipo settimana">Weekly report</span>'}<span>•</span><time datetime="${p.data}">${fmtData(p.data)}</time>${p.tema ? `<span>•</span><span class="tenue">${esc(p.tema)}</span>` : ''}${grande ? `<span>•</span><span class="tenue">${lettura(p)} min read</span><span class="post-destra verde">Featured</span>` : ''}${p.nuovi != null ? `<span class="post-destra conta-nuovi${p.nuovi >= 10 ? ' molti' : ''}">${p.nuovi} new model${p.nuovi === 1 ? '' : 's'}</span>` : ''}</p>
+${p.copertina ? `<a class="post-copertina" href="/blog/${p.slug}.html" tabindex="-1" aria-hidden="true"><img src="${p.copertina}" alt="" loading="lazy" width="320" height="${['Weekly video report', 'Model review'].includes(p.tema) ? 180 : 569}"></a>` : ''}<p class="post-meta">${p.tipo === 'Guide' ? `<span class="post-tipo${grande ? ' pillola' : ''}">Guide</span>` : p.tipo === 'Video' ? '<span class="post-tipo video">Video</span>' : p.tipo === 'News' ? '<span class="post-tipo notizia">News</span>' : '<span class="post-tipo settimana">Weekly report</span>'}<span>•</span><time datetime="${p.data}">${fmtData(p.data)}</time>${p.tema ? `<span>•</span><span class="tenue">${esc(p.tema)}</span>` : ''}${grande ? `<span>•</span><span class="tenue">${lettura(p)} min read</span><span class="post-destra verde">Featured</span>` : ''}${p.nuovi != null ? `<span class="post-destra conta-nuovi${p.nuovi >= 10 ? ' molti' : ''}">${p.nuovi} new model${p.nuovi === 1 ? '' : 's'}</span>` : ''}</p>
 <h2><a href="/blog/${p.slug}.html">${esc(p.titolo)}</a></h2>
 <p class="post-descr">${esc(p.descr)}</p>
 ${grande && capi.length ? `<p class="post-capi"><span class="tenue">Arena #1 free:</span>${capi.map(([n, m]) => `<span>${n}: <b>${esc(m.nome)}</b></span>`).join('')}</p>` : ''}</article>`;
   pagina({
     file: 'blog/index.html', attiva: '/blog/', dati, blog: post, script: 'blog.js',
-    titolo: `Blog: Free AI Models, Guides and Weekly Reports · ${NOME_PIENO}`,
-    descr: 'Guides to free and local AI models, and a weekly report of what changed on the free leaderboard.',
-    corpo: `<div class="blog-testa"><h1>Blog</h1><p class="lead">Guides to using AI models for free, and a weekly report of what changed, written automatically from the leaderboard data.</p>
-<nav class="blog-filtri" aria-label="Filter posts"><button type="button" aria-pressed="true" data-filtro="">All articles</button><button type="button" aria-pressed="false" data-filtro="guide">Guides</button><button type="button" aria-pressed="false" data-filtro="video">Videos</button><button type="button" aria-pressed="false" data-filtro="week">Weekly reports</button><button type="button" aria-pressed="false" data-filtro="hardware">Hardware and GPUs</button></nav></div>
+    titolo: `AI News, Guides and Reviews · ${NOME_PIENO} Blog`,
+    descr: 'AI news from official sources, guides to free and local AI models, model reviews and a weekly report of the free leaderboard.',
+    corpo: `<div class="blog-testa"><h1>Blog</h1><p class="lead">AI news from official sources and news sites, guides, model reviews and a weekly report of the free leaderboard. Every number is checked against its source.</p>
+<nav class="blog-filtri" aria-label="Filter posts"><button type="button" aria-pressed="true" data-filtro="">All articles</button><button type="button" aria-pressed="false" data-filtro="news">News</button><button type="button" aria-pressed="false" data-filtro="guide">Guides</button><button type="button" aria-pressed="false" data-filtro="video">Videos</button><button type="button" aria-pressed="false" data-filtro="week">Weekly reports</button><button type="button" aria-pressed="false" data-filtro="hardware">Hardware and GPUs</button></nav></div>
 <section class="lista-blog" aria-label="Posts">
 ${evidenza ? scheda(evidenza, true) : ''}
+${notizie.length ? `<div class="blog-sezione" data-filtro="news"><h3>AI news</h3><span>Every day, from official sources and news sites</span></div>${notizie.map((p) => scheda(p)).join('\n')}` : ''}
 ${altre.map((p) => scheda(p)).join('\n')}
 ${video.length ? `<div class="blog-sezione" data-filtro="video"><h3>Videos</h3><span>Every day</span></div><div class="griglia-video">${video.map((p) => scheda(p)).join('\n')}</div>` : ''}
 ${resoconti.length ? `<div class="blog-sezione" data-filtro="week"><h3>Automatic weekly Arena reports</h3><span>Every Sunday</span></div>${resoconti.map((p) => scheda(p)).join('\n')}` : ''}
