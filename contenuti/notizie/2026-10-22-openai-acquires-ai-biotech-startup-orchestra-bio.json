@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-22-openai-acquires-ai-biotech-startup-orchestra-bio",
+ "titolo": "OpenAI acquires AI biotech startup Orchestra Bio",
+ "descr": "OpenAI adds Orchestra Bio's AI agents to boost its Rosalind life‑sciences platform, expanding biotech services.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI announced on October 20, 2026 that it has acquired Orchestra Bio, a four‑year‑old AI biotech software startup.",
+  "Orchestra Bio, backed by Andreessen Horowitz, Atria and 8VC with roughly $20 million raised by 2025, builds AI agents that manage drug‑discovery operations such as finance tracking and clinical‑trial scheduling.",
+  "The acquisition will integrate Orchestra’s team and technology into OpenAI’s Rosalind model and the Rosalind Workbench tool, which help researchers plan experiments and analyze results.",
+  "OpenAI cites existing Rosalind customers including Moderna and Novo Nordisk, indicating a growing market for AI‑driven life‑science tools.",
+  "Terms of the deal were not disclosed, and the move reflects a broader trend of large AI labs expanding into industry‑specific software."
+ ],
+ "perche": [
+  "For AI users, the deal signals more specialized tools that combine large models with workflow automation in biotech. Those seeking free or locally hosted models may see increased competition for resources as commercial AI labs deepen domain‑specific offerings."
+ ],
+ "pubblicato": "2026-10-22",
+ "titoloFonte": "OpenAI acquires startup Orchestra Bio⁠ to beef up its biotech business",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/20/openai-acquires-startup-orchestra-bio%e2%81%a0-to-beef-up-its-biotech-business/",
+   "titolo": "OpenAI acquires startup Orchestra Bio⁠ to beef up its biotech business",
+   "ufficiale": false,
+   "data": "2026-10-20"
+  },
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/openai-to-acquire-orchestra-bio",
+   "titolo": "OpenAI acquires Orchestra Bio",
+   "ufficiale": true,
+   "data": "2026-10-20"
+  }
+ ],
+ "frasiTolte": 0
+}
