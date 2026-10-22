@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-22-uber-deploys-chatgpt-work-to-its-30-000-person-workforce",
+ "titolo": "Uber deploys ChatGPT Work to its 30,000‑person workforce",
+ "descr": "Uber expands its partnership with OpenAI, giving all 30,000 employees access to the enterprise AI agent ChatGPT Work.",
+ "tema": "Business",
+ "paragrafi": [
+  "Uber announced on October 22, 2026 that every one of its roughly 30,000 global employees will start using ChatGPT Work.",
+  "The rollout follows a pilot earlier this year that involved 1,000 staff across finance, operations and product, with about 80% of early users being non‑engineers.",
+  "According to VP of engineering Sumanth Sukumar, employees used the tool for data analysis, multilingual training material localisation and building interactive dashboards.",
+  "Uber’s strategy is to make powerful AI tools widely available while letting teams experiment; the company paired 30 AI engineers with internal groups for two‑week automation sprints.",
+  "OpenAI worked closely with Uber on the integration, but the firm did not disclose the cost of the deployment and will monitor usage to guide future AI adoption."
+ ],
+ "perche": [
+  "For users of free or locally hosted models, Uber’s enterprise‑scale adoption highlights the growing demand for AI agents that can handle complex workflows across large organizations. While free models like MiMo‑V2.6‑Pro or Kimi K3 excel in conversational tasks, enterprises may still prefer dedicated, managed solutions such as ChatGPT Work for data‑intensive and multilingual use cases."
+ ],
+ "pubblicato": "2026-10-22",
+ "titoloFonte": "Uber puts all 30,000 employees on ChatGPT Work",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/22/uber-puts-all-30000-employees-on-chatgpt-work/",
+   "titolo": "Uber puts all 30,000 employees on ChatGPT Work",
+   "ufficiale": false,
+   "data": "2026-10-22"
+  },
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/uber-chatgpt-work-rollout",
+   "titolo": "Uber brings ChatGPT Work to all employees with OpenAI",
+   "ufficiale": true,
+   "data": "2026-10-22"
+  }
+ ],
+ "frasiTolte": 0
+}

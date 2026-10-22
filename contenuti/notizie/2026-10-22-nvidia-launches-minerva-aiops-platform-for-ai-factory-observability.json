@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-22-nvidia-launches-minerva-aiops-platform-for-ai-factory-observability",
+ "titolo": "NVIDIA launches Minerva AIOps platform for AI factory observability",
+ "descr": "Minerva aggregates telemetry from GPUs, networking and storage to detect anomalies and streamline AI infrastructure maintenance.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced Minerva on Oct 22, 2026 as an AIOps platform that monitors AI factories.",
+  "The system collects data from NVIDIA GPUs, SuperNICs, switches, cables and workloads, building a knowledge graph of the infrastructure.",
+  "It analyzes billions of data points per hour with supervised and unsupervised models to learn normal behavior, spot anomalies and predict failures.",
+  "Minerva includes a native AI assistant that offers a natural‑language interface for operators to query cluster health and receive remediation suggestions."
+ ],
+ "perche": [
+  "For AI teams, Minerva promises earlier detection of hardware or workload issues, reducing downtime and improving GPU utilization. Users of free or locally hosted models may benefit from the reduced need for extensive custom monitoring, though the platform targets large‑scale NVIDIA‑based factories rather than small deployments."
+ ],
+ "pubblicato": "2026-10-22",
+ "titoloFonte": "NVIDIA Unveils Minerva to Bring End-to-End Observability for AI Factories",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/minerva-platform-infrastructure/",
+   "titolo": "NVIDIA Unveils Minerva to Bring End-to-End Observability for AI Factories",
+   "ufficiale": true,
+   "data": "2026-10-22"
+  }
+ ],
+ "frasiTolte": 1
+}
