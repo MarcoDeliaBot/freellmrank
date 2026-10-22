@@ -1,0 +1,83 @@
+{
+ "nome": "modello-ling-3.1-flash",
+ "titolo": "Ling-3.1-flash: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "Ling-3.1-flash is a 560 billion-parameter hybrid model with a 1 million-token context window, released by InclusionAI. Learn its architecture, benchmark strengths, and who can get the most out of it.\n\nSize: 572.1B parameters (33.1B active) · context 256K · memory at 4-bit about 349 GB.\nMac Studio M3 Ultra 512 GB: about 26 tokens/s\nModel card: https://huggingface.co/inclusionAI/Ling-3.1-flash\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Ling-3.1-flash",
+  "InclusionAI"
+ ],
+ "condividi": "Ling-3.1-flash by InclusionAI: 572.1B parameters, about 349 GB at 4-bit; smallest home machine that holds it: Mac Studio M3 Ultra 512 GB. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "Ling-3.1-flash: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Ling-3.1-flash: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Ling-3.1-flash: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Ling-3.1-flash : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Ling-3.1-flash: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Ling-3.1-flash",
+    "gb": 349,
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Ling-3.1-flash",
+    "vel": 26,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "Ling-3.1-flash packs a massive 560 billion parameters while keeping only 25 billion active per token. It also supports a 1 million-token context window, far beyond most open models.",
+  "According to InclusionAI, Ling-3.1-flash is a hybrid-linear mixture-of-experts model. It has a total of 560 billion parameters, but only 25 billion are activated for each token. The architecture combines 63 KDA transformer layers with 9 gated MLA layers in a 7:1 ratio, and it uses 64 attention heads. The model also includes 512 routed experts, of which eight are active at inference time.",
+  "Ling-3.1-flash builds on Ling-3.0-flash with several upgrades. The model card says it shows stronger real-world capabilities across tasks like search, office productivity, and software engineering. The context window has been expanded to 1 million tokens, enabling far longer inputs. InclusionAI also introduced LingCode, a coding-agent harness designed for long-horizon, multi-step tool use.",
+  "The model card lists a range of benchmarks where Ling-3.1-flash performs strongly. It scores well on Terminal-Bench 4.0, a coding-and-tool-use benchmark, and on GDPVal-AA V2.1, which measures office-task abilities. HealthBench Professional shows its competence in healthcare tasks, while FrontierSWE highlights software-engineering performance. These results suggest the model is versatile across coding, agentic, and domain-specific workloads.",
+  "Ling-3.1-flash’s 560 billion-parameter size gives it strong reasoning power, especially on multi-step and tool-calling tasks. The 1 million-token context window lets you feed very long documents or codebases. However, the model’s memory footprint is large; at 4-bit precision it needs about 349 GB for an 8 K context, and the smallest home machine that can hold it fully is a Mac Studio M3 Ultra with 512 GB RAM. Also, there is currently no free API on OpenRouter, so you must download the weights yourself.",
+  "If you run AI experiments at home and have a high-end machine, like the Mac Studio M3 Ultra that can host the model, you’ll benefit from Ling-3.1-flash’s capacity. It’s a good fit for researchers exploring long-context reasoning, developers building sophisticated coding assistants, and hobbyists who like to tinker with state-of-the-art open models. The model’s MIT license also makes it easy to integrate into personal projects.",
+  "What do you need to run it at home? At 4-bit it takes about 349 gigabytes of memory. The smallest home machine that holds it fully is the Mac Studio M3 Ultra 512 GB. On the Mac Studio M3 Ultra 512 GB it writes about 26 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the MIT license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare Ling 3.1 flash with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-ling-3.1-flash",
+ "pubblicato": "2026-10-22"
+}

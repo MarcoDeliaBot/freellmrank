@@ -1,0 +1,155 @@
+{
+ "nome": "modello-lfm2.5-24b-a2b",
+ "titolo": "LFM2.5-24B-A2B: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "LFM2.5-24B-A2B is a 24 B-parameter reasoning model with only 2 B active parameters, delivering fast, private on-device agents. It scores 48.09 on LiveClaw and runs up to 1.7× faster than comparable MoE models.\n\nSize: 24B parameters (2B active) · context 128K · memory at 4-bit about 17 GB.\nRTX 3060 12 GB + 32 GB RAM: about 97 tokens/s\nRTX 4090 + 64 GB RAM: about 220 tokens/s\nRTX 5090 + 64 GB RAM: about 264 tokens/s\nMac M4 Max 128 GB: about 103 tokens/s\nNVIDIA DGX Spark 128 GB: about 108 tokens/s\nRyzen AI Max+ 395 128 GB: about 103 tokens/s\nMac Studio M3 Ultra 512 GB: about 115 tokens/s\nModel card: https://huggingface.co/LiquidAI/LFM2.5-24B-A2B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "LFM2.5-24B-A2B",
+  "LiquidAI"
+ ],
+ "condividi": "LFM2.5-24B-A2B by LiquidAI: 24B parameters, about 17 GB at 4-bit; smallest home machine that holds it: RX 7900 XT. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "LFM2.5-24B-A2B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "LFM2.5-24B-A2B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "LFM2.5-24B-A2B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "LFM2.5-24B-A2B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "LFM2.5-24B-A2B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "LFM2.5-24B-A2B",
+    "gb": 17,
+    "scheda": {
+     "id": "rx7900xt",
+     "nome": "RX 7900 XT",
+     "gb": 20,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "LFM2.5-24B-A2B",
+    "vel": 97,
+    "dove": "ram"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "LFM2.5-24B-A2B",
+    "vel": 220,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "LFM2.5-24B-A2B",
+    "vel": 264,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "LFM2.5-24B-A2B",
+    "vel": 103,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "LFM2.5-24B-A2B",
+    "vel": 108,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "LFM2.5-24B-A2B",
+    "vel": 103,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "LFM2.5-24B-A2B",
+    "vel": 115,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "LFM2.5-24B-A2B packs 24 billion parameters but only 2 billion are active per token, making it a fast, private on-device reasoning model. It scores 48.09 on LiveClaw, beating a much larger 35 B-parameter competitor.",
+  "LFM2.5-24B-A2B is a text-only reasoning model from LiquidAI. It has a total of 24 billion parameters, but only about 2.45 billion are active for each token thanks to a mixture-of-experts design. The architecture includes 40 layers, with 64 experts per MoE block and a top-4 routing scheme. The model supports many languages, from English to Vietnamese, and is delivered in several formats for different runtimes.",
+  "Compared to earlier LFM2.5 models, this version expands the context window from 32 K to 131 K tokens and doubles the vocabulary size from 65 K to 128 K, improving non-Latin tokenization. It is a pure reasoning model that always thinks before answering, inserting a special token at the start of each assistant reply. The mixture-of-experts setup keeps only 2 B active parameters per token, which makes inference cheap and fast on consumer hardware.",
+  "According to LiquidAI, LFM2.5-24B-A2B achieves a LiveClaw score of 48.09, outperforming the Qwen3.6-35B-A3B model, which scores 38.19, despite having fewer active parameters. The model runs up to 1.7 times faster than comparable mixture-of-experts models on-device.",
+  "The main strength of LFM2.5-24B-A2B is its speed: only 2 B active parameters mean each reasoning token is inexpensive, and the model excels at agentic and tool-use tasks. It handles function calling in a four-step process built into its chat template. However, the model card notes it is not recommended for knowledge-heavy tasks on its own. Pairing it with a retrieval system or web search is advised to compensate for that limitation.",
+  "If you run AI models at home or look for free, fast reasoning capabilities, LFM2.5-24B-A2B is a solid choice. It is especially suited for developers building private, on-device agents that need to think before responding and call external tools.",
+  "What do you need to run it at home? At 4-bit it takes about 17 gigabytes of memory. The smallest home machine that holds it fully is an RX 7900 XT. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 97 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 220 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face, under the license written in its model card. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare LFM2.5 24B A2B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-lfm2.5-24b-a2b",
+ "pubblicato": "2026-10-22"
+}
