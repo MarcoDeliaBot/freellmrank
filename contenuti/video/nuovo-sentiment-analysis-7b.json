@@ -1,0 +1,67 @@
+{
+ "nome": "nuovo-sentiment-analysis-7b",
+ "titolo": "Sentiment-Analysis-7B: 7B parameters, free to download #Shorts",
+ "descrizione": "Sentiment-Analysis-7B by Microsoft came out on 17 Oct 2026, with open weights on Hugging Face. At 4-bit it needs about 7 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Sentiment-Analysis-7B"
+ ],
+ "condividi": "Sentiment-Analysis-7B is out: 7B parameters and open weights. At 4-bit it needs about 7 GB, so the smallest card that holds it fully is the RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "Sentiment-Analysis-7B: 7 miliardi di parametri, gratis #Shorts",
+   "descrizione": "Sentiment-Analysis-7B di Microsoft è uscito il 17 ottobre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 7 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Sentiment-Analysis-7B: 7 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "Sentiment-Analysis-7B de Microsoft salió el 17 de octubre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 7 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Sentiment-Analysis-7B: 7 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "Sentiment-Analysis-7B von Microsoft ist am 17. Oktober 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 7 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Sentiment-Analysis-7B : 7 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "Sentiment-Analysis-7B de Microsoft est sorti le 17 octobre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 7 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Sentiment-Analysis-7B: 7 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "Sentiment-Analysis-7B da Microsoft saiu em 17 de outubro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 7 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Sentiment-Analysis-7B",
+    "gb": 7,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "schede": [
+   {
+    "id": "rtx4060",
+    "nome": "RTX 4060",
+    "gb": 8,
+    "tiene": true
+   }
+  ]
+ },
+ "voce": [
+  "A new free AI model with 7 billion parameters.",
+  "It comes from Microsoft, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 7 gigabytes. You need at least an RTX 40 60.",
+  "It reads up to 32 thousand tokens at once.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-sentiment-analysis-7b",
+ "pubblicato": "2026-10-22"
+}

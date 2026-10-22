@@ -1,0 +1,155 @@
+{
+ "nome": "modello-sentiment-analysis-7b",
+ "titolo": "Sentiment-Analysis-7B: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "Microsoft's Sentiment-Analysis-7B offers a free, 7-billion-parameter sentiment classifier that outperforms its base model. Ideal for hobbyists and developers looking for an easy, low-cost solution.\n\nSize: 7.2B parameters · context 32K · memory at 4-bit about 7 GB.\nRTX 3060 12 GB + 32 GB RAM: about 49 tokens/s\nRTX 4090 + 64 GB RAM: about 126 tokens/s\nRTX 5090 + 64 GB RAM: about 205 tokens/s\nMac M4 Max 128 GB: about 61 tokens/s\nNVIDIA DGX Spark 128 GB: about 38 tokens/s\nRyzen AI Max+ 395 128 GB: about 35 tokens/s\nMac Studio M3 Ultra 512 GB: about 83 tokens/s\nModel card: https://huggingface.co/microsoft/Sentiment-Analysis-7B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Sentiment-Analysis-7B",
+  "Microsoft"
+ ],
+ "condividi": "Sentiment-Analysis-7B by Microsoft: 7.2B parameters, about 7 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "Sentiment-Analysis-7B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Sentiment-Analysis-7B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Sentiment-Analysis-7B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Sentiment-Analysis-7B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Sentiment-Analysis-7B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Sentiment-Analysis-7B",
+    "gb": 7,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "Sentiment-Analysis-7B",
+    "vel": 49,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Sentiment-Analysis-7B",
+    "vel": 126,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Sentiment-Analysis-7B",
+    "vel": 205,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Sentiment-Analysis-7B",
+    "vel": 61,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Sentiment-Analysis-7B",
+    "vel": 38,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Sentiment-Analysis-7B",
+    "vel": 35,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Sentiment-Analysis-7B",
+    "vel": 83,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "Microsoft released a 7-billion-parameter model that labels sentiment in a single token. It improves accuracy over its base model by over ten points.",
+  "Sentiment-Analysis-7B is a causal language model that reads a user message and outputs a sentiment label followed by a short explanation. The label appears as the first token, so you can get just the classification by limiting the generation to three new tokens. It works for messages aimed at a service, product, or agent, which the system prompt defines as the \"Target.\"",
+  "The model starts from the open source Mistral-7B-Instruct-v0.2 checkpoint. Microsoft fine-tuned it using reinforcement learning, where another large language model acted as a judge. The fine-tuning set is small, roughly three hundred examples, and no fixed sentiment labels were used during training. This approach lets the model learn the labeling task directly from the data.",
+  "According to the model card, the evaluation metric is accuracy. The original Mistral-7B-Instruct-v0.2 scores 62.0 percent, while the fine-tuned Sentiment-Analysis-7B reaches 72.8 percent. That is an improvement of more than ten percentage points, showing the benefit of the targeted fine-tuning.",
+  "The main strength is the higher accuracy for sentiment classification compared with the base model. Because the label is the first token, you can request just three new tokens and get a rapid, low-cost prediction. The model is limited to the three predefined labels and was trained on a small internal dataset, so its performance may vary on domains far from the training examples.",
+  "If you run AI models at home and need a free sentiment classifier, this model fits well. It runs on a RTX 4060 in 4-bit mode, and even a RTX 3060 can generate about 49 tokens per second, more than enough for single-token labels. The MIT license lets you download the weights from Hugging Face and integrate them into your own projects without cost.",
+  "What do you need to run it at home? At 4-bit it takes about 7 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 49 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 126 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the MIT license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare Sentiment Analysis 7B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-sentiment-analysis-7b",
+ "pubblicato": "2026-10-22"
+}
