@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-22-recursive-releases-flint-a-free-40b-moe-coding-model-that-runs-on-lapt",
+ "titolo": "Recursive releases Flint, a free 40B MoE coding model that runs on laptops",
+ "descr": "Flint, a 40‑billion‑parameter mixture‑of‑experts model with 2.5 B active params, is open‑source and runs locally on MacBook Pro M4‑Pro.",
+ "tema": "Software",
+ "paragrafi": [
+  "Recursive unveiled Flint, an Apache 2.0‑licensed coding model with 40 billion total parameters and 2.5 billion active parameters per inference.",
+  "The model achieves 74.2 % on the SWE‑bench Verified benchmark and processes about 131 tokens per second on an Apple M4 Pro MacBook Pro, roughly double the speed of comparable models.",
+  "Flint runs entirely on a user’s laptop, allowing offline use and keeping code private, and is available for free download on Hugging Face.",
+  "Recursive built the model using its automated research system, the Eureka Machine, which contributed to pre‑training, low‑bit training that reduced size by 71 %, and custom kernels for speed.",
+  "The company, backed by GV, Nvidia and AMD Ventures, positions Flint as an early test of recursive self‑improvement, aiming for future models that can build better AI with minimal human oversight."
+ ],
+ "perche": [
+  "For developers, Flint offers a high‑performing, locally‑run coding assistant without cloud fees, enhancing privacy and offline capability. For the free‑model community, its open‑source license and modest hardware requirements broaden access to powerful AI coding tools."
+ ],
+ "pubblicato": "2026-10-22",
+ "titoloFonte": "Recursive Releases Flint, an Open-Weight 40B MoE Local Coding Model for Agents with 2.5B Active Params",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/21/recursive-flint-local-coding-model/",
+   "titolo": "Recursive Releases Flint, an Open-Weight 40B MoE Local Coding Model for Agents with 2.5B Active Params",
+   "ufficiale": false,
+   "data": "2026-10-21"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/",
+   "titolo": "Recursive launches Flint, a laptop coding model it says was largely built by AI",
+   "ufficiale": false,
+   "data": "2026-10-21"
+  }
+ ],
+ "frasiTolte": 0
+}
