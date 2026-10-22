@@ -143,9 +143,12 @@ async function main() {
     const testiFonti = [...fonti.map((f) => `${f.fonte} ${f.titolo} ${f.testo}`), contesto];
     const corpo = controlla([...(r.paragrafi || [])], testiFonti);
     const perche = controlla([r.perche || ''], testiFonti);
-    const titolo = controlla([r.titolo || ''], testiFonti).paragrafi[0];
-    const descr = controlla([r.descr || ''], testiFonti).paragrafi[0];
-    const tolte = [...corpo.tolte, ...perche.tolte];
+    const cTitolo = controlla([r.titolo || ''], testiFonti), cDescr = controlla([r.descr || ''], testiFonti);
+    // il 22/10 la notizia su Flint aveva 4 paragrafi buoni ma il titolo no: invece di buttarla, titolo della fonte
+    // più ripresa e prima frase già controllata come riassunto
+    const titolo = cTitolo.paragrafi[0] || s.voci[0].titolo.replace(/[⁠​]/g, '').slice(0, 110);
+    const descr = cDescr.paragrafi[0] || (frasi(corpo.paragrafi[0] || '')[0] || '').slice(0, 160);
+    const tolte = [...corpo.tolte, ...perche.tolte, ...cTitolo.tolte, ...cDescr.tolte];
     for (const t of tolte) console.log(`  tolta: «${t.s.slice(0, 110)}» ${t.n.length ? 'numeri ' + t.n.join(',') : ''} ${t.nomi.length ? 'nomi ' + t.nomi.join(',') : ''} ${t.copia ? 'copiata' : ''}`);
     if (!titolo || !descr || corpo.paragrafi.length < 3) { console.log(`notizie: NON pubblicata «${s.voci[0].titolo}» (dopo il controllo restano ${corpo.paragrafi.length} paragrafi)`); continue; }
     const giorno = new Date().toISOString().slice(0, 10);
