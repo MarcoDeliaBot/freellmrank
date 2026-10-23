@@ -1,0 +1,155 @@
+{
+ "nome": "modello-wevisone-vl-4b",
+ "titolo": "WeVisOne-VL-4B: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "WeVisOne-VL-4B unifies object detection, OCR, counting, segmentation and matting in a single 4.8 B-parameter model. Learn what makes it different, its strengths, limits, and which home setups can run it.\n\nSize: 4.8B parameters · context 256K · memory at 4-bit about 6 GB.\nRTX 3060 12 GB + 32 GB RAM: about 64 tokens/s\nRTX 4090 + 64 GB RAM: about 160 tokens/s\nRTX 5090 + 64 GB RAM: about 253 tokens/s\nMac M4 Max 128 GB: about 76 tokens/s\nNVIDIA DGX Spark 128 GB: about 49 tokens/s\nRyzen AI Max+ 395 128 GB: about 46 tokens/s\nMac Studio M3 Ultra 512 GB: about 101 tokens/s\nModel card: https://huggingface.co/tencent/WeVisOne-VL-4B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "WeVisOne-VL-4B",
+  "Tencent"
+ ],
+ "condividi": "WeVisOne-VL-4B by Tencent: 4.8B parameters, about 6 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "WeVisOne-VL-4B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "WeVisOne-VL-4B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "WeVisOne-VL-4B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "WeVisOne-VL-4B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "WeVisOne-VL-4B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "WeVisOne-VL-4B",
+    "gb": 6,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "WeVisOne-VL-4B",
+    "vel": 64,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "WeVisOne-VL-4B",
+    "vel": 160,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "WeVisOne-VL-4B",
+    "vel": 253,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeVisOne-VL-4B",
+    "vel": 76,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeVisOne-VL-4B",
+    "vel": 49,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeVisOne-VL-4B",
+    "vel": 46,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeVisOne-VL-4B",
+    "vel": 101,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "WeVisOne-VL-4B is a single model that can detect objects, count them, read text, and even produce full-resolution alpha mattes. It does all that with 4.8 billion parameters and a tiny 9.6 M-parameter pixel decoder.",
+  "According to the model card, WeVisOne-VL-4B is a vision-language model built on Qwen3-VL. It can understand images at the level of objects, detecting, counting, pointing, and reading text, and also at the pixel level, providing segmentation and matting. The model uses a 256 K token context, which lets it handle long prompts and detailed visual information. All of this runs on a single 4.8 billion-parameter network, so you only need one set of weights to cover many visual tasks.",
+  "The model introduces dedicated coordinate tokens that encode normalized bounding boxes and points directly in the token stream. After each predicted box, it emits a special instance token (ID 152678) to separate dense predictions. A lightweight pixel decoder with 9,609,764 parameters handles the heavy lifting for segmentation and alpha matting, using a visual feature adapter, a box-guided query decoder, and an instance-conditioned dense head. These pieces let the model switch between object-level and pixel-level outputs without a separate network.",
+  "According to Tencent, the model excels at a range of visual grounding tasks: open-vocabulary object detection, referring localization, counting, pointing, OCR, referring segmentation, and promptable alpha matting. It generates structured outputs directly, which makes inference efficient for single-turn image perception. However, the card notes that fine alpha boundaries can be fragile when the image resolution is low, when there is severe occlusion, complex transparency, or when the prompt phrasing is ambiguous. Video grids are also rejected by the pixel decoder, limiting it to still images.",
+  "The data sheet lists token-generation speeds for several consumer GPUs. On an RTX 3060 with 12 GB VRAM and 32 GB RAM, the model runs at about 64 tokens per second when fully loaded into GPU memory. A higher-end RTX 4090 reaches roughly 160 tokens per second, and the newest RTX 5090 pushes that to about 253 tokens per second. These numbers give a sense of how quickly the model can respond to prompts on typical home machines.",
+  "The model is aimed at research in visual grounding, referring localization, counting, OCR, segmentation, and matting. Because it runs on a RTX 4060 as the smallest machine that can hold it fully, hobbyists with mid-range GPUs can experiment without expensive hardware. Anyone looking for a free, Apache-2.0 licensed vision-language model that covers many tasks in one package will find it a useful addition to their toolkit.",
+  "What do you need to run it at home? At 4-bit it takes about 6 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 64 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 160 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the Apache 2.0 license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare WeVisOne VL 4B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-wevisone-vl-4b",
+ "pubblicato": "2026-10-23"
+}

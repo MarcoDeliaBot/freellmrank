@@ -1,0 +1,154 @@
+{
+ "nome": "modello-wevisone-vl-2b",
+ "titolo": "WeVisOne-VL-2B: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "WeVisOne-VL-2B is a 2.4 billion-parameter unified vision-language model from Tencent, running on a modest RTX 4060. It supports object detection, OCR, segmentation, and matting in a single model.\n\nSize: 2.4B parameters · context 256K · memory at 4-bit about 4 GB.\nRTX 3060 12 GB + 32 GB RAM: about 105 tokens/s\nRTX 4090 + 64 GB RAM: about 247 tokens/s\nRTX 5090 + 64 GB RAM: about 369 tokens/s\nMac M4 Max 128 GB: about 110 tokens/s\nNVIDIA DGX Spark 128 GB: about 82 tokens/s\nRyzen AI Max+ 395 128 GB: about 77 tokens/s\nMac Studio M3 Ultra 512 GB: about 138 tokens/s\nModel card: https://huggingface.co/tencent/WeVisOne-VL-2B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "WeVisOne-VL-2B",
+  "Tencent"
+ ],
+ "condividi": "WeVisOne-VL-2B by Tencent: 2.4B parameters, about 4 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "WeVisOne-VL-2B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "WeVisOne-VL-2B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "WeVisOne-VL-2B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "WeVisOne-VL-2B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "WeVisOne-VL-2B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "WeVisOne-VL-2B",
+    "gb": 4,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "WeVisOne-VL-2B",
+    "vel": 105,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "WeVisOne-VL-2B",
+    "vel": 247,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "WeVisOne-VL-2B",
+    "vel": 369,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeVisOne-VL-2B",
+    "vel": 110,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeVisOne-VL-2B",
+    "vel": 82,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeVisOne-VL-2B",
+    "vel": 77,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeVisOne-VL-2B",
+    "vel": 138,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "Tencent released WeVisOne-VL-2B, a 2.4 billion-parameter vision-language model that handles objects and pixels in one go. It runs on a modest RTX 4060 with just 4 GB memory.",
+  "WeVisOne-VL-2B is a vision-language model from Tencent's WeChat Vision team. According to the model card, it builds on Qwen3-VL and adds a lightweight 9.5 million-parameter pixel decoder. The model can predict bounding boxes, points, and full-resolution alpha mattes directly from images, using special coordinate and instance tokens.",
+  "The new part is a dedicated pixel decoder that combines a visual feature adapter, a box-guided query decoder, and an instance-conditioned dense prediction head. It produces dense outputs like segmentation and matting without a separate processing stage. The model also returns None when a queried target is absent, simplifying downstream handling.",
+  "According to the model card, the model excels at open-vocabulary object detection, referring localization, counting, OCR, segmentation, and promptable alpha matting. However, fine alpha boundaries can be affected by image resolution, severe occlusion, complex transparency, and how prompts are phrased. It is designed for single-turn image perception; video grids are rejected.",
+  "The release is aimed at research on visual grounding, referring localization, pointing, counting, OCR localization, segmentation, and image matting. Because it fits in the memory of an RTX 4060 at 4 GB, hobbyists with a modest GPU can also experiment. No free API is available yet, but the weights can be downloaded from Hugging Face.",
+  "What do you need to run it at home? At 4-bit it takes about 4 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 105 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 247 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the Apache 2.0 license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare WeVisOne VL 2B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-wevisone-vl-2b",
+ "pubblicato": "2026-10-23"
+}
