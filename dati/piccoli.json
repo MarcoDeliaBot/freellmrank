@@ -4,7 +4,7 @@
   "nome": "Qwen3-0.6B",
   "org": "Qwen",
   "parametri": 751632384,
-  "download": 26678187,
+  "download": 25158033,
   "like": 1846,
   "tipo": "text-generation",
   "creato": "2025-04-27",
@@ -18,8 +18,8 @@
   "nome": "Qwen3-4B",
   "org": "Qwen",
   "parametri": 4022468096,
-  "download": 11578451,
-  "like": 769,
+  "download": 11396683,
+  "like": 770,
   "tipo": "text-generation",
   "creato": "2025-04-27",
   "gated": false,
@@ -32,8 +32,8 @@
   "nome": "Qwen3-14B",
   "org": "Qwen",
   "parametri": 14768307200,
-  "download": 9211389,
-  "like": 513,
+  "download": 9401416,
+  "like": 516,
   "tipo": "text-generation",
   "creato": "2025-04-27",
   "gated": false,
@@ -46,8 +46,8 @@
   "nome": "Qwen3-8B",
   "org": "Qwen",
   "parametri": 8190735360,
-  "download": 8298786,
-  "like": 2137,
+  "download": 8080572,
+  "like": 2140,
   "tipo": "text-generation",
   "creato": "2025-04-27",
   "gated": false,
@@ -61,7 +61,7 @@
   "org": "Qwen",
   "parametri": 4659865088,
   "download": 7630082,
-  "like": 1108,
+  "like": 1113,
   "tipo": "image-text-to-text",
   "creato": "2026-02-27",
   "gated": false,
@@ -76,7 +76,7 @@
   "org": "Qwen",
   "parametri": 9653104368,
   "download": 6689005,
-  "like": 2221,
+  "like": 2224,
   "tipo": "image-text-to-text",
   "creato": "2026-02-27",
   "gated": false,
@@ -91,7 +91,7 @@
   "org": "nvidia",
   "parametri": 3973556832,
   "download": 2529545,
-  "like": 139,
+  "like": 140,
   "tipo": "text-generation",
   "creato": "2026-03-07",
   "gated": false,
@@ -104,8 +104,8 @@
   "nome": "SmolVLM2-500M-Video-Instruct",
   "org": "HuggingFaceTB",
   "parametri": 507482304,
-  "download": 1456185,
-  "like": 196,
+  "download": 1444173,
+  "like": 198,
   "tipo": "image-text-to-text",
   "creato": "2025-02-11",
   "gated": false,
@@ -119,8 +119,8 @@
   "nome": "DeepSeek-R1-Distill-Qwen-1.5B",
   "org": "deepseek-ai",
   "parametri": 1777088000,
-  "download": 1309873,
-  "like": 1641,
+  "download": 1293555,
+  "like": 1642,
   "tipo": "text-generation",
   "creato": "2025-01-20",
   "gated": false,
@@ -134,7 +134,7 @@
   "org": "openbmb",
   "parametri": 2516756480,
   "download": 1290255,
-  "like": 1809,
+  "like": 1811,
   "tipo": "text-generation",
   "creato": "2026-09-06",
   "gated": false,
@@ -147,7 +147,7 @@
   "nome": "gemma-3-1b-it",
   "org": "google",
   "parametri": 999885952,
-  "download": 1217096,
+  "download": 1015440,
   "like": 1260,
   "tipo": "text-generation",
   "creato": "2025-03-10",
@@ -161,8 +161,8 @@
   "nome": "gemma-3-4b-it",
   "org": "google",
   "parametri": 4300079472,
-  "download": 1025839,
-  "like": 1593,
+  "download": 994526,
+  "like": 1594,
   "tipo": "image-text-to-text",
   "creato": "2025-02-20",
   "gated": true,
@@ -176,8 +176,8 @@
   "nome": "SmolLM3-3B",
   "org": "HuggingFaceTB",
   "parametri": 3075098624,
-  "download": 731019,
-  "like": 1069,
+  "download": 718659,
+  "like": 1070,
   "tipo": "text-generation",
   "creato": "2025-07-08",
   "gated": false,
@@ -219,7 +219,7 @@
   "org": "swiss-ai",
   "parametri": 8903547555,
   "download": 425476,
-  "like": 159,
+  "like": 160,
   "tipo": "image-text-to-text",
   "creato": "2026-07-24",
   "gated": true,
@@ -233,7 +233,7 @@
   "nome": "Apertus-8B-Instruct-2509",
   "org": "swiss-ai",
   "parametri": 8053338176,
-  "download": 422916,
+  "download": 415765,
   "like": 498,
   "tipo": "text-generation",
   "creato": "2025-08-13",
@@ -247,8 +247,8 @@
   "nome": "DeepSeek-R1-0528-Qwen3-8B",
   "org": "deepseek-ai",
   "parametri": 8190735360,
-  "download": 383642,
-  "like": 1123,
+  "download": 362624,
+  "like": 1125,
   "tipo": "text-generation",
   "creato": "2025-05-29",
   "gated": false,
@@ -261,24 +261,10 @@
   "nome": "Phi-4-mini-instruct",
   "org": "microsoft",
   "parametri": 3836021760,
-  "download": 354727,
-  "like": 864,
+  "download": 346874,
+  "like": 867,
   "tipo": "text-generation",
   "creato": "2025-02-19",
-  "gated": false,
-  "cat": [
-   "chat"
-  ]
- },
- {
-  "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
-  "nome": "DeepSeek-R1-Distill-Qwen-7B",
-  "org": "deepseek-ai",
-  "parametri": 7615616512,
-  "download": 352738,
-  "like": 938,
-  "tipo": "text-generation",
-  "creato": "2025-01-20",
   "gated": false,
   "cat": [
    "chat"
@@ -290,7 +276,7 @@
   "org": "openbmb",
   "parametri": 1080632832,
   "download": 345663,
-  "like": 1173,
+  "like": 1174,
   "tipo": "text-generation",
   "creato": "2026-05-21",
   "gated": false,
@@ -299,26 +285,11 @@
   ]
  },
  {
-  "repo": "google/gemma-3-12b-it",
-  "nome": "gemma-3-12b-it",
-  "org": "google",
-  "parametri": 12187325040,
-  "download": 345595,
-  "like": 882,
-  "tipo": "image-text-to-text",
-  "creato": "2025-03-01",
-  "gated": true,
-  "cat": [
-   "chat",
-   "vision"
-  ]
- },
- {
   "repo": "ibm-granite/granite-3.3-2b-instruct",
   "nome": "granite-3.3-2b-instruct",
   "org": "ibm-granite",
   "parametri": 2533539840,
-  "download": 342007,
+  "download": 340490,
   "like": 87,
   "tipo": "text-generation",
   "creato": "2025-04-09",
@@ -342,12 +313,41 @@
   ]
  },
  {
+  "repo": "google/gemma-3-12b-it",
+  "nome": "gemma-3-12b-it",
+  "org": "google",
+  "parametri": 12187325040,
+  "download": 331881,
+  "like": 882,
+  "tipo": "image-text-to-text",
+  "creato": "2025-03-01",
+  "gated": true,
+  "cat": [
+   "chat",
+   "vision"
+  ]
+ },
+ {
   "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
   "nome": "DeepSeek-R1-Distill-Qwen-14B",
   "org": "deepseek-ai",
   "parametri": 14770033664,
-  "download": 314366,
-  "like": 722,
+  "download": 305865,
+  "like": 723,
+  "tipo": "text-generation",
+  "creato": "2025-01-20",
+  "gated": false,
+  "cat": [
+   "chat"
+  ]
+ },
+ {
+  "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+  "nome": "DeepSeek-R1-Distill-Qwen-7B",
+  "org": "deepseek-ai",
+  "parametri": 7615616512,
+  "download": 305510,
+  "like": 939,
   "tipo": "text-generation",
   "creato": "2025-01-20",
   "gated": false,
@@ -360,7 +360,7 @@
   "nome": "NVIDIA-Nemotron-Nano-9B-v2",
   "org": "nvidia",
   "parametri": 8888227328,
-  "download": 224855,
+  "download": 216962,
   "like": 529,
   "tipo": "text-generation",
   "creato": "2025-08-12",
@@ -375,7 +375,7 @@
   "org": "openbmb",
   "parametri": 1300428016,
   "download": 181313,
-  "like": 1242,
+  "like": 1243,
   "tipo": "image-text-to-text",
   "creato": "2026-04-13",
   "gated": false,
@@ -404,8 +404,8 @@
   "nome": "DeepSeek-R1-Distill-Llama-8B",
   "org": "deepseek-ai",
   "parametri": 8030261248,
-  "download": 120261,
-  "like": 912,
+  "download": 116039,
+  "like": 913,
   "tipo": "text-generation",
   "creato": "2025-01-20",
   "gated": false,
@@ -414,76 +414,17 @@
   ]
  },
  {
-  "repo": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
-  "nome": "SmolVLM2-2.2B-Instruct",
-  "org": "HuggingFaceTB",
-  "parametri": 2246784880,
-  "download": 109735,
-  "like": 336,
-  "tipo": "image-text-to-text",
-  "creato": "2025-02-08",
-  "gated": false,
-  "cat": [
-   "chat",
-   "vision"
-  ]
- },
- {
   "repo": "LiquidAI/LFM2.5-1.2B-Instruct",
   "nome": "LFM2.5-1.2B-Instruct",
   "org": "LiquidAI",
   "parametri": 1170340608,
   "download": 109489,
-  "like": 685,
+  "like": 684,
   "tipo": "text-generation",
   "creato": "2026-01-06",
   "gated": false,
   "cat": [
    "chat"
-  ]
- },
- {
-  "repo": "google/gemma-3n-E2B-it",
-  "nome": "gemma-3n-E2B-it",
-  "org": "google",
-  "parametri": 5439438272,
-  "download": 102617,
-  "like": 333,
-  "tipo": "image-text-to-text",
-  "creato": "2025-06-12",
-  "gated": true,
-  "cat": [
-   "chat",
-   "vision"
-  ]
- },
- {
-  "repo": "allenai/OLMoE-1B-7B-0125-Instruct",
-  "nome": "OLMoE-1B-7B-0125-Instruct",
-  "org": "allenai",
-  "parametri": 6919161856,
-  "download": 101939,
-  "like": 68,
-  "tipo": "text-generation",
-  "creato": "2025-01-27",
-  "gated": false,
-  "cat": [
-   "chat"
-  ]
- },
- {
-  "repo": "zai-org/GLM-4.1V-9B-Thinking",
-  "nome": "GLM-4.1V-9B-Thinking",
-  "org": "zai-org",
-  "parametri": 10292777472,
-  "download": 100766,
-  "like": 791,
-  "tipo": "image-text-to-text",
-  "creato": "2025-06-28",
-  "gated": false,
-  "cat": [
-   "chat",
-   "vision"
   ]
  },
  {
@@ -506,7 +447,7 @@
   "org": "LiquidAI",
   "parametri": 2697198592,
   "download": 98407,
-  "like": 847,
+  "like": 848,
   "tipo": "text-generation",
   "creato": "2026-07-28",
   "gated": false,
@@ -515,11 +456,41 @@
   ]
  },
  {
+  "repo": "google/gemma-3n-E2B-it",
+  "nome": "gemma-3n-E2B-it",
+  "org": "google",
+  "parametri": 5439438272,
+  "download": 95332,
+  "like": 333,
+  "tipo": "image-text-to-text",
+  "creato": "2025-06-12",
+  "gated": true,
+  "cat": [
+   "chat",
+   "vision"
+  ]
+ },
+ {
+  "repo": "zai-org/GLM-4.1V-9B-Thinking",
+  "nome": "GLM-4.1V-9B-Thinking",
+  "org": "zai-org",
+  "parametri": 10292777472,
+  "download": 93184,
+  "like": 791,
+  "tipo": "image-text-to-text",
+  "creato": "2025-06-28",
+  "gated": false,
+  "cat": [
+   "chat",
+   "vision"
+  ]
+ },
+ {
   "repo": "HuggingFaceTB/SmolVLM-500M-Instruct",
   "nome": "SmolVLM-500M-Instruct",
   "org": "HuggingFaceTB",
   "parametri": 507482304,
-  "download": 97679,
+  "download": 93075,
   "like": 198,
   "tipo": "image-text-to-text",
   "creato": "2025-01-20",
@@ -527,6 +498,20 @@
   "cat": [
    "chat",
    "vision"
+  ]
+ },
+ {
+  "repo": "allenai/OLMoE-1B-7B-0125-Instruct",
+  "nome": "OLMoE-1B-7B-0125-Instruct",
+  "org": "allenai",
+  "parametri": 6919161856,
+  "download": 92802,
+  "like": 68,
+  "tipo": "text-generation",
+  "creato": "2025-01-27",
+  "gated": false,
+  "cat": [
+   "chat"
   ]
  },
  {
@@ -545,26 +530,12 @@
   ]
  },
  {
-  "repo": "ibm-granite/granite-3.3-8b-instruct",
-  "nome": "granite-3.3-8b-instruct",
-  "org": "ibm-granite",
-  "parametri": 8170864640,
-  "download": 86773,
-  "like": 161,
-  "tipo": "text-generation",
-  "creato": "2025-04-09",
-  "gated": false,
-  "cat": [
-   "chat"
-  ]
- },
- {
   "repo": "ibm-granite/granite-4.2-8b",
   "nome": "granite-4.2-8b",
   "org": "ibm-granite",
   "parametri": 8791592960,
   "download": 86110,
-  "like": 107,
+  "like": 108,
   "tipo": "text-generation",
   "creato": "2026-08-07",
   "gated": false,
@@ -578,7 +549,7 @@
   "org": "openbmb",
   "parametri": 8695895280,
   "download": 85661,
-  "like": 1109,
+  "like": 1110,
   "tipo": "image-text-to-text",
   "creato": "2025-08-24",
   "gated": false,
@@ -588,14 +559,43 @@
   ]
  },
  {
+  "repo": "ibm-granite/granite-3.3-8b-instruct",
+  "nome": "granite-3.3-8b-instruct",
+  "org": "ibm-granite",
+  "parametri": 8170864640,
+  "download": 85417,
+  "like": 161,
+  "tipo": "text-generation",
+  "creato": "2025-04-09",
+  "gated": false,
+  "cat": [
+   "chat"
+  ]
+ },
+ {
   "repo": "nvidia/Llama-3.1-Nemotron-Nano-VL-8B-V1",
   "nome": "Llama-3.1-Nemotron-Nano-VL-8B-V1",
   "org": "nvidia",
   "parametri": 8721768454,
-  "download": 84082,
-  "like": 187,
+  "download": 82492,
+  "like": 188,
   "tipo": "image-text-to-text",
   "creato": "2025-06-03",
+  "gated": false,
+  "cat": [
+   "chat",
+   "vision"
+  ]
+ },
+ {
+  "repo": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+  "nome": "SmolVLM2-2.2B-Instruct",
+  "org": "HuggingFaceTB",
+  "parametri": 2246784880,
+  "download": 81583,
+  "like": 336,
+  "tipo": "image-text-to-text",
+  "creato": "2025-02-08",
   "gated": false,
   "cat": [
    "chat",
@@ -637,7 +637,7 @@
   "nome": "OLMo-2-0425-1B-Instruct",
   "org": "allenai",
   "parametri": 1484916736,
-  "download": 50840,
+  "download": 48103,
   "like": 58,
   "tipo": "text-generation",
   "creato": "2025-04-29",
@@ -662,20 +662,6 @@
   ]
  },
  {
-  "repo": "microsoft/Phi-4-mini-reasoning",
-  "nome": "Phi-4-mini-reasoning",
-  "org": "microsoft",
-  "parametri": 3836021760,
-  "download": 38998,
-  "like": 248,
-  "tipo": "text-generation",
-  "creato": "2025-04-29",
-  "gated": false,
-  "cat": [
-   "chat"
-  ]
- },
- {
   "repo": "CohereLabs/North-Micro-Vision-Instruct",
   "nome": "North-Micro-Vision-Instruct",
   "org": "CohereLabs",
@@ -691,11 +677,39 @@
   ]
  },
  {
+  "repo": "microsoft/Phi-4-mini-reasoning",
+  "nome": "Phi-4-mini-reasoning",
+  "org": "microsoft",
+  "parametri": 3836021760,
+  "download": 38164,
+  "like": 249,
+  "tipo": "text-generation",
+  "creato": "2025-04-29",
+  "gated": false,
+  "cat": [
+   "chat"
+  ]
+ },
+ {
+  "repo": "moonshotai/Moonlight-16B-A3B-Instruct",
+  "nome": "Moonlight-16B-A3B-Instruct",
+  "org": "moonshotai",
+  "parametri": 15960111936,
+  "download": 33983,
+  "like": 209,
+  "tipo": "text-generation",
+  "creato": "2025-02-22",
+  "gated": false,
+  "cat": [
+   "chat"
+  ]
+ },
+ {
   "repo": "microsoft/Phi-tiny-MoE-instruct",
   "nome": "Phi-tiny-MoE-instruct",
   "org": "microsoft",
   "parametri": 3755220288,
-  "download": 37457,
+  "download": 33773,
   "like": 48,
   "tipo": "text-generation",
   "creato": "2025-06-23",
@@ -709,24 +723,10 @@
   "nome": "LFM2-1.2B",
   "org": "LiquidAI",
   "parametri": 1170340608,
-  "download": 36143,
+  "download": 33066,
   "like": 370,
   "tipo": "text-generation",
   "creato": "2025-07-10",
-  "gated": false,
-  "cat": [
-   "chat"
-  ]
- },
- {
-  "repo": "moonshotai/Moonlight-16B-A3B-Instruct",
-  "nome": "Moonlight-16B-A3B-Instruct",
-  "org": "moonshotai",
-  "parametri": 15960111936,
-  "download": 33603,
-  "like": 209,
-  "tipo": "text-generation",
-  "creato": "2025-02-22",
   "gated": false,
   "cat": [
    "chat"
@@ -751,7 +751,7 @@
   "nome": "MiMo-7B-RL",
   "org": "XiaomiMiMo",
   "parametri": 7833409536,
-  "download": 30634,
+  "download": 29973,
   "like": 280,
   "tipo": "text-generation",
   "creato": "2025-04-29",
@@ -781,7 +781,7 @@
   "org": "LiquidAI",
   "parametri": 3123483888,
   "download": 27611,
-  "like": 225,
+  "like": 226,
   "tipo": "image-text-to-text",
   "creato": "2026-08-11",
   "gated": false,
@@ -810,7 +810,7 @@
   "nome": "Phi-4-reasoning",
   "org": "microsoft",
   "parametri": 14659507200,
-  "download": 26270,
+  "download": 26378,
   "like": 232,
   "tipo": "text-generation",
   "creato": "2025-04-09",
@@ -825,7 +825,7 @@
   "org": "XiaomiMiMo",
   "parametri": 9409813744,
   "download": 25918,
-  "like": 666,
+  "like": 667,
   "tipo": "image-text-to-text",
   "creato": "2026-09-21",
   "gated": false,
@@ -839,8 +839,8 @@
   "nome": "Phi-mini-MoE-instruct",
   "org": "microsoft",
   "parametri": 7647632704,
-  "download": 19124,
-  "like": 48,
+  "download": 17019,
+  "like": 49,
   "tipo": "text-generation",
   "creato": "2025-06-23",
   "gated": false,
@@ -867,7 +867,7 @@
   "nome": "GLM-4-9B-0414",
   "org": "zai-org",
   "parametri": 9400279040,
-  "download": 12586,
+  "download": 12510,
   "like": 111,
   "tipo": "text-generation",
   "creato": "2025-04-07",
@@ -881,7 +881,7 @@
   "nome": "Hunyuan-7B-Instruct",
   "org": "tencent",
   "parametri": 7504568320,
-  "download": 12397,
+  "download": 11979,
   "like": 90,
   "tipo": "text-generation",
   "creato": "2025-07-30",
@@ -966,7 +966,7 @@
   "nome": "Hunyuan-1.8B-Instruct",
   "org": "tencent",
   "parametri": 1791080448,
-  "download": 3905,
+  "download": 3917,
   "like": 604,
   "tipo": "text-generation",
   "creato": "2025-07-30",
@@ -980,7 +980,7 @@
   "nome": "Apriel-5B-Instruct",
   "org": "ServiceNow-AI",
   "parametri": 4832071680,
-  "download": 3106,
+  "download": 3061,
   "like": 54,
   "tipo": "text-generation",
   "creato": "2025-04-11",

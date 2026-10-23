@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-10-22",
+ "aggiornato": "2026-10-23",
  "fonti": {
   "asr": {
    "nome": "Open ASR Leaderboard (Hugging Face)",
@@ -498,8 +498,8 @@
    "space": "Qwen/Qwen3-TTS",
    "punteggio": 1125,
    "ic": 8,
-   "voti": 8459,
-   "vinte": 4341,
+   "voti": 8460,
+   "vinte": 4342,
    "ultimo": "2026-10-22"
   },
   {
@@ -586,7 +586,7 @@
    "space": "ResembleAI/chatterbox-turbo-demo",
    "punteggio": 1051,
    "ic": 7,
-   "voti": 9954,
+   "voti": 9955,
    "vinte": 3709,
    "ultimo": "2026-10-22"
   },
@@ -835,65 +835,65 @@
   {
    "nome": "Tontaube V1 (pre-filter-fix)",
    "repo": null,
-   "elo": 1609,
-   "ic": 205,
+   "elo": 1607,
+   "ic": 204,
    "voti": 4,
    "attivo": true
   },
   {
    "nome": "Chatterbox",
    "repo": "ResembleAI/chatterbox",
-   "elo": 1477,
-   "ic": 22,
-   "voti": 1786,
+   "elo": 1475,
+   "ic": 20,
+   "voti": 1787,
    "attivo": true
   },
   {
    "nome": "Kokoro v1.0",
    "repo": "hexgrad/Kokoro-82M",
-   "elo": 1474,
-   "ic": 28,
+   "elo": 1473,
+   "ic": 24,
    "voti": 1033,
    "attivo": false
   },
   {
    "nome": "CosyVoice 2.0",
    "repo": null,
-   "elo": 1445,
-   "ic": 86,
+   "elo": 1443,
+   "ic": 95,
    "voti": 58,
    "attivo": false
   },
   {
    "nome": "Maya 1",
    "repo": "maya-research/maya1",
-   "elo": 1408,
-   "ic": 37,
+   "elo": 1406,
+   "ic": 34,
    "voti": 467,
    "attivo": false
   },
   {
    "nome": "Tontaube V1",
    "repo": null,
-   "elo": 1383,
-   "ic": 96,
-   "voti": 56,
+   "elo": 1393,
+   "ic": 90,
+   "voti": 61,
    "attivo": true
   },
   {
    "nome": "Veena",
    "repo": "maya-research/Veena",
-   "elo": 1361,
-   "ic": 34,
+   "elo": 1359,
+   "ic": 35,
    "voti": 510,
    "attivo": false
   },
   {
    "nome": "Fluxions Vui",
    "repo": null,
-   "elo": 1344,
-   "ic": 90,
-   "voti": 75,
+   "elo": 1358,
+   "ic": 78,
+   "voti": 80,
    "attivo": true
   }
  ]

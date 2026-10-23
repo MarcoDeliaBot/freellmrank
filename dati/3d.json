@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-10-22",
+ "aggiornato": "2026-10-23",
  "licenze": {
   "mit": {
    "nome": "MIT",
@@ -29,7 +29,7 @@
    "licenza": "mit",
    "demo": "microsoft/TRELLIS.2",
    "download": 2333498,
-   "like": 1383,
+   "like": 1385,
    "creato": "2025-12-01",
    "b": null
   },
@@ -40,8 +40,8 @@
    "da": "Image",
    "licenza": "mit",
    "demo": "microsoft/TRELLIS",
-   "download": 2284515,
-   "like": 710,
+   "download": 2273891,
+   "like": 711,
    "creato": "2024-12-02",
    "b": null
   },
@@ -52,7 +52,7 @@
    "da": "Image",
    "licenza": "mit",
    "demo": "stabilityai/TripoSR",
-   "download": 250604,
+   "download": 246528,
    "like": 680,
    "creato": "2024-02-29",
    "b": null
@@ -64,8 +64,8 @@
    "da": "Image",
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2",
-   "download": 155779,
-   "like": 1854,
+   "download": 153754,
+   "like": 1856,
    "creato": "2025-01-20",
    "b": null
   },
@@ -76,8 +76,8 @@
    "da": "Image",
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2.1",
-   "download": 77225,
-   "like": 1302,
+   "download": 76799,
+   "like": 1305,
    "creato": "2025-06-13",
    "b": null
   },
@@ -88,8 +88,8 @@
    "da": "Image",
    "licenza": "stability",
    "demo": "stabilityai/stable-fast-3d",
-   "download": 55705,
-   "like": 1316,
+   "download": 55046,
+   "like": 1320,
    "creato": "2024-07-17",
    "b": 1
   },
@@ -100,7 +100,7 @@
    "da": "Image",
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2mini-Turbo",
-   "download": 45527,
+   "download": 45369,
    "like": 146,
    "creato": "2025-03-12",
    "b": null
@@ -112,7 +112,7 @@
    "da": "Image",
    "licenza": "apache",
    "demo": "TencentARC/InstantMesh",
-   "download": 21696,
+   "download": 21030,
    "like": 344,
    "creato": "2024-04-10",
    "b": null
@@ -124,7 +124,7 @@
    "da": "Several photos",
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2mv",
-   "download": 16940,
+   "download": 16883,
    "like": 434,
    "creato": "2025-03-12",
    "b": null
@@ -136,8 +136,8 @@
    "da": "Text",
    "licenza": "mit",
    "demo": null,
-   "download": 14559,
-   "like": 86,
+   "download": 12911,
+   "like": 87,
    "creato": "2025-03-24",
    "b": null
   },
@@ -148,8 +148,8 @@
    "da": "Text or image",
    "licenza": "mit",
    "demo": null,
-   "download": 8804,
-   "like": 295,
+   "download": 8745,
+   "like": 296,
    "creato": "2023-07-04",
    "b": null
   },
@@ -160,7 +160,7 @@
    "da": "Image",
    "licenza": "mit",
    "demo": "VAST-AI/TripoSG",
-   "download": 8240,
+   "download": 8280,
    "like": 152,
    "creato": "2025-03-24",
    "b": 1.4
@@ -172,8 +172,8 @@
    "da": "Image",
    "licenza": "stability",
    "demo": "stabilityai/stable-point-aware-3d",
-   "download": 6305,
-   "like": 426,
+   "download": 6309,
+   "like": 427,
    "creato": "2024-12-28",
    "b": 2
   }

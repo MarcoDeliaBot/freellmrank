@@ -352,12 +352,12 @@
   },
   {
    "id": "linne-oak-1.0",
-   "nome": "linne-oak 1.0 (31B)",
-   "org": "MISA-AICORE",
+   "nome": "MISA AI 2.0 Decision Plus · oak (31B)",
+   "org": "MISA JSC",
    "tipo": "full fine-tune",
    "b": 31.3,
    "stimato": false,
-   "repo": "MISA-core/linne-oak-1-0",
+   "repo": "misa-jsc/misa-ai-2.0-decision-plus",
    "base": "google/gemma-4-31B-it",
    "nota": null,
    "punti": 66.88,
@@ -594,6 +594,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "knowline-35b-a3b-gen1.5",
+   "nome": "KnowLine 35B-A3B Gen1.5",
+   "org": "PelaAI",
+   "tipo": "LoRA",
+   "b": 36,
+   "stimato": false,
+   "repo": "PelaAI/KnowLine-35B-A3B-Gen1.5",
+   "base": "Qwen/Qwen3.5-35B-A3B",
+   "nota": null,
+   "punti": 65.77,
+   "pubblico": 70.72,
+   "ms": 47.1,
+   "p95": 219.2,
+   "ece": 0.0442,
+   "acc": 0.8121,
+   "aree": {
+    "knowledge": 55,
+    "language": 72.9,
+    "retrieval": 75.4,
+    "tools": 88.3,
+    "arts": 64.2
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "bobcat-1.3",
    "nome": "Bobcat 1.3 (31B)",
    "org": "",
@@ -699,6 +725,32 @@
    },
    "vision": null,
    "licenza": null
+  },
+  {
+   "id": "knowline-26b-a4b-gen2.5",
+   "nome": "KnowLine 26B-A4B Gen2.5",
+   "org": "PelaAI",
+   "tipo": "LoRA",
+   "b": 25.8,
+   "stimato": false,
+   "repo": "PelaAI/KnowLine-26B-A4B-Gen2.5",
+   "base": "google/gemma-4-26B-A4B-it",
+   "nota": null,
+   "punti": 64.57,
+   "pubblico": 68.21,
+   "ms": 71.7,
+   "p95": 417.5,
+   "ece": 0.0194,
+   "acc": 0.7985,
+   "aree": {
+    "knowledge": 55.1,
+    "language": 71.2,
+    "retrieval": 70.9,
+    "tools": 83.3,
+    "arts": 61.4
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
   },
   {
    "id": "jebadiah-27b-v2.1-t1e",
@@ -958,61 +1010,6 @@
     "arts": 59.2
    },
    "vision": null,
-   "licenza": "apache-2.0"
-  },
-  {
-   "id": "knowline-26b-a4b-gen2",
-   "nome": "KnowLine 26B-A4B Gen2",
-   "org": "PelaAI",
-   "tipo": "LoRA",
-   "b": 25.8,
-   "stimato": false,
-   "repo": "PelaAI/KnowLine-26B-A4B-Gen2",
-   "base": "google/gemma-4-26B-A4B-it",
-   "nota": null,
-   "punti": 61.34,
-   "pubblico": 66.94,
-   "ms": 60.8,
-   "p95": 256.8,
-   "ece": 0.0152,
-   "acc": 0.7915,
-   "aree": {
-    "knowledge": 51.9,
-    "language": 69.7,
-    "retrieval": 70.4,
-    "tools": 84.4,
-    "arts": 60
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
-  },
-  {
-   "id": "knowline-35b-a3b-gen1",
-   "nome": "KnowLine 35B-A3B Gen1",
-   "org": "PelaAI",
-   "tipo": "LoRA",
-   "b": 36,
-   "stimato": false,
-   "repo": "PelaAI/KnowLine-35B-A3B-Gen1",
-   "base": "Qwen/Qwen3.5-35B-A3B",
-   "nota": null,
-   "punti": 61.2,
-   "pubblico": 69.49,
-   "ms": 41.1,
-   "p95": 147.2,
-   "ece": 0.0475,
-   "acc": 0.8046,
-   "aree": {
-    "knowledge": 52.5,
-    "language": 71.2,
-    "retrieval": 75.2,
-    "tools": 88.1,
-    "arts": 63.4
-   },
-   "vision": {
-    "punti": 68.1,
-    "ms": 158.7
-   },
    "licenza": "apache-2.0"
   },
   {
@@ -1675,6 +1672,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "knowline-4b-gen5.5",
+   "nome": "KnowLine 4B Gen5.5",
+   "org": "PelaAI",
+   "tipo": "full fine-tune",
+   "b": 4.7,
+   "stimato": false,
+   "repo": "PelaAI/KnowLine-4B-Gen5.5",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 55.99,
+   "pubblico": 66.76,
+   "ms": 35.2,
+   "p95": 170.3,
+   "ece": 0.0472,
+   "acc": 0.7825,
+   "aree": {
+    "knowledge": 47.3,
+    "language": 68.2,
+    "retrieval": 74,
+    "tools": 87.4,
+    "arts": 61
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "blink-v0.3-26b-a4b-nvfp4",
    "nome": "Blink v0.3 26B-A4B (NVFP4)",
    "org": "Pixilab.ai",
@@ -1941,32 +1964,6 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
-   "id": "knowline-4b-gen5",
-   "nome": "KnowLine 4B Gen5",
-   "org": "PelaAI",
-   "tipo": "full fine-tune",
-   "b": 4.7,
-   "stimato": false,
-   "repo": "PelaAI/KnowLine-4B-Gen5",
-   "base": "Qwen/Qwen3.5-4B",
-   "nota": null,
-   "punti": 53.68,
-   "pubblico": 65.67,
-   "ms": 34.5,
-   "p95": 123,
-   "ece": 0.0508,
-   "acc": 0.7738,
-   "aree": {
-    "knowledge": 45,
-    "language": 66.8,
-    "retrieval": 73.3,
-    "tools": 87.4,
-    "arts": 61.2
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
-  },
-  {
    "id": "xor-1.2",
    "nome": "Xor 1.2",
    "org": "Juspay Technologies",
@@ -2095,6 +2092,32 @@
     "retrieval": 58.9,
     "tools": 70.8,
     "arts": 39.1
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "jeffan-4b-2010",
+   "nome": "Jeffan-4B-2010",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 4.2,
+   "stimato": false,
+   "repo": "tattrongvu/Jeffan-4B-2010",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 52.21,
+   "pubblico": 64.85,
+   "ms": 50.4,
+   "p95": 236.1,
+   "ece": 0.0389,
+   "acc": 0.7854,
+   "aree": {
+    "knowledge": 49.5,
+    "language": 69.8,
+    "retrieval": 62.8,
+    "tools": 87.4,
+    "arts": 54.6
    },
    "vision": null,
    "licenza": "apache-2.0"
@@ -2384,6 +2407,32 @@
     "retrieval": 65.1,
     "tools": 79.2,
     "arts": 43
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "senova-4b",
+   "nome": "Senova-4B",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 4.5,
+   "stimato": false,
+   "repo": "WangSenQWQ/Senova-4B",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 47.32,
+   "pubblico": 61.6,
+   "ms": 48.3,
+   "p95": 346.8,
+   "ece": 0.1521,
+   "acc": 0.7535,
+   "aree": {
+    "knowledge": 38.9,
+    "language": 65,
+    "retrieval": 67,
+    "tools": 84.6,
+    "arts": 58.6
    },
    "vision": null,
    "licenza": "apache-2.0"
@@ -3268,6 +3317,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "standard-one-3b-sh-v4",
+   "nome": "Standard One 3B SH (v4)",
+   "org": "Standard Thinking",
+   "tipo": "LoRA + head",
+   "b": 3.8,
+   "stimato": false,
+   "repo": "StandardThinking/StandardOne-3B-SH",
+   "base": "StandardThinking/StandardOne-3B",
+   "nota": null,
+   "punti": 39.79,
+   "pubblico": 58.08,
+   "ms": 79.9,
+   "p95": 139.9,
+   "ece": 0.1136,
+   "acc": 0.7223,
+   "aree": {
+    "knowledge": 36.3,
+    "language": 57.5,
+    "retrieval": 67,
+    "tools": 85.7,
+    "arts": 47.5
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "jpt-4b",
    "nome": "JPT-4B",
    "org": "",
@@ -3567,32 +3642,6 @@
     "retrieval": 47.1,
     "tools": 68.8,
     "arts": 32.4
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
-  },
-  {
-   "id": "standard-one-3b-sh-v2",
-   "nome": "Standard One 3B SH (v2)",
-   "org": "Standard Thinking",
-   "tipo": "LoRA + head",
-   "b": 3.8,
-   "stimato": false,
-   "repo": "StandardThinking/StandardOne-3B-SH",
-   "base": "StandardThinking/StandardOne-3B",
-   "nota": null,
-   "punti": 35.26,
-   "pubblico": 42.9,
-   "ms": 76.2,
-   "p95": 139.9,
-   "ece": 0.1005,
-   "acc": 0.6526,
-   "aree": {
-    "knowledge": 25.3,
-    "language": 44.2,
-    "retrieval": 59.7,
-    "tools": 60.3,
-    "arts": 19.8
    },
    "vision": null,
    "licenza": "apache-2.0"
@@ -3995,6 +4044,32 @@
    },
    "vision": null,
    "licenza": "cc-by-nc-4.0"
+  },
+  {
+   "id": "gliclass-v4-edge",
+   "nome": "GLiClass v4 edge (0.4B)",
+   "org": "Knowledgator Engineering",
+   "tipo": "full fine-tune",
+   "b": 0.4,
+   "stimato": false,
+   "repo": "knowledgator/gliclass-v4-edge",
+   "base": "microsoft/deberta-v3-large",
+   "nota": null,
+   "punti": 31.21,
+   "pubblico": 47.49,
+   "ms": 21.8,
+   "p95": 188.2,
+   "ece": 0.0887,
+   "acc": 0.68,
+   "aree": {
+    "knowledge": 21.4,
+    "language": 54.6,
+    "retrieval": 66.7,
+    "tools": 58.1,
+    "arts": 38.6
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
   },
   {
    "id": "d1-3b",
@@ -4786,6 +4861,32 @@
    "licenza": "other"
   },
   {
+   "id": "tasksource-decider-nano-v5",
+   "nome": "tasksource Decider nano v5 (150M)",
+   "org": "tasksource",
+   "tipo": "full fine-tune",
+   "b": 0.1,
+   "stimato": false,
+   "repo": "tasksource/tasksource-decider-nano",
+   "base": "cross-encoder/ettin-reranker-150m-v1",
+   "nota": null,
+   "punti": 19.85,
+   "pubblico": 33.51,
+   "ms": 13,
+   "p95": 21.5,
+   "ece": 0.07,
+   "acc": 0.5792,
+   "aree": {
+    "knowledge": 9.7,
+    "language": 38.6,
+    "retrieval": 50.1,
+    "tools": 50.9,
+    "arts": 16.6
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "crivo-68m",
    "nome": "Crivo-68M",
    "org": "",
@@ -5096,32 +5197,6 @@
     "retrieval": 32,
     "tools": 26.7,
     "arts": 7.4
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
-  },
-  {
-   "id": "tasksource-decider-nano-v4",
-   "nome": "tasksource Decider nano v4 (150M)",
-   "org": "tasksource",
-   "tipo": "full fine-tune",
-   "b": 0.1,
-   "stimato": false,
-   "repo": "tasksource/tasksource-decider-nano",
-   "base": "cross-encoder/ettin-reranker-150m-v1",
-   "nota": null,
-   "punti": 16.43,
-   "pubblico": 30.9,
-   "ms": 14.2,
-   "p95": 22.6,
-   "ece": 0.069,
-   "acc": 0.5653,
-   "aree": {
-    "knowledge": 7.8,
-    "language": 37.7,
-    "retrieval": 49.4,
-    "tools": 43.6,
-    "arts": 12.8
    },
    "vision": null,
    "licenza": "apache-2.0"

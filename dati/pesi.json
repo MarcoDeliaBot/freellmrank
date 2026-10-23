@@ -753,5 +753,10 @@
   "repo": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
   "parametri": 31577937344,
   "fonte": "hf-auto"
+ },
+ "MiniMax-M3.1-Flash": {
+  "repo": "MiniMaxAI/MiniMax-M3.1-Flash",
+  "parametri": 220490854016,
+  "fonte": "hf-auto"
  }
 }

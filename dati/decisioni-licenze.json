@@ -206,5 +206,12 @@
  "MachineFi/Trio-Spark-DI": "cc-by-nc-4.0",
  "AnamK/jdi-ptr14-0.8b": "cc-by-nc-4.0",
  "lCREEl/pick-150m": "cc-by-nc-4.0",
- "fastino/GLiDE": "other"
+ "fastino/GLiDE": "other",
+ "misa-jsc/misa-ai-2.0-decision-plus": "apache-2.0",
+ "PelaAI/KnowLine-35B-A3B-Gen1.5": "apache-2.0",
+ "PelaAI/KnowLine-26B-A4B-Gen2.5": "apache-2.0",
+ "PelaAI/KnowLine-4B-Gen5.5": "apache-2.0",
+ "tattrongvu/Jeffan-4B-2010": "apache-2.0",
+ "WangSenQWQ/Senova-4B": "apache-2.0",
+ "knowledgator/gliclass-v4-edge": "apache-2.0"
 }

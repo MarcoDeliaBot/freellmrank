@@ -1846,5 +1846,16 @@
   "contestoMax": 262144,
   "moe": true,
   "attivi": 8577887200
+ },
+ "MiniMaxAI/MiniMax-M3.1-Flash": {
+  "strati": 60,
+  "tipo": "GQA",
+  "kvPerStrato": 2048,
+  "pieni": 60,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 1048576,
+  "moe": false,
+  "attivi": 220490854016
  }
 }
