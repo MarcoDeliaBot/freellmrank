@@ -10,6 +10,8 @@
 # dei fatti): fino a 2 per corsa, il più recente non ancora raccontato.
 # Ogni video ha il suo post nel blog (deciso da Marco il 22/10/2026), pubblicato da solo se passa il controllo dei fatti
 # (script/video-post.mjs: ogni numero detto o scritto deve stare nelle scene, costruite dai dati); poi commit e push.
+# Dal 23/10/2026 (Marco): ogni Short nasce insieme al suo video lungo e rimanda a lui (script/brag/corto.sh, collega.py):
+# lo Short del modello dopo il video lungo del modello, lo Short della settimana collegato al video lungo della settimana.
 # Dal 22/10/2026 niente bozze social per mail: i post del blog vanno da soli su Bluesky (script/bluesky.mjs).
 name: Video
 
@@ -31,6 +33,14 @@ on:
         description: 'Fai anche il video lungo della settimana (orizzontale, 2-3 minuti)'
         type: boolean
         default: false
+      lunghi:
+        description: 'Video lunghi da fare per modelli precisi: repo Hugging Face (es. briaai/Fibo-2.0-edit-turbo), separati da ;'
+        type: string
+        default: ''
+      corti:
+        description: 'Short da fare per modelli che hanno già il video lungo: nomi come in data.json, separati da ;'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -73,7 +83,7 @@ jobs:
         run: |
           node script/brag/genera.mjs
           node script/brag/lungo.mjs
-          tipi="nuovo"
+          tipi=""
           if [ "$(date -u +%u)" = "7" ] || [ "${{ inputs.settimana }}" = "true" ]; then tipi="$tipi settimana"; fi
           if [ "$(date -u +%u)" = "3" ] || [ "${{ inputs.gpu }}" = "true" ]; then tipi="$tipi gpu"; fi
           if [ "$(date -u +%u)" = "7" ] || [ "${{ inputs.lungo }}" = "true" ]; then tipi="$tipi lungo"; fi
@@ -85,6 +95,8 @@ jobs:
               python script/brag/registra.py video "$v"
               d="video/brag/brag-output-$v"
               cp "$d/brag.mp4" "$d/$nome.mp4"; cp "$d/brag.jpg" "$d/$nome.jpg"; cp "$d/brag.srt" "$d/$nome.srt"; cp "video/brag/info-$v.json" "$d/$nome.json"
+              # lo Short della settimana rimanda al video lungo della stessa settimana (si fanno insieme la domenica)
+              if [ "$tipo" = "settimana" ] && echo "$tipi" | grep -qw lungo; then python script/brag/collega.py "$d/$nome.json" "lungo-${nome#settimana-}"; fi
               titolo=$(python -c "import json; print(json.load(open('$d/$nome.json', encoding='utf-8'))['titolo'])")
               gh release create "video-$nome" "$d/$nome.mp4" "$d/$nome.jpg" "$d/$nome.srt" "$d/$nome.json" --title "$titolo" --notes-file "$d/share-copy.txt" --latest=false
               echo "Pubblicato: $nome"
@@ -94,12 +106,16 @@ jobs:
           done
           # video lunghi dei modelli nuovi: fino a 2 a corsa (la lista delle release dice quali sono già fatti)
           gh release list -L 400 --json tagName -q '.[].tagName' > video/brag/fatti.txt
-          for k in 1 2; do
+          # «lunghi» (a mano): repo Hugging Face dei modelli di cui fare il video lungo, separati da ;
+          IFS=';' read -ra lunghi <<< "${{ inputs.lunghi }}"
+          [ ${#lunghi[@]} -eq 0 ] && lunghi=("" "")
+          for repo in "${lunghi[@]}"; do
+            repo=$(echo "$repo" | xargs)
             rm -f video/brag/info-modello.json
-            BRAG_FATTI=video/brag/fatti.txt node script/brag/modello.mjs || { echo "Copione del modello non riuscito"; break; }
+            BRAG_MODELLO="$repo" BRAG_FATTI=video/brag/fatti.txt node script/brag/modello.mjs || { echo "Copione del modello non riuscito"; break; }
             [ -f video/brag/info-modello.json ] || break
             nome=$(python -c "import json; print(json.load(open('video/brag/info-modello.json', encoding='utf-8'))['nome'])")
-            if gh release view "video-$nome" >/dev/null 2>&1; then echo "Già fatto: $nome"; break; fi
+            if gh release view "video-$nome" >/dev/null 2>&1; then echo "Già fatto: $nome"; continue; fi
             python script/brag/registra.py video modello
             d="video/brag/brag-output-modello"
             cp "$d/brag.mp4" "$d/$nome.mp4"; cp "$d/brag.jpg" "$d/$nome.jpg"; cp "$d/brag.srt" "$d/$nome.srt"; cp video/brag/info-modello.json "$d/$nome.json"
@@ -108,7 +124,12 @@ jobs:
             echo "Pubblicato: $nome"
             node script/video-post.mjs video/brag/info-modello.json "$d/brag.jpg" video/brag/scena-modello.html "video-$nome" video/brag/fonti-modello.txt || echo "Post non scritto per $nome: controllo dei fatti non superato"
             echo "video-$nome" >> video/brag/fatti.txt
+            # lo Short dello stesso modello, collegato al video lungo appena fatto
+            bash script/brag/corto.sh "$(python -c "import json; print(json.load(open('video/brag/info-modello.json', encoding='utf-8'))['hardware']['modelli'][0]['nome'])")"
           done
+          # Short chiesti a mano per modelli che hanno già il video lungo
+          IFS=';' read -ra corti <<< "${{ inputs.corti }}"
+          for c in "${corti[@]}"; do c=$(echo "$c" | xargs); [ -n "$c" ] && bash script/brag/corto.sh "$c"; done
       - name: Post su Bluesky dei post nuovi del blog
         env:
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}

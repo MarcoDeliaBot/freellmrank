@@ -30,6 +30,8 @@ const voceNome = (n) => String(n).replace(/[-_]?\b20\d{6}\b/g, '').replace(/[-_]
 const fatti = process.env.BRAG_FATTI && fs.existsSync(process.env.BRAG_FATTI) ? new Set(fs.readFileSync(process.env.BRAG_FATTI, 'utf8').split(/\s+/).filter(Boolean)) : new Set();
 const candidati = [...dati.nuovi].filter((m) => m.hf && !m.gated).sort((a, b) => (b.creato || '').localeCompare(a.creato || ''));
 const nomeVideo = (m) => `modello-${slug(m.nome)}`;
+// chiesto un modello preciso (BRAG_MODELLO=<repo>) che non è fra i candidati (es. gated): niente video, non un altro al suo posto
+if (process.env.BRAG_MODELLO && !candidati.some((x) => x.hf.repo === process.env.BRAG_MODELLO)) { console.log(`Modello non disponibile: ${process.env.BRAG_MODELLO}`); process.exit(0); }
 const m = (process.env.BRAG_MODELLO && candidati.find((x) => x.hf.repo === process.env.BRAG_MODELLO)) || candidati.slice(0, 10).find((x) => !fatti.has(`video-${nomeVideo(x)}`));
 if (!m) { console.log('Nessun modello nuovo da raccontare'); process.exit(0); }
 
