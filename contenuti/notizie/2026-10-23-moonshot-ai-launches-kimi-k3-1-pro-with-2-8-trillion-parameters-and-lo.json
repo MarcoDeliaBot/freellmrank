@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-23-moonshot-ai-launches-kimi-k3-1-pro-with-2-8-trillion-parameters-and-lo",
+ "titolo": "Moonshot AI launches Kimi K3.1 Pro with 2.8 trillion parameters and lower pricing",
+ "descr": "Kimi K3.1 Pro scores 55 on the Artificial Analysis Index, offers a high‑speed variant, and drops API costs by a third.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Moonshot AI released Kimi K3.1 Pro on 23 October 2026 via the Kimi API. The model retains 2.8 trillion total parameters and a one‑million‑token context window.",
+  "Artificial Analysis ranks K3.1 Pro at 55 points, fourth overall and just three points behind Claude Opus 5.5. The score reflects large gains in agentic tasks, coding and 3D modeling.",
+  "Pricing for the standard version is $2 per million input tokens and $10 per million output tokens, a 33 percent drop from the previous K3 rates. A Highspeed variant runs 2‑3 times faster for twice the price ($4 in, $20 out).",
+  "Benchmark results show 65.7 % on Terminal‑Bench 4.0, close to Claude Opus 5.5’s 66.4 %, and a GDPval‑AA Elo of 1,846, just behind the top proprietary models.",
+  "Moonshot plans to release full model weights by 4 November 2026, which would make K3.1 Pro the highest‑scoring open‑weights model at that time."
+ ],
+ "perche": [
+  "If the weight release proceeds, the model could provide a powerful open‑source alternative to proprietary giants, benefiting users who prefer free or locally hosted LLMs."
+ ],
+ "pubblicato": "2026-10-23",
+ "titoloFonte": "Introducing Kimi K3.1 Pro",
+ "fonti": [
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Oct/23/kimi-k31-pro/",
+   "titolo": "Introducing Kimi K3.1 Pro",
+   "ufficiale": false,
+   "data": "2026-10-23"
+  },
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/chinese-ai-model-kimi-k3-1-pro-is-closing-in-on-anthropics-claude-opus-5-5/",
+   "titolo": "Chinese AI model Kimi K3.1 Pro is closing in on Anthropic's Claude Opus 5.5",
+   "ufficiale": false,
+   "data": "2026-10-23"
+  }
+ ],
+ "frasiTolte": 1
+}

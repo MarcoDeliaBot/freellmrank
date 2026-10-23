@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-23-openai-adds-gpt-6-astra-sol-and-luna-to-google-cloud-model-garden",
+ "titolo": "OpenAI adds GPT-6 Astra, Sol and Luna to Google Cloud Model Garden",
+ "descr": "OpenAI will make its flagship GPT-6 Astra and two scaled‑down versions available via Google Cloud’s Model Garden in the coming weeks.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "OpenAI announced that its newest large language models will be offered through Google Cloud’s Model Garden service.",
+  "The first model is GPT‑6 Astra, which has been credited with recent AI‑driven math discoveries and a perfect ExploitBench score.",
+  "Two smaller variants, GPT‑6.1 Sol and GPT‑6 Luna, launched in late September, trade some output quality for lower token costs, priced five and 100 times less than Astra respectively.",
+  "Google Cloud chief executive Thomas Kurian said the partnership gives customers a broad model selection for quality and cost optimization.",
+  "The models will appear in Model Garden within weeks and later integrate with Google’s Confidential Compute, Antigravity coding tool, and Gemini Agent business‑automation product."
+ ],
+ "perche": [
+  "Enterprise users gain access to cutting‑edge LLMs without building their own infrastructure, while the lower‑cost Sol and Luna options help control spend. For users preferring free or locally hosted models, the availability of high‑end OpenAI models on a public cloud underscores the performance gap and may encourage continued interest in community‑driven alternatives such as the top‑ranked free chat models listed on FreeLLMArena."
+ ],
+ "pubblicato": "2026-10-23",
+ "titoloFonte": "OpenAI to make its most advanced AI models available in Google Cloud",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/10/21/openai-to-make-its-most-advanced-ai-models-available-in-google-cloud/",
+   "titolo": "OpenAI to make its most advanced AI models available in Google Cloud",
+   "ufficiale": false,
+   "data": "2026-10-22"
+  },
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/openai-models-google-cloud",
+   "titolo": "OpenAI models are coming to Google Cloud",
+   "ufficiale": true,
+   "data": "2026-10-21"
+  }
+ ],
+ "frasiTolte": 0
+}

@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-23-google-cloud-launches-agent-compute-engine-giving-each-gemini-agent-it",
+ "titolo": "Google Cloud launches Agent Compute Engine, giving each Gemini agent its own microVM",
+ "descr": "Google Cloud's new Agent Compute Engine isolates each Gemini AI agent in a hardware‑secured microVM and enters preview soon.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "Google Cloud announced Agent Compute Engine, a service that runs each Gemini AI agent inside a separate micro virtual machine.",
+  "The microVMs are hardware isolated by Google’s Titanium chip and contain no internal credentials.",
+  "When an agent is idle, its VM pauses automatically, freeing resources for other agents and reducing cost.",
+  "Google says the design lets ten times more agents run on a single server; a test with 200,000 agents showed suspend and resume in under 500 ms.",
+  "The service will open for preview in the coming months and integrates with Cloud Run, GKE, and managed endpoints, adding token tracking and third‑party identity support."
+ ],
+ "perche": [
+  "Isolating each agent improves security and efficiency, making large‑scale agent deployments cheaper. Users of free or local models may see higher costs for comparable isolation, while cloud‑based Gemini agents benefit from this streamlined, scalable compute model."
+ ],
+ "pubblicato": "2026-10-23",
+ "titoloFonte": "Google Cloud Launches Agent Compute Engine: A MicroVM per AI Agent",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/22/google-cloud-agent-compute-engine-microvm-ai-agents/",
+   "titolo": "Google Cloud Launches Agent Compute Engine: A MicroVM per AI Agent",
+   "ufficiale": false,
+   "data": "2026-10-23"
+  },
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/googles-agent-compute-engine-gives-every-gemini-agent-its-own-hardware-isolated-micro-virtual-machine/",
+   "titolo": "Google's Agent Compute Engine gives every Gemini agent its own hardware-isolated micro virtual machine",
+   "ufficiale": false,
+   "data": "2026-10-22"
+  }
+ ],
+ "frasiTolte": 0
+}
