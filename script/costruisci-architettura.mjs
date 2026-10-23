@@ -60,9 +60,15 @@ export function analizza(cfg, totale, nomeRepo) {
     if (Array.isArray(c.moe_layer_freq)) stratiMoe = c.moe_layer_freq.filter(Boolean).length;
     else if (Array.isArray(c.mlp_layer_types)) stratiMoe = c.mlp_layer_types.filter((t) => t !== 'dense').length;
     else if (Array.isArray(tipi) && tipi.some((t) => t === 'moe')) stratiMoe = tipi.filter((t) => t === 'moe').length;
+    // strati densi elencati a parte (stile Qwen-MoE: «mlp_only_layers», es. Flint [0, 1]): prima li contavo a esperti e
+    // Flint usciva con 1,3 B attivi invece dei ~2,5 della scheda (23/10/2026)
+    else if (Array.isArray(c.mlp_only_layers) && c.mlp_only_layers.length) stratiMoe = Math.floor((strati - c.mlp_only_layers.length) / (c.decoder_sparse_step || 1));
     else stratiMoe = Math.floor((strati - (c.first_k_dense_replace || 0)) / (c.moe_layer_freq || c.decoder_sparse_step || c.interleave_moe_layer_step || 1));
     const spenti = stratiMoe * (esperti - perTok) * 3 * larghezza * inter;
     if (spenti > 0 && spenti < totale) attivi = totale - spenti;
+    // la tabella delle parole in ingresso si legge, non si calcola: non conta fra gli attivi (come nelle schede ufficiali,
+    // es. Flint «excludes the full input embedding matrix»); se è condivisa con l'uscita resta, perché l'uscita calcola
+    if (attivi < totale && !c.tie_word_embeddings && c.vocab_size && c.hidden_size) attivi -= c.vocab_size * c.hidden_size;
   }
 
   return {

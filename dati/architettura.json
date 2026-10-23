@@ -8,7 +8,7 @@
   "larghezzaFinestra": 128,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 44863396608
+  "attivi": 43925969664
  },
  "moonshotai/Kimi-K3": {
   "strati": 93,
@@ -19,7 +19,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 105811378944
+  "attivi": 104636973824
  },
  "zai-org/GLM-5.3": {
   "strati": 78,
@@ -30,7 +30,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 51173510400
+  "attivi": 50221927680
  },
  "zai-org/GLM-5.3-Flash": {
   "strati": 45,
@@ -41,7 +41,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 25372941150
+  "attivi": 24738552670
  },
  "zai-org/GLM-5.2": {
   "strati": 78,
@@ -52,7 +52,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 51203450880
+  "attivi": 50251868160
  },
  "XiaomiMiMo/MiMo-V2.5-Pro": {
   "strati": 70,
@@ -63,7 +63,7 @@
   "larghezzaFinestra": 128,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 43829634816
+  "attivi": 42892207872
  },
  "deepseek-ai/DeepSeek-V4.1-Flash": {
   "strati": 40,
@@ -74,7 +74,7 @@
   "larghezzaFinestra": 128,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 228116982994
+  "attivi": 227455069394
  },
  "zai-org/GLM-5.1": {
   "strati": 78,
@@ -85,7 +85,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 202752,
   "moe": true,
-  "attivi": 51737649408
+  "attivi": 50786066688
  },
  "moonshotai/Kimi-K2.6": {
   "strati": 61,
@@ -96,7 +96,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 262144,
   "moe": true,
-  "attivi": 33332644848
+  "attivi": 32158239728
  },
  "XiaomiMiMo/MiMo-V2.6-Flash-RL": {
   "strati": 48,
@@ -107,7 +107,7 @@
   "larghezzaFinestra": 128,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 17423478144
+  "attivi": 16798526848
  },
  "deepseek-ai/DeepSeek-V4-Pro": {
   "strati": 61,
@@ -118,7 +118,7 @@
   "larghezzaFinestra": 128,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 75621554078
+  "attivi": 74694875038
  },
  "zai-org/GLM-5": {
   "strati": 78,
@@ -129,7 +129,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 202752,
   "moe": true,
-  "attivi": 51773510400
+  "attivi": 50821927680
  },
  "google/gemma-4-31B-it": {
   "strati": 60,
@@ -162,7 +162,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 202752,
   "moe": true,
-  "attivi": 37634437120
+  "attivi": 36858490880
  },
  "tencent/Hy3": {
   "strati": 80,
@@ -173,7 +173,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 262144,
   "moe": true,
-  "attivi": 24428342528
+  "attivi": 23933414656
  },
  "Qwen/Qwen3.5-397B-A17B": {
   "strati": 60,
@@ -195,7 +195,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 202752,
   "moe": true,
-  "attivi": 39134437120
+  "attivi": 38358490880
  },
  "google/gemma-4-26B-A4B-it": {
   "strati": 30,
@@ -217,7 +217,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 26828041088
+  "attivi": 25598847872
  },
  "deepseek-ai/DeepSeek-V4-Flash": {
   "strati": 43,
@@ -228,7 +228,7 @@
   "larghezzaFinestra": 128,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 20412008402
+  "attivi": 19882477522
  },
  "zai-org/GLM-4.5": {
   "strati": 92,
@@ -239,7 +239,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 131072,
   "moe": true,
-  "attivi": 39134437120
+  "attivi": 38396282176
  },
  "XiaomiMiMo/MiMo-V2.5": {
   "strati": 48,
@@ -250,7 +250,7 @@
   "larghezzaFinestra": 128,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 17442195456
+  "attivi": 16817244160
  },
  "deepseek-ai/DeepSeek-R1-0528": {
   "strati": 61,
@@ -261,7 +261,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 163840,
   "moe": true,
-  "attivi": 51025878272
+  "attivi": 50099199232
  },
  "deepseek-ai/DeepSeek-V3.2": {
   "strati": 61,
@@ -272,7 +272,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 163840,
   "moe": true,
-  "attivi": 51925878272
+  "attivi": 50954529024
  },
  "deepseek-ai/DeepSeek-V3.2-Exp": {
   "strati": 61,
@@ -283,7 +283,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 163840,
   "moe": true,
-  "attivi": 51925878272
+  "attivi": 50996120608
  },
  "Qwen/Qwen3-VL-235B-A22B-Instruct": {
   "strati": 94,
@@ -305,7 +305,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 163840,
   "moe": true,
-  "attivi": 51057264272
+  "attivi": 50130585232
  },
  "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": {
   "strati": 94,
@@ -327,7 +327,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 262144,
   "moe": true,
-  "attivi": 61563322259
+  "attivi": 60927623059
  },
  "moonshotai/Kimi-K2.7-Code": {
   "strati": 61,
@@ -338,7 +338,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 262144,
   "moe": true,
-  "attivi": 33332644848
+  "attivi": 32158239728
  },
  "moonshotai/Kimi-K2.5": {
   "strati": 61,
@@ -349,7 +349,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 262144,
   "moe": true,
-  "attivi": 33332644848
+  "attivi": 32158239728
  },
  "MiniMaxAI/MiniMax-M2.7": {
   "strati": 62,
@@ -360,7 +360,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 204800,
   "moe": true,
-  "attivi": 11030553088
+  "attivi": 10415956480
  },
  "MiniMaxAI/MiniMax-M2.5": {
   "strati": 62,
@@ -371,7 +371,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 196608,
   "moe": true,
-  "attivi": 11044433152
+  "attivi": 10429836544
  },
  "MiniMaxAI/MiniMax-M2.1": {
   "strati": 62,
@@ -382,7 +382,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 196608,
   "moe": true,
-  "attivi": 11030553088
+  "attivi": 10415956480
  },
  "Qwen/Qwen3.5-122B-A10B": {
   "strati": 48,
@@ -426,7 +426,7 @@
   "larghezzaFinestra": null,
   "contestoMax": null,
   "moe": true,
-  "attivi": 18744095232
+  "attivi": 17820749312
  },
  "zai-org/GLM-4.6V": {
   "strati": 46,
@@ -437,7 +437,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 131072,
   "moe": true,
-  "attivi": 14282811520
+  "attivi": 13662054528
  },
  "zai-org/GLM-4.5V": {
   "strati": 46,
@@ -448,7 +448,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 65536,
   "moe": true,
-  "attivi": 14282811520
+  "attivi": 13662054528
  },
  "Qwen/Qwen2.5-VL-32B-Instruct": {
   "strati": 64,
@@ -503,7 +503,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 131072,
   "moe": true,
-  "attivi": 33417696000
+  "attivi": 32612389632
  },
  "XiaomiMiMo/MiMo-V2-Flash": {
   "strati": 48,
@@ -514,7 +514,7 @@
   "larghezzaFinestra": 128,
   "contestoMax": 262144,
   "moe": true,
-  "attivi": 16467155456
+  "attivi": 15808805248
  },
  "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16": {
   "strati": 108,
@@ -833,7 +833,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 4096,
   "moe": true,
-  "attivi": 1282017280
+  "attivi": 1178994688
  },
  "zai-org/GLM-4.6V-Flash": {
   "strati": 40,
@@ -976,7 +976,7 @@
   "larghezzaFinestra": 2047,
   "contestoMax": 4096,
   "moe": true,
-  "attivi": 1288969536
+  "attivi": 1157635392
  },
  "moonshotai/Moonlight-16B-A3B-Instruct": {
   "strati": 27,
@@ -1042,7 +1042,7 @@
   "larghezzaFinestra": 2047,
   "contestoMax": 4096,
   "moe": true,
-  "attivi": 2362809664
+  "attivi": 2231475520
  },
  "utter-project/EuroLLM-9B-Instruct-2512": {
   "strati": 42,
@@ -1108,7 +1108,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 131072,
   "moe": true,
-  "attivi": 1381735840
+  "attivi": 1140301216
  },
  "tencent/Hunyuan-1.8B-Instruct": {
   "strati": 32,
@@ -1273,7 +1273,7 @@
   "larghezzaFinestra": 128,
   "contestoMax": 1048576,
   "moe": true,
-  "attivi": 228116982994
+  "attivi": 227455069394
  },
  "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16": {
   "strati": 72,
@@ -1339,7 +1339,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 262144,
   "moe": true,
-  "attivi": 33068730688
+  "attivi": 32424905024
  },
  "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16": {
   "strati": 88,
@@ -1515,7 +1515,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 163840,
   "moe": true,
-  "attivi": 51057264272
+  "attivi": 50130585232
  },
  "Qwen/Qwen3-Next-80B-A3B-Instruct": {
   "strati": 48,
@@ -1537,7 +1537,7 @@
   "larghezzaFinestra": 512,
   "contestoMax": 262144,
   "moe": true,
-  "attivi": 1203437376
+  "attivi": 675479360
  },
  "Qwen/Qwen3.5-35B-A3B": {
   "strati": 40,
@@ -1559,7 +1559,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 131072,
   "moe": true,
-  "attivi": 17040703232
+  "attivi": 16419946240
  },
  "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16": {
   "strati": 88,
@@ -1581,7 +1581,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 163840,
   "moe": true,
-  "attivi": 51015723776
+  "attivi": 50089044736
  },
  "Qwen/Qwen3-Next-80B-A3B-Thinking": {
   "strati": 48,
@@ -1614,7 +1614,7 @@
   "larghezzaFinestra": 128,
   "contestoMax": 131072,
   "moe": true,
-  "attivi": 5750551872
+  "attivi": 5171418432
  },
  "ibm-granite/granite-4.2-30b": {
   "strati": 64,
@@ -1647,7 +1647,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 202752,
   "moe": true,
-  "attivi": 5174860736
+  "attivi": 4857666496
  },
  "Qwen/Qwen3-32B": {
   "strati": 64,
@@ -1669,7 +1669,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 196608,
   "moe": true,
-  "attivi": 11030553088
+  "attivi": 10415956480
  },
  "deepseek-ai/DeepSeek-V3": {
   "strati": 61,
@@ -1680,7 +1680,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 163840,
   "moe": true,
-  "attivi": 51015723776
+  "attivi": 50089044736
  },
  "Qwen/QwQ-32B": {
   "strati": 64,
@@ -1724,7 +1724,7 @@
   "larghezzaFinestra": 128,
   "contestoMax": 131072,
   "moe": true,
-  "attivi": 4193246784
+  "attivi": 3614113344
  },
  "deepseek-ai/DeepSeek-V2.5": {
   "strati": 60,
@@ -1735,7 +1735,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 163840,
   "moe": true,
-  "attivi": 21375800320
+  "attivi": 20851512320
  },
  "Qwen/Qwen2.5-VL-72B-Instruct": {
   "strati": 80,
@@ -1834,7 +1834,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 262144,
   "moe": true,
-  "attivi": 4746200944
+  "attivi": 4237641584
  },
  "inclusionAI/Ling-3.0-flash-Sante": {
   "strati": 42,
@@ -1845,7 +1845,7 @@
   "larghezzaFinestra": null,
   "contestoMax": 262144,
   "moe": true,
-  "attivi": 8577887200
+  "attivi": 8175496160
  },
  "MiniMaxAI/MiniMax-M3.1-Flash": {
   "strati": 60,
@@ -1867,7 +1867,7 @@
   "larghezzaFinestra": 513,
   "contestoMax": 262144,
   "moe": true,
-  "attivi": 1250119456
+  "attivi": 2515488544
  },
  "XingChen-AGI/Xing4.0-29B-A4B": {
   "strati": 40,

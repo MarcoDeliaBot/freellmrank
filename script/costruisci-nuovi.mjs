@@ -69,7 +69,8 @@ for (const m of dati.openrouterGratis || []) {
       const r = await fetch(`https://huggingface.co/api/models/${m.hf}?expand[]=createdAt&expand[]=downloads&expand[]=likes&expand[]=pipeline_tag&expand[]=safetensors&expand[]=gated`);
       const h = r.ok ? await r.json() : null;
       if (h?.safetensors?.total && TIPI[h.pipeline_tag] && (h.createdAt || '') >= soglia) {
-        const nome = h.id.split('/')[1];
+        // nome come lo scrive OpenRouter («Recursive: Flint (free)» -> «Flint»), non il repository tutto minuscolo
+        const nome = m.nome.replace(/\s*\(free\)\s*$/i, '').replace(/^[^:]+:\s*/, '') || h.id.split('/')[1];
         const cat = [...TIPI[h.pipeline_tag]];
         if (/coder|code|devstral/i.test(nome)) cat.push('code');
         uscita.push({ repo: h.id, nome, org: h.id.split('/')[0], parametri: h.safetensors.total, download: h.downloads, like: h.likes, tipo: h.pipeline_tag, creato: h.createdAt.slice(0, 10), gated: !!h.gated, cat, fonte: 'hf', or: m.id });
