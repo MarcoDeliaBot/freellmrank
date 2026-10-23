@@ -1857,5 +1857,27 @@
   "contestoMax": 1048576,
   "moe": false,
   "attivi": 220490854016
+ },
+ "RecursiveSI/flint": {
+  "strati": 49,
+  "tipo": "GQA",
+  "kvPerStrato": 2048,
+  "pieni": 14,
+  "finestra": 35,
+  "larghezzaFinestra": 513,
+  "contestoMax": 262144,
+  "moe": true,
+  "attivi": 1250119456
+ },
+ "XingChen-AGI/Xing4.0-29B-A4B": {
+  "strati": 40,
+  "tipo": "MLA",
+  "kvPerStrato": 1152,
+  "pieni": 40,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": true,
+  "attivi": 4000000000
  }
 }

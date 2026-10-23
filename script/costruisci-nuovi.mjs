@@ -62,6 +62,21 @@ for (const m of dati.openrouterGratis || []) {
   const k = nucleo(m.id.split('/')[1]);
   const gemello = uscita.find((x) => x.fonte === 'hf' && k.length > 6 && nucleo(x.nome).includes(k));
   if (gemello) { gemello.or = m.id; continue; }
+  // laboratorio non in AUTORI ma con i pesi su Hugging Face, dichiarati da OpenRouter (23/10/2026: Flint di
+  // RecursiveSI arrivava senza dimensioni, quindi senza simulatore, pagina completa e video)
+  if (m.hf && !noti.has(m.hf)) {
+    try {
+      const r = await fetch(`https://huggingface.co/api/models/${m.hf}?expand[]=createdAt&expand[]=downloads&expand[]=likes&expand[]=pipeline_tag&expand[]=safetensors&expand[]=gated`);
+      const h = r.ok ? await r.json() : null;
+      if (h?.safetensors?.total && TIPI[h.pipeline_tag] && (h.createdAt || '') >= soglia) {
+        const nome = h.id.split('/')[1];
+        const cat = [...TIPI[h.pipeline_tag]];
+        if (/coder|code|devstral/i.test(nome)) cat.push('code');
+        uscita.push({ repo: h.id, nome, org: h.id.split('/')[0], parametri: h.safetensors.total, download: h.downloads, like: h.likes, tipo: h.pipeline_tag, creato: h.createdAt.slice(0, 10), gated: !!h.gated, cat, fonte: 'hf', or: m.id });
+        continue;
+      }
+    } catch (e) { console.log('salto', m.hf, e.message); }
+  }
   uscita.push({ repo: null, nome: m.nome.replace(/\s*\(free\)\s*$/i, ''), org: m.id.split('/')[0], or: m.id, contesto: m.contesto, cat: ['chat'], fonte: 'openrouter' });
 }
 

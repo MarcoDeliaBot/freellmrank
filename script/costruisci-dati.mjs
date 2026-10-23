@@ -119,7 +119,7 @@ for (const c of CATEGORIE) {
 // modelli gratuiti di OpenRouter, anche quelli che Arena non vota
 const SCARTA = /^openrouter\/free$|lyria|content-safety/;
 uscita.openrouterGratis = orModelli.filter((m) => libero(m) && !SCARTA.test(m.id))
-  .map((m) => ({ id: m.id, nome: m.name, contesto: m.context_length }));
+  .map((m) => ({ id: m.id, nome: m.name, contesto: m.context_length, hf: m.hugging_face_id || null }));
 
 uscita.schede = leggiJson('schede.json', { schede: [], ram: [] });
 
