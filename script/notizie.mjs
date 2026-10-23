@@ -26,9 +26,8 @@ const FONTI = [
   { nome: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/technology-lab' },
   { nome: 'MarkTechPost', url: 'https://www.marktechpost.com/feed/' },
   { nome: 'Simon Willison', url: 'https://simonwillison.net/atom/everything/' },
-  // 24/10/2026: Kimi K3.1 Pro e Claude Duet non erano usciti; queste tre fonti li avevano entrambi
+  // 24/10/2026: Kimi K3.1 Pro e Claude Duet non erano usciti; SiliconANGLE e The Decoder li avevano entrambi (Unite.AI risponde 403 al nostro programma)
   { nome: 'SiliconANGLE', url: 'https://siliconangle.com/category/ai/feed/' },
-  { nome: 'Unite.AI', url: 'https://www.unite.ai/feed/' },
   { nome: 'The Decoder', url: 'https://the-decoder.com/feed/' },
 ];
 // lanci dei grandi laboratori: passano davanti (Marco, 24/10/2026: «oggi è uscito Kimi K3.1, Anthropic ha annunciato
