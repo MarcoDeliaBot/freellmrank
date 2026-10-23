@@ -1,0 +1,26 @@
+{
+ "nome": "2026-10-23-kazakhstan-expands-compute-for-its-ai-future",
+ "titolo": "Kazakhstan Expands Compute for Its AI Future",
+ "descr": "NVIDIA and Firebird bring tens of thousands of GPUs to Kazakhstan, expanding compute for local AI development and industry.",
+ "tema": "Business",
+ "paragrafi": [
+  "NVIDIA founder Jensen Huang visited Astana on Oct. 23, meeting President Tokayev and Deputy Prime Minister Zhaslan Madiyev for a fireside chat at Alem.AI.",
+  "Local AI firms such as Higgsfield are expanding on NVIDIA Vera Rubin cloud services, gaining extra capacity to train and serve generative media models.",
+  "Madiyev said the goal is AI that “understands and speaks Kazakh,” while Huang highlighted turning the country’s energy resources into intelligence exports."
+ ],
+ "perche": [
+  "The new compute base gives Kazakh developers and startups access to large‑scale GPU resources, enabling training of Kazakh‑language models and industry‑specific AI. For users of free or locally hosted models, the expanded infrastructure could lower reliance on foreign cloud services and foster more affordable, culturally relevant AI solutions."
+ ],
+ "pubblicato": "2026-10-23",
+ "titoloFonte": "Kazakhstan Expands Compute for Its AI Future",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/kazakhstan-ai-compute-ecosystem/",
+   "titolo": "Kazakhstan Expands Compute for Its AI Future",
+   "ufficiale": true,
+   "data": "2026-10-23"
+  }
+ ],
+ "frasiTolte": 3
+}

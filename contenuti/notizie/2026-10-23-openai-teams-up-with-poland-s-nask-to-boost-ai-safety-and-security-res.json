@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-23-openai-teams-up-with-poland-s-nask-to-boost-ai-safety-and-security-res",
+ "titolo": "OpenAI teams up with Poland’s NASK to boost AI safety and security research",
+ "descr": "OpenAI and NASK announce a partnership focused on technical research and safeguards for a more resilient digital ecosystem.",
+ "tema": "Research",
+ "paragrafi": [
+  "OpenAI and Poland’s research institute NASK have entered a collaboration aimed at advancing AI safety and security.",
+  "The partnership will involve joint technical research to strengthen safeguards around AI systems.",
+  "Both organizations say the work will support a more resilient digital ecosystem.",
+  "The effort adds to OpenAI’s recent moves to address safety concerns in its models.",
+  "Details on specific projects or timelines were not disclosed."
+ ],
+ "perche": [
+  "The collaboration could lead to stronger safety measures that benefit all AI users, including those relying on free or locally hosted models. Improved safeguards may make it easier for developers to deploy open‑source tools with confidence."
+ ],
+ "pubblicato": "2026-10-23",
+ "titoloFonte": "OpenAI and Poland’s NASK partner to advance AI safety and security",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
+   "titolo": "OpenAI and Poland’s NASK partner to advance AI safety and security",
+   "ufficiale": true,
+   "data": "2026-10-23"
+  }
+ ],
+ "frasiTolte": 0
+}
