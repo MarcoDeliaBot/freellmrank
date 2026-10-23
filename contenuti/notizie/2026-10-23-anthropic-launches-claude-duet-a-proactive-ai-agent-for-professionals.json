@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-23-anthropic-launches-claude-duet-a-proactive-ai-agent-for-professionals",
+ "titolo": "Anthropic launches Claude Duet, a proactive AI agent for professionals",
+ "descr": "Claude Duet, built on Claude Opus 5.5, offers task automation and daily briefs for Pro and Max users in research preview.",
+ "tema": "Business",
+ "paragrafi": [
+  "Anthropic introduced Claude Duet, a new AI agent aimed at professionals and small businesses.",
+  "The app runs on the Claude Opus 5.5 model and can connect to more than 6,000 marketplace connectors and plug‑ins.",
+  "Duet creates daily briefings, builds dashboards, and suggests actions based on user data, handling tasks in the background via its own virtual machine.",
+  "It is available as a standalone app on iOS, Android, and the web for Pro and Max subscribers, with access through a research preview waitlist.",
+  "Payments can be made via Stripe Link or Shopify Shop Pay, but require user approval, and the agent cannot trade securities or move money between accounts."
+ ],
+ "perche": [
+  "Claude Duet gives professionals a hands‑free assistant that can automate routine work without additional setup, potentially reducing time spent on administrative tasks. For users of free or locally hosted models, Duet shows how large‑scale agents integrate extensive connectors and trust safeguards, highlighting the gap between research‑preview services and open‑source alternatives."
+ ],
+ "pubblicato": "2026-10-23",
+ "titoloFonte": "Claude Duet app is Anthropic's bet on agents",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/22/claude-duet-app-is-anthropics-bet-on-agents/",
+   "titolo": "Claude Duet app is Anthropic's bet on agents",
+   "ufficiale": false,
+   "data": "2026-10-22"
+  },
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/10/22/anthropic-introduces-claude-duet-a-proactive-ai-agent-for-professionals/",
+   "titolo": "Anthropic introduces Claude Duet, a proactive AI agent for professionals",
+   "ufficiale": false,
+   "data": "2026-10-22"
+  }
+ ],
+ "frasiTolte": 0
+}

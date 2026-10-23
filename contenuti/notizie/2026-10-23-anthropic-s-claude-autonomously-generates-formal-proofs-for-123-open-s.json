@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-23-anthropic-s-claude-autonomously-generates-formal-proofs-for-123-open-s",
+ "titolo": "Anthropic's Claude autonomously generates formal proofs for 123 open‑source libraries",
+ "descr": "Claude produced about 180 million lines of proof code, uncovered hundreds of bugs and verified software under strict conditions.",
+ "tema": "Research",
+ "paragrafi": [
+  "Anthropic and verification partner Theorem used Claude to create formal proofs of correctness for existing code.",
+  "In a few weeks the model generated roughly 180 million lines of mathematical proof code covering 123 open‑source libraries from Google's OSS‑Fuzz project.",
+  "Claude translated crash tests into formal problems, analyzed compiled machine code and produced proofs that were automatically checked by Rocq with minimal human review.",
+  "During proof generation Claude identified and fixed hundreds of bugs, including security issues in a PDF reader and a decade‑old logical error.",
+  "The proofs apply only under strict limits: a specific processor architecture, single‑threaded execution and inputs under 64 MB, and each proof consumes hundreds of millions of tokens."
+ ],
+ "perche": [
+  "For developers, Claude’s ability to auto‑generate formal verification could reduce manual review time and catch bugs missed by testing, though the high compute cost and narrow applicability limit immediate adoption. For users of free or locally run models, the result highlights a gap: current free models lack the scale and token budget to perform such extensive proof generation, underscoring the advantage of large, cloud‑based systems for advanced verification tasks."
+ ],
+ "pubblicato": "2026-10-23",
+ "titoloFonte": "Anthropic's Claude now writes code and proves it safe automatically",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/anthropics-claude-now-writes-code-and-proves-it-safe-automatically/",
+   "titolo": "Anthropic's Claude now writes code and proves it safe automatically",
+   "ufficiale": false,
+   "data": "2026-10-23"
+  }
+ ],
+ "frasiTolte": 0
+}
