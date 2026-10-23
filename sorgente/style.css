@@ -1012,3 +1012,7 @@ dialog.cerca::backdrop{background:rgba(2,6,23,.55)}
 /* notizie del blog (22/10/2026) */
 .post-tipo.notizia{background:#dbeafe;color:#1e40af}
 @media (prefers-color-scheme:dark){.post-tipo.notizia{background:rgba(59,130,246,.2);color:#93c5fd}}
+
+/* link al canale YouTube nel piè di pagina (23/10/2026) */
+.link-youtube{display:inline-flex;align-items:center;gap:.35rem}
+.link-youtube svg{flex:none}

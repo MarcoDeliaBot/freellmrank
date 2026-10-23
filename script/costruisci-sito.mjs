@@ -403,12 +403,40 @@ pagina({
 <h2 id="arena">Free Arena</h2>
 <p>When you use Free Arena, your question goes through our server to Cloudflare Workers AI, which runs the two models. We do not store your question or the answers. We store only your vote: which model was A, which was B, which one you preferred, the type you picked (general, coding, writing, other), your browser language (two letters) and how many seconds you took to vote. These votes contain no personal data and will be published as an open ranking. To keep the service free and fair (10 duels a day), we keep a daily counter linked to a one-way fingerprint of your IP address that changes every day and is deleted after the day ends. Legal basis: legitimate interest in running and protecting the service (art. 6.1.f).</p>
 <p>On the audio page, your recording or text goes to Cloudflare Workers AI and back; we do not store it. The Italian, German and Portuguese voices run on our free voice server on Hugging Face (the text is sent there to make the audio and is not stored), or, if you choose, in your browser: then your browser downloads the voice from Hugging Face and the speech engine from jsDelivr, and your text never leaves your device. On the music page, the example tracks play from Hugging Face, and the music demos open only if you click them: they are Hugging Face pages, with Hugging Face’s own privacy policy. In the music blind test we store only which pair you heard and your choice. When you send a report with “Report a mistake”, we store only the page address and your text, with no name, email or IP address, until the mistake is fixed. The same daily IP fingerprint limits how many reports and audio tries one visitor can send.</p>
+<h2 id="youtube">YouTube</h2>
+<p>We publish our own videos on our YouTube channel, <a href="https://www.youtube.com/@FreeLLMArena" rel="noopener">@FreeLLMArena</a>. To upload them we use the YouTube API Services (YouTube Data API v3), only on our own channel: our automation uploads each video with its title, description and subtitles. This site does not ask visitors to sign in with Google or YouTube, does not use the YouTube API Services with your account and does not read, store or share any data about you from YouTube.</p>
+<p>The only YouTube data we keep is the access token for our own channel, stored on our automation server so it can upload new videos. We can revoke it at any time from the Google account settings (<a href="https://security.google.com/settings/security/permissions" rel="noopener">security.google.com/settings/security/permissions</a>), and it is deleted when we stop uploading. When you watch our videos on YouTube, YouTube’s <a href="https://www.youtube.com/t/terms" rel="noopener">Terms of Service</a> and the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a> apply.</p>
 <h2>Links to Amazon</h2>
 <p>The GPU page links to Amazon. We are an Amazon Associate and earn from qualifying purchases. When you click one of these links, Amazon may set its own cookies to record that you came from us, under <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201909150" rel="noopener">Amazon’s privacy notice</a>. We do not receive your name or what you buy, only a total of sales.</p>
 <h2>Stored in your browser</h2>
 <p>We keep a few settings in your browser’s local storage: your cookie choice, your catalogue filters, your own Free Arena votes (for “Your ranking”) and, if you use them, your OpenRouter key and votes. They never leave your device.</p>
 <h2>Your rights</h2>
 <p>You can ask for access, correction or deletion of your data, object to processing, and complain to your data protection authority (in Italy: Garante per la protezione dei dati personali, garanteprivacy.it). For Google Analytics data, you can also use Google’s own tools.</p>
+<p class="small muted">Last updated ${fmtData(dati.aggiornato)}.</p>
+</article>`,
+});
+
+// termini di servizio (23/10/2026: li chiede la verifica dei servizi API di YouTube, insieme alla parte YouTube della privacy)
+pagina({
+  file: 'terms.html', attiva: '', dati, blog,
+  titolo: `Terms of Service · ${NOME_PIENO}`, descr: `The rules for using ${NOME_PIENO}, its free tools and its YouTube videos.`,
+  corpo: `<article class="articolo">
+<h1>Terms of service</h1>
+<p class="lead">Short version: ${esc(NOME_PIENO)} is free to use, with no account. The rankings and estimates are information, not advice, and come with no guarantee.</p>
+<h2>Who runs the site</h2>
+<p>${esc(NOME_PIENO)} (${esc(URL_SITO.replace('https://', ''))}).${CONTATTO_PRIVACY ? ` Contact: <a href="mailto:${esc(CONTATTO_PRIVACY)}">${esc(CONTATTO_PRIVACY)}</a>.` : ''}</p>
+<h2>Using the site</h2>
+<p>You can read the site and use its free tools (Try it now, Free Arena, audio, the simulators) without an account. Please use them fairly: daily limits keep them free for everyone. Do not try to get around the limits, attack the site or send personal data, illegal content or other people’s private information in your questions.</p>
+<h2>The information we publish</h2>
+<p>Scores come from public datasets (see <a href="/about.html#sources">data sources</a>). Sizes, memory and speeds are estimates from our simulator and from the models’ public files. Models and prices change quickly: always check the model’s own page and licence before you rely on it. The site is provided “as is”, without warranties, and we are not liable for decisions you make based on it.</p>
+<h2>AI answers</h2>
+<p>Answers in Try it now and Free Arena are written by AI models, not by us. They can be wrong. Do not use them for medical, legal, financial or safety decisions.</p>
+<h2>Our YouTube videos</h2>
+<p>We publish our videos on YouTube (<a href="https://www.youtube.com/@FreeLLMArena" rel="noopener">@FreeLLMArena</a>) and upload them with the YouTube API Services. By watching them on YouTube you agree to the <a href="https://www.youtube.com/t/terms" rel="noopener">YouTube Terms of Service</a>; Google’s use of data is described in the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>. How we handle data is explained in our <a href="/privacy.html#youtube">privacy policy</a>.</p>
+<h2>Links</h2>
+<p>We link to other sites (model pages, Hugging Face, OpenRouter, Amazon). They have their own terms. Some Amazon links earn us a commission (see the <a href="/privacy.html">privacy policy</a>).</p>
+<h2>Changes</h2>
+<p>We may update these terms. The date below shows the latest version.</p>
 <p class="small muted">Last updated ${fmtData(dati.aggiornato)}.</p>
 </article>`,
 });
