@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-23-rl-fine-tuning-boosts-qwen3-8-27b-repeatable-success-on-thinkingbox-be",
+ "titolo": "RL fine‑tuning boosts Qwen3.8‑27B repeatable success on ThinkingBox‑Bench",
+ "descr": "After 50 GRPO steps, Qwen3.8‑27B's observed‑20/20 rose from 7.5% to 21.1% on the 507‑task benchmark.",
+ "tema": "Research",
+ "paragrafi": [
+  "Microsoft and Hugging Face released ThinkingBox‑Training, a GitHub tool that turns executable database checks into rewards for post‑training agents.",
+  "They selected 507 tasks from ThinkingBox‑Bench, each providing a real backend and tool set, then built an offline policy‑relative difficulty pool for training.",
+  "Fine‑tuning Qwen3.8‑27B with GRPO for 50 steps raised pass@1 from 51.70% to 60.78% and increased tasks solved on every attempt (observed‑20/20) from 38 to 107.",
+  "The improvement came with a slight drop in pass@20 (tasks solved at least once) from 453 to 446, indicating higher repeatability but marginally less breadth.",
+  "Domain‑level results show gains across all five categories, with the largest observed‑20/20 increase in retail (+24.5 points) and the biggest pass@20 decline in auto insurance (‑7 points)."
+ ],
+ "perche": [
+  "The higher repeatable success makes agents more reliable for production database operations, reducing risky “done” false positives. For users preferring free or locally run models, the results highlight that larger models like Qwen3.8‑27B can become more dependable through targeted RL fine‑tuning, though broader coverage may require additional strategies."
+ ],
+ "pubblicato": "2026-10-23",
+ "titoloFonte": "Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox",
+ "fonti": [
+  {
+   "nome": "Hugging Face",
+   "url": "https://huggingface.co/blog/microsoft/thinkingbox-training",
+   "titolo": "Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox",
+   "ufficiale": true,
+   "data": "2026-10-22"
+  }
+ ],
+ "frasiTolte": 0
+}

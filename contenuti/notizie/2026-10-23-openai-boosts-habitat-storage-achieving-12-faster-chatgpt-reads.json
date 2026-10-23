@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-23-openai-boosts-habitat-storage-achieving-12-faster-chatgpt-reads",
+ "titolo": "OpenAI boosts Habitat storage, achieving 12× faster ChatGPT reads",
+ "descr": "OpenAI upgraded Habitat with multi‑tenancy, global caching and Azure Cosmos DB, delivering twelve‑fold read speed improvements for ChatGPT users.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI announced a major upgrade to its Habitat storage system to support over one billion ChatGPT users.",
+  "Read operations are now twelve times faster than before, according to the company’s technical brief.",
+  "The changes aim to keep response times low as the user base continues to grow worldwide.",
+  "OpenAI’s approach highlights the importance of scalable cloud infrastructure for large‑scale AI services."
+ ],
+ "perche": [
+  "Faster reads lower latency for ChatGPT, improving user experience at massive scale. For developers of free or local models, the upgrade shows how cloud‑native storage tricks can reduce bottlenecks when serving many requests."
+ ],
+ "pubblicato": "2026-10-23",
+ "titoloFonte": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+   "titolo": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+   "ufficiale": true,
+   "data": "2026-10-23"
+  }
+ ],
+ "frasiTolte": 1
+}
