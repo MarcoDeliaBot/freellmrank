@@ -207,15 +207,23 @@ for (const l of Object.keys(LINGUE)) {
   dizionari[l] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : {};
 }
 
+// Una pagina tradotta già pubblicata non sparisce più (Marco, 23/10/2026: «non si deve cancellare nulla se pubblicato»):
+// il 23/10 l'indice del blog in 6 lingue è andato in 404 perché le notizie nuove avevano più frasi mancanti del margine.
+// traduzioni/pubblicate.json ricorda le pagine uscite in ogni lingua; per quelle le frasi mancanti restano in inglese.
+// Lo aggiorna la corsa notturna (traduzioni/*.json è nel suo commit); la build di Cloudflare lo legge soltanto.
+const FILE_PUBBLICATE = path.join(CARTELLA, 'pubblicate.json');
+const pubblicate = fs.existsSync(FILE_PUBBLICATE) ? JSON.parse(fs.readFileSync(FILE_PUBBLICATE, 'utf8')) : {};
+
 // primo giro: quali pagine sono complete in ogni lingua (i link portano solo a quelle)
 const complete = {}, mancantiPer = {};
 const finto = (t) => t;
 for (const l of Object.keys(LINGUE)) {
   complete[l] = new Set();
   mancantiPer[l] = new Map();
+  const giaUscite = new Set(pubblicate[l] || []);
   for (const f of pagine) {
     const { mancanti, frasi } = traduciPagina(html.get(f), dizionari[l], finto);
-    if (mancanti.size <= Math.max(3, frasi * 0.03) && mancanti.size < frasi) complete[l].add(f);
+    if (mancanti.size < frasi && (mancanti.size <= Math.max(3, frasi * 0.03) || giaUscite.has(f))) complete[l].add(f);
     for (const k of mancanti) mancantiPer[l].set(k, (mancantiPer[l].get(k) || 0) + 1);
   }
 }
@@ -271,6 +279,8 @@ const conLingua = (h, f, l) => {
   return h.replace('</body>', `<script src="/lingua.js?v=${VER}" defer></script>\n</body>`);
 };
 
+// le pagine uscite ora si aggiungono a quelle già uscite (mai tolte)
+fs.writeFileSync(FILE_PUBBLICATE, JSON.stringify(Object.fromEntries(Object.keys(LINGUE).map((l) => [l, [...new Set([...(pubblicate[l] || []), ...complete[l]])].sort()])), null, 1) + '\n');
 for (const l of Object.keys(LINGUE)) fs.rmSync(path.join(SITO, l), { recursive: true, force: true });
 // pagine inglesi: alternative, scelta della lingua, avviso
 for (const f of pagine) fs.writeFileSync(path.join(SITO, f), conLingua(html.get(f), f, ''));
