@@ -12,6 +12,7 @@
 # (script/video-post.mjs: ogni numero detto o scritto deve stare nelle scene, costruite dai dati); poi commit e push.
 # Dal 23/10/2026 (Marco): ogni Short nasce insieme al suo video lungo e rimanda a lui (script/brag/corto.sh, collega.py):
 # lo Short del modello dopo il video lungo del modello, lo Short della settimana collegato al video lungo della settimana.
+# Dal 24/10/2026 (Marco: «SI») anche i video delle notizie (script/brag/notizia.mjs): lungo + Short collegato, 2 a corsa.
 # Dal 22/10/2026 niente bozze social per mail: i post del blog vanno da soli su Bluesky (script/bluesky.mjs).
 name: Video
 
@@ -126,6 +127,30 @@ jobs:
             echo "video-$nome" >> video/brag/fatti.txt
             # lo Short dello stesso modello, collegato al video lungo appena fatto
             bash script/brag/corto.sh "$(python -c "import json; print(json.load(open('video/brag/info-modello.json', encoding='utf-8'))['hardware']['modelli'][0]['nome'])")"
+          done
+          # video delle notizie (Marco, 24/10/2026): fino a 2 a corsa, la notizia più ripresa degli ultimi 2 giorni non ancora
+          # raccontata; la voce legge il post già verificato. Lo Short nasce subito dopo e rimanda al video lungo
+          for i in 1 2; do
+            rm -f video/brag/info-notizia.json
+            BRAG_FATTI=video/brag/fatti.txt node script/brag/notizia.mjs || { echo "Video della notizia non riuscito"; break; }
+            [ -f video/brag/info-notizia.json ] || break
+            nome=$(python -c "import json; print(json.load(open('video/brag/info-notizia.json', encoding='utf-8'))['nome'])")
+            echo "video-$nome" >> video/brag/fatti.txt
+            if gh release view "video-$nome" >/dev/null 2>&1; then echo "Già fatto: $nome"; continue; fi
+            python script/brag/registra.py video notizia || { echo "Registrazione non riuscita per $nome"; break; }
+            d="video/brag/brag-output-notizia"
+            cp "$d/brag.mp4" "$d/$nome.mp4"; cp "$d/brag.jpg" "$d/$nome.jpg"; cp "$d/brag.srt" "$d/$nome.srt"; cp video/brag/info-notizia.json "$d/$nome.json"
+            titolo=$(python -c "import json; print(json.load(open('$d/$nome.json', encoding='utf-8'))['titolo'])")
+            gh release create "video-$nome" "$d/$nome.mp4" "$d/$nome.jpg" "$d/$nome.srt" "$d/$nome.json" --title "$titolo" --notes-file "$d/share-copy.txt" --latest=false
+            echo "Pubblicato: $nome"
+            breve=$(python -c "import json; print(json.load(open('video/brag/info-notizia-corto.json', encoding='utf-8'))['nome'])")
+            if python script/brag/registra.py video notizia-corto; then
+              d="video/brag/brag-output-notizia-corto"
+              cp "$d/brag.mp4" "$d/$breve.mp4"; cp "$d/brag.jpg" "$d/$breve.jpg"; cp "$d/brag.srt" "$d/$breve.srt"; cp video/brag/info-notizia-corto.json "$d/$breve.json"
+              titolo=$(python -c "import json; print(json.load(open('$d/$breve.json', encoding='utf-8'))['titolo'])")
+              gh release create "video-$breve" "$d/$breve.mp4" "$d/$breve.jpg" "$d/$breve.srt" "$d/$breve.json" --title "$titolo" --notes-file "$d/share-copy.txt" --latest=false
+              echo "Pubblicato: $breve (collegato a $nome)"
+            else echo "Short non registrato per $nome"; fi
           done
           # Short chiesti a mano per modelli che hanno già il video lungo
           IFS=';' read -ra corti <<< "${{ inputs.corti }}"

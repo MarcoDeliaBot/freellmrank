@@ -180,7 +180,7 @@ const simili = (a, b) => {
 const frasi = (t) => String(t).trim().split(/(?<=[.!?]["')]?)\s+(?=["'(]?[A-Z0-9])/).map((s) => s.trim()).filter(Boolean);
 // nomi da controllare: parole con maiuscola non a inizio frase, sigle e nomi con cifre (GPT-5, H200, Llama-4)
 const NOTI = /^(I|AI|The|This|That|It|In|On|For|And|But|If|What|Why|How|FreeLLMArena|Arena|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|January|February|March|April|May|June|July|August|September|October|November|December|English|US|EU|UK)$/;
-function nomiDi(frase) {
+export function nomiDi(frase) {
   const t = frase.replace(/^["'(\s]*\S+/, ''); // la prima parola della frase ha la maiuscola comunque
   return [...t.matchAll(/\b([A-Z][\w.\-]*[A-Za-z0-9]|[A-Za-z]+-?\d[\w.\-]*)\b/g)].map((m) => m[1]).filter((n) => !NOTI.test(n));
 }
