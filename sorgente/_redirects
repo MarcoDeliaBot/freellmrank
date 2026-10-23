@@ -79,3 +79,12 @@
 /fr/model/molmo2-8b /fr/model/molmo-2-8b 301
 /pt/model/molmo2-8b /pt/model/molmo-2-8b 301
 /ja/model/molmo2-8b /ja/model/molmo-2-8b 301
+
+# Flint: pagina nata dal nome OpenRouter, ora dal repository Hugging Face (23/10/2026)
+/model/recursive-flint /model/flint 301
+/it/model/recursive-flint /it/model/flint 301
+/es/model/recursive-flint /es/model/flint 301
+/de/model/recursive-flint /de/model/flint 301
+/fr/model/recursive-flint /fr/model/flint 301
+/pt/model/recursive-flint /pt/model/flint 301
+/ja/model/recursive-flint /ja/model/flint 301
