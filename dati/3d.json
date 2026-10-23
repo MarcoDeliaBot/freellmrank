@@ -28,8 +28,8 @@
    "da": "Image",
    "licenza": "mit",
    "demo": "microsoft/TRELLIS.2",
-   "download": 2333498,
-   "like": 1385,
+   "download": 2355366,
+   "like": 1391,
    "creato": "2025-12-01",
    "b": null
   },
@@ -77,7 +77,7 @@
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2.1",
    "download": 76799,
-   "like": 1305,
+   "like": 1308,
    "creato": "2025-06-13",
    "b": null
   },
@@ -89,7 +89,7 @@
    "licenza": "stability",
    "demo": "stabilityai/stable-fast-3d",
    "download": 55046,
-   "like": 1320,
+   "like": 1325,
    "creato": "2024-07-17",
    "b": 1
   },
@@ -101,7 +101,7 @@
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2mini-Turbo",
    "download": 45369,
-   "like": 146,
+   "like": 145,
    "creato": "2025-03-12",
    "b": null
   },
@@ -125,7 +125,7 @@
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2mv",
    "download": 16883,
-   "like": 434,
+   "like": 435,
    "creato": "2025-03-12",
    "b": null
   },
@@ -173,7 +173,7 @@
    "licenza": "stability",
    "demo": "stabilityai/stable-point-aware-3d",
    "download": 6309,
-   "like": 427,
+   "like": 428,
    "creato": "2024-12-28",
    "b": 2
   }

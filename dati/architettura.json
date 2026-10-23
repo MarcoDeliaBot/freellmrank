@@ -1879,5 +1879,27 @@
   "contestoMax": 262144,
   "moe": true,
   "attivi": 4000000000
+ },
+ "tencent/WeVisOne-VL-4B": {
+  "strati": 36,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 36,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": false,
+  "attivi": 4830581248
+ },
+ "tencent/WeVisOne-VL-2B": {
+  "strati": 28,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 28,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": false,
+  "attivi": 2441744384
  }
 }
