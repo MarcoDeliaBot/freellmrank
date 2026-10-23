@@ -55,8 +55,8 @@ const ORG_HF = { mistralai: 'Mistral AI', 'deepseek-ai': 'DeepSeek', Qwen: 'Qwen
 const SCARTA_HF = /awq|gptq|fp8|fp4|nvfp4|int4|int8|gguf|mlx|onnx|bnb|uncensored|abliterat|quantized|-comfy|lora/i;
 // lanci dei grandi laboratori: passano davanti (Marco, 24/10/2026: «oggi è uscito Kimi K3.1, Anthropic ha annunciato
 // Claude Duet e non hai fatto neanche un post»; erano nei feed ma perdevano contro storie citate da più siti)
-const LABORATORI = /\b(Anthropic|Claude|OpenAI|GPT[-\w.]*|ChatGPT|Gemini|Gemma|DeepMind|Meta|Llama|Kimi|Moonshot|DeepSeek|Qwen|Alibaba|Mistral|GLM|Zhipu|Z\.ai|MiniMax|xAI|Grok|Nemotron|Phi-\d|Granite|Hunyuan|Tencent|ERNIE|Liquid AI|Ant Group|Ling|Xiaomi|MiMo|ByteDance|StepFun|Black Forest Labs|FLUX|Recursive)\b/i; // NVIDIA no: ogni articolo del suo blog sembrava un lancio
-const LANCIO = /\b(launch|launches|launched|release[sd]?|introduc\w*|unveil\w*|announc\w*|debut\w*|open[- ]sourc\w*|open[- ]weights?|new model|rolls? out)\b/i;
+export const LABORATORI = /\b(Anthropic|Claude|OpenAI|GPT[-\w.]*|ChatGPT|Gemini|Gemma|DeepMind|Meta|Llama|Kimi|Moonshot|DeepSeek|Qwen|Alibaba|Mistral|GLM|Zhipu|Z\.ai|MiniMax|xAI|Grok|Nemotron|Phi-\d|Granite|Hunyuan|Tencent|ERNIE|Liquid AI|Ant Group|Ling|Xiaomi|MiMo|ByteDance|StepFun|Black Forest Labs|FLUX|Recursive)\b/i; // NVIDIA no: ogni articolo del suo blog sembrava un lancio
+export const LANCIO = /\b(launch|launches|launched|release[sd]?|introduc\w*|unveil\w*|announc\w*|debut\w*|open[- ]sourc\w*|open[- ]weights?|new model|rolls? out)\b/i;
 const GIORNI = 3;
 const AI = /\b(AI|A\.I\.|LLMs?|GPT[-\w.]*|Gemini|Claude|Llama|Qwen|DeepSeek|Mistral|Grok|Copilot|ChatGPT|OpenAI|Anthropic|DeepMind|Hugging Face|NVIDIA|GPUs?|chatbots?|agents?|agentic|neural|machine learning|model weights|open[- ]weights?|inference|transformer|diffusion)\b/i;
 const UA = { 'User-Agent': 'Mozilla/5.0 (compatible; FreeLLMArenaBot/1.0; +https://freellmarena.com/about)' };

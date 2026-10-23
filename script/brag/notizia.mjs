@@ -12,7 +12,7 @@ import path from 'node:path';
 import { MOTORE, STILE_ORIZZONTALE, STILE_VERTICALE } from './motore.mjs';
 import { chiediModello } from '../bozze.mjs';
 import { numeri } from '../video-post.mjs';
-import { nomiDi } from '../notizie.mjs';
+import { nomiDi, LABORATORI, LANCIO } from '../notizie.mjs';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
 const RADICE = path.join(QUI, '..', '..');
@@ -29,10 +29,15 @@ const fatti = process.env.BRAG_FATTI && fs.existsSync(process.env.BRAG_FATTI) ? 
 const nomeVideo = (n) => `notizia-${n.nome.replace(/^\d{4}-\d{2}-\d{2}-/, '').slice(0, 56).replace(/-+$/, '')}`;
 const tutte = fs.readdirSync(DIR).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8')));
 const recente = (n) => Date.now() - new Date(n.pubblicato + 'T12:00:00Z') < 2.5 * 864e5;
-const peso = (n) => n.fonti.length * 3 + (n.fonti.some((f) => f.ufficiale) ? 2 : 0) + (n.tema === 'LLMs' ? 1 : 0);
+// i lanci dei grandi laboratori passano davanti (24/10/2026: la prima corsa scelse OpenAI su Google Cloud e Orchestra Bio
+// invece di Kimi K3.1 Pro e Claude Duet, perché contava solo il numero di fonti)
+const lancio = (n) => LABORATORI.test(n.titolo) && LANCIO.test(`${n.titolo} ${n.descr}`);
+const peso = (n) => n.fonti.length * 3 + (lancio(n) ? 8 : 0) + (n.fonti.some((f) => f.ufficiale) ? 2 : 0) + (n.tema === 'LLMs' ? 2 : 0);
+// un modello che ha già il suo video lungo (video-modello-flint) non si racconta una seconda volta come notizia
+const giaModello = (n) => [...fatti].filter((f) => f.startsWith('video-modello-')).some((f) => n.titolo.toLowerCase().includes(f.slice(14).replace(/-/g, ' ')));
 const n = process.env.BRAG_NOTIZIA
   ? tutte.find((x) => x.nome === process.env.BRAG_NOTIZIA.replace(/\.json$/, ''))
-  : tutte.filter((x) => recente(x) && x.paragrafi.length >= 3 && !fatti.has(`video-${nomeVideo(x)}`)).sort((a, b) => peso(b) - peso(a) || b.pubblicato.localeCompare(a.pubblicato))[0];
+  : tutte.filter((x) => recente(x) && x.paragrafi.length >= 3 && !fatti.has(`video-${nomeVideo(x)}`) && !giaModello(x)).sort((a, b) => peso(b) - peso(a) || b.pubblicato.localeCompare(a.pubblicato))[0];
 if (!n) { console.log('Nessuna notizia nuova da raccontare'); process.exit(0); }
 const url = `https://freellmarena.com/blog/news-${n.nome}`;
 
