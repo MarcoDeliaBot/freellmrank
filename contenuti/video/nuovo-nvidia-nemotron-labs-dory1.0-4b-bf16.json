@@ -1,0 +1,67 @@
+{
+ "nome": "nuovo-nvidia-nemotron-labs-dory1.0-4b-bf16",
+ "titolo": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16: 4B parameters, free to download #Shorts",
+ "descrizione": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 by NVIDIA came out on 16 Oct 2026, with open weights on Hugging Face. At 4-bit it needs about 5 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16"
+ ],
+ "condividi": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 is out: 4B parameters and open weights. At 4-bit it needs about 5 GB, so the smallest card that holds it fully is the RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16: 4 miliardi di parametri, gratis #Shorts",
+   "descrizione": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 di NVIDIA è uscito il 16 ottobre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 5 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16: 4 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 de NVIDIA salió el 16 de octubre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 5 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16: 4 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 von NVIDIA ist am 16. Oktober 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 5 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 : 4 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 de NVIDIA est sorti le 16 octobre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 5 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16: 4 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 da NVIDIA saiu em 16 de outubro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 5 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+    "gb": 5,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "schede": [
+   {
+    "id": "rtx4060",
+    "nome": "RTX 4060",
+    "gb": 8,
+    "tiene": true
+   }
+  ]
+ },
+ "voce": [
+  "A new free AI model with 4 billion parameters.",
+  "It comes from NVIDIA, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 5 gigabytes. You need at least an RTX 40 60.",
+  "It reads up to 256 thousand tokens at once.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-nvidia-nemotron-labs-dory1.0-4b-bf16",
+ "pubblicato": "2026-10-22"
+}

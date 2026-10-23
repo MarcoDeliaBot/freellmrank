@@ -1,0 +1,79 @@
+{
+ "nome": "nuovo-granite-switch-4.1-30b",
+ "titolo": "granite-switch-4.1-30b: 30B parameters, free to download #Shorts",
+ "descrizione": "granite-switch-4.1-30b by Ibm-granite came out on 14 Oct 2026, with open weights on Hugging Face. At 4-bit it needs about 21 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "granite-switch-4.1-30b"
+ ],
+ "condividi": "granite-switch-4.1-30b is out: 30B parameters and open weights. At 4-bit it needs about 21 GB, so the smallest card that holds it fully is the RTX 3090. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "granite-switch-4.1-30b: 30 miliardi di parametri, gratis #Shorts",
+   "descrizione": "granite-switch-4.1-30b di Ibm-granite è uscito il 14 ottobre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 21 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "granite-switch-4.1-30b: 30 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "granite-switch-4.1-30b de Ibm-granite salió el 14 de octubre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 21 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "granite-switch-4.1-30b: 30 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "granite-switch-4.1-30b von Ibm-granite ist am 14. Oktober 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 21 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "granite-switch-4.1-30b : 30 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "granite-switch-4.1-30b de Ibm-granite est sorti le 14 octobre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 21 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "granite-switch-4.1-30b: 30 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "granite-switch-4.1-30b da Ibm-granite saiu em 14 de outubro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 21 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "granite-switch-4.1-30b",
+    "gb": 21,
+    "scheda": {
+     "id": "rtx3090",
+     "nome": "RTX 3090",
+     "gb": 24,
+     "tiene": true
+    }
+   }
+  ],
+  "schede": [
+   {
+    "id": "rx9070xt",
+    "nome": "RX 9070 / 9070 XT",
+    "gb": 16,
+    "tiene": false
+   },
+   {
+    "id": "rx7900xt",
+    "nome": "RX 7900 XT",
+    "gb": 20,
+    "tiene": false
+   },
+   {
+    "id": "rtx3090",
+    "nome": "RTX 3090",
+    "gb": 24,
+    "tiene": true
+   }
+  ]
+ },
+ "voce": [
+  "A new free AI model with 30 billion parameters.",
+  "It comes from Ibm-granite, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 21 gigabytes. You need at least an RTX 30 90.",
+  "It reads up to 128 thousand tokens at once.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-granite-switch-4.1-30b",
+ "pubblicato": "2026-10-22"
+}
