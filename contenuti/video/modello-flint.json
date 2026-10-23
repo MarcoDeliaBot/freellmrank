@@ -1,15 +1,15 @@
 {
  "nome": "modello-flint",
- "titolo": "flint: What's New, Hardware Needed, How to Run It Free",
- "descrizione": "Flint is a 39.8 B parameter mixture-of-experts model designed for coding agents, with strong benchmark scores on SWE-bench. It runs on a single high-end GPU and is released under Apache 2.0, making it a free option for developers and researchers.\n\nSize: 39.8B parameters (1.3B active) · context 256K · memory at 4-bit about 27 GB.\nRTX 3060 12 GB + 32 GB RAM: about 94 tokens/s\nRTX 4090 + 64 GB RAM: about 221 tokens/s\nRTX 5090 + 64 GB RAM: about 281 tokens/s\nMac M4 Max 128 GB: about 111 tokens/s\nNVIDIA DGX Spark 128 GB: about 129 tokens/s\nRyzen AI Max+ 395 128 GB: about 123 tokens/s\nMac Studio M3 Ultra 512 GB: about 123 tokens/s\nModel card: https://huggingface.co/RecursiveSI/flint\nEvery free model, compared: https://freellmarena.com",
+ "titolo": "Flint: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "Flint is a 39.8 B parameter mixture-of-experts model built for coding agents, released under Apache 2.0. It offers strong performance on code-fix benchmarks while requiring careful safety checks.\n\nSize: 39.8B parameters (2.5B active) · context 256K · memory at 4-bit about 27 GB.\nRTX 3060 12 GB + 32 GB RAM: about 59 tokens/s\nRTX 4090 + 64 GB RAM: about 172 tokens/s\nRTX 5090 + 64 GB RAM: about 245 tokens/s\nMac M4 Max 128 GB: about 93 tokens/s\nNVIDIA DGX Spark 128 GB: about 89 tokens/s\nRyzen AI Max+ 395 128 GB: about 85 tokens/s\nMac Studio M3 Ultra 512 GB: about 108 tokens/s\nModel card: https://huggingface.co/RecursiveSI/flint\nEvery free model, compared: https://freellmarena.com",
  "tag": [
   "free AI",
   "open source AI",
   "local LLM",
-  "flint",
+  "Flint",
   "RecursiveSI"
  ],
- "condividi": "flint by RecursiveSI: 39.8B parameters, about 27 GB at 4-bit; smallest home machine that holds it: RTX 5090. https://freellmarena.com",
+ "condividi": "Flint by RecursiveSI: 39.8B parameters, about 27 GB at 4-bit; smallest home machine that holds it: RTX 5090. https://freellmarena.com",
  "lingua": "en",
  "formato": {
   "w": 1920,
@@ -19,30 +19,30 @@
  "copertina": 0,
  "localizzazioni": {
   "it": {
-   "titolo": "flint: novità, hardware necessario, come usarlo gratis",
+   "titolo": "Flint: novità, hardware necessario, come usarlo gratis",
    "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
   },
   "es": {
-   "titolo": "flint: novedades, hardware necesario, cómo usarlo gratis",
+   "titolo": "Flint: novedades, hardware necesario, cómo usarlo gratis",
    "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
   },
   "de": {
-   "titolo": "flint: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "titolo": "Flint: Neuerungen, nötige Hardware, kostenlos nutzen",
    "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
   },
   "fr": {
-   "titolo": "flint : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "titolo": "Flint : nouveautés, matériel nécessaire, l’utiliser gratuitement",
    "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
   },
   "pt": {
-   "titolo": "flint: novidades, hardware necessário, como usar grátis",
+   "titolo": "Flint: novidades, hardware necessário, como usar grátis",
    "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
   }
  },
  "hardware": {
   "modelli": [
    {
-    "nome": "flint",
+    "nome": "Flint",
     "gb": 27,
     "scheda": {
      "id": "rtx5090",
@@ -61,8 +61,8 @@
      "tiene": true
     },
     "ram": 32,
-    "modello": "flint",
-    "vel": 94,
+    "modello": "Flint",
+    "vel": 59,
     "dove": "ram"
    },
    {
@@ -73,8 +73,8 @@
      "tiene": true
     },
     "ram": 64,
-    "modello": "flint",
-    "vel": 221,
+    "modello": "Flint",
+    "vel": 172,
     "dove": "ram"
    },
    {
@@ -85,8 +85,8 @@
      "tiene": true
     },
     "ram": 64,
-    "modello": "flint",
-    "vel": 281,
+    "modello": "Flint",
+    "vel": 245,
     "dove": "gpu"
    },
    {
@@ -97,8 +97,8 @@
      "tiene": true
     },
     "ram": 0,
-    "modello": "flint",
-    "vel": 111,
+    "modello": "Flint",
+    "vel": 93,
     "dove": "gpu"
    },
    {
@@ -109,8 +109,8 @@
      "tiene": true
     },
     "ram": 0,
-    "modello": "flint",
-    "vel": 129,
+    "modello": "Flint",
+    "vel": 89,
     "dove": "gpu"
    },
    {
@@ -121,8 +121,8 @@
      "tiene": true
     },
     "ram": 0,
-    "modello": "flint",
-    "vel": 123,
+    "modello": "Flint",
+    "vel": 85,
     "dove": "gpu"
    },
    {
@@ -133,22 +133,22 @@
      "tiene": true
     },
     "ram": 0,
-    "modello": "flint",
-    "vel": 123,
+    "modello": "Flint",
+    "vel": 108,
     "dove": "gpu"
    }
   ]
  },
  "voce": [
-  "Flint packs 39.8 B parameters but only activates about 2.5 B per token. It’s a mixture-of-experts model built specifically for coding agents.",
-  "According to the model card, Flint is a decoder-only mixture-of-experts Transformer with 39.8 billion total parameters. Only roughly 2.5 billion of those are active for each token, which includes the output head. The architecture has 49 layers: two dense layers followed by 47 MoE layers. It supports a context window of 262,144 tokens, allowing long codebases and reasoning chains to stay in memory. Flint’s vocabulary contains 150,144 tokens and it works with plain text input and output, including tool calls compatible with OpenAI’s format.",
-  "The key novelty is the mixture-of-experts design. Each MoE layer holds 256 experts, but the router picks six for every token, plus a shared always-active expert. Attention is split: 35 layers use a sliding-window of 513 tokens, while 14 layers apply full attention. This combination lets Flint keep the compute cost low per token while still accessing a large pool of specialized experts when needed. The model also uses per-head RMSNorm and learned attention sinks, which are specific to its architecture.",
-  "Recursive’s release evaluations show Flint scoring 54.9 percent on Terminal-Bench 2.1, 89.7 percent on SWE-bench Pro v2, and 74.2 percent on SWE-bench Verified. These scores are average pass-at-1 over at least five attempts, using temperature 1.0, top-p 0.95 and top-k 20. The Terminal-Bench metric treats solutions that rely on web retrieval as failures, which makes the score a stricter measure of pure coding ability.",
-  "According to the model card, Flint excels at investigating codebases, fixing bugs, implementing features, and writing tests. Its 256 K token window lets it keep large files and multi-turn reasoning in memory. However, lengthy reasoning can consume the output budget and add latency, especially on slower runtimes. The supervised fine-tuning includes safety examples, but the model may still generate incorrect, harmful, or unsafe code and tool calls, so users must review any generated output before execution.",
-  "Flint is a good fit for developers who want an autonomous coding assistant and for researchers interested in mixture-of-experts architectures. The model runs on a single high-end GPU such as an RTX 5090, which can hold the full model in memory and reach about 281 tokens per second. Users with slightly less powerful hardware can still experiment, though performance may be lower. Because the model can emit faulty code, it’s best for users who are comfortable testing and validating the output before using it in production.",
-  "What do you need to run it at home? At 4-bit it takes about 27 gigabytes of memory. The smallest home machine that holds it fully is an RTX 50 90. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 94 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 221 tokens per second.",
+  "Flint packs 39.8 billion parameters but only activates about 2.5 billion per token thanks to its mixture-of-experts design. It’s built specifically for coding agents that investigate codebases, fix bugs, and write tests.",
+  "According to the model card, Flint is a decoder-only mixture-of-experts transformer with a total of 39.8 billion parameters. Only about 2.5 billion of those are active for each token, which includes the output head. The architecture uses 49 layers, two dense layers followed by 47 MoE layers, and supports a context window of 262,144 tokens. It was trained from scratch on a mix of text and code, with supervised fine-tuning and reinforcement learning to handle instruction following and agentic tasks.",
+  "The model introduces a large expert pool: each MoE layer has 256 routed experts, and the routing mechanism picks six of them for every token, plus a shared always-active expert. Attention is split between 35 sliding-window layers that look back 512 tokens and the current token, and 14 full-attention layers that see the whole context. This combination aims to keep inference efficient while still providing the capacity needed for complex coding tasks.",
+  "In the release evaluations, Flint scored 54.9 percent on Terminal-Bench 2.1, 89.7 percent on SWE-bench Pro v2, and 74.2 percent on SWE-bench Verified. These numbers are reported with temperature 1.0, top-p 0.95 and top-k 20, and they reflect average pass-at-1 over at least five attempts per task.",
+  "According to the model card, Flint excels at investigating codebases, fixing bugs, implementing features, and writing tests. However, long reasoning chains can consume the output budget and raise latency, especially when the 256 K token context is approached. The model still can produce incorrect or harmful code, and tool-using applications need to enforce their own safety checks. Performance may also vary with checkpoint precision and the inference runtime used.",
+  "Flint is a good fit for hobbyists who have a high-end GPU such as an RTX 4090, RTX 5090, or an Apple M4 Max, where it runs at several hundred tokens per second. Developers looking for a free, open-source model that can act as a coding assistant will find its specialized training useful. Researchers interested in mixture-of-experts behavior can experiment with its 256-expert routing. In all cases, users should plan to review generated code and enforce safety constraints.",
+  "What do you need to run it at home? At 4-bit it takes about 27 gigabytes of memory. The smallest home machine that holds it fully is an RTX 50 90. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 59 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 172 tokens per second.",
   "You can try it for free through OpenRouter, without a GPU. The weights are open: you can download them from Hugging Face under the Apache 2.0 license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
-  "Compare flint with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+  "Compare Flint with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
  ],
  "release": "video-modello-flint",
  "pubblicato": "2026-10-23"

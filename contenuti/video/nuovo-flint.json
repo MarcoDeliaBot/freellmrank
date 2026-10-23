@@ -1,41 +1,41 @@
 {
  "nome": "nuovo-flint",
- "titolo": "flint: 40B parameters, free to download #Shorts",
- "descrizione": "flint by RecursiveSI came out on 21 Oct 2026, with open weights on Hugging Face. At 4-bit it needs about 27 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "titolo": "Flint: 40B parameters, free to download #Shorts",
+ "descrizione": "Flint by RecursiveSI came out on 21 Oct 2026, with open weights on Hugging Face. At 4-bit it needs about 27 GB of memory.\nCompare it with every free model: https://freellmarena.com",
  "tag": [
   "free AI",
   "open source AI",
   "local LLM",
-  "flint"
+  "Flint"
  ],
- "condividi": "flint is out: 40B parameters and open weights. At 4-bit it needs about 27 GB, so the smallest card that holds it fully is the RTX 5090. https://freellmarena.com",
+ "condividi": "Flint is out: 40B parameters and open weights. At 4-bit it needs about 27 GB, so the smallest card that holds it fully is the RTX 5090. https://freellmarena.com",
  "lingua": "en",
  "localizzazioni": {
   "it": {
-   "titolo": "flint: 40 miliardi di parametri, gratis #Shorts",
-   "descrizione": "flint di RecursiveSI è uscito il 21 ottobre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 27 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+   "titolo": "Flint: 40 miliardi di parametri, gratis #Shorts",
+   "descrizione": "Flint di RecursiveSI è uscito il 21 ottobre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 27 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
   },
   "es": {
-   "titolo": "flint: 40 mil millones de parámetros, gratis #Shorts",
-   "descrizione": "flint de RecursiveSI salió el 21 de octubre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 27 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+   "titolo": "Flint: 40 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "Flint de RecursiveSI salió el 21 de octubre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 27 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
   },
   "de": {
-   "titolo": "flint: 40 Mrd. Parameter, kostenlos #Shorts",
-   "descrizione": "flint von RecursiveSI ist am 21. Oktober 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 27 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+   "titolo": "Flint: 40 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "Flint von RecursiveSI ist am 21. Oktober 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 27 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
   },
   "fr": {
-   "titolo": "flint : 40 milliards de paramètres, gratuit #Shorts",
-   "descrizione": "flint de RecursiveSI est sorti le 21 octobre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 27 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+   "titolo": "Flint : 40 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "Flint de RecursiveSI est sorti le 21 octobre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 27 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
   },
   "pt": {
-   "titolo": "flint: 40 bilhões de parâmetros, grátis #Shorts",
-   "descrizione": "flint da RecursiveSI saiu em 21 de outubro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 27 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+   "titolo": "Flint: 40 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "Flint da RecursiveSI saiu em 21 de outubro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 27 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
   }
  },
  "hardware": {
   "modelli": [
    {
-    "nome": "flint",
+    "nome": "Flint",
     "gb": 27,
     "scheda": {
      "id": "rtx5090",
