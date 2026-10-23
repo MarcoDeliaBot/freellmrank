@@ -26,12 +26,20 @@ const FONTI = [
   { nome: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/technology-lab' },
   { nome: 'MarkTechPost', url: 'https://www.marktechpost.com/feed/' },
   { nome: 'Simon Willison', url: 'https://simonwillison.net/atom/everything/' },
+  // 24/10/2026: Kimi K3.1 Pro e Claude Duet non erano usciti; queste tre fonti li avevano entrambi
+  { nome: 'SiliconANGLE', url: 'https://siliconangle.com/category/ai/feed/' },
+  { nome: 'Unite.AI', url: 'https://www.unite.ai/feed/' },
+  { nome: 'The Decoder', url: 'https://the-decoder.com/feed/' },
 ];
+// lanci dei grandi laboratori: passano davanti (Marco, 24/10/2026: «oggi è uscito Kimi K3.1, Anthropic ha annunciato
+// Claude Duet e non hai fatto neanche un post»; erano nei feed ma perdevano contro storie citate da più siti)
+const LABORATORI = /\b(Anthropic|Claude|OpenAI|GPT[-\w.]*|ChatGPT|Gemini|Gemma|DeepMind|Meta AI|Llama|Kimi|Moonshot|DeepSeek|Qwen|Alibaba|Mistral|GLM|Zhipu|Z\.ai|MiniMax|xAI|Grok|Nemotron|Phi-\d|Granite|Hunyuan|ERNIE)\b/i;
+const LANCIO = /\b(launch|launches|launched|release[sd]?|introduc\w*|unveil\w*|announc\w*|debut\w*|open[- ]sourc\w*|open[- ]weights?|new model|rolls? out)\b/i;
 const GIORNI = 3;
 const AI = /\b(AI|A\.I\.|LLMs?|GPT[-\w.]*|Gemini|Claude|Llama|Qwen|DeepSeek|Mistral|Grok|Copilot|ChatGPT|OpenAI|Anthropic|DeepMind|Hugging Face|NVIDIA|GPUs?|chatbots?|agents?|agentic|neural|machine learning|model weights|open[- ]weights?|inference|transformer|diffusion)\b/i;
 const UA = { 'User-Agent': 'Mozilla/5.0 (compatible; FreeLLMArenaBot/1.0; +https://freellmarena.com/about)' };
 const arg = (n, d) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : d; };
-const MAX = Number(arg('--max', 2));
+const MAX = Number(arg('--max', 3));
 const PROVA = process.argv.includes('--prova');
 const DIR = PROVA ? path.join(os.tmpdir(), 'notizie-prova') : path.join(RADICE, 'contenuti', 'notizie');
 
@@ -112,7 +120,8 @@ async function main() {
   }
   const fatteTitoli = fatte.map((n) => n.titoloFonte || n.titolo);
   // conta soprattutto quante fonti diverse ne parlano; una fonte ufficiale aiuta poco (i comunicati commerciali sono tanti)
-  const punti = (s) => s.voci.length * 4 + (s.voci.some((v) => v.ufficiale) ? 1 : 0) + (Date.now() - s.voci[0].data < 864e5 ? 1 : 0);
+  const lancio = (s) => s.voci.some((v) => LABORATORI.test(v.titolo) && LANCIO.test(`${v.titolo} ${v.sommario}`));
+  const punti = (s) => s.voci.length * 4 + (lancio(s) ? 10 : 0) + (s.voci.some((v) => v.ufficiale) ? 1 : 0) + (Date.now() - s.voci[0].data < 864e5 ? 1 : 0);
   const usate = new Set();
   const scelte = storie.filter((s) => !fatteTitoli.some((t) => simili(t, s.voci[0].titolo) >= 0.5)).sort((a, b) => punti(b) - punti(a))
     .filter((s) => { if (usate.has(s.voci[0].fonte)) return false; usate.add(s.voci[0].fonte); return true; }).slice(0, MAX); // una storia per fonte a giro

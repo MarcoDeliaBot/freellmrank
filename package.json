@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Best free AI models ranked by Arena votes: free online and on your own GPUs.",
   "scripts": {
-    "dati": "node script/costruisci-dati.mjs && node script/costruisci-pesi.mjs && node script/costruisci-piccoli.mjs && node script/costruisci-nuovi.mjs && node script/costruisci-architettura.mjs && node script/costruisci-storia.mjs && node script/costruisci-decisioni.mjs && node script/costruisci-audio.mjs && node script/costruisci-musica.mjs && node script/costruisci-3d.mjs && node script/costruisci-dati.mjs --offline",
+    "dati": "node script/costruisci-dati.mjs && node script/costruisci-pesi.mjs && (node script/costruisci-piccoli.mjs || echo AVVISO-piccoli-non-aggiornato-restano-i-dati-di-ieri) && (node script/costruisci-nuovi.mjs || echo AVVISO-nuovi-non-aggiornato-restano-i-dati-di-ieri) && (node script/costruisci-architettura.mjs || echo AVVISO-architettura-non-aggiornato-restano-i-dati-di-ieri) && (node script/costruisci-storia.mjs || echo AVVISO-storia-non-aggiornato-restano-i-dati-di-ieri) && (node script/costruisci-decisioni.mjs || echo AVVISO-decisioni-non-aggiornato-restano-i-dati-di-ieri) && (node script/costruisci-audio.mjs || echo AVVISO-audio-non-aggiornato-restano-i-dati-di-ieri) && (node script/costruisci-musica.mjs || echo AVVISO-musica-non-aggiornato-restano-i-dati-di-ieri) && (node script/costruisci-3d.mjs || echo AVVISO-3d-non-aggiornato-restano-i-dati-di-ieri) && node script/costruisci-dati.mjs --offline",
     "build": "node script/costruisci-sito.mjs && node script/traduci.mjs && node script/controlla-link.mjs"
   },
   "dependencies": {

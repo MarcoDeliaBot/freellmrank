@@ -11,7 +11,7 @@ on:
     inputs:
       max:
         description: 'Quante notizie al massimo'
-        default: '2'
+        default: '3'
 
 permissions:
   contents: write
@@ -34,7 +34,7 @@ jobs:
       - name: Scrivi le notizie
         env:
           BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
-        run: node script/notizie.mjs --max "${{ inputs.max || '2' }}"
+        run: node script/notizie.mjs --max "${{ inputs.max || '3' }}"
       - name: Commit delle notizie
         run: |
           git add contenuti/notizie
