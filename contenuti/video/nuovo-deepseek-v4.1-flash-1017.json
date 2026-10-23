@@ -32,16 +32,6 @@
    "descrizione": "DeepSeek-V4.1-Flash-1017 da Deepseek-ai saiu em 17 de outubro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 465 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
   }
  },
- "voce": [
-  "A new free AI model with 763 billion parameters.",
-  "It comes from Deepseek-ai, with open weights.",
-  "Can your PC run it? At 4-bit it needs about 465 gigabytes. No single home machine on our list can hold it.",
-  "It reads up to 1 million tokens at once.",
-  "Compare it with every free model.",
-  "Find it all on FreeLLMArena. Link in bio."
- ],
- "release": "video-nuovo-deepseek-v4.1-flash-1017",
- "pubblicato": "2026-10-20",
  "hardware": {
   "modelli": [
    {
@@ -76,5 +66,15 @@
     "tiene": false
    }
   ]
- }
+ },
+ "voce": [
+  "A new free AI model with 763 billion parameters.",
+  "It comes from Deepseek-ai, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 465 gigabytes. No single home machine on our list can hold it.",
+  "It reads up to 1 million tokens at once.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-deepseek-v4.1-flash-1017",
+ "pubblicato": "2026-10-22"
 }
