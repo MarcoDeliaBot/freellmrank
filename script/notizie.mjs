@@ -29,10 +29,33 @@ const FONTI = [
   // 24/10/2026: Kimi K3.1 Pro e Claude Duet non erano usciti; SiliconANGLE e The Decoder li avevano entrambi (Unite.AI risponde 403 al nostro programma)
   { nome: 'SiliconANGLE', url: 'https://siliconangle.com/category/ai/feed/' },
   { nome: 'The Decoder', url: 'https://the-decoder.com/feed/' },
+  // 24/10/2026, Marco: «perché tutte queste informazioni non me le hai trovate? dobbiamo stare sul pezzo». Timestral era
+  // nel feed di Mistral, che non leggevamo; le altre fonti qui sotto le ho provate una per una (Reddit e VentureBeat
+  // bloccano il programma, X non si legge gratis, il feed di AINews è fermo a settembre)
+  { nome: 'Mistral', url: 'https://mistral.ai/rss.xml', ufficiale: true },
+  { nome: 'Google', url: 'https://blog.google/technology/ai/rss/', ufficiale: true },
+  { nome: 'Google Developers', url: 'https://developers.googleblog.com/feeds/posts/default', ufficiale: true },
+  { nome: 'NVIDIA Developer', url: 'https://developer.nvidia.com/blog/feed', ufficiale: true },
+  { nome: 'TestingCatalog', url: 'https://www.testingcatalog.com/rss/' },
+  { nome: 'ZDNet', url: 'https://www.zdnet.com/topic/artificial-intelligence/rss.xml' },
+  { nome: 'Latent Space', url: 'https://www.latent.space/feed' },
+  { nome: 'Interconnects', url: 'https://www.interconnects.ai/feed' },
+  { nome: 'LessWrong', url: 'https://www.lesswrong.com/feed.xml?view=curated-rss' },
 ];
+// laboratori senza feed: si legge la pagina delle notizie e la data dentro ogni articolo
+const PAGINE = [
+  { nome: 'Anthropic', url: 'https://www.anthropic.com/news', base: 'https://www.anthropic.com', link: /href="(\/news\/[a-z0-9-]+)"/g, ufficiale: true },
+  { nome: 'Meta AI', url: 'https://ai.meta.com/blog/', base: '', link: /href="(https:\/\/ai\.meta\.com\/blog\/[a-z0-9-]+\/)"/g, ufficiale: true },
+];
+// radar: ciò che esce prima su Hugging Face e GitHub che sui giornali (modelli, framework come DeepInfer)
+const ORG_HF = { mistralai: 'Mistral AI', 'deepseek-ai': 'DeepSeek', Qwen: 'Qwen', google: 'Google', 'meta-llama': 'Meta', facebook: 'Meta', MiniMaxAI: 'MiniMax',
+  tencent: 'Tencent', inclusionAI: 'Ant Group', RecursiveSI: 'Recursive', 'black-forest-labs': 'Black Forest Labs', nvidia: 'NVIDIA', LiquidAI: 'Liquid AI',
+  moonshotai: 'Moonshot AI', 'zai-org': 'Z.ai', XiaomiMiMo: 'Xiaomi', 'ibm-granite': 'IBM', microsoft: 'Microsoft', openai: 'OpenAI', 'stepfun-ai': 'StepFun',
+  'ByteDance-Seed': 'ByteDance', baidu: 'Baidu', Lightricks: 'Lightricks', allenai: 'Ai2', HuggingFaceTB: 'Hugging Face', 'meituan-longcat': 'Meituan' };
+const SCARTA_HF = /awq|gptq|fp8|fp4|nvfp4|int4|int8|gguf|mlx|onnx|bnb|uncensored|abliterat|quantized|-comfy|lora/i;
 // lanci dei grandi laboratori: passano davanti (Marco, 24/10/2026: «oggi è uscito Kimi K3.1, Anthropic ha annunciato
 // Claude Duet e non hai fatto neanche un post»; erano nei feed ma perdevano contro storie citate da più siti)
-const LABORATORI = /\b(Anthropic|Claude|OpenAI|GPT[-\w.]*|ChatGPT|Gemini|Gemma|DeepMind|Meta AI|Llama|Kimi|Moonshot|DeepSeek|Qwen|Alibaba|Mistral|GLM|Zhipu|Z\.ai|MiniMax|xAI|Grok|Nemotron|Phi-\d|Granite|Hunyuan|ERNIE)\b/i;
+const LABORATORI = /\b(Anthropic|Claude|OpenAI|GPT[-\w.]*|ChatGPT|Gemini|Gemma|DeepMind|Meta|Llama|Kimi|Moonshot|DeepSeek|Qwen|Alibaba|Mistral|GLM|Zhipu|Z\.ai|MiniMax|xAI|Grok|Nemotron|Phi-\d|Granite|Hunyuan|Tencent|ERNIE|Liquid AI|Ant Group|Ling|Xiaomi|MiMo|ByteDance|StepFun|Black Forest Labs|FLUX|Recursive)\b/i; // NVIDIA no: ogni articolo del suo blog sembrava un lancio
 const LANCIO = /\b(launch|launches|launched|release[sd]?|introduc\w*|unveil\w*|announc\w*|debut\w*|open[- ]sourc\w*|open[- ]weights?|new model|rolls? out)\b/i;
 const GIORNI = 3;
 const AI = /\b(AI|A\.I\.|LLMs?|GPT[-\w.]*|Gemini|Claude|Llama|Qwen|DeepSeek|Mistral|Grok|Copilot|ChatGPT|OpenAI|Anthropic|DeepMind|Hugging Face|NVIDIA|GPUs?|chatbots?|agents?|agentic|neural|machine learning|model weights|open[- ]weights?|inference|transformer|diffusion)\b/i;
@@ -62,11 +85,95 @@ async function leggiFeed(f) {
   }).filter((v) => v.titolo && v.link && !Number.isNaN(v.data.getTime()));
 }
 
+// data di un articolo: meta del sito, JSON-LD o la prima data scritta per esteso («October 23, 2026», «Oct 23, 2026»)
+const MESI = 'January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec';
+function dataDa(html) {
+  const m = html.match(/article:published_time"\s+content="([^"]+)"/i) || html.match(/"datePublished"\s*:\s*"([^"]+)"/i)
+    || html.match(new RegExp(`\\b((?:${MESI})\\.? \\d{1,2}, 20\\d\\d)\\b`));
+  return m ? new Date(m[1].replace(/^Sept\b/, 'Sep')) : new Date(NaN);
+}
+
+// 1b. pagine delle notizie senza feed: i primi articoli della pagina, con titolo e data letti dall'articolo
+async function leggiPagina(p, linkFatti) {
+  const html = await scarica(p.url);
+  const link = [...new Set([...html.matchAll(p.link)].map((m) => p.base + m[1]))].filter((u) => !linkFatti.has(u) && u !== p.url).slice(0, 12);
+  const voci = [];
+  for (const u of link) {
+    try {
+      const a = await scarica(u);
+      const titolo = testoDa(campo(a, ['title'])).replace(/\s*[|\\-]\s*(Anthropic|AI at Meta|Meta AI)\s*$/i, '');
+      const sommario = entita((a.match(/<meta[^>]+(?:name|property)="(?:og:)?description"[^>]+content="([^"]*)"/i) || [])[1] || '');
+      voci.push({ fonte: p.nome, ufficiale: !!p.ufficiale, titolo, link: u, data: dataDa(a), sommario });
+    } catch (e) { console.log(`notizie: salto ${u} (${e.message})`); }
+  }
+  return voci.filter((v) => v.titolo && !Number.isNaN(v.data.getTime()));
+}
+
+// 1c. radar: modelli di tendenza su Hugging Face (dei laboratori, non le copie quantizzate) e nuovi progetti AI su GitHub
+async function radar() {
+  const voci = [];
+  try {
+    const lista = JSON.parse(await scarica('https://huggingface.co/api/models?sort=trendingScore&limit=40'));
+    for (const m of lista) {
+      const [org, nome] = m.id.split('/');
+      const giorni = (Date.now() - new Date(m.createdAt)) / 864e5;
+      if (giorni > 7 || SCARTA_HF.test(nome) || !(ORG_HF[org] ? m.likes >= 100 : m.likes >= 500)) continue;
+      const lab = ORG_HF[org] || org;
+      voci.push({ fonte: 'Hugging Face trending', ufficiale: true, titolo: `${lab} releases ${nome} on Hugging Face`, link: `https://huggingface.co/${m.id}`,
+        data: new Date(m.createdAt), sommario: `${lab} published the model ${nome} (${m.pipeline_tag || 'model'}) on Hugging Face. ${m.likes} likes.` });
+    }
+  } catch (e) { console.log(`notizie: salto Hugging Face trending (${e.message})`); }
+  // ricerche del giorno su Hugging Face Papers: quelle dei grandi laboratori o molto votate (es. il lavoro di Meta sui byte al posto dei token)
+  const ORG_PAPER = /^(google|google-deepmind|facebook|meta|metaresearch|MicrosoftResearch|microsoft|nvidia|deepseek-ai|Qwen|openai|anthropic|tencent|TencentARC|mistralai|allenai|LiquidAI|moonshotai|zai-org|ByteDance-Seed|inclusionAI|apple)$/i;
+  for (const g of [0, 1]) {
+    const giorno = new Date(Date.now() - g * 864e5).toISOString().slice(0, 10);
+    try {
+      for (const p of JSON.parse(await scarica(`https://huggingface.co/api/daily_papers?date=${giorno}&limit=100`))) {
+        const org = p.paper?.organization?.name || '';
+        if (!(ORG_PAPER.test(org) ? p.paper.upvotes >= 20 : p.paper.upvotes >= 150)) continue;
+        const lab = ORG_HF[org] || p.paper.organization?.fullname || org || 'Researchers';
+        voci.push({ fonte: 'Hugging Face Papers', ufficiale: true, titolo: `${lab} paper: ${p.title}`.slice(0, 200), link: `https://huggingface.co/papers/${p.paper.id}`,
+          data: new Date(p.publishedAt || giorno), sommario: String(p.paper.summary || '').slice(0, 1500) });
+      }
+    } catch (e) { console.log(`notizie: salto Hugging Face Papers ${giorno} (${e.message})`); }
+  }
+  try {
+    const da = new Date(Date.now() - 10 * 864e5).toISOString().slice(0, 10);
+    const q = encodeURIComponent(`created:>${da} stars:>800`);
+    const h = { ...UA, Accept: 'application/vnd.github+json', ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}) };
+    const r = await fetch(`https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=50`, { headers: h, signal: AbortSignal.timeout(20000) });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    // solo progetti di AI (descrizione o argomenti), non i tanti progetti di moda della settimana
+    const RADAR_AI = /\b(LLMs?|AI|agents?|agentic|inference|model|transformer|diffusion|Claude|GPT|Gemini|Qwen|DeepSeek|MCP|RAG|fine-?tun\w*|embedding|speech|TTS)\b/i;
+    for (const p of (await r.json()).items || []) {
+      const testo = `${p.description || ''} ${(p.topics || []).join(' ')}`;
+      if (!RADAR_AI.test(testo)) continue;
+      voci.push({ fonte: 'GitHub trending', ufficiale: ORG_HF[p.owner.login] !== undefined || /^(deepseek-ai|QwenLM|openai|anthropics|google|google-deepmind|facebookresearch|meta-llama|microsoft|NVIDIA|mistralai|huggingface|MoonshotAI|NousResearch|Liquid4All)$/i.test(p.owner.login),
+        titolo: `${p.full_name}: ${p.description || 'new open-source project'}`.slice(0, 200), link: p.html_url, data: new Date(p.created_at),
+        sommario: `${p.description || ''} Open-source project on GitHub with ${p.stargazers_count} stars, created ${p.created_at.slice(0, 10)}.` });
+    }
+  } catch (e) { console.log(`notizie: salto GitHub trending (${e.message})`); }
+  return voci;
+}
+
 // parole che distinguono una storia (nomi propri, nomi di modelli con numeri), per riconoscere la stessa notizia su più siti
 const VUOTE = new Set('the a an and or of to in on for with from by is are was be this that new its at as how why what will can now your our their it after into over says said launches launched release released introduces announces using use more than about up out just'.split(' '));
 const parole = (s) => new Set(String(s).toLowerCase().replace(/[^a-z0-9.\- ]/g, ' ').split(/\s+/).filter((w) => w.length > 2 && !VUOTE.has(w)));
 // stessa storia: almeno 2 parole in comune e metà delle parole del titolo più corto («programming» da sola non basta)
-const simili = (a, b) => { const A = parole(a), B = parole(b); let c = 0; for (const w of A) if (B.has(w)) c++; return c >= 2 ? c / Math.max(1, Math.min(A.size, B.size)) : 0; };
+// nomi propri di prodotto («DeepInfer», «Timestral-209M» -> «timestral», «Flint»): basta uno in comune per dire stessa storia,
+// perché il radar scrive «Mistral AI releases Timestral-209M» e il blog di Mistral «Introducing Timestral» (24/10/2026).
+// I nomi dei laboratori e le parole da titolo non contano: due notizie diverse su Claude non sono la stessa storia
+const COMUNI = /^(introducing|announcing|releases?|launch\w*|hugging|face|github|google|cloud|model|models|agent|agents|agentic|open|source|today|update|security|research|developers?|enterprise|platform|coding|reasoning|policy|frontier|national|global|america\w*|europe\w*|china|chinese|world|new|first|best|faster|better|smaller|larger|week|year|startup|series|funding|billion|million|study|report|paper|benchmark|safety|preview|beta|available|generally|support|now|with|what|how|why|when)$/i;
+// nomi «forti»: con maiuscola interna (DeepInfer) o con cifre (Timestral-209M); il nome nudo nell'altro titolo basta
+const forti = (t) => [...String(t).matchAll(/\b([A-Z][a-z]+[A-Z]\w*|[A-Za-z]{5,}[-.]?\d[\w.-]*)\b/g)].map((m) => m[1].toLowerCase().split(/[-.]?\d/)[0])
+  .filter((w) => w.length >= 5 && !COMUNI.test(w) && !LABORATORI.test(w));
+const tutteParole = (t) => new Set(String(t).toLowerCase().split(/[^a-z0-9]+/));
+const simili = (a, b) => {
+  const A = parole(a), B = parole(b); let c = 0; for (const w of A) if (B.has(w)) c++;
+  const pa = tutteParole(a), pb = tutteParole(b);
+  if (forti(a).some((w) => pb.has(w)) || forti(b).some((w) => pa.has(w))) return 1;
+  return c >= 2 ? c / Math.max(1, Math.min(A.size, B.size)) : 0;
+};
 
 // 4. controlli in codice
 // una frase finisce con . ! ? seguiti da spazio e maiuscola: «GPT-5.6» e «400,000» restano interi
@@ -111,6 +218,15 @@ async function main() {
     try { const v = await leggiFeed(f); voci.push(...v.filter((x) => x.data.getTime() > limite && !linkFatti.has(x.link) && AI.test(`${x.titolo} ${x.sommario}`))); }
     catch (e) { console.log(`notizie: salto ${f.nome} (${e.message})`); }
   }
+  const recenti = (x) => x.data.getTime() > limite && !linkFatti.has(x.link);
+  for (const p of PAGINE) {
+    try { voci.push(...(await leggiPagina(p, linkFatti)).filter(recenti)); } catch (e) { console.log(`notizie: salto ${p.nome} (${e.message})`); }
+  }
+  // il radar guarda una settimana: un modello di tendenza è notizia anche se è uscito 5 giorni fa e nessun giornale l'ha scritto
+  voci.push(...(await radar()).filter((x) => !linkFatti.has(x.link) && x.data.getTime() > Date.now() - 10 * 864e5));
+  const perFonte = {};
+  for (const v of voci) perFonte[v.fonte] = (perFonte[v.fonte] || 0) + 1;
+  console.log(`notizie: voci per fonte ${JSON.stringify(perFonte)}`);
   // 2. storie: voci simili di fonti diverse
   const storie = [];
   for (const v of voci.sort((a, b) => b.data - a.data)) {
@@ -137,7 +253,7 @@ async function main() {
     const fonti = [];
     for (const v of s.voci.slice(0, 3)) {
       let testo = '';
-      try { testo = testoDa(await scarica(v.link)).slice(0, 9000); } catch (e) { console.log(`notizie: pagina chiusa ${v.link} (${e.message})`); }
+      try { testo = testoDa(await scarica(v.link)).slice(0, 6000); } catch (e) { console.log(`notizie: pagina chiusa ${v.link} (${e.message})`); }
       fonti.push({ ...v, testo: testo.length > 600 ? testo : `${v.titolo}. ${v.sommario}` });
     }
     const blocco = fonti.map((f, i) => `SOURCE ${i + 1} (${f.fonte}${f.ufficiale ? ', official' : ''}, ${f.data.toISOString().slice(0, 10)}): ${f.titolo}\n${f.testo}`).join('\n\n');

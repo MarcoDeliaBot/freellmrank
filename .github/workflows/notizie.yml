@@ -5,8 +5,12 @@ name: Notizie
 
 on:
   schedule:
+    # 24/10/2026: cinque giri invece di due, per stare sul pezzo (il primo subito dopo la mezzanotte UTC, quando si azzera il tetto)
+    - cron: '20 0 * * *'
     - cron: '40 6 * * *'
+    - cron: '40 11 * * *'
     - cron: '40 15 * * *'
+    - cron: '40 20 * * *'
   workflow_dispatch:
     inputs:
       max:
@@ -34,6 +38,7 @@ jobs:
       - name: Scrivi le notizie
         env:
           BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node script/notizie.mjs --max "${{ inputs.max || '3' }}"
       - name: Commit delle notizie
         run: |

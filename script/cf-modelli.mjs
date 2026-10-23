@@ -22,7 +22,7 @@ export const CF_MODELLI = [
 
 // Quota gratis Cloudflare: 10.000 neurons al giorno (UTC). Ci fermiamo prima, con margine,
 // e la dividiamo (decisione del 19/10/2026, rivista il 22/10/2026 quando sono arrivati i video lunghi: misurato il consumo
-// vero, «Try it now» ~45 al giorno, audio ~3, Arena 0). Totale dei tetti: 1.500 + 1.000 (Arena) + 1.000 (audio) + 1.000 + 2.500 + 2.000 + 1.000 (notizie) = 10.000
+// vero, «Try it now» ~45 al giorno, audio ~3, Arena 0). Totale dei tetti: 1.500 + 1.000 (Arena) + 1.000 (audio) + 1.000 + 2.500 + 1.500 + 1.500 (notizie) = 10.000
 // (22/10 sera: più spazio alle traduzioni, che non stavano dietro ai post quotidiani dei video).
 export const TETTO_NEURONS = 1500;
 export const TETTO_ARENA = 1000; // 22/10/2026: 1.000 passano alle notizie del blog (Arena usata ~0)
@@ -53,5 +53,7 @@ export const AUDIO_PER_VISITATORE = 6;
 // Scrittura automatica (functions/api/scrivi.js): un tetto per uso, ognuno col suo contatore.
 // bozze: articolo del blog e post social (20/10/2026); traduzioni: frasi nuove del sito (21/10); video: copioni dei video lunghi (22/10).
 // notizie: articoli del blog dai siti ufficiali e di notizie (22/10, ~230 neurons ad articolo)
-export const TETTI_SCRIVI = { bozze: 1000, traduzioni: 2500, video: 2000, notizie: 1000 };
+// 24/10/2026: notizie 1.000 -> 1.500 tolti ai video (misurato in KV: video 967 il 22/10 e 412 il 23/10, notizie 858 per 5 articoli
+// e il 23 sera DeepInfer è rimasto fuori per il tetto); con le fonti tagliate a 6.000 caratteri un articolo costa ~120-170
+export const TETTI_SCRIVI = { bozze: 1000, traduzioni: 2500, video: 1500, notizie: 1500 };
 export const TETTO_SCRIVI = TETTI_SCRIVI.bozze;
