@@ -13,6 +13,7 @@ import { MOTORE, STILE_ORIZZONTALE, STILE_VERTICALE } from './motore.mjs';
 import { chiediModello } from '../bozze.mjs';
 import { numeri } from '../video-post.mjs';
 import { nomiDi, LABORATORI, LANCIO } from '../notizie.mjs';
+import { metaYoutube, RICHIESTA_YT } from './titoli-yt.mjs';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
 const RADICE = path.join(QUI, '..', '..');
@@ -54,10 +55,10 @@ let ai = {};
 try {
   ai = await chiediModello([
     { role: 'system', content: `You prepare on-screen text for a YouTube news video by FreeLLMArena. Use ONLY facts and names from ARTICLE. Never add a number, name, date or claim that is not in ARTICLE. No hype words, no emojis. Use sentence case: capital letter only for the first word and for names.
-Return JSON: {"schermo": "headline for the screen, max 8 words", "sezioni": [{"titolo": "3 to 6 words", "punti": ["2 or 3 bullets, max 9 words each"]}], "corto": ["3 short spoken sentences for a 30-second vertical Short, max 20 words each: the news, the key fact, why it matters"]}.
+Return JSON: {"schermo": "headline for the screen, max 8 words", "sezioni": [{"titolo": "3 to 6 words", "punti": ["2 or 3 bullets, max 9 words each"]}], "corto": ["3 short spoken sentences for a 30-second vertical Short, max 20 words each: the news, the key fact, why it matters"], ${RICHIESTA_YT}}.
 Write exactly one item in "sezioni" for each numbered paragraph, in the same order.` },
     { role: 'user', content: `ARTICLE:\nTitle: ${n.titolo}\nSummary: ${n.descr}\n${n.paragrafi.map((p, i) => `Paragraph ${i + 1}: ${p}`).join('\n')}\nWhy it matters: ${(n.perche || []).join(' ')}` },
-  ], { json: true, max: 1200, scopo: 'video' });
+  ], { json: true, max: 1500, scopo: 'video' });
 } catch (e) { console.log(`Testi dello schermo non scritti (${e.message}): uso le frasi del post`); }
 const prima = (p) => semplice(p).split(/(?<=[.!?])\s+(?=[A-Z0-9"])/)[0];
 const corta = (t, max) => { const w = semplice(t).split(' '); return w.length > max ? w.slice(0, max).join(' ') + '…' : w.join(' '); };
@@ -98,10 +99,14 @@ fs.writeFileSync(path.join(OUT, 'scena-notizia.html'), `<!doctype html><html lan
 <script>let DURATA = ${lungo.t};${MOTORE};render(0)</script></body></html>`);
 const nome = nomeVideo(n);
 const righeFonti = n.fonti.map((f) => `${f.nome}: ${f.url}`).join('\n');
+// titolo, descrizione e tag di YouTube (youtube-seo, 24/10/2026): script/brag/titoli-yt.mjs
+const nomiTitolo = [...new Set(nomiDi(`X ${semplice(n.titolo)}`).filter((x) => x.length >= 3))];
+const yt = metaYoutube({ n: { ...n, titolo: semplice(n.titolo), descr: semplice(n.descr) }, yt: ai.yt || {}, regge, punti: sezioni.flatMap((s) => s.punti.filter((p) => !p.endsWith('…'))), nomi: nomiTitolo, url, righeFonti, guida: GUIDA });
+if (yt.tolti.length) console.log(`Titolo/descrizione YouTube: tolti ${yt.tolti.length} pezzi che non reggono: ${yt.tolti.join(' | ')}`);
 const info = {
-  nome, titolo: n.titolo.slice(0, 100), notizia: n.nome, post: GUIDA ? url.replace(/^.*\/blog\//, '') : `news-${n.nome}`,
-  descrizione: `${semplice(n.descr)}\n\nFull story: ${url}\n\nSources:\n${righeFonti}\n\nAI news every day and every free AI model, compared: https://freellmarena.com`,
-  tag: [GUIDA ? 'local LLM' : 'AI news', 'artificial intelligence', 'free AI', ...fonti.slice(0, 2)],
+  nome, titolo: yt.titolo, notizia: n.nome, post: GUIDA ? url.replace(/^.*\/blog\//, '') : `news-${n.nome}`,
+  descrizione: yt.descrizione,
+  tag: yt.tag,
   condividi: `${n.titolo} ${url}`,
   lingua: 'en', formato: { w: 1920, h: 1080 }, fps: 24, copertina: 0,
   scene: scene.map((s) => ({ min: s.min, voce: s.voce })),
@@ -126,11 +131,11 @@ fs.writeFileSync(path.join(OUT, 'scena-notizia-corto.html'), `<!doctype html><ht
 <div class="tela">${marchioV}${breve.html.join('\n')}<div class="sotto"><p></p></div><div class="avanza"><i></i></div></div>
 <script>let DURATA = ${breve.t};${MOTORE};render(0)</script></body></html>`);
 const infoC = {
-  nome: GUIDA ? `breve-${nome}` : nome.replace(/^notizia-/, 'breve-'), titolo: `${corta(n.titolo, 12).replace(/…$/, '')} #Shorts`.slice(0, 100), notizia: n.nome,
+  nome: GUIDA ? `breve-${nome}` : nome.replace(/^notizia-/, 'breve-'), titolo: `${yt.titolo} #Shorts`, notizia: n.nome,
   // lo Short rimanda al video lungo (Marco, 23/10/2026): «lungo» per il «Video correlato» di YouTube, e il link nella descrizione
   lungo: `video-${nome}`,
-  descrizione: `${semplice(n.descr)}\nFull story: ${url}\nSources: ${fonti.join(', ')}`,
-  tag: [GUIDA ? 'local LLM' : 'AI news', 'Shorts', ...fonti.slice(0, 2)],
+  descrizione: `${yt.apertura}\nFull story: ${url}\nSources: ${fonti.join(', ')}`,
+  tag: [...yt.tag.slice(0, 10), 'Shorts'],
   condividi: `${n.titolo} ${url}`,
   lingua: 'en', copertina: 0,
   scene: sceneC.map((s) => ({ min: s.min, voce: s.voce })),
