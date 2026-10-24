@@ -45,8 +45,25 @@ function ripara(st, dati, n) {
     prove.push(d);
   }
   if (st.nome === 'titolo') prove.push({ ...clona(dati), testo: titoloCorto(semplice(n.titolo)) });
-  for (const d of [...prove]) { const e = clona(d); delete e.evidenza; prove.push(e); }
-  return prove.find((d) => !st.valida(d).length) || null;
+  // togliere le voci troppo lunghe di una lista, una alla volta, finché i problemi calano (la voce le dice comunque)
+  let d = clona(dati);
+  for (let giro = 0; giro < 4 && st.valida(d).length; giro++) {
+    const prima = st.valida(d).length;
+    let meglio = null;
+    for (const via of liste(d)) {
+      const a = prendi(d, via);
+      for (let i = 0; i < a.length; i++) {
+        const t = clona(d); prendi(t, via).splice(i, 1);
+        const e = st.valida(t).length;
+        if (e < prima && (!meglio || e < meglio.e)) meglio = { t, e };
+      }
+    }
+    if (!meglio) break;
+    d = meglio.t;
+  }
+  prove.push(d);
+  for (const x of [...prove]) { const e = clona(x); delete e.evidenza; prove.push(e); }
+  return prove.find((x) => !st.valida(x).length) || null;
 }
 
 const titoloDiRiserva = (n) => {
@@ -122,7 +139,7 @@ Return JSON: {"scene": [{"stampo": "...", "etichetta": "...", "voce": "...", "da
   // due tentativi: il secondo riceve i problemi del primo
   for (let tentativo = 1; tentativo <= 2 && !migliore?.ok; tentativo++) {
     try {
-      const grezzo = await chiediModello(domanda, { json: true, max: 2200, scopo: 'video' });
+      const grezzo = await chiediModello(domanda, { json: true, max: 1800, scopo: 'video' });
       grezzi.push(grezzo);
       const c = controllaPiano(grezzo, n);
       problemi.push(...c.problemi.map((p) => `tentativo ${tentativo}: ${p}`));
