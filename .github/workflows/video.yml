@@ -42,6 +42,10 @@ on:
         description: 'Short da fare per modelli che hanno già il video lungo: nomi come in data.json, separati da ;'
         type: string
         default: ''
+      guide:
+        description: 'Video di guide: file in contenuti/video-guide (es. contenuti/video-guide/strata.json), separati da ;'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -130,9 +134,14 @@ jobs:
           done
           # video delle notizie (Marco, 24/10/2026): fino a 2 a corsa, la notizia più ripresa degli ultimi 2 giorni non ancora
           # raccontata; la voce legge il post già verificato. Lo Short nasce subito dopo e rimanda al video lungo
-          for i in 1 2; do
+          # prima le guide chieste a mano (input «guide», 24/10/2026: Strata), poi 2 notizie
+          IFS=';' read -ra guide <<< "${{ inputs.guide }}"
+          giri=()
+          for g in "${guide[@]}"; do g=$(echo "$g" | xargs); [ -n "$g" ] && giri+=("$g"); done
+          giri+=("" "")
+          for g in "${giri[@]}"; do
             rm -f video/brag/info-notizia.json
-            BRAG_FATTI=video/brag/fatti.txt node script/brag/notizia.mjs || { echo "Video della notizia non riuscito"; break; }
+            BRAG_FILE="$g" BRAG_FATTI=video/brag/fatti.txt node script/brag/notizia.mjs || { echo "Video della notizia non riuscito"; break; }
             [ -f video/brag/info-notizia.json ] || break
             nome=$(python -c "import json; print(json.load(open('video/brag/info-notizia.json', encoding='utf-8'))['nome'])")
             echo "video-$nome" >> video/brag/fatti.txt

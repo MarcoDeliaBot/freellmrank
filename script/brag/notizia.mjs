@@ -26,7 +26,7 @@ const semplice = (t) => String(t || '').replace(/[‐‑‒]/g, '-').replace(/\s
 
 // ---------- 1. quale notizia: la più ripresa degli ultimi 2 giorni non ancora raccontata ----------
 const fatti = process.env.BRAG_FATTI && fs.existsSync(process.env.BRAG_FATTI) ? new Set(fs.readFileSync(process.env.BRAG_FATTI, 'utf8').split(/\s+/).filter(Boolean)) : new Set();
-const nomeVideo = (n) => `notizia-${n.nome.replace(/^\d{4}-\d{2}-\d{2}-/, '').slice(0, 56).replace(/-+$/, '')}`;
+const nomeVideo = (n) => `${n.tipo === 'guida' ? 'guida' : 'notizia'}-${n.nome.replace(/^\d{4}-\d{2}-\d{2}-/, '').slice(0, 56).replace(/-+$/, '')}`;
 const tutte = fs.readdirSync(DIR).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8')));
 const recente = (n) => Date.now() - new Date(n.pubblicato + 'T12:00:00Z') < 2.5 * 864e5;
 // i lanci dei grandi laboratori passano davanti (24/10/2026: la prima corsa scelse OpenAI su Google Cloud e Orchestra Bio
@@ -35,11 +35,14 @@ const lancio = (n) => LABORATORI.test(n.titolo) && LANCIO.test(`${n.titolo} ${n.
 const peso = (n) => n.fonti.length * 3 + (lancio(n) ? 8 : 0) + (n.fonti.some((f) => f.ufficiale) ? 2 : 0) + (n.tema === 'LLMs' ? 2 : 0);
 // un modello che ha già il suo video lungo (video-modello-flint) non si racconta una seconda volta come notizia
 const giaModello = (n) => [...fatti].filter((f) => f.startsWith('video-modello-')).some((f) => n.titolo.toLowerCase().includes(f.slice(14).replace(/-/g, ' ')));
-const n = process.env.BRAG_NOTIZIA
+// BRAG_FILE=<json>: una guida (contenuti/video-guide/*.json: i campi di una notizia più «tipo»: «guida» e «url»), dal 24/10/2026
+const n = process.env.BRAG_FILE ? JSON.parse(fs.readFileSync(process.env.BRAG_FILE, 'utf8')) : process.env.BRAG_NOTIZIA
   ? tutte.find((x) => x.nome === process.env.BRAG_NOTIZIA.replace(/\.json$/, ''))
   : tutte.filter((x) => recente(x) && x.paragrafi.length >= 3 && !fatti.has(`video-${nomeVideo(x)}`) && !giaModello(x)).sort((a, b) => peso(b) - peso(a) || b.pubblicato.localeCompare(a.pubblicato))[0];
 if (!n) { console.log('Nessuna notizia nuova da raccontare'); process.exit(0); }
-const url = `https://freellmarena.com/blog/news-${n.nome}`;
+const url = n.url || `https://freellmarena.com/blog/news-${n.nome}`;
+const GUIDA = n.tipo === 'guida';
+const ETICHETTA = GUIDA ? 'Guide' : 'AI news';
 
 // ---------- 2. titoli e punti sullo schermo (Workers AI), poi il controllo ----------
 const POST = [n.titolo, n.descr, ...n.paragrafi, ...(n.perche || [])].map(semplice).join('\n');
@@ -64,7 +67,7 @@ const schermo = tieni(ai.schermo, '') || semplice(n.titolo);
 const sezioni = n.paragrafi.map((p, i) => {
   const s = (ai.sezioni || [])[i] || {};
   const punti = (s.punti || []).map((x) => tieni(String(x).slice(0, 90), null)).filter(Boolean).slice(0, 3);
-  return { titolo: tieni(String(s.titolo || '').slice(0, 60), '') || (i === 0 ? 'What happened' : 'The details'), punti: punti.length ? punti : [corta(prima(p), 14)], voce: semplice(p) };
+  return { titolo: (n.titoliSezioni || [])[i] || tieni(String(s.titolo || '').slice(0, 60), '') || (GUIDA ? 'Step by step' : i === 0 ? 'What happened' : 'The details'), punti: punti.length ? punti : [corta(prima(p), 14)], voce: semplice(p) };
 });
 // le frasi dello Short: quelle di Workers AI che reggono, se no le prime frasi del post
 let corto = (ai.corto || []).map((x) => tieni(x, null)).filter(Boolean).slice(0, 3);
@@ -77,19 +80,19 @@ const elencoFonti = fonti.length > 1 ? `${fonti.slice(0, -1).join(', ')} and ${f
 const dimTitolo = schermo.length > 70 ? 76 : schermo.length > 48 ? 88 : schermo.length > 30 ? 104 : 124;
 const scene = [
   { min: 7, voce: semplice(n.descr),
-    corpo: `<span class="chip riga" data-in="0">AI news · ${esc(giorno(n.pubblicato))}</span><p class="grande riga verde" data-in="0.2" style="font-size:${dimTitolo}px;line-height:1.05">${esc(schermo)}</p><p class="sotto-titolo riga" data-in="0.6">Sources: ${esc(fonti.join(' · '))}</p>` },
+    corpo: `<span class="chip riga" data-in="0">${ETICHETTA} · ${esc(giorno(n.pubblicato))}</span><p class="grande riga verde" data-in="0.2" style="font-size:${dimTitolo}px;line-height:1.05">${esc(schermo)}</p><p class="sotto-titolo riga" data-in="0.6">Sources: ${esc(fonti.join(' · '))}</p>` },
   ...sezioni.map((s) => ({ min: 8, voce: s.voce,
     corpo: `<p class="titolo riga" data-in="0">${esc(s.titolo)}</p><div class="griglia ${s.punti.length === 1 ? '' : 'due'}" style="${s.punti.length === 1 ? 'grid-template-columns:1fr' : ''}">${s.punti.map((p, i) => `<div class="carta riga" data-in="${0.6 + i * 0.6}"><b style="font-size:38px">${esc(p)}</b></div>`).join('')}</div>` })),
   ...((n.perche || []).length ? [{ min: 8, voce: (n.perche || []).map(semplice).join(' '),
     corpo: `<p class="titolo riga" data-in="0">Why it matters</p><p class="sotto-titolo riga" data-in="0.5" style="font-size:44px;color:var(--ink)">${esc(corta(prima(n.perche[0]), 30))}</p>` }] : []),
-  { min: 6, voce: `This story comes from ${elencoFonti}. The links are in the description.`,
+  { min: 6, voce: `${GUIDA ? 'This guide is based on' : 'This story comes from'} ${elencoFonti}. The links are in the description.`,
     corpo: `<p class="titolo riga" data-in="0">Sources</p><div class="griglia">${n.fonti.slice(0, 3).map((f, i) => `<div class="carta riga" data-in="${0.4 + i * 0.3}"><small>${f.ufficiale ? 'Official' : 'Report'} · ${esc(f.data)}</small><b>${esc(f.nome)}</b><span>${esc(new URL(f.url).hostname.replace(/^www\./, ''))}</span></div>`).join('')}</div>` },
   { min: 7, voce: 'For AI news every day, and to compare every free AI model, visit FreeLLMArena. The link is in the description.',
     corpo: `<p class="titolo riga" data-in="0">AI news every day · every free model compared</p><p class="url riga" data-in="0.3">freellmarena.com</p><p class="sotto-titolo riga" data-in="0.6">Link in the description</p>` },
 ];
 const tempi = (sc) => { let t = 0; return { html: sc.map((s) => { const da = t; t += s.min; return `<section class="scena${s.classe ? ' ' + s.classe : ''}" data-da="${da}" data-a="${t}">${s.corpo}</section>`; }), t }; };
 const lungo = tempi(scene);
-const marchioO = `<div class="marchio"><span class="segno"><i style="height:22px"></i><i style="height:36px"></i><i style="height:28px"></i></span><b>FreeLLM<span>Arena</span></b></div><div class="data-sett">AI news · ${esc(giorno(n.pubblicato))}</div>`;
+const marchioO = `<div class="marchio"><span class="segno"><i style="height:22px"></i><i style="height:36px"></i><i style="height:28px"></i></span><b>FreeLLM<span>Arena</span></b></div><div class="data-sett">${ETICHETTA} · ${esc(giorno(n.pubblicato))}</div>`;
 fs.writeFileSync(path.join(OUT, 'scena-notizia.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8"><style>${css}${STILE_ORIZZONTALE}</style></head><body>
 <div class="tela">${marchioO}${lungo.html.join('\n')}<div class="sotto"><p></p></div><div class="avanza"><i></i></div></div>
 <script>let DURATA = ${lungo.t};${MOTORE};render(0)</script></body></html>`);
@@ -98,7 +101,7 @@ const righeFonti = n.fonti.map((f) => `${f.nome}: ${f.url}`).join('\n');
 const info = {
   nome, titolo: n.titolo.slice(0, 100), notizia: n.nome,
   descrizione: `${semplice(n.descr)}\n\nFull story: ${url}\n\nSources:\n${righeFonti}\n\nAI news every day and every free AI model, compared: https://freellmarena.com`,
-  tag: ['AI news', 'artificial intelligence', 'free AI', ...fonti.slice(0, 2)],
+  tag: [GUIDA ? 'local LLM' : 'AI news', 'artificial intelligence', 'free AI', ...fonti.slice(0, 2)],
   condividi: `${n.titolo} ${url}`,
   lingua: 'en', formato: { w: 1920, h: 1080 }, fps: 24, copertina: 0,
   scene: scene.map((s) => ({ min: s.min, voce: s.voce })),
@@ -109,10 +112,10 @@ fs.writeFileSync(path.join(OUT, 'info-notizia.json'), JSON.stringify(info, null,
 const dimCorto = schermo.length > 70 ? 76 : schermo.length > 40 ? 92 : schermo.length > 24 ? 112 : 132;
 const sceneC = [
   { min: 3.6, voce: corto[0],
-    corpo: `<span class="chip riga" data-in="0">AI NEWS · ${esc(giorno(n.pubblicato).toUpperCase())}</span><p class="grande riga verde" data-in="0.2" style="font-size:${dimCorto}px">${esc(schermo)}</p>` },
+    corpo: `<span class="chip riga" data-in="0">${ETICHETTA.toUpperCase()} · ${esc(giorno(n.pubblicato).toUpperCase())}</span><p class="grande riga verde" data-in="0.2" style="font-size:${dimCorto}px">${esc(schermo)}</p>` },
   ...corto.slice(1).map((c, i) => ({ min: 3.4, voce: c,
     corpo: `<p class="medio riga" data-in="0">${esc(sezioni[i]?.titolo || 'Key fact')}</p><p class="piccolo riga" data-in="0.3" style="color:var(--ink)">${esc(corta(c, 24))}</p>` })),
-  { min: 3.0, voce: 'Watch the full story on our channel.',
+  { min: 3.0, voce: GUIDA ? 'Watch the full guide on our channel.' : 'Watch the full story on our channel.',
     corpo: `<p class="medio riga" data-in="0.1">Full story on <span class="verde">our channel</span></p><p class="piccolo riga" data-in="0.4">Sources: ${esc(fonti.join(' · '))}</p>` },
   { min: 2.6, classe: 'fine', voce: 'Find it all on FreeLLMArena. Link in bio.',
     corpo: `<span class="segno riga" data-in="0"><i style="height:60px"></i><i style="height:96px"></i><i style="height:76px"></i></span><p class="url riga" data-in="0.2">freellmarena.com</p><span class="bio riga" data-in="0.45">Link in bio ↑</span>` },
@@ -123,11 +126,11 @@ fs.writeFileSync(path.join(OUT, 'scena-notizia-corto.html'), `<!doctype html><ht
 <div class="tela">${marchioV}${breve.html.join('\n')}<div class="sotto"><p></p></div><div class="avanza"><i></i></div></div>
 <script>let DURATA = ${breve.t};${MOTORE};render(0)</script></body></html>`);
 const infoC = {
-  nome: nome.replace(/^notizia-/, 'breve-'), titolo: `${corta(n.titolo, 12).replace(/…$/, '')} #Shorts`.slice(0, 100), notizia: n.nome,
+  nome: GUIDA ? `breve-${nome}` : nome.replace(/^notizia-/, 'breve-'), titolo: `${corta(n.titolo, 12).replace(/…$/, '')} #Shorts`.slice(0, 100), notizia: n.nome,
   // lo Short rimanda al video lungo (Marco, 23/10/2026): «lungo» per il «Video correlato» di YouTube, e il link nella descrizione
   lungo: `video-${nome}`,
   descrizione: `${semplice(n.descr)}\nFull story: ${url}\nSources: ${fonti.join(', ')}`,
-  tag: ['AI news', 'Shorts', ...fonti.slice(0, 2)],
+  tag: [GUIDA ? 'local LLM' : 'AI news', 'Shorts', ...fonti.slice(0, 2)],
   condividi: `${n.titolo} ${url}`,
   lingua: 'en', copertina: 0,
   scene: sceneC.map((s) => ({ min: s.min, voce: s.voce })),
