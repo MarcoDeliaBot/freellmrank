@@ -22,6 +22,18 @@
  },
  "modelli": [
   {
+   "repo": "microsoft/TRELLIS.2-4B",
+   "nome": "TRELLIS.2",
+   "lab": "Microsoft",
+   "da": "Image",
+   "licenza": "mit",
+   "demo": "microsoft/TRELLIS.2",
+   "download": 2408591,
+   "like": 1393,
+   "creato": "2025-12-01",
+   "b": null
+  },
+  {
    "repo": "microsoft/TRELLIS-image-large",
    "nome": "TRELLIS (image)",
    "lab": "Microsoft",
@@ -29,20 +41,8 @@
    "licenza": "mit",
    "demo": "microsoft/TRELLIS",
    "download": 2357340,
-   "like": 712,
+   "like": 713,
    "creato": "2024-12-02",
-   "b": null
-  },
-  {
-   "repo": "microsoft/TRELLIS.2-4B",
-   "nome": "TRELLIS.2",
-   "lab": "Microsoft",
-   "da": "Image",
-   "licenza": "mit",
-   "demo": "microsoft/TRELLIS.2",
-   "download": 2355366,
-   "like": 1391,
-   "creato": "2025-12-01",
    "b": null
   },
   {
@@ -76,8 +76,8 @@
    "da": "Image",
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2.1",
-   "download": 76799,
-   "like": 1308,
+   "download": 78978,
+   "like": 1309,
    "creato": "2025-06-13",
    "b": null
   },
@@ -89,7 +89,7 @@
    "licenza": "stability",
    "demo": "stabilityai/stable-fast-3d",
    "download": 55721,
-   "like": 1327,
+   "like": 1330,
    "creato": "2024-07-17",
    "b": 1
   },
@@ -100,7 +100,7 @@
    "da": "Image",
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2mini-Turbo",
-   "download": 45369,
+   "download": 47354,
    "like": 145,
    "creato": "2025-03-12",
    "b": null
@@ -124,7 +124,7 @@
    "da": "Several photos",
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2mv",
-   "download": 16883,
+   "download": 17326,
    "like": 435,
    "creato": "2025-03-12",
    "b": null
@@ -136,7 +136,7 @@
    "da": "Text",
    "licenza": "mit",
    "demo": null,
-   "download": 12911,
+   "download": 12936,
    "like": 87,
    "creato": "2025-03-24",
    "b": null
@@ -160,7 +160,7 @@
    "da": "Image",
    "licenza": "mit",
    "demo": "VAST-AI/TripoSG",
-   "download": 8280,
+   "download": 8629,
    "like": 152,
    "creato": "2025-03-24",
    "b": 1.4
@@ -173,7 +173,7 @@
    "licenza": "stability",
    "demo": "stabilityai/stable-point-aware-3d",
    "download": 6457,
-   "like": 429,
+   "like": 430,
    "creato": "2024-12-28",
    "b": 2
   }
