@@ -80,7 +80,18 @@ export async function monta(piano, dir) {
   const g = gruppi(tutte);
   fs.writeFileSync(d('compositions/captions.html'), composizione(g, totale, formato));
   fs.writeFileSync(d('video.srt'), srt(g));
-  fs.writeFileSync(d('index.html'), indice(scene, totale, F));
+  // musica di sottofondo (24/10/2026 sera, Marco: rimetterla): generata qui da musica.py, più presente negli Short,
+  // bassa nei video lunghi; piano.musica = 'calma' | 'vivace' | 'nessuna'. Se Python o numpy mancano, video senza musica
+  const stile = piano.musica || (formato === 'verticale' ? 'vivace' : 'calma');
+  let musica = false;
+  if (stile !== 'nessuna') {
+    fs.writeFileSync(d('lavoro/musica.json'), JSON.stringify({ durata: totale, stile, livello: formato === 'verticale' ? 'presente' : 'basso',
+      voce: scene.map((sc) => [sc.inizio, sc.inizio + sc.durVoce]), scene: scene.map((sc) => sc.inizio) }));
+    const m = spawnSync(process.env.HYPERFRAMES_PYTHON || 'python', [path.join(QUI, 'musica.py'), d('lavoro/musica.json'), d('assets/musica.wav')], { encoding: 'utf8', timeout: 300000 });
+    musica = m.status === 0 && fs.existsSync(d('assets/musica.wav'));
+    console.log(musica ? m.stdout.trim() : `Musica non creata (video senza musica): ${(m.stderr || m.error?.message || '').slice(-400)}`);
+  }
+  fs.writeFileSync(d('index.html'), indice(scene, totale, F, musica));
   fs.writeFileSync(d('tempi.json'), JSON.stringify({ totale, scene: scene.map(({ n, stampo, inizio: a, durata, testo }) => ({ n, stampo, inizio: a, durata, testo })) }, null, 1));
 
   // 4. controllo e montaggio
@@ -98,10 +109,12 @@ export async function monta(piano, dir) {
   return { totale, scene: scene.length, mancate };
 }
 
-function indice(scene, totale, { W, H }) {
+function indice(scene, totale, { W, H }, musica = false) {
   const pezzi = scene.map((sc) => `
       <div id="el-${sc.id}" class="scene" data-composition-id="${sc.id}" data-composition-src="${sc.file}" data-start="${sc.inizio}" data-duration="${sc.durata}" data-track-index="1"></div>
-      <audio id="el-${sc.id}-voce" src="${sc.wav}" data-start="${sc.inizio}" data-duration="${sc.durVoce.toFixed(3)}" data-track-index="10" data-volume="1"></audio>`).join('');
+      <audio id="el-${sc.id}-voce" src="${sc.wav}" data-start="${sc.inizio}" data-duration="${sc.durVoce.toFixed(3)}" data-track-index="10" data-volume="1"></audio>`).join('')
+    + (musica ? `
+      <audio id="el-musica" src="assets/musica.wav" data-start="0" data-duration="${totale}" data-track-index="11" data-volume="1"></audio>` : '');
   return `<!doctype html>
 <html lang="en">
   <head>

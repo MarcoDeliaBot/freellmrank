@@ -135,5 +135,5 @@ const piano = [
   ...(casa.length >= 2 ? [{ stampo: 'barre', etichetta: 'At home', voce: voceDi('What can you run at home'), dati: { titolo: 'What runs at home', sotto: '4-bit · 8K context · our simulator', voci: casa.map((x) => ({ nome: corto(`${x.s.nome.replace(/ \d+ GB$/, '')}${x.ram ? ` + ${x.ram} GB` : ''}`, 28), valore: Number(fmtVel(x.r.vel)), testo: `${fmtVel(x.r.vel)} tok/s`, nota: corto(x.m.nome, 34) })) } }] : []),
   { stampo: 'chiusura', etichetta: 'FreeLLMArena' },
 ].filter((s) => s.stampo === 'chiusura' || s.voce);
-fs.writeFileSync(path.join(OUT, 'piano-lungo.json'), JSON.stringify({ formato: 'orizzontale', copertina: 1, scene: piano }, null, 1));
+fs.writeFileSync(path.join(OUT, 'piano-lungo.json'), JSON.stringify({ formato: 'orizzontale', musica: 'vivace', copertina: 1, scene: piano }, null, 1));
 console.log('ok', { scene: scene.length, min: t, mosse: mosse.map((x) => `${x.m.nome} ${x.d}`), entrati: entrati.map((m) => m.nome), nuovi: nuoviSett.map((m) => m.nome), casa: casa.map((x) => `${x.s.nome}: ${x.m.nome} ${fmtVel(x.r.vel)}`) });

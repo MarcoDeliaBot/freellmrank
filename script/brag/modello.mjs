@@ -173,5 +173,5 @@ const piano = [
   { stampo: 'punti', etichetta: 'Use it free', voce: scene.at(-2).voce, dati: { titolo: 'Where to use it for free', punti: [api ? 'Free API on OpenRouter' : 'No free API yet', 'Open weights on Hugging Face', voto ? `Arena: ${voto.x.punti} points` : 'Arena: not ranked yet'] } },
   { stampo: 'chiusura', etichetta: 'FreeLLMArena' },
 ];
-fs.writeFileSync(path.join(OUT, 'piano-modello.json'), JSON.stringify({ formato: 'orizzontale', copertina: 0, scene: piano }, null, 1));
+fs.writeFileSync(path.join(OUT, 'piano-modello.json'), JSON.stringify({ formato: 'orizzontale', musica: 'vivace', copertina: 0, scene: piano }, null, 1));
 console.log('ok', { modello: m.nome, parti: sezioni.length, minimo: t, tolte: tolte.length, casa: casa.map((x) => `${x.s.nome} ${fmtVel(x.r.vel)}`) });
