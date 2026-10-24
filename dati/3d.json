@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-10-23",
+ "aggiornato": "2026-10-24",
  "licenze": {
   "mit": {
    "nome": "MIT",
@@ -22,6 +22,18 @@
  },
  "modelli": [
   {
+   "repo": "microsoft/TRELLIS-image-large",
+   "nome": "TRELLIS (image)",
+   "lab": "Microsoft",
+   "da": "Image",
+   "licenza": "mit",
+   "demo": "microsoft/TRELLIS",
+   "download": 2357340,
+   "like": 712,
+   "creato": "2024-12-02",
+   "b": null
+  },
+  {
    "repo": "microsoft/TRELLIS.2-4B",
    "nome": "TRELLIS.2",
    "lab": "Microsoft",
@@ -34,25 +46,13 @@
    "b": null
   },
   {
-   "repo": "microsoft/TRELLIS-image-large",
-   "nome": "TRELLIS (image)",
-   "lab": "Microsoft",
-   "da": "Image",
-   "licenza": "mit",
-   "demo": "microsoft/TRELLIS",
-   "download": 2273891,
-   "like": 711,
-   "creato": "2024-12-02",
-   "b": null
-  },
-  {
    "repo": "stabilityai/TripoSR",
    "nome": "TripoSR",
    "lab": "Stability AI and Tripo",
    "da": "Image",
    "licenza": "mit",
    "demo": "stabilityai/TripoSR",
-   "download": 246528,
+   "download": 248725,
    "like": 680,
    "creato": "2024-02-29",
    "b": null
@@ -64,7 +64,7 @@
    "da": "Image",
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2",
-   "download": 153754,
+   "download": 159035,
    "like": 1856,
    "creato": "2025-01-20",
    "b": null
@@ -88,8 +88,8 @@
    "da": "Image",
    "licenza": "stability",
    "demo": "stabilityai/stable-fast-3d",
-   "download": 55046,
-   "like": 1325,
+   "download": 55721,
+   "like": 1327,
    "creato": "2024-07-17",
    "b": 1
   },
@@ -112,7 +112,7 @@
    "da": "Image",
    "licenza": "apache",
    "demo": "TencentARC/InstantMesh",
-   "download": 21030,
+   "download": 21071,
    "like": 344,
    "creato": "2024-04-10",
    "b": null
@@ -148,7 +148,7 @@
    "da": "Text or image",
    "licenza": "mit",
    "demo": null,
-   "download": 8745,
+   "download": 8775,
    "like": 296,
    "creato": "2023-07-04",
    "b": null
@@ -172,8 +172,8 @@
    "da": "Image",
    "licenza": "stability",
    "demo": "stabilityai/stable-point-aware-3d",
-   "download": 6309,
-   "like": 428,
+   "download": 6457,
+   "like": 429,
    "creato": "2024-12-28",
    "b": 2
   }
