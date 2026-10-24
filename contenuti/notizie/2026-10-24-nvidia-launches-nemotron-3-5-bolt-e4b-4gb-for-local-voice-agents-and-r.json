@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-24-nvidia-launches-nemotron-3-5-bolt-e4b-4gb-for-local-voice-agents-and-r",
+ "titolo": "NVIDIA launches Nemotron 3.5 Bolt E4B 4GB for local voice agents and robots",
+ "descr": "NVIDIA announced the Nemotron 3.5 Bolt E4B 4GB model on 24 October 2026.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "NVIDIA announced the Nemotron 3.5 Bolt E4B 4GB model on 24 October 2026.",
+  "The model is a post‑trained version of Gemma 4 E4B and is open for use.",
+  "It is designed to run on about 4 GB of VRAM, targeting NVIDIA RTX graphics cards and Jetson platforms.",
+  "Nemotron 3.5 Bolt E4B is positioned for local voice assistants, game characters and robotic applications.",
+  "The release adds another small, locally runnable LLM to the open‑source ecosystem."
+ ],
+ "perche": [
+  "The model lets developers embed conversational AI on edge devices without cloud reliance. For users seeking free or locally hosted models, it offers a lightweight alternative to larger commercial offerings."
+ ],
+ "pubblicato": "2026-10-24",
+ "titoloFonte": "NVIDIA Releases Nemotron 3.5 Bolt E4B 4GB: An Open Small Language Model for Local Voice Agents, Game Characters and Robots",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/23/nvidia-nemotron-3-5-bolt-e4b-4gb/",
+   "titolo": "NVIDIA Releases Nemotron 3.5 Bolt E4B 4GB: An Open Small Language Model for Local Voice Agents, Game Characters and Robots",
+   "ufficiale": false,
+   "data": "2026-10-24"
+  }
+ ],
+ "frasiTolte": 1
+}
