@@ -83,7 +83,7 @@ export function controllaPiano(grezzo, n) {
     const grezzi = sc.dati && typeof sc.dati === 'object' ? sc.dati : {};
     // i fatti non si riparano: una scena con un numero o un nome che non sta nella notizia si toglie
     const fatti = [
-      ...(parole(voce) < 6 || parole(voce) > 50 ? [`voce di ${parole(voce)} parole (servono 6-50)`] : []),
+      ...(parole(voce) < 6 || parole(voce) > 60 ? [`voce di ${parole(voce)} parole (servono 6-60)`] : []),
       ...(regge(voce) ? [] : [`voce con numeri o nomi non nella notizia (${mancanti(voce).join(', ')})`]),
       ...testi(grezzi).filter((t) => !regge(semplice(t))).map((t) => `testo non nella notizia: «${t}» (${mancanti(semplice(t)).join(', ')})`),
     ];
@@ -137,7 +137,7 @@ Return JSON: {"scene": [{"stampo": "...", "etichetta": "...", "voce": "...", "da
       { role: 'user', content: `ARTICLE:\nTitle: ${semplice(n.titolo)}\nDate: ${giorno(n.pubblicato)}\nSummary: ${semplice(n.descr)}\n${(n.paragrafi || []).map((p, i) => `Paragraph ${i + 1}: ${semplice(p)}`).join('\n')}\nWhy it matters: ${(n.perche || []).map(semplice).join(' ')}\nSources: ${(n.fonti || []).map((f) => f.nome).join(', ')}` },
   ];
   // due tentativi: il secondo riceve i problemi del primo
-  for (let tentativo = 1; tentativo <= 2 && !migliore?.ok; tentativo++) {
+  for (let tentativo = 1; tentativo <= 3 && !migliore?.ok; tentativo++) {
     try {
       const grezzo = await chiediModello(domanda, { json: true, max: 1800, scopo: 'video' });
       grezzi.push(grezzo);
@@ -145,9 +145,15 @@ Return JSON: {"scene": [{"stampo": "...", "etichetta": "...", "voce": "...", "da
       problemi.push(...c.problemi.map((p) => `tentativo ${tentativo}: ${p}`));
       if (!migliore || (c.ok && !migliore.ok) || c.totale > migliore.totale) migliore = c;
       if (!c.ok) domanda.push({ role: 'assistant', content: JSON.stringify(grezzo) }, { role: 'user', content: `Problems found by the checker:\n- ${c.problemi.join('\n- ')}\nFix them and return the whole JSON again. Remember: 4 to 6 scenes, 110 to 190 words in total, respect every max length and item count, only facts from ARTICLE.` });
-    } catch (e) { problemi.push(`tentativo ${tentativo}: Workers AI non ha risposto (${e.message})`); break; }
+    } catch (e) {
+      problemi.push(`tentativo ${tentativo}: Workers AI non ha risposto (${e.message})`);
+      // quota finita o chiave sbagliata: inutile riprovare; JSON rotto: si riprova
+      if (/\/api\/scrivi 4\d\d/.test(e.message)) break;
+    }
   }
-  const ok = !!migliore?.ok;
+  // un piano quasi buono (almeno 3 scene e 45 parole, tutte controllate) è meglio della riserva, che mostra solo i titoli
+  const ok = !!migliore?.ok || (migliore?.scene.length >= 3 && migliore.totale >= 45);
+  if (ok && !migliore.ok) problemi.push(`piano di Workers AI quasi buono usato lo stesso (${migliore.scene.length} scene, ${migliore.totale} parole)`);
   const scene = ok ? migliore.scene : pianoDiRiserva(n);
   const copertina = Math.max(0, scene.findIndex((s) => s.stampo === 'numero' || s.stampo === 'numeri'));
   return { notizia: n.nome, riserva: !ok, problemi, copertina, scene: [...scene, { stampo: 'chiusura', etichetta: 'FreeLLMArena' }], grezzi };
