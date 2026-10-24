@@ -25,14 +25,14 @@ export function misura(testo, { larghezza, max, min = 28, fattore = 0.5, righe =
 // la parola della voce che fa comparire un pezzo: quella scelta dal piano (dati.quando[chiave]) o, se manca,
 // la parola più lunga del testo del pezzo (le parole corte come «the» si trovano ovunque)
 const VUOTE = new Set(['the', 'and', 'for', 'with', 'from', 'that', 'this', 'into', 'your', 'are', 'its', 'per']);
+const candidate = (testo) => String(testo ?? '').split(/[\s/·,]+/).map((w) => w.replace(/[^\w.%-]/g, '').replace(/\.$/, '')).filter((w) => w.length > 1 && !VUOTE.has(w.toLowerCase())).sort((a, b) => b.length - a.length);
 export function attacco(dati, chiave, testo) {
-  const scelta = dati?.quando?.[chiave];
-  if (scelta) return scelta;
-  const parole = String(testo ?? '').split(/[\s/·,]+/).map((w) => w.replace(/[^\w.%-]/g, '')).filter((w) => w && !VUOTE.has(w.toLowerCase()));
-  return parole.sort((a, b) => b.length - a.length)[0] || '';
+  return dati?.quando?.[chiave] || candidate(testo)[0] || '';
 }
-// l'elenco per parole(dati): solo i pezzi che ci sono
-export const attacchi = (dati, coppie) => coppie.filter(([, testo]) => testo != null && String(testo).trim()).map(([chiave, testo]) => ({ chiave, parola: attacco(dati, chiave, testo) })).filter((x) => x.parola);
+// l'elenco per parole(dati): solo i pezzi che ci sono. «altre»: le altre parole del pezzo, che monta.mjs prova
+// se la voce non dice la prima (il piano scrive «Largest model…» e la voce dice «The biggest model…»)
+export const attacchi = (dati, coppie) => coppie.filter(([, testo]) => testo != null && String(testo).trim())
+  .map(([chiave, testo]) => ({ chiave, parola: attacco(dati, chiave, testo), altre: candidate(testo) })).filter((x) => x.parola);
 
 // secondi a 3 decimali, per i tempi scritti nel codice della scena
 export const s3 = (x) => Math.round(Math.max(0, x) * 1000) / 1000;

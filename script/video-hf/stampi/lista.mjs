@@ -70,7 +70,7 @@ export default {
     const conPannello = d.blocchi.length > 0;
     const occhiello = !!d.pannello && !conPannello;
     const occF = occhiello ? misura(d.pannello, { larghezza: 1100, max: 40, min: 32, fattore: 0.6 }) : 0;
-    const occH = occhiello ? Math.round(occF * 1.2) + 22 : 0;
+    const occH = occhiello ? Math.round(occF * 1.2) + 14 : 0;
 
     // tempi: ogni pezzo quando la voce lo nomina; riserve distribuite sulla durata, nell'ordine della voce
     const ordine = [
@@ -94,17 +94,19 @@ export default {
       g.chk = 56; g.rowMax = 100; g.rowFMax = 64;
     }
     const nA = d.alternative.length;
-    const optH = nA ? 140 : 0, altH = nA ? 30 + optH : 0;
+    // le alternative: senza note («nota» vuota = assente) il riquadro è basso e lascia spazio alle righe
+    const conNote = d.alternative.some((a) => a.nota);
+    const orW = 54, gapA = 22;
+    const optW = nA === 2 ? Math.floor((g.colW - orW - 2 * gapA) / 2) : Math.min(g.colW, conPannello ? 420 : 520);
+    const optF = Math.min(...d.alternative.map((a) => misura(a.testo, { larghezza: optW - 52, max: 40, fattore: 0.6 })), 40);
+    const optH = nA ? (conNote ? 140 : optF + 52) : 0, altH = nA ? 30 + optH : 0;
     const testa = occH + g.titF + 26 + 26; // titolo, riga verde con i suoi margini
     const disponibile = (conPannello ? FONDO - g.colY : FONDO - ALTO) - testa - altH;
     const rowH = Math.min(g.rowMax, Math.floor(disponibile / d.righe.length));
     const lunga = d.righe.reduce((a, r) => (r.length > a.length ? r : a), '');
     const chk = Math.min(g.chk, rowH - 18);
     const gapR = Math.round(chk * 0.6);
-    const rowF = Math.max(28, Math.min(misura(lunga, { larghezza: g.colW - chk - gapR - 8, max: g.rowFMax, fattore: 0.6 }), Math.floor(rowH * 0.64)));
-    const orW = 54, gapA = 22;
-    const optW = nA === 2 ? Math.floor((g.colW - orW - 2 * gapA) / 2) : Math.min(g.colW, conPannello ? 420 : 520);
-    const optF = Math.min(...d.alternative.map((a) => misura(a.testo, { larghezza: optW - 52, max: 40, fattore: 0.6 })), 40);
+    const rowF = Math.max(28, Math.min(misura(lunga, { larghezza: g.colW - chk - gapR - 8, max: g.rowFMax, fattore: 0.6 }), Math.floor(rowH * 0.72)));
     const altoTot = testa + rowH * d.righe.length + altH;
     if (!conPannello) {
       // colonna centrata: larga quanto serve, mai meno di 760
@@ -149,7 +151,7 @@ export default {
     ${righeB ? `.${px}btipo { left: 48px; top: 50%; margin-top: -14px; } .${px}bnome { left: ${48 + tipoW}px; top: 50%; margin-top: -${Math.round(nomeF / 2)}px; }`
     : `.${px}btipo { left: 48px; top: 42px; } .${px}bnome { left: 46px; bottom: 46px; }`}
     #${px}colonna { position: absolute; left: ${g.colX}px; top: ${g.colY}px; width: ${g.colW}px; }
-    #${px}occhiello { font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: ${occF}px; line-height: 1.2; margin-bottom: 22px; white-space: pre; color: ${C.crema2}; }
+    #${px}occhiello { font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: ${occF}px; line-height: 1.2; margin-bottom: 14px; white-space: pre; color: ${C.crema2}; }
     .${px}occ { display: none; }
     #${px}titolo { font-weight: 500; font-size: ${g.titF}px; line-height: 1; letter-spacing: -0.02em; color: ${C.crema}; white-space: nowrap; opacity: 0; }
     #${px}trega { margin-top: 24px; height: 2px; background: ${C.accento}; transform-origin: 0 50%; }
@@ -162,7 +164,7 @@ export default {
     .${px}rc { opacity: 0; }
     .${px}alt { margin-top: 30px; display: flex; align-items: center; gap: ${gapA}px; }
     .${px}opz { width: ${optW}px; height: ${optH}px; border: 2px solid ${C.accento}; border-radius: 6px; padding: 24px 26px; box-sizing: border-box;
-      display: flex; flex-direction: column; justify-content: space-between; opacity: 0; }
+      display: flex; flex-direction: column; justify-content: ${conNote ? 'space-between' : 'center'}; opacity: 0; }
     .${px}onome { font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: ${optF}px; line-height: 1; white-space: nowrap; color: ${C.crema}; }
     .${px}onota { font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; color: ${C.accento}; }
     #${px}or { width: ${orW}px; text-align: center; font-weight: 500; font-size: 44px; color: ${C.crema2}; opacity: 0; }`;
@@ -183,7 +185,7 @@ export default {
             <svg class="${px}spunta" viewBox="0 0 46 46"><rect x="1" y="1" width="44" height="44" rx="6" /><path id="${px}k${i + 1}" pathLength="1" d="M 11 24 L 20 33 L 36 13" /></svg>
             <span class="${px}rtesto">${caratteri(r, null, `rc ${px}rc${i + 1}`)}</span>
           </div>`).join('');
-    const alt = d.alternative.map((a, i) => `${i ? `<div id="${px}or">or</div>` : ''}<div id="${px}o${i + 1}" class="${px}opz"><div class="${px}onome">${esc(a.testo)}</div>${a.nota ? `<div class="${px}onota">${esc(a.nota)}</div>` : '<div></div>'}</div>`).join('');
+    const alt = d.alternative.map((a, i) => `${i ? `<div id="${px}or">or</div>` : ''}<div id="${px}o${i + 1}" class="${px}opz"><div class="${px}onome">${esc(a.testo)}</div>${a.nota ? `<div class="${px}onota">${esc(a.nota)}</div>` : conNote ? '<div></div>' : ''}</div>`).join('');
     const corpo = `${pannello}
       <div id="${px}colonna">
         ${occhiello ? `<div id="${px}occhiello">${caratteri(d.pannello, taglio, 'occ')}</div>` : ''}

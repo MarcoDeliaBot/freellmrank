@@ -41,9 +41,11 @@ export async function monta(piano, dir) {
     const st = STAMPI[sc.stampo];
     const istanti = {};
     let dopo = 0;
-    for (const { chiave, parola } of st.parole(sc.dati || {})) {
-      // prima dopo il pezzo precedente; se la voce la dice prima (ordine diverso dallo schermo), ovunque nella scena
-      const t = quando(sc.parole, parola, dopo) ?? quando(sc.parole, parola, 0);
+    for (const { chiave, parola, altre = [] } of st.parole(sc.dati || {})) {
+      // prima dopo il pezzo precedente; se la voce la dice prima (ordine diverso dallo schermo), ovunque nella scena;
+      // poi le altre parole del pezzo, ma solo dopo il pezzo precedente (una parola comune detta prima sarebbe un falso aggancio)
+      let t = quando(sc.parole, parola, dopo) ?? quando(sc.parole, parola, 0);
+      for (const p of altre.filter((x) => x !== parola)) { if (t != null) break; t = quando(sc.parole, p, dopo); }
       if (t == null) { mancate.push(`${sc.n} ${sc.stampo}: «${parola}»`); continue; }
       istanti[chiave] = Math.max(0, t - ANTICIPO);
       dopo = t;
