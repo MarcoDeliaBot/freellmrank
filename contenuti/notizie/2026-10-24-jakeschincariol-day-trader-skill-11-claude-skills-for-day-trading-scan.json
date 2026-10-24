@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-24-jakeschincariol-day-trader-skill-11-claude-skills-for-day-trading-scan",
+ "titolo": "Jakeschincariol/day-trader-skill: 11 Claude skills for day trading: scan thousands of charts, track breaking n",
+ "descr": "The open‑source repo provides Claude plugins that scan charts, monitor news, time entries, and run 10,000 trade simulations before risking money.",
+ "tema": "Software",
+ "paragrafi": [
+  "Jakeschincariol released the day‑trader‑skill repository on GitHub, adding eleven Claude skills aimed at day‑trading workflows.",
+  "The tools are plain Python scripts that require Python 3.8+ and no additional packages, pulling data from Yahoo Finance, Nasdaq Trader, SEC EDGAR, and the House Clerk.",
+  "Functions include a chart scanner, news monitor, entry timer, exit planner, risk manager, budget manager, and a time‑machine that replays a trade 10,000 times using recent candle data and historic setups.",
+  "All actions default to paper trading; no order is placed without explicit user confirmation. The repo is MIT‑licensed and free, with installation via Claude code or as a plugin.",
+  "The time‑machine reports odds such as a 29.4 % chance of hitting the target and a 25.5 % chance of hitting the stop for a sample Tesla trade on October 19 2026."
+ ],
+ "perche": [
+  "For AI users seeking open tools, the repo demonstrates how large‑language‑model extensions can combine public data sources with custom logic, supporting both hobbyists and developers who prefer free or locally run solutions."
+ ],
+ "pubblicato": "2026-10-24",
+ "titoloFonte": "Jakeschincariol/day-trader-skill: 11 Claude skills for day trading: scan thousands of charts, track breaking news, time every entry and exit, and replay every outcome before you risk a dollar.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/Jakeschincariol/day-trader-skill",
+   "titolo": "Jakeschincariol/day-trader-skill: 11 Claude skills for day trading: scan thousands of charts, track breaking news, time every entry and exit, and replay every outcome before you risk a dollar.",
+   "ufficiale": false,
+   "data": "2026-10-20"
+  }
+ ],
+ "frasiTolte": 2
+}
