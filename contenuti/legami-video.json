@@ -26,5 +26,13 @@
  "news-2026-10-23-openai-adds-gpt-6-astra-sol-and-luna-to-google-cloud-model-garden": {
   "lungo": "notizia-openai-adds-gpt-6-astra-sol-and-luna-to-google-cloud-mod",
   "breve": "breve-openai-adds-gpt-6-astra-sol-and-luna-to-google-cloud-mod"
+ },
+ "news-2026-10-24-google-launches-early-access-to-gemini-4-carbon-a-slower-but-stronger-": {
+  "lungo": "notizia-google-launches-early-access-to-gemini-4-carbon-a-slower",
+  "breve": "breve-google-launches-early-access-to-gemini-4-carbon-a-slower"
+ },
+ "news-2026-10-24-tencent-releases-wevisone-vl-a-unified-visual-language-model-for-objec": {
+  "lungo": "notizia-tencent-releases-wevisone-vl-a-unified-visual-language-m",
+  "breve": "breve-tencent-releases-wevisone-vl-a-unified-visual-language-m"
  }
 }
