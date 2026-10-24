@@ -11,6 +11,14 @@ export const C = {
 export const W = 1920;
 export const H = 1080;
 export const FONDO_SOTTOTITOLI = 860; // sotto questa riga ci sono i sottotitoli: niente contenuto
+// i due formati (24/10/2026 sera, Marco: «li vorrei tutti così», anche gli Short). Verticale = Short di YouTube: in basso
+// YouTube copre lo schermo con titolo, canale e pulsanti, quindi contenuto fra y 150 e 1180, sottotitoli 1220-1420,
+// sotto solo il fondo. margine: distanza dai bordi destro e sinistro
+export const FORMATI = {
+  orizzontale: { W: 1920, H: 1080, fondo: 860, capTop: 900, capH: 180, margine: 96 },
+  verticale: { W: 1080, H: 1920, fondo: 1180, capTop: 1220, capH: 200, margine: 72 },
+};
+export const formatoDi = (nome) => FORMATI[nome] || FORMATI.orizzontale;
 
 export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
@@ -43,8 +51,10 @@ const FONT = `@font-face { font-family: "Source Serif 4"; src: url("assets/fonts
 // la scena completa: fondo verde con griglia, barra in alto, il corpo dello stampo e la sua animazione.
 // id: identificativo della composizione (es. "s3-numeri"); px: prefisso di classi e id dello stampo (es. "s3-");
 // css, corpo: dello stampo, con classi e id che iniziano con px; anima: righe JS che usano tl, q(sel), qa(sel), DUR
-export function scena({ id, px, durata, etichetta = '', numero = '', css = '', corpo = '', anima = '', ultima = false }) {
+export function scena({ id, px, durata, etichetta = '', numero = '', css = '', corpo = '', anima = '', ultima = false, formato = 'orizzontale' }) {
   const D = s3(durata);
+  const { W, H, margine: M } = formatoDi(formato);
+  const alto = formato === 'verticale' ? 72 : 56;
   return `<template>
   <style>
     ${FONT}
@@ -54,9 +64,9 @@ export function scena({ id, px, durata, etichetta = '', numero = '', css = '', c
       background-size: 120px 120px; background-position: center center; }
     #${px}velo { position: absolute; inset: 0; background: ${C.fondo}; opacity: 0.55; }
     #${px}palco { position: absolute; inset: 0; }
-    .${px}barra { position: absolute; left: 96px; right: 96px; top: 56px; display: flex; justify-content: space-between; align-items: center;
+    .${px}barra { position: absolute; left: ${M}px; right: ${M}px; top: ${alto}px; display: flex; justify-content: space-between; align-items: center;
       font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.18em; text-transform: uppercase; color: ${C.accento}; }
-    .${px}riga-barra { position: absolute; left: 96px; right: 96px; top: 108px; height: 2px; background: ${C.accento}; transform-origin: left center; }
+    .${px}riga-barra { position: absolute; left: ${M}px; right: ${M}px; top: ${alto + 52}px; height: 2px; background: ${C.accento}; transform-origin: left center; }
     ${css}
   </style>
   <div id="root" data-composition-id="${id}" data-width="${W}" data-height="${H}" data-duration="${D}">

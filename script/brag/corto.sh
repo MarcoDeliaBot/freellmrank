@@ -10,7 +10,7 @@ nome=$(python -c "import json; print(json.load(open('video/brag/info-nuovo.json'
 lungo="modello-${nome#nuovo-}"
 if gh release view "video-$nome" >/dev/null 2>&1; then echo "Short già fatto: $nome"; exit 0; fi
 if ! gh release view "video-$lungo" >/dev/null 2>&1; then echo "Manca il video lungo $lungo: Short non fatto"; exit 0; fi
-python script/brag/registra.py video nuovo || { echo "Registrazione non riuscita per $nome"; exit 0; }
+bash script/video-hf/registra.sh nuovo || { echo "Registrazione non riuscita per $nome"; exit 0; }
 d="video/brag/brag-output-nuovo"
 cp "$d/brag.mp4" "$d/$nome.mp4"; cp "$d/brag.jpg" "$d/$nome.jpg"; cp "$d/brag.srt" "$d/$nome.srt"; cp video/brag/info-nuovo.json "$d/$nome.json"
 python script/brag/collega.py "$d/$nome.json" "$lungo"

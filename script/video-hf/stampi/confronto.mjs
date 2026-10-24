@@ -2,7 +2,7 @@
 // e una striscia di conclusione in basso con le parole in evidenza. Dal quadro 5 della prova DeepInfer (24/10/2026).
 // Con destra.chiuso la scheda destra è scura, col lucchetto che si disegna e le voci spente e barrate;
 // senza, le due schede sono pari (A contro B) con un «vs» fra le due.
-import { C, scena, s3, esc, misura, attacchi, attacco } from '../base.mjs';
+import { C, scena, s3, esc, misura, attacchi, attacco, formatoDi } from '../base.mjs';
 
 const MAX_TITOLO = 16, MAX_VOCE = 28, MAX_CONCLUSIONE = 70;
 
@@ -20,6 +20,43 @@ const titolo = (dati, chiave, testo) => {
   return parola ? [{ chiave, parola }] : [];
 };
 const voci = (lato) => (Array.isArray(lato?.voci) ? lato.voci : []);
+
+// verticale (Short 1080x1920): le due schede una sotto l'altra (sinistra sopra), la striscia sotto, tutto fra y 160 e 1180.
+// Regole aggiunte in coda al CSS orizzontale (stessi selettori, vincono perché dopo): l'orizzontale resta identico.
+function verticaleCss({ px, conc, vs, vd, sx, dx }) {
+  const { W, fondo, margine: M } = formatoDi('verticale');
+  // le schede inclinate sporgono di ~10 px per lato in prospettiva: più strette della striscia, per restare nei margini
+  const LARGA = W - 2 * M, CARTA = LARGA - 24, TOP = 170, GAP = 32;
+  // conclusione: una riga se ci sta, altrimenti due (mai sotto 40 px)
+  let fC = 0, hC = 0;
+  if (conc) {
+    const utile = LARGA - 80 - 40; // padding e margine per gli a capo
+    fC = misura(conc, { larghezza: utile, max: 52, min: 40, fattore: 0.52 });
+    let righe = 1;
+    if (conc.length * 0.52 * fC > utile) { righe = 2; fC = misura(conc, { larghezza: utile, righe: 2, max: 52, min: 40, fattore: 0.52 }); }
+    hC = Math.ceil(righe * 1.22 * fC + 56);
+  }
+  const fineSchede = conc ? fondo - 12 - hC - GAP : fondo - 12;
+  const ALTA = Math.floor((fineSchede - TOP - GAP) / 2);
+  const TESTA = 96;
+  const n = Math.max(vs.length, vd.length);
+  const lunga = [...vs, ...vd].reduce((a, b) => (b.length > a.length ? b : a), '');
+  const fVoce = Math.min(misura(lunga, { larghezza: CARTA - 88 - 40 - 24, max: 58, min: 40, fattore: 0.54 }), Math.floor((ALTA - TESTA - 40) / n / 1.3));
+  const titoloLungo = [sx.titolo, dx.titolo].reduce((a, b) => (String(b).length > String(a).length ? b : a), '');
+  const fTitolo = misura(titoloLungo, { larghezza: LARGA - 88 - 90, max: 64, min: 40, fattore: 0.55 });
+  return `
+    /* verticale */
+    #${px}palco3d { left: ${M + (LARGA - CARTA) / 2}px; top: ${TOP}px; width: ${CARTA}px; height: ${2 * ALTA + GAP}px; flex-direction: column; justify-content: space-between; }
+    .${px}card { width: ${CARTA}px; height: ${ALTA}px; }
+    #${px}card-sx, #${px}card-dx { transform-origin: center center; }
+    .${px}testa { height: ${TESTA}px; }
+    .${px}lista { top: ${TESTA}px; padding: 10px 0 18px; }
+    .${px}titolo { font-size: ${fTitolo}px; }
+    .${px}voce { font-size: ${fVoce}px; }
+    #${px}vs { left: auto; right: 110px; width: 84px; height: 84px; margin: -42px 0 0 0; z-index: 2; }
+    #${px}striscia { left: ${M}px; width: ${LARGA}px; top: ${fondo - 12 - hC}px; height: ${hC}px; padding: 0 40px; }
+    #${px}testo-c { font-size: ${fC}px; white-space: normal; line-height: 1.22; }`;
+}
 
 export default {
   nome: 'confronto',
@@ -70,7 +107,8 @@ export default {
       ...attacchi(dati, [['evidenza', ev]]),
     ].filter((x) => x.parola);
   },
-  html({ id, px, dati, durata, t, etichetta, numero }) {
+  html({ id, px, dati, durata, t, etichetta, numero, formato = 'orizzontale' }) {
+    const V = formato === 'verticale';
     const sx = dati.sinistra, dx = dati.destra;
     const chiuso = dx.chiuso === true;
     const vs = voci(sx).map((v) => String(v).trim()), vd = voci(dx).map((v) => String(v).trim());
@@ -155,7 +193,8 @@ export default {
       display: flex; align-items: center; background: ${C.scuro}; border: 2px solid ${C.pannello}; border-radius: 6px; overflow: hidden; opacity: 0; }
     #${px}testo-c { font-size: ${fCs}px; font-weight: 400; line-height: 1.2; color: ${C.crema}; white-space: nowrap; }
     .${px}accento { position: relative; display: inline-block; color: ${C.accento}; }
-    #${px}regola { position: absolute; left: 0; right: 0; bottom: -4px; height: 3px; background: ${C.accento}; transform-origin: left center; transform: scaleX(0); }`;
+    #${px}regola { position: absolute; left: 0; right: 0; bottom: -4px; height: 3px; background: ${C.accento}; transform-origin: left center; transform: scaleX(0); }`
+      + (V ? verticaleCss({ px, conc, vs, vd, sx, dx }) : '');
 
     const lista = (arr, lato, barra) => arr.map((v, i) => barra
       ? `<div class="${px}voce" id="${px}${lato}${i}"><span class="${px}punto" id="${px}${lato}${i}p"></span><span class="${px}barrabile"><span id="${px}${lato}${i}t">${esc(v)}</span><span class="${px}barra-voce" id="${px}${lato}${i}b"></span></span></div>`
@@ -184,10 +223,11 @@ export default {
       </div>
       ${conc ? `<div id="${px}striscia"><span id="${px}testo-c">${testoC}</span></div>` : ''}`;
 
-    const TILT = 7, OLTRE = 6;
+    // in verticale le schede sono larghe il doppio rispetto all'altezza dello schermo disponibile: inclinazione minore
+    const TILT = V ? 5 : 7, OLTRE = V ? 5 : 6, DA = V ? 420 : 360;
     const righe = [
-      `tl.fromTo(q("#${px}card-sx"), { x: -360, rotationY: ${TILT + OLTRE}, scale: 0.88, opacity: 0 }, { x: 0, rotationY: ${TILT}, scale: 1, opacity: 1, duration: 0.95, ease: "power3.out" }, ${s3(cardSx)});`,
-      `tl.fromTo(q("#${px}card-dx"), { x: 360, rotationY: ${-TILT - OLTRE}, scale: 0.88, opacity: 0 }, { x: 0, rotationY: ${-TILT}, scale: 1, opacity: 1, duration: 0.95, ease: "power3.out" }, ${s3(cardDx)});`,
+      `tl.fromTo(q("#${px}card-sx"), { x: -${DA}, rotationY: ${TILT + OLTRE}, scale: 0.88, opacity: 0 }, { x: 0, rotationY: ${TILT}, scale: 1, opacity: 1, duration: 0.95, ease: "power3.out" }, ${s3(cardSx)});`,
+      `tl.fromTo(q("#${px}card-dx"), { x: ${DA}, rotationY: ${-TILT - OLTRE}, scale: 0.88, opacity: 0 }, { x: 0, rotationY: ${-TILT}, scale: 1, opacity: 1, duration: 0.95, ease: "power3.out" }, ${s3(cardDx)});`,
       ...tSx.map((x, i) => `tl.fromTo(q("#${px}sx${i}"), { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" }, ${s3(x)});`),
       ...tDx.map((x, i) => `tl.fromTo(q("#${px}dx${i}"), { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" }, ${s3(x)});`),
     ];
@@ -212,6 +252,6 @@ export default {
       );
       if (ev) righe.push(`tl.fromTo(q("#${px}regola"), { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.out" }, ${s3(regola)});`);
     }
-    return scena({ id, px, durata, etichetta, numero, css, corpo, anima: righe.join('\n      ') });
+    return scena({ id, px, durata, etichetta, numero, css, corpo, anima: righe.join('\n      '), formato: V ? 'verticale' : 'orizzontale' });
   },
 };

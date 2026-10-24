@@ -1,12 +1,10 @@
 // Stampo «punti»: 2–4 punti chiave per le notizie senza numeri (la maggior parte). Titolo in alto a sinistra con la riga
 // d'accento che si disegna; i punti sono righe grandi numerate (01, 02… in un quadratino d'accento) che salgono una alla
 // volta quando la voce le nomina; all'arrivo di un punto nuovo i precedenti si attenuano (crema2) perché si legga quello.
-// Carattere dei punti deciso qui con misura() sul punto più lungo, poi ridotto finché tutto sta sopra la riga 860.
-import { C, scena, s3, esc, misura, attacchi, W, FONDO_SOTTOTITOLI } from '../base.mjs';
+// Carattere dei punti deciso qui con misura() sul punto più lungo, poi ridotto finché tutto sta sopra i sottotitoli
+// (y 860 in orizzontale; y 1180 nel verticale degli Short, dove i punti possono andare su 3 righe).
+import { C, scena, s3, esc, misura, attacchi, formatoDi } from '../base.mjs';
 
-const MARGINE = 96;
-const LARGO = W - 2 * MARGINE; // 1728
-const ALTO_TITOLO = 150; // sotto la barra (56–110)
 const MAX_TITOLO = 32;
 const MAX_PUNTO = 60;
 const MAX_PAROLA = 22; // una parola più lunga non va a capo e sfonderebbe la riga
@@ -23,7 +21,7 @@ const em = (s) => [...String(s)].reduce((a, c) => a + largo(c), 0);
 // righe occupate andando a capo per parole, come fa il browser (larghezza in em)
 function righeDi(testo, larghezzaEm) {
   let righe = 1, riga = 0;
-  for (const p of String(testo).trim().split(/s+/)) {
+  for (const p of String(testo).trim().split(/\s+/)) {
     const w = em(p);
     if (riga === 0) riga = w;
     else if (riga + 0.23 + w <= larghezzaEm) riga += 0.23 + w;
@@ -33,34 +31,50 @@ function righeDi(testo, larghezzaEm) {
   return righe;
 }
 
-function impagina(dati) {
+// le misure dei due formati: l'orizzontale (1920×1080) è quello di sempre; il verticale (Short, 1080×1920) ha il
+// titolo anche su 2 righe, punti fino a 3 righe e tutto fra y 150 e 1180, con il gruppo dei punti centrato nello spazio
+const MISURE = {
+  orizzontale: { alto: 150, tMax: 84, tMin: 56, tRighe: 1, tetti: { 2: 136, 3: 108, 4: 92 }, righeMax: 2, latoMin: 60, latoMax: 84, scarto: 44, gapMax: 150, fIndice: 30, centra: false },
+  verticale: { alto: 170, tMax: 88, tMin: 52, tRighe: 2, tetti: { 2: 112, 3: 92, 4: 80 }, righeMax: 3, latoMin: 56, latoMax: 72, scarto: 28, gapMax: 110, fIndice: 32, centra: true },
+};
+
+function impagina(dati, formato = 'orizzontale') {
+  const F = formatoDi(formato);
+  const M = MISURE[formato === 'verticale' ? 'verticale' : 'orizzontale'];
+  const MARGINE = F.margine;
+  const LARGO = F.W - 2 * MARGINE; // 1728 in orizzontale, 936 in verticale
   const punti = dati.punti.map((p) => String(p).trim());
   const titolo = String(dati.titolo).trim();
   const n = punti.length;
-  const fTitolo = Math.max(56, Math.min(84, Math.floor(LARGO / Math.max(1, em(titolo)))));
-  const filo = ALTO_TITOLO + Math.round(fTitolo * 1.05) + 22; // la riga d'accento sotto il titolo
+  let fTitolo = Math.max(M.tMin, Math.min(M.tMax, Math.floor((LARGO * M.tRighe) / Math.max(1, em(titolo)))));
+  while (fTitolo > M.tMin && righeDi(titolo, LARGO / fTitolo) > M.tRighe) fTitolo -= 2;
+  const righeTitolo = righeDi(titolo, LARGO / fTitolo);
+  const filo = M.alto + Math.round(fTitolo * 1.05 * righeTitolo) + 22; // la riga d'accento sotto il titolo
   const cima = filo + 4 + 44; // dove iniziano i punti
-  const fondo = FONDO_SOTTOTITOLI - 14;
+  const fondo = F.fondo - 14;
   const spazio = fondo - cima;
-  const lato = (f) => Math.max(60, Math.min(84, Math.round(f * 0.92))); // il quadratino dell'indice
-  const scarto = 44; // fra quadratino e testo
+  const lato = (f) => Math.max(M.latoMin, Math.min(M.latoMax, Math.round(f * 0.92))); // il quadratino dell'indice
+  const scarto = M.scarto; // fra quadratino e testo
   const larghezzaTesto = (f) => LARGO - lato(f) - scarto;
-  // tetto per numero di punti, poi misura() sul punto più lungo (al massimo 2 righe), poi giù finché ogni punto sta in
-  // 2 righe e tutto sta sopra i sottotitoli
-  const tetto = { 2: 136, 3: 108, 4: 92 }[n] || 92;
+  // tetto per numero di punti, poi misura() sul punto più lungo, poi giù finché ogni punto sta nelle sue righe
+  // (2 in orizzontale, 3 in verticale) e tutto sta sopra i sottotitoli
+  const tetto = M.tetti[n] || M.tetti[4];
   const lungo = punti.reduce((a, b) => (em(b) > em(a) ? b : a), '');
-  let f = misura(lungo, { larghezza: larghezzaTesto(tetto), max: tetto, min: F_MIN, fattore: em(lungo) / Math.max(1, lungo.length), righe: 2 });
+  let f = misura(lungo, { larghezza: larghezzaTesto(tetto), max: tetto, min: F_MIN, fattore: em(lungo) / Math.max(1, lungo.length), righe: M.righeMax });
   const conto = (f) => {
     const righe = punti.map((p) => righeDi(p, larghezzaTesto(f) / f));
     const alti = righe.map((r) => Math.max(lato(f), Math.round(r * f * INTERLINEA)));
     return { righe, alti, totale: alti.reduce((a, b) => a + b, 0) };
   };
-  const sta = (c) => c.righe.every((r) => r <= 2) && c.totale + (n - 1) * GAP_MIN <= spazio;
+  const sta = (c) => c.righe.every((r) => r <= M.righeMax) && c.totale + (n - 1) * GAP_MIN <= spazio;
   let c = conto(f);
   while (f > F_MIN && !sta(c)) { f -= 2; c = conto(f); }
   // lo spazio che resta va fra i punti (con un tetto: oltre, il gruppo si stacca troppo)
-  const gap = Math.round(Math.max(GAP_MIN, Math.min(150, (spazio - c.totale) / Math.max(1, n - 1))));
-  return { punti, titolo, n, fTitolo, titoloSta: em(titolo) * fTitolo <= LARGO, filo, cima, f, lato: lato(f), scarto, righe: c.righe, gap, sta: sta(c) };
+  const gap = Math.round(Math.max(GAP_MIN, Math.min(M.gapMax, (spazio - c.totale) / Math.max(1, n - 1))));
+  // in verticale il gruppo dei punti sta al centro dello spazio libero (il telefono si guarda in alto-centro)
+  const sposta = M.centra ? Math.max(0, Math.round((spazio - c.totale - (n - 1) * gap) / 2)) : 0;
+  return { punti, titolo, n, MARGINE, LARGO, alto: M.alto, fTitolo, titoloSta: righeTitolo <= M.tRighe, nowrap: M.tRighe === 1, filo, cima: cima + sposta, f,
+    lato: lato(f), scarto, righe: c.righe, righeMax: M.righeMax, gap, fIndice: M.fIndice, sta: sta(c) };
 }
 
 export default {
@@ -88,10 +102,11 @@ export default {
       const parola = t.split(/\s+/).reduce((a, b) => (b.length > a.length ? b : a), '');
       if (parola.length > MAX_PAROLA) e.push(`titolo: parola troppo lunga («${parola}»)`);
     }
-    if (!e.length) {
-      const L = impagina(dati);
-      if (!L.titoloSta) e.push('titolo troppo largo anche a 56 px');
-      if (!L.sta) e.push(`punti troppo lunghi: non stanno in 2 righe a ${F_MIN} px sopra i sottotitoli`);
+    // deve entrare in tutti e due i formati: il piano non sa in quale verrà montato
+    if (!e.length) for (const formato of ['orizzontale', 'verticale']) {
+      const L = impagina(dati, formato);
+      if (!L.titoloSta) e.push(`titolo troppo largo (${formato})`);
+      if (!L.sta) e.push(`punti troppo lunghi: non stanno in ${L.righeMax} righe a ${F_MIN} px sopra i sottotitoli (${formato})`);
     }
     if (dati.quando != null && (typeof dati.quando !== 'object' || Array.isArray(dati.quando))) e.push('quando deve essere un oggetto { chiave: parola }');
     return e;
@@ -102,8 +117,8 @@ export default {
     const testa = (p) => { const w = String(p).trim().split(/\s+/); return w.slice(0, Math.max(2, Math.ceil(w.length / 2))).join(' '); };
     return attacchi(dati, [['titolo', dati.titolo], ...punti.map((p, i) => [`p${i + 1}`, testa(p)])]);
   },
-  html({ id, px, dati, durata, t, etichetta, numero }) {
-    const L = impagina(dati);
+  html({ id, px, dati, durata, t, etichetta, numero, formato = 'orizzontale' }) {
+    const L = impagina(dati, formato);
     const tTitolo = t('titolo', 0.15);
     // riserve: i punti distribuiti sul resto della voce, mai tutti all'inizio
     const resto = Math.max(1, durata - 0.6 - (tTitolo + 0.8));
@@ -113,10 +128,10 @@ export default {
     });
     // un punto non sale prima del titolo né prima del punto precedente
     for (let i = 0; i < tPunti.length; i++) tPunti[i] = Math.max(tPunti[i], i ? tPunti[i - 1] + 0.35 : tTitolo + 0.3);
-    const fIndice = 30;
+    const { MARGINE, LARGO, fIndice } = L;
     const css = `
-    #${px}titolo { position: absolute; left: ${MARGINE}px; top: ${ALTO_TITOLO}px; width: ${LARGO}px; font-weight: 500; font-size: ${L.fTitolo}px;
-      line-height: 1.05; letter-spacing: -0.02em; font-variation-settings: "opsz" 60; white-space: nowrap; color: ${C.crema}; }
+    #${px}titolo { position: absolute; left: ${MARGINE}px; top: ${L.alto}px; width: ${LARGO}px; font-weight: 500; font-size: ${L.fTitolo}px;
+      line-height: 1.05; letter-spacing: -0.02em; font-variation-settings: "opsz" 60; ${L.nowrap ? 'white-space: nowrap;' : 'text-wrap: balance;'} color: ${C.crema}; }
     #${px}filo { position: absolute; left: ${MARGINE}px; top: ${L.filo}px; width: 240px; height: 4px; background: ${C.accento}; transform-origin: left center; }
     #${px}elenco { position: absolute; left: ${MARGINE}px; top: ${L.cima}px; width: ${LARGO}px; display: flex; flex-direction: column; gap: ${L.gap}px; }
     .${px}riga { position: relative; display: flex; align-items: flex-start; gap: ${L.scarto}px; }
@@ -155,6 +170,6 @@ export default {
       tl.fromTo(q("#${px}i${k - 1}"), { opacity: 1 }, { opacity: 0.6, duration: 0.6, ease: "power2.out", immediateRender: false }, ${s3(tp + 0.1)});`;
       }
     });
-    return scena({ id, px, durata, etichetta, numero, css, corpo, anima });
+    return scena({ id, px, durata, etichetta, numero, css, corpo, anima, formato });
   },
 };

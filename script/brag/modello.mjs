@@ -151,4 +151,27 @@ const info = {
   scene: scene.map((s) => ({ min: s.min, voce: s.voce })),
 };
 fs.writeFileSync(path.join(OUT, 'info-modello.json'), JSON.stringify(info, null, 1));
+
+// ---------- piano del video a stampi (24/10/2026 sera, Marco: «li vorrei tutti così»; script/video-hf/) ----------
+// Stesse voci delle scene di sopra (copione già controllato e parti scritte dai dati); a schermo i punti del copione
+// (già filtrati) e i dati del sito. Nessuna chiamata in più a Workers AI.
+const corto = (s, n) => (String(s).length > n ? String(s).slice(0, n - 1).trimEnd() + '…' : String(s));
+const visto = (n) => String(n).replace(/[-_]?\b20\d{6}\b/g, '').replace(/[-_]+/g, ' ').trim();
+const piano = [
+  visto(m.nome).length <= 18
+    ? { stampo: 'nome', etichetta: 'New open model', voce: scene[0].voce, dati: { nome: visto(m.nome), sopra: corto(`by ${lab}`, 30), etichette: [corto(`${miliardi}B parameters${moe ? ` · ${attivi}B active` : ''}`, 34), corto(`${ctxTesto} context${licenza ? ` · ${licenza}` : ''}`, 34)] } }
+    : { stampo: 'titolo', etichetta: 'New open model', voce: scene[0].voce, dati: { testo: corto(visto(m.nome), 60), sopra: corto(`New open model · by ${lab}`, 40) } },
+  ...sezioni.map((s, i) => {
+    const punti = s.punti.filter((p) => p.length <= 60 && !/\S{23,}/.test(p)).slice(0, 4);
+    return punti.length >= 2
+      ? { stampo: 'punti', etichetta: corto(s.titolo, 24), voce: scene[1 + i].voce, dati: { titolo: corto(s.titolo, 32), punti } }
+      : { stampo: 'titolo', etichetta: corto(s.titolo, 24), voce: scene[1 + i].voce, dati: { testo: corto(s.titolo, 60), sopra: corto(lab, 40) } };
+  }),
+  casa.length >= 2
+    ? { stampo: 'barre', etichetta: 'Hardware', voce: scene.at(-3).voce, dati: { titolo: `About ${gb4} GB at 4-bit`, sotto: corto(piccola ? `Smallest machine that holds it: ${piccola.nome}` : 'No single home machine holds it', 50), voci: casa.slice(0, 6).map((x) => ({ nome: corto(`${x.s.nome.replace(/ \d+ GB$/, '')}${x.ram ? ` + ${x.ram} GB` : ''}`, 28), valore: Number(fmtVel(x.r.vel)), testo: `${fmtVel(x.r.vel)} tok/s`, nota: x.r.dove === 'gpu' ? 'fully in memory' : 'part in system RAM' })) } }
+    : { stampo: 'numero', etichetta: 'Hardware', voce: scene.at(-3).voce, dati: { valore: String(gb4), unita: 'GB', etichetta: 'memory at 4-bit', dettaglio: corto(piccola ? `fits a ${piccola.nome}` : 'too big for home', 24) } },
+  { stampo: 'punti', etichetta: 'Use it free', voce: scene.at(-2).voce, dati: { titolo: 'Where to use it for free', punti: [api ? 'Free API on OpenRouter' : 'No free API yet', 'Open weights on Hugging Face', voto ? `Arena: ${voto.x.punti} points` : 'Arena: not ranked yet'] } },
+  { stampo: 'chiusura', etichetta: 'FreeLLMArena' },
+];
+fs.writeFileSync(path.join(OUT, 'piano-modello.json'), JSON.stringify({ formato: 'orizzontale', copertina: 0, scene: piano }, null, 1));
 console.log('ok', { modello: m.nome, parti: sezioni.length, minimo: t, tolte: tolte.length, casa: casa.map((x) => `${x.s.nome} ${fmtVel(x.r.vel)}`) });

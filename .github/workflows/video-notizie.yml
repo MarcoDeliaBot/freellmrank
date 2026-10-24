@@ -3,7 +3,7 @@
 # spostiamo su di noi»). Lo fa partire n8n (n8n/video-notizie.json), due volte al giorno, e n8n controlla l'esito.
 # Per ogni notizia: script/brag/notizia.mjs sceglie la notizia e scrive titolo, descrizione e tag; script/video-hf/piano.mjs
 # fa scrivere il piano a Workers AI (con controllo dei fatti e piano di riserva); script/video-hf/monta.mjs fa voce Kokoro,
-# tempi Parakeet, scene HyperFrames, sottotitoli e MP4. Lo Short collegato resta quello di prima (script/brag/registra.py).
+# tempi Parakeet, scene HyperFrames, sottotitoli e MP4. Lo Short collegato è verticale a stampi (script/video-hf/breve.mjs), con la vecchia registrazione come riserva.
 # Tutto gratis: progetto pubblico, strumenti che girano qui, Workers AI nella quota gratis del sito.
 name: Video notizie
 
@@ -107,19 +107,24 @@ jobs:
             cp video/brag/info-notizia.json "$d/$nome.json"; cp "video/hf/piano-$nome.json" "$d/piano.json"
             node -p "require('./video/brag/info-notizia.json').condividi" > "$d/share-copy.txt"
             fatti=$((fatti + 1))
-            if [ "$PROVA" = "true" ]; then echo "Prova: $nome fatto, non pubblicato"; continue; fi
+            # lo Short collegato, verticale a stampi dal piano del video lungo (script/video-hf/breve.mjs); se non riesce,
+            # registra.sh lo fa alla vecchia maniera
+            breve=$(node -p "require('./video/brag/info-notizia-corto.json').nome")
+            node script/video-hf/breve.mjs "video/hf/piano-$nome.json" video/brag/piano-notizia-corto.json || rm -f video/brag/piano-notizia-corto.json
+            if bash script/video-hf/registra.sh notizia-corto; then
+              s="video/brag/brag-output-notizia-corto"
+              cp "$s/brag.mp4" "$s/$breve.mp4"; cp "$s/brag.jpg" "$s/$breve.jpg"; cp "$s/brag.srt" "$s/$breve.srt"; cp video/brag/info-notizia-corto.json "$s/$breve.json"
+              mkdir -p "video/esito/$breve"; cp "$s/$breve.mp4" "$s/$breve.jpg" "$s/$breve.json" "video/esito/$breve/"
+            else echo "::warning::Short non registrato per $nome"; breve=""; fi
+            if [ "$PROVA" = "true" ]; then echo "Prova: $nome ${breve:+e $breve }fatti, non pubblicati"; continue; fi
             titolo=$(node -p "require('./$d/$nome.json').titolo")
             gh release create "video-$nome" "$d/$nome.mp4" "$d/$nome.jpg" "$d/$nome.srt" "$d/$nome.json" --title "$titolo" --notes-file "$d/share-copy.txt" --latest=false
             echo "Pubblicato: $nome"
-            # lo Short collegato al video lungo (stile di prima, voce Piper)
-            breve=$(node -p "require('./video/brag/info-notizia-corto.json').nome")
-            if python script/brag/registra.py video notizia-corto; then
-              s="video/brag/brag-output-notizia-corto"
-              cp "$s/brag.mp4" "$s/$breve.mp4"; cp "$s/brag.jpg" "$s/$breve.jpg"; cp "$s/brag.srt" "$s/$breve.srt"; cp video/brag/info-notizia-corto.json "$s/$breve.json"
+            if [ -n "$breve" ]; then
               titolo=$(node -p "require('./$s/$breve.json').titolo")
               gh release create "video-$breve" "$s/$breve.mp4" "$s/$breve.jpg" "$s/$breve.srt" "$s/$breve.json" --title "$titolo" --notes-file "$s/share-copy.txt" --latest=false
               echo "Pubblicato: $breve (collegato a $nome)"
-            else echo "::warning::Short non registrato per $nome"; breve=""; fi
+            fi
             post=$(node -p "require('./video/brag/info-notizia.json').post")
             node script/brag/lega.mjs "$post" "$nome" $breve
           done

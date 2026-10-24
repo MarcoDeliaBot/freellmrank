@@ -247,6 +247,53 @@ const HARDWARE = {
   gpu: () => ({ schede: [scheda(gpu, null)], modelli: sullaScheda.map((x) => ({ nome: x.m.nome, gb: gbA4(x.m), vel: Number(fmtVel(x.r.vel)), dove: x.r.dove })) }),
 };
 
+// ---------- piani per i video a stampi (24/10/2026 sera, Marco: «li vorrei tutti così»; script/video-hf/) ----------
+// Stesse frasi della voce di sopra (già costruite dai dati), scena per scena; a schermo solo dati del sito. Niente Workers AI.
+// La voce di ogni scena dice ciò che la scena mostra; l'ultima scena è la chiusura «link in bio».
+const corto28 = (s, n = 28) => (String(s).length > n ? String(s).slice(0, n - 1).trimEnd() + '…' : String(s));
+const chiusuraShort = (invito = 'bio') => ({ stampo: 'chiusura', etichetta: 'FreeLLMArena', dati: { invito } });
+const PIANI = {
+  nuovo: (sc) => {
+    const v = sc.map((s) => s.voce);
+    const conCtx = Boolean(ctx);
+    return [
+      { stampo: 'numero', etichetta: 'New model', voce: v[0], dati: { valore: String(miliardi), unita: 'B', etichetta: 'parameters', dettaglio: 'free to download' } },
+      nomeCorto.length <= 18
+        ? { stampo: 'nome', etichetta: 'Who made it', voce: v[1], dati: { nome: nomeCorto, sopra: `by ${corto28(nomeLab(nuovo.org), 27)}`, etichette: ['open weights', `new · ${giorno(nuovo.creato, 'en')}`] } }
+        : { stampo: 'titolo', etichetta: 'Who made it', voce: v[1], dati: { testo: corto28(nomeCorto, 60), sopra: corto28(`by ${nomeLab(nuovo.org)} · open weights`, 40) } },
+      { stampo: 'barre', etichetta: 'Can your PC run it?', voce: v[2], dati: { titolo: `It needs ${gb4} GB at 4-bit`, voci: (chiTiene ? casa.slice(Math.max(0, iTiene - 2), Math.max(iTiene + 1, 3)) : mostrate).map((s) => ({ nome: corto28(s.nome), valore: usa(s), testo: `${usa(s)} GB`, segno: usa(s) >= gb4 ? 'si' : 'no' })), riferimento: { nome: 'needed', valore: gb4, testo: `${gb4} GB` } } },
+      ...(conCtx ? [{ stampo: 'numero', etichetta: 'Context', voce: v[3], dati: ctx >= 1048576 ? { valore: String(Math.round(ctx / 1048576 * 10) / 10), unita: 'M', etichetta: 'tokens at once' } : { valore: String(Math.round(ctx / 1024)), unita: 'K', etichetta: 'tokens at once' } }] : []),
+      chiusuraShort(process.env.BRAG_NUOVO ? 'canale' : 'bio'),
+    ];
+  },
+  settimana: (sc) => {
+    const v = sc.map((s) => s.voce);
+    const conCasa = top5.map((m) => ({ m, gb: m.hf ? Math.round(m.hf.b * 0.606 + 1.2 + 1.5) : null })).filter((x) => x.gb).map((x) => ({ ...x, s: casa.find((s) => usa(s) >= x.gb) })).slice(0, 4);
+    return [
+      { stampo: 'numero', etichetta: 'This week', voce: v[0], dati: { valore: String(distacco), unita: '', etichetta: 'points behind', dettaglio: 'the best paid AI' } },
+      { stampo: 'numero', etichetta: 'The ranking', voce: v[1], dati: { valore: String(contaGratis), unita: '', etichetta: 'free chat models', dettaglio: 'ranked by blind votes' } },
+      { stampo: 'barre', etichetta: 'Top 5', voce: v[2], dati: { titolo: 'Top 5 free chat models', sotto: `This week, ${giorno(dati.aggiornato, 'en')}`, voci: top5.map((m) => ({ nome: corto28(m.nome), valore: m.punti, testo: String(m.punti) })), riferimento: { nome: corto28(pagato.nome), valore: pagato.punti, testo: String(pagato.punti) }, scala: { da: 1400 }, evidenza: 0 } },
+      { stampo: 'titolo', etichetta: 'Free', voce: v[3], dati: tuttiAperti ? { testo: 'All five are open', evidenza: 'open', sopra: 'Download. Run. Free.' } : { testo: 'All of them are free', evidenza: 'free' } },
+      ...(conCasa.length >= 2 ? [{ stampo: 'barre', etichetta: 'At home', voce: v[4], dati: { titolo: 'Do they run at home?', sotto: 'Memory at 4-bit', voci: conCasa.map((x) => ({ nome: corto28(x.m.nome), valore: x.gb, testo: `${x.gb} GB`, nota: corto28(x.s ? x.s.nome : 'no home machine', 34), segno: x.s ? 'si' : 'no' })) } }] : []),
+      { stampo: 'titolo', etichetta: 'Your GPU', voce: v[5], dati: { testo: 'Which one runs on your GPU?', evidenza: 'your GPU', sopra: 'Free · updated every night' } },
+      chiusuraShort('bio'),
+    ];
+  },
+  gpu: (sc) => {
+    const v = sc.map((s) => s.voce);
+    const nomeG = gpu.nome.replace(/ \d+ GB$/, '');
+    return [
+      { stampo: 'titolo', etichetta: 'GPU of the week', voce: v[0], dati: { testo: `The best free AI for the ${nomeG}`, sopra: 'Graphics card of the week' } },
+      { stampo: 'numero', etichetta: 'Memory', voce: v[1], dati: { valore: String(gpu.gb), unita: 'GB', etichetta: 'of memory', dettaglio: corto28(`${gpu.banda} GB/s · ${gpu.marca}`, 24) } },
+      sullaScheda.length >= 2
+        ? { stampo: 'barre', etichetta: 'Best models', voce: v[2], dati: { titolo: 'With 32 GB of RAM', sotto: '4-bit · 8K context · our simulator', voci: sullaScheda.map((x) => ({ nome: corto28(x.m.nome), valore: Number(fmtVel(x.r.vel)), testo: `${fmtVel(x.r.vel)} tok/s`, nota: corto28(`${nomeLab(x.m.org)} · Arena ${x.m.punti}`, 34) })), evidenza: 0 } }
+        : { stampo: 'titolo', etichetta: 'Best models', voce: v[2], dati: { testo: sullaScheda.length ? `${corto28(sullaScheda[0].m.nome, 40)}: ${fmtVel(sullaScheda[0].r.vel)} tok/s` : 'No ranked model is fast enough', sopra: 'With 32 GB of RAM' } },
+      { stampo: 'titolo', etichetta: 'Your card', voce: v[3], dati: { testo: 'Try your card in our free simulator', evidenza: 'your card', sopra: 'Free simulator · 35 cards' } },
+      chiusuraShort('bio'),
+    ];
+  },
+};
+
 const VIDEO = { settimana: videoSettimana, nuovo: videoNuovo, gpu: videoGpu };
 for (const [tipo, fai] of Object.entries(VIDEO)) {
   for (const l of LINGUE_VIDEO) {
@@ -254,6 +301,7 @@ for (const [tipo, fai] of Object.entries(VIDEO)) {
     const { html, scene } = fai(l);
     fs.writeFileSync(path.join(OUT, `scena-${tipo}${coda}.html`), html);
     fs.writeFileSync(path.join(OUT, `info-${tipo}${coda}.json`), JSON.stringify({ ...INFO[tipo](l), lingua: l, ...(l === 'en' ? { localizzazioni: localizzazioni(tipo) } : {}), hardware: HARDWARE[tipo](), scene }, null, 1));
+    if (l === 'en') fs.writeFileSync(path.join(OUT, `piano-${tipo}.json`), JSON.stringify({ formato: 'verticale', copertina: 0, scene: PIANI[tipo](scene) }, null, 1));
   }
 }
 console.log('ok', { distacco, contaGratis, top5: top5.map((m) => m.nome), pagato: pagato.nome, nuovo: nuovo.nome, gb4, chiTiene: chiTiene?.nome, gpu: gpu.nome, sullaScheda: sullaScheda.map((x) => `${x.m.nome} ${fmtVel(x.r.vel)} ${x.r.dove}`) });

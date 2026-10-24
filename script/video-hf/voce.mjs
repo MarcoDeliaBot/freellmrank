@@ -26,9 +26,16 @@ const json = (testo) => {
 export function parla(testo, file) {
   const txt = file.replace(/\.wav$/, '.txt');
   fs.writeFileSync(txt, testo);
-  const r = json(hf(['tts', txt, '-v', VOCE, '-o', file, '--json']));
-  if (!r.ok || !fs.existsSync(file)) throw new Error(`Voce non creata per: ${testo.slice(0, 80)}`);
-  return r.durationSeconds;
+  // fino a 3 tentativi: due montaggi insieme sullo stesso computer a volte si contendono il modello della voce
+  let ultimo;
+  for (let i = 1; i <= 3; i++) {
+    try {
+      const r = json(hf(['tts', txt, '-v', VOCE, '-o', file, '--json']));
+      if (r.ok && fs.existsSync(file)) return r.durationSeconds;
+      ultimo = new Error(JSON.stringify(r));
+    } catch (e) { ultimo = e; }
+  }
+  throw new Error(`Voce non creata per: ${testo.slice(0, 80)} (${ultimo?.message?.slice(0, 300)})`);
 }
 
 // parole riconosciute con i tempi: [{ text, start, end }]

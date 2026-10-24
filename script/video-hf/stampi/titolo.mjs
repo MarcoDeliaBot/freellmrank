@@ -3,15 +3,19 @@
 // in evidenza che si accendono di verde quando la voce le nomina. Stile dalla prova DeepInfer (quadri 01 e 02).
 import { C, scena, s3, esc, misura, attacchi } from '../base.mjs';
 
-const LARGHEZZA = 1250; // ~65% dello schermo: la riga più lunga del titolo punta a questa larghezza
 const FATTORE = 0.44; // larghezza media di un carattere di Source Serif 4 (peso 500) in em, misurata nei fotogrammi
-const MAX_RIGHE = { 1: 220, 2: 200, 3: 165 }; // carattere massimo per numero di righe (altezza: il blocco sta sopra y 860)
-const SOGLIA = 120; // si va a capo solo se su meno righe il titolo verrebbe più piccolo di così
-const MIN_TITOLO = 72; // sotto questa misura il titolo non si legge come titolo: valida() lo rifiuta
+// per formato: larghezza a cui punta la riga più lunga, carattere massimo per numero di righe (altezza del blocco),
+// soglia sotto la quale si va a capo, minimo leggibile (valida() rifiuta sotto)
+const IMPAGINA = {
+  // ~65% dello schermo; il blocco sta fra la barra e y 860
+  orizzontale: { larghezza: 1250, max: { 1: 220, 2: 200, 3: 165 }, soglia: 120, minimo: 72 },
+  // Short: righe corte e impilate (fino a 5) nei 936 px fra i margini; il blocco sta fra y 150 e 1180
+  verticale: { larghezza: 880, max: { 1: 170, 2: 160, 3: 150, 4: 140, 5: 120 }, soglia: 104, minimo: 56 },
+};
 
 const parole = (testo) => String(testo ?? '').trim().split(/\s+/).filter(Boolean);
 // lunghezza «pesata»: maiuscole e cifre sono più larghe delle minuscole (un titolo in maiuscole non deve uscire dallo schermo)
-const lunghezza = (s) => s.length + 0.4 * (s.match(/[p{Lu}p{N}]/gu) || []).length;
+const lunghezza = (s) => s.length + 0.25 * (s.match(/[\p{Lu}\p{N}]/gu) || []).length;
 const norma = (w) => String(w).toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
 
 // tutte le divisioni di n parole in k righe consecutive (k ≤ 3, poche parole: si provano tutte)
@@ -23,10 +27,11 @@ function divisioni(n, k) {
 }
 
 // righe e misura del titolo: il minor numero di righe che dà un carattere ≥ SOGLIA, altrimenti quello col carattere più grande
-export function impagina(testo) {
+export function impagina(testo, formato = 'orizzontale') {
+  const { larghezza: LARGHEZZA, max: MAX_RIGHE, soglia: SOGLIA } = IMPAGINA[formato] || IMPAGINA.orizzontale;
   const w = parole(testo);
   let scelta = null;
-  for (let k = 1; k <= Math.min(3, w.length); k++) {
+  for (let k = 1; k <= Math.min(Object.keys(MAX_RIGHE).length, w.length); k++) {
     let migliore = null;
     for (const d of divisioni(w.length, k)) {
       const righe = [];
@@ -75,7 +80,7 @@ export default {
     const n = parole(testo).length;
     if (n < 2 || n > 14) p.push(`titolo: «testo» deve avere 2–14 parole (${n})`);
     if (parole(testo).some((w) => w.length > 22)) p.push('titolo: una parola di «testo» supera 22 caratteri');
-    else if (impagina(testo).px < MIN_TITOLO) p.push('titolo: «testo» non entra a una misura leggibile');
+    else for (const f of Object.keys(IMPAGINA)) if (impagina(testo, f).px < IMPAGINA[f].minimo) p.push(`titolo: «testo» non entra a una misura leggibile (${f})`);
     // evidenza facoltativa (il piano di riserva costruito nel codice non ce l'ha): mancante = nessuna parola accesa
     if (ev == null || (typeof ev === 'string' && !ev.trim())) { /* niente evidenza */ }
     else if (typeof ev !== 'string') p.push('titolo: «evidenza» non è un testo');
@@ -104,8 +109,10 @@ export default {
     });
     return attacchi(dati, coppie);
   },
-  html({ id, px, dati, durata, t, etichetta, numero }) {
-    const { righe, px: fs } = impagina(dati.testo);
+  html({ id, px, dati, durata, t, etichetta, numero, formato = 'orizzontale' }) {
+    const V = formato === 'verticale';
+    // i pezzi (e quindi i tempi) sono gli stessi nei due formati; cambiano solo le righe e le misure
+    const { righe, px: fs } = impagina(dati.testo, V ? 'verticale' : 'orizzontale');
     const ps = pezzi(dati.testo);
     const nEv = parole(dati.evidenza).length;
     const iEv = trovaEvidenza(dati.testo, dati.evidenza);
@@ -137,15 +144,19 @@ export default {
 
     // altezze: il blocco (riga piccola, titolo, riga verde) centrato fra la barra (110) e i sottotitoli (860)
     const LH = 1.06;
-    const hSopra = sopra ? 30 + 2 * 12 + 4 + 44 : 0;
+    // riga piccola: in verticale più grande (≥ 32 px anche a 40 caratteri, spaziatura stretta) e misurata per stare nei margini
+    const fsS = V ? Math.max(32, Math.min(44, Math.floor(820 / (Math.max(1, sopra.length) * 0.65)))) : 30;
+    const spS = V ? 0.05 : 0.14;
+    const hSopra = sopra ? fsS + 2 * 12 + 4 + 44 : 0;
     const hTitolo = righe.length * fs * LH;
     const hTot = hSopra + hTitolo + 44 + 2;
-    const top = Math.round(150 + Math.max(0, (690 - hTot) * 0.45));
+    // orizzontale: fra la barra e y 860; verticale: centro del blocco a y 650, mai sopra 170 né sotto 1180
+    const top = V ? Math.round(Math.min(1180 - hTot, Math.max(170, 650 - hTot / 2))) : Math.round(150 + Math.max(0, (690 - hTot) * 0.45));
 
     const css = `
     #${px}colonna { position: absolute; left: 0; right: 0; top: ${top}px; display: flex; flex-direction: column; align-items: center; }
     #${px}sopra { display: inline-flex; align-items: center; gap: 18px; padding: 12px 26px; margin-bottom: 44px; border: 2px solid ${C.accento}; border-radius: 6px;
-      font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 30px; line-height: 30px; letter-spacing: 0.14em; text-transform: uppercase; color: ${C.accento}; white-space: nowrap; }
+      font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: ${fsS}px; line-height: ${fsS}px; letter-spacing: ${spS}em; text-transform: uppercase; color: ${C.accento}; white-space: nowrap; }
     #${px}punto { width: 12px; height: 12px; border-radius: 50%; background: ${C.accento}; }
     #${px}blocco { display: inline-flex; flex-direction: column; align-items: stretch; }
     #${px}titolo { font-family: "Source Serif 4", Georgia, serif; font-weight: 500; font-size: ${fs}px; line-height: ${LH}; letter-spacing: -0.015em;
@@ -187,6 +198,6 @@ export default {
       tEv != null ? `tl.fromTo(qa(".${px}box"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out", stagger: 0.08 }, ${s3(tEv)});` : '',
       tEv != null ? `tl.fromTo(qa(".${px}ev"), { color: "${C.crema}" }, { color: "${C.accento}", duration: 0.45, ease: "power2.out", stagger: 0.08 }, ${s3(tEv + 0.05)});` : '',
     ].filter(Boolean).join('\n      ');
-    return scena({ id, px, durata, etichetta, numero, css, corpo, anima });
+    return scena({ id, px, durata, etichetta, numero, css, corpo, anima, formato: V ? 'verticale' : 'orizzontale' });
   },
 };

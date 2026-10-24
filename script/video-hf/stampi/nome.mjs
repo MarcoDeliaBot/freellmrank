@@ -15,20 +15,46 @@ const PASSO = 0.1; // secondi per simbolo
 const SFALSA = 0.06; // ritardo fra una lettera e la successiva
 const GIRO = 0.7; // durata della rotazione di ogni lettera
 
-// misure delle pillole (JetBrains Mono: ogni carattere è 0.6 em, quindi le larghezze si calcolano qui)
-const P_FONT = 34, P_PADX = 32, P_PALLINO = 14 + 18, P_ALTEZZA = Math.round(P_FONT * 1.2) + 20 + 22;
-const P_LARGHEZZA = 1728, P_GAPX = 28, P_GAPY = 20;
+// misure delle pillole (JetBrains Mono: ogni carattere è 0.6 em, quindi le larghezze si calcolano qui).
+// Orizzontale: pillole affiancate, al più 2 righe. Verticale (Short): una pillola per riga, testo più grande.
+const PILLOLE = {
+  orizzontale: { font: 34, padx: 32, larghezza: 1728, gapx: 28 },
+  verticale: { font: 40, padx: 28, larghezza: 936, gapx: 28 },
+};
+const P_PALLINO = 14 + 18, P_GAPY = 20;
+const altezzaPillola = (P) => Math.round(P.font * 1.2) + 20 + 22;
 
 const testo = (x) => (typeof x === 'string' ? x.trim() : '');
 const etichetteDi = (dati) => (Array.isArray(dati?.etichette) ? dati.etichette.map(testo).filter(Boolean) : []);
 
-function righePillole(etichette) {
+function righePillole(etichette, P, verticale) {
+  if (verticale) return etichette.length;
   let righe = 0, usata = 0;
   for (const e of etichette) {
-    const w = e.length * P_FONT * 0.6 + 2 * P_PADX + P_PALLINO;
-    if (righe === 0 || usata + P_GAPX + w > P_LARGHEZZA) { righe++; usata = w; } else usata += P_GAPX + w;
+    const w = e.length * P.font * 0.6 + 2 * P.padx + P_PALLINO;
+    if (righe === 0 || usata + P.gapx + w > P.larghezza) { righe++; usata = w; } else usata += P.gapx + w;
   }
   return righe;
+}
+
+// verticale: il nome sta in ~900 px; se su una riga diventa piccolo e ha uno spazio, va a capo allo spazio che
+// rende le due righe più pari (mai a metà parola). Restituisce le righe come [inizio, fine) sugli indici del nome.
+function righeNome(nome) {
+  const opz = { larghezza: 900, max: 230, min: 40, fattore: 0.56 };
+  const una = misura(nome, opz);
+  let meglio = null;
+  if (una < 150) {
+    for (let i = 0; i < nome.length; i++) {
+      if (nome[i] !== ' ') continue;
+      const lungo = Math.max(i, nome.length - i - 1);
+      if (!meglio || lungo < meglio.lungo) meglio = { i, lungo };
+    }
+  }
+  if (meglio) {
+    const fs2 = misura('x'.repeat(meglio.lungo), opz);
+    if (fs2 > una) return { fs: fs2, righe: [[0, meglio.i], [meglio.i + 1, nome.length]] };
+  }
+  return { fs: una, righe: [[0, nome.length]] };
 }
 
 export default {
@@ -73,7 +99,9 @@ export default {
     return attacchi(dati, [['nome', testo(dati.nome)], ['sopra', produttore], ...et.map((e, i) => [`e${i + 1}`, e])]);
   },
 
-  html({ id, px, dati, durata, t, etichetta, numero }) {
+  html({ id, px, dati, durata, t, etichetta, numero, formato = 'orizzontale' }) {
+    const V = formato === 'verticale';
+    const P = PILLOLE[V ? 'verticale' : 'orizzontale'];
     const nome = testo(dati.nome);
     const ev = testo(dati.evidenza);
     const daAccento = ev && nome.endsWith(ev) ? nome.length - ev.length : nome.length;
@@ -92,41 +120,52 @@ export default {
     });
 
     // dimensioni decise qui: il nome entra nell'80% della larghezza, ma non diventa enorme se è corto
-    const fs = misura(nome, { larghezza: 1536, max: 270, min: 96, fattore: 0.56 });
-    const righe = righePillole(et);
-    const hSopra = sopra ? Math.round(46 * 1.2) + 22 : 0;
-    const hNome = Math.round(fs * 0.92);
+    // (verticale: entro 936 px, anche su due righe)
+    const rn = V ? righeNome(nome) : { fs: misura(nome, { larghezza: 1536, max: 270, min: 96, fattore: 0.56 }), righe: [[0, nome.length]] };
+    const fs = rn.fs;
+    const fsSopra = V ? misura(sopra || 'x', { larghezza: 936, max: 56, min: 40, fattore: 0.55 }) : 46;
+    const sottoSopra = V ? 26 : 22;
+    const aCapo = Math.round(fs * 0.12); // spazio fra le due righe del nome (verticale)
+    const righe = righePillole(et, P, V);
+    const hSopra = sopra ? Math.round(fsSopra * 1.2) + sottoSopra : 0;
+    const hNome = Math.round(fs * 0.92) * rn.righe.length + aCapo * (rn.righe.length - 1);
     const scendi = 30 + Math.round(fs * 0.12); // spazio per le discendenti (p, g, y) sopra la riga
     const hRiga = scendi + 2;
-    const hPill = righe ? 56 + righe * P_ALTEZZA + (righe - 1) * P_GAPY : 0;
+    const hPill = righe ? 56 + righe * altezzaPillola(P) + (righe - 1) * P_GAPY : 0;
     const alto = hSopra + hNome + hRiga + hPill;
-    const cima = Math.max(150, Math.round(150 + (680 - alto) / 2)); // centrato fra la barra e i sottotitoli
+    const cima = V
+      ? Math.max(170, Math.min(1180 - alto, Math.round(650 - alto / 2))) // verticale: centro a y 650, mai sotto 1180
+      : Math.max(150, Math.round(150 + (680 - alto) / 2)); // centrato fra la barra e i sottotitoli
 
     const css = `
     #${px}colonna { position: absolute; left: 0; right: 0; top: ${cima}px; display: flex; flex-direction: column; align-items: center; }
-    #${px}sopra { font-weight: 400; font-size: 46px; line-height: 1.2; color: ${C.crema2}; margin-bottom: 22px; white-space: nowrap; }
+    #${px}sopra { font-weight: 400; font-size: ${fsSopra}px; line-height: 1.2; color: ${C.crema2}; margin-bottom: ${sottoSopra}px; white-space: nowrap; }
     #${px}marchio { display: inline-flex; flex-direction: column; align-items: stretch; }
     #${px}nome { font-weight: 500; font-variation-settings: "opsz" 60; font-size: ${fs}px; line-height: 0.92; letter-spacing: -0.02em;
-      white-space: nowrap; color: ${C.crema}; perspective: 1500px; }
+      white-space: nowrap; color: ${C.crema}; perspective: 1500px;${V ? ' text-align: center;' : ''} }${V ? `
+    .${px}rn + .${px}rn { margin-top: ${aCapo}px; }` : ''}
     .${px}c { position: relative; display: inline-block; transform-origin: 50% 100%; transform-style: preserve-3d; white-space: pre; }
     .${px}c.${px}acc { color: ${C.accento}; }
     .${px}fant { visibility: hidden; }
     .${px}g, .${px}v { position: absolute; left: -40px; right: -40px; top: 0; text-align: center; opacity: 0; }
     #${px}riga { height: 2px; margin-top: ${scendi}px; background: ${C.accento}; transform-origin: left center; }
-    #${px}pillole { display: flex; flex-wrap: wrap; justify-content: center; column-gap: ${P_GAPX}px; row-gap: ${P_GAPY}px;
-      max-width: ${P_LARGHEZZA}px; margin-top: 56px; }
-    .${px}pill { display: inline-flex; align-items: center; gap: 18px; padding: 20px ${P_PADX}px 22px; border-radius: 6px; background: ${C.pannello};
-      white-space: pre; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: ${P_FONT}px; line-height: 1.2; color: ${C.crema}; }
+    #${px}pillole { display: flex; ${V ? 'flex-direction: column; align-items: center' : 'flex-wrap: wrap; justify-content: center'}; column-gap: ${P.gapx}px; row-gap: ${P_GAPY}px;
+      max-width: ${P.larghezza}px; margin-top: 56px; }
+    .${px}pill { display: inline-flex; align-items: center; gap: 18px; padding: 20px ${P.padx}px 22px; border-radius: 6px; background: ${C.pannello};
+      white-space: pre; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: ${P.font}px; line-height: 1.2; color: ${C.crema}; }
     .${px}pallino { width: 14px; height: 14px; border-radius: 3px; background: ${C.accento}; flex: none; }`;
 
-    const lettere = [...nome].map((ch, i) => {
+    const cella = (ch, i) => {
       const acc = i >= daAccento ? ` ${px}acc` : '';
       if (ch === ' ') return `<span class="${px}c${acc}"><span class="${px}fant">&nbsp;</span></span>`;
       const code = ch.codePointAt(0);
       const set = /[fijlrtI1.,:;'!|]/.test(ch) ? SIMBOLI_STRETTI : /[a-z]/.test(ch) ? SIMBOLI_MINUSC : SIMBOLI_MAIUSC;
       const sim = Array.from({ length: PASSI }, (_, k) => set[(i * 7 + k * 13 + code * 3) % set.length]);
       return `<span class="${px}c${acc}"><span class="${px}fant">${esc(ch)}</span>${sim.map((g) => `<span class="${px}g">${esc(g)}</span>`).join('')}<span class="${px}v">${esc(ch)}</span></span>`;
-    }).join('');
+    };
+    const lettere = V
+      ? rn.righe.map(([a, b]) => `<div class="${px}rn">${[...nome].slice(a, b).map((ch, k) => cella(ch, a + k)).join('')}</div>`).join('')
+      : [...nome].map(cella).join('');
 
     const corpo = `
       <div id="${px}colonna">
@@ -154,6 +193,6 @@ export default {
       ${sopra ? `tl.fromTo(q("#${px}sopra"), { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, ${s3(tSopra)});` : ''}
       ${tEt.map((x, i) => `tl.fromTo(q("#${px}p${i + 1}"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, ${s3(x)});`).join('\n      ')}`;
 
-    return scena({ id, px, durata, etichetta, numero, css, corpo, anima });
+    return scena({ id, px, durata, etichetta, numero, css, corpo, anima, formato: V ? 'verticale' : 'orizzontale' });
   },
 };

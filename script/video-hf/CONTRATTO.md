@@ -56,6 +56,29 @@ export default {
 | `punti` | 2–4 punti chiave, notizie senza numeri | `{ "titolo": "What changed, max 32", "punti": ["max 60 chars each, 2-4"] }` |
 | `chiusura` | sempre l'ultima | nessun dato, voce fissa |
 
+## Formato verticale (Short di YouTube) — dal 24/10/2026 sera
+
+Marco: «li vorrei tutti così», anche gli Short. Ogni stampo deve funzionare in **due formati**:
+`html({ ..., formato })` riceve `formato` = `'orizzontale'` (1920×1080, quello di sopra) o `'verticale'` (1080×1920).
+`formatoDi(formato)` in `base.mjs` dà `{ W, H, fondo, capTop, capH, margine }`; passare `formato` a `scena()`.
+
+Regole del verticale:
+- Contenuto fra y = 150 (sotto la barra) e y = **1180**; sotto ci sono i sottotitoli (1220–1420) e poi i pulsanti di
+  YouTube: niente contenuto sotto 1180. Margini laterali 72 px.
+- Impaginazione **impilata**, mai affiancata: le colonne diventano righe, le schede una sotto l'altra, griglie 1×N.
+- Testi più grandi e righe più corte: un telefono legge male sotto i 40 px; minimo assoluto 32 px.
+- L'elemento principale occupa la parte alta-centrale (centro a circa y = 650).
+- `valida(dati)` vale per entrambi i formati: se una cosa non entra in verticale (es. troppe voci), `valida` la rifiuta
+  oppure lo stampo la impagina in modo che entri. Mai testo tagliato.
+- Stessi movimenti, stessi tempi `t(...)`.
+
+## Lo stampo `barre`
+
+Per classifiche, memoria e velocità (video della settimana, dei modelli, delle schede video):
+`{ "titolo": "max 40", "sotto": "riga piccola facoltativa, max 50", "voci": [{ "nome": "max 28", "valore": 1491, "testo": "testo mostrato a destra, es. 1491 o 6 GB o 49 tok/s, max 12", "nota": "facoltativa, max 34", "segno": "si|no|" }] (2-10 voci), "riferimento": { "nome": "max 28", "valore": 1532, "testo": "max 12" } (facoltativo: linea tratteggiata, es. il miglior modello a pagamento), "scala": { "da": 1400 } (facoltativo: dove parte l'asse; senza, da 0), "evidenza": 0 }`
+Le barre crescono una dopo l'altra (lunghezza proporzionale a `valore` sulla scala), la voce `evidenza` (indice) in
+accento, le altre in pannello; `segno` mostra ✓ o ✕ accanto al nome. Parole di attacco: titolo, poi ogni voce nell'ordine.
+
 ## Provare uno stampo
 
 ```bash
@@ -65,4 +88,5 @@ node script/video-hf/monta.mjs <piano.json> <cartella-nuova>
 ```
 
 Piano di prova: `{ "scene": [{ "stampo": "numero", "etichetta": "The number", "voce": "...", "dati": { ... } }], "copertina": 0 }`.
+Per il verticale aggiungere `"formato": "verticale"` al piano.
 Poi guardare i fotogrammi (ffmpeg `-ss <t> -frames:v 1`) a metà e alla fine di ogni entrata.

@@ -3,8 +3,14 @@
 // Dalla prova DeepInfer del 24/10/2026, quadro 1 («155T tokens / day»), reso guidato dai dati.
 import { C, scena, s3, esc, misura, attacchi } from '../base.mjs';
 
-// quadrante: centro, raggio delle tacche, anello sottile interno, raggio utile per i testi
-const CX = 960, CY = 486, RT = 356, SW = 26, RI = 326, RU = 308;
+// quadrante: raggio delle tacche, spessore, anello sottile interno
+const RT = 356, SW = 26, RI = 326;
+// geometria per formato: centro del quadrante, raggio utile per i testi, dimensioni massime e minime dei testi;
+// in orizzontale la fonte sta dentro il quadrante, in verticale (Short) sta sopra e il timbro sotto
+const GEOMETRIE = {
+  orizzontale: { k: 1, CX: 960, CY: 486, RU: 308, W: 1920, fsN: 250, fsE: 52, fsD: 40, min: 28, chipDentro: true },
+  verticale: { k: 0.94, CX: 540, CY: 620, RU: 290, W: 1080, fsN: 250, fsE: 60, fsD: 48, min: 34, chipDentro: false },
+};
 const NUMERO = /^(\d{1,3}(,\d{3})+|\d+)(\.\d{1,2})?$/;
 
 // larghezza stimata di un testo in em (Source Serif 4): cifre tabellari, maiuscole, minuscole, spazi
@@ -26,20 +32,22 @@ function em(testo, { cifre = 0.56 } = {}) {
 const taglia = (testo, larghezza, max, min = 28) => misura(testo, { larghezza, max, min, fattore: em(testo) / Math.max(1, String(testo).length) });
 
 // corda del cerchio utile fra le quote y1 e y2: la larghezza disponibile per una riga che sta fra le due
-function corda(y1, y2) {
-  const d = Math.max(Math.abs(y1 - CY), Math.abs(y2 - CY));
-  return d >= RU ? 0 : 2 * Math.sqrt(RU * RU - d * d);
+function corda(G, y1, y2) {
+  const d = Math.max(Math.abs(y1 - G.CY), Math.abs(y2 - G.CY));
+  return d >= G.RU ? 0 : 2 * Math.sqrt(G.RU * G.RU - d * d);
 }
 
 // impaginazione dentro il quadrante, decisa qui: la pila (fonte, numero, etichetta, dettaglio) centrata sul quadrante;
 // se un pezzo non sta nella sua corda, il numero rimpicciolisce e la pila si accorcia
-function impagina({ valore, unita, etichetta, dettaglio, fonte }) {
+function impagina(G, { valore, unita, etichetta, dettaglio, fonte: fonteVera }) {
   const testoNumero = valore + unita;
-  let fsN = 250;
+  const fonte = G.chipDentro ? fonteVera : '';
+  const CY = G.CY, corda2 = (a, b) => corda(G, a, b);
+  let fsN = G.fsN;
   const chipH = 56, gapChip = 30, gapE = 24, gapD = 8;
   let ris;
   for (let giro = 0; giro < 80; giro++) {
-    const fsE = 52, fsD = 40;
+    const fsE = G.fsE, fsD = G.fsD;
     // prima passata con le dimensioni massime, poi le righe si adattano alla loro corda
     const pila = (fe, fd) => {
       const hN = fsN * 0.92, hE = fe * 1.2, hD = dettaglio ? fd * 1.2 : 0;
@@ -53,19 +61,19 @@ function impagina({ valore, unita, etichetta, dettaglio, fonte }) {
       return p;
     };
     let p = pila(fsE, fsD);
-    const fe = taglia(etichetta, corda(...p.eti) - 24, fsE);
-    const fd = dettaglio ? taglia(dettaglio, corda(...p.det) - 24, fsD) : fsD;
+    const fe = taglia(etichetta, corda2(...p.eti) - 24, fsE, G.min);
+    const fd = dettaglio ? taglia(dettaglio, corda2(...p.det) - 24, fsD, G.min) : fsD;
     p = pila(fe, fd);
     let ok = true;
     // numero: deve stare nella sua corda
-    const largN = corda(...p.num) - 20;
+    const largN = corda2(...p.num) - 20;
     if (em(testoNumero) * fsN * 0.97 > largN) ok = false;
-    if (em(etichetta) * fe > corda(...p.eti) - 16) ok = false;
-    if (dettaglio && em(dettaglio) * fd > corda(...p.det) - 16) ok = false;
+    if (em(etichetta) * fe > corda2(...p.eti) - 16) ok = false;
+    if (dettaglio && em(dettaglio) * fd > corda2(...p.det) - 16) ok = false;
     // fonte: carattere fisso 28 px, spaziatura che si stringe se serve
     let spazio = 0.14;
     if (fonte) {
-      const largC = corda(...p.chip);
+      const largC = corda2(...p.chip);
       const chip = (ls) => String(fonte).length * (0.6 + ls) * 28 + 48;
       spazio = [0.14, 0.08, 0.02].find((ls) => chip(ls) <= largC);
       if (spazio == null) { ok = false; spazio = 0.02; }
@@ -103,10 +111,13 @@ export default {
     const primo = String(d.timbro ?? '').split(/\s+/).find((w) => w.replace(/[^\w]/g, '').length >= 3) || d.timbro;
     return attacchi(d, [['etichetta', d.etichetta], ['dettaglio', d.dettaglio], ['fonte', d.fonte], ['timbro', primo]]);
   },
-  html({ id, px, dati, durata, t, etichetta: titolo, numero }) {
+  html({ id, px, dati, durata, t, etichetta: titolo, numero, formato = 'orizzontale' }) {
+    const V = formato === 'verticale';
+    const G = V ? GEOMETRIE.verticale : GEOMETRIE.orizzontale;
+    const { CX, CY, k } = G;
     const tx = (k) => (dati[k] == null ? '' : String(dati[k]).trim());
     const valore = tx('valore'), unita = tx('unita'), etichetta = tx('etichetta'), dettaglio = tx('dettaglio'), fonte = tx('fonte'), timbro = tx('timbro');
-    const L = impagina({ valore, unita, etichetta, dettaglio, fonte });
+    const L = impagina(G, { valore, unita, etichetta, dettaglio, fonte });
 
     // il conteggio: cifre, decimali e virgole delle migliaia come in «valore»
     const decimali = (valore.split('.')[1] || '').length;
@@ -130,20 +141,25 @@ export default {
     const kT = s3(Math.max(0.45, Math.min(1, (durata - 0.15 - Math.min(tT, tFine)) / 1.0)));
 
     // timbro: dimensione e riquadro in base al testo
-    const fsT = timbro ? misura(timbro, { larghezza: 380, max: 40, min: 28, fattore: 0.74 }) : 40;
+    // orizzontale: in alto a destra, fuori dal quadrante; verticale: centrato sotto il quadrante (fra il quadrante e y 1180)
+    const fsT = timbro ? misura(timbro, V ? { larghezza: 560, max: 48, min: 34, fattore: 0.74 } : { larghezza: 380, max: 40, min: 28, fattore: 0.74 }) : 40;
     const wT = Math.round(Math.max(260, timbro.length * 0.74 * fsT + 76)), hT = 120;
-    const xT = 1800 - wT;
+    const xT = V ? Math.round(CX - wT / 2) : 1800 - wT;
+    const yT = V ? Math.round((CY + 400 * k * 0.92 + 1180) / 2 - hT / 2) : 160;
+    // verticale: la fonte sta sopra il quadrante, in una riga sua
+    const fsC = V && fonte ? misura(fonte, { larghezza: G.W - 2 * 72 - 60, max: 44, min: 34, fattore: 0.74 }) : 28;
+    const hC = Math.round(fsC * 1.1 + 26);
 
     const top = (r) => Math.round(r[0]);
     const css = `
     #${px}alone { position: absolute; left: ${CX - 500}px; top: ${CY - 500}px; width: 1000px; height: 1000px; border-radius: 50%;
       background: radial-gradient(circle at 50% 50%, rgba(76,203,139,0.20) 0%, rgba(76,203,139,0.07) 38%, rgba(76,203,139,0) 68%); }
-    #${px}quadrante { position: absolute; left: ${CX - 400}px; top: ${CY - 400}px; width: 800px; height: 800px; overflow: visible; }
+    #${px}quadrante { position: absolute; left: ${CX - 400 * k}px; top: ${CY - 400 * k}px; width: ${800 * k}px; height: ${800 * k}px; overflow: visible; }
     .${px}tacche { fill: none; stroke: ${C.accentoScuro}; stroke-width: ${SW}; stroke-dasharray: 3 ${(2 * Math.PI * RT / 120 - 3).toFixed(2)}; }
     .${px}anello { fill: none; stroke: ${C.accento}; stroke-width: 2; stroke-linecap: round; }
-    .${px}riga { position: absolute; left: 0; width: 1920px; display: flex; justify-content: center; align-items: center; white-space: nowrap; }
+    .${px}riga { position: absolute; left: 0; width: ${G.W}px; display: flex; justify-content: center; align-items: center; white-space: nowrap; }
     #${px}chip { padding: 11px 22px 11px; border: 2px solid ${C.accento}; border-radius: 6px; background: ${C.fondo};
-      font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; line-height: 1.1; letter-spacing: ${L.spazio}em; text-transform: uppercase; color: ${C.crema}; }
+      font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: ${fsC}px; line-height: 1.1; letter-spacing: ${V ? 0.14 : L.spazio}em; text-transform: uppercase; color: ${C.crema}; }
     #${px}cifra { display: flex; align-items: baseline; justify-content: center; font-weight: 500; font-optical-sizing: auto; line-height: 0.92;
       letter-spacing: -0.03em; color: ${C.accento}; font-size: ${L.fsN}px; }
     #${px}conta { display: inline-block; font-variant-numeric: tabular-nums lining-nums; transform-origin: 50% 70%; }
@@ -151,7 +167,7 @@ export default {
     #${px}eti { gap: ${Math.round(L.fe * 0.28)}px; font-weight: 400; font-size: ${L.fe}px; line-height: 1.2; color: ${C.crema}; }
     .${px}parola { display: inline-block; }
     #${px}det { font-family: "Source Serif 4", serif; font-style: italic; font-weight: 400; font-size: ${L.fd}px; line-height: 1.2; color: ${C.crema2}; }
-    #${px}timbro { position: absolute; left: ${xT}px; top: 160px; width: ${wT}px; height: ${hT}px; transform: rotate(-7deg); }
+    #${px}timbro { position: absolute; left: ${xT}px; top: ${yT}px; width: ${wT}px; height: ${hT}px; transform: rotate(-7deg); }
     #${px}timbro-svg { position: absolute; inset: 0; width: ${wT}px; height: ${hT}px; overflow: visible; }
     .${px}timbro-linea { fill: none; stroke: ${C.accento}; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
     #${px}timbro-testo { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; white-space: nowrap;
@@ -167,7 +183,7 @@ export default {
         <circle class="${px}tacche" cx="400" cy="400" r="${RT}" transform="rotate(-90 400 400)" mask="url(#${px}maschera)"/>
         <circle id="${px}anello" class="${px}anello" cx="400" cy="400" r="${RI}" transform="rotate(-90 400 400)"/>
       </svg>
-      ${fonte ? `<div class="${px}riga" style="top: ${top(L.p.chip)}px; height: ${Math.round(L.p.chip[1] - L.p.chip[0])}px"><div id="${px}chip">${esc(fonte)}</div></div>` : ''}
+      ${!fonte ? '' : V ? `<div class="${px}riga" style="top: 160px; height: ${hC}px"><div id="${px}chip">${esc(fonte)}</div></div>` : `<div class="${px}riga" style="top: ${top(L.p.chip)}px; height: ${Math.round(L.p.chip[1] - L.p.chip[0])}px"><div id="${px}chip">${esc(fonte)}</div></div>`}
       <div class="${px}riga" style="top: ${top(L.p.num)}px; height: ${Math.round(L.p.num[1] - L.p.num[0])}px"><div id="${px}cifra"><span id="${px}conta">${formatta(0)}</span>${unita ? `<span id="${px}unita">${esc(unita)}</span>` : ''}</div></div>
       <div id="${px}eti" class="${px}riga" style="top: ${top(L.p.eti)}px">${parole}</div>
       ${dettaglio ? `<div id="${px}det" class="${px}riga" style="top: ${top(L.p.det)}px">${esc(dettaglio)}</div>` : ''}
@@ -205,6 +221,6 @@ export default {
         tl.fromTo(p, { strokeDasharray: l, strokeDashoffset: l }, { strokeDashoffset: 0, duration: d * ${kT}, ease: "power2.out" }, ${tempo(tT)} + a * ${kT});
       });
       tl.fromTo(q("#${px}timbro-testo"), { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: ${s3(0.45 * kT)}, ease: "power2.out" }, ${s3(tempo(tT) + 0.55 * kT)});` : ''}`;
-    return scena({ id, px, durata, etichetta: titolo, numero, css, corpo, anima });
+    return scena({ id, px, durata, etichetta: titolo, numero, css, corpo, anima, formato: V ? 'verticale' : 'orizzontale' });
   },
 };

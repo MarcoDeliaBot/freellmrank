@@ -115,4 +115,25 @@ const info = {
   titoli: scene.map((s) => s.corpo.match(/class="titolo[^>]*>([^<]+)/)?.[1] || 'Intro'),
 };
 fs.writeFileSync(path.join(OUT, 'info-lungo.json'), JSON.stringify(info, null, 1));
+
+// ---------- piano del video a stampi (24/10/2026 sera, Marco: «li vorrei tutti così»; script/video-hf/) ----------
+// Stesse voci delle scene di sopra (dai dati del sito), a schermo solo dati del sito. Niente Workers AI.
+const corto = (s, n) => (String(s).length > n ? String(s).slice(0, n - 1).trimEnd() + '…' : String(s));
+// nomi dei modelli nelle liste: senza la data finale e con spazi, così vanno a capo («DeepSeek-V4.1-Flash-20261017» → «DeepSeek V4.1 Flash»)
+const visto = (n) => String(n).replace(/[-_]?\b20\d{6}\b/g, '').replace(/[-_]+/g, ' ').trim();
+const voceDi = (inizio) => scene.find((s) => s.voce.startsWith(inizio))?.voce;
+const piano = [
+  { stampo: 'numero', etichetta: 'Weekly report', voce: scene[0].voce, dati: { valore: String(distacco), unita: '', etichetta: 'points behind', dettaglio: 'the best paid model', fonte: corto(`Week of ${giorno(dati.aggiornato)}`, 28) } },
+  { stampo: 'barre', etichetta: 'Top 10', voce: scene[1].voce, dati: { titolo: 'Top 10 free chat models', sotto: 'Blind human votes on Arena', voci: top10.map((m) => ({ nome: corto(m.nome, 28), valore: m.punti, testo: String(m.punti), nota: corto(nomeLab(m.org), 34) })), riferimento: { nome: corto(pagato.nome, 28), valore: pagato.punti, testo: String(pagato.punti) }, scala: { da: 1400 }, evidenza: 0, quando: { riferimento: 'dashed' } } },
+  { stampo: 'barre', etichetta: 'Places 4 to 10', voce: scene[2].voce, dati: { titolo: 'Places 4 to 10', voci: top10.slice(3).map((m) => ({ nome: corto(m.nome, 28), valore: m.punti, testo: String(m.punti), nota: corto(`${nomeLab(m.org)} · ${m.aperto ? 'open weights' : 'free API'}`, 34) })), scala: { da: 1400 } } },
+  { stampo: 'numeri', etichetta: 'Top 50', voce: scene[3].voce, dati: { titolo: 'Of the top 50 chat models', voci: [{ valore: String(gratis50), unita: '', etichetta: 'free to use', grafico: 'nessuno' }, { valore: String(aperti50), unita: '', etichetta: 'open weights', grafico: 'nessuno' }] } },
+  ...(mosse.length ? [{ stampo: 'punti', etichetta: 'Who moved', voce: voceDi('The biggest move'), dati: { titolo: 'Who moved this week', punti: mosse.slice(0, 4).map((x) => corto(`${visto(x.m.nome)} ${x.d > 0 ? '+' : ''}${x.d}, now ${x.m.punti}`, 60)) } }] : []),
+  ...(entrati.length >= 2 ? [{ stampo: 'punti', etichetta: 'New on the board', voce: voceDi(entrati.length === 1 ? 'One free model' : `${entrati.length} free models`), dati: { titolo: `${entrati.length} new on the leaderboard`, punti: entrati.slice(0, 4).map((m) => corto(`${visto(m.nome)}: ${m.punti} points, #${m.pos} overall`, 60)) } }] : []),
+  { stampo: 'punti', etichetta: 'By category', voce: voceDi('Now the best free model'), dati: { titolo: 'Best free model per category', punti: capi.slice(0, 4).map((x) => corto(`${x.c.nome}: ${visto(x.m.nome)}`, 60)) } },
+  ...(nuoviSett.length >= 2 ? [{ stampo: 'punti', etichetta: 'New open models', voce: voceDi(nuoviSett.length === 1 ? 'One new open model' : `${nuoviSett.length} new open models`), dati: { titolo: 'New open models this week', punti: nuoviSett.slice(0, 4).map((m) => corto(`${visto(m.nome)}: ${Math.round(m.hf.b * 10) / 10}B parameters`, 60)) } }] : []),
+  ...(nuovo ? [{ stampo: 'numeri', etichetta: 'Model of the week', voce: voceDi('The model of the week'), dati: { titolo: corto(nuovo.nome, 32), voci: [{ valore: String(Math.round(nuovo.hf.b)), unita: 'B', etichetta: 'parameters', grafico: 'nessuno' }, { valore: String(gb4), unita: 'GB', etichetta: 'memory at 4-bit', grafico: 'nessuno' }] } }] : []),
+  ...(casa.length >= 2 ? [{ stampo: 'barre', etichetta: 'At home', voce: voceDi('What can you run at home'), dati: { titolo: 'What runs at home', sotto: '4-bit · 8K context · our simulator', voci: casa.map((x) => ({ nome: corto(`${x.s.nome.replace(/ \d+ GB$/, '')}${x.ram ? ` + ${x.ram} GB` : ''}`, 28), valore: Number(fmtVel(x.r.vel)), testo: `${fmtVel(x.r.vel)} tok/s`, nota: corto(x.m.nome, 34) })) } }] : []),
+  { stampo: 'chiusura', etichetta: 'FreeLLMArena' },
+].filter((s) => s.stampo === 'chiusura' || s.voce);
+fs.writeFileSync(path.join(OUT, 'piano-lungo.json'), JSON.stringify({ formato: 'orizzontale', copertina: 1, scene: piano }, null, 1));
 console.log('ok', { scene: scene.length, min: t, mosse: mosse.map((x) => `${x.m.nome} ${x.d}`), entrati: entrati.map((m) => m.nome), nuovi: nuoviSett.map((m) => m.nome), casa: casa.map((x) => `${x.s.nome}: ${x.m.nome} ${fmtVel(x.r.vel)}`) });

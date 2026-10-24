@@ -64,7 +64,8 @@ export default {
       ...d.alternative.map((a, i) => [`alternativa${i + 1}`, a.testo]),
     ]);
   },
-  html({ id, px, dati, durata, t, etichetta, numero }) {
+  html({ id, px, dati, durata, t, etichetta, numero, formato }) {
+    if (formato === 'verticale') return verticale({ id, px, dati, durata, t, etichetta, numero });
     const d = pezzi(dati);
     // il pannello scuro solo con dei blocchi; senza blocchi l'intestazione diventa un occhiello sopra il titolo della lista
     const conPannello = d.blocchi.length > 0;
@@ -72,13 +73,7 @@ export default {
     const occF = occhiello ? misura(d.pannello, { larghezza: 1100, max: 40, min: 32, fattore: 0.6 }) : 0;
     const occH = occhiello ? Math.round(occF * 1.2) + 14 : 0;
 
-    // tempi: ogni pezzo quando la voce lo nomina; riserve distribuite sulla durata, nell'ordine della voce
-    const ordine = [
-      ...(d.pannello ? ['pannello'] : []), ...d.blocchi.map((_, i) => `blocco${i + 1}`), 'titoloLista',
-      ...d.righe.map((_, i) => `riga${i + 1}`), ...d.alternative.map((_, i) => `alternativa${i + 1}`),
-    ];
-    const T = {};
-    ordine.forEach((k, i) => { T[k] = t(k, i === 0 ? 0.15 : durata * (0.06 + (0.8 * i) / Math.max(1, ordine.length - 1))); });
+    const T = tempi(d, durata, t);
     const tLista = T.titoloLista;
 
     // ---------- geometria, decisa qui ----------
@@ -133,9 +128,7 @@ export default {
     const tipoW = 270;
     const nomeF = Math.min(...d.blocchi.map((b) => misura(b.nome, { larghezza: righeB ? inW - tipoW - 90 : bW - 96, max: 56, fattore: 0.6 })), 56);
 
-    // la parte dell'intestazione dall'ultima «/» in poi va in verde, come nella prova
-    const barra = d.pannello.lastIndexOf('/');
-    const taglio = barra >= 0 ? (d.pannello.slice(0, barra).endsWith(' ') ? barra - 1 : barra) : d.pannello.length;
+    const taglio = tagliaVerde(d.pannello);
 
     const css = `
     #${px}pannello { position: absolute; left: ${P.x}px; top: ${P.y}px; width: ${P.w}px; height: ${P.h}px; background: ${C.pannello}; border-radius: 8px; overflow: hidden; opacity: 0; }
@@ -169,7 +162,7 @@ export default {
     .${px}onota { font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; color: ${C.accento}; }
     #${px}or { width: ${orW}px; text-align: center; font-weight: 500; font-size: 44px; color: ${C.crema2}; opacity: 0; }`;
 
-    const caratteri = (s, da, cls) => [...s].map((ch, i) => `<span class="${px}${cls}${da != null && i >= da ? ` ${px}car-acc` : ''}">${esc(ch)}</span>`).join('');
+    const caratteri = (s, da, cls) => lettere(px, s, da, cls);
     const blocchi = d.blocchi.map((b, i) => {
       const x = righeB || nB === 1 ? 0 : i * (bW + 40);
       const y = righeB ? bY + i * (bH + 24) : bY;
@@ -196,55 +189,180 @@ export default {
         ${nA ? `<div class="${px}alt">${alt}</div>` : ''}
       </div>`;
 
-    // ---------- animazione: solo tl.fromTo / tl.set, tutto sulla linea del tempo ----------
-    const A = [];
-    if (conPannello) {
-      A.push(`tl.fromTo(q("#${px}pannello"), { opacity: 0, y: 28, clipPath: "inset(0% 0% 100% 0% round 8px)" }, { opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0% round 8px)", duration: 0.8, ease: "power3.out" }, 0.1);`);
-      if (conTesta) {
-        // il cursore: compare, la scritta si compone lettera per lettera, poi lampeggia finché parte la lista
-        const n = [...d.pannello].length;
-        const inizio = Math.max(0.6, T.pannello + 0.25);
-        const fineMax = nB ? T.blocco1 - 0.15 : tLista - 0.3;
-        const passo = Math.max(0.03, Math.min(0.09, (fineMax - inizio) / n));
-        const fine = inizio + passo * n;
-        A.push(`tl.set(q("#${px}cursore"), { opacity: 1 }, ${s3(inizio - 0.25)});`);
-        A.push(`(function () { var c = qa(".${px}car"); for (var i = 0; i < c.length; i++) tl.set(c[i], { display: "inline" }, ${s3(inizio)} + i * ${s3(passo)}); })();`);
-        A.push(`tl.set(q("#${px}cursore"), { backgroundColor: "${C.accento}" }, ${s3(inizio + passo * taglio)});`);
-        const stop = Math.max(fine, tLista);
-        for (let x = fine + 0.45, acceso = false; x < stop - 0.05; x += 0.4, acceso = !acceso) A.push(`tl.set(q("#${px}cursore"), { opacity: ${acceso ? 1 : 0} }, ${s3(x)});`);
-        A.push(`tl.set(q("#${px}cursore"), { opacity: 0 }, ${s3(stop)});`);
-        if (nB) A.push(`tl.fromTo(q("#${px}prega"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.out" }, ${s3(fine)});`);
-      }
-      d.blocchi.forEach((_, i) => {
-        const b = T[`blocco${i + 1}`];
-        A.push(`tl.fromTo(q("#${px}b${i + 1}"), { opacity: 0, y: 46 }, { opacity: 1, y: 0, duration: 0.75, ease: "power3.out" }, ${s3(b)});`);
-        A.push(`tl.fromTo(q("#${px}bb${i + 1}"), { scaleY: 0 }, { scaleY: 1, duration: 0.55, ease: "power2.out" }, ${s3(b + 0.2)});`);
-      });
-      // la lista prende la scena: il pannello si sfoca un poco
-      A.push(`tl.fromTo(q("#${px}pannello"), { filter: "blur(0px)" }, { filter: "blur(2.5px)", opacity: 0.6, duration: 0.9, ease: "power2.inOut", immediateRender: false }, ${s3(tLista + 0.2)});`);
-    }
-    if (occhiello) {
-      // l'occhiello si scrive lettera per lettera quando la voce lo nomina (o all'inizio)
-      const n = [...d.pannello].length;
-      const inizio = Math.max(0.3, T.pannello);
-      const passo = Math.max(0.03, Math.min(0.06, (tLista - 0.15 - inizio) / n));
-      A.push(`(function () { var c = qa(".${px}occ"); for (var i = 0; i < c.length; i++) tl.set(c[i], { display: "inline" }, ${s3(inizio)} + i * ${s3(passo)}); })();`);
-    }
-    A.push(`tl.fromTo(q("#${px}titolo"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, ${s3(tLista)});`);
-    A.push(`tl.fromTo(q("#${px}trega"), { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.out" }, ${s3(tLista + 0.3)});`);
-    d.righe.forEach((r, i) => {
-      const x = T[`riga${i + 1}`];
-      const passo = 0.045;
-      A.push(`tl.fromTo(q("#${px}r${i + 1}"), { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, ${s3(x)});`);
-      A.push(`(function () { var c = qa(".${px}rc${i + 1}"); for (var i = 0; i < c.length; i++) tl.set(c[i], { opacity: 1 }, ${s3(x + 0.08)} + i * ${passo}); })();`);
-      A.push(`tl.fromTo(q("#${px}k${i + 1}"), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out" }, ${s3(x + 0.22)});`);
-    });
-    d.alternative.forEach((_, i) => {
-      const a = T[`alternativa${i + 1}`];
-      A.push(`tl.fromTo(q("#${px}o${i + 1}"), { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, ${s3(a)});`);
-      if (i === 1) A.push(`tl.fromTo(q("#${px}or"), { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, ${s3(Math.max(T.alternativa1 + 0.3, a - 0.45))});`);
-    });
+    const A = animazione({ px, d, T, taglio, conPannello, occhiello });
 
     return scena({ id, px, durata, etichetta, numero, css, corpo, anima: A.join('\n      ') });
   },
 };
+
+// tempi: ogni pezzo quando la voce lo nomina; riserve distribuite sulla durata, nell'ordine della voce
+function tempi(d, durata, t) {
+  const ordine = [
+    ...(d.pannello ? ['pannello'] : []), ...d.blocchi.map((_, i) => `blocco${i + 1}`), 'titoloLista',
+    ...d.righe.map((_, i) => `riga${i + 1}`), ...d.alternative.map((_, i) => `alternativa${i + 1}`),
+  ];
+  const T = {};
+  ordine.forEach((k, i) => { T[k] = t(k, i === 0 ? 0.15 : durata * (0.06 + (0.8 * i) / Math.max(1, ordine.length - 1))); });
+  return T;
+}
+
+// la parte dell'intestazione dall'ultima «/» in poi va in verde, come nella prova
+function tagliaVerde(testo) {
+  const barra = testo.lastIndexOf('/');
+  return barra >= 0 ? (testo.slice(0, barra).endsWith(' ') ? barra - 1 : barra) : testo.length;
+}
+
+// un testo lettera per lettera (ogni lettera compare con tl.set), dalla posizione «da» in accento
+const lettere = (px, s, da, cls) => [...s].map((ch, i) => `<span class="${px}${cls}${da != null && i >= da ? ` ${px}car-acc` : ''}">${esc(ch)}</span>`).join('');
+
+// l'animazione, uguale nei due formati: stessi id e classi, stessi tempi
+function animazione({ px, d, T, taglio, conPannello, occhiello }) {
+  const tLista = T.titoloLista, conTesta = !!d.pannello, nB = d.blocchi.length;
+  // ---------- animazione: solo tl.fromTo / tl.set, tutto sulla linea del tempo ----------
+  const A = [];
+  if (conPannello) {
+    A.push(`tl.fromTo(q("#${px}pannello"), { opacity: 0, y: 28, clipPath: "inset(0% 0% 100% 0% round 8px)" }, { opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0% round 8px)", duration: 0.8, ease: "power3.out" }, 0.1);`);
+    if (conTesta) {
+      // il cursore: compare, la scritta si compone lettera per lettera, poi lampeggia finché parte la lista
+      const n = [...d.pannello].length;
+      const inizio = Math.max(0.6, T.pannello + 0.25);
+      const fineMax = nB ? T.blocco1 - 0.15 : tLista - 0.3;
+      const passo = Math.max(0.03, Math.min(0.09, (fineMax - inizio) / n));
+      const fine = inizio + passo * n;
+      A.push(`tl.set(q("#${px}cursore"), { opacity: 1 }, ${s3(inizio - 0.25)});`);
+      A.push(`(function () { var c = qa(".${px}car"); for (var i = 0; i < c.length; i++) tl.set(c[i], { display: "inline" }, ${s3(inizio)} + i * ${s3(passo)}); })();`);
+      A.push(`tl.set(q("#${px}cursore"), { backgroundColor: "${C.accento}" }, ${s3(inizio + passo * taglio)});`);
+      const stop = Math.max(fine, tLista);
+      for (let x = fine + 0.45, acceso = false; x < stop - 0.05; x += 0.4, acceso = !acceso) A.push(`tl.set(q("#${px}cursore"), { opacity: ${acceso ? 1 : 0} }, ${s3(x)});`);
+      A.push(`tl.set(q("#${px}cursore"), { opacity: 0 }, ${s3(stop)});`);
+      if (nB) A.push(`tl.fromTo(q("#${px}prega"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.out" }, ${s3(fine)});`);
+    }
+    d.blocchi.forEach((_, i) => {
+      const b = T[`blocco${i + 1}`];
+      A.push(`tl.fromTo(q("#${px}b${i + 1}"), { opacity: 0, y: 46 }, { opacity: 1, y: 0, duration: 0.75, ease: "power3.out" }, ${s3(b)});`);
+      A.push(`tl.fromTo(q("#${px}bb${i + 1}"), { scaleY: 0 }, { scaleY: 1, duration: 0.55, ease: "power2.out" }, ${s3(b + 0.2)});`);
+    });
+    // la lista prende la scena: il pannello si sfoca un poco
+    A.push(`tl.fromTo(q("#${px}pannello"), { filter: "blur(0px)" }, { filter: "blur(2.5px)", opacity: 0.6, duration: 0.9, ease: "power2.inOut", immediateRender: false }, ${s3(tLista + 0.2)});`);
+  }
+  if (occhiello) {
+    // l'occhiello si scrive lettera per lettera quando la voce lo nomina (o all'inizio)
+    const n = [...d.pannello].length;
+    const inizio = Math.max(0.3, T.pannello);
+    const passo = Math.max(0.03, Math.min(0.06, (tLista - 0.15 - inizio) / n));
+    A.push(`(function () { var c = qa(".${px}occ"); for (var i = 0; i < c.length; i++) tl.set(c[i], { display: "inline" }, ${s3(inizio)} + i * ${s3(passo)}); })();`);
+  }
+  A.push(`tl.fromTo(q("#${px}titolo"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, ${s3(tLista)});`);
+  A.push(`tl.fromTo(q("#${px}trega"), { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.out" }, ${s3(tLista + 0.3)});`);
+  d.righe.forEach((r, i) => {
+    const x = T[`riga${i + 1}`];
+    const passo = 0.045;
+    A.push(`tl.fromTo(q("#${px}r${i + 1}"), { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, ${s3(x)});`);
+    A.push(`(function () { var c = qa(".${px}rc${i + 1}"); for (var i = 0; i < c.length; i++) tl.set(c[i], { opacity: 1 }, ${s3(x + 0.08)} + i * ${passo}); })();`);
+    A.push(`tl.fromTo(q("#${px}k${i + 1}"), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out" }, ${s3(x + 0.22)});`);
+  });
+  d.alternative.forEach((_, i) => {
+    const a = T[`alternativa${i + 1}`];
+    A.push(`tl.fromTo(q("#${px}o${i + 1}"), { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, ${s3(a)});`);
+    if (i === 1) A.push(`tl.fromTo(q("#${px}or"), { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, ${s3(Math.max(T.alternativa1 + 0.3, a - 0.45))});`);
+  });
+  return A;
+}
+
+// Short (1080x1920): tutto in una colonna fra y 150 e 1180, margini 72. In alto il pannello scuro compatto
+// (intestazione che si scrive, blocchi come righe basse), sotto la lista, in fondo le alternative. Testi da 40 px in su.
+function verticale({ id, px, dati, durata, t, etichetta, numero }) {
+  const d = pezzi(dati);
+  const T = tempi(d, durata, t);
+  const conPannello = d.blocchi.length > 0;
+  const occhiello = !!d.pannello && !conPannello;
+  const taglio = tagliaVerde(d.pannello);
+  const nB = d.blocchi.length, nA = d.alternative.length;
+  const ALTO = 150, FONDO = 1180, X = 72, LW = 1080 - 2 * X; // 936
+
+  // pannello compatto
+  const pad = 28;
+  const testaF = conPannello && d.pannello ? misura(d.pannello, { larghezza: LW - 2 * pad - 40, max: 52, min: 40, fattore: 0.6 }) : 0;
+  const testaH = testaF ? Math.round(testaF * 1.3) : 0;
+  const bH = 72, bGap = 10;
+  const tipoMax = Math.max(0, ...d.blocchi.map((b) => b.tipo.length));
+  const tipoW = tipoMax ? Math.ceil(tipoMax * 0.68 * 40) + 28 : 0;
+  const nomeF = Math.min(...d.blocchi.map((b) => misura(b.nome, { larghezza: LW - 2 * pad - 48 - tipoW - 16, max: 52, min: 40, fattore: 0.6 })), 52);
+  const panH = conPannello ? 2 * pad + testaH + (testaH ? 36 : 0) + nB * bH + (nB - 1) * bGap : 0;
+  const dopoPan = conPannello ? 36 : 0;
+
+  // colonna della lista
+  const occF = occhiello ? misura(d.pannello, { larghezza: LW, max: 52, min: 40, fattore: 0.6 }) : 0;
+  const occH = occhiello ? Math.round(occF * 1.2) + 14 : 0;
+  const titF = misura(d.titolo, { larghezza: LW, max: 100, min: 40, fattore: 0.52 });
+  const conNote = d.alternative.some((a) => a.nota);
+  const orW = 54, gapA = 22;
+  const optW = nA === 2 ? Math.floor((LW - orW - 2 * gapA) / 2) : 560;
+  const optF = Math.min(...d.alternative.map((a) => misura(a.testo, { larghezza: optW - 52, max: 48, min: 40, fattore: 0.6 })), 48);
+  const optH = nA ? (conNote ? optF + 102 : optF + 52) : 0, altH = nA ? 24 + optH : 0;
+  const testa = occH + titF + 18 + 2 + 20;
+  const disponibile = FONDO - ALTO - panH - dopoPan - testa - altH;
+  const rowH = Math.min(110, Math.floor(disponibile / d.righe.length));
+  const lunga = d.righe.reduce((a, r) => (r.length > a.length ? r : a), '');
+  const chk = Math.min(56, rowH - 16);
+  const gapR = Math.round(chk * 0.55);
+  const rowF = Math.max(40, Math.min(misura(lunga, { larghezza: LW - chk - gapR - 8, max: 72, min: 40, fattore: 0.6 }), Math.floor(rowH * 0.72)));
+  const totale = panH + dopoPan + testa + rowH * d.righe.length + altH;
+  const top = Math.round(ALTO + Math.max(0, (FONDO - ALTO - totale) / 2));
+
+  const css = `
+    #${px}pila { position: absolute; left: ${X}px; top: ${top}px; width: ${LW}px; }
+    #${px}pannello { position: relative; height: ${panH}px; box-sizing: border-box; padding: ${pad}px; margin-bottom: ${dopoPan}px; background: ${C.pannello}; border-radius: 8px; overflow: hidden; opacity: 0; }
+    .${px}testa { display: flex; align-items: center; height: ${testaH}px; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: ${testaF}px; white-space: pre; color: ${C.crema}; }
+    .${px}car { display: none; } .${px}car-acc { color: ${C.accento}; }
+    #${px}cursore { display: inline-block; width: ${Math.round(testaF * 0.5)}px; height: ${Math.round(testaF * 0.9)}px; margin-left: 6px; background: ${C.crema}; opacity: 0; }
+    #${px}prega { margin: 16px 0 18px; height: 2px; background: ${C.scuro}; transform-origin: 0 50%; }
+    .${px}blocco { position: relative; display: flex; align-items: center; height: ${bH}px; margin-bottom: ${bGap}px; padding-left: 48px; box-sizing: border-box; background: ${C.scuro}; border-radius: 6px; overflow: hidden; opacity: 0; }
+    .${px}blocco:last-child { margin-bottom: 0; }
+    .${px}bbarra { position: absolute; left: 0; top: 0; bottom: 0; width: 10px; background: ${C.accento}; transform-origin: 50% 0; }
+    .${px}btipo { flex: none; width: ${tipoW}px; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 40px; line-height: 1; letter-spacing: 0.06em; text-transform: uppercase; color: ${C.accento}; white-space: nowrap; }
+    .${px}bnome { font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: ${nomeF}px; line-height: 1; letter-spacing: -0.01em; color: ${C.crema}; white-space: nowrap; }
+    #${px}occhiello { font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: ${occF}px; line-height: 1.2; margin-bottom: 14px; white-space: pre; color: ${C.crema2}; }
+    .${px}occ { display: none; }
+    #${px}titolo { font-weight: 500; font-size: ${titF}px; line-height: 1; letter-spacing: -0.02em; color: ${C.crema}; white-space: nowrap; opacity: 0; }
+    #${px}trega { margin-top: 18px; height: 2px; background: ${C.accento}; transform-origin: 0 50%; }
+    .${px}righe { margin-top: 20px; }
+    .${px}riga { display: flex; align-items: center; height: ${rowH}px; gap: ${gapR}px; opacity: 0; }
+    .${px}spunta { width: ${chk}px; height: ${chk}px; flex: none; }
+    .${px}spunta rect { fill: none; stroke: ${C.crema2}; stroke-width: 2; }
+    .${px}spunta path { fill: none; stroke: ${C.accento}; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .${px}rtesto { white-space: pre; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: ${rowF}px; line-height: 1; color: ${C.crema}; }
+    .${px}rc { opacity: 0; }
+    .${px}alt { margin-top: 24px; display: flex; align-items: center; gap: ${gapA}px; }
+    .${px}opz { width: ${optW}px; height: ${optH}px; border: 2px solid ${C.accento}; border-radius: 6px; padding: 24px 26px; box-sizing: border-box;
+      display: flex; flex-direction: column; justify-content: ${conNote ? 'space-between' : 'center'}; opacity: 0; }
+    .${px}onome { font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: ${optF}px; line-height: 1; white-space: nowrap; color: ${C.crema}; }
+    .${px}onota { font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 40px; line-height: 1; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; color: ${C.accento}; }
+    #${px}or { width: ${orW}px; text-align: center; font-weight: 500; font-size: 48px; color: ${C.crema2}; opacity: 0; }`;
+
+  const blocchi = d.blocchi.map((b, i) => `<div id="${px}b${i + 1}" class="${px}blocco"><div id="${px}bb${i + 1}" class="${px}bbarra"></div>${tipoW ? `<div class="${px}btipo">${esc(b.tipo)}</div>` : ''}<div class="${px}bnome">${esc(b.nome)}</div></div>`).join('');
+  const pannello = conPannello ? `
+      <div id="${px}pannello">
+        ${d.pannello ? `<div class="${px}testa"><span>${lettere(px, d.pannello, taglio, 'car')}</span><span id="${px}cursore"></span></div><div id="${px}prega"></div>` : ''}
+        <div>${blocchi}</div>
+      </div>` : '';
+  const righe = d.righe.map((r, i) => `
+          <div id="${px}r${i + 1}" class="${px}riga">
+            <svg class="${px}spunta" viewBox="0 0 46 46"><rect x="1" y="1" width="44" height="44" rx="6" /><path id="${px}k${i + 1}" pathLength="1" d="M 11 24 L 20 33 L 36 13" /></svg>
+            <span class="${px}rtesto">${lettere(px, r, null, `rc ${px}rc${i + 1}`)}</span>
+          </div>`).join('');
+  const alt = d.alternative.map((a, i) => `${i ? `<div id="${px}or">or</div>` : ''}<div id="${px}o${i + 1}" class="${px}opz"><div class="${px}onome">${esc(a.testo)}</div>${a.nota ? `<div class="${px}onota">${esc(a.nota)}</div>` : conNote ? '<div></div>' : ''}</div>`).join('');
+  const corpo = `
+      <div id="${px}pila">${pannello}
+        <div id="${px}colonna">
+          ${occhiello ? `<div id="${px}occhiello">${lettere(px, d.pannello, taglio, 'occ')}</div>` : ''}
+          <div id="${px}titolo">${esc(d.titolo)}</div>
+          <div id="${px}trega"></div>
+          <div class="${px}righe">${righe}
+          </div>
+          ${nA ? `<div class="${px}alt">${alt}</div>` : ''}
+        </div>
+      </div>`;
+  const A = animazione({ px, d, T, taglio, conPannello, occhiello });
+  return scena({ id, px, durata, etichetta, numero, css, corpo, anima: A.join('\n      '), formato: 'verticale' });
+}

@@ -72,6 +72,12 @@ jobs:
           python-version: '3.12'
       - name: Strumenti (browser senza finestra, caratteri, numpy, voce Piper)
         run: |
+          # 24/10/2026 sera: i video si fanno con gli stampi (script/video-hf/registra.sh): servono ffmpeg e la voce Kokoro;
+          # Piper e registra.py restano per la riserva
+          sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+          pip install kokoro-onnx soundfile
+          echo "HYPERFRAMES_PYTHON=$(which python)" >> "$GITHUB_ENV"
+          echo "HYPERFRAMES_NO_TELEMETRY=1" >> "$GITHUB_ENV"
           pip install playwright numpy imageio-ffmpeg piper-tts==1.3.0
           python -m playwright install --with-deps chromium
           sudo apt-get install -y fonts-urw-base35 fonts-noto-core
@@ -80,6 +86,17 @@ jobs:
         with:
           path: video/voci
           key: voci-piper-lessac-high-paola-medium
+      # voce Kokoro, Parakeet e browser di HyperFrames per gli stampi: stessa cache di video-notizie.yml
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/hyperframes
+            ~/.npm/_npx
+          key: hyperframes-0.8.192-kokoro-parakeet-v1
+      - name: Modelli per gli stampi (Parakeet, browser)
+        run: |
+          npx --yes hyperframes@0.8.192 models install parakeet --json
+          npx --yes hyperframes@0.8.192 browser ensure || true
       - name: Video e release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -97,7 +114,7 @@ jobs:
               v="$tipo$lingua"
               nome=$(python -c "import json; print(json.load(open('video/brag/info-$v.json', encoding='utf-8'))['nome'])")
               if gh release view "video-$nome" >/dev/null 2>&1; then echo "Già fatto: $nome"; continue; fi
-              python script/brag/registra.py video "$v"
+              bash script/video-hf/registra.sh "$v"
               d="video/brag/brag-output-$v"
               cp "$d/brag.mp4" "$d/$nome.mp4"; cp "$d/brag.jpg" "$d/$nome.jpg"; cp "$d/brag.srt" "$d/$nome.srt"; cp "video/brag/info-$v.json" "$d/$nome.json"
               # lo Short della settimana rimanda al video lungo della stessa settimana (si fanno insieme la domenica)
@@ -121,7 +138,7 @@ jobs:
             [ -f video/brag/info-modello.json ] || break
             nome=$(python -c "import json; print(json.load(open('video/brag/info-modello.json', encoding='utf-8'))['nome'])")
             if gh release view "video-$nome" >/dev/null 2>&1; then echo "Già fatto: $nome"; continue; fi
-            python script/brag/registra.py video modello
+            bash script/video-hf/registra.sh modello
             d="video/brag/brag-output-modello"
             cp "$d/brag.mp4" "$d/$nome.mp4"; cp "$d/brag.jpg" "$d/$nome.jpg"; cp "$d/brag.srt" "$d/$nome.srt"; cp video/brag/info-modello.json "$d/$nome.json"
             titolo=$(python -c "import json; print(json.load(open('$d/$nome.json', encoding='utf-8'))['titolo'])")
