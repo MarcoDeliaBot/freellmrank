@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-24-anthropic-releases-open-source-os-level-sandbox-for-ai-agents",
+ "titolo": "Anthropic releases open‑source OS‑level sandbox for AI agents",
+ "descr": "Anthropic's sandbox-runtime adds file and network restrictions for Claude Code agents without using containers.",
+ "tema": "Software",
+ "paragrafi": [
+  "Anthropic announced an open‑source sandbox called sandbox-runtime (srt) that runs at the OS level.",
+  "The runtime limits file system and network access for AI agents, MCP servers and CLI tools.",
+  "On macOS it uses Seatbelt, while on Linux it relies on bubblewrap, eliminating the need for container solutions.",
+  "The sandbox is the security layer behind Anthropic's Claude Code product.",
+  "Anthropic positions the tool as a lightweight alternative to container‑based isolation for AI workloads."
+ ],
+ "perche": [
+  "The sandbox offers developers a simpler way to enforce security boundaries for AI agents, which can help protect data on local machines. For users of free or self‑hosted models, such OS‑level controls may reduce reliance on heavyweight container stacks while still providing isolation."
+ ],
+ "pubblicato": "2026-10-24",
+ "titoloFonte": "Meet Anthropic’s sandbox-runtime: OS-Level Sandboxing for AI Agents, No Containers",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/24/anthropic-sandbox-runtime-ai-agent-sandbox/",
+   "titolo": "Meet Anthropic’s sandbox-runtime: OS-Level Sandboxing for AI Agents, No Containers",
+   "ufficiale": false,
+   "data": "2026-10-24"
+  }
+ ],
+ "frasiTolte": 0
+}

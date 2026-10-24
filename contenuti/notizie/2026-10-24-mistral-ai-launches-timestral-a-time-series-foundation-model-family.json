@@ -1,0 +1,26 @@
+{
+ "nome": "2026-10-24-mistral-ai-launches-timestral-a-time-series-foundation-model-family",
+ "titolo": "Mistral AI launches Timestral, a time‑series foundation model family",
+ "descr": "Timestral offers four sizes up to 209 M parameters, achieving top zero‑shot scores on GIFT‑Eval, TIME and fev‑bench.",
+ "tema": "Research",
+ "paragrafi": [
+  "Four model sizes are available: 5 M, 28 M, 123 M and 209 M parameters, with the largest weighing 837 MB.",
+  "The models support past‑only, known‑future and categorical covariates, output 21 quantiles per step, and handle contexts up to 32,768 steps.",
+  "Inference runs on CPU or GPU using PyTorch, NumPy, safetensors and huggingface_hub; installation is via pip or a cloned repository."
+ ],
+ "perche": [
+  "Timestral provides a ready‑to‑use forecasting tool that works without a GPU, making advanced time‑series prediction accessible to researchers and developers on modest hardware. Its strong zero‑shot performance also offers a free alternative to commercial forecasting services for those seeking locally runnable models."
+ ],
+ "pubblicato": "2026-10-24",
+ "titoloFonte": "mistralai/timestral: Repository for Timestral, the time-series foundation model by Mistral AI",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/mistralai/timestral",
+   "titolo": "mistralai/timestral: Repository for Timestral, the time-series foundation model by Mistral AI",
+   "ufficiale": true,
+   "data": "2026-10-15"
+  }
+ ],
+ "frasiTolte": 2
+}

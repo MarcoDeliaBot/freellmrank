@@ -1,0 +1,33 @@
+{
+ "nome": "2026-10-24-anthropic-donates-agent-skills-standard-to-agentic-ai-foundation",
+ "titolo": "Anthropic donates Agent Skills standard to Agentic AI Foundation",
+ "descr": "Anthropic moves the open Agent Skills standard to the Linux‑backed AAIF, keeping it community‑driven and vendor‑neutral.",
+ "tema": "Business",
+ "paragrafi": [
+  "Anthropic announced on 22 October 2026 that it is transferring the Agent Skills open standard to the Agentic AI Foundation (AAIF).",
+  "The AAIF operates under the Linux Foundation, which Anthropic co‑founded with Block and OpenAI in 2025.",
+  "Agent Skills, first released in December 2025, let AI agents access specialized knowledge and workflows via a folder containing a SKILL.md file and supporting scripts."
+ ],
+ "perche": [
+  "The move secures a neutral home for Agent Skills, ensuring continued openness and community input. Users of AI agents can expect ongoing compatibility, while developers of free or locally‑run models gain a stable, vendor‑neutral specification to build on."
+ ],
+ "pubblicato": "2026-10-24",
+ "titoloFonte": "Donating Agent Skills to the Agentic AI Foundation",
+ "fonti": [
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Oct/22/donating-agent-skills/",
+   "titolo": "Donating Agent Skills to the Agentic AI Foundation",
+   "ufficiale": false,
+   "data": "2026-10-22"
+  },
+  {
+   "nome": "Anthropic",
+   "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+   "titolo": "Donating Agent Skills to the Agentic AI Foundation",
+   "ufficiale": true,
+   "data": "2026-10-22"
+  }
+ ],
+ "frasiTolte": 2
+}
