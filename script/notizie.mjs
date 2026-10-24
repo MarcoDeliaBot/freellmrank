@@ -110,6 +110,29 @@ async function leggiPagina(p, linkFatti) {
 }
 
 // 1c. radar: modelli di tendenza su Hugging Face (dei laboratori, non le copie quantizzate) e nuovi progetti AI su GitHub
+// 1d. segnali: i titoli degli ultimi video dei canali YouTube che Marco segue (24/10/2026: ci ha mandato i loro video su
+// DeepInfer, Timestral, Flint, Strata, TimesFM). Il feed RSS dei canali risponde 404: si legge la pagina «Video».
+// Non diventano notizie da soli (un titolo di video non è una fonte dei fatti): fanno solo salire le storie di cui parlano
+const CREATOR = [
+  { nome: 'Julian Goldie SEO', id: 'UCGpsgNbzdF7BECCVbB1COHw' }, { nome: 'Julian Goldie AI', id: 'UCX9_0hjELAj1RAb2s3S5gpA' },
+  { nome: "Luke's Dev Lab", id: 'UC6YL31AicZzw1-gap7zBm9A' }, { nome: 'Sam Witteveen', id: 'UC55ODQSvARtgSyc8ThfiepQ' },
+  { nome: 'Prompt Engineering', id: 'UCDq7SjbgRKty5TgGafW8Clg' }, { nome: 'Brendan Jowett', id: 'UCzIsviqoJc-VcWqF5Pp8iLw' },
+  { nome: 'Matthew Berman', id: 'UCzi5kcwU8aT4aLR7LcYhfWQ' }, { nome: 'AICodeKing', id: 'UC0m81bQuthaQZmFbXEY9QSw' }, { nome: 'Wes Roth', id: 'UCqcbQf6yw5KzRoDDcZ_wBSw' },
+];
+async function segnali() {
+  const uscita = [];
+  for (const c of CREATOR) {
+    try {
+      const r = await fetch(`https://www.youtube.com/channel/${c.id}/videos`, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)', 'Accept-Language': 'en', Cookie: 'SOCS=CAI' }, signal: AbortSignal.timeout(20000) });
+      const html = await r.text();
+      const titoli = [...html.matchAll(/"lockupMetadataViewModel":\{"title":\{"content":"((?:[^"\\]|\\.)*)"/g)].map((m) => entita(JSON.parse(`"${m[1]}"`))).slice(0, 10);
+      if (titoli.length) uscita.push({ nome: c.nome, titoli });
+    } catch (e) { console.log(`notizie: salto il canale ${c.nome} (${e.message})`); }
+  }
+  console.log(`notizie: segnali da ${uscita.length} canali YouTube su ${CREATOR.length}`);
+  return uscita;
+}
+
 async function radar() {
   const voci = [];
   try {
@@ -236,12 +259,18 @@ async function main() {
   const fatteTitoli = fatte.map((n) => n.titoloFonte || n.titolo);
   // conta soprattutto quante fonti diverse ne parlano; una fonte ufficiale aiuta poco (i comunicati commerciali sono tanti)
   const lancio = (s) => s.voci.some((v) => LABORATORI.test(v.titolo) && LANCIO.test(`${v.titolo} ${v.sommario}`));
-  const punti = (s) => s.voci.length * 4 + (lancio(s) ? 10 : 0) + (s.voci.some((v) => v.ufficiale) ? 1 : 0) + (Date.now() - s.voci[0].data < 864e5 ? 1 : 0);
+  // i creator che Marco segue: se ne parlano, la storia sale (+3 per canale, al massimo +6). Non sono fonti dei fatti
+  const titoliCreator = await segnali();
+  // per i creator serve un nome forte in comune (DeepInfer, Timestral-209M) o 3 parole: «Claude Code» da solo è in mille titoli
+  const comuni = (a, b) => { const B = parole(b); return [...parole(a)].filter((w) => B.has(w)).length; };
+  const tocca = (a, b) => { const pa = tutteParole(a), pb = tutteParole(b); return forti(a).some((w) => pb.has(w)) || forti(b).some((w) => pa.has(w)) || comuni(a, b) >= 3; };
+  const creator = (s) => titoliCreator.filter((c) => c.titoli.some((t) => s.voci.some((v) => tocca(v.titolo, t)))).map((c) => c.nome);
+  const punti = (s) => s.voci.length * 4 + (lancio(s) ? 10 : 0) + (s.voci.some((v) => v.ufficiale) ? 1 : 0) + (Date.now() - s.voci[0].data < 864e5 ? 1 : 0) + Math.min(6, creator(s).length * 3);
   const usate = new Set();
   const scelte = storie.filter((s) => !fatteTitoli.some((t) => simili(t, s.voci[0].titolo) >= 0.5)).sort((a, b) => punti(b) - punti(a))
     .filter((s) => { if (usate.has(s.voci[0].fonte)) return false; usate.add(s.voci[0].fonte); return true; }).slice(0, MAX); // una storia per fonte a giro
   console.log(`notizie: ${voci.length} voci nuove, ${storie.length} storie, scelte ${scelte.length}`);
-  for (const s of scelte) console.log(`  scelta (${punti(s)} punti): ${s.voci.map((v) => `${v.fonte}: ${v.titolo}`).join(' | ')}`);
+  for (const s of scelte) console.log(`  scelta (${punti(s)} punti): ${s.voci.map((v) => `${v.fonte}: ${v.titolo}`).join(' | ')}${creator(s).length ? ` [creator: ${creator(s).join(', ')}]` : ''}`);
 
   const dati = JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', 'data.json'), 'utf8'));
   const gratis = dati.categorie.find((c) => c.id === 'chat')?.modelli.filter((m) => m.aperto || m.or?.gratis).slice(0, 5) || [];
