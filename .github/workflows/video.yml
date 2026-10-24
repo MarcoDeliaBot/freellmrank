@@ -159,7 +159,10 @@ jobs:
               titolo=$(python -c "import json; print(json.load(open('$d/$breve.json', encoding='utf-8'))['titolo'])")
               gh release create "video-$breve" "$d/$breve.mp4" "$d/$breve.jpg" "$d/$breve.srt" "$d/$breve.json" --title "$titolo" --notes-file "$d/share-copy.txt" --latest=false
               echo "Pubblicato: $breve (collegato a $nome)"
-            else echo "Short non registrato per $nome"; fi
+            else echo "Short non registrato per $nome"; breve=""; fi
+            # il post (notizia o guida) mostra il suo video in cima (script/sito/blog.mjs)
+            post=$(python -c "import json; print(json.load(open('video/brag/info-notizia.json', encoding='utf-8'))['post'])")
+            node script/brag/lega.mjs "$post" "$nome" $breve
           done
           # Short chiesti a mano per modelli che hanno già il video lungo
           IFS=';' read -ra corti <<< "${{ inputs.corti }}"
@@ -171,7 +174,7 @@ jobs:
         run: node script/bluesky.mjs || echo "Bluesky non riuscito"
       - name: Post del blog dei video (commit)
         run: |
-          git add contenuti/video
+          git add contenuti/video contenuti/legami-video.json
           if git diff --cached --quiet; then echo "Nessun post nuovo"; exit 0; fi
           git config user.name "freellmarena-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

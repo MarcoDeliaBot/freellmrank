@@ -232,7 +232,7 @@ pagina({
     })),
     { '@type': 'Dataset', name: `${NOME_PIENO} free AI model rankings`, description: 'Free and open-weight AI models with Arena scores, sizes, GPU memory needs and where to use them free. Updated nightly.', url: URL_SITO + '/', dateModified: dati.aggiornato, isBasedOn: 'https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset', license: 'https://creativecommons.org/licenses/by/4.0/', creditText: 'Rankings from the Arena leaderboard dataset by Arena Intelligence (CC BY 4.0); sizes from Hugging Face.', creator: { '@type': 'Organization', name: NOME_PIENO, url: URL_SITO + '/' }, distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: URL_SITO + '/data.json' }, { '@type': 'DataDownload', encodingFormat: 'text/markdown', contentUrl: URL_SITO + '/llms-full.txt' }] },
   ],
-  titolo: `Best Free AI Models, Ranked by Real Votes · ${NOME_PIENO}`,
+  titolo: `Best Free AI Models & Free LLMs, Ranked by Real Votes · ${NOME_PIENO}`,
   descr: 'Free and open AI models for chat, coding, vision, image and video, ranked by millions of blind votes. Where to use them free and which GPU you need.',
   corpo: `<div class="eroe">
 <div style="display:grid;gap:.5rem">

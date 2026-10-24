@@ -99,7 +99,7 @@ fs.writeFileSync(path.join(OUT, 'scena-notizia.html'), `<!doctype html><html lan
 const nome = nomeVideo(n);
 const righeFonti = n.fonti.map((f) => `${f.nome}: ${f.url}`).join('\n');
 const info = {
-  nome, titolo: n.titolo.slice(0, 100), notizia: n.nome,
+  nome, titolo: n.titolo.slice(0, 100), notizia: n.nome, post: GUIDA ? url.replace(/^.*\/blog\//, '') : `news-${n.nome}`,
   descrizione: `${semplice(n.descr)}\n\nFull story: ${url}\n\nSources:\n${righeFonti}\n\nAI news every day and every free AI model, compared: https://freellmarena.com`,
   tag: [GUIDA ? 'local LLM' : 'AI news', 'artificial intelligence', 'free AI', ...fonti.slice(0, 2)],
   condividi: `${n.titolo} ${url}`,

@@ -12,6 +12,25 @@ const DIR_VIDEO = path.join(RADICE, 'contenuti', 'video');
 const DIR_NOTIZIE = path.join(RADICE, 'contenuti', 'notizie');
 const TIPO_VIDEO = { nuovo: 'New model', settimana: 'Weekly ranking', gpu: 'GPU of the week', lungo: 'Weekly video report', modello: 'Model review' };
 const ORIZZONTALI = ['lungo', 'modello'];
+// video delle notizie e delle guide (24/10/2026, Marco: «in questa guida non vedo i link dei video»):
+// contenuti/legami-video.json dice quale video lungo e quale Short ha ogni post (lo scrive il workflow Video),
+// contenuti/youtube.json dà l'indirizzo YouTube di ogni video già caricato (script/youtube-link.mjs).
+// Finché il video non è su YouTube si vede l'MP4 della release di GitHub.
+const leggiJson = (f) => { const p = path.join(RADICE, 'contenuti', f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : {}; };
+const LEGAMI = leggiJson('legami-video.json');
+const YOUTUBE = leggiJson('youtube.json');
+function videoDelPost(slug, titolo) {
+  const l = LEGAMI[slug];
+  if (!l?.lungo) return '';
+  const id = YOUTUBE[l.lungo];
+  const base = `https://github.com/${REPO}/releases/download/video-${l.lungo}/${l.lungo}`;
+  const player = id
+    ? `<div class="video-post"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}" title="${esc(titolo)}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
+    : `<div class="video-post"><video controls preload="none" playsinline poster="${base}.jpg" src="${base}.mp4"></video></div>`;
+  const breve = l.breve && YOUTUBE[l.breve] ? ` · [Watch the Short](https://youtube.com/shorts/${YOUTUBE[l.breve]})` : '';
+  const canale = `[Watch on YouTube](${id ? `https://youtu.be/${id}` : 'https://www.youtube.com/@FreeLLMArena'})`;
+  return `${player}\n\n${canale}${breve}\n\n`;
+}
 
 // un post per video: il video (da YouTube quando c'è l'indirizzo, se no l'MP4 della release di GitHub), cosa dice la voce, i dati
 function leggiVideo(hrefPerNome, dati) {
@@ -40,8 +59,9 @@ function leggiVideo(hrefPerNome, dati) {
     const righe = v.descrizione.split('\n').filter(Boolean);
     const mp4 = `https://github.com/${REPO}/releases/download/${v.release}/${v.nome}.mp4`;
     const verticale = !ORIZZONTALI.includes(tipo);
-    const player = v.youtube
-      ? `<div class="video-post${verticale ? ' verticale' : ''}"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.youtube)}" title="${esc(titolo)}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
+    const yt = v.youtube || YOUTUBE[v.nome];
+    const player = yt
+      ? `<div class="video-post${verticale ? ' verticale' : ''}"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(yt)}" title="${esc(titolo)}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
       : `<div class="video-post${verticale ? ' verticale' : ''}"><video controls preload="none" playsinline poster="/video/${v.nome}.jpg" src="${mp4}"></video></div>`;
     // i nomi dei modelli nell'elenco dei dati portano alla loro pagina
     const conLink = (r) => r.replace(/^(\d+\.\s)([^:(]+?)(?=[:(])/, (t, n, nome) => (hrefPerNome(nome.trim()) ? `${n}[${nome.trim()}](${hrefPerNome(nome.trim())})` : t));
@@ -84,7 +104,7 @@ function leggiNotizie(perNome, dati) {
     if (nostri.length) parti.push(`## On FreeLLMArena\n\nFrom our rankings on ${fmtData(dati.aggiornato)}, based on Arena's blind votes:\n\n${nostri.join('\n')}`);
     parti.push(`## Sources\n\n${fonti.join('\n')}`);
     parti.push(`<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-${n.nome}).</small>`);
-    return { slug: `news-${n.nome}`, titolo: n.titolo, descr: n.descr, data: n.pubblicato, tema: n.tema || 'AI', corpo: parti.join('\n\n') + '\n', tipo: 'News' };
+    return { slug: `news-${n.nome}`, titolo: n.titolo, descr: n.descr, data: n.pubblicato, tema: n.tema || 'AI', corpo: videoDelPost(`news-${n.nome}`, n.titolo) + parti.join('\n\n') + '\n', tipo: 'News' };
   });
 }
 const SETTIMANE = 8;
@@ -95,7 +115,7 @@ function leggiGuide() {
     const testo = fs.readFileSync(path.join(DIR, f), 'utf8').replace(/\r\n/g, '\n');
     const m = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/.exec(testo);
     const meta = Object.fromEntries((m?.[1] || '').split('\n').map((r) => r.split(/:\s(.*)/s).slice(0, 2)).filter((x) => x[0]));
-    return { slug: f.replace(/\.md$/, ''), titolo: meta.titolo, descr: meta.descr, data: meta.data, tema: meta.tema || '', corpo: m ? m[2] : testo, tipo: 'Guide' };
+    return { slug: f.replace(/\.md$/, ''), titolo: meta.titolo, descr: meta.descr, data: meta.data, tema: meta.tema || '', corpo: videoDelPost(f.replace(/\.md$/, ''), meta.titolo) + (m ? m[2] : testo), tipo: 'Guide' };
   });
 }
 
