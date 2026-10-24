@@ -292,7 +292,7 @@ $('rileva').addEventListener('click', () => {
   const s = dati && trovaScheda(nome);
   if (s) {
     $('scheda').value = s.id;
-    aggiornaCampi(); calcola();
+    aggiornaCampi(); calcola(); comandoWhichllm();
     esito.innerHTML = `Found <b>${esc(s.nome)}</b> (${s.gb} GB). If you have more than one, set “How many”. Now set your system RAM.`;
   } else {
     esito.innerHTML = `Your browser reports <b>${esc(nome)}</b>, which is not in our list${/integrated|radeon\(tm\) graphics|uhd|iris|apple gpu/i.test(nome) ? ' (it looks like built-in graphics, not a separate card)' : ''}. Pick your card from the list, or choose “Custom card”.`;
