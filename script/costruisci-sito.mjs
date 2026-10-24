@@ -343,6 +343,11 @@ pagina({
 <div id="migliore"></div>
 <div id="spiega"></div>
 <div id="grafico"></div>
+<div class="panel" id="un-comando"><h2>Or ask your own PC, in one command</h2>
+<p class="small"><a href="https://github.com/Andyyyy64/whichllm" rel="noopener">whichllm</a>, a free open-source tool (MIT license), detects your graphics card and RAM and ranks the models that run best on them, using several benchmarks including Arena. It picks the right compressed version and can start a chat. It needs <a href="https://docs.astral.sh/uv/" rel="noopener">uv</a> (Python).</p>
+<pre class="codice"><code id="cmd-whichllm">uvx whichllm@latest</code></pre>
+<p class="small"><button class="btn" type="button" id="copia-cmd">Copy command</button> Drop the <code>--gpu</code> part to let it read your own hardware. To chat with its top pick: <code>uvx whichllm@latest run</code></p>
+</div>
 <div id="tabella"></div>
 <details class="panel small"><summary><b>How we estimate</b></summary>
 <p><b>Memory</b> = weights (parameters × bytes per weight at the chosen precision) + context cache (computed from each model's real architecture on Hugging Face: layers, attention heads, sliding windows) + about 0.6 GB per card for the runtime. Image and video models get 3 GB more for text encoders and decoders.</p>

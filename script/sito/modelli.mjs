@@ -166,6 +166,8 @@ ${cats.map((c) => `<tr><td><a href="/#${c}">${esc(nomiCat[c])}</a></td><td class
     if (cf) gratis.push(`<li><b>Right here, no account</b>: <a href="#try">ask it a question below</a> (${DOMANDE_PER_VISITATORE} free questions a day)</li>`);
     if (m.or?.gratis) gratis.push(`<li><b>Free API on OpenRouter</b>: model id <code>${esc(m.or.id)}</code>. <a href="/compare.html#${encodeURIComponent(m.or.id)}">Try it side by side</a> · <a href="https://openrouter.ai/${esc(m.or.id.replace(/:free$/, ''))}" rel="noopener">OpenRouter page</a></li>`);
     if (m.aperto && CHAT_WEB[m.org]) gratis.push(`<li><b>The lab's own chat</b>: <a href="${CHAT_WEB[m.org]}" rel="noopener">${esc(CHAT_WEB[m.org].replace('https://', ''))}</a> (free with daily limits)</li>`);
+    // comando unico con whichllm (github.com/Andyyyy64/whichllm, MIT): quale GPU serve e chat in locale (24/10/2026)
+    if (m.aperto && m.hf && testo) gratis.push(`<li><b>Run it in one command</b> with <a href="https://github.com/Andyyyy64/whichllm" rel="noopener">whichllm</a> (free, open source): <code>uvx whichllm@latest plan "${esc(m.hf.repo.split('/')[1])}"</code> shows the GPU you need, <code>uvx whichllm@latest run "${esc(m.hf.repo.split('/')[1])} gguf"</code> downloads it and starts a chat</li>`);
     if (m.aperto && m.hf) gratis.push(`<li><b>Download and run it at home</b>: <a href="https://huggingface.co/${esc(m.hf.repo)}" rel="noopener">official weights</a> · <a href="https://huggingface.co/models?search=${encodeURIComponent(m.hf.repo.split('/')[1] + ' gguf')}" rel="noopener">GGUF files for Ollama and LM Studio</a>${m.licenza === 'license to accept' ? ' (you accept the license on Hugging Face first)' : ''}</li>`);
 
     let memoria = '', velocita = '';
@@ -200,7 +202,13 @@ ${QUANTI.filter((p) => p.id !== 'Q2_K').map((p) => { const pq = perditaQualita(p
       if (altri.length) vicini = `<div class="panel"><h2>Similar free models in ${esc(nomiCat[cat])}</h2><ul class="vicini">${altri.map((x) => `<li><a href="${x.href}">${esc(x.nome)}</a> <span class="muted small">${x.cat[cat].punti}${x.hf ? ' · ' + x.hf.b + ' B' : ''}</span></li>`).join('')}</ul></div>`;
     }
 
-    const titoloPagina = `${m.nome}: Free? GPU Memory, Speed and Arena Score · ${NOME_PIENO}`;
+    // 24/10/2026 (piano SEO): le ricerche che ci portano visite sono i nomi dei modelli; il titolo dice subito
+    // quello che si cerca insieme al nome: API gratis, eseguirlo in locale, requisiti della GPU
+    const titoloPagina = m.or?.gratis
+      ? `${m.nome}: Free API, Run It Locally, GPU Requirements · ${NOME_PIENO}`
+      : m.aperto && m.hf
+        ? `${m.nome}: Run It Locally for Free, GPU Requirements and Speed · ${NOME_PIENO}`
+        : `${m.nome}: Is It Free? Arena Score and Free Alternatives · ${NOME_PIENO}`;
     const descr = `${m.nome} by ${m.org}${c0 ? `, Arena score ${c0.punti} (#${c0.pos} in ${nomiCat[m.categoriaMigliore]})` : ''}${m.hf ? `, ${m.hf.b} B parameters, about ${fmtGB(m.hf.b * 0.606 + 1.2)} at 4-bit` : ''}. Where to use it free and how fast it runs on your GPU.`;
     pagina({
       file: `model/${m.slug}.html`, attiva: '/models.html', dati, blog, script: cf ? 'try.js' : undefined,

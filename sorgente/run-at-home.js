@@ -321,12 +321,34 @@ document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('cli
   document.querySelectorAll('.tabs button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
   calcola();
 }));
-['scheda', 'n-gpu', 'gb-custom', 'banda-custom', 'ram', 'ram-tipo', 'quant', 'kvq', 'ctx'].forEach((id) => $(id).addEventListener('input', () => { aggiornaCampi(); calcola(); }));
+// comando unico con whichllm (github.com/Andyyyy64/whichllm, MIT), aggiunto il 24/10/2026: la stessa scheda scelta qui.
+// Le macchine a memoria unificata e la scheda personalizzata passano la memoria (--vram) invece del nome
+function comandoWhichllm() {
+  const el = $('cmd-whichllm');
+  if (!el || !dati) return;
+  const id = $('scheda').value;
+  const s = dati.schede.schede.find((x) => x.id === id);
+  let arg;
+  if (id === 'custom' || !s) arg = `--vram ${+$('gb-custom').value || 24}`;
+  else if (s.unificata) arg = `--vram ${Math.round(s.gb * 0.75)}`;
+  else {
+    const nome = s.nome.replace(/\s*\/.*$/, '').replace(/\s+(\d+)\s*GB$/i, ' $1').replace(/\s+SXM$/, '');
+    const n = +$('n-gpu').value;
+    arg = `--gpu "${n > 1 ? `${n}x ` : ''}${nome}"`;
+  }
+  el.textContent = `uvx whichllm@latest ${arg}`;
+}
+$('copia-cmd')?.addEventListener('click', (e) => {
+  const t = $('cmd-whichllm').textContent;
+  const fatto = () => { e.target.textContent = 'Copied'; setTimeout(() => { e.target.textContent = 'Copy command'; }, 1500); };
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(fatto, () => prompt('Copy this command:', t)); else prompt('Copy this command:', t);
+});
+['scheda', 'n-gpu', 'gb-custom', 'banda-custom', 'ram', 'ram-tipo', 'quant', 'kvq', 'ctx'].forEach((id) => $(id).addEventListener('input', () => { aggiornaCampi(); calcola(); comandoWhichllm(); }));
 fetch('data.json').then((r) => r.json()).then((d) => {
   dati = d;
   // arrivo dalla pagina /gpus: ?gpu=<id> sceglie la scheda
   const scelta = new URLSearchParams(location.search).get('gpu');
   if (scelta && d.schede.schede.some((s) => s.id === scelta)) $('scheda').value = scelta;
-  aggiornaCampi(); calcola();
+  aggiornaCampi(); calcola(); comandoWhichllm();
 })
   .catch(() => { $('migliore').innerHTML = '<div class="panel"><p>Could not load the model list. Reload the page.</p></div>'; });
