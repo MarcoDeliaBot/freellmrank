@@ -61,7 +61,21 @@ export const TETTO_GEMINI = 200; // richieste al giorno (UTC) per tutto il sito,
 // per le pagine dei modelli: prima Cloudflare, poi Gemini
 // i riquadri Gemini compaiono solo quando la chiave c'è (GEMINI_KEY nel progetto Pages): fino ad allora resta false
 export const GEMINI_ATTIVO = false;
-export const perNomeProva = (nome) => perNomeArena(nome) || (GEMINI_ATTIVO ? GEMINI_MODELLI.find((m) => m.arena.includes(String(nome).toLowerCase())) : undefined);
+
+// «Try it now» per Qwen con Alibaba Cloud Model Studio (24/10/2026: promesso da Marco a Louis del team Qwen il 22/10).
+// Regione Singapore, endpoint compatibile OpenAI. Quota gratis: circa 1M token per modello, 90 giorni dall'attivazione
+// (alibabacloud.com/help/en/model-studio/new-free-quota). Va acceso «Free Quota Only» nella console: a quota finita
+// Model Studio risponde 403 AllocationQuota.FreeTierOnly invece di addebitare. Segreto QWEN_KEY.
+// ID verificati sulla pagina text-generation-model di Model Studio (24/10/2026).
+export const QWEN_MODELLI = [
+  { arena: ['qwen3.8-max', 'qwen3.8-max (0902)'], id: 'qwen/qwen3.8-max', max: 700 },
+  { arena: ['qwen3.7-plus'], id: 'qwen/qwen3.7-plus', max: 700 },
+  { arena: ['qwen3.8-flash'], id: 'qwen/qwen3.8-flash', max: 700 },
+];
+export const TETTO_QWEN_TOKEN = 30000; // token al giorno per modello: 90 giorni × 30.000 < 1M di quota per modello
+export const QWEN_ATTIVO = false;
+const cerca = (lista, nome) => lista.find((m) => m.arena.includes(String(nome).toLowerCase()));
+export const perNomeProva = (nome) => perNomeArena(nome) || (QWEN_ATTIVO ? cerca(QWEN_MODELLI, nome) : undefined) || (GEMINI_ATTIVO ? cerca(GEMINI_MODELLI, nome) : undefined);
 
 // Prova audio sulla pagina /audio (decisione del 20/10/2026): voce → testo e testo → voce, modelli aperti.
 // Listino Cloudflare 20/10/2026: whisper-large-v3-turbo 46,63 neurons al minuto di audio, melotts 18,63.

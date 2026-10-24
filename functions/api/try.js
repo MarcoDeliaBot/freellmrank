@@ -4,7 +4,7 @@
 // Legami (impostati nel progetto Pages): AI = Workers AI, PROVA = KV per i contatori, SALE = segreto.
 // Dal 24/10/2026 anche i modelli Gemini (GEMINI_MODELLI) con la quota gratis della Gemini API: segreto GEMINI_KEY,
 // un tetto nostro di richieste al giorno (TETTO_GEMINI) e lo stesso limite di domande per visitatore.
-import { CF_MODELLI, GEMINI_MODELLI, TETTO_GEMINI, TETTO_NEURONS, DOMANDE_PER_VISITATORE, LUNGHEZZA_DOMANDA, peggioreNeurons } from '../../script/cf-modelli.mjs';
+import { CF_MODELLI, GEMINI_MODELLI, TETTO_GEMINI, QWEN_MODELLI, TETTO_QWEN_TOKEN, TETTO_NEURONS, DOMANDE_PER_VISITATORE, LUNGHEZZA_DOMANDA, peggioreNeurons } from '../../script/cf-modelli.mjs';
 
 const ORIGINI = ['https://freellmarena.com', 'http://127.0.0.1:8788', 'http://localhost:8788'];
 const json = (dati, stato = 200) => new Response(JSON.stringify(dati), { status: stato, headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' } });
@@ -24,6 +24,8 @@ export async function onRequestPost({ request, env }) {
   try { corpo = await request.json(); } catch { return json({ errore: 'Bad request.' }, 400); }
   const g = GEMINI_MODELLI.find((x) => x.id === corpo?.modello);
   if (g) return provaGemini(g, corpo, request, env);
+  const q = QWEN_MODELLI.find((x) => x.id === corpo?.modello);
+  if (q) return provaQwen(q, corpo, request, env);
   if (!env.AI) return json({ errore: 'Try-now is not set up yet.' }, 503);
   const m = CF_MODELLI.find((x) => x.id === corpo?.modello);
   const domanda = String(corpo?.domanda || '').trim();
@@ -101,6 +103,47 @@ async function provaGemini(g, corpo, request, env) {
     risposta: risposta || '(The model returned an empty answer. Try a shorter or clearer question.)',
     tagliata: cand?.finishReason === 'MAX_TOKENS',
     token: d?.usageMetadata?.candidatesTokenCount ?? null,
+    rimaste: DOMANDE_PER_VISITATORE - usate - 1,
+  });
+}
+
+// Qwen su Alibaba Cloud Model Studio (Singapore, compatibile OpenAI), quota gratis con «Free Quota Only» acceso.
+// Tetto nostro in token al giorno per modello, così la quota gratis (circa 1M per modello) dura i suoi 90 giorni
+async function provaQwen(q, corpo, request, env) {
+  if (!env.QWEN_KEY) return json({ errore: 'This model is not available to try here yet.' }, 503);
+  const domanda = String(corpo?.domanda || '').trim();
+  if (!domanda) return json({ errore: 'Write a question first.' }, 400);
+  if (domanda.length > LUNGHEZZA_DOMANDA) return json({ errore: `Keep the question under ${LUNGHEZZA_DOMANDA} characters.` }, 400);
+  const giorno = new Date().toISOString().slice(0, 10);
+  const chiaveToken = `qwen:${q.id}:${giorno}`;
+  const chiaveIp = `ip:${await impronta(request.headers.get('CF-Connecting-IP') || 'x', giorno, env.SALE || '')}`;
+  const [tokenTesto, usateTesto] = await Promise.all([env.PROVA.get(chiaveToken), env.PROVA.get(chiaveIp)]);
+  const token = Number(tokenTesto) || 0, usate = Number(usateTesto) || 0;
+  if (usate >= DOMANDE_PER_VISITATORE) return json({ errore: `You used your ${DOMANDE_PER_VISITATORE} free questions for today. Come back tomorrow, or try the model on the other free sites listed on this page.`, rimaste: 0 }, 429);
+  // caso peggiore: la domanda (circa 1 token ogni 3 caratteri) più la risposta più lunga possibile
+  if (token + domanda.length / 3 + q.max > TETTO_QWEN_TOKEN) return json({ errore: 'Today\'s free questions for this model are finished for everyone. They come back at midnight UTC.', rimaste: 0 }, 429);
+  await env.PROVA.put(chiaveIp, String(usate + 1), { expirationTtl: 60 * 60 * 26 });
+  let r, d;
+  try {
+    r = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${env.QWEN_KEY}` },
+      body: JSON.stringify({ model: q.id.slice(5), messages: [{ role: 'user', content: domanda }], max_tokens: q.max, enable_thinking: false }),
+    });
+    d = await r.json();
+  } catch {
+    return json({ errore: 'The model did not answer. Try again in a minute.' }, 502);
+  }
+  // quota gratis finita («Free Quota Only»): 403 AllocationQuota.FreeTierOnly, nessun addebito
+  if (r.status === 403 || r.status === 429) return json({ errore: 'The free quota for this model is used up for now. Try another model on this page.' }, 429);
+  if (!r.ok) return json({ errore: 'The model did not answer. Try again in a minute.' }, 502);
+  const usati = Number(d?.usage?.total_tokens) || Math.ceil(domanda.length / 3) + q.max;
+  await env.PROVA.put(chiaveToken, String(token + usati), { expirationTtl: 60 * 60 * 48 });
+  const scelta = d?.choices?.[0];
+  return json({
+    risposta: String(scelta?.message?.content || '').replace(/<think>[\s\S]*?<\/think>/g, '').trim() || '(The model returned an empty answer. Try a shorter or clearer question.)',
+    tagliata: scelta?.finish_reason === 'length',
+    token: d?.usage?.completion_tokens ?? null,
     rimaste: DOMANDE_PER_VISITATORE - usate - 1,
   });
 }
