@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-24-google-launches-early-access-to-gemini-4-carbon-a-slower-but-stronger-",
+ "titolo": "Google launches early access to Gemini 4 Carbon, a slower but stronger 3D model",
+ "descr": "Gemini 4 Carbon enters early access, showing higher 3D quality than Argon while lagging in speed and UI.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Google has opened an early access program for Gemini 4 Carbon, the successor to the recently released Gemini 4 Argon.",
+  "Partners and invited developers are testing the model on LM Arena, where early reports say Carbon delivers noticeably better 3D output than Argon.",
+  "The same testers note that the model is considerably slower—about two to four times slower depending on the task—and that its frontend and UI generation remain weak.",
+  "Google’s Trusted Tester Agreement restricts public sharing of benchmarks or outputs, but leaked screenshots and user posts confirm the early access status."
+ ],
+ "perche": [
+  "For AI users, Gemini 4 Carbon promises improved 3D capabilities but may require patience due to its slower response times. Those seeking free or locally run models will still rely on existing open‑source options, as Carbon remains an invite‑only, cloud‑based service."
+ ],
+ "pubblicato": "2026-10-24",
+ "titoloFonte": "Gemini 4 Carbon early test results are in ahead of public release",
+ "fonti": [
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/gemini-4-carbon-early-test-results/",
+   "titolo": "Gemini 4 Carbon early test results are in ahead of public release",
+   "ufficiale": false,
+   "data": "2026-10-23"
+  }
+ ],
+ "frasiTolte": 1
+}

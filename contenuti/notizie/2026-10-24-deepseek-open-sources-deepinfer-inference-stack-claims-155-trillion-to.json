@@ -1,0 +1,33 @@
+{
+ "nome": "2026-10-24-deepseek-open-sources-deepinfer-inference-stack-claims-155-trillion-to",
+ "titolo": "DeepSeek open‑sources DeepInfer inference stack, claims 155 trillion tokens per day",
+ "descr": "DeepSeek releases DeepInfer, an open‑source framework for large‑scale inference that it says handles 155 T tokens daily with high cache hit rates and strong margins.",
+ "tema": "Software",
+ "paragrafi": [
+  "DeepSeek announced the open‑source release of DeepInfer, the inference engine used for its V4.1 Flash model.",
+  "The company reports that a single cluster processes 155 trillion tokens per day, achieves 96 % input‑cache hits, and delivers an average first‑token latency of 400 ms.",
+  "The repository includes optimized kernels such as FlashMLA and DeepGEMM, and requires Linux, GCC 13, Python 3.12, CUDA 13 (NVIDIA) or CANN 9.2 (Ascend) to build."
+ ],
+ "perche": [
+  "For developers, DeepInfer offers a production‑grade, open‑source stack that can be adapted for offline serving, though key KV‑cache and load‑balancing components remain closed. Users of free or locally hosted models can experiment with the framework on standard GPU or NPU hardware, but must supply their own orchestration for full‑scale deployment."
+ ],
+ "pubblicato": "2026-10-24",
+ "titoloFonte": "[AINews] DeepSeek DeepInfer: Open Source SOTA Inference running 155T toks/day/cluster making $22m/day at ~80% margin for a 81 day payback",
+ "fonti": [
+  {
+   "nome": "Latent Space",
+   "url": "https://latent.space/p/ainews-deepseek-deepinfer-open-source/",
+   "titolo": "[AINews] DeepSeek DeepInfer: Open Source SOTA Inference running 155T toks/day/cluster making $22m/day at ~80% margin for a 81 day payback",
+   "ufficiale": false,
+   "data": "2026-10-21"
+  },
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/deepseek-ai/DeepInfer",
+   "titolo": "deepseek-ai/DeepInfer: DeepInfer: High-performance, large-scale inference framework for DeepSeek models",
+   "ufficiale": true,
+   "data": "2026-10-16"
+  }
+ ],
+ "frasiTolte": 2
+}

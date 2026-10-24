@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-24-tencent-releases-wevisone-vl-a-unified-visual-language-model-for-objec",
+ "titolo": "Tencent releases WeVisOne-VL, a unified visual-language model for object and pixel perception",
+ "descr": "WeVisOne-VL unifies object-level and pixel-level visual tasks through next-token prediction, with code and model collection available on GitHub and Hugging Face.",
+ "tema": "Research",
+ "paragrafi": [
+  "Tencent's research team introduced WeVisOne-VL, short for WeChat Vision All-in-One, as a new vision-language model.",
+  "The model aims to handle both object-level and pixel-level perception by predicting structured tokens in a unified framework.",
+  "Details of the approach are described in the paper titled \"WeVisOne-VL: Unified Visual Perception from Objects to Pixels\".",
+  "The project's source code is hosted on GitHub at https://github.com/Tencent/WeVisOne-VL.",
+  "Model checkpoints and related resources are available through a Hugging Face collection at https://huggingface.co/collections/tencent/wevisone-vl."
+ ],
+ "perche": [
+  "WeVisOne-VL offers researchers a single model that can address diverse visual tasks, reducing the need for separate specialized models. For developers seeking free or locally runnable AI, the open-source release provides immediate access to a versatile visual-language system."
+ ],
+ "pubblicato": "2026-10-24",
+ "titoloFonte": "Tencent paper: WeVisOne-VL: Unified Visual Perception from Objects to Pixels",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.31329",
+   "titolo": "Tencent paper: WeVisOne-VL: Unified Visual Perception from Objects to Pixels",
+   "ufficiale": true,
+   "data": "2026-10-21"
+  }
+ ],
+ "frasiTolte": 0
+}
