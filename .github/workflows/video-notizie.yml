@@ -1,0 +1,147 @@
+# Video delle notizie e delle guide a stampi (deciso da Marco il 24/10/2026: lo stile della prova DeepInfer, fatto ogni
+# giorno da n8n sui computer di GitHub, senza Claude; «se non paghiamo usiamo GitHub, quando diventerà a pagamento lo
+# spostiamo su di noi»). Lo fa partire n8n (n8n/video-notizie.json), due volte al giorno, e n8n controlla l'esito.
+# Per ogni notizia: script/brag/notizia.mjs sceglie la notizia e scrive titolo, descrizione e tag; script/video-hf/piano.mjs
+# fa scrivere il piano a Workers AI (con controllo dei fatti e piano di riserva); script/video-hf/monta.mjs fa voce Kokoro,
+# tempi Parakeet, scene HyperFrames, sottotitoli e MP4. Lo Short collegato resta quello di prima (script/brag/registra.py).
+# Tutto gratis: progetto pubblico, strumenti che girano qui, Workers AI nella quota gratis del sito.
+name: Video notizie
+
+on:
+  workflow_dispatch:
+    inputs:
+      quante:
+        description: 'Quante notizie raccontare (0-3)'
+        type: string
+        default: '2'
+      notizia:
+        description: 'Una notizia precisa: nome del file in contenuti/notizie, senza .json (facoltativo)'
+        type: string
+        default: ''
+      guide:
+        description: 'Video di guide: file in contenuti/video-guide (es. contenuti/video-guide/strata.json), separati da ;'
+        type: string
+        default: ''
+      prova:
+        description: 'Solo prova: fa i video ma non li pubblica (restano come artefatto della corsa)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: video
+  cancel-in-progress: false
+
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      HYPERFRAMES_PYTHON: python3
+      HYPERFRAMES_NO_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Strumenti (ffmpeg, caratteri, voce Kokoro, Short con Piper)
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q ffmpeg fonts-urw-base35 fonts-noto-core
+          pip install kokoro-onnx soundfile playwright numpy imageio-ffmpeg piper-tts==1.3.0
+          python -m playwright install --with-deps chromium
+          echo "HYPERFRAMES_PYTHON=$(which python)" >> "$GITHUB_ENV"
+      # modelli di voce e riconoscimento, browser di HyperFrames: si scaricano una volta e restano nella cache
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/hyperframes
+            ~/.npm/_npx
+          key: hyperframes-0.8.192-kokoro-parakeet-v1
+      - uses: actions/cache@v4
+        with:
+          path: video/voci
+          key: voci-piper-lessac-high-paola-medium
+      - name: Modelli (Parakeet, browser)
+        run: |
+          npx --yes hyperframes@0.8.192 models install parakeet --json
+          npx --yes hyperframes@0.8.192 browser ensure || true
+      - name: Video, Short e release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
+          PROVA: ${{ inputs.prova }}
+        run: |
+          mkdir -p video/brag video/hf video/esito
+          gh release list -L 400 --json tagName -q '.[].tagName' > video/brag/fatti.txt
+          # prima le guide chieste a mano, poi le notizie (una precisa, o le più riprese non ancora raccontate)
+          IFS=';' read -ra guide <<< "${{ inputs.guide }}"
+          giri=()
+          for g in "${guide[@]}"; do g=$(echo "$g" | xargs); [ -n "$g" ] && giri+=("guida:$g"); done
+          if [ -n "${{ inputs.notizia }}" ]; then giri+=("notizia:${{ inputs.notizia }}"); else
+            for i in $(seq 1 "${{ inputs.quante || '2' }}"); do giri+=("notizia:"); done; fi
+          fatti=0
+          for giro in "${giri[@]}"; do
+            tipo="${giro%%:*}"; valore="${giro#*:}"
+            rm -f video/brag/info-notizia.json
+            if [ "$tipo" = "guida" ]; then BRAG_FILE="$valore" BRAG_FATTI=video/brag/fatti.txt node script/brag/notizia.mjs || { echo "::error::Testi della guida non riusciti"; exit 1; }
+            else BRAG_NOTIZIA="$valore" BRAG_FATTI=video/brag/fatti.txt node script/brag/notizia.mjs || { echo "::error::Testi della notizia non riusciti"; exit 1; }; fi
+            [ -f video/brag/info-notizia.json ] || { echo "Nessuna notizia nuova"; break; }
+            nome=$(node -p "require('./video/brag/info-notizia.json').nome")
+            echo "video-$nome" >> video/brag/fatti.txt
+            if gh release view "video-$nome" >/dev/null 2>&1; then echo "Già fatto: $nome"; continue; fi
+            # la notizia (o la guida) da cui nasce il piano
+            if [ "$tipo" = "guida" ]; then sorgente="$valore"; else sorgente="contenuti/notizie/$(node -p "require('./video/brag/info-notizia.json').notizia").json"; fi
+            node script/video-hf/piano.mjs "$sorgente" "video/hf/piano-$nome.json"
+            rm -rf "video/hf/$nome"
+            node script/video-hf/monta.mjs "video/hf/piano-$nome.json" "video/hf/$nome"
+            d="video/esito/$nome"; mkdir -p "$d"
+            cp "video/hf/$nome/video.mp4" "$d/$nome.mp4"; cp "video/hf/$nome/copertina.jpg" "$d/$nome.jpg"; cp "video/hf/$nome/video.srt" "$d/$nome.srt"
+            cp video/brag/info-notizia.json "$d/$nome.json"; cp "video/hf/piano-$nome.json" "$d/piano.json"
+            node -p "require('./video/brag/info-notizia.json').condividi" > "$d/share-copy.txt"
+            fatti=$((fatti + 1))
+            if [ "$PROVA" = "true" ]; then echo "Prova: $nome fatto, non pubblicato"; continue; fi
+            titolo=$(node -p "require('./$d/$nome.json').titolo")
+            gh release create "video-$nome" "$d/$nome.mp4" "$d/$nome.jpg" "$d/$nome.srt" "$d/$nome.json" --title "$titolo" --notes-file "$d/share-copy.txt" --latest=false
+            echo "Pubblicato: $nome"
+            # lo Short collegato al video lungo (stile di prima, voce Piper)
+            breve=$(node -p "require('./video/brag/info-notizia-corto.json').nome")
+            if python script/brag/registra.py video notizia-corto; then
+              s="video/brag/brag-output-notizia-corto"
+              cp "$s/brag.mp4" "$s/$breve.mp4"; cp "$s/brag.jpg" "$s/$breve.jpg"; cp "$s/brag.srt" "$s/$breve.srt"; cp video/brag/info-notizia-corto.json "$s/$breve.json"
+              titolo=$(node -p "require('./$s/$breve.json').titolo")
+              gh release create "video-$breve" "$s/$breve.mp4" "$s/$breve.jpg" "$s/$breve.srt" "$s/$breve.json" --title "$titolo" --notes-file "$s/share-copy.txt" --latest=false
+              echo "Pubblicato: $breve (collegato a $nome)"
+            else echo "::warning::Short non registrato per $nome"; breve=""; fi
+            post=$(node -p "require('./video/brag/info-notizia.json').post")
+            node script/brag/lega.mjs "$post" "$nome" $breve
+          done
+          echo "Video fatti: $fatti"
+      - name: Video della corsa (artefatto, 7 giorni)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-notizie
+          path: video/esito
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Video in cima ai post (commit)
+        if: ${{ !inputs.prova }}
+        run: |
+          git add contenuti/legami-video.json
+          if git diff --cached --quiet; then echo "Niente da salvare"; exit 0; fi
+          git config user.name "freellmarena-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Video delle notizie $(date -u +%F)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs origin main && git push && break
+            [ "$i" = 5 ] && exit 1
+            sleep $((i * 10))
+          done

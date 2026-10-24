@@ -1,0 +1,203 @@
+{
+  "name": "FreeLLMArena · video delle notizie",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "cronExpression", "expression": "0 10,19 * * *" }
+          ]
+        }
+      },
+      "id": "b7c1e2d3-0001-4000-8000-000000000001",
+      "name": "Ogni giorno 10:00 e 19:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0],
+      "notes": "Le notizie del blog si aggiornano alle 8:40, 13:40, 17:40 e 22:40 (ora italiana): il video parte dopo. Deciso da Marco il 24/10/2026: i video li fa n8n, sui computer di GitHub, gratis."
+    },
+    {
+      "parameters": {
+        "jsCode": "// Ora di partenza: serve per riconoscere la corsa giusta fra quelle di GitHub\nreturn [{ json: { partenza: new Date(Date.now() - 60000).toISOString() } }];"
+      },
+      "id": "b7c1e2d3-0002-4000-8000-000000000002",
+      "name": "Segna l'ora",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/actions/workflows/video-notizie.yml/dispatches",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Accept", "value": "application/vnd.github+json" },
+            { "name": "X-GitHub-Api-Version", "value": "2022-11-28" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{ \"ref\": \"main\", \"inputs\": { \"quante\": \"2\" } }",
+        "options": {
+          "response": { "response": { "fullResponse": true } }
+        }
+      },
+      "id": "b7c1e2d3-0003-4000-8000-000000000003",
+      "name": "Fai partire i video su GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [440, 0],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 60000,
+      "credentials": {
+        "httpHeaderAuth": { "id": "", "name": "GitHub freellmrank (Actions)" }
+      }
+    },
+    {
+      "parameters": { "amount": 15, "unit": "minutes" },
+      "id": "b7c1e2d3-0004-4000-8000-000000000004",
+      "name": "Aspetta 15 minuti",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [660, 0],
+      "webhookId": "b7c1e2d3-0004-4000-8000-0000000000aa"
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/actions/workflows/video-notizie.yml/runs?per_page=5&event=workflow_dispatch",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Accept", "value": "application/vnd.github+json" },
+            { "name": "X-GitHub-Api-Version", "value": "2022-11-28" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b7c1e2d3-0005-4000-8000-000000000005",
+      "name": "Leggi la corsa",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [880, 0],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000,
+      "credentials": {
+        "httpHeaderAuth": { "id": "", "name": "GitHub freellmrank (Actions)" }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// La corsa partita da questo flusso (la prima creata dopo l'ora segnata) e il suo stato.\n// Se non è finita si riaspetta, fino a 8 volte (circa 2 ore e un quarto in tutto).\nconst partenza = $('Segna l\\'ora').first().json.partenza;\nconst corse = $input.first().json.workflow_runs || [];\nconst corsa = corse.filter((c) => c.created_at >= partenza).at(-1);\nconst giro = $runIndex;\nif (!corsa) return [{ json: { stato: giro < 2 ? 'aspetta' : 'errore', motivo: 'la corsa non è partita', giro } }];\nif (corsa.status !== 'completed') return [{ json: { stato: giro < 8 ? 'aspetta' : 'errore', motivo: `ancora in corso dopo ${15 + giro * 15} minuti`, link: corsa.html_url, giro } }];\nreturn [{ json: { stato: corsa.conclusion === 'success' ? 'ok' : 'errore', motivo: `esito ${corsa.conclusion}`, link: corsa.html_url, giro } }];"
+      },
+      "id": "b7c1e2d3-0006-4000-8000-000000000006",
+      "name": "Com'è andata",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1100, 0]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+                "conditions": [{ "leftValue": "={{ $json.stato }}", "rightValue": "aspetta", "operator": { "type": "string", "operation": "equals" } }],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "aspetta"
+            },
+            {
+              "conditions": {
+                "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+                "conditions": [{ "leftValue": "={{ $json.stato }}", "rightValue": "ok", "operator": { "type": "string", "operation": "equals" } }],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ok"
+            },
+            {
+              "conditions": {
+                "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+                "conditions": [{ "leftValue": "={{ $json.stato }}", "rightValue": "errore", "operator": { "type": "string", "operation": "equals" } }],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "errore"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b7c1e2d3-0007-4000-8000-000000000007",
+      "name": "Strada",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [1320, 0]
+    },
+    {
+      "parameters": {},
+      "id": "b7c1e2d3-0008-4000-8000-000000000008",
+      "name": "Video fatti",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1560, 0]
+    },
+    {
+      "parameters": {
+        "fromEmail": "info@freellmarena.com",
+        "toEmail": "info@freellmarena.com",
+        "subject": "Video delle notizie non riusciti",
+        "emailFormat": "html",
+        "html": "=<p>La corsa dei video delle notizie su GitHub non è andata: {{ $json.motivo }}.</p><p>Dettagli: <a href=\"{{ $json.link }}\">{{ $json.link }}</a></p><p>I video del giorno che erano già pronti restano pubblicati; il flusso riparte da solo alla prossima ora.</p>",
+        "options": {}
+      },
+      "id": "b7c1e2d3-0009-4000-8000-000000000009",
+      "name": "Avvisami per mail",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [1560, 160],
+      "credentials": {
+        "smtp": { "id": "", "name": "SMTP info@freellmarena.com" }
+      }
+    },
+    {
+      "parameters": {
+        "errorMessage": "=Video delle notizie non riusciti: {{ $('Com\\'è andata').first().json.motivo }}. {{ $('Com\\'è andata').first().json.link || '' }}"
+      },
+      "id": "b7c1e2d3-0010-4000-8000-000000000010",
+      "name": "Segna errore",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [1780, 160]
+    }
+  ],
+  "connections": {
+    "Ogni giorno 10:00 e 19:00": { "main": [[{ "node": "Segna l'ora", "type": "main", "index": 0 }]] },
+    "Segna l'ora": { "main": [[{ "node": "Fai partire i video su GitHub", "type": "main", "index": 0 }]] },
+    "Fai partire i video su GitHub": { "main": [[{ "node": "Aspetta 15 minuti", "type": "main", "index": 0 }]] },
+    "Aspetta 15 minuti": { "main": [[{ "node": "Leggi la corsa", "type": "main", "index": 0 }]] },
+    "Leggi la corsa": { "main": [[{ "node": "Com'è andata", "type": "main", "index": 0 }]] },
+    "Com'è andata": { "main": [[{ "node": "Strada", "type": "main", "index": 0 }]] },
+    "Strada": {
+      "main": [
+        [{ "node": "Aspetta 15 minuti", "type": "main", "index": 0 }],
+        [{ "node": "Video fatti", "type": "main", "index": 0 }],
+        [{ "node": "Avvisami per mail", "type": "main", "index": 0 }]
+      ]
+    },
+    "Avvisami per mail": { "main": [[{ "node": "Segna errore", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1", "timezone": "Europe/Rome", "saveExecutionProgress": true },
+  "pinData": {},
+  "active": false
+}
