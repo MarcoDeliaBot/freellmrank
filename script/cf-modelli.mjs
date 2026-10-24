@@ -75,6 +75,16 @@ export const QWEN_MODELLI = [
 export const TETTO_QWEN_TOKEN = 30000; // token al giorno per modello: 90 giorni × 30.000 < 1M di quota per modello
 export const QWEN_ATTIVO = false;
 const cerca = (lista, nome) => lista.find((m) => m.arena.includes(String(nome).toLowerCase()));
+// Modelli chiusi che si usano gratis con l'API del laboratorio (24/10/2026, Marco: pagine anche per loro, con la quota
+// spiegata). Gemini: Free Tier permanente con limiti giornalieri. Qwen: quota di prova di Model Studio (≈1M token per
+// modello, 90 giorni). Vale anche senza le nostre chiavi: dice al visitatore come usarli gratis con la sua chiave
+export function apiGratisPer(nome) {
+  const g = cerca(GEMINI_MODELLI, nome);
+  if (g) return { fornitore: 'gemini', modello: g.id.slice(7), tipo: 'free tier' };
+  const q = cerca(QWEN_MODELLI, nome);
+  if (q) return { fornitore: 'qwen', modello: q.id.slice(5), tipo: 'trial' };
+  return null;
+}
 export const perNomeProva = (nome) => perNomeArena(nome) || (QWEN_ATTIVO ? cerca(QWEN_MODELLI, nome) : undefined) || (GEMINI_ATTIVO ? cerca(GEMINI_MODELLI, nome) : undefined);
 
 // Prova audio sulla pagina /audio (decisione del 20/10/2026): voce → testo e testo → voce, modelli aperti.

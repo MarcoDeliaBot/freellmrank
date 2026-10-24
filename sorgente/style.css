@@ -56,6 +56,7 @@ td.m{min-width:12rem}
 .tag.free{background:color-mix(in srgb,var(--free) 15%,transparent);color:var(--free)}
 .tag.home{background:color-mix(in srgb,var(--home) 15%,transparent);color:var(--home)}
 .tag.web{background:var(--soft);color:var(--ink)}
+.tag.quota{background:var(--soft);color:var(--ink);border:1px dashed var(--line)}
 .tag.bad{background:color-mix(in srgb,var(--bad) 13%,transparent);color:var(--bad)}
 .best{border:2px solid var(--free)}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:1rem}

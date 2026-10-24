@@ -1,11 +1,12 @@
 // Catalogo dei modelli gratuiti e una pagina per ciascuno.
 import { esc, fmtNum, fmtData, pagina, CHAT_WEB, NOME_PIENO, URL_SITO, conLicenza } from './comune.mjs';
 import { linee } from './grafici.mjs';
-import { perNomeProva, DOMANDE_PER_VISITATORE } from '../cf-modelli.mjs';
+import { perNomeProva, apiGratisPer, DOMANDE_PER_VISITATORE } from '../cf-modelli.mjs';
 import { simula, daScheda, kvGB, QUANTI, perditaQualita, giudizio, slug } from '../../sorgente/calc.mjs';
 
 const SOLO_PESI = new Set(['image', 'video', 'edit', 'i2v', 'vedit']);
-const usabileGratis = (m) => m.aperto || m.or?.gratis;
+// 24/10/2026: anche i modelli chiusi con API gratis del laboratorio (Gemini) o quota gratis di prova (Qwen su Model Studio)
+const usabileGratis = (m) => m.aperto || m.or?.gratis || !!apiGratisPer(m.nome);
 // nome più leggibile fra quelli usati nelle varie classifiche
 const piuBello = (a, b) => ((/[A-Z ]/.test(b) && !/[A-Z ]/.test(a)) ? b : a);
 
@@ -19,11 +20,14 @@ export function unisci(dati, storia) {
   for (const c of dati.categorie) {
     for (const m of c.modelli) {
       if (!usabileGratis(m)) continue;
-      const chiave = m.hf?.repo || m.or?.id || perNorma.get(norma(m.nome))?.chiave || slug(m.nome);
+      // varianti dello stesso modello chiuso («Gemini 3 Flash» e «Gemini 3 Flash (Minimal)»): una pagina sola, per id dell'API
+      const api = apiGratisPer(m.nome);
+      // (prima dell'id OpenRouter: le varianti hanno id OpenRouter a pagamento diversi fra loro)
+      const chiave = m.hf?.repo || (api && !m.or?.gratis && `api:${api.modello}`) || m.or?.id || perNorma.get(norma(m.nome))?.chiave || slug(m.nome);
       let u = mappa.get(chiave);
       if (!u) { u = { chiave, nome: m.nome, org: m.org, licenza: m.licenza, aperto: m.aperto, or: m.or, hf: m.hf, cat: {}, nomi: {} }; mappa.set(chiave, u); ricorda(u); }
       u.nome = piuBello(u.nome, m.nome);
-      u.or ||= m.or; u.hf ||= m.hf;
+      u.or ||= m.or; u.hf ||= m.hf; u.api ||= apiGratisPer(m.nome);
       const prima = u.cat[c.id];
       if (!prima || m.punti > prima.punti) {
         u.cat[c.id] = { punti: m.punti, pos: m.pos, totale: c.totale, voti: m.voti, nomeArena: m.nome };
@@ -76,6 +80,8 @@ function etichetteGratis(m, piccolo = false) {
   const t = [];
   const et = (cls, testo, href) => (piccolo || !href ? `<span class="tag ${cls}">${testo}</span>` : `<a class="tag ${cls}" href="${href}"${href.startsWith('http') ? ' rel="noopener"' : ''}>${testo}</a>`);
   if (m.or?.gratis) t.push(et('free', 'Free API', `/compare.html#${encodeURIComponent(m.or.id)}`));
+  if (m.api?.tipo === 'free tier') t.push(et('free', 'Free API (Google)', 'https://ai.google.dev/gemini-api/docs/pricing'));
+  if (m.api?.tipo === 'trial') t.push(et('quota', 'Free trial quota', 'https://www.alibabacloud.com/help/en/model-studio/new-free-quota'));
   if (m.aperto && CHAT_WEB[m.org]) t.push(et('web', 'Lab chat', CHAT_WEB[m.org]));
   if (m.aperto) t.push(et('home', 'Download'));
   if (m.nuovo) t.push(et('nuovo', 'New · waiting for Arena votes'));
@@ -95,7 +101,7 @@ export function paginaCatalogo(dati, modelli, blog) {
     const cats = Object.keys(m.cat).concat(m.senzaVoti ? m.catPiccoli : []);
     const c = m.categoriaMigliore && m.cat[m.categoriaMigliore];
     const q4 = m.hf ? m.hf.b * 0.606 + 1.2 : null;
-    return `<a class="scheda-modello" href="${m.href}" data-cat="${[...new Set(cats)].join(' ')}" data-org="${esc(m.org)}" data-dim="${m.hf ? fasciaDim(m.hf.b) : ''}" data-api="${m.or?.gratis ? 1 : 0}" data-punti="${c ? c.punti : 0}" data-data="${m.primo || ''}" data-b="${m.hf?.b || 0}" data-testo="${esc((m.nome + ' ' + m.org).toLowerCase())}">
+    return `<a class="scheda-modello" href="${m.href}" data-cat="${[...new Set(cats)].join(' ')}" data-org="${esc(m.org)}" data-dim="${m.hf ? fasciaDim(m.hf.b) : ''}" data-api="${m.or?.gratis || m.api ? 1 : 0}" data-punti="${c ? c.punti : 0}" data-data="${m.primo || ''}" data-b="${m.hf?.b || 0}" data-testo="${esc((m.nome + ' ' + m.org).toLowerCase())}">
 <span class="sm-testa"><b>${esc(m.nome)}</b><span class="org">${esc(m.org)}${m.licenza ? ' · ' + esc(m.licenza) : ''}</span></span>
 <span class="sm-dati">
 <span><span class="muted">Arena</span><b>${c ? c.punti : '—'}</b></span>
@@ -164,10 +170,11 @@ ${cats.map((c) => `<tr><td><a href="/#${c}">${esc(nomiCat[c])}</a></td><td class
     const cf = [m.nome, ...Object.values(m.nomi || {})].map(perNomeProva).find(Boolean);
     const suGemini = cf?.id.startsWith('gemini/');
     // la quota gratis della Gemini API vale anche per il visitatore, con la sua chiave (24/10/2026)
-    const geminiGratis = suGemini ? `<li><b>Free API from Google</b>: the <a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">Gemini API free tier</a>, model id <code>${esc(cf.id.slice(7))}</code>, with a free key from <a href="https://aistudio.google.com/apikey" rel="noopener">Google AI Studio</a> (daily limits)</li>` : '';
+    const geminiGratis = m.api?.fornitore === 'gemini' ? `<li><b>Free API from Google</b>: the <a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">Gemini API free tier</a> gives this model for free, with no end date. Google limits how many requests you can send per minute and per day (your limits are shown in AI Studio). Get a free key at <a href="https://aistudio.google.com/apikey" rel="noopener">Google AI Studio</a> and use the model id <code>${esc(m.api.modello)}</code>. In the EU, UK and Switzerland Google applies its <a href="https://ai.google.dev/gemini-api/terms" rel="noopener">paid-service data rules</a> to the free tier too, so your prompts are not used to improve its models</li>` : '';
     const gratis = [];
     if (cf) gratis.push(`<li><b>Right here, no account</b>: <a href="#try">ask it a question below</a> (${DOMANDE_PER_VISITATORE} free questions a day)</li>`);
     if (geminiGratis) gratis.push(geminiGratis);
+    if (m.api?.fornitore === 'qwen') gratis.push(`<li><b>Free trial quota from Alibaba Cloud</b>: on <a href="https://www.alibabacloud.com/en/product/modelstudio" rel="noopener">Model Studio</a> (Singapore region), new accounts get about 1 million free tokens for <code>${esc(m.api.modello)}</code>, valid 90 days. It is a trial, not free forever: turn on <a href="https://www.alibabacloud.com/help/en/model-studio/new-free-quota" rel="noopener">Free Quota Only</a> so you are never charged when it runs out</li>`);
     if (m.or?.gratis) gratis.push(`<li><b>Free API on OpenRouter</b>: model id <code>${esc(m.or.id)}</code>. <a href="/compare.html#${encodeURIComponent(m.or.id)}">Try it side by side</a> · <a href="https://openrouter.ai/${esc(m.or.id.replace(/:free$/, ''))}" rel="noopener">OpenRouter page</a></li>`);
     if (m.aperto && CHAT_WEB[m.org]) gratis.push(`<li><b>The lab's own chat</b>: <a href="${CHAT_WEB[m.org]}" rel="noopener">${esc(CHAT_WEB[m.org].replace('https://', ''))}</a> (free with daily limits)</li>`);
     // comando unico con whichllm (github.com/Andyyyy64/whichllm, MIT): quale GPU serve e chat in locale (24/10/2026)
@@ -208,7 +215,11 @@ ${QUANTI.filter((p) => p.id !== 'Q2_K').map((p) => { const pq = perditaQualita(p
 
     // 24/10/2026 (piano SEO): le ricerche che ci portano visite sono i nomi dei modelli; il titolo dice subito
     // quello che si cerca insieme al nome: API gratis, eseguirlo in locale, requisiti della GPU
-    const titoloPagina = m.or?.gratis
+    const titoloPagina = m.api?.tipo === 'free tier'
+      ? `${m.nome}: Free API from Google, Limits and Arena Score · ${NOME_PIENO}`
+      : m.api?.tipo === 'trial'
+        ? `${m.nome}: Free Trial Quota, Arena Score and Free Alternatives · ${NOME_PIENO}`
+        : m.or?.gratis
       ? `${m.nome}: Free API, Run It Locally, GPU Requirements · ${NOME_PIENO}`
       : m.aperto && m.hf
         ? `${m.nome}: Run It Locally for Free, GPU Requirements and Speed · ${NOME_PIENO}`
