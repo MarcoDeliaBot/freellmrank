@@ -285,10 +285,25 @@ function trovaScheda(nome) {
   }
   return null;
 }
-$('rileva').addEventListener('click', () => {
-  const nome = nomeGpu();
+// 24/10/2026, PC di Marco: Chrome rispondeva «Microsoft Basic Render Driver» (accelerazione hardware spenta o driver
+// non usato dal browser). È un disegnatore software, non la scheda: proviamo WebGPU e, se niente, lo diciamo chiaro
+const SOFTWARE = /basic render driver|swiftshader|llvmpipe|software rasterizer|microsoft basic/i;
+async function nomeWebGpu() {
+  try {
+    const a = await navigator.gpu?.requestAdapter({ powerPreference: 'high-performance' });
+    const i = a?.info || (await a?.requestAdapterInfo?.());
+    return i ? [i.vendor, i.architecture, i.device, i.description].filter(Boolean).join(' ') : null;
+  } catch { return null; }
+}
+$('rileva').addEventListener('click', async () => {
   const esito = $('rileva-esito');
+  let nome = nomeGpu();
+  if (!nome || SOFTWARE.test(nome)) nome = (await nomeWebGpu()) || nome;
   if (!nome) { esito.textContent = 'Your browser does not share the graphics card name. Pick it from the list.'; return; }
+  if (SOFTWARE.test(nome)) {
+    esito.innerHTML = 'Your browser is drawing without your graphics card (it reports a software driver), so it cannot tell us which card you have. Turn on hardware acceleration in the browser settings and reload, or pick your card from the list.';
+    return;
+  }
   const s = dati && trovaScheda(nome);
   if (s) {
     $('scheda').value = s.id;

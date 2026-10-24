@@ -2,7 +2,9 @@
 // Il visitatore prova un modello senza account. Paga la quota gratis di Cloudflare Workers AI del sito,
 // e ci fermiamo prima della fine: tetto giornaliero sui neurons e 5 domande al giorno per visitatore.
 // Legami (impostati nel progetto Pages): AI = Workers AI, PROVA = KV per i contatori, SALE = segreto.
-import { CF_MODELLI, TETTO_NEURONS, DOMANDE_PER_VISITATORE, LUNGHEZZA_DOMANDA, peggioreNeurons } from '../../script/cf-modelli.mjs';
+// Dal 24/10/2026 anche i modelli Gemini (GEMINI_MODELLI) con la quota gratis della Gemini API: segreto GEMINI_KEY,
+// un tetto nostro di richieste al giorno (TETTO_GEMINI) e lo stesso limite di domande per visitatore.
+import { CF_MODELLI, GEMINI_MODELLI, TETTO_GEMINI, TETTO_NEURONS, DOMANDE_PER_VISITATORE, LUNGHEZZA_DOMANDA, peggioreNeurons } from '../../script/cf-modelli.mjs';
 
 const ORIGINI = ['https://freellmarena.com', 'http://127.0.0.1:8788', 'http://localhost:8788'];
 const json = (dati, stato = 200) => new Response(JSON.stringify(dati), { status: stato, headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' } });
@@ -16,10 +18,13 @@ async function impronta(ip, giorno, sale) {
 export async function onRequestPost({ request, env }) {
   const origine = request.headers.get('Origin');
   if (origine && !ORIGINI.includes(origine)) return json({ errore: 'Not allowed.' }, 403);
-  if (!env.AI || !env.PROVA) return json({ errore: 'Try-now is not set up yet.' }, 503);
+  if (!env.PROVA) return json({ errore: 'Try-now is not set up yet.' }, 503);
 
   let corpo;
   try { corpo = await request.json(); } catch { return json({ errore: 'Bad request.' }, 400); }
+  const g = GEMINI_MODELLI.find((x) => x.id === corpo?.modello);
+  if (g) return provaGemini(g, corpo, request, env);
+  if (!env.AI) return json({ errore: 'Try-now is not set up yet.' }, 503);
   const m = CF_MODELLI.find((x) => x.id === corpo?.modello);
   const domanda = String(corpo?.domanda || '').trim();
   if (!m) return json({ errore: 'This model cannot be tried here.' }, 400);
@@ -55,6 +60,47 @@ export async function onRequestPost({ request, env }) {
     risposta: risposta || '(The model returned an empty answer. Try a shorter or clearer question.)',
     tagliata: r?.choices?.[0]?.finish_reason === 'length',
     token: usage.completion_tokens ?? null,
+    rimaste: DOMANDE_PER_VISITATORE - usate - 1,
+  });
+}
+
+// Gemini API, quota gratis del progetto (senza fatturazione: oltre il limite Google risponde 429 e non addebita nulla)
+async function provaGemini(g, corpo, request, env) {
+  if (!env.GEMINI_KEY) return json({ errore: 'This model is not available to try here yet.' }, 503);
+  const domanda = String(corpo?.domanda || '').trim();
+  if (!domanda) return json({ errore: 'Write a question first.' }, 400);
+  if (domanda.length > LUNGHEZZA_DOMANDA) return json({ errore: `Keep the question under ${LUNGHEZZA_DOMANDA} characters.` }, 400);
+  const giorno = new Date().toISOString().slice(0, 10);
+  const chiaveGemini = `gemini:${giorno}`;
+  const chiaveIp = `ip:${await impronta(request.headers.get('CF-Connecting-IP') || 'x', giorno, env.SALE || '')}`;
+  const [fatteTesto, usateTesto] = await Promise.all([env.PROVA.get(chiaveGemini), env.PROVA.get(chiaveIp)]);
+  const fatte = Number(fatteTesto) || 0, usate = Number(usateTesto) || 0;
+  if (usate >= DOMANDE_PER_VISITATORE) return json({ errore: `You used your ${DOMANDE_PER_VISITATORE} free questions for today. Come back tomorrow, or try the model on the other free sites listed on this page.`, rimaste: 0 }, 429);
+  if (fatte >= TETTO_GEMINI) return json({ errore: 'Today\'s free questions for this model are finished for everyone. They come back at midnight UTC.', rimaste: 0 }, 429);
+  await Promise.all([
+    env.PROVA.put(chiaveIp, String(usate + 1), { expirationTtl: 60 * 60 * 26 }),
+    env.PROVA.put(chiaveGemini, String(fatte + 1), { expirationTtl: 60 * 60 * 48 }),
+  ]);
+  let r, d;
+  try {
+    r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${g.id.slice(7)}:generateContent`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': env.GEMINI_KEY },
+      body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: domanda }] }], generationConfig: { maxOutputTokens: g.max } }),
+    });
+    d = await r.json();
+  } catch {
+    return json({ errore: 'The model did not answer. Try again in a minute.' }, 502);
+  }
+  if (r.status === 429) return json({ errore: 'Google\'s free quota for this model is busy right now. Try again in a minute.' }, 429);
+  if (!r.ok) return json({ errore: 'The model did not answer. Try again in a minute.' }, 502);
+  const cand = d?.candidates?.[0];
+  // le parti di «ragionamento» (thought) non sono la risposta
+  const risposta = (cand?.content?.parts || []).filter((p) => !p.thought).map((p) => p.text || '').join('').trim();
+  return json({
+    risposta: risposta || '(The model returned an empty answer. Try a shorter or clearer question.)',
+    tagliata: cand?.finishReason === 'MAX_TOKENS',
+    token: d?.usageMetadata?.candidatesTokenCount ?? null,
     rimaste: DOMANDE_PER_VISITATORE - usate - 1,
   });
 }

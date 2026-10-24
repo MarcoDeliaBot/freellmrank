@@ -43,6 +43,26 @@ export const peggioreNeurons = (m, caratteri) => neuronsDa(((caratteri / 3 + 100
 
 export const perNomeArena = (nome) => CF_MODELLI.find((m) => m.arena.includes(String(nome).toLowerCase()));
 
+// «Try it now» anche con la quota gratis della Gemini API (deciso da Marco il 24/10/2026). In SEE/UK/CH la quota gratis
+// vale (ai.google.dev/gemini-api/terms: valgono le regole sui dati dei servizi a pagamento, niente addestramento).
+// Solo i modelli che il listino (ai.google.dev/gemini-api/docs/pricing, 24/10/2026) dà «Free of charge» nel Free Tier.
+// La chiave (segreto GEMINI_KEY) va creata in un progetto SENZA fatturazione: oltre il limite Google risponde 429, non addebita.
+// Google non pubblica i limiti giornalieri del Free Tier: ci fermiamo prima con un tetto nostro di richieste al giorno.
+export const GEMINI_MODELLI = [
+  { arena: ['gemini 3.8 flash (high)'], id: 'gemini/gemini-3.8-flash', max: 2048 },
+  { arena: ['gemini 3.6 flash (high)', 'gemini-3.6-flash-high'], id: 'gemini/gemini-3.6-flash', max: 2048 },
+  { arena: ['gemini 3.5 flash-lite'], id: 'gemini/gemini-3.5-flash-lite', max: 2048 },
+  { arena: ['gemini 3.1 flash-lite preview'], id: 'gemini/gemini-3.1-flash-lite', max: 2048 },
+  { arena: ['gemini 3 flash', 'gemini 3 flash (minimal)', 'gemini-3-flash'], id: 'gemini/gemini-3-flash-preview', max: 2048 },
+  { arena: ['gemini 2.5 pro', 'gemini-2.5-pro'], id: 'gemini/gemini-2.5-pro', max: 2048 },
+  { arena: ['gemini 2.5 flash'], id: 'gemini/gemini-2.5-flash', max: 2048 },
+];
+export const TETTO_GEMINI = 200; // richieste al giorno (UTC) per tutto il sito, sommando i modelli Gemini
+// per le pagine dei modelli: prima Cloudflare, poi Gemini
+// i riquadri Gemini compaiono solo quando la chiave c'è (GEMINI_KEY nel progetto Pages): fino ad allora resta false
+export const GEMINI_ATTIVO = false;
+export const perNomeProva = (nome) => perNomeArena(nome) || (GEMINI_ATTIVO ? GEMINI_MODELLI.find((m) => m.arena.includes(String(nome).toLowerCase())) : undefined);
+
 // Prova audio sulla pagina /audio (decisione del 20/10/2026): voce → testo e testo → voce, modelli aperti.
 // Listino Cloudflare 20/10/2026: whisper-large-v3-turbo 46,63 neurons al minuto di audio, melotts 18,63.
 // Il browser converte la registrazione in WAV 16 kHz mono, così il server conosce la durata esatta.

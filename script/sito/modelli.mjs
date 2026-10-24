@@ -1,7 +1,7 @@
 // Catalogo dei modelli gratuiti e una pagina per ciascuno.
 import { esc, fmtNum, fmtData, pagina, CHAT_WEB, NOME_PIENO, URL_SITO, conLicenza } from './comune.mjs';
 import { linee } from './grafici.mjs';
-import { perNomeArena, DOMANDE_PER_VISITATORE } from '../cf-modelli.mjs';
+import { perNomeProva, DOMANDE_PER_VISITATORE } from '../cf-modelli.mjs';
 import { simula, daScheda, kvGB, QUANTI, perditaQualita, giudizio, slug } from '../../sorgente/calc.mjs';
 
 const SOLO_PESI = new Set(['image', 'video', 'edit', 'i2v', 'vedit']);
@@ -161,9 +161,13 @@ ${cats.map((c) => `<tr><td><a href="/#${c}">${esc(nomiCat[c])}</a></td><td class
       : `<div class="panel"><h2>No Arena votes yet</h2><p class="small">Arena has not voted on this model. It is listed because it is a popular small model on its lab's official Hugging Face page (${fmtNum(m.download || 0)} downloads a month).</p></div>`;
 
     // si prova qui, senza account, se Cloudflare Workers AI ha lo stesso modello
-    const cf = [m.nome, ...Object.values(m.nomi || {})].map(perNomeArena).find(Boolean);
+    const cf = [m.nome, ...Object.values(m.nomi || {})].map(perNomeProva).find(Boolean);
+    const suGemini = cf?.id.startsWith('gemini/');
+    // la quota gratis della Gemini API vale anche per il visitatore, con la sua chiave (24/10/2026)
+    const geminiGratis = suGemini ? `<li><b>Free API from Google</b>: the <a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">Gemini API free tier</a>, model id <code>${esc(cf.id.slice(7))}</code>, with a free key from <a href="https://aistudio.google.com/apikey" rel="noopener">Google AI Studio</a> (daily limits)</li>` : '';
     const gratis = [];
     if (cf) gratis.push(`<li><b>Right here, no account</b>: <a href="#try">ask it a question below</a> (${DOMANDE_PER_VISITATORE} free questions a day)</li>`);
+    if (geminiGratis) gratis.push(geminiGratis);
     if (m.or?.gratis) gratis.push(`<li><b>Free API on OpenRouter</b>: model id <code>${esc(m.or.id)}</code>. <a href="/compare.html#${encodeURIComponent(m.or.id)}">Try it side by side</a> · <a href="https://openrouter.ai/${esc(m.or.id.replace(/:free$/, ''))}" rel="noopener">OpenRouter page</a></li>`);
     if (m.aperto && CHAT_WEB[m.org]) gratis.push(`<li><b>The lab's own chat</b>: <a href="${CHAT_WEB[m.org]}" rel="noopener">${esc(CHAT_WEB[m.org].replace('https://', ''))}</a> (free with daily limits)</li>`);
     // comando unico con whichllm (github.com/Andyyyy64/whichllm, MIT): quale GPU serve e chat in locale (24/10/2026)
@@ -236,7 +240,7 @@ ${QUANTI.filter((p) => p.id !== 'Q2_K').map((p) => { const pq = perditaQualita(p
 <div class="tiles">${tessere.map(([a, b, c]) => `<div class="tile"><span class="small muted">${a}</span><b>${b}</b><span class="small muted">${esc(c)}</span></div>`).join('')}</div>
 ${gratis.length ? `<div class="panel"><h2>Where to use it for free</h2><ul class="dove">${gratis.join('')}</ul></div>` : ''}
 ${cf ? `<div class="panel prova" id="try" data-modello="${esc(cf.id)}"><h2>Try ${esc(m.nome)} now</h2>
-<p class="small muted">No account, no payment. ${DOMANDE_PER_VISITATORE} questions a day per visitor, short answers. It runs on <a href="https://developers.cloudflare.com/workers-ai/" rel="noopener">Cloudflare Workers AI</a> (<code>${esc(cf.id)}</code>). We do not store your question. Do not write personal data.</p>
+<p class="small muted">No account, no payment. ${DOMANDE_PER_VISITATORE} questions a day per visitor, short answers. It runs on ${suGemini ? `Google's free <a href="https://ai.google.dev/gemini-api/docs" rel="noopener">Gemini API</a> (<code>${esc(cf.id.slice(7))}</code>)` : `<a href="https://developers.cloudflare.com/workers-ai/" rel="noopener">Cloudflare Workers AI</a> (<code>${esc(cf.id)}</code>)`}. We do not store your question. Do not write personal data.</p>
 <form class="prova-form"><label for="try-question" class="small">Your question</label>
 <textarea id="try-question" rows="3" maxlength="1500" required placeholder="Example: Explain what a context window is, in three short sentences."></textarea>
 <div class="row"><button type="submit" class="btn">Ask</button><span class="small muted prova-stato" aria-live="polite"></span></div></form>
