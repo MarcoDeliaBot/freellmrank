@@ -41,7 +41,9 @@ export async function monta(piano, dir) {
     const st = STAMPI[sc.stampo];
     const istanti = {};
     let dopo = 0;
+    const ordine = [];
     for (const { chiave, parola, altre = [] } of st.parole(sc.dati || {})) {
+      ordine.push(chiave);
       // prima dopo il pezzo precedente; se la voce la dice prima (ordine diverso dallo schermo), ovunque nella scena;
       // poi le altre parole del pezzo, ma solo dopo il pezzo precedente (una parola comune detta prima sarebbe un falso aggancio)
       let t = quando(sc.parole, parola, dopo) ?? quando(sc.parole, parola, 0);
@@ -50,6 +52,17 @@ export async function monta(piano, dir) {
       istanti[chiave] = Math.max(0, t - ANTICIPO);
       dopo = t;
     }
+    // i pezzi senza aggancio si distribuiscono fra quelli agganciati (prima prova vera, 24/10: col tempo di riserva dello
+    // stampo alcune scene restavano mezze vuote per secondi), dall'inizio della voce fino a poco prima della sua fine
+    for (let k = 0; k < ordine.length;) {
+      if (ordine[k] in istanti) { k++; continue; }
+      let m = k; while (m < ordine.length && !(ordine[m] in istanti)) m++;
+      const a = k > 0 ? istanti[ordine[k - 1]] : 0.3;
+      let b = m < ordine.length ? istanti[ordine[m]] : sc.durVoce * 0.85;
+      if (b < a + 0.5 * (m - k + 1)) b = Math.min(sc.durVoce * 0.95, a + 0.5 * (m - k + 1));
+      for (let j = k; j < m; j++) istanti[ordine[j]] = k === 0 && j === 0 ? a : a + ((b - a) * (j - k + 1)) / (m - k + 1);
+      k = m;
+    }
     const t = (chiave, riserva) => Math.min(sc.durata - 0.6, istanti[chiave] ?? riserva);
     const id = `s${i + 1}-${sc.stampo}`;
     const html = st.html({ id, px: `s${i + 1}-`, dati: sc.dati || {}, durata: sc.durata, t, etichetta: sc.etichetta || '', numero: `${sc.n} / ${String(scene.length).padStart(2, '0')}` });
@@ -57,7 +70,7 @@ export async function monta(piano, dir) {
     sc.id = id;
     fs.writeFileSync(d(sc.file), html);
   }
-  if (mancate.length) console.log(`Parole di attacco non trovate nella voce (uso il tempo di riserva): ${mancate.join(' · ')}`);
+  if (mancate.length) console.log(`Parole di attacco non trovate nella voce (pezzi distribuiti fra quelli agganciati): ${mancate.join(' · ')}`);
 
   // 3. sottotitoli e indice
   const tutte = scene.flatMap((sc) => sc.parole.map((w) => ({ text: w.text, start: +(w.start + sc.inizio).toFixed(3), end: +(w.end + sc.inizio).toFixed(3) })));

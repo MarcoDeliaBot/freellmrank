@@ -83,7 +83,7 @@ export function controllaPiano(grezzo, n) {
     const grezzi = sc.dati && typeof sc.dati === 'object' ? sc.dati : {};
     // i fatti non si riparano: una scena con un numero o un nome che non sta nella notizia si toglie
     const fatti = [
-      ...(parole(voce) < 6 || parole(voce) > 70 ? [`voce di ${parole(voce)} parole (servono 6-70)`] : []),
+      ...(parole(voce) < 6 || parole(voce) > 50 ? [`voce di ${parole(voce)} parole (servono 6-50)`] : []),
       ...(regge(voce) ? [] : [`voce con numeri o nomi non nella notizia (${mancanti(voce).join(', ')})`]),
       ...testi(grezzi).filter((t) => !regge(semplice(t))).map((t) => `testo non nella notizia: «${t}» (${mancanti(semplice(t)).join(', ')})`),
     ];
@@ -129,8 +129,8 @@ ${elenco}
 Rules:
 - 4 to 6 scenes. The first scene is always "titolo". Do NOT add a closing scene (it is added automatically).
 - Use "numero", "numeri", "lista" or "confronto" only when ARTICLE really has that kind of content; otherwise "punti".
-- "voce" is what the narrator says during the scene: 1 to 3 short spoken sentences (6 to 60 words), plain English, numbers written as digits. All scenes together: 110 to 190 words.
-- Everything shown on screen ("dati") must also be said in that scene's "voce", in the same order.
+- "voce" is what the narrator says during the scene: 1 to 3 short spoken sentences (6 to 45 words, never more than 50), plain English, numbers written as digits. All scenes together: 110 to 190 words.
+- Everything shown on screen ("dati") must also be said in that scene's "voce", in the same order. Show about one on-screen item for every 12 to 15 spoken words: a long voice needs more items, or split it into two scenes.
 - "quando" (optional, inside dati): for each piece, the exact word of "voce" at which it should appear, e.g. {"etichetta": "day"}.
 - "etichetta": a 1-3 word label for the scene, shown small at the top (e.g. "The number", "What's inside").
 Return JSON: {"scene": [{"stampo": "...", "etichetta": "...", "voce": "...", "dati": {...}}]}` },
