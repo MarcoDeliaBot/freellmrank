@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-24-nvidia-earth-2-models-deployed-across-europe-for-real-world-weather-an",
+ "titolo": "NVIDIA Earth‑2 models deployed across Europe for real‑world weather and climate forecasting",
+ "descr": "European organisations adopt NVIDIA Earth‑2 open models like StormScope EU and CorrDiff for regional forecasts and environmental research.",
+ "tema": "Research",
+ "paragrafi": [
+  "NVIDIA announced that several European pioneers are using its Earth‑2 open‑source AI models to improve weather and climate prediction.",
+  "The StormScope EU model, a regional version of StormScope, processes EUMETSAT satellite data across 16 Meteosat channels every 10 minutes to forecast cloud conditions over Europe.",
+  "Developers combine StormScope with the CorrDiff model to add local detail to coarser forecasts, and can retrain the architectures for other tasks such as air‑quality modeling.",
+  "Partners include AXA, which runs FourCastNet 3 for cyclone risk across more than 1,000 simulated seasons, and Vaisala Xweather, which integrates StormScope with lightning data for short‑term warnings.",
+  "University of Manchester researchers adapted CorrDiff for UK air‑quality work on the Isambard‑AI supercomputer and later on NVIDIA DGX Spark systems, moving the capability from a national supercomputer to desktop environments."
+ ],
+ "perche": [
+  "These deployments show that open AI weather models can be customized with proprietary data, offering more accurate regional forecasts for sectors like insurance, energy and transport. For users of free or locally run models, the Earth‑2 toolset demonstrates how open architectures can be adapted to niche applications without relying on large cloud services."
+ ],
+ "pubblicato": "2026-10-24",
+ "titoloFonte": "Pioneers Across Europe Deploy NVIDIA Earth-2 Open Models to Power Real-World Weather and Climate Prediction",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/europe-earth-2-open-models-weather-climate-prediction/",
+   "titolo": "Pioneers Across Europe Deploy NVIDIA Earth-2 Open Models to Power Real-World Weather and Climate Prediction",
+   "ufficiale": true,
+   "data": "2026-10-22"
+  }
+ ],
+ "frasiTolte": 0
+}

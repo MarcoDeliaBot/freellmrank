@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-24-liquid-ai-launches-ripl-a-real-time-inference-engine-for-sub-50-ms-lfm",
+ "titolo": "Liquid AI Launches RIPL, a Real-Time Inference Engine for Sub-50 ms LFMs",
+ "descr": "Liquid AI announced RIPL, a real‑time inference engine designed for large‑foundation models (LFMs).",
+ "tema": "Software",
+ "paragrafi": [
+  "Liquid AI announced RIPL, a real‑time inference engine designed for large‑foundation models (LFMs).",
+  "The engine targets sub‑50 ms response times, aiming to improve interactive AI experiences.",
+  "The comparison highlights a significant reduction in tail latency, a key metric for real‑time applications.",
+  "RIPL is positioned as a solution for developers needing fast, consistent inference on large models."
+ ],
+ "perche": [
+  "For AI users, RIPL promises smoother, faster interactions with large models, reducing wait times in chat or tool use. For developers seeking free or locally hosted models, the lower latency may make on‑premise deployment more viable, though hardware requirements remain high."
+ ],
+ "pubblicato": "2026-10-24",
+ "titoloFonte": "Liquid AI Launches RIPL, a Real-Time Inference Engine for Sub-50 ms LFMs",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/22/liquid-ai-ripl-real-time-inference-engine/",
+   "titolo": "Liquid AI Launches RIPL, a Real-Time Inference Engine for Sub-50 ms LFMs",
+   "ufficiale": false,
+   "data": "2026-10-22"
+  }
+ ],
+ "frasiTolte": 3
+}
