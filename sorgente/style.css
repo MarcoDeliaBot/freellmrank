@@ -247,6 +247,9 @@ code{font:.85em var(--mono);background:var(--soft);padding:.1rem .3rem;border-ra
 .articolo ul,.articolo ol{display:grid;gap:.35rem;padding-left:1.2rem;margin:0}
 .articolo table{border-collapse:collapse;font-size:.92rem;display:block;overflow-x:auto;max-width:100%}
 .articolo th,.articolo td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left}
+/* codice negli articoli (25/10/2026, guida Kimi K3.1 Pro): le righe lunghe allargavano la colonna a 754 px sul telefono */
+.articolo>*{min-width:0}
+.articolo pre{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:.8rem .9rem;margin:0;max-width:100%;overflow-x:auto;font:13px/1.5 var(--mono)}
 .lista-post{display:grid;gap:.7rem;max-width:44rem}
 .post{display:grid;gap:.2rem;padding:.9rem 1rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);text-decoration:none;color:var(--ink)}
 .post:hover{border-color:var(--accent)}
