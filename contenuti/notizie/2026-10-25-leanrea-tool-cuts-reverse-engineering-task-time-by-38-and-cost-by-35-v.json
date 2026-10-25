@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-25-leanrea-tool-cuts-reverse-engineering-task-time-by-38-and-cost-by-35-v",
+ "titolo": "leanrea tool cuts reverse‑engineering task time by 38% and cost by 35% versus REA",
+ "descr": "The 8 KB leanrea skill drops the MCP layer of REA, delivering faster, cheaper reverse‑engineering on macOS arm64.",
+ "tema": "Software",
+ "paragrafi": [
+  "The GitHub project aicodeking/leanrea offers an 8 KB skill that replaces the REA (Reverse Engineer Anything) framework.",
+  "Benchmarks on macOS arm64 using Claude Code (Sonnet 5.5) show leanrea completing four reverse‑engineering tasks in 388 seconds at a cost of $2.17, compared with REA's 627 seconds and $3.36.",
+  "The leanrea approach removes the MCP server and 207 predefined tool definitions, letting the agent run native commands directly.",
+  "Against a baseline with no skill, leanrea is about 19 % faster and uses 32 % fewer turns, while its advantage over REA is larger at 38 % faster and 35 % cheaper.",
+  "Installation is via the skills CLI (e.g., npx skills add aicodeking/leanrea) or manual copy into the agent’s skill directory."
+ ],
+ "perche": [
+  "For users, leanrea reduces both runtime and expense for reverse‑engineering workflows, especially on macOS arm64 machines. Developers of free or local AI agents can adopt the skill without adding a heavy MCP layer, keeping deployments lightweight and cost‑effective."
+ ],
+ "pubblicato": "2026-10-25",
+ "titoloFonte": "aicodeking/leanrea: One 8 KB skill that replaces REA (Reverse Engineer Anything): plain CLI tools, no MCP. Benchmarked: 38% faster, 35% cheaper.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/aicodeking/leanrea",
+   "titolo": "aicodeking/leanrea: One 8 KB skill that replaces REA (Reverse Engineer Anything): plain CLI tools, no MCP. Benchmarked: 38% faster, 35% cheaper.",
+   "ufficiale": false,
+   "data": "2026-10-17"
+  }
+ ],
+ "frasiTolte": 0
+}

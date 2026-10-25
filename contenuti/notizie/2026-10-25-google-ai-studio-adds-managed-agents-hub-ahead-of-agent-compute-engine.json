@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-25-google-ai-studio-adds-managed-agents-hub-ahead-of-agent-compute-engine",
+ "titolo": "Google AI Studio adds Managed Agents hub ahead of Agent Compute Engine preview",
+ "descr": "Google announces a new Managed Agents interface in AI Studio, linking to upcoming Agent Compute Engine microVM service.",
+ "tema": "Business",
+ "paragrafi": [
+  "Google AI Studio will feature a Managed Agents hub that consolidates navigation for Agents, Environments, Credentials, Triggers, and Runs.",
+  "The hub builds on existing Gemini API and AI Studio Playground capabilities, giving developers a single place to configure autonomous agents and review run histories.",
+  "Google has not set a rollout date for the hub and has not confirmed integration with Agent Compute Engine, but the two appear to be part of a broader agent platform strategy.",
+  "Developer program members receive monthly GenAI and Cloud credits ($10 for AI Pro, larger for AI Ultra) that can offset AI Studio and Cloud usage, though credits expire after one year."
+ ],
+ "perche": [
+  "The hub streamlines building and managing autonomous agents, reducing the need for multiple tools. For users of free or locally hosted models, it highlights Google's push toward cloud‑based agent services, underscoring the importance of evaluating cost and data residency when choosing between hosted and self‑run solutions."
+ ],
+ "pubblicato": "2026-10-25",
+ "titoloFonte": "Google AI Studio prepares new Managed Agents hub",
+ "fonti": [
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/google-ai-studio-prepares-new-managed-agents-hub/",
+   "titolo": "Google AI Studio prepares new Managed Agents hub",
+   "ufficiale": false,
+   "data": "2026-10-25"
+  }
+ ],
+ "frasiTolte": 1
+}
