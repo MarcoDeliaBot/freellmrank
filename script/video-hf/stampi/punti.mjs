@@ -6,7 +6,7 @@
 import { C, scena, s3, esc, misura, attacchi, formatoDi } from '../base.mjs';
 
 const MAX_TITOLO = 32;
-const MAX_PUNTO = 60;
+const MAX_PUNTO = 90; // 25/10/2026: Workers AI scrive punti di 65-90 caratteri; con 60 le scene venivano scartate
 const MAX_PAROLA = 22; // una parola più lunga non va a capo e sfonderebbe la riga
 const INTERLINEA = 1.14;
 const GAP_MIN = 30;
@@ -80,7 +80,7 @@ function impagina(dati, formato = 'orizzontale') {
 export default {
   nome: 'punti',
   descrizione: '2-4 key points of a news story that has no striking numbers (the most common case): what changed, why it matters, what stays the same',
-  schema: '{ "titolo": "What changed, max 32 chars", "punti": ["one short sentence, max 60 chars", "2 to 4 points, in the order the voice says them"] }',
+  schema: '{ "titolo": "What changed, max 32 chars", "punti": ["one short sentence, max 90 chars", "2 to 4 points, in the order the voice says them"] }',
   valida(dati) {
     const e = [];
     if (!dati || typeof dati !== 'object') return ['dati mancanti'];
