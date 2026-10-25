@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-25-nanbeige-launches-33b-open-source-coding-model-nanbeige4-3-33b",
+ "titolo": "Nanbeige launches 33B open-source coding model Nanbeige4.3-33B",
+ "descr": "Nanbeige4.3-33B is a 33‑billion‑parameter dense model with 512K context, Apache 2.0 licence, scoring 80.9 on Terminal‑Bench 2.1.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Nanbeige LLM Lab announced the release of Nanbeige4.3-33B, a new open‑source coding model.",
+  "The model contains 33 billion dense parameters and is licensed under Apache 2.0.",
+  "It supports a 512 K token context window, allowing very long inputs.",
+  "Benchmark results show an 80.9 score on Terminal‑Bench 2.1.",
+  "Nanbeige4.3-33B will be used to train the upcoming Nanbeige4.3-3B model."
+ ],
+ "perche": [
+  "The release adds a large, permissively licensed coding model to the free ecosystem, giving developers a high‑capacity option without cost. Its size and context length make it suitable for complex code tasks, while the open licence encourages further community training and specialization."
+ ],
+ "pubblicato": "2026-10-25",
+ "titoloFonte": "Nanbeige Releases Nanbeige4.3-33B, a 33B Open Agentic Coding Model",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/25/nanbeige-releases-nanbeige4-3-33b-open-agentic-coding-model/",
+   "titolo": "Nanbeige Releases Nanbeige4.3-33B, a 33B Open Agentic Coding Model",
+   "ufficiale": false,
+   "data": "2026-10-25"
+  }
+ ],
+ "frasiTolte": 0
+}
