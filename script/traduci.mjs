@@ -302,10 +302,24 @@ for (const l of Object.keys(LINGUE)) {
   }
 }
 
-// frasi mancanti, dalla più usata: le traduce script/traduci-mancanti.mjs
+// frasi mancanti in ordine di importanza: le traduce script/traduci-mancanti.mjs, una quarantina per lingua a notte.
+// 25/10/2026: in ordine solo di uso, il titolo nuovo della home (una pagina sola) era al 498° posto su 565 e la home
+// italiana usciva col titolo inglese (passava come «completa»: mancavano meno di 3 frasi). Prima quindi titoli e
+// descrizioni (quelli che si vedono su Google) delle pagine principali, poi titoli e descrizioni delle altre,
+// poi il resto delle pagine principali, infine per numero di pagine.
+const TESTA = /<title>[\s\S]*?<\/title>|<meta\s+(?:name="description"|property="og:(?:title|description|image:alt)")[^>]*>/g;
+const principale = (f) => !f.includes('/') || /^(arena|blog)\/(index|leaderboard)\.html$/.test(f);
+const peso = new Map();
+const pesa = (k, p) => peso.set(k, Math.max(peso.get(k) || 0, p));
+for (const f of pagine) {
+  const h = html.get(f);
+  const testa = (h.match(TESTA) || []).join('\n');
+  for (const k of traduciPagina(testa, {}, finto).mancanti) pesa(k, principale(f) ? 3 : 2);
+  if (principale(f)) for (const k of traduciPagina(h, {}, finto).mancanti) pesa(k, 1);
+}
 fs.mkdirSync(path.join(CARTELLA, 'mancanti'), { recursive: true });
 for (const l of Object.keys(LINGUE)) {
-  const lista = [...mancantiPer[l]].sort((a, b) => b[1] - a[1]).map(([k]) => k);
+  const lista = [...mancantiPer[l]].sort((a, b) => (peso.get(b[0]) || 0) - (peso.get(a[0]) || 0) || b[1] - a[1]).map(([k]) => k);
   fs.writeFileSync(path.join(CARTELLA, 'mancanti', `${l}.json`), JSON.stringify(lista, null, 1) + '\n');
 }
 
