@@ -9,7 +9,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
-const CATEGORIE = { chat: 'text', code: 'webdev', vision: 'vision', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit', document: 'document', search: 'search', i2v: 'image_to_video', vedit: 'video_edit', agent: 'agent' };
+const CATEGORIE = { chat: 'text_style_control', code: 'webdev', vision: 'vision_style_control', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit', document: 'document_style_control', search: 'search_style_control', i2v: 'image_to_video', vedit: 'video_edit', agent: 'agent' };
 
 export function confronta(commit, nostre, oggi) {
   const ultima = {};
@@ -18,7 +18,7 @@ export function confronta(commit, nostre, oggi) {
     if (m && (!ultima[m[1]] || m[2] > ultima[m[1]])) ultima[m[1]] = m[2];
   }
   const nuove = Object.entries(CATEGORIE).filter(([id, cfg]) => ultima[cfg] && nostre[id] && ultima[cfg] > nostre[id]).map(([id, cfg]) => ({ id, arena: ultima[cfg], noi: nostre[id] }));
-  const ultimaChat = ultima.text || nostre.chat;
+  const ultimaChat = ultima.text_style_control || ultima.text || nostre.chat;
   const giorniFermi = ultimaChat ? Math.floor((Date.parse(oggi) - Date.parse(ultimaChat)) / 864e5) : null;
   return { nuove, ultimaChat, giorniFermi, avvisa: giorniFermi !== null && giorniFermi >= 3 };
 }

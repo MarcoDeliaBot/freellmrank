@@ -13,15 +13,15 @@ const OFFLINE = process.argv.includes('--offline');
 
 // Arena config -> categoria del sito
 const CATEGORIE = [
-  { id: 'chat', arena: 'text', nome: 'Chat' },
+  { id: 'chat', arena: 'text_style_control', nome: 'Chat' }, // 25/10/2026: la classifica che arena.ai mostra di default è quella con il controllo dello stile (verificato: stessi punteggi)
   { id: 'code', arena: 'webdev', nome: 'Coding' },
-  { id: 'vision', arena: 'vision', nome: 'Vision' },
+  { id: 'vision', arena: 'vision_style_control', nome: 'Vision' },
   { id: 'image', arena: 'text_to_image', nome: 'Image' },
   { id: 'video', arena: 'text_to_video', nome: 'Video' },
   { id: 'edit', arena: 'image_edit', nome: 'Image edit' },
   // aggiunte il 20/10/2026 («metti sempre tutto»)
-  { id: 'document', arena: 'document', nome: 'Documents' },
-  { id: 'search', arena: 'search', nome: 'Search' },
+  { id: 'document', arena: 'document_style_control', nome: 'Documents' },
+  { id: 'search', arena: 'search_style_control', nome: 'Search' },
   { id: 'i2v', arena: 'image_to_video', nome: 'Image to video' },
   { id: 'vedit', arena: 'video_edit', nome: 'Video edit' },
   // gli agenti hanno un'altra misura: un punteggio da 0 a 1 (score), non i punti Elo; lo mostriamo ×100

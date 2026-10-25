@@ -11,7 +11,7 @@ const DIR = path.join(RADICE, 'dati', 'arena-storia');
 fs.mkdirSync(DIR, { recursive: true });
 const OFFLINE = process.argv.includes('--offline');
 const GIORNI = 182; // andamento degli ultimi sei mesi
-const CATEGORIE = { chat: 'text', code: 'webdev', vision: 'vision', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit', document: 'document', search: 'search', i2v: 'image_to_video', vedit: 'video_edit', agent: 'agent' };
+const CATEGORIE = { chat: 'text_style_control', code: 'webdev', vision: 'vision_style_control', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit', document: 'document_style_control', search: 'search_style_control', i2v: 'image_to_video', vedit: 'video_edit', agent: 'agent' };
 
 async function righe(config) {
   const file = path.join(DIR, `${config}.parquet`);
