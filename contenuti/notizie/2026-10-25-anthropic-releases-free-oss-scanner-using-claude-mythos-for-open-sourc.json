@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-25-anthropic-releases-free-oss-scanner-using-claude-mythos-for-open-sourc",
+ "titolo": "Anthropic releases free OSS Scanner using Claude Mythos for open‑source code",
+ "descr": "Anthropic's OSS Scanner offers free, opt‑in AI vulnerability scanning of critical open‑source projects, delivering direct reports to maintainers.",
+ "tema": "Software",
+ "paragrafi": [
+  "Anthropic announced a new tool called OSS Scanner on October 8, 2026.",
+  "The scanner is free and opt‑in, targeting critical open‑source projects that enroll their codebases.",
+  "It runs Anthropic's strongest models, including Claude Mythos, to analyze the code for vulnerabilities.",
+  "Findings are sent directly to project maintainers without any human review, speeding up detection.",
+  "The approach moves triage responsibilities to the project teams, who must handle the reports."
+ ],
+ "perche": [
+  "Developers of open‑source software gain faster, automated vulnerability insights without cost, but must allocate resources for triage. For users seeking free AI tools, Anthropic's offering demonstrates how leading models can be applied to security tasks without requiring paid services."
+ ],
+ "pubblicato": "2026-10-25",
+ "titoloFonte": "Anthropic Launches OSS Scanner, a Free AI Vulnerability Scanner",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/25/anthropic-launches-oss-scanner-a-free-ai-vulnerability-scanner/",
+   "titolo": "Anthropic Launches OSS Scanner, a Free AI Vulnerability Scanner",
+   "ufficiale": false,
+   "data": "2026-10-25"
+  }
+ ],
+ "frasiTolte": 0
+}

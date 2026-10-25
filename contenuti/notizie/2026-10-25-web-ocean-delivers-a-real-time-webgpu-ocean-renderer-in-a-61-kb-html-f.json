@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-25-web-ocean-delivers-a-real-time-webgpu-ocean-renderer-in-a-61-kb-html-f",
+ "titolo": "Web-Ocean delivers a real‑time WebGPU ocean renderer in a 61 KB HTML file",
+ "descr": "The open‑source project renders a sunset sea with FFT waves, sky, and clouds, running in Chrome on a recent GPU.",
+ "tema": "Software",
+ "paragrafi": [
+  "Noniv released web‑ocean, a WebGPU ocean renderer built from scratch without any engine or rendering library.",
+  "A single 61 KB minified HTML file (ocean.min.html) runs directly from file:// in Chrome, requiring a recent browser and a capable GPU.",
+  "Performance on an RTX 5070 Ti at 2560 × 1440 resolution shows GPU frame times of roughly 6–8 ms, even when other programs share the GPU.",
+  "The repository includes source files, a build script that strips WGSL comments, and instructions for running a local server."
+ ],
+ "perche": [
+  "The project demonstrates how sophisticated visual simulations can be delivered as tiny, self‑contained web pages, lowering the barrier for developers to experiment with real‑time graphics. For the AI community, the same WebGPU approach could enable lightweight, locally run visualizations of model outputs without relying on heavyweight engines."
+ ],
+ "pubblicato": "2026-10-25",
+ "titoloFonte": "Noniv/web-ocean: Real-time WebGPU ocean renderer written from scratch, no engine. FFT waves, whitecaps, sun glitter, physically based sunset sky with clouds, free camera. Built with Claude Code (Opus ",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/Noniv/web-ocean",
+   "titolo": "Noniv/web-ocean: Real-time WebGPU ocean renderer written from scratch, no engine. FFT waves, whitecaps, sun glitter, physically based sunset sky with clouds, free camera. Built with Claude Code (Opus ",
+   "ufficiale": false,
+   "data": "2026-10-16"
+  }
+ ],
+ "frasiTolte": 1
+}

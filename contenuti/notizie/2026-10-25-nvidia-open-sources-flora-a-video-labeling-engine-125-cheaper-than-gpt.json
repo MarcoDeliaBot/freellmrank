@@ -1,0 +1,25 @@
+{
+ "nome": "2026-10-25-nvidia-open-sources-flora-a-video-labeling-engine-125-cheaper-than-gpt",
+ "titolo": "Nvidia open-sources Flora, a video‑labeling engine 125× cheaper than GPT‑6 Astra",
+ "descr": "Flora annotates robot video at $0.72 per hour, using three fine‑tuned Qwen3.5 models and claims higher quality than GPT‑6 Astra in tests.",
+ "tema": "Research",
+ "paragrafi": [
+  "Nvidia has released Flora, an open data engine for robot video labeling, claiming it can label an hour of video for 72 cents versus about $88 for OpenAI's GPT‑6 Astra.",
+  "In a test of 50 videos, Flora achieved 57.1 % annotation quality at $0.72 per hour, slightly ahead of GPT‑6 Astra’s 53.7 % quality at $88.49, while Claude Opus 5 scored lower and cost about $42 per hour.",
+  "Flora excels at detecting action boundaries and catching failed steps, reducing error rates by 27.8 % compared with Astra, though it sometimes over‑segments actions and mislabels them.",
+  "The engine is positioned as an open alternative to commercial services such as Scale AI’s Physical AI Data Engine and integrates with Nvidia’s broader robotics data pipeline."
+ ],
+ "perche": [],
+ "pubblicato": "2026-10-25",
+ "titoloFonte": "Nvidia open-sources Flora to make robot video labeling 125x cheaper than GPT-6 Astra",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/nvidia-open-sources-flora-to-make-robot-video-labeling-125x-cheaper-than-gpt-6-astra/",
+   "titolo": "Nvidia open-sources Flora to make robot video labeling 125x cheaper than GPT-6 Astra",
+   "ufficiale": false,
+   "data": "2026-10-25"
+  }
+ ],
+ "frasiTolte": 3
+}
