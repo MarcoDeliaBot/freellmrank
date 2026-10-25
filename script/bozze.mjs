@@ -26,19 +26,69 @@ export const REGOLE_SCRITTURA = `Writing rules (strict):
 - Describe apps and tools only with the text given in DATA. Do not add features, integrations, commands, ports, settings or install steps that are not in DATA.
 - Do not claim how many models the site ranks unless that exact number is in DATA.`;
 
-export async function chiediModello(messaggi, { json = false, max = 2500, scopo = 'bozze' } = {}) {
-  // GitHub Models è stato chiuso il 30/7/2026: si scrive con Workers AI attraverso la funzione protetta del sito
-  const r = await fetch(`${process.env.SCRIVI_URL || 'https://freellmarena.com'}/api/scrivi`, {
+// Chi scrive, in ordine (25/10/2026, Marco: «trova un altro sistema per fare video gratuiti»): il tetto giornaliero di
+// Workers AI finiva quasi a ogni corsa e i video uscivano col piano di riserva. Se uno risponde con un errore (tetto,
+// 5xx, rete, risposta senza JSON) si passa al successivo. Tutti gratuiti:
+// - workers: gpt-oss-120b su Workers AI, quota gratis del sito, tramite /api/scrivi (segreto BOZZE_KEY);
+// - groq: gpt-oss-120b sul piano gratuito di Groq (segreto GROQ_KEY, account di Marco), API compatibile OpenAI;
+// - locale: un modello aperto che gira sul computer stesso della corsa (Ollama), senza tetti: LLM_LOCALE_URL e LLM_LOCALE_MODELLO.
+// SCRITTORI cambia l'ordine o ne sceglie alcuni (es. «locale» per una prova). Chi non è configurato si salta.
+const SCRITTORI = () => (process.env.SCRITTORI || 'workers,groq,locale').split(',').map((s) => s.trim()).filter(Boolean);
+export let ultimoScrittore = '';
+
+async function compatibileOpenAI(url, chiave, modello, messaggi, max, attesa) {
+  const r = await fetch(`${url}/chat/completions`, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${process.env.BOZZE_KEY || ''}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ messaggi: json ? [...messaggi, { role: 'user', content: 'Reply with only the JSON object, no other text.' }] : messaggi, max, scopo }),
+    headers: { ...(chiave ? { Authorization: `Bearer ${chiave}` } : {}), 'Content-Type': 'application/json' },
+    body: JSON.stringify({ model: modello, messages: messaggi, max_tokens: max, reasoning_effort: 'low' }),
+    signal: AbortSignal.timeout(attesa),
   });
   const d = await r.json().catch(() => ({}));
-  if (!r.ok) throw new Error(`/api/scrivi ${r.status}: ${d.errore || ''}`);
-  if (!json) return d.testo;
-  const m = d.testo.match(/\{[\s\S]*\}/);
-  if (!m) throw new Error(`Risposta senza JSON: ${d.testo.slice(0, 200)}`);
-  return JSON.parse(m[0]);
+  if (!r.ok) throw new Error(`${r.status}: ${String(d.error?.message || d.error || '').slice(0, 160)}`);
+  return String(d.choices?.[0]?.message?.content || '').replace(/<think>[\s\S]*?<\/think>/g, '').trim();
+}
+
+const SCRIVONO = {
+  // GitHub Models è stato chiuso il 30/7/2026: si scrive con Workers AI attraverso la funzione protetta del sito
+  workers: async (messaggi, max, scopo) => {
+    if (!process.env.BOZZE_KEY && !process.env.SCRIVI_URL) return null;
+    const r = await fetch(`${process.env.SCRIVI_URL || 'https://freellmarena.com'}/api/scrivi`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${process.env.BOZZE_KEY || ''}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messaggi, max, scopo }),
+    });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(`/api/scrivi ${r.status}: ${d.errore || ''}`);
+    return d.testo;
+  },
+  groq: (messaggi, max) => (process.env.GROQ_KEY
+    ? compatibileOpenAI('https://api.groq.com/openai/v1', process.env.GROQ_KEY, process.env.GROQ_MODELLO || 'openai/gpt-oss-120b', messaggi, max, 120000)
+    : null),
+  // sul computer della corsa può metterci minuti: attesa lunga
+  locale: (messaggi, max) => (process.env.LLM_LOCALE_URL
+    ? compatibileOpenAI(process.env.LLM_LOCALE_URL, '', process.env.LLM_LOCALE_MODELLO || 'gpt-oss:20b', messaggi, max, 900000)
+    : null),
+};
+
+export async function chiediModello(messaggi, { json = false, max = 2500, scopo = 'bozze' } = {}) {
+  const lista = json ? [...messaggi, { role: 'user', content: 'Reply with only the JSON object, no other text.' }] : messaggi;
+  const errori = [];
+  for (const nome of SCRITTORI()) {
+    if (!SCRIVONO[nome]) continue;
+    try {
+      const testo = await SCRIVONO[nome](lista, max, scopo);
+      if (testo == null) continue; // non configurato
+      ultimoScrittore = nome;
+      if (errori.length) console.log(`Scritto da ${nome} (prima: ${errori.join(' | ')})`);
+      if (!json) return testo;
+      const m = testo.match(/\{[\s\S]*\}/);
+      if (!m) throw new Error(`risposta senza JSON: ${testo.slice(0, 120)}`);
+      return JSON.parse(m[0]);
+    } catch (e) {
+      errori.push(`${nome}: ${e.message}`);
+    }
+  }
+  throw new Error(errori.length ? errori.join(' | ') : 'nessuno scrittore configurato (BOZZE_KEY, GROQ_KEY o LLM_LOCALE_URL)');
 }
 
 // secondo passaggio: il modello rilegge la bozza contro i dati e toglie o corregge ciò che non è sostenuto

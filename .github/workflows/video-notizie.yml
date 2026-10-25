@@ -28,6 +28,16 @@ on:
         description: 'Solo prova: fa i video ma non li pubblica (restano come artefatto della corsa)'
         type: boolean
         default: false
+      # 25/10/2026: chi scrive testi e piani (script/bozze.mjs). Vuoto = Workers AI, poi Groq (se c'è GROQ_KEY), poi il
+      # modello locale. «locale» = solo il modello aperto che gira su questo computer (Ollama), senza tetti giornalieri
+      scrittori:
+        description: 'Chi scrive, in ordine (workers,groq,locale). Vuoto = tutti in questo ordine'
+        type: string
+        default: ''
+      modello_locale:
+        description: 'Modello Ollama per «locale»'
+        type: string
+        default: 'gpt-oss:20b'
 
 permissions:
   contents: write
@@ -70,6 +80,18 @@ jobs:
         with:
           path: video/voci
           key: voci-piper-lessac-high-paola-medium
+      # modello di scrittura locale: solo se chiesto (la prima scelta resta Workers AI). Misura anche la velocità
+      - name: Scrittore locale (Ollama)
+        if: contains(inputs.scrittori, 'locale')
+        run: |
+          echo "Computer: $(nproc) CPU, $(free -g | awk '/Mem:/{print $2}') GB di RAM, $(df -h / | awk 'NR==2{print $4}') liberi"
+          curl -fsSL https://ollama.com/install.sh | sh
+          (ollama serve > /tmp/ollama.log 2>&1 &) ; sleep 5
+          inizio=$(date +%s); ollama pull "${{ inputs.modello_locale }}"; echo "Scaricato in $(( $(date +%s) - inizio )) s"
+          curl -s http://127.0.0.1:11434/api/generate -d "{\"model\":\"${{ inputs.modello_locale }}\",\"prompt\":\"Write three short sentences about open AI models.\",\"stream\":false}" \
+            | python3 -c "import json,sys; d=json.load(sys.stdin); print('Velocità: %.1f token/s in scrittura, %.1f token/s in lettura' % (d['eval_count']/d['eval_duration']*1e9, d.get('prompt_eval_count',0)/max(d.get('prompt_eval_duration',1),1)*1e9))"
+          echo "LLM_LOCALE_URL=http://127.0.0.1:11434/v1" >> "$GITHUB_ENV"
+          echo "LLM_LOCALE_MODELLO=${{ inputs.modello_locale }}" >> "$GITHUB_ENV"
       - name: Modelli (Parakeet, browser)
         run: |
           npx --yes hyperframes@0.8.192 models install parakeet --json
@@ -79,6 +101,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
           BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
+          GROQ_KEY: ${{ secrets.GROQ_KEY }}
+          SCRITTORI: ${{ inputs.scrittori }}
           PROVA: ${{ inputs.prova }}
         run: |
           mkdir -p video/brag video/hf video/esito
