@@ -1,6 +1,8 @@
 // Simulatore "in casa": quali modelli aperti entrano nell'hardware scelto,
 // come si divide la memoria e quanto vanno veloci. Tutto nel browser.
-import { simula as simulaHf, QUANTI, perditaQualita, giudizio } from './calc.mjs';
+import { simula as simulaHf, QUANTI, perditaQualita, giudizio as giudizioEn } from './calc.mjs';
+import { t, num, numB, giudizioT, radice, LINGUA } from './run-at-home-testi.mjs';
+const giudizio = (p) => giudizioT(giudizioEn(p));
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const CONTESTI = [2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144];
@@ -28,49 +30,57 @@ function spiega(m, h, cat) {
     || ok.find((x) => x.perdita < 3.5 && (soloPesi || x.r.vel >= LETTURA))
     || [...ok].sort((a, b) => (b.r.vel || 0) - (a.r.vel || 0))[0];
   const secondi = (v) => (PAROLE * TOKEN_PER_PAROLA) / v;
-  const fmtTempo = (s) => (s < 60 ? `${Math.round(s)} seconds` : `${Math.round(s / 60)} min ${Math.round(s % 60)} s`);
+  const fmtTempo = (s) => (s < 60 ? t('secondi', { n: Math.round(s) }) : t('minuti', { m: Math.round(s / 60), s: Math.round(s % 60) }));
   const hw = h.n > 1 ? `${h.n} × ${h.nome}` : h.nome;
 
   let testo;
   if (!consigliato) {
     const minimo = righe[0];
-    testo = `<p><b>${esc(m.nome)}</b> does not fit on ${esc(hw)}${h.ram ? ` even with ${h.ram} GB of system RAM` : ''}. At the smallest level (${minimo.q.id}) it still needs about ${fmtGB(minimo.r.serve)}. Use it free online instead, or pick a smaller model.</p>`;
+    testo = `<p>${t('nonEntra', { nome: esc(m.nome), hw: esc(hw), ram: h.ram ? t('nonEntraRam', { ram: h.ram }) : '', q: minimo.q.id, gb: fmtGB(minimo.r.serve) })}</p>`;
   } else {
     const { q, r, perdita } = consigliato;
     const i = righe.indexOf(consigliato);
     const su = righe.slice(i + 1).find((x) => x.r.dove !== 'no') || righe[i + 1];
     const giu = righe[i - 1];
-    const dove = r.dove === 'gpu' ? 'fits entirely in GPU memory' : `fits only with ${fmtGB(r.inRam)} in system RAM, which is much slower`;
-    const parti = [`<p>On <b>${esc(hw)}</b>, the best choice for <b>${esc(m.nome)}</b> is <b>${q.id}</b>. It needs ${fmtGB(r.serve)} and ${dove}.</p>`];
-    if (!soloPesi) parti.push(`<p>It writes about <b>${fmtVel(r.vel)} tokens per second</b>: a ${PAROLE}-word answer takes about <b>${fmtTempo(secondi(r.vel))}</b>, ${r.vel >= LETTURA ? `${(r.vel / LETTURA).toFixed(1)}× faster than you read` : 'slower than you read'}. Quality: ${giudizio(perdita)} compared with the full model (${perdita < 0.1 ? 'under 0.1' : '+' + perdita.toFixed(1)}% perplexity).</p>`);
-    else parti.push(`<p>${q.id === 'F16' ? 'The full 16-bit model fits, so you get its best quality.' : 'For image and video models, 8-bit is the usual choice when memory is tight; lower levels lose fine detail.'} We have no measured quality numbers for these models, so we do not show a score.</p>`);
-    if (su) parti.push(`<p>One level up, ${su.q.id} would ${su.r.dove === 'no' ? `need ${fmtGB(su.r.serve)}: it does not fit` : su.r.dove === 'ram' && r.dove === 'gpu' ? `spill ${fmtGB(su.r.inRam)} into system RAM${soloPesi ? '' : ` and drop to about ${fmtVel(su.r.vel)} tokens per second`}` : `need ${fmtGB(su.r.serve)}${soloPesi ? '' : ` and run at about ${fmtVel(su.r.vel)} tokens per second`}`}${soloPesi ? '' : `, and quality would improve by only ${(perdita - su.perdita).toFixed(1)} percentage points`}.</p>`);
-    if (giu && giu.r.dove !== 'no') parti.push(`<p>One level down, ${giu.q.id} saves ${fmtGB(r.serve - giu.r.serve)}${soloPesi ? '' : ` and runs at about ${fmtVel(giu.r.vel)} tokens per second`}${soloPesi ? '' : `; quality ${giudizio(giu.perdita) === giudizio(perdita) ? 'stays at' : 'goes down to'} ${giudizio(giu.perdita)} (+${giu.perdita.toFixed(1)}%)`}.</p>`);
+    const dove = r.dove === 'gpu' ? t('doveGpu') : t('doveRam', { gb: fmtGB(r.inRam) });
+    const parti = [`<p>${t('scelta', { hw: esc(hw), nome: esc(m.nome), q: q.id, gb: fmtGB(r.serve), dove })}</p>`];
+    if (!soloPesi) parti.push(`<p>${t('scrive', { vel: fmtVel(r.vel), parole: PAROLE, tempo: fmtTempo(secondi(r.vel)), confronto: r.vel >= LETTURA ? t('piuVeloce', { x: num(r.vel / LETTURA, 1) }) : t('piuLento'), giudizio: giudizio(perdita), perdita: perdita < 0.1 ? t('sotto01') : '+' + num(perdita, 1) + '%' })}</p>`);
+    else parti.push(`<p>${q.id === 'F16' ? t('f16') : t('bit8')} ${t('nessunNumero')}</p>`);
+    if (su) {
+      const cosa = su.r.dove === 'no' ? t('suNo', { gb: fmtGB(su.r.serve) })
+        : su.r.dove === 'ram' && r.dove === 'gpu' ? t('suRam', { gb: fmtGB(su.r.inRam) }) + (soloPesi ? '' : t('suRamVel', { vel: fmtVel(su.r.vel) }))
+        : t('suServe', { gb: fmtGB(su.r.serve) }) + (soloPesi ? '' : t('suVel', { vel: fmtVel(su.r.vel) }));
+      parti.push(`<p>${t('su', { q: su.q.id, cosa, qualita: soloPesi ? '' : t('suQualita', { p: num(perdita - su.perdita, 1) }) })}</p>`);
+    }
+    if (giu && giu.r.dove !== 'no') {
+      const resto = soloPesi ? '' : t('giuVel', { vel: fmtVel(giu.r.vel) }) + t(giudizio(giu.perdita) === giudizio(perdita) ? 'giuUguale' : 'giuPeggio', { g: giudizio(giu.perdita), p: num(giu.perdita, 1) });
+      parti.push(`<p>${t('giu', { q: giu.q.id, gb: fmtGB(r.serve - giu.r.serve), resto })}</p>`);
+    }
     testo = parti.join('');
   }
 
   return `<div class="panel spiega" id="spiega-pannello">
-<h2>What you get with ${esc(m.nome)}</h2>
+<h2>${t('titoloSpiega', { nome: esc(m.nome) })}</h2>
 <div class="spiega-testo">${testo}</div>
-<div class="tw"><table><thead><tr><th>Level</th><th>Memory</th><th>Where</th>${soloPesi ? '' : `<th>Speed</th><th>${PAROLE}-word answer</th>`}<th>Quality vs full</th></tr></thead><tbody>
-${righe.map((x) => `<tr class="${x === consigliato ? 'consigliato' : ''}${x.r.dove === 'no' ? ' spento' : ''}"><td class="n"><b>${x.q.id}</b>${x === consigliato ? ' <span class="tag chip-gpu">Best for you</span>' : ''}</td>
+<div class="tw"><table><thead><tr><th>${t('thLivello')}</th><th>${t('thMemoria')}</th><th>${t('thDove')}</th>${soloPesi ? '' : `<th>${t('thVelocita')}</th><th>${t('thRisposta', { n: PAROLE })}</th>`}<th>${t('thQualita')}</th></tr></thead><tbody>
+${righe.map((x) => `<tr class="${x === consigliato ? 'consigliato' : ''}${x.r.dove === 'no' ? ' spento' : ''}"><td class="n"><b>${x.q.id}</b>${x === consigliato ? ` <span class="tag chip-gpu">${t('perTe')}</span>` : ''}</td>
 <td class="n">${fmtGB(x.r.serve)}</td><td>${chip(x.r)}</td>
 ${soloPesi ? '' : `<td class="n">${x.r.vel != null ? fmtVel(x.r.vel) + ' tok/s' : '—'}</td><td class="n">${x.r.vel != null ? fmtTempo(secondi(x.r.vel)) : '—'}</td>`}
-<td>${soloPesi ? '<span class="small muted">not measured</span>' : `<span class="n">${x.perdita < 0.1 ? '≈ 0%' : '+' + x.perdita.toFixed(1) + '%'}</span> <span class="small muted">${giudizio(x.perdita)}</span>`}</td></tr>`).join('')}
+<td>${soloPesi ? `<span class="small muted">${t('nonMisurato')}</span>` : `<span class="n">${x.perdita < 0.1 ? '≈ 0%' : '+' + num(x.perdita, 1) + '%'}</span> <span class="small muted">${giudizio(x.perdita)}</span>`}</td></tr>`).join('')}
 </tbody></table></div>
-<p class="small muted">Quality loss is the increase in perplexity against the full 16-bit model, measured by <a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/perplexity/README.md" rel="noopener">llama.cpp</a> on Llama 3 8B and Llama 2 70B; bigger models lose less, so we scale it by size. It is a guide, not a test of this exact model. ${PAROLE} words ≈ ${Math.round(PAROLE * TOKEN_PER_PAROLA)} tokens. Reading a long document before answering takes extra time that we do not estimate.</p>
+<p class="small muted">${t('notaQualita', { link: '<a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/perplexity/README.md" rel="noopener">llama.cpp</a>', parole: PAROLE, token: Math.round(PAROLE * TOKEN_PER_PAROLA) })}</p>
 </div>`;
 }
 
-const fmtGB = (g) => (g >= 100 ? Math.round(g) : g >= 10 ? g.toFixed(0) : g.toFixed(1)) + ' GB';
-const fmtCtx = (t) => (t >= 1024 ? Math.round(t / 1024) + 'K' : t) + ' tokens';
-const fmtDownload = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(n));
-const fmtVel = (v) => (v >= 100 ? Math.round(v) : v >= 10 ? v.toFixed(0) : v.toFixed(1));
+const fmtGB = (g) => (g >= 10 ? num(g) : num(g, 1)) + ' GB';
+const fmtCtx = (n) => t('token', { n: n >= 1024 ? Math.round(n / 1024) + 'K' : n });
+const fmtDownload = (n) => (n >= 1e6 ? num(n / 1e6, 1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(n));
+const fmtVel = (v) => (v >= 10 ? num(v) : num(v, 1));
 
 function hardware() {
   const id = $('scheda').value;
   const custom = id === 'custom';
-  const s = custom ? { nome: 'Custom card', gb: +$('gb-custom').value || 24, banda: +$('banda-custom').value || 1000 } : dati.schede.schede.find((x) => x.id === id);
+  const s = custom ? { nome: t('schedaCustom'), gb: +$('gb-custom').value || 24, banda: +$('banda-custom').value || 1000 } : dati.schede.schede.find((x) => x.id === id);
   const unificata = !!s.unificata;
   const n = unificata ? 1 : +$('n-gpu').value;
   const perScheda = unificata ? s.gb * 0.75 : s.gb;
@@ -85,6 +95,11 @@ function hardware() {
 }
 
 const simula = (m, h) => simulaHf(m.hf, h, SOLO_PESI.has(categoria));
+// nome della categoria come sulla scheda della pagina (già tradotta); minuscolo tranne in tedesco e giapponese
+function nomeCategoria(cat) {
+  const nome = document.querySelector(`.tabs button[data-cat="${categoria}"]`)?.textContent.trim() || cat.nome;
+  return LINGUA === 'de' || LINGUA === 'ja' ? nome : nome.toLowerCase();
+}
 
 // ---------- disegno ----------
 function barraMemoria(r, h, grande) {
@@ -92,32 +107,32 @@ function barraMemoria(r, h, grande) {
   const totale = Math.max(h.vram + (h.ram ? h.ram * 0.8 : 0), r.serve);
   const pct = (g) => (100 * g) / totale;
   const pezzi = [
-    { cls: 'p-gpu', g: Math.max(0, r.dove === 'ram' ? r.pesi - r.inRam : r.pesi), nome: 'Weights on GPU' },
-    { cls: 'p-kv', g: r.kv, nome: 'Context cache' },
-    { cls: 'p-extra', g: r.extra, nome: SOLO_PESI.has(categoria) ? 'Runtime + encoders' : 'Runtime' },
-    { cls: 'p-ram', g: r.dove === 'ram' ? r.inRam : 0, nome: 'Weights in system RAM' },
+    { cls: 'p-gpu', g: Math.max(0, r.dove === 'ram' ? r.pesi - r.inRam : r.pesi), nome: t('pesiGpu') },
+    { cls: 'p-kv', g: r.kv, nome: t('cache') },
+    { cls: 'p-extra', g: r.extra, nome: SOLO_PESI.has(categoria) ? t('runtimeEnc') : t('runtime') },
+    { cls: 'p-ram', g: r.dove === 'ram' ? r.inRam : 0, nome: t('pesiRam') },
   ].filter((p) => p.g > 0.01);
   const linea = pct(h.vram);
-  return `<div class="mem${grande ? ' grande' : ''}" role="img" aria-label="Needs ${fmtGB(r.serve)}; ${fmtGB(h.vram)} of GPU memory${h.ram ? ' plus system RAM' : ''}">
+  return `<div class="mem${grande ? ' grande' : ''}" role="img" aria-label="${esc(t('ariaMem', { gb: fmtGB(r.serve), vram: fmtGB(h.vram), piu: h.ram ? t('piuRam') : '' }))}">
 <div class="mem-barra">${pezzi.map((p) => `<span class="${p.cls}" style="width:${pct(p.g)}%" data-tip="${esc(p.nome)}: ${fmtGB(p.g)}"></span>`).join('')}</div>
 <div class="mem-limite" style="left:${Math.min(100, linea)}%"><span>GPU ${fmtGB(h.vram)}</span></div>
 </div>`;
 }
 
 function chip(r) {
-  if (r.dove === 'gpu') return '<span class="tag chip-gpu">Fits in GPU</span>';
-  if (r.dove === 'ram') return '<span class="tag chip-ram">GPU + RAM</span>';
-  return '<span class="tag bad">Does not fit</span>';
+  if (r.dove === 'gpu') return `<span class="tag chip-gpu">${t('chipGpu')}</span>`;
+  if (r.dove === 'ram') return `<span class="tag chip-ram">${t('chipRam')}</span>`;
+  return `<span class="tag bad">${t('chipNo')}</span>`;
 }
 
 function tessere(h) {
-  const t = [
-    ['GPU memory', fmtGB(h.vram), h.unificata ? `75% of ${h.nome}` : `${h.n} × ${h.nome}`],
-    ['Bandwidth', `${h.banda} GB/s`, h.n > 1 ? 'per card (layers run one card at a time)' : 'read speed of GPU memory'],
-    ['System RAM', h.ram ? fmtGB(h.ram) : 'not used', h.ram ? `${h.bandaRam} GB/s` : h.unificata ? 'shared with the GPU' : 'offload off'],
-    ['Context', SOLO_PESI.has(categoria) ? '—' : fmtCtx(h.ctx), SOLO_PESI.has(categoria) ? 'not used by image/video models' : 'memory the chat history needs'],
+  const righe = [
+    [t('tMemoria'), fmtGB(h.vram), h.unificata ? t('tQuota', { nome: h.nome }) : `${h.n} × ${h.nome}`],
+    [t('tBanda'), `${h.banda} GB/s`, h.n > 1 ? t('tPerScheda') : t('tLettura')],
+    [t('tRam'), h.ram ? fmtGB(h.ram) : t('tNonUsata'), h.ram ? `${h.bandaRam} GB/s` : h.unificata ? t('tCondivisa') : t('tSpenta')],
+    [t('tContesto'), SOLO_PESI.has(categoria) ? '—' : fmtCtx(h.ctx), SOLO_PESI.has(categoria) ? t('tNoContesto') : t('tStoria')],
   ];
-  $('tiles').innerHTML = t.map(([a, b, c]) => `<div class="tile"><span class="small muted">${a}</span><b>${b}</b><span class="small muted">${esc(c)}</span></div>`).join('');
+  $('tiles').innerHTML = righe.map(([a, b, c]) => `<div class="tile"><span class="small muted">${a}</span><b>${b}</b><span class="small muted">${esc(c)}</span></div>`).join('');
 }
 
 function calcola() {
@@ -159,24 +174,24 @@ function calcola() {
   // il migliore
   if (best) {
     const { m, r } = best;
-    const vel = r.vel != null ? `<div class="vel"><b>${fmtVel(r.vel)}</b><span>tokens per second</span><span class="small ${r.vel >= LETTURA ? 'ok' : 'lento'}">${r.vel >= LETTURA ? 'Faster than you read' : 'Slower than reading speed'}</span></div>` : '';
-    const schede = h.n > 1 && r.dove !== 'no' ? `<div class="schede" aria-label="How the model splits across your cards">${Array.from({ length: h.n }, (_, i) => {
+    const vel = r.vel != null ? `<div class="vel"><b>${fmtVel(r.vel)}</b><span>${t('tokSec')}</span><span class="small ${r.vel >= LETTURA ? 'ok' : 'lento'}">${r.vel >= LETTURA ? t('piuVeloceLettura') : t('piuLentoLettura')}</span></div>` : '';
+    const schede = h.n > 1 && r.dove !== 'no' ? `<div class="schede" aria-label="${esc(t('divise'))}">${Array.from({ length: h.n }, (_, i) => {
       const quota = Math.min(1, (Math.min(r.serve, h.vram)) / h.vram);
-      return `<span title="Card ${i + 1}"><i style="height:${Math.round(quota * 100)}%"></i></span>`;
-    }).join('')}<span class="small muted">${h.n} cards, ${Math.round((100 * Math.min(r.serve, h.vram)) / h.vram)}% full each</span></div>` : '';
+      return `<span title="${esc(t('scheda', { n: i + 1 }))}"><i style="height:${Math.round(quota * 100)}%"></i></span>`;
+    }).join('')}<span class="small muted">${t('schedePiene', { n: h.n, p: Math.round((100 * Math.min(r.serve, h.vram)) / h.vram) })}</span></div>` : '';
     $('migliore').innerHTML = `<div class="panel best">
-<div class="best-testa"><div><span class="small muted">Best ${esc(cat.nome.toLowerCase())} model for your setup</span>
+<div class="best-testa"><div><span class="small muted">${t('migliore', { cat: esc(nomeCategoria(cat)) })}</span>
 <h2>${esc(m.nome)}</h2>
-<p class="small">${esc(m.org)} · ${m.senzaVoti ? `<b>No Arena votes yet</b>: no voted model fits, so we show the biggest of the 25 most downloaded small models that does (${fmtDownload(m.download)} downloads a month on Hugging Face)` : `Arena score <b>${m.punti}</b> (#${m.pos} of ${cat.totale}, paid models included)`} · ${m.hf.b} B parameters${m.hf.att && m.hf.att < m.hf.b ? `, ${m.hf.att} B active` : ''}</p>
-${chip(r)}${m.senzaVoti ? ' <span class="tag novoti">No Arena votes</span>' : ''}</div>${vel}</div>
+<p class="small">${esc(m.org)} · ${m.senzaVoti ? t('senzaVotiBest', { n: fmtDownload(m.download) }) : t('punteggio', { punti: m.punti, pos: m.pos, tot: cat.totale })} · ${t('parametri', { b: numB(m.hf.b) })}${m.hf.att && m.hf.att < m.hf.b ? t('attivi', { a: numB(m.hf.att) }) : ''}</p>
+${chip(r)}${m.senzaVoti ? ` <span class="tag novoti">${t('novoti')}</span>` : ''}</div>${vel}</div>
 ${barraMemoria(r, h, true)}
-<div class="legenda small">${[['p-gpu', 'Weights on GPU'], ['p-kv', 'Context cache'], ['p-extra', 'Runtime'], ['p-ram', 'Weights in system RAM']].map(([c, t]) => `<span><i class="${c}"></i>${t}</span>`).join('')}</div>
-<p class="small">Needs <b>${fmtGB(r.serve)}</b>: weights ${fmtGB(r.pesi)}${r.kv ? `, context ${fmtGB(r.kv)}` : ''}, runtime ${fmtGB(r.extra)}.${r.dove === 'ram' ? ` ${fmtGB(r.inRam)} goes to system RAM, which slows it down.` : ''}</p>
+<div class="legenda small">${[['p-gpu', t('pesiGpu')], ['p-kv', t('cache')], ['p-extra', t('runtime')], ['p-ram', t('pesiRam')]].map(([c, nome]) => `<span><i class="${c}"></i>${nome}</span>`).join('')}</div>
+<p class="small">${t('serve', { gb: fmtGB(r.serve), pesi: fmtGB(r.pesi) })}${r.kv ? t('serveCtx', { kv: fmtGB(r.kv) }) : ''}${t('serveRun', { extra: fmtGB(r.extra) })}${r.dove === 'ram' ? t('serveRam', { gb: fmtGB(r.inRam) }) : ''}</p>
 ${schede}
-<p class="small"><a href="https://huggingface.co/${esc(m.hf.repo)}" rel="noopener">Model page</a> · <a href="https://huggingface.co/models?search=${encodeURIComponent(m.hf.repo.split('/')[1] + ' gguf')}" rel="noopener">GGUF files for Ollama and LM Studio</a></p>
+<p class="small"><a href="https://huggingface.co/${esc(m.hf.repo)}" rel="noopener">${t('paginaModello')}</a> · <a href="https://huggingface.co/models?search=${encodeURIComponent(m.hf.repo.split('/')[1] + ' gguf')}" rel="noopener">${t('gguf')}</a></p>
 </div>`;
   } else {
-    $('migliore').innerHTML = `<div class="panel"><h2>Nothing fits in ${fmtGB(h.vram)}${h.ram ? ' plus RAM' : ''}</h2><p class="small">Try 4-bit, a shorter context, more system RAM, or a free model online: <a href="/#${categoria}">free ranking</a>.</p></div>`;
+    $('migliore').innerHTML = `<div class="panel"><h2>${t('niente', { gb: fmtGB(h.vram), piu: h.ram ? t('nientePiu') : '' })}</h2><p class="small">${t('nienteProva', { link: `${radice}#${categoria}` })}</p></div>`;
   }
 
   // spiegazione automatica: il modello scelto (clic nella tabella) o il migliore
@@ -194,15 +209,15 @@ ${schede}
     const fine = Math.ceil(max / passo) * passo;
     const tacche = []; for (let v = 0; v <= fine; v += passo) tacche.push(v);
     const x = (v) => (100 * v) / fine;
-    $('grafico').innerHTML = `<div class="panel"><h2>Writing speed of the models that fit</h2>
-<p class="small muted">Arena-voted models first, by score; then popular small models, biggest first, marked “no votes”. Tokens per second on your setup, estimated.</p>
-<div class="legenda small"><span><i class="p-gpu"></i>Fits in GPU</span><span><i class="p-ram"></i>GPU + system RAM</span></div>
+    $('grafico').innerHTML = `<div class="panel"><h2>${t('graficoTitolo')}</h2>
+<p class="small muted">${t('graficoNota')}</p>
+<div class="legenda small"><span><i class="p-gpu"></i>${t('chipGpu')}</span><span><i class="p-ram"></i>${t('legGpuRam')}</span></div>
 <div class="vel-grafico">
-${conVel.map(({ m, r }) => `<div class="vg-riga" tabindex="0" data-tip="${esc(m.nome)}: ${fmtVel(r.vel)} tok/s · needs ${fmtGB(r.serve)} · ${m.senzaVoti ? 'no Arena votes' : 'Arena ' + m.punti}">
-<span class="vg-nome">${esc(m.nome)}${m.nuovo ? ' <small class="muted">(new, no votes yet)</small>' : m.senzaVoti ? ' <small class="muted">(no votes)</small>' : ''}</span>
+${conVel.map(({ m, r }) => `<div class="vg-riga" tabindex="0" data-tip="${esc(t('tipVel', { nome: m.nome, vel: fmtVel(r.vel), gb: fmtGB(r.serve), voti: m.senzaVoti ? t('tipNoVoti') : t('tipArena', { p: m.punti }) }))}">
+<span class="vg-nome">${esc(m.nome)}${m.nuovo ? ` <small class="muted">${t('nuovoNoVoti')}</small>` : m.senzaVoti ? ` <small class="muted">${t('noVoti')}</small>` : ''}</span>
 <span class="vg-pista"><span class="vg-l" style="left:${x(LETTURA)}%"></span><span class="vg-barra ${r.dove === 'gpu' ? 'p-gpu' : 'p-ram'}" style="width:${x(r.vel)}%"></span><span class="vg-val" style="left:${x(r.vel)}%">${fmtVel(r.vel)}</span></span></div>`).join('')}
 <div class="vg-asse"><span class="vg-nome"></span><span class="vg-pista">${tacche.map((v) => `<span style="left:${x(v)}%">${v}</span>`).join('')}</span></div>
-<p class="small muted">Dashed line: reading speed, about ${LETTURA} tokens per second.</p>
+<p class="small muted">${t('tratteggio', { n: LETTURA })}</p>
 </div></div>`;
   } else $('grafico').innerHTML = '';
 
@@ -215,19 +230,19 @@ ${conVel.map(({ m, r }) => `<div class="vg-riga" tabindex="0" data-tip="${esc(m.
     .concat(votati.filter((x) => x.r.dove === 'no').slice(0, 5));
   const maxPunti = Math.max(...votati.map((x) => x.m.punti)), minPunti = Math.min(...votati.map((x) => x.m.punti));
   const cellaPunti = (m) => (m.nuovo
-    ? `<span class="tag nuovo">New · waiting for votes</span>${m.creato ? `<div class="org">released ${m.creato}</div>` : ''}`
+    ? `<span class="tag nuovo">${t('nuovoAttesa')}</span>${m.creato ? `<div class="org">${t('uscito', { d: m.creato })}</div>` : ''}`
     : m.senzaVoti
-    ? `<span class="tag novoti">No Arena votes</span><div class="org">${fmtDownload(m.download)} downloads/month</div>`
+    ? `<span class="tag novoti">${t('novoti')}</span><div class="org">${t('scaricati', { n: fmtDownload(m.download) })}</div>`
     : `${m.punti}<span class="punti"><i style="width:${Math.round((100 * (m.punti - minPunti + 20)) / (maxPunti - minPunti + 20))}%"></i></span>`);
-  $('tabella').innerHTML = `<div class="panel"><h2>Open models for your setup</h2>
-<p class="small muted">Arena-voted models first, by score. Then small models from the labs' official Hugging Face pages, which Arena has not voted on: they are ordered by size, biggest first, among the 25 most downloaded.</p>
-<div class="tw"><table><thead><tr><th>Model</th><th>Arena score</th><th>Size</th><th>Memory needed</th><th>Speed</th><th>Where</th><th></th></tr></thead><tbody>
-${righe.map(({ m, r }) => `<tr${r.dove === 'no' ? ' class="spento"' : ''}><td class="m"><b>${esc(m.nome)}</b><div class="org">${esc(m.org)} · <a href="https://huggingface.co/${esc(m.hf.repo)}" rel="noopener">model</a>${m.gated ? ' · license to accept' : ''}</div></td>
+  $('tabella').innerHTML = `<div class="panel"><h2>${t('tabTitolo')}</h2>
+<p class="small muted">${t('tabNota')}</p>
+<div class="tw"><table><thead><tr><th>${t('thModello')}</th><th>${t('thPunti')}</th><th>${t('thTaglia')}</th><th>${t('thServe')}</th><th>${t('thVelocita')}</th><th>${t('thDove')}</th><th></th></tr></thead><tbody>
+${righe.map(({ m, r }) => `<tr${r.dove === 'no' ? ' class="spento"' : ''}><td class="m"><b>${esc(m.nome)}</b><div class="org">${esc(m.org)} · <a href="https://huggingface.co/${esc(m.hf.repo)}" rel="noopener">${t('modello')}</a>${m.gated ? t('licenza') : ''}</div></td>
 <td class="n">${cellaPunti(m)}</td>
-<td class="n">${m.hf.b} B${m.hf.att && m.hf.att < m.hf.b ? `<div class="org">${m.hf.att} B active</div>` : ''}</td>
+<td class="n">${numB(m.hf.b)} B${m.hf.att && m.hf.att < m.hf.b ? `<div class="org">${t('attiviRiga', { a: numB(m.hf.att) })}</div>` : ''}</td>
 <td class="cella-mem"><span class="n">${fmtGB(r.serve)}</span>${barraMemoria(r, h, false)}</td>
 <td class="n">${r.vel != null ? fmtVel(r.vel) + ' tok/s' : '—'}</td>
-<td>${chip(r)}</td><td><button type="button" class="btn piccolo" data-spiega="${esc(m.hf.repo)}">Explain</button></td></tr>`).join('')}
+<td>${chip(r)}</td><td><button type="button" class="btn piccolo" data-spiega="${esc(m.hf.repo)}">${t('spiega')}</button></td></tr>`).join('')}
 </tbody></table></div></div>`;
 }
 
@@ -299,18 +314,18 @@ $('rileva').addEventListener('click', async () => {
   const esito = $('rileva-esito');
   let nome = nomeGpu();
   if (!nome || SOFTWARE.test(nome)) nome = (await nomeWebGpu()) || nome;
-  if (!nome) { esito.textContent = 'Your browser does not share the graphics card name. Pick it from the list.'; return; }
+  if (!nome) { esito.textContent = t('rNome'); return; }
   if (SOFTWARE.test(nome)) {
-    esito.innerHTML = 'Your browser is drawing without your graphics card (it reports a software driver), so it cannot tell us which card you have. Turn on hardware acceleration in the browser settings and reload, or pick your card from the list.';
+    esito.innerHTML = t('rSoftware');
     return;
   }
   const s = dati && trovaScheda(nome);
   if (s) {
     $('scheda').value = s.id;
     aggiornaCampi(); calcola(); comandoWhichllm();
-    esito.innerHTML = `Found <b>${esc(s.nome)}</b> (${s.gb} GB). If you have more than one, set “How many”. Now set your system RAM.`;
+    esito.innerHTML = t('rTrovata', { nome: esc(s.nome), gb: s.gb });
   } else {
-    esito.innerHTML = `Your browser reports <b>${esc(nome)}</b>, which is not in our list${/integrated|radeon\(tm\) graphics|uhd|iris|apple gpu/i.test(nome) ? ' (it looks like built-in graphics, not a separate card)' : ''}. Pick your card from the list, or choose “Custom card”.`;
+    esito.innerHTML = t('rNonInLista', { nome: esc(nome), integrata: /integrated|radeon\(tm\) graphics|uhd|iris|apple gpu/i.test(nome) ? t('rIntegrata') : '' });
   }
 });
 
@@ -354,16 +369,18 @@ function comandoWhichllm() {
   el.textContent = `uvx whichllm@latest ${arg}`;
 }
 $('copia-cmd')?.addEventListener('click', (e) => {
-  const t = $('cmd-whichllm').textContent;
-  const fatto = () => { e.target.textContent = 'Copied'; setTimeout(() => { e.target.textContent = 'Copy command'; }, 1500); };
-  if (navigator.clipboard) navigator.clipboard.writeText(t).then(fatto, () => prompt('Copy this command:', t)); else prompt('Copy this command:', t);
+  const cmd = $('cmd-whichllm').textContent;
+  const fatto = () => { e.target.textContent = t('copiato'); setTimeout(() => { e.target.textContent = t('copia'); }, 1500); };
+  if (navigator.clipboard) navigator.clipboard.writeText(cmd).then(fatto, () => prompt(t('copiaQuesto'), cmd)); else prompt(t('copiaQuesto'), cmd);
 });
+if ($('copia-cmd')) $('copia-cmd').textContent = t('copia');
 ['scheda', 'n-gpu', 'gb-custom', 'banda-custom', 'ram', 'ram-tipo', 'quant', 'kvq', 'ctx'].forEach((id) => $(id).addEventListener('input', () => { aggiornaCampi(); calcola(); comandoWhichllm(); }));
-fetch('data.json').then((r) => r.json()).then((d) => {
+// indirizzo assoluto: dalle pagine tradotte (/it/home) «data.json» diventava /it/data.json, che non esiste (25/10/2026)
+fetch('/data.json').then((r) => r.json()).then((d) => {
   dati = d;
   // arrivo dalla pagina /gpus: ?gpu=<id> sceglie la scheda
   const scelta = new URLSearchParams(location.search).get('gpu');
   if (scelta && d.schede.schede.some((s) => s.id === scelta)) $('scheda').value = scelta;
   aggiornaCampi(); calcola(); comandoWhichllm();
 })
-  .catch(() => { $('migliore').innerHTML = '<div class="panel"><p>Could not load the model list. Reload the page.</p></div>'; });
+  .catch(() => { $('migliore').innerHTML = `<div class="panel"><p>${t('errore')}</p></div>`; });

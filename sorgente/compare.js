@@ -149,7 +149,7 @@ $('cieco').addEventListener('change', () => { $('scelta').hidden = $('cieco').ch
 $('invia').addEventListener('click', invia);
 document.querySelectorAll('#voto button').forEach((b) => b.addEventListener('click', () => vota(b.dataset.v)));
 
-fetch('data.json').then((r) => r.json()).then((d) => {
+fetch('/data.json').then((r) => r.json()).then((d) => {
   modelli = d.openrouterGratis;
   const opz = modelli.map((m) => `<option value="${m.id}">${m.nome}</option>`).join('');
   $('mod-a').innerHTML = opz;

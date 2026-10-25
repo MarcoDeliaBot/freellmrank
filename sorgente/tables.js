@@ -51,7 +51,9 @@
     box.className = 'tw-box';
     var aiuto = document.createElement('p');
     aiuto.className = 'tw-aiuto small';
-    aiuto.innerHTML = '<span aria-hidden="true">←</span> Scroll sideways for more columns <span aria-hidden="true">→</span>';
+    // nella lingua della pagina (25/10/2026: sulle pagine tradotte restava in inglese)
+    var SCORRI = { it: 'Scorri di lato per vedere altre colonne', es: 'Desliza de lado para ver más columnas', de: 'Seitlich wischen für weitere Spalten', fr: 'Faites défiler sur le côté pour voir plus de colonnes', pt: 'Deslize para o lado para ver mais colunas', ja: '横にスクロールすると他の列が見られます' };
+    aiuto.innerHTML = '<span aria-hidden="true">←</span> ' + (SCORRI[(document.documentElement.lang || 'en').slice(0, 2)] || 'Scroll sideways for more columns') + ' <span aria-hidden="true">→</span>';
     tw.parentNode.insertBefore(box, tw);
     box.appendChild(aiuto);
     box.appendChild(tw);
