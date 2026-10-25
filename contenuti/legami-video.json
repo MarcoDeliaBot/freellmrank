@@ -50,5 +50,13 @@
  "news-2026-10-25-anthropic-releases-free-oss-scanner-using-claude-mythos-for-open-sourc": {
   "lungo": "notizia-anthropic-releases-free-oss-scanner-using-claude-mythos",
   "breve": "breve-anthropic-releases-free-oss-scanner-using-claude-mythos"
+ },
+ "news-2026-10-25-grok-releases-first-seven-minutes-of-its-ai-generated-odyssey": {
+  "lungo": "notizia-grok-releases-first-seven-minutes-of-its-ai-generated-od",
+  "breve": "breve-grok-releases-first-seven-minutes-of-its-ai-generated-od"
+ },
+ "news-2026-10-25-nvidia-open-sources-flora-a-video-labeling-engine-125-cheaper-than-gpt": {
+  "lungo": "notizia-nvidia-open-sources-flora-a-video-labeling-engine-125-ch",
+  "breve": "breve-nvidia-open-sources-flora-a-video-labeling-engine-125-ch"
  }
 }
