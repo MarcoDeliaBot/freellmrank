@@ -1,0 +1,151 @@
+{
+  "name": "FreeLLMArena · controllo classifica Arena",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "cronExpression", "expression": "25 */2 * * *" }
+          ]
+        }
+      },
+      "id": "c4d5e6f7-0001-4000-8000-000000000001",
+      "name": "Ogni 2 ore",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0],
+      "notes": "Deciso da Marco il 25/10/2026: la classifica deve seguire Arena appena possibile. I Termini d'uso di arena.ai vietano di leggere il sito con programmi, quindi si usa la fonte ufficiale che Arena pubblica apposta (dataset su Hugging Face, CC BY 4.0) e la si controlla ogni 2 ore."
+    },
+    {
+      "parameters": {
+        "url": "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset/commits/main?limit=100",
+        "options": { "response": { "response": { "responseFormat": "json" } } }
+      },
+      "id": "c4d5e6f7-0002-4000-8000-000000000002",
+      "name": "Ultime versioni di Arena",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [220, 0],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000
+    },
+    {
+      "parameters": {
+        "url": "=https://freellmarena.com/data.json?n={{ Date.now() }}",
+        "options": { "response": { "response": { "responseFormat": "json" } } }
+      },
+      "id": "c4d5e6f7-0003-4000-8000-000000000003",
+      "name": "Date sul nostro sito",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [440, 0],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Confronta, classifica per classifica, l'ultima versione pubblicata da Arena con quella che ha il nostro sito.\n// Se Arena ha una versione più nuova: si fa partire l'aggiornamento (una volta sola per versione).\n// Se la classifica chat di Arena è ferma da 3 giorni o più: una mail al giorno a info@ (è Arena che non pubblica, non noi).\nconst CATEGORIE = { chat: 'text', code: 'webdev', vision: 'vision', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit', document: 'document', search: 'search', i2v: 'image_to_video', vedit: 'video_edit', agent: 'agent' };\nconst memoria = $getWorkflowStaticData('global');\nmemoria.avviate = memoria.avviate || {};\nconst commit = $('Ultime versioni di Arena').first().json;\nconst lista = Array.isArray(commit) ? commit : Object.values(commit);\nconst ultima = {};\nfor (const c of lista) {\n  const m = /^Update (\\S+) for (\\d{4}-\\d{2}-\\d{2})/.exec(c.title || '');\n  if (m && (!ultima[m[1]] || m[2] > ultima[m[1]])) ultima[m[1]] = m[2];\n}\nconst sito = $('Date sul nostro sito').first().json;\nconst nostre = Object.fromEntries((sito.categorie || []).map((c) => [c.id, c.data]));\nconst nuove = [];\nfor (const [id, cfg] of Object.entries(CATEGORIE)) {\n  if (ultima[cfg] && nostre[id] && ultima[cfg] > nostre[id]) nuove.push({ id, arena: ultima[cfg], noi: nostre[id] });\n}\n// una versione già avviata non si riavvia per 6 ore (il sito impiega circa mezz'ora ad aggiornarsi)\nconst adesso = Date.now();\nconst daAvviare = nuove.filter((x) => !memoria.avviate[`${x.id}:${x.arena}`] || adesso - memoria.avviate[`${x.id}:${x.arena}`] > 6 * 3600e3);\nfor (const x of daAvviare) memoria.avviate[`${x.id}:${x.arena}`] = adesso;\n// pulizia della memoria: solo le ultime 200 voci\nconst chiavi = Object.keys(memoria.avviate);\nif (chiavi.length > 200) for (const k of chiavi.slice(0, chiavi.length - 200)) delete memoria.avviate[k];\nconst oggi = new Date(adesso).toISOString().slice(0, 10);\nconst ultimaChat = ultima.text || nostre.chat;\nconst giorniFermi = ultimaChat ? Math.floor((Date.parse(oggi) - Date.parse(ultimaChat)) / 864e5) : null;\nconst avvisa = giorniFermi !== null && giorniFermi >= 3 && memoria.avvisato !== oggi;\nif (avvisa) memoria.avvisato = oggi;\nreturn [{ json: { aggiorna: daAvviare.length > 0, nuove: daAvviare, avvisa, giorniFermi, ultimaChat, nostraChat: nostre.chat } }];"
+      },
+      "id": "c4d5e6f7-0004-4000-8000-000000000004",
+      "name": "Confronta le date",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 0]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            { "id": "c4d5e6f7-0005-4000-8000-0000000000c1", "leftValue": "={{ $json.aggiorna }}", "rightValue": true, "operator": { "type": "boolean", "operation": "true", "singleValue": true } }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "c4d5e6f7-0005-4000-8000-000000000005",
+      "name": "Arena ha una versione nuova?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [880, -100]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/actions/workflows/aggiorna-dati.yml/dispatches",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Accept", "value": "application/vnd.github+json" },
+            { "name": "X-GitHub-Api-Version", "value": "2022-11-28" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{ \"ref\": \"main\" }",
+        "options": { "response": { "response": { "fullResponse": true } } }
+      },
+      "id": "c4d5e6f7-0006-4000-8000-000000000006",
+      "name": "Aggiorna il sito",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1100, -100],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 60000,
+      "credentials": {
+        "httpHeaderAuth": { "id": "", "name": "GitHub freellmrank (Actions)" }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            { "id": "c4d5e6f7-0007-4000-8000-0000000000c1", "leftValue": "={{ $('Confronta le date').first().json.avvisa }}", "rightValue": true, "operator": { "type": "boolean", "operation": "true", "singleValue": true } }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "c4d5e6f7-0007-4000-8000-000000000007",
+      "name": "Arena ferma da 3 giorni?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [880, 120]
+    },
+    {
+      "parameters": {
+        "fromEmail": "info@freellmarena.com",
+        "toEmail": "info@freellmarena.com",
+        "subject": "=Classifica Arena ferma da {{ $('Confronta le date').first().json.giorniFermi }} giorni",
+        "emailFormat": "html",
+        "html": "=<p>La classifica chat ufficiale di Arena (dataset su Hugging Face) è ferma al {{ $('Confronta le date').first().json.ultimaChat }}: {{ $('Confronta le date').first().json.giorniFermi }} giorni.</p><p>Sul nostro sito: {{ $('Confronta le date').first().json.nostraChat }}. Il nostro controllo gira ogni 2 ore e aggiorna il sito appena Arena pubblica una versione nuova: il ritardo è di Arena, non nostro.</p><p>Fonte: <a href=\"https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset\">lmarena-ai/leaderboard-dataset</a></p>",
+        "options": {}
+      },
+      "id": "c4d5e6f7-0008-4000-8000-000000000008",
+      "name": "Avvisami per mail",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [1100, 120],
+      "credentials": {
+        "smtp": { "id": "", "name": "SMTP info@freellmarena.com" }
+      }
+    }
+  ],
+  "connections": {
+    "Ogni 2 ore": { "main": [[{ "node": "Ultime versioni di Arena", "type": "main", "index": 0 }]] },
+    "Ultime versioni di Arena": { "main": [[{ "node": "Date sul nostro sito", "type": "main", "index": 0 }]] },
+    "Date sul nostro sito": { "main": [[{ "node": "Confronta le date", "type": "main", "index": 0 }]] },
+    "Confronta le date": { "main": [[{ "node": "Arena ha una versione nuova?", "type": "main", "index": 0 }, { "node": "Arena ferma da 3 giorni?", "type": "main", "index": 0 }]] },
+    "Arena ha una versione nuova?": { "main": [[{ "node": "Aggiorna il sito", "type": "main", "index": 0 }], []] },
+    "Arena ferma da 3 giorni?": { "main": [[{ "node": "Avvisami per mail", "type": "main", "index": 0 }], []] }
+  },
+  "settings": { "executionOrder": "v1", "timezone": "Europe/Rome", "saveExecutionProgress": true },
+  "pinData": {},
+  "active": false
+}
