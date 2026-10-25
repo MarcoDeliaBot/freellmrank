@@ -274,7 +274,7 @@ ${abbellisci(marked.parse(p.corpo), p, dati)}
   const guide = post.filter((p) => p.tipo === 'Guide');
   const resoconti = post.filter((p) => p.tipo === 'Weekly report');
   const notizie = post.filter((p) => p.tipo === 'News').slice(0, 30);
-  const evidenza = guide.find((p) => p.slug === 'best-free-ai-models') || guide[0];
+  const evidenza = guide.find((p) => p.slug === 'how-much-gpu-memory-for-a-local-llm') || guide[0];
   const altre = guide.filter((p) => p !== evidenza);
   const filtro = (p) => (p.tipo === 'Guide' ? `guide${/hardware/i.test(p.tema) ? ' hardware' : ''}` : p.tipo === 'Video' ? 'video' : p.tipo === 'News' ? 'news' : 'week');
   const video = post.filter((p) => p.tipo === 'Video');

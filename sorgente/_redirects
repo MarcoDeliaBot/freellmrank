@@ -88,3 +88,19 @@
 /fr/model/recursive-flint /fr/model/flint 301
 /pt/model/recursive-flint /pt/model/flint 301
 /ja/model/recursive-flint /ja/model/flint 301
+
+# guide doppie confluite nelle pagine per parola chiave (LETTERA SEO-01, 25/10/2026)
+/blog/best-free-ai-models /best-free-ai 301
+/it/blog/best-free-ai-models /it/best-free-ai 301
+/es/blog/best-free-ai-models /es/best-free-ai 301
+/de/blog/best-free-ai-models /de/best-free-ai 301
+/fr/blog/best-free-ai-models /fr/best-free-ai 301
+/pt/blog/best-free-ai-models /pt/best-free-ai 301
+/ja/blog/best-free-ai-models /ja/best-free-ai 301
+/blog/use-top-ai-models-free-online /free-ai 301
+/it/blog/use-top-ai-models-free-online /it/free-ai 301
+/es/blog/use-top-ai-models-free-online /es/free-ai 301
+/de/blog/use-top-ai-models-free-online /de/free-ai 301
+/fr/blog/use-top-ai-models-free-online /fr/free-ai 301
+/pt/blog/use-top-ai-models-free-online /pt/free-ai 301
+/ja/blog/use-top-ai-models-free-online /ja/free-ai 301

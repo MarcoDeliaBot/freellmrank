@@ -20,6 +20,7 @@ import { paginaRam } from './sito/ram.mjs';
 import { paginaPc } from './sito/pc.mjs';
 import { coloreLab, nomeLab, chiaveLab, laboratoriDi } from './sito/laboratori.mjs';
 import { scriviLlms } from './sito/llms.mjs';
+import { paginaFreeLlm, paginaBestFreeAi, paginaFreeAi } from './sito/parole.mjs';
 import { simula, daScheda, kvGB, perditaQualita, giudizio, QUANTI } from '../sorgente/calc.mjs';
 
 const SORGENTE = path.join(RADICE, 'sorgente');
@@ -232,12 +233,13 @@ pagina({
     })),
     { '@type': 'Dataset', name: `${NOME_PIENO} free AI model rankings`, description: 'Free and open-weight AI models with Arena scores, sizes, GPU memory needs and where to use them free. Updated nightly.', url: URL_SITO + '/', dateModified: dati.aggiornato, isBasedOn: 'https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset', license: 'https://creativecommons.org/licenses/by/4.0/', creditText: 'Rankings from the Arena leaderboard dataset by Arena Intelligence (CC BY 4.0); sizes from Hugging Face.', creator: { '@type': 'Organization', name: NOME_PIENO, url: URL_SITO + '/' }, distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: URL_SITO + '/data.json' }, { '@type': 'DataDownload', encodingFormat: 'text/markdown', contentUrl: URL_SITO + '/llms-full.txt' }] },
   ],
-  titolo: `Best Free AI Models & Free LLMs, Ranked by Real Votes · ${NOME_PIENO}`,
+  titolo: 'Free AI Leaderboard, Ranked by Real Votes',
   descr: 'Free and open AI models for chat, coding, vision, image and video, ranked by millions of blind votes. Where to use them free and which GPU you need.',
   corpo: `<div class="eroe">
 <div style="display:grid;gap:.5rem">
-<h1>The best free AI models, ranked by real votes</h1>
+<h1>Free AI Leaderboard, Ranked by Real Votes</h1>
 <p class="lead">Only models you can use without paying: free online, or downloaded to your own GPU. Scores come from millions of blind human votes on Arena, updated every night.</p>
+<p class="su-pagina-in small"><a href="/free-llm.html">Best free LLMs</a> · <a href="/best-free-ai.html">Best free AI for every task</a> · <a href="/free-ai.html">Free AI chats</a></p>
 <p class="su-pagina-in small"><b>On this page:</b> <a href="#glance">3 charts</a> · <a href="#rankings">Rankings</a> · <a href="#new">New models</a> · <a href="#faq">FAQ</a></p>
 </div>
 ${ultimi.length ? `<div class="nuovi"><p class="nuovi-testa"><span>New on the free leaderboard</span><i class="punto-vivo" aria-hidden="true"></i></p>${ultimi.map((x) => `<a href="${hrefDi(x.m.nome)}"><b>${esc(x.m.nome)}</b><span>#${x.m.pos} in ${esc(x.c.nome)} · ${fmtData(x.d)}</span></a>`).join('')}</div>` : ''}
@@ -454,6 +456,11 @@ pagina({
 <p><a href="/">Free leaderboard</a> · <a href="/models.html">All free models</a> · <a href="/home.html">Run at home</a></p></div>`,
 });
 
+// tre pagine per parola chiave (LETTERA SEO-01): le funzioni del build passano a parole.mjs, niente calcoli doppi
+const ctxParole = { dati, blog, modelli, perNome, usabileGratis, hrefDi, cellaGratis, RIF };
+paginaFreeLlm(ctxParole);
+paginaBestFreeAi(ctxParole);
+paginaFreeAi(ctxParole);
 paginaCatalogo(dati, modelli, blog);
 paginaDecisioni(dati, blog);
 paginaGpu(dati, modelli, blog);

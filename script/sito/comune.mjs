@@ -83,6 +83,9 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
   const GRUPPI = [
     ['Rankings', [
       ['/', `${icona('classifica')}Free leaderboard <span class="badge-free">free</span>`],
+      ['/free-llm.html', `${icona('classifica')}Best free LLMs`],
+      ['/best-free-ai.html', `${icona('modelli')}Best free AI for every task`],
+      ['/free-ai.html', `${icona('confronto')}Free AI chats`],
       ['/arena.html', `${icona('arena')}Free Arena${nuovo('2026-10-20')}`],
       ['/audio.html', `${icona('audio')}Audio${nuovo('2026-10-20')}`],
       ['/music.html', `${icona('musica')}Music${nuovo('2026-10-20')}`],
@@ -115,7 +118,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
   const anteprima = ANTEPRIMA[attiva] || 'og-default.png';
   const condividi = encodeURIComponent(canonico), testoCond = encodeURIComponent(titolo);
   const colonne = [
-    ['Leaderboards', dati.categorie.map((c) => [`/#${c.id}`, `Best free ${c.nome.toLowerCase()} models`])],
+    ['Leaderboards', [['/free-llm.html', 'Best free LLMs'], ['/best-free-ai.html', 'Best free AI for every task'], ['/free-ai.html', 'Free AI chats'], ...dati.categorie.map((c) => [`/#${c.id}`, `Best free ${c.nome.toLowerCase()} models`])]],
     ['Tools', [['/home.html', 'Run at home: GPU simulator'], ['/gpus.html', 'GPUs for local AI, compared'], ['/ram.html', 'How much RAM for local AI'], ['/ai-pcs.html', 'AI PCs: Mac Studio, DGX Spark, Ryzen AI Max'], ['/phone.html', 'AI models on your phone'], ['/audio.html', 'Speech to text and text to speech'], ['/music.html', 'Free AI music generators'], ['/3d-models.html', 'Free AI 3D model generators'], ['/apps.html', 'Free and paid AI apps'], ['/embed.html', 'Widget for your site'], ['/arena.html', 'Free Arena: vote blind'], ['/compare.html', 'Try two free models'], ['/models.html', 'All free models'], ['/decision.html', 'Decision models (Jev-style)']]],
     ['Blog', [...blog.slice(0, 4).map((p) => [`/blog/${p.slug}.html`, p.titolo]), ['/blog/', 'All posts']]],
     ['About', [['/about.html', 'How we rank'], ['/about.html#faq', 'FAQ'], ['/about.html#sources', 'Data sources'], ['/blog/feed.xml', 'RSS feed'], ['https://github.com/MarcoDeliaBot/freellmrank', 'Source code']]],
