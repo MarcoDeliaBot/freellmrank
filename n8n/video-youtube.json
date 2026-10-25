@@ -20,7 +20,7 @@
         0,
         0
       ],
-      "notes": "25/10/2026, Marco: «fai girare il caricamento su YouTube più volte al giorno, dopo i video». Alle 8 i video del giorno non esistevano ancora (nascono dalle 10 in poi) e restavano fermi fino al giorno dopo."
+      "notes": "SPENTO in n8n il 25/10/2026 (Marco): finché Google non accetta il progetto (audit API), i caricamenti con l'API restano privati. I video li pubblica in PUBBLICO il compito programmato di Claude «freellmarena-youtube-coda-25» (9:30 e 18:30). Riaccendere solo dopo l'audit, e spegnere allora quel compito. 25/10/2026, Marco: «fai girare il caricamento su YouTube più volte al giorno, dopo i video». Alle 8 i video del giorno non esistevano ancora (nascono dalle 10 in poi) e restavano fermi fino al giorno dopo."
     },
     {
       "parameters": {
