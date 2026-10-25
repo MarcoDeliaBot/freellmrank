@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-25-co-op-anything-lets-ai-agents-turn-single-player-pc-games-into-multipl",
+ "titolo": "Co-op Anything lets AI agents turn single-player PC games into multiplayer sessions",
+ "descr": "The open‑source project lets AI agents reverse‑engineer, fix and package co‑op mods for a wide range of PC titles.",
+ "tema": "Software",
+ "paragrafi": [
+  "The GitHub repo cranebeaker/coop-anything offers a framework for turning any PC single‑player game into a co‑op experience using AI agents.",
+  "Agents such as Claude Code, Codex, Gemini CLI or Cursor can read the repository’s playbook, detect the game engine and either repair existing mods or build new networking logic from scratch.",
+  "The project already lists games with active co‑op work, including Deus Ex, Fallout: New Vegas, Zelda: Ocarina of Time, Dungeon Keeper and many others ranging from classic titles to modern shooters.",
+  "Tools in the repo provide UDP relays, fuzzer suites, animation checks and runtime mutation twins to test synchronization and reduce desyncs before shipping the mod.",
+  "All output is packaged for one‑click Steam installation, allowing friends to join without manual port forwarding."
+ ],
+ "perche": [
+  "For AI developers, the repo demonstrates how large language models can automate reverse engineering and multiplayer integration, expanding the utility of coding assistants. Gamers gain a free, community‑driven way to add co‑op to beloved single‑player games without needing paid mod tools."
+ ],
+ "pubblicato": "2026-10-25",
+ "titoloFonte": "cranebeaker/coop-anything: Co-op Anything: point your AI agent at any single-player game and play it with friends (online and/or splitscreen!). MCP server and playbook to let you reverse engineer, fix",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/cranebeaker/coop-anything",
+   "titolo": "cranebeaker/coop-anything: Co-op Anything: point your AI agent at any single-player game and play it with friends (online and/or splitscreen!). MCP server and playbook to let you reverse engineer, fix",
+   "ufficiale": false,
+   "data": "2026-10-16"
+  }
+ ],
+ "frasiTolte": 0
+}

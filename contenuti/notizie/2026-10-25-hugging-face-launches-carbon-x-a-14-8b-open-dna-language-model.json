@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-25-hugging-face-launches-carbon-x-a-14-8b-open-dna-language-model",
+ "titolo": "Hugging Face launches Carbon‑X, a 14.8B open DNA‑language model",
+ "descr": "Carbon‑X reads raw DNA, replies in English and scores 66.7% on five DNA benchmarks under an Apache‑2.0 license.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "On October 25, 2026 Hugging Face announced Carbon‑X, an open‑source DNA language model with 14.8 billion parameters built on the Qwen3‑14B architecture.",
+  "The model can ingest raw DNA sequences in a chat interface and generate answers in natural English, bridging genomics and conversational AI.",
+  "Carbon‑X achieved an average score of 66.7 % across five DNA‑specific benchmarks, demonstrating competitive performance in this emerging domain.",
+  "The model is released under the Apache 2.0 license, allowing unrestricted use, modification, and distribution.",
+  "Its release follows recent activity on Hugging Face, including the publication of Recursive’s Flint coding agent, highlighting the platform’s expanding model portfolio."
+ ],
+ "perche": [
+  "Carbon‑X gives researchers and developers a free tool to query genetic data without specialized bioinformatics pipelines. For users seeking free or locally runnable models, the Apache‑2.0 licence and open availability align with the growing demand for accessible AI, complementing top‑ranked free chat models such as Kimi K3 and GLM‑5.3 on FreeLLMArena."
+ ],
+ "pubblicato": "2026-10-25",
+ "titoloFonte": "Hugging Face Releases Carbon-X, a 14B Open DNA Language Model that Brings DNA and Natural Language Together for the First Time",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/25/hugging-face-carbon-x-14b-dna-language-model/",
+   "titolo": "Hugging Face Releases Carbon-X, a 14B Open DNA Language Model that Brings DNA and Natural Language Together for the First Time",
+   "ufficiale": false,
+   "data": "2026-10-25"
+  },
+  {
+   "nome": "Hugging Face trending",
+   "url": "https://huggingface.co/RecursiveSI/flint",
+   "titolo": "Recursive releases flint on Hugging Face",
+   "ufficiale": true,
+   "data": "2026-10-21"
+  }
+ ],
+ "frasiTolte": 0
+}
