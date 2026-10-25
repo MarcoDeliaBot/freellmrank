@@ -31,12 +31,14 @@ export const REGOLE_SCRITTURA = `Writing rules (strict):
 // 5xx, rete, risposta senza JSON) si passa al successivo. Tutti gratuiti:
 // - workers: gpt-oss-120b su Workers AI, quota gratis del sito, tramite /api/scrivi (segreto BOZZE_KEY);
 // - groq: gpt-oss-120b sul piano gratuito di Groq (segreto GROQ_KEY, account di Marco), API compatibile OpenAI;
-// - locale: un modello aperto che gira sul computer stesso della corsa (Ollama), senza tetti: LLM_LOCALE_URL e LLM_LOCALE_MODELLO.
+// - locale: un modello aperto via Ollama, senza tetti: LLM_LOCALE_URL e LLM_LOCALE_MODELLO. Provato il 25/10/2026 sul computer
+//   di GitHub (4 CPU, 15 GB, niente GPU, corsa 40240521010): gpt-oss:20b scrive 4,5 token/s, un piano richiede oltre 10 minuti
+//   e i 3 tentativi sono falliti (tempo scaduto, JSON rotto, fatti inventati). Serve una scheda video (es. il PC di Marco).
 // SCRITTORI cambia l'ordine o ne sceglie alcuni (es. «locale» per una prova). Chi non è configurato si salta.
 const SCRITTORI = () => (process.env.SCRITTORI || 'workers,groq,locale').split(',').map((s) => s.trim()).filter(Boolean);
 export let ultimoScrittore = '';
 
-async function compatibileOpenAI(url, chiave, modello, messaggi, max, attesa) {
+async function compatibileOpenAI(url, chiave, modello, messaggi, max, attesa, tentativo = 1) {
   const r = await fetch(`${url}/chat/completions`, {
     method: 'POST',
     headers: { ...(chiave ? { Authorization: `Bearer ${chiave}` } : {}), 'Content-Type': 'application/json' },
@@ -44,6 +46,13 @@ async function compatibileOpenAI(url, chiave, modello, messaggi, max, attesa) {
     signal: AbortSignal.timeout(attesa),
   });
   const d = await r.json().catch(() => ({}));
+  // limite al minuto (Groq gratis: 8.000 token al minuto, una nostra richiesta ne usa circa 4.000): si aspetta e si riprova
+  // fino a 2 volte; se l'attesa chiesta è lunga (tetto del giorno) si passa al successivo
+  const dopo = Number(r.headers.get('retry-after'));
+  if (r.status === 429 && tentativo < 3 && dopo > 0 && dopo <= 90) {
+    await new Promise((ok) => setTimeout(ok, dopo * 1000 + 500));
+    return compatibileOpenAI(url, chiave, modello, messaggi, max, attesa, tentativo + 1);
+  }
   if (!r.ok) throw new Error(`${r.status}: ${String(d.error?.message || d.error || '').slice(0, 160)}`);
   return String(d.choices?.[0]?.message?.content || '').replace(/<think>[\s\S]*?<\/think>/g, '').trim();
 }
