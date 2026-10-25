@@ -34,5 +34,13 @@
  "news-2026-10-24-tencent-releases-wevisone-vl-a-unified-visual-language-model-for-objec": {
   "lungo": "notizia-tencent-releases-wevisone-vl-a-unified-visual-language-m",
   "breve": "breve-tencent-releases-wevisone-vl-a-unified-visual-language-m"
+ },
+ "news-2026-10-24-mistral-ai-launches-timestral-a-time-series-foundation-model-family": {
+  "lungo": "notizia-mistral-ai-launches-timestral-a-time-series-foundation-m",
+  "breve": "breve-mistral-ai-launches-timestral-a-time-series-foundation-m"
+ },
+ "news-2026-10-24-nvidia-launches-nemotron-3-5-bolt-e4b-4gb-for-local-voice-agents-and-r": {
+  "lungo": "notizia-nvidia-launches-nemotron-3-5-bolt-e4b-4gb-for-local-voic",
+  "breve": "breve-nvidia-launches-nemotron-3-5-bolt-e4b-4gb-for-local-voic"
  }
 }
