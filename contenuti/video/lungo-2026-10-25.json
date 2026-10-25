@@ -1,0 +1,85 @@
+{
+ "nome": "lungo-2026-10-25",
+ "titolo": "Best FREE AI Models This Week (25 October 2026): Top 10, New Models, What Runs at Home",
+ "descrizione": "The free AI report for the week of 25 October 2026, from blind human votes on Arena.\n\nTop 10 free chat models:\n1. MiMo-V2.6-Pro (Xiaomi): 1491\n2. Kimi K3 (Max) (Kimi (Moonshot)): 1475\n3. GLM-5.3 (Max) (GLM (Z.ai)): 1474\n4. GLM-5.3-Flash (GLM (Z.ai)): 1472\n5. GLM-5.2 (Max) (GLM (Z.ai)): 1470\n6. DeepSeek-V4.1-Flash-20260910 (Max) (DeepSeek): 1464\n7. MiMo-V2.5-Pro (Xiaomi): 1464\n8. GLM-5.1 (GLM (Z.ai)): 1463\n9. Kimi K2.6 (Kimi (Moonshot)): 1455\n10. MiMo-V2.6-Flash (Xiaomi): 1452\nBest paid model: Gemini 4 Argon (High) (1526).\n\nBest free model per category: Coding: DeepSeek-V4.1-Flash-20261017 (Max); Vision: GLM-5.3-Flash; Image: qwen-image-2.1; Video: minimax-h3; Search: diffbot-small-xl; Agents: MiMo-V2.6-Pro.\n\nEvery free model, with sizes, speeds and where to use it free: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "AI leaderboard",
+  "local LLM",
+  "best AI models"
+ ],
+ "condividi": "Free AI this week: MiMo-V2.6-Pro leads the free models at 1491, 35 points behind Gemini 4 Argon (High). Full report: https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "hardware": {
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "Gemma 4 26B A4B",
+    "vel": 49,
+    "dove": "ram"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Gemma 4 31B",
+    "vel": 36,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Gemma 4 31B",
+    "vel": 19,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "titoli": [
+  "Free AI is",
+  "Top 10 free chat models",
+  "Places 4 to 10",
+  "Of the top 50 chat models",
+  "5 new on the leaderboard",
+  "Best free model in each category",
+  "New open models this week",
+  "WeVisOne-VL-4B",
+  "What runs at home",
+  "Every free AI model, updated every night"
+ ],
+ "voce": [
+  "This is the free AI report for the week of 25 October 2026. The best free chat model is 35 points behind the best paid one. Let's see who is on top, what's new, and what you can run at home.",
+  "Here are the ten best free chat models, ranked by blind human votes on Arena. In first place, MiMo V2.6 Pro from Xiaomi, with 1491 points. Then Kimi K3 Max, and GLM 5.3 Max. The dashed line is the best paid model.",
+  "From fourth to tenth: GLM 5.3 Flash, 1472; GLM 5.2 Max, 1470; DeepSeek V4.1 Flash Max, 1464; MiMo V2.5 Pro, 1464; GLM 5.1, 1463; Kimi K2.6, 1455; MiMo V2.6 Flash, 1452.",
+  "Of the top 50 chat models on Arena, paid ones included, 11 can be used for free, and 11 have open weights you can download.",
+  "5 free models entered the leaderboard this week. The highest is DeepSeek V4.1 Flash Max, at number 37 overall.",
+  "Now the best free model in each category. For coding: DeepSeek V4.1 Flash Max. For vision: GLM 5.3 Flash. For image: qwen image 2.1. For video: minimax h3. For search: diffbot small xl. For agents: MiMo V2.6 Pro.",
+  "5 new open models came out on Hugging Face this week. The biggest is Ling 3.0 flash Sante, with 128 billion parameters.",
+  "The model of the week is WeVisOne VL 4B, from Tencent. It has 5 billion parameters. At 4-bit it needs about 6 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60.",
+  "What can you run at home? On an RTX 30 60 with 32 gigabytes of RAM, the best free model is Gemma 4 26B A4B, at about 49 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM, the best free model is Gemma 4 31B, at about 36 tokens per second. On a Mac M4 Max, the best free model is Gemma 4 31B, at about 19 tokens per second.",
+  "Every free model, with sizes and speeds, is on FreeLLMArena, updated every night. The link is in the description. See you next week."
+ ],
+ "release": "video-lungo-2026-10-25",
+ "pubblicato": "2026-10-25"
+}

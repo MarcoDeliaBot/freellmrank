@@ -1,0 +1,80 @@
+{
+ "nome": "settimana-2026-10-25",
+ "titolo": "The best free AI model is 35 points behind the best paid one #Shorts",
+ "descrizione": "Top 5 free chat models on Arena this week (2026-10-25), by blind human votes:\n1. MiMo-V2.6-Pro (1491)\n2. Kimi K3 (Max) (1475)\n3. GLM-5.3 (Max) (1474)\n4. GLM-5.3-Flash (1472)\n5. GLM-5.2 (Max) (1470)\nBest paid model: Gemini 4 Argon (High) (1526).\nFree-only ranking, updated every night: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "AI leaderboard",
+  "local LLM"
+ ],
+ "condividi": "Gemini 4 Argon (High) leads Arena's chat ranking at 1526. The best free model, MiMo-V2.6-Pro, is 35 points behind, and all top 5 free models are open weights. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "La miglior AI gratis è a 35 punti da quella a pagamento #Shorts",
+   "descrizione": "I 5 migliori modelli di chat gratis su Arena questa settimana (25 ottobre 2026), con voti alla cieca di persone vere:\n1. MiMo-V2.6-Pro (1491)\n2. Kimi K3 (Max) (1475)\n3. GLM-5.3 (Max) (1474)\n4. GLM-5.3-Flash (1472)\n5. GLM-5.2 (Max) (1470)\nMiglior modello a pagamento: Gemini 4 Argon (High) (1526).\nClassifica dei modelli gratis, aggiornata ogni notte: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "La mejor IA gratis está a 35 puntos de la de pago #Shorts",
+   "descrizione": "Los 5 mejores modelos de chat gratis en Arena esta semana (25 de octubre de 2026), por votos a ciegas de personas reales:\n1. MiMo-V2.6-Pro (1491)\n2. Kimi K3 (Max) (1475)\n3. GLM-5.3 (Max) (1474)\n4. GLM-5.3-Flash (1472)\n5. GLM-5.2 (Max) (1470)\nMejor modelo de pago: Gemini 4 Argon (High) (1526).\nClasificación de modelos gratis, actualizada cada noche: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Die beste kostenlose KI liegt 35 Punkte hinter der besten bezahlten #Shorts",
+   "descrizione": "Die 5 besten kostenlosen Chat-Modelle auf Arena diese Woche (25. Oktober 2026), nach Blindabstimmungen echter Menschen:\n1. MiMo-V2.6-Pro (1491)\n2. Kimi K3 (Max) (1475)\n3. GLM-5.3 (Max) (1474)\n4. GLM-5.3-Flash (1472)\n5. GLM-5.2 (Max) (1470)\nBestes bezahltes Modell: Gemini 4 Argon (High) (1526).\nRangliste der kostenlosen Modelle, jede Nacht aktualisiert: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "La meilleure IA gratuite est à 35 points de la meilleure payante #Shorts",
+   "descrizione": "Les 5 meilleurs modèles de chat gratuits sur Arena cette semaine (25 octobre 2026), selon des votes à l'aveugle de vraies personnes :\n1. MiMo-V2.6-Pro (1491)\n2. Kimi K3 (Max) (1475)\n3. GLM-5.3 (Max) (1474)\n4. GLM-5.3-Flash (1472)\n5. GLM-5.2 (Max) (1470)\nMeilleur modèle payant : Gemini 4 Argon (High) (1526).\nClassement des modèles gratuits, mis à jour chaque nuit : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "A melhor IA grátis está 35 pontos atrás da melhor paga #Shorts",
+   "descrizione": "Os 5 melhores modelos de chat grátis no Arena nesta semana (25 de outubro de 2026), por votos às cegas de pessoas reais:\n1. MiMo-V2.6-Pro (1491)\n2. Kimi K3 (Max) (1475)\n3. GLM-5.3 (Max) (1474)\n4. GLM-5.3-Flash (1472)\n5. GLM-5.2 (Max) (1470)\nMelhor modelo pago: Gemini 4 Argon (High) (1526).\nRanking dos modelos grátis, atualizado toda noite: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "MiMo-V2.6-Pro",
+    "gb": 623,
+    "scheda": null
+   },
+   {
+    "nome": "Kimi K3 (Max)",
+    "gb": 1687,
+    "scheda": null
+   },
+   {
+    "nome": "GLM-5.3 (Max)",
+    "gb": 459,
+    "scheda": null
+   },
+   {
+    "nome": "GLM-5.3-Flash",
+    "gb": 197,
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    }
+   },
+   {
+    "nome": "GLM-5.2 (Max)",
+    "gb": 459,
+    "scheda": null
+   }
+  ]
+ },
+ "voce": [
+  "The best free AI is 35 points behind the best paid one.",
+  "We rank 227 free chat models by blind human votes.",
+  "Here are the top five this week.",
+  "All five are open: download them and run them for free.",
+  "At home? Only one of the five fits a single home machine: a Mac Studio M3 Ultra.",
+  "Which one runs on your GPU?",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-settimana-2026-10-25",
+ "pubblicato": "2026-10-25"
+}
