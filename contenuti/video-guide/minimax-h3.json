@@ -1,0 +1,42 @@
+{
+ "tipo": "guida",
+ "nome": "minimax-h3-open-video-model",
+ "url": "https://freellmarena.com/blog/minimax-h3-open-video-model-guide",
+ "titolo": "MiniMax H3: the best open video model, and the license catch",
+ "descr": "MiniMax H3 makes up to 15 seconds of video with stereo sound in one pass, and it is first in the Arena image-to-video ranking. What it does, which build fits your GPU, and where its license does not apply.",
+ "tema": "Video",
+ "pubblicato": "2026-10-25",
+ "paragrafi": [
+  "MiniMax H3 makes up to 15 seconds of video with stereo sound in a single pass: dialogue, sound effects and music, generated together with the picture. You can download it from Hugging Face. In blind Arena votes it is first of 48 models in image-to-video, ahead of Google, ByteDance and Alibaba.",
+  "It has three modes. Text to video, from a prompt alone. Image to video, where your picture becomes the first or the last frame. And reference to video, with up to 9 images, 3 video clips and 3 audio clips, 12 files in total, to keep a face, reuse a song or copy a voice.",
+  "To run it at home, update ComfyUI, open Template Library, then Video, and pick a MiniMax H3 workflow. The video model comes in four builds: 66 GB complete, 40 GB pruned, 21 GB in 8-bit, and 16 GB as the smallest. Comfy's advice is to pick the smallest build that fits in your VRAM.",
+  "The open model makes video at 768 pixels on the short side, at 24 frames per second. The 2K version is only in MiniMax's paid service. Italian is one of the 11 languages it speaks well, with English, Spanish, French, German and Japanese.",
+  "For the prompt, describe shots with times, like shot one at the start and a cut at second four, then write the sounds and the music in separate lines. The official examples are several hundred words for 5 to 10 seconds of video."
+ ],
+ "perche": [
+  "There is a catch: the license does not cover the European Union, the United Kingdom, South Korea and the United States, not even for the videos you make. There, use MiniMax's own API or app instead. Everywhere else it is free, also for commercial use."
+ ],
+ "titoliSezioni": [
+  "What MiniMax H3 is",
+  "Three ways to use it",
+  "Which build fits your GPU",
+  "What you get",
+  "How to write the prompt"
+ ],
+ "fonti": [
+  {
+   "nome": "MiniMax on Hugging Face",
+   "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
+   "titolo": "MiniMax H3 model card",
+   "ufficiale": true,
+   "data": "2026-10-25"
+  },
+  {
+   "nome": "ComfyUI",
+   "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3",
+   "titolo": "ComfyUI MiniMax H3 Video Generation Guide",
+   "ufficiale": true,
+   "data": "2026-10-25"
+  }
+ ]
+}
