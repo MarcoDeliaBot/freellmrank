@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-25-tv-detox-lets-users-speed-up-old-android-tvs-with-claude-code-or-codex",
+ "titolo": "TV Detox lets users speed up old Android TVs with Claude Code or Codex",
+ "descr": "The open‑source TV Detox project removes bloatware and adds a minimal home screen, using AI prompts to guide the cleanup.",
+ "tema": "Guides",
+ "paragrafi": [
+  "The GitHub repo Ansub/tv-detox offers a way to make sluggish Android TVs run faster. Users run Claude Code or Codex on a laptop, then follow AI‑generated prompts to disable system apps and install a lightweight home screen.",
+  "The process requires enabling developer mode, turning on USB or wireless debugging, and connecting the TV to the same Wi‑Fi network as the laptop. An install.sh script applies the changes, while an undo.sh script can revert them.",
+  "The cleanup removes ads, sponsored rows and other unwanted apps, leaving only user‑chosen apps, HDMI inputs and a clock. Animations are turned off and the TV is set to sleep after five minutes.",
+  "Warnings note that turning off system apps can cause some TVs to get stuck at the logo or restart, and users must re‑enable debugging only for updates or undo actions.",
+  "Since version 1.4.1, the script avoids disabling Google TV’s own home screen unless the user opts in with GOOGLE_TV=1, reducing the risk of bricking newer devices."
+ ],
+ "perche": [
+  "For owners of older Android TVs, TV Detox provides a low‑cost method to reclaim performance without buying new hardware. The AI‑driven workflow simplifies a usually technical process, making it accessible to non‑experts who prefer free, open‑source tools over paid solutions."
+ ],
+ "pubblicato": "2026-10-25",
+ "titoloFonte": "Ansub/tv-detox: Make an old Android TV fast again with Claude Code or Codex: a tiny ad-free home screen plus the prompt to clean it up",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/Ansub/tv-detox",
+   "titolo": "Ansub/tv-detox: Make an old Android TV fast again with Claude Code or Codex: a tiny ad-free home screen plus the prompt to clean it up",
+   "ufficiale": false,
+   "data": "2026-10-18"
+  }
+ ],
+ "frasiTolte": 0
+}

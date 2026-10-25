@@ -1,0 +1,26 @@
+{
+ "nome": "2026-10-25-how-to-run-underdog-saluki-27b-2-bit-qwen3-8-27b-tool-calling-guide",
+ "titolo": "How to Run Underdog Saluki 27B: 2-Bit Qwen3.8-27B Tool-Calling Guide",
+ "descr": "MarkTechPost details a step‑by‑step guide for running the 27‑billion‑parameter Underdog Saluki model using 2‑bit Qwen3.8 quantization and tool‑calling in llama.cpp.",
+ "tema": "Guides",
+ "paragrafi": [
+  "The guide compares the model’s performance against ISTA’s GSQ‑RCO quantization, focusing on GGUF header handling and memory consumption.",
+  "It also evaluates BFCL tool‑calling speed when the model runs in stock llama.cpp, providing concrete measurements.",
+  "Readers receive a full coding walkthrough, including command‑line flags and configuration settings required for the 2‑bit setup."
+ ],
+ "perche": [
+  "The guide helps developers and hobbyists who want to run large language models locally without high‑end hardware. By showing that Underdog Saluki 27B can operate with 2‑bit quantization, it lowers the resource barrier for free or open‑source AI experimentation."
+ ],
+ "pubblicato": "2026-10-25",
+ "titoloFonte": "How to Run Underdog Saluki 27B: 2-Bit Qwen3.8-27B Tool-Calling Guide",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/24/underdog-saluki-27b-coding-guide-llama-cpp/",
+   "titolo": "How to Run Underdog Saluki 27B: 2-Bit Qwen3.8-27B Tool-Calling Guide",
+   "ufficiale": false,
+   "data": "2026-10-25"
+  }
+ ],
+ "frasiTolte": 2
+}
