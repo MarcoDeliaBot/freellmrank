@@ -1,5 +1,6 @@
 // Prova a confronto: due modelli gratuiti di OpenRouter, chiamati dal browser del visitatore
 // con la sua chiave (accesso OAuth PKCE, nessun server nostro).
+import { t, tn, tServer } from './testi.mjs';
 const $ = (id) => document.getElementById(id);
 const OR = 'https://openrouter.ai/api/v1';
 const leggi = (k) => { try { return localStorage.getItem(k); } catch { return null; } };
@@ -26,7 +27,7 @@ async function ritornoDaOpenRouter() {
   let verifier = null;
   try { verifier = sessionStorage.getItem('pkce'); sessionStorage.removeItem('pkce'); } catch {}
   history.replaceState(null, '', indietro() + location.hash);
-  $('stato-conto').textContent = 'Connecting…';
+  $('stato-conto').textContent = t('connessione');
   try {
     const r = await fetch(`${OR}/auth/keys`, { method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ code, code_verifier: verifier, code_challenge_method: 'S256' }) });
@@ -34,7 +35,7 @@ async function ritornoDaOpenRouter() {
     if (!r.ok || !j.key) throw new Error(j.error?.message || `HTTP ${r.status}`);
     scrivi('or-key', j.key);
   } catch (e) {
-    $('stato-conto').textContent = `Connection failed: ${e.message}. Try again.`;
+    $('stato-conto').textContent = t('connFallita', { e: e.message });
     return;
   }
   aggiornaConto();
@@ -42,7 +43,7 @@ async function ritornoDaOpenRouter() {
 
 function aggiornaConto() {
   const k = leggi('or-key');
-  $('stato-conto').innerHTML = k ? '<span class="tag free">Connected</span> <button class="btn" id="esci" type="button">Disconnect</button>' : 'Not connected.';
+  $('stato-conto').innerHTML = k ? `<span class="tag free">${t('connesso')}</span> <button class="btn" id="esci" type="button">${t('disconnetti')}</button>` : t('nonConnesso');
   $('accedi').hidden = !!k;
   $('esci')?.addEventListener('click', () => { scrivi('or-key', null); aggiornaConto(); });
   $('invia').disabled = !k;
@@ -62,8 +63,8 @@ function scegliCoppia() {
 }
 function mostraNomi(svela) {
   const cieco = $('cieco').checked && !svela;
-  $('nome-a').textContent = cieco ? 'Model A' : `A · ${nome(coppia.a)}`;
-  $('nome-b').textContent = cieco ? 'Model B' : `B · ${nome(coppia.b)}`;
+  $('nome-a').textContent = cieco ? t('modelloA') : `A · ${nome(coppia.a)}`;
+  $('nome-b').textContent = cieco ? t('modelloB') : `B · ${nome(coppia.b)}`;
 }
 
 // ---------- invio ----------
@@ -76,7 +77,7 @@ async function chiedi(modello, domanda, box) {
   });
   if (!r.ok) {
     const j = await r.json().catch(() => ({}));
-    throw new Error(r.status === 429 ? 'Free limit reached for now. Wait a minute, or try tomorrow.' : (j.error?.message || `HTTP ${r.status}`));
+    throw new Error(r.status === 429 ? t('limiteGratis') : (j.error?.message || `HTTP ${r.status}`));
   }
   const lettore = r.body.getReader();
   const dec = new TextDecoder();
@@ -103,20 +104,20 @@ async function chiedi(modello, domanda, box) {
 
 async function invia() {
   const domanda = $('domanda').value.trim();
-  if (!domanda) { $('stato-invio').textContent = 'Write a prompt first.'; return; }
-  if (!$('cieco').checked && $('mod-a').value === $('mod-b').value) { $('stato-invio').textContent = 'Pick two different models.'; return; }
+  if (!domanda) { $('stato-invio').textContent = t('scriviPrima'); return; }
+  if (!$('cieco').checked && $('mod-a').value === $('mod-b').value) { $('stato-invio').textContent = t('dueDiversi'); return; }
   scegliCoppia();
   mostraNomi(false);
   votato = false;
   $('voto').hidden = true;
   $('esito').textContent = '';
   $('invia').disabled = true;
-  $('stato-invio').textContent = 'Waiting for both answers…';
+  $('stato-invio').textContent = t('attesaRisposte');
   const esiti = await Promise.allSettled([chiedi(coppia.a, domanda, $('risp-a')), chiedi(coppia.b, domanda, $('risp-b'))]);
-  esiti.forEach((e, i) => { if (e.status === 'rejected') $(i ? 'risp-b' : 'risp-a').textContent = `Error: ${e.reason.message}`; });
+  esiti.forEach((e, i) => { if (e.status === 'rejected') $(i ? 'risp-b' : 'risp-a').textContent = t('erroreDi', { e: tServer(e.reason.message) }); });
   $('invia').disabled = false;
   const ok = esiti.every((e) => e.status === 'fulfilled');
-  $('stato-invio').textContent = ok ? 'Done. Vote below.' : 'One model did not answer.';
+  $('stato-invio').textContent = ok ? t('fattoVota') : t('unoNonRisponde');
   $('voto').hidden = !ok;
 }
 
@@ -129,7 +130,7 @@ function vota(v) {
   lista.push({ a: coppia.a, b: coppia.b, v, t: Date.now() });
   scrivi('voti', JSON.stringify(lista.slice(-500)));
   mostraNomi(true);
-  $('esito').textContent = `Thanks. A was ${nome(coppia.a)}, B was ${nome(coppia.b)}.`;
+  $('esito').textContent = t('grazieAB', { a: nome(coppia.a), b: nome(coppia.b) });
   mostraVoti();
 }
 function mostraVoti() {
@@ -139,7 +140,7 @@ function mostraVoti() {
     if (x.v === 'b') vinte[x.b] = (vinte[x.b] || 0) + 1;
   }
   const ord = Object.entries(vinte).sort((p, q) => q[1] - p[1]);
-  $('miei-voti').innerHTML = ord.length ? `<ol>${ord.map(([id, n]) => `<li>${nome(id)}: ${n} win${n > 1 ? 's' : ''}</li>`).join('')}</ol>` : 'No votes yet.';
+  $('miei-voti').innerHTML = ord.length ? `<ol>${ord.map(([id, n]) => `<li>${tn('vittorie', n, { nome: nome(id) })}</li>`).join('')}</ol>` : t('nessunVoto');
 }
 
 // ---------- avvio ----------

@@ -2,6 +2,7 @@
 // 1° modo: il nostro Space gratuito su Hugging Face (space-voci/), così il visitatore non scarica niente.
 // 2° modo, di riserva: la voce gira nel browser (libreria @mintplex-labs/piper-tts-web 1.0.5, MIT; voci rhasspy/piper-voices, MIT),
 // se lo Space dorme troppo a lungo o è occupato. Il testo non passa dal nostro server.
+import { t } from './testi.mjs';
 const box = document.getElementById('piper');
 const LIBRERIA = 'https://cdn.jsdelivr.net/npm/@mintplex-labs/piper-tts-web@1.0.5/+esm';
 // la libreria si aspetta onnxruntime 1.18 su cdnjs, ma jsDelivr le dà la 1.27: i file wasm devono essere della stessa versione
@@ -35,7 +36,7 @@ if (box) {
   };
   // nel cloud: lo Space gratuito può dormire; il primo avvio può chiedere mezzo minuto
   async function nelCloud(testo) {
-    const lento = setTimeout(() => { stato.textContent = 'Waking up the free voice server, the first time can take 30 seconds…'; }, 3000);
+    const lento = setTimeout(() => { stato.textContent = t('sveglia'); }, 3000);
     try {
       // API di Gradio dello Space (ZeroGPU gratuito, voci sulla CPU): si chiede, poi si legge l'esito e si scarica il WAV
       const segnale = AbortSignal.timeout(90000);
@@ -60,42 +61,42 @@ if (box) {
     lettore.hidden = true;
     if (!nelBrowser) {
       try {
-        stato.textContent = 'Speaking…';
+        stato.textContent = t('parlo');
         suona(await nelCloud(testo));
-        stato.textContent = 'Done. It ran on our free voice server: nothing was downloaded.';
+        stato.textContent = t('fattoCloud');
         if (window.gtag) window.gtag('event', 'prova_audio', { tipo: 'piper-cloud', voce: voce.value });
       } catch (err) {
         console.warn(err);
-        stato.textContent = 'The free voice server is busy or asleep. Try again in a minute, or run the voice in your browser.';
+        stato.textContent = t('occupato');
         riserva.hidden = false;
-        riserva.textContent = `Run it in my browser (downloads ${voce.selectedOptions[0].dataset.mb} MB once)`;
+        riserva.textContent = t('nelBrowser', { mb: voce.selectedOptions[0].dataset.mb });
       }
       tasto.disabled = false;
       return;
     }
     try {
-      stato.textContent = 'Loading the speech engine…';
+      stato.textContent = t('motore');
       tts = tts || await import(LIBRERIA);
       if (voceCaricata !== voce.value) {
         // una sessione carica una sola voce: per cambiarla se ne apre una nuova
         tts.TtsSession._instance = null;
         const mb = voce.selectedOptions[0].dataset.mb;
-        stato.textContent = `Downloading the voice (${mb} MB, only the first time)…`;
+        stato.textContent = t('scaricoVoce', { mb });
         sessione = await tts.TtsSession.create({
           voiceId: voce.value,
-          progress: (p) => { if (p.total) stato.textContent = `Downloading the voice: ${Math.round((p.loaded * 100) / p.total)}% of ${mb} MB (only the first time)`; },
+          progress: (p) => { if (p.total) stato.textContent = t('scaricoPct', { p: Math.round((p.loaded * 100) / p.total), mb }); },
           wasmPaths: { onnxWasm: ONNX, piperData: `${tts.WASM_BASE}.data`, piperWasm: `${tts.WASM_BASE}.wasm` },
         });
         voceCaricata = voce.value;
       }
-      stato.textContent = 'Speaking…';
+      stato.textContent = t('parlo');
       suona(await sessione.predict(testo.slice(0, 1000)));
-      stato.textContent = 'Done. It ran on your device: try another sentence, it is instant now.';
+      stato.textContent = t('fattoLocale');
       if (window.gtag) window.gtag('event', 'prova_audio', { tipo: 'piper', voce: voce.value });
     } catch (err) {
       console.error(err);
       voceCaricata = null;
-      stato.textContent = 'This browser could not run the voice. Try an up-to-date Chrome, Edge or Firefox on a computer.';
+      stato.textContent = t('voceNonVa');
     }
     tasto.disabled = false;
   });

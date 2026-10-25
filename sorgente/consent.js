@@ -37,9 +37,12 @@
 document.addEventListener('click', function (e) {
   var b = e.target.closest && e.target.closest('[data-copia]');
   if (!b) return;
-  var fatto = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy link'; }, 1500); };
-  if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.copia).then(fatto, function () { prompt('Copy this link:', b.dataset.copia); });
-  else prompt('Copy this link:', b.dataset.copia);
+  // nella lingua della pagina (25/10/2026); il testo di partenza del tasto è quello già tradotto nella pagina
+  var T = { it: ['Copiato', 'Copia questo link:'], es: ['Copiado', 'Copia este enlace:'], de: ['Kopiert', 'Kopiere diesen Link:'], fr: ['Copié', 'Copiez ce lien :'], pt: ['Copiado', 'Copie este link:'], ja: ['コピーしました', 'このリンクをコピーしてください：'] }[(document.documentElement.lang || 'en').slice(0, 2)] || ['Copied', 'Copy this link:'];
+  var prima = b.dataset.etichetta || (b.dataset.etichetta = b.textContent);
+  var fatto = function () { b.textContent = T[0]; setTimeout(function () { b.textContent = prima; }, 1500); };
+  if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.copia).then(fatto, function () { prompt(T[1], b.dataset.copia); });
+  else prompt(T[1], b.dataset.copia);
 });
 
 // menu del telefono: si chiude toccando fuori o scegliendo una voce

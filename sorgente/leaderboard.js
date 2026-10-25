@@ -1,4 +1,5 @@
 // Schede delle categorie e filtri della classifica.
+import { t } from './testi.mjs';
 const bottoni = document.querySelectorAll('.tabs button');
 const fApi = document.getElementById('f-api');
 const fOpen = document.getElementById('f-open');
@@ -15,7 +16,7 @@ async function carica(sez) {
     filtra();
   } catch {
     delete sez.dataset.caricata;
-    sez.innerHTML = '<p class="small">This ranking did not load. Check your connection and click the tab again.</p>';
+    sez.innerHTML = `<p class="small">${t('classificaNonCaricata')}</p>`;
   }
 }
 
@@ -44,7 +45,7 @@ function prepara(sez) {
     const accesi = new Set(tasti.filter((b) => b.getAttribute('aria-pressed') === 'true').map((b) => b.dataset.lab));
     sez.querySelectorAll('[data-lab]:not(button)').forEach((el) => el.classList.toggle('spento', !accesi.has(el.dataset.lab)));
     const righe = [...sez.querySelectorAll('.pannello-tabella tbody tr')];
-    if (conta) conta.textContent = `${righe.filter((r) => !r.classList.contains('spento')).length} of ${righe.length} models`;
+    if (conta) conta.textContent = t('diModelli', { n: righe.filter((r) => !r.classList.contains('spento')).length, tot: righe.length });
   };
   tasti.forEach((b) => b.addEventListener('click', () => {
     const tutti = tasti.every((x) => x.getAttribute('aria-pressed') === 'true');

@@ -2,6 +2,7 @@
 // La usano sia la build (script/sito/gpus.mjs, per Google e senza JavaScript) sia il browser (gpus.js),
 // così ordine e numeri sono gli stessi.
 import { simula, daScheda } from './calc.mjs';
+import { t } from './testi.mjs'; // nella build resta inglese (niente document): la traduce traduci.mjs
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 export const fmtVel = (v) => (v >= 100 ? Math.round(v) : v >= 10 ? v.toFixed(0) : v.toFixed(1));
@@ -33,13 +34,13 @@ export const ordina = (valutate, col, verso = -1) => [...valutate].sort((a, b) =
 export function celle(v, massimi) {
   const { s, h } = v;
   const vel = v.vel.map((r, i) => {
-    if (r.dove === 'no') return '<span class="muted small">does not fit</span>';
+    if (r.dove === 'no') return `<span class="muted small">${t('nonEntra')}</span>`;
     const w = massimi[i] ? Math.max(3, Math.round((100 * r.vel) / massimi[i])) : 0;
-    return `<span class="vc"><span class="n">${fmtVel(r.vel)}</span><span class="mb${r.dove === 'ram' ? ' lenta' : ''}"><i style="width:${w}%"></i></span></span>${r.dove === 'ram' ? '<span class="tag chip-ram" title="Part of the model sits in system RAM, which is much slower">+RAM</span>' : ''}`;
+    return `<span class="vc"><span class="n">${fmtVel(r.vel)}</span><span class="mb${r.dove === 'ram' ? ' lenta' : ''}"><i style="width:${w}%"></i></span></span>${r.dove === 'ram' ? `<span class="tag chip-ram" title="${t('parteInRam')}">+RAM</span>` : ''}`;
   });
   return {
     // memoria e, sotto, la banda (quanto in fretta la scheda legge la memoria)
-    gb: (s.unificata ? `${s.gb} GB<br><span class="small muted">~${Math.round(s.gb * 0.75)} GB for AI</span>`
+    gb: (s.unificata ? `${s.gb} GB<br><span class="small muted">${t('perAi', { n: Math.round(s.gb * 0.75) })}</span>`
       : h.n > 1 ? `${h.vram} GB<br><span class="small muted">${h.n} × ${s.gb} GB</span>` : `${s.gb} GB`)
       + `<br><span class="small muted">${s.banda} GB/s</span>`,
     vel,

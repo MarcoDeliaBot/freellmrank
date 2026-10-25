@@ -1,4 +1,5 @@
 // Filtri della classifica dei modelli decisionali (le righe sono già nella pagina).
+import { t } from './testi.mjs';
 const $ = (id) => document.getElementById(id);
 const righe = [...document.querySelectorAll('tbody tr[data-lavoro]')];
 const MARGINE = 1.5; // GB per il programma che fa girare il modello; una decisione usa poco contesto
@@ -16,7 +17,7 @@ function applica() {
     r.hidden = !ok;
     if (ok) n++;
   }
-  $('conta-dec').textContent = `${n} of ${righe.length} models${vram ? ` fit in ${vram % 1 ? vram.toFixed(1) : vram} GB` : ''}`;
+  $('conta-dec').textContent = t('diModelli', { n, tot: righe.length }) + (vram ? t('entranoIn', { gb: vram % 1 ? vram.toFixed(1) : vram }) : '');
 }
 ['f-lavoro', 'f-img', 'f-scheda', 'f-quante'].forEach((id) => $(id).addEventListener('change', applica));
 applica();

@@ -37,7 +37,7 @@
       var tasto = document.createElement('button');
       tasto.type = 'button';
       tasto.className = 'btn mostra-tutte';
-      tasto.textContent = 'Show all ' + righe.length;
+      tasto.textContent = ({ it: 'Mostra tutte e ', es: 'Mostrar las ', de: 'Alle anzeigen: ', fr: 'Tout afficher : ', pt: 'Mostrar as ', ja: 'すべて表示：' }[(document.documentElement.lang || 'en').slice(0, 2)] || 'Show all ') + righe.length;
       tasto.addEventListener('click', function () { t.classList.remove('accorcia'); tasto.remove(); });
       tw.parentNode.insertBefore(tasto, tw.nextSibling);
     }

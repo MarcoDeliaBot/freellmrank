@@ -1,5 +1,6 @@
 // Riquadro "Try it now" della pagina /audio: voce → testo (registra o carica un file) e testo → voce.
 // La voce si converte qui, nel browser, in WAV 16 kHz mono: il server ne conosce la durata esatta (e il costo).
+import { t, tn, tServer } from './testi.mjs';
 const box = document.getElementById('try-audio');
 const SECONDI_MAX = Number(box?.dataset.secondi) || 30;
 
@@ -29,11 +30,11 @@ function base64(u8) {
   for (let i = 0; i < u8.length; i += 0x8000) s += String.fromCharCode.apply(null, u8.subarray(i, i + 0x8000));
   return btoa(s);
 }
-const rimasteTesto = (n) => (n > 0 ? `${n} free audio tr${n === 1 ? 'y' : 'ies'} left today.` : 'That was your last free audio try today.');
+const rimasteTesto = (n) => (n > 0 ? tn('audio', n) : t('ultimoAudio'));
 async function chiedi(corpo) {
   const r = await fetch('/api/audio', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo) });
   const d = await r.json().catch(() => ({}));
-  if (!r.ok) throw Object.assign(new Error(d.errore || 'Something went wrong. Try again in a minute.'), { rimaste: d.rimaste });
+  if (!r.ok) throw Object.assign(new Error(tServer(d.errore) || t('erroreGenerico')), { rimaste: d.rimaste });
   return d;
 }
 
@@ -45,21 +46,22 @@ if (box) {
   const statoS = stt.querySelector('.prova-stato');
   const uscitaS = stt.querySelector('.prova-risposta');
   let rec = null, timer = null, inizio = 0;
+  const etichettaReg = tastoReg.textContent; // «Record» già tradotto nella pagina
 
   async function trascrivi(blob) {
     tastoReg.disabled = true; file.disabled = true;
-    statoS.textContent = 'Transcribing…';
+    statoS.textContent = t('trascrivo');
     uscitaS.hidden = true;
     try {
       const { b64, tagliato } = await inWav(blob);
       const d = await chiedi({ tipo: 'stt', audio: b64 });
-      uscitaS.textContent = d.testo;
+      uscitaS.textContent = tServer(d.testo);
       uscitaS.hidden = false;
-      statoS.textContent = `${d.secondi} s of audio${d.lingua ? `, language: ${d.lingua}` : ''}${tagliato ? ` (only the first ${SECONDI_MAX} s)` : ''}. ${rimasteTesto(d.rimaste)}`;
+      statoS.textContent = `${t('secondiAudio', { s: d.secondi })}${d.lingua ? t('linguaAudio', { l: d.lingua }) : ''}${tagliato ? t('soloPrimi', { n: SECONDI_MAX }) : ''}. ${rimasteTesto(d.rimaste)}`;
       if (window.gtag) window.gtag('event', 'prova_audio', { tipo: 'stt' });
       if (d.rimaste <= 0) return;
     } catch (e) {
-      statoS.textContent = e.name === 'EncodingError' || e.name === 'NotSupportedError' ? 'This file could not be read. Try an MP3, WAV or M4A.' : e.message;
+      statoS.textContent = e.name === 'EncodingError' || e.name === 'NotSupportedError' ? t('fileIlleggibile') : e.message;
       if (e.rimaste === 0) return;
     }
     tastoReg.disabled = false; file.disabled = false;
@@ -70,26 +72,26 @@ if (box) {
   }
   tastoReg.addEventListener('click', async () => {
     if (rec && rec.state === 'recording') return ferma();
-    if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) { statoS.textContent = 'This browser cannot record. Upload a file instead.'; return; }
+    if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) { statoS.textContent = t('nonRegistra'); return; }
     let flusso;
-    try { flusso = await navigator.mediaDevices.getUserMedia({ audio: true }); } catch { statoS.textContent = 'Microphone blocked. Allow it in the browser, or upload a file.'; return; }
+    try { flusso = await navigator.mediaDevices.getUserMedia({ audio: true }); } catch { statoS.textContent = t('microfono'); return; }
     const pezzi = [];
     rec = new MediaRecorder(flusso);
     rec.ondataavailable = (e) => e.data.size && pezzi.push(e.data);
     rec.onstop = () => {
       flusso.getTracks().forEach((t) => t.stop());
-      tastoReg.textContent = 'Record';
+      tastoReg.textContent = etichettaReg;
       tastoReg.classList.remove('in-corso');
       trascrivi(new Blob(pezzi, { type: rec.mimeType }));
     };
     rec.start();
     inizio = Date.now();
-    tastoReg.textContent = 'Stop';
+    tastoReg.textContent = t('ferma');
     tastoReg.classList.add('in-corso');
     uscitaS.hidden = true;
     timer = setInterval(() => {
       const s = Math.floor((Date.now() - inizio) / 1000);
-      statoS.textContent = `Recording… ${s} s of ${SECONDI_MAX}`;
+      statoS.textContent = t('registrando', { s, max: SECONDI_MAX });
       if (s >= SECONDI_MAX) ferma();
     }, 250);
   });
@@ -108,7 +110,7 @@ if (box) {
     const testo = campo.value.trim();
     if (!testo) return;
     tastoT.disabled = true;
-    statoT.textContent = 'Speaking…';
+    statoT.textContent = t('parlo');
     lettore.hidden = true;
     try {
       const d = await chiedi({ tipo: 'tts', testo, lingua: lingua.value });
@@ -117,7 +119,7 @@ if (box) {
       lettore.src = URL.createObjectURL(new Blob([byte], { type: d.tipoAudio }));
       lettore.hidden = false;
       lettore.play().catch(() => {});
-      statoT.textContent = `${d.secondi} s of speech. ${rimasteTesto(d.rimaste)}`;
+      statoT.textContent = `${t('secondiVoce', { s: d.secondi })} ${rimasteTesto(d.rimaste)}`;
       tastoT.disabled = d.rimaste <= 0;
       if (window.gtag) window.gtag('event', 'prova_audio', { tipo: 'tts' });
     } catch (err) {

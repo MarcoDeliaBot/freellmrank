@@ -1,4 +1,5 @@
 // Filtri e ordinamento del catalogo dei modelli (le schede sono già nella pagina).
+import { t } from './testi.mjs';
 const $ = (id) => document.getElementById(id);
 const griglia = $('griglia');
 const schede = [...griglia.querySelectorAll('.scheda-modello')];
@@ -19,7 +20,7 @@ function applica() {
   const ord = $('f-ord').value;
   const chiave = { punti: (s) => -Number(s.dataset.punti), data: (s) => -Date.parse(s.dataset.data || '1970-01-01'), b: (s) => Number(s.dataset.b) || 1e9 }[ord];
   schede.slice().sort((a, b) => chiave(a) - chiave(b)).forEach((s) => griglia.appendChild(s));
-  $('conta').textContent = `${n} of ${schede.length} models`;
+  $('conta').textContent = t('diModelli', { n, tot: schede.length });
   scrivi('catalogo', JSON.stringify({ q, cat, org, dim, api, ord }));
 }
 

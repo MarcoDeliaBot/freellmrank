@@ -1,4 +1,5 @@
 // Pagina /report: compila la pagina di provenienza (?from=/...) e manda la segnalazione a /api/report.
+import { t, tServer } from './testi.mjs';
 const form = document.getElementById('report-form');
 if (form) {
   const pagina = document.getElementById('report-page');
@@ -13,23 +14,23 @@ if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     tasto.disabled = true;
-    stato.textContent = 'Sending…';
+    stato.textContent = t('invio');
     const turnstile = form.querySelector('[name="cf-turnstile-response"]')?.value || '';
     try {
       const r = await fetch('/api/report', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ pagina: pagina.value.trim(), testo: testo.value.trim(), turnstile }) });
       const d = await r.json().catch(() => ({}));
       if (!r.ok) {
-        stato.textContent = d.errore || 'Something went wrong. Try again in a minute.';
+        stato.textContent = tServer(d.errore) || t('erroreGenerico');
         tasto.disabled = false;
         if (window.turnstile) window.turnstile.reset();
         return;
       }
       testo.value = '';
-      stato.textContent = 'Thank you: report received. We will check it.';
+      stato.textContent = t('grazieSegnalazione');
       if (window.gtag) window.gtag('event', 'segnalazione');
       setTimeout(() => { tasto.disabled = false; if (window.turnstile) window.turnstile.reset(); }, 3000);
     } catch {
-      stato.textContent = 'No connection. Try again.';
+      stato.textContent = t('nessunaConnessione');
       tasto.disabled = false;
     }
   });

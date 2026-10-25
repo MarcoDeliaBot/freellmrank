@@ -1,24 +1,29 @@
 // Pagina /music: generatori ufficiali caricati solo su richiesta, e il test alla cieca sulle coppie di Music Arena.
 // I voti vanno a /api/music/vote (solo coppia ed esito); il conto «d'accordo con il votante originale» resta nel browser.
 
+import { t } from './testi.mjs';
+
 // generatori: l'iframe dello Space di Hugging Face si crea solo quando il visitatore lo chiede
 for (const b of document.querySelectorAll('[data-space]')) {
+  // nome del generatore e testo del tasto come scritti nella pagina (già tradotti): servono per «Chiudi»
+  const nomeGen = b.closest('.mus-gen-voce')?.querySelector('b')?.textContent || '';
+  const apri = b.textContent;
   b.addEventListener('click', () => {
     const cornice = b.parentElement.querySelector('.mus-cornice');
     if (!cornice.firstChild) {
       const f = document.createElement('iframe');
       f.src = b.dataset.space;
-      f.title = b.textContent.replace('Open the ', '').replace(' demo here', '') + ' demo on Hugging Face';
+      f.title = t('demoSuHf', { nome: nomeGen });
       f.loading = 'lazy';
       f.allow = 'autoplay; clipboard-write';
       const attesa = document.createElement('p');
       attesa.className = 'small muted';
-      attesa.textContent = 'Loading the demo from Hugging Face, it can take 10 to 20 seconds…';
+      attesa.textContent = t('caricoDemo');
       f.addEventListener('load', () => attesa.remove());
       cornice.append(attesa, f);
     }
     cornice.hidden = !cornice.hidden;
-    b.textContent = cornice.hidden ? b.textContent.replace('Close', 'Open') : b.textContent.replace('Open', 'Close');
+    b.textContent = cornice.hidden ? apri : t('chiudiDemo', { nome: nomeGen });
   });
 }
 
@@ -42,7 +47,7 @@ if (arena && dati.coppie.length) {
 
   function mostra() {
     ora = ordine[i % ordine.length];
-    prompt.textContent = `Prompt: “${ora.p}”`;
+    prompt.textContent = t('promptMusica', { p: ora.p });
     lettori[0].src = ora.a; lettori[1].src = ora.b;
     chi.forEach((c) => { c.textContent = ''; c.className = 'mus-chi'; });
     voti.forEach((b) => { b.disabled = false; });
@@ -53,13 +58,13 @@ if (arena && dati.coppie.length) {
     const voto = b.dataset.voto;
     voti.forEach((x) => { x.disabled = true; });
     lettori.forEach((l) => l.pause());
-    [ora.sa, ora.sb].forEach((s, k) => { chi[k].textContent = `${nome(s)} · ${dati.nomi[s]?.o ? 'open weights' : 'closed'}`; chi[k].classList.add(dati.nomi[s]?.o ? 'aperto' : 'chiuso'); });
+    [ora.sa, ora.sb].forEach((s, k) => { chi[k].textContent = `${nome(s)} · ${dati.nomi[s]?.o ? t('pesiAperti') : t('chiuso')}`; chi[k].classList.add(dati.nomi[s]?.o ? 'aperto' : 'chiuso'); });
     const loro = ora.v === 'a' ? 'A' : 'B';
     conto.fatti++;
     if (voto === ora.v) conto.accordo++;
     visti.add(ora.id);
     scrivi('mus-visti', [...visti].slice(-200)); scrivi('mus-conto', conto);
-    esito.textContent = `${voto === 'pari' ? 'You called it a tie' : `You picked ${voto.toUpperCase()}`}. The original Music Arena voter picked ${loro}. You agreed ${conto.accordo} times out of ${conto.fatti}.`;
+    esito.textContent = t('esitoMusica', { tu: voto === 'pari' ? t('pari') : t('hoScelto', { v: voto.toUpperCase() }), loro, a: conto.accordo, f: conto.fatti });
     avanti.hidden = false;
     fetch('/api/music/vote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ coppia: ora.id, esito: voto }) }).catch(() => {});
     if (window.gtag) window.gtag('event', 'voto_musica');
