@@ -6,8 +6,8 @@
 name: Controllo Arena
 
 on:
-  schedule:
-    - cron: '35 */2 * * *'
+  # 25/10/2026: il controllo ogni 2 ore lo fa n8n (flusso «FreeLLMArena · controllo classifica Arena»), che ha la chiave
+  # GitHub. Questo resta come riserva da far partire a mano, se n8n è spento.
   workflow_dispatch:
 
 permissions:

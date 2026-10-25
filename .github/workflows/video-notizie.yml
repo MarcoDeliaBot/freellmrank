@@ -8,10 +8,8 @@
 name: Video notizie
 
 on:
-  # 25/10/2026: in n8n non c'è una chiave GitHub e la chiave non la crea Claude (è un segreto): parte da solo alle
-  # 10:00 e alle 19:00 ora italiana d'inverno (9 e 18 UTC; d'estate un'ora dopo). GitHub a volte ritarda di qualche minuto.
-  schedule:
-    - cron: '0 9,18 * * *'
+  # 25/10/2026: lo fa partire n8n (flusso «FreeLLMArena · video delle notizie», alle 10 e alle 19) con la credenziale
+  # «GitHub freellmrank (Actions)» creata da Marco. Niente orario qui, se no le corse partono due volte.
   workflow_dispatch:
     inputs:
       quante:
