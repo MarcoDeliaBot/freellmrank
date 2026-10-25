@@ -1,0 +1,50 @@
+# Controllo della classifica di Arena ogni 2 ore (Marco, 25/10/2026). Confronta la fonte ufficiale di Arena (dataset su
+# Hugging Face) con sito/data.json: se Arena ha pubblicato una versione nuova fa partire subito «Aggiorna dati», senza
+# aspettare le corse delle 4 e delle 16; se la classifica chat di Arena è ferma da 3 giorni apre una segnalazione
+# «salute» (una al giorno), che il flusso n8n «bozze e problemi da GitHub» manda per mail a info@.
+# Gira su GitHub perché in n8n non c'è una chiave GitHub (25/10/2026): gratis, progetto pubblico.
+name: Controllo Arena
+
+on:
+  schedule:
+    - cron: '35 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+  issues: write
+
+jobs:
+  controllo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - name: Confronta Arena con il sito
+        id: confronto
+        run: node script/controllo-arena.mjs
+      - name: Aggiorna il sito (se non sta già girando)
+        if: steps.confronto.outputs.aggiorna == 'si'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          in_corso=$(gh run list --workflow aggiorna-dati.yml -L 5 --json status -q '[.[] | select(.status != "completed")] | length')
+          if [ "$in_corso" != "0" ]; then echo "Aggiorna dati sta già girando"; exit 0; fi
+          gh workflow run aggiorna-dati.yml --ref main
+          echo "Aggiorna dati avviato"
+      - name: Segnalazione se Arena è ferma (una al giorno)
+        if: steps.confronto.outputs.avvisa == 'si'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITOLO: ${{ steps.confronto.outputs.titolo }}
+        run: |
+          oggi=$(date -u +%F)
+          if gh issue list --label salute --state all --search "Classifica Arena ferma in:title created:>=$oggi" --json number -q 'length' | grep -qv '^0$'; then echo "Segnalazione di oggi già aperta"; exit 0; fi
+          gh label create salute --color d73a4a --description "Problemi del sito" 2>/dev/null || true
+          gh issue create --label salute --title "$TITOLO" --body "La classifica chat ufficiale di Arena (https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset) non ha versioni nuove da 3 giorni o più. Il sito controlla ogni 2 ore e si aggiorna appena Arena pubblica: il ritardo è di Arena. Si chiude da sola quando non serve più: basta chiuderla a mano."
