@@ -60,8 +60,8 @@
   "nome": "Qwen3.5-4B",
   "org": "Qwen",
   "parametri": 4659865088,
-  "download": 7513368,
-  "like": 1122,
+  "download": 7430684,
+  "like": 1123,
   "tipo": "image-text-to-text",
   "creato": "2026-02-27",
   "gated": false,
@@ -75,8 +75,8 @@
   "nome": "Qwen3.5-9B",
   "org": "Qwen",
   "parametri": 9653104368,
-  "download": 6291933,
-  "like": 2237,
+  "download": 6085485,
+  "like": 2239,
   "tipo": "image-text-to-text",
   "creato": "2026-02-27",
   "gated": false,
@@ -90,7 +90,7 @@
   "nome": "NVIDIA-Nemotron-3-Nano-4B-BF16",
   "org": "nvidia",
   "parametri": 3973556832,
-  "download": 2151382,
+  "download": 1610886,
   "like": 140,
   "tipo": "text-generation",
   "creato": "2026-03-07",
@@ -133,7 +133,7 @@
   "nome": "MiniCPM5-2B",
   "org": "openbmb",
   "parametri": 2516756480,
-  "download": 1249910,
+  "download": 1234534,
   "like": 1817,
   "tipo": "text-generation",
   "creato": "2026-09-06",
@@ -176,7 +176,7 @@
   "nome": "SmolLM3-3B",
   "org": "HuggingFaceTB",
   "parametri": 3075098624,
-  "download": 723577,
+  "download": 718665,
   "like": 1070,
   "tipo": "text-generation",
   "creato": "2025-07-08",
@@ -190,7 +190,7 @@
   "nome": "granite-4.1-3b",
   "org": "ibm-granite",
   "parametri": 3402836480,
-  "download": 608869,
+  "download": 602022,
   "like": 118,
   "tipo": "text-generation",
   "creato": "2026-04-06",
@@ -204,7 +204,7 @@
   "nome": "Olmo-3-7B-Think",
   "org": "allenai",
   "parametri": 7298011136,
-  "download": 487552,
+  "download": 485730,
   "like": 110,
   "tipo": "text-generation",
   "creato": "2025-11-18",
@@ -218,28 +218,13 @@
   "nome": "Apertus-8B-Instruct-2509",
   "org": "swiss-ai",
   "parametri": 8053338176,
-  "download": 420690,
+  "download": 420291,
   "like": 499,
   "tipo": "text-generation",
   "creato": "2025-08-13",
   "gated": false,
   "cat": [
    "chat"
-  ]
- },
- {
-  "repo": "swiss-ai/Apertus-v1.5-8B",
-  "nome": "Apertus-v1.5-8B",
-  "org": "swiss-ai",
-  "parametri": 8903547555,
-  "download": 361447,
-  "like": 161,
-  "tipo": "image-text-to-text",
-  "creato": "2026-07-24",
-  "gated": true,
-  "cat": [
-   "chat",
-   "vision"
   ]
  },
  {
@@ -285,17 +270,18 @@
   ]
  },
  {
-  "repo": "openbmb/MiniCPM5-1B",
-  "nome": "MiniCPM5-1B",
-  "org": "openbmb",
-  "parametri": 1080632832,
-  "download": 332679,
-  "like": 1174,
-  "tipo": "text-generation",
-  "creato": "2026-05-21",
-  "gated": false,
+  "repo": "swiss-ai/Apertus-v1.5-8B",
+  "nome": "Apertus-v1.5-8B",
+  "org": "swiss-ai",
+  "parametri": 8903547555,
+  "download": 331302,
+  "like": 161,
+  "tipo": "image-text-to-text",
+  "creato": "2026-07-24",
+  "gated": true,
   "cat": [
-   "chat"
+   "chat",
+   "vision"
   ]
  },
  {
@@ -314,12 +300,26 @@
   ]
  },
  {
+  "repo": "openbmb/MiniCPM5-1B",
+  "nome": "MiniCPM5-1B",
+  "org": "openbmb",
+  "parametri": 1080632832,
+  "download": 325052,
+  "like": 1174,
+  "tipo": "text-generation",
+  "creato": "2026-05-21",
+  "gated": false,
+  "cat": [
+   "chat"
+  ]
+ },
+ {
   "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
   "nome": "DeepSeek-R1-Distill-Qwen-7B",
   "org": "deepseek-ai",
   "parametri": 7615616512,
   "download": 309108,
-  "like": 942,
+  "like": 943,
   "tipo": "text-generation",
   "creato": "2025-01-20",
   "gated": false,
@@ -346,7 +346,7 @@
   "nome": "Olmo-3-7B-Instruct",
   "org": "allenai",
   "parametri": 7298011136,
-  "download": 279452,
+  "download": 262454,
   "like": 159,
   "tipo": "text-generation",
   "creato": "2025-11-19",
@@ -360,7 +360,7 @@
   "nome": "NVIDIA-Nemotron-Nano-9B-v2",
   "org": "nvidia",
   "parametri": 8888227328,
-  "download": 213137,
+  "download": 208094,
   "like": 529,
   "tipo": "text-generation",
   "creato": "2025-08-12",
@@ -374,7 +374,7 @@
   "nome": "MiniCPM-V-4.6",
   "org": "openbmb",
   "parametri": 1300428016,
-  "download": 174845,
+  "download": 170920,
   "like": 1245,
   "tipo": "image-text-to-text",
   "creato": "2026-04-13",
@@ -404,10 +404,25 @@
   "nome": "granite-vision-4.1-4b",
   "org": "ibm-granite",
   "parametri": 3997203904,
-  "download": 123871,
+  "download": 123417,
   "like": 112,
   "tipo": "image-text-to-text",
   "creato": "2026-04-16",
+  "gated": false,
+  "cat": [
+   "chat",
+   "vision"
+  ]
+ },
+ {
+  "repo": "openbmb/MiniCPM-V-4.7-1B",
+  "nome": "MiniCPM-V-4.7-1B",
+  "org": "openbmb",
+  "parametri": 1554476272,
+  "download": 116673,
+  "like": 405,
+  "tipo": "image-text-to-text",
+  "creato": "2026-10-06",
   "gated": false,
   "cat": [
    "chat",
@@ -419,7 +434,7 @@
   "nome": "LFM2.5-1.2B-Instruct",
   "org": "LiquidAI",
   "parametri": 1170340608,
-  "download": 112029,
+  "download": 113772,
   "like": 684,
   "tipo": "text-generation",
   "creato": "2026-01-06",
@@ -443,26 +458,11 @@
   ]
  },
  {
-  "repo": "openbmb/MiniCPM-V-4.7-1B",
-  "nome": "MiniCPM-V-4.7-1B",
-  "org": "openbmb",
-  "parametri": 1554476272,
-  "download": 104433,
-  "like": 405,
-  "tipo": "image-text-to-text",
-  "creato": "2026-10-06",
-  "gated": false,
-  "cat": [
-   "chat",
-   "vision"
-  ]
- },
- {
   "repo": "LiquidAI/LFM2.5-2.6B",
   "nome": "LFM2.5-2.6B",
   "org": "LiquidAI",
   "parametri": 2697198592,
-  "download": 99777,
+  "download": 97589,
   "like": 853,
   "tipo": "text-generation",
   "creato": "2026-07-28",
@@ -476,7 +476,7 @@
   "nome": "granite-4.1-8b",
   "org": "ibm-granite",
   "parametri": 8791592960,
-  "download": 93772,
+  "download": 89098,
   "like": 256,
   "tipo": "text-generation",
   "creato": "2026-04-06",
@@ -490,25 +490,10 @@
   "nome": "GLM-4.1V-9B-Thinking",
   "org": "zai-org",
   "parametri": 10292777472,
-  "download": 88657,
+  "download": 83775,
   "like": 791,
   "tipo": "image-text-to-text",
   "creato": "2025-06-28",
-  "gated": false,
-  "cat": [
-   "chat",
-   "vision"
-  ]
- },
- {
-  "repo": "openbmb/MiniCPM-V-4_5",
-  "nome": "MiniCPM-V-4_5",
-  "org": "openbmb",
-  "parametri": 8695895280,
-  "download": 82880,
-  "like": 1110,
-  "tipo": "image-text-to-text",
-  "creato": "2025-08-24",
   "gated": false,
   "cat": [
    "chat",
@@ -546,14 +531,14 @@
   ]
  },
  {
-  "repo": "zai-org/GLM-4.6V-Flash",
-  "nome": "GLM-4.6V-Flash",
-  "org": "zai-org",
-  "parametri": 10292777472,
-  "download": 80952,
-  "like": 631,
+  "repo": "openbmb/MiniCPM-V-4_5",
+  "nome": "MiniCPM-V-4_5",
+  "org": "openbmb",
+  "parametri": 8695895280,
+  "download": 80179,
+  "like": 1110,
   "tipo": "image-text-to-text",
-  "creato": "2025-12-07",
+  "creato": "2025-08-24",
   "gated": false,
   "cat": [
    "chat",
@@ -565,13 +550,28 @@
   "nome": "granite-4.2-8b",
   "org": "ibm-granite",
   "parametri": 8791592960,
-  "download": 80186,
+  "download": 78274,
   "like": 108,
   "tipo": "text-generation",
   "creato": "2026-08-07",
   "gated": false,
   "cat": [
    "chat"
+  ]
+ },
+ {
+  "repo": "zai-org/GLM-4.6V-Flash",
+  "nome": "GLM-4.6V-Flash",
+  "org": "zai-org",
+  "parametri": 10292777472,
+  "download": 77323,
+  "like": 631,
+  "tipo": "image-text-to-text",
+  "creato": "2025-12-07",
+  "gated": false,
+  "cat": [
+   "chat",
+   "vision"
   ]
  },
  {
@@ -622,7 +622,7 @@
   "nome": "MiniCPM-V-4.6-Thinking",
   "org": "openbmb",
   "parametri": 1300428016,
-  "download": 56915,
+  "download": 56341,
   "like": 33,
   "tipo": "image-text-to-text",
   "creato": "2026-05-08",
@@ -647,21 +647,6 @@
   ]
  },
  {
-  "repo": "allenai/Molmo2-8B",
-  "nome": "Molmo2-8B",
-  "org": "allenai",
-  "parametri": 8661703120,
-  "download": 38645,
-  "like": 198,
-  "tipo": "image-text-to-text",
-  "creato": "2025-12-14",
-  "gated": false,
-  "cat": [
-   "chat",
-   "vision"
-  ]
- },
- {
   "repo": "microsoft/Phi-4-mini-reasoning",
   "nome": "Phi-4-mini-reasoning",
   "org": "microsoft",
@@ -676,11 +661,26 @@
   ]
  },
  {
+  "repo": "allenai/Molmo2-8B",
+  "nome": "Molmo2-8B",
+  "org": "allenai",
+  "parametri": 8661703120,
+  "download": 37492,
+  "like": 198,
+  "tipo": "image-text-to-text",
+  "creato": "2025-12-14",
+  "gated": false,
+  "cat": [
+   "chat",
+   "vision"
+  ]
+ },
+ {
   "repo": "CohereLabs/North-Micro-Vision-Instruct",
   "nome": "North-Micro-Vision-Instruct",
   "org": "CohereLabs",
   "parametri": 2484847856,
-  "download": 36591,
+  "download": 35947,
   "like": 154,
   "tipo": "image-text-to-text",
   "creato": "2026-08-10",
@@ -709,38 +709,10 @@
   "nome": "LFM2.5-8B-A1B",
   "org": "LiquidAI",
   "parametri": 8467856832,
-  "download": 32027,
+  "download": 30783,
   "like": 798,
   "tipo": "text-generation",
   "creato": "2026-05-28",
-  "gated": false,
-  "cat": [
-   "chat"
-  ]
- },
- {
-  "repo": "microsoft/Phi-tiny-MoE-instruct",
-  "nome": "Phi-tiny-MoE-instruct",
-  "org": "microsoft",
-  "parametri": 3755220288,
-  "download": 30990,
-  "like": 48,
-  "tipo": "text-generation",
-  "creato": "2025-06-23",
-  "gated": false,
-  "cat": [
-   "chat"
-  ]
- },
- {
-  "repo": "LiquidAI/LFM2-1.2B",
-  "nome": "LFM2-1.2B",
-  "org": "LiquidAI",
-  "parametri": 1170340608,
-  "download": 30830,
-  "like": 370,
-  "tipo": "text-generation",
-  "creato": "2025-07-10",
   "gated": false,
   "cat": [
    "chat"
@@ -761,6 +733,20 @@
   ]
  },
  {
+  "repo": "microsoft/Phi-tiny-MoE-instruct",
+  "nome": "Phi-tiny-MoE-instruct",
+  "org": "microsoft",
+  "parametri": 3755220288,
+  "download": 30420,
+  "like": 48,
+  "tipo": "text-generation",
+  "creato": "2025-06-23",
+  "gated": false,
+  "cat": [
+   "chat"
+  ]
+ },
+ {
   "repo": "microsoft/Phi-4-reasoning",
   "nome": "Phi-4-reasoning",
   "org": "microsoft",
@@ -775,11 +761,25 @@
   ]
  },
  {
+  "repo": "LiquidAI/LFM2-1.2B",
+  "nome": "LFM2-1.2B",
+  "org": "LiquidAI",
+  "parametri": 1170340608,
+  "download": 28852,
+  "like": 370,
+  "tipo": "text-generation",
+  "creato": "2025-07-10",
+  "gated": false,
+  "cat": [
+   "chat"
+  ]
+ },
+ {
   "repo": "LiquidAI/d1-3B",
   "nome": "d1-3B",
   "org": "LiquidAI",
   "parametri": 3123483888,
-  "download": 26547,
+  "download": 27011,
   "like": 478,
   "tipo": "image-text-to-text",
   "creato": "2026-10-05",
@@ -790,14 +790,14 @@
   ]
  },
  {
-  "repo": "LiquidAI/LFM2.5-VL-1.6B",
-  "nome": "LFM2.5-VL-1.6B",
+  "repo": "LiquidAI/LFM2.5-VL-3B",
+  "nome": "LFM2.5-VL-3B",
   "org": "LiquidAI",
-  "parametri": 1596625904,
-  "download": 25881,
-  "like": 332,
+  "parametri": 3123483888,
+  "download": 25542,
+  "like": 228,
   "tipo": "image-text-to-text",
-  "creato": "2026-01-05",
+  "creato": "2026-08-11",
   "gated": false,
   "cat": [
    "chat",
@@ -809,7 +809,7 @@
   "nome": "Molmo2-ER",
   "org": "allenai",
   "parametri": 4850869200,
-  "download": 24151,
+  "download": 24273,
   "like": 17,
   "tipo": "image-text-to-text",
   "creato": "2026-05-04",
@@ -824,7 +824,7 @@
   "nome": "MiMo-V2.6-Distill-Qwen-9B",
   "org": "XiaomiMiMo",
   "parametri": 9409813744,
-  "download": 22974,
+  "download": 22460,
   "like": 671,
   "tipo": "image-text-to-text",
   "creato": "2026-09-21",
@@ -832,20 +832,6 @@
   "cat": [
    "chat",
    "vision"
-  ]
- },
- {
-  "repo": "microsoft/Phi-mini-MoE-instruct",
-  "nome": "Phi-mini-MoE-instruct",
-  "org": "microsoft",
-  "parametri": 7647632704,
-  "download": 15200,
-  "like": 49,
-  "tipo": "text-generation",
-  "creato": "2025-06-23",
-  "gated": false,
-  "cat": [
-   "chat"
   ]
  },
  {
@@ -867,7 +853,7 @@
   "nome": "EuroLLM-9B-Instruct-2512",
   "org": "utter-project",
   "parametri": 9152319488,
-  "download": 13858,
+  "download": 13420,
   "like": 16,
   "tipo": "text-generation",
   "creato": "2026-01-26",
@@ -881,7 +867,7 @@
   "nome": "Ling-3.0-tiny",
   "org": "inclusionAI",
   "parametri": 7893392800,
-  "download": 11853,
+  "download": 12274,
   "like": 551,
   "tipo": "text-generation",
   "creato": "2026-08-10",
@@ -895,7 +881,7 @@
   "nome": "Hunyuan-7B-Instruct",
   "org": "tencent",
   "parametri": 7504568320,
-  "download": 11709,
+  "download": 11516,
   "like": 90,
   "tipo": "text-generation",
   "creato": "2025-07-30",
@@ -909,7 +895,7 @@
   "nome": "Youtu-LLM-2B",
   "org": "tencent",
   "parametri": 1961560064,
-  "download": 10319,
+  "download": 10111,
   "like": 239,
   "tipo": "text-generation",
   "creato": "2025-12-31",
@@ -923,7 +909,7 @@
   "nome": "Step3-VL-10B",
   "org": "stepfun-ai",
   "parametri": 10171750144,
-  "download": 10205,
+  "download": 9708,
   "like": 419,
   "tipo": "image-text-to-text",
   "creato": "2026-01-13",
@@ -938,7 +924,7 @@
   "nome": "tiny-aya-global",
   "org": "CohereLabs",
   "parametri": 3349227520,
-  "download": 8282,
+  "download": 7948,
   "like": 179,
   "tipo": "text-generation",
   "creato": "2026-02-13",
@@ -952,7 +938,7 @@
   "nome": "tiny-aya-earth",
   "org": "CohereLabs",
   "parametri": 3349227520,
-  "download": 7868,
+  "download": 7833,
   "like": 29,
   "tipo": "text-generation",
   "creato": "2026-02-13",
@@ -966,7 +952,7 @@
   "nome": "Hunyuan-1.8B-Instruct",
   "org": "tencent",
   "parametri": 1791080448,
-  "download": 4005,
+  "download": 4163,
   "like": 604,
   "tipo": "text-generation",
   "creato": "2025-07-30",

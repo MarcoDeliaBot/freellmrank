@@ -28,7 +28,7 @@
    "da": "Image",
    "licenza": "mit",
    "demo": "microsoft/TRELLIS.2",
-   "download": 2408591,
+   "download": 2446131,
    "like": 1395,
    "creato": "2025-12-01",
    "b": null
@@ -89,7 +89,7 @@
    "licenza": "stability",
    "demo": "stabilityai/stable-fast-3d",
    "download": 58220,
-   "like": 1337,
+   "like": 1338,
    "creato": "2024-07-17",
    "b": 1
   },
@@ -173,7 +173,7 @@
    "licenza": "stability",
    "demo": "stabilityai/stable-point-aware-3d",
    "download": 6553,
-   "like": 430,
+   "like": 431,
    "creato": "2024-12-28",
    "b": 2
   }

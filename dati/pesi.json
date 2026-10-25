@@ -758,5 +758,10 @@
   "repo": "MiniMaxAI/MiniMax-M3.1-Flash",
   "parametri": 220490854016,
   "fonte": "hf-auto"
+ },
+ "Qwen2.5-72B-Instruct": {
+  "repo": "Qwen/Qwen2.5-72B-Instruct",
+  "parametri": 72706203648,
+  "fonte": "hf-auto"
  }
 }
