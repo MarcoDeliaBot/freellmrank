@@ -1,0 +1,26 @@
+{
+ "nome": "2026-10-26-t3dotgg-releases-tstack-a-set-of-claude-code-and-codex-agent-skills",
+ "titolo": "t3dotgg releases tstack, a set of Claude Code and Codex agent skills",
+ "descr": "The open‑source tstack repo offers reusable skills for Claude Code and Codex, enabling automated PR handling and model‑based reviews.",
+ "tema": "Software",
+ "paragrafi": [
+  "tstack provides a collection of agent skills that work with Claude Code and Codex, such as full‑send, full‑stop, council and babysit‑pr.",
+  "Installation involves cloning the repo and copying the skills folder to the appropriate Claude or Codex directory, with optional requirements like an authenticated GitHub CLI and Python 3 for babysit‑pr.",
+  "The project is released under the MIT license, has received 919 stars, 12 watchers and 33 forks."
+ ],
+ "perche": [
+  "Developers can automate routine pull‑request tasks without writing custom scripts, saving time and reducing errors. The free, open‑source nature of tstack aligns with the growing demand for accessible AI tooling, complementing free chat models such as Kimi K3 and GLM‑5.3 that dominate the FreeLLMArena rankings."
+ ],
+ "pubblicato": "2026-10-26",
+ "titoloFonte": "t3dotgg/tstack: The agent skills I use every day. Works with Claude Code and Codex.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/t3dotgg/tstack",
+   "titolo": "t3dotgg/tstack: The agent skills I use every day. Works with Claude Code and Codex.",
+   "ufficiale": false,
+   "data": "2026-10-24"
+  }
+ ],
+ "frasiTolte": 2
+}

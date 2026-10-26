@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-26-anthropic-launches-claude-haiku-5-5-sonnet-5-5-and-opus-5-5-upgrades",
+ "titolo": "Anthropic launches Claude Haiku 5.5, Sonnet 5.5 and Opus 5.5 upgrades",
+ "descr": "Anthropic unveiled faster, cheaper Claude Haiku, Sonnet and Opus 5.5 models aimed at high‑volume and coding tasks.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "On Oct 7, 2026 Anthropic announced Claude Haiku 5.5, describing it as the company’s fastest small model for summarization, subagents and browser use.",
+  "Two weeks earlier, on Sep 28, 2026 the firm released Claude Sonnet 5.5, noting it runs more than 30% faster and costs up to 30% less than Claude Sonnet 5.",
+  "On Sep 22, 2026 Anthropic introduced Claude Opus 5.5, claiming a 40% cost reduction compared with Opus 5 while leading in agentic coding and knowledge work.",
+  "These releases follow earlier announcements of Claude Mythos, Fable 5.1 and a Life Sciences Verification Program that provide broader access to advanced models for scientific tasks."
+ ],
+ "perche": [
+  "The new Claude 5.5 models promise lower operating costs and higher speed, which can benefit enterprises and developers seeking efficient AI services. Users of free or locally hosted models may see increased pressure to adopt paid, cloud‑based solutions that offer these performance gains."
+ ],
+ "pubblicato": "2026-10-26",
+ "titoloFonte": "Announcements",
+ "fonti": [
+  {
+   "nome": "Anthropic",
+   "url": "https://www.anthropic.com/news/announcements",
+   "titolo": "Announcements",
+   "ufficiale": true,
+   "data": "2026-10-26"
+  }
+ ],
+ "frasiTolte": 1
+}

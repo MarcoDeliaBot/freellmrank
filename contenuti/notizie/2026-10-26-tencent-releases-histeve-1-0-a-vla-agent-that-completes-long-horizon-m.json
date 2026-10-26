@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-26-tencent-releases-histeve-1-0-a-vla-agent-that-completes-long-horizon-m",
+ "titolo": "Tencent releases HiSTEVE 1.0, a VLA agent that completes long‑horizon Minecraft tasks via native controls",
+ "descr": "HiSTEVE 1.0 uses a hierarchical Vision‑Language‑Action framework to plan and act in Minecraft, achieving 85% on MineStudio Bench and 37.4% on OpenHA.",
+ "tema": "Research",
+ "paragrafi": [
+  "Tencent researchers announced HiSTEVE 1.0, a Vision‑Language‑Action (VLA) agent designed for open‑world games like Minecraft.",
+  "The agent operates solely through visual observations and standard keyboard‑and‑mouse inputs, avoiding any privileged game state or API.",
+  "A hierarchical orchestration framework combines capability‑aware planning, structured memory, and a task‑completion detector to manage long‑horizon execution.",
+  "HiSTEVE reaches state‑of‑the‑art atomic‑task results, scoring 85.0% on the MineStudio Bench and an average 37.4% success rate on the OpenHA benchmark.",
+  "The paper, posted on arXiv (2610.31162) on October 22, 2026, includes a three‑stage training pipeline that mixes world‑knowledge injection, imitation learning, and reinforcement learning."
+ ],
+ "perche": [
+  "For AI practitioners, HiSTEVE demonstrates that fully native‑interface agents can handle complex, multi‑step goals without external APIs, opening pathways for more human‑like game AI. The results also highlight the potential of VLA models for other visual‑interactive tasks, encouraging development of free or locally run agents that rely only on visual input and standard controls."
+ ],
+ "pubblicato": "2026-10-26",
+ "titoloFonte": "Tencent paper: HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.31162",
+   "titolo": "Tencent paper: HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games",
+   "ufficiale": true,
+   "data": "2026-10-21"
+  }
+ ],
+ "frasiTolte": 0
+}
