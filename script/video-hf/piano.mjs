@@ -7,7 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { STAMPI } from './stampi/index.mjs';
-import { chiediModello } from '../bozze.mjs';
+import { chiediModello, ultimoScrittore } from '../bozze.mjs';
 import { numeri } from '../video-post.mjs';
 import { nomiDi } from '../notizie.mjs';
 import { titoloCorto } from '../brag/titoli-yt.mjs';
@@ -123,7 +123,7 @@ export async function pianoPer(n) {
   let migliore = null;
   const domanda = [
       { role: 'system', content: `You plan a 60-90 second YouTube ${n.tipo === 'guida' ? 'guide' : 'news'} video for FreeLLMArena, built from ready-made animated scenes ("stampi").
-Use ONLY facts, numbers and names from ARTICLE. Never add a number, name, date or claim that is not in ARTICLE. Performance claims are the company's own: say "X reports" or "according to X". No hype words, no emojis, no questions to the viewer.
+Use ONLY facts, numbers and names from ARTICLE. Never add a number, name, date or claim that is not in ARTICLE. Write ranks, names and places exactly as ARTICLE does: "first", not "#1" or "1st"; "South Korea", not "SK"; never shorten a name. Performance claims are the company's own: say "X reports" or "according to X". No hype words, no emojis, no questions to the viewer.
 Available stampi:
 ${elenco}
 Rules:
@@ -136,8 +136,9 @@ Rules:
 Return JSON: {"scene": [{"stampo": "...", "etichetta": "...", "voce": "...", "dati": {...}}]}` },
       { role: 'user', content: `ARTICLE:\nTitle: ${semplice(n.titolo)}\nDate: ${giorno(n.pubblicato)}\nSummary: ${semplice(n.descr)}\n${(n.paragrafi || []).map((p, i) => `Paragraph ${i + 1}: ${semplice(p)}`).join('\n')}\nWhy it matters: ${(n.perche || []).map(semplice).join(' ')}\nSources: ${(n.fonti || []).map((f) => f.nome).join(', ')}` },
   ];
-  // due tentativi: il secondo riceve i problemi del primo
-  for (let tentativo = 1; tentativo <= 3 && !migliore?.ok; tentativo++) {
+  // ogni tentativo riceve i problemi del precedente. 26/10/2026: 5 tentativi invece di 3, ora che c'è Groq come riserva
+  // (con il solo tetto di Workers AI i tentativi erano pochi e i piani finivano scartati)
+  for (let tentativo = 1; tentativo <= 5 && !migliore?.ok; tentativo++) {
     try {
       const grezzo = await chiediModello(domanda, { json: true, max: 1800, scopo: 'video' });
       grezzi.push(grezzo);
@@ -146,14 +147,14 @@ Return JSON: {"scene": [{"stampo": "...", "etichetta": "...", "voce": "...", "da
       if (!migliore || (c.ok && !migliore.ok) || c.totale > migliore.totale) migliore = c;
       if (!c.ok) domanda.push({ role: 'assistant', content: JSON.stringify(grezzo) }, { role: 'user', content: `Problems found by the checker:\n- ${c.problemi.join('\n- ')}\nFix them and return the whole JSON again. Remember: 4 to 6 scenes, 110 to 190 words in total, respect every max length and item count, only facts from ARTICLE.` });
     } catch (e) {
-      problemi.push(`tentativo ${tentativo}: Workers AI non ha risposto (${e.message})`);
+      problemi.push(`tentativo ${tentativo}: nessun modello ha risposto (${e.message})`);
       // quota finita o chiave sbagliata: inutile riprovare; JSON rotto: si riprova
       if (/\/api\/scrivi 4\d\d/.test(e.message)) break;
     }
   }
   // un piano quasi buono (almeno 3 scene e 45 parole, tutte controllate) è meglio della riserva, che mostra solo i titoli
   const ok = !!migliore?.ok || (migliore?.scene.length >= 3 && migliore.totale >= 45);
-  if (ok && !migliore.ok) problemi.push(`piano di Workers AI quasi buono usato lo stesso (${migliore.scene.length} scene, ${migliore.totale} parole)`);
+  if (ok && !migliore.ok) problemi.push(`piano del modello quasi buono usato lo stesso (${migliore.scene.length} scene, ${migliore.totale} parole)`);
   const scene = ok ? migliore.scene : pianoDiRiserva(n);
   const copertina = Math.max(0, scene.findIndex((s) => s.stampo === 'numero' || s.stampo === 'numeri'));
   return { notizia: n.nome, riserva: !ok, problemi, copertina, scene: [...scene, { stampo: 'chiusura', etichetta: 'FreeLLMArena' }], grezzi };
@@ -164,5 +165,5 @@ if (process.argv[1] && import.meta.url.endsWith(path.basename(process.argv[1])))
   const piano = await pianoPer(JSON.parse(fs.readFileSync(fileNotizia, 'utf8')));
   fs.writeFileSync(out, JSON.stringify(piano, null, 1));
   if (piano.problemi.length) console.log(`Problemi del piano:\n- ${piano.problemi.join('\n- ')}`);
-  console.log(`Piano ${piano.riserva ? 'DI RISERVA' : 'di Workers AI'}: ${piano.scene.map((s) => s.stampo).join(' → ')}`);
+  console.log(`Piano ${piano.riserva ? 'DI RISERVA' : `scritto da ${ultimoScrittore || "?"}`}: ${piano.scene.map((s) => s.stampo).join(' → ')}`);
 }

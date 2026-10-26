@@ -54,7 +54,7 @@ const regge = (t) => [...numeri(t)].every((x) => ammessi.has(x)) && nomiDi(`X ${
 let ai = {};
 try {
   ai = await chiediModello([
-    { role: 'system', content: `You prepare on-screen text for a YouTube news video by FreeLLMArena. Use ONLY facts and names from ARTICLE. Never add a number, name, date or claim that is not in ARTICLE. No hype words, no emojis. Use sentence case: capital letter only for the first word and for names.
+    { role: 'system', content: `You prepare on-screen text for a YouTube news video by FreeLLMArena. Use ONLY facts and names from ARTICLE. Never add a number, name, date or claim that is not in ARTICLE. Write ranks, names and places exactly as ARTICLE does: "first", not "#1" or "1st"; "South Korea", not "SK"; never shorten a name. No hype words, no emojis. Use sentence case: capital letter only for the first word and for names.
 Return JSON: {"schermo": "headline for the screen, max 8 words", "sezioni": [{"titolo": "3 to 6 words", "punti": ["2 or 3 bullets, max 9 words each"]}], "corto": ["3 short spoken sentences for a 30-second vertical Short, max 20 words each: the news, the key fact, why it matters"], ${RICHIESTA_YT}}.
 Write exactly one item in "sezioni" for each numbered paragraph, in the same order.` },
     { role: 'user', content: `ARTICLE:\nTitle: ${n.titolo}\nSummary: ${n.descr}\n${n.paragrafi.map((p, i) => `Paragraph ${i + 1}: ${p}`).join('\n')}\nWhy it matters: ${(n.perche || []).join(' ')}` },
