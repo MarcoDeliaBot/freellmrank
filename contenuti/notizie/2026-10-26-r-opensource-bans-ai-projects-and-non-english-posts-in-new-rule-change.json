@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-26-r-opensource-bans-ai-projects-and-non-english-posts-in-new-rule-change",
+ "titolo": "r/opensource bans AI projects and non‑English posts in new rule change",
+ "descr": "The open‑source subreddit now forbids AI‑related submissions and blocks non‑English speakers, sparking community backlash.",
+ "tema": "Policy",
+ "paragrafi": [
+  "Moderators of r/opensource announced new submission rules that prohibit any project that uses, is created by, or is intended for AI.",
+  "Non‑English speakers are effectively barred, with moderators stating they cannot verify AI‑generated translations without English fluency.",
+  "The changes have triggered heated discussion, including the creation of a rival subreddit, r/trueopensource, and concerns that existing code like the Linux kernel, which contains AI‑generated sections, could be affected.",
+  "Moderator Wolvereness noted there may be selective enforcement for features such as automatic captioning, but many users view the rules as overly broad."
+ ],
+ "perche": [
+  "These rules could restrict the visibility of AI‑enhanced open‑source tools, limiting community contributions and discovery. For users seeking free or locally run models, the ban may reduce access to projects that incorporate AI features, pushing them toward alternative platforms that remain inclusive."
+ ],
+ "pubblicato": "2026-10-26",
+ "titoloFonte": "r/opensource just banned AI, non-English speakers, and more",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1018217/reddit-opensource-ai-ban",
+   "titolo": "r/opensource just banned AI, non-English speakers, and more",
+   "ufficiale": false,
+   "data": "2026-10-25"
+  }
+ ],
+ "frasiTolte": 1
+}

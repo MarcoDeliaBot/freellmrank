@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-26-beautifulrust-plugin-adds-idiomatic-rust-skills-to-claude-code-and-oth",
+ "titolo": "BeautifulRust plugin adds idiomatic Rust skills to Claude Code and other agents",
+ "descr": "A new GitHub repo provides three Agent Skills that guide AI coding assistants toward robust, idiomatic Rust.",
+ "tema": "Guides",
+ "paragrafi": [
+  "The repository morganlinton/BeautifulRust offers a Claude Code plugin that teaches agents to write, review, and port Rust code following best‑practice guidelines.",
+  "It includes three skill folders—rust‑best‑practices, rust‑review, and rust‑port—each triggered automatically when an agent edits Rust files.",
+  "The skills draw from five sources, such as the Google Rust Style Guide and Rust API Guidelines, and resolve conflicts by selecting a preferred rule.",
+  "Installation works via a single command for many agents, including Claude Code, OpenAI Codex, GitHub Copilot, Cursor, and Gemini CLI, using npm, the Claude plugin system, or GitHub CLI.",
+  "Testing showed the skill‑enabled agent passed 29 of 30 checks on a library, CLI, and refactoring task, compared with 24 of 30 without the skill."
+ ],
+ "perche": [
+  "Developers using AI assistants can rely on the plugin to produce safer, more maintainable Rust code, reducing manual review effort. For users of free or locally run models, the skill set can be added to compatible agents without extra cost, improving code quality without needing paid services."
+ ],
+ "pubblicato": "2026-10-26",
+ "titoloFonte": "morganlinton/BeautifulRust: A Claude Code plugin that teaches Claude to write idiomatic, robust Rust",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/morganlinton/BeautifulRust",
+   "titolo": "morganlinton/BeautifulRust: A Claude Code plugin that teaches Claude to write idiomatic, robust Rust",
+   "ufficiale": false,
+   "data": "2026-10-23"
+  }
+ ],
+ "frasiTolte": 0
+}
