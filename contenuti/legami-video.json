@@ -58,5 +58,9 @@
  "news-2026-10-25-nvidia-open-sources-flora-a-video-labeling-engine-125-cheaper-than-gpt": {
   "lungo": "notizia-nvidia-open-sources-flora-a-video-labeling-engine-125-ch",
   "breve": "breve-nvidia-open-sources-flora-a-video-labeling-engine-125-ch"
+ },
+ "minimax-h3-open-video-model-guide": {
+  "lungo": "guida-minimax-h3-open-video-model",
+  "breve": "breve-guida-minimax-h3-open-video-model"
  }
 }
