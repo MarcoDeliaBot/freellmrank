@@ -115,6 +115,8 @@ jobs:
               bash script/video-hf/registra.sh "$v"
               d="video/brag/brag-output-$v"
               cp "$d/brag.mp4" "$d/$nome.mp4"; cp "$d/brag.jpg" "$d/$nome.jpg"; cp "$d/brag.srt" "$d/$nome.srt"; cp "video/brag/info-$v.json" "$d/$nome.json"
+              # 26/10/2026: capitoli di YouTube nella descrizione, dai tempi veri delle scene (solo video orizzontali)
+              node script/brag/capitoli-yt.mjs "$d/$nome.json" "$d/tempi.json" || true
               # lo Short della settimana rimanda al video lungo della stessa settimana (si fanno insieme la domenica)
               if [ "$tipo" = "settimana" ] && echo "$tipi" | grep -qw lungo; then python script/brag/collega.py "$d/$nome.json" "lungo-${nome#settimana-}"; fi
               titolo=$(python -c "import json; print(json.load(open('$d/$nome.json', encoding='utf-8'))['titolo'])")
@@ -139,6 +141,7 @@ jobs:
             bash script/video-hf/registra.sh modello
             d="video/brag/brag-output-modello"
             cp "$d/brag.mp4" "$d/$nome.mp4"; cp "$d/brag.jpg" "$d/$nome.jpg"; cp "$d/brag.srt" "$d/$nome.srt"; cp video/brag/info-modello.json "$d/$nome.json"
+            node script/brag/capitoli-yt.mjs "$d/$nome.json" "$d/tempi.json" || true
             titolo=$(python -c "import json; print(json.load(open('$d/$nome.json', encoding='utf-8'))['titolo'])")
             gh release create "video-$nome" "$d/$nome.mp4" "$d/$nome.jpg" "$d/$nome.srt" "$d/$nome.json" --title "$titolo" --notes-file "$d/share-copy.txt" --latest=false
             echo "Pubblicato: $nome"

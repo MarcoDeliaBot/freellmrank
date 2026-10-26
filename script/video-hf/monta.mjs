@@ -92,7 +92,8 @@ export async function monta(piano, dir) {
     console.log(musica ? m.stdout.trim() : `Musica non creata (video senza musica): ${(m.stderr || m.error?.message || '').slice(-400)}`);
   }
   fs.writeFileSync(d('index.html'), indice(scene, totale, F, musica));
-  fs.writeFileSync(d('tempi.json'), JSON.stringify({ totale, scene: scene.map(({ n, stampo, inizio: a, durata, testo }) => ({ n, stampo, inizio: a, durata, testo })) }, null, 1));
+  // etichetta, capitolo e titolo della scena: per i capitoli di YouTube nella descrizione (26/10/2026, script/brag/capitoli-yt.mjs)
+  fs.writeFileSync(d('tempi.json'), JSON.stringify({ totale, scene: scene.map(({ n, stampo, inizio: a, durata, testo, etichetta, capitolo, dati }) => ({ n, stampo, inizio: a, durata, testo, etichetta, capitolo, titolo: dati?.titolo })) }, null, 1));
 
   // 4. controllo e montaggio
   const controllo = hf(['lint'], { cwd: dir });

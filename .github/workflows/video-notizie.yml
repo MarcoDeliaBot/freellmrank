@@ -131,6 +131,8 @@ jobs:
             d="video/esito/$nome"; mkdir -p "$d"
             cp "video/hf/$nome/video.mp4" "$d/$nome.mp4"; cp "video/hf/$nome/copertina.jpg" "$d/$nome.jpg"; cp "video/hf/$nome/video.srt" "$d/$nome.srt"
             cp video/brag/info-notizia.json "$d/$nome.json"; cp "video/hf/piano-$nome.json" "$d/piano.json"
+            # 26/10/2026: capitoli di YouTube nella descrizione, dai tempi veri delle scene (script/brag/capitoli-yt.mjs)
+            node script/brag/capitoli-yt.mjs "$d/$nome.json" "video/hf/$nome/tempi.json" || true
             node -p "require('./video/brag/info-notizia.json').condividi" > "$d/share-copy.txt"
             fatti=$((fatti + 1))
             # lo Short collegato, verticale a stampi dal piano del video lungo (script/video-hf/breve.mjs); se non riesce,

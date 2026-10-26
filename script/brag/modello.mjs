@@ -13,6 +13,7 @@ import { simula, daScheda } from '../../sorgente/calc.mjs';
 import { MOTORE, STILE_ORIZZONTALE } from './motore.mjs';
 import { chiediModello } from '../bozze.mjs';
 import { numeri } from '../video-post.mjs';
+import { titoloYT } from './controllo-yt.mjs';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
 const RADICE = path.join(QUI, '..', '..');
@@ -111,17 +112,18 @@ if (tolte.length) console.log(`Controllo dei fatti: tolte frasi con numeri senza
 // ---------- 6. le scene ----------
 const carta = (sopra, nome, sotto, i) => `<div class="carta riga" data-in="${0.5 + i * 0.3}"><small>${sopra}</small><b>${esc(nome)}</b><span>${sotto}</span></div>`;
 const scene = [
-  { min: 8, voce: gancio,
+  // capitolo: il titolo del capitolo di YouTube della scena (26/10/2026, script/brag/capitoli-yt.mjs)
+  { min: 8, capitolo: 'Intro', voce: gancio,
     corpo: `<span class="chip riga" data-in="0">New open model · ${esc(giorno(m.creato))}</span><p class="grande riga verde" data-in="0.2" style="font-size:${m.nome.length > 26 ? 92 : m.nome.length > 18 ? 116 : 140}px;overflow-wrap:anywhere">${esc(m.nome)}</p><p class="titolo riga" data-in="0.5">by ${esc(lab)}</p><p class="sotto-titolo riga" data-in="0.8">${miliardi}B parameters${moe ? ` · ${attivi}B active` : ''} · ${esc(ctxTesto)} context${licenza ? ` · ${esc(licenza)} license` : ''}</p>` },
-  ...sezioni.map((s) => ({ min: 10, voce: s.voce,
+  ...sezioni.map((s) => ({ min: 10, capitolo: s.titolo, voce: s.voce,
     corpo: `<p class="titolo riga" data-in="0">${esc(s.titolo)}</p><div class="griglia due">${s.punti.map((p, i) => `<div class="carta riga" data-in="${0.6 + i * 0.5}"><b style="font-size:34px">${esc(p)}</b></div>`).join('')}</div>` })),
-  { min: 12,
+  { min: 12, capitolo: `Hardware needed: about ${gb4} GB at 4-bit`,
     voce: `What do you need to run it at home? At 4-bit it takes about ${gb4} gigabytes of memory. ${piccola ? `The smallest home machine that holds it fully is ${/^(Mac|NVIDIA)/.test(piccola.nome) ? 'the' : 'an'} ${voceNome(piccola.nome)}.` : 'No single home machine on our list holds it fully.'} ${veloci.length ? `${veloci.slice(0, 2).map((x) => `On ${/^(Mac|NVIDIA)/.test(x.s.nome) ? 'the' : 'an'} ${voceNome(x.s.nome)}${x.ram ? ` with ${x.ram} gigabytes of RAM` : ''} it writes about ${fmtVel(x.r.vel)} tokens per second.`).join(' ')}` : casa.length ? `It runs, but slowly: about ${fmtVel(casa[0].r.vel)} tokens per second on ${/^(Mac|NVIDIA)/.test(casa[0].s.nome) ? 'the' : 'an'} ${voceNome(casa[0].s.nome)}.` : ''}`,
     corpo: `<p class="titolo riga" data-in="0">Hardware: ~${gb4} GB at 4-bit</p><div class="griglia">${(casa.length ? casa.slice(0, 6) : []).map((x, i) => carta(esc(x.s.nome) + (x.ram ? ` + ${x.ram} GB RAM` : ''), `~${fmtVel(x.r.vel)} tok/s`, x.r.dove === 'gpu' ? 'fully in memory' : 'part in system RAM', i)).join('') || carta('Home machines', 'Too big', 'no single home machine on our list holds it', 0)}</div><p class="sotto-titolo riga" data-in="2">${piccola ? `Smallest machine that holds it: ${esc(piccola.nome)}` : 'Needs a data center or several GPUs'} · estimates from our simulator</p>` },
-  { min: 8,
+  { min: 8, capitolo: 'Where to use it for free',
     voce: `${api ? `You can try it for free through OpenRouter, without a GPU.` : 'There is no free API for it yet.'} The weights are open: you can download them from Hugging Face${licenza ? ` under the ${licenza} license` : ', under the license written in its model card'}.${voto ? ` On the Arena leaderboard it scores ${voto.x.punti}.` : ' Arena has not ranked it yet: we add the score as soon as the votes arrive.'}`,
     corpo: `<p class="titolo riga" data-in="0">Where to use it for free</p><div class="griglia">${carta('Free API', api ? 'OpenRouter' : 'Not yet', api ? esc(api) : 'we check every night', 0)}${carta('Open weights', 'Hugging Face', esc(m.hf.repo), 1)}${carta('Arena', voto ? `${voto.x.punti} points` : 'Not ranked yet', voto ? `#${voto.x.pos} in ${esc(voto.c.nome)}` : 'waiting for votes', 2)}</div>` },
-  { min: 7, voce: `Compare ${voceNome(m.nome)} with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description.`,
+  { min: 7, capitolo: 'Compare every free model', voce: `Compare ${voceNome(m.nome)} with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description.`,
     corpo: `<p class="titolo riga" data-in="0">Every free AI model, updated every night</p><p class="url riga" data-in="0.3">freellmarena.com</p><p class="sotto-titolo riga" data-in="0.6">Link in the description</p>` },
 ];
 let t = 0;
@@ -132,7 +134,14 @@ fs.writeFileSync(path.join(OUT, 'scena-modello.html'), `<!doctype html><html lan
 <script>let DURATA = ${t};${MOTORE};render(0)</script></body></html>`);
 fs.writeFileSync(path.join(OUT, 'fonti-modello.txt'), FONTI);
 
-const titolo = `${m.nome}: What's New, Hardware Needed, How to Run It Free`.slice(0, 100);
+// titolo entro 60 caratteri col nome davanti (yt-package, 26/10/2026: prima 63-71 caratteri, tagliati nella ricerca):
+// il primo che sta, se no il nome da solo
+const titolo = titoloYT([
+  `${m.nome}: What's New, Hardware Needed, How to Run It Free`,
+  `${m.nome}: Hardware Needed and How to Run It Free`,
+  `${m.nome}: How to Run It Free`,
+  m.nome,
+]);
 const LOC = {
   it: [`${m.nome}: novità, hardware necessario, come usarlo gratis`, 'Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.'],
   es: [`${m.nome}: novedades, hardware necesario, cómo usarlo gratis`, 'El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.'],
@@ -148,7 +157,7 @@ const info = {
   lingua: 'en', formato: { w: 1920, h: 1080 }, fps: 24, copertina: 0,
   localizzazioni: Object.fromEntries(Object.entries(LOC).map(([l, [tt, dd]]) => [l, { titolo: tt.slice(0, 100), descrizione: `${dd}\nhttps://freellmarena.com/${l}` }])),
   hardware: { modelli: [{ nome: m.nome, gb: gb4, scheda: piccola ? { id: piccola.id, nome: piccola.nome, gb: piccola.gb, tiene: true } : null }], casa: casa.map((x) => ({ scheda: { id: x.s.id, nome: x.s.nome, gb: x.s.gb, tiene: true }, ram: x.ram, modello: m.nome, vel: Number(fmtVel(x.r.vel)), dove: x.r.dove })) },
-  scene: scene.map((s) => ({ min: s.min, voce: s.voce })),
+  scene: scene.map((s) => ({ min: s.min, voce: s.voce, capitolo: s.capitolo })),
 };
 fs.writeFileSync(path.join(OUT, 'info-modello.json'), JSON.stringify(info, null, 1));
 
@@ -164,14 +173,14 @@ const piano = [
   ...sezioni.map((s, i) => {
     const punti = s.punti.filter((p) => p.length <= 60 && !/\S{23,}/.test(p)).slice(0, 4);
     return punti.length >= 2
-      ? { stampo: 'punti', etichetta: corto(s.titolo, 24), voce: scene[1 + i].voce, dati: { titolo: corto(s.titolo, 32), punti } }
-      : { stampo: 'titolo', etichetta: corto(s.titolo, 24), voce: scene[1 + i].voce, dati: { testo: corto(s.titolo, 60), sopra: corto(lab, 40) } };
+      ? { stampo: 'punti', etichetta: corto(s.titolo, 24), capitolo: s.titolo, voce: scene[1 + i].voce, dati: { titolo: corto(s.titolo, 32), punti } }
+      : { stampo: 'titolo', etichetta: corto(s.titolo, 24), capitolo: s.titolo, voce: scene[1 + i].voce, dati: { testo: corto(s.titolo, 60), sopra: corto(lab, 40) } };
   }),
   casa.length >= 2
-    ? { stampo: 'barre', etichetta: 'Hardware', voce: scene.at(-3).voce, dati: { titolo: `About ${gb4} GB at 4-bit`, sotto: corto(piccola ? `Smallest machine that holds it: ${piccola.nome}` : 'No single home machine holds it', 50), voci: casa.slice(0, 6).map((x) => ({ nome: corto(`${x.s.nome.replace(/ \d+ GB$/, '')}${x.ram ? ` + ${x.ram} GB` : ''}`, 28), valore: Number(fmtVel(x.r.vel)), testo: `${fmtVel(x.r.vel)} tok/s`, nota: x.r.dove === 'gpu' ? 'fully in memory' : 'part in system RAM' })) } }
-    : { stampo: 'numero', etichetta: 'Hardware', voce: scene.at(-3).voce, dati: { valore: String(gb4), unita: 'GB', etichetta: 'memory at 4-bit', dettaglio: corto(piccola ? `fits a ${piccola.nome}` : 'too big for home', 24) } },
-  { stampo: 'punti', etichetta: 'Use it free', voce: scene.at(-2).voce, dati: { titolo: 'Where to use it for free', punti: [api ? 'Free API on OpenRouter' : 'No free API yet', 'Open weights on Hugging Face', voto ? `Arena: ${voto.x.punti} points` : 'Arena: not ranked yet'] } },
-  { stampo: 'chiusura', etichetta: 'FreeLLMArena' },
+    ? { stampo: 'barre', etichetta: 'Hardware', capitolo: scene.at(-3).capitolo, voce: scene.at(-3).voce, dati: { titolo: `About ${gb4} GB at 4-bit`, sotto: corto(piccola ? `Smallest machine that holds it: ${piccola.nome}` : 'No single home machine holds it', 50), voci: casa.slice(0, 6).map((x) => ({ nome: corto(`${x.s.nome.replace(/ \d+ GB$/, '')}${x.ram ? ` + ${x.ram} GB` : ''}`, 28), valore: Number(fmtVel(x.r.vel)), testo: `${fmtVel(x.r.vel)} tok/s`, nota: x.r.dove === 'gpu' ? 'fully in memory' : 'part in system RAM' })) } }
+    : { stampo: 'numero', etichetta: 'Hardware', capitolo: scene.at(-3).capitolo, voce: scene.at(-3).voce, dati: { valore: String(gb4), unita: 'GB', etichetta: 'memory at 4-bit', dettaglio: corto(piccola ? `fits a ${piccola.nome}` : 'too big for home', 24) } },
+  { stampo: 'punti', etichetta: 'Use it free', capitolo: scene.at(-2).capitolo, voce: scene.at(-2).voce, dati: { titolo: 'Where to use it for free', punti: [api ? 'Free API on OpenRouter' : 'No free API yet', 'Open weights on Hugging Face', voto ? `Arena: ${voto.x.punti} points` : 'Arena: not ranked yet'] } },
+  { stampo: 'chiusura', etichetta: 'FreeLLMArena', capitolo: scene.at(-1).capitolo },
 ];
 fs.writeFileSync(path.join(OUT, 'piano-modello.json'), JSON.stringify({ formato: 'orizzontale', musica: 'vivace', copertina: 0, scene: piano }, null, 1));
 console.log('ok', { modello: m.nome, parti: sezioni.length, minimo: t, tolte: tolte.length, casa: casa.map((x) => `${x.s.nome} ${fmtVel(x.r.vel)}`) });

@@ -11,6 +11,9 @@ import { barre } from '../../script/sito/grafici.mjs';
 import { coloreLab, nomeLab, chiaveLab } from '../../script/sito/laboratori.mjs';
 import { simula, daScheda } from '../../sorgente/calc.mjs';
 import { MOTORE, STILE_VERTICALE } from './motore.mjs';
+// 26/10/2026 (yt-package): «#Shorts» si aggiunge dopo il taglio, così non si taglia mai (prima .slice(0, 100) lo tagliava)
+import { titoloYT } from './controllo-yt.mjs';
+const SHORT = { shorts: true, max: 100 - 8 };
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
 const RADICE = path.join(QUI, '..', '..');
@@ -186,22 +189,22 @@ const INFO = {
       tag: ['free AI', 'open source AI', 'AI leaderboard', 'local LLM'],
       condividi: `${pagato.nome} leads Arena's chat ranking at ${pagato.punti}. The best free model, ${top5[0].nome}, is ${distacco} points behind, and ${tuttiAperti ? 'all top 5 free models are open weights' : 'the next four are close'}. ${sito(l)}` }),
   nuovo: (l) => (l === 'it'
-    ? { nome: `nuovo-${slug(nuovo.nome)}-it`, titolo: `${nomeCorto}: ${miliardi} miliardi di parametri, gratis #Shorts`.slice(0, 100),
+    ? { nome: `nuovo-${slug(nuovo.nome)}-it`, titolo: titoloYT([`${nomeCorto}: ${miliardi} miliardi di parametri, gratis`, nomeCorto], SHORT),
       descrizione: `${nuovo.nome} di ${nomeLab(nuovo.org)} è uscito il ${giorno(nuovo.creato, l)}, con i pesi aperti su Hugging Face. A 4 bit servono circa ${gb4} GB di memoria.\nConfrontalo con tutti i modelli gratis: ${sito(l)}`,
       tag: ['AI gratis', 'intelligenza artificiale', 'LLM locale', nomeCorto],
       condividi: `È uscito ${nomeCorto}: ${miliardi} miliardi di parametri e pesi aperti. A 4 bit servono circa ${gb4} GB${chiTiene ? `: la scheda più piccola che lo tiene tutto è la ${chiTiene.nome}` : ', più di qualunque computer di casa della nostra lista'}. ${sito(l)}` }
-    : { nome: `nuovo-${slug(nuovo.nome)}`, titolo: `${nomeCorto}: ${miliardi}B parameters, free to download #Shorts`.slice(0, 100),
+    : { nome: `nuovo-${slug(nuovo.nome)}`, titolo: titoloYT([`${nomeCorto}: ${miliardi}B parameters, free to download`, `${nomeCorto}: ${miliardi}B parameters`, nomeCorto], SHORT),
       descrizione: `${nuovo.nome} by ${nomeLab(nuovo.org)} came out on ${giorno(nuovo.creato, l)}, with open weights on Hugging Face. At 4-bit it needs about ${gb4} GB of memory.\nCompare it with every free model: ${sito(l)}`,
       tag: ['free AI', 'open source AI', 'local LLM', nomeCorto],
       condividi: `${nomeCorto} is out: ${miliardi}B parameters and open weights. At 4-bit it needs about ${gb4} GB${chiTiene ? `, so the smallest card that holds it fully is the ${chiTiene.nome}` : ', more than any single home machine on our list can hold'}. ${sito(l)}` }),
   gpu: (l) => {
     const m = sullaScheda[0];
     return l === 'it'
-      ? { nome: `gpu-${gpu.id}-${dati.aggiornato}-it`, titolo: `La miglior AI gratis per ${gpu.nome} #Shorts`.slice(0, 100),
+      ? { nome: `gpu-${gpu.id}-${dati.aggiornato}-it`, titolo: titoloYT([`La miglior AI gratis per ${gpu.nome}`], SHORT),
         descrizione: `I migliori modelli AI gratis su ${gpu.nome} (${gpu.gb} GB, ${gpu.banda} GB/s) con 32 GB di RAM DDR5, a 4 bit con 8K di contesto:\n${sullaScheda.map((x, i) => `${i + 1}. ${x.m.nome}: circa ${fmtVel(x.r.vel)} token/s (Arena ${x.m.punti}, ${x.r.dove === 'gpu' ? 'tutto sulla GPU' : 'GPU + RAM'})`).join('\n')}\nStime del nostro simulatore. Prova la tua scheda: ${sito(l)}/home`,
         tag: ['AI gratis', 'LLM locale', gpu.nome, 'scheda video AI'],
         condividi: m ? `Su ${gpu.nome} con 32 GB di RAM il miglior modello gratis è ${m.m.nome}, circa ${fmtVel(m.r.vel)} token/s. ${sito(l)}/home` : `${gpu.nome}: ${gpu.gb} GB. ${sito(l)}/home` }
-      : { nome: `gpu-${gpu.id}-${dati.aggiornato}`, titolo: `The best free AI for the ${gpu.nome} #Shorts`.slice(0, 100),
+      : { nome: `gpu-${gpu.id}-${dati.aggiornato}`, titolo: titoloYT([`The best free AI for the ${gpu.nome}`], SHORT),
         descrizione: `The best free AI models on the ${gpu.nome} (${gpu.gb} GB, ${gpu.banda} GB/s) with 32 GB of DDR5 RAM, at 4-bit with 8K context:\n${sullaScheda.map((x, i) => `${i + 1}. ${x.m.nome}: about ${fmtVel(x.r.vel)} tokens/s (Arena ${x.m.punti}, ${x.r.dove === 'gpu' ? 'fully on the GPU' : 'GPU + RAM'})`).join('\n')}\nEstimates from our simulator. Try your own card: ${sito(l)}/home`,
         tag: ['free AI', 'local LLM', gpu.nome, 'GPU for AI'],
         condividi: m ? `On the ${gpu.nome} with 32 GB of RAM, the best free model is ${m.m.nome}, at about ${fmtVel(m.r.vel)} tokens/s. ${sito(l)}/home` : `${gpu.nome}: ${gpu.gb} GB. ${sito(l)}/home` };
@@ -227,11 +230,11 @@ const TRADOTTI = {
     descrizione: `${{ it: `I 5 migliori modelli di chat gratis su Arena questa settimana (${data(dati.aggiornato, l)}), con voti alla cieca di persone vere`, es: `Los 5 mejores modelos de chat gratis en Arena esta semana (${data(dati.aggiornato, l)}), por votos a ciegas de personas reales`, de: `Die 5 besten kostenlosen Chat-Modelle auf Arena diese Woche (${data(dati.aggiornato, l)}), nach Blindabstimmungen echter Menschen`, fr: `Les 5 meilleurs modèles de chat gratuits sur Arena cette semaine (${data(dati.aggiornato, l)}), selon des votes à l'aveugle de vraies personnes`, pt: `Os 5 melhores modelos de chat grátis no Arena nesta semana (${data(dati.aggiornato, l)}), por votos às cegas de pessoas reais` }[l]}${dueP(l)}\n${top5.map((m, i) => `${i + 1}. ${m.nome} (${m.punti})`).join('\n')}\n${PAROLE[l].pagato}${dueP(l)} ${pagato.nome} (${pagato.punti}).\n${PAROLE[l].classifica}${dueP(l)} ${sitoL(l)}`,
   }),
   nuovo: (l) => ({
-    titolo: `${{ it: `${nomeCorto}: ${miliardi} miliardi di parametri, gratis`, es: `${nomeCorto}: ${miliardi} mil millones de parámetros, gratis`, de: `${nomeCorto}: ${miliardi} Mrd. Parameter, kostenlos`, fr: `${nomeCorto} : ${miliardi} milliards de paramètres, gratuit`, pt: `${nomeCorto}: ${miliardi} bilhões de parâmetros, grátis` }[l]} #Shorts`.slice(0, 100),
+    titolo: titoloYT([`${{ it: `${nomeCorto}: ${miliardi} miliardi di parametri, gratis`, es: `${nomeCorto}: ${miliardi} mil millones de parámetros, gratis`, de: `${nomeCorto}: ${miliardi} Mrd. Parameter, kostenlos`, fr: `${nomeCorto} : ${miliardi} milliards de paramètres, gratuit`, pt: `${nomeCorto}: ${miliardi} bilhões de parâmetros, grátis` }[l]}`, nomeCorto], SHORT),
     descrizione: `${{ it: `${nuovo.nome} di ${nomeLab(nuovo.org)} è uscito il ${data(nuovo.creato, l)}, con i pesi aperti su Hugging Face. A 4 bit servono circa ${gb4} GB di memoria.`, es: `${nuovo.nome} de ${nomeLab(nuovo.org)} salió el ${data(nuovo.creato, l)}, con pesos abiertos en Hugging Face. A 4 bits necesita unos ${gb4} GB de memoria.`, de: `${nuovo.nome} von ${nomeLab(nuovo.org)} ist am ${data(nuovo.creato, l)} erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa ${gb4} GB Speicher.`, fr: `${nuovo.nome} de ${nomeLab(nuovo.org)} est sorti le ${data(nuovo.creato, l)}, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ ${gb4} Go de mémoire.`, pt: `${nuovo.nome} da ${nomeLab(nuovo.org)} saiu em ${data(nuovo.creato, l)}, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de ${gb4} GB de memória.` }[l]}\n${PAROLE[l].confronta}${dueP(l)} ${sitoL(l)}`,
   }),
   gpu: (l) => ({
-    titolo: `${{ it: `La miglior AI gratis per ${gpu.nome}`, es: `La mejor IA gratis para la ${gpu.nome}`, de: `Die beste kostenlose KI für die ${gpu.nome}`, fr: `La meilleure IA gratuite pour la ${gpu.nome}`, pt: `A melhor IA grátis para a ${gpu.nome}` }[l]} #Shorts`.slice(0, 100),
+    titolo: titoloYT([`${{ it: `La miglior AI gratis per ${gpu.nome}`, es: `La mejor IA gratis para la ${gpu.nome}`, de: `Die beste kostenlose KI für die ${gpu.nome}`, fr: `La meilleure IA gratuite pour la ${gpu.nome}`, pt: `A melhor IA grátis para a ${gpu.nome}` }[l]}`], SHORT),
     descrizione: `${{ it: `I migliori modelli AI gratis su ${gpu.nome} (${gpu.gb} GB, ${gpu.banda} GB/s) con 32 GB di RAM DDR5, a 4 bit con 8K di contesto`, es: `Los mejores modelos de IA gratis en la ${gpu.nome} (${gpu.gb} GB, ${gpu.banda} GB/s) con 32 GB de RAM DDR5, a 4 bits con 8K de contexto`, de: `Die besten kostenlosen KI-Modelle auf der ${gpu.nome} (${gpu.gb} GB, ${gpu.banda} GB/s) mit 32 GB DDR5-RAM, in 4 Bit mit 8K Kontext`, fr: `Les meilleurs modèles d'IA gratuits sur la ${gpu.nome} (${gpu.gb} Go, ${gpu.banda} Go/s) avec 32 Go de RAM DDR5, en 4 bits avec 8K de contexte`, pt: `Os melhores modelos de IA grátis na ${gpu.nome} (${gpu.gb} GB, ${gpu.banda} GB/s) com 32 GB de RAM DDR5, em 4 bits com 8K de contexto` }[l]}${dueP(l)}\n${sullaScheda.map((x, i) => `${i + 1}. ${x.m.nome}: ~${fmtVel(x.r.vel)} tok/s (Arena ${x.m.punti}, ${x.r.dove === 'gpu' ? PAROLE[l].gpu : 'GPU + RAM'})`).join('\n')}\n${PAROLE[l].stime}${dueP(l)} ${sitoL(l)}/home`,
   }),
 };

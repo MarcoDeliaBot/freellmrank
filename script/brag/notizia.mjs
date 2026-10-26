@@ -14,6 +14,7 @@ import { chiediModello } from '../bozze.mjs';
 import { numeri } from '../video-post.mjs';
 import { nomiDi, LABORATORI, LANCIO } from '../notizie.mjs';
 import { metaYoutube, RICHIESTA_YT } from './titoli-yt.mjs';
+import { titoloYT } from './controllo-yt.mjs';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
 const RADICE = path.join(QUI, '..', '..');
@@ -131,7 +132,7 @@ fs.writeFileSync(path.join(OUT, 'scena-notizia-corto.html'), `<!doctype html><ht
 <div class="tela">${marchioV}${breve.html.join('\n')}<div class="sotto"><p></p></div><div class="avanza"><i></i></div></div>
 <script>let DURATA = ${breve.t};${MOTORE};render(0)</script></body></html>`);
 const infoC = {
-  nome: GUIDA ? `breve-${nome}` : nome.replace(/^notizia-/, 'breve-'), titolo: `${yt.titolo} #Shorts`, notizia: n.nome,
+  nome: GUIDA ? `breve-${nome}` : nome.replace(/^notizia-/, 'breve-'), titolo: titoloYT([yt.titolo], { shorts: true, max: 100 - 8 }), notizia: n.nome,
   // lo Short rimanda al video lungo (Marco, 23/10/2026): «lungo» per il «Video correlato» di YouTube, e il link nella descrizione
   lungo: `video-${nome}`,
   descrizione: `${yt.apertura}\nFull story: ${url}\nSources: ${fonti.join(', ')}`,

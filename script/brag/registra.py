@@ -196,6 +196,11 @@ def video(nome):
                     os.path.join(base, 'brag.mp4')], check=True)
     open(os.path.join(base, 'share-copy.txt'), 'w', encoding='utf-8').write(info['condividi'] + '\n')
     open(os.path.join(base, 'brag.srt'), 'w', encoding='utf-8').write(srt(testi))
+    # tempi veri delle scene, per i capitoli di YouTube nella descrizione (26/10/2026, script/brag/capitoli-yt.mjs)
+    titoli = info.get('titoli') or []
+    json.dump({'totale': durata, 'scene': [{'n': f'{i + 1:02d}', 'inizio': round(a, 3), 'durata': round(d, 3), 'capitolo': s.get('capitolo') or '', 'titolo': titoli[i] if i < len(titoli) else ''}
+               for i, (s, a, d) in enumerate(zip(info['scene'], inizi, durate))]},
+              open(os.path.join(base, 'tempi.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(os.path.join(base, 'brag.mp4'), f'{durata} s')
 
 if __name__ == '__main__':

@@ -10,6 +10,9 @@ piano="video/brag/piano-$v.json"
 out="video/brag/brag-output-$v"
 lavoro="video/hf/brag-$v"
 vecchio() { echo "Video $v alla vecchia maniera (registra.py)"; python script/brag/registra.py video "$v"; exit $?; }
+# 26/10/2026: anche tempi.json (inizio vero di ogni scena, per i capitoli di YouTube: script/brag/capitoli-yt.mjs);
+# quello di un video precedente non deve restare
+rm -f "$out/tempi.json"
 [ -f "$piano" ] || vecchio
 node script/video-hf/controlla.mjs "$piano" || vecchio
 rm -rf "$lavoro"
@@ -18,5 +21,6 @@ mkdir -p "$out"
 cp "$lavoro/video.mp4" "$out/brag.mp4"
 cp "$lavoro/copertina.jpg" "$out/brag.jpg"
 cp "$lavoro/video.srt" "$out/brag.srt"
+cp "$lavoro/tempi.json" "$out/tempi.json"
 node -p "require('./video/brag/info-$v.json').condividi" > "$out/share-copy.txt"
 echo "$out/brag.mp4 (stampi)"

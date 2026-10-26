@@ -8,6 +8,7 @@ import { barre } from '../../script/sito/grafici.mjs';
 import { coloreLab, nomeLab, chiaveLab } from '../../script/sito/laboratori.mjs';
 import { simula, daScheda } from '../../sorgente/calc.mjs';
 import { MOTORE, STILE_ORIZZONTALE as STILE } from './motore.mjs';
+import { titoloYT } from './controllo-yt.mjs';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
 const RADICE = path.join(QUI, '..', '..');
@@ -104,7 +105,12 @@ fs.writeFileSync(path.join(OUT, 'scena-lungo.html'), `<!doctype html><html lang=
 const capitoli = (inizi) => scene.map((s, i) => `${new Date(inizi[i] * 1000).toISOString().slice(14, 19)} ${s.corpo.match(/class="titolo[^>]*>([^<]+)/)?.[1] || 'Intro'}`);
 const info = {
   nome: `lungo-${dati.aggiornato}`,
-  titolo: `Best FREE AI Models This Week (${giorno(dati.aggiornato)}): Top 10, New Models, What Runs at Home`.slice(0, 100),
+  // entro 60 caratteri (yt-package, 26/10/2026: prima 86, tagliato nella ricerca); «best» e «free» sono le parole chiave del sito
+  titolo: titoloYT([
+    `Best FREE AI Models This Week (${giorno(dati.aggiornato)}): Top 10, New Models, What Runs at Home`,
+    `Best FREE AI Models This Week (${giorno(dati.aggiornato)}): Top 10 and What Runs at Home`,
+    `Best FREE AI Models This Week (${giorno(dati.aggiornato)}): Top 10`,
+  ]),
   descrizione: `The free AI report for the week of ${giorno(dati.aggiornato)}, from blind human votes on Arena.\n\nTop 10 free chat models:\n${top10.map((m, i) => `${i + 1}. ${m.nome} (${nomeLab(m.org)}): ${m.punti}`).join('\n')}\nBest paid model: ${pagato.nome} (${pagato.punti}).\n\nBest free model per category: ${capi.map((x) => `${x.c.nome}: ${x.m.nome}`).join('; ')}.\n\nEvery free model, with sizes, speeds and where to use it free: https://freellmarena.com`,
   tag: ['free AI', 'open source AI', 'AI leaderboard', 'local LLM', 'best AI models'],
   condividi: `Free AI this week: ${top10[0].nome} leads the free models at ${top10[0].punti}, ${distacco} points behind ${pagato.nome}. Full report: https://freellmarena.com`,
@@ -131,7 +137,8 @@ const piano = [
   ...(entrati.length >= 2 ? [{ stampo: 'punti', etichetta: 'New on the board', voce: voceDi(entrati.length === 1 ? 'One free model' : `${entrati.length} free models`), dati: { titolo: `${entrati.length} new on the leaderboard`, punti: entrati.slice(0, 4).map((m) => corto(`${visto(m.nome)}: ${m.punti} points, #${m.pos} overall`, 60)) } }] : []),
   { stampo: 'punti', etichetta: 'By category', voce: voceDi('Now the best free model'), dati: { titolo: 'Best free model per category', punti: capi.slice(0, 4).map((x) => corto(`${x.c.nome}: ${visto(x.m.nome)}`, 60)) } },
   ...(nuoviSett.length >= 2 ? [{ stampo: 'punti', etichetta: 'New open models', voce: voceDi(nuoviSett.length === 1 ? 'One new open model' : `${nuoviSett.length} new open models`), dati: { titolo: 'New open models this week', punti: nuoviSett.slice(0, 4).map((m) => corto(`${visto(m.nome)}: ${Math.round(m.hf.b * 10) / 10}B parameters`, 60)) } }] : []),
-  ...(nuovo ? [{ stampo: 'numeri', etichetta: 'Model of the week', voce: voceDi('The model of the week'), dati: { titolo: corto(nuovo.nome, 32), voci: [{ valore: String(Math.round(nuovo.hf.b)), unita: 'B', etichetta: 'parameters', grafico: 'nessuno' }, { valore: String(gb4), unita: 'GB', etichetta: 'memory at 4-bit', grafico: 'nessuno' }] } }] : []),
+  // capitolo: il titolo del capitolo di YouTube (26/10/2026, script/brag/capitoli-yt.mjs); se manca vale dati.titolo
+  ...(nuovo ? [{ stampo: 'numeri', etichetta: 'Model of the week', capitolo: `Model of the week: ${visto(nuovo.nome)}`, voce: voceDi('The model of the week'), dati: { titolo: corto(nuovo.nome, 32), voci: [{ valore: String(Math.round(nuovo.hf.b)), unita: 'B', etichetta: 'parameters', grafico: 'nessuno' }, { valore: String(gb4), unita: 'GB', etichetta: 'memory at 4-bit', grafico: 'nessuno' }] } }] : []),
   ...(casa.length >= 2 ? [{ stampo: 'barre', etichetta: 'At home', voce: voceDi('What can you run at home'), dati: { titolo: 'What runs at home', sotto: '4-bit · 8K context · our simulator', voci: casa.map((x) => ({ nome: corto(`${x.s.nome.replace(/ \d+ GB$/, '')}${x.ram ? ` + ${x.ram} GB` : ''}`, 28), valore: Number(fmtVel(x.r.vel)), testo: `${fmtVel(x.r.vel)} tok/s`, nota: corto(x.m.nome, 34) })) } }] : []),
   { stampo: 'chiusura', etichetta: 'FreeLLMArena' },
 ].filter((s) => s.stampo === 'chiusura' || s.voce);
