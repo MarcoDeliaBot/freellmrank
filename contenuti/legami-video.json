@@ -63,8 +63,12 @@
   "lungo": "guida-minimax-h3-open-video-model",
   "breve": "breve-guida-minimax-h3-open-video-model"
  },
- "kimi-k3-1-pro-free-in-kimi-app": {
-  "lungo": "guida-kimi-k3-1-pro-free-in-kimi-app",
-  "breve": "breve-guida-kimi-k3-1-pro-free-in-kimi-app"
+ "news-2026-10-26-anthropic-launches-claude-haiku-5-5-sonnet-5-5-and-opus-5-5-upgrades": {
+  "lungo": "notizia-anthropic-launches-claude-haiku-5-5-sonnet-5-5-and-opus",
+  "breve": "breve-anthropic-launches-claude-haiku-5-5-sonnet-5-5-and-opus"
+ },
+ "news-2026-10-26-tencent-releases-histeve-1-0-a-vla-agent-that-completes-long-horizon-m": {
+  "lungo": "notizia-tencent-releases-histeve-1-0-a-vla-agent-that-completes",
+  "breve": "breve-tencent-releases-histeve-1-0-a-vla-agent-that-completes"
  }
 }
