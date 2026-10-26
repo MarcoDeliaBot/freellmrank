@@ -14,6 +14,7 @@ data: 2026-10-26
 | RTX 3060 | 12 | 360 |
 | RTX 4070 / 4070 Super | 12 | 504 |
 | RX 7700 XT | 12 | 432 |
+| Arc B580 | 12 | 456 |
 
 These cards can run 4-bit quantized models that require up to roughly 8 GB of VRAM, such as many 7 B-parameter LLMs. Models larger than 12 GB generally need a card with more memory.
 
@@ -29,13 +30,12 @@ These cards can run 4-bit quantized models that require up to roughly 8 GB of 
 | RX 7800 XT | 16 | 624 | n/a |
 | RX 9070 XT | 16 | 640 | 137 t/s (Llama 2 7B Q4_0) |
 | RX 9060 XT | 16 | 322 | n/a |
-| Arc B580 | 12 | 456 | n/a |
 
 *Speed figures are taken directly from the benchmark data.
 
-These cards can accommodate most 20-B-parameter models quantized to 4-bit. The measured speeds show the impact of bandwidth: the RTX 5060 Ti (448 GB/s) achieved 111 t/s, while the RX 9070 XT (640 GB/s) reached 137 t/s on a 7-B model.
+These cards can accommodate most 20-B-parameter models quantized to 4-bit. The measured speeds show the impact of bandwidth: the RTX 5060 Ti (448 GB/s) achieved 111 t/s on gpt-oss-20b, while the RX 9070 XT (640 GB/s) reached 137 t/s on the smaller Llama 2 7B, so the two figures are not directly comparable.
 
-## 3. High tier, 24 GB VRAM  
+## 3. High tier, 24 GB to 32 GB VRAM  
 
 | GPU | VRAM (GB) | Bandwidth (GB/s) | Example speed* |
 |-----|-----------|------------------|----------------|
@@ -43,7 +43,7 @@ These cards can accommodate most 20-B-parameter models quantized to 4-bit. The m
 | RTX 3090 Ti | 24 | 1008 | n/a |
 | RTX 4090 | 24 | 1008 | 198 t/s (Qwen3-30B-A3B Q4_K_M) |
 | RTX 5090 | 32 | 1792 | 247 t/s (Qwen3-30B-A3B Q4_K_M) |
-| RX 7900 XTX | 24 | 960 | 140 t/s (GLM-4.5-Flash Q4_0) |
+| RX 7900 XTX | 24 | 960 | 140 t/s (GLM-4.7-Flash Q4_0) |
 
 *Speed figures are taken directly from the benchmark data.
 
@@ -83,7 +83,7 @@ The DGX Spark achieved 83 t/s on gpt-oss-20b MXFP4, comparable to mid-rang
 | Tier | Typical VRAM | Example GPUs | Example token-per-second (20 B model) |
 |------|--------------|--------------|----------------------------------------|
 | Budget | 8-12 GB | RTX 3060, RTX 4060 | n/a |
-| Mid | 16 GB | RTX 5060 Ti, RX 9070 XT | 111 to 137 |
-| High | 24 GB | RTX 4090, RTX 3090 | 162 to 198 |
-| Extreme | 48 GB+ | RTX A6000, RTX PRO 6000 |, (handles largest 4-bit models) |
-| Unified | 64-512 GB | Mac Studio M3 Ultra, DGX Spark | 80 to 115 (CPU-GPU bandwidth dependent) |
+| Mid | 16 GB | RTX 5060 Ti, RX 9070 XT | 111 (RTX 5060 Ti) |
+| High | 24-32 GB | RTX 4090, RTX 3090 | 162 to 225 |
+| Extreme | 48 GB+ | RTX A6000, RTX PRO 6000 | n/a (handles the largest 4-bit models) |
+| Unified | 64-512 GB | Mac Studio M3 Ultra, DGX Spark | 83 to 116 (bandwidth dependent) |
