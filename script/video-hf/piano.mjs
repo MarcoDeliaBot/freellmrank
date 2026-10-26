@@ -75,10 +75,11 @@ export function controllaPiano(grezzo, n) {
   const { regge, mancanti } = controllore(n);
   const problemi = [];
   const scene = [];
+  let tolte = 0; // scene scartate: un piano che ha perso una scena (es. quella sulla licenza) non è completo
   for (const [i, sc] of (Array.isArray(grezzo?.scene) ? grezzo.scene : []).entries()) {
     const st = STAMPI[sc?.stampo];
     const dove = `scena ${i + 1} (${sc?.stampo})`;
-    if (!st || sc.stampo === 'chiusura') { problemi.push(`${dove}: stampo non valido`); continue; }
+    if (!st || sc.stampo === 'chiusura') { problemi.push(`${dove}: stampo non valido`); tolte++; continue; }
     const voce = semplice(sc.voce);
     const grezzi = sc.dati && typeof sc.dati === 'object' ? sc.dati : {};
     // i fatti non si riparano: una scena con un numero o un nome che non sta nella notizia si toglie
@@ -87,9 +88,9 @@ export function controllaPiano(grezzo, n) {
       ...(regge(voce) ? [] : [`voce con numeri o nomi non nella notizia (${mancanti(voce).join(', ')})`]),
       ...testi(grezzi).filter((t) => !regge(semplice(t))).map((t) => `testo non nella notizia: «${t}» (${mancanti(semplice(t)).join(', ')})`),
     ];
-    if (fatti.length) { problemi.push(`${dove}: ${fatti.join('; ')}`); continue; }
+    if (fatti.length) { problemi.push(`${dove}: ${fatti.join('; ')}`); tolte++; continue; }
     const dati = ripara(st, grezzi, n);
-    if (!dati) { problemi.push(`${dove}: ${st.valida(grezzi).join('; ')}`); continue; }
+    if (!dati) { problemi.push(`${dove}: ${st.valida(grezzi).join('; ')}`); tolte++; continue; }
     if (dati !== grezzi) problemi.push(`${dove}: riparata (${st.valida(grezzi).join('; ')})`);
     scene.push({ stampo: sc.stampo, etichetta: semplice(sc.etichetta).slice(0, 24), voce, dati });
   }
@@ -100,7 +101,7 @@ export function controllaPiano(grezzo, n) {
   // e passavano piani da 40 secondi
   const ok = scene.length >= 4 && totale >= 100 && totale <= 230;
   if (!ok) problemi.push(`piano scartato: ${scene.length} scene buone, ${totale} parole (servono almeno 4 scene e 100-230 parole)`);
-  return { ok, scene, problemi, totale };
+  return { ok, completo: ok && tolte === 0, tolte, scene, problemi, totale };
 }
 
 // riserva: titolo con il riassunto, poi una scena per paragrafo con la voce che legge il paragrafo; a schermo i punti
@@ -140,14 +141,17 @@ Return JSON: {"scene": [{"stampo": "...", "etichetta": "...", "voce": "...", "da
   ];
   // ogni tentativo riceve i problemi del precedente. 26/10/2026: 5 tentativi invece di 3, ora che c'è Groq come riserva
   // (con il solo tetto di Workers AI i tentativi erano pochi e i piani finivano scartati)
-  for (let tentativo = 1; tentativo <= 5 && !migliore?.ok; tentativo++) {
+  for (let tentativo = 1; tentativo <= 5 && !migliore?.completo; tentativo++) {
     try {
       const grezzo = await chiediModello(domanda, { json: true, max: 1800, scopo: 'video' });
       grezzi.push(grezzo);
       const c = controllaPiano(grezzo, n);
       problemi.push(...c.problemi.map((p) => `tentativo ${tentativo}: ${p}`));
-      if (!migliore || (c.ok && !migliore.ok) || c.totale > migliore.totale) migliore = c;
-      if (!c.ok) domanda.push({ role: 'assistant', content: JSON.stringify(grezzo) }, { role: 'user', content: `Problems found by the checker:\n- ${c.problemi.join('\n- ')}\nFix them and return the whole JSON again. Remember: 4 to 6 scenes, 110 to 190 words in total, respect every max length and item count, only facts from ARTICLE.` });
+      // il migliore: completo, poi accettabile, poi con meno scene perse, poi più parole
+      const voto = (x) => [x.completo ? 1 : 0, x.ok ? 1 : 0, -x.tolte, x.totale];
+      const meglio = (a, b) => { const va = voto(a), vb = voto(b); for (let i = 0; i < va.length; i++) if (va[i] !== vb[i]) return va[i] > vb[i]; return false; };
+      if (!migliore || meglio(c, migliore)) migliore = c;
+      if (!c.completo) domanda.push({ role: 'assistant', content: JSON.stringify(grezzo) }, { role: 'user', content: `Problems found by the checker:\n- ${c.problemi.join('\n- ')}\nFix them and return the whole JSON again. Remember: 4 to 6 scenes, 110 to 190 words in total, respect every max length and item count, only facts from ARTICLE.` });
     } catch (e) {
       problemi.push(`tentativo ${tentativo}: nessun modello ha risposto (${e.message})`);
       // quota finita o chiave sbagliata: inutile riprovare; JSON rotto: si riprova
