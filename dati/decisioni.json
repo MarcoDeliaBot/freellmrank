@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-10-22",
+ "aggiornato": "2026-10-26",
  "suite": {
   "versione": "decision-index-0.3",
   "test": 42,
@@ -74,6 +74,35 @@
     "ms": 346.6
    },
    "licenza": "other"
+  },
+  {
+   "id": "vllm-sr-d3-ultra",
+   "nome": "vLLM-SR d3-ultra (Decision 3.0, 27B)",
+   "org": "vLLM Semantic Router",
+   "tipo": "full fine-tune",
+   "b": 26.1,
+   "stimato": false,
+   "repo": "vllm-sr/d3-ultra",
+   "base": "Qwen/Qwen3.8-27B",
+   "nota": null,
+   "punti": 70.18,
+   "pubblico": 71.57,
+   "ms": 200.5,
+   "p95": 673.5,
+   "ece": 0.0666,
+   "acc": 0.809,
+   "aree": {
+    "knowledge": 62.3,
+    "language": 72.4,
+    "retrieval": 71.8,
+    "tools": 87.8,
+    "arts": 63.5
+   },
+   "vision": {
+    "punti": 70.6,
+    "ms": 380.7
+   },
+   "licenza": "apache-2.0"
   },
   {
    "id": "jeffan-31b-1710",

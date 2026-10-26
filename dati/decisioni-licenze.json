@@ -213,5 +213,6 @@
  "PelaAI/KnowLine-4B-Gen5.5": "apache-2.0",
  "tattrongvu/Jeffan-4B-2010": "apache-2.0",
  "WangSenQWQ/Senova-4B": "apache-2.0",
- "knowledgator/gliclass-v4-edge": "apache-2.0"
+ "knowledgator/gliclass-v4-edge": "apache-2.0",
+ "vllm-sr/d3-ultra": "apache-2.0"
 }
