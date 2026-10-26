@@ -98,6 +98,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
           BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
+          # 26/10/2026: se il tetto di Workers AI è finito scrive Groq gratis (script/bozze.mjs)
+          GROQ_KEY: ${{ secrets.GROQ_KEY }}
         run: |
           node script/brag/genera.mjs
           node script/brag/lungo.mjs

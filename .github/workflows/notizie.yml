@@ -38,6 +38,8 @@ jobs:
       - name: Scrivi le notizie
         env:
           BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
+          # 26/10/2026: se il tetto di Workers AI è finito scrive Groq gratis (script/bozze.mjs)
+          GROQ_KEY: ${{ secrets.GROQ_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node script/notizie.mjs --max "${{ inputs.max || '3' }}"
       - name: Commit delle notizie
