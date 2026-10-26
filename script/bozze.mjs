@@ -38,11 +38,11 @@ export const REGOLE_SCRITTURA = `Writing rules (strict):
 const SCRITTORI = () => (process.env.SCRITTORI || 'workers,groq,locale').split(',').map((s) => s.trim()).filter(Boolean);
 export let ultimoScrittore = '';
 
-async function compatibileOpenAI(url, chiave, modello, messaggi, max, attesa, tentativo = 1) {
+async function compatibileOpenAI(url, chiave, modello, messaggi, max, attesa, tentativo = 1, ragionamento = 'low') {
   const r = await fetch(`${url}/chat/completions`, {
     method: 'POST',
     headers: { ...(chiave ? { Authorization: `Bearer ${chiave}` } : {}), 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: modello, messages: messaggi, max_tokens: max, reasoning_effort: 'low' }),
+    body: JSON.stringify({ model: modello, messages: messaggi, max_tokens: max, reasoning_effort: ragionamento }),
     signal: AbortSignal.timeout(attesa),
   });
   const d = await r.json().catch(() => ({}));
@@ -51,7 +51,7 @@ async function compatibileOpenAI(url, chiave, modello, messaggi, max, attesa, te
   const dopo = Number(r.headers.get('retry-after'));
   if (r.status === 429 && tentativo < 3 && dopo > 0 && dopo <= 90) {
     await new Promise((ok) => setTimeout(ok, dopo * 1000 + 500));
-    return compatibileOpenAI(url, chiave, modello, messaggi, max, attesa, tentativo + 1);
+    return compatibileOpenAI(url, chiave, modello, messaggi, max, attesa, tentativo + 1, ragionamento);
   }
   if (!r.ok) throw new Error(`${r.status}: ${String(d.error?.message || d.error || '').slice(0, 160)}`);
   return String(d.choices?.[0]?.message?.content || '').replace(/<think>[\s\S]*?<\/think>/g, '').trim();
@@ -71,7 +71,8 @@ const SCRIVONO = {
     return d.testo;
   },
   groq: (messaggi, max) => (process.env.GROQ_KEY
-    ? compatibileOpenAI('https://api.groq.com/openai/v1', process.env.GROQ_KEY, process.env.GROQ_MODELLO || 'openai/gpt-oss-120b', messaggi, max, 120000)
+    // ragionamento «medium» (26/10/2026): con «low» i piani uscivano corti e con frasi contraddittorie
+    ? compatibileOpenAI('https://api.groq.com/openai/v1', process.env.GROQ_KEY, process.env.GROQ_MODELLO || 'openai/gpt-oss-120b', messaggi, max + 1500, 120000, 1, process.env.GROQ_RAGIONAMENTO || 'medium')
     : null),
   // sul computer della corsa può metterci minuti: attesa lunga
   locale: (messaggi, max) => (process.env.LLM_LOCALE_URL

@@ -96,8 +96,10 @@ export function controllaPiano(grezzo, n) {
   // si apre sempre col titolo: se manca, quello costruito dalla notizia (riassunto letto così com'è)
   if (scene.length && scene[0].stampo !== 'titolo') { scene.unshift(titoloDiRiserva(n)); problemi.push('titolo di apertura aggiunto dalla notizia'); }
   const totale = scene.reduce((s, x) => s + parole(x.voce), 0);
-  const ok = scene.length >= 3 && totale >= 60 && totale <= 230;
-  if (!ok) problemi.push(`piano scartato: ${scene.length} scene buone, ${totale} parole (servono almeno 3 scene e 60-230 parole)`);
+  // 26/10/2026: soglia allineata alle regole date al modello (4-6 scene, 110-190 parole); prima bastavano 3 scene e 60 parole
+  // e passavano piani da 40 secondi
+  const ok = scene.length >= 4 && totale >= 100 && totale <= 230;
+  if (!ok) problemi.push(`piano scartato: ${scene.length} scene buone, ${totale} parole (servono almeno 4 scene e 100-230 parole)`);
   return { ok, scene, problemi, totale };
 }
 
@@ -127,7 +129,7 @@ Use ONLY facts, numbers and names from ARTICLE. Never add a number, name, date o
 Available stampi:
 ${elenco}
 Rules:
-- 4 to 6 scenes. The first scene is always "titolo". Do NOT add a closing scene (it is added automatically).
+- 4 to 6 scenes. The first scene is always "titolo"; its "sopra" is ${n.tipo === 'guida' ? '"Guide · ' : '"AI news · '}${giorno(n.pubblicato)}" exactly. Do NOT add a closing scene (it is added automatically).
 - Use "numero", "numeri", "lista" or "confronto" only when ARTICLE really has that kind of content; otherwise "punti".
 - "voce" is what the narrator says during the scene: 1 to 3 short spoken sentences (6 to 45 words, never more than 50), plain English, numbers written as digits. All scenes together: 110 to 190 words.
 - Everything shown on screen ("dati") must also be said in that scene's "voce", in the same order. Show about one on-screen item for every 12 to 15 spoken words: a long voice needs more items, or split it into two scenes.
