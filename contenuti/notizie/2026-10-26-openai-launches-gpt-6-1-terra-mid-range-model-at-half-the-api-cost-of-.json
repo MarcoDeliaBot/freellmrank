@@ -1,0 +1,34 @@
+{
+ "nome": "2026-10-26-openai-launches-gpt-6-1-terra-mid-range-model-at-half-the-api-cost-of-",
+ "titolo": "OpenAI launches GPT-6.1 Terra, mid‑range model at half the API cost of GPT‑5.6",
+ "descr": "OpenAI announced GPT-6.1 Terra, a mid‑range language model aimed at everyday work tasks such as drafting proposals, interpreting technical drawings and filling ",
+ "tema": "LLMs",
+ "paragrafi": [
+  "OpenAI announced GPT-6.1 Terra, a mid‑range language model aimed at everyday work tasks such as drafting proposals, interpreting technical drawings and filling forms.",
+  "The model costs $1 per million input tokens and $5 per million output tokens, exactly half the rates of GPT-5.6 Terra, while cached inputs drop to $0.05 per million tokens.",
+  "Benchmarks show Terra improves the Intelligence Index by six points over GPT-5.6 Terra and reduces hallucinations from 88% to 38% on a private test, while solving 50.3% of coding tasks at maximum effort.",
+  "Terra also delivers faster computer control, matching GPT-6 Astra on the Agents' Last Exam benchmark at one‑tenth the token price and finishing three times quicker than larger models."
+ ],
+ "perche": [
+  "For users, Terra offers a cheaper, faster option for routine office automation and coding assistance, lowering the cost per task to $0.40 compared with $1.40 for the previous generation. For developers of free or local models, the price‑performance leap highlights the growing gap between open‑source offerings and proprietary mid‑tier models, emphasizing the need for continued optimization to stay competitive."
+ ],
+ "pubblicato": "2026-10-26",
+ "titoloFonte": "GPT-6.1 Terra halves OpenAI's API prices and still gains ground on its larger models",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/gpt-6-1-terra-halves-openais-api-prices-and-still-gains-ground-on-its-larger-models/",
+   "titolo": "GPT-6.1 Terra halves OpenAI's API prices and still gains ground on its larger models",
+   "ufficiale": false,
+   "data": "2026-10-26"
+  },
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/introducing-gpt-6-1-terra",
+   "titolo": "Introducing GPT-6.1 Terra",
+   "ufficiale": true,
+   "data": "2026-10-26"
+  }
+ ],
+ "frasiTolte": 2
+}

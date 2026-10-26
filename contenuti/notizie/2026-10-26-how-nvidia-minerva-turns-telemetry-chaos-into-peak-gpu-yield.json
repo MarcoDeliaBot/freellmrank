@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-26-how-nvidia-minerva-turns-telemetry-chaos-into-peak-gpu-yield",
+ "titolo": "How NVIDIA Minerva Turns Telemetry Chaos Into Peak GPU Yield",
+ "descr": "Minerva’s telemetry platform consolidates hundreds of alerts into single incidents, saving up to 54 hours of cluster uptime.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced Minerva, an AIOps platform that unifies telemetry from GPUs, networking, storage and workloads into a real‑time knowledge graph.",
+  "The system applies supervised and unsupervised machine‑learning models to spot gray failures such as a single NVLink link degrading among 400,000 components or a GPU running hotter than peers under the same load.",
+  "Topology‑aware correlation can collapse many related alerts into one incident; a pause‑frame storm that generated 81 alerts was reduced to a single actionable case, cutting repair time and preserving an estimated 54 hours of cluster uptime.",
+  "Proactive detection of rare SuperNIC PCIe faults and NVMe power‑state failures allowed NVIDIA to drain affected nodes before customer jobs arrived, preventing hundreds to thousands of wasted GPU hours."
+ ],
+ "perche": [
+  "For AI practitioners, Minerva promises higher GPU utilization and faster fault resolution, reducing training delays. For developers of free or local models, the platform demonstrates how AI‑driven telemetry can improve reliability in large‑scale clusters, a benefit that may eventually trickle down to smaller deployments."
+ ],
+ "pubblicato": "2026-10-26",
+ "titoloFonte": "How NVIDIA Minerva Turns Telemetry Chaos Into Peak GPU Yield",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/how-nvidia-minerva-turns-telemetry-chaos-into-peak-gpu-yield/",
+   "titolo": "How NVIDIA Minerva Turns Telemetry Chaos Into Peak GPU Yield",
+   "ufficiale": true,
+   "data": "2026-10-26"
+  }
+ ],
+ "frasiTolte": 2
+}

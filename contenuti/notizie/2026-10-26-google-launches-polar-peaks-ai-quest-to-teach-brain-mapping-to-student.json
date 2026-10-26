@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-26-google-launches-polar-peaks-ai-quest-to-teach-brain-mapping-to-student",
+ "titolo": "Google launches \"Polar Peaks\" AI Quest to teach brain‑mapping to students",
+ "descr": "Google Research and Stanford Accelerator debut an interactive game for ages 11‑14 to map neurons using AI, with new teacher training modules.",
+ "tema": "Research",
+ "paragrafi": [
+  "Google Research and the Stanford Accelerator for Learning have released \"Polar Peaks,\" the third AI Quest aimed at students aged 11 to 14.",
+  "The quest lets learners act as researchers, scanning and mapping brain neurons while practicing data cleaning and model testing.",
+  "It highlights the need for human oversight in AI and builds critical thinking skills, echoing a decade of Google’s work in connectomics.",
+  "Upon completion, students hear from the scientists behind real breakthroughs, including the recent full fruit‑fly brain map, the largest by neuron count.",
+  "Google also introduced dedicated teacher training modules through the Google AI Educator Series, with the Quest 3 module arriving next month."
+ ],
+ "perche": [
+  "The game provides a hands‑on way for young learners to understand AI’s role in neuroscience, encouraging responsible use. Educators gain ready‑made resources to integrate AI literacy without needing specialized hardware or paid models."
+ ],
+ "pubblicato": "2026-10-26",
+ "titoloFonte": "Our newest AI Quest: Mapping the human brain",
+ "fonti": [
+  {
+   "nome": "Google",
+   "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
+   "titolo": "Our newest AI Quest: Mapping the human brain",
+   "ufficiale": true,
+   "data": "2026-10-26"
+  }
+ ],
+ "frasiTolte": 0
+}
