@@ -51,7 +51,9 @@ const FONT = `@font-face { font-family: "Source Serif 4"; src: url("assets/fonts
 // la scena completa: fondo verde con griglia, barra in alto, il corpo dello stampo e la sua animazione.
 // id: identificativo della composizione (es. "s3-numeri"); px: prefisso di classi e id dello stampo (es. "s3-");
 // css, corpo: dello stampo, con classi e id che iniziano con px; anima: righe JS che usano tl, q(sel), qa(sel), DUR
-export function scena({ id, px, durata, etichetta = '', numero = '', css = '', corpo = '', anima = '', ultima = false, formato = 'orizzontale' }) {
+// fuori: pezzi messi fuori dal palco (che ha data-start): un <video data-start> non può stare dentro un contenitore temporizzato
+// (regola di HyperFrames «video_nested_in_timed_element»), quindi le clip dello stampo «immagine» vanno qui (26/10/2026)
+export function scena({ id, px, durata, etichetta = '', numero = '', css = '', corpo = '', anima = '', ultima = false, formato = 'orizzontale', fuori = '' }) {
   const D = s3(durata);
   const { W, H, margine: M } = formatoDi(formato);
   const alto = formato === 'verticale' ? 72 : 56;
@@ -76,6 +78,7 @@ export function scena({ id, px, durata, etichetta = '', numero = '', css = '', c
       <div class="${px}riga-barra" id="${px}riga-barra"></div>
       ${corpo}
     </div>
+    ${fuori}
   </div>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
   <script>

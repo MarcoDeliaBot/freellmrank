@@ -5,6 +5,8 @@ data: 2026-10-25
 tema: Guides
 ---
 
+> **Update, 26 October 2026:** this guide said K3.1 Pro was paid only. That is no longer true. Moonshot's [pricing page](https://www.kimi.ai/resources/kimi-k3-1-pro-pricing), updated on 26 October, lists K3.1 Pro on the Free plan with "Limited usage" on the web and in Kimi Work. The API and Kimi Code are still paid. Details in [Kimi K3.1 Pro is free to try in the Kimi app](/blog/kimi-k3-1-pro-free-in-kimi-app).
+
 Kimi K3.1 Pro is the new top model from Moonshot AI, released on the Kimi API on 23 October 2026. Moonshot calls it "our most capable 3T-class open-weight model to date", with a 1-million-token context window. It comes with a faster twin, **Kimi K3.1 Pro Highspeed**, which Moonshot says runs 2 to 3 times faster.
 
 For anyone looking for free AI, one sentence matters more than all the benchmarks: Moonshot's guide says the full model weights "will be released by Nov 4". Until that day, K3.1 Pro is a paid model. After that day, it should become the strongest open model for coding that anyone has published.
@@ -188,7 +190,7 @@ What the official guide documents, and the rules that are easy to miss:
 
 **Is Kimi K3.1 Pro open source?** Not yet. Today it is an API model. Moonshot promises the full weights by 4 November 2026; until then nobody outside Moonshot can download it.
 
-**Is it free?** No. The API needs a $1 top-up and costs $2 / $10 per million tokens. The free option today is Kimi K3.
+**Is it free?** The API is not: it needs a $1 top-up and costs $2 / $10 per million tokens. Updated 26 October 2026: the Kimi app and Kimi Work now include K3.1 Pro on the Free plan, with limited usage ([details](/blog/kimi-k3-1-pro-free-in-kimi-app)).
 
 **Is it better than Claude or GPT?** Not at the top. In blind Arena votes for coding, the best Claude and GPT models are still ahead, by up to 115 points. It is close to the best closed models, ahead of all open ones, and much cheaper than Claude Opus 5.5.
 

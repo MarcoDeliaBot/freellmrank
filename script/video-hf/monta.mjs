@@ -20,6 +20,14 @@ export async function monta(piano, dir) {
   const d = (...p) => path.join(dir, ...p);
   for (const c of ['assets/voice', 'assets/fonts', 'compositions/frames', 'lavoro']) fs.mkdirSync(d(c), { recursive: true });
   for (const f of ['Source_Serif_4.ttf', 'JetBrains_Mono.ttf']) fs.copyFileSync(path.join(QUI, 'fonti', f), d('assets/fonts', f));
+  // immagini e clip delle scene «immagine» (26/10/2026): il piano dà il percorso del file, lo stampo usa assets/media/<nome>
+  for (const sc of piano.scene) {
+    const m = sc.dati?.media;
+    if (typeof m !== 'string' || !m) continue;
+    if (!fs.existsSync(m)) throw new Error(`File della scena immagine non trovato: ${m}`);
+    fs.mkdirSync(d('assets/media'), { recursive: true });
+    fs.copyFileSync(m, d('assets/media', path.basename(m)));
+  }
 
   // 1. voce e tempi, scena per scena
   let inizio = 0;
