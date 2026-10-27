@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-27-github-repo-digital-human-koubo-lets-users-create-ai-talking-head-vide",
+ "titolo": "GitHub repo digital-human-koubo lets users create AI talking‑head videos from a single photo",
+ "descr": "The open‑source project generates lip‑synced, multi‑language videos with five editing styles and 48 packaging components using a Claude‑compatible agent skill.",
+ "tema": "Software",
+ "paragrafi": [
+  "The repository digital-human-koubo, authored by andyhuo520, produces AI‑driven talking‑head videos from one photo and one sentence.",
+  "It builds a fixed digital presenter stored in persona.json, composites the figure into any scene, and generates ≤15‑second lip‑synced clips via Grok Video 1.5 on Renoise MCP.",
+  "The pipeline includes automatic credit quoting, Whisper transcription for quality control, voice unification processing, and final editing in Remotion with five selectable styles.",
+  "Supported output includes English, Japanese, Korean, French, Spanish and Arabic, with Whisper back‑check accuracy reported between 94 % and 100 %.",
+  "The skill folder follows the open Agent Skills format and works with Claude Code, Codex, OpenClaw, WorkBuddy and other agents that can load skills, connect to a remote MCP server and run local commands."
+ ],
+ "perche": [
+  "For creators, the tool offers a turnkey way to produce professional‑looking livestream ads or tutorials without filming, lowering production cost to a few Renoise credits. For developers of free or local AI models, the repo demonstrates how to integrate large‑language agents with video generation pipelines, expanding the range of applications that can be built on open‑source foundations."
+ ],
+ "pubblicato": "2026-10-27",
+ "titoloFonte": "andyhuo520/digital-human-koubo: AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude Code / Co",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/andyhuo520/digital-human-koubo",
+   "titolo": "andyhuo520/digital-human-koubo: AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude Code / Co",
+   "ufficiale": false,
+   "data": "2026-10-26"
+  }
+ ],
+ "frasiTolte": 0
+}

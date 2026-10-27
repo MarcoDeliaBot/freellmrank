@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-27-openai-seeks-external-review-of-ai-generated-proofs-overturning-eth-an",
+ "titolo": "OpenAI seeks external review of AI‑generated proofs overturning ETH and tackling wave conjecture",
+ "descr": "OpenAI posted AI‑produced proofs that challenge the Exponential Time Hypothesis and address a decades‑old wave conjecture, inviting independent experts to verify them.",
+ "tema": "Research",
+ "paragrafi": [
+  "OpenAI announced that its internal AI models have generated proofs that refute the Exponential Time Hypothesis (ETH) in computer science and resolve part of a Millennium Prize Problem in mathematics.",
+  "The company also claims a proof related to a 1991 wave concentration conjecture by Christopher Sogge, and a physics result, though details on the latter are limited.",
+  "OpenAI translated the mathematics and computer‑science proofs into the Lean language, allowing computer‑checked verification of each logical step, but notes that Lean only confirms the formal statement as written.",
+  "OpenAI will publish the raw data, including the written and Lean proofs, and has pledged funding for a conference to discuss the implications of the findings."
+ ],
+ "perche": [
+  "If confirmed, overturning the ETH would unsettle many theoretical results that rely on it, potentially reshaping algorithm research and complexity theory. For AI users, the episode highlights the growing role of AI in generating formal research and the need for rigorous, independent verification, especially when free or locally run models aim to replicate such capabilities."
+ ],
+ "pubblicato": "2026-10-27",
+ "titoloFonte": "OpenAI asks outside experts, including a Nobel laureate, to check proofs its AI produced in math, computer science, and physics",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/openai-asks-outside-experts-including-a-nobel-laureate-to-check-proofs-its-ai-produced-in-math-computer-science-and-physics/",
+   "titolo": "OpenAI asks outside experts, including a Nobel laureate, to check proofs its AI produced in math, computer science, and physics",
+   "ufficiale": false,
+   "data": "2026-10-27"
+  }
+ ],
+ "frasiTolte": 1
+}
