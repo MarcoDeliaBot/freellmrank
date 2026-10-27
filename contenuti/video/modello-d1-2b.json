@@ -1,0 +1,155 @@
+{
+ "nome": "modello-d1-2b",
+ "titolo": "d1-2B: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "d1-2B is a 1.9 B parameter decision model that handles text, images and video in a single forward pass. It offers millisecond latency and strong benchmark scores for free AI enthusiasts.\n\nSize: 1.9B parameters · context 125K · memory at 4-bit about 4 GB.\nRTX 3060 12 GB + 32 GB RAM: about 183 tokens/s\nRTX 4090 + 64 GB RAM: about 385 tokens/s\nRTX 5090 + 64 GB RAM: about 527 tokens/s\nMac M4 Max 128 GB: about 155 tokens/s\nNVIDIA DGX Spark 128 GB: about 145 tokens/s\nRyzen AI Max+ 395 128 GB: about 137 tokens/s\nMac Studio M3 Ultra 512 GB: about 183 tokens/s\nModel card: https://huggingface.co/LiquidAI/d1-2B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "d1-2B",
+  "LiquidAI"
+ ],
+ "condividi": "d1-2B by LiquidAI: 1.9B parameters, about 4 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "d1-2B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "d1-2B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "d1-2B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "d1-2B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "d1-2B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "d1-2B",
+    "gb": 4,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "d1-2B",
+    "vel": 183,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "d1-2B",
+    "vel": 385,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "d1-2B",
+    "vel": 527,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "d1-2B",
+    "vel": 155,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "d1-2B",
+    "vel": 145,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "d1-2B",
+    "vel": 137,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "d1-2B",
+    "vel": 183,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "d1-2B decides on text, images, and video in one forward pass, without generating tokens. It can return an answer in just 5.7 ms on an NVIDIA H100.",
+  "According to LiquidAI, d1-2B is a decision-oriented model that works with text, images and video. It uses the LFM3-VL-2B backbone and has 1.92 billion parameters. It can answer in multiple languages, including English, Arabic, Chinese and many others. The model returns typed answers with probabilities in a single forward pass, so there are no sampling parameters to set.",
+  "The model card says d1-2B returns calibrated answers in one forward pass, unlike typical generative models that emit tokens. You can ask any number of named questions about a single state, and the model will answer them all at once. Beyond simple classification, it can extract text, numbers, dates with spans, locate objects in pictures, and even give quantity estimates with confidence intervals. All of this happens without generating any output tokens.",
+  "LiquidAI reports that d1-2B leads the open d1 family on average across a board of more than a hundred decision benchmarks. On the Decision Index public suite it scores 51.1, and on the overall board it reaches 63.2, ahead of the larger d1-3B model. In vision tasks it scores 76.7 on AI2D and 86.1 on CV-Bench, placing it among the top open models for image decisions.",
+  "The model runs in about 5.7 ms per decision on an NVIDIA H100 and 3.8 ms on an AMD MI325X, making it suitable for high-throughput pipelines. It excels at tasks like routing, moderation, intent classification, document extraction and visual inspection. However, the card notes that knowledge-heavy queries favor larger models and accuracy drops after about 64 K tokens of state. Also, d1-2B is a decision model, not a conversational chat model.",
+  "If you run AI at home, the model fits on a modest RTX 4060, according to the data. It is ideal for developers who need rapid, calibrated decisions over text, images or video without the overhead of token generation. Projects that combine multimodal inputs, like forms with attached pictures, can benefit from its unified interface. And anyone who prefers a decision output over a generative response will find d1-2B a good match.",
+  "What do you need to run it at home? At 4-bit it takes about 4 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 183 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 385 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face, under the license written in its model card. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare d1 2B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-d1-2b",
+ "pubblicato": "2026-10-27"
+}

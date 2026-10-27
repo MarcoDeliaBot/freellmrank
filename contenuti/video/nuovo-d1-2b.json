@@ -1,0 +1,67 @@
+{
+ "nome": "nuovo-d1-2b",
+ "titolo": "d1-2B: 2B parameters, free to download #Shorts",
+ "descrizione": "d1-2B by LiquidAI came out on 24 Oct 2026, with open weights on Hugging Face. At 4-bit it needs about 4 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "d1-2B"
+ ],
+ "condividi": "d1-2B is out: 2B parameters and open weights. At 4-bit it needs about 4 GB, so the smallest card that holds it fully is the RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "d1-2B: 2 miliardi di parametri, gratis #Shorts",
+   "descrizione": "d1-2B di LiquidAI è uscito il 24 ottobre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 4 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "d1-2B: 2 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "d1-2B de LiquidAI salió el 24 de octubre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 4 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "d1-2B: 2 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "d1-2B von LiquidAI ist am 24. Oktober 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 4 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "d1-2B : 2 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "d1-2B de LiquidAI est sorti le 24 octobre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 4 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "d1-2B: 2 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "d1-2B da LiquidAI saiu em 24 de outubro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 4 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "d1-2B",
+    "gb": 4,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "schede": [
+   {
+    "id": "rtx4060",
+    "nome": "RTX 4060",
+    "gb": 8,
+    "tiene": true
+   }
+  ]
+ },
+ "voce": [
+  "A new free AI model with 2 billion parameters.",
+  "It comes from LiquidAI, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 4 gigabytes. You need at least an RTX 40 60.",
+  "It reads up to 125 thousand tokens at once.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-d1-2b",
+ "pubblicato": "2026-10-27"
+}
