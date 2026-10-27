@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-27-offline-coding-agent-runs-on-laptop-with-opencode-ollama-and-qwen3-5-9",
+ "titolo": "Offline coding agent runs on laptop with OpenCode, Ollama and Qwen3.5 9B",
+ "descr": "A principal engineer demonstrates a fully offline workflow using OpenCode, Ollama and the Qwen3.5 9B model on a Mac laptop.",
+ "tema": "Guides",
+ "paragrafi": [
+  "Rittika Jindal, a Principal Engineer at Thomson Reuters, set up a local coding assistant that works without an internet connection.",
+  "The workflow combines OpenCode 1.19.4, which reads project files and proposes edits, with Ollama running the open‑weight Qwen3.5 9B model on the same machine.",
+  "Qwen3.5 9B weighs about 6.6–7.6 GB to download and requires 12–16 GB of RAM, fitting on a typical laptop with enough free memory for a 64k‑token context.",
+  "Published scores show Qwen3.5 9B achieving 65.6 on LiveCodeBench v6 and 66.1 on BFCL‑V4, outperforming the 4‑B variant used in the same article.",
+  "Benchmarks from a cloud‑based study reported OpenCode achieving a 50 % pass rate on Terminal‑Bench Pro tasks, though token usage was higher than competing agents."
+ ],
+ "perche": [
+  "Running a coding agent fully offline lets developers work in remote locations with unreliable connectivity, preserving productivity while keeping code and data local. The availability of open‑weight models like Qwen3.5 9B demonstrates that powerful assistance can be achieved without relying on paid cloud APIs, supporting the push for free and self‑hosted AI tools."
+ ],
+ "pubblicato": "2026-10-27",
+ "titoloFonte": "Coding From the Himalayas With an Offline AI Agent",
+ "fonti": [
+  {
+   "nome": "Latent Space",
+   "url": "https://latent.space/p/offline-coding/",
+   "titolo": "Coding From the Himalayas With an Offline AI Agent",
+   "ufficiale": false,
+   "data": "2026-10-27"
+  },
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/udhaykumarbala/cleanyourtv-app",
+   "titolo": "udhaykumarbala/cleanyourtv-app: A community-built phone app for Clean Your TV: clean up an Android TV from your phone. No laptop, no coding agent, nothing uninstalled.",
+   "ufficiale": false,
+   "data": "2026-10-21"
+  }
+ ],
+ "frasiTolte": 0
+}

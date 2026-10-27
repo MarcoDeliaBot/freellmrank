@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-27-can-we-trust-llms-to-judge-whether-a-research-idea-is-novel",
+ "titolo": "Can we trust LLMs to judge whether a research idea is novel?",
+ "descr": "Six leading LLMs give wildly different novelty assessments, with accuracy swings over 50 points after minor prompt tweaks.",
+ "tema": "Research",
+ "paragrafi": [
+  "The benchmark uses two pools: 154 high‑novelty ideas from top‑rated ICLR papers and 145 low‑novelty ideas from rejected papers, plus a matched set of AI‑generated ideas.",
+  "Small prompt changes altered a model’s accuracy by more than 50 percentage points.",
+  "Adding retrieval or extra reasoning steps did not consistently improve performance, and two purpose‑built novelty systems performed worse than a simple Claude Opus 4.6 baseline.",
+  "The authors warn that current novelty judges are unstable, making it hard to rely on LLMs for automated scientific discovery."
+ ],
+ "perche": [
+  "Researchers cannot yet trust LLMs to filter genuinely new ideas, so human review remains essential for scientific evaluation. Users of free or locally hosted models—such as Kimi K3, GLM‑5.3, MiMo‑V2.6‑Pro, DeepSeek‑V4.1‑Flash, and GLM‑5.3‑Flash—should be aware that novelty assessment tools built on these models may inherit the same instability."
+ ],
+ "pubblicato": "2026-10-27",
+ "titoloFonte": "Can we trust LLMs to judge whether a research idea is novel?",
+ "fonti": [
+  {
+   "nome": "Hugging Face",
+   "url": "https://huggingface.co/blog/allenai/novelty-bench",
+   "titolo": "Can we trust LLMs to judge whether a research idea is novel?",
+   "ufficiale": true,
+   "data": "2026-10-27"
+  }
+ ],
+ "frasiTolte": 3
+}
