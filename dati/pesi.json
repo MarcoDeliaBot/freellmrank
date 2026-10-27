@@ -763,5 +763,35 @@
   "repo": "Qwen/Qwen2.5-72B-Instruct",
   "parametri": 72706203648,
   "fonte": "hf-auto"
+ },
+ "HunyuanImage 3.0": {
+  "repo": "tencent/HunyuanImage-3.0-Instruct",
+  "parametri": 83009199459,
+  "fonte": "hf-auto"
+ },
+ "HiDream-O1-Image": {
+  "repo": "HiDream-ai/HiDream-O1-Image",
+  "parametri": 8804887792,
+  "fonte": "hf-auto"
+ },
+ "Krea 2 Turbo": {
+  "repo": "krea/Krea-2-Turbo",
+  "parametri": 12820073036,
+  "fonte": "hf-auto"
+ },
+ "Z-Image-Turbo": {
+  "repo": "Tongyi-MAI/Z-Image-Turbo",
+  "parametri": 6154908736,
+  "fonte": "hf-auto"
+ },
+ "Qwen-Image": {
+  "repo": "Qwen/Qwen-Image",
+  "parametri": 20430401088,
+  "fonte": "hf-auto"
+ },
+ "GLM-Image": {
+  "repo": "zai-org/GLM-Image",
+  "parametri": 6926882880,
+  "fonte": "hf-auto"
  }
 }

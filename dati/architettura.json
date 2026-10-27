@@ -1923,5 +1923,27 @@
   "contestoMax": 4096,
   "moe": false,
   "attivi": 1510019104
+ },
+ "Qwen/Qwen3-VL-8B-Instruct": {
+  "strati": 36,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 36,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": false,
+  "attivi": 8767123696
+ },
+ "XiaomiMiMo/MiMo-VL-7B-RL-2508": {
+  "strati": 36,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 36,
+  "finestra": 0,
+  "larghezzaFinestra": 8192,
+  "contestoMax": 128000,
+  "moe": false,
+  "attivi": 8306217216
  }
 }
