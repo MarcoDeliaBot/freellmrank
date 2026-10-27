@@ -1945,5 +1945,38 @@
   "contestoMax": 128000,
   "moe": false,
   "attivi": 8306217216
+ },
+ "inclusionAI/Ling-3.1-flash-1019": {
+  "strati": 72,
+  "tipo": "MLA",
+  "kvPerStrato": 1152,
+  "pieni": 72,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": true,
+  "attivi": 32424905024
+ },
+ "LiquidAI/d1-2B": {
+  "strati": 24,
+  "tipo": "GQA",
+  "kvPerStrato": 2048,
+  "pieni": 6,
+  "finestra": 5,
+  "larghezzaFinestra": 256,
+  "contestoMax": 128000,
+  "moe": false,
+  "attivi": 1918181888
+ },
+ "LiquidAI/LFM3-1.7B": {
+  "strati": 24,
+  "tipo": "GQA",
+  "kvPerStrato": 2048,
+  "pieni": 6,
+  "finestra": 5,
+  "larghezzaFinestra": 256,
+  "contestoMax": 262144,
+  "moe": false,
+  "attivi": 1728801536
  }
 }
