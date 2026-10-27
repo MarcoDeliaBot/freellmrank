@@ -78,5 +78,13 @@
  "news-2026-10-26-openai-launches-gpt-6-1-terra-mid-range-model-at-half-the-api-cost-of-": {
   "lungo": "notizia-openai-launches-gpt-6-1-terra-mid-range-model-at-half-th",
   "breve": "breve-openai-launches-gpt-6-1-terra-mid-range-model-at-half-th"
+ },
+ "news-2026-10-27-meta-releases-interactiveworld-a-simulation-platform-for-egocentric-ai": {
+  "lungo": "notizia-meta-releases-interactiveworld-a-simulation-platform-for",
+  "breve": "breve-meta-releases-interactiveworld-a-simulation-platform-for"
+ },
+ "news-2026-10-27-openai-releases-ai-generated-proofs-disproving-eth-and-solving-major-m": {
+  "lungo": "notizia-openai-releases-ai-generated-proofs-disproving-eth-and-s",
+  "breve": "breve-openai-releases-ai-generated-proofs-disproving-eth-and-s"
  }
 }
