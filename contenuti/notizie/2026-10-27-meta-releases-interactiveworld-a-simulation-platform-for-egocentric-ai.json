@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-27-meta-releases-interactiveworld-a-simulation-platform-for-egocentric-ai",
+ "titolo": "Meta releases InteractiveWorld, a simulation platform for egocentric AI assistants",
+ "descr": "InteractiveWorld offers a verifiable environment and benchmark to test multimodal LLM assistants that guide humans in physical tasks.",
+ "tema": "Research",
+ "paragrafi": [
+  "Meta announced InteractiveWorld, the first environment that realistically simulates a human wearing an AI assistant and interacting in a physical setting.",
+  "In the platform the assistant sees through the human’s eyes, issues instructions, the human acts, and the world updates accordingly, creating a closed‑loop interaction.",
+  "The accompanying InteractiveBench benchmark contains 120 multi‑turn tasks across six categories, scoring performance with state‑based rewards.",
+  "Tests on 12 frontier multimodal large language models showed limited reliability; the top model, Claude Fable 5.1, reached at most 20% on long‑horizon guidance and 25% on planning tasks.",
+  "The project page and source code are publicly available on GitHub, inviting further research into more capable egocentric AI assistants."
+ ],
+ "perche": [
+  "InteractiveWorld provides researchers with a reproducible testbed to evaluate how well multimodal LLMs can assist users in real‑world scenarios. For developers of free or locally run models, the benchmark highlights current gaps and may guide improvements toward more reliable, wearable AI assistants."
+ ],
+ "pubblicato": "2026-10-27",
+ "titoloFonte": "Meta paper: InteractiveWorld: A Verifiable Human-Centric Environment for Building Better Interactive MLLM Assistants",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.33966",
+   "titolo": "Meta paper: InteractiveWorld: A Verifiable Human-Centric Environment for Building Better Interactive MLLM Assistants",
+   "ufficiale": true,
+   "data": "2026-10-24"
+  }
+ ],
+ "frasiTolte": 0
+}

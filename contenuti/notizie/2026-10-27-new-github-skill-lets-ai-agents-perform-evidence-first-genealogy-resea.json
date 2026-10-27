@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-27-new-github-skill-lets-ai-agents-perform-evidence-first-genealogy-resea",
+ "titolo": "New GitHub skill lets AI agents perform evidence‑first genealogy research across former USSR",
+ "descr": "The ex‑USSR Kinship Research skill equips Codex, Claude Code and similar agents to search church, civil, military and archive records in all 15 former Soviet republics.",
+ "tema": "Research",
+ "paragrafi": [
+  "A GitHub repository named ex‑ussr-kinship-research provides an evidence‑first genealogy skill for AI agents such as Codex and Claude Code.",
+  "Instructions are written in Russian, but the agent can reply in English, Ukrainian, Polish, German and other languages, quoting sources in original spelling with translations.",
+  "It separates proven facts from hypotheses, uses a status system from hypothesis to strongly‑corroborated, and logs every find in a CSV register with an audit script that checks referential integrity.",
+  "Installation requires cloning the repo into the agent’s skills folder; the scripts run on Python 3 and the standard library, with an optional Chromium‑based browser for PDF generation."
+ ],
+ "perche": [
+  "For AI users, the skill offers a structured, reproducible way to conduct complex family‑history research without manual data entry. For advocates of free and locally run models, the open‑source nature and minimal dependencies mean the tool can run on personal hardware, keeping genealogy work transparent and independent of proprietary services."
+ ],
+ "pubblicato": "2026-10-27",
+ "titoloFonte": "DenisSergeevitch/ex-ussr-kinship-research: Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. ",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+   "titolo": "DenisSergeevitch/ex-ussr-kinship-research: Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. ",
+   "ufficiale": false,
+   "data": "2026-10-25"
+  }
+ ],
+ "frasiTolte": 1
+}
