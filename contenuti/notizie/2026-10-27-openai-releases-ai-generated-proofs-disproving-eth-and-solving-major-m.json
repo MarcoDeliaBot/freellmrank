@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-27-openai-releases-ai-generated-proofs-disproving-eth-and-solving-major-m",
+ "titolo": "OpenAI releases AI‑generated proofs disproving ETH and solving major math conjectures",
+ "descr": "OpenAI announced three new scientific breakthroughs on Oct 26, 2026, covering mathematics, computer science and physics.",
+ "tema": "Research",
+ "paragrafi": [
+  "OpenAI announced three new scientific breakthroughs on Oct 26, 2026, covering mathematics, computer science and physics.",
+  "In computer science, the AI output presented a deterministic algorithm that counts satisfying assignments of fixed‑width CNF formulas in sub‑exponential time and polynomial space, refuting the Exponential Time Hypothesis for 3‑SAT.",
+  "In physics, OpenAI released a rigorous existence proof for interacting quantum field theories with gauge fields and fermions in four dimensions, including QCD and a unified Standard Model completion.",
+  "Each result is posted on GitHub with Lean‑formalized proofs, and independent expert groups led by Russell Impagliazzo, Ramamohan Paturi, Ryan Williams (computer science) and David Gross (physics) will examine the claims."
+ ],
+ "perche": [
+  "The releases illustrate how AI can generate complex proofs, prompting the research community to develop new verification workflows. For users of free or locally‑run models, the work highlights the gap between cutting‑edge AI research and the capabilities of publicly available models, underscoring the need for open‑source tools that can assist in proof checking and collaborative validation."
+ ],
+ "pubblicato": "2026-10-27",
+ "titoloFonte": "OpenAI announces three big science discoveries and a new way to work with academics",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
+   "titolo": "OpenAI announces three big science discoveries and a new way to work with academics",
+   "ufficiale": false,
+   "data": "2026-10-26"
+  }
+ ],
+ "frasiTolte": 2
+}

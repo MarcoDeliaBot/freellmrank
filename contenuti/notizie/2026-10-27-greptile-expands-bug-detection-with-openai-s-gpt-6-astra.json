@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-27-greptile-expands-bug-detection-with-openai-s-gpt-6-astra",
+ "titolo": "Greptile expands bug detection with OpenAI's GPT-6 Astra",
+ "descr": "Greptile integrates GPT-6 Astra to test user workflows, enhance security with Daybreak, and cut rework using Codex.",
+ "tema": "Software",
+ "paragrafi": [
+  "Greptile announced a new bug detection capability that goes beyond traditional code review.",
+  "The company now leverages OpenAI's GPT-6 Astra to automatically test user workflows.",
+  "Greptile also employs its Daybreak tool to strengthen security in the development pipeline.",
+  "Codex is used within the platform to reduce the amount of rework developers must perform."
+ ],
+ "perche": [
+  "The integration of GPT-6 Astra gives developers a more automated way to find bugs early, potentially speeding up releases. Users of free or locally hosted models may still rely on existing tools, as this feature depends on OpenAI's proprietary model."
+ ],
+ "pubblicato": "2026-10-27",
+ "titoloFonte": "Greptile takes bug detection beyond code review with GPT-6 Astra",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/greptile-code-review-codex-astra",
+   "titolo": "Greptile takes bug detection beyond code review with GPT-6 Astra",
+   "ufficiale": true,
+   "data": "2026-10-26"
+  }
+ ],
+ "frasiTolte": 0
+}

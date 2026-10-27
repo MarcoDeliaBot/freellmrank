@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-27-nvidia-mission-control-2-5-adds-autonomous-recovery-for-kubernetes-ai-",
+ "titolo": "NVIDIA Mission Control 2.5 adds autonomous recovery for Kubernetes AI workloads",
+ "descr": "The new version extends its self‑healing engine to Kubernetes jobs managed by Run:ai, handling hardware faults and software errors automatically.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced Mission Control 2.5 on Oct 26, 2026. The update brings the autonomous recovery engine to Kubernetes‑based AI workloads that run under NVIDIA Run:ai.",
+  "For transient software errors, the job recovery service simply retries the workload.",
+  "The hardware recovery service can also detect early degradation and remove risky nodes from the scheduling pool before jobs are disrupted. NVIDIA cites AI‑enabled network anomaly detection as a new feature in the release.",
+  "Documentation and upgrade instructions are available on NVIDIA’s site. The update aims to shift AI factory operations from reactive maintenance to proactive, self‑healing infrastructure."
+ ],
+ "perche": [
+  "For AI practitioners, the added Kubernetes support means larger clusters can stay productive with less manual intervention, reducing downtime for training jobs. Users of free or locally hosted models benefit indirectly, as more reliable infrastructure can lower overall cloud costs and keep resources available for open‑source workloads."
+ ],
+ "pubblicato": "2026-10-27",
+ "titoloFonte": "How NVIDIA Mission Control 2.5 Brings Autonomous Recovery to Kubernetes",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/how-nvidia-mission-control-2-5-brings-autonomous-recovery-to-kubernetes/",
+   "titolo": "How NVIDIA Mission Control 2.5 Brings Autonomous Recovery to Kubernetes",
+   "ufficiale": true,
+   "data": "2026-10-26"
+  }
+ ],
+ "frasiTolte": 2
+}
