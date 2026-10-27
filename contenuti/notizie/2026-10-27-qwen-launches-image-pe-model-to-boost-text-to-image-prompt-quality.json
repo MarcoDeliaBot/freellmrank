@@ -1,0 +1,26 @@
+{
+ "nome": "2026-10-27-qwen-launches-image-pe-model-to-boost-text-to-image-prompt-quality",
+ "titolo": "Qwen launches Image-PE model to boost text-to-image prompt quality",
+ "descr": "Qwen-Image-PE employs two-stage training to enhance prompts, raising benchmark scores by up to 7.81 points and outperforming existing baselines.",
+ "tema": "Research",
+ "paragrafi": [
+  "Qwen released a new model called Qwen-Image-PE that focuses on visual design for text‑to‑image (T2I) prompt enhancement.",
+  "The approach uses supervised fine‑tuning with Caption‑Based Reverse Distillation followed by reinforcement learning with a Groupwise Design Reward to refine lighting, composition, layout and detail.",
+  "On the Qwen‑Image‑Bench, the 397‑billion‑parameter version improves original requests by 7.81 points, while the 9‑billion‑parameter version outperforms all evaluated prompt‑enhancement baselines."
+ ],
+ "perche": [
+  "For creators and developers, the model offers a way to turn vague text requests into higher‑quality visual outputs without manual prompt engineering. Its open release supports the free‑model ecosystem, giving users an advanced tool that can be run locally or integrated into existing pipelines."
+ ],
+ "pubblicato": "2026-10-27",
+ "titoloFonte": "Qwen paper: Qwen-Image-PE: Learning Visual Design for Text-to-Image Prompt Enhancement",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.33472",
+   "titolo": "Qwen paper: Qwen-Image-PE: Learning Visual Design for Text-to-Image Prompt Enhancement",
+   "ufficiale": true,
+   "data": "2026-10-23"
+  }
+ ],
+ "frasiTolte": 2
+}

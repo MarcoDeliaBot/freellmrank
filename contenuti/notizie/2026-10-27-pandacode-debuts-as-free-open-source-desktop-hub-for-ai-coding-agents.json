@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-27-pandacode-debuts-as-free-open-source-desktop-hub-for-ai-coding-agents",
+ "titolo": "PandaCode debuts as free open‑source desktop hub for AI coding agents",
+ "descr": "The new Tauri‑based workspace lets developers run multiple coding CLIs and AI models side by side on Windows, macOS and Linux.",
+ "tema": "Software",
+ "paragrafi": [
+  "The app runs existing coding CLIs such as Claude Code, Codex, Kimi Code, OpenCode, GLM Coding Plan, GitHub Copilot CLI and many others, letting users switch harnesses and models per task.",
+  "Built with Tauri 2, Rust, SQLite and plain TypeScript, PandaCode uses the operating system’s webview and does not bundle Chromium or a Node server.",
+  "It is released under the PandaCode License, a MIT variant that requires forks used commercially to display the notice \"This is a fork of PandaCode\".",
+  "Download packages are available for macOS (Apple silicon and Intel), Windows (x64 and arm64) and Linux (x64 and arm64)."
+ ],
+ "perche": [
+  "For developers who prefer free or locally run AI tools, PandaCode offers a unified interface without accounts or telemetry. It complements the growing ecosystem of free chat models such as Kimi K3 and GLM‑5.3, giving users a practical way to experiment with multiple coding agents on their own hardware."
+ ],
+ "pubblicato": "2026-10-27",
+ "titoloFonte": "aicodeking/pandacode: PandaCode: a calm desktop workspace for coding agents",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/aicodeking/pandacode",
+   "titolo": "aicodeking/pandacode: PandaCode: a calm desktop workspace for coding agents",
+   "ufficiale": false,
+   "data": "2026-10-18"
+  }
+ ],
+ "frasiTolte": 1
+}

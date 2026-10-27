@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-27-google-deepmind-unveils-genie-4-a-real-time-interactive-world-model-wi",
+ "titolo": "Google DeepMind unveils Genie 4, a real‑time interactive world model with audio and dialogue",
+ "descr": "Genie 4 simulates frame‑by‑frame environments, generates background sound and character speech, and is limited to select testers before reaching Google AI Ultra users.",
+ "tema": "Research",
+ "paragrafi": [
+  "Google DeepMind announced Genie 4, the successor to Genie 3 shown in August 2025. The system renders interactive worlds frame by frame and adds matching background audio and spoken dialogue in real time.",
+  "Gemini models run behind the scenes, planning multistep tasks and adjusting the simulation when users change conditions with text prompts or keyboard moves. The model can adapt weather, lighting and character actions on the fly.",
+  "The demo includes a scenario where Gemini 4 Argon provides step‑by‑step instructions for a simulated humanoid robot, Apollo, to play checkers, showing a link between the world model and robotics research.",
+  "DeepMind describes Genie 4 as experimental. Short sessions stay consistent, but longer runs can suffer visual drift and object persistence issues. Complex physics and accurate sound remain research challenges.",
+  "Access is currently limited to a small group of testers. The company plans to expand availability through the Project Genie web app for Google AI Ultra subscribers and early‑access partners of the Gemini API and Google AI Studio."
+ ],
+ "perche": [
+  "Genie 4 demonstrates how large‑scale models can blend language reasoning with pixel‑level simulation, pointing to future training environments for robots and AI agents. For users focused on free or locally run models, the arena data shows the top free chat models such as Kimi K3 and GLM‑5.3, while the best paid option remains Gemini 4 Argon, highlighting a gap between cutting‑edge research prototypes and widely accessible AI services."
+ ],
+ "pubblicato": "2026-10-27",
+ "titoloFonte": "Google Deepmind's Genie 4 puts a modern spin on agent designs that predate LLMs",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/google-deepminds-genie-4-puts-a-modern-spin-on-agent-designs-that-predate-llms/",
+   "titolo": "Google Deepmind's Genie 4 puts a modern spin on agent designs that predate LLMs",
+   "ufficiale": false,
+   "data": "2026-10-27"
+  }
+ ],
+ "frasiTolte": 0
+}
