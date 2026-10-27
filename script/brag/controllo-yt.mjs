@@ -11,6 +11,7 @@
 //   rapporto breve per ogni video e riepilogo con i conteggi; esce sempre con 0 (serve a vedere, non a fermare).
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 
 export const MAX_TITOLO = 60;
 export const LIMITE_TITOLO = 100;
@@ -20,6 +21,8 @@ export const MAX_TAG = 15;
 export const MAX_CARATTERI_TAG = 500;
 export const MAX_DESCRIZIONE = 5000;
 export const MIN_CAPITOLO = 10;
+// 27/10/2026: 1 s di margine nel montare i capitoli (Claude 5.5: ultimo capitolo di 10,03 s, valido per 0,03 s)
+export const MARGINE_CAPITOLO = 1;
 export const MAX_TITOLO_CAPITOLO = 40;
 const SHORTS = ' #Shorts';
 // parole che non possono chiudere un titolo (segno di un taglio)
@@ -75,7 +78,7 @@ const orario = (s) => {
 const secondi = (t) => t.split(':').reduce((a, x) => a * 60 + Number(x), 0);
 export const titoloCapitolo = (t) => tagliaParole(String(t ?? '').replace(/…/g, ' '), MAX_TITOLO_CAPITOLO);
 
-// capitoli = [{ inizio: secondi, titolo }], durata = secondi del video. Un capitolo sotto i 10 s si unisce al precedente
+// capitoli = [{ inizio: secondi, titolo }], durata = secondi del video. Un capitolo sotto gli 11 s (10 + 1 di margine) si unisce al precedente
 // (il primo, che parte sempre da 0:00, si tiene il seguente). Restituisce le righe «0:00 Titolo» solo se valgono le regole
 // di YouTube (primo a 0:00, almeno 3, ognuno di almeno 10 s); se no ''.
 export function capitoliYT(capitoli, durata) {
@@ -90,8 +93,8 @@ export function capitoliYT(capitoli, durata) {
   // due scene di seguito con lo stesso titolo: un capitolo solo
   c = c.filter((x, i) => i === 0 || x.titolo.toLowerCase() !== c[i - 1].titolo.toLowerCase());
   const lung = (i) => (i + 1 < c.length ? c[i + 1].inizio : fine) - c[i].inizio;
-  for (let i; c.length > 1 && (i = c.findIndex((_, j) => lung(j) < MIN_CAPITOLO)) >= 0;) c.splice(i === 0 ? 1 : i, 1);
-  const ok = c.length >= 3 && c[0].inizio === 0 && c.every((_, j) => lung(j) >= MIN_CAPITOLO);
+  for (let i; c.length > 1 && (i = c.findIndex((_, j) => lung(j) < MIN_CAPITOLO + MARGINE_CAPITOLO)) >= 0;) c.splice(i === 0 ? 1 : i, 1);
+  const ok = c.length >= 3 && c[0].inizio === 0 && c.every((_, j) => lung(j) >= MIN_CAPITOLO + MARGINE_CAPITOLO);
   return ok ? c.map((x) => `${orario(x.inizio)} ${x.titolo}`).join('\n') : '';
 }
 
@@ -181,8 +184,16 @@ export function controlli(info) {
 export const controllaYT = (info) => controlli(info).map((x) => x.testo);
 
 // ---------- riga di comando ----------
-// durata: fine dell'ultima riga del .srt accanto al .json; se manca, la somma delle durate minime delle scene
+// durata: quella del video .mp4 accanto al .json (ffprobe); se manca, la fine dell'ultima riga del .srt;
+// se manca anche quello, la somma delle durate minime delle scene
 function durataDi(file, info) {
+  const mp4 = file.replace(/\.json$/i, '.mp4');
+  if (fs.existsSync(mp4)) {
+    try {
+      const d = Number(execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', mp4], { encoding: 'utf8' }).trim());
+      if (d > 0) return d;
+    } catch { /* ffprobe assente: si passa al .srt */ }
+  }
   const srt = file.replace(/\.json$/i, '.srt');
   if (fs.existsSync(srt)) {
     const fini = [...fs.readFileSync(srt, 'utf8').matchAll(/-->\s*(\d+):(\d+):(\d+)[,.](\d+)/g)].map((m) => +m[1] * 3600 + +m[2] * 60 + +m[3] + +m[4] / 1000);
