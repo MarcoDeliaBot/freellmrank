@@ -70,5 +70,13 @@
  "news-2026-10-26-tencent-releases-histeve-1-0-a-vla-agent-that-completes-long-horizon-m": {
   "lungo": "notizia-tencent-releases-histeve-1-0-a-vla-agent-that-completes",
   "breve": "breve-tencent-releases-histeve-1-0-a-vla-agent-that-completes"
+ },
+ "news-2026-10-27-openai-launches-gpt-6-1-terra-a-faster-vision-computer-model-at-half-t": {
+  "lungo": "notizia-openai-launches-gpt-6-1-terra-a-faster-vision-computer-m",
+  "breve": "breve-openai-launches-gpt-6-1-terra-a-faster-vision-computer-m"
+ },
+ "news-2026-10-26-openai-launches-gpt-6-1-terra-mid-range-model-at-half-the-api-cost-of-": {
+  "lungo": "notizia-openai-launches-gpt-6-1-terra-mid-range-model-at-half-th",
+  "breve": "breve-openai-launches-gpt-6-1-terra-mid-range-model-at-half-th"
  }
 }
