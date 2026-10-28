@@ -1,0 +1,74 @@
+{
+ "nome": "gpu-rtx4070-2026-10-28",
+ "titolo": "The best free AI for the RTX 4070 / 4070 Super #Shorts",
+ "descrizione": "The best free AI models on the RTX 4070 / 4070 Super (12 GB, 504 GB/s) with 32 GB of DDR5 RAM, at 4-bit with 8K context:\n1. Gemma 4 26B A4B: about 55 tokens/s (Arena 1437, GPU + RAM)\n2. Qwen3.5-35B-A3B: about 59 tokens/s (Arena 1394, GPU + RAM)\n3. GLM-4.7-Flash: about 41 tokens/s (Arena 1365, GPU + RAM)\nEstimates from our simulator. Try your own card: https://freellmarena.com/home",
+ "tag": [
+  "free AI",
+  "local LLM",
+  "RTX 4070 / 4070 Super",
+  "GPU for AI"
+ ],
+ "condividi": "On the RTX 4070 / 4070 Super with 32 GB of RAM, the best free model is Gemma 4 26B A4B, at about 55 tokens/s. https://freellmarena.com/home",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "La miglior AI gratis per RTX 4070 / 4070 Super #Shorts",
+   "descrizione": "I migliori modelli AI gratis su RTX 4070 / 4070 Super (12 GB, 504 GB/s) con 32 GB di RAM DDR5, a 4 bit con 8K di contesto:\n1. Gemma 4 26B A4B: ~55 tok/s (Arena 1437, GPU + RAM)\n2. Qwen3.5-35B-A3B: ~59 tok/s (Arena 1394, GPU + RAM)\n3. GLM-4.7-Flash: ~41 tok/s (Arena 1365, GPU + RAM)\nStime del nostro simulatore. Prova la tua scheda: https://freellmarena.com/it/home"
+  },
+  "es": {
+   "titolo": "La mejor IA gratis para la RTX 4070 / 4070 Super #Shorts",
+   "descrizione": "Los mejores modelos de IA gratis en la RTX 4070 / 4070 Super (12 GB, 504 GB/s) con 32 GB de RAM DDR5, a 4 bits con 8K de contexto:\n1. Gemma 4 26B A4B: ~55 tok/s (Arena 1437, GPU + RAM)\n2. Qwen3.5-35B-A3B: ~59 tok/s (Arena 1394, GPU + RAM)\n3. GLM-4.7-Flash: ~41 tok/s (Arena 1365, GPU + RAM)\nEstimaciones de nuestro simulador. Prueba tu tarjeta: https://freellmarena.com/es/home"
+  },
+  "de": {
+   "titolo": "Die beste kostenlose KI für die RTX 4070 / 4070 Super #Shorts",
+   "descrizione": "Die besten kostenlosen KI-Modelle auf der RTX 4070 / 4070 Super (12 GB, 504 GB/s) mit 32 GB DDR5-RAM, in 4 Bit mit 8K Kontext:\n1. Gemma 4 26B A4B: ~55 tok/s (Arena 1437, GPU + RAM)\n2. Qwen3.5-35B-A3B: ~59 tok/s (Arena 1394, GPU + RAM)\n3. GLM-4.7-Flash: ~41 tok/s (Arena 1365, GPU + RAM)\nSchätzungen unseres Simulators. Teste deine Karte: https://freellmarena.com/de/home"
+  },
+  "fr": {
+   "titolo": "La meilleure IA gratuite pour la RTX 4070 / 4070 Super #Shorts",
+   "descrizione": "Les meilleurs modèles d'IA gratuits sur la RTX 4070 / 4070 Super (12 Go, 504 Go/s) avec 32 Go de RAM DDR5, en 4 bits avec 8K de contexte :\n1. Gemma 4 26B A4B: ~55 tok/s (Arena 1437, GPU + RAM)\n2. Qwen3.5-35B-A3B: ~59 tok/s (Arena 1394, GPU + RAM)\n3. GLM-4.7-Flash: ~41 tok/s (Arena 1365, GPU + RAM)\nEstimations de notre simulateur. Testez votre carte : https://freellmarena.com/fr/home"
+  },
+  "pt": {
+   "titolo": "A melhor IA grátis para a RTX 4070 / 4070 Super #Shorts",
+   "descrizione": "Os melhores modelos de IA grátis na RTX 4070 / 4070 Super (12 GB, 504 GB/s) com 32 GB de RAM DDR5, em 4 bits com 8K de contexto:\n1. Gemma 4 26B A4B: ~55 tok/s (Arena 1437, GPU + RAM)\n2. Qwen3.5-35B-A3B: ~59 tok/s (Arena 1394, GPU + RAM)\n3. GLM-4.7-Flash: ~41 tok/s (Arena 1365, GPU + RAM)\nEstimativas do nosso simulador. Teste sua placa: https://freellmarena.com/pt/home"
+  }
+ },
+ "hardware": {
+  "schede": [
+   {
+    "id": "rtx4070",
+    "nome": "RTX 4070 / 4070 Super",
+    "gb": 12,
+    "tiene": true
+   }
+  ],
+  "modelli": [
+   {
+    "nome": "Gemma 4 26B A4B",
+    "gb": 18,
+    "vel": 55,
+    "dove": "ram"
+   },
+   {
+    "nome": "Qwen3.5-35B-A3B",
+    "gb": 25,
+    "vel": 59,
+    "dove": "ram"
+   },
+   {
+    "nome": "GLM-4.7-Flash",
+    "gb": 22,
+    "vel": 41,
+    "dove": "ram"
+   }
+  ]
+ },
+ "voce": [
+  "What's the best free AI for an RTX 40 70?",
+  "It has 12 gigabytes of memory.",
+  "With 32 gigabytes of RAM, the best one is from Google, at about 55 tokens per second.",
+  "Try your own card in our free simulator.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-gpu-rtx4070-2026-10-28",
+ "pubblicato": "2026-10-28"
+}
