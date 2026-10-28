@@ -214,5 +214,14 @@
  "tattrongvu/Jeffan-4B-2010": "apache-2.0",
  "WangSenQWQ/Senova-4B": "apache-2.0",
  "knowledgator/gliclass-v4-edge": "apache-2.0",
- "vllm-sr/d3-ultra": "apache-2.0"
+ "vllm-sr/d3-ultra": "apache-2.0",
+ "sthanika-ai/Sieve-31B-v3": "apache-2.0",
+ "Rover00/WeMM-JEV": "apache-2.0",
+ "Ainvest-World/Ainvest-Decision-27b-v1.0": "apache-2.0",
+ "PNPM244/oak1.1": "cc-by-nc-4.0",
+ "StandardThinking/StandardOne-35B-SH": "apache-2.0",
+ "Kyunghwan-kim/crystal-0.8b": "cc-by-nc-4.0",
+ "vllm-sr/vela3-fast": "apache-2.0",
+ "vllm-sr/vela3-fast-vision": "mit",
+ "Elfsong/jev-ettin-150m-v16": "apache-2.0"
 }

@@ -1978,5 +1978,16 @@
   "contestoMax": 262144,
   "moe": false,
   "attivi": 1728801536
+ },
+ "allenai/Molmo2-O-7B": {
+  "strati": 32,
+  "tipo": "MHA",
+  "kvPerStrato": 16384,
+  "pieni": 32,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 65536,
+  "moe": false,
+  "attivi": 7760786896
  }
 }

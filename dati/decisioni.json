@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-10-26",
+ "aggiornato": "2026-10-28",
  "suite": {
   "versione": "decision-index-0.3",
   "test": 42,
@@ -76,6 +76,32 @@
    "licenza": "other"
   },
   {
+   "id": "sieve-31b-v3",
+   "nome": "Sieve 31B v3",
+   "org": "Sthānika AI",
+   "tipo": "full fine-tune",
+   "b": 31.3,
+   "stimato": false,
+   "repo": "sthanika-ai/Sieve-31B-v3",
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 71.1,
+   "pubblico": 71.68,
+   "ms": 231.8,
+   "p95": 1520.2,
+   "ece": 0.0537,
+   "acc": 0.806,
+   "aree": {
+    "knowledge": 61.2,
+    "language": 71.6,
+    "retrieval": 76.1,
+    "tools": 86.9,
+    "arts": 62.3
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "vllm-sr-d3-ultra",
    "nome": "vLLM-SR d3-ultra (Decision 3.0, 27B)",
    "org": "vLLM Semantic Router",
@@ -131,6 +157,35 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "wemm-jev-27b",
+   "nome": "WeMM-JEV-27B",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 26.1,
+   "stimato": false,
+   "repo": "Rover00/WeMM-JEV",
+   "base": "Qwen/Qwen3.8-27B",
+   "nota": null,
+   "punti": 68.49,
+   "pubblico": 69.37,
+   "ms": 98.3,
+   "p95": 1076.1,
+   "ece": 0.0512,
+   "acc": 0.8026,
+   "aree": {
+    "knowledge": 59,
+    "language": 74.1,
+    "retrieval": 70,
+    "tools": 86,
+    "arts": 52.4
+   },
+   "vision": {
+    "punti": 73.8,
+    "ms": 338.7
+   },
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "mammoth-1",
    "nome": "baselabs mammoth-1 (27B)",
    "org": "baselabs",
@@ -155,6 +210,32 @@
    },
    "vision": null,
    "licenza": "other"
+  },
+  {
+   "id": "ainvest-decision-27b-v1.0",
+   "nome": "Ainvest-Decision-27B v1.0",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 26.1,
+   "stimato": false,
+   "repo": "Ainvest-World/Ainvest-Decision-27b-v1.0",
+   "base": "Qwen/Qwen3.8-27B",
+   "nota": null,
+   "punti": 68.23,
+   "pubblico": 71.88,
+   "ms": 99.1,
+   "p95": 1067.7,
+   "ece": 0.0421,
+   "acc": 0.8197,
+   "aree": {
+    "knowledge": 57.9,
+    "language": 74.7,
+    "retrieval": 75.5,
+    "tools": 87.1,
+    "arts": 65.7
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
   },
   {
    "id": "pplx-decider-v1.2",
@@ -241,6 +322,32 @@
     "punti": 71.6,
     "ms": 251.9
    },
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
+   "id": "oak-1.1",
+   "nome": "MISA AI 2.0 Decision Plus · oak 1.1 (31B)",
+   "org": "MISA JSC",
+   "tipo": "full fine-tune",
+   "b": 31.3,
+   "stimato": false,
+   "repo": "PNPM244/oak1.1",
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 67.62,
+   "pubblico": 68.19,
+   "ms": 112.6,
+   "p95": 1611.7,
+   "ece": 0.0716,
+   "acc": 0.7836,
+   "aree": {
+    "knowledge": 54.4,
+    "language": 70.9,
+    "retrieval": 71.8,
+    "tools": 85.7,
+    "arts": 57.5
+   },
+   "vision": null,
    "licenza": "cc-by-nc-4.0"
   },
   {
@@ -377,32 +484,6 @@
     "punti": 71.3,
     "ms": 299.1
    },
-   "licenza": "apache-2.0"
-  },
-  {
-   "id": "linne-oak-1.0",
-   "nome": "MISA AI 2.0 Decision Plus · oak (31B)",
-   "org": "MISA JSC",
-   "tipo": "full fine-tune",
-   "b": 31.3,
-   "stimato": false,
-   "repo": "misa-jsc/misa-ai-2.0-decision-plus",
-   "base": "google/gemma-4-31B-it",
-   "nota": null,
-   "punti": 66.88,
-   "pubblico": 63.94,
-   "ms": 105.3,
-   "p95": 1539.7,
-   "ece": 0.1055,
-   "acc": 0.7522,
-   "aree": {
-    "knowledge": 54.3,
-    "language": 66.6,
-    "retrieval": 69.1,
-    "tools": 78.5,
-    "arts": 45.1
-   },
-   "vision": null,
    "licenza": "apache-2.0"
   },
   {
@@ -808,32 +889,6 @@
    "licenza": "apache-2.0"
   },
   {
-   "id": "sieve-31b",
-   "nome": "Sieve 31B",
-   "org": "Sthānika AI",
-   "tipo": "LoRA",
-   "b": 31.3,
-   "stimato": false,
-   "repo": "sthanika-ai/Sieve-31B",
-   "base": "google/gemma-4-31B-it",
-   "nota": null,
-   "punti": 64.25,
-   "pubblico": 62.52,
-   "ms": 252.6,
-   "p95": 2459,
-   "ece": 0.0331,
-   "acc": 0.7479,
-   "aree": {
-    "knowledge": 49.9,
-    "language": 65.6,
-    "retrieval": 69.5,
-    "tools": 78.7,
-    "arts": 43.5
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
-  },
-  {
    "id": "anyjev-l0-gemma-4-31b",
    "nome": "AnyJev L0 · Gemma-4-31B",
    "org": "",
@@ -1144,6 +1199,32 @@
    },
    "vision": null,
    "licenza": "other"
+  },
+  {
+   "id": "standard-one-35b-sh-v1",
+   "nome": "Standard One 35B SH (v1)",
+   "org": "Standard Thinking",
+   "tipo": "LoRA + head",
+   "b": 35.1,
+   "stimato": false,
+   "repo": "StandardThinking/StandardOne-35B-SH",
+   "base": "Qwen/Qwen3.6-35B-A3B",
+   "nota": null,
+   "punti": 60.14,
+   "pubblico": 66.26,
+   "ms": 319.9,
+   "p95": 409.8,
+   "ece": 0.0537,
+   "acc": 0.7794,
+   "aree": {
+    "knowledge": 52.1,
+    "language": 66,
+    "retrieval": 72.5,
+    "tools": 86.1,
+    "arts": 54.6
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
   },
   {
    "id": "lumma-fev-27b",
@@ -3488,6 +3569,32 @@
    "licenza": null
   },
   {
+   "id": "valen-4b-r2",
+   "nome": "Valen-4B",
+   "org": "Valen",
+   "tipo": "full fine-tune",
+   "b": 4.5,
+   "stimato": false,
+   "repo": "Valen-Team/Valen-4B",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 37.88,
+   "pubblico": 38.68,
+   "ms": 236.3,
+   "p95": 714.8,
+   "ece": 0.107,
+   "acc": 0.6411,
+   "aree": {
+    "knowledge": 27.4,
+    "language": 46.3,
+    "retrieval": 41.9,
+    "tools": 52,
+    "arts": 17.4
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "razorback-one-read-3e296f08",
    "nome": "razorback16 openjev diffusiongemma (NVFP4, vLLM)",
    "org": "",
@@ -3515,32 +3622,6 @@
     "ms": 255.2
    },
    "licenza": null
-  },
-  {
-   "id": "valen-4b",
-   "nome": "Valen-4B",
-   "org": "Valen",
-   "tipo": "full fine-tune",
-   "b": 4.5,
-   "stimato": false,
-   "repo": "Valen-Team/Valen-4B",
-   "base": "Qwen/Qwen3.5-4B",
-   "nota": null,
-   "punti": 37.57,
-   "pubblico": 38.54,
-   "ms": 166.7,
-   "p95": 451.9,
-   "ece": 0.1075,
-   "acc": 0.6406,
-   "aree": {
-    "knowledge": 27.2,
-    "language": 45.8,
-    "retrieval": 42.1,
-    "tools": 52,
-    "arts": 17.6
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
   },
   {
    "id": "neohorse-jev-4b",
@@ -4257,6 +4338,58 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "crystal-0.8b",
+   "nome": "crystal-0.8b",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 0.9,
+   "stimato": false,
+   "repo": "Kyunghwan-kim/crystal-0.8b",
+   "base": "Qwen/Qwen3.5-0.8B",
+   "nota": null,
+   "punti": 29.37,
+   "pubblico": 42.79,
+   "ms": 53.8,
+   "p95": 133.3,
+   "ece": 0.0173,
+   "acc": 0.6523,
+   "aree": {
+    "knowledge": 19.1,
+    "language": 44.8,
+    "retrieval": 55.4,
+    "tools": 64.9,
+    "arts": 33.4
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
+   "id": "vela3-fast",
+   "nome": "vLLM-SR vela3-fast (Vela 3.0, 0.4B)",
+   "org": "vLLM Semantic Router",
+   "tipo": "full fine-tune",
+   "b": 0.4,
+   "stimato": false,
+   "repo": "vllm-sr/vela3-fast",
+   "base": "dmis-lab/UltraBERT-380M",
+   "nota": null,
+   "punti": 29.27,
+   "pubblico": 50.36,
+   "ms": 54.3,
+   "p95": 161,
+   "ece": 0.1206,
+   "acc": 0.6758,
+   "aree": {
+    "knowledge": 21.2,
+    "language": 53.1,
+    "retrieval": 66.9,
+    "tools": 73.7,
+    "arts": 43.1
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "crivo-1b",
    "nome": "Crivo-1B",
    "org": "",
@@ -4705,7 +4838,7 @@
    "licenza": null
   },
   {
-   "id": "valen-2b",
+   "id": "valen-2b-r2",
    "nome": "Valen-2B",
    "org": "Valen",
    "tipo": "full fine-tune",
@@ -4715,20 +4848,46 @@
    "base": "Qwen/Qwen3.5-2B",
    "nota": null,
    "punti": 22.2,
-   "pubblico": 27.2,
-   "ms": 128,
-   "p95": 311.9,
+   "pubblico": 26.95,
+   "ms": 160.7,
+   "p95": 421.8,
    "ece": 0.1053,
    "acc": 0.5763,
    "aree": {
     "knowledge": 14.8,
-    "language": 31.4,
+    "language": 30.4,
     "retrieval": 26.2,
     "tools": 45.1,
     "arts": 17.8
    },
    "vision": null,
    "licenza": "apache-2.0"
+  },
+  {
+   "id": "vela3-fast-vision-text",
+   "nome": "vLLM-SR vela3-fast-vision (Vela 3.0, 0.25B)",
+   "org": "vLLM Semantic Router",
+   "tipo": "full fine-tune",
+   "b": 0.3,
+   "stimato": false,
+   "repo": "vllm-sr/vela3-fast-vision",
+   "base": "athrael-soju/UltraVBERT",
+   "nota": null,
+   "punti": 22.11,
+   "pubblico": 37.5,
+   "ms": 36.8,
+   "p95": 216.4,
+   "ece": 0.1119,
+   "acc": 0.618,
+   "aree": {
+    "knowledge": 13.2,
+    "language": 36.6,
+    "retrieval": 54.9,
+    "tools": 51.8,
+    "arts": 41.5
+   },
+   "vision": null,
+   "licenza": "mit"
   },
   {
    "id": "sieve-2b",
@@ -4942,6 +5101,32 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "jev-ettin-150m",
+   "nome": "JEV Ettin 150M",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 0.1,
+   "stimato": false,
+   "repo": "Elfsong/jev-ettin-150m-v16",
+   "base": "cross-encoder/ettin-reranker-150m-v1",
+   "nota": null,
+   "punti": 18.52,
+   "pubblico": 37.31,
+   "ms": 77.1,
+   "p95": 151.5,
+   "ece": 0.1287,
+   "acc": 0.5942,
+   "aree": {
+    "knowledge": 14.4,
+    "language": 43.2,
+    "retrieval": 52.1,
+    "tools": 60.4,
+    "arts": 9.3
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "decision-2.0-eos-0.8b",
    "nome": "vLLM-SR Decision 2.0 Eos 0.8B",
    "org": "vLLM Semantic Router",
@@ -5153,7 +5338,7 @@
    "licenza": "apache-2.0"
   },
   {
-   "id": "valen-0.8b",
+   "id": "valen-0.8b-r2",
    "nome": "Valen-0.8B",
    "org": "Valen",
    "tipo": "full fine-tune",
@@ -5163,14 +5348,14 @@
    "base": "Qwen/Qwen3.5-0.8B",
    "nota": null,
    "punti": 16.55,
-   "pubblico": 20.71,
-   "ms": 128,
-   "p95": 313.9,
+   "pubblico": 20.79,
+   "ms": 200.1,
+   "p95": 556.2,
    "ece": 0.1084,
    "acc": 0.5279,
    "aree": {
     "knowledge": 10.2,
-    "language": 24.5,
+    "language": 24.8,
     "retrieval": 20.6,
     "tools": 35.6,
     "arts": 11.2
