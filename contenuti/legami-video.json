@@ -94,5 +94,13 @@
  "news-2026-10-28-liquid-ai-launches-lfm3-series-with-six-2b-class-multimodal-models": {
   "lungo": "notizia-liquid-ai-launches-lfm3-series-with-six-2b-class-multimo",
   "breve": "breve-liquid-ai-launches-lfm3-series-with-six-2b-class-multimo"
+ },
+ "news-2026-10-28-nvidia-launches-open-weight-nemotron-3-5-transcribe-for-multilingual-s": {
+  "lungo": "notizia-nvidia-launches-open-weight-nemotron-3-5-transcribe-for",
+  "breve": "breve-nvidia-launches-open-weight-nemotron-3-5-transcribe-for"
+ },
+ "news-2026-10-28-legora-launches-agentic-operating-system-for-legal-workflows-using-ope": {
+  "lungo": "notizia-legora-launches-agentic-operating-system-for-legal-workf",
+  "breve": "breve-legora-launches-agentic-operating-system-for-legal-workf"
  }
 }
