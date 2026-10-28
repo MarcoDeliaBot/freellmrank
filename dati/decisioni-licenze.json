@@ -223,5 +223,14 @@
  "Kyunghwan-kim/crystal-0.8b": "cc-by-nc-4.0",
  "vllm-sr/vela3-fast": "apache-2.0",
  "vllm-sr/vela3-fast-vision": "mit",
- "Elfsong/jev-ettin-150m-v16": "apache-2.0"
+ "Elfsong/jev-ettin-150m-v16": "apache-2.0",
+ "PelaAI/KnowLine-31B-Gen1": "apache-2.0",
+ "turion-ai/turion-jev-31b": "apache-2.0",
+ "OneShotOrg/OneShot": null,
+ "scar-ai/vera-large": "apache-2.0",
+ "PelaAI/KnowLine-9B-Gen1": "apache-2.0",
+ "victorbennett/Verdin-4B-v1.1": "cc-by-nc-4.0",
+ "ironbcc/Seb-9B-v2": "apache-2.0",
+ "MLukauskas/amber-hybrid-4b": "cc-by-nc-4.0",
+ "chaoliangUNSW/Jev-Style-2B-Decision-v4": "apache-2.0"
 }
