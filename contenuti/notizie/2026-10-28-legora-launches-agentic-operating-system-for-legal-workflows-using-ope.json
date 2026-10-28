@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-28-legora-launches-agentic-operating-system-for-legal-workflows-using-ope",
+ "titolo": "Legora launches agentic operating system for legal workflows using OpenAI models",
+ "descr": "Legora announced the development of an agentic operating system aimed at legal work.",
+ "tema": "Business",
+ "paragrafi": [
+  "Legora announced the development of an agentic operating system aimed at legal work.",
+  "The platform integrates OpenAI models, including ChatGPT and Codex, to automate routine legal tasks.",
+  "Key capabilities include accelerated contract analysis and workflow automation for law firms.",
+  "Legora says the system allows lawyers to focus on higher‑value activities rather than repetitive processing.",
+  "The announcement positions Legora as a tech‑focused player in the legal services market."
+ ],
+ "perche": [
+  "For AI users, the system shows how large language models can be embedded in domain‑specific tools to improve productivity. For those seeking free or local models, Legora’s reliance on OpenAI’s cloud services highlights the trade‑off between convenience and the need for accessible alternatives."
+ ],
+ "pubblicato": "2026-10-28",
+ "titoloFonte": "Legora is building the agentic operating system for legal work",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/legora-agentic-operating-system-for-legal-work",
+   "titolo": "Legora is building the agentic operating system for legal work",
+   "ufficiale": true,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 1
+}

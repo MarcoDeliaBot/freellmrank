@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-28-nus-paper-shows-trinity-agents-improve-26-points-on-average-across-18-",
+ "titolo": "NUS paper shows Trinity agents improve 26 points on average across 18 unseen benchmarks",
+ "descr": "The Trinity framework lets multimodal agents build training worlds and recursively evolve, achieving a 26‑point mean gain on 18 new tasks.",
+ "tema": "Research",
+ "paragrafi": [
+  "The system enables agents to construct their own training environments around shared capabilities and to evolve reusable harnesses that guide learning.",
+  "Evaluations on 18 previously unseen benchmarks, including real‑world robotics tasks, showed an average improvement of 26 points over baseline performance.",
+  "The authors note that each benchmark and harness pair underwent five preparation trials, which were turned into skills before the final scoring.",
+  "The work highlights a step toward agents that can autonomously generate useful training data and improve across diverse tasks without manual redesign."
+ ],
+ "perche": [
+  "For AI users, the Trinity approach suggests future agents could adapt more quickly to new domains, reducing the need for extensive re‑training. For developers of free or locally run models, the idea of self‑generated training worlds may offer a path to boost performance without relying on large external datasets."
+ ],
+ "pubblicato": "2026-10-28",
+ "titoloFonte": "National University of Singapore paper: The Trinity:Capability-Driven Recursive Self-Improvement for Multimodal Agents",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.36077",
+   "titolo": "National University of Singapore paper: The Trinity:Capability-Driven Recursive Self-Improvement for Multimodal Agents",
+   "ufficiale": true,
+   "data": "2026-10-25"
+  }
+ ],
+ "frasiTolte": 1
+}
