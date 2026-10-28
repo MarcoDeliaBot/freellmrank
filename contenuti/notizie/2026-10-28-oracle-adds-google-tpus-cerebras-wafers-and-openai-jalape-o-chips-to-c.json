@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-28-oracle-adds-google-tpus-cerebras-wafers-and-openai-jalape-o-chips-to-c",
+ "titolo": "Oracle adds Google TPUs, Cerebras wafers and OpenAI Jalapeño chips to cloud",
+ "descr": "Oracle will offer Google’s TPU accelerators, Cerebras wafer‑scale chips and OpenAI’s Jalapeño inference processor, plus new ChatGPT‑linked services.",
+ "tema": "Business",
+ "paragrafi": [
+  "Oracle announced it will make Google’s TPU AI accelerators available through its public cloud, marking the first time Google supplies chips to another hyperscaler.",
+  "The rollout will also include Cerebras Systems’ wafer‑scale accelerators and OpenAI’s Jalapeño inference processor, which OpenAI says runs some open‑source models 1.5 × faster than competing silicon.",
+  "TPUs will use Google’s optical‑link OCS and copper‑link ICI technologies, while Oracle’s Acceleron networking with a custom SmartNIC will handle data movement between databases, storage and accelerator clusters.",
+  "Oracle introduced several new services: AI Workspace integrates ChatGPT with Oracle applications, App Composer lets non‑technical users build AI‑assisted software, and AI Security Mesh scans for vulnerabilities using OpenAI’s security‑focused models.",
+  "A “free‑to‑start” Oracle AI SMB Bundle bundles AI Workspace, App Composer, NetApp QuickStart, ChatGPT Business and Codex, offering customers $12,000 in cloud credits per year."
+ ],
+ "perche": [
+  "Enterprises gain access to a broader range of high‑performance AI hardware without leaving Oracle’s cloud, potentially lowering costs for large‑scale workloads. For users of free or locally run models, the move highlights growing reliance on proprietary cloud accelerators, making it harder to match performance with on‑premise or community‑hosted solutions."
+ ],
+ "pubblicato": "2026-10-28",
+ "titoloFonte": "Oracle brings Google’s TPUs to its cloud, adds ChatGPT integrations",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/10/27/oracle-brings-googles-tpus-to-its-cloud-adds-chatgpt-integrations/",
+   "titolo": "Oracle brings Google’s TPUs to its cloud, adds ChatGPT integrations",
+   "ufficiale": false,
+   "data": "2026-10-27"
+  }
+ ],
+ "frasiTolte": 0
+}

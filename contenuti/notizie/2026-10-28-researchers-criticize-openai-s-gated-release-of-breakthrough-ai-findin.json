@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-28-researchers-criticize-openai-s-gated-release-of-breakthrough-ai-findin",
+ "titolo": "Researchers criticize OpenAI’s gated release of breakthrough AI findings",
+ "descr": "OpenAI announced major AI-generated results in math, CS and physics but limits access through selected expert “shepherds”, sparking frustration.",
+ "tema": "Research",
+ "paragrafi": [
+  "On Oct. 27, 2026 OpenAI disclosed AI‑generated breakthroughs in three fields: a claimed proof of the Kakeya conjecture, a disproof of the exponential time hypothesis, and new work on quantum chromodynamics within the Standard Model.",
+  "The company said each result will follow a different release plan, guided by external “shepherd” experts. The math paper is posted in full, while the computer‑science work will be explained by an assembled research group. The physics material remains unreleased pending expert advice.",
+  "Researchers interviewed by The Verge expressed growing fatigue with OpenAI’s approach, noting a flood of preprints earlier in October and the new practice of hand‑picking reviewers.",
+  "Mathematician Brendan Hassett called the Kakeya claim “well supported” but has not yet checked the formal Lean verification. Others described the findings as “huge” and “significant,” yet urged broader community scrutiny.",
+  "Critics argue that publicly announcing results should be paired with open access, allowing anyone to evaluate the work rather than limiting it to a small set of distinguished scientists."
+ ],
+ "perche": [
+  "Limiting access to cutting‑edge AI research hampers independent verification and slows collective progress, especially for developers of free or locally‑run models. Open access to such breakthroughs could accelerate model improvements and foster transparency across the AI ecosystem."
+ ],
+ "pubblicato": "2026-10-28",
+ "titoloFonte": "Researchers are getting tired of OpenAI gatekeeping its breakthroughs",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1019921/openai-breakthrough-math-computer-science-physics",
+   "titolo": "Researchers are getting tired of OpenAI gatekeeping its breakthroughs",
+   "ufficiale": false,
+   "data": "2026-10-27"
+  }
+ ],
+ "frasiTolte": 0
+}

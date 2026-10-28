@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-28-liquid-ai-launches-lfm3-series-with-six-2b-class-multimodal-models",
+ "titolo": "Liquid AI launches LFM3 series with six 2B‑class multimodal models",
+ "descr": "Liquid AI introduced LFM3, a set of six open‑weight 2 billion‑parameter models covering text, vision, audio, omni and decision tasks.",
+ "tema": "Research",
+ "paragrafi": [
+  "Liquid AI announced the LFM3 series on 27 October 2026. The lineup includes six open‑weight models, each built on a 2 billion‑parameter scale.",
+  "The models span multiple modalities: text, vision, audio, omni‑modal and decision‑making capabilities. All are released under an open‑weight license.",
+  "LFM3‑1.7B features a tri‑hybrid backbone and supports a 256 K token context window. It can be stored in roughly 1 GB when quantised to 4‑bit precision.",
+  "The release follows a trend of making multimodal AI more accessible for research and development, offering larger context windows than many earlier 2 B‑class models."
+ ],
+ "perche": [
+  "For developers and researchers, LFM3 provides free, open‑weight multimodal models that can run on modest hardware, expanding options beyond text‑only systems. Users seeking local or offline AI can now experiment with vision and audio capabilities without paying for commercial services."
+ ],
+ "pubblicato": "2026-10-28",
+ "titoloFonte": "Liquid AI Releases LFM3: 6 Open-Weight 2B-Class Multimodal Models",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/27/liquid-ai-lfm3-open-weight-2b-multimodal-models/",
+   "titolo": "Liquid AI Releases LFM3: 6 Open-Weight 2B-Class Multimodal Models",
+   "ufficiale": false,
+   "data": "2026-10-27"
+  }
+ ],
+ "frasiTolte": 0
+}
