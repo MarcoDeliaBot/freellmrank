@@ -1,0 +1,42 @@
+{
+ "nome": "2026-10-28-nvidia-launches-open-weight-nemotron-3-5-transcribe-for-multilingual-s",
+ "titolo": "Nvidia launches open‑weight Nemotron 3.5 Transcribe for multilingual speech, translation and speaker diarization",
+ "descr": "The 30‑billion‑parameter model runs on a single GPU, supports 40 languages, translates 31, and identifies up to eight speakers.",
+ "tema": "Software",
+ "paragrafi": [
+  "Nvidia announced Nemotron 3.5 Transcribe, an open‑weight speech model built with 30 billion parameters but only about 4 billion active per step, allowing it to run on a single Nvidia GPU.",
+  "The model can transcribe audio in up to 40 languages, translate 31 of them to or from English, and label up to eight speakers in recordings up to one hour long, all driven by simple text prompts.",
+  "On Hugging Face’s Open ASR Leaderboard it leads open‑weight models with a 5.33 % word‑error rate, and it topped speaker‑recognition tests in VoiceArena and David AI benchmarks.",
+  "Fine‑tuning on an Indian medical speech benchmark cut the error rate to 11.8 %, while the base model showed a 30.8 % error rate out of the box, reducible to 20.8 % with careful prompting.",
+  "Nemotron 3.5 Transcribe runs on hardware ranging from the Jetson AGX Thor edge processor to DGX Spark desktops and Blackwell data‑center GPUs, and the checkpoint, dataset and demo are available on Hugging Face."
+ ],
+ "perche": [
+  "Because the model is open‑weight and fits on a single GPU, developers can deploy multilingual transcription and translation locally without relying on commercial cloud services. The released Granary v2 dataset and fine‑tuning tools let users adapt the system to niche vocabularies, making high‑quality speech AI accessible to teams that prefer free or on‑premise solutions."
+ ],
+ "pubblicato": "2026-10-28",
+ "titoloFonte": "Nvidia's open Nemotron 3.5 Transcribe combines transcription, translation, and speaker recognition",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/nvidias-open-nemotron-3-5-transcribe-combines-transcription-translation-and-speaker-recognition/",
+   "titolo": "Nvidia's open Nemotron 3.5 Transcribe combines transcription, translation, and speaker recognition",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  },
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/10/28/nvidia-releases-all-in-one-adaptable-nemotron-3-5-audio-transcription-and-translation-model/",
+   "titolo": "Nvidia releases all-in-one adaptable Nemotron 3.5 audio transcription and translation model",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/",
+   "titolo": "Voice AI in vogue: Nvidia releases new open transcription model",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 2
+}

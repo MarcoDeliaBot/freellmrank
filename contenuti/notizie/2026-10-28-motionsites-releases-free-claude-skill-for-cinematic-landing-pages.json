@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-28-motionsites-releases-free-claude-skill-for-cinematic-landing-pages",
+ "titolo": "MotionSites releases free Claude skill for cinematic landing pages",
+ "descr": "The open‑source Claude skill lets users generate award‑level web pages with media‑rich designs directly in Claude.",
+ "tema": "Software",
+ "paragrafi": [
+  "MotionSites published a free Claude skill called motionsites‑web‑builder on GitHub, aimed at creating high‑quality landing pages.",
+  "The repository has 825 stars, 84 forks and contains 40 example prompts, a media shelf with over 50 videos, 30 3D cut‑outs and 29 images, plus 55 technique recipes.",
+  "Claude follows a workflow that selects popular designs, picks cinematic media, writes a precise build spec, generates the page, screenshots it and iterates until it meets a gallery‑level rubric.",
+  "Installation requires uploading the provided zip file to Claude’s Skills section and enabling code execution; optional Playwright integration can improve the look‑and‑fix loop.",
+  "A paid MotionSites Unlimited tier unlocks additional prompts, animated hero backgrounds and over 40 Lovable templates, but the core skill remains free under an MIT license."
+ ],
+ "perche": [
+  "The skill gives free‑tool users a way to produce professional‑grade web pages without costly design services. It also shows how Claude can be extended with custom plugins, highlighting the value of open‑source extensions for developers seeking local or free AI‑driven workflows."
+ ],
+ "pubblicato": "2026-10-28",
+ "titoloFonte": "Motionsites-AI/claude-skill: Free Claude skill: make Claude build award-level, cinematic landing pages. By MotionSites.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/Motionsites-AI/claude-skill",
+   "titolo": "Motionsites-AI/claude-skill: Free Claude skill: make Claude build award-level, cinematic landing pages. By MotionSites.",
+   "ufficiale": false,
+   "data": "2026-10-26"
+  }
+ ],
+ "frasiTolte": 0
+}
