@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-28-google-expands-gemini-and-search-with-connected-apps-platform-and-open",
+ "titolo": "Google expands Gemini and Search with Connected Apps platform and opens Android Studio to third‑party AI agents",
+ "descr": "Google launches a public preview for developers to submit Connected Apps for Gemini and Search, and adds a BYOA feature to Android Studio for over 40 external coding agents.",
+ "tema": "Software",
+ "paragrafi": [
+  "Google introduced the Connected Apps Platform, letting businesses link third‑party services to Gemini and Google Search.",
+  "Developers can register apps via a cloud‑hosted or Android Model Context Protocol (MCP) server and choose to expose them in Search, Gemini, or both.",
+  "The preview is in beta for U.S. developers who join the waitlist; Google already hosts more than 50 partner apps such as Adobe, Peloton and Experian.",
+  "At the Android Dev Summit, Google added a \"Bring Your Own Agent\" (BYOA) feature to Android Studio Rabbit 2, supporting more than 40 coding agents like Claude and Codex.",
+  "New terminal tools, an Agentic API powered by Gemini Nano 4, and the AppFunctions API aim to run agent functions locally on devices and integrate app services with Search and Gemini."
+ ],
+ "perche": [
+  "These moves let developers embed AI‑driven actions directly into Google’s consumer products, reducing the need to open separate apps. For users of free or locally hosted models, the expanded ecosystem may shift attention toward Google‑hosted agents, but the open BYOA feature also provides a path to use alternative models within Android development."
+ ],
+ "pubblicato": "2026-10-28",
+ "titoloFonte": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/",
+   "titolo": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  },
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/google-opens-android-development-to-third-party-ai-agents-and-unveils-new-gemini-apis/",
+   "titolo": "Google opens Android development to third-party AI agents and unveils new Gemini APIs",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 0
+}

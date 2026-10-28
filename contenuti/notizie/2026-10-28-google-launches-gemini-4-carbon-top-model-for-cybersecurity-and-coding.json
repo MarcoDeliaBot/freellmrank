@@ -1,0 +1,40 @@
+{
+ "nome": "2026-10-28-google-launches-gemini-4-carbon-top-model-for-cybersecurity-and-coding",
+ "titolo": "Google launches Gemini 4 Carbon, top model for cybersecurity and coding",
+ "descr": "Gemini 4 Carbon tops AI benchmarks, beats OpenAI and Anthropic in security tests, and launches at $2 / $10 per million tokens.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Google DeepMind released Gemini 4 Carbon on 28 Oct 2026, two weeks after its predecessor Argon.",
+  "Carbon leads the SEC‑bench Pro and ExploitGym security benchmarks, outperforming GPT‑6 Astra on SEC‑bench Pro and achieving an 88.2 % success rate in vulnerability discovery.",
+  "Google says the model can run multi‑day autonomous coding sessions, avoid prompt‑injection attacks and generate more transparent, honest outputs."
+ ],
+ "perche": [
+  "For AI users, Carbon offers a powerful option for security‑focused tasks and complex, long‑running code work, though access is currently restricted. Those seeking free or locally hosted models will still rely on community‑ranked options such as Kimi K3 or GLM‑5.3, as no single home machine can run Carbon."
+ ],
+ "pubblicato": "2026-10-28",
+ "titoloFonte": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+   "titolo": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  },
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/",
+   "titolo": "Google Deepmind releases Gemini 4 Carbon just two weeks after Argon with gains across the board",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  },
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/28/google-deepmind-gemini-4-carbon-frontier-model/",
+   "titolo": "Google DeepMind Introduces Gemini 4 Carbon, Its Top Model for Cyber Defense and Coding",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 2
+}

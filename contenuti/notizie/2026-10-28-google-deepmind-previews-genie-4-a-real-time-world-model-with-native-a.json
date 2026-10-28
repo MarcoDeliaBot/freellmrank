@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-28-google-deepmind-previews-genie-4-a-real-time-world-model-with-native-a",
+ "titolo": "Google DeepMind previews Genie 4, a real‑time world model with native audio",
+ "descr": "Genie 4 creates photorealistic, interactive environments with sound and dialogue, now in a research preview for trusted testers.",
+ "tema": "Research",
+ "paragrafi": [
+  "Google DeepMind unveiled Genie 4, its latest real‑time world model that renders photorealistic scenes and generates ambient audio, music‑like sound, and spoken dialogue.",
+  "Users control the simulation with keyboard inputs and plain‑language prompts that can change weather, move the camera, or add objects without restarting the scene.",
+  "The system integrates Gemini Omni for visual grounding and Gemini 3.8 Flash as a planner that interprets prompts, breaks goals into steps, verifies progress, and adapts when the world shifts.",
+  "Genie 4 runs on Google‑hosted infrastructure and is currently available as a research preview to trusted testers in creative, journalistic, educational, gaming, and engineering fields.",
+  "The preview includes safety guardrails, SynthID watermarks on generated media, and acknowledges limitations such as visual drift, short session length, and imperfect object permanence."
+ ],
+ "perche": [
+  "Genie 4 offers developers a new way to prototype interactive simulations with built‑in audio, potentially speeding up pre‑visualization and robotics research. However, as a cloud‑only, early‑stage system it does not yet provide a free or locally runnable alternative, keeping the focus on paid Google AI Ultra and early‑access partners."
+ ],
+ "pubblicato": "2026-10-28",
+ "titoloFonte": "ICYMI: Google DeepMind previews Genie 4 with native audio",
+ "fonti": [
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/icymi-google-deepmind-previews-genie-4-with-native-audio/",
+   "titolo": "ICYMI: Google DeepMind previews Genie 4 with native audio",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  },
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/28/google-deepmind-genie-4-world-model/",
+   "titolo": "Meet Google DeepMind's Genie 4: Real-Time World Model With Native Audio",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 0
+}
