@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-29-openai-plans-europe-rollout-of-dots-assistant-cites-rising-codex-use",
+ "titolo": "OpenAI plans Europe rollout of Dots assistant, cites rising Codex use",
+ "descr": "OpenAI says its Dots AI assistant will launch broadly in Europe within weeks as Codex usage in Germany jumps twentyfold.",
+ "tema": "Business",
+ "paragrafi": [
+  "At the DevDay Exchange 2026 in Berlin, OpenAI announced that its AI assistant Dots will become widely available across Europe in a few weeks, pending regulator approval.",
+  "OpenAI highlighted a twentyfold increase in weekly active Codex users in Germany since January 2026, building on a previously reported sevenfold rise.",
+  "The company reiterated that it has no plans to release a video‑understanding model, citing low customer demand and high resource costs that led to the shutdown of the Sora video generator in March.",
+  "OpenAI emphasized its strategy to lock developers into its platform through tools like the Agents API and a growing ecosystem of plugins and web apps."
+ ],
+ "perche": [
+  "The focus on proprietary services and high‑cost infrastructure may push users toward free or locally run models that avoid vendor lock‑in. FreeLLMArena’s top free chat models, such as Kimi K3 and GLM‑5.3, offer alternatives for developers seeking more control and lower operating expenses."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "OpenAI teases Dots for Europe, but its Berlin DevDay was really about building a platform",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/openai-teases-dots-for-europe-but-its-berlin-devday-was-really-about-building-a-platform/",
+   "titolo": "OpenAI teases Dots for Europe, but its Berlin DevDay was really about building a platform",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 1
+}

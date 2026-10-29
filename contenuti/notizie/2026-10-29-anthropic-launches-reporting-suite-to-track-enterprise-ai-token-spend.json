@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-29-anthropic-launches-reporting-suite-to-track-enterprise-ai-token-spend",
+ "titolo": "Anthropic launches reporting suite to track enterprise AI token spend",
+ "descr": "New tools let companies see cost, output and workflow bottlenecks of Anthropic models like Claude Code.",
+ "tema": "Business",
+ "paragrafi": [
+  "Anthropic announced a suite of reporting tools aimed at enterprise customers.",
+  "The tools let managers view team work over chosen dates, output produced, token cost and workflow breakdowns.",
+  "Anthropic says the data will not be used for model training by default and will include recommendations for improvement.",
+  "Anthropic also introduced pooled group budgets to help teams manage token spending more effectively."
+ ],
+ "perche": [
+  "For users of free or locally run models, the focus on enterprise analytics highlights a gap in transparency tools available for open‑source alternatives."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "Anthropic just launched tools to show companies what their AI spending is buying",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
+   "titolo": "Anthropic just launched tools to show companies what their AI spending is buying",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 2
+}

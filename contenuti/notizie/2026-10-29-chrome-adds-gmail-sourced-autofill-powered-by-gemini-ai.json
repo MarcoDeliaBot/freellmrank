@@ -1,0 +1,34 @@
+{
+ "nome": "2026-10-29-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai",
+ "titolo": "Chrome adds Gmail‑sourced autofill powered by Gemini AI",
+ "descr": "Google rolls out an AI‑enhanced autofill that pulls order numbers, travel details and more from Gmail on desktop, Android and iOS.",
+ "tema": "Software",
+ "paragrafi": [
+  "Google announced that Chrome’s enhanced autofill will now use Gemini with Personal Intelligence to suggest information drawn from users’ Gmail accounts.",
+  "Sensitive suggestions remain encrypted, and users can control the feature in Chrome settings or disable it entirely.",
+  "The rollout begins today for U.S. users on desktop browsers and the Android and iOS Chrome apps that support Gemini.",
+  "This update expands on prior autofill capabilities that already accessed names, passport numbers, email addresses and physical addresses from Google services."
+ ],
+ "perche": [
+  "For everyday users, the AI‑driven autofill reduces the need to switch between email and form tabs, speeding up online transactions. For those preferring free or locally hosted models, the move underscores Google’s push to keep users inside its AI ecosystem, highlighting the trade‑off between convenience and reliance on cloud‑based services."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "Chrome’s enhanced autofill can now pull info from Gmail to help you fill out forms",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/tech/1020626/chrome-enhanced-autofill-gmail-forms-gemini-personal-intelligence",
+   "titolo": "Chrome’s enhanced autofill can now pull info from Gmail to help you fill out forms",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/28/chromes-ai-powered-autofill-can-now-dig-through-your-gmail-to-fill-out-forms/",
+   "titolo": "Chrome's AI-powered Autofill can now dig through your Gmail to fill out forms",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 1
+}
