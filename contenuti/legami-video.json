@@ -110,5 +110,13 @@
  "news-2026-10-29-google-launches-gemini-4-carbon-for-cyber-defenders-tops-ai-leaderboar": {
   "lungo": "notizia-google-launches-gemini-4-carbon-for-cyber-defenders-tops",
   "breve": "breve-google-launches-gemini-4-carbon-for-cyber-defenders-tops"
+ },
+ "news-2026-10-29-mistral-releases-open-weights-for-1-trillion-parameter-large-4-model-l": {
+  "lungo": "notizia-mistral-releases-open-weights-for-1-trillion-parameter-l",
+  "breve": "breve-mistral-releases-open-weights-for-1-trillion-parameter-l"
+ },
+ "news-2026-10-29-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai": {
+  "lungo": "notizia-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai",
+  "breve": "breve-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai"
  }
 }
