@@ -1,0 +1,33 @@
+{
+ "nome": "2026-10-29-google-launches-gemini-4-carbon-for-cyber-defenders-tops-ai-leaderboar",
+ "titolo": "Google launches Gemini 4 Carbon for cyber defenders, tops AI leaderboards",
+ "descr": "Gemini 4 Carbon, billed as Google’s strongest cybersecurity model, leads independent benchmarks and rolls out to trusted defenders first.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Google DeepMind announced Gemini 4 Carbon two weeks after its predecessor Argon, positioning it as the most capable model for cybersecurity and long‑horizon tasks.",
+  "Safety metrics show 0.0% successful cheating on Terminal‑Bench 4.0 and a drop in overreach and under‑service compared with Argon.",
+  "Initial access is limited to trusted cyber defenders through the Fairwind Program, with broader developer and consumer availability promised later."
+ ],
+ "perche": [
+  "For security teams, Carbon offers state‑of‑the‑art vulnerability detection and patch generation, potentially reducing manual review time. For users of free or locally hosted models, the launch highlights the widening gap between leading commercial AI systems and open‑source alternatives, reinforcing the need to evaluate cost, capability and access requirements."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "[AINews] Gemini 4 Carbon tops leaderboards, launches for cyber defenders",
+ "fonti": [
+  {
+   "nome": "Latent Space",
+   "url": "https://latent.space/p/ainews-gemini-4-carbon/",
+   "titolo": "[AINews] Gemini 4 Carbon tops leaderboards, launches for cyber defenders",
+   "ufficiale": false,
+   "data": "2026-10-29"
+  },
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/google-unveils-gemini-4-carbon-for-cyber-defenders/",
+   "titolo": "Google unveils Gemini 4 Carbon for cyber defenders",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 3
+}

@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-29-agent-purge-lets-users-swap-system-prompts-across-multiple-coding-agen",
+ "titolo": "agent-purge lets users swap system prompts across multiple coding agents via a local web console",
+ "descr": "The open‑source tool offers replace, append, strict and off modes to manage personas for agents like Codex, Claude and Pi.",
+ "tema": "Software",
+ "paragrafi": [
+  "ZiChuanLan released agent-purge, a Node‑based CLI and web console that centralises system prompt management for a range of coding agents.",
+  "The tool supports four modes—replace, strict, append and off—and can hot‑swap personas without touching disk files.",
+  "Installation works via npm (Node ≥ 20) or npx, and the web console runs at http://127.0.0.1:7788, displaying available personas stored in ~/.agent-purge/personas/.",
+  "Agent‑purge integrates with magpie gateway plugins, allowing prompt changes for agents that route requests through the gateway without restarting each harness.",
+  "Supported agents include Codex, Claude, Grok, OMP, Hermes, Zcode, Opencode, Pi and others, each with documented injection points and version numbers."
+ ],
+ "perche": [
+  "Developers can experiment with different system prompts across many AI coding assistants from a single interface, simplifying prompt engineering and testing. The zero‑dependency, reversible design also supports users who prefer fully local, open‑source tooling over cloud‑based prompt management."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "ZiChuanLan/agent-purge: One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/ZiChuanLan/agent-purge",
+   "titolo": "ZiChuanLan/agent-purge: One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
+   "ufficiale": false,
+   "data": "2026-10-25"
+  }
+ ],
+ "frasiTolte": 0
+}

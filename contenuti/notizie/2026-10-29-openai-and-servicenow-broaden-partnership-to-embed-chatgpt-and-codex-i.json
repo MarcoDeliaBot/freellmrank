@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-29-openai-and-servicenow-broaden-partnership-to-embed-chatgpt-and-codex-i",
+ "titolo": "OpenAI and ServiceNow broaden partnership to embed ChatGPT and Codex in enterprise workflows",
+ "descr": "The collaboration adds OpenAI models and agents to ServiceNow platforms, enabling AI‑driven automation across business processes.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI announced an expansion of its partnership with ServiceNow on 28 October 2026.",
+  "The deal integrates OpenAI's ChatGPT and Codex models directly into ServiceNow applications and workflow tools.",
+  "Enterprise users will be able to invoke AI agents within ServiceNow tickets, approvals and other routine tasks.",
+  "The integration aims to streamline operations, reduce manual effort and improve decision‑making speed.",
+  "OpenAI and ServiceNow say the joint solution will be available to customers soon, though pricing and rollout details were not disclosed."
+ ],
+ "perche": [
+  "For businesses, the partnership promises faster automation and smarter assistance in daily workflows. Free‑model enthusiasts can note that while the integration uses paid OpenAI services, the market still offers top free chat models such as Kimi K3 and GLM‑5.3, which may suit lighter or local use cases."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+   "titolo": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+   "ufficiale": true,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 0
+}
