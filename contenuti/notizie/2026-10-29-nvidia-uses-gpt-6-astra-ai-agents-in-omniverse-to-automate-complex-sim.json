@@ -1,0 +1,29 @@
+{
+ "nome": "2026-10-29-nvidia-uses-gpt-6-astra-ai-agents-in-omniverse-to-automate-complex-sim",
+ "titolo": "NVIDIA uses GPT-6 Astra AI agents in Omniverse to automate complex simulations",
+ "descr": "Frontier AI model GPT-6 Astra works with Omniverse libraries to build editable building models, gas-turbine twins, large warehouse tests and asset-driven scenes.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced that its GPT-6 Astra model can be directed with natural‑language prompts inside the Omniverse platform to create simulation applications.",
+  "In one demo, Astra turned panoramic photos and point‑cloud measurements into a clean building geometry, stored it in OpenUSD and rendered it with the ovrtx library for inspection.",
+  "Another demo built a digital twin of a gas turbine, letting users change load, temperature and fuel composition. Astra used Cantera and SciPy for the physics and linked the results to animated 3D visualizations streamed via ovstream.",
+  "A warehouse stress test used Astra to scale a scene to 80 conveyors, 40 robot arms and 800 boxes, keeping 30 fps at full HD for a two‑minute run and completing 640 box placements before performance dropped when the scene doubled.",
+  "Using the SimReady Central Library, developers accessed more than 2,000 USD assets; a kitchen scene was assembled with 180 placements from 63 unique assets and 18 custom geometry pieces, rendered with Isaac Sim.",
+  "Across these examples, Omniverse libraries such as ovstage, ovrtx and ovstream handled physics, rendering and streaming while Astra managed high‑level orchestration, reducing manual coding effort."
+ ],
+ "perche": [
+  "Engineers can use a powerful LLM like Astra to describe simulation tasks in plain language, which speeds up creation of digital twins and factory layouts. Astra is a proprietary frontier model; free alternatives rank lower on FreeLLMArena, where Kimi K3 leads the free chat space and Gemini 4 Carbon remains the top paid model, highlighting a cost‑performance trade‑off."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
+   "titolo": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+   "ufficiale": true,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 0
+}

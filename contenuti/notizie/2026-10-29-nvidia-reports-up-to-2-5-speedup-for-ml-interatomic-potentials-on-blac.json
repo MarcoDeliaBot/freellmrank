@@ -1,0 +1,29 @@
+{
+ "nome": "2026-10-29-nvidia-reports-up-to-2-5-speedup-for-ml-interatomic-potentials-on-blac",
+ "titolo": "NVIDIA reports up to 2.5× speedup for ML interatomic potentials on Blackwell GPUs",
+ "descr": "NVIDIA shows BF16x9 on Blackwell GPUs speeds large GEMMs 2.2–2.5× and TF32x3 on Ampere GPUs speeds GEMMs 1.7–1.9×, keeping errors near FP32 baseline.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "NVIDIA released a technical blog that evaluates Tensor Core methods for machine learning interatomic potentials. It focuses on the Point Edge Transformer model.",
+  "On Blackwell GPUs the BF16x9 algorithm speeds large matrix multiplications by between 2.2 and 2.5 times for a 17,280‑atom system and by 1.2 to 1.4 times for a 192‑atom system. The error stays below the model’s own non‑determinism.",
+  "On Ampere GPUs the TF32x3 algorithm speeds major matrix multiplications by between 1.7 and 1.9 times and speeds the full molecular dynamics step by up to 1.5 times. Force error remains close to the FP32 baseline.",
+  "In a structural relaxation test of a 539‑atom Cantor‑alloy slab TF32x3 reaches convergence in 218 to 222 steps with a 1.5× per‑step speedup. One‑pass TF32 does not reach the force tolerance after 1,000 steps.",
+  "NVIDIA advises users to enable BF16x9 through the cuBLAS environment variable and to consult the ALCHEMI Toolkit for TF32x3 integration examples.",
+  "FreeLLMArena’s latest community votes place Kimi K3 as the top free chat model and Gemini 4 Carbon as the leading paid chat model, showing strong interest in high‑performing AI services."
+ ],
+ "perche": [
+  "The speed gains let researchers run larger atomistic simulations faster, which can accelerate material discovery and scientific insight. Faster hardware also lowers the cost of using cloud services, making free and locally hosted models more attractive for developers who need responsive AI tools."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "Unlocking Tensor Core Performance for Machine Learning Interatomic Potentials",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/unlocking-tensor-core-performance-for-machine-learning-interatomic-potentials/",
+   "titolo": "Unlocking Tensor Core Performance for Machine Learning Interatomic Potentials",
+   "ufficiale": true,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 0
+}

@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-29-google-deepmind-launches-gemini-4-carbon-top-paid-chat-model-on-freell",
+ "titolo": "Google DeepMind launches Gemini 4 Carbon, top paid chat model on FreeLLMArena",
+ "descr": "Gemini 4 Carbon debuts with advanced cybersecurity performance and pricing of $2 per million input tokens.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Google DeepMind announced Gemini 4 Carbon on Oct 28, 2026 as its newest frontier model.",
+  "Carbon ranks #1 on the v5.0 Artificial Analysis Intelligence Index with a score of 59 and leads external benchmarks: 88.2% on SEC‑bench Pro, 54.8% on ExploitGym, and 71.0% on CWE‑bench.",
+  "The model builds on Gemini 4 Argon and shares the same safety stack, adding improvements in alignment, reduced misalignment alerts by almost 80%, and zero successful cheating on Terminal‑Bench 4.0.",
+  "Access will start with a subset of cyber defenders and expand through the Fairwind Program.",
+  "FreeLLMArena’s blind vote on Oct 29, 2026 lists Gemini 4 Carbon as the best paid chat model with a score of 1528."
+ ],
+ "perche": [
+  "For users, Carbon offers leading cybersecurity assistance and more reliable coding output, but at a paid token cost. Those seeking free or locally hosted models can still turn to top‑ranked free options such as Kimi K3 Max or GLM‑5.3, which remain highly rated on the arena rankings."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "How we detect frontier model misalignment",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+   "titolo": "How we detect frontier model misalignment",
+   "ufficiale": true,
+   "data": "2026-10-29"
+  },
+  {
+   "nome": "Google DeepMind",
+   "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+   "titolo": "Gemini 4 Carbon: Our next frontier model",
+   "ufficiale": true,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 2
+}
