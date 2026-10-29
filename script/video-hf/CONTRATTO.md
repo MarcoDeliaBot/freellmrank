@@ -26,6 +26,8 @@ export default {
   nello stesso video. In JS si cerca solo con `q('#'+...)` / `qa('.'+...)` dati da `scena()`.
 - `valida()` deve rifiutare tutto ciò che romperebbe l'impaginazione (testi troppo lunghi, numero di voci fuori dai
   limiti, valori non numerici dove serve un numero). Il piano scartato torna a una scena di riserva: meglio scartare.
+- `fatti(dati, notizia)` (facoltativo, 29/10/2026): problemi di fatto propri dello stampo, controllati da `piano.mjs` sul testo
+  della notizia. Serve perché il controllo generale dei nomi salta i testi di una parola sola (es. «Hangzhou»).
 - `dati.quando`: oggetto facoltativo `{ chiave: "parola della voce" }` scritto dal piano; `attacchi()` lo usa.
 
 ## Regole di disegno (dalla prova DeepInfer e da faceless-explainer)
@@ -54,6 +56,7 @@ export default {
 | `lista` | cosa contiene / cosa serve | `{ "pannello": "deepinfer /, max 22", "blocchi": [{ "nome": "FlashMLA, max 14", "tipo": "kernel, max 12" }], "titoloLista": "To build, max 22", "righe": ["Linux", "GCC 13", "max 22 each, 1-5"], "alternative": [{ "testo": "CUDA 13", "nota": "NVIDIA" }] }` (blocchi 0–3, alternative 0–2) |
 | `confronto` | due colonne: aperto/chiuso, prima/dopo, A/B | `{ "sinistra": { "titolo": "Open, max 16", "voci": ["max 28 each, 1-4"] }, "destra": { "titolo": "Closed", "voci": [...], "chiuso": true }, "conclusione": "max 70, optional", "evidenza": "words of conclusione to color" }` |
 | `punti` | 2–4 punti chiave, notizie senza numeri | `{ "titolo": "What changed, max 32", "punti": ["max 60 chars each, 2-4"] }` |
+| `mappa` | dove succede: sede di un laboratorio, lancio in un paese, data center (29/10/2026) | `{ "titolo": "Where it comes from, max 32", "luoghi": [{ "luogo": "un nome dell'elenco LUOGHI di stampi/mappa.mjs (o US, UK, EU, Bengaluru…)", "nome": "DeepSeek, max 18, facoltativo" }] (1–5), "rotte": false }` (con `rotte` archi dal primo luogo agli altri; spilli troppo vicini o etichette senza posto = scena scartata) |
 | `chiusura` | sempre l'ultima | nessun dato, voce fissa |
 
 ## Formato verticale (Short di YouTube) — dal 24/10/2026 sera

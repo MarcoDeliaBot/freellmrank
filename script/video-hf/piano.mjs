@@ -72,7 +72,7 @@ const titoloDiRiserva = (n) => {
 };
 
 export function controllaPiano(grezzo, n) {
-  const { regge, mancanti } = controllore(n);
+  const { POST, regge, mancanti } = controllore(n);
   const problemi = [];
   const scene = [];
   let tolte = 0; // scene scartate: un piano che ha perso una scena (es. quella sulla licenza) non è completo
@@ -87,6 +87,8 @@ export function controllaPiano(grezzo, n) {
       ...(parole(voce) < 6 || parole(voce) > 60 ? [`voce di ${parole(voce)} parole (servono 6-60)`] : []),
       ...(regge(voce) ? [] : [`voce con numeri o nomi non nella notizia (${mancanti(voce).join(', ')})`]),
       ...testi(grezzi).filter((t) => !regge(semplice(t))).map((t) => `testo non nella notizia: «${t}» (${mancanti(semplice(t)).join(', ')})`),
+      // controlli dei fatti propri dello stampo (29/10/2026, «mappa»: ogni luogo deve stare nella notizia, anche se è una parola sola)
+      ...(typeof st.fatti === 'function' ? st.fatti(grezzi, POST) : []),
     ];
     if (fatti.length) { problemi.push(`${dove}: ${fatti.join('; ')}`); tolte++; continue; }
     const dati = ripara(st, grezzi, n);
@@ -131,7 +133,7 @@ Available stampi:
 ${elenco}
 Rules:
 - 4 to 6 scenes. The first scene is always "titolo"; its "sopra" is ${n.tipo === 'guida' ? '"Guide · ' : '"AI news · '}${giorno(n.pubblicato)}" exactly. Do NOT add a closing scene (it is added automatically).
-- Use "numero", "numeri", "lista" or "confronto" only when ARTICLE really has that kind of content; otherwise "punti".
+- Use "numero", "numeri", "lista", "confronto" or "mappa" only when ARTICLE really has that kind of content ("mappa": ARTICLE names the cities or countries); otherwise "punti".
 - "voce" is what the narrator says during the scene: 1 to 3 short spoken sentences (6 to 45 words, never more than 50), plain English, numbers written as digits. All scenes together: 110 to 190 words.
 - Everything shown on screen ("dati") must also be said in that scene's "voce", in the same order. Show about one on-screen item for every 12 to 15 spoken words: a long voice needs more items, or split it into two scenes.
 - "quando" (optional, inside dati): for each piece, the exact word of "voce" at which it should appear, e.g. {"etichetta": "day"}.
