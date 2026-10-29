@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const PREFERENZA = ['numero', 'numeri', 'barre', 'nome', 'confronto', 'punti', 'lista', 'titolo'];
+const PREFERENZA = ['numero', 'numeri', 'barre', 'nome', 'mappa', 'confronto', 'punti', 'lista', 'titolo'];
 
 export function pianoBreve(lungo) {
   const scene = lungo.scene.filter((s) => s.stampo !== 'chiusura');
