@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-29-mistral-releases-large-4-le-chonk-with-1-trillion-parameters-strong-co",
+ "titolo": "Mistral releases Large 4 \"Le Chonk\" with 1 trillion parameters, strong coding performance",
+ "descr": "Mistral's new open‑source model runs on eight Nvidia B300 GPUs, scores high on coding benchmarks but lags Chinese rivals overall.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Paris‑based Mistral AI has published the weights for its largest model yet, Mistral Large 4, nicknamed \"Le Chonk\".",
+  "The model contains about one trillion parameters, of which 52 billion are active per inference step, and can process text and images to output text and code.",
+  "Inference requires eight Nvidia B300 GPUs for the standard version or four GB300 GPUs for a more compressed variant, according to the SGLang framework documentation.",
+  "Independent tests show Le Chonk leads open models on coding benchmarks, reaching 48 % on Artificial Analysis' Coding Agent Index while using 47 % fewer tokens than comparable models.",
+  "Mistral offers the model under a modified MIT license for free use, modification and commercial deployment, but commercial cloud providers must obtain a separate license."
+ ],
+ "perche": [
+  "Le Chonk gives developers a high‑performance, locally runnable coding model at a lower API cost, supporting the push for sovereign AI. However, its lower overall intelligence scores mean users seeking the best all‑round capability may still prefer Chinese open models or paid proprietary services."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "Paris-based Mistral releases \"Le Chonk,\" a strong coding model that still trails China overall",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/paris-based-mistral-releases-le-chonk-a-strong-coding-model-that-still-trails-china-overall/",
+   "titolo": "Paris-based Mistral releases \"Le Chonk,\" a strong coding model that still trails China overall",
+   "ufficiale": false,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 1
+}

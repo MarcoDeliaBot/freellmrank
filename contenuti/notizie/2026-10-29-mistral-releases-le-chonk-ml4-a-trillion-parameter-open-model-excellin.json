@@ -1,0 +1,26 @@
+{
+ "nome": "2026-10-29-mistral-releases-le-chonk-ml4-a-trillion-parameter-open-model-excellin",
+ "titolo": "Mistral releases Le Chonk (ML4), a trillion‑parameter open model excelling in coding and security",
+ "descr": "Mistral's new ML4 model tops open coding benchmarks, offers low‑token usage and strong cyber‑defense features.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "On Oct. 6, French AI lab Mistral unveiled Mistral Large 4 (ML4), nicknamed “Le Chonk,” a trillion‑parameter open model whose weights are now publicly available.",
+  "ML4 scored 41% on the Terminal‑Bench 4.0 coding benchmark, up from 28% in its preview, and placed a point behind GLM‑5.3 on the overall Artificial Analysis Coding Agent Index with a score of 48 versus 49.",
+  "The model runs with three reasoning modes—low, medium, high—and uses 47% fewer tokens per task than comparable open models, according to Mistral."
+ ],
+ "perche": [
+  "Le Chonk shows that open models can deliver high coding performance and robust security with far less compute, giving developers and enterprises a cost‑effective alternative to closed services."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "Mistral’s Le Chonk is now a top open model for coding, ranking alongside Codex GPT-6.1 Terra",
+ "fonti": [
+  {
+   "nome": "ZDNet",
+   "url": "https://www.zdnet.com/innovation/mistral-large-4-weights-release/",
+   "titolo": "Mistral’s Le Chonk is now a top open model for coding, ranking alongside Codex GPT-6.1 Terra",
+   "ufficiale": false,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 3
+}
