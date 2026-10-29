@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-10-28",
+ "aggiornato": "2026-10-29",
  "suite": {
   "versione": "decision-index-0.3",
   "test": 42,
@@ -316,6 +316,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "oenogarum",
+   "nome": "oenogarum (Gemma 4 31B)",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 31.3,
+   "stimato": false,
+   "repo": "plantwaterer/oenogarum",
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 68.1,
+   "pubblico": 62.8,
+   "ms": 259.4,
+   "p95": 1989.7,
+   "ece": 0.0403,
+   "acc": 0.759,
+   "aree": {
+    "knowledge": 52.3,
+    "language": 66,
+    "retrieval": 64.6,
+    "tools": 77.3,
+    "arts": 51.5
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "pplx-decider-v1.2",
    "nome": "Perplexity Decider v1.2 (27B)",
    "org": "Perplexity",
@@ -565,6 +591,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "allec-oavg",
+   "nome": "allec-oavg (Gemma 4 31B)",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 31.3,
+   "stimato": false,
+   "repo": "plantwaterer/allec",
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 66.96,
+   "pubblico": 62.03,
+   "ms": 256.8,
+   "p95": 1977.6,
+   "ece": 0.0471,
+   "acc": 0.7551,
+   "aree": {
+    "knowledge": 50.7,
+    "language": 65.2,
+    "retrieval": 64.8,
+    "tools": 77.6,
+    "arts": 49
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "visionjev-1.0.0",
    "nome": "VisionJEV 1.0.0 (27B)",
    "org": "",
@@ -722,32 +774,6 @@
     "retrieval": 65.5,
     "tools": 84.2,
     "arts": 55.2
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
-  },
-  {
-   "id": "allec",
-   "nome": "allec (Gemma 4 31B)",
-   "org": "",
-   "tipo": "full fine-tune",
-   "b": 31.3,
-   "stimato": false,
-   "repo": "plantwaterer/allec",
-   "base": "google/gemma-4-31B-it",
-   "nota": null,
-   "punti": 66.01,
-   "pubblico": 61.6,
-   "ms": 102.6,
-   "p95": 1714.2,
-   "ece": 0.0457,
-   "acc": 0.7552,
-   "aree": {
-    "knowledge": 49.8,
-    "language": 64.8,
-    "retrieval": 64.8,
-    "tools": 77.4,
-    "arts": 48.4
    },
    "vision": null,
    "licenza": "apache-2.0"
@@ -2412,6 +2438,32 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "senova-4b-v2",
+   "nome": "Senova-4B v2",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 4.5,
+   "stimato": false,
+   "repo": "WangSenQWQ/Senova-4B-v2",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 51.01,
+   "pubblico": 66.87,
+   "ms": 53.1,
+   "p95": 471.7,
+   "ece": 0.1409,
+   "acc": 0.7828,
+   "aree": {
+    "knowledge": 48.9,
+    "language": 69.6,
+    "retrieval": 73.2,
+    "tools": 85.4,
+    "arts": 59.7
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "jebadiah-9b-v2.1-t1e",
    "nome": "frontier-infra Jebadiah 9B v2.1 (t1e)",
    "org": "Frontier Infra",
@@ -2670,32 +2722,6 @@
     "retrieval": 65.1,
     "tools": 79.2,
     "arts": 43
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
-  },
-  {
-   "id": "senova-4b",
-   "nome": "Senova-4B",
-   "org": "",
-   "tipo": "full fine-tune",
-   "b": 4.5,
-   "stimato": false,
-   "repo": "WangSenQWQ/Senova-4B",
-   "base": "Qwen/Qwen3.5-4B",
-   "nota": null,
-   "punti": 47.32,
-   "pubblico": 61.6,
-   "ms": 48.3,
-   "p95": 346.8,
-   "ece": 0.1521,
-   "acc": 0.7535,
-   "aree": {
-    "knowledge": 38.9,
-    "language": 65,
-    "retrieval": 67,
-    "tools": 84.6,
-    "arts": 58.6
    },
    "vision": null,
    "licenza": "apache-2.0"
@@ -3291,6 +3317,32 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "saif-4b",
+   "nome": "Saif 4B",
+   "org": "Gyr Technology",
+   "tipo": "LoRA + head",
+   "b": 4.2,
+   "stimato": false,
+   "repo": "GyrTechnology/saif-4b",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 42.47,
+   "pubblico": 50.75,
+   "ms": 94.9,
+   "p95": 354,
+   "ece": 0.05,
+   "acc": 0.692,
+   "aree": {
+    "knowledge": 29.9,
+    "language": 54.4,
+    "retrieval": 62,
+    "tools": 71.3,
+    "arts": 35.1
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
    "id": "jev-9b",
    "nome": "JEV-9B",
    "org": "AutoTrust AI Lab",
@@ -3661,6 +3713,32 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "amber-4b",
+   "nome": "Amber 4B",
+   "org": "",
+   "tipo": "LoRA + head",
+   "b": 4.2,
+   "stimato": false,
+   "repo": "MLukauskas/amber-4b",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 39.45,
+   "pubblico": 52.12,
+   "ms": 127.6,
+   "p95": 1067.2,
+   "ece": 0.0569,
+   "acc": 0.7076,
+   "aree": {
+    "knowledge": 34.7,
+    "language": 58.3,
+    "retrieval": 54.6,
+    "tools": 71.9,
+    "arts": 40.1
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
    "id": "intern-decision-4b",
    "nome": "Intern-Decision-4B",
    "org": "Intern Large Models",
@@ -3887,6 +3965,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "joey-1",
+   "nome": "baselabs joey-1 (2B)",
+   "org": "baselabs",
+   "tipo": "full fine-tune",
+   "b": 2.7,
+   "stimato": false,
+   "repo": "baselabs/joey-1",
+   "base": "Qwen/Qwen3.5-2B",
+   "nota": null,
+   "punti": 35.91,
+   "pubblico": 63.3,
+   "ms": 84.7,
+   "p95": 124,
+   "ece": 0.0444,
+   "acc": 0.7642,
+   "aree": {
+    "knowledge": 45.1,
+    "language": 62.8,
+    "retrieval": 71.2,
+    "tools": 85.8,
+    "arts": 54.7
+   },
+   "vision": null,
+   "licenza": "mit"
+  },
+  {
    "id": "lev",
    "nome": "lev",
    "org": "Interfaze",
@@ -3987,7 +4091,10 @@
     "tools": 61.8,
     "arts": 29
    },
-   "vision": null,
+   "vision": {
+    "punti": 51.9,
+    "ms": 406.8
+   },
    "licenza": "apache-2.0"
   },
   {

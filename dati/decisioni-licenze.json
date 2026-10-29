@@ -232,5 +232,10 @@
  "victorbennett/Verdin-4B-v1.1": "cc-by-nc-4.0",
  "ironbcc/Seb-9B-v2": "apache-2.0",
  "MLukauskas/amber-hybrid-4b": "cc-by-nc-4.0",
- "chaoliangUNSW/Jev-Style-2B-Decision-v4": "apache-2.0"
+ "chaoliangUNSW/Jev-Style-2B-Decision-v4": "apache-2.0",
+ "plantwaterer/oenogarum": "apache-2.0",
+ "WangSenQWQ/Senova-4B-v2": "apache-2.0",
+ "GyrTechnology/saif-4b": "cc-by-nc-4.0",
+ "MLukauskas/amber-4b": "cc-by-nc-4.0",
+ "baselabs/joey-1": "mit"
 }
