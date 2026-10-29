@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-29-deepgram-acquires-daily-the-maker-of-open-source-pipecat-voice-ai-fram",
+ "titolo": "Deepgram acquires Daily, the maker of open‑source Pipecat voice AI framework",
+ "descr": "Deepgram buys Daily to integrate Pipecat, keep it open‑source, and expand its real‑time voice and video AI infrastructure.",
+ "tema": "Business",
+ "paragrafi": [
+  "Deepgram announced on Thursday that it is acquiring Daily, the company behind the popular open‑source voice AI framework Pipecat.",
+  "The deal amount was not disclosed, but Deepgram said Pipecat will remain open‑source and vendor‑neutral.",
+  "Daily, which also provides hosted voice and video call infrastructure, has raised more than $62 million from investors including Tiger Global and Nat Friedman.",
+  "Deepgram recently reached unicorn status after a $130 million Series C round and aims to use Pipecat to improve real‑time voice and video pipelines and to develop its Real‑Time Context Standard (RCS) protocol.",
+  "Both firms were part of the same 2016 Y Combinator batch, and Daily co‑founder Kwindla Kramer cited Deepgram CEO Scott Stephenson’s commitment to open‑source as a key factor in the acquisition."
+ ],
+ "perche": [
+  "Developers will now have a unified, open‑source stack for building voice agents that can plug in any speech‑to‑text, large language, or text‑to‑speech model. Keeping Pipecat open‑source preserves a free option for teams that prefer self‑hosted or locally run models, aligning with the interests of users seeking non‑proprietary AI infrastructure."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "Deepgram acquires Pipecat-maker Daily to bolster its voice AI infrastructure",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/29/deepgram-acquires-pipecat-maker-daily-to-bolster-its-voice-ai-infrastructure/",
+   "titolo": "Deepgram acquires Pipecat-maker Daily to bolster its voice AI infrastructure",
+   "ufficiale": false,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 0
+}

@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-29-nemotron-labs-diffusion-uni-introduces-elastic-self-refining-unified-d",
+ "titolo": "Nemotron-Labs-Diffusion-Uni introduces elastic self‑refining unified diffusion LLM",
+ "descr": "The new Nemotron-Labs-Diffusion-Uni model combines diffusion and on‑policy distillation for unified understanding and generation.",
+ "tema": "Research",
+ "paragrafi": [
+  "The model blends diffusion techniques with on‑policy distillation, aiming for a unified approach to both understanding and generation tasks.",
+  "The authors describe the system as an elastic, self‑refining architecture that can adapt across paradigms during training.",
+  "The paper was submitted to daily review on 28 October 2026 and is listed on Hugging Face Papers.",
+  "Related work suggested by an automated Librarian Bot includes several 2026 diffusion‑based LLM papers such as Omni‑Diffusion‑Distill and Zarya."
+ ],
+ "perche": [
+  "The approach could lower the gap between diffusion‑based generation and traditional autoregressive models, offering a new path for researchers seeking versatile LLMs. For users of free or locally hosted models, the technique may eventually enable more efficient, adaptable models that run on modest hardware."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "NVIDIA paper: Nemotron-Labs-Diffusion-Uni: Elastic Self-Refining Unified Diffusion LLM with Cross-Paradigm On-Policy Distillation",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.36466",
+   "titolo": "NVIDIA paper: Nemotron-Labs-Diffusion-Uni: Elastic Self-Refining Unified Diffusion LLM with Cross-Paradigm On-Policy Distillation",
+   "ufficiale": true,
+   "data": "2026-10-26"
+  }
+ ],
+ "frasiTolte": 1
+}

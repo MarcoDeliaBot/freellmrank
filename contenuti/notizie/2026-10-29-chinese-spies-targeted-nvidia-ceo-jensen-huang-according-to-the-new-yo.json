@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-29-chinese-spies-targeted-nvidia-ceo-jensen-huang-according-to-the-new-yo",
+ "titolo": "Chinese spies targeted Nvidia CEO Jensen Huang, according to The New York Times",
+ "descr": "US intel says a Megaspeed executive passed Nvidia info to Beijing; Trump was briefed but took no action.",
+ "tema": "Policy",
+ "paragrafi": [
+  "The New York Times reports that US intelligence believes a close associate of Nvidia CEO Jensen Huang acted as an informant for China.",
+  "The individual identified is Alice Huang (Huang Le) of Singapore‑based data‑center operator Megaspeed, who allegedly passed information to Beijing.",
+  "US officials say a Malaysian sister company of Megaspeed purchased at least $4.8 billion of AI hardware with Nvidia chips between June 2024 and February 2026.",
+  "President Trump was briefed about the situation a year ago but did not intervene, reportedly to avoid disrupting Nvidia sales or harming trade ties with China.",
+  "Nvidia says its CEO’s meetings with customers are routine and that Megaspeed does not receive sensitive data; the company has announced an internal investigation."
+ ],
+ "perche": [
+  "If the allegations are true, they highlight the risk of supply‑chain and partner exposure for AI hardware users. Companies relying on Nvidia chips may need tighter vetting of partners, while developers of free or locally run models should consider the geopolitical dimensions of hardware sourcing."
+ ],
+ "pubblicato": "2026-10-29",
+ "titoloFonte": "Chinese spies targeted Nvidia CEO Jensen Huang, according to The New York Times",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/chinese-spies-targeted-nvidia-ceo-jensen-huang-according-to-the-new-york-times/",
+   "titolo": "Chinese spies targeted Nvidia CEO Jensen Huang, according to The New York Times",
+   "ufficiale": false,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 1
+}
