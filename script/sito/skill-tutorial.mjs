@@ -1,0 +1,66 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { marked } from 'marked';
+import { RADICE, pagina, esc, fmtData } from './comune.mjs';
+import { videoDelPost } from './blog.mjs';
+import { validateCard, DISCLAIMER, SECURITY_TEXT } from '../skill/verifica.mjs';
+import { read } from '../skill/fonti.mjs';
+import { rank } from '../skill/raccogli.mjs';
+
+function cards(dir) {
+  const p = path.join(RADICE, 'contenuti', dir);
+  return fs.existsSync(p) ? fs.readdirSync(p).filter(f=>f.endsWith('.json')).map(f=>JSON.parse(fs.readFileSync(path.join(p,f),'utf8'))).filter(c=>!c.revoked) : [];
+}
+const href = c => `/${c.tipo === 'skill' ? 'skills' : 'tutorials'}/${c.slug}.html`;
+const p = t => `<p>${esc(t)}</p>`;
+const code = t => `<pre translate="no"><code>${esc(t)}</code></pre>`;
+const section = (title, body) => `<section class="cat-sezione"><h2>${esc(title)}</h2>${body}</section>`;
+const list = items => items.map(c=>`<article class="card"><h3><a href="${href(c)}">${esc(c.titolo)}</a></h3>${p(c.descr)}<p class="small muted">${fmtData(c.date)}</p></article>`).join('');
+
+function metrics(c) {
+  const m = c.metrics;
+  if (!m) return '';
+  const g = m.growth7d;
+  const values = [['GitHub stars',m.stars], ['Star growth over seven days',g ? `${g.value >= 0 ? '+' : ''}${g.value} (${g.from} to ${g.to})` : 'Not available: seven-day history is still being collected'],
+    ['skills.sh total installs',m.installs ?? 'Not exposed for this skill'],['skills.sh installs in 24 hours',m.installs24h ?? 'Not exposed for this skill'],['License',m.license || 'Not identified by GitHub'],['Last commit',m.lastCommit]];
+  return `<p>Observed on <time datetime="${esc(m.date)}">${fmtData(m.date)}</time>. GitHub counts apply to the repository; skills.sh counts apply to this skill.</p><dl>${values.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join('')}</dl>`;
+}
+function security(c) {
+  if (!c.security) return p('Commands were checked against official documentation. This guide does not include a repository security certification.');
+  return `<aside class="card">${p(`Checked on ${c.security.date}, at commit ${c.commit}. ${c.security.files} repository files inspected.`)}${p(SECURITY_TEXT)}${p('Raster documentation images were identified by file signature; other opaque binaries were rejected. No repository code was executed.')}<p><strong>${esc(DISCLAIMER)}</strong></p></aside>`;
+}
+export function pagineSkillTutorial(dati, blog) {
+  const catalogue = read('dati/skill.json', {skills:[]});
+  const skills = cards('skills'), tutorials = cards('tutorials');
+  for (const c of [...skills,...tutorials]) {
+    const errors = validateCard(c);
+    if (errors.length) throw Error(`${c.slug}: ${errors.join('; ')}`);
+    if (!c.videoVerified) throw Error(`${c.slug}: video gate not completed`);
+    const skill = c.tipo === 'skill';
+    const body = [videoDelPost(`${c.tipo}-${c.slug}`,c.titolo,{breveRelease:true}),
+      section('What it does',p(c.descr) + p('Descriptions and examples below are attributed excerpts from the pinned official sources. They describe intended behavior.')),
+      section('Who it is for',p(c.audience?.length ? `The README names these assistants: ${c.audience.join(', ')}.` : 'The README does not name specific assistant hosts. Check the installer and the source for compatibility.')),
+      section(skill ? 'How to install' : 'Step by step',skill ? code(c.install) + p('Exact installation command from the README. Review it before running it.') : `<ol>${c.steps.map(s=>`<li><h3>${esc(s.title)}</h3>${p(s.text)}${s.command?code(s.command):''}</li>`).join('')}</ol>`),
+      section('How to use it',`<blockquote>${p(c.example)}</blockquote>${p('Documented example or workflow from the README. Read the complete source for context.')}`),
+      section('Features explained',c.features.map(f=>`<article><h3>${esc(f.label)}</h3><blockquote>${p(f.detail)}</blockquote></article>`).join('')),
+      section('Limits',c.limits.map(p).join('')),
+      ...(c.hardware ? [section('Hardware requirements',p(c.hardware.note)+p(c.hardware.parameters ? `The site records ${c.hardware.parameters} parameters on ${c.hardware.date}. This is not a measured RAM requirement.` : 'No measured RAM requirement is available.')+`<p><a href="/home.html">Check your machine in the Run at home simulator</a></p>`)] : []),
+      section('Security check',security(c)),
+      ...(c.metrics ? [section('Numbers and date',metrics(c))] : []),
+      section('Sources',`<ul>${c.fonti.map(f=>`<li><a href="${esc(f.url)}" rel="noopener">${esc(f.tipo)}</a></li>`).join('')}</ul>`),
+    ].join('\n');
+    pagina({file:href(c).slice(1),titolo:c.titolo,descr:c.descr.slice(0,158),attiva:skill?'/skills.html':'/tutorials.html',dati,blog,
+      corpo:`<header class="hero"><p class="eyebrow">${skill?'Agent Skills':'Tutorials'} · ${fmtData(c.date)}</p><h1>${esc(c.titolo)}</h1></header><div class="cat-guida">${marked.parse(body)}</div>`});
+  }
+  const ranked = [...skills].sort(rank).slice(0,10);
+  const unlinked = (catalogue.skills || []).filter(c=>!skills.some(s=>s.slug===c.slug)).sort(rank);
+  pagina({file:'skills.html',titolo:'Best Agent Skills this week',descr:'Agent Skills with dated GitHub and skills.sh measurements, installation instructions, static checks and videos.',attiva:'/skills.html',dati,blog,
+    corpo:`<header class="hero"><p class="eyebrow">Agent Skills</p><h1>Best Agent Skills this week</h1><p>Source-based walkthroughs, dated popularity and a static repository review before publication.</p></header>
+    ${section('Weekly ranking',p(catalogue.metodologia || 'Measured popularity from GitHub and skills.sh.')+p(`As of ${catalogue.aggiornato || dati.aggiornato}. ${ranked.length} published skills available; the list grows to ten only when ten entries pass all gates.`)+list(ranked))}
+    ${section('New Agent Skills',list([...skills].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,10)) || p('The first videos and walkthroughs are being prepared.'))}
+    ${section('All Agent Skills',list(skills) || p('No skill walkthrough has passed all publication gates yet.'))}
+    ${section('Measured candidates',p('These candidates passed static review but await a complete page and both videos. Numbers are observations, not a recommendation.')+unlinked.slice(0,20).map(c=>`<article class="card"><h3><a href="${esc(c.fonti[0].url)}">${esc(c.name)}</a></h3>${p(c.descr)}${metrics(c)}</article>`).join(''))}`});
+  const guides = ['strata','minimax-h3'].map(n=>read(`contenuti/video-guide/${n}.json`)).filter(Boolean);
+  pagina({file:'tutorials.html',titolo:'AI tutorials',descr:'Step-by-step tutorials for local AI, free models and Agent Skills, with official commands and linked videos.',attiva:'/tutorials.html',dati,blog,
+    corpo:`<header class="hero"><p class="eyebrow">Learn by doing</p><h1>AI tutorials</h1><p>Official commands, practical steps and videos. New topics are selected from measured model and skill popularity.</p></header>${section('Latest tutorials',list([...tutorials].sort((a,b)=>b.date.localeCompare(a.date))) || p('The first automatic walkthrough is being prepared.'))}${section('Existing guides',guides.map(g=>`<article class="card"><h3><a href="${esc(new URL(g.url).pathname)}.html">${esc(g.titolo)}</a></h3>${p(g.descr)}</article>`).join(''))}`});
+}

@@ -104,6 +104,10 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
       ['/phone.html', `${icona('telefono')}On your phone`],
       ['/apps.html', `${icona('app')}AI apps${nuovo('2026-10-20')}`],
     ]],
+    ['Skills and tutorials', [
+      ['/skills.html', `${icona('app')}Agent Skills: best this week`],
+      ['/tutorials.html', `${icona('blog')}Tutorials`],
+    ]],
     ['Read', [
       ['/blog/', `${icona('blog')}Blog`],
       ['/about.html', `${icona('info')}How we rank`],
