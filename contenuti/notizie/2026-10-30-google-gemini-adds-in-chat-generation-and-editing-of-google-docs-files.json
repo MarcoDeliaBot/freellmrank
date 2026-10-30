@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-30-google-gemini-adds-in-chat-generation-and-editing-of-google-docs-files",
+ "titolo": "Google Gemini adds in‑chat generation and editing of Google Docs files",
+ "descr": "Google announced that Gemini can now generate and edit Google Docs files within the chat experience.",
+ "tema": "Software",
+ "paragrafi": [
+  "Google announced that Gemini can now generate and edit Google Docs files within the chat experience.",
+  "Users can highlight text to ask Gemini questions or request changes, such as turning a table into a graph.",
+  "The update follows earlier support for generating and downloading files and mirrors Anthropic’s similar Claude document editing feature.",
+  "Google says documents can be expanded to full‑screen mode for easier editing."
+ ],
+ "perche": [
+  "The new Gemini capabilities tighten the integration between AI chat and Google Workspace, making it easier for users to iterate on documents without switching apps. For those who rely on free models, the best‑ranked options remain Kimi K3 Max and GLM‑5.3, while Gemini 4 Carbon leads paid offerings, highlighting a trade‑off between convenience and cost."
+ ],
+ "pubblicato": "2026-10-30",
+ "titoloFonte": "You can generate and edit Google Docs files directly in Gemini chats now",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs",
+   "titolo": "You can generate and edit Google Docs files directly in Gemini chats now",
+   "ufficiale": false,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 2
+}

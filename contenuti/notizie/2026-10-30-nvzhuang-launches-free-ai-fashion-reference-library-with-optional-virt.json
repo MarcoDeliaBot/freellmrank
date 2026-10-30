@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-30-nvzhuang-launches-free-ai-fashion-reference-library-with-optional-virt",
+ "titolo": "NVZhuang launches free AI fashion reference library with optional virtual try‑on",
+ "descr": "The open‑source site offers 1,407 AI‑generated clothing images, bilingual search and a plug‑in backend for AI‑driven virtual fitting.",
+ "tema": "Software",
+ "paragrafi": [
+  "The GitHub project NVZhuang provides a static web front‑end that displays 1,407 AI‑generated women’s clothing images in a 2:3 ratio.",
+  "An optional AI try‑on feature lets users upload a portrait and have the selected garment virtually transferred onto the person using a backend service written in GoFrame.",
+  "The backend supports multiple image generation models—including OpenAI Images, Gemini‑3.1‑flash‑image, Doubao Seedream, and ComfyUI‑local Qwen‑Image‑Edit—configurable via API key, Base URL and model name.",
+  "The project is MIT‑licensed, free to use without deployment, and offers Docker‑Compose, Docker‑Run and native Go execution options for those who wish to host the try‑on service."
+ ],
+ "perche": [
+  "For AI enthusiasts, NVZhuang delivers a ready‑made fashion reference library without cost, while the modular backend lets developers experiment with various image‑generation models locally or in the cloud. The ability to run the try‑on pipeline offline via ComfyUI also supports privacy‑focused users seeking free, self‑hosted AI tools."
+ ],
+ "pubblicato": "2026-10-30",
+ "titoloFonte": "paipiange/nvzhuang: 1407 张 AI 女装参考图集与虚拟试穿网站，支持中英检索、OpenAI Images / Gemini / 豆包及自定义 Base URL、API Key、模型。https://github.com/paipiange/nvzhuang",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/paipiange/nvzhuang",
+   "titolo": "paipiange/nvzhuang: 1407 张 AI 女装参考图集与虚拟试穿网站，支持中英检索、OpenAI Images / Gemini / 豆包及自定义 Base URL、API Key、模型。https://github.com/paipiange/nvzhuang",
+   "ufficiale": false,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 1
+}

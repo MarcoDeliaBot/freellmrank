@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-30-tencent-releases-youtu-parsing-omni-a-5b-omni-modal-parsing-model",
+ "titolo": "Tencent releases Youtu-Parsing-Omni, a 5B omni‑modal parsing model",
+ "descr": "The new compact model parses documents, images, charts, audio and video into a single JSON schema.",
+ "tema": "Research",
+ "paragrafi": [
+  "Tencent's research team published Youtu-Parsing-Omni, a 5‑billion‑parameter model that handles seven parsing families with a single encoder.",
+  "The model accepts a document page, natural image, chart, flowchart, geometry figure, audio clip or audio‑visual video and returns a structured JSON envelope covering perception (layout, text, tables, OCR, timestamps, acoustic events) and cognition (captions, narratives, reports).",
+  "A unified schema is driven by a task prompt, while the omni encoder processes image, audio and interleaved audio‑visual inputs in one network.",
+  "Youtu-Parsing-Omni achieves state‑of‑the‑art scores on OmniDocBench v1.6 (96.96 overall) and leads open‑weight results on OmniParsingBench (75.08 average), trailing only Gemini‑3‑Pro, and performs competitively on specialized tasks such as ChemOCR and PDMX‑Synth.",
+  "The authors provide a vLLM plugin with pinned serving settings, task prompts and inference examples to simplify deployment."
+ ],
+ "perche": [
+  "For developers, a single model that parses multiple modalities reduces the need for separate specialized systems, lowering integration complexity. For the free‑model community, the compact 5B size makes it feasible to run locally or on modest cloud instances, expanding access to advanced omni‑modal parsing without relying on large proprietary services."
+ ],
+ "pubblicato": "2026-10-30",
+ "titoloFonte": "Tencent paper: Youtu-Parsing-Omni: One Encoder, One Schema, All Modalities",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.39301",
+   "titolo": "Tencent paper: Youtu-Parsing-Omni: One Encoder, One Schema, All Modalities",
+   "ufficiale": true,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 0
+}
