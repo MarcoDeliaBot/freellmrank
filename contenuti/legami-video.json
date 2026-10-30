@@ -126,5 +126,13 @@
  "news-2026-10-30-mistral-releases-open-weight-1-trillion-parameter-model-le-chonk-with-": {
   "lungo": "notizia-mistral-releases-open-weight-1-trillion-parameter-model",
   "breve": "breve-mistral-releases-open-weight-1-trillion-parameter-model"
+ },
+ "news-2026-10-28-google-expands-gemini-and-search-with-connected-apps-platform-and-open": {
+  "lungo": "notizia-google-expands-gemini-and-search-with-connected-apps-pla",
+  "breve": "breve-google-expands-gemini-and-search-with-connected-apps-pla"
+ },
+ "news-2026-10-30-ant-group-s-idm-method-sets-new-scores-on-longtext-benchmarks-at-2-nfe": {
+  "lungo": "notizia-ant-group-s-idm-method-sets-new-scores-on-longtext-bench",
+  "breve": "breve-ant-group-s-idm-method-sets-new-scores-on-longtext-bench"
  }
 }
