@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-30-nvidia-launches-nemoclaw-blueprints-for-secure-optimized-ai-agents",
+ "titolo": "NVIDIA launches NemoClaw blueprints for secure, optimized AI agents",
+ "descr": "NVIDIA NemoClaw offers open blueprints that combine tuned Nemotron models, NeMo tools and OpenShell runtime for customizable agent stacks.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced NemoClaw, a collection of open blueprints that let developers build specialized AI agents on a stack they control.",
+  "The blueprints support three harnesses—OpenClaw, Hermes Agent and LangChain Deep Agents—allowing existing agent logic to be kept while adding model optimization and governance.",
+  "Nemotron 3 Ultra, tuned for LangChain Deep Agents, achieved near‑frontier performance at roughly ten times lower cost per run compared with leading closed models, according to NVIDIA.",
+  "NemoClaw integrates NVIDIA NeMo optimization tools, including NeMo Relay for telemetry, and the OpenShell secure runtime that enforces policies on file, network, credential and tool access."
+ ],
+ "perche": [
+  "Developers gain a reusable stack that improves performance and reduces cost without rewriting their agent harness. For users of free or local models, the ability to run secure, optimized agents on personal or on‑prem hardware expands practical deployment options."
+ ],
+ "pubblicato": "2026-10-30",
+ "titoloFonte": "Build Specialized Agents on a Stack You Control with NVIDIA NemoClaw",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/build-specialized-agents-on-a-stack-you-control-with-nvidia-nemoclaw/",
+   "titolo": "Build Specialized Agents on a Stack You Control with NVIDIA NemoClaw",
+   "ufficiale": true,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 1
+}

@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-30-anthropic-openai-google-and-cloudflare-launch-ai-agents-that-hunt-code",
+ "titolo": "Anthropic, OpenAI, Google and Cloudflare launch AI agents that hunt code security bugs",
+ "descr": "Claude, Codex, Mantis and Cloudflare agents all follow a find‑disprove‑patch loop, joining 12 other tools in the space.",
+ "tema": "Research",
+ "paragrafi": [
+  "Anthropic, OpenAI, Google and Cloudflare have each released an AI security agent that scans source code for vulnerabilities.",
+  "The four agents – Claude, Codex, Mantis and Cloudflare – share a common workflow: they locate a potential issue, attempt to disprove it, and then generate a patch.",
+  "MarkTechPost notes that this find‑disprove‑patch loop is the same across all four offerings.",
+  "The article also lists twelve additional security‑focused AI tools, expanding the ecosystem of automated code‑review assistants.",
+  "These agents aim to speed up vulnerability detection and remediation in software development pipelines."
+ ],
+ "perche": [
+  "Developers gain a faster, automated way to spot and fix bugs, reducing manual review time. For users of free or locally hosted models, the growing list of tools highlights the need to evaluate open alternatives against these proprietary agents."
+ ],
+ "pubblicato": "2026-10-30",
+ "titoloFonte": "AI Security Agents Compared: Claude, Codex, Mantis, Cloudflare",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/30/ai-security-agents-claude-codex-mantis-cloudflare/",
+   "titolo": "AI Security Agents Compared: Claude, Codex, Mantis, Cloudflare",
+   "ufficiale": false,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 0
+}

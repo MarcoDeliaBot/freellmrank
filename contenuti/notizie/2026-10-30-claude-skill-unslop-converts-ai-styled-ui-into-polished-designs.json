@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-30-claude-skill-unslop-converts-ai-styled-ui-into-polished-designs",
+ "titolo": "Claude skill \"unslop\" converts AI‑styled UI into polished designs",
+ "descr": "Damir Sokolovsky's unslop skill audits and redesigns vibecoded interfaces for Next.js, React, Vue, Svelte and plain HTML.",
+ "tema": "Software",
+ "paragrafi": [
+  "A new GitHub repository, heydamir/unslop, offers a Claude skill that transforms AI‑generated, vibecoded UI into a refined design.",
+  "The skill scans a screen for issues such as purple gradients, glows, emoji labels and uneven spacing, then proposes a design direction before editing.",
+  "Installation involves cloning the repo and copying the skill folder to the Claude skills directory; usage is via the /unslop command or natural language prompts.",
+  "Optional features include generating a short story video of the redesign and connecting to image services like Replicate or OpenAI for visual assets."
+ ],
+ "perche": [
+  "For AI users, unslop provides a quick way to clean up AI‑styled interfaces without manual redesign, saving time for developers and product teams. Those seeking free or locally hosted models can still benefit by running Claude with this skill on their own machines, keeping the workflow open and customizable."
+ ],
+ "pubblicato": "2026-10-30",
+ "titoloFonte": "heydamir/unslop: A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/heydamir/unslop",
+   "titolo": "heydamir/unslop: A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
+   "ufficiale": false,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 1
+}
