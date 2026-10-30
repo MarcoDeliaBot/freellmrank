@@ -99,7 +99,8 @@ function leggiNotizie(perNome, dati) {
     }
     const nostri = citati.map((c) => `- [${md(c.nome)}](${perNome.get(c.nome)}): ${posizioni.get(c.nome) || 'on our model list'}`);
     const fonti = n.fonti.map((s) => `- [${md(s.titolo)}](${s.url}), ${md(s.nome)}${s.ufficiale ? ' (official)' : ''}, ${fmtData(s.data)}`);
-    const parti = [n.paragrafi.join('\n\n')];
+    // nota di correzione: il pubblicato si corregge dichiarandolo, non si cancella (regola di Marco, 23/10/2026)
+    const parti = [...(n.nota ? [`> ${n.nota}`] : []), n.paragrafi.join('\n\n')];
     if (n.perche?.length) parti.push(`## What it means for you\n\n${n.perche.join('\n\n')}`);
     if (nostri.length) parti.push(`## On FreeLLMArena\n\nFrom our rankings on ${fmtData(dati.aggiornato)}, based on Arena's blind votes:\n\n${nostri.join('\n')}`);
     parti.push(`## Sources\n\n${fonti.join('\n')}`);

@@ -22,14 +22,8 @@
    "titolo": "Coding From the Himalayas With an Offline AI Agent",
    "ufficiale": false,
    "data": "2026-10-27"
-  },
-  {
-   "nome": "GitHub trending",
-   "url": "https://github.com/udhaykumarbala/cleanyourtv-app",
-   "titolo": "udhaykumarbala/cleanyourtv-app: A community-built phone app for Clean Your TV: clean up an Android TV from your phone. No laptop, no coding agent, nothing uninstalled.",
-   "ufficiale": false,
-   "data": "2026-10-21"
   }
  ],
- "frasiTolte": 0
+ "frasiTolte": 0,
+ "nota": "**Correction, 30 October 2026:** an unrelated GitHub project was wrongly listed as a source here, and we removed it. The article text is unchanged."
 }

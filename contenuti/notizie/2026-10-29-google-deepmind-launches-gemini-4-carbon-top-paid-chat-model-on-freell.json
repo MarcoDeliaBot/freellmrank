@@ -14,15 +14,8 @@
   "For users, Carbon offers leading cybersecurity assistance and more reliable coding output, but at a paid token cost. Those seeking free or locally hosted models can still turn to top‑ranked free options such as Kimi K3 Max or GLM‑5.3, which remain highly rated on the arena rankings."
  ],
  "pubblicato": "2026-10-29",
- "titoloFonte": "How we detect frontier model misalignment",
+ "titoloFonte": "Gemini 4 Carbon: Our next frontier model",
  "fonti": [
-  {
-   "nome": "OpenAI",
-   "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
-   "titolo": "How we detect frontier model misalignment",
-   "ufficiale": true,
-   "data": "2026-10-29"
-  },
   {
    "nome": "Google DeepMind",
    "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
@@ -31,5 +24,6 @@
    "data": "2026-10-28"
   }
  ],
- "frasiTolte": 2
+ "frasiTolte": 2,
+ "nota": "**Correction, 30 October 2026:** an unrelated OpenAI post was wrongly listed as a source here, and we removed it. The article text is unchanged: its figures come from Google DeepMind's post."
 }
