@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-30-ropes-gray-partners-with-openai-to-build-ai-tools-for-transactional-di",
+ "titolo": "Ropes & Gray partners with OpenAI to build AI tools for transactional diligence",
+ "descr": "Law firm Ropes & Gray is creating AI solutions with OpenAI to help lawyers review grouped documents, summaries, and reports for client advice.",
+ "tema": "Business",
+ "paragrafi": [
+  "Ropes & Gray announced a collaboration with OpenAI to develop artificial‑intelligence applications for transactional diligence work.",
+  "The AI tools will assist lawyers by processing groups of documents, generating summaries and producing reports that lawyers can review before advising clients.",
+  "The partnership focuses on using OpenAI's technology to streamline the document‑review phase of transactions, a traditionally labor‑intensive task.",
+  "Ropes & Gray will retain final oversight, with attorneys reviewing AI‑generated outputs to ensure accuracy and compliance before client interaction."
+ ],
+ "perche": [
+  "The initiative shows how large firms can augment legal workflows with AI, reducing time spent on routine document analysis. For users of free or local models, it highlights a growing gap between proprietary AI services and open‑source alternatives, emphasizing the need for robust, trustworthy tools in specialized domains."
+ ],
+ "pubblicato": "2026-10-30",
+ "titoloFonte": "How Ropes & Gray is developing AI for transactional diligence",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/ropes-gray-ai-diligence",
+   "titolo": "How Ropes & Gray is developing AI for transactional diligence",
+   "ufficiale": true,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 0
+}
