@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-30-openai-releases-updated-model-spec-emphasizing-five-core-values-for-ai",
+ "titolo": "OpenAI releases updated Model Spec emphasizing five core values for AI",
+ "descr": "OpenAI's new Model Spec outlines five guiding values to improve AI judgment, agency, and alignment, while FreeLLMArena ranks top free and paid chat models.",
+ "tema": "Policy",
+ "paragrafi": [
+  "The document lists five core values intended to steer more capable AI toward sound judgment, respect for human agency, and faithful execution of human intent.",
+  "The specification aims to shape future model development and deployment practices across the industry. It reflects OpenAI's ongoing effort to embed ethical considerations into AI systems.",
+  "In the same period, FreeLLMArena released its latest blind‑vote rankings for chat models. The top free model is Kimi K3 (Max) with a score of 1488, followed closely by GLM‑5.3 (Max) at 1481.",
+  "Other high‑scoring free models include MiMo‑V2.6‑Pro (1480), GLM‑5.3‑Flash (1477), and DeepSeek‑V4.1‑Flash‑20260910 (Max) (1476). The highest‑ranked paid chat model is Gemini 4 Carbon (High) with a score of 1528.",
+  "OpenAI's updated values and the community rankings together highlight a growing focus on both responsible AI development and performance benchmarking."
+ ],
+ "perche": [
+  "For users, the new Model Spec signals OpenAI's commitment to trustworthy AI behavior, which may improve reliability in everyday applications. For developers and enthusiasts seeking free or locally‑run models, the FreeLLMArena rankings provide a clear view of the most capable open alternatives available today."
+ ],
+ "pubblicato": "2026-10-30",
+ "titoloFonte": "An updated Model Spec for more capable and beneficial AI",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/updated-model-spec",
+   "titolo": "An updated Model Spec for more capable and beneficial AI",
+   "ufficiale": true,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 1
+}

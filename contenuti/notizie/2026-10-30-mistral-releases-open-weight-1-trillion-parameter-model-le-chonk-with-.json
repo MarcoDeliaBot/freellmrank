@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-30-mistral-releases-open-weight-1-trillion-parameter-model-le-chonk-with-",
+ "titolo": "Mistral releases open‑weight 1‑trillion‑parameter model Le Chonk with coding and security gains",
+ "descr": "Mistral Large 4 (Le Chonk) is now publicly available with three reasoning modes and top open‑weight coding performance.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Mistral announced that the weights for its 1‑trillion‑parameter multimodal model, Mistral Large 4 (Le Chonk), are now publicly released.",
+  "The model shows leading results on open‑weight coding benchmarks, scoring 19.7% on FrontierCode 2.0 and 41% on Terminal‑Bench 4.0, while using fewer tokens than competitors.",
+  "Three reasoning modes are offered: Low for simple tasks, Medium for everyday use, and High (default) for demanding reasoning, letting users balance performance and cost.",
+  "In cybersecurity tests, Le Chonk achieved a 51% score on the Artificial Analysis Cyber Index, indicating strong vulnerability discovery and patching abilities without excessive refusals.",
+  "The release follows a public preview that already placed the model at the top of open‑weight coding rankings, and it joins a landscape where the top free chat models are Kimi K3, GLM‑5.3, and MiMo‑V2.6‑Pro."
+ ],
+ "perche": [
+  "Free‑model users gain a new benchmark‑leading option that can be run locally, expanding the pool of capable, cost‑effective AI models."
+ ],
+ "pubblicato": "2026-10-30",
+ "titoloFonte": "Le Chonk: Built for Coders, Trusted by Defenders.",
+ "fonti": [
+  {
+   "nome": "Mistral",
+   "url": "https://mistral.ai/news/mistral-large-4-oss/",
+   "titolo": "Le Chonk: Built for Coders, Trusted by Defenders.",
+   "ufficiale": true,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 1
+}

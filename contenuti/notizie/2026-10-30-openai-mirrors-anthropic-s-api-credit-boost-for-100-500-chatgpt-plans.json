@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-30-openai-mirrors-anthropic-s-api-credit-boost-for-100-500-chatgpt-plans",
+ "titolo": "OpenAI mirrors Anthropic's API credit boost for $100‑$500 ChatGPT plans",
+ "descr": "OpenAI now gives the same amount of expiring API credits as the subscription tier for eligible ChatGPT users.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI announced that subscribers to its $100, $200, and $500 ChatGPT plans will receive an equal number of expiring API credits.",
+  "The move matches a recent Anthropic offer that provides $100, $200, or $500 worth of credits each month to Max and Team plan users.",
+  "Credits can be applied to any organization within the subscriber’s OpenAI API account.",
+  "Simon Willison, who maintains subscriptions with both providers, said the alignment lets him run public demos without extra cost.",
+  "The benefit applies only to eligible ChatGPT subscriptions and does not affect other OpenAI pricing tiers."
+ ],
+ "perche": [
+  "Users seeking free or locally hosted models can compare this benefit against the performance of top free chat models such as Kimi K3 (Max) and Gemini 4 Carbon (High) listed in FreeLLMArena."
+ ],
+ "pubblicato": "2026-10-30",
+ "titoloFonte": "API credits benefit for eligible ChatGPT subscriptions",
+ "fonti": [
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Oct/29/api-credits/",
+   "titolo": "API credits benefit for eligible ChatGPT subscriptions",
+   "ufficiale": false,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 1
+}
