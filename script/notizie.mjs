@@ -188,16 +188,19 @@ const parole = (s) => new Set(String(s).toLowerCase().replace(/[^a-z0-9.\- ]/g, 
 // nomi propri di prodotto («DeepInfer», «Timestral-209M» -> «timestral», «Flint»): basta uno in comune per dire stessa storia,
 // perché il radar scrive «Mistral AI releases Timestral-209M» e il blog di Mistral «Introducing Timestral» (24/10/2026).
 // I nomi dei laboratori e le parole da titolo non contano: due notizie diverse su Claude non sono la stessa storia
-const COMUNI = /^(introducing|announcing|releases?|launch\w*|hugging|face|github|google|cloud|model|models|agent|agents|agentic|open|source|today|update|security|research|developers?|enterprise|platform|coding|reasoning|policy|frontier|national|global|america\w*|europe\w*|china|chinese|world|new|first|best|faster|better|smaller|larger|week|year|startup|series|funding|billion|million|study|report|paper|benchmark|safety|preview|beta|available|generally|support|now|with|what|how|why|when)$/i;
+const COMUNI = /^(introducing|announcing|releases?|launch\w*|hugging|face|github|google|cloud|model|models|agent|agents|agentic|open|source|today|update|security|research|developers?|enterprise|platform|coding|reasoning|policy|frontier|national|global|america\w*|europe\w*|china|chinese|world|new|first|best|faster|better|smaller|larger|week|year|startup|series|funding|billion|million|study|report|paper|benchmark|safety|preview|beta|available|generally|support|now|with|what|how|why|when|audio|video|image|images|voice|speech|vision|music|earth)$/i;
 // nomi «forti»: con maiuscola interna (DeepInfer) o con cifre (Timestral-209M); il nome nudo nell'altro titolo basta
 const forti = (t) => [...String(t).matchAll(/\b([A-Z][a-z]+[A-Z]\w*|[A-Za-z]{5,}[-.]?\d[\w.-]*)\b/g)].map((m) => m[1].toLowerCase().split(/[-.]?\d/)[0])
   .filter((w) => w.length >= 5 && !COMUNI.test(w) && !LABORATORI.test(w));
 const tutteParole = (t) => new Set(String(t).toLowerCase().split(/[^a-z0-9]+/));
+// il nome forte vale solo scritto da nome: «Audio8» diventava «audio» e univa ogni titolo con «native audio» (30/10/2026:
+// Edge0, Genie 4 e Nemotron in una storia sola). Maiuscola, oppure dentro un percorso (org/nome di GitHub e Hugging Face)
+export const nomina = (nome, testo) => [...String(testo).matchAll(new RegExp(`(?<![a-z0-9])${nome}(?![a-z0-9])`, 'gi'))].some((m) => /[A-Z]/.test(m[0][0]) || testo[m.index - 1] === '/');
 const simili = (a, b) => {
-  const A = parole(a), B = parole(b); let c = 0; for (const w of A) if (B.has(w)) c++;
-  const pa = tutteParole(a), pb = tutteParole(b);
-  if (forti(a).some((w) => pb.has(w)) || forti(b).some((w) => pa.has(w))) return 1;
-  return c >= 2 ? c / Math.max(1, Math.min(A.size, B.size)) : 0;
+  const A = parole(a), B = parole(b); let c = 0, propria = false; for (const w of A) if (B.has(w)) { c++; propria ||= !COMUNI.test(w); }
+  if (forti(a).some((w) => nomina(w, b)) || forti(b).some((w) => nomina(w, a))) return 1;
+  // serve almeno una parola non comune: «frontier model» da solo univa OpenAI e Gemini 4 Carbon, «on Hugging Face» ogni modello del radar
+  return c >= 2 && propria ? c / Math.max(1, Math.min(A.size, B.size)) : 0;
 };
 
 // 2b. fonte primaria (Marco, 30/10/2026: «Ma stai rubando notizie dai competitors?»; 46 notizie su 99 riscrivevano il
@@ -231,8 +234,8 @@ export function linkPrimari(html, titolo) {
 }
 // stessa storia: un nome forte del titolo, oppure almeno 3 parole distintive e metà di quelle del titolo
 export function riguarda(titolo, testo) {
+  if (forti(titolo).some((w) => nomina(w, testo))) return true;
   const pagina = tutteParole(testo);
-  if (forti(titolo).some((w) => pagina.has(w))) return true;
   const chiavi = [...tutteParole(titolo)].filter((w) => w.length > 2 && !VUOTE.has(w) && !COMUNI.test(w) && !LABORATORI.test(w));
   const dentro = chiavi.filter((w) => pagina.has(w)).length;
   return dentro >= 3 && dentro >= chiavi.length / 2;
@@ -317,7 +320,7 @@ async function main() {
   const titoliCreator = await segnali();
   // per i creator serve un nome forte in comune (DeepInfer, Timestral-209M) o 3 parole: «Claude Code» da solo è in mille titoli
   const comuni = (a, b) => { const B = parole(b); return [...parole(a)].filter((w) => B.has(w)).length; };
-  const tocca = (a, b) => { const pa = tutteParole(a), pb = tutteParole(b); return forti(a).some((w) => pb.has(w)) || forti(b).some((w) => pa.has(w)) || comuni(a, b) >= 3; };
+  const tocca = (a, b) => forti(a).some((w) => nomina(w, b)) || forti(b).some((w) => nomina(w, a)) || comuni(a, b) >= 3;
   const creator = (s) => titoliCreator.filter((c) => c.titoli.some((t) => s.voci.some((v) => tocca(v.titolo, t)))).map((c) => c.nome);
   const punti = (s) => s.voci.length * 4 + (lancio(s) ? 10 : 0) + (s.voci.some((v) => v.ufficiale) ? 1 : 0) + (Date.now() - s.voci[0].data < 864e5 ? 1 : 0) + Math.min(6, creator(s).length * 3);
   const usate = new Set();
