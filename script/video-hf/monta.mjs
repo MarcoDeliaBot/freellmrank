@@ -37,9 +37,23 @@ export async function monta(piano, dir) {
     const testo = typeof st.voceFissa === 'function' ? st.voceFissa(sc.dati || {}, formato) : st.voceFissa || sc.voce;
     const n = String(i + 1).padStart(2, '0');
     const wav = d('assets/voice', `${n}.wav`);
-    const durVoce = parla(testo, wav);
+    let durVoce = parla(testo, wav);
+    // Optional editorial timing contract (skills/tutorials): fit the voice to its
+    // window, then hold the finished slide. Existing news plans are unchanged.
+    const fixed = piano.tempiFissi ? Number(sc.durata) : null;
+    if (fixed != null) {
+      if (!(fixed >= 2 && fixed <= 60)) throw new Error(`Invalid fixed scene duration: ${fixed}`);
+      const speed = durVoce / (fixed - 0.15);
+      if (speed > 1.8) throw new Error(`Narration exceeds its reading window (${speed.toFixed(2)}x)`);
+      if (speed > 1) {
+        const fitted = wav.replace(/\.wav$/, '-fit.wav');
+        const r = spawnSync('ffmpeg', ['-v','error','-y','-i',wav,'-af',`atempo=${speed.toFixed(6)}`,fitted]);
+        if (r.status !== 0) throw new Error('Could not fit narration to its scene');
+        fs.renameSync(fitted,wav); durVoce = fixed - 0.15;
+      }
+    }
     const parole = allinea(testo, ascolta(wav, d('lavoro', `t${n}`)), durVoce);
-    const durata = +Math.max(4, durVoce + CODA).toFixed(3);
+    const durata = fixed ?? +Math.max(4, durVoce + CODA).toFixed(3);
     const out = { ...sc, n, testo, wav: `assets/voice/${n}.wav`, durVoce, durata, inizio: +inizio.toFixed(3), parole };
     inizio += durata;
     return out;
