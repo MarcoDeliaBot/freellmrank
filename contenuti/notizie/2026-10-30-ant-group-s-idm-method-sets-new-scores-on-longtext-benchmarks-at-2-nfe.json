@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-30-ant-group-s-idm-method-sets-new-scores-on-longtext-benchmarks-at-2-nfe",
+ "titolo": "Ant Group’s IDM method sets new scores on LongText benchmarks at 2 NFE",
+ "descr": "Ant Group released a paper titled “Intrinsic Distribution Matching” (IDM) that proposes a generator‑based moment loss on the means and per‑coordinate standard d",
+ "tema": "Research",
+ "paragrafi": [
+  "Ant Group released a paper titled “Intrinsic Distribution Matching” (IDM) that proposes a generator‑based moment loss on the means and per‑coordinate standard deviations of its own EMA features.",
+  "The approach removes the need for an external feature encoder and keeps the full DMD correction while adding an explicit loss on these statistics.",
+  "At a budget of just 2 neural function evaluations (NFE), IDM (Z‑Image) records 94.25% on the LongText‑CN benchmark and 90.20% on LongText‑EN, the highest scores among the methods compared at this budget.",
+  "Ablation studies confirm consistent gains from the added moment loss, and the generator EMA features perform competitively with DINOv2 representations."
+ ],
+ "perche": [
+  "IDM shows that strong text generation performance can be achieved with very few function evaluations, which may lower compute costs for researchers and developers. For users seeking free or locally‑run models, the technique suggests future lightweight alternatives could close the gap with larger paid systems."
+ ],
+ "pubblicato": "2026-10-30",
+ "titoloFonte": "Ant Group paper: Intrinsic Distribution Matching",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.39633",
+   "titolo": "Ant Group paper: Intrinsic Distribution Matching",
+   "ufficiale": true,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 2
+}

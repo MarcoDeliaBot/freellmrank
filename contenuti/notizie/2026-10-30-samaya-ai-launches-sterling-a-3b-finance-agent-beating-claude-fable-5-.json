@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-30-samaya-ai-launches-sterling-a-3b-finance-agent-beating-claude-fable-5-",
+ "titolo": "Samaya AI launches Sterling, a 3B finance agent beating Claude Fable 5.1 at 11× lower cost",
+ "descr": "Samaya AI announced the release of Sterling, a 3 billion‑parameter finance research agent.",
+ "tema": "Research",
+ "paragrafi": [
+  "Samaya AI announced the release of Sterling, a 3 billion‑parameter finance research agent.",
+  "Sterling is built on a post‑trained Nemotron 3.5 Lightning foundation and targets financial question answering.",
+  "On the FrontierFinance benchmark it achieved 58.9% accuracy, compared with Claude Fable 5.1’s 55.9% score.",
+  "The cost per question for Sterling was $0.61, while Claude Fable 5.1 cost $6.89, an 11‑fold reduction.",
+  "Samaya AI highlighted the model’s efficiency for finance‑focused workloads."
+ ],
+ "perche": [
+  "For users seeking cost‑effective AI, Sterling offers a cheaper alternative for finance research without sacrificing accuracy. While it is a paid offering, its lower per‑query price may encourage adoption over more expensive proprietary models, especially for organizations with tight budgets."
+ ],
+ "pubblicato": "2026-10-30",
+ "titoloFonte": "Samaya AI Releases Sterling: A 3B-Active Finance Research Agent Model that Beats Claude Fable 5.1 on FrontierFinance at 11x Lower Cost",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/30/samaya-sterling-post-trained-finance-research-model-frontierfinance/",
+   "titolo": "Samaya AI Releases Sterling: A 3B-Active Finance Research Agent Model that Beats Claude Fable 5.1 on FrontierFinance at 11x Lower Cost",
+   "ufficiale": false,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 1
+}
