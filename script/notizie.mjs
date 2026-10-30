@@ -2,6 +2,7 @@
 // hardware, software, guide), da fonti ufficiali e siti di notizie. Si pubblicano da sole «dopo il controllo dei fatti».
 // 1. legge i feed (FONTI), tiene le voci degli ultimi 3 giorni che parlano di AI
 // 2. raggruppa le voci sulla stessa storia: vince quella citata da più fonti, con un bonus se c'è una fonte ufficiale
+//    una storia con una sola fonte non ufficiale passa solo se si trova anche la fonte primaria (cercaPrimaria)
 // 3. scarica il testo delle pagine e chiede a Workers AI un articolo in inglese basato SOLO su quelle pagine
 // 4. controlli in codice, frase per frase: ogni numero e ogni nome devono stare nelle fonti (o nei dati del sito),
 //    e nessuna frase può copiare 10 parole di fila da una fonte (diritto d'autore). Le frasi che non passano si tolgono;
@@ -81,7 +82,8 @@ async function leggiFeed(f) {
   return voci.map((v) => {
     const link = (v.match(/<link[^>]*href="([^"]+)"/i) || [])[1] || campo(v, ['link']);
     const data = new Date(campo(v, ['pubDate', 'published', 'updated', 'dc:date']));
-    return { fonte: f.nome, ufficiale: !!f.ufficiale, titolo: testoDa(campo(v, ['title'])), link: link.trim(), data, sommario: testoDa(campo(v, ['description', 'summary', 'content:encoded', 'content'])).slice(0, 1500) };
+    return { fonte: f.nome, ufficiale: !!f.ufficiale, titolo: testoDa(campo(v, ['title'])), link: link.trim(), data, sommario: testoDa(campo(v, ['description', 'summary', 'content:encoded', 'content'])).slice(0, 1500),
+      grezzo: campo(v, ['content:encoded', 'content', 'description', 'summary']) }; // con i link: MarkTechPost risponde 403 alle pagine, il feed no
   }).filter((v) => v.titolo && v.link && !Number.isNaN(v.data.getTime()));
 }
 
@@ -198,6 +200,58 @@ const simili = (a, b) => {
   return c >= 2 ? c / Math.max(1, Math.min(A.size, B.size)) : 0;
 };
 
+// 2b. fonte primaria (Marco, 30/10/2026: «Ma stai rubando notizie dai competitors?»; 46 notizie su 99 riscrivevano il
+// lavoro di una sola testata). Se la storia ha una sola fonte non ufficiale, si cerca fra i link dell'articolo la pagina
+// del laboratorio, il modello, il codice o la ricerca: se c'è e parla della stessa storia diventa una fonte, se no la
+// storia non esce. Il progetto GitHub del radar è già la fonte primaria di se stesso
+const HOST_PRIMARI = /(^|\.)(openai\.com|anthropic\.com|deepmind\.google|blog\.google|ai\.google\.dev|ai\.meta\.com|about\.fb\.com|mistral\.ai|nvidia\.com|microsoft\.com|qwen\.ai|qwenlm\.github\.io|deepseek\.com|moonshot\.ai|kimi\.com|x\.ai|z\.ai|minimax\.io|arxiv\.org|europa\.eu|[a-z0-9-]+\.gov)$/i;
+const SENZA_SITO = /^(twitter|linkedin|facebook|youtube|reddit|instagram|threads|medium|substack|google|github|huggingface)$/i;
+const etichetta = (host) => host.split('.').at(-2) || '';
+const TESTATE = new Set(FONTI.filter((f) => !f.ufficiale).map((f) => etichetta(new URL(f.url).hostname)));
+const primario = (u, titolo) => {
+  const percorso = u.pathname.replace(/\/+$/, '');
+  if (!percorso) return false;
+  if (u.hostname === 'huggingface.co' || u.hostname === 'github.com') return /^\/[\w.-]+\/[\w.-]+/.test(percorso);
+  if (HOST_PRIMARI.test(u.hostname)) return true;
+  // il sito di chi è nel titolo: «Cursor raises…» -> cursor.com
+  const e = etichetta(u.hostname);
+  return e.length >= 4 && !TESTATE.has(e) && !SENZA_SITO.test(e) && titolo.has(e);
+};
+export function linkPrimari(html, titolo) {
+  const corpo = (html.match(/<article[\s>][\s\S]*<\/article>/i) || [html])[0].replace(/<nav[\s\S]*?<\/nav>|<footer[\s\S]*?<\/footer>|<aside[\s\S]*?<\/aside>/gi, ' ');
+  const parti = tutteParole(titolo), uscita = new Set();
+  for (const m of corpo.matchAll(/href=["'](https?:\/\/[^"'#\s]+)/gi)) {
+    try {
+      const u = new URL(entita(m[1]));
+      if (!primario(u, parti)) continue;
+      uscita.add(u.href.replace(/^https:\/\/arxiv\.org\/pdf\//, 'https://arxiv.org/abs/').replace(/\.pdf$/, ''));
+    } catch { /* link non valido */ }
+  }
+  return [...uscita].slice(0, 6);
+}
+// stessa storia: un nome forte del titolo, oppure almeno 3 parole distintive e metà di quelle del titolo
+export function riguarda(titolo, testo) {
+  const pagina = tutteParole(testo);
+  if (forti(titolo).some((w) => pagina.has(w))) return true;
+  const chiavi = [...tutteParole(titolo)].filter((w) => w.length > 2 && !VUOTE.has(w) && !COMUNI.test(w) && !LABORATORI.test(w));
+  const dentro = chiavi.filter((w) => pagina.has(w)).length;
+  return dentro >= 3 && dentro >= chiavi.length / 2;
+}
+export async function cercaPrimaria(v, leggi = scarica) {
+  let html = '';
+  try { html = await leggi(v.link); } catch (e) { console.log(`notizie: pagina chiusa ${v.link} (${e.message})`); }
+  for (const link of new Set([...linkPrimari(v.grezzo || '', v.titolo), ...linkPrimari(html, v.titolo)])) {
+    try {
+      const pagina = await leggi(link, 10000);
+      const testo = testoDa(pagina);
+      if (testo.length < 300 || !riguarda(v.titolo, testo)) continue;
+      const data = dataDa(pagina);
+      return { fonte: new URL(link).hostname.replace(/^www\./, ''), ufficiale: true, titolo: testoDa(campo(pagina, ['title'])).slice(0, 200) || v.titolo, link, data: Number.isNaN(data.getTime()) ? v.data : data, sommario: '' };
+    } catch (e) { console.log(`notizie: fonte primaria chiusa ${link} (${e.message})`); }
+  }
+  return null;
+}
+
 // 4. controlli in codice
 // una frase finisce con . ! ? seguiti da spazio e maiuscola: «GPT-5.6» e «400,000» restano interi
 const frasi = (t) => String(t).trim().split(/(?<=[.!?]["')]?)\s+(?=["'(]?[A-Z0-9])/).map((s) => s.trim()).filter(Boolean);
@@ -267,8 +321,20 @@ async function main() {
   const creator = (s) => titoliCreator.filter((c) => c.titoli.some((t) => s.voci.some((v) => tocca(v.titolo, t)))).map((c) => c.nome);
   const punti = (s) => s.voci.length * 4 + (lancio(s) ? 10 : 0) + (s.voci.some((v) => v.ufficiale) ? 1 : 0) + (Date.now() - s.voci[0].data < 864e5 ? 1 : 0) + Math.min(6, creator(s).length * 3);
   const usate = new Set();
-  const scelte = storie.filter((s) => !fatteTitoli.some((t) => simili(t, s.voci[0].titolo) >= 0.5)).sort((a, b) => punti(b) - punti(a))
-    .filter((s) => { if (usate.has(s.voci[0].fonte)) return false; usate.add(s.voci[0].fonte); return true; }).slice(0, MAX); // una storia per fonte a giro
+  const scelte = [];
+  const inizio = Date.now();
+  for (const s of storie.filter((x) => !fatteTitoli.some((t) => simili(t, x.voci[0].titolo) >= 0.5)).sort((a, b) => punti(b) - punti(a))) {
+    if (scelte.length >= MAX) break;
+    if (usate.has(s.voci[0].fonte)) continue; // una storia per fonte a giro
+    if (s.voci.length === 1 && !s.voci[0].ufficiale && s.voci[0].fonte !== 'GitHub trending') {
+      // la ricerca ha un tetto di tempo: il lavoro su GitHub muore dopo 15 minuti e deve ancora scrivere gli articoli
+      const primaria = Date.now() - inizio < 4 * 6e4 ? await cercaPrimaria(s.voci[0]) : null;
+      if (!primaria) { console.log(`notizie: una sola fonte, nessuna primaria: salto «${s.voci[0].titolo}» (${s.voci[0].fonte})`); continue; }
+      s.voci.push(primaria);
+    }
+    usate.add(s.voci[0].fonte);
+    scelte.push(s);
+  }
   console.log(`notizie: ${voci.length} voci nuove, ${storie.length} storie, scelte ${scelte.length}`);
   for (const s of scelte) console.log(`  scelta (${punti(s)} punti): ${s.voci.map((v) => `${v.fonte}: ${v.titolo}`).join(' | ')}${creator(s).length ? ` [creator: ${creator(s).join(', ')}]` : ''}`);
 
