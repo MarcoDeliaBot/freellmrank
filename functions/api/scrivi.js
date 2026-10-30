@@ -17,7 +17,7 @@ export async function onRequestPost({ request, env }) {
   const max = Math.min(4000, Math.max(100, Number(corpo?.max) || 2500));
 
   // ogni uso ha il suo tetto (bozze, traduzioni, video): le traduzioni non tolgono spazio ai copioni
-  const scopo = TETTI_SCRIVI[corpo?.scopo] ? corpo.scopo : 'bozze';
+  const scopo = Object.hasOwn(TETTI_SCRIVI, corpo?.scopo) ? corpo.scopo : 'bozze';
   const TETTO_SCRIVI = TETTI_SCRIVI[scopo];
   const giorno = new Date().toISOString().slice(0, 10);
   const chiave = scopo === 'bozze' ? `scrivi-spesa:${giorno}` : `scrivi-spesa-${scopo}:${giorno}`;
