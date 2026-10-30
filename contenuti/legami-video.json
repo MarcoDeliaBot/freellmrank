@@ -118,5 +118,13 @@
  "news-2026-10-29-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai": {
   "lungo": "notizia-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai",
   "breve": "breve-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai"
+ },
+ "news-2026-10-29-google-deepmind-launches-gemini-4-carbon-top-paid-chat-model-on-freell": {
+  "lungo": "notizia-google-deepmind-launches-gemini-4-carbon-top-paid-chat-m",
+  "breve": "breve-google-deepmind-launches-gemini-4-carbon-top-paid-chat-m"
+ },
+ "news-2026-10-30-mistral-releases-open-weight-1-trillion-parameter-model-le-chonk-with-": {
+  "lungo": "notizia-mistral-releases-open-weight-1-trillion-parameter-model",
+  "breve": "breve-mistral-releases-open-weight-1-trillion-parameter-model"
  }
 }
