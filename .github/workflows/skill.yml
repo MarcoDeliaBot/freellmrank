@@ -9,10 +9,6 @@ on:
         description: 'Una skill e un tutorial completi, senza pubblicare: pagine, video e fotogrammi come artefatti'
         type: boolean
         default: true
-  # TEMPORANEO: consente il collaudo prima che il workflow esista su main.
-  push:
-    branches: [skill-tutorial]
-    paths: ['.github/workflows/skill.yml', 'script/skill/**', 'script/skill.mjs', 'script/video-hf/stampi/diagramma.mjs', 'script/video-hf/stampi/passo.mjs']
 
 permissions:
   contents: write
@@ -91,6 +87,8 @@ jobs:
             dati/skill.json
             dati/skill-scartate.json
             dati/skill-storico
+            contenuti/skills
+            contenuti/tutorials
       - name: Release verificate per il flusso YouTube esistente
         if: env.PROVA != 'true'
         env:
@@ -99,7 +97,10 @@ jobs:
       - name: Salva dati, pagine e legami dopo i controlli
         if: env.PROVA != 'true'
         run: |
-          git add dati/skill.json dati/skill-scartate.json dati/skill-storico contenuti/skills contenuti/tutorials contenuti/legami-video.json
+          git add dati/skill.json dati/skill-scartate.json dati/skill-storico contenuti/legami-video.json
+          for dir in contenuti/skills contenuti/tutorials; do
+            if [ -d "$dir" ]; then git add "$dir"; fi
+          done
           if git diff --cached --quiet; then exit 0; fi
           git config user.name freellmarena-bot
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

@@ -40,7 +40,7 @@ export async function monta(piano, dir) {
     let durVoce = parla(testo, wav);
     // Optional editorial timing contract (skills/tutorials): fit the voice to its
     // window, then hold the finished slide. Existing news plans are unchanged.
-    const fixed = piano.tempiFissi ? Number(sc.durata) : null;
+    const fixed = piano.tempiFissi === true ? Number(sc.durata) : null;
     if (fixed != null) {
       if (!(fixed >= 2 && fixed <= 60)) throw new Error(`Invalid fixed scene duration: ${fixed}`);
       const speed = durVoce / (fixed - 0.15);

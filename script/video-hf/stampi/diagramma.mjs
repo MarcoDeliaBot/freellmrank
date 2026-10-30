@@ -5,6 +5,7 @@
 import { C, scena, formatoDi, esc, s3, attacchi } from '../base.mjs';
 export default {
   nome:'diagramma',
+  soloSkillTutorial:true,
   descrizione:'A documented ordered workflow with three source-backed steps; no inferred relationships',
   schema:'{"titolo":"max 60","nodi":["max 64", "max 64", "max 64"]}',
   valida(d) {

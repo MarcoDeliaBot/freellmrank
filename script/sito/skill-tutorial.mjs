@@ -15,7 +15,7 @@ const href = c => `/${c.tipo === 'skill' ? 'skills' : 'tutorials'}/${c.slug}.htm
 const p = t => `<p>${esc(t)}</p>`;
 const code = t => `<pre translate="no"><code>${esc(t)}</code></pre>`;
 const section = (title, body) => `<section class="cat-guida"><div class="cat-testa"><h2>${esc(title)}</h2></div>${body}</section>`;
-const list = items => items.map(c=>`<article class="cat-scheda"><h3><a href="${href(c)}">${esc(c.titolo)}</a></h3>${p(c.descr)}<p class="small muted">${fmtData(c.date)}</p></article>`).join('');
+const list = (items, numbers=false) => items.map((c,i)=>`<article class="cat-scheda"><h3>${numbers?`<span class="cat-conta">${i+1}</span> `:''}<a href="${href(c)}">${esc(c.titolo)}</a></h3>${p(c.descr)}${numbers?metrics(c):`<p class="small muted">${fmtData(c.date)}</p>`}</article>`).join('');
 
 function metrics(c) {
   const m = c.metrics;
@@ -52,11 +52,12 @@ export function pagineSkillTutorial(dati, blog) {
     pagina({file:href(c).slice(1),titolo:c.titolo,descr:c.descr.slice(0,158),attiva:skill?'/skills.html':'/tutorials.html',dati,blog,
       corpo:`<article class="articolo skill-tutorial"><header class="art-testa"><p class="art-meta">${skill?'Agent Skills':'Tutorials'} · ${fmtData(c.date)}</p><h1>${esc(c.titolo)}</h1></header>${marked.parse(body)}</article>`});
   }
-  const ranked = [...skills].sort(rank).slice(0,10);
+  const current = new Map((catalogue.skills || []).map(c=>[c.slug,c.metrics]));
+  const ranked = skills.map(c=>({...c,metrics:current.get(c.slug)||c.metrics})).sort(rank).slice(0,10);
   const unlinked = (catalogue.skills || []).filter(c=>!skills.some(s=>s.slug===c.slug)).sort(rank);
   pagina({file:'skills.html',titolo:'Best Agent Skills this week',descr:'Agent Skills with dated GitHub and skills.sh measurements, installation instructions, static checks and videos.',attiva:'/skills.html',dati,blog,
     corpo:`<div class="articolo skill-tutorial"><header class="art-testa"><p class="art-meta">Agent Skills</p><h1>Best Agent Skills this week</h1><p class="lead">Source-based walkthroughs, dated popularity and a static repository review before publication.</p></header>
-    ${section('Weekly ranking',p(catalogue.metodologia || 'Measured popularity from GitHub and skills.sh.')+p(`As of ${catalogue.aggiornato || dati.aggiornato}. ${ranked.length} published skills available; the list grows to ten only when ten entries pass all gates.`)+list(ranked))}
+    ${section('Weekly ranking',p(catalogue.metodologia || 'Measured popularity from GitHub and skills.sh.')+p(`As of ${catalogue.aggiornato || dati.aggiornato}. ${ranked.length} published skills available; the list grows to ten only when ten entries pass all gates.`)+list(ranked,true))}
     ${section('New Agent Skills',list([...skills].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,10)) || p('The first videos and walkthroughs are being prepared.'))}
     ${section('All Agent Skills',list(skills) || p('No skill walkthrough has passed all publication gates yet.'))}
     ${section('Measured candidates',p('These candidates passed static review but await a complete page and both videos. Numbers are observations, not a recommendation.')+unlinked.slice(0,20).map(c=>`<article class="cat-scheda"><h3><a href="${esc(c.fonti[0].url)}">${esc(c.name)}</a></h3>${p(c.descr)}${p(`${c.metrics.stars} repository stars · ${c.metrics.installs24h ?? 'Unavailable'} installs in 24h · observed ${c.metrics.date}`)}</article>`).join(''))}</div>`});

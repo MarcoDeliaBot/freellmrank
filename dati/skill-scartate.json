@@ -179,6 +179,23 @@
    ]
   },
   {
+   "repository": "prime-skills/runcomfy-agent-skills",
+   "date": "2026-10-30",
+   "commit": "fca19ae084c2ae4667f5c8affbb99da5103d5832",
+   "reasons": [
+    {
+     "file": "codex-pet/SKILL.md",
+     "reason": "sensitive-read",
+     "line": 16
+    },
+    {
+     "file": "gpt-image-2/SKILL.md",
+     "reason": "sensitive-read",
+     "line": 195
+    }
+   ]
+  },
+  {
    "repository": "skills-shell/superpowers",
    "date": "2026-10-30",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
@@ -407,6 +424,16 @@
    ]
   },
   {
+   "repository": "flowkit-labs/skills",
+   "skill": "reddit-automation",
+   "date": "2026-10-30",
+   "reasons": [
+    {
+     "reason": "no unambiguous exact installation command in README"
+    }
+   ]
+  },
+  {
    "repository": "uizze/uizze",
    "date": "2026-10-30",
    "commit": "40b0ee439ba88aecb65d68bcb379da0e716b899e",
@@ -477,19 +504,9 @@
    ]
   },
   {
-   "repository": "flowkit-labs/skills",
-   "skill": "reddit-automation",
-   "date": "2026-10-30",
-   "reasons": [
-    {
-     "reason": "no unambiguous exact installation command in README"
-    }
-   ]
-  },
-  {
    "repository": "vercel-labs/agent-browser",
    "date": "2026-10-30",
-   "commit": "f7a4cdea3155eac5321f7e8b5de14e19068b3e68",
+   "commit": "28898e4cc2d3ee47c7080ab653b4ad29340cef57",
    "reasons": [
     {
      "file": ".claude",
@@ -528,7 +545,7 @@
     {
      "file": "cli/src/flags.rs",
      "reason": "sensitive-read",
-     "line": 1437
+     "line": 1461
     },
     {
      "file": "cli/src/native/a11y/axe.min.js",
@@ -728,7 +745,7 @@
     {
      "file": "skill-data/core/SKILL.md",
      "reason": "sensitive-read",
-     "line": 342
+     "line": 346
     },
     {
      "file": "skill-data/core/references/authentication.md",
@@ -1037,6 +1054,148 @@
    ]
   },
   {
+   "repository": "its-a-skill-issue/superpowers",
+   "date": "2026-10-30",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "reasons": [
+    {
+     "file": "cli-install.md",
+     "reason": "download-and-execute",
+     "line": 4
+    },
+    {
+     "file": "guides/product/product-changelog/SKILL.md",
+     "reason": "sensitive-read",
+     "line": 190
+    },
+    {
+     "file": "sdk/building-apps/SKILL.md",
+     "reason": "download-and-execute",
+     "line": 24
+    },
+    {
+     "file": "sdk/building-apps/SKILL.md",
+     "reason": "sensitive-read",
+     "line": 198
+    },
+    {
+     "file": "sdk/building-apps/references/cli.md",
+     "reason": "download-and-execute",
+     "line": 9
+    },
+    {
+     "file": "sdk/building-apps/references/node-secrets-oauth.md",
+     "reason": "sensitive-read",
+     "line": 29
+    },
+    {
+     "file": "sdk/building-apps/references/python-secrets-oauth.md",
+     "reason": "environment-secret-read",
+     "line": 31
+    },
+    {
+     "file": "sdk/javascript-sdk/SKILL.md",
+     "reason": "sensitive-read",
+     "line": 55
+    },
+    {
+     "file": "sdk/javascript-sdk/references/agent-patterns.md",
+     "reason": "sensitive-read",
+     "line": 353
+    },
+    {
+     "file": "sdk/javascript-sdk/references/react-integration.md",
+     "reason": "sensitive-read",
+     "line": 18
+    },
+    {
+     "file": "sdk/javascript-sdk/references/server-proxy.md",
+     "reason": "sensitive-read",
+     "line": 43
+    },
+    {
+     "file": "sdk/javascript-sdk/references/sessions.md",
+     "reason": "sensitive-read",
+     "line": 316
+    },
+    {
+     "file": "sdk/javascript-sdk/references/tool-builder.md",
+     "reason": "sensitive-read",
+     "line": 425
+    },
+    {
+     "file": "sdk/javascript-sdk/references/typescript.md",
+     "reason": "sensitive-read",
+     "line": 372
+    },
+    {
+     "file": "sdk/python-sdk/SKILL.md",
+     "reason": "sensitive-read",
+     "line": 56
+    },
+    {
+     "file": "tools/agent-tools/SKILL.md",
+     "reason": "download-and-execute",
+     "line": 18
+    },
+    {
+     "file": "tools/agent-tools/references/authentication.md",
+     "reason": "download-and-execute",
+     "line": 6
+    },
+    {
+     "file": "tools/agent-tools/references/authentication.md",
+     "reason": "sensitive-read",
+     "line": 15
+    },
+    {
+     "file": "tools/agent-tools/references/cli-reference.md",
+     "reason": "download-and-execute",
+     "line": 6
+    },
+    {
+     "file": "tools/infsh-cli/SKILL.md",
+     "reason": "download-and-execute",
+     "line": 18
+    },
+    {
+     "file": "tools/infsh-cli/references/authentication.md",
+     "reason": "download-and-execute",
+     "line": 6
+    },
+    {
+     "file": "tools/infsh-cli/references/authentication.md",
+     "reason": "sensitive-read",
+     "line": 15
+    },
+    {
+     "file": "tools/infsh-cli/references/cli-reference.md",
+     "reason": "download-and-execute",
+     "line": 6
+    },
+    {
+     "file": "tools/utilities/agent-browser/references/authentication.md",
+     "reason": "environment-secret-read",
+     "line": 37
+    },
+    {
+     "file": "tools/utilities/agent-browser/templates/authenticated-session.sh",
+     "reason": "environment-secret-read",
+     "line": 83
+    }
+   ]
+  },
+  {
+   "repository": "thedotmack/claude-mem",
+   "date": "2026-10-30",
+   "commit": "70aa40042cfb8157a0d84954b9c0d2b30b50af80",
+   "reasons": [
+    {
+     "reason": "archive limit; scan incomplete"
+    }
+   ]
+  },
+  {
    "repository": "Egonex-AI/Understand-Anything",
    "date": "2026-10-30",
    "commit": "4e6d3299017a7432da15957874992837a315c5b4",
@@ -1049,7 +1208,7 @@
   {
    "repository": "code-yeongyu/oh-my-openagent",
    "date": "2026-10-30",
-   "commit": "b89733622c6c8a141f6c6f7af4fb5e1a056d0429",
+   "commit": "df6524a444875299976a90e464faaefa1acd9270",
    "reasons": [
     {
      "reason": "archive limit; scan incomplete"
@@ -1091,7 +1250,7 @@
   {
    "repository": "wshobson/agents",
    "date": "2026-10-30",
-   "commit": "0874a27b17a22e2b7c2e2bcd725768e0803cad06",
+   "commit": "fa128d5c6e281215de4df67331620708b27de919",
    "reasons": [
     {
      "file": ".github/workflows/validate.yml",
@@ -10210,23 +10369,6 @@
      "file": "skills/baoyu-youtube-transcript/scripts/youtube.ts",
      "reason": "multiline-data-send",
      "line": 143
-    }
-   ]
-  },
-  {
-   "repository": "prime-skills/runcomfy-agent-skills",
-   "date": "2026-10-30",
-   "commit": "fca19ae084c2ae4667f5c8affbb99da5103d5832",
-   "reasons": [
-    {
-     "file": "codex-pet/SKILL.md",
-     "reason": "sensitive-read",
-     "line": 16
-    },
-    {
-     "file": "gpt-image-2/SKILL.md",
-     "reason": "sensitive-read",
-     "line": 195
     }
    ]
   }

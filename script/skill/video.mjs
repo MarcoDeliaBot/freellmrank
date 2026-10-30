@@ -42,6 +42,7 @@ export function plan(card, short=false) {
 
 export function validatePlan(card,piano) {
   const e=[...validateCard(card)];
+  if(piano.tempiFissi!==true)e.push('fixed timing contract is required');
   if (piano.cardHash!==digest(JSON.stringify(card))) e.push('plan does not match the reviewed card');
   const short=piano.formato==='verticale';
   for (const [i,s] of (piano.scene || []).entries()) {

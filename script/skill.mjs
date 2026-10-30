@@ -14,7 +14,7 @@ function run(command,args) {
   return r.stdout;
 }
 const args=process.argv.slice(2);
-const prova=args.includes('--prova') || process.env.PROVA==='true' || (process.env.GITHUB_REF && process.env.GITHUB_REF!=='refs/heads/main');
+const prova=args.includes('--prova') || process.env.PROVA==='true' || process.env.GITHUB_REF!=='refs/heads/main';
 const offline=args.includes('--offline'); // reuse a dated, reviewed local catalogue for tests
 const count=prova?1:Math.max(1,Math.min(2,Number(process.env.MAX_SKILL || 2)));
 const folder=path.join(ROOT,'video/skill-tutorial');
@@ -29,6 +29,11 @@ if(args.includes('--pubblica')) {
     if(previous.status===0) {
       const assets=JSON.parse(previous.stdout).assets.map(a=>a.name);
       if(!video.files.every(f=>assets.includes(path.basename(f))))throw Error(`Existing release incomplete: ${video.release}; no overwrite`);
+      const checkDir=fs.mkdtempSync(path.join(ROOT,'.ai/release-check-'));
+      const jsonName=`${video.nome}.json`;
+      run('gh',['release','download',video.release,'--pattern',jsonName,'--dir',checkDir]);
+      const old=JSON.parse(fs.readFileSync(path.join(checkDir,jsonName),'utf8'));
+      if(old.sourceHash!==result.evidence.cardHash)throw Error(`Existing release belongs to a different reviewed card: ${video.release}; no overwrite`);
       continue;
     }
     const info=JSON.parse(fs.readFileSync(video.files.find(f=>f.endsWith('.json')),'utf8'));

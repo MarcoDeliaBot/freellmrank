@@ -73,7 +73,7 @@ export async function scanRepository(repo) {
 
 export function growth(history, repo, stars, date) {
   const before = new Date(Date.parse(date) - 7 * 864e5).toISOString().slice(0, 10);
-  const observation = history.filter(x => x.date <= before && Date.parse(before) - Date.parse(x.date) < 2 * 864e5 && Number.isInteger(x.stars?.[repo])).sort((a,b) => b.date.localeCompare(a.date))[0];
+  const observation = history.find(x => x.date === before && Number.isInteger(x.stars?.[repo]));
   return observation ? { value: stars - observation.stars[repo], from: observation.date, to: date } : null;
 }
 

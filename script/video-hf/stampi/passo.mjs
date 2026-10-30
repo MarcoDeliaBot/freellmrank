@@ -2,6 +2,7 @@
 import { C, scena, formatoDi, esc, s3, attacchi } from '../base.mjs';
 export default {
   nome: 'passo',
+  soloSkillTutorial: true,
   descrizione: 'A source-backed explanation or exact command, readable in both formats',
   schema: '{"titolo":"max 72","testo":"max 360","comando":"optional exact command, max 180"}',
   valida(d) {

@@ -5,6 +5,7 @@ import { validateCard, digest, topicExists, GENERIC } from './verifica.mjs';
 import { plan, validatePlan } from './video.mjs';
 import { skillTutorial } from './tutorial.mjs';
 import { onRequestPost } from '../../functions/api/scrivi.js';
+import { STAMPI, STAMPI_NOTIZIE } from '../video-hf/stampi/index.mjs';
 
 function fixture() {
   const raw='Demo teaches agents to review a proposed change.\nnpx skills add owner/demo\nReview the project.\nRead the request carefully.\nCheck the proposed changes.\nReport the review findings.';
@@ -14,6 +15,11 @@ function fixture() {
     claims:['Demo teaches agents to review a proposed change.'],limits:[GENERIC[1]],
     fonti:[{url:'https://github.com/owner/demo/blob/'+ 'a'.repeat(40) + '/README.md',testo:raw,sha256:digest(raw)}],metrics:{date:'2026-10-30',stars:10},security:{passed:true,complete:true,files:2,checked:['all-files'],errors:[],date:'2026-10-30',commit:'a'.repeat(40)}};
 }
+test('the news planner retains its previous template catalogue',()=>{
+  assert.ok(STAMPI.passo && STAMPI.diagramma);
+  assert.equal(STAMPI_NOTIZIE.passo,undefined);assert.equal(STAMPI_NOTIZIE.diagramma,undefined);
+  for(const name of ['titolo','punti','numero','chiusura'])assert.ok(STAMPI_NOTIZIE[name]);
+});
 test('exact source evidence and a complete scan are mandatory',()=>{
   const c=fixture();assert.deepEqual(validateCard(c),[]);
   for(const mutate of [c=>c.install+=' --force',c=>c.security.complete=false,c=>c.descr='It is twice as fast.',c=>c.fonti[0].testo+='tampered',c=>c.features[1].detail='It uploads nothing.',c=>c.problem='Invented capability',c=>c.flow=['Made up workflow'],c=>c.limits=['Works offline forever']]) {
@@ -40,6 +46,7 @@ test('both video formats preserve recipe and reject factual or command mutations
   const speech=structuredClone(short);speech.scene[1].voce='Invented claim';assert.ok(validatePlan(c,speech).length);
   const command=structuredClone(short);command.scene[5].dati.comando='npx skills add attacker/evil';assert.ok(validatePlan(c,command).length);
   const timing=structuredClone(short);timing.scene[0].durata=4;assert.ok(validatePlan(c,timing).length);
+  const flexible=structuredClone(short);flexible.tempiFissi=false;assert.ok(validatePlan(c,flexible).length);
 });
 test('tutorials share gates and avoid duplicate keywords and titles',()=>{
   const c=skillTutorial(fixture(),'2026-10-30');assert.deepEqual(validateCard(c),[]);assert.deepEqual(validatePlan(c,plan(c,false)),[]);
@@ -49,6 +56,7 @@ test('tutorials share gates and avoid duplicate keywords and titles',()=>{
 });
 test('missing history never becomes a fabricated zero growth',()=>{
   assert.equal(growth([], 'a/b',100,'2026-10-30'),null);
+  assert.equal(growth([{date:'2026-10-22',stars:{'a/b':80}}],'a/b',100,'2026-10-30'),null);
   assert.deepEqual(growth([{date:'2026-10-23',stars:{'a/b':80}}],'a/b',100,'2026-10-30'),{value:20,from:'2026-10-23',to:'2026-10-30'});
 });
 test('README install commands retain flags, case and version specifiers',()=>{
