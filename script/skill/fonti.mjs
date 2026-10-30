@@ -9,6 +9,20 @@ export const read = (f, fallback = null) => fs.existsSync(path.join(ROOT, f)) ? 
 export function write(f, data) { const p = path.join(ROOT, f); fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, JSON.stringify(data, null, 1) + '\n'); }
 export const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 export const plain = s => String(s).replace(/!\[[^\]]*\]\([^)]*\)/g, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/<[^>]+>/g, '').replace(/[*_`]/g, '').replace(/\s+/g, ' ').trim();
+export function labelFrom(text, max=64) {
+  let s=String(text).split(/\s*\(/)[0].trim();
+  const qualifier=s.indexOf(' with ');
+  if(qualifier>=18)s=s.slice(0,qualifier);
+  if(s.length>max)s=s.slice(0,max+1).replace(/\s+\S*$/,'');
+  let previous;
+  do { previous=s; s=s.replace(/[,:;.!?\s]+$/,'').replace(/\s+(?:and|or|the|of|a|an|to|with|for|in|on|at|by|from|based|specific)$/i,''); } while(previous!==s);
+  return s;
+}
+export function licenseFrom(readme, github) {
+  if(github && github!=='NOASSERTION')return github;
+  const declaration=/^##\s+License\s*\r?\n+([^\r\n]+)/mi.exec(readme)?.[1];
+  return declaration ? plain(declaration).slice(0,180) : null;
+}
 export async function text(url) { const r = await fetch(url, { signal: AbortSignal.timeout(45000) }); if (!r.ok) throw Error(`${r.status} ${url}`); return r.text(); }
 export async function api(route) {
   const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;

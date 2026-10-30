@@ -37,6 +37,7 @@ export function validateCard(card) {
   for (const c of card.claims || []) if (!backed(c)) errors.push(`unsupported claim: ${c}`);
   if (!card.claims?.length || !backed(card.descr)) errors.push('description has no exact source evidence');
   if (!card.install || !backed(card.install) || /[;&|]|\$\(|[<>…]/.test(card.install)) errors.push('installation command is absent, altered or unsafe');
+  if (card.tipo==='tutorial' && /\bnpx\s+skills(?:@[\w.-]+)?\s+add\b/.test(card.install || '') && !card.skillSource) errors.push('skill installation tutorial requires a reviewed target repository');
   const stepTitles=['Read the source','Install the skill','Try the documented example','Review the result','Prepare your machine','Run the documented command','Review the output','Install the official tool','Use the documented command','Check the result'];
   for (const step of card.steps || []) {
     if (step.command && !backed(step.command)) errors.push(`unsupported step command: ${step.command}`);

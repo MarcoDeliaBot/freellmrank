@@ -1,7 +1,7 @@
 // Daily discovery and conservative repository review. No skill is installed or run.
 import fs from 'node:fs';
 import path from 'node:path';
-import { api, directory, scanRepository, growth, installFrom, plain, read, write, text, slug, ROOT } from './fonti.mjs';
+import { api, directory, scanRepository, growth, installFrom, licenseFrom, labelFrom, plain, read, write, text, slug, ROOT } from './fonti.mjs';
 import { digest, validateCard, GENERIC, DISCLAIMER } from './verifica.mjs';
 
 export function cardFrom(repo, entry, result, date, history) {
@@ -37,7 +37,7 @@ export function cardFrom(repo, entry, result, date, history) {
     scoped=lines.slice(headingIndex+1,end).map(l=>plain(l.replace(/^[-*\d.]+\s*/,''))).filter(s=>s.length>=25&&s.length<=240&&!s.includes('http')&&!s.includes('npx'));
   }
   const featurePool = skillPaths.length===1 && ordered.length>=3 ? ordered.slice(-3) : scoped.length>=3 ? scoped : relevant.map(l=>plain(l.replace(/^[-*]+\s*/,'')));
-  const features = [...new Set(featurePool)].filter(s => s !== descr).slice(0, 3).map(s => ({ label: s.split(/\s+/).slice(0, 7).join(' '), detail: s }));
+  const features = [...new Set(featurePool)].filter(s => s !== descr).slice(0, 3).map(s => ({ label: labelFrom(s), detail: s }));
   if (features.length !== 3) throw Error('not enough README facts');
   // Usage must be in README, not an invented prompt. Prefer an actual Usage block.
   const usage = /##\s+(?:Usage|Quickstart|Quick start|How to use)[^\n]*\n([\s\S]*?)(?=\n## |$)/i.exec(readme)?.[1];
@@ -53,7 +53,7 @@ export function cardFrom(repo, entry, result, date, history) {
     install, example, features, limits: [...prose.filter(s=>/\b(?:requires?|needs?|supports?|limits?|only|must)\b/i.test(s)&&s.length<=180).slice(0,2), GENERIC[1], DISCLAIMER], screenshots, fonti,
     claims: [descr, install, example, ...features.flatMap(f => [f.label, f.detail])],
     ...(ordered.length>=3?{flow:ordered.slice(0,3)}:{}),
-    metrics: { date, stars: meta.stargazers_count, growth7d: growth(history, repo, meta.stargazers_count, date), installs: entry.totalInstalls ?? null, installs24h: entry.trendingInstalls ?? null, license: meta.license?.spdx_id || null, lastCommit: commit.commit.committer.date },
+    metrics: { date, stars: meta.stargazers_count, growth7d: growth(history, repo, meta.stargazers_count, date), installs: entry.totalInstalls ?? null, installs24h: entry.trendingInstalls ?? null, license: licenseFrom(readme,meta.license?.spdx_id), lastCommit: commit.commit.committer.date },
     security: { passed: true, complete: true, date, commit: commit.sha, files: scan.files, checked: scan.checked, errors: [], version: scan.version, policySha256: scan.policySha256, archiveSha256: scan.archiveSha256 },
   };
   const errors = validateCard(card);

@@ -23,7 +23,7 @@
    "example": "implement the payment service, use review-loop",
    "features": [
     {
-     "label": "The critic scores the work 1–10 with",
+     "label": "The critic scores the work 1–10",
      "detail": "The critic scores the work 1–10 with specific, actionable feedback"
     },
     {
@@ -59,7 +59,7 @@
     "A reusable AI agent skill that implements an iterative worker-reviewer cycle to produce higher quality output through structured critique and revision.",
     "npx skills add 2dmurali/review-loop-skill",
     "implement the payment service, use review-loop",
-    "The critic scores the work 1–10 with",
+    "The critic scores the work 1–10",
     "The critic scores the work 1–10 with specific, actionable feedback",
     "The agent revises based on the feedback",
     "The agent revises based on the feedback",
@@ -77,7 +77,7 @@
     "growth7d": null,
     "installs": 110029,
     "installs24h": 1200,
-    "license": null,
+    "license": "MIT — free to use, adapt, and redistribute with any AI tool or platform.",
     "lastCommit": "2026-05-08T01:26:30Z"
    },
    "security": {

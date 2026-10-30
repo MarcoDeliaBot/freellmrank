@@ -5,7 +5,7 @@ import { STAMPI } from '../video-hf/stampi/index.mjs';
 import { monta } from '../video-hf/monta.mjs';
 import { titoloYT, capitoliYT, conCapitoli, controlli } from '../brag/controllo-yt.mjs';
 import { approvedText, validateCard, GENERIC, SECURITY_TEXT, DISCLAIMER, digest } from './verifica.mjs';
-import { plain, ROOT } from './fonti.mjs';
+import { labelFrom, ROOT } from './fonti.mjs';
 
 const HEADINGS = ['The problem','What it is','How it works','Install','Try it','Read the source','Limits and review','Feature','Step by step'];
 const words = (s,n) => String(s).split(/\s+/).slice(0,n).join(' ');
@@ -26,7 +26,7 @@ export function plan(card, short=false) {
     scenes=[slide('The problem',card.problem,[card.descr,GENERIC[8]],16),
       slide('What it is',card.descr,[card.descr,GENERIC[9]],18)];
     const flow = card.flow;
-    if (flow?.length===3) scenes.push({stampo:'diagramma',etichetta:'How it works',capitolo:'How it works',dati:{titolo:'How it works',nodi:flow.map(s=>words(s,7))},parlato:flow,voce:flow.join(' '),durata:20});
+    if (flow?.length===3) scenes.push({stampo:'diagramma',etichetta:'How it works',capitolo:'How it works',dati:{titolo:'How it works',nodi:flow.map(s=>labelFrom(s))},parlato:flow,voce:flow.join(' '),durata:20});
     else scenes.push(slide('How it works',words(card.example,45),[card.example,GENERIC[8]],20));
     if (card.tipo==='tutorial') for (const step of card.steps) scenes.push(slide(step.title,step.text,[step.text,...(step.command?[step.command]:[])],16,step.command));
     else scenes.push(slide('Install',GENERIC[4],[GENERIC[4],card.install],20,card.install));
@@ -64,7 +64,7 @@ export function validatePlan(card,piano) {
 
 function run(command,args,options={}) {
   const r=spawnSync(command,args,{encoding:'utf8',timeout:120000,maxBuffer:4e6,...options});
-  if(r.status!==0) throw Error(`${command} failed (${r.status}): ${(r.stderr||r.stdout||r.error?.message||'').slice(-2000)}`);
+  if(r.status!==0) throw Error(`${command} failed (${r.status}): ${[r.stdout,r.stderr,r.error?.message].filter(Boolean).join('\n').slice(-3000)}`);
   return r.stdout;
 }
 export async function render(card,folder) {
@@ -103,7 +103,7 @@ export async function render(card,folder) {
     if(!qa.passed) throw Error(`Frame/layout gate failed: ${JSON.stringify(qa.errors)}`);
     const nome=`${short?'breve-':''}${card.tipo}-${card.slug}`;
     const page=`https://freellmarena.com/${card.tipo==='skill'?'skills':'tutorials'}/${card.slug}`;
-    const info={nome,titolo:titoloYT([card.titolo,card.name],{shorts:short}),descrizione:`${words(card.descr,20).slice(0,155)}\n\nFull story: ${page}\nSources: ${card.fonti.map(s=>s.url).join('\n')}\n\n${DISCLAIMER}`,tag:['Agent Skills',card.name,'FreeLLMArena',card.tipo==='skill'?'AI tools':'AI tutorial'],lingua:'en',formato:{w:short?1080:1920,h:short?1920:1080},...(short?{lungo:`video-${card.tipo}-${card.slug}`}:{})};
+    const info={nome,sourceHash:digest(JSON.stringify(card)),titolo:titoloYT([card.titolo,card.name],{shorts:short}),descrizione:`${words(card.descr,20).slice(0,155)}\n\nFull story: ${page}\nSources: ${card.fonti.map(s=>s.url).join('\n')}\n\n${DISCLAIMER}`,tag:['Agent Skills',card.name,'FreeLLMArena',card.tipo==='skill'?'AI tools':'AI tutorial'],lingua:'en',formato:{w:short?1080:1920,h:short?1920:1080},...(short?{lungo:`video-${card.tipo}-${card.slug}`}:{})};
     const times=JSON.parse(fs.readFileSync(path.join(dir,'tempi.json'),'utf8'));
     if(!short) info.descrizione=conCapitoli(info.descrizione,capitoliYT(times.scene.map(s=>({inizio:s.inizio,titolo:s.capitolo})),times.totale));
     const ytErrors=controlli({...info,durata:times.totale}).filter(e=>['titolo-100','descrizione-5000','tag','shorts-rotto','senza-capitoli','capitoli-errati'].includes(e.codice));

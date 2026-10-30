@@ -7,6 +7,7 @@ import subprocess
 import sys
 import threading
 from playwright.sync_api import sync_playwright
+from layout_check import CHECK_LAYOUT
 
 folder = pathlib.Path(sys.argv[1]).resolve()
 plan = json.loads((folder/'piano.json').read_text(encoding='utf-8'))
@@ -28,6 +29,9 @@ if not (folder/'video.srt').read_text(encoding='utf-8').strip():
 
 class Quiet(http.server.SimpleHTTPRequestHandler):
     def log_message(self, *_): pass
+    def copyfile(self, source, outputfile):
+        try: super().copyfile(source, outputfile)
+        except (BrokenPipeError, ConnectionResetError): pass
 
 server = http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Quiet,directory=str(folder)))
 threading.Thread(target=server.serve_forever,daemon=True).start()
@@ -45,16 +49,13 @@ with sync_playwright() as pw:
         frames.append(str(frame.relative_to(folder)))
         name = f"{i+1:02}-{scene['stampo']}.html"
         template = (folder/'compositions/frames'/name).read_text(encoding='utf-8').replace('<template>','').replace('</template>','')
-        html = f'<html><head><base href="{base}"></head><body style="margin:0">{template}</body></html>'
+        # Match the host composition's reset, including border-box sizing.
+        reset = '*{margin:0;padding:0;box-sizing:border-box}'
+        html = f'<html><head><base href="{base}"><style>{reset}</style></head><body>{template}</body></html>'
         page.set_content(html,wait_until='networkidle')
         page.evaluate('document.fonts.ready')
         page.evaluate('(at)=>Object.values(window.__timelines||{}).forEach(t=>t.seek(at))',scene['durata']-.25)
-        issues = page.evaluate('''({w,limit}) => [...document.querySelectorAll('[id$="palco"] *')].filter(e=>!e.children.length && e.textContent.trim() && !e.closest('svg')).flatMap(e=>{
-          const b=e.getBoundingClientRect(),style=getComputedStyle(e);
-          if (style.display==='none') return [];
-          const problem=b.left<0 || b.right>w+.5 || b.top<0 || b.bottom>limit+.5 || e.scrollWidth>e.clientWidth+2 || e.scrollHeight>e.clientHeight+2;
-          return problem ? [{text:e.textContent,box:{x:b.x,y:b.y,w:b.width,h:b.height},scroll:[e.scrollWidth,e.scrollHeight],client:[e.clientWidth,e.clientHeight]}] : [];
-        })''',{'w':w,'limit':limit})
+        issues = page.evaluate(CHECK_LAYOUT,{'w':w,'limit':limit})
         layouts.append({'scene':i+1,'passed':not issues,'issues':issues})
         if issues: errors.append({'scene':i+1,'layout':issues})
     browser.close()

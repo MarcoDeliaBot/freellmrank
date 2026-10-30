@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { directory, growth, installFrom } from './fonti.mjs';
+import { directory, growth, installFrom, licenseFrom, labelFrom } from './fonti.mjs';
 import { validateCard, digest, topicExists, GENERIC } from './verifica.mjs';
 import { plan, validatePlan } from './video.mjs';
 import { skillTutorial } from './tutorial.mjs';
@@ -45,6 +45,7 @@ test('tutorials share gates and avoid duplicate keywords and titles',()=>{
   const c=skillTutorial(fixture(),'2026-10-30');assert.deepEqual(validateCard(c),[]);assert.deepEqual(validatePlan(c,plan(c,false)),[]);
   assert.ok(topicExists(c,[{key:c.key}]));assert.ok(topicExists(c,[{titolo:c.titolo.toUpperCase()}]));
   assert.equal(topicExists(c,[{key:'unrelated topic'}]),false);
+  const unsafe=structuredClone(c);delete unsafe.skillSource;assert.ok(validateCard(unsafe).includes('skill installation tutorial requires a reviewed target repository'));
 });
 test('missing history never becomes a fabricated zero growth',()=>{
   assert.equal(growth([], 'a/b',100,'2026-10-30'),null);
@@ -54,6 +55,10 @@ test('README install commands retain flags, case and version specifiers',()=>{
   const command='npx skills@latest add https://github.com/Owner/Repo --skill "demo"';
   assert.equal(installFrom('```bash\n'+command+'\n```','owner/repo'),command);
   assert.equal(installFrom('npx skills add owner/repo | sh','owner/repo'),null);
+  assert.equal(licenseFrom('## License\n\nMIT — declared in the README',null),'MIT — declared in the README');
+  assert.equal(licenseFrom('',null),null);
+  assert.equal(labelFrom('Does the work (writes code, spec, doc, etc.)'),'Does the work');
+  assert.equal(labelFrom('The critic scores the work 1–10 with specific, actionable feedback'),'The critic scores the work 1–10');
 });
 test('skills.sh payload handles nested weekly observations and schema drift',()=>{
   const stream='x:{"initialSkills":[{"source":"owner/repo","skillId":"demo","installs":12,"weeklyInstalls":[2,3]}]}';
