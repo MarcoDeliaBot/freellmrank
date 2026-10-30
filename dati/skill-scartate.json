@@ -2,122 +2,122 @@
  "aggiornato": "2026-10-30",
  "scartate": [
   {
-   "repository": "leonxlnx/taste-skill",
-   "skill": "high-end-visual-design",
+   "repository": "emilkowalski/skills",
+   "skill": "emil-design-eng",
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "directory identity does not match a SKILL.md"
+     "reason": "not enough README facts"
     }
    ]
   },
   {
-   "repository": "leonxlnx/taste-skill",
-   "skill": "redesign-existing-projects",
+   "repository": "emilkowalski/skills",
+   "skill": "review-animations",
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "directory identity does not match a SKILL.md"
+     "reason": "not enough README facts"
     }
    ]
   },
   {
-   "repository": "leonxlnx/taste-skill",
-   "skill": "minimalist-ui",
+   "repository": "emilkowalski/skills",
+   "skill": "apple-design",
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "directory identity does not match a SKILL.md"
+     "reason": "not enough README facts"
     }
    ]
   },
   {
-   "repository": "leonxlnx/taste-skill",
-   "skill": "full-output-enforcement",
+   "repository": "emilkowalski/skills",
+   "skill": "animation-vocabulary",
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "directory identity does not match a SKILL.md"
+     "reason": "not enough README facts"
     }
    ]
   },
   {
-   "repository": "leonxlnx/taste-skill",
-   "skill": "gpt-taste",
+   "repository": "emilkowalski/skills",
+   "skill": "improve-animations",
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "directory identity does not match a SKILL.md"
+     "reason": "not enough README facts"
     }
    ]
   },
   {
-   "repository": "leonxlnx/taste-skill",
-   "skill": "industrial-brutalist-ui",
+   "repository": "emilkowalski/skills",
+   "skill": "find-animation-opportunities",
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "directory identity does not match a SKILL.md"
+     "reason": "not enough README facts"
     }
    ]
   },
   {
-   "repository": "leonxlnx/taste-skill",
-   "skill": "stitch-design-taste",
+   "repository": "emilkowalski/skills",
+   "skill": "pick-ui-library",
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "directory identity does not match a SKILL.md"
+     "reason": "not enough README facts"
     }
    ]
   },
   {
-   "repository": "leonxlnx/taste-skill",
-   "skill": "brandkit",
+   "repository": "emilkowalski/skills",
+   "skill": "prototype",
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "directory identity does not match a SKILL.md"
+     "reason": "not enough README facts"
     }
    ]
   },
   {
-   "repository": "leonxlnx/taste-skill",
-   "skill": "image-to-code",
+   "repository": "emilkowalski/skills",
+   "skill": "animate",
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "directory identity does not match a SKILL.md"
+     "reason": "not enough README facts"
     }
    ]
   },
   {
-   "repository": "leonxlnx/taste-skill",
-   "skill": "imagegen-frontend-web",
+   "repository": "emilkowalski/skills",
+   "skill": "ask-sonner",
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "directory identity does not match a SKILL.md"
+     "reason": "not enough README facts"
     }
    ]
   },
   {
-   "repository": "leonxlnx/taste-skill",
-   "skill": "imagegen-frontend-mobile",
+   "repository": "emilkowalski/skills",
+   "skill": "animate-expo",
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "directory identity does not match a SKILL.md"
+     "reason": "not enough README facts"
     }
    ]
   },
   {
-   "repository": "leonxlnx/taste-skill",
-   "skill": "design-taste-frontend-v1",
+   "repository": "emilkowalski/skills",
+   "skill": "write-swift",
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "directory identity does not match a SKILL.md"
+     "reason": "not enough README facts"
     }
    ]
   },
@@ -127,7 +127,54 @@
    "date": "2026-10-30",
    "reasons": [
     {
-     "reason": "no usage example in README"
+     "reason": "not enough README facts"
+    }
+   ]
+  },
+  {
+   "repository": "emilkowalski/skills",
+   "skill": "break-ui",
+   "date": "2026-10-30",
+   "reasons": [
+    {
+     "reason": "not enough README facts"
+    }
+   ]
+  },
+  {
+   "repository": "emilkowalski/skills",
+   "skill": "animation-performance",
+   "date": "2026-10-30",
+   "reasons": [
+    {
+     "reason": "not enough README facts"
+    }
+   ]
+  },
+  {
+   "repository": "emilkowalski/skills",
+   "skill": "remove-animations",
+   "date": "2026-10-30",
+   "reasons": [
+    {
+     "reason": "not enough README facts"
+    }
+   ]
+  },
+  {
+   "repository": "leonxlnx/taste-skill",
+   "date": "2026-10-30",
+   "commit": "12af471f627f866411b4bd785b19646d3672784c",
+   "reasons": [
+    {
+     "file": "skills/taste-skill/assets/scenes/stage.js",
+     "reason": "remote-code-load",
+     "line": 9
+    },
+    {
+     "file": "skills/taste-skill/references/scenes.md",
+     "reason": "remote-code-load",
+     "line": 60
     }
    ]
   },
@@ -165,6 +212,11 @@
      "file": "sdk/building-apps/references/node-secrets-oauth.md",
      "reason": "sensitive-read",
      "line": 29
+    },
+    {
+     "file": "sdk/building-apps/references/python-secrets-oauth.md",
+     "reason": "environment-secret-read",
+     "line": 31
     },
     {
      "file": "sdk/javascript-sdk/SKILL.md",
@@ -245,16 +297,33 @@
      "file": "tools/infsh-cli/references/cli-reference.md",
      "reason": "download-and-execute",
      "line": 6
+    },
+    {
+     "file": "tools/utilities/agent-browser/references/authentication.md",
+     "reason": "environment-secret-read",
+     "line": 37
+    },
+    {
+     "file": "tools/utilities/agent-browser/templates/authenticated-session.sh",
+     "reason": "environment-secret-read",
+     "line": 83
     }
    ]
   },
   {
    "repository": "designed-by-ai/skills",
-   "skill": "design-mobile-apps",
    "date": "2026-10-30",
+   "commit": "03c20aec6dcedb5fabfb03dc37982eb52ef19ed6",
    "reasons": [
     {
-     "reason": "no unambiguous exact installation command in README"
+     "file": "skills/design-mobile-apps/SKILL.md",
+     "reason": "environment-secret-read",
+     "line": 17
+    },
+    {
+     "file": "skills/design-mobile-apps/endpoints.md",
+     "reason": "environment-secret-read",
+     "line": 13
     }
    ]
   },
@@ -343,12 +412,22 @@
    "commit": "40b0ee439ba88aecb65d68bcb379da0e716b899e",
    "reasons": [
     {
+     "file": "integrations/benchmark/site/index.html",
+     "reason": "remote-code-load",
+     "line": 19
+    },
+    {
      "file": "integrations/benchmark/site/recordings/billing-settings-v1/assets/baseline/flow.webm",
      "reason": "opaque-binary"
     },
     {
      "file": "integrations/benchmark/site/recordings/billing-settings-v1/assets/treatment/flow.webm",
      "reason": "opaque-binary"
+    },
+    {
+     "file": "integrations/benchmark/site/recordings/billing-settings-v1/index.html",
+     "reason": "remote-code-load",
+     "line": 19
     },
     {
      "file": "integrations/nextjs-starter/.agents/skills/anti-ui-slop/SKILL.md",
@@ -467,6 +546,11 @@
      "line": 743
     },
     {
+     "file": "cli/src/native/e2e_tests.rs",
+     "reason": "remote-code-load",
+     "line": 12314
+    },
+    {
      "file": "cli/src/native/providers.rs",
      "reason": "sensitive-read",
      "line": 871
@@ -480,6 +564,21 @@
      "file": "cli/src/output.rs",
      "reason": "sensitive-read",
      "line": 1631
+    },
+    {
+     "file": "cli/tests/fixtures/tls/install.key",
+     "reason": "environment-secret-read",
+     "line": 1
+    },
+    {
+     "file": "cli/tests/fixtures/tls/server-a.key",
+     "reason": "environment-secret-read",
+     "line": 1
+    },
+    {
+     "file": "cli/tests/fixtures/tls/server-b.key",
+     "reason": "environment-secret-read",
+     "line": 1
     },
     {
      "file": "docs/content/docs/changelog.mdx",
@@ -530,6 +629,11 @@
      "reason": "binary-or-executable"
     },
     {
+     "file": "docs/scripts/test-routes.mjs",
+     "reason": "multiline-data-send",
+     "line": 116
+    },
+    {
      "file": "docs/src/app/favicon.ico",
      "reason": "opaque-binary"
     },
@@ -559,6 +663,11 @@
      "line": 27
     },
     {
+     "file": "evals/fixtures/webmcp-shop.html",
+     "reason": "multiline-data-send",
+     "line": 27
+    },
+    {
      "file": "evals/lib/claude.ts",
      "reason": "sensitive-read",
      "line": 40
@@ -571,6 +680,11 @@
     {
      "file": "examples/environments/app/favicon.ico",
      "reason": "opaque-binary"
+    },
+    {
+     "file": "examples/environments/app/page.tsx",
+     "reason": "multiline-data-send",
+     "line": 181
     },
     {
      "file": "examples/environments/lib/agent-browser-sandbox.ts",
@@ -607,6 +721,11 @@
      "line": 43
     },
     {
+     "file": "packages/dashboard/src/lib/exec.ts",
+     "reason": "multiline-data-send",
+     "line": 10
+    },
+    {
      "file": "skill-data/core/SKILL.md",
      "reason": "sensitive-read",
      "line": 342
@@ -615,6 +734,11 @@
      "file": "skill-data/core/references/authentication.md",
      "reason": "sensitive-read",
      "line": 25
+    },
+    {
+     "file": "skill-data/core/references/authentication.md",
+     "reason": "environment-secret-read",
+     "line": 376
     },
     {
      "file": "skill-data/core/references/commands.md",
@@ -627,6 +751,11 @@
      "line": 84
     },
     {
+     "file": "skill-data/core/templates/authenticated-session.sh",
+     "reason": "environment-secret-read",
+     "line": 90
+    },
+    {
      "file": "skill-data/dogfood/SKILL.md",
      "reason": "sensitive-read",
      "line": 23
@@ -635,6 +764,11 @@
      "file": "skill-data/protected-vercel-deployments/SKILL.md",
      "reason": "sensitive-read",
      "line": 57
+    },
+    {
+     "file": "skill-data/protected-vercel-deployments/SKILL.md",
+     "reason": "environment-secret-read",
+     "line": 36
     }
    ]
   },
@@ -672,6 +806,11 @@
      "file": "sdk/building-apps/references/node-secrets-oauth.md",
      "reason": "sensitive-read",
      "line": 29
+    },
+    {
+     "file": "sdk/building-apps/references/python-secrets-oauth.md",
+     "reason": "environment-secret-read",
+     "line": 31
     },
     {
      "file": "sdk/javascript-sdk/SKILL.md",
@@ -752,6 +891,148 @@
      "file": "tools/infsh-cli/references/cli-reference.md",
      "reason": "download-and-execute",
      "line": 6
+    },
+    {
+     "file": "tools/utilities/agent-browser/references/authentication.md",
+     "reason": "environment-secret-read",
+     "line": 37
+    },
+    {
+     "file": "tools/utilities/agent-browser/templates/authenticated-session.sh",
+     "reason": "environment-secret-read",
+     "line": 83
+    }
+   ]
+  },
+  {
+   "repository": "bankai-skills/superpowers",
+   "date": "2026-10-30",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "reasons": [
+    {
+     "file": "cli-install.md",
+     "reason": "download-and-execute",
+     "line": 4
+    },
+    {
+     "file": "guides/product/product-changelog/SKILL.md",
+     "reason": "sensitive-read",
+     "line": 190
+    },
+    {
+     "file": "sdk/building-apps/SKILL.md",
+     "reason": "download-and-execute",
+     "line": 24
+    },
+    {
+     "file": "sdk/building-apps/SKILL.md",
+     "reason": "sensitive-read",
+     "line": 198
+    },
+    {
+     "file": "sdk/building-apps/references/cli.md",
+     "reason": "download-and-execute",
+     "line": 9
+    },
+    {
+     "file": "sdk/building-apps/references/node-secrets-oauth.md",
+     "reason": "sensitive-read",
+     "line": 29
+    },
+    {
+     "file": "sdk/building-apps/references/python-secrets-oauth.md",
+     "reason": "environment-secret-read",
+     "line": 31
+    },
+    {
+     "file": "sdk/javascript-sdk/SKILL.md",
+     "reason": "sensitive-read",
+     "line": 55
+    },
+    {
+     "file": "sdk/javascript-sdk/references/agent-patterns.md",
+     "reason": "sensitive-read",
+     "line": 353
+    },
+    {
+     "file": "sdk/javascript-sdk/references/react-integration.md",
+     "reason": "sensitive-read",
+     "line": 18
+    },
+    {
+     "file": "sdk/javascript-sdk/references/server-proxy.md",
+     "reason": "sensitive-read",
+     "line": 43
+    },
+    {
+     "file": "sdk/javascript-sdk/references/sessions.md",
+     "reason": "sensitive-read",
+     "line": 316
+    },
+    {
+     "file": "sdk/javascript-sdk/references/tool-builder.md",
+     "reason": "sensitive-read",
+     "line": 425
+    },
+    {
+     "file": "sdk/javascript-sdk/references/typescript.md",
+     "reason": "sensitive-read",
+     "line": 372
+    },
+    {
+     "file": "sdk/python-sdk/SKILL.md",
+     "reason": "sensitive-read",
+     "line": 56
+    },
+    {
+     "file": "tools/agent-tools/SKILL.md",
+     "reason": "download-and-execute",
+     "line": 18
+    },
+    {
+     "file": "tools/agent-tools/references/authentication.md",
+     "reason": "download-and-execute",
+     "line": 6
+    },
+    {
+     "file": "tools/agent-tools/references/authentication.md",
+     "reason": "sensitive-read",
+     "line": 15
+    },
+    {
+     "file": "tools/agent-tools/references/cli-reference.md",
+     "reason": "download-and-execute",
+     "line": 6
+    },
+    {
+     "file": "tools/infsh-cli/SKILL.md",
+     "reason": "download-and-execute",
+     "line": 18
+    },
+    {
+     "file": "tools/infsh-cli/references/authentication.md",
+     "reason": "download-and-execute",
+     "line": 6
+    },
+    {
+     "file": "tools/infsh-cli/references/authentication.md",
+     "reason": "sensitive-read",
+     "line": 15
+    },
+    {
+     "file": "tools/infsh-cli/references/cli-reference.md",
+     "reason": "download-and-execute",
+     "line": 6
+    },
+    {
+     "file": "tools/utilities/agent-browser/references/authentication.md",
+     "reason": "environment-secret-read",
+     "line": 37
+    },
+    {
+     "file": "tools/utilities/agent-browser/templates/authenticated-session.sh",
+     "reason": "environment-secret-read",
+     "line": 83
     }
    ]
   },
@@ -827,6 +1108,11 @@
      "line": 50
     },
     {
+     "file": "docs/mlops.md",
+     "reason": "environment-secret-read",
+     "line": 29
+    },
+    {
      "file": "plugins/api-scaffolding/agents/backend-architect.md",
      "reason": "sensitive-read",
      "line": 71
@@ -840,6 +1126,11 @@
      "file": "plugins/api-scaffolding/agents/fastapi-pro.md",
      "reason": "sensitive-read",
      "line": 165
+    },
+    {
+     "file": "plugins/api-testing-observability/commands/api-mock.md",
+     "reason": "remote-code-load",
+     "line": 1292
     },
     {
      "file": "plugins/backend-api-security/agents/backend-architect.md",
@@ -887,9 +1178,29 @@
      "line": 80
     },
     {
+     "file": "plugins/cicd-automation/skills/deployment-pipeline-design/references/advanced-strategies.md",
+     "reason": "environment-secret-read",
+     "line": 181
+    },
+    {
+     "file": "plugins/cicd-automation/skills/gitlab-ci-patterns/SKILL.md",
+     "reason": "environment-secret-read",
+     "line": 85
+    },
+    {
+     "file": "plugins/cicd-automation/skills/secrets-management/SKILL.md",
+     "reason": "environment-secret-read",
+     "line": 97
+    },
+    {
      "file": "plugins/cloud-infrastructure/skills/service-mesh-observability/references/details.md",
      "reason": "sensitive-read",
      "line": 211
+    },
+    {
+     "file": "plugins/code-documentation/commands/doc-generate.md",
+     "reason": "remote-code-load",
+     "line": 517
     },
     {
      "file": "plugins/codebase-cleanup/commands/deps-audit.md",
@@ -922,6 +1233,11 @@
      "line": 71
     },
     {
+     "file": "plugins/database-cloud-optimization/commands/cost-optimize.md",
+     "reason": "remote-code-load",
+     "line": 448
+    },
+    {
      "file": "plugins/database-migrations/commands/migration-observability.md",
      "reason": "external-data-send",
      "line": 192
@@ -952,14 +1268,34 @@
      "line": 643
     },
     {
+     "file": "plugins/documentation-generation/commands/doc-generate.md",
+     "reason": "remote-code-load",
+     "line": 517
+    },
+    {
      "file": "plugins/dotnet-contribution/agents/dotnet-architect.md",
      "reason": "sensitive-read",
      "line": 133
     },
     {
+     "file": "plugins/error-debugging/commands/error-trace.md",
+     "reason": "multiline-data-send",
+     "line": 424
+    },
+    {
+     "file": "plugins/error-diagnostics/commands/error-trace.md",
+     "reason": "multiline-data-send",
+     "line": 424
+    },
+    {
      "file": "plugins/framework-migration/agents/architect-review.md",
      "reason": "sensitive-read",
      "line": 58
+    },
+    {
+     "file": "plugins/framework-migration/commands/code-migrate.md",
+     "reason": "remote-code-load",
+     "line": 984
     },
     {
      "file": "plugins/frontend-mobile-development/skills/react-native-architecture/references/details.md",
@@ -987,6 +1323,11 @@
      "line": 80
     },
     {
+     "file": "plugins/javascript-typescript/skills/javascript-testing-patterns/SKILL.md",
+     "reason": "multiline-data-send",
+     "line": 218
+    },
+    {
      "file": "plugins/javascript-typescript/skills/nodejs-backend-patterns/references/advanced-patterns.md",
      "reason": "sensitive-read",
      "line": 278
@@ -995,6 +1336,16 @@
      "file": "plugins/javascript-typescript/skills/nodejs-backend-patterns/references/details.md",
      "reason": "sensitive-read",
      "line": 327
+    },
+    {
+     "file": "plugins/kubernetes-operations/skills/gitops-workflow/references/argocd-setup.md",
+     "reason": "environment-secret-read",
+     "line": 111
+    },
+    {
+     "file": "plugins/llm-application-dev/skills/embedding-strategies/references/details.md",
+     "reason": "environment-secret-read",
+     "line": 15
     },
     {
      "file": "plugins/llm-application-dev/skills/langchain-architecture/SKILL.md",
@@ -1022,6 +1373,16 @@
      "line": 132
     },
     {
+     "file": "plugins/payment-processing/skills/paypal-integration/SKILL.md",
+     "reason": "remote-code-load",
+     "line": 67
+    },
+    {
+     "file": "plugins/payment-processing/skills/paypal-integration/SKILL.md",
+     "reason": "multiline-data-send",
+     "line": 85
+    },
+    {
      "file": "plugins/payment-processing/skills/paypal-integration/references/details.md",
      "reason": "external-data-send",
      "line": 23
@@ -1035,6 +1396,11 @@
      "file": "plugins/pptx-deck-creation/skills/pptx-reference-deck-analysis/references/ooxml-parsing.md",
      "reason": "sensitive-read",
      "line": 15
+    },
+    {
+     "file": "plugins/protect-mcp/agents/policy-enforcer.md",
+     "reason": "environment-secret-read",
+     "line": 55
     },
     {
      "file": "plugins/protect-mcp/commands/audit-chain.md",
@@ -1087,6 +1453,11 @@
      "line": 29
     },
     {
+     "file": "plugins/security-scanning/commands/security-sast.md",
+     "reason": "environment-secret-read",
+     "line": 225
+    },
+    {
      "file": "plugins/security-scanning/skills/security-requirement-extraction/references/details.md",
      "reason": "sensitive-read",
      "line": 174
@@ -1100,6 +1471,11 @@
      "file": "plugins/ship-mate/agents/implement.md",
      "reason": "sensitive-read",
      "line": 27
+    },
+    {
+     "file": "plugins/signed-audit-trails/skills/signed-audit-trails-recipe/references/cedar-policy.md",
+     "reason": "environment-secret-read",
+     "line": 40
     },
     {
      "file": "plugins/ui-design/agents/design-system-architect.md",
@@ -1198,6 +1574,11 @@
      "line": 49
     },
     {
+     "file": ".claude/skills/add-cursor/payload/container/agent-runner/src/providers/cursor.gateway-proxy.test.ts",
+     "reason": "environment-secret-read",
+     "line": 67
+    },
+    {
      "file": ".claude/skills/add-dashboard/resources/dashboard-pusher.test.ts",
      "reason": "sensitive-read",
      "line": 90
@@ -1251,6 +1632,11 @@
      "file": ".claude/skills/add-iron-proxy/scripts/auth-resume.test.ts",
      "reason": "sensitive-read",
      "line": 123
+    },
+    {
+     "file": ".claude/skills/add-iron-proxy/scripts/capture-claude-token.sh",
+     "reason": "environment-secret-read",
+     "line": 24
     },
     {
      "file": ".claude/skills/add-iron-proxy/scripts/control.ts",
@@ -1388,6 +1774,11 @@
      "line": 30
     },
     {
+     "file": ".claude/skills/add-onecli/scripts/register-claude-token.sh",
+     "reason": "environment-secret-read",
+     "line": 102
+    },
+    {
      "file": ".claude/skills/add-onecli/scripts/secret-input.test.ts",
      "reason": "sensitive-read",
      "line": 163
@@ -1513,9 +1904,19 @@
      "line": 294
     },
     {
+     "file": ".claude/skills/add-vercel/REMOVE.md",
+     "reason": "environment-secret-read",
+     "line": 31
+    },
+    {
      "file": ".claude/skills/add-vercel/SKILL.md",
      "reason": "sensitive-read",
      "line": 8
+    },
+    {
+     "file": ".claude/skills/add-vercel/SKILL.md",
+     "reason": "environment-secret-read",
+     "line": 125
     },
     {
      "file": ".claude/skills/customize/SKILL.md",
@@ -1558,6 +1959,11 @@
      "line": 161
     },
     {
+     "file": ".claude/skills/slack-a2a-rooms/scripts/open-a2a-room.ts",
+     "reason": "multiline-data-send",
+     "line": 84
+    },
+    {
      "file": ".claude/skills/slack-agent-flow/SKILL.md",
      "reason": "sensitive-read",
      "line": 255
@@ -1578,9 +1984,19 @@
      "line": 143
     },
     {
+     "file": ".claude/skills/slack-agent-flow/src/modules/slack-agent-flow/provision.ts",
+     "reason": "multiline-data-send",
+     "line": 297
+    },
+    {
      "file": ".claude/skills/slack-agent-flow/src/modules/slack-agent-flow/room-actions.test.ts",
      "reason": "sensitive-read",
      "line": 353
+    },
+    {
+     "file": ".claude/skills/slack-agent-flow/src/modules/slack-agent-flow/room-canvas.ts",
+     "reason": "multiline-data-send",
+     "line": 120
     },
     {
      "file": ".github/workflows/refresh-agent-image.yml",
@@ -1643,6 +2059,11 @@
      "file": "docs/SPEC.md",
      "reason": "sensitive-read",
      "line": 389
+    },
+    {
+     "file": "docs/architecture-diagram.html",
+     "reason": "remote-code-load",
+     "line": 7
     },
     {
      "file": "docs/architecture.md",
@@ -1855,14 +2276,29 @@
      "line": 184
     },
     {
+     "file": "setup/registry-login.ts",
+     "reason": "multiline-data-send",
+     "line": 222
+    },
+    {
      "file": "setup/registry.ts",
      "reason": "sensitive-read",
      "line": 409
     },
     {
+     "file": "setup/registry/credential-helper.mjs",
+     "reason": "multiline-data-send",
+     "line": 299
+    },
+    {
      "file": "setup/set-env.test.ts",
      "reason": "sensitive-read",
      "line": 35
+    },
+    {
+     "file": "setup/slack-worker.ts",
+     "reason": "multiline-data-send",
+     "line": 32
     },
     {
      "file": "setup/templates.test.ts",
@@ -1880,6 +2316,11 @@
      "line": 50
     },
     {
+     "file": "src/channels/chat-sdk-bridge.ts",
+     "reason": "multiline-data-send",
+     "line": 1245
+    },
+    {
      "file": "src/config.ts",
      "reason": "sensitive-read",
      "line": 29
@@ -1888,6 +2329,11 @@
      "file": "src/drivers/conformance.test.ts",
      "reason": "sensitive-read",
      "line": 612
+    },
+    {
+     "file": "src/drivers/conformance.test.ts",
+     "reason": "environment-secret-read",
+     "line": 619
     },
     {
      "file": "src/drivers/docker-driver.ts",
@@ -1904,6 +2350,11 @@
      "line": 115
     },
     {
+     "file": "src/modules/self-mod/request.test.ts",
+     "reason": "multiline-data-send",
+     "line": 465
+    },
+    {
      "file": "src/templates/parse.ts",
      "reason": "sensitive-read",
      "line": 61
@@ -1912,6 +2363,11 @@
      "file": "src/webhook-server-raw.test.ts",
      "reason": "external-data-send",
      "line": 27
+    },
+    {
+     "file": "src/webhook-server-raw.test.ts",
+     "reason": "multiline-data-send",
+     "line": 60
     }
    ]
   },
@@ -1934,6 +2390,11 @@
      "file": ".codex/skills-index.json",
      "reason": "sensitive-read",
      "line": 1272
+    },
+    {
+     "file": ".codex/skills-index.json",
+     "reason": "environment-secret-read",
+     "line": 36
     },
     {
      "file": ".codex/skills/a11y-audit",
@@ -3479,6 +3940,11 @@
      "file": ".gemini/skills-index.json",
      "reason": "sensitive-read",
      "line": 1319
+    },
+    {
+     "file": ".gemini/skills-index.json",
+     "reason": "environment-secret-read",
+     "line": 189
     },
     {
      "file": ".gemini/skills/a11y-audit",
@@ -5289,6 +5755,11 @@
      "reason": "unsafe-path-or-symlink"
     },
     {
+     "file": ".github/workflows/skill-evals.yml",
+     "reason": "environment-secret-read",
+     "line": 57
+    },
+    {
      "file": ".hermes/skills/claude-skills/agent-launcher/agent-launcher-orchestrator",
      "reason": "unsafe-path-or-symlink"
     },
@@ -6820,6 +7291,11 @@
      "file": ".hermes/skills/claude-skills/skills-index.json",
      "reason": "sensitive-read",
      "line": 363
+    },
+    {
+     "file": ".hermes/skills/claude-skills/skills-index.json",
+     "reason": "environment-secret-read",
+     "line": 1827
     },
     {
      "file": ".vibe/skills/claude-skills/agent-launcher/agent-launcher-orchestrator",
@@ -8355,14 +8831,74 @@
      "line": 364
     },
     {
+     "file": ".vibe/skills/claude-skills/skills-index.json",
+     "reason": "environment-secret-read",
+     "line": 1828
+    },
+    {
      "file": "CHANGELOG.md",
      "reason": "sensitive-read",
      "line": 22
     },
     {
+     "file": "CHANGELOG.md",
+     "reason": "environment-secret-read",
+     "line": 537
+    },
+    {
      "file": "CLAUDE.md",
      "reason": "sensitive-read",
      "line": 598
+    },
+    {
+     "file": "agent-launcher/CLAUDE.md",
+     "reason": "environment-secret-read",
+     "line": 18
+    },
+    {
+     "file": "agent-launcher/README.md",
+     "reason": "environment-secret-read",
+     "line": 53
+    },
+    {
+     "file": "agent-launcher/SPEC.md",
+     "reason": "environment-secret-read",
+     "line": 34
+    },
+    {
+     "file": "agent-launcher/commands/cs-stage-launch.md",
+     "reason": "environment-secret-read",
+     "line": 19
+    },
+    {
+     "file": "agent-launcher/skills/agent-launcher-orchestrator/SKILL.md",
+     "reason": "environment-secret-read",
+     "line": 67
+    },
+    {
+     "file": "agent-launcher/skills/run-without-you/scripts/deployment_builder.py",
+     "reason": "environment-secret-read",
+     "line": 46
+    },
+    {
+     "file": "agent-launcher/skills/stage-launch/README.md",
+     "reason": "environment-secret-read",
+     "line": 5
+    },
+    {
+     "file": "agent-launcher/skills/stage-launch/SKILL.md",
+     "reason": "environment-secret-read",
+     "line": 3
+    },
+    {
+     "file": "agent-launcher/skills/stage-launch/scripts/launch_script_writer.py",
+     "reason": "environment-secret-read",
+     "line": 6
+    },
+    {
+     "file": "agent-launcher/skills/stage-launch/scripts/payload_validator.py",
+     "reason": "environment-secret-read",
+     "line": 119
     },
     {
      "file": "agents/marketing/cs-aeo.md",
@@ -8378,6 +8914,11 @@
      "file": "audit/newgen-2026-06/productivity-markdown-html.md",
      "reason": "sensitive-read",
      "line": 46
+    },
+    {
+     "file": "audit/pr-stream-2026-08/maintainer-drafts.md",
+     "reason": "environment-secret-read",
+     "line": 110
     },
     {
      "file": "c-level-advisor/ceo-advisor.zip",
@@ -8580,6 +9121,11 @@
      "line": 61
     },
     {
+     "file": "docs/agents/cs-landing.md",
+     "reason": "remote-code-load",
+     "line": 148
+    },
+    {
      "file": "docs/agents/cs-product-manager.md",
      "reason": "sensitive-read",
      "line": 162
@@ -8595,14 +9141,39 @@
      "line": 27
     },
     {
+     "file": "docs/commands/cs-stage-launch.md",
+     "reason": "environment-secret-read",
+     "line": 25
+    },
+    {
      "file": "docs/integrations.md",
      "reason": "sensitive-read",
      "line": 598
     },
     {
+     "file": "docs/integrations.md",
+     "reason": "environment-secret-read",
+     "line": 591
+    },
+    {
+     "file": "docs/overrides/main.html",
+     "reason": "remote-code-load",
+     "line": 5
+    },
+    {
      "file": "docs/plugins/index.md",
      "reason": "download-and-execute",
      "line": 84
+    },
+    {
+     "file": "docs/skills/agent-launcher/agent-launcher-orchestrator.md",
+     "reason": "environment-secret-read",
+     "line": 71
+    },
+    {
+     "file": "docs/skills/agent-launcher/stage-launch.md",
+     "reason": "environment-secret-read",
+     "line": 39
     },
     {
      "file": "docs/skills/engineering-team/cloud-security.md",
@@ -8633,6 +9204,11 @@
      "file": "docs/skills/engineering-team/senior-secops.md",
      "reason": "sensitive-read",
      "line": 495
+    },
+    {
+     "file": "docs/skills/engineering-team/senior-secops.md",
+     "reason": "environment-secret-read",
+     "line": 364
     },
     {
      "file": "docs/skills/engineering-team/senior-security.md",
@@ -8685,6 +9261,11 @@
      "line": 39
     },
     {
+     "file": "docs/skills/engineering/pr-review-expert.md",
+     "reason": "environment-secret-read",
+     "line": 269
+    },
+    {
      "file": "docs/skills/engineering/secrets-vault-manager.md",
      "reason": "sensitive-read",
      "line": 72
@@ -8698,6 +9279,11 @@
      "file": "docs/skills/engineering/skill-security-auditor.md",
      "reason": "external-data-send",
      "line": 49
+    },
+    {
+     "file": "docs/skills/marketing/landing.md",
+     "reason": "remote-code-load",
+     "line": 269
     },
     {
      "file": "docs/skills/product-team/saas-scaffolder.md",
@@ -8765,6 +9351,36 @@
      "line": 310
     },
     {
+     "file": "engineering-team/skills/epic-design/references/inter-section-effects.md",
+     "reason": "remote-code-load",
+     "line": 382
+    },
+    {
+     "file": "engineering-team/skills/epic-design/references/motion-system.md",
+     "reason": "remote-code-load",
+     "line": 24
+    },
+    {
+     "file": "engineering-team/skills/epic-design/references/text-animations.md",
+     "reason": "remote-code-load",
+     "line": 24
+    },
+    {
+     "file": "engineering-team/skills/epic-design/scripts/validate-layers.js",
+     "reason": "remote-code-load",
+     "line": 102
+    },
+    {
+     "file": "engineering-team/skills/ms365-tenant-manager/references/powershell-templates.md",
+     "reason": "environment-secret-read",
+     "line": 302
+    },
+    {
+     "file": "engineering-team/skills/ms365-tenant-manager/references/troubleshooting.md",
+     "reason": "environment-secret-read",
+     "line": 185
+    },
+    {
      "file": "engineering-team/skills/security-pen-testing/references/attack_patterns.md",
      "reason": "sensitive-read",
      "line": 338
@@ -8800,6 +9416,11 @@
      "line": 800
     },
     {
+     "file": "engineering-team/skills/senior-frontend/references/nextjs_optimization_guide.md",
+     "reason": "remote-code-load",
+     "line": 609
+    },
+    {
      "file": "engineering-team/skills/senior-fullstack/SKILL.md",
      "reason": "sensitive-read",
      "line": 267
@@ -8825,6 +9446,16 @@
      "line": 366
     },
     {
+     "file": "engineering-team/skills/senior-fullstack/scripts/project_scaffolder.py",
+     "reason": "environment-secret-read",
+     "line": 524
+    },
+    {
+     "file": "engineering-team/skills/senior-fullstack/scripts/project_scaffolder.py",
+     "reason": "multiline-data-send",
+     "line": 493
+    },
+    {
      "file": "engineering-team/skills/senior-ml-engineer/references/llm_integration_guide.md",
      "reason": "sensitive-read",
      "line": 173
@@ -8835,9 +9466,19 @@
      "line": 600
     },
     {
+     "file": "engineering-team/skills/senior-qa/references/qa_best_practices.md",
+     "reason": "multiline-data-send",
+     "line": 117
+    },
+    {
      "file": "engineering-team/skills/senior-secops/SKILL.md",
      "reason": "sensitive-read",
      "line": 484
+    },
+    {
+     "file": "engineering-team/skills/senior-secops/SKILL.md",
+     "reason": "environment-secret-read",
+     "line": 353
     },
     {
      "file": "engineering-team/skills/senior-secops/references/compliance_requirements.md",
@@ -8855,6 +9496,11 @@
      "line": 95
     },
     {
+     "file": "engineering-team/skills/senior-security/scripts/secret_scanner.py",
+     "reason": "environment-secret-read",
+     "line": 165
+    },
+    {
      "file": "engineering-team/skills/stripe-integration-expert/SKILL.md",
      "reason": "sensitive-read",
      "line": 71
@@ -8863,6 +9509,11 @@
      "file": "engineering-team/snowflake-development/skills/snowflake-development/SKILL.md",
      "reason": "sensitive-read",
      "line": 267
+    },
+    {
+     "file": "engineering/agent-harness/skills/agent-harness/assets/harnesses/agent-launcher.json",
+     "reason": "environment-secret-read",
+     "line": 283
     },
     {
      "file": "engineering/agent-harness/skills/agent-harness/assets/harnesses/engineering.json",
@@ -8915,6 +9566,11 @@
      "line": 10
     },
     {
+     "file": "engineering/docker-development/skills/docker-development/references/dockerfile-best-practices.md",
+     "reason": "environment-secret-read",
+     "line": 134
+    },
+    {
      "file": "engineering/handoff/skills/handoff/references/deduplication_discipline.md",
      "reason": "sensitive-read",
      "line": 135
@@ -8960,6 +9616,11 @@
      "line": 841
     },
     {
+     "file": "engineering/skillopt-sleep/skillopt_sleep/backend.py",
+     "reason": "environment-secret-read",
+     "line": 627
+    },
+    {
      "file": "engineering/skills/agent-designer/agent_evaluator.py",
      "reason": "sensitive-read",
      "line": 163
@@ -8975,9 +9636,19 @@
      "line": 187
     },
     {
+     "file": "engineering/skills/changelog-generator/references/hotfix-procedures.md",
+     "reason": "environment-secret-read",
+     "line": 432
+    },
+    {
      "file": "engineering/skills/codebase-onboarding/references/output-format-templates.md",
      "reason": "sensitive-read",
      "line": 10
+    },
+    {
+     "file": "engineering/skills/codebase-onboarding/references/output-format-templates.md",
+     "reason": "environment-secret-read",
+     "line": 26
     },
     {
      "file": "engineering/skills/coding-agent-rollout/assets/managed-settings.example.json",
@@ -9000,9 +9671,19 @@
      "line": 101
     },
     {
+     "file": "engineering/skills/env-secrets-manager/references/validation-detection-rotation.md",
+     "reason": "environment-secret-read",
+     "line": 353
+    },
+    {
      "file": "engineering/skills/focused-fix/SKILL.md",
      "reason": "sensitive-read",
      "line": 113
+    },
+    {
+     "file": "engineering/skills/full-page-screenshot/scripts/full-page-screenshot.mjs",
+     "reason": "multiline-data-send",
+     "line": 609
     },
     {
      "file": "engineering/skills/interview-system-designer/references/bias_mitigation_checklist.md",
@@ -9015,9 +9696,19 @@
      "line": 3
     },
     {
+     "file": "engineering/skills/mcp-oauth-triage/references/verification-recipes.md",
+     "reason": "environment-secret-read",
+     "line": 48
+    },
+    {
      "file": "engineering/skills/mcp-server-builder/references/python-server-template.md",
      "reason": "sensitive-read",
      "line": 10
+    },
+    {
+     "file": "engineering/skills/pr-review-expert/SKILL.md",
+     "reason": "environment-secret-read",
+     "line": 258
     },
     {
      "file": "engineering/skills/secrets-vault-manager/SKILL.md",
@@ -9065,6 +9756,11 @@
      "line": 461
     },
     {
+     "file": "engineering/skills/skill-tester/tests/test_security_scorer.py",
+     "reason": "environment-secret-read",
+     "line": 118
+    },
+    {
      "file": "engineering/skills/spec-driven-workflow/references/acceptance_criteria_patterns.md",
      "reason": "sensitive-read",
      "line": 80
@@ -9073,6 +9769,11 @@
      "file": "engineering/skills/spec-driven-workflow/references/bounded_autonomy_rules.md",
      "reason": "sensitive-read",
      "line": 142
+    },
+    {
+     "file": "engineering/skills/tech-debt-tracker/assets/sample_codebase/src/frontend.js",
+     "reason": "multiline-data-send",
+     "line": 355
     },
     {
      "file": "engineering/skills/tech-debt-tracker/assets/sample_codebase/src/payment_processor.py",
@@ -9085,6 +9786,11 @@
      "line": 115
     },
     {
+     "file": "engineering/universal-scraping-architect/skills/universal-scraping-architect/scripts/firecrawl_example.py",
+     "reason": "environment-secret-read",
+     "line": 20
+    },
+    {
      "file": "engineering/write-a-skill/vendor/karpathy-coder",
      "reason": "unsafe-path-or-symlink"
     },
@@ -9092,6 +9798,26 @@
      "file": "finance/skills/stock-analysis/references/sectors/exchanges-payments.md",
      "reason": "sensitive-read",
      "line": 62
+    },
+    {
+     "file": "markdown-html/skills/markdown-html-orchestrator/references/single_file_html_discipline.md",
+     "reason": "remote-code-load",
+     "line": 43
+    },
+    {
+     "file": "markdown-html/skills/md-document/assets/md_document_template.html",
+     "reason": "remote-code-load",
+     "line": 97
+    },
+    {
+     "file": "markdown-html/skills/md-document/scripts/html_renderer.py",
+     "reason": "remote-code-load",
+     "line": 563
+    },
+    {
+     "file": "markdown-html/skills/md-slides/scripts/deck_html_renderer.py",
+     "reason": "remote-code-load",
+     "line": 491
     },
     {
      "file": "marketing-skill/skills/aeo/references/aeo_eeat_canon.md",
@@ -9102,6 +9828,21 @@
      "file": "marketing-skill/skills/pricing-strategy/references/pricing-models.md",
      "reason": "sensitive-read",
      "line": 48
+    },
+    {
+     "file": "marketing/landing/agents/cs-landing.md",
+     "reason": "remote-code-load",
+     "line": 144
+    },
+    {
+     "file": "marketing/landing/skills/landing/SKILL.md",
+     "reason": "remote-code-load",
+     "line": 264
+    },
+    {
+     "file": "marketing/landing/skills/landing/scripts/html_validator.py",
+     "reason": "remote-code-load",
+     "line": 81
     },
     {
      "file": "marketing/linkedin/skills/linkedin-skills/scripts/linkedin_policy_gate.py",
@@ -9132,6 +9873,11 @@
      "file": "productivity/handoff/skills/session-handoff/references/deduplication_discipline.md",
      "reason": "sensitive-read",
      "line": 13
+    },
+    {
+     "file": "productivity/handoff/skills/session-handoff/references/redaction_checklist.md",
+     "reason": "environment-secret-read",
+     "line": 19
     },
     {
      "file": "project-management/skills/atlassian-admin/SKILL.md",
@@ -9233,6 +9979,11 @@
      "line": 66
     },
     {
+     "file": "packages/baoyu-fetch/src/adapters/youtube/transcript.ts",
+     "reason": "multiline-data-send",
+     "line": 196
+    },
+    {
      "file": "packages/baoyu-md/dist/index.cjs",
      "reason": "size-limit-scan-incomplete"
     },
@@ -9241,9 +9992,24 @@
      "reason": "size-limit-scan-incomplete"
     },
     {
+     "file": "scripts/publish-skill.mjs",
+     "reason": "multiline-data-send",
+     "line": 232
+    },
+    {
+     "file": "scripts/sync-clawhub.mjs",
+     "reason": "multiline-data-send",
+     "line": 374
+    },
+    {
      "file": "skills/baoyu-danger-gemini-web/SKILL.md",
      "reason": "sensitive-read",
      "line": 127
+    },
+    {
+     "file": "skills/baoyu-danger-gemini-web/scripts/gemini-webapi/utils/upload-file.ts",
+     "reason": "multiline-data-send",
+     "line": 18
     },
     {
      "file": "skills/baoyu-danger-x-to-markdown/SKILL.md",
@@ -9291,9 +10057,19 @@
      "line": 19
     },
     {
+     "file": "skills/baoyu-image-gen/scripts/providers/agnes.ts",
+     "reason": "multiline-data-send",
+     "line": 148
+    },
+    {
      "file": "skills/baoyu-image-gen/scripts/providers/azure.ts",
      "reason": "sensitive-read",
      "line": 63
+    },
+    {
+     "file": "skills/baoyu-image-gen/scripts/providers/azure.ts",
+     "reason": "multiline-data-send",
+     "line": 138
     },
     {
      "file": "skills/baoyu-image-gen/scripts/providers/dashscope.ts",
@@ -9301,9 +10077,19 @@
      "line": 136
     },
     {
+     "file": "skills/baoyu-image-gen/scripts/providers/dashscope.ts",
+     "reason": "multiline-data-send",
+     "line": 611
+    },
+    {
      "file": "skills/baoyu-image-gen/scripts/providers/google.ts",
      "reason": "sensitive-read",
      "line": 39
+    },
+    {
+     "file": "skills/baoyu-image-gen/scripts/providers/google.ts",
+     "reason": "multiline-data-send",
+     "line": 152
     },
     {
      "file": "skills/baoyu-image-gen/scripts/providers/jimeng.ts",
@@ -9316,9 +10102,19 @@
      "line": 43
     },
     {
+     "file": "skills/baoyu-image-gen/scripts/providers/minimax.ts",
+     "reason": "multiline-data-send",
+     "line": 204
+    },
+    {
      "file": "skills/baoyu-image-gen/scripts/providers/openai.ts",
      "reason": "sensitive-read",
      "line": 284
+    },
+    {
+     "file": "skills/baoyu-image-gen/scripts/providers/openai.ts",
+     "reason": "multiline-data-send",
+     "line": 326
     },
     {
      "file": "skills/baoyu-image-gen/scripts/providers/openrouter.ts",
@@ -9326,9 +10122,19 @@
      "line": 81
     },
     {
+     "file": "skills/baoyu-image-gen/scripts/providers/openrouter.ts",
+     "reason": "multiline-data-send",
+     "line": 359
+    },
+    {
      "file": "skills/baoyu-image-gen/scripts/providers/replicate.ts",
      "reason": "sensitive-read",
      "line": 42
+    },
+    {
+     "file": "skills/baoyu-image-gen/scripts/providers/replicate.ts",
+     "reason": "multiline-data-send",
+     "line": 512
     },
     {
      "file": "skills/baoyu-image-gen/scripts/providers/seedream.ts",
@@ -9336,9 +10142,19 @@
      "line": 53
     },
     {
+     "file": "skills/baoyu-image-gen/scripts/providers/seedream.ts",
+     "reason": "multiline-data-send",
+     "line": 321
+    },
+    {
      "file": "skills/baoyu-image-gen/scripts/providers/zai.ts",
      "reason": "sensitive-read",
      "line": 47
+    },
+    {
+     "file": "skills/baoyu-image-gen/scripts/providers/zai.ts",
+     "reason": "multiline-data-send",
+     "line": 272
     },
     {
      "file": "skills/baoyu-post-to-wechat/SKILL.md",
@@ -9361,6 +10177,11 @@
      "line": 38
     },
     {
+     "file": "skills/baoyu-post-to-wechat/scripts/wechat-article.ts",
+     "reason": "multiline-data-send",
+     "line": 109
+    },
+    {
      "file": "skills/baoyu-post-to-wechat/scripts/wechat-extend-config.test.ts",
      "reason": "sensitive-read",
      "line": 40
@@ -9379,6 +10200,16 @@
      "file": "skills/baoyu-post-to-x/references/regular-posts.md",
      "reason": "sensitive-read",
      "line": 72
+    },
+    {
+     "file": "skills/baoyu-url-to-markdown/scripts/lib/adapters/youtube/transcript.ts",
+     "reason": "multiline-data-send",
+     "line": 196
+    },
+    {
+     "file": "skills/baoyu-youtube-transcript/scripts/youtube.ts",
+     "reason": "multiline-data-send",
+     "line": 143
     }
    ]
   },

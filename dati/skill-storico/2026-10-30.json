@@ -1,19 +1,19 @@
 {
  "date": "2026-10-30",
  "stars": {
-  "emilkowalski/skills": 51960,
-  "leonxlnx/taste-skill": 106282,
+  "emilkowalski/skills": 51962,
+  "leonxlnx/taste-skill": 106283,
   "2dmurali/review-loop-skill": 6,
   "skills-shell/superpowers": 2,
   "designed-by-ai/skills": 21,
-  "heygen-com/hyperframes": 76012,
-  "vercel-labs/skills": 37278,
+  "heygen-com/hyperframes": 76013,
+  "vercel-labs/skills": 37279,
   "gencraft-labs/skills": 0,
   "uizze/uizze": 77,
   "flowkit-labs/skills": 25,
-  "vercel-labs/agent-browser": 44927,
+  "vercel-labs/agent-browser": 44928,
   "101-skills/superpowers": 16,
-  "Egonex-AI/Understand-Anything": 89073,
+  "Egonex-AI/Understand-Anything": 89077,
   "code-yeongyu/oh-my-openagent": 70505,
   "ayghri/i-have-adhd": 59497,
   "K-Dense-AI/scientific-agent-skills": 55399,
@@ -24,7 +24,8 @@
   "alchaincyf/huashu-design": 28225,
   "OthmanAdi/planning-with-files": 27777,
   "JimLiu/baoyu-skills": 27089,
-  "prime-skills/runcomfy-agent-skills": 62
+  "prime-skills/runcomfy-agent-skills": 62,
+  "bankai-skills/superpowers": 0
  },
  "directory": {
   "allTime": [

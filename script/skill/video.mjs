@@ -31,7 +31,7 @@ export function plan(card, short=false) {
     if (card.tipo==='tutorial') for (const step of card.steps) scenes.push(slide(step.title,step.text,[step.text,...(step.command?[step.command]:[])],16,step.command));
     else scenes.push(slide('Install',GENERIC[4],[GENERIC[4],card.install],20,card.install));
     for (const f of card.features) scenes.push(slide(f.label,f.detail,[f.detail,GENERIC[3]],16));
-    scenes.push(slide('Limits and review',DISCLAIMER,[...(card.security?[SECURITY_TEXT]:[GENERIC[6]]),DISCLAIMER],24));
+    scenes.push(slide('Limits and review',`${words(card.limits[0],24)}\n\n${DISCLAIMER}`,[card.limits[0],...(card.security?[SECURITY_TEXT]:[GENERIC[6]]),DISCLAIMER],24));
     scenes.push(slide('Read the source',`github.com/${card.repository}`,[GENERIC[8],`github.com/${card.repository}`],14));
   }
   const out={formato:short?'verticale':'orizzontale',tempiFissi:true,copertina:1,musica:short?'vivace':'calma',cardHash:digest(JSON.stringify(card)),scene:scenes};
@@ -50,7 +50,7 @@ export function validatePlan(card,piano) {
     e.push(...st.valida(s.dati || {}).map(x=>`scene ${i+1}: ${x}`));
     if(!s.parlato?.length || s.voce!==s.parlato.join(' ') || s.parlato.some(t=>!approvedText(card,t))) e.push(`scene ${i+1}: unsupported narration`);
     const strings=o=>typeof o==='string'?[o]:Array.isArray(o)?o.flatMap(strings):o&&typeof o==='object'?Object.values(o).flatMap(strings):[];
-    for(const t of strings(s.dati).filter(Boolean)) if(!HEADINGS.includes(t) && !approvedText(card,t)) e.push(`scene ${i+1}: unsupported on-screen text ${t}`);
+    for(const t of strings(s.dati).flatMap(t=>t.split(/\n{2,}/)).filter(Boolean)) if(!HEADINGS.includes(t) && !approvedText(card,t)) e.push(`scene ${i+1}: unsupported on-screen text ${t}`);
     if(!HEADINGS.includes(s.etichetta)&&!approvedText(card,s.etichetta)) e.push('unapproved scene label');
   }
   const total=piano.scene?.reduce((a,s)=>a+s.durata,0);

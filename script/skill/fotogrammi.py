@@ -35,6 +35,9 @@ base = f'http://127.0.0.1:{server.server_port}/'
 with sync_playwright() as pw:
     browser = pw.chromium.launch(headless=True)
     page = browser.new_page(viewport={'width':w,'height':h})
+    # Set the real local origin before loading the standalone template so its
+    # font requests are same-origin, as in the actual HyperFrames composition.
+    page.goto(base,wait_until='domcontentloaded')
     for i, scene in enumerate(times['scene']):
         frame = frame_dir/f'scena-{i+1:02}.jpg'
         at = scene['inizio'] + scene['durata'] - .2

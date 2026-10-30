@@ -14,7 +14,7 @@ import stat
 import urllib.request
 import zipfile
 
-VERSION = '1'
+VERSION = '2'
 CHECKS = {
     'download-and-execute': r'(?:curl|wget)[^\n]{0,500}\|\s*(?:ba|z|fi)?sh\b|(?:iwr|irm|Invoke-WebRequest|Invoke-RestMethod)[^\n]{0,300}\|\s*(?:iex|Invoke-Expression)|\b(?:iex|Invoke-Expression)\s*\(',
     'remote-eval': r'\b(?:eval|exec|Function)\s*\([^\n]{0,300}(?:fetch|requests\.|https?://|urlopen)|\beval\s*\(\s*(?:atob|base64)',
@@ -22,6 +22,9 @@ CHECKS = {
     'sensitive-read': r'(?:readFile(?:Sync)?|open|cat|Get-Content|read_text|read_bytes)[^\n]{0,160}(?:\.ssh[/\\]|\.env\b|[Cc]ookies|[Ll]ogin [Dd]ata|credentials|[Tt][Oo][Kk][Ee][Nn])|(?:~|HOME|USERPROFILE)[^\n]{0,60}\.ssh|os\.environ\[[^\n]*(?:TOKEN|SECRET|KEY)|process\.env\.(?:\w*(?:TOKEN|SECRET|KEY))',
     'external-data-send': r'(?:curl|wget)[^\n]{0,300}(?:--data|-d\s|--upload-file|-T\s)[^\n]{0,300}https?://|(?:requests|httpx)\.post\s*\(|\bfetch\s*\([^\n]{0,300}https?://[^\n]{0,300}(?:POST|body)|\bsendBeacon\s*\(|\b(?:upload|exfiltrat)\w*[^\n]{0,100}(?:token|credential|secret|cookie)',
     'postinstall': r'"(?:preinstall|postinstall|prepare)"\s*:',
+    'remote-code-load': r'<script\b[^>]*\bsrc=["\']https?://|\bimport\s*\(["\']https?://',
+    'environment-secret-read': r'os\.environ\.get\s*\([^\n]*(?:TOKEN|SECRET|KEY)|\$(?:env:)?[A-Z_]*(?:TOKEN|SECRET|API_KEY|PASSWORD)\b|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
+    'multiline-data-send': r'\bfetch\s*\([\s\S]{0,600}?method\s*:\s*["\']POST["\'][\s\S]{0,600}?body\s*:|https?://[^\s"\']{0,180}[?&][^\s"\']{0,80}=\$\{?\w*(?:TOKEN|SECRET|KEY)',
 }
 RASTER = {'.png': b'\x89PNG\r\n\x1a\n', '.jpg': b'\xff\xd8\xff', '.jpeg': b'\xff\xd8\xff', '.gif': b'GIF8', '.webp': b'RIFF'}
 EXEC = {'.exe', '.dll', '.so', '.dylib', '.bin', '.wasm', '.msi', '.com', '.scr', '.jar', '.pyc', '.zip', '.gz', '.woff', '.woff2', '.ttf', '.otf', '.pdf'}
@@ -52,7 +55,7 @@ def scan(data):
             if suffix in EXEC or raw[:2] == b'MZ' or raw[:4] == b'\x7fELF':
                 errors.append({'file': name, 'reason': 'binary-or-executable'})
                 continue
-            if suffix in RASTER and raw.startswith(RASTER[suffix]):
+            if suffix in RASTER and raw.startswith(RASTER[suffix]) and (suffix != '.webp' or raw[8:12] == b'WEBP'):
                 images[name] = {'bytes': len(raw), 'sha256': manifest[-1]['sha256']}
                 continue
             try:

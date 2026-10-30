@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 export const read = (f, fallback = null) => fs.existsSync(path.join(ROOT, f)) ? JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8')) : fallback;
@@ -45,12 +46,14 @@ export function directory(html) {
 export async function scanRepository(repo) {
   const meta = await api(`repos/${repo}`);
   const commit = await api(`repos/${repo}/commits/${meta.default_branch}`);
-  const file = path.join(ROOT, '.ai', 'skill-cache', `${slug(repo)}-${commit.sha}.json`);
+  const policy=createHash('sha256').update(fs.readFileSync(path.join(ROOT,'script/skill/sicurezza.py'))).digest('hex');
+  const file = path.join(ROOT, '.ai', 'skill-cache', `${slug(repo)}-${commit.sha}-${policy.slice(0,12)}.json`);
   if (!fs.existsSync(file)) {
     const r = spawnSync(process.env.PYTHON || (process.platform === 'win32' ? 'python' : 'python3'), [path.join(ROOT, 'script/skill/sicurezza.py'), repo, commit.sha, file], { encoding: 'utf8', timeout: 180000, maxBuffer: 2e6 });
     if (r.status !== 0) throw Error(`Scan failed: ${r.stderr?.slice(-500)}`);
   }
   const scan = JSON.parse(fs.readFileSync(file, 'utf8'));
+  scan.policySha256=policy;
   return { meta, commit, scan };
 }
 

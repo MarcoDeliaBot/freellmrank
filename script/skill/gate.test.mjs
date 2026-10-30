@@ -16,7 +16,7 @@ function fixture() {
 }
 test('exact source evidence and a complete scan are mandatory',()=>{
   const c=fixture();assert.deepEqual(validateCard(c),[]);
-  for(const mutate of [c=>c.install+=' --force',c=>c.security.complete=false,c=>c.descr='It is twice as fast.',c=>c.fonti[0].testo+='tampered',c=>c.features[1].detail='It uploads nothing.']) {
+  for(const mutate of [c=>c.install+=' --force',c=>c.security.complete=false,c=>c.descr='It is twice as fast.',c=>c.fonti[0].testo+='tampered',c=>c.features[1].detail='It uploads nothing.',c=>c.problem='Invented capability',c=>c.flow=['Made up workflow'],c=>c.limits=['Works offline forever']]) {
     const bad=structuredClone(c);mutate(bad);assert.ok(validateCard(bad).length);
   }
 });

@@ -52,7 +52,7 @@ export async function tutorials(skills, date, existing = existingTopics()) {
     if (topicExists({ key, titolo: key, slug: slug(key) }, existing)) continue;
     try {
       const url = `https://huggingface.co/${m.repo}/raw/main/README.md`, raw = await text(url);
-      const commands = [...raw.matchAll(/(?:^|\n)\s*((?:ollama run|llama-cli\s+-hf)[^\n`]+)/g)].map(x => x[1].trim()).filter(c => !/[<>|;&]/.test(c));
+      const commands = [...raw.matchAll(/(?:^|\n)\s*((?:ollama run|llama-cli\s+-hf)[^\n`]+)/g)].map(x => x[1].trim()).filter(c => !/[<>|;&]|:cloud|--cloud/i.test(c));
       if (!commands.length) continue;
       const descr = plain(raw.split('\n').find(l => l.length >= 50 && l.length < 180 && !/^[#<|!]/.test(l)) || '');
       const featureLines = raw.split('\n').filter(l => /^[-*]\s/.test(l)).map(l => plain(l.replace(/^[-*]\s*/, ''))).filter(l => l.length > 20 && l.length < 150).slice(0,3);

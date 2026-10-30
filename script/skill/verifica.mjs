@@ -28,10 +28,21 @@ export function validateCard(card) {
   if (!card.fonti?.length || card.fonti.some(f => !/^https:\/\//.test(f.url) || digest(f.testo) !== f.sha256)) errors.push('missing or altered source snapshot');
   const corpus = normalized((card.fonti || []).flatMap(f => [f.testo, plain(f.testo)]).join('\n'));
   const backed = s => !!s && corpus.includes(normalized(s));
+  if (!backed(card.name) || !backed(card.problem)) errors.push('name or opening problem has no source evidence');
+  if ((card.flow || []).some(s=>!backed(s))) errors.push('workflow contains an unsupported step');
+  if ((card.audience || []).some(s=>!backed(s))) errors.push('assistant compatibility has no source evidence');
+  if ((card.limits || []).some(s=>!GENERIC.includes(s)&&s!==DISCLAIMER&&!backed(s))) errors.push('unsupported limitation');
+  const expectedTitles=[`${card.name}: Agent Skill`,`How to install and use ${card.name}`,`How to use ${card.name} locally`,`How to run ${card.name} locally for free`,`How to use ${card.name} for free online`];
+  if (!expectedTitles.includes(card.titolo)) errors.push('title is outside the source-backed topic contract');
   for (const c of card.claims || []) if (!backed(c)) errors.push(`unsupported claim: ${c}`);
   if (!card.claims?.length || !backed(card.descr)) errors.push('description has no exact source evidence');
   if (!card.install || !backed(card.install) || /[;&|]|\$\(|[<>…]/.test(card.install)) errors.push('installation command is absent, altered or unsafe');
-  for (const step of card.steps || []) if (step.command && !backed(step.command)) errors.push(`unsupported step command: ${step.command}`);
+  const stepTitles=['Read the source','Install the skill','Try the documented example','Review the result','Prepare your machine','Run the documented command','Review the output','Install the official tool','Use the documented command','Check the result'];
+  for (const step of card.steps || []) {
+    if (step.command && !backed(step.command)) errors.push(`unsupported step command: ${step.command}`);
+    if (step.text && !GENERIC.includes(step.text) && !backed(step.text)) errors.push('unsupported step explanation');
+    if (!stepTitles.includes(step.title) && !backed(step.title)) errors.push('unsupported step heading');
+  }
   if (card.tipo === 'skill' || card.skillSource) {
     const s = card.security;
     if (!s?.passed || !s.complete || !s.files || !/^[a-f0-9]{40}$/.test(s.commit || '') || !s.checked?.includes('all-files') || s.errors?.length) errors.push('security gate failed or incomplete');

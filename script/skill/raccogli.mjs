@@ -21,13 +21,22 @@ export function cardFrom(repo, entry, result, date, history) {
   // Prefer the README section for this skill; keep excerpts visibly attributed.
   const lines = readme.replace(/\r/g, '').split('\n');
   const relevant = lines.filter(l => !/<|!\[|skills\.sh/.test(l) && plain(l).toLowerCase().includes(name.toLowerCase()));
-  let descr = relevant.map(plain).map(s => s.replace(/^[-#\s]+/, '')).find(s => s.length >= 35 && s.length <= 260 && !s.includes('npx'));
+  let descr = relevant.map(plain).map(s => s.replace(/^[-#\s]+/, '')).find(s => s.length >= 35 && s.length <= 260 && !/^(git |cp |npx)|https?:|git@/.test(s));
   const prose = lines.filter(l => !/^\s*<|!\[|\[!\[/.test(l)).map(l => plain(l).replace(/^[-#\d.\s]+/, '')).filter(s => s.length >= 35 && s.length <= 250 && !/^(https?:|\||npx|git |cp |\[)|skills.sh|img.shields/.test(s));
-  descr = prose.find(s => / is an? (?:Agent Skill|reusable|collection)/i.test(s)) || descr || prose.find(s => !/^\[/.test(s));
+  descr = prose.find(s => / is an? (?:Agent Skill|reusable|collection)|^A reusable AI agent skill/i.test(s)) || descr || prose.find(s => !/^\[/.test(s));
   if (!descr) throw Error('no usable README description');
   const usable = [...relevant.map(plain), ...prose].map(s => s.replace(/^[-#\d.\s]+/, '')).filter(s => s.length >= 25 && s.length <= 240 && !s.includes('npx') && !s.includes('http'));
   const ordered = lines.filter(l=>/^\d+\.\s/.test(l)).map(l=>plain(l.replace(/^\d+\.\s*/,''))).filter(s=>s.length>=20&&s.length<=240);
-  const featurePool = skillPaths.length===1 && ordered.length>=3 ? ordered.slice(-3) : usable;
+  // A collection's other skills are not features of this skill. If its README
+  // gives only one catalogue sentence, defer publication rather than padding
+  // three scenes with unrelated capabilities from the rest of the repository.
+  const headingIndex=lines.findIndex(l=>/^#{2,4}\s/.test(l)&&plain(l).toLowerCase().includes(identity.toLowerCase()));
+  let scoped=[];
+  if(headingIndex>=0) {
+    let end=headingIndex+1;while(end<lines.length&&!/^#{1,4}\s/.test(lines[end]))end++;
+    scoped=lines.slice(headingIndex+1,end).map(l=>plain(l.replace(/^[-*\d.]+\s*/,''))).filter(s=>s.length>=25&&s.length<=240&&!s.includes('http')&&!s.includes('npx'));
+  }
+  const featurePool = skillPaths.length===1 && ordered.length>=3 ? ordered.slice(-3) : scoped.length>=3 ? scoped : relevant.map(l=>plain(l.replace(/^[-*]+\s*/,'')));
   const features = [...new Set(featurePool)].filter(s => s !== descr).slice(0, 3).map(s => ({ label: s.split(/\s+/).slice(0, 7).join(' '), detail: s }));
   if (features.length !== 3) throw Error('not enough README facts');
   // Usage must be in README, not an invented prompt. Prefer an actual Usage block.
@@ -38,14 +47,14 @@ export function cardFrom(repo, entry, result, date, history) {
   const screenshotMatches = [...readme.matchAll(/!\[[^\]]*\]\(([^) ]+)\)|<img\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1] || m[2]);
   const screenshots = screenshotMatches.filter(p => /\.(png|jpe?g|webp)$/i.test(p) && !/^https?:/.test(p) && scan.images[p.replace(/^\.\//, '')] && !/sponsor|badge|logo|wordmark|icon|readme-tastecode/i.test(p)).slice(0, 3).map(p => ({ url: `https://raw.githubusercontent.com/${repo}/${commit.sha}/${p.replace(/^\.\//, '')}`, source: `https://github.com/${repo}/blob/${commit.sha}/${readmePath}` }));
   const fonti = [{ url: `https://github.com/${repo}/blob/${commit.sha}/${readmePath}`, testo: readme, sha256: digest(readme), tipo: 'README' }, { url: `https://github.com/${repo}/blob/${commit.sha}/${skillPath}`, testo: skillText, sha256: digest(skillText), tipo: 'SKILL.md' }];
-  const hook = /that makes coding agents (.+?)(?: instead|[.!?])/.exec(descr)?.[1] || descr;
+  const hook = /that makes coding agents (.+?)(?: instead|[.!?])/.exec(descr)?.[1] || /to (produce .+?) through/.exec(descr)?.[1] || descr;
   const card = { tipo: 'skill', slug: slug(`${repo}-${identity}`), key: `agent skill ${repo} ${identity}`, name, repository: repo, commit: commit.sha, skillPath,
     titolo: `${name}: Agent Skill`, date, descr, problem: hook.split(/\s+/).slice(0, 6).join(' '), audience: hosts,
-    install, example, features, limits: [GENERIC[1], DISCLAIMER], screenshots, fonti,
+    install, example, features, limits: [...prose.filter(s=>/\b(?:requires?|needs?|supports?|limits?|only|must)\b/i.test(s)&&s.length<=180).slice(0,2), GENERIC[1], DISCLAIMER], screenshots, fonti,
     claims: [descr, install, example, ...features.flatMap(f => [f.label, f.detail])],
     ...(ordered.length>=3?{flow:ordered.slice(0,3)}:{}),
     metrics: { date, stars: meta.stargazers_count, growth7d: growth(history, repo, meta.stargazers_count, date), installs: entry.totalInstalls ?? null, installs24h: entry.trendingInstalls ?? null, license: meta.license?.spdx_id || null, lastCommit: commit.commit.committer.date },
-    security: { passed: true, complete: true, date, commit: commit.sha, files: scan.files, checked: scan.checked, errors: [], version: scan.version, archiveSha256: scan.archiveSha256 },
+    security: { passed: true, complete: true, date, commit: commit.sha, files: scan.files, checked: scan.checked, errors: [], version: scan.version, policySha256: scan.policySha256, archiveSha256: scan.archiveSha256 },
   };
   const errors = validateCard(card);
   if (errors.length) throw Error(errors.join('; '));

