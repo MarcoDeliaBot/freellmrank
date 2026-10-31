@@ -31,13 +31,14 @@ function slide(title,body,speech,duration,command,elements,opening=false) {
     parlato:speech,voce:speech.join(' '),durata:duration};
 }
 function featureScene(card,f,duration,short) {
-  if(f.example)return slide(f.label,'',[short?words(f.detail,20):f.detail],duration,examplePanel(card,f));
+  const shortSpeech=words(f.detail.split(/(?<=[.!?])\s/)[0],12);
+  if(f.example)return slide(f.label,'',[short?shortSpeech:f.detail],duration,examplePanel(card,f));
   let fact=f.detail;
   if(fact.toLowerCase().startsWith(f.label.toLowerCase()))fact=fact.slice(f.label.length).replace(/^[\s:,.–—-]+/,'');
   if(!fact)return slide(f.label,'',[f.detail],duration,examplePanel(card));
   const tokens=fact.split(/\s+/),middle=Math.ceil(tokens.length/2);
   const parts=[tokens.slice(0,middle).join(' '),tokens.slice(middle).join(' ')].filter(Boolean);
-  return slide(f.label,'',[short?words(f.detail,20):f.detail,...(short?[]:[GENERIC[3]])],duration,null,parts);
+  return slide(f.label,'',[short?shortSpeech:f.detail,...(short?[]:[GENERIC[3]])],duration,null,parts);
 }
 export function plan(card,short=false) {
   const base=validateCard(card);if(base.length)throw Error(base.join('; '));
@@ -45,9 +46,9 @@ export function plan(card,short=false) {
   let scenes;
   if(short) {
     scenes=[slide(card.problem,'',[card.problem],3,null,[],true),
-      slide(card.name,'',[trim(card.descr,210)],7,panel),
+      slide(card.name,'',[words(card.descr,11)],7,panel),
       ...card.features.map((f,i)=>featureScene(card,f,[7,7,8][i],true)),
-      slide('Install',card.installSelection||'',[card.install],8,card.install),
+      slide('Install',card.installSelection||'',[card.tipo==='tutorial'?(card.steps.find(s=>s.command===card.install)?.title||card.install):card.install],8,card.install),
       slide('Read the source','',[`github.com/${card.repository}`],5,null,[`github.com/${card.repository}`])];
   } else {
     scenes=[slide(card.problem,'',[card.descr,GENERIC[8]],16,null,[],true),

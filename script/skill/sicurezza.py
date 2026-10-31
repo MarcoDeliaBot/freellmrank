@@ -59,7 +59,7 @@ def scan_unit(files, skill_path):
         if stat.S_ISLNK(mode):
             target = raw.decode('utf-8', errors='replace').strip()
             resolved = posixpath.normpath(posixpath.join(posixpath.dirname(name), target))
-            if target.startswith('/') or '\\' in target or not inside(resolved, root) or resolved.startswith('../'):
+            if target.startswith('/') or re.match(r'^[a-zA-Z]:',target) or '\\' in target or not inside(resolved, root) or resolved.startswith('../'):
                 errors.append(finding(name, 'symlink-outside-skill')); continue
             if resolved not in selected:
                 errors.append(finding(name, 'symlink-target-missing-scan-incomplete')); continue

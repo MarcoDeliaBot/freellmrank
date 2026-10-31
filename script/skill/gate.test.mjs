@@ -91,6 +91,11 @@ test('README install commands retain flags, case and version specifiers',()=>{
   assert.equal(licenseFrom('',null),null);
   assert.equal(labelFrom('Does the work (writes code, spec, doc, etc.)'),'Does the work');
   assert.equal(labelFrom('The critic scores the work 1–10 with specific, actionable feedback'),'The critic scores the work 1–10');
+  assert.equal(installFrom('npx skills add owner/repo -s other','owner/repo','demo'),null);
+  assert.equal(installFrom('npx skills add owner/repo --all','owner/repo','demo'),null);
+  assert.equal(installFrom('npx skills add owner/repo -y','owner/repo','demo'),null);
+  assert.equal(installFrom('npx skills add owner/repo -s demo other','owner/repo','demo'),null);
+  assert.equal(installFrom('npx skills add owner/repo -s demo','owner/repo','demo'),'npx skills add owner/repo -s demo');
 });
 test('Markdown cleanup preserves literal inline HTML, code paths and placeholders',()=>{
   assert.equal(plain('Copy `<style>` and `compositions/<name>.html`.'),'Copy <style> and compositions/<name>.html.');

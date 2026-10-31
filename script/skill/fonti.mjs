@@ -99,5 +99,17 @@ export function installFrom(readme, repo, identity) {
   // Preserve the exact command. Placeholders, chained commands and remote execution are never eligible.
   const eligible=commands.filter(c => c.toLowerCase().includes(repo.toLowerCase()) && !/[<>…]|\.\.\.|[;&|]|\$\(/.test(c) && c.length <= 180);
   if(!identity)return eligible[0]||null;
-  return eligible.find(c=>new RegExp(`--skill(?:=|\\s+)["']?${identity}["']?(?:\\s|$)`,'i').test(c)) || eligible.find(c=>!c.includes('--skill')) || null;
+  const targets=c=>{
+    const tokens=(c.match(/"[^"]*"|'[^']*'|\S+/g)||[]).map(s=>s.replace(/^["']|["']$/g,''));
+    const add=tokens.indexOf('add'),tail=tokens.slice(add+2);const ids=[];
+    for(let i=0;i<tail.length;i++) {
+      if(tail[i].startsWith('#'))break;
+      if(tail[i]==='--skill'||tail[i]==='-s')for(i++;i<tail.length&&!tail[i].startsWith('-')&&!tail[i].startsWith('#');i++)ids.push(tail[i]);
+      else if(tail[i].startsWith('--skill='))ids.push(tail[i].slice(8));
+    }
+    if(tail.includes('--all'))return false;
+    if(ids.length)return ids.length===1&&ids[0]===identity;
+    return !tail.some(t=>['--all','-y','--yes'].includes(t))&&!tail.some(t=>/^--skill|-s$/.test(t));
+  };
+  return eligible.find(targets)||null;
 }

@@ -54,7 +54,7 @@ class SecurityGate(unittest.TestCase):
 
     def test_only_symbolic_links_escaping_scope_block(self):
         import stat
-        for target,passed in [('data.txt',True),('../outside.txt',False),('sub/../data.txt',True)]:
+        for target,passed in [('data.txt',True),('../outside.txt',False),('sub/../data.txt',True),('C:/outside.txt',False)]:
             out=io.BytesIO()
             with zipfile.ZipFile(out,'w') as z:
                 z.writestr('root/skills/demo/SKILL.md','# Demo')
