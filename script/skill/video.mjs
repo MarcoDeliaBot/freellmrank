@@ -4,102 +4,59 @@ import { spawnSync } from 'node:child_process';
 import { STAMPI } from '../video-hf/stampi/index.mjs';
 import { monta } from '../video-hf/monta.mjs';
 import { titoloYT, capitoliYT, conCapitoli, controlli } from '../brag/controllo-yt.mjs';
-import { approvedText, validateCard, GENERIC, SECURITY_TEXT, DISCLAIMER, digest } from './verifica.mjs';
-import { labelFrom, ROOT } from './fonti.mjs';
+import { approvedText, validateCard, digest } from './verifica.mjs';
+import { ROOT } from './fonti.mjs';
+import { lessonFor, textIssues, duplicateIssues } from './copione.mjs';
 
-const HEADINGS = ['The problem','What it is','How it works','Install','Try it','Read the source','Limits and review','Feature','Step by step','Documented example'];
 const words=(s,n)=>String(s).split(/\s+/).slice(0,n).join(' ');
-const trim=(s,max)=>String(s).length<=max?String(s):String(s).slice(0,max+1).replace(/\s+\S*$/,'');
-export function examplePanel(card, feature) {
-  const raw=feature?.example||card.example;
-  return raw.length<=620&&raw.split('\n').length<=12?raw:card.install;
-}
-export function warningText(card) {
-  if(card.officialInstaller)return 'Warning: the official installer downloads and executes a script. Review it before running.';
-  if(!card.security?.warnings?.length)return 'No blocking pattern was found in the installed skill directory.';
-  const reasons=[...new Set(card.security.warnings.map(w=>w.reason))];
-  if(reasons.some(r=>/secret|sensitive/.test(r)))return 'Warning: Markdown documents credential or configuration access. Review those instructions before use.';
-  if(reasons.some(r=>/download|remote/.test(r)))return 'Warning: Markdown includes installer or remote code instructions. Review the documented source before use.';
-  if(reasons.some(r=>/api|send/.test(r)))return 'Warning: documented service API calls require network access. Review the destination and data before use.';
-  return 'Warning: review the flagged Markdown instructions before granting permissions.';
-}
-function slide(title,body,speech,duration,command,elements,opening=false) {
-  speech=[...new Set(speech)];
-  if(body&&body.toLowerCase().startsWith(title.toLowerCase()))body=body.slice(title.length).replace(/^[\s:,.??-]+/,'');
-  const facts=elements||(!command&&body?[body]:[]);
-  return {stampo:'passo',etichetta:opening?'The problem':HEADINGS.includes(title)?title:'Feature',capitolo:title,
-    dati:{titolo:title,...(command&&body?{testo:body}:{}),...(command?{comando:command}:{}),...(facts.length?{elementi:facts}:{}),...(opening?{apertura:true}:{})},
-    parlato:speech,voce:speech.join(' '),durata:duration};
-}
-function featureScene(card,f,duration,short) {
-  const shortSpeech=words(f.detail.split(/(?<=[.!?])\s/)[0],12);
-  if(f.example)return slide(f.label,'',[short?shortSpeech:f.detail],duration,examplePanel(card,f));
-  let fact=f.detail;
-  if(fact.toLowerCase().startsWith(f.label.toLowerCase()))fact=fact.slice(f.label.length).replace(/^[\s:,.–—-]+/,'');
-  if(!fact)return slide(f.label,'',[f.detail],duration,examplePanel(card));
-  const tokens=fact.split(/\s+/),middle=Math.ceil(tokens.length/2);
-  const parts=[tokens.slice(0,middle).join(' '),tokens.slice(middle).join(' ')].filter(Boolean);
-  return slide(f.label,'',[short?shortSpeech:f.detail,...(short?[]:[GENERIC[3]])],duration,null,parts);
-}
+export function examplePanel(card,feature){return feature?.example||card.example;}
+export function warningText(card){return lessonFor(card).limits;}
 export function plan(card,short=false) {
-  const base=validateCard(card);if(base.length)throw Error(base.join('; '));
-  const panel=examplePanel(card);
-  let scenes;
-  if(short) {
-    scenes=[slide(card.problem,'',[card.problem],3,null,[],true),
-      slide(card.name,'',[words(card.descr,11)],7,panel),
-      ...card.features.map((f,i)=>featureScene(card,f,[7,7,8][i],true)),
-      slide('Install',card.installSelection||'',[card.tipo==='tutorial'?(card.steps.find(s=>s.command===card.install)?.title||card.install):card.install],8,card.install),
-      slide('Read the source','',[`github.com/${card.repository}`],5,null,[`github.com/${card.repository}`])];
-  } else {
-    scenes=[slide(card.problem,'',[card.descr,GENERIC[8]],16,null,[],true),
-      slide('What it is',trim(card.descr,180),[card.descr,GENERIC[9]],18,panel)];
-    if(card.flow?.length===3)scenes.push({stampo:'diagramma',etichetta:'How it works',capitolo:'How it works',dati:{titolo:'How it works',nodi:card.flow.map(s=>labelFrom(s))},parlato:card.flow,voce:card.flow.join(' '),durata:20});
-    else scenes.push(slide('How it works','',[card.example,GENERIC[8]],20,panel));
-    if(card.tipo==='tutorial')for(const step of card.steps)scenes.push(slide(step.title,trim(step.text,200),[step.text,...(step.command?[step.command]:[])],16,step.command||panel));
-    else scenes.push(slide('Install',card.installSelection||GENERIC[4],[GENERIC[4],...(card.installSelection?[card.installSelection]:[]),card.install],20,card.install));
-    for(const f of card.features)scenes.push(featureScene(card,f,16,false));
-    scenes.push(slide('Limits and review','',[card.limits.find(t=>t.length<220)||GENERIC[1],warningText(card),DISCLAIMER],24,null,[warningText(card),'Review the pinned source and its dependencies before installing.']));
-    scenes.push(slide('Read the source','',[GENERIC[8],`github.com/${card.repository}`],14,null,[`github.com/${card.repository}`]));
-  }
-  // AI edits only explanations and the problem question, never commands,
-  // examples, metrics or diagrams. Every sentence has explicit source evidence.
-  for(const [i,scene] of scenes.entries()) {
+  const errors=validateCard(card);if(errors.length)throw Error(errors.join('; '));
+  const lesson=lessonFor(card);
+  const scenes=(short?lesson.short:lesson.long).map((s,i)=>{
     const explanation=card.explanations?.[`${short?'short':'long'}:${i}`];
-    if(explanation){scene.parlato=explanation.sentences.map(s=>s.text);scene.voce=scene.parlato.join(' ');}
-  }
-  const out={formato:short?'verticale':'orizzontale',tempiFissi:true,copertina:1,musica:short?'vivace':'calma',cardHash:digest(JSON.stringify(card)),scene:scenes};
-  const errors=validatePlan(card,out);if(errors.length)throw Error(errors.join('; '));return out;
+    const speech=explanation?explanation.sentences.map(s=>s.text):[s.voice];
+    const data={titolo:s.title,testo:s.text,...(s.code?{comando:s.code,risultato:s.result}:{}),...(s.nodes?{nodi:s.nodes}:{}),...(s.role==='problem'?{apertura:true}:{}),...(s.role==='link'?{link:true}:{})};
+    return {stampo:s.nodes?'diagramma':'passo',etichetta:s.label,capitolo:s.title,role:s.role,dati:data,parlato:speech,voce:speech.join(' '),durata:s.duration,evidence:s.quotes};
+  });
+  const out={formato:short?'verticale':'orizzontale',tempiFissi:true,teaching:true,copertina:1,musica:short?'vivace':'calma',cardHash:digest(JSON.stringify(card)),scene:scenes};
+  const check=validatePlan(card,out);if(check.length)throw Error(check.join('; '));return out;
 }
 
 export function validatePlan(card,piano) {
-  const e=[...validateCard(card)];
-  if(piano.tempiFissi!==true)e.push('fixed timing contract is required');
-  if (piano.cardHash!==digest(JSON.stringify(card))) e.push('plan does not match the reviewed card');
-  const short=piano.formato==='verticale';
-  for (const [i,s] of (piano.scene || []).entries()) {
-    const st=STAMPI[s.stampo];
-    if(!st) {e.push(`unknown template ${s.stampo}`);continue;}
-    e.push(...st.valida(s.dati || {}).map(x=>`scene ${i+1}: ${x}`));
-    const norm=t=>String(t).toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
-    const title=norm(s.dati.titolo),others=[s.dati.testo,...(s.dati.elementi||[])].filter(Boolean).map(norm);
-    if(title&&others.some(t=>t===title||t.startsWith(title+' ')))e.push(`scene ${i+1}: repeated title`);
-    if(s.etichetta.length>26)e.push(`scene ${i+1}: scene label too long`);
-    const said=(s.parlato||[]).map(norm);
-    if(new Set(said).size!==said.length)e.push(`scene ${i+1}: repeated narration`);
-    if(!s.parlato?.length || s.voce!==s.parlato.join(' ') || s.parlato.some(t=>!approvedText(card,t))) e.push(`scene ${i+1}: unsupported narration`);
-    const strings=o=>typeof o==='string'?[o]:Array.isArray(o)?o.flatMap(strings):o&&typeof o==='object'?Object.values(o).flatMap(strings):[];
-    for(const t of strings(s.dati).flatMap(t=>t.split(/\n{2,}/)).filter(Boolean)) if(!HEADINGS.includes(t) && !approvedText(card,t)) e.push(`scene ${i+1}: unsupported on-screen text ${t}`);
-    if(!HEADINGS.includes(s.etichetta)&&!approvedText(card,s.etichetta)) e.push('unapproved scene label');
+  const errors=[...validateCard(card)],short=piano.formato==='verticale',tool=card.tipo==='tutorial'&&!card.skillSource;
+  if(piano.tempiFissi!==true)errors.push('fixed timing contract is required');
+  if(piano.cardHash!==digest(JSON.stringify(card)))errors.push('plan does not match the reviewed card');
+  errors.push(...duplicateIssues(piano.scene||[]));
+  for(const [i,s] of (piano.scene||[]).entries()) {
+    const st=STAMPI[s.stampo];if(!st){errors.push(`unknown template ${s.stampo}`);continue;}
+    errors.push(...st.valida(s.dati||{}).map(e=>`scene ${i+1}: ${e}`));
+    if(s.etichetta.length>26)errors.push(`scene ${i+1}: scene label too long`);
+    if(!s.parlato?.length||s.voce!==s.parlato.join(' ')||s.parlato.some(t=>!approvedText(card,t)))errors.push(`scene ${i+1}: unsupported narration`);
+    errors.push(...textIssues(s.voce,{voice:true,tool}).map(e=>`scene ${i+1}: ${e}`));
+    for(const t of [s.dati?.titolo,s.dati?.testo,s.dati?.risultato,...(s.dati?.elementi||[]),...(s.dati?.nodi||[])].filter(Boolean)){
+      if(!approvedText(card,t))errors.push(`scene ${i+1}: unsupported on-screen text ${t}`);
+      errors.push(...textIssues(t,{tool}).map(e=>`scene ${i+1}: ${e}`));
+    }
+    if(s.dati?.comando&&!approvedText(card,s.dati.comando))errors.push(`scene ${i+1}: unsupported code`);
+    if(s.dati?.comando&&FORBIDDEN_CODE.test(s.dati.comando))errors.push(`scene ${i+1}: forbidden code annotation`);
   }
   const total=piano.scene?.reduce((a,s)=>a+s.durata,0);
-  if(short) {
-    if(total!==45 || piano.scene.length!==7 || piano.scene.map(s=>s.durata).join(',')!=='3,7,7,7,8,8,5') e.push('Short timing does not match 0-3 / 3-10 / 10-32 / 32-40 / 40-45');
-    if(card.problem.split(/\s+/).length>6) e.push('hook exceeds six words');
-    if(piano.scene[5]?.dati.comando!==card.install || piano.scene[6]?.dati.elementi?.[0]!==`github.com/${card.repository}`) e.push('exact command or repository missing');
-  } else if(!(total>=120&&total<=240)) e.push(`long video outside 2-4 minutes: ${total}`);
-  return e;
+  if(short){
+    if(total!==45||piano.scene.length!==7||piano.scene.map(s=>s.durata).join(',')!=='3,7,7,7,8,8,5')errors.push('Short timing does not match 0-3 / 3-10 / 10-32 / 32-40 / 40-45');
+    if(piano.scene[0]?.dati.titolo.split(/\s+/).length>6)errors.push('hook exceeds six words');
+    if(piano.scene[1]?.etichetta!=='What it is'||piano.scene[1]?.role!=='identity')errors.push('Short identity scene required');
+    if(piano.scene.slice(2,5).some(s=>s.role!=='feature')||!piano.scene.slice(2,5).some(s=>s.stampo==='diagramma'))errors.push('Short needs exactly three features including a diagram');
+    if(piano.scene[5]?.dati.comando!==card.install||piano.scene[6]?.dati.testo!==`github.com/${card.repository}`||piano.scene[6]?.voce!=='Link in the description.')errors.push('exact command or repository missing');
+  }else{
+    if(!(total>=90&&total<=240))errors.push(`long video outside 90 seconds to 4 minutes: ${total}`);
+    if(piano.scene.filter(s=>s.stampo==='diagramma').length<2)errors.push('long video needs at least two diagrams');
+    if(tool){const roles=piano.scene.map(s=>s.role);if(roles[0]!=='goal'||roles[1]!=='prerequisites'||!roles.includes('verify')||!roles.includes('next')||roles.at(-1)!=='link')errors.push('tutorial structure incomplete');}
+  }
+  return errors;
 }
+const FORBIDDEN_CODE=/remote-code-load|sensitive-read|This review covers|\.(?:md|py|mjs):\d+/i;
 
 function run(command,args,options={}) {
   const r=spawnSync(command,args,{encoding:'utf8',timeout:120000,maxBuffer:4e6,...options});
@@ -120,16 +77,6 @@ export async function render(card,folder) {
   }
   for(const short of [false,true]) {
     const piano=plan(card,short);
-    // A real README screenshot replaces a feature slide while keeping the exact
-    // voice/timing contract. The caption remains a verified source phrase.
-    if(screenshots.length) {
-      const shot=screenshots[0], index=short?2:piano.scene.findIndex(s=>s.dati.titolo===card.features[0].label);
-      if(index>=0) {
-        const original=piano.scene[index];
-        const ratio=JSON.parse(run(process.env.PYTHON || (process.platform==='win32'?'python':'python3'),['-c','from PIL import Image;import json,sys;im=Image.open(sys.argv[1]);print(json.dumps(im.width/im.height))',shot.file]));
-        piano.scene[index]={...original,stampo:'immagine',dati:{media:shot.file,rapporto:ratio,didascalia:words(card.features[0].label,6).slice(0,48),credito:card.repository.slice(0,44),skillTutorial:true}};
-      }
-    }
     // Media paths are validated separately; they are not factual text.
     const checkCard={...card};
     const errors=validatePlanWithMedia(checkCard,piano,screenshots);
@@ -142,7 +89,7 @@ export async function render(card,folder) {
     if(!qa.passed) throw Error(`Frame/layout gate failed: ${JSON.stringify(qa.errors)}`);
     const nome=`${short?'breve-':''}${card.tipo}-${card.slug}`;
     const page=`https://freellmarena.com/${card.tipo==='skill'?'skills':'tutorials'}/${card.slug}`;
-    const info={nome,sourceHash:digest(JSON.stringify(card)),titolo:titoloYT([card.titolo,card.name],{shorts:short}),descrizione:`${words(card.descr,20).slice(0,155)}\n\nFull story: ${page}\nSources: ${card.fonti.map(s=>s.url).join('\n')}\n\n${DISCLAIMER}`,tag:['Agent Skills',card.name,'FreeLLMArena',card.tipo==='skill'?'AI tools':'AI tutorial'],lingua:'en',formato:{w:short?1080:1920,h:short?1920:1080},...(short?{lungo:`video-${card.tipo}-${card.slug}`}:{})};
+    const info={nome,sourceHash:digest(JSON.stringify(card)),titolo:titoloYT([card.titolo,card.name],{shorts:short}),descrizione:`${words(card.descr,20).slice(0,155)}\n\nFull story: ${page}\nSources: ${card.fonti.map(s=>s.url).join('\n')}`,tag:[card.tipo==='skill'?'Agent Skills':'AI tutorial',card.name,'FreeLLMArena','AI tools'],lingua:'en',formato:{w:short?1080:1920,h:short?1920:1080},...(short?{lungo:`video-${card.tipo}-${card.slug}`}:{})};
     const times=JSON.parse(fs.readFileSync(path.join(dir,'tempi.json'),'utf8'));
     if(!short) info.descrizione=conCapitoli(info.descrizione,capitoliYT(times.scene.map(s=>({inizio:s.inizio,titolo:s.capitolo})),times.totale));
     const ytErrors=controlli({...info,durata:times.totale}).filter(e=>['titolo-100','descrizione-5000','tag','shorts-rotto','senza-capitoli','capitoli-errati'].includes(e.codice));

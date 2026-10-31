@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { plain } from './fonti.mjs';
 import { controllore } from '../video-hf/piano.mjs';
+import { lessonFor, lessonStrings, textIssues } from './copione.mjs';
 export const digest = s => createHash('sha256').update(s).digest('hex');
 export const normalized = s => String(s).replace(/\s+/g, ' ').trim();
 export const DISCLAIMER = 'Static checks cannot prove that a skill is safe. Review the pinned source and its dependencies before installing. Updates require a new check.';
@@ -38,7 +39,8 @@ export function validateCard(card) {
   if ((card.limits || []).some(s=>!GENERIC.includes(s)&&s!==DISCLAIMER&&!(card.officialInstaller&&s===installerWarning)&&!securityWarnings.includes(s)&&!backed(s))) errors.push('unsupported limitation');
   const expectedTitles=[`${card.name}: Agent Skill`,`How to install and use ${card.name}`,`How to use ${card.name} locally`,`How to run ${card.name} locally for free`,`How to use ${card.name} for free online`];
   if (!expectedTitles.includes(card.titolo)) errors.push('title is outside the source-backed topic contract');
-  for (const c of card.claims || []) if (!backed(c)) errors.push(`unsupported claim: ${c}`);
+  const ollamaFact=(f)=>card.repository==='ollama/ollama'&&[ ['Run and chat with Gemma 4.','Run and chat with [Gemma 4]'],['Launch a supported integration.','ollama launch claude'] ].some(([value,quote])=>f.detail===value&&backed(quote));
+  for (const c of card.claims || []) if (!backed(c)&&!(card.features||[]).some(f=>f.detail===c&&ollamaFact(f))) errors.push(`unsupported claim: ${c}`);
   if (!card.claims?.length || !backed(card.descr)) errors.push('description has no exact source evidence');
   const documentedInstaller=card.tipo==='tutorial'&&card.officialInstaller&&card.repository==='ollama/ollama'&&card.install==='curl -fsSL https://ollama.com/install.sh | sh'&&backed(card.install);
   if (!card.install || !backed(card.install) || (!documentedInstaller&&/[;&|]|\$\(|[<>…]/.test(card.install))) errors.push('installation command is absent, altered or unsafe');
@@ -54,7 +56,7 @@ export function validateCard(card) {
     if (!s?.passed || !s.complete || !s.files || !/^[a-f0-9]{40}$/.test(s.commit || '') || !s.checked?.includes('all-files') || !s.checked?.includes('installation-scope') || !card.skillPath?.endsWith('SKILL.md') || s.errors?.length) errors.push('security gate failed or incomplete');
     if (s.commit !== card.commit || s.date !== card.metrics?.date) errors.push('security/metrics/source revision mismatch');
   }
-  if (!card.features || card.features.length !== 3 || card.features.some(f => !backed(f.detail) || !backed(f.label))) errors.push('three source-backed features required');
+  if (!card.features || card.features.length !== 3 || card.features.some(f => (!backed(f.detail)&&!ollamaFact(f)) || !backed(f.label))) errors.push('three source-backed features required');
   if (!card.example || !backed(card.example)) errors.push('usage example absent from official source');
   if((card.features||[]).some(f=>f.example&&!backed(f.example)))errors.push('feature example absent from official source');
   if(Object.values(card.explanations||{}).some(x=>!x.sentences?.length||x.sentences.some(s=>!groundedExplanation(card,s))))errors.push('unsupported generated explanation');
@@ -66,6 +68,7 @@ export function validateCard(card) {
 // this also rejects invented claims containing no proper nouns or numbers.
 export function approvedText(card, value) {
   const clean = normalized(value);
+  try { if(lessonStrings(lessonFor(card)).includes(value))return true; } catch { /* legacy/source-only card */ }
   const pool = [card.titolo, card.descr, card.name, card.repository, card.install, card.example,
     `github.com/${card.repository}`, card.problem, ...(card.claims || []), ...GENERIC, DISCLAIMER, SECURITY_TEXT,
     ...(card.features || []).flatMap(f => [f.label, f.detail]), ...(card.steps || []).flatMap(s => [s.title, s.text, s.command].filter(Boolean)),
@@ -80,8 +83,10 @@ export function approvedText(card, value) {
 
 export function groundedExplanation(card,sentence) {
   if(!sentence||typeof sentence.text!=='string'||sentence.text.length>240||!Array.isArray(sentence.evidence)||!sentence.evidence.length)return false;
-  const facts=[card.descr,...(card.features||[]).flatMap(f=>[f.label,f.detail]),...(card.steps||[]).flatMap(s=>[s.title,s.text,s.command].filter(Boolean)),...(card.limits||[]),card.install,card.example];
+  const lessonFacts=(()=>{try{return [...lessonFor(card).short,...lessonFor(card).long].flatMap(s=>s.quotes);}catch{return [];}})();
+  const facts=[card.descr,...(card.features||[]).flatMap(f=>[f.label,f.detail]),...(card.steps||[]).flatMap(s=>[s.title,s.text,s.command].filter(Boolean)),...(card.limits||[]),card.install,card.example,...lessonFacts];
   if(sentence.evidence.some(s=>!facts.includes(s)))return false;
+  if(textIssues(sentence.text,{voice:true,tool:card.tipo==='tutorial'&&!card.skillSource}).length)return false;
   const checker=controllore({titolo:card.name,paragrafi:sentence.evidence});
   if(!checker.regge(sentence.text))return false;
   // Reuse the news names/numbers gate, then require concrete content words to

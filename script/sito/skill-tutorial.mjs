@@ -6,6 +6,7 @@ import { videoDelPost } from './blog.mjs';
 import { validateCard, DISCLAIMER, SECURITY_TEXT } from '../skill/verifica.mjs';
 import { read } from '../skill/fonti.mjs';
 import { rank } from '../skill/raccogli.mjs';
+import { lessonFor, textIssues } from '../skill/copione.mjs';
 
 function cards(dir) {
   const p = path.join(RADICE, 'contenuti', dir);
@@ -38,13 +39,23 @@ export function pagineSkillTutorial(dati, blog) {
     if (errors.length) throw Error(`${c.slug}: ${errors.join('; ')}`);
     if (!c.videoVerified) throw Error(`${c.slug}: video gate not completed`);
     const skill = c.tipo === 'skill';
+    const lesson=lessonFor(c),tool=!skill&&!c.skillSource;
+    const teaching=lesson.long.filter(s=>s.role==='step');
+    const seenCode=new Set();
+    const once=t=>{if(!t||seenCode.has(t))return '';seenCode.add(t);return code(t);};
+    const verification=lesson.long.find(s=>s.role==='verify');
+    const publicText=[lesson.description,lesson.prerequisites,lesson.check,lesson.next,lesson.limits,...teaching.flatMap(s=>[s.title,s.text])];
+    const wording=publicText.flatMap(t=>textIssues(t,{tool}));
+    if(wording.length)throw Error(`${c.slug}: page wording gate: ${wording.join('; ')}`);
     const body = [videoDelPost(`${c.tipo}-${c.slug}`,c.titolo,{breveRelease:true}),
-      section('What it does',p(c.descr) + p('Descriptions and examples below are attributed excerpts from the pinned official sources. They describe intended behavior.')),
-      section('Who it is for',p(c.audience?.length ? `The README names these assistants: ${c.audience.join(', ')}.` : 'The README does not name specific assistant hosts. Check the installer and the source for compatibility.')),
-      section(skill ? 'How to install' : 'Step by step',skill ? code(c.install) + p('Exact installation command from the README. Review it before running it.') + (c.installSelection?p(c.installSelection):'') : `<ol>${c.steps.map(s=>`<li><h3>${esc(s.title)}</h3>${p(s.text)}${s.command?code(s.command):''}</li>`).join('')}</ol>`),
-      section('How to use it',code(c.example)+p('Documented code example from the pinned source. Read the complete source for context.')),
-      section('Features explained',c.features.map(f=>`<article><h3>${esc(f.label)}</h3><blockquote>${p(f.detail)}</blockquote></article>`).join('')),
-      section('Limits',c.limits.map(p).join('')),
+      section(skill?'What it does':'What you will build',p(lesson.description)),
+      section('What you need',p(lesson.prerequisites)),
+      ...(c.audience?.length?[section('Who it is for',p(`The README names these assistants: ${c.audience.join(', ')}.`))]:[]),
+      section(skill?'Setup and use':'Step by step',`<ol>${teaching.map((s,i)=>`<li><h3>Step ${i+1}. ${esc(s.title)}</h3>${p(s.text)}${once(s.code)}</li>`).join('')}</ol>`),
+      section('Check that it works',p(lesson.check)+once(verification?.code)),
+      ...(skill?[section('Features explained',lesson.short.slice(2,5).map(f=>`<article><h3>${esc(f.title)}</h3>${p(f.text)}</article>`).join(''))]:[]),
+      section('Next steps',p(lesson.next)),
+      section('Limits',p(lesson.limits)),
       ...(c.hardware ? [section('Hardware requirements',p(c.hardware.note)+p(c.hardware.parameters ? `The site records ${c.hardware.parameters} parameters on ${c.hardware.date}. This is not a measured RAM requirement.` : 'No measured RAM requirement is available.')+`<p><a href="/home.html">Check your machine in the Run at home simulator</a></p>`)] : []),
       section('Security check',security(c)),
       ...(c.metrics ? [section('Numbers and date',metrics(c))] : []),
@@ -57,7 +68,7 @@ export function pagineSkillTutorial(dati, blog) {
   const ranked = skills.map(c=>({...c,metrics:current.get(c.slug)||c.metrics})).sort(rank).slice(0,10);
   const unlinked = (catalogue.skills || []).filter(c=>!skills.some(s=>s.slug===c.slug)).sort(rank);
   pagina({file:'skills.html',titolo:'Best Agent Skills this week',descr:'Agent Skills with dated GitHub and skills.sh measurements, installation instructions, static checks and videos.',attiva:'/skills.html',dati,blog,
-    corpo:`<div class="articolo skill-tutorial"><header class="art-testa"><p class="art-meta">Agent Skills</p><h1>Best Agent Skills this week</h1><p class="lead">Source-based walkthroughs, dated popularity and a static repository review before publication.</p></header>
+    corpo:`<div class="articolo skill-tutorial"><header class="art-testa"><p class="art-meta">Agent Skills</p><h1>Best Agent Skills this week</h1><p class="lead">Practical guides to Agent Skills, with dated popularity and installation instructions.</p></header>
     ${section('Weekly ranking',p(catalogue.metodologia || 'Measured popularity from GitHub and skills.sh.')+p(`As of ${catalogue.aggiornato || dati.aggiornato}. ${ranked.length} published skills available; the list grows to ten only when ten entries pass all gates.`)+list(ranked,true))}
     ${section('New Agent Skills',list([...skills].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,10)) || p('The first videos and walkthroughs are being prepared.'))}
     ${section('All Agent Skills',list(skills) || p('No skill walkthrough has passed all publication gates yet.'))}

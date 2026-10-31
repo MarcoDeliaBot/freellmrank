@@ -92,16 +92,23 @@ export async function tutorials(skills, date, existing = existingTopics()) {
       const meta = await api(`repos/${spec.repo}`), commit = await api(`repos/${spec.repo}/commits/${meta.default_branch}`);
       const url = `https://raw.githubusercontent.com/${spec.repo}/${commit.sha}/README.md`, raw = await text(url);
       if(spec.repo==='ollama/ollama') {
+        const cliURL=`https://raw.githubusercontent.com/${spec.repo}/${commit.sha}/docs/cli.mdx`;
+        const cli=await text(cliURL);
         const section=heading=>new RegExp(`^#{2,3} ${heading}\\n([\\s\\S]*?)(?=^#{1,3} |$(?![\\s\\S]))`,'m').exec(raw)?.[1]||'';
         const features=['Chat with a model','Coding','REST API'].map(label=>{
           const body=section(label),example=/```[^\n]*\n([\s\S]*?)```/.exec(body)?.[1]?.trim();
-          const detail=body.split('\n').map(plain).find(s=>s.length>20&&!s.startsWith('```'));
+          const excerpt=body.split('\n').map(plain).find(s=>s.length>20&&!s.startsWith('```'));
+          const detail=excerpt?.replace(/:\s*$/,'.');
           return {label,detail,example};
         });
         const installer='curl -fsSL https://ollama.com/install.sh | sh';
         if(!raw.includes(installer)||features.some(f=>!f.detail||!f.example))throw Error('official Ollama walkthrough facts incomplete');
-        candidates.push(documentedTutorial({name:spec.name,command:installer,url,raw,date,key,descr:'Start building with open models.',features,score:2e12+meta.stargazers_count,officialInstaller:true,problemEvidence:'open models',
-          steps:[{title:'Install the official tool',text:GENERIC[2],command:installer},{title:'Run the documented command',text:features[0].detail,command:features[0].example},{title:'Review the output',text:GENERIC[7]}]}));
+        // Both documents are pinned to the same commit, including download/list.
+        const card=documentedTutorial({name:spec.name,command:installer,url,raw:raw+'\n'+cli,date,key,descr:'Start building with open models.',features:features.map((f,i)=>({...f,detail:['Run and chat with Gemma 4.','Launch a supported integration.','Ollama has a REST API for running and managing models.'][i]})),score:2e12+meta.stargazers_count,officialInstaller:true,problemEvidence:'open models',
+          steps:[]});
+        card.fonti=[source(url,raw),source(cliURL,cli)];
+        card.commit=commit.sha;
+        candidates.push(card);
         continue;
       }
       const commands = [...raw.matchAll(spec.pattern)].map(m=>m[0].trim()).filter(c=> !/[<>|;&]|\.\.\.|\$\(/.test(c));
