@@ -105,6 +105,7 @@ export function lessonFor(card) {
   } else {
     // Conservative general fallback: complete source sentences only. A source
     // too thin for three distinct facts is ineligible, rather than padded.
+    if(card.tipo==='tutorial')throw Error('A tutorial needs a documented step-by-step procedure, not a reused feature list');
     const safe=t=>!textIssues(t,{voice:true,tool:card.tipo==='tutorial'&&!card.skillSource}).length&&/[.!?]$/.test(t)&&t.split(/\s+/).length<=28;
     const facts=(card.features||[]).map(f=>f.detail.split(/(?<=[.!?])\s+/).find(safe));
     if(facts.some(f=>!f)||new Set(facts.map(norm)).size!==3)throw Error('Source lacks three complete teachable facts');
@@ -114,6 +115,12 @@ export function lessonFor(card) {
     lesson={problem:card.problem,description,prerequisites:'Read the documented requirements before installation.',check:'Follow the example and check the result against the documented behavior.',next:'Continue with the complete project documentation.',limits:'Review the instructions before granting access to your project.',
       short:[s('The problem',card.problem,'Start with the task you need to solve.','Choose the workflow for your task.',{role:'problem',duration:3,nodes:['Your task','Instructions','Result']}),s('What it is',card.name,description,description,{role:'identity',duration:7,nodes:['Assistant','Instructions','Your project']}),...features.map((f,i)=>({...f,duration:[7,7,8][i]})),s('Install','Add the instructions','Use the documented command for your assistant.','Read the project requirements and choose your assistant. Use the installation command on screen, then follow the documented example in your own project.',{code:card.install,role:'install',duration:8}),s('Repository','Read the full guide',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5})],
       long:[s('Goal',card.name,description,description,{role:'goal',nodes:['Your task','Agent Skill','Project workflow'],duration:14}),s('Requirements','Prepare your assistant','Read the requirements before granting access.','Check the project documentation for the supported assistant and setup. Review the instructions before installing.',{role:'prerequisites',nodes:['Project documentation','Assistant setup','Permissions'],duration:14}),s('Installation','Install the instructions','Use the exact command documented by the project.','Use the installation command and choose your assistant. Then return to the usage example in the project documentation.',{role:'step',code:card.install,duration:14}),...features.map(f=>({...f,duration:14})),s('Verify and continue','Compare with the documented example','Review the result in your own project.','Check the result against the documented behavior. Continue with the complete instructions for your next task.',{role:'verify',code:card.example,duration:14}),s('Source','Open the complete documentation',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5})]};
+  }
+  if(card.tipo==='skill'&&!lesson.long.some(s=>s.role==='limits')){
+    const reasons=(card.security?.warnings||[]).map(w=>w.reason).join(' ');
+    const warning=/remote|download/.test(reasons)?'Some instructions can load code from the internet. Read them before use.':/sensitive|secret|credential/.test(reasons)?'Some instructions refer to credentials or configuration files. Check what access they require.':/api|send/.test(reasons)?'Some instructions contact a service. Check which data is sent.':'Review the instructions before granting access to your project.';
+    lesson.limits=warning;
+    lesson.long.splice(-1,0,s('Permissions','Review access before use',warning,'Check which files the instructions read and which services they contact. Grant only the access your task needs.',{role:'limits',duration:14,nodes:['Read the instructions','Check file access','Check network access']}));
   }
   // Arrows only on source-documented sequences; alternatives stay unconnected.
   const ordered=new Set(['Inspect before acting','Instructions come from the installed tool','Refresh your view after changes','Download your model','Your first local conversation']);

@@ -83,7 +83,8 @@ test('a trial without a Pages preview never calls the production writer',async()
   }finally{if(previous===undefined)delete process.env.SCRIVI_URL;else process.env.SCRIVI_URL=previous;}
 });
 test('tutorials share gates and avoid duplicate keywords and titles',()=>{
-  const c=skillTutorial(fixture(),'2026-10-30');assert.deepEqual(validateCard(c),[]);assert.deepEqual(validatePlan(c,plan(c,false)),[]);
+  const c=skillTutorial(fixture(),'2026-10-30');assert.deepEqual(validateCard(c),[]);
+  assert.throws(()=>plan(c,false),/documented step-by-step procedure/);
   assert.ok(topicExists(c,[{key:c.key}]));assert.ok(topicExists(c,[{titolo:c.titolo.toUpperCase()}]));
   assert.equal(topicExists(c,[{key:'unrelated topic'}]),false);
   const unsafe=structuredClone(c);delete unsafe.skillSource;assert.ok(validateCard(unsafe).includes('skill installation tutorial requires a reviewed target repository'));
@@ -138,4 +139,9 @@ test('the same forbidden-word gate covers the visible label and code annotations
   assert.ok(validatePlan(card,p).some(e=>e.includes('forbidden internal wording')));
   p.scene[3].etichetta='Step 2';p.scene[3].dati.comando='echo "This pipeline"';
   assert.ok(validatePlan(card,p).some(e=>e.includes('forbidden internal wording in code')));
+});
+test('the general skill fallback keeps a plain-language permissions scene',()=>{
+  const card=fixture();card.security.warnings=[{reason:'remote-code-load',file:'SKILL.md',line:5}];
+  const scene=plan(card,false).scene.find(s=>s.role==='limits');assert.ok(scene);
+  assert.match(scene.dati.testo,/internet/);assert.equal(scene.dati.testo.includes('remote-code-load'),false);
 });
