@@ -1,0 +1,346 @@
+{
+  "name": "FreeLLMArena · primo commento",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "25 */2 * * *"
+            }
+          ]
+        }
+      },
+      "id": "d4e5f6a7-0001-4000-8000-000000000001",
+      "name": "Ogni due ore",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        -100
+      ],
+      "notes": "31/10/2026, Marco: «tutto a n8n». Il commento esce come FreeLLMArena qualunque sia il canale attivo in Chrome. L'API di YouTube non sa fissarlo in cima. Un commento costa 50 unità di quota, un caricamento 1.600."
+    },
+    {
+      "parameters": {},
+      "id": "d4e5f6a7-0002-4000-8000-000000000002",
+      "name": "Prova a mano",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://www.googleapis.com/youtube/v3/channels?part=id,snippet&mine=true",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "youTubeOAuth2Api",
+        "options": {}
+      },
+      "id": "d4e5f6a7-0003-4000-8000-000000000003",
+      "name": "Di che canale è il collegamento",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube FreeLLMArena"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Stessa guardia del flusso dei video: se il collegamento non è FreeLLMArena non scrive niente.\nconst GIUSTO = 'UCaDO6FcvstiPM83lh5eH7_w';\nconst canale = ($input.first().json.items || [])[0] || {};\nif (canale.id !== GIUSTO) throw new Error('Canale sbagliato: il collegamento YouTube è su ' + (canale.snippet?.title || canale.id || 'nessun canale') + ', non su FreeLLMArena.');\nreturn [{ json: { canale: GIUSTO } }];"
+      },
+      "id": "d4e5f6a7-0004-4000-8000-000000000004",
+      "name": "Solo sul canale FreeLLMArena",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=50&playlistId=UUaDO6FcvstiPM83lh5eH7_w",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "youTubeOAuth2Api",
+        "options": {}
+      },
+      "id": "d4e5f6a7-0005-4000-8000-000000000005",
+      "name": "Ultimi video del canale",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        0
+      ],
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube FreeLLMArena"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Salta i video già sistemati: così ogni giro costa poco della quota YouTube.\nconst memoria = $getWorkflowStaticData('global');\nconst fatti = memoria.fatti || [];\nconst ids = ($input.first().json.items || []).map((i) => i.contentDetails?.videoId).filter((v) => v && !fatti.includes(v)).slice(0, 20);\nreturn ids.length ? [{ json: { ids: ids.join(',') } }] : [];"
+      },
+      "id": "d4e5f6a7-0006-4000-8000-000000000006",
+      "name": "Solo i video da controllare",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://www.googleapis.com/youtube/v3/videos?part=snippet,status&id={{ $json.ids }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "youTubeOAuth2Api",
+        "options": {}
+      },
+      "id": "d4e5f6a7-0007-4000-8000-000000000007",
+      "name": "Titolo e descrizione",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        0
+      ],
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube FreeLLMArena"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return ($input.first().json.items || []).filter((v) => v.status?.privacyStatus === 'public').map((v) => ({ json: { video: v.id, titolo: v.snippet.title, descrizione: v.snippet.description } }));"
+      },
+      "id": "d4e5f6a7-0008-4000-8000-000000000008",
+      "name": "Uno per video",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults=100&videoId={{ $json.video }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "youTubeOAuth2Api",
+        "options": {}
+      },
+      "id": "d4e5f6a7-0009-4000-8000-000000000009",
+      "name": "Commenti già sul video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1680,
+        0
+      ],
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube FreeLLMArena"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Testo del primo commento (video/da-pubblicare/COMMENTO.md): solo frasi della descrizione del video, senza inventare.\nfunction testoCommento(titolo, descrizione) {\n  const righe = String(descrizione || '').split('\\n').map((r) => r.trim()).filter(Boolean);\n  const prima = righe.find((r) => !/^(Full |Sources?:|Project:|Chapters|\\d+:\\d)/i.test(r)) || String(titolo).replace(/#\\w+/g, '').trim();\n  const frasi = prima.match(/.+?[.!?](?=\\s|$)/g) || [prima];\n  let sunto = '';\n  for (const f of frasi) if ((sunto + f).length <= 220) sunto += f; else break;\n  if (!sunto) sunto = prima.slice(0, 217).replace(/[\\s,;:]+\\S*$/, '') + '...';\n  if (!/[.!?]$/.test(sunto.trim())) sunto = sunto.trim() + '.';\n  const link = [...String(descrizione || '').matchAll(/^Full (video|story|guide|rankings):\\s*(\\S+)/gim)].map((m) => 'Full ' + m[1].toLowerCase() + ': ' + m[2]);\n  if (!link.some((l) => l.includes('freellmarena.com'))) link.push('Full rankings: https://freellmarena.com');\n  const tema = titolo + ' ' + prima;\n  const domanda = /\\b(GPU|RTX|Radeon|RX \\d|Arc \\w?\\d)/i.test(tema) ? 'Which GPU should we test next?'\n    : /\\bweek/i.test(tema) ? 'Which free model surprised you this week?'\n    : /\\b(model|weights|LLM)\\b/i.test(tema) ? 'Which open model should we test next?'\n    : 'Which AI story should we cover next?';\n  return 'Quick summary: ' + sunto.trim() + ' ' + link.join(' ') + '\\n' + domanda;\n}\n\n// 26/10/2026, Marco: poche scritture per volta, tanti commenti uguali possono sembrare spam. Tetto: 2 a giro, un giro ogni 2 ore.\nconst CANALE = 'UCaDO6FcvstiPM83lh5eH7_w';\nconst TETTO = 2;\nconst memoria = $getWorkflowStaticData('global');\nmemoria.fatti = memoria.fatti || [];\nconst video = $('Uno per video').all();\nconst scelti = [];\n$input.all().forEach((it, i) => {\n  const v = video[i].json;\n  const gia = (it.json.items || []).some((t) => t.snippet?.topLevelComment?.snippet?.authorChannelId?.value === CANALE);\n  if (gia || !Array.isArray(it.json.items)) memoria.fatti.push(v.video); // già commentato, o commenti chiusi\n  else if (scelti.length < TETTO) scelti.push({ json: { video: v.video, canale: CANALE, testo: testoCommento(v.titolo, v.descrizione) } });\n});\nmemoria.fatti = memoria.fatti.slice(-500);\nreturn scelti;"
+      },
+      "id": "d4e5f6a7-0010-4000-8000-000000000010",
+      "name": "Prepara il testo",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1920,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://www.googleapis.com/youtube/v3/commentThreads?part=snippet",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "youTubeOAuth2Api",
+        "options": {},
+        "method": "POST",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ snippet: { videoId: $json.video, channelId: $json.canale, topLevelComment: { snippet: { textOriginal: $json.testo } } } }) }}"
+      },
+      "id": "d4e5f6a7-0011-4000-8000-000000000011",
+      "name": "Scrivi il commento",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2160,
+        0
+      ],
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube FreeLLMArena"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Segna i video commentati: il giro dopo non li rilegge.\nconst memoria = $getWorkflowStaticData('global');\nmemoria.fatti = [...(memoria.fatti || []), ...$('Prepara il testo').all().map((i) => i.json.video)].slice(-500);\nreturn $input.all().map((it, i) => ({ json: { video: $('Prepara il testo').all()[i].json.video, commento: it.json.id } }));"
+      },
+      "id": "d4e5f6a7-0012-4000-8000-000000000012",
+      "name": "Segna come fatto",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2400,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Ogni due ore": {
+      "main": [
+        [
+          {
+            "node": "Di che canale è il collegamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prova a mano": {
+      "main": [
+        [
+          {
+            "node": "Di che canale è il collegamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Di che canale è il collegamento": {
+      "main": [
+        [
+          {
+            "node": "Solo sul canale FreeLLMArena",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Solo sul canale FreeLLMArena": {
+      "main": [
+        [
+          {
+            "node": "Ultimi video del canale",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ultimi video del canale": {
+      "main": [
+        [
+          {
+            "node": "Solo i video da controllare",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Solo i video da controllare": {
+      "main": [
+        [
+          {
+            "node": "Titolo e descrizione",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Titolo e descrizione": {
+      "main": [
+        [
+          {
+            "node": "Uno per video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Uno per video": {
+      "main": [
+        [
+          {
+            "node": "Commenti già sul video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Commenti già sul video": {
+      "main": [
+        [
+          {
+            "node": "Prepara il testo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara il testo": {
+      "main": [
+        [
+          {
+            "node": "Scrivi il commento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scrivi il commento": {
+      "main": [
+        [
+          {
+            "node": "Segna come fatto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Rome"
+  },
+  "pinData": {},
+  "active": false
+}
