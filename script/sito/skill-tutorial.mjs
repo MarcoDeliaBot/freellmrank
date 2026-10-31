@@ -26,8 +26,9 @@ function metrics(c) {
   return `<p>Observed on <time datetime="${esc(m.date)}">${fmtData(m.date)}</time>. GitHub counts apply to the repository; skills.sh counts apply to this skill.</p><dl>${values.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join('')}</dl>`;
 }
 function security(c) {
-  if (!c.security) return p('Commands were checked against official documentation. This guide does not include a repository security certification.');
-  return `<aside class="cat-scheda">${p(`Checked on ${c.security.date}, at commit ${c.commit}. ${c.security.files} repository files inspected.`)}${p(SECURITY_TEXT)}${p('Raster documentation images were identified by file signature; other opaque binaries were rejected. No repository code was executed.')}<p><strong>${esc(DISCLAIMER)}</strong></p></aside>`;
+  if (!c.security) return p('Commands were checked against official documentation. This guide does not include a repository security certification.')+(c.officialInstaller?p('Warning: the official installer downloads and executes a script. Review it before running.'): '');
+  const warnings=c.security.warnings||[];
+  return `<aside class="cat-scheda">${p(`Checked on ${c.security.date}, at commit ${c.commit}. ${c.security.files} files inspected in installation scope: ${c.security.scope||c.skillPath}.`)}${p(SECURITY_TEXT)}${warnings.length?`<h3>Warnings</h3><ul>${warnings.map(w=>`<li>${esc(w.reason)} — <a href="https://github.com/${esc(c.repository)}/blob/${c.commit}/${esc(w.file)}#L${w.line}">${esc(w.file)}:${w.line}</a></li>`).join('')}</ul>`:p('No blocking pattern or documentation warning was found in this installation scope.')}<p><strong>${esc(DISCLAIMER)}</strong></p></aside>`;
 }
 export function pagineSkillTutorial(dati, blog) {
   const catalogue = read('dati/skill.json', {skills:[]});
@@ -40,7 +41,7 @@ export function pagineSkillTutorial(dati, blog) {
     const body = [videoDelPost(`${c.tipo}-${c.slug}`,c.titolo,{breveRelease:true}),
       section('What it does',p(c.descr) + p('Descriptions and examples below are attributed excerpts from the pinned official sources. They describe intended behavior.')),
       section('Who it is for',p(c.audience?.length ? `The README names these assistants: ${c.audience.join(', ')}.` : 'The README does not name specific assistant hosts. Check the installer and the source for compatibility.')),
-      section(skill ? 'How to install' : 'Step by step',skill ? code(c.install) + p('Exact installation command from the README. Review it before running it.') : `<ol>${c.steps.map(s=>`<li><h3>${esc(s.title)}</h3>${p(s.text)}${s.command?code(s.command):''}</li>`).join('')}</ol>`),
+      section(skill ? 'How to install' : 'Step by step',skill ? code(c.install) + p('Exact installation command from the README. Review it before running it.') + (c.installSelection?p(c.installSelection):'') : `<ol>${c.steps.map(s=>`<li><h3>${esc(s.title)}</h3>${p(s.text)}${s.command?code(s.command):''}</li>`).join('')}</ol>`),
       section('How to use it',`<blockquote>${p(c.example)}</blockquote>${p('Documented example or workflow from the README. Read the complete source for context.')}`),
       section('Features explained',c.features.map(f=>`<article><h3>${esc(f.label)}</h3><blockquote>${p(f.detail)}</blockquote></article>`).join('')),
       section('Limits',c.limits.map(p).join('')),

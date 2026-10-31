@@ -54,16 +54,27 @@ export function directory(html) {
     else if (c === ']' && --depth === 0) break;
   }
   const rows = JSON.parse(stream.slice(start, end + 1));
-  return rows.filter(x => /^[\w.-]+\/[\w.-]+$/.test(x.source) && /^[\w.-]+$/.test(x.skillId) && Number.isSafeInteger(x.installs));
+  return rows.filter(x => /^[\w./-]+$/.test(x.source) && /^[\w.-]+$/.test(x.skillId) && Number.isSafeInteger(x.installs));
 }
 
-export async function scanRepository(repo) {
+export async function scanRepository(repo, identities=[]) {
   const meta = await api(`repos/${repo}`);
   const commit = await api(`repos/${repo}/commits/${meta.default_branch}`);
   const policy=createHash('sha256').update(fs.readFileSync(path.join(ROOT,'script/skill/sicurezza.py'))).digest('hex');
-  const file = path.join(ROOT, '.ai', 'skill-cache', `${slug(repo)}-${commit.sha}-${policy.slice(0,12)}.json`);
+  const selection=createHash('sha256').update([...identities].sort().join('\n')).digest('hex').slice(0,8);
+  const file = path.join(ROOT, '.ai', 'skill-cache', `${slug(repo)}-${commit.sha}-${policy.slice(0,12)}-${selection}.json`);
   if (!fs.existsSync(file)) {
-    const r = spawnSync(process.env.PYTHON || (process.platform === 'win32' ? 'python' : 'python3'), [path.join(ROOT, 'script/skill/sicurezza.py'), repo, commit.sha, file], { encoding: 'utf8', timeout: 180000, maxBuffer: 2e6 });
+    const tree=await api(`repos/${repo}/git/trees/${commit.sha}?recursive=1`);
+    if(tree.truncated)throw Error('GitHub tree truncated; review incomplete');
+    const paths=tree.tree.filter(x=>/(^|\/)SKILL\.md$/.test(x.path)&&!/(^|\/)(?:tests?|fixtures?|\.automations|\.github|node_modules)\//i.test(x.path)).map(x=>x.path);
+    const selected=identities.length?paths.filter(p=>identities.some(id=>path.posix.basename(path.posix.dirname(p)).toLowerCase()===id.toLowerCase() || p==='SKILL.md')):paths.slice(0,20);
+    // Download only the installation units, not a CLI/framework archive. Root
+    // README is retained separately as installation evidence, never executable input.
+    const roots=selected.map(p=>path.posix.dirname(p));
+    const entries=tree.tree.filter(x=>x.type==='blob'&&(roots.some(root=>root==='.'||x.path.startsWith(root+'/'))||/^readme\.md$/i.test(x.path)));
+    const inventory=file+'.inventory.json';fs.mkdirSync(path.dirname(file),{recursive:true});
+    fs.writeFileSync(inventory,JSON.stringify({repository:repo,commit:commit.sha,paths:selected,entries}));
+    const r = spawnSync(process.env.PYTHON || (process.platform === 'win32' ? 'python' : 'python3'), [path.join(ROOT, 'script/skill/sicurezza.py'), repo, commit.sha, file,'--inventory',inventory], { encoding: 'utf8', timeout: 300000, maxBuffer: 2e6 });
     if (r.status !== 0) throw Error(`Scan failed: ${r.stderr?.slice(-500)}`);
   }
   const scan = JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -77,8 +88,10 @@ export function growth(history, repo, stars, date) {
   return observation ? { value: stars - observation.stars[repo], from: observation.date, to: date } : null;
 }
 
-export function installFrom(readme, repo) {
+export function installFrom(readme, repo, identity) {
   const commands = [...readme.matchAll(/(?:^|\n)\s*(?:\$\s*)?((?:npx(?:\s+-y|\s+--yes)?\s+skills(?:@[\w.-]+)?\s+add|claude\s+plugin\s+install)\s+[^\n`]+)/g)].map(m => m[1].trim());
   // Preserve the exact command. Placeholders, chained commands and remote execution are never eligible.
-  return commands.find(c => c.toLowerCase().includes(repo.toLowerCase()) && !/[<>…]|\.\.\.|[;&|]|\$\(/.test(c) && c.length <= 180) || null;
+  const eligible=commands.filter(c => c.toLowerCase().includes(repo.toLowerCase()) && !/[<>…]|\.\.\.|[;&|]|\$\(/.test(c) && c.length <= 180);
+  if(!identity)return eligible[0]||null;
+  return eligible.find(c=>new RegExp(`--skill(?:=|\\s+)["']?${identity}["']?(?:\\s|$)`,'i').test(c)) || eligible.find(c=>!c.includes('--skill')) || null;
 }
