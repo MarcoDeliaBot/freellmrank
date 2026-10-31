@@ -44,13 +44,13 @@ export default {
     const x = Math.round((W - w) / 2), y = vert ? alto + Math.max(0, Math.round((fondo - alto - h - spazioTesti) / 2)) : alto;
     const di = testo(dati.didascalia), cr = testo(dati.credito);
     const fsD = misura(di, { larghezza: maxW, max: vert ? 64 : 56, min: vert ? 40 : 34, fattore: 0.5 });
-    const fsC = vert ? 32 : 28;
+    const fsC = vert ? (dati.skillTutorial?36:32) : 28;
     const yT = y + h + (vert ? 48 : 34);
     const D = s3(durata);
     const src = `assets/media/${esc(nomeFile(dati.media))}`;
     const video = /\.mp4$/i.test(dati.media);
     const tDi = Math.min(Math.max(0.3, t('didascalia', 0.6)), Math.max(0.3, durata - 1.5));
-    const css = `
+    const css = `${dati.skillTutorial?`.${px}barra{gap:36px;letter-spacing:.08em}.${px}barra span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(100% - 160px);flex:1}.${px}barra span:last-child{white-space:nowrap;flex:none}`:''}
     #${px}cornice { position: absolute; left: ${x}px; top: ${y}px; width: ${w}px; height: ${h}px; border-radius: 18px; overflow: hidden;
       border: 4px solid ${C.accento}; background: ${C.scuro}; opacity: 0; }
     #${px}cornice video, #${px}cornice img { width: 100%; height: 100%; object-fit: cover; display: block; }

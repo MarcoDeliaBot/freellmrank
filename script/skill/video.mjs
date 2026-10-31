@@ -31,7 +31,7 @@ function slide(title,body,speech,duration,command,elements,opening=false) {
     parlato:speech,voce:speech.join(' '),durata:duration};
 }
 function featureScene(card,f,duration,short) {
-  if(f.example)return slide(f.label,'',[short?words(f.detail,20):f.detail,...(short?[]:[GENERIC[3]])],duration,examplePanel(card,f));
+  if(f.example)return slide(f.label,'',[short?words(f.detail,20):f.detail],duration,examplePanel(card,f));
   let fact=f.detail;
   if(fact.toLowerCase().startsWith(f.label.toLowerCase()))fact=fact.slice(f.label.length).replace(/^[\s:,.–—-]+/,'');
   if(!fact)return slide(f.label,'',[f.detail],duration,examplePanel(card));
@@ -123,7 +123,7 @@ export async function render(card,folder) {
       if(index>=0) {
         const original=piano.scene[index];
         const ratio=JSON.parse(run(process.env.PYTHON || (process.platform==='win32'?'python':'python3'),['-c','from PIL import Image;import json,sys;im=Image.open(sys.argv[1]);print(json.dumps(im.width/im.height))',shot.file]));
-        piano.scene[index]={...original,stampo:'immagine',dati:{media:shot.file,rapporto:ratio,didascalia:words(card.features[0].label,6).slice(0,48),credito:card.repository.slice(0,44)}};
+        piano.scene[index]={...original,stampo:'immagine',dati:{media:shot.file,rapporto:ratio,didascalia:words(card.features[0].label,6).slice(0,48),credito:card.repository.slice(0,44),skillTutorial:true}};
       }
     }
     // Media paths are validated separately; they are not factual text.

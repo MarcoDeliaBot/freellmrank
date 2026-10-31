@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { directory, growth, installFrom, licenseFrom, labelFrom } from './fonti.mjs';
+import { directory, growth, installFrom, licenseFrom, labelFrom, plain } from './fonti.mjs';
 import { validateCard, digest, topicExists, GENERIC } from './verifica.mjs';
 import { plan, validatePlan } from './video.mjs';
 import { skillTutorial, conflictsRecent } from './tutorial.mjs';
@@ -91,6 +91,10 @@ test('README install commands retain flags, case and version specifiers',()=>{
   assert.equal(licenseFrom('',null),null);
   assert.equal(labelFrom('Does the work (writes code, spec, doc, etc.)'),'Does the work');
   assert.equal(labelFrom('The critic scores the work 1–10 with specific, actionable feedback'),'The critic scores the work 1–10');
+});
+test('Markdown cleanup preserves literal inline HTML, code paths and placeholders',()=>{
+  assert.equal(plain('Copy `<style>` and `compositions/<name>.html`.'),'Copy <style> and compositions/<name>.html.');
+  assert.equal(plain('<div>Visible **text**</div>'),'Visible text');
 });
 test('skills.sh payload handles nested weekly observations and schema drift',()=>{
   const stream='x:{"initialSkills":[{"source":"owner/repo","skillId":"demo","installs":12,"weeklyInstalls":[2,3]}]}';

@@ -26,6 +26,7 @@ export function cardFrom(repo, entry, result, date, history) {
   if(!descr)throw Error('no scoped skill description');
   const sections=[...content.matchAll(/^#{2,4}\s+([^\n]+)\n([\s\S]*?)(?=^#{1,4}\s|$(?![\s\S]))/gm)];
   const features=[];
+  const featureSources=new Set();
   for(const section of sections) {
     const label=labelFrom(plain(section[1]),56);
     if(/^(?:install|prerequisite)|reference|resource|license|security|contributing|troubleshoot|when to|overview|introduction|quick start/i.test(label))continue;
@@ -37,12 +38,29 @@ export function cardFrom(repo, entry, result, date, history) {
     if(features.length>=3)break;
     if(detail!==descr&&!features.some(f=>f.detail===detail))features.push({label:labelFrom(detail,52),detail});
   }
+  // The registry's install/search/wire contract is explicit. Keep these useful
+  // operations instead of turning plugin prerequisites into feature slides.
+  if(identity==='hyperframes-registry') {
+    const bullet=label=>lines.find(l=>new RegExp(`^- \\*\\*${label}\\*\\*:`).test(l));
+    const block=bullet('Block'),component=bullet('Component');
+    const search=lines.find(l=>l.startsWith('- Search is local'));
+    const commands=/```bash\n([\s\S]*?)```/.exec(content)?.[1]?.trim().split('\n');
+    const ref=Object.keys(scan.texts).find(p=>p.endsWith('/references/wiring-components.md'));
+    const refExample=ref&&/```html\n([\s\S]*?)```/.exec(scan.texts[ref])?.[1]?.trim();
+    if(block&&component&&search&&commands?.length>=2&&refExample) {
+      const fact=s=>plain(s.replace(/^- /,'')).split(/(?<=[.!?])\s/).slice(0,2).join(' ');
+      features.splice(0,3,{label:'Search',detail:fact(search),example:commands[0]},
+        {label:'Block',detail:fact(block),example:commands[1]},
+        {label:'Component',detail:fact(component),example:refExample});
+      featureSources.add(ref);
+    }
+  }
   if(features.length!==3)throw Error('not enough scoped skill facts');
   const blocks=[...content.matchAll(/```[^\n]*\n([\s\S]*?)```/g)].map(m=>m[1].trim()).filter(t=>t&&t.length<=1100&&!/^(?:curl|wget).*\|/s.test(t)&&!t.includes('npx skills add'));
   const example=blocks.find(s=>s.length<=600)||blocks[0];
   if(!example)throw Error('no actual usage code block in skill or README');
   const exampleLine=skillText.slice(0,skillText.indexOf(example)).split('\n').length;
-  const fonti=Object.entries(evidence).filter(([p])=>p===readmePath||p===skillPath||scan.warnings.some(w=>w.file===p)).map(([p,t])=>({url:`https://github.com/${repo}/blob/${commit.sha}/${p}`,testo:t,sha256:digest(t),tipo:p===readmePath?'README':p===skillPath?'SKILL.md':'Skill reference'}));
+  const fonti=Object.entries(evidence).filter(([p])=>p===readmePath||p===skillPath||featureSources.has(p)||scan.warnings.some(w=>w.file===p)).map(([p,t])=>({url:`https://github.com/${repo}/blob/${commit.sha}/${p}`,testo:t,sha256:digest(t),tipo:p===readmePath?'README':p===skillPath?'SKILL.md':'Skill reference'}));
   const corpus=plain(skillText);
   const task=['browser automation','blocks and components','video editing','find skills','mobile app screens','AI images','videos','images','skills'].find(t=>corpus.toLowerCase().includes(t.toLowerCase()))||name;
   const problem=`Need ${task}?`;

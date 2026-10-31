@@ -42,7 +42,7 @@ export function pagineSkillTutorial(dati, blog) {
       section('What it does',p(c.descr) + p('Descriptions and examples below are attributed excerpts from the pinned official sources. They describe intended behavior.')),
       section('Who it is for',p(c.audience?.length ? `The README names these assistants: ${c.audience.join(', ')}.` : 'The README does not name specific assistant hosts. Check the installer and the source for compatibility.')),
       section(skill ? 'How to install' : 'Step by step',skill ? code(c.install) + p('Exact installation command from the README. Review it before running it.') + (c.installSelection?p(c.installSelection):'') : `<ol>${c.steps.map(s=>`<li><h3>${esc(s.title)}</h3>${p(s.text)}${s.command?code(s.command):''}</li>`).join('')}</ol>`),
-      section('How to use it',`<blockquote>${p(c.example)}</blockquote>${p('Documented example or workflow from the README. Read the complete source for context.')}`),
+      section('How to use it',code(c.example)+p('Documented code example from the pinned source. Read the complete source for context.')),
       section('Features explained',c.features.map(f=>`<article><h3>${esc(f.label)}</h3><blockquote>${p(f.detail)}</blockquote></article>`).join('')),
       section('Limits',c.limits.map(p).join('')),
       ...(c.hardware ? [section('Hardware requirements',p(c.hardware.note)+p(c.hardware.parameters ? `The site records ${c.hardware.parameters} parameters on ${c.hardware.date}. This is not a measured RAM requirement.` : 'No measured RAM requirement is available.')+`<p><a href="/home.html">Check your machine in the Run at home simulator</a></p>`)] : []),

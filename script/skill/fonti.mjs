@@ -8,7 +8,13 @@ export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 export const read = (f, fallback = null) => fs.existsSync(path.join(ROOT, f)) ? JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8')) : fallback;
 export function write(f, data) { const p = path.join(ROOT, f); fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, JSON.stringify(data, null, 1) + '\n'); }
 export const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-export const plain = s => String(s).replace(/!\[[^\]]*\]\([^)]*\)/g, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/<[^>]+>/g, '').replace(/[*_`]/g, '').replace(/\s+/g, ' ').trim();
+export function plain(value) {
+  const code=[];
+  return String(value).replace(/`([^`\n]+)`/g,(_m,s)=>`CODETOKEN${code.push(s)-1}ENDTOKEN`)
+    .replace(/!\[[^\]]*\]\([^)]*\)/g,'').replace(/\[([^\]]+)\]\([^)]*\)/g,'$1')
+    .replace(/<[^>]+>/g,'').replace(/[*_`]/g,'')
+    .replace(/CODETOKEN(\d+)ENDTOKEN/g,(_m,i)=>code[Number(i)]).replace(/\s+/g,' ').trim();
+}
 export function labelFrom(text, max=64) {
   let s=String(text).split(/\s*\(/)[0].trim();
   const qualifier=s.indexOf(' with ');
