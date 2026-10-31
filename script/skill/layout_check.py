@@ -57,6 +57,12 @@ CHECK_QUALITY = r'''({w,limit,opening=false}) => {
  const norm=t=>t.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
  const seen=new Set();
  for(const e of leaves){const t=norm(e.textContent);if(t.length>12&&seen.has(t))issues.push('repeated on-screen text');seen.add(t);}
+ const ink=leaves.map(e=>{const r=document.createRange();r.selectNodeContents(e);return r.getBoundingClientRect();});
+ for(let a=0;a<ink.length;a++)for(let b=a+1;b<ink.length;b++){
+  const x=Math.min(ink[a].right,ink[b].right)-Math.max(ink[a].left,ink[b].left);
+  const y=Math.min(ink[a].bottom,ink[b].bottom)-Math.max(ink[a].top,ink[b].top);
+  if(x>2&&y>2)issues.push('content text overlaps another field');
+ }
  const rects=leaves.map(e=>({e,b:e.getBoundingClientRect()})).filter(x=>x.b.width>0&&x.b.top>=140&&x.b.bottom<=limit+1);
  const media=document.querySelector('[id$="cornice"] img,[id$="cornice"] video');
  if(media)rects.push({e:media,b:media.getBoundingClientRect()});

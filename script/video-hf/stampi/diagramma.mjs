@@ -24,8 +24,8 @@ export default {
     const arrows=[0,1].map(i=>{const x1=xs[i]+widths[i]/2,y1=ys[i]+h,x2=xs[i+1]+widths[i+1]/2,y2=ys[i+1],mid=(y1+y2)/2;return `<path id="${px}e${i}" d="M${x1} ${y1} L${x1} ${mid} L${x2} ${mid} L${x2} ${y2-2}" stroke="${C.crema2}" stroke-width="3" fill="none" marker-end="url(#${px}arrow)"/>`;}).join('');
     const corpo=`<div data-content-area style="position:absolute;inset:0"><div id="${px}titolo">${esc(d.titolo)}</div>${d.testo?`<div id="${px}testo">${esc(d.testo)}</div>`:''}<svg data-visual class="${px}edges" viewBox="0 0 ${F.W} ${F.H}"><defs><marker id="${px}arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="${C.crema2}"/></marker></defs>${d.ordine?arrows:''}</svg>${nodes}</div>`;
     const css=`.${px}barra{gap:36px;letter-spacing:.08em}.${px}barra span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(100% - 160px);flex:1}.${px}barra span:last-child{white-space:nowrap;flex:none}
-      #${px}titolo{position:absolute;top:${v?205:190}px;left:${M}px;width:${v?F.W-2*M:660}px;font-size:${d.apertura?(v?116:110):(v?82:80)}px;line-height:1.1;}
-      #${px}testo{position:absolute;top:${v?470:510}px;left:${M}px;width:${v?F.W-2*M:660}px;font-size:${v?46:40}px;line-height:1.2;color:${C.crema2};}
+      #${px}titolo{position:absolute;top:${v?205:190}px;left:${M}px;width:${v?F.W-2*M:660}px;font-size:${d.apertura?(v?104:110):(v?82:80)}px;line-height:1.1;}
+      #${px}testo{position:absolute;top:${v?(d.apertura?520:470):510}px;left:${M}px;width:${v?F.W-2*M:660}px;font-size:${v?46:40}px;line-height:1.2;color:${C.crema2};}
       .${px}edges{position:absolute;inset:0;width:100%;height:100%;}
       .${px}node{position:absolute;display:flex;align-items:center;padding:28px;border:2px solid;border-radius:6px;font:600 ${v?52:44}px/1.18 Arial,sans-serif;overflow-wrap:anywhere;}`;
     // Grouped options are explicitly distinguished from an ordered workflow.

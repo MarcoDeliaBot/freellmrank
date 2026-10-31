@@ -46,6 +46,12 @@ class LayoutGate(unittest.TestCase):
         result=self.page.evaluate(CHECK_QUALITY,{'w':1080,'limit':1180})
         self.assertIn('label wraps or truncates',result)
 
+    def test_title_intersecting_a_body_field_is_rejected(self):
+        title='<div style="position:absolute;left:72px;top:205px;width:936px;font:116px/1.1 Georgia">Need reliable browser automation?</div>'
+        body='<div style="position:absolute;left:72px;top:350px;width:936px;font:46px/1.2 Georgia">Give your assistant a browser workflow.</div>'
+        self.assertIn('content text overlaps another field',self.quality(title+body))
+        self.assertNotIn('content text overlaps another field',self.quality(title+body.replace('top:350px','top:800px')))
+
 
 
 class EncodedFrameGate(unittest.TestCase):

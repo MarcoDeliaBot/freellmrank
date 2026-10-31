@@ -74,13 +74,13 @@ export function lessonFor(card) {
       click=need('agent-browser click @e2'), refs=need('Accessibility-tree snapshots with element refs for reliable interaction'),
       specialized=need('Specialized skills for Electron apps, Slack, exploratory testing, cloud providers'),
       install=need(card.install),chrome=need('Chrome/Chromium via CDP'),refresh=need('Re-snapshot after page changes');
-    lesson={problem:'Need reliable browser automation?',description:'An Agent Skill that teaches an assistant how to use the agent-browser tool.',
+    lesson={problem:'Need browser automation?',description:'An Agent Skill that teaches an assistant how to use the agent-browser tool.',
       prerequisites:'Use an assistant that supports Agent Skills. Install the browser tool and Chrome separately as documented.',
       check:'Take a fresh snapshot after the page changes. Use references from the current snapshot for the next action.',
       next:'Load a specialized workflow for desktop apps, exploratory testing or supported cloud browsers.',
       limits:'The skill loads workflow instructions from the installed tool. Review those instructions and browser permissions before use.',
       short:[
-        s('The problem','Need reliable browser automation?','Give your assistant a browser workflow.','Does your assistant need to operate a website?',{role:'problem',duration:3,nodes:['A website','Your assistant','Browser actions'],quotes:[desc]}),
+        s('The problem','Need browser automation?','Give your assistant a browser workflow.','Does your assistant need to operate a website?',{role:'problem',duration:3,nodes:['A website','Your assistant','Browser actions'],quotes:[desc]}),
         s('What it is','agent-browser skill','Teach an assistant to navigate, inspect and interact with websites.','The agent browser skill teaches an assistant to navigate websites, inspect pages, and use their controls.',{role:'identity',duration:7,nodes:['Agent Skill','Browser tool','Website'],quotes:[desc,open,snapshot,click]}),
         s('Feature 1','Load the right workflow','Get instructions that match the installed tool version.','First, load the core workflow from the installed tool. Its instructions match the version you are actually using.',{role:'feature',duration:7,code:core,quotes:[core,need('The CLI serves skill content that always matches the installed version')]}),
         s('Feature 2','Inspect before acting','A snapshot supplies references for the next browser action.','Next, inspect the page through a snapshot. Use the element references to choose the control your assistant should interact with.',{role:'feature',duration:7,nodes:['Open a page','Inspect a snapshot','Act on a reference'],quotes:[open,snapshot,click,refs]}),

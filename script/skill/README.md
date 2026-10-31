@@ -90,7 +90,7 @@ clipping. The actual background is calibrated from the frame's outer gutters,
 so RGB/YUV/JPEG color conversion cannot hide a real content panel. A codec
 regression preserves the same measured height across that conversion.
 Additional DOM checks cover
-clipping, one-line headers and a 44px minimum Short content font. Long lessons
+clipping, intersecting text fields, one-line headers and a 44px minimum Short content font. Long lessons
 may last 90–240 seconds. Source-documented workflows have orthogonal arrows;
 option groups have no invented dependencies.
 

@@ -22,7 +22,7 @@ export default {
       #${px}testo{font:400 ${v?46:40}px/1.22 'Source Serif 4',Georgia,serif;color:${C.crema2};}
       #${px}risultato{padding:${v?42:32}px;border:2px solid ${C.crema2};background:${C.pannello};font:500 ${v?50:42}px/1.24 'Source Serif 4',Georgia,serif;min-height:${v?390:290}px;display:flex;align-items:center;}
       #${px}comando{font:500 ${size}px/1.3 'JetBrains Mono',monospace;white-space:break-spaces;overflow-wrap:anywhere;word-break:break-word;tab-size:2;padding:${v?42:28}px;border:2px solid ${C.accento};border-radius:6px;background:${C.scuro};color:${C.crema};min-height:${v?640:0}px;display:flex;align-items:center;}
-      #${px}link{font:500 ${v?64:74}px/1.35 'JetBrains Mono',monospace;overflow-wrap:anywhere;padding:${v?52:60}px;border:2px solid ${C.accento};background:${C.scuro};min-height:${v?1150:570}px;display:flex;align-items:center;}`;
+      #${px}link{font:500 ${v?54:74}px/1.35 'JetBrains Mono',monospace;overflow-wrap:anywhere;padding:${v?52:60}px;border:2px solid ${C.accento};background:${C.scuro};min-height:${v?1150:570}px;display:flex;align-items:center;}`;
     const result=d.risultato?`<div id="${px}risultato" data-visual>${esc(d.risultato)}</div>`:'';
     const intro=`<div id="${px}intro"><div id="${px}titolo">${esc(d.titolo)}</div>${d.testo&&!d.link?`<div id="${px}testo">${esc(d.testo)}</div>`:''}${!v?result:''}</div>`;
     const corpo=`<div id="${px}slide" data-content-area>${intro}${d.link?`<div id="${px}link" data-visual>${esc(d.testo)}</div>`:''}${d.comando?`<pre id="${px}comando" data-visual>${esc(d.comando)}</pre>`:''}${v?result:''}</div>`;
