@@ -41,4 +41,12 @@ class HistoricalTrial(unittest.TestCase):
         self.assertTrue(text_issues('Install the skill.',tool=True))
         self.assertEqual(text_issues('Download the model and ask a question.',voice=True,tool=True),[])
 
+    def test_codec_color_shift_does_not_hide_real_content_panels(self):
+        original=Image.new('RGB',(1080,1920),(49,67,58))
+        original.paste((39,53,46),(72,200,1008,1500))
+        encoded=Image.new('RGB',(1080,1920),(52,69,59))
+        encoded.paste((42,55,46),(72,200,1008,1500))
+        self.assertEqual(background_height(original,(1660,1860)),background_height(encoded,(1660,1860)))
+        self.assertLess(background_height(encoded,(1660,1860)),35)
+
 if __name__=='__main__':unittest.main()

@@ -86,6 +86,10 @@ The SRT and burned-in captions share their held intervals and scene boundaries.
 caption band (1660–1860 in teaching Shorts). At least 2% of a row must contain
 teaching ink or a content panel; the faint background grid does not count. More
 than 35% empty rows blocks publication. This is independent of DOM checks for
+clipping. The actual background is calibrated from the frame's outer gutters,
+so RGB/YUV/JPEG color conversion cannot hide a real content panel. A codec
+regression preserves the same measured height across that conversion.
+Additional DOM checks cover
 clipping, one-line headers and a 44px minimum Short content font. Long lessons
 may last 90–240 seconds. Source-documented workflows have orthogonal arrows;
 option groups have no invented dependencies.

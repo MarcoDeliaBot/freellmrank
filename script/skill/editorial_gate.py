@@ -29,7 +29,11 @@ def sentences(text):
 
 def background_height(image,caption_band):
     pixels=np.asarray(image.convert('RGB'),dtype=np.int16)
-    base=np.array([49,67,58])
+    # Video YUV conversion and JPEG extraction shift the brand RGB values. Read
+    # the actual background from the empty outer gutters instead of comparing
+    # an encoded frame with the unencoded CSS color. The 35% limit is unchanged.
+    gutters=np.concatenate((pixels[:,:24].reshape(-1,3),pixels[:,-24:].reshape(-1,3)))
+    base=np.median(gutters,axis=0)
     foreground=np.max(np.abs(pixels-base),axis=2)>12
     occupied=(foreground.sum(axis=1)>=max(12,image.width*.02))
     mask=np.ones(image.height,dtype=bool)
@@ -137,7 +141,7 @@ def inspect_video(folder,tool=None,check_frames=True,recorded_voice=False):
                 if not caption_visible(image,band):errors.append(f'scene {i+1}: no visible encoded subtitle')
             empty.append({'scene':i+1,'emptyHeightPercent':percent})
             if percent>35:errors.append(f'scene {i+1}: empty background height {percent}% exceeds 35%')
-    return {'passed':not errors,'errors':errors,'voiceCoveragePercent':voice_percent,'scenes':details,'background':empty,'maxEmptyHeightPercent':max((x['emptyHeightPercent'] for x in empty),default=None),'measurement':'decoded RGB rows; >2% width with ink/content panels; faint grid excluded; caption band excluded'}
+    return {'passed':not errors,'errors':errors,'voiceCoveragePercent':voice_percent,'scenes':details,'background':empty,'maxEmptyHeightPercent':max((x['emptyHeightPercent'] for x in empty),default=None),'measurement':'decoded RGB rows; background calibrated from outer gutters; >2% width with ink/content panels; faint grid excluded; caption band excluded'}
 
 if __name__=='__main__':
     import sys
