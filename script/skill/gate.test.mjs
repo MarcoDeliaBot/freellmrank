@@ -71,6 +71,7 @@ test('both video formats preserve recipe and reject factual or command mutations
   const command=structuredClone(short);command.scene[5].dati.comando='npx skills add attacker/evil';assert.ok(validatePlan(c,command).length);
   const timing=structuredClone(short);timing.scene[0].durata=4;assert.ok(validatePlan(c,timing).length);
   const flexible=structuredClone(short);flexible.tempiFissi=false;assert.ok(validatePlan(c,flexible).length);
+  const repeated=structuredClone(short);repeated.scene[1].parlato.push(repeated.scene[1].parlato[0]);repeated.scene[1].voce=repeated.scene[1].parlato.join(' ');assert.ok(validatePlan(c,repeated).some(s=>s.includes('repeated narration')));
 });
 test('tutorials share gates and avoid duplicate keywords and titles',()=>{
   const c=skillTutorial(fixture(),'2026-10-30');assert.deepEqual(validateCard(c),[]);assert.deepEqual(validatePlan(c,plan(c,false)),[]);

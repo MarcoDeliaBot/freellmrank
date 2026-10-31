@@ -24,6 +24,7 @@ export function warningText(card) {
   return 'Warning: review the flagged Markdown instructions before granting permissions.';
 }
 function slide(title,body,speech,duration,command,elements,opening=false) {
+  speech=[...new Set(speech)];
   if(body&&body.toLowerCase().startsWith(title.toLowerCase()))body=body.slice(title.length).replace(/^[\s:,.??-]+/,'');
   const facts=elements||(!command&&body?[body]:[]);
   return {stampo:'passo',etichetta:opening?'The problem':HEADINGS.includes(title)?title:'Feature',capitolo:title,
@@ -84,6 +85,8 @@ export function validatePlan(card,piano) {
     const title=norm(s.dati.titolo),others=[s.dati.testo,...(s.dati.elementi||[])].filter(Boolean).map(norm);
     if(title&&others.some(t=>t===title||t.startsWith(title+' ')))e.push(`scene ${i+1}: repeated title`);
     if(s.etichetta.length>26)e.push(`scene ${i+1}: scene label too long`);
+    const said=(s.parlato||[]).map(norm);
+    if(new Set(said).size!==said.length)e.push(`scene ${i+1}: repeated narration`);
     if(!s.parlato?.length || s.voce!==s.parlato.join(' ') || s.parlato.some(t=>!approvedText(card,t))) e.push(`scene ${i+1}: unsupported narration`);
     const strings=o=>typeof o==='string'?[o]:Array.isArray(o)?o.flatMap(strings):o&&typeof o==='object'?Object.values(o).flatMap(strings):[];
     for(const t of strings(s.dati).flatMap(t=>t.split(/\n{2,}/)).filter(Boolean)) if(!HEADINGS.includes(t) && !approvedText(card,t)) e.push(`scene ${i+1}: unsupported on-screen text ${t}`);

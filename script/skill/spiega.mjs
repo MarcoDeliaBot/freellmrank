@@ -1,6 +1,6 @@
 import { scriviWorkers, REGOLE_SCRITTURA } from '../bozze.mjs';
 import { plan } from './video.mjs';
-import { groundedExplanation, digest } from './verifica.mjs';
+import { groundedExplanation, digest, normalized } from './verifica.mjs';
 import { TETTI_SCRIVI } from '../cf-modelli.mjs';
 
 // One bounded Workers call per card; no Groq/news/other-purpose fallback.
@@ -21,6 +21,7 @@ export async function explain(card, writer=scriviWorkers) {
     for(const slide of parsed.slides||[]) {
       if(!Number.isInteger(slide.index)||!scenes[slide.index]||!Array.isArray(slide.sentences)||slide.sentences.length<2||slide.sentences.length>3)continue;
       const sentences=slide.sentences.map(s=>({text:s.text,evidence:(s.facts||[]).map(i=>facts[i])}));
+      if(new Set(sentences.map(s=>normalized(s.text).toLowerCase())).size!==sentences.length)continue;
       if(!sentences.every(s=>groundedExplanation(card,s)))continue;
       explanations[`long:${slide.index}`]={sentences};quota.accepted++;
     }
