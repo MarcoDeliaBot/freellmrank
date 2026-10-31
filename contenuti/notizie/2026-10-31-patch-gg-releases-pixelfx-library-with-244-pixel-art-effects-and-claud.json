@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-31-patch-gg-releases-pixelfx-library-with-244-pixel-art-effects-and-claud",
+ "titolo": "Patch‑gg releases Pixelfx library with 244 pixel‑art effects and Claude Code skill",
+ "descr": "The open‑source Pixelfx repo offers 244 small‑code pixel art effects, a Claude plugin for generating new effects, and tools for exporting sprite sheets.",
+ "tema": "Software",
+ "paragrafi": [
+  "The repository includes a Claude Code skill that lets users draft, render, and refine custom effects, following the method described by Hugo Duprez.",
+  "Effects cover categories such as fire, explosions, water, ice, lightning, sci‑fi, melee, impacts, projectiles, arcane, holy, shadow, status, nature, weather, UI, pickups, transitions, and critters.",
+  "Developers can import the library into browser games using canvas, Phaser, PixiJS, Kaplay, or three.js without additional dependencies, and can export sprite sheets for engines like Godot, Unity, GameMaker, Defold, LÖVE, and Bevy.",
+  "Installation is possible via npm with \"npm i github:patch-gg/pixelfx\" or by copying the source files, and command‑line tools generate PNG sheets and Aseprite‑style JSON metadata."
+ ],
+ "perche": [
+  "Pixelfx gives indie developers a ready‑made collection of visual effects that can be customized through a Claude plugin, reducing the time needed to create pixel‑art assets. The open‑source nature and engine‑agnostic tools support free and locally hosted game projects, aligning with the community’s interest in accessible, non‑proprietary AI‑enhanced workflows."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "patch-gg/pixelfx: 232 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/patch-gg/pixelfx",
+   "titolo": "patch-gg/pixelfx: 232 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.",
+   "ufficiale": false,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 1
+}
