@@ -137,5 +137,13 @@
  },
  "news-2026-10-25-web-ocean-delivers-a-real-time-webgpu-ocean-renderer-in-a-61-kb-html-f": {
   "lungo": "esplora-web-ocean"
+ },
+ "news-2026-10-31-xiaomi-research-releases-a-rsi-for-zero-data-multimodal-self-improveme": {
+  "lungo": "notizia-xiaomi-research-releases-a-rsi-for-zero-data-multimodal",
+  "breve": "breve-xiaomi-research-releases-a-rsi-for-zero-data-multimodal"
+ },
+ "news-2026-10-30-openai-releases-updated-model-spec-emphasizing-five-core-values-for-ai": {
+  "lungo": "notizia-openai-releases-updated-model-spec-emphasizing-five-core",
+  "breve": "breve-openai-releases-updated-model-spec-emphasizing-five-core"
  }
 }
