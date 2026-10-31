@@ -145,5 +145,9 @@
  "news-2026-10-30-openai-releases-updated-model-spec-emphasizing-five-core-values-for-ai": {
   "lungo": "notizia-openai-releases-updated-model-spec-emphasizing-five-core",
   "breve": "breve-openai-releases-updated-model-spec-emphasizing-five-core"
+ },
+ "kaggle-free-gpu-for-ai-models": {
+  "lungo": "guida-kaggle-free-gpu-for-ai-models",
+  "breve": "breve-guida-kaggle-free-gpu-for-ai-models"
  }
 }
