@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-31-xiaomi-research-releases-a-rsi-for-zero-data-multimodal-self-improveme",
+ "titolo": "Xiaomi Research releases A‑RSI for zero‑data multimodal self‑improvement",
+ "descr": "The A‑RSI method refreshes training tasks when learning signals drop, boosting benchmark scores without external labels.",
+ "tema": "Research",
+ "paragrafi": [
+  "A‑RSI improves recursive self‑improvement by automatically refreshing tasks based on declining learning signals.",
+  "The approach also uses program‑generated answers that can be independently verified, removing the need for external labels.",
+  "Experiments show that A‑RSI raises benchmark performance compared to static‑task training.",
+  "The paper and its supplementary materials are hosted on Hugging Face and include a visual poster, video, and downloadable blog."
+ ],
+ "perche": [
+  "A‑RSI offers a way to keep multimodal models learning without costly labeled data, which benefits researchers and developers seeking efficient self‑improvement. For users of free or locally hosted models, the technique could enable better performance without relying on large external datasets."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "Xiaomi Research paper: A-RSI: Adaptive Task Refresh for Zero-Data Multimodal Self-Improvement",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.38568",
+   "titolo": "Xiaomi Research paper: A-RSI: Adaptive Task Refresh for Zero-Data Multimodal Self-Improvement",
+   "ufficiale": true,
+   "data": "2026-10-27"
+  }
+ ],
+ "frasiTolte": 1
+}

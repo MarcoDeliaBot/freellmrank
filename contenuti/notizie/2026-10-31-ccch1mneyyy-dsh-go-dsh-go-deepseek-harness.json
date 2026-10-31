@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-31-ccch1mneyyy-dsh-go-dsh-go-deepseek-harness",
+ "titolo": "ccch1mneyyy/dsh-Go: dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
+ "descr": "Community‑built DSH Go brings DeepSeek Harness to Android, offering on‑device Linux, model switching and SSH/DSH remote access.",
+ "tema": "Software",
+ "paragrafi": [
+  "The open‑source project DSH Go, hosted on GitHub, provides an Android client for DeepSeek Harness, allowing the engine to run directly on a phone.",
+  "The app includes a built‑in Ubuntu and Node.js environment, requires Android 8.0 (API 26) or newer, and offers both local execution and remote connection via SSH or DSH Remote.",
+  "The client supports chat, image sending, voice input, plugin cards, and screen‑control features, with permissions clearly explained for screen reading and input automation.",
+  "DSH Go is released under AGPL‑3.0 (with MIT‑licensed SDK/examples), and the developers note it is an unofficial community project with no affiliation to DeepSeek."
+ ],
+ "perche": [
+  "Running DeepSeek Harness on a phone removes the need for a separate Linux host, useful for developers who want a portable LLM interface. For users preferring free or locally hosted models, DSH Go offers a way to experiment without paying for cloud services, while still allowing remote access to more powerful machines when needed."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "ccch1mneyyy/dsh-Go: dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/ccch1mneyyy/dsh-Go",
+   "titolo": "ccch1mneyyy/dsh-Go: dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
+   "ufficiale": false,
+   "data": "2026-10-25"
+  }
+ ],
+ "frasiTolte": 2
+}
