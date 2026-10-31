@@ -61,7 +61,7 @@ try {
   // No content is published until BOTH formats of EVERY selected card pass.
   const staged=[];
   for(const candidate of [...skillCards,...tutorialCards]) {
-    const card=await explain(candidate);
+    const card=await explain(candidate,undefined,{trial:prova});
     const result=await render(card,path.join(folder,`${card.tipo}-${card.slug}`));
     if(result.cardHash!==digest(JSON.stringify(card))||result.evidence.length!==2||result.evidence.some(e=>!e.qa.passed))throw Error('incomplete video evidence');
     staged.push({...card,videoVerified:{date:new Date().toISOString(),cardHash:result.cardHash,formats:result.evidence.map(e=>({release:e.release,seconds:e.seconds,frames:e.qa.frames}))}});

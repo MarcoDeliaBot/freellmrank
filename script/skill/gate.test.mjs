@@ -74,6 +74,14 @@ test('both video formats preserve recipe and reject factual or command mutations
   const flexible=structuredClone(short);flexible.tempiFissi=false;assert.ok(validatePlan(c,flexible).length);
   const repeated=structuredClone(short);repeated.scene[1].parlato.push(repeated.scene[1].parlato[0]);repeated.scene[1].voce=repeated.scene[1].parlato.join(' ');assert.ok(validatePlan(c,repeated).some(s=>s.includes('repeated narration')));
 });
+test('a trial without a Pages preview never calls the production writer',async()=>{
+  const previous=process.env.SCRIVI_URL;delete process.env.SCRIVI_URL;let called=0;
+  try{
+    const card=await explain(fixture(),async()=>{called++;throw Error('must not be called');},{trial:true});
+    assert.equal(called,0);assert.equal(card.writing.calls,0);assert.equal(card.writing.neurons,0);assert.equal(card.writing.endpoint,null);
+    assert.match(card.writing.error,/Pages preview/);
+  }finally{if(previous===undefined)delete process.env.SCRIVI_URL;else process.env.SCRIVI_URL=previous;}
+});
 test('tutorials share gates and avoid duplicate keywords and titles',()=>{
   const c=skillTutorial(fixture(),'2026-10-30');assert.deepEqual(validateCard(c),[]);assert.deepEqual(validatePlan(c,plan(c,false)),[]);
   assert.ok(topicExists(c,[{key:c.key}]));assert.ok(topicExists(c,[{titolo:c.titolo.toUpperCase()}]));
