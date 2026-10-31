@@ -21,27 +21,50 @@ every selected card must finish before any page is staged. Artifact hashes are
 checked again before release creation. An existing incomplete release fails
 closed instead of being overwritten.
 
-The scanner reads every archive member without extracting or executing it. It
-rejects known remote execution, code loading, obfuscation, secret reads, data
-sends, install hooks, symlinks and opaque binaries. Document images are recognized
-by raster signatures; they are not executed. Archive/file/count limits fail
-closed. Cache keys include the pinned commit and scanner policy hash. These are
-conservative static checks, not a safety guarantee; legitimate repositories can
-be rejected. Reasons are retained in `dati/skill-scartate.json`.
+Discovery works on SKILL.md installation units. A repository containing several
+skills yields several candidates; a CLI or framework without the matching skill
+unit is not an installable skill candidate. The pinned GitHub tree is used to
+download only each selected directory, plus the root README as separate command
+evidence. CLI sources, CI and unrelated documentation are not scanned as skill
+code. All files inside the installed directory are reviewed, including scripts,
+references and assets. Cache identity includes commit, policy and selected units.
 
-Discovery reviews at most 24 repositories per run, prioritizes known candidates,
-and rotates the remaining discovery window. Missing seven-day history is `null`,
-never a fabricated zero. Ranking then uses observed 24-hour installs, total
-installs and repository stars. The weekly hub uses dated eligible publications;
-it does not invent ten entries when fewer pass. A collected README must provide
-three relevant features; other skills in the same collection cannot fill them.
+Executable code blocks on dynamic evaluation, obfuscation, remote loading or
+execution, secret reads, undocumented outbound hosts, opaque binaries and install
+hooks. Markdown instructions become dated warnings, including official installers
+and documented configuration/service access. Internal symlinks are allowed; links
+leaving the skill directory block. Incomplete reviews fail closed. No skill code
+is installed or executed. Static review is not a security certification.
 
-Tutorial selection considers site model novelty/downloads, eligible skills, then
-official evergreen tools. Commands must be present verbatim in official sources;
-unsupported model tags are skipped. Installation tutorials cannot bypass the
-target skill's repository review. Existing Strata/MiniMax guides remain links.
-No model is called to write content: the dedicated Workers AI budgets are zero,
-and the news budget is unchanged.
+The first 20 entries of the actual skills.sh trending payload are recorded in
+`dati/skill-audit-top20.json`, with status, pinned revision and file/line evidence.
+A separate content eligibility reason explains when a static pass cannot produce
+a page: for example, a fork whose README installs a different repository. Generic
+README install commands retain their exact syntax; the page and video instruct
+the user to select only the reviewed skill in the installer.
+
+Tutorials prioritize official evergreen guides and new free models. A tutorial
+cannot cover a skill topic published or staged in the previous seven days.
+Existing Strata/MiniMax guides remain links. Official installer commands are shown
+as documented instructions with a warning; this pipeline never runs them.
+
+Slide explanations use one bounded Workers AI request per selected card through
+the shared writing transport. Dedicated daily caps: skill 200 neurons, tutorial
+200. They come from the video-plan budget (3000 to 2600); news remains 1500 and
+the sum of site caps remains 10000. The client first verifies the authenticated
+budget-policy contract, so an older endpoint cannot charge an unknown scope to
+bozze. An undeployed contract, exhausted cap, invalid output or unavailable writer
+uses deterministic text, with the reason and usage retained in the delivery.
+There is no fallback to another scope/provider. Each generated sentence cites
+exact card facts and passes the existing news names/numbers gate plus a content
+word check against its cited evidence. Commands and examples remain exact source
+text. Usage is provider neurons when returned, otherwise a token-cost estimate.
+
+Scenes have a large opening question, short one-line header, centered safe-area
+content, source code examples and diagrams/fact groups. Automatic checks reject
+repeated titles, duplicate visible text, wrapping or overlapping headers, small
+Short fonts, empty safe areas, clipping and missing visual elements. Encoded
+frame checks remain separate from DOM fact/layout checks.
 
 Diagram rules were adapted from
 [Diagram Design](https://github.com/cathrynlavery/diagram-design/tree/main/skills/diagram-design)

@@ -39,3 +39,39 @@ def missing_text(image, regions):
                 if ink>=12: break
         if ink<12: missing.append(region['text'])
     return missing
+
+# Composition quality is evaluated within the content-safe region, excluding
+# YouTube overlays and captions. It measures occupied semantic regions, not the
+# whole background or decorative full-screen SVG boxes.
+CHECK_QUALITY = r'''({w,limit,opening=false}) => {
+ const issues=[],root=document.querySelector('[id$="palco"]');if(!root)return ['missing stage'];
+ const header=root.querySelector('[id$="barra"]'),spans=header?[...header.children]:[];
+ if(spans.length===2){
+  const [label,counter]=spans.map(e=>e.getBoundingClientRect());
+  const range=document.createRange();range.selectNodeContents(spans[0]);
+  const rects=[...range.getClientRects()];
+  if(rects.length>1||spans[0].scrollWidth>spans[0].clientWidth+1)issues.push('label wraps or truncates');
+  if(label.right+24>counter.left)issues.push('label touches counter');
+ }
+ const leaves=[...root.querySelectorAll('*')].filter(e=>!e.children.length&&e.textContent.trim()&&!e.closest('svg')&&!e.closest('[id$="barra"]'));
+ const norm=t=>t.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+ const seen=new Set();
+ for(const e of leaves){const t=norm(e.textContent);if(t.length>12&&seen.has(t))issues.push('repeated on-screen text');seen.add(t);}
+ const rects=leaves.map(e=>({e,b:e.getBoundingClientRect()})).filter(x=>x.b.width>0&&x.b.top>=140&&x.b.bottom<=limit+1);
+ if(w===1080){
+  for(const {e} of rects)if(parseFloat(getComputedStyle(e).fontSize)<36)issues.push('Short font below 36px');
+  const title=root.querySelector('[id$="titolo"]');if(opening&&title&&parseFloat(getComputedStyle(title).fontSize)<100)issues.push('problem font below 100px');
+ }
+ if(rects.length){
+  const minY=Math.min(...rects.map(x=>x.b.top)),maxY=Math.max(...rects.map(x=>x.b.bottom));
+  const minX=Math.min(...rects.map(x=>x.b.left)),maxX=Math.max(...rects.map(x=>x.b.right));
+  // Large opening typography and repository cards can use less height. Feature
+  // slides must fill a substantial part of the safe teaching region.
+  const coverage=(maxX-minX)*(maxY-minY)/(w*(limit-150));
+  const center=(minY+maxY)/2;
+  if(coverage<(opening?.11:.19))issues.push('too much empty safe area');
+  if(w===1080&&(center<430||center>960))issues.push('content not centered in Short safe area');
+ }else issues.push('no visible content');
+ if(!opening&&!root.querySelector('[data-visual]'))issues.push('missing visual element');
+ return [...new Set(issues)];
+}'''

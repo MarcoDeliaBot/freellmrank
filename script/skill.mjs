@@ -5,6 +5,7 @@ import { spawnSync } from 'node:child_process';
 import { collect } from './skill/raccogli.mjs';
 import { tutorials, existingTopics } from './skill/tutorial.mjs';
 import { render } from './skill/video.mjs';
+import { explain } from './skill/spiega.mjs';
 import { read, write, ROOT } from './skill/fonti.mjs';
 import { digest, topicExists } from './skill/verifica.mjs';
 
@@ -52,11 +53,12 @@ try {
   if(prova&&(skillCards.length!==1||tutorialCards.length!==1))throw Error('Trial requires one eligible skill and one eligible tutorial');
   // No content is published until BOTH formats of EVERY selected card pass.
   const staged=[];
-  for(const card of [...skillCards,...tutorialCards]) {
+  for(const candidate of [...skillCards,...tutorialCards]) {
+    const card=await explain(candidate);
     const result=await render(card,path.join(folder,`${card.tipo}-${card.slug}`));
     if(result.cardHash!==digest(JSON.stringify(card))||result.evidence.length!==2||result.evidence.some(e=>!e.qa.passed))throw Error('incomplete video evidence');
     staged.push({...card,videoVerified:{date:new Date().toISOString(),cardHash:result.cardHash,formats:result.evidence.map(e=>({release:e.release,seconds:e.seconds,frames:e.qa.frames}))}});
-    summary.completed.push({tipo:card.tipo,slug:card.slug,evidence:result});
+    summary.completed.push({tipo:card.tipo,slug:card.slug,writing:card.writing,evidence:result});
     write('video/skill-tutorial/esito.json',summary);
   }
   // Trial pages are written only in the disposable runner checkout, then uploaded.
@@ -72,7 +74,7 @@ try {
     if(!fs.existsSync(base))continue;
     for(const f of fs.readdirSync(base).filter(f=>f.endsWith('.json'))) {
       const c=JSON.parse(fs.readFileSync(path.join(base,f),'utf8'));
-      if((c.tipo==='skill'||c.skillSource)&&!catalogue.skills.some(s=>s.repository===c.repository&&s.security.passed))write(`contenuti/${dir}/${f}`,{...c,revoked:true,revokedOn:catalogue.aggiornato});
+      if((c.tipo==='skill'||c.skillSource)&&!catalogue.skills.some(s=>s.repository===c.repository&&s.skillPath===c.skillPath&&s.security.passed))write(`contenuti/${dir}/${f}`,{...c,revoked:true,revokedOn:catalogue.aggiornato});
     }
   }
   summary.finished=new Date().toISOString();

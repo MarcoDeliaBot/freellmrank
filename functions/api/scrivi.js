@@ -35,7 +35,13 @@ export async function onRequestPost({ request, env }) {
   const neurons = Number(r?.usage?.neurons) || neuronsDa(((r?.usage?.prompt_tokens || caratteri / 3) * MODELLO.pin + (r?.usage?.completion_tokens || max) * MODELLO.pout) / 1e6);
   await env.PROVA.put(chiave, String(Math.round((spesa + neurons) * 100) / 100), { expirationTtl: 60 * 60 * 48 });
   const testo = String(r?.choices?.[0]?.message?.content || r?.response || '').replace(/<think>[\s\S]*?<\/think>/g, '').trim();
-  return json({ testo, tagliato: r?.choices?.[0]?.finish_reason === 'length', neurons: Math.round(neurons) });
+  return json({ testo, tagliato: r?.choices?.[0]?.finish_reason === 'length', neurons: Math.round(neurons*100)/100,
+    scopo, usage:{prompt_tokens:r?.usage?.prompt_tokens||null,completion_tokens:r?.usage?.completion_tokens||null,neuronsSource:r?.usage?.neurons?'provider':'token-cost-estimate'} });
 }
 
-export const onRequestGet = () => json({ errore: 'Use POST.' }, 405);
+// The caller verifies this contract before using a new dedicated scope. An old
+// deployed function must never silently interpret it as the default bozze scope.
+export const onRequestGet = ({request,env}) => {
+  if(request.headers.get('Authorization')!==`Bearer ${env.BOZZE_KEY}`||!env.BOZZE_KEY)return json({errore:'Use POST.'},405);
+  return json({budgetPolicy:'skill-tutorial-20261031',caps:TETTI_SCRIVI});
+};

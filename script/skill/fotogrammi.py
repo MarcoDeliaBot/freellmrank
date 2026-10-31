@@ -7,7 +7,7 @@ import subprocess
 import sys
 import threading
 from playwright.sync_api import sync_playwright
-from layout_check import CHECK_LAYOUT, TEXT_REGIONS, missing_text
+from layout_check import CHECK_LAYOUT, TEXT_REGIONS, missing_text, CHECK_QUALITY
 from PIL import Image
 
 folder = pathlib.Path(sys.argv[1]).resolve()
@@ -59,6 +59,7 @@ with sync_playwright() as pw:
         page.evaluate('document.fonts.ready')
         page.evaluate('(at)=>Object.values(window.__timelines||{}).forEach(t=>t.seek(at))',scene['durata']-.25)
         issues = page.evaluate(CHECK_LAYOUT,{'w':w,'limit':limit})
+        issues += page.evaluate(CHECK_QUALITY,{'w':w,'limit':limit,'opening':bool(plan['scene'][i].get('dati',{}).get('apertura'))})
         with Image.open(frame) as encoded:
             absent=missing_text(encoded,page.evaluate(TEXT_REGIONS))
         if absent: issues.append({'missing_encoded_text':absent})

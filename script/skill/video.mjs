@@ -7,37 +7,67 @@ import { titoloYT, capitoliYT, conCapitoli, controlli } from '../brag/controllo-
 import { approvedText, validateCard, GENERIC, SECURITY_TEXT, DISCLAIMER, digest } from './verifica.mjs';
 import { labelFrom, ROOT } from './fonti.mjs';
 
-const HEADINGS = ['The problem','What it is','How it works','Install','Try it','Read the source','Limits and review','Feature','Step by step'];
-const words = (s,n) => String(s).split(/\s+/).slice(0,n).join(' ');
-function slide(title, body, speech, duration, command) {
-  return { stampo:'passo',etichetta:title,capitolo:title,dati:{titolo:title,testo:body,...(command?{comando:command}:{})},parlato:speech,voce:speech.join(' '),durata:duration };
+const HEADINGS = ['The problem','What it is','How it works','Install','Try it','Read the source','Limits and review','Feature','Step by step','Documented example'];
+const words=(s,n)=>String(s).split(/\s+/).slice(0,n).join(' ');
+const trim=(s,max)=>String(s).length<=max?String(s):String(s).slice(0,max+1).replace(/\s+\S*$/,'');
+export function examplePanel(card, feature) {
+  const raw=feature?.example||card.example;
+  return raw.length<=620&&raw.split('\n').length<=12?raw:card.install;
 }
-export function plan(card, short=false) {
-  const base = validateCard(card);
-  if (base.length) throw Error(base.join('; '));
+export function warningText(card) {
+  if(card.officialInstaller)return 'Warning: the official installer downloads and executes a script. Review it before running.';
+  if(!card.security?.warnings?.length)return 'No blocking pattern was found in the installed skill directory.';
+  const reasons=[...new Set(card.security.warnings.map(w=>w.reason))];
+  if(reasons.some(r=>/secret|sensitive/.test(r)))return 'Warning: Markdown documents credential or configuration access. Review those instructions before use.';
+  if(reasons.some(r=>/download|remote/.test(r)))return 'Warning: Markdown includes installer or remote code instructions. Review the documented source before use.';
+  if(reasons.some(r=>/api|send/.test(r)))return 'Warning: documented service API calls require network access. Review the destination and data before use.';
+  return 'Warning: review the flagged Markdown instructions before granting permissions.';
+}
+function slide(title,body,speech,duration,command,elements,opening=false) {
+  if(body&&body.toLowerCase().startsWith(title.toLowerCase()))body=body.slice(title.length).replace(/^[\s:,.??-]+/,'');
+  const facts=elements||(!command&&body?[body]:[]);
+  return {stampo:'passo',etichetta:opening?'The problem':HEADINGS.includes(title)?title:'Feature',capitolo:title,
+    dati:{titolo:title,...(command&&body?{testo:body}:{}),...(command?{comando:command}:{}),...(facts.length?{elementi:facts}:{}),...(opening?{apertura:true}:{})},
+    parlato:speech,voce:speech.join(' '),durata:duration};
+}
+function featureScene(card,f,duration,short) {
+  if(f.example)return slide(f.label,'',[short?words(f.detail,20):f.detail,...(short?[]:[GENERIC[3]])],duration,examplePanel(card,f));
+  let fact=f.detail;
+  if(fact.toLowerCase().startsWith(f.label.toLowerCase()))fact=fact.slice(f.label.length).replace(/^[\s:,.–—-]+/,'');
+  if(!fact)return slide(f.label,'',[f.detail],duration,examplePanel(card));
+  const tokens=fact.split(/\s+/),middle=Math.ceil(tokens.length/2);
+  const parts=[tokens.slice(0,middle).join(' '),tokens.slice(middle).join(' ')].filter(Boolean);
+  return slide(f.label,'',[short?words(f.detail,20):f.detail,...(short?[]:[GENERIC[3]])],duration,null,parts);
+}
+export function plan(card,short=false) {
+  const base=validateCard(card);if(base.length)throw Error(base.join('; '));
+  const panel=examplePanel(card);
   let scenes;
-  if (short) {
-    scenes=[slide(card.problem,card.problem,[card.problem],3),
-      slide(card.name,words(card.descr,24),[card.name,words(card.descr,14)],7),
-      ...card.features.map((f,i)=>slide(f.label,words(f.detail,32),[words(f.detail,i===2?18:16)],[7,7,8][i])),
-      slide('Install','',[card.install],8,card.install),
-      slide('Read the source',`github.com/${card.repository}`,[`github.com/${card.repository}`],5)];
+  if(short) {
+    scenes=[slide(card.problem,'',[card.problem],3,null,[],true),
+      slide(card.name,'',[trim(card.descr,210)],7,panel),
+      ...card.features.map((f,i)=>featureScene(card,f,[7,7,8][i],true)),
+      slide('Install',card.installSelection||'',[card.install],8,card.install),
+      slide('Read the source','',[`github.com/${card.repository}`],5,null,[`github.com/${card.repository}`])];
   } else {
-    scenes=[slide('The problem',card.problem,[card.descr,GENERIC[8]],16),
-      slide('What it is',card.descr,[card.descr,GENERIC[9]],18)];
-    const flow = card.flow;
-    if (flow?.length===3) scenes.push({stampo:'diagramma',etichetta:'How it works',capitolo:'How it works',dati:{titolo:'How it works',nodi:flow.map(s=>labelFrom(s))},parlato:flow,voce:flow.join(' '),durata:20});
-    else scenes.push(slide('How it works',words(card.example,45),[card.example,GENERIC[8]],20));
-    if (card.tipo==='tutorial') for (const step of card.steps) scenes.push(slide(step.title,step.text,[step.text,...(step.command?[step.command]:[])],16,step.command));
-    else scenes.push(slide('Install',GENERIC[4],[GENERIC[4],card.install],20,card.install));
-    for (const f of card.features) scenes.push(slide(f.label,f.detail,[f.detail,GENERIC[3]],16));
-    scenes.push(slide('Limits and review',`${words(card.limits[0],24)}\n\n${DISCLAIMER}`,[card.limits[0],...(card.security?[SECURITY_TEXT]:[GENERIC[6]]),DISCLAIMER],24));
-    scenes.push(slide('Read the source',`github.com/${card.repository}`,[GENERIC[8],`github.com/${card.repository}`],14));
+    scenes=[slide(card.problem,'',[card.descr,GENERIC[8]],16,null,[],true),
+      slide('What it is',trim(card.descr,180),[card.descr,GENERIC[9]],18,panel)];
+    if(card.flow?.length===3)scenes.push({stampo:'diagramma',etichetta:'How it works',capitolo:'How it works',dati:{titolo:'How it works',nodi:card.flow.map(s=>labelFrom(s))},parlato:card.flow,voce:card.flow.join(' '),durata:20});
+    else scenes.push(slide('How it works','',[card.example,GENERIC[8]],20,panel));
+    if(card.tipo==='tutorial')for(const step of card.steps)scenes.push(slide(step.title,trim(step.text,200),[step.text,...(step.command?[step.command]:[])],16,step.command||panel));
+    else scenes.push(slide('Install',card.installSelection||GENERIC[4],[GENERIC[4],...(card.installSelection?[card.installSelection]:[]),card.install],20,card.install));
+    for(const f of card.features)scenes.push(featureScene(card,f,16,false));
+    scenes.push(slide('Limits and review','',[card.limits.find(t=>t.length<220)||GENERIC[1],warningText(card),DISCLAIMER],24,null,[warningText(card),'Review the pinned source and its dependencies before installing.']));
+    scenes.push(slide('Read the source','',[GENERIC[8],`github.com/${card.repository}`],14,null,[`github.com/${card.repository}`]));
+  }
+  // AI edits only explanations and the problem question, never commands,
+  // examples, metrics or diagrams. Every sentence has explicit source evidence.
+  for(const [i,scene] of scenes.entries()) {
+    const explanation=card.explanations?.[`${short?'short':'long'}:${i}`];
+    if(explanation){scene.parlato=explanation.sentences.map(s=>s.text);scene.voce=scene.parlato.join(' ');}
   }
   const out={formato:short?'verticale':'orizzontale',tempiFissi:true,copertina:1,musica:short?'vivace':'calma',cardHash:digest(JSON.stringify(card)),scene:scenes};
-  const errors=validatePlan(card,out);
-  if(errors.length) throw Error(errors.join('; '));
-  return out;
+  const errors=validatePlan(card,out);if(errors.length)throw Error(errors.join('; '));return out;
 }
 
 export function validatePlan(card,piano) {
@@ -49,6 +79,10 @@ export function validatePlan(card,piano) {
     const st=STAMPI[s.stampo];
     if(!st) {e.push(`unknown template ${s.stampo}`);continue;}
     e.push(...st.valida(s.dati || {}).map(x=>`scene ${i+1}: ${x}`));
+    const norm=t=>String(t).toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+    const title=norm(s.dati.titolo),others=[s.dati.testo,...(s.dati.elementi||[])].filter(Boolean).map(norm);
+    if(title&&others.some(t=>t===title||t.startsWith(title+' ')))e.push(`scene ${i+1}: repeated title`);
+    if(s.etichetta.length>26)e.push(`scene ${i+1}: scene label too long`);
     if(!s.parlato?.length || s.voce!==s.parlato.join(' ') || s.parlato.some(t=>!approvedText(card,t))) e.push(`scene ${i+1}: unsupported narration`);
     const strings=o=>typeof o==='string'?[o]:Array.isArray(o)?o.flatMap(strings):o&&typeof o==='object'?Object.values(o).flatMap(strings):[];
     for(const t of strings(s.dati).flatMap(t=>t.split(/\n{2,}/)).filter(Boolean)) if(!HEADINGS.includes(t) && !approvedText(card,t)) e.push(`scene ${i+1}: unsupported on-screen text ${t}`);
@@ -58,7 +92,7 @@ export function validatePlan(card,piano) {
   if(short) {
     if(total!==45 || piano.scene.length!==7 || piano.scene.map(s=>s.durata).join(',')!=='3,7,7,7,8,8,5') e.push('Short timing does not match 0-3 / 3-10 / 10-32 / 32-40 / 40-45');
     if(card.problem.split(/\s+/).length>6) e.push('hook exceeds six words');
-    if(piano.scene[5]?.dati.comando!==card.install || piano.scene[6]?.dati.testo!==`github.com/${card.repository}`) e.push('exact command or repository missing');
+    if(piano.scene[5]?.dati.comando!==card.install || piano.scene[6]?.dati.elementi?.[0]!==`github.com/${card.repository}`) e.push('exact command or repository missing');
   } else if(!(total>=120&&total<=240)) e.push(`long video outside 2-4 minutes: ${total}`);
   return e;
 }

@@ -22,8 +22,9 @@ export default {
     const ys=v?[370,650,930]:[390,390,390], h=v?170:250;
     const nodes=d.nodi.map((n,i)=>`<div id="${px}n${i}" data-layout-box class="${px}node" style="left:${xs[i]}px;top:${ys[i]}px;width:${widths[i]}px;height:${h}px;border-color:${i===1?C.accento:C.crema2};background:${i===1?C.pannello:C.scuro}">${esc(n)}</div>`).join('');
     const arrows=[0,1].map(i=>{const x1=v?F.W/2:xs[i]+widths[i], y1=v?ys[i]+h:ys[i]+h/2, x2=v?F.W/2:xs[i+1]-10,y2=v?ys[i+1]-10:y1;return `<path id="${px}e${i}" d="M${x1} ${y1} L${x2} ${y2}" stroke="${C.crema2}" stroke-width="3" fill="none" marker-end="url(#${px}arrow)"/>`;}).join('');
-    const corpo=`<div id="${px}titolo">${esc(d.titolo)}</div><svg class="${px}edges" viewBox="0 0 ${F.W} ${F.H}"><defs><marker id="${px}arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="${C.crema2}"/></marker></defs>${arrows}</svg>${nodes}`;
-    const css=`#${px}titolo{position:absolute;top:${v?190:160}px;left:${M}px;right:${M}px;font-size:${v?66:80}px;line-height:1.1;}
+    const corpo=`<div data-content-area style="position:absolute;inset:0"><div id="${px}titolo">${esc(d.titolo)}</div><svg data-visual class="${px}edges" viewBox="0 0 ${F.W} ${F.H}"><defs><marker id="${px}arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="${C.crema2}"/></marker></defs>${arrows}</svg>${nodes}</div>`;
+    const css=`.${px}barra{gap:36px;letter-spacing:.08em}.${px}barra span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(100% - 160px);flex:1}.${px}barra span:last-child{white-space:nowrap;flex:none}
+      #${px}titolo{position:absolute;top:${v?190:160}px;left:${M}px;right:${M}px;font-size:${v?66:80}px;line-height:1.1;}
       .${px}edges{position:absolute;inset:0;width:100%;height:100%;}
       .${px}node{position:absolute;display:flex;align-items:center;padding:28px;border:2px solid;border-radius:6px;font:600 ${v?42:40}px/1.18 Arial,sans-serif;overflow-wrap:anywhere;}`;
     let anima=`tl.fromTo(q('#${px}titolo'),{opacity:0,y:16},{opacity:1,y:0,duration:.4,ease:'power3.out'},0);`;

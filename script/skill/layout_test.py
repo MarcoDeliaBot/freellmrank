@@ -1,6 +1,6 @@
 import unittest
 from playwright.sync_api import sync_playwright
-from layout_check import CHECK_LAYOUT, missing_text
+from layout_check import CHECK_LAYOUT, missing_text, CHECK_QUALITY
 from PIL import Image
 
 
@@ -28,6 +28,24 @@ class LayoutGate(unittest.TestCase):
 
     def test_text_outside_safe_area_is_rejected(self):
         self.assertTrue(self.check('top:1170px'))
+
+    def quality(self,body,opening=False):
+        self.page.set_content(f'<div id="test-palco"><div id="test-barra" style="display:flex;position:absolute;left:72px;right:72px;top:72px;font:26px monospace;gap:36px"><span style="flex:1">Feature</span><span>04 / 07</span></div>{body}</div>')
+        return self.page.evaluate(CHECK_QUALITY,{'w':1080,'limit':1180,'opening':opening})
+
+    def test_small_empty_slide_fails_quality(self):
+        self.assertIn('too much empty safe area',self.quality('<div style="position:absolute;top:190px;font-size:30px">Small title</div>'))
+        self.assertIn('Short font below 36px',self.quality('<div style="position:absolute;top:190px;font-size:30px">Small title</div>'))
+
+    def test_repeated_slide_text_fails_quality(self):
+        result=self.quality('<div style="position:absolute;top:350px;font-size:70px">The agent revises based on feedback</div><div data-visual style="position:absolute;top:650px;font-size:48px">The agent revises based on feedback</div>')
+        self.assertIn('repeated on-screen text',result)
+
+    def test_wrapped_header_fails_quality(self):
+        self.page.set_content('<div id="test-palco"><div id="test-barra" style="display:flex;width:300px;font:40px monospace"><span>Too long a label for this small space</span><span>04 / 07</span></div></div>')
+        result=self.page.evaluate(CHECK_QUALITY,{'w':1080,'limit':1180})
+        self.assertIn('label wraps or truncates',result)
+
 
 
 class EncodedFrameGate(unittest.TestCase):

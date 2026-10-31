@@ -68,4 +68,8 @@ class SecurityGate(unittest.TestCase):
             result=scan(archive({'SKILL.md':'Service API: https://api.service.example','scripts/run.py':script}))
             self.assertEqual(result['passed'],passed)
 
+    def test_known_media_signature_is_an_asset_not_an_opaque_executable(self):
+        self.assertTrue(scan(archive({'SKILL.md':'# Audio','assets/chime.mp3':b'ID3\x04\x00\x00'}))['passed'])
+        self.assertFalse(scan(archive({'SKILL.md':'# Audio','assets/chime.mp3':b'MZ\x00\x01'}))['passed'])
+
 if __name__=='__main__': unittest.main()

@@ -18,7 +18,12 @@ export function existingTopics() {
   return out;
 }
 
-function source(url, testo) { return { url, testo: plain(testo), sha256: digest(plain(testo)), tipo: 'Official documentation' }; }
+function source(url, testo) { return { url, testo, sha256: digest(testo), tipo: 'Official documentation' }; }
+export function conflictsRecent(card,existing,date) {
+  const cutoff=Date.parse(date)-7*864e5;
+  return existing.filter(c=>c.tipo==='skill'&&Date.parse(c.date)>=cutoff&&Date.parse(c.date)<=Date.parse(date)).some(s=>
+    card.repository===s.repository||card.skillSource===s.slug||card.name.toLowerCase()===s.name.toLowerCase());
+}
 export function skillTutorial(skill, date) {
   return { ...skill, tipo: 'tutorial', skillSource: skill.slug, slug: `install-and-use-${skill.slug}`, key: `how to install and use ${skill.repository} ${skill.name}`,
     titolo: `How to install and use ${skill.name}`, date,
@@ -30,12 +35,15 @@ export function skillTutorial(skill, date) {
     ], selection: { reason: 'Measured skill popularity', metrics: skill.metrics } };
 }
 
-function documentedTutorial({ name, command, url, raw, date, steps, features, descr, score, key, hardware }) {
-  const card = { tipo: 'tutorial', name, repository: url.includes('github.com') ? url.split('github.com/')[1].split('/').slice(0,2).join('/') : new URL(url).hostname,
+function documentedTutorial({ name, command, url, raw, date, steps, features, descr, score, key, hardware, officialInstaller=false, problemEvidence=name }) {
+  const sourceURL=new URL(url);
+  const githubSource=['github.com','raw.githubusercontent.com'].includes(sourceURL.hostname);
+  const repository=githubSource?sourceURL.pathname.slice(1).split('/').slice(0,2).join('/'):sourceURL.hostname;
+  const card = { tipo: 'tutorial', name, repository,
     slug: slug(key || `how to use ${name} locally`), key: key || `how to use ${name} locally`, titolo: key || `How to use ${name} locally`, date,
     descr, install: command, example: steps.find(s => s.command && s.command !== command)?.command || command,
-    problem: descr.split(/\s+/).slice(0,6).join(' '), audience: [], features, steps,
-    limits: [GENERIC[6]], screenshots: [], fonti: [source(url,raw)], claims: [descr, command, ...features.flatMap(f => [f.label, f.detail])],
+    problem: `Need ${problemEvidence}?`, problemEvidence, audience: [], features, steps,officialInstaller,
+    limits: [...(officialInstaller?['Warning: the official installer downloads and executes a script. Review it before running.']:[]),GENERIC[6]], screenshots: [], fonti: [source(url,raw)], claims: [descr, command, ...features.flatMap(f => [f.label, f.detail])],
     selection: { reason: 'Measured model novelty and downloads, then official tool popularity', score }, hardware };
   const errors = validateCard(card);
   if (errors.length) throw Error(errors.join('; '));
@@ -63,11 +71,11 @@ export async function tutorials(skills, date, existing = existingTopics()) {
         steps:[{title:'Prepare your machine',text:GENERIC[2]},...commands.slice(0,3).map(command=>({title:'Run the documented command',text:GENERIC[9],command})),{title:'Review the output',text:GENERIC[7]}] }));
     } catch (e) { console.log(`Tutorial model skipped ${m.repo}: ${e.message.slice(0,160)}`); }
   }
-  // A source-backed skill walkthrough outranks evergreen tools. Already covered
-  // skill keywords and installation tutorial keywords have distinct intents.
+  // A topic published as a skill in the last seven days (including today's
+  // staged card) cannot return as a tutorial under a different title.
   for (const skill of [...skills].sort(rank)) {
     const c = skillTutorial(skill,date);
-    if (!topicExists(c,existing)) candidates.push(c);
+    if (!topicExists(c,existing)&&!conflictsRecent(c,existing,date)) candidates.push(c);
   }
   // Evergreen fallbacks use exact commands from official maintained documentation.
   for (const spec of [
@@ -83,14 +91,27 @@ export async function tutorials(skills, date, existing = existingTopics()) {
     try {
       const meta = await api(`repos/${spec.repo}`), commit = await api(`repos/${spec.repo}/commits/${meta.default_branch}`);
       const url = `https://raw.githubusercontent.com/${spec.repo}/${commit.sha}/README.md`, raw = await text(url);
+      if(spec.repo==='ollama/ollama') {
+        const section=heading=>new RegExp(`^#{2,3} ${heading}\\n([\\s\\S]*?)(?=^#{1,3} |$(?![\\s\\S]))`,'m').exec(raw)?.[1]||'';
+        const features=['Chat with a model','Coding','REST API'].map(label=>{
+          const body=section(label),example=/```[^\n]*\n([\s\S]*?)```/.exec(body)?.[1]?.trim();
+          const detail=body.split('\n').map(plain).find(s=>s.length>20&&!s.startsWith('```'));
+          return {label,detail,example};
+        });
+        const installer='curl -fsSL https://ollama.com/install.sh | sh';
+        if(!raw.includes(installer)||features.some(f=>!f.detail||!f.example))throw Error('official Ollama walkthrough facts incomplete');
+        candidates.push(documentedTutorial({name:spec.name,command:installer,url,raw,date,key,descr:'Start building with open models.',features,score:2e12+meta.stargazers_count,officialInstaller:true,problemEvidence:'open models',
+          steps:[{title:'Install the official tool',text:GENERIC[2],command:installer},{title:'Run the documented command',text:features[0].detail,command:features[0].example},{title:'Review the output',text:GENERIC[7]}]}));
+        continue;
+      }
       const commands = [...raw.matchAll(spec.pattern)].map(m=>m[0].trim()).filter(c=> !/[<>|;&]|\.\.\.|\$\(/.test(c));
       if (!commands.length) continue;
       const paragraphs = raw.split('\n').map(l=>plain(l.replace(/^[-*#]+\s*/,''))).filter(s=>s.length>30 && s.length<180 && !/^\||https?:|!|\[|<|npx|curl|irm/.test(s));
       if (paragraphs.length<4) continue;
       const features = paragraphs.slice(1,4).map(detail=>({ label:detail.split(' ').slice(0,6).join(' '),detail }));
-      candidates.push(documentedTutorial({name:spec.name, command:commands[0], url, raw, date, key, descr:paragraphs[0], features, score:meta.stargazers_count,
+      candidates.push(documentedTutorial({name:spec.name, command:commands[0], url, raw, date, key, descr:paragraphs[0], features, score:2e12+meta.stargazers_count,
         steps:[{title:'Install the official tool',text:GENERIC[2]},...commands.slice(0,3).map(command=>({title:'Use the documented command',text:GENERIC[9],command})),{title:'Check the result',text:GENERIC[7]}] }));
     } catch (e) { console.log(`Evergreen skipped ${spec.name}: ${e.message.slice(0,160)}`); }
   }
-  return candidates.sort((a,b)=>(b.selection?.score ?? (b.skillSource?1e10:0))-(a.selection?.score ?? (a.skillSource?1e10:0))).filter(c=> !topicExists(c,existing));
+  return candidates.sort((a,b)=>(b.selection?.score ?? (b.skillSource?1e9:0))-(a.selection?.score ?? (a.skillSource?1e9:0))).filter(c=> !topicExists(c,existing)&&!conflictsRecent(c,existing,date));
 }

@@ -71,6 +71,15 @@ def scan_unit(files, skill_path):
         suffix = pathlib.PurePosixPath(name).suffix.lower()
         if suffix in RASTER and raw.startswith(RASTER[suffix]) and (suffix!='.webp' or raw[8:12]==b'WEBP'):
             images[name] = manifest[-1]; continue
+        # Recognizable inert media/font resources are not opaque executable
+        # payloads. Unrecognized data and executable/archive signatures still block.
+        known_asset=(suffix=='.mp3' and (raw.startswith(b'ID3') or raw[:2] in [b'\xff\xfb',b'\xff\xf3',b'\xff\xf2'])) or \
+            (suffix=='.wav' and raw[:4]==b'RIFF' and raw[8:12]==b'WAVE') or \
+            (suffix in {'.ogg','.opus'} and raw[:4]==b'OggS') or \
+            (suffix in {'.mp4','.m4a','.mov'} and raw[4:8]==b'ftyp') or \
+            (suffix in {'.woff','.woff2','.ttf','.otf'} and raw[:4] in [b'wOFF',b'wOF2',b'\x00\x01\x00\x00',b'OTTO'])
+        if known_asset:
+            manifest[-1]['assetType']=suffix;continue
         if suffix in BINARY or raw[:2]==b'MZ' or raw[:4]==b'\x7fELF':
             errors.append(finding(name, 'opaque-binary')); continue
         try:

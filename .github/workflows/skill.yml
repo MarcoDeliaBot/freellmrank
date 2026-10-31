@@ -64,6 +64,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
+          BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
         run: node script/skill.mjs
       - name: Build esistente, link e heading
         run: |
@@ -86,6 +87,7 @@ jobs:
             sito/inter.woff2
             dati/skill.json
             dati/skill-scartate.json
+            dati/skill-audit-top20.json
             dati/skill-storico
             contenuti/skills
             contenuti/tutorials

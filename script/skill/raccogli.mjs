@@ -98,7 +98,7 @@ export async function collect({maxRepos=24,date=new Date().toISOString().slice(0
       }
     } catch(e) {
       for(const entry of choices.length?choices:[{skillId:null}]) {
-        const row={rank:trending.indexOf(entry)+1,repository:repo,skill:entry.skillId,date,status:'blocked',reasons:[{file:'SKILL.md',line:1,reason:`incomplete review: ${e.message}`}]};
+        const row={rank:trending.indexOf(entry)+1,repository:repo,skill:entry.skillId,date,status:'blocked',reasons:[{file:null,line:null,reason:`incomplete review: ${e.message}`}]};
         rejected.push(row);if(top.some(x=>x.source===repo&&x.skillId===entry.skillId))audit.push(row);
       }
     }
