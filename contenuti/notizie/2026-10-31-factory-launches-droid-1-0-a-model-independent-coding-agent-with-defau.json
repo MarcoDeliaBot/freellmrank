@@ -1,0 +1,34 @@
+{
+ "nome": "2026-10-31-factory-launches-droid-1-0-a-model-independent-coding-agent-with-defau",
+ "titolo": "Factory launches Droid 1.0, a model‑independent coding agent with default programmatic tool calling",
+ "descr": "Droid 1.0 reduces prompt size, improves Terminal‑Bench 4 scores and cuts cost by up to 24% using a script‑based tool engine.",
+ "tema": "Software",
+ "paragrafi": [
+  "Factory announced Droid 1.0, the latest update to its coding‑agent harness that works with any supported LLM, including user‑provided API keys.",
+  "The update makes programmatic tool calling (PTC) the default mode, letting the model write JavaScript scripts that run hundreds of tool calls inside a sandbox.",
+  "The base prompt shrank 37% to 13,055 tokens, tool definitions fell 46%, and latency dropped from 1,839 ms to 488 ms, while session memory growth fell from 350 MB to 20 MB.",
+  "Droid 1.0 is available as a macOS/Windows desktop app, a terminal UI, and a Node SDK; paid plans start at $20 per month."
+ ],
+ "perche": [
+  "Developers gain faster, cheaper coding assistance that scales across many models without rewriting prompts."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "Meet Factory Droid 1.0: A Model-Independent Coding Agent Harness Built on Script Mode",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/31/factory-droid-1-0-frontier-harness/",
+   "titolo": "Meet Factory Droid 1.0: A Model-Independent Coding Agent Harness Built on Script Mode",
+   "ufficiale": false,
+   "data": "2026-10-31"
+  },
+  {
+   "nome": "factory.com",
+   "url": "https://factory.com/news/frontier-harness",
+   "titolo": "Droid 1.0: Building a Frontier Harness | Factory",
+   "ufficiale": true,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 2
+}
