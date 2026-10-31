@@ -147,7 +147,6 @@
   "breve": "breve-openai-releases-updated-model-spec-emphasizing-five-core"
  },
  "kaggle-free-gpu-for-ai-models": {
-  "lungo": "guida-kaggle-free-gpu-for-ai-models",
-  "breve": "breve-guida-kaggle-free-gpu-for-ai-models"
+  "lungo": "tutorial-kaggle-free-gpu"
  }
 }
