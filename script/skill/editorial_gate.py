@@ -98,7 +98,7 @@ def inspect_video(folder,tool=None,check_frames=True,recorded_voice=False):
         for key in sentences(voice):
             if key in seen_voice:errors.append(f'scene {i+1}: repeated narration from {seen_voice[key]}')
             seen_voice[key]=i+1
-        for value in [data.get('titolo'),data.get('testo'),data.get('risultato'),*data.get('elementi',[]),*data.get('nodi',[])]:
+        for value in [scene.get('etichetta'),data.get('titolo'),data.get('testo'),data.get('risultato'),*data.get('elementi',[]),*data.get('nodi',[])]:
             if not value:continue
             # Repository URL is deliberately shown once, in the final card.
             for e in text_issues(value,False,tool):errors.append(f'scene {i+1}: {e}')
@@ -106,6 +106,7 @@ def inspect_video(folder,tool=None,check_frames=True,recorded_voice=False):
                 if key in seen_screen:errors.append(f'scene {i+1}: repeated screen sentence from {seen_screen[key]}')
                 seen_screen[key]=i+1
         if data.get('comando'):
+            if FORBIDDEN.search(data['comando']):errors.append(f'scene {i+1}: forbidden internal wording in code')
             key=norm(data['comando'])
             if key in seen_code:errors.append(f'scene {i+1}: repeated code from {seen_code[key]}')
             seen_code[key]=i+1

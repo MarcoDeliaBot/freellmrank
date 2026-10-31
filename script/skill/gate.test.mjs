@@ -133,3 +133,9 @@ test('recipe gate rejects a generic Feature identity label and missing diagrams'
   for(const scene of p.scene.slice(2,5))scene.stampo='passo';
   assert.ok(validatePlan(card,p).some(e=>e.includes('three features')));
 });
+test('the same forbidden-word gate covers the visible label and code annotations',()=>{
+  const card=fixture(),p=plan(card,true);p.scene[3].etichetta='This pipeline';
+  assert.ok(validatePlan(card,p).some(e=>e.includes('forbidden internal wording')));
+  p.scene[3].etichetta='Step 2';p.scene[3].dati.comando='echo "This pipeline"';
+  assert.ok(validatePlan(card,p).some(e=>e.includes('forbidden internal wording in code')));
+});

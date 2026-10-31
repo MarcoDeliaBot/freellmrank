@@ -6,7 +6,7 @@ import { monta } from '../video-hf/monta.mjs';
 import { titoloYT, capitoliYT, conCapitoli, controlli } from '../brag/controllo-yt.mjs';
 import { approvedText, validateCard, digest } from './verifica.mjs';
 import { ROOT } from './fonti.mjs';
-import { lessonFor, textIssues, duplicateIssues } from './copione.mjs';
+import { lessonFor, textIssues, duplicateIssues, FORBIDDEN } from './copione.mjs';
 
 const words=(s,n)=>String(s).split(/\s+/).slice(0,n).join(' ');
 export function examplePanel(card,feature){return feature?.example||card.example;}
@@ -33,6 +33,8 @@ export function validatePlan(card,piano) {
     const st=STAMPI[s.stampo];if(!st){errors.push(`unknown template ${s.stampo}`);continue;}
     errors.push(...st.valida(s.dati||{}).map(e=>`scene ${i+1}: ${e}`));
     if(s.etichetta.length>26)errors.push(`scene ${i+1}: scene label too long`);
+    if(!approvedText(card,s.etichetta))errors.push(`scene ${i+1}: unsupported scene label`);
+    errors.push(...textIssues(s.etichetta,{tool}).map(e=>`scene ${i+1}: ${e}`));
     if(!s.parlato?.length||s.voce!==s.parlato.join(' ')||s.parlato.some(t=>!approvedText(card,t)))errors.push(`scene ${i+1}: unsupported narration`);
     errors.push(...textIssues(s.voce,{voice:true,tool}).map(e=>`scene ${i+1}: ${e}`));
     for(const t of [s.dati?.titolo,s.dati?.testo,s.dati?.risultato,...(s.dati?.elementi||[]),...(s.dati?.nodi||[])].filter(Boolean)){
@@ -40,7 +42,7 @@ export function validatePlan(card,piano) {
       errors.push(...textIssues(t,{tool}).map(e=>`scene ${i+1}: ${e}`));
     }
     if(s.dati?.comando&&!approvedText(card,s.dati.comando))errors.push(`scene ${i+1}: unsupported code`);
-    if(s.dati?.comando&&FORBIDDEN_CODE.test(s.dati.comando))errors.push(`scene ${i+1}: forbidden code annotation`);
+    if(s.dati?.comando&&FORBIDDEN.test(s.dati.comando))errors.push(`scene ${i+1}: forbidden internal wording in code`);
   }
   const total=piano.scene?.reduce((a,s)=>a+s.durata,0);
   if(short){
@@ -56,8 +58,6 @@ export function validatePlan(card,piano) {
   }
   return errors;
 }
-const FORBIDDEN_CODE=/remote-code-load|sensitive-read|This review covers|\.(?:md|py|mjs):\d+/i;
-
 function run(command,args,options={}) {
   const r=spawnSync(command,args,{encoding:'utf8',timeout:120000,maxBuffer:4e6,...options});
   if(r.status!==0) throw Error(`${command} failed (${r.status}): ${[r.stdout,r.stderr,r.error?.message].filter(Boolean).join('\n').slice(-3000)}`);
