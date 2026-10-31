@@ -4,6 +4,7 @@
 import { esc, pagina, NOME_PIENO, URL_SITO, conLicenza } from './comune.mjs';
 import { simula, daScheda } from '../../sorgente/calc.mjs';
 import { fmtVel } from '../../sorgente/gpu-table.mjs';
+import { avvisoArchivio } from './pagine-pubblicate.mjs';
 
 const QUANTI = 15;
 const HARDWARE = [['rtx3090', 1], ['rtx4090', 1], ['rtx5090', 1], ['rx7900xtx', 1], ['m4max-128', 1], ['strixhalo-128', 1]];
@@ -57,7 +58,7 @@ export function pagineConfronti(dati, coppie, blog) {
 
     pagina({
       file, attiva: '/models.html', dati, blog,
-      titolo: `${a.nome} vs ${b.nome}: Which Free AI Model Is Better? · ${NOME_PIENO}`,
+      titolo: `${a.nome} vs ${b.nome}`,
       descr: `${verdetto} Size, memory, speed on home GPUs and where to use both for free.`,
       jsonld: { '@type': 'BreadcrumbList', itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'All free models', item: `${URL_SITO}/models` },
@@ -66,6 +67,8 @@ export function pagineConfronti(dati, coppie, blog) {
       corpo: `<p class="briciole small"><a href="/models.html">All models</a> › Compare</p>
 <div style="display:grid;gap:.4rem">
 <h1>${esc(a.nome)} vs ${esc(b.nome)}</h1>
+${avvisoArchivio(a)}
+${avvisoArchivio(b)}
 <p class="lead">${esc(verdetto)}</p>
 </div>
 <div class="tiles">

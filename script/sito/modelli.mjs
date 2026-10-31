@@ -1,6 +1,7 @@
 // Catalogo dei modelli gratuiti e una pagina per ciascuno.
 import { esc, fmtNum, fmtData, pagina, CHAT_WEB, NOME_PIENO, URL_SITO, conLicenza } from './comune.mjs';
 import { linee } from './grafici.mjs';
+import { avvisoArchivio } from './pagine-pubblicate.mjs';
 import { perNomeProva, apiGratisPer, DOMANDE_PER_VISITATORE } from '../cf-modelli.mjs';
 import { simula, daScheda, kvGB, QUANTI, perditaQualita, giudizio, slug } from '../../sorgente/calc.mjs';
 
@@ -30,7 +31,7 @@ export function unisci(dati, storia) {
       u.or ||= m.or; u.hf ||= m.hf; u.api ||= apiGratisPer(m.nome);
       const prima = u.cat[c.id];
       if (!prima || m.punti > prima.punti) {
-        u.cat[c.id] = { punti: m.punti, pos: m.pos, totale: c.totale, voti: m.voti, nomeArena: m.nome };
+        u.cat[c.id] = { punti: m.punti, pos: m.pos, totale: c.totale, voti: m.voti, nomeArena: m.nome, data: c.data };
         u.nomi[c.id] = m.nome;
       }
       const primo = storia?.categorie[c.id]?.primo[m.nome];
@@ -161,7 +162,7 @@ export function pagineModelli(dati, storia, modelli, blog) {
     ];
 
     const punteggi = cats.length ? `<div class="panel"><h2>Arena scores</h2><div class="tw"><table><thead><tr><th>Arena</th><th>Score</th><th>Rank</th><th>Votes</th></tr></thead><tbody>
-${cats.map((c) => `<tr><td><a href="/#${c}">${esc(nomiCat[c])}</a></td><td class="n">${m.cat[c].punti}${c === 'agent' ? ' <span class="small muted">agent score</span>' : ''}</td><td class="n">#${m.cat[c].pos} of ${m.cat[c].totale}</td><td class="n">${fmtNum(m.cat[c].voti)}${c === 'agent' ? ' <span class="small muted">sessions</span>' : ''}</td></tr>`).join('')}
+${cats.map((c) => `<tr><td><a href="/#${c}">${esc(nomiCat[c])}</a>${m.cat[c].data ? `<div class="small muted"><time datetime="${m.cat[c].data}">${m.cat[c].data}</time></div>` : ''}</td><td class="n">${m.cat[c].punti}${c === 'agent' ? ' <span class="small muted">agent score</span>' : ''}</td><td class="n">#${m.cat[c].pos} of ${m.cat[c].totale}</td><td class="n">${fmtNum(m.cat[c].voti)}${c === 'agent' ? ' <span class="small muted">sessions</span>' : ''}</td></tr>`).join('')}
 </tbody></table></div><p class="small muted">Rank among all models, paid ones included. Source: Arena leaderboard dataset.${cats.includes('agent') ? ' The agent score is on a different scale (×100, from real agent sessions) and cannot be compared with the other scores.' : ''}</p></div>` : m.nuovo
       ? `<div class="panel"><h2>New: waiting for Arena votes</h2><p class="small">${m.primo ? `Released on ${fmtData(m.primo)}. ` : ''}Arena has not voted on this model yet. As soon as it does, the model moves into the ranking automatically, usually the next night. Until then you can still check its size, memory needs and speed below${m.or?.gratis ? ', and try it for free' : ''}.</p></div>`
       : `<div class="panel"><h2>No Arena votes yet</h2><p class="small">Arena has not voted on this model. It is listed because it is a popular small model on its lab's official Hugging Face page (${fmtNum(m.download || 0)} downloads a month).</p></div>`;
@@ -200,30 +201,27 @@ ${QUANTI.filter((p) => p.id !== 'Q2_K').map((p) => { const pq = perditaQualita(p
 
     const andamenti = cats.map((c) => {
       const st = storia?.categorie[c];
-      const valori = st?.serie[m.cat[c].nomeArena];
+      let date = st?.date || [], valori = st?.serie[m.cat[c].nomeArena], pagato = st?.pagato;
+      if (m.pubblicazione && m.pubblicazione.stato !== 'attiva') {
+        const n = date.filter(d => d <= m.pubblicazione.ultimaVista).length;
+        date = date.slice(0, n); valori = valori?.slice(0, n); pagato = pagato?.slice(0, n);
+      }
       if (!valori || valori.filter((v) => v != null).length < 2) return '';
-      return `<div class="panel"><h2>${esc(nomiCat[c])} score over time</h2>${linee(st.date, [{ nome: m.nome, valori }], st.pagato)}</div>`;
+      return `<div class="panel"><h2>${esc(nomiCat[c])} score over time</h2>${linee(date, [{ nome: m.nome, valori }], pagato)}</div>`;
     }).join('');
 
     // vicini in classifica, per navigare
     let vicini = '';
-    if (m.categoriaMigliore) {
+    if (m.pubblicazione && m.pubblicazione.stato !== 'attiva') {
+      const altri = modelli.filter(x => x.pubblicazione?.stato === 'attiva' && x.href !== m.href &&
+        (x.org === m.org || Object.keys(x.cat).some(c => m.cat[c]))).slice(0, 6);
+      if (altri.length) vicini = `<div class="panel"><h2>Current alternatives</h2><ul class="vicini">${altri.map(x => `<li><a href="${x.href}">${esc(x.nome)}</a></li>`).join('')}</ul></div>`;
+    } else if (m.categoriaMigliore) {
       const cat = m.categoriaMigliore;
       const altri = modelli.filter((x) => x !== m && x.cat[cat]).sort((a, b) => Math.abs(a.cat[cat].punti - c0.punti) - Math.abs(b.cat[cat].punti - c0.punti)).slice(0, 6);
       if (altri.length) vicini = `<div class="panel"><h2>Similar free models in ${esc(nomiCat[cat])}</h2><ul class="vicini">${altri.map((x) => `<li><a href="${x.href}">${esc(x.nome)}</a> <span class="muted small">${x.cat[cat].punti}${x.hf ? ' · ' + x.hf.b + ' B' : ''}</span></li>`).join('')}</ul></div>`;
     }
 
-    // 24/10/2026 (piano SEO): le ricerche che ci portano visite sono i nomi dei modelli; il titolo dice subito
-    // quello che si cerca insieme al nome: API gratis, eseguirlo in locale, requisiti della GPU
-    const titoloPagina = m.api?.tipo === 'free tier'
-      ? `${m.nome}: Free API from Google, Limits and Arena Score · ${NOME_PIENO}`
-      : m.api?.tipo === 'trial'
-        ? `${m.nome}: Free Trial Quota, Arena Score and Free Alternatives · ${NOME_PIENO}`
-        : m.or?.gratis
-      ? `${m.nome}: Free API, Run It Locally, GPU Requirements · ${NOME_PIENO}`
-      : m.aperto && m.hf
-        ? `${m.nome}: Run It Locally for Free, GPU Requirements and Speed · ${NOME_PIENO}`
-        : `${m.nome}: Is It Free? Arena Score and Free Alternatives · ${NOME_PIENO}`;
     const descr = `${m.nome} by ${m.org}${c0 ? `, Arena score ${c0.punti} (#${c0.pos} in ${nomiCat[m.categoriaMigliore]})` : ''}${m.hf ? `, ${m.hf.b} B parameters, about ${fmtGB(m.hf.b * 0.606 + 1.2)} at 4-bit` : ''}. Where to use it free and how fast it runs on your GPU.`;
     pagina({
       file: `model/${m.slug}.html`, attiva: '/models.html', dati, blog, script: cf ? 'try.js' : undefined,
@@ -241,10 +239,11 @@ ${QUANTI.filter((p) => p.id !== 'Q2_K').map((p) => { const pq = perditaQualita(p
           { '@type': 'ListItem', position: 2, name: m.nome, item: `${URL_SITO}/model/${m.slug}` },
         ] },
       ],
-      titolo: titoloPagina, descr,
+      titolo: m.titoloPagina || m.nome, descr,
       corpo: `<p class="briciole small"><a href="/models.html">All models</a> › ${esc(m.org)}</p>
 <div style="display:grid;gap:.4rem">
-<h1>${esc(m.nome)}</h1>
+<h1>${esc(m.titoloPagina || m.nome)}</h1>
+${avvisoArchivio(m)}
 <p class="lead">${esc(m.org)}${m.licenza ? ' · ' + esc(conLicenza(m.licenza)) : ''}${m.primo ? ` · ${m.senzaVoti ? 'released' : 'on Arena since'} ${fmtData(m.primo)}` : ''}</p>
 <div>${etichetteGratis(m)}</div>
 </div>

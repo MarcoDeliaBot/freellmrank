@@ -11,8 +11,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { RADICE, SITO, URL_SITO, VER } from './sito/comune.mjs';
 import { LINGUE } from './traduci-lingue.mjs';
+import { publicationRoot, leggi, filePerURL, verificaPubblicate } from './sito/pagine-pubblicate.mjs';
 
-const CARTELLA = path.join(RADICE, 'traduzioni');
+const CARTELLA = path.resolve(process.env.TRADUZIONI_ROOT || path.join(RADICE, 'traduzioni'));
 const SOLO_CONTA = process.argv.includes('--conta');
 
 // tag che stanno dentro una frase; tutti gli altri la chiudono
@@ -52,12 +53,15 @@ const NOMI = (() => {
       else if (typeof v === 'object') raccogli(v);
     }
   };
-  for (const f of ['sito/data.json', 'dati/ram.json', 'dati/musica.json', 'dati/audio.json']) {
-    const p = path.join(RADICE, f);
+  for (const f of ['sito/data.json', 'dati/ram.json', 'dati/musica.json', 'dati/audio.json', 'dati/pagine-archivio.json']) {
+    const p = path.join(f === 'dati/pagine-archivio.json' ? publicationRoot() : RADICE, f);
     if (fs.existsSync(p)) raccogli(JSON.parse(fs.readFileSync(p, 'utf8')));
   }
   // solo nomi con una cifra, un trattino o una maiuscola dentro: mai parole comuni come «free» o «image»
   const buoni = [...nomi].map((n) => n.trim()).filter((n) => n.length >= 3 && n.length <= 80 && /\p{L}/u.test(n) && (/[\d\-_/.:]/.test(n) || /\p{Ll}\p{Lu}/u.test(n)) && !/\s{2}/.test(n));
+  // Historical proper names without digits (e.g. Flint) must also remain names.
+  for (const item of Object.values(leggi(publicationRoot(), 'dati/pagine-archivio.json', { modelli: {} }).modelli))
+    if (item.modello.nome.length >= 3) buoni.push(item.modello.nome);
   // laboratori in minuscolo come «microsoft», «mistral» (le chiavi dei dati, scritte così nelle pagine)
   for (const n of lab) if (!['free', 'open', 'other', 'image', 'video', 'audio', 'music', 'code', 'chat', 'search'].includes(n)) buoni.push(n);
   buoni.sort((a, b) => b.length - a.length);
@@ -213,6 +217,7 @@ for (const l of Object.keys(LINGUE)) {
 // Lo aggiorna la corsa notturna (traduzioni/*.json è nel suo commit); la build di Cloudflare lo legge soltanto.
 const FILE_PUBBLICATE = path.join(CARTELLA, 'pubblicate.json');
 const pubblicate = fs.existsSync(FILE_PUBBLICATE) ? JSON.parse(fs.readFileSync(FILE_PUBBLICATE, 'utf8')) : {};
+const registro = leggi(publicationRoot(), 'dati/pagine-pubblicate.json', []);
 
 // primo giro: quali pagine sono complete in ogni lingua (i link portano solo a quelle)
 const complete = {}, mancantiPer = {};
@@ -221,9 +226,10 @@ for (const l of Object.keys(LINGUE)) {
   complete[l] = new Set();
   mancantiPer[l] = new Map();
   const giaUscite = new Set(pubblicate[l] || []);
+  const obbligatorie = new Set(registro.filter(p => p.lingua === l).map(p => filePerURL(p.url).replace(new RegExp(`^${l}/`), '')));
   for (const f of pagine) {
     const { mancanti, frasi } = traduciPagina(html.get(f), dizionari[l], finto);
-    if (mancanti.size < frasi && (mancanti.size <= Math.max(3, frasi * 0.03) || giaUscite.has(f))) complete[l].add(f);
+    if (obbligatorie.has(f) || (mancanti.size < frasi && (mancanti.size <= Math.max(3, frasi * 0.03) || giaUscite.has(f)))) complete[l].add(f);
     for (const k of mancanti) mancantiPer[l].set(k, (mancantiPer[l].get(k) || 0) + 1);
   }
 }
@@ -326,8 +332,13 @@ for (const l of Object.keys(LINGUE)) {
 // sitemap: si aggiungono le pagine tradotte
 const fileSitemap = path.join(SITO, 'sitemap.xml');
 if (fs.existsSync(fileSitemap)) {
-  const righe = Object.keys(LINGUE).flatMap((l) => [...complete[l]].filter((f) => !f.startsWith('cat/')).map((f) => `<url><loc>${urlDi(f, l)}</loc></url>`));
-  const vecchie = new RegExp(`<url><loc>${URL_SITO.replace(/[.]/g, '\\.')}/(?:${Object.keys(LINGUE).join('|')})/[^<]*</loc></url>\\n`, 'g');
-  fs.writeFileSync(fileSitemap, fs.readFileSync(fileSitemap, 'utf8').replace(vecchie, '').replace('</urlset>', righe.join('\n') + '\n</urlset>'));
+  const urls = new Map([...fs.readFileSync(fileSitemap, 'utf8').matchAll(/<url><loc>([^<]+)<\/loc>(?:<lastmod>([^<]+)<\/lastmod>)?<\/url>/g)].map(m => [m[1], m[2]]));
+  const date = JSON.parse(fs.readFileSync(path.join(SITO, 'data.json'), 'utf8')).aggiornato;
+  for (const l of Object.keys(LINGUE)) for (const f of complete[l]) if (!f.startsWith('cat/')) urls.set(urlDi(f, l), date);
+  for (const p of registro) urls.set(URL_SITO + p.url, p.ultimaVista);
+  const xml = entries => `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.map(([u, d]) => `<url><loc>${u}</loc><lastmod>${d || date}</lastmod></url>`).join('\n')}\n</urlset>\n`;
+  fs.writeFileSync(fileSitemap, xml([...urls]));
+  for (const l of Object.keys(LINGUE)) fs.writeFileSync(path.join(SITO, l, 'sitemap.xml'), xml([...urls].filter(([u]) => u.startsWith(`${URL_SITO}/${l}/`))));
 }
+verificaPubblicate(registro, SITO);
 console.log(`Traduzioni: ${scritte} pagine scritte (${Object.keys(LINGUE).map((l) => `${l} ${complete[l].size}`).join(', ')} su ${pagine.length})`);

@@ -260,10 +260,10 @@ export function pagineBlog(dati, post) {
         { '@type': 'BlogPosting', headline: p.titolo, description: p.descr, datePublished: p.data, dateModified: dati.aggiornato, url: `${URL_SITO}/blog/${p.slug}`, author: { '@type': 'Organization', name: NOME_PIENO, url: URL_SITO + '/' }, publisher: { '@type': 'Organization', name: NOME_PIENO, url: URL_SITO + '/' } },
         { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Blog', item: `${URL_SITO}/blog/` }, { '@type': 'ListItem', position: 2, name: p.titolo, item: `${URL_SITO}/blog/${p.slug}` }] },
       ],
-      titolo: `${p.titolo} · ${NOME_PIENO}`, descr: p.descr,
+      titolo: p.titoloPagina || p.titolo, descr: p.descr,
       corpo: `<article class="articolo">
 <nav class="art-briciole" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span>/</span><span>${esc(etichetta(p))}</span></nav>
-<header class="art-testa"><p class="art-meta"><span class="art-tipo">${esc(etichetta(p))}</span><span>·</span><time datetime="${p.data}">${fmtData(p.data)}</time><span>·</span><span>${Math.max(1, Math.round(p.corpo.split(/\s+/).length / 220))} min read</span>${p.tipo !== 'Guide' || /\{\{|Data as of/.test(p.corpo) || p.automatico ? '<span>·</span><span class="art-vivo"><i class="punto-vivo" aria-hidden="true"></i>Data updated automatically</span>' : ''}</p><h1>${esc(p.titolo)}</h1><p class="lead">${esc(p.descr)}</p></header>
+<header class="art-testa"><p class="art-meta"><span class="art-tipo">${esc(etichetta(p))}</span><span>·</span><time datetime="${p.data}">${fmtData(p.data)}</time><span>·</span><span>${Math.max(1, Math.round(p.corpo.split(/\s+/).length / 220))} min read</span>${!p.archiviato && (p.tipo !== 'Guide' || /\{\{|Data as of/.test(p.corpo) || p.automatico) ? '<span>·</span><span class="art-vivo"><i class="punto-vivo" aria-hidden="true"></i>Data updated automatically</span>' : ''}</p><h1>${esc(p.titoloPagina || p.titolo)}</h1><p class="lead">${esc(p.descr)}</p></header>
 ${abbellisci(marked.parse(p.corpo), p, dati)}
 </article>`,
     });
@@ -287,16 +287,16 @@ ${p.copertina ? `<a class="post-copertina" href="/blog/${p.slug}.html" tabindex=
 ${grande && capi.length ? `<p class="post-capi"><span class="tenue">Arena #1 free:</span>${capi.map(([n, m]) => `<span>${n}: <b>${esc(m.nome)}</b></span>`).join('')}</p>` : ''}</article>`;
   pagina({
     file: 'blog/index.html', attiva: '/blog/', dati, blog: post, script: 'blog.js',
-    titolo: `AI News, Guides and Reviews · ${NOME_PIENO} Blog`,
+    titolo: 'Blog',
     descr: 'AI news from official sources, guides to free and local AI models, model reviews and a weekly report of the free leaderboard.',
     corpo: `<div class="blog-testa"><h1>Blog</h1><p class="lead">AI news from official sources and news sites, guides, model reviews and a weekly report of the free leaderboard. Every number is checked against its source.</p>
 <nav class="blog-filtri" aria-label="Filter posts"><button type="button" aria-pressed="true" data-filtro="">All articles</button><button type="button" aria-pressed="false" data-filtro="news">News</button><button type="button" aria-pressed="false" data-filtro="guide">Guides</button><button type="button" aria-pressed="false" data-filtro="video">Videos</button><button type="button" aria-pressed="false" data-filtro="week">Weekly reports</button><button type="button" aria-pressed="false" data-filtro="hardware">Hardware and GPUs</button></nav></div>
 <section class="lista-blog" aria-label="Posts">
 ${evidenza ? scheda(evidenza, true) : ''}
-${notizie.length ? `<div class="blog-sezione" data-filtro="news"><h3>AI news</h3><span>Every day, from official sources and news sites</span></div>${notizie.map((p) => scheda(p)).join('\n')}` : ''}
+${notizie.length ? `<div class="blog-sezione" data-filtro="news"><h2>AI news</h2><span>Every day, from official sources and news sites</span></div>${notizie.map((p) => scheda(p)).join('\n')}` : ''}
 ${altre.map((p) => scheda(p)).join('\n')}
-${video.length ? `<div class="blog-sezione" data-filtro="video"><h3>Videos</h3><span>Every day</span></div><div class="griglia-video">${video.map((p) => scheda(p)).join('\n')}</div>` : ''}
-${resoconti.length ? `<div class="blog-sezione" data-filtro="week"><h3>Automatic weekly Arena reports</h3><span>Every Sunday</span></div>${resoconti.map((p) => scheda(p)).join('\n')}` : ''}
+${video.length ? `<div class="blog-sezione" data-filtro="video"><h2>Videos</h2><span>Every day</span></div><div class="griglia-video">${video.map((p) => scheda(p)).join('\n')}</div>` : ''}
+${resoconti.length ? `<div class="blog-sezione" data-filtro="week"><h2>Automatic weekly Arena reports</h2><span>Every Sunday</span></div>${resoconti.map((p) => scheda(p)).join('\n')}` : ''}
 </section>`,
   });
 }
