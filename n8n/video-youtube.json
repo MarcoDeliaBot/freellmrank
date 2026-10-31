@@ -12,19 +12,18 @@
           ]
         }
       },
-      "id": "b2c3d4e5-0001-4000-8000-000000000001",
+      "id": "45c35aae-cc8b-4b73-ad9c-54aa7938fa76",
       "name": "Ogni mezz'ora",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
         0,
         0
-      ],
-      "notes": "SPENTO in n8n il 25/10/2026 (Marco): finché Google non accetta il progetto (audit API), i caricamenti con l'API restano privati. I video li pubblica in PUBBLICO il compito programmato di Claude «freellmarena-youtube-coda-25» (9:30 e 18:30). Riaccendere solo dopo l'audit, e spegnere allora quel compito. 25/10/2026, Marco: «fai girare il caricamento su YouTube più volte al giorno, dopo i video». Alle 8 i video del giorno non esistevano ancora (nascono dalle 10 in poi) e restavano fermi fino al giorno dopo."
+      ]
     },
     {
       "parameters": {
-        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/releases?per_page=30",
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/releases?per_page=100",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -40,12 +39,12 @@
         },
         "options": {}
       },
-      "id": "b2c3d4e5-0002-4000-8000-000000000002",
+      "id": "88ad8e50-6575-4998-830b-96610f46f917",
       "name": "Leggi i video pronti su GitHub",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        720,
+        224,
         0
       ],
       "retryOnFail": true,
@@ -54,20 +53,22 @@
     },
     {
       "parameters": {
-        "jsCode": "// Tiene solo i video non ancora caricati (la memoria resta fra un'esecuzione e l'altra\n// solo quando il flusso è ATTIVO: le prove a mano con «Esegui» non se lo ricordano).\nconst memoria = $getWorkflowStaticData('global');\nmemoria.fatti = memoria.fatti || [];\n// 25/10/2026: il flusso gira ogni mezz'ora. Tetto: 6 caricamenti per giorno di quota YouTube (quota gratis 10.000 unità,\n// un caricamento ne costa 1.600; si azzera a mezzanotte del Pacifico). Il canale ne ha accettati 10 in 24 ore, quindi 6 sta dentro.\nconst TETTO = 6;\nconst giorno = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });\nif (memoria.giorno !== giorno) { memoria.giorno = giorno; memoria.oggi = 0; }\nconst posto = Math.max(0, TETTO - (memoria.oggi || 0));\nconst pronti = [];\nfor (const it of $('Leggi i video pronti su GitHub').all()) {\n  const r = it.json;\n  if (!String(r.tag_name || '').startsWith('video-') || memoria.fatti.includes(r.tag_name)) continue;\n  // solo in inglese (Marco, 22/10/2026) e solo i video nati dopo quelli pubblicati a mano fino al 25/10/2026\n  if (r.tag_name.endsWith('-it') || String(r.created_at) < '2026-10-25T00:00:00Z') continue;\n  const mp4 = (r.assets || []).find((a) => a.name.endsWith('.mp4'));\n  const info = (r.assets || []).find((a) => a.name.endsWith('.json'));\n  if (mp4 && info) pronti.push({ json: { tag: r.tag_name, mp4: mp4.browser_download_url, info: info.browser_download_url, creato: r.created_at } });\n}\n// i più vecchi prima, fino al tetto del giorno\nreturn pronti.sort((a, b) => a.json.creato.localeCompare(b.json.creato)).slice(0, posto);"
-      },
-      "id": "b2c3d4e5-0003-4000-8000-000000000003",
-      "name": "Solo i video nuovi",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        960,
-        0
-      ]
-    },
-    {
-      "parameters": {
-        "url": "={{ $json.info }}",
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/contents/contenuti/youtube.json",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.raw+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
         "options": {
           "response": {
             "response": {
@@ -76,86 +77,34 @@
           }
         }
       },
-      "id": "b2c3d4e5-0004-4000-8000-000000000004",
-      "name": "Leggi titolo e descrizione",
+      "name": "Leggi i video già sul canale",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1200,
+        448,
         0
       ],
-      "retryOnFail": true,
-      "maxTries": 3,
-      "waitBetweenTries": 30000
-    },
-    {
-      "parameters": {
-        "url": "={{ $('Solo i video nuovi').item.json.mp4 }}",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "file",
-              "outputPropertyName": "data"
-            }
-          }
-        }
-      },
-      "id": "b2c3d4e5-0005-4000-8000-000000000005",
-      "name": "Scarica il video",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1440,
-        0
-      ],
-      "retryOnFail": true,
-      "maxTries": 3,
-      "waitBetweenTries": 30000
-    },
-    {
-      "parameters": {
-        "resource": "video",
-        "operation": "upload",
-        "title": "={{ $('Leggi titolo e descrizione').item.json.titolo }}",
-        "regionCode": "US",
-        "categoryId": "28",
-        "binaryProperty": "data",
-        "options": {
-          "description": "={{ $('Leggi titolo e descrizione').item.json.descrizione }}",
-          "tags": "={{ $('Leggi titolo e descrizione').item.json.tag.join(',') }}",
-          "privacyStatus": "private",
-          "selfDeclaredMadeForKids": false,
-          "defaultLanguage": "en"
-        }
-      },
-      "id": "b2c3d4e5-0006-4000-8000-000000000006",
-      "name": "Carica su YouTube",
-      "type": "n8n-nodes-base.youTube",
-      "typeVersion": 1,
-      "position": [
-        1680,
-        0
-      ],
+      "executeOnce": true,
+      "id": "564b35b4-37f5-4b26-bcb7-c5864cc6e876",
       "credentials": {
-        "youTubeOAuth2Api": {
+        "httpHeaderAuth": {
           "id": "",
-          "name": "YouTube FreeLLMArena"
+          "name": "GitHub freellmrank (Actions)"
         }
       }
     },
     {
       "parameters": {
-        "mode": "runOnceForEachItem",
-        "jsCode": "// Segna il video come caricato, così non si ricarica; conta i caricamenti del giorno per il tetto\nconst memoria = $getWorkflowStaticData('global');\nconst tag = $('Solo i video nuovi').item.json.tag;\nmemoria.fatti = [...(memoria.fatti || []), tag].slice(-300);\nmemoria.oggi = (memoria.oggi || 0) + 1;\nreturn { json: { caricato: tag, youtube: $json.id ? `https://youtube.com/shorts/${$json.id}` : null } };"
+        "jsCode": "// Sceglie UN video a ogni giro (Marco, 30/10/2026: «fai il lavoro completo»).\n// Già sul canale = nella memoria del flusso oppure in contenuti/youtube.json (lì ci sono anche quelli pubblicati da Chrome).\n// Ordine: prima le skill; poi i più vecchi prima; a parità di ora il video lungo prima del suo Short (così lo Short rimanda al lungo).\n// La memoria resta fra un giro e l'altro solo quando il flusso è ATTIVO (le prove a mano non se la ricordano).\nconst memoria = $getWorkflowStaticData('global');\nmemoria.fatti = memoria.fatti || [];\nmemoria.ids = memoria.ids || {};\n// Quota YouTube (tabella ufficiale, controllata il 30/10/2026): i caricamenti hanno un conto a parte, 100 al giorno a 1 unità\n// l'uno; le altre chiamate stanno nelle 10.000 unità al giorno: sottotitoli 400 + lingua 51 + controllo del canale 1 = 452\n// a video, quindi ~22 video al giorno. Tetto a 15: margine per il limite di caricamenti del canale (si azzera a mezzanotte del Pacifico).\nconst TETTO = 15;\nconst giorno = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });\nif (memoria.giorno !== giorno) { memoria.giorno = giorno; memoria.oggi = 0; }\n// 30/10/2026: il 30/10 i video li caricava anche il compito di Chrome sul PC: 3 copie di n8n sono state cancellate (Marco)\n// e restano quelle di Chrome. Qui la memoria prende gli id giusti, una volta sola. Da qui in poi carica solo n8n.\nconst GIUSTI = { 'video-notizia-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai': 'NT-pCaERZbk', 'video-breve-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai': 'O7KEomzUnL0', 'video-notizia-google-expands-gemini-and-search-with-connected-apps-pla': 'g0Rpj7w9HOU' };\nif (!memoria.doppioni30) { for (const [t, id] of Object.entries(GIUSTI)) { memoria.ids[t] = id; if (!memoria.fatti.includes(t)) memoria.fatti.push(t); } memoria.doppioni30 = true; }\nif (memoria.pieno === giorno || (memoria.oggi || 0) >= TETTO) return [];\nconst canale = $('Leggi i video già sul canale').first().json || {};\nconst gia = (tag) => memoria.fatti.includes(tag) || !!memoria.ids[tag] || !!canale[tag.slice(6)];\nconst pronti = [];\nfor (const it of $('Leggi i video pronti su GitHub').all()) {\n  const r = it.json;\n  const tag = String(r.tag_name || '');\n  if (!tag.startsWith('video-') || tag.endsWith('-it') || gia(tag)) continue;\n  // solo in inglese (Marco, 22/10/2026) e solo i video nati dopo quelli pubblicati a mano fino al 25/10/2026\n  if (String(r.created_at) < '2026-10-25T00:00:00Z') continue;\n  const file = (fine) => (r.assets || []).find((a) => a.name.endsWith(fine));\n  if (!file('.mp4') || !file('.json')) continue;\n  pronti.push({\n    tag, nome: tag.slice(6), creato: r.created_at,\n    breve: /^video-(breve|nuovo|settimana)-/.test(tag) ? 1 : 0,\n    mp4: file('.mp4').browser_download_url, info: file('.json').browser_download_url,\n    srt: file('.srt') ? file('.srt').browser_download_url : '',\n  });\n}\nif (!pronti.length) return [];\n// 30/10/2026 (Marco): prima le skill, poi tutto il resto. Le skill escono come release «video-skill-<nome>» (lungo)\n// e «video-breve-skill-<nome>» (Short collegato): dentro ogni gruppo i più vecchi prima, il lungo prima del suo Short.\nconst prima = (p) => (/^video-(breve-)?skill-/.test(p.tag) ? 0 : 1);\npronti.sort((a, b) => prima(a) - prima(b) || a.creato.localeCompare(b.creato) || a.breve - b.breve);\nreturn [{ json: { ...pronti[0], inCoda: pronti.length, oggi: memoria.oggi || 0 } }];"
       },
-      "id": "b2c3d4e5-0007-4000-8000-000000000007",
-      "name": "Segna come caricato",
+      "name": "Scegli il video da caricare",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1920,
+        672,
         0
-      ]
+      ],
+      "id": "508049f7-f9cd-4269-b46f-58c3e079c9bb"
     },
     {
       "parameters": {
@@ -168,9 +117,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        240,
+        880,
         0
       ],
+      "id": "d5479951-0e9b-43da-b002-be4875e31f35",
       "credentials": {
         "youTubeOAuth2Api": {
           "id": "",
@@ -180,30 +130,406 @@
     },
     {
       "parameters": {
-        "jsCode": "// 23/10/2026: n8n aveva caricato 6 video sul canale personale «Marco D'Elia», perché il collegamento\n// Google era stato fatto prima che esistesse FreeLLMArena. YouTube carica sempre sul canale del collegamento:\n// se non è FreeLLMArena il flusso si ferma con un errore e non carica niente.\nconst GIUSTO = 'UCaDO6FcvstiPM83lh5eH7_w';\nconst canale = ($input.first().json.items || [])[0] || {};\nif (canale.id !== GIUSTO) throw new Error(`Canale sbagliato: il collegamento YouTube è su «${canale.snippet?.title || canale.id || 'nessun canale'}», non su FreeLLMArena. Ricollega la credenziale scegliendo FreeLLMArena.`);\nreturn [{ json: { canale: canale.snippet.title } }];"
+        "jsCode": "// 23/10/2026: n8n aveva caricato 6 video sul canale personale «Marco D'Elia», perché il collegamento\n// Google era stato fatto prima che esistesse FreeLLMArena. YouTube carica sempre sul canale del collegamento:\n// se non è FreeLLMArena il flusso si ferma con un errore e non carica niente.\n// 30/10/2026: il controllo si fa solo quando c'è un video da caricare (1 unità di quota in meno a ogni giro vuoto).\nconst GIUSTO = 'UCaDO6FcvstiPM83lh5eH7_w';\nconst canale = ($input.first().json.items || [])[0] || {};\nif (canale.id !== GIUSTO) throw new Error(`Canale sbagliato: il collegamento YouTube è su «${canale.snippet?.title || canale.id || 'nessun canale'}», non su FreeLLMArena. Ricollega la credenziale scegliendo FreeLLMArena.`);\nreturn [{ json: { ...$('Scegli il video da caricare').first().json, canale: canale.snippet.title } }];"
       },
       "name": "Solo sul canale FreeLLMArena",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        480,
+        1104,
         0
+      ],
+      "id": "f894c7e2-f552-4536-89d8-6f32f29124dc"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.info }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "67725a69-d911-4150-83f6-ce4e1c2dc660",
+      "name": "Leggi titolo e descrizione",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1328,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lo Short rimanda al suo video lungo (Marco, 23/10/2026) con «Full video: https://youtu.be/<id>», come nella pubblicazione\n// da Chrome. L'id del lungo viene dalla memoria del flusso o da contenuti/youtube.json; se il lungo non è ancora sul canale,\n// lo Short esce con la descrizione della release (l'ordine dei caricamenti mette il lungo prima, quindi è un caso raro).\nconst scelto = $('Solo sul canale FreeLLMArena').first().json;\nconst info = $json;\nconst memoria = $getWorkflowStaticData('global');\nconst canale = $('Leggi i video già sul canale').first().json || {};\nlet descrizione = String(info.descrizione || '').trim();\nlet collegato = '';\nif (info.lungo) {\n  const id = (memoria.ids || {})[info.lungo] || canale[String(info.lungo).replace(/^video-/, '')];\n  if (id) {\n    collegato = 'https://youtu.be/' + id;\n    const riga = 'Full video: ' + collegato;\n    if (/^Full video:.*$/m.test(descrizione)) descrizione = descrizione.replace(/^Full video:.*$/m, riga);\n    else if (/^Full story:/m.test(descrizione)) descrizione = descrizione.replace(/^Full story:/m, riga + '\\nFull story:');\n    else descrizione += '\\n' + riga;\n  }\n}\n// limiti di YouTube: titolo 100 caratteri, descrizione 5.000, niente < >\nconst pulito = (s) => String(s || '').replace(/[<>]/g, '');\nreturn [{ json: {\n  ...scelto,\n  titolo: pulito(info.titolo).slice(0, 100),\n  descrizione: pulito(descrizione).slice(0, 5000),\n  parole: (info.tag || []).join(','), // tag di YouTube (il campo «tag» resta quello della release)\n  lingua: info.lingua || 'en',\n  lungo: info.lungo || '',\n  collegato,\n} }];"
+      },
+      "name": "Prepara la descrizione",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1552,
+        0
+      ],
+      "id": "f899ae7e-dff7-4adc-8fd1-9d348a82f8d6"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Prepara la descrizione').first().json.mp4 }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "bf34cd40-2fb8-4082-b616-7d8f666243f2",
+      "name": "Scarica il video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1760,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "upload",
+        "title": "={{ $('Prepara la descrizione').first().json.titolo }}",
+        "regionCode": "US",
+        "categoryId": "28",
+        "options": {
+          "defaultLanguage": "={{ $('Prepara la descrizione').first().json.lingua }}",
+          "description": "={{ $('Prepara la descrizione').first().json.descrizione }}",
+          "privacyStatus": "public",
+          "selfDeclaredMadeForKids": false,
+          "tags": "={{ $('Prepara la descrizione').first().json.parole }}"
+        }
+      },
+      "id": "6a25a2bd-cf0e-4a82-856a-2f13155d8d2e",
+      "name": "Carica su YouTube",
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [
+        1984,
+        0
+      ],
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube FreeLLMArena"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Segna il video come caricato (così non si ricarica), tiene il suo id per lo Short collegato e conta i caricamenti del giorno.\nconst memoria = $getWorkflowStaticData('global');\nconst v = $('Prepara la descrizione').first().json;\nconst id = $json.uploadId || $json.id;\nif (!id) throw new Error('YouTube non ha restituito l\\'id del video: ' + JSON.stringify($json).slice(0, 300));\nmemoria.fatti = [...(memoria.fatti || []).filter((t) => t !== v.tag), v.tag].slice(-300);\nmemoria.ids = memoria.ids || {};\nmemoria.ids[v.tag] = id;\nconst chiavi = Object.keys(memoria.ids);\nfor (const k of chiavi.slice(0, Math.max(0, chiavi.length - 300))) delete memoria.ids[k];\nmemoria.oggi = (memoria.oggi || 0) + 1;\nreturn [{ json: {\n  tag: v.tag, nome: v.nome, id,\n  link: v.breve ? 'https://youtube.com/shorts/' + id : 'https://youtu.be/' + id,\n  collegato: v.collegato, srt: v.srt, lingua: v.lingua,\n} }];"
+      },
+      "id": "018bd7c3-edb3-4bb3-8377-e0e83b8e92f9",
+      "name": "Segna come caricato",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2208,
+        -128
       ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Se YouTube dice che la quota del giorno è finita, il flusso si ferma fino alla mezzanotte del Pacifico\n// (niente errori a ogni mezz'ora). Ogni altro errore resta un errore, così si vede nelle esecuzioni.\nconst testo = JSON.stringify($json);\n// anche il limite di caricamenti del canale («uploadLimitExceeded»): ci si ferma fino al giorno dopo\nif (/quota|uploadLimitExceeded|exceeded the number of videos/i.test(testo)) {\n  const memoria = $getWorkflowStaticData('global');\n  memoria.pieno = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });\n  return [{ json: { fermo: 'Quota o limite di caricamenti YouTube finiti per oggi: si riprende dopo la mezzanotte del Pacifico', video: $('Prepara la descrizione').first().json.tag } }];\n}\nthrow new Error('Caricamento su YouTube non riuscito: ' + testo.slice(0, 500));"
+      },
+      "name": "Quota finita?",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2208,
+        160
+      ],
+      "id": "ec03d92d-c10c-4c5a-8b21-848f5118ea86"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.srt }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text",
+              "outputPropertyName": "testo"
+            }
+          }
+        }
+      },
+      "name": "Scarica i sottotitoli",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2432,
+        -240
+      ],
+      "id": "d2b8b477-c251-43e1-abb9-f4808c12dc99",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Corpo «multipart/related» per captions.insert: prima i dati della traccia, poi il file .srt (la voce esatta del video:\n// YouTube li traduce nelle altre lingue).\nconst v = $('Segna come caricato').first().json;\nconst testo = String($json.testo || '').trim();\nif (!v.srt || !testo || $json.error) return [];\nconst confine = 'freellmarena' + Date.now();\nconst dati = { snippet: { videoId: v.id, language: v.lingua || 'en', name: '', isDraft: false } };\nconst corpo = '--' + confine + '\\r\\nContent-Type: application/json; charset=UTF-8\\r\\n\\r\\n' + JSON.stringify(dati) + '\\r\\n'\n  + '--' + confine + '\\r\\nContent-Type: application/octet-stream\\r\\n\\r\\n' + testo + '\\r\\n'\n  + '--' + confine + '--';\nreturn [{ json: { corpo, tipo: 'multipart/related; boundary=' + confine } }];"
+      },
+      "name": "Prepara i sottotitoli",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2640,
+        -240
+      ],
+      "id": "27dc1d43-711b-4fca-b3f3-9ad4b0703f2e"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/upload/youtube/v3/captions?part=snippet&uploadType=multipart",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "youTubeOAuth2Api",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "={{ $json.tipo }}",
+        "body": "={{ $json.corpo }}",
+        "options": {}
+      },
+      "name": "Carica i sottotitoli",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2864,
+        -240
+      ],
+      "id": "90c53bea-173b-4de9-9419-ebb6f74af07f",
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube FreeLLMArena"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/contents/contenuti/youtube.json",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Rileggi youtube.json",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2432,
+        0
+      ],
+      "id": "64c4d9dd-7bca-4cfa-b703-780c6bde67f6",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub freellmrank (Actions)"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Gli id vanno in contenuti/youtube.json: il blog mette il video in cima al post (script/sito/blog.mjs).\n// Stesso formato di script/youtube-link.mjs: { \"<nome del video>\": \"<id YouTube>\" }, rientro di 1 spazio.\n// Scrive TUTTI gli id caricati dal flusso che mancano nel file: se un salvataggio non è riuscito, lo recupera il giro dopo.\nconst memoria = $getWorkflowStaticData('global');\nconst v = $('Segna come caricato').first().json;\nconst f = $json;\nif (!f.content || !f.sha) return [];\nconst mappa = JSON.parse(Buffer.from(f.content, 'base64').toString('utf8'));\nconst nuovi = [];\nfor (const [tag, id] of Object.entries({ ...(memoria.ids || {}), [v.tag]: v.id })) {\n  const nome = tag.replace(/^video-/, '');\n  if (mappa[nome] !== id) { mappa[nome] = id; nuovi.push(nome); }\n}\nif (!nuovi.length) return [];\nconst testo = JSON.stringify(mappa, null, 1) + '\\n';\nreturn [{ json: { message: 'YouTube: ' + nuovi.join(', ').slice(0, 200), sha: f.sha, content: Buffer.from(testo, 'utf8').toString('base64'), nuovi } }];"
+      },
+      "name": "Aggiungi il video a youtube.json",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2640,
+        0
+      ],
+      "id": "38449e55-e68b-42d3-b568-cbaf70038986"
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/contents/contenuti/youtube.json",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message: $json.message, content: $json.content, sha: $json.sha }) }}",
+        "options": {}
+      },
+      "name": "Salva youtube.json su GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2864,
+        0
+      ],
+      "id": "8db80ff6-bd33-4d7d-acfa-98d9edcc6eab",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub freellmrank (Actions)"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "=https://www.googleapis.com/youtube/v3/videos?part=snippet&id={{ $('Segna come caricato').first().json.id }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "youTubeOAuth2Api",
+        "options": {}
+      },
+      "name": "Leggi i dati del video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2432,
+        240
+      ],
+      "id": "2b6a2b29-4410-4773-a460-359e050dae23",
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube FreeLLMArena"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// «Lingua del video» in YouTube Studio: senza, Studio non mostra i sottotitoli e YouTube non traduce né doppia il video. Si riscrive lo snippet com'è, con la lingua in più (50 unità di quota).\nconst v = $('Segna come caricato').first().json;\nconst video = ($json.items || [])[0];\nif (!video) return [];\nconst s = video.snippet;\nconst lingua = v.lingua || 'en';\n// 30/10/2026: si riscrive SEMPRE. L'API risponde già «en» dopo il caricamento, ma Studio la considera impostata (e parte\n// con doppiaggio e traduzioni automatiche) solo dopo questo aggiornamento: provato sul video HeAxSIimpiE.\nreturn [{ json: { id: video.id, snippet: { title: s.title, description: s.description, tags: s.tags || [], categoryId: s.categoryId, defaultLanguage: lingua, defaultAudioLanguage: lingua } } }];"
+      },
+      "name": "Aggiungi la lingua",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2640,
+        240
+      ],
+      "id": "524719e9-0219-4602-b9b9-1a04b28f840c"
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://www.googleapis.com/youtube/v3/videos?part=snippet",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "youTubeOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "name": "Imposta la lingua del video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2864,
+        240
+      ],
+      "id": "afde635e-b3ad-488f-9df9-d69d41c74fef",
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube FreeLLMArena"
+        }
+      },
+      "onError": "continueRegularOutput"
     }
   ],
   "connections": {
-    "Leggi i video pronti su GitHub": {
+    "Ogni mezz'ora": {
       "main": [
         [
           {
-            "node": "Solo i video nuovi",
+            "node": "Leggi i video pronti su GitHub",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Solo i video nuovi": {
+    "Leggi i video pronti su GitHub": {
+      "main": [
+        [
+          {
+            "node": "Leggi i video già sul canale",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leggi i video già sul canale": {
+      "main": [
+        [
+          {
+            "node": "Scegli il video da caricare",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scegli il video da caricare": {
+      "main": [
+        [
+          {
+            "node": "Di che canale è il collegamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Di che canale è il collegamento": {
+      "main": [
+        [
+          {
+            "node": "Solo sul canale FreeLLMArena",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Solo sul canale FreeLLMArena": {
       "main": [
         [
           {
@@ -215,6 +541,17 @@
       ]
     },
     "Leggi titolo e descrizione": {
+      "main": [
+        [
+          {
+            "node": "Prepara la descrizione",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara la descrizione": {
       "main": [
         [
           {
@@ -244,36 +581,97 @@
             "type": "main",
             "index": 0
           }
-        ]
-      ]
-    },
-    "Di che canale è il collegamento": {
-      "main": [
+        ],
         [
           {
-            "node": "Solo sul canale FreeLLMArena",
+            "node": "Quota finita?",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Solo sul canale FreeLLMArena": {
+    "Segna come caricato": {
       "main": [
         [
           {
-            "node": "Leggi i video pronti su GitHub",
+            "node": "Scarica i sottotitoli",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Rileggi youtube.json",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Leggi i dati del video",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Ogni mezz'ora": {
+    "Scarica i sottotitoli": {
       "main": [
         [
           {
-            "node": "Di che canale è il collegamento",
+            "node": "Prepara i sottotitoli",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara i sottotitoli": {
+      "main": [
+        [
+          {
+            "node": "Carica i sottotitoli",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rileggi youtube.json": {
+      "main": [
+        [
+          {
+            "node": "Aggiungi il video a youtube.json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggiungi il video a youtube.json": {
+      "main": [
+        [
+          {
+            "node": "Salva youtube.json su GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leggi i dati del video": {
+      "main": [
+        [
+          {
+            "node": "Aggiungi la lingua",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggiungi la lingua": {
+      "main": [
+        [
+          {
+            "node": "Imposta la lingua del video",
             "type": "main",
             "index": 0
           }
@@ -283,8 +681,9 @@
   },
   "settings": {
     "executionOrder": "v1",
+    "binaryMode": "separate",
     "timezone": "Europe/Rome"
   },
   "pinData": {},
-  "active": false
+  "active": true
 }
