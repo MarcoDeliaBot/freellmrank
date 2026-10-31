@@ -1,0 +1,12 @@
+[
+ {"slug":"browser-automation","nome":"Browser Automation","paroleChiave":["browser","playwright","puppeteer","selenium","web automation"],"introduzione":"Give an assistant a repeatable workflow for navigating websites, inspecting pages and working with browser controls."},
+ {"slug":"frontend-design","nome":"Frontend Design","paroleChiave":["frontend","ui engineering","interface design","css","figma","web design"],"introduzione":"Shape web interfaces with skills for layout, visual design and frontend implementation."},
+ {"slug":"testing","nome":"Testing","paroleChiave":["testing","test driven","test suite","code review","review loop","debugging"],"introduzione":"Check behavior, investigate failures and review changes with workflows focused on software quality."},
+ {"slug":"documents","nome":"Documents","paroleChiave":["document","pdf","docx","slides","presentation","slideshow","spreadsheet"],"introduzione":"Prepare written documents, slide decks and spreadsheets with instructions tailored to those formats."},
+ {"slug":"data","nome":"Data","paroleChiave":["data analysis","analytics","dataset","sql","pandas","data science"],"introduzione":"Explore datasets and turn structured information into queries, analyses and charts."},
+ {"slug":"marketing-seo","nome":"Marketing and SEO","paroleChiave":["marketing","seo","copywriting","campaign","search engine"],"introduzione":"Plan campaigns and search content with workflows for marketing and discoverability."},
+ {"slug":"devops","nome":"DevOps","paroleChiave":["devops","ci cd","deployment","docker","kubernetes","observability","git workflow","shipping"],"introduzione":"Take software through version control, delivery and operations with infrastructure focused skills."},
+ {"slug":"video-media","nome":"Video and Media","paroleChiave":["video","hyperframes","audio","animation","media","image"],"introduzione":"Build and edit media with skills for video composition, animation and audiovisual production."},
+ {"slug":"coding","nome":"Coding","paroleChiave":["coding","code","development","programming","api","refactor","implementation","migration"],"introduzione":"Move from a software requirement to maintainable code with implementation and refactoring workflows."},
+ {"slug":"productivity","nome":"Productivity","paroleChiave":["productivity","planning","task","context","interview","idea","workflow","agent skills"],"introduzione":"Organize tasks, clarify requirements and maintain the context an assistant needs to keep work moving."}
+]

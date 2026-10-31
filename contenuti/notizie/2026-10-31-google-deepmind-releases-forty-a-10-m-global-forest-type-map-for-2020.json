@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-31-google-deepmind-releases-forty-a-10-m-global-forest-type-map-for-2020",
+ "titolo": "Google DeepMind releases ForTy, a 10‑m global forest‑type map for 2020",
+ "descr": "The ForTy map classifies land into six forest and crop categories with 90.2% overall accuracy, aiding EU deforestation regulations.",
+ "tema": "Research",
+ "paragrafi": [
+  "Google DeepMind and the World Resources Institute unveiled ForTy, an AI‑driven global map of land cover for the year 2020.",
+  "The map uses AlphaEarth Foundations and three image‑recognition stages to assign each 10‑meter pixel to one of six classes, including primary forest, plantations and tree‑crop farms.",
+  "Independent validation of 8,190 sites showed a 90.2% overall correctness rate, with 89% accuracy for primary forests but lower performance for plantations and tree crops.",
+  "ForTy outperformed comparable European Commission datasets, scoring 95.5% versus 93.6% for forest‑versus‑non‑forest and 90.9% versus 87.8% for forest‑type classification on the same test data.",
+  "The map provides a 2020 reference point for the EU Regulation on Deforestation‑free Products, supporting supply‑chain risk assessments and broader conservation goals."
+ ],
+ "perche": [
+  "The dataset gives policymakers and companies a detailed baseline for evaluating land‑use changes since the 2020 cut‑off, improving compliance with the EUDR. Researchers and developers of free or local AI tools can use the ForTy data via the GeeFlow library to train or test geospatial models without needing proprietary satellite pipelines."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "Google Deepmind creates a global map of forests with satellite data and AI",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/google-deepmind-creates-a-global-map-of-forests-with-satellite-data-and-ai/",
+   "titolo": "Google Deepmind creates a global map of forests with satellite data and AI",
+   "ufficiale": false,
+   "data": "2026-10-31"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/google-deepmind/geeflow",
+   "titolo": "GitHub - google-deepmind/geeflow: GeeFlow - generate and process large-scale geospatial datasets with Google Earth Engine. · GitHub",
+   "ufficiale": true,
+   "data": "2026-10-31"
+  }
+ ],
+ "frasiTolte": 0
+}

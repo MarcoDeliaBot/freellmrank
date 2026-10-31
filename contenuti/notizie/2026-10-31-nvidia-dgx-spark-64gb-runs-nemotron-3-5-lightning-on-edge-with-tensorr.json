@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-31-nvidia-dgx-spark-64gb-runs-nemotron-3-5-lightning-on-edge-with-tensorr",
+ "titolo": "NVIDIA DGX Spark 64GB runs Nemotron‑3.5 Lightning on edge with TensorRT Edge‑LLM",
+ "descr": "Developers can prototype, fine‑tune and test the Nemotron‑3.5 Lightning 30B model on the DGX Spark using a few CLI commands and serve it locally via an OpenAI‑compatible API.",
+ "tema": "Guides",
+ "paragrafi": [
+  "NVIDIA announced that the DGX Spark 64GB system now supports edge AI development with TensorRT Edge‑LLM, a lightweight C++ inference runtime.",
+  "Using the trtedge CLI, developers can download the Nemotron‑3.5 Lightning 30B model (about 21 GB) and build optimized TensorRT engines on the Spark platform.",
+  "The runtime also lets users launch a local OpenAI‑compatible API server, enabling rapid application prototyping on the Spark before deployment to Jetson Thor, DRIVE AGX Thor or IGX Thor devices.",
+  "Prerequisites include a DGX Spark with CUDA 13, TensorRT 10.16.1.11 or newer, and Python 3.10‑3.12; the tutorial was validated with TensorRT Edge‑LLM 0.11.1."
+ ],
+ "perche": [
+  "It also offers a path for users of free or locally hosted models to test and benchmark their applications before moving to production hardware."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "Run AI Models for Edge Application Development with Just a Few Commands",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/run-ai-models-for-edge-application-development-with-just-a-few-commands/",
+   "titolo": "Run AI Models for Edge Application Development with Just a Few Commands",
+   "ufficiale": true,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 2
+}

@@ -9,6 +9,7 @@ import { explain } from './skill/spiega.mjs';
 import { read, write, ROOT } from './skill/fonti.mjs';
 import { digest, topicExists } from './skill/verifica.mjs';
 import { plan } from './skill/video.mjs';
+import { prepareArchive } from './skill/archivio.mjs';
 
 function run(command,args) {
   const r=spawnSync(command,args,{cwd:ROOT,encoding:'utf8',timeout:300000,maxBuffer:8e6});
@@ -61,7 +62,8 @@ try {
   // No content is published until BOTH formats of EVERY selected card pass.
   const staged=[];
   for(const candidate of [...skillCards,...tutorialCards]) {
-    const card=await explain(candidate,undefined,{trial:prova});
+    const {category,archiveMetrics,retirement,licenseReview,revoked,revokedOn,...lessonCandidate}=candidate;
+    const card=await explain(lessonCandidate,undefined,{trial:prova});
     const result=await render(card,path.join(folder,`${card.tipo}-${card.slug}`));
     if(result.cardHash!==digest(JSON.stringify(card))||result.evidence.length!==2||result.evidence.some(e=>!e.qa.passed))throw Error('incomplete video evidence');
     staged.push({...card,videoVerified:{date:new Date().toISOString(),cardHash:result.cardHash,formats:result.evidence.map(e=>({release:e.release,seconds:e.seconds,frames:e.qa.frames}))}});
@@ -74,16 +76,7 @@ try {
     write(`contenuti/${card.tipo==='skill'?'skills':'tutorials'}/${card.slug}.json`,card);
     run(process.execPath,['script/brag/lega.mjs',`${card.tipo}-${card.slug}`,`${card.tipo}-${card.slug}`,`breve-${card.tipo}-${card.slug}`]);
   }
-  // Re-check previously published skills every day too. A failed or incomplete
-  // current review removes the page from the next build, without erasing history.
-  if(!offline) for(const dir of ['skills','tutorials']) {
-    const base=path.join(ROOT,'contenuti',dir);
-    if(!fs.existsSync(base))continue;
-    for(const f of fs.readdirSync(base).filter(f=>f.endsWith('.json'))) {
-      const c=JSON.parse(fs.readFileSync(path.join(base,f),'utf8'));
-      if((c.tipo==='skill'||c.skillSource)&&!catalogue.skills.some(s=>s.repository===c.repository&&s.skillPath===c.skillPath&&s.security.passed))write(`contenuti/${dir}/${f}`,{...c,revoked:true,revokedOn:catalogue.aggiornato});
-    }
-  }
+  prepareArchive({root:ROOT,date:catalogue.aggiornato});
   summary.finished=new Date().toISOString();
   write('video/skill-tutorial/esito.json',summary);
   console.log(`${prova?'Trial':'Production'}: ${staged.length} pages, ${summary.completed.length*2} videos, all publication gates passed.`);
