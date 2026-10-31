@@ -1,0 +1,50 @@
+name: Indirizzi YouTube da n8n
+
+# Il flusso n8n «video su YouTube Shorts» avvia questo workflow dopo ogni caricamento, con le voci nuove di
+# contenuti/youtube.json. Il token di n8n ha solo il permesso Actions: la scrittura la fa GITHUB_TOKEN (31/10/2026).
+on:
+  workflow_dispatch:
+    inputs:
+      voci:
+        description: 'JSON { "<nome del video>": "<id YouTube>" }'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-link
+  cancel-in-progress: false
+
+jobs:
+  scrivi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Aggiorna contenuti/youtube.json e salva
+        env:
+          VOCI: ${{ inputs.voci }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4 5; do
+            git fetch -q --depth 1 origin main
+            git reset -q --hard origin/main
+            node script/youtube-voci.mjs
+            if git diff --quiet -- contenuti/youtube.json; then echo "Niente di nuovo da salvare"; exit 0; fi
+            git add contenuti/youtube.json
+            git commit -q -m "YouTube: $(cat "$RUNNER_TEMP/youtube-nuovi.txt")"
+            if git push -q origin HEAD:main; then echo "Salvato al tentativo $i"; exit 0; fi
+            sleep $((i * 5))
+          done
+          echo "Push non riuscito dopo 5 tentativi"; exit 1
