@@ -120,9 +120,9 @@ On the home card, a context of 32K ran as fast as a context of 4K. On Kaggle, [K
 
 You can reach a notebook from your computer with a tunnel, so your apps can use the model. We left this out of the main steps for three reasons.
 
-A [Cloudflare Quick Tunnel](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/trycloudflare/) is public, and anyone with the address can use your model unless you add a password yourself. Cloudflare says Quick Tunnels are for testing and development, and that they do not support Server-Sent Events, so streamed answers may fail in some apps. In our test, [KAGGLE: tunnel streaming result].
+A [Cloudflare Quick Tunnel](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/trycloudflare/) is public, and anyone with the address can use your model unless you add a password yourself. Cloudflare says Quick Tunnels are for testing and development, and that they do not support Server-Sent Events, so streamed answers may fail in some apps.
 
-Kaggle's rules also matter more here, as the next section explains. If you still want to try, [KAGGLE: link to the public notebook] adds a random token and closes the tunnel when the test ends.
+Kaggle's rules also matter more here, as the next section explains. For that reason we did not test a tunnel on Kaggle, and we have no speed figures for it.
 
 Avoid connecting a coding agent that can run commands on your computer. Your files and prompts would travel through the tunnel to a machine you do not control.
 
@@ -134,7 +134,7 @@ Neither page mentions tunnels. Our reading: testing a model for a few hours fits
 
 A few practical limits follow from that:
 
-- An idle session closes on its own. Kaggle's pages give two figures, 20 and 60 minutes. In our test it closed after [KAGGLE: idle time].
+- An idle session closes on its own. Kaggle's pages give two figures, 20 and 60 minutes, so plan for the shorter one.
 - The download is lost when the session ends, so you repeat step 5 next time.
 - Do not send private data. It runs on someone else's machine.
 
