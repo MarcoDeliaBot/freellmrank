@@ -12,7 +12,7 @@ import numpy as np
 from PIL import Image
 
 FORBIDDEN=re.compile(r'source-based walkthrough|this pipeline|does not execute|this review covers|static checks cannot prove|remote-code-load|sensitive-read|environment-secret-read|download-and-execute|remote-eval|external-data-send|multiline-data-send|unsafe-path-or-symlink|[\w./-]+\.(?:md|py|js|mjs):\d+',re.I)
-TECHNICAL=re.compile(r'[<>/\\]|--[\w-]+|\b(?:npx|curl|wget|npm|pip|irm|iex|localhost)\b|\b[\w.-]+\.(?:md|html|json|py|mjs|js|txt|sh|png|com|org)\b|\b(?:ollama|agent-browser)\s+(?:run|pull|launch|ls|open|snapshot|click|skills|install)\b|@e\d|:\d+|[_{}=]|`',re.I)
+TECHNICAL=re.compile(r'[<>/\\]|(?:^|\s)-[a-z0-9-]+\b|\b(?:npx|curl|wget|npm|pip|irm|iex|localhost)\b|\b[\w.-]+\.(?:md|html|json|py|mjs|js|txt|sh|png|com|org)\b|\b(?:ollama|agent-browser|lms|git|docker|brew|llama-cli)\s+(?:run|pull|launch|ls|open|snapshot|click|skills|install|chat|clone|status|diff|checkout|commit|build|get|load|serve)\b|@e\d|:\d+|[_{}=]|`',re.I)
 
 def norm(s): return re.sub(r'[^a-z0-9]+',' ',s.lower()).strip()
 
@@ -35,6 +35,10 @@ def background_height(image,caption_band):
     mask=np.ones(image.height,dtype=bool)
     mask[max(0,caption_band[0]):min(image.height,caption_band[1])]=False
     return round(float((~occupied[mask]).mean()*100),3)
+
+def caption_visible(image,band):
+    crop=np.asarray(image.convert('RGB'))[band[0]:band[1]]
+    return bool(((crop[:,:,0]>180)&(crop[:,:,1]>185)&(crop[:,:,2]>175)).sum()>150)
 
 def parse_srt(text):
     def seconds(t):
@@ -128,7 +132,9 @@ def inspect_video(folder,tool=None,check_frames=True,recorded_voice=False):
         if len(paths)!=len(plan['scene']):errors.append('missing rendered scene frames')
         band=(1660,1860) if short and plan.get('teaching') else ((1220,1420) if short else (900,1080))
         for i,file in enumerate(paths):
-            with Image.open(file) as image:percent=background_height(image,band)
+            with Image.open(file) as image:
+                percent=background_height(image,band)
+                if not caption_visible(image,band):errors.append(f'scene {i+1}: no visible encoded subtitle')
             empty.append({'scene':i+1,'emptyHeightPercent':percent})
             if percent>35:errors.append(f'scene {i+1}: empty background height {percent}% exceeds 35%')
     return {'passed':not errors,'errors':errors,'voiceCoveragePercent':voice_percent,'scenes':details,'background':empty,'maxEmptyHeightPercent':max((x['emptyHeightPercent'] for x in empty),default=None),'measurement':'decoded RGB rows; >2% width with ink/content panels; faint grid excluded; caption band excluded'}

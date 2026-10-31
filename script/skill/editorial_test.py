@@ -1,6 +1,6 @@
 import hashlib,json,os,pathlib,unittest
 from PIL import Image
-from editorial_gate import inspect_video,background_height,text_issues
+from editorial_gate import inspect_video,background_height,text_issues,caption_visible
 
 class HistoricalTrial(unittest.TestCase):
     def test_all_four_original_trial2_videos_are_rejected(self):
@@ -28,7 +28,9 @@ class HistoricalTrial(unittest.TestCase):
     def test_background_is_measured_on_pixels_and_excludes_captions_only(self):
         im=Image.new('RGB',(1080,1920),(49,67,58))
         self.assertEqual(background_height(im,(1660,1860)),100)
+        self.assertFalse(caption_visible(im,(1660,1860)))
         im.paste((238,245,240),(100,1660,980,1860))
+        self.assertTrue(caption_visible(im,(1660,1860)))
         self.assertEqual(background_height(im,(1660,1860)),100)
         im.paste((39,53,46),(72,200,1008,1500))
         self.assertLess(background_height(im,(1660,1860)),35)

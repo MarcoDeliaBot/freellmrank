@@ -2,7 +2,7 @@
 // If a pinned source changes, an adapter stops instead of making up missing facts.
 export const norm = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 export const FORBIDDEN = /source-based walkthrough|this pipeline|does not execute|this review covers|static checks cannot prove|remote-code-load|sensitive-read|environment-secret-read|download-and-execute|remote-eval|external-data-send|multiline-data-send|unsafe-path-or-symlink|[\w./-]+\.(?:md|py|js|mjs):\d+/i;
-export const TECHNICAL_VOICE = /[<>/\\]|--[\w-]+|\b(?:npx|curl|wget|npm|pip|irm|iex|localhost)\b|\b[\w.-]+\.(?:md|html|json|py|mjs|js|txt|sh|png|com|org)\b|\b(?:ollama|agent-browser)\s+(?:run|pull|launch|ls|open|snapshot|click|skills|install)\b|@e\d|:\d+|[_{}=]|`/i;
+export const TECHNICAL_VOICE = /[<>/\\]|(?:^|\s)-[a-z0-9-]+\b|\b(?:npx|curl|wget|npm|pip|irm|iex|localhost)\b|\b[\w.-]+\.(?:md|html|json|py|mjs|js|txt|sh|png|com|org)\b|\b(?:ollama|agent-browser|lms|git|docker|brew|llama-cli)\s+(?:run|pull|launch|ls|open|snapshot|click|skills|install|chat|clone|status|diff|checkout|commit|build|get|load|serve)\b|@e\d|:\d+|[_{}=]|`/i;
 export function textIssues(text, {voice=false, tool=false}={}) {
   const errors=[];
   if(FORBIDDEN.test(text))errors.push('forbidden internal wording');

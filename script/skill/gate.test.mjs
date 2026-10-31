@@ -115,7 +115,7 @@ test('whole-video gate catches repetitions across scenes and punctuation changes
   assert.ok(duplicateIssues([scene('First action.','one command'),scene('Next action.','one command')]).some(e=>e.includes('repeated code')));
 });
 test('speech and public text reject internal phrases, technical strings and colon fragments',()=>{
-  for(const value of ['This is a source-based walkthrough.','This pipeline explains it.','This review covers a folder.','Static checks cannot prove safety.','remote-code-load: source.md:22','ollama run gemma4','npx tools install','Read <style>.','Open the file:'])assert.ok(textIssues(value,{voice:true}).length,value);
+  for(const value of ['This is a source-based walkthrough.','This pipeline explains it.','This review covers a folder.','Static checks cannot prove safety.','remote-code-load: source.md:22','ollama run gemma4','git status','lms chat','Use -v for output.','npx tools install','Read <style>.','Open the file:'])assert.ok(textIssues(value,{voice:true}).length,value);
   assert.ok(textIssues('Install the skill.',{tool:true}).length);
   assert.deepEqual(textIssues('Download the model and start a conversation.',{voice:true,tool:true}),[]);
 });
