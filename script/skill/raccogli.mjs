@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { api, directory, scanRepository, growth, installFrom, licenseFrom, labelFrom, plain, read, write, text, slug, ROOT } from './fonti.mjs';
 import { digest, validateCard, GENERIC, DISCLAIMER } from './verifica.mjs';
+import { refreshPublished, assignCategory, load, readCards } from './archivio.mjs';
 
 export function cardFrom(repo, entry, result, date, history) {
   const {scan,meta,commit}=result;
@@ -77,7 +78,7 @@ export function cardFrom(repo, entry, result, date, history) {
     titolo:`${name}: Agent Skill`,date,descr,problem,problemEvidence:task,audience:hosts,install,example,exampleSource:{file:skillPath,line:exampleLine},features,
     limits:[...warnings.slice(0,3),GENERIC[1],DISCLAIMER],screenshots,fonti,
     claims:[descr,install,example,...features.flatMap(f=>[f.label,f.detail])],...(flow?{flow}:{}),
-    metrics:{date,stars:meta.stargazers_count,growth7d:growth(history,repo,meta.stargazers_count,date),installs:entry.totalInstalls??null,installs24h:entry.trendingInstalls??null,license:licenseFrom(readme,meta.license?.spdx_id),lastCommit:commit.commit.committer.date},
+    topics:meta.topics||[],metrics:{date,stars:meta.stargazers_count,growth7d:growth(history,repo,meta.stargazers_count,date),installs:entry.totalInstalls??null,installs24h:entry.trendingInstalls??null,license:licenseFrom(readme,meta.license?.spdx_id),lastCommit:commit.commit.committer.date},
     security:{passed:true,complete:true,date,commit:commit.sha,scope:scan.scope,skillPath,files:scan.files,checked:scan.checked,errors:[],warnings:scan.warnings,status:scan.status,version:scan.version,policySha256:scan.policySha256,manifest:scan.manifest}};
   const errors=validateCard(card);if(errors.length)throw Error(errors.join('; '));
   return card;
@@ -95,13 +96,15 @@ export async function collect({maxRepos=24,date=new Date().toISOString().slice(0
     try{github.push(...(await api(`search/repositories?q=${encodeURIComponent(`topic:${topic} archived:false`)}&sort=stars&per_page=10`)).items.map(r=>({source:r.full_name})));}
     catch(e){warnings.push(e.message);}
   }
-  const repos=[...new Set([...top.map(x=>x.source),...old.map(x=>x.repository),...trending.slice(20,32).map(x=>x.source),...github.map(x=>x.source)])].slice(0,maxRepos);
-  const cards=[],stars={};
+  const repos=[...new Set([...top.map(x=>x.source),...trending.slice(20,32).map(x=>x.source),...github.map(x=>x.source)])].slice(0,maxRepos);
+  const cards=[],stars={},observed=new Map();
   for(const repo of repos) {
     const choices=trending.filter(x=>x.source===repo);
     try {
       if(!/^[\w.-]+\/[\w.-]+$/.test(repo))throw Error('directory entry is not a GitHub skill repository');
       const result=await scanRepository(repo,choices.map(c=>c.skillId));
+      observed.set(repo,result);
+      if(result.meta.archived)throw Error('repository is archived');
       if(!result.scan.complete)throw Error(result.scan.errors?.map(e=>e.reason).join('; ')||'incomplete scan');
       stars[repo]=result.meta.stargazers_count;
       const units=result.scan.units;
@@ -128,6 +131,10 @@ export async function collect({maxRepos=24,date=new Date().toISOString().slice(0
   write('dati/skill-scartate.json',{aggiornato:date,scartate:rejected});
   write(`dati/skill-storico/${date}.json`,{date,stars:{...(history.find(x=>x.date===date)?.stars||{}),...stars},directory:{allTime:all,trending24h:trending}});
   const data={aggiornato:date,metodologia:'Pinned SKILL.md units; seven-day star growth when observed, then measured skills.sh 24-hour installs, total installs and stars.',warnings,skills:cards,audit:report,weekly:{date,complete:new Date(`${date}T12:00:00Z`).getUTCDay()===0,slugs:cards.slice(0,10).map(c=>c.slug)}};
+  const categories=load(ROOT,'dati/skill-categorie.json'),published=readCards(ROOT);
+  for(const c of cards)c.category=old.find(s=>s.repository===c.repository&&s.skillPath===c.skillPath)?.category||published.find(s=>s.repository===c.repository&&s.skillPath===c.skillPath)?.category||assignCategory(c,categories);
+  warnings.push(...await refreshPublished({root:ROOT,date,catalogue:data,observed}));
+  data.weekly.slugs=data.skills.slice(0,10).map(c=>c.slug);
   write('dati/skill.json',data);
   console.log(`Skills: ${cards.length} publishable units; top20 ${JSON.stringify(report.counts)}`);
   return data;

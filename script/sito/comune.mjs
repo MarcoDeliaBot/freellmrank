@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { arteAscii } from './arte.mjs';
 
 export const RADICE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-export const SITO = path.join(RADICE, 'sito');
+export const SITO = path.resolve(process.env.SITO_OUTPUT || path.join(RADICE, 'sito'));
 export const URL_SITO = (process.env.SITO_URL || 'https://freellmarena.com').replace(/\/$/, '');
 // repository pubblico: i video stanno nelle sue release
 export const REPO = 'MarcoDeliaBot/freellmrank';
@@ -58,7 +58,7 @@ const TASTO_TEMA = `<button type="button" class="icona-btn tema-btn" aria-label=
 const ICONA_PANNELLO = SVG('<rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M9.5 4.5v15"/>');
 export const pagineScritte = () => pagine;
 
-export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog = [], jsonld = [] }) {
+export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog = [], jsonld = [], noindex = false, htmlCompleto }) {
   // icone a linea, disegnate qui (niente librerie esterne)
   const ICONE = {
     classifica: '<path d="M5 20v-7M12 20V5M19 20v-10"/>',
@@ -153,6 +153,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>${esc(titolo)}</title>
 <meta name="description" content="${esc(descr)}">
+${noindex ? '<meta name="robots" content="noindex">' : ''}
 <link rel="canonical" href="${canonico}">
 <meta property="og:title" content="${esc(titolo)}">
 <meta property="og:description" content="${esc(descr)}">
@@ -212,7 +213,7 @@ ${script ? `<script type="module" src="/${script}?v=${VER}"></script>` : ''}
 `;
   const dest = path.join(SITO, file);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
-  fs.writeFileSync(dest, html);
+  fs.writeFileSync(dest, htmlCompleto ?? html);
   pagine.push(file);
   // ricerca: titolo senza il nome del sito, una riga di descrizione, il tipo di pagina
   if (!/^(404|report|embed)\.html$/.test(file)) {

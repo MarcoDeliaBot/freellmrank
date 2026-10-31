@@ -22,7 +22,8 @@ export const GENERIC = [
 export function validateCard(card) {
   const errors = [];
   if (card?.videoVerified) {
-    const {videoVerified, ...content}=card;
+    // Publication metadata can evolve without changing the reviewed lesson/video.
+    const {videoVerified,category,archiveMetrics,retirement,licenseReview,revoked,revokedOn,...content}=card;
     if(videoVerified.cardHash!==digest(JSON.stringify(content))) errors.push('content changed after video verification');
   }
   if (!['skill', 'tutorial'].includes(card?.tipo) || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(card?.slug || '')) return ['invalid card identity'];

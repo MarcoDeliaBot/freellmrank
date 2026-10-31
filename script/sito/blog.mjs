@@ -19,8 +19,8 @@ const ORIZZONTALI = ['lungo', 'modello'];
 const leggiJson = (f) => { const p = path.join(RADICE, 'contenuti', f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : {}; };
 const LEGAMI = leggiJson('legami-video.json');
 const YOUTUBE = leggiJson('youtube.json');
-export function videoDelPost(slug, titolo, { breveRelease = false } = {}) {
-  const l = LEGAMI[slug];
+export function videoDelPost(slug, titolo, { breveRelease = false, legami = LEGAMI } = {}) {
+  const l = legami[slug];
   if (!l?.lungo) return '';
   const id = YOUTUBE[l.lungo];
   const base = `https://github.com/${REPO}/releases/download/video-${l.lungo}/${l.lungo}`;
