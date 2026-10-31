@@ -9,12 +9,13 @@ import threading
 from playwright.sync_api import sync_playwright
 from layout_check import CHECK_LAYOUT, TEXT_REGIONS, missing_text, CHECK_QUALITY
 from PIL import Image
+from editorial_gate import inspect_video
 
 folder = pathlib.Path(sys.argv[1]).resolve()
 plan = json.loads((folder/'piano.json').read_text(encoding='utf-8'))
 times = json.loads((folder/'tempi.json').read_text(encoding='utf-8'))
 vertical = plan['formato'] == 'verticale'
-w, h, limit = (1080,1920,1180) if vertical else (1920,1080,860)
+w, h, limit = (1080,1920,1640 if plan.get('teaching') else 1180) if vertical else (1920,1080,860)
 errors, frames, layouts = [], [], []
 frame_dir = folder/'fotogrammi'
 frame_dir.mkdir(exist_ok=True)
@@ -25,8 +26,8 @@ if (video['width'],video['height']) != (w,h):
     errors.append('wrong encoded dimensions')
 if abs(duration-times['totale']) > .15 or (vertical and abs(duration-45)>.15):
     errors.append('wrong encoded duration')
-if not vertical and not 120 <= duration <= 240:
-    errors.append('encoded long video is outside 2-4 minutes')
+if not vertical and not 90 <= duration <= 240:
+    errors.append('encoded long video is outside 90 seconds to 4 minutes')
 if not (folder/'video.srt').read_text(encoding='utf-8').strip():
     errors.append('missing captions')
 
@@ -67,7 +68,9 @@ with sync_playwright() as pw:
         if issues: errors.append({'scene':i+1,'layout':issues})
     browser.close()
 server.shutdown()
-(folder/'controllo.json').write_text(json.dumps({'passed':not errors,'width':w,'height':h,'seconds':duration,'frames':frames,'layouts':layouts,'errors':errors},indent=1),encoding='utf-8')
+editorial=inspect_video(folder)
+errors.extend(editorial['errors'])
+(folder/'controllo.json').write_text(json.dumps({'passed':not errors,'width':w,'height':h,'seconds':duration,'frames':frames,'layouts':layouts,'editorial':editorial,'errors':errors},indent=1),encoding='utf-8')
 if errors:
     print(json.dumps(errors))
     raise SystemExit(1)

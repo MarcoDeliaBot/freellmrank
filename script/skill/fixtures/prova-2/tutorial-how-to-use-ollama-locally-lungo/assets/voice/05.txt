@@ -1,0 +1,1 @@
+Run and chat with Gemma 4: ollama run gemma4

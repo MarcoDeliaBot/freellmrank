@@ -1,0 +1,56 @@
+[
+ {
+  "onset": 0.06,
+  "end": 15.8,
+  "sha256": "56eaba7b0c0ff2645b7c0bec14e7783641a5cc9d7418b6d0dbffd36f633d9c75",
+  "source": "assets/voice/01.wav"
+ },
+ {
+  "onset": 0.06,
+  "end": 17.740000000000002,
+  "sha256": "8329457f41b2c0e76a0c44ca27eb3073dfa5a73c0d6a65090bbbd703981dd3dd",
+  "source": "assets/voice/02.wav"
+ },
+ {
+  "onset": 0.06,
+  "end": 4.44,
+  "sha256": "001f93aad684b010c9112b8f160816b3398d645c01079439b3270e398ef90d15",
+  "source": "assets/voice/03.wav"
+ },
+ {
+  "onset": 0.04,
+  "end": 18.16,
+  "sha256": "54bb006db255a992f14940a34bf6859dbbb7de0ea6d6a7bf2fd5e81263437068",
+  "source": "assets/voice/04.wav"
+ },
+ {
+  "onset": 0.04,
+  "end": 12.56,
+  "sha256": "d140ba8b00f1850f10b84782277623dbb54695a67d7a732a1c00c0bd14c46ea5",
+  "source": "assets/voice/05.wav"
+ },
+ {
+  "onset": 0.04,
+  "end": 15.620000000000001,
+  "sha256": "8c26b05f035b15a3c0faee578c66fc7adb667f8cd88c226d1ea2f74b4872bf5b",
+  "source": "assets/voice/06.wav"
+ },
+ {
+  "onset": 0.02,
+  "end": 12.9,
+  "sha256": "40c646d6789c51eb2cb1035ea0c7d59d8bfd164ca6f9909516c2ea968f58d47c",
+  "source": "assets/voice/07.wav"
+ },
+ {
+  "onset": 0.04,
+  "end": 23.64,
+  "sha256": "3208c274d99271943dbe3a8c9dd4239b87b1252a9f35da894620f973510608cb",
+  "source": "assets/voice/08.wav"
+ },
+ {
+  "onset": 0.08,
+  "end": 10.18,
+  "sha256": "0abf6fd45f1229dcd74243b395d7ee63bdf4af7c9072f2b0773ffe18f4c50999",
+  "source": "assets/voice/09.wav"
+ }
+]

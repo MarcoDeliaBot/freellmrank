@@ -1,0 +1,95 @@
+{
+ "totale": 160,
+ "scene": [
+  {
+   "n": "01",
+   "stampo": "passo",
+   "inizio": 0,
+   "durata": 16,
+   "testo": "About 450 ready-made HyperFrames blocks and components installed as editable source - transitions, overlays, titles, kinetic type, captions, charts, map overlays, 3D, camera moves. For the complete instructions and any prerequisites, open the official source linked on this page.",
+   "etichetta": "The problem",
+   "capitolo": "Need blocks and components?",
+   "titolo": "Need blocks and components?"
+  },
+  {
+   "n": "02",
+   "stampo": "passo",
+   "inizio": 16,
+   "durata": 18,
+   "testo": "About 450 ready-made HyperFrames blocks and components installed as editable source - transitions, overlays, titles, kinetic type, captions, charts, map overlays, 3D, camera moves. This is a source-based walkthrough. Commands are displayed for you to review; this pipeline does not execute the skill.",
+   "etichetta": "What it is",
+   "capitolo": "What it is",
+   "titolo": "What it is"
+  },
+  {
+   "n": "03",
+   "stampo": "diagramma",
+   "inizio": 34,
+   "durata": 20,
+   "testo": "npx hyperframes catalog npx hyperframes add Wiring",
+   "etichetta": "How it works",
+   "capitolo": "How it works",
+   "titolo": "How it works"
+  },
+  {
+   "n": "04",
+   "stampo": "passo",
+   "inizio": 54,
+   "durata": 20,
+   "testo": "Open the pinned README and check the command. Run it from the project where you want to use the skill. In the installer, select only hyperframes-registry. This review covers skills/hyperframes-registry. npx skills add heygen-com/hyperframes",
+   "etichetta": "Install",
+   "capitolo": "Install",
+   "titolo": "Install"
+  },
+  {
+   "n": "05",
+   "stampo": "passo",
+   "inizio": 74,
+   "durata": 16,
+   "testo": "Search is local and sends nothing. The default words tier only finds items that reuse your words; --on-device ranks by meaning after a one-time ~33 MB download.",
+   "etichetta": "Feature",
+   "capitolo": "Search",
+   "titolo": "Search"
+  },
+  {
+   "n": "06",
+   "stampo": "passo",
+   "inizio": 90,
+   "durata": 16,
+   "testo": "Block: installs to compositions/<name>.html. Mount it with data-composition-src, data-composition-id matching the block's own id, data-start and the data-duration you need; the snippet add prints is the starting point.",
+   "etichetta": "Feature",
+   "capitolo": "Block",
+   "titolo": "Block"
+  },
+  {
+   "n": "07",
+   "stampo": "passo",
+   "inizio": 106,
+   "durata": 16,
+   "testo": "Component: installs to compositions/components/<name>.html. Copy its markup, <style> and script into your scene, and follow its comment block if it hooks into your timeline.",
+   "etichetta": "Feature",
+   "capitolo": "Component",
+   "titolo": "Component"
+  },
+  {
+   "n": "08",
+   "stampo": "passo",
+   "inizio": 122,
+   "durata": 24,
+   "testo": "remote-code-load: skills/hyperframes-registry/references/demo-html-pattern.md:22 Warning: Markdown includes installer or remote code instructions. Review the documented source before use. Static checks cannot prove that a skill is safe. Review the pinned source and its dependencies before installing. Updates require a new check.",
+   "etichetta": "Limits and review",
+   "capitolo": "Limits and review",
+   "titolo": "Limits and review"
+  },
+  {
+   "n": "09",
+   "stampo": "passo",
+   "inizio": 146,
+   "durata": 14,
+   "testo": "For the complete instructions and any prerequisites, open the official source linked on this page. github.com/heygen-com/hyperframes",
+   "etichetta": "Read the source",
+   "capitolo": "Read the source",
+   "titolo": "Read the source"
+  }
+ ]
+}

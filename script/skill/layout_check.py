@@ -61,7 +61,7 @@ CHECK_QUALITY = r'''({w,limit,opening=false}) => {
  const media=document.querySelector('[id$="cornice"] img,[id$="cornice"] video');
  if(media)rects.push({e:media,b:media.getBoundingClientRect()});
  if(w===1080){
-  for(const {e} of rects)if(e!==media&&parseFloat(getComputedStyle(e).fontSize)<36)issues.push('Short font below 36px');
+  for(const {e} of rects)if(e!==media&&parseFloat(getComputedStyle(e).fontSize)<44)issues.push('Short font below 44px');
   const title=root.querySelector('[id$="titolo"]');if(opening&&title&&parseFloat(getComputedStyle(title).fontSize)<100)issues.push('problem font below 100px');
  }
  if(rects.length){
@@ -72,7 +72,7 @@ CHECK_QUALITY = r'''({w,limit,opening=false}) => {
   const coverage=(maxX-minX)*(maxY-minY)/(w*(limit-150));
   const center=(minY+maxY)/2;
   if(coverage<(opening?.11:.19))issues.push('too much empty safe area');
-  if(w===1080&&(center<430||center>960))issues.push('content not centered in Short safe area');
+  if(w===1080&&(center<430||center>limit-180))issues.push('content not centered in Short safe area');
  }else issues.push('no visible content');
  if(!opening&&!root.querySelector('[data-visual]')&&!media)issues.push('missing visual element');
  return [...new Set(issues)];

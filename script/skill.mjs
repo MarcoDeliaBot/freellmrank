@@ -8,6 +8,7 @@ import { render } from './skill/video.mjs';
 import { explain } from './skill/spiega.mjs';
 import { read, write, ROOT } from './skill/fonti.mjs';
 import { digest, topicExists } from './skill/verifica.mjs';
+import { plan } from './skill/video.mjs';
 
 function run(command,args) {
   const r=spawnSync(command,args,{cwd:ROOT,encoding:'utf8',timeout:300000,maxBuffer:8e6});
@@ -17,6 +18,7 @@ function run(command,args) {
 const args=process.argv.slice(2);
 const prova=args.includes('--prova') || process.env.PROVA==='true' || process.env.GITHUB_REF!=='refs/heads/main';
 const offline=args.includes('--offline'); // reuse a dated, reviewed local catalogue for tests
+if(prova&&process.env.SCRIVI_URL&&!/^https:\/\/[a-z0-9-]+\.freellmrank\.pages\.dev$/.test(process.env.SCRIVI_URL))throw Error('Trial Workers endpoint must be this project\'s Cloudflare Pages preview');
 const count=prova?1:Math.max(1,Math.min(2,Number(process.env.MAX_SKILL || 2)));
 const folder=path.join(ROOT,'video/skill-tutorial');
 fs.mkdirSync(folder,{recursive:true});
@@ -48,8 +50,13 @@ try {
   const catalogue=offline?read('dati/skill.json'):await collect();
   if(!catalogue)throw Error('missing reviewed catalogue');
   const existing=existingTopics();
-  const skillCards=catalogue.skills.filter(c=>!topicExists(c,existing)).slice(0,count);
-  const tutorialCards=(await tutorials(catalogue.skills,catalogue.aggiornato,[...existing,...skillCards])).slice(0,1);
+  const teaches=c=>{try{plan(c,false);plan(c,true);return true;}catch(error){console.log(`Teaching skipped ${c.name}: ${error.message.slice(0,200)}`);return false;}};
+  const wanted=prova?process.env.PROVA_SKILL:null;
+  const eligible=catalogue.skills.filter(c=>!topicExists(c,existing)&&(!wanted||c.name===wanted));
+  const skillCards=eligible.filter(teaches).slice(0,count);
+  if(wanted&&!catalogue.audit.entries.some(e=>e.skill===wanted&&['passed','warning'].includes(e.status)))throw Error('Requested trial skill is not eligible in the measured top20');
+  const requestedTutorial=prova?process.env.PROVA_TUTORIAL:null;
+  const tutorialCards=(await tutorials(catalogue.skills,catalogue.aggiornato,[...existing,...skillCards])).filter(c=>(!requestedTutorial||c.name===requestedTutorial)&&teaches(c)).slice(0,1);
   if(prova&&(skillCards.length!==1||tutorialCards.length!==1))throw Error('Trial requires one eligible skill and one eligible tutorial');
   // No content is published until BOTH formats of EVERY selected card pass.
   const staged=[];

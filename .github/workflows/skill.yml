@@ -9,6 +9,18 @@ on:
         description: 'Una skill e un tutorial completi, senza pubblicare: pagine, video e fotogrammi come artefatti'
         type: boolean
         default: true
+      skill:
+        description: 'Solo prova: nome della skill, deve essere passata o con avviso nei primi 20 misurati'
+        type: string
+        default: ''
+      tutorial:
+        description: 'Solo prova: nome dello strumento del tutorial'
+        type: string
+        default: ''
+      preview_url:
+        description: 'Solo prova: URL di anteprima del progetto freellmrank.pages.dev per Workers AI'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -25,6 +37,9 @@ jobs:
       HYPERFRAMES_PYTHON: python3
       HYPERFRAMES_NO_TELEMETRY: '1'
       PROVA: ${{ github.event_name == 'push' || github.ref != 'refs/heads/main' || inputs.prova == true }}
+      PROVA_SKILL: ${{ inputs.skill }}
+      PROVA_TUTORIAL: ${{ inputs.tutorial }}
+      SCRIVI_URL: ${{ inputs.prova == true && inputs.preview_url || '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

@@ -9,6 +9,7 @@ import { explain } from './spiega.mjs';
 import { groundedExplanation } from './verifica.mjs';
 import { TETTI_SCRIVI, TETTO_NEURONS, TETTO_ARENA, TETTO_AUDIO } from '../cf-modelli.mjs';
 import { STAMPI, STAMPI_NOTIZIE } from '../video-hf/stampi/index.mjs';
+import { duplicateIssues, textIssues } from './copione.mjs';
 
 function fixture() {
   const raw='Demo teaches agents to review a proposed change.\nnpx skills add owner/demo\nReview the project.\nRead the request carefully.\nCheck the proposed changes.\nReport the review findings.';
@@ -106,4 +107,21 @@ test('skills.sh payload handles nested weekly observations and schema drift',()=
   const stream='x:{"initialSkills":[{"source":"owner/repo","skillId":"demo","installs":12,"weeklyInstalls":[2,3]}]}';
   const html='<script>self.__next_f.push('+JSON.stringify([1,stream])+')</script>';
   assert.equal(directory(html)[0].installs,12);assert.throws(()=>directory('schema changed'));
+});
+
+test('whole-video gate catches repetitions across scenes and punctuation changes',()=>{
+  const scene=(voice,code)=>({voce:voice,dati:{titolo:'A title',comando:code}});
+  assert.ok(duplicateIssues([scene('Try it.','one command'),scene('TRY IT!','one command')]).some(e=>e.includes('repeated narration')));
+  assert.ok(duplicateIssues([scene('First action.','one command'),scene('Next action.','one command')]).some(e=>e.includes('repeated code')));
+});
+test('speech and public text reject internal phrases, technical strings and colon fragments',()=>{
+  for(const value of ['This is a source-based walkthrough.','This pipeline explains it.','This review covers a folder.','Static checks cannot prove safety.','remote-code-load: source.md:22','ollama run gemma4','npx tools install','Read <style>.','Open the file:'])assert.ok(textIssues(value,{voice:true}).length,value);
+  assert.ok(textIssues('Install the skill.',{tool:true}).length);
+  assert.deepEqual(textIssues('Download the model and start a conversation.',{voice:true,tool:true}),[]);
+});
+test('recipe gate rejects a generic Feature identity label and missing diagrams',()=>{
+  const card=fixture(),p=plan(card,true);p.scene[1].etichetta='Feature';
+  assert.ok(validatePlan(card,p).some(e=>e.includes('identity')));
+  for(const scene of p.scene.slice(2,5))scene.stampo='passo';
+  assert.ok(validatePlan(card,p).some(e=>e.includes('three features')));
 });

@@ -1,0 +1,109 @@
+{
+ "run": "https://github.com/MarcoDeliaBot/freellmrank/actions/runs/41152536447",
+ "videos": [
+  {
+   "folder": "skill-heygen-com-hyperframes-hyperframes-registry-breve",
+   "tool": false,
+   "sha256": {
+    "piano.json": "e11e339db3aecb679ab22758eb14fab5c475a8e7b9b53d9b05d862afcd8233b6",
+    "tempi.json": "1555deda264d1f22c231173e39497a493db3b866f413c5adebd10bd8cfc081fb",
+    "video.srt": "117c4499033f77a3fbe80147ca61618d5369a440a2bbc237c070100bf9f0acdd",
+    "assets/voice/01.txt": "9cd6b95349de1316d3d28d7c3d3e6a7fdea5723b818cbeab1bc3278ba0db230b",
+    "assets/voice/02.txt": "b291e56e277d8a4f0664a1fccf9da8d8232fd3171d02a48e6c4b291f1c5819df",
+    "assets/voice/03.txt": "8a43914564f07d0793f8aa4bd8ea62839824902990d460b67b628d77d3d1e4c2",
+    "assets/voice/04.txt": "af1d6ba7b006b3699af0a0eee8761dd47520464ca9d0291d8dd37ce80180f402",
+    "assets/voice/05.txt": "aa5c25e908464608bff64445ef36316c50433d6a9284af9b2359062d3258688d",
+    "assets/voice/06.txt": "1a388e5775c18659ec7799c11f249f914b01a8597997b3ca2a068b8bdac9b978",
+    "assets/voice/07.txt": "1e225815e157799f2feea1e1505bae43f7c53cdd1e9302945674909f7e1d741f",
+    "fotogrammi/scena-01.jpg": "4879ea5bc4c409d18902f6434f1d30b2bd138802a5839d4fa2d52e44f848256e",
+    "fotogrammi/scena-02.jpg": "2c63c92f904d6e86fab442a07115eeca3013adb2bf3fbdd78383e3c973cc9b46",
+    "fotogrammi/scena-03.jpg": "1f1044387da66a47dd59bba4a20061fc1f4a87780a2fb815c841802f4b326239",
+    "fotogrammi/scena-04.jpg": "81ace6563c50fc99cd449e3294e479d1efa01fbde06c223228978192ba3e169b",
+    "fotogrammi/scena-05.jpg": "c3c9e5ae1d8f247f9a022d818bc3ac5a41e94123be58d4672e5f34f22544ab44",
+    "fotogrammi/scena-06.jpg": "9961e67385ddb99308544b42ce9a90e9193777f6c51f24ae7e61b270a76db222",
+    "fotogrammi/scena-07.jpg": "7e4bb333b396d823cca0501dc84e87811163a9a100063b096ef7337e3ff2d07f"
+   }
+  },
+  {
+   "folder": "skill-heygen-com-hyperframes-hyperframes-registry-lungo",
+   "tool": false,
+   "sha256": {
+    "piano.json": "3bdd25bba6da8c423e0709493ec7fdb11f9e59ed3b199245c0d3c6d37b29cd84",
+    "tempi.json": "5dc2e65e0e2078a2aebe74a8cfe39c3517a65691d37adacc3164f5fef8233ba3",
+    "video.srt": "cbc42b33779b13f681cafcea85df160c6628a53a4b1e8bf719f23956b5baa3ce",
+    "assets/voice/01.txt": "0bffcc763303ba9b25f7a52a800a9f33e5907778523d5b8804fb83ed6ae5dff6",
+    "assets/voice/02.txt": "68c354219f7466d2f831456dd396cf0260e6a1d7a657a26188baf6a1d7cc26ee",
+    "assets/voice/03.txt": "9ce6b1976e4771ff7789e842e3db37be2335b23a600ff622650c90efcb0faaf7",
+    "assets/voice/04.txt": "a5189076d4b8fbdf286b2bc583602498135a72ccb4dde85ba9ca631169bda9d8",
+    "assets/voice/05.txt": "98a623f205b6078ca5baa25a2446ab11fcbdfb6d1c723f947d7433aa95879c0e",
+    "assets/voice/06.txt": "0b43b3a7972cd785ed4d020bf1456dfd9daf975468b7cf96c90b29484eb4466e",
+    "assets/voice/07.txt": "8ad3afee8eb66ed482140b87aff1b24285c80a8123305a267ac471d6d88b19a1",
+    "assets/voice/08.txt": "8d67f4dd458eeac73cfc3a9358ad8bbf95e5521b392607f877384dd0054d6a37",
+    "assets/voice/09.txt": "e7d5cf25e90a829eb4d70cb1726eafa6dd0f35e6390c1594e8aafb3c624993c1",
+    "fotogrammi/scena-01.jpg": "8f861b47c42a1596cde328aafa07a5c93dbfd602a0d96e1ac2213cbdb8ad5005",
+    "fotogrammi/scena-02.jpg": "507b6ca17280e052f7e7e036fb15100d01ca62dc947e28204617362ccd05b9b2",
+    "fotogrammi/scena-03.jpg": "9d10e0161d1b1df4841bcf4708c618a59a7a9ebc26eeba9025d0df1252e8651d",
+    "fotogrammi/scena-04.jpg": "f3edd53441b4b8ffab282e7fd8596562b43e6d1612ec0e22fc002aa47f27c17a",
+    "fotogrammi/scena-05.jpg": "07c8d0dc92b37f47e17ae0acfe806c3930f8ecd6193ef548796b320896af228c",
+    "fotogrammi/scena-06.jpg": "c664e89702e8bbd200d1392f3caea56fc62a5d7f4c9322693873efdc7bc0fe6a",
+    "fotogrammi/scena-07.jpg": "70d3c505ba5b9808279f9f17d4ec7bcac543a49c54f7150be56c41ca428d19ac",
+    "fotogrammi/scena-08.jpg": "601edc4e0f7fb514209d8310e90cfa0c2ea4cf0e6f2d58b1f446bbe78b9d1be2",
+    "fotogrammi/scena-09.jpg": "a6d99ef073d42153dd75ce11f15b37f4f981c712649c084bc4c9d3871d4acae6"
+   }
+  },
+  {
+   "folder": "tutorial-how-to-use-ollama-locally-breve",
+   "tool": true,
+   "sha256": {
+    "piano.json": "46b383647999f7ba411f3d91c8339b7e198f9b8bbebb8a92992311871fbea599",
+    "tempi.json": "a98cacf1a32b75135da014f72994de0e6725f57b3704cb7a85a7935d5ebd115c",
+    "video.srt": "58b5f63c3e4eff2d811af74fe5566047d99e134c4238be6fa08f77824cfbb4c9",
+    "assets/voice/01.txt": "a64f61283998bf536879f9c4895d21053451db6e5b89f33584722711125d203c",
+    "assets/voice/02.txt": "9510312f9e886b880c1fc33a97c453eb1e4ac6ee06ae3d66db624312398e274b",
+    "assets/voice/03.txt": "50e9439663f9371d438499dfee18d1a83dfbf65d1068ed46031b0c368a1414d7",
+    "assets/voice/04.txt": "2bc18eeb20bf223f3a88f008ab391a492cf6c2870874f57d3c1352b47a1acb6c",
+    "assets/voice/05.txt": "e2d48e33784a5494df09c46637f6c3ca281e47b2997780d4493d2a61438bf2e6",
+    "assets/voice/06.txt": "26dfa12a914fff12934194a6cc94a8765d951f1343f5eae29b22bb1c57b6b2bc",
+    "assets/voice/07.txt": "954b1a135d24fa74b001b128b54ddc0e438450e58e6d296bfbd4e8924bd296cd",
+    "fotogrammi/scena-01.jpg": "97534536543d10b8734d2dc89362ab3d380e0e6c760c35ceefc286c8673ab5aa",
+    "fotogrammi/scena-02.jpg": "b535d558f49256d92f2a0a7e20576a698884da27a5d58478e9fe5d7fe0c697fc",
+    "fotogrammi/scena-03.jpg": "8d9dab5c37cda0060653079d09ef5df3ed8aadd028249a3f2d973e8244aeb3a7",
+    "fotogrammi/scena-04.jpg": "18186a007905ef074773d0251be8ca4c7bf4699d5562192934ec780a9d6c7fee",
+    "fotogrammi/scena-05.jpg": "24551f7f78341cd7bd7e42800b398792a6e33d7c4f8cb0bd1b505b8744c7e6cb",
+    "fotogrammi/scena-06.jpg": "56a0ec72f8ee157ffdeabbd037655d9d94bad17da1853f15b7ffc000fe12bc89",
+    "fotogrammi/scena-07.jpg": "15df032cb723bcae037b7344442bf01e5b271d0f9d448a18e3bfa231328d68e6"
+   }
+  },
+  {
+   "folder": "tutorial-how-to-use-ollama-locally-lungo",
+   "tool": true,
+   "sha256": {
+    "piano.json": "acda2d9d2e23e35c36dc03186ca7354d32e4ef3238a73eb0c9ba7b3bbd5b68a2",
+    "tempi.json": "b2daa27279bf5a1fdb6f30d0159dfbbdee00310bb86ef2eece4eadf6a35d66a2",
+    "video.srt": "50574b78ffeaee6b184dda2da58894e2289036c361bf80f9963176ddf1ad427c",
+    "assets/voice/01.txt": "b679682163013df320daa689e044367f75220450d65b413857c8a401b0fe042b",
+    "assets/voice/02.txt": "21a01a4fee229273a0514c96b367b37cbba173f5496d0cace50048b86c859545",
+    "assets/voice/03.txt": "9f1e888e8e6c0696123d337cfb7e814b0ed1dc7d395ac57819b7008cc871a133",
+    "assets/voice/04.txt": "da97370a1c6712c9e473a6e3fb6cb49ebbc6b491f281e112e6fe1c8819465850",
+    "assets/voice/05.txt": "b3c6a48c861cd7e12243a9b823f254f2237ae18173717b03a922183614b64b15",
+    "assets/voice/06.txt": "96f9260161b4150cfd8fb400449da9e6d15f105cc67b3106ea25f5a3c68c414f",
+    "assets/voice/07.txt": "50e9439663f9371d438499dfee18d1a83dfbf65d1068ed46031b0c368a1414d7",
+    "assets/voice/08.txt": "2bc18eeb20bf223f3a88f008ab391a492cf6c2870874f57d3c1352b47a1acb6c",
+    "assets/voice/09.txt": "e2d48e33784a5494df09c46637f6c3ca281e47b2997780d4493d2a61438bf2e6",
+    "assets/voice/10.txt": "1d5a05cfd4613aa3a3d8ee2ac2f7d68f167b48b60371fb3f72c34e026f09140c",
+    "assets/voice/11.txt": "13136c9ab3fb3e12dc03573dabcf3c469ce6fa919758b7f5469d474b450d565d",
+    "fotogrammi/scena-01.jpg": "dc09bb8378c02b1cd0c6ff94e79020897d40c57e8ada796b75b99f5e77c7526e",
+    "fotogrammi/scena-02.jpg": "6f8bb17bab994c7071f8545c1cb9cf5de430d87266cf9e6a34ec7d3c3feb2c31",
+    "fotogrammi/scena-03.jpg": "c01129593ce1fefbd786f9aa1bdc6028154895f4440066dbe61ae69205cfc43a",
+    "fotogrammi/scena-04.jpg": "0ba4a7120cc93c99f2d52674c98c87ae659386c33ea5da7c9ffb8b13da46471a",
+    "fotogrammi/scena-05.jpg": "b2f8679e26e89e5d4e07d9bd2803ab799d613c94cbdb656c12b7d6a79f239cb5",
+    "fotogrammi/scena-06.jpg": "2e31c165adfa2066d06f1cb4721cba6f8bb7a0fff74e0c908c54bc40724c1121",
+    "fotogrammi/scena-07.jpg": "1e376a8a871a66719017962311c7a5eae8fcb9f3bd4ac6a2598e70e133be4789",
+    "fotogrammi/scena-08.jpg": "0da5e826c480251b79e9e12509aae12626ca076c46705f6641cd0799730627ec",
+    "fotogrammi/scena-09.jpg": "0d7cedd1924c41e4a9e37b9dd6741ca6966698cd04775a49bb8d4f13d4c3a324",
+    "fotogrammi/scena-10.jpg": "3f476e8e4bfc7d0eaa3a662a9632531cf4add924496b35cdca43b23f236abcb5",
+    "fotogrammi/scena-11.jpg": "e3dd06c4d0e22f478eccbec4e800690eb6bda7b272700593061619e13cabbc27"
+   }
+  }
+ ]
+}

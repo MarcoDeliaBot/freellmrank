@@ -1,0 +1,1 @@
+Component: installs to compositions/components/<name>.html. Copy its markup, <style> and script into your scene, and follow its comment block if it hooks into your timeline.

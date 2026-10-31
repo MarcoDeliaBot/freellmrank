@@ -1,0 +1,63 @@
+1
+00:00:00,160 --> 00:00:01,680
+Need blocks and components?
+
+2
+00:00:03,160 --> 00:00:05,160
+About 450 ready-made
+
+3
+00:00:05,160 --> 00:00:07,000
+HyperFrames blocks and
+
+4
+00:00:07,000 --> 00:00:08,440
+components installed as
+
+5
+00:00:08,440 --> 00:00:09,560
+editable source
+
+6
+00:00:10,080 --> 00:00:11,360
+Search is local and
+
+7
+00:00:11,360 --> 00:00:12,160
+sends nothing.
+
+8
+00:00:17,000 --> 00:00:17,480
+Block:
+
+9
+00:00:17,480 --> 00:00:18,280
+installs to
+
+10
+00:00:18,280 --> 00:00:20,920
+compositions/<name>.html.
+
+11
+00:00:24,000 --> 00:00:24,720
+Component:
+
+12
+00:00:24,960 --> 00:00:25,760
+installs to
+
+13
+00:00:25,760 --> 00:00:29,600
+compositions/components/<name>.html.
+
+14
+00:00:32,080 --> 00:00:33,328
+npx skills add
+
+15
+00:00:33,328 --> 00:00:35,440
+heygen-com/hyperframes
+
+16
+00:00:40,000 --> 00:00:43,280
+github.com/heygen-com/hyperframes

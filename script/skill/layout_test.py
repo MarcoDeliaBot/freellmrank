@@ -35,7 +35,7 @@ class LayoutGate(unittest.TestCase):
 
     def test_small_empty_slide_fails_quality(self):
         self.assertIn('too much empty safe area',self.quality('<div style="position:absolute;top:190px;font-size:30px">Small title</div>'))
-        self.assertIn('Short font below 36px',self.quality('<div style="position:absolute;top:190px;font-size:30px">Small title</div>'))
+        self.assertIn('Short font below 44px',self.quality('<div style="position:absolute;top:190px;font-size:30px">Small title</div>'))
 
     def test_repeated_slide_text_fails_quality(self):
         result=self.quality('<div style="position:absolute;top:350px;font-size:70px">The agent revises based on feedback</div><div data-visual style="position:absolute;top:650px;font-size:48px">The agent revises based on feedback</div>')
