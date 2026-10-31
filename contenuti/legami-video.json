@@ -148,5 +148,13 @@
  },
  "kaggle-free-gpu-for-ai-models": {
   "lungo": "tutorial-kaggle-free-gpu"
+ },
+ "news-2026-10-31-google-deepmind-releases-forty-a-10-m-global-forest-type-map-for-2020": {
+  "lungo": "notizia-google-deepmind-releases-forty-a-10-m-global-forest-type",
+  "breve": "breve-google-deepmind-releases-forty-a-10-m-global-forest-type"
+ },
+ "news-2026-10-31-deepseek-releases-dsh-superagent-prototype-for-autonomous-coding-agent": {
+  "lungo": "notizia-deepseek-releases-dsh-superagent-prototype-for-autonomou",
+  "breve": "breve-deepseek-releases-dsh-superagent-prototype-for-autonomou"
  }
 }
