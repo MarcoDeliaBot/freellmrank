@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-31-floorplan-maps-codebases-with-claude-or-codex-as-github-trending-repo",
+ "titolo": "Floorplan maps codebases with Claude or Codex as GitHub trending repo",
+ "descr": "It offers an interactive map of an application’s codebase.",
+ "tema": "Software",
+ "paragrafi": [
+  "It offers an interactive map of an application’s codebase.",
+  "Floorplan reads a project, asks Claude or Codex to generate plain‑English names for each part, and draws connections between files, endpoints and external services. The map can be zoomed from the whole app down to a single function.",
+  "The tool supports ten diagram types, health checks for common AI‑generated app issues, and a live demo that runs entirely on the user’s machine. It tracks recent changes and highlights AI‑modified code in green.",
+  "The repository contains 85 commits and includes documentation, a quick‑start guide, video walkthrough and install instructions. It integrates with Claude Code, Codex, Cursor, Copilot and Gemini CLI.",
+  "FreeLLMArena lists Kimi K3 Max, GLM‑5.3, MiMo‑V2.6‑Pro, GLM‑5.3‑Flash and DeepSeek‑V4.1‑Flash‑20260910 as the top free chat models, while Gemini 4 Carbon leads the paid ranking. The timing shows strong interest in AI‑driven development tools."
+ ],
+ "perche": [
+  "Developers get a visual overview without reading code, which speeds onboarding and debugging. The map works with Claude and Codex, so teams can use free or locally hosted models. The health‑check feature catches exposed keys, open databases and unsecured webhooks, helping protect apps built with free chat models."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "haydenschmitty/floorplan: See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/haydenschmitty/floorplan",
+   "titolo": "haydenschmitty/floorplan: See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.",
+   "ufficiale": false,
+   "data": "2026-10-27"
+  }
+ ],
+ "frasiTolte": 2
+}
