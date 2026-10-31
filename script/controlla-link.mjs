@@ -13,11 +13,15 @@ const pagine = [];
 })(SITO);
 
 // Cloudflare Pages serve /x come /x.html e /cartella/ come /cartella/index.html
+const cache = new Map();
 const esiste = (url) => {
   const pulito = decodeURIComponent(url.split('#')[0].split('?')[0]);
   if (!pulito || pulito === '/') return true;
+  if (cache.has(pulito)) return cache.get(pulito);
   const p = path.join(SITO, pulito);
-  return [p, p + '.html', path.join(p, 'index.html')].some((x) => fs.existsSync(x) && fs.statSync(x).isFile());
+  const result = [p, p + '.html', path.join(p, 'index.html')].some((x) => fs.existsSync(x) && fs.statSync(x).isFile());
+  cache.set(pulito, result);
+  return result;
 };
 
 const rotti = new Map();
