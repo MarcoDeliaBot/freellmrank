@@ -54,20 +54,24 @@ For other models, compare memory and scores on our [free ranking](/) and try you
 
 **1. Create the notebook.** On Kaggle, choose Create and then New Notebook. Open Settings, set the Accelerator to GPU T4 x2 and turn Internet on. Keep the notebook private.
 
+![The Accelerator menu in Kaggle, with GPU T4 x2 in the list](/kaggle-acceleratore.jpg)
+
 **2. Check the cards.** Run this in a cell. You should see two lines.
 
 ```
 !nvidia-smi -L
 ```
 
-**3. Install Ollama.** This runs the official installer from ollama.com.
+![Kaggle notebook showing GPU 0 and GPU 1, both Tesla T4](/kaggle-due-gpu.jpg)
+
+**3. Install Ollama.** This runs the official installer from ollama.com. A red warning about the GPU appears during the install. It is normal, and the last line should say Install complete.
 
 ```
 !apt-get install -y zstd
 !curl -fsSL https://ollama.com/install.sh | sh
 ```
 
-**4. Start Ollama.** It keeps running in the background. The model goes to a temporary folder because /kaggle/working stops at 20 GB.
+**4. Start Ollama.** It keeps running in the background. The model goes to a temporary folder because /kaggle/working stops at 20 GB. The two DEVNULL lines hide Ollama's log. Without them, red messages fill your next cells and the page looks broken even when it works.
 
 ```python
 import os, subprocess, time
@@ -76,6 +80,8 @@ os.makedirs("/kaggle/temp/ollama", exist_ok=True)
 server = subprocess.Popen(
     ["ollama", "serve"],
     env={**os.environ, "OLLAMA_MODELS": "/kaggle/temp/ollama"},
+    stdout=subprocess.DEVNULL,
+    stderr=subprocess.DEVNULL,
 )
 time.sleep(5)
 ```
@@ -92,12 +98,18 @@ time.sleep(5)
 !ollama run qwen3.8:27b-q4_K_M --verbose "Explain quantization in two sentences."
 ```
 
+The first answer can take a minute and a half, because the model has to load.
+
+![The model answer on Kaggle, with the speed printed below it](/kaggle-risposta.jpg)
+
 **7. Check that it used the GPUs.** The first command should show the model on the GPU. The second shows the memory on each card.
 
 ```
 !ollama ps
 !nvidia-smi
 ```
+
+![ollama ps shows 100% GPU and nvidia-smi shows memory in use on both cards](/kaggle-verifica.jpg)
 
 **8. Stop the session.** Press Stop Session when you finish. A session left open keeps using your weekly hours.
 
