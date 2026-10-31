@@ -114,7 +114,8 @@ jobs:
       - name: Salva dati, pagine e legami dopo i controlli
         if: env.PROVA != 'true'
         run: |
-          git add dati/skill.json dati/skill-scartate.json dati/skill-storico contenuti/legami-video.json
+          git add dati/skill.json dati/skill-scartate.json dati/skill-storico dati/skill-pagine.json dati/skill-categorie.json contenuti/legami-video.json
+          if [ -d dati/skill-mesi ]; then git add dati/skill-mesi; fi
           for dir in contenuti/skills contenuti/tutorials; do
             if [ -d "$dir" ]; then git add "$dir"; fi
           done

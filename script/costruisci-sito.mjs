@@ -463,7 +463,7 @@ paginaFreeLlm(ctxParole);
 paginaBestFreeAi(ctxParole);
 paginaFreeAi(ctxParole);
 paginaCatalogo(dati, modelli, blog);
-pagineSkillTutorial(dati, blog);
+const skillArchive = pagineSkillTutorial(dati, blog);
 paginaDecisioni(dati, blog);
 paginaGpu(dati, modelli, blog);
 paginaRam(dati, modelli, blog);
@@ -517,10 +517,11 @@ fs.writeFileSync(path.join(SITO, 'sito.js'), COMUNI.map((n) => `// ${n}.js\ntry 
 fs.writeFileSync(path.join(SITO, 'cerca.json'), JSON.stringify(indiceRicerca()));
 // robots.txt e sitemap.xml con tutte le pagine
 fs.writeFileSync(path.join(SITO, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${URL_SITO}/sitemap.xml\n`);
-const indirizzi = pagineScritte().filter((f) => f !== '404.html').map((f) => URL_SITO + '/' + f.replace(/index\.html$/, '').replace(/\.html$/, ''));
+const registryURLs = new Set(skillArchive.registry.map(p=>p.url));
+const indirizzi = pagineScritte().filter((f) => f !== '404.html').map((f) => URL_SITO + (registryURLs.has('/'+f)?'/'+f:'/' + f.replace(/index\.html$/, '').replace(/\.html$/, '')));
 fs.writeFileSync(path.join(SITO, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${indirizzi.map((u) => `<url><loc>${u}</loc><lastmod>${dati.aggiornato}</lastmod></url>`).join('\n')}
+${indirizzi.map((u) => `<url><loc>${u}</loc><lastmod>${skillArchive.registry.find(p=>URL_SITO+p.url===u&&p.tipo==='mese')?.primaPubblicazione||dati.aggiornato}</lastmod></url>`).join('\n')}
 </urlset>
 `);
 // _routes.json: con functions/_middleware.js ogni richiesta (anche un'icona) passava da una Function, più lenta e

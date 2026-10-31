@@ -1038,3 +1038,8 @@ dialog.cerca::backdrop{background:rgba(2,6,23,.55)}
 /* link al canale YouTube nel piè di pagina (23/10/2026) */
 .link-youtube{display:inline-flex;align-items:center;gap:.35rem}
 .link-youtube svg{flex:none}
+.skill-history { margin: 1.5rem 0; }
+.skill-history svg { display: block; width: 100%; height: auto; min-width: 0; }
+.skill-history figcaption { font-size: .9rem; line-height: 1.6; margin-top: .75rem; }
+.skill-status { font-weight: 600; line-height: 1.7; }
+.skill-withdrawn { border: 2px solid #de8f05; padding: 1rem; margin-bottom: 1.5rem; border-radius: .6rem; }

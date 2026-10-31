@@ -117,3 +117,41 @@ python -m unittest discover -s script/skill -p '*_test.py'
 npm run build
 node script/skill/heading.mjs
 ```
+
+
+## Permanent archive
+
+`archivio.mjs` owns the publication registry (`dati/skill-pagine.json`), sticky
+primary categories and immutable closed-month snapshots (`dati/skill-mesi/`).
+Catalogue membership never deletes or revokes an existing guide. The build checks
+every registered URL after rendering and includes it in the sitemap with lastmod.
+A missing content file or snapshot stops the build.
+
+A complete new scan can withdraw only the same SKILL.md unit. A verified archived
+repository, repository-endpoint 404, or explicit incompatible license terms can
+also withdraw a guide. Network errors, missing license metadata and incomplete
+scans retain the last published page and produce warnings. Withdrawn URLs serve a
+noindex notice without installation instructions or videos. Repository/license
+withdrawals exclude all candidates from that repository; security withdrawals are
+scoped to the reviewed unit. Pages outside the daily trending ranking are checked and measured on
+Mondays; existing catalogue scans are reused without extra metric requests.
+
+The weekly labels and daily history use skills.sh trending24h positions. Stars
+are repository measurements, with their observation dates. Seven observations
+produce an inline SVG; shorter histories produce a table. Categories score exact
+normalized words/phrases in name (6), description (2) and topics (3), with the
+configuration order breaking ties. Saved assignments, including `other`, stay fixed.
+
+Monthly snapshots require 14 distinct observed days in a completed month. They
+rank by days present, average position and a stable identity tie-break. The entire
+monthly HTML is deterministic from the snapshot. A tiny local navigation script
+resolves available adjacent months from `/skill-months.json`; its fallback is the
+permanent archive hub, so future months never create broken links or alter the
+frozen document. No JavaScript or remote requests are used for the SVG chart.
+
+Run the existing JavaScript/Python suites; `archivio.test.mjs` adds T1?T8 and
+withdrawal/quota guards. `SKILL_ARCHIVE_EVIDENCE` optionally retains the isolated
+fixture and results. Tests inject `SKILL_ARCHIVE_ROOT`, `SKILL_ARCHIVE_DATE` and
+`SITO_OUTPUT` into child builds; synthetic data never enters the real `dati/`.
+`archivio_layout.py --fixture <evidence>/fixture --output <delivery>` creates the
+requested 360/1280 screenshots and checks HTTP 200, themes and mobile overflow.
