@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-31-openai-to-honor-robots-txt-signals-for-ai-training-preferences",
+ "titolo": "OpenAI to honor robots.txt signals for AI training preferences",
+ "descr": "OpenAI will respect a shared robots.txt signal, letting website owners specify if their content can be used for AI model training.",
+ "tema": "Policy",
+ "paragrafi": [
+  "OpenAI announced a new policy to honor a shared robots.txt signal for AI training.",
+  "The signal will allow website operators to communicate their preferences about whether their data may be used by participating AI providers.",
+  "OpenAI says it will follow the signal when it is present, aiming to give creators more control over their content.",
+  "The move follows growing calls for clearer data usage rules in the AI industry.",
+  "OpenAI did not specify a rollout date or which providers will be included beyond its own services."
+ ],
+ "perche": [
+  "For AI users, the policy could reduce the amount of web data that models are trained on, potentially affecting model breadth. For developers of free or local models, it underscores the importance of respecting site owners' signals when sourcing training data."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "Making it easier for websites to express AI training preferences",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+   "titolo": "Making it easier for websites to express AI training preferences",
+   "ufficiale": true,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 0
+}

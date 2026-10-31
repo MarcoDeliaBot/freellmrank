@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-31-nvidia-releases-validated-kubernetes-runtime-for-dynamo-1-4-2",
+ "titolo": "NVIDIA releases validated Kubernetes runtime for Dynamo 1.4.2",
+ "descr": "NVIDIA AI Cluster Runtime packages Dynamo 1.4.2 with GPU driver, scheduling and monitoring components for reproducible Kubernetes deployments.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced a validated Kubernetes runtime for its Dynamo distributed inference framework.",
+  "The runtime, part of the NVIDIA DSX AI Factory Platform, uses the AI Cluster Runtime (AICR) to create reproducible recipes with pinned component versions.",
+  "Dynamo 1.4.2 employs TCP for request traffic and ZMQ for KV‑cache events, supporting both a native Frontend router and a Gateway API Inference Extension (GAIE) path.",
+  "The AICR recipe includes the GPU Operator, Node Feature Discovery, Dynamic Resource Allocation driver, KAI Scheduler, NVSentinel health checks and Prometheus metrics collection."
+ ],
+ "perche": [
+  "The runtime simplifies building reliable inference clusters, reducing time spent on driver, scheduling and monitoring setup."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "Build a Validated Kubernetes Runtime for NVIDIA Dynamo",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/build-a-validated-kubernetes-runtime-for-nvidia-dynamo/",
+   "titolo": "Build a Validated Kubernetes Runtime for NVIDIA Dynamo",
+   "ufficiale": true,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 2
+}

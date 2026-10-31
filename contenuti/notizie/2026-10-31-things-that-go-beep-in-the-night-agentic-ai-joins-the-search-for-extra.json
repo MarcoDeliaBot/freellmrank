@@ -1,0 +1,26 @@
+{
+ "nome": "2026-10-31-things-that-go-beep-in-the-night-agentic-ai-joins-the-search-for-extra",
+ "titolo": "Things That Go Beep in the Night: Agentic AI Joins the Search for Extraterrestrial Signals",
+ "descr": "Agentic AI on RTX PRO 6000 Blackwell GPUs steers telescopes and detects pulsars in real time at the Allen Telescope Array.",
+ "tema": "Research",
+ "paragrafi": [
+  "The system uses NVIDIA’s Holoscan platform and a library called DAQIRI to pull terabits per second of sensor data directly into GPU memory, avoiding hard‑drive storage.",
+  "A web‑based orchestrator, Nexus, lets researchers control the telescope, calibrate instruments, and rewrite processing blocks via natural‑language prompts.",
+  "The pipeline achieved the first real‑time AI detection of a pulsar in the Crab Nebula and is evaluating open models like NVIDIA Nemotron for low‑latency or off‑world observatories."
+ ],
+ "perche": [
+  "The ability to process massive data streams in‑flight shortens analysis from weeks to hours, making SETI observations more agile. For AI users, the demonstration shows how high‑throughput GPU platforms can run large models locally, a model that could inspire similar deployments for free or open‑source tools."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "Things That Go Beep in the Night: Agentic AI Joins the Search for Extraterrestrial Signals",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/ai-joins-the-search-for-extraterrestrial-signals/",
+   "titolo": "Things That Go Beep in the Night: Agentic AI Joins the Search for Extraterrestrial Signals",
+   "ufficiale": true,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 3
+}
