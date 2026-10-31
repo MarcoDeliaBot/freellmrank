@@ -51,7 +51,7 @@ export function pagineSkillTutorial(dati, blog) {
       section(skill?'What it does':'What you will build',p(lesson.description)),
       section('What you need',p(lesson.prerequisites)),
       ...(c.audience?.length?[section('Who it is for',p(`The README names these assistants: ${c.audience.join(', ')}.`))]:[]),
-      section(skill?'Setup and use':'Step by step',`<ol>${teaching.map((s,i)=>`<li><h3>Step ${i+1}. ${esc(s.title)}</h3>${p(s.text)}${once(s.code)}</li>`).join('')}</ol>`),
+      section(skill?'Setup and use':'Step by step',`<ol>${teaching.map((s,i)=>`<li><h3>Step ${i+1}. ${esc(s.title)}</h3>${p(s.text)}${once(s.code)}${s.result?p(s.result):''}</li>`).join('')}</ol>`),
       section('Check that it works',p(lesson.check)+once(verification?.code)),
       ...(skill?[section('Features explained',lesson.short.slice(2,5).map(f=>`<article><h3>${esc(f.title)}</h3>${p(f.text)}</article>`).join(''))]:[]),
       section('Next steps',p(lesson.next)),

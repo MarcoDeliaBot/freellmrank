@@ -66,6 +66,39 @@ repeated titles, duplicate visible text, wrapping or overlapping headers, small
 Short fonts, empty safe areas, clipping and missing visual elements. Encoded
 frame checks remain separate from DOM fact/layout checks.
 
+The spoken script is separate from screen text. `copione.mjs` asserts the
+required excerpts in pinned sources and supplies distinct actions and expected
+results. Thin sources are ineligible instead of padded with repeated excerpts.
+Tool tutorials have a goal, prerequisites, commands for distinct steps, a working
+check, next steps and a link. Empty audience sections are omitted. The static
+security disclaimer appears only in the page's Security check box.
+
+The whole-video gate rejects repeated normalized sentences and code, internal
+procedure wording, technical speech, colon fragments and skill wording in tool
+tutorials. Short timing remains 3/7/7/7/8/8/5 seconds: scene two is What it is,
+followed by exactly three features or steps, an installer and a repository card.
+Kokoro speech is fitted to 92% of each non-link Short scene; final link speech is
+just “Link in the description.” Real WAV speech coverage must exceed 75%, onset
+must be within 0.3 seconds, and SRT coverage must exceed 80% in every scene.
+The SRT and burned-in captions share their held intervals and scene boundaries.
+
+`editorial_gate.py` counts empty height on decoded RGB rows, excluding only the
+caption band (1660–1860 in teaching Shorts). At least 2% of a row must contain
+teaching ink or a content panel; the faint background grid does not count. More
+than 35% empty rows blocks publication. This is independent of DOM checks for
+clipping, one-line headers and a 44px minimum Short content font. Long lessons
+may last 90–240 seconds. Source-documented workflows have orthogonal arrows;
+option groups have no invented dependencies.
+
+The trial-2 regression fixture keeps the four original scripts, timings, SRTs
+and 34 JPEGs byte for byte, with hashes and measured WAV speech spans. CI must
+reject all four. On the delivery workstation the test also reads the original
+WAVs under `../consegna/prova-2/`. `archive_regression.py` rebuilds that archive.
+Workflow dispatch can select an eligible top20 skill and tutorial for a trial;
+an optional Workers URL is restricted to this project's Pages preview hostname.
+Preview deployment requires existing AI/KV bindings and its authorization secret;
+missing prerequisites never justify a production deploy or another writer.
+
 Diagram rules were adapted from
 [Diagram Design](https://github.com/cathrynlavery/diagram-design/tree/main/skills/diagram-design)
 and the HyperFrames registry `flowchart` block: sparse source-backed steps,

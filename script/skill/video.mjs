@@ -17,7 +17,7 @@ export function plan(card,short=false) {
   const scenes=(short?lesson.short:lesson.long).map((s,i)=>{
     const explanation=card.explanations?.[`${short?'short':'long'}:${i}`];
     const speech=explanation?explanation.sentences.map(s=>s.text):[s.voice];
-    const data={titolo:s.title,testo:s.text,...(s.code?{comando:s.code,risultato:s.result}:{}),...(s.nodes?{nodi:s.nodes}:{}),...(s.role==='problem'?{apertura:true}:{}),...(s.role==='link'?{link:true}:{})};
+    const data={titolo:s.title,testo:s.text,...(s.code?{comando:s.code,risultato:s.result}:{}),...(s.nodes?{nodi:s.nodes,ordine:!!s.order}:{}),...(s.role==='problem'?{apertura:true}:{}),...(s.role==='link'?{link:true}:{})};
     return {stampo:s.nodes?'diagramma':'passo',etichetta:s.label,capitolo:s.title,role:s.role,dati:data,parlato:speech,voce:speech.join(' '),durata:s.duration,evidence:s.quotes};
   });
   const out={formato:short?'verticale':'orizzontale',tempiFissi:true,teaching:true,copertina:1,musica:short?'vivace':'calma',cardHash:digest(JSON.stringify(card)),scene:scenes};
