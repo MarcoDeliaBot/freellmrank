@@ -14,7 +14,7 @@ This guide shows the steps, the speed we measured and the limits. Kaggle is a pl
 - Kaggle's T4 x2 option gives you 2 NVIDIA T4 cards, 4 CPU cores and 29 GB of RAM.
 - You get about 30 hours of GPU time per week, and one session lasts at most 12 hours.
 - Qwen3.8-27B at 4-bit is an 18 GB download with an Apache 2.0 license.
-- On Kaggle it writes [KAGGLE: tokens/s] tokens per second. A home RX 7900 XTX writes 50 to 66.
+- On Kaggle it writes about 13 tokens per second. A home RX 7900 XTX writes 50 to 66.
 - Everything here is for short tests. Kaggle's policy limits other uses, and the model runs on Kaggle's machines, not on yours.
 
 ## What you get for free
@@ -23,9 +23,9 @@ These figures come from [Kaggle's notebook documentation](https://www.kaggle.com
 
 | Item | Kaggle T4 x2 |
 |---|---|
-| Graphics cards | 2 NVIDIA T4, [KAGGLE: memory per card] each |
+| Graphics cards | 2 NVIDIA T4, 15 GB each in our session |
 | CPU | 4 cores |
-| RAM | 29 GB |
+| RAM | 29 GB, 31 GB in our session |
 | One session | up to 12 hours |
 | GPU time per week | 30 hours, sometimes more |
 | Saved disk space | 20 GB in /kaggle/working |
@@ -34,13 +34,13 @@ Free GPUs are limited, so at busy times you may wait in a queue. Your account ma
 
 ## Two cards are different from one big card
 
-Videos often call this a 32 GB server. The memory is real, but it sits on two separate cards.
+Videos often call this a 32 GB server. Our session showed about 15 GB per card, and that memory sits on two separate cards.
 
 Ollama's [FAQ](https://docs.ollama.com/faq) explains what happens. If a model fits on one GPU, Ollama loads it there. If it does not fit, Ollama spreads it across all the GPUs.
 
 We measured how much memory Qwen3.8-27B really takes on a 24 GB RX 7900 XTX. It used 18.1 GB with a 4K context and 20 GB with a 32K context. Ollama's own report said about 16 GB, so check the real figure with `nvidia-smi`.
 
-That model is too big for one T4, so on Kaggle it must split across both. In our test the two cards held [KAGGLE: GPU 0 memory] and [KAGGLE: GPU 1 memory].
+That model is too big for one T4, so on Kaggle it must split across both, and it did. With a 4K context the two cards held 8.8 GB and 8.1 GB. With a 32K context they held 9.8 GB and 9.1 GB. Ollama reported the model as 100% on the GPU every time.
 
 ## Which model to pick
 
@@ -80,13 +80,13 @@ server = subprocess.Popen(
 time.sleep(5)
 ```
 
-**5. Download the model.** On our run this took [KAGGLE: download time].
+**5. Download the model.** On our run this took under 3 minutes.
 
 ```
 !ollama pull qwen3.8:27b-q4_K_M
 ```
 
-**6. Ask it something and read the speed.** The `--verbose` option prints the tokens per second.
+**6. Ask it something and read the speed.** The `--verbose` option prints the tokens per second. The model thinks first, so you will see its reasoning before the answer. In our run this command gave 13.01 tokens per second.
 
 ```
 !ollama run qwen3.8:27b-q4_K_M --verbose "Explain quantization in two sentences."
@@ -107,14 +107,16 @@ We ran the same test on both machines: the same model, 256 tokens per answer, th
 
 | Test | Kaggle T4 x2 | RX 7900 XTX 24 GB |
 |---|---|---|
-| Short question | [KAGGLE] tokens/s | 54 tokens/s |
-| Code | [KAGGLE] tokens/s | 66 tokens/s |
-| Long text, about 2,800 tokens | [KAGGLE] tokens/s | 50 tokens/s |
-| Reading that long text | [KAGGLE] tokens/s | about 850 tokens/s |
-| Loading the model | [KAGGLE] s | about 20 s |
-| First word on screen | [KAGGLE] s | about 0.5 s |
+| Short question | 13 tokens/s | 54 tokens/s |
+| Code | 13 tokens/s | 66 tokens/s |
+| Long text, about 2,800 tokens | 13 tokens/s | 50 tokens/s |
+| Reading that long text | about 370 tokens/s | about 850 tokens/s |
+| Loading the model | 90 s the first time, then about 10 s | about 20 s |
+| First word on screen | about 0.6 s | about 0.5 s |
 
-On the home card, a context of 32K ran as fast as a context of 4K. On Kaggle, [KAGGLE: effect of context size].
+The home card writes about four times faster. On Kaggle, 13 tokens per second means an answer of 256 tokens takes about 20 seconds. That is slow for daily work but fine for testing a model.
+
+On both machines, a context of 32K ran as fast as a context of 4K. All 36 runs on Kaggle finished with no errors, and the whole test used 28 minutes of the weekly 30 hours.
 
 ## Using it from your own PC
 
