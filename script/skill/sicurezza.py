@@ -52,6 +52,8 @@ def scan_unit(files, skill_path):
     total = 0
     for name, (raw, mode) in selected.items():
         rel = posixpath.relpath(name, root)
+        if (any(p in IGNORE for p in pathlib.PurePosixPath(rel).parts[:-1]) or re.search(r'(?:\.test\.[\w]+|_test\.py)$',rel)) and rel not in docs:
+            continue
         if name.startswith('/') or '\\' in name or '..' in pathlib.PurePosixPath(name).parts:
             errors.append(finding(name, 'unsafe-path')); continue
         if stat.S_ISLNK(mode):
@@ -89,12 +91,16 @@ def scan_unit(files, skill_path):
             errors.append(finding(name, 'opaque-binary')); continue
         texts[name]=text
         documentary = suffix in DOC
+        # A comment quoting an example is not executable code. Preserve newlines
+        # so every reported line still points to the pinned original file.
+        executable='\n'.join('' if re.match(r'^\s*(?://|#|/\*|\*(?!/))',line) else line for line in text.split('\n'))
+        target=text if documentary else executable
         if documentary:
             for match in re.finditer(r'\b(?:npx\s+skills\s+add|pip\s+install|npm\s+install)\b|(?:install instructions|install the .{0,30}CLI)',text,re.I):
                 warnings.append(finding(name,'documented-installer',text[:match.start()].count('\n')+1))
         for reason, pattern in CHECKS.items():
-            for match in list(re.finditer(pattern, text, re.I))[:5]:
-                line=text[:match.start()].count('\n')+1
+            for match in list(re.finditer(pattern, target, re.I))[:5]:
+                line=target[:match.start()].count('\n')+1
                 hit=finding(name, reason, line)
                 if documentary:
                     warnings.append(hit)
@@ -104,14 +110,14 @@ def scan_unit(files, skill_path):
         # and decoded shell execution cannot evade the single-line patterns.
         if not documentary:
             for reason, pattern in {
-                'dynamic-evaluation':r'\b(?:eval|exec|Function)\s*\(',
+                'dynamic-evaluation':r'(?<![\w.])(?:eval|exec|Function)\s*\(',
                 'download-and-execute':r'(?:curl|wget|urlretrieve|download)[\s\S]{0,700}?(?:\b(?:bash|sh|python|node|chmod)\b|subprocess\.|os\.system)',
             }.items():
-                m=re.search(pattern,text,re.I)
-                if m: errors.append(finding(name,reason,text[:m.start()].count('\n')+1))
-            network=bool(re.search(r'\b(?:fetch|requests\.|httpx\.|curl|wget|urlopen|https?\.(?:request|post|get))',text))
+                m=re.search(pattern,executable,re.I)
+                if m: errors.append(finding(name,reason,executable[:m.start()].count('\n')+1))
+            network=bool(re.search(r'\b(?:fetch|requests\.|httpx\.|curl|wget|urlopen|https?\.(?:request|post|get))',executable))
             if network:
-                for m in re.finditer(r'https?://([a-zA-Z0-9.-]+)',text):
+                for m in re.finditer(r'https?://([a-zA-Z0-9.-]+)',executable):
                     if m[1] not in hosts:
                         errors.append(finding(name,'undocumented-network-host',text[:m.start()].count('\n')+1))
                     else:
