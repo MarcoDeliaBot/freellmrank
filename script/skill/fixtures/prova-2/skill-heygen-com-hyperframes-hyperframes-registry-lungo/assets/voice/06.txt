@@ -1,0 +1,1 @@
+Block: installs to compositions/<name>.html. Mount it with data-composition-src, data-composition-id matching the block's own id, data-start and the data-duration you need; the snippet add prints is the starting point.

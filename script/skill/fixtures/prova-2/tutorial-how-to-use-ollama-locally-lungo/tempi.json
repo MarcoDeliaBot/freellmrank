@@ -1,0 +1,115 @@
+{
+ "totale": 188,
+ "scene": [
+  {
+   "n": "01",
+   "stampo": "passo",
+   "inizio": 0,
+   "durata": 16,
+   "testo": "Start building with open models. For the complete instructions and any prerequisites, open the official source linked on this page.",
+   "etichetta": "The problem",
+   "capitolo": "Need open models?",
+   "titolo": "Need open models?"
+  },
+  {
+   "n": "02",
+   "stampo": "passo",
+   "inizio": 16,
+   "durata": 18,
+   "testo": "Start building with open models. This is a source-based walkthrough. Commands are displayed for you to review; this pipeline does not execute the skill.",
+   "etichetta": "What it is",
+   "capitolo": "What it is",
+   "titolo": "What it is"
+  },
+  {
+   "n": "03",
+   "stampo": "passo",
+   "inizio": 34,
+   "durata": 20,
+   "testo": "ollama run gemma4 For the complete instructions and any prerequisites, open the official source linked on this page.",
+   "etichetta": "How it works",
+   "capitolo": "How it works",
+   "titolo": "How it works"
+  },
+  {
+   "n": "04",
+   "stampo": "passo",
+   "inizio": 54,
+   "durata": 16,
+   "testo": "Install the documented tool for your operating system before running these commands. curl -fsSL https://ollama.com/install.sh | sh",
+   "etichetta": "Feature",
+   "capitolo": "Install the official tool",
+   "titolo": "Install the official tool"
+  },
+  {
+   "n": "05",
+   "stampo": "passo",
+   "inizio": 70,
+   "durata": 16,
+   "testo": "Run and chat with Gemma 4: ollama run gemma4",
+   "etichetta": "Feature",
+   "capitolo": "Run the documented command",
+   "titolo": "Run the documented command"
+  },
+  {
+   "n": "06",
+   "stampo": "passo",
+   "inizio": 86,
+   "durata": 16,
+   "testo": "Inspect the proposed changes before accepting them. Keep a copy of your work so you can compare the result.",
+   "etichetta": "Feature",
+   "capitolo": "Review the output",
+   "titolo": "Review the output"
+  },
+  {
+   "n": "07",
+   "stampo": "passo",
+   "inizio": 102,
+   "durata": 16,
+   "testo": "Run and chat with Gemma 4:",
+   "etichetta": "Feature",
+   "capitolo": "Chat with a model",
+   "titolo": "Chat with a model"
+  },
+  {
+   "n": "08",
+   "stampo": "passo",
+   "inizio": 118,
+   "durata": 16,
+   "testo": "To launch a specific integration:",
+   "etichetta": "Feature",
+   "capitolo": "Coding",
+   "titolo": "Coding"
+  },
+  {
+   "n": "09",
+   "stampo": "passo",
+   "inizio": 134,
+   "durata": 16,
+   "testo": "Ollama has a REST API for running and managing models.",
+   "etichetta": "Feature",
+   "capitolo": "REST API",
+   "titolo": "REST API"
+  },
+  {
+   "n": "10",
+   "stampo": "passo",
+   "inizio": 150,
+   "durata": 24,
+   "testo": "Warning: the official installer downloads and executes a script. Review it before running. Static checks cannot prove that a skill is safe. Review the pinned source and its dependencies before installing. Updates require a new check.",
+   "etichetta": "Limits and review",
+   "capitolo": "Limits and review",
+   "titolo": "Limits and review"
+  },
+  {
+   "n": "11",
+   "stampo": "passo",
+   "inizio": 174,
+   "durata": 14,
+   "testo": "For the complete instructions and any prerequisites, open the official source linked on this page. github.com/ollama/ollama",
+   "etichetta": "Read the source",
+   "capitolo": "Read the source",
+   "titolo": "Read the source"
+  }
+ ]
+}

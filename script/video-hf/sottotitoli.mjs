@@ -24,8 +24,9 @@ export function gruppi(parole) {
   return out;
 }
 
-export function composizione(lista, durata, formato = 'orizzontale') {
-  const { W, H, capTop, capH } = formatoDi(formato);
+export function composizione(lista, durata, formato = 'orizzontale', {teaching=false}={}) {
+  const { W, H, capTop:baseTop, capH } = formatoDi(formato);
+  const capTop=teaching&&formato==='verticale'?1660:baseTop;
   const vert = formato === 'verticale';
   const G = lista.map((g) => ({ start: g.start, end: g.end, words: g.words.map((w) => ({ text: w.text, start: w.start, end: w.end })) }));
   return `<template id="captions-template" data-composition-id="captions" data-width="${W}" data-height="${H}">

@@ -1,0 +1,75 @@
+{
+ "totale": 45,
+ "scene": [
+  {
+   "n": "01",
+   "stampo": "passo",
+   "inizio": 0,
+   "durata": 3,
+   "testo": "Need blocks and components?",
+   "etichetta": "The problem",
+   "capitolo": "Need blocks and components?",
+   "titolo": "Need blocks and components?"
+  },
+  {
+   "n": "02",
+   "stampo": "passo",
+   "inizio": 3,
+   "durata": 7,
+   "testo": "About 450 ready-made HyperFrames blocks and components installed as editable source",
+   "etichetta": "Feature",
+   "capitolo": "hyperframes-registry",
+   "titolo": "hyperframes-registry"
+  },
+  {
+   "n": "03",
+   "stampo": "passo",
+   "inizio": 10,
+   "durata": 7,
+   "testo": "Search is local and sends nothing.",
+   "etichetta": "Feature",
+   "capitolo": "Search",
+   "titolo": "Search"
+  },
+  {
+   "n": "04",
+   "stampo": "passo",
+   "inizio": 17,
+   "durata": 7,
+   "testo": "Block: installs to compositions/<name>.html.",
+   "etichetta": "Feature",
+   "capitolo": "Block",
+   "titolo": "Block"
+  },
+  {
+   "n": "05",
+   "stampo": "passo",
+   "inizio": 24,
+   "durata": 8,
+   "testo": "Component: installs to compositions/components/<name>.html.",
+   "etichetta": "Feature",
+   "capitolo": "Component",
+   "titolo": "Component"
+  },
+  {
+   "n": "06",
+   "stampo": "passo",
+   "inizio": 32,
+   "durata": 8,
+   "testo": "npx skills add heygen-com/hyperframes",
+   "etichetta": "Install",
+   "capitolo": "Install",
+   "titolo": "Install"
+  },
+  {
+   "n": "07",
+   "stampo": "passo",
+   "inizio": 40,
+   "durata": 5,
+   "testo": "github.com/heygen-com/hyperframes",
+   "etichetta": "Read the source",
+   "capitolo": "Read the source",
+   "titolo": "Read the source"
+  }
+ ]
+}

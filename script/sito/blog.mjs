@@ -19,7 +19,7 @@ const ORIZZONTALI = ['lungo', 'modello'];
 const leggiJson = (f) => { const p = path.join(RADICE, 'contenuti', f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : {}; };
 const LEGAMI = leggiJson('legami-video.json');
 const YOUTUBE = leggiJson('youtube.json');
-function videoDelPost(slug, titolo) {
+export function videoDelPost(slug, titolo, { breveRelease = false } = {}) {
   const l = LEGAMI[slug];
   if (!l?.lungo) return '';
   const id = YOUTUBE[l.lungo];
@@ -27,7 +27,7 @@ function videoDelPost(slug, titolo) {
   const player = id
     ? `<div class="video-post"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}" title="${esc(titolo)}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
     : `<div class="video-post"><video controls preload="none" playsinline poster="${base}.jpg" src="${base}.mp4"></video></div>`;
-  const breve = l.breve && YOUTUBE[l.breve] ? ` · [Watch the Short](https://youtube.com/shorts/${YOUTUBE[l.breve]})` : '';
+  const breve = l.breve && YOUTUBE[l.breve] ? ` · [Watch the Short](https://youtube.com/shorts/${YOUTUBE[l.breve]})` : l.breve && breveRelease ? ` · [Watch the Short](https://github.com/${REPO}/releases/download/video-${l.breve}/${l.breve}.mp4)` : '';
   const canale = `[Watch on YouTube](${id ? `https://youtu.be/${id}` : 'https://www.youtube.com/@FreeLLMArena'})`;
   return `${player}\n\n${canale}${breve}\n\n`;
 }

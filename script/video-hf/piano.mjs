@@ -6,7 +6,7 @@
 // Uso: BOZZE_KEY=… node script/video-hf/piano.mjs <notizia.json> <piano.json>
 import fs from 'node:fs';
 import path from 'node:path';
-import { STAMPI } from './stampi/index.mjs';
+import { STAMPI_NOTIZIE as STAMPI } from './stampi/index.mjs';
 import { chiediModello, ultimoScrittore } from '../bozze.mjs';
 import { numeri } from '../video-post.mjs';
 import { nomiDi } from '../notizie.mjs';

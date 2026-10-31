@@ -1,0 +1,1 @@
+Open the pinned README and check the command. Run it from the project where you want to use the skill. In the installer, select only hyperframes-registry. This review covers skills/hyperframes-registry. npx skills add heygen-com/hyperframes

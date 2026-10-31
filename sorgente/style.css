@@ -714,6 +714,11 @@ footer{font-size:.75rem;color:var(--muted);border-top:1px solid var(--line);padd
 .salta a{font-size:.75rem;font-weight:500;padding:.375rem .75rem;border-radius:.5rem;background:var(--surface);border:1px solid var(--line);color:var(--ink-medio);text-decoration:none;box-shadow:0 1px 1px rgba(0,0,0,.03)}
 @media (hover:hover){.salta a:hover{border-color:var(--free);color:var(--free-forte)}}
 .cat-guida{margin-bottom:2.25rem;scroll-margin-top:1.5rem}
+.skill-tutorial .cat-scheda{margin-bottom:1rem;overflow-wrap:anywhere}
+.skill-tutorial blockquote{margin:1rem 0;padding:.25rem 1rem;border-left:3px solid var(--free);color:var(--ink-medio)}
+.skill-tutorial dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:.6rem 1rem;overflow-wrap:anywhere}
+.skill-tutorial dt{font-weight:600}.skill-tutorial dd{margin:0}
+@media(max-width:40rem){.skill-tutorial dl{grid-template-columns:minmax(0,1fr);gap:.25rem}.skill-tutorial dd{margin-bottom:.75rem}}
 .cat-testa{display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding-bottom:.75rem;margin-bottom:1rem;border-bottom:1px solid var(--line2)}
 .cat-testa h2{margin:0;font-size:1.5rem;font-weight:700;letter-spacing:-.025em}
 .cat-sotto{font-size:1.125rem;font-weight:400;color:var(--muted2)}

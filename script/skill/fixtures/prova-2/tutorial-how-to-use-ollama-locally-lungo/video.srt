@@ -1,0 +1,235 @@
+1
+00:00:00,000 --> 00:00:01,520
+Start building with open
+
+2
+00:00:01,520 --> 00:00:02,160
+models.
+
+3
+00:00:02,320 --> 00:00:03,200
+For the complete
+
+4
+00:00:03,200 --> 00:00:04,240
+instructions and any
+
+5
+00:00:04,240 --> 00:00:05,520
+prerequisites,
+
+6
+00:00:05,520 --> 00:00:07,040
+open the official source
+
+7
+00:00:07,040 --> 00:00:08,240
+linked on this page.
+
+8
+00:00:16,000 --> 00:00:17,520
+Start building with open
+
+9
+00:00:17,520 --> 00:00:18,320
+models.
+
+10
+00:00:18,320 --> 00:00:19,920
+This is a source-based
+
+11
+00:00:19,920 --> 00:00:20,880
+walkthrough.
+
+12
+00:00:20,880 --> 00:00:22,400
+Commands are displayed for
+
+13
+00:00:22,400 --> 00:00:23,600
+you to review;
+
+14
+00:00:23,600 --> 00:00:24,880
+this pipeline does not
+
+15
+00:00:24,880 --> 00:00:25,920
+execute the skill.
+
+16
+00:00:34,000 --> 00:00:36,080
+ollama run gemma4 For
+
+17
+00:00:36,080 --> 00:00:37,280
+the complete instructions
+
+18
+00:00:37,280 --> 00:00:39,040
+and any prerequisites,
+
+19
+00:00:39,040 --> 00:00:40,560
+open the official source
+
+20
+00:00:40,560 --> 00:00:41,680
+linked on this page.
+
+21
+00:00:54,000 --> 00:00:55,840
+Install the documented tool
+
+22
+00:00:55,840 --> 00:00:57,120
+for your operating system
+
+23
+00:00:57,120 --> 00:00:58,240
+before running these
+
+24
+00:00:58,240 --> 00:00:59,200
+commands.
+
+25
+00:00:59,200 --> 00:01:00,804
+curl -fsSL
+
+26
+00:01:00,804 --> 00:01:05,933
+https://ollama.com/install.sh
+
+27
+00:01:05,933 --> 00:01:06,640
+| sh
+
+28
+00:01:10,000 --> 00:01:10,800
+Run and chat with
+
+29
+00:01:10,800 --> 00:01:11,840
+Gemma 4:
+
+30
+00:01:11,840 --> 00:01:13,360
+ollama run gemma4
+
+31
+00:01:26,000 --> 00:01:27,840
+Inspect the proposed changes
+
+32
+00:01:27,840 --> 00:01:29,440
+before accepting them.
+
+33
+00:01:29,440 --> 00:01:30,400
+Keep a copy of
+
+34
+00:01:30,400 --> 00:01:31,440
+your work so you
+
+35
+00:01:31,440 --> 00:01:32,880
+can compare the result.
+
+36
+00:01:42,000 --> 00:01:42,800
+Run and chat with
+
+37
+00:01:42,800 --> 00:01:43,760
+Gemma 4:
+
+38
+00:01:58,080 --> 00:01:59,280
+To launch a specific
+
+39
+00:01:59,280 --> 00:02:00,000
+integration:
+
+40
+00:02:14,000 --> 00:02:15,440
+Ollama has a REST
+
+41
+00:02:15,440 --> 00:02:16,960
+API for running and
+
+42
+00:02:16,960 --> 00:02:18,000
+managing models.
+
+43
+00:02:30,000 --> 00:02:30,800
+Warning:
+
+44
+00:02:30,800 --> 00:02:32,160
+the official installer
+
+45
+00:02:32,160 --> 00:02:33,680
+downloads and executes a
+
+46
+00:02:33,680 --> 00:02:34,240
+script.
+
+47
+00:02:34,400 --> 00:02:36,240
+Review it before running.
+
+48
+00:02:36,240 --> 00:02:37,920
+Static checks cannot prove
+
+49
+00:02:37,920 --> 00:02:39,440
+that a skill is safe.
+
+50
+00:02:39,440 --> 00:02:40,880
+Review the pinned source
+
+51
+00:02:40,880 --> 00:02:42,640
+and its dependencies before
+
+52
+00:02:42,640 --> 00:02:43,680
+installing.
+
+53
+00:02:43,680 --> 00:02:45,680
+Updates require a new check.
+
+54
+00:02:54,000 --> 00:02:54,800
+For the complete
+
+55
+00:02:54,800 --> 00:02:55,840
+instructions and any
+
+56
+00:02:55,840 --> 00:02:56,960
+prerequisites,
+
+57
+00:02:56,960 --> 00:02:58,320
+open the official source
+
+58
+00:02:58,320 --> 00:02:59,920
+linked on this page.
+
+59
+00:02:59,920 --> 00:03:03,440
+github.com/ollama/ollama

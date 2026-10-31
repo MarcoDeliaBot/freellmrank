@@ -1,0 +1,1 @@
+Component: installs to compositions/components/<name>.html.

@@ -6,6 +6,7 @@ import { RADICE, SITO, URL_SITO, NOME_PIENO, CHAT_WEB, CONTATTO_PRIVACY, VER, es
 import { barre, dispersione, linee, matrice, COLORI as COLORI_SERIE } from './sito/grafici.mjs';
 import { unisci, paginaCatalogo, pagineModelli } from './sito/modelli.mjs';
 import { preparaBlog, pagineBlog } from './sito/blog.mjs';
+import { pagineSkillTutorial } from './sito/skill-tutorial.mjs';
 import { paginaDecisioni } from './sito/decisioni.mjs';
 import { paginaGpu } from './sito/gpus.mjs';
 import { paginaArena } from './sito/arena.mjs';
@@ -29,7 +30,7 @@ const fileStoria = path.join(SITO, 'history.json');
 const storia = fs.existsSync(fileStoria) ? JSON.parse(fs.readFileSync(fileStoria, 'utf8')) : null;
 
 // pulizia delle cartelle generate
-for (const d of ['model', 'blog', 'compare', 'video']) fs.rmSync(path.join(SITO, d), { recursive: true, force: true });
+for (const d of ['model', 'blog', 'compare', 'video', 'skills', 'tutorials']) fs.rmSync(path.join(SITO, d), { recursive: true, force: true });
 
 const modelli = unisci(dati, storia);
 const coppie = preparaConfronti(modelli); // prima delle pagine dei modelli: le linkano
@@ -462,6 +463,7 @@ paginaFreeLlm(ctxParole);
 paginaBestFreeAi(ctxParole);
 paginaFreeAi(ctxParole);
 paginaCatalogo(dati, modelli, blog);
+pagineSkillTutorial(dati, blog);
 paginaDecisioni(dati, blog);
 paginaGpu(dati, modelli, blog);
 paginaRam(dati, modelli, blog);

@@ -1,0 +1,1 @@
+remote-code-load: skills/hyperframes-registry/references/demo-html-pattern.md:22 Warning: Markdown includes installer or remote code instructions. Review the documented source before use. Static checks cannot prove that a skill is safe. Review the pinned source and its dependencies before installing. Updates require a new check.

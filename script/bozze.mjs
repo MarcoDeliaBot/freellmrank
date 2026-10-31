@@ -57,17 +57,28 @@ async function compatibileOpenAI(url, chiave, modello, messaggi, max, attesa, te
   return String(d.choices?.[0]?.message?.content || '').replace(/<think>[\s\S]*?<\/think>/g, '').trim();
 }
 
+// Shared Workers transport also returns quota evidence for skill/tutorial slides.
+export async function scriviWorkers(messaggi,max,scopo) {
+  if(!process.env.BOZZE_KEY&&!process.env.SCRIVI_URL)throw Error('Workers AI not configured');
+  const url=`${process.env.SCRIVI_URL || 'https://freellmarena.com'}/api/scrivi`;
+  if(['skill','tutorial'].includes(scopo)) {
+    const preflight=await fetch(url,{headers:{Authorization:`Bearer ${process.env.BOZZE_KEY||''}`},signal:AbortSignal.timeout(20000)});
+    const policy=await preflight.json().catch(()=>({}));
+    if(!preflight.ok||policy.budgetPolicy!=='skill-tutorial-20261031'||!(policy.caps?.[scopo]>0))
+      throw Object.assign(Error('Dedicated Workers AI budget contract is not deployed at this endpoint'),{status:preflight.status});
+  }
+  const r=await fetch(url,{
+    method:'POST',headers:{Authorization:`Bearer ${process.env.BOZZE_KEY||''}`,'Content-Type':'application/json'},
+    body:JSON.stringify({messaggi,max,scopo}),signal:AbortSignal.timeout(90000)});
+  const d=await r.json().catch(()=>({}));
+  if(!r.ok)throw Object.assign(Error(`/api/scrivi ${r.status}: ${d.errore||''}`),{status:r.status});
+  return d;
+}
 const SCRIVONO = {
   // GitHub Models è stato chiuso il 30/7/2026: si scrive con Workers AI attraverso la funzione protetta del sito
   workers: async (messaggi, max, scopo) => {
     if (!process.env.BOZZE_KEY && !process.env.SCRIVI_URL) return null;
-    const r = await fetch(`${process.env.SCRIVI_URL || 'https://freellmarena.com'}/api/scrivi`, {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${process.env.BOZZE_KEY || ''}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messaggi, max, scopo }),
-    });
-    const d = await r.json().catch(() => ({}));
-    if (!r.ok) throw new Error(`/api/scrivi ${r.status}: ${d.errore || ''}`);
+    const d = await scriviWorkers(messaggi,max,scopo);
     return d.testo;
   },
   groq: (messaggi, max) => (process.env.GROQ_KEY

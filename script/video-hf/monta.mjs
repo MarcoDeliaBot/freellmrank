@@ -37,9 +37,28 @@ export async function monta(piano, dir) {
     const testo = typeof st.voceFissa === 'function' ? st.voceFissa(sc.dati || {}, formato) : st.voceFissa || sc.voce;
     const n = String(i + 1).padStart(2, '0');
     const wav = d('assets/voice', `${n}.wav`);
-    const durVoce = parla(testo, wav);
+    let durVoce = parla(testo, wav);
+    // Optional editorial timing contract (skills/tutorials): fit the voice to its
+    // window, then hold the finished slide. Existing news plans are unchanged.
+    const fixed = piano.tempiFissi === true ? Number(sc.durata) : null;
+    if (fixed != null) {
+      if (!(fixed >= 2 && fixed <= 60)) throw new Error(`Invalid fixed scene duration: ${fixed}`);
+      // Teaching Shorts sustain narration in every beat. Fit real speech to
+      // 92% of the scene, in either direction, without padding it with silence.
+      const sustained=piano.teaching && formato==='verticale' && sc.role!=='link';
+      const target = sustained ? fixed * .92 : fixed - .15;
+      const speed = durVoce / target;
+      if (speed > 1.8) throw new Error(`Narration exceeds its reading window (${speed.toFixed(2)}x)`);
+      if (speed > 1 || (sustained && speed < 1)) {
+        if(speed<.5)throw new Error(`Narration is too short for its teaching window (${speed.toFixed(2)}x)`);
+        const fitted = wav.replace(/\.wav$/, '-fit.wav');
+        const r = spawnSync('ffmpeg', ['-v','error','-y','-i',wav,'-af',`atempo=${speed.toFixed(6)}`,fitted]);
+        if (r.status !== 0) throw new Error('Could not fit narration to its scene');
+        fs.renameSync(fitted,wav); durVoce = target;
+      }
+    }
     const parole = allinea(testo, ascolta(wav, d('lavoro', `t${n}`)), durVoce);
-    const durata = +Math.max(4, durVoce + CODA).toFixed(3);
+    const durata = fixed ?? +Math.max(4, durVoce + CODA).toFixed(3);
     const out = { ...sc, n, testo, wav: `assets/voice/${n}.wav`, durVoce, durata, inizio: +inizio.toFixed(3), parole };
     inizio += durata;
     return out;
@@ -85,8 +104,21 @@ export async function monta(piano, dir) {
 
   // 3. sottotitoli e indice
   const tutte = scene.flatMap((sc) => sc.parole.map((w) => ({ text: w.text, start: +(w.start + sc.inizio).toFixed(3), end: +(w.end + sc.inizio).toFixed(3) })));
-  const g = gruppi(tutte);
-  fs.writeFileSync(d('compositions/captions.html'), composizione(g, totale, formato));
+  let g = gruppi(tutte);
+  if(piano.teaching){
+    // The SRT and burned-in captions have the same held intervals. Never carry
+    // a previous scene's final caption into the following beat.
+    g=[];
+    for(const sc of scene){
+      const local=gruppi(sc.parole.map(w=>({...w,start:w.start+sc.inizio,end:w.end+sc.inizio})));
+      for(const [i,group] of local.entries()){
+        group.start=i?group.start:sc.inizio;
+        group.end=i+1<local.length?local[i+1].start:sc.inizio+sc.durata-.02;
+      }
+      g.push(...local);
+    }
+  }
+  fs.writeFileSync(d('compositions/captions.html'), composizione(g, totale, formato,{teaching:piano.teaching}));
   fs.writeFileSync(d('video.srt'), srt(g));
   // musica di sottofondo (24/10/2026 sera, Marco: rimetterla): generata qui da musica.py, più presente negli Short,
   // bassa nei video lunghi; piano.musica = 'calma' | 'vivace' | 'nessuna'. Se Python o numpy mancano, video senza musica
@@ -101,7 +133,7 @@ export async function monta(piano, dir) {
   }
   fs.writeFileSync(d('index.html'), indice(scene, totale, F, musica));
   // etichetta, capitolo e titolo della scena: per i capitoli di YouTube nella descrizione (26/10/2026, script/brag/capitoli-yt.mjs)
-  fs.writeFileSync(d('tempi.json'), JSON.stringify({ totale, scene: scene.map(({ n, stampo, inizio: a, durata, testo, etichetta, capitolo, dati }) => ({ n, stampo, inizio: a, durata, testo, etichetta, capitolo, titolo: dati?.titolo })) }, null, 1));
+  fs.writeFileSync(d('tempi.json'), JSON.stringify({ totale, scene: scene.map(({ n, stampo, inizio: a, durata, durVoce, parole, testo, etichetta, capitolo, dati }) => ({ n, stampo, inizio: a, durata, durVoce, voiceStart:parole[0]?.start, voiceEnd:parole.at(-1)?.end, testo, etichetta, capitolo, titolo: dati?.titolo })) }, null, 1));
 
   // 4. controllo e montaggio
   const controllo = hf(['lint'], { cwd: dir });

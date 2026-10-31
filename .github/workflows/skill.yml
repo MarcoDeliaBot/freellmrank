@@ -1,0 +1,129 @@
+name: Agent Skills e tutorial
+
+on:
+  schedule:
+    - cron: '10 3 * * *'
+  workflow_dispatch:
+    inputs:
+      prova:
+        description: 'Una skill e un tutorial completi, senza pubblicare: pagine, video e fotogrammi come artefatti'
+        type: boolean
+        default: true
+      skill:
+        description: 'Solo prova: nome della skill, deve essere passata o con avviso nei primi 20 misurati'
+        type: string
+        default: ''
+      tutorial:
+        description: 'Solo prova: nome dello strumento del tutorial'
+        type: string
+        default: ''
+      preview_url:
+        description: 'Solo prova: URL di anteprima del progetto freellmrank.pages.dev per Workers AI'
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: video
+  cancel-in-progress: false
+
+jobs:
+  skill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      HYPERFRAMES_PYTHON: python3
+      HYPERFRAMES_NO_TELEMETRY: '1'
+      PROVA: ${{ github.event_name == 'push' || github.ref != 'refs/heads/main' || inputs.prova == true }}
+      PROVA_SKILL: ${{ inputs.skill }}
+      PROVA_TUTORIAL: ${{ inputs.tutorial }}
+      SCRIVI_URL: ${{ inputs.prova == true && inputs.preview_url || '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Dipendenze esistenti
+        run: |
+          npm ci
+          sudo apt-get update -q && sudo apt-get install -y -q ffmpeg fonts-urw-base35 fonts-noto-core
+          pip install kokoro-onnx soundfile playwright numpy imageio-ffmpeg pillow
+          python -m playwright install --with-deps chromium
+          echo "HYPERFRAMES_PYTHON=$(which python)" >> "$GITHUB_ENV"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/hyperframes
+            ~/.npm/_npx
+          key: hyperframes-0.8.192-kokoro-parakeet-v1
+      - name: Modelli voce e browser
+        run: |
+          npx --yes hyperframes@0.8.192 models install parakeet --json
+          npx --yes hyperframes@0.8.192 browser ensure
+      - name: Controlli dei gate
+        run: |
+          node --test script/skill/*.test.mjs
+          python -m unittest discover -s script/skill -p '*_test.py'
+      - uses: actions/cache@v4
+        with:
+          path: .ai/skill-cache
+          key: skill-review-${{ hashFiles('script/skill/sicurezza.py') }}-${{ github.run_id }}
+          restore-keys: skill-review-${{ hashFiles('script/skill/sicurezza.py') }}-
+      - name: Raccolta, pagine, video e controllo fotogrammi
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
+        run: node script/skill.mjs
+      - name: Build esistente, link e heading
+        run: |
+          npm run build
+          node script/skill/heading.mjs
+      - name: Artefatti di prova e diagnostica
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: skill-tutorial-prova-${{ github.run_id }}
+          retention-days: 7
+          if-no-files-found: warn
+          path: |
+            video/skill-tutorial
+            sito/skills.html
+            sito/tutorials.html
+            sito/skills
+            sito/tutorials
+            sito/style.css
+            sito/inter.woff2
+            dati/skill.json
+            dati/skill-scartate.json
+            dati/skill-audit-top20.json
+            dati/skill-storico
+            contenuti/skills
+            contenuti/tutorials
+      - name: Release verificate per il flusso YouTube esistente
+        if: env.PROVA != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node script/skill.mjs --pubblica
+      - name: Salva dati, pagine e legami dopo i controlli
+        if: env.PROVA != 'true'
+        run: |
+          git add dati/skill.json dati/skill-scartate.json dati/skill-storico contenuti/legami-video.json
+          for dir in contenuti/skills contenuti/tutorials; do
+            if [ -d "$dir" ]; then git add "$dir"; fi
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name freellmarena-bot
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Skill e tutorial verificati $(date -u +%F)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && break
+            [ "$i" = 5 ] && exit 1
+            sleep $((i * 10))
+          done

@@ -1,0 +1,109 @@
+{
+ "formato": "verticale",
+ "tempiFissi": true,
+ "copertina": 1,
+ "musica": "vivace",
+ "cardHash": "91a61e5459bde30cf1cf6296d58b0bd56e0d0439902d8740a77a672cf052595e",
+ "scene": [
+  {
+   "stampo": "passo",
+   "etichetta": "The problem",
+   "capitolo": "Need open models?",
+   "dati": {
+    "titolo": "Need open models?",
+    "apertura": true
+   },
+   "parlato": [
+    "Need open models?"
+   ],
+   "voce": "Need open models?",
+   "durata": 3
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Feature",
+   "capitolo": "Ollama",
+   "dati": {
+    "titolo": "Ollama",
+    "comando": "ollama run gemma4"
+   },
+   "parlato": [
+    "Start building with open models."
+   ],
+   "voce": "Start building with open models.",
+   "durata": 7
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Feature",
+   "capitolo": "Chat with a model",
+   "dati": {
+    "titolo": "Chat with a model",
+    "comando": "ollama run gemma4"
+   },
+   "parlato": [
+    "Run and chat with Gemma 4:"
+   ],
+   "voce": "Run and chat with Gemma 4:",
+   "durata": 7
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Feature",
+   "capitolo": "Coding",
+   "dati": {
+    "titolo": "Coding",
+    "comando": "ollama launch claude"
+   },
+   "parlato": [
+    "To launch a specific integration:"
+   ],
+   "voce": "To launch a specific integration:",
+   "durata": 7
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Feature",
+   "capitolo": "REST API",
+   "dati": {
+    "titolo": "REST API",
+    "comando": "curl http://localhost:11434/api/chat -d '{\n  \"model\": \"gemma4\",\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"Why is the sky blue?\"\n  }],\n  \"stream\": false\n}'"
+   },
+   "parlato": [
+    "Ollama has a REST API for running and managing models."
+   ],
+   "voce": "Ollama has a REST API for running and managing models.",
+   "durata": 8
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Install",
+   "capitolo": "Install",
+   "dati": {
+    "titolo": "Install",
+    "comando": "curl -fsSL https://ollama.com/install.sh | sh"
+   },
+   "parlato": [
+    "Install the official tool"
+   ],
+   "voce": "Install the official tool",
+   "durata": 8
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Read the source",
+   "capitolo": "Read the source",
+   "dati": {
+    "titolo": "Read the source",
+    "elementi": [
+     "github.com/ollama/ollama"
+    ]
+   },
+   "parlato": [
+    "github.com/ollama/ollama"
+   ],
+   "voce": "github.com/ollama/ollama",
+   "durata": 5
+  }
+ ]
+}

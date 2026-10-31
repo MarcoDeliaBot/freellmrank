@@ -1,0 +1,1085 @@
+{
+ "date": "2026-10-31",
+ "source": "https://skills.sh/trending",
+ "observedAt": "2026-10-31T03:28:10.341Z",
+ "entries": [
+  {
+   "rank": 1,
+   "repository": "skills-shell/superpowers",
+   "skill": "ai-image-generation",
+   "date": "2026-10-31",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/image/ai-image-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 7,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 17,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 140,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 143,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 146,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 149,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 152,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 155,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 158,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 161,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 2,
+   "repository": "skills-shell/superpowers",
+   "skill": "ai-video-generation",
+   "date": "2026-10-31",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/ai-video-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 7,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 17,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 218,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 221,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 224,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 227,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 230,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 233,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 236,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 239,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 242,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 3,
+   "repository": "skills-shell/superpowers",
+   "skill": "ai-avatar-video",
+   "date": "2026-10-31",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/ai-avatar-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 7,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 17,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 243,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 246,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 249,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 252,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 255,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 258,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 4,
+   "repository": "skills-shell/superpowers",
+   "skill": "twitter-automation",
+   "date": "2026-10-31",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/social/twitter-automation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 7,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 17,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 138,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 141,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 144,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 147,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 5,
+   "repository": "uizze.sh",
+   "skill": "ui-taste",
+   "date": "2026-10-31",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": null,
+     "line": null,
+     "reason": "incomplete review: directory entry is not a GitHub skill repository"
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "repository": "designed-by-ai/skills",
+   "skill": "design-mobile-apps",
+   "date": "2026-10-31",
+   "commit": "03c20aec6dcedb5fabfb03dc37982eb52ef19ed6",
+   "skillPath": "skills/design-mobile-apps/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/design-mobile-apps/SKILL.md",
+     "line": 17,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/design-mobile-apps/endpoints.md",
+     "line": 13,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/design-mobile-apps/endpoints.md",
+     "line": 37,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/design-mobile-apps/endpoints.md",
+     "line": 62,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/design-mobile-apps/endpoints.md",
+     "line": 99,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/design-mobile-apps/endpoints.md",
+     "line": 112,
+     "reason": "environment-secret-read"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 7,
+   "repository": "heygen-com/hyperframes",
+   "skill": "media-use",
+   "date": "2026-10-31",
+   "commit": "164d6c7a36eba26e9126b364beab98437e2eeec7",
+   "skillPath": "skills/media-use/SKILL.md",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": "skills/media-use/audio/scripts/lib/bgm.mjs",
+     "line": 22,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/bgm.mjs",
+     "line": 17,
+     "reason": "download-and-execute"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
+     "line": 7,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
+     "line": 8,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
+     "line": 9,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
+     "line": 15,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.py",
+     "line": 21,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.py",
+     "line": 46,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-tts.mjs",
+     "line": 38,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 47,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 48,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 115,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 117,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 195,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 4,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 7,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 83,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/openverse.mjs",
+     "line": 2,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
+     "line": 31,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
+     "line": 46,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
+     "line": 50,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
+     "line": 236,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
+     "line": 51,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lyria-recipe.py",
+     "line": 8,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lyria-recipe.py",
+     "line": 58,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/scripts/lib/telemetry.mjs",
+     "line": 193,
+     "reason": "multiline-data-send"
+    },
+    {
+     "file": "skills/media-use/scripts/lib/telemetry.mjs",
+     "line": 10,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/media-use/audio/references/bgm.md",
+     "line": 72,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/audio/references/bgm.md",
+     "line": 44,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/captions/transcript-handling.md",
+     "line": 71,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/captions/transcript-handling.md",
+     "line": 84,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 10,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 11,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 12,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 13,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 23,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 24,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 25,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 9,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 10,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 11,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/tts.md",
+     "line": 120,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/tts.md",
+     "line": 25,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/tts.md",
+     "line": 45,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/tts.md",
+     "line": 46,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/tts.md",
+     "line": 62,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/references/operations.md",
+     "line": 45,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/references/operations.md",
+     "line": 46,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/references/operations.md",
+     "line": 118,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/references/setup-providers.md",
+     "line": 5,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/references/setup-providers.md",
+     "line": 80,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/references/setup-providers.md",
+     "line": 82,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/references/setup-providers.md",
+     "line": 84,
+     "reason": "documented-installer"
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "repository": "heygen-com/hyperframes",
+   "skill": "hyperframes-cli",
+   "date": "2026-10-31",
+   "commit": "164d6c7a36eba26e9126b364beab98437e2eeec7",
+   "skillPath": "skills/hyperframes-cli/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/hyperframes-cli/references/cloud.md",
+     "line": 19,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/hyperframes-cli/references/cloud.md",
+     "line": 23,
+     "reason": "environment-secret-read"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no actual usage code block in skill or README"
+  },
+  {
+   "rank": 9,
+   "repository": "vercel-labs/skills",
+   "skill": "find-skills",
+   "date": "2026-10-31",
+   "commit": "92a9a34ac3bf88e695e468b90c7bf32f163d32c8",
+   "skillPath": "skills/find-skills/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/find-skills/SKILL.md",
+     "line": 28,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/find-skills/SKILL.md",
+     "line": 90,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/find-skills/SKILL.md",
+     "line": 100,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 10,
+   "repository": "heygen-com/hyperframes",
+   "skill": "hyperframes-registry",
+   "date": "2026-10-31",
+   "commit": "164d6c7a36eba26e9126b364beab98437e2eeec7",
+   "skillPath": "skills/hyperframes-registry/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/hyperframes-registry/references/demo-html-pattern.md",
+     "line": 22,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes-registry/references/templates.md",
+     "line": 16,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes-registry/references/templates.md",
+     "line": 191,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes-registry/references/templates.md",
+     "line": 192,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes-registry/references/templates.md",
+     "line": 377,
+     "reason": "remote-code-load"
+    }
+   ],
+   "publishable": true
+  },
+  {
+   "rank": 11,
+   "repository": "gencraft-labs/skills",
+   "skill": "video-edit",
+   "date": "2026-10-31",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "video-edit/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "video-edit/SKILL.md",
+     "line": 28,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 12,
+   "repository": "heygen-com/hyperframes",
+   "skill": "hyperframes",
+   "date": "2026-10-31",
+   "commit": "164d6c7a36eba26e9126b364beab98437e2eeec7",
+   "skillPath": "skills/hyperframes/SKILL.md",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": "skills/hyperframes/assets/frame-presets/biennale-yellow/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/biennale-yellow/caption-skin.html",
+     "line": 156,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/blockframe/caption-skin.html",
+     "line": 29,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/blockframe/caption-skin.html",
+     "line": 159,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/blue-professional/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/blue-professional/caption-skin.html",
+     "line": 158,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/bold-poster/caption-skin.html",
+     "line": 29,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/bold-poster/caption-skin.html",
+     "line": 165,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/broadside/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/broadside/caption-skin.html",
+     "line": 160,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/capsule/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/capsule/caption-skin.html",
+     "line": 159,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/cartesian/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/cartesian/caption-skin.html",
+     "line": 157,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/cobalt-grid/caption-skin.html",
+     "line": 30,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/cobalt-grid/caption-skin.html",
+     "line": 173,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/code-editorial/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/code-editorial/caption-skin.html",
+     "line": 159,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/coral/caption-skin.html",
+     "line": 29,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/coral/caption-skin.html",
+     "line": 161,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/creative-mode/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/creative-mode/caption-skin.html",
+     "line": 162,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/daisy-days/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/daisy-days/caption-skin.html",
+     "line": 165,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/editorial-forest/caption-skin.html",
+     "line": 29,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/editorial-forest/caption-skin.html",
+     "line": 158,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 150,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 151,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 181,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 64,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 67,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 70,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 88,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 89,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 90,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 157,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/locate.mjs",
+     "line": 192,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/hyperframes/scripts/locate.mjs",
+     "line": 215,
+     "reason": "multiline-data-send"
+    },
+    {
+     "file": "skills/hyperframes/scripts/locate.mjs",
+     "line": 178,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/references/film.md",
+     "line": 28,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/hyperframes/references/plugin-installation.md",
+     "line": 12,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/hyperframes/references/skill-lifecycle.md",
+     "line": 37,
+     "reason": "documented-installer"
+    }
+   ]
+  },
+  {
+   "rank": 13,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-video-generation",
+   "date": "2026-10-31",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-video-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-video-generation/SKILL.md",
+     "line": 50,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 14,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-image-generation",
+   "date": "2026-10-31",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-image-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-image-generation/SKILL.md",
+     "line": 52,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "ai-image-generation/SKILL.md",
+     "line": 479,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 15,
+   "repository": "flowkit-labs/skills",
+   "skill": "reddit-automation",
+   "date": "2026-10-31",
+   "commit": "0c9e2b63f504a296a86e45ed3a60a426dd979ca6",
+   "skillPath": "reddit-automation/SKILL.md",
+   "status": "passed",
+   "reasons": [],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 16,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-music",
+   "date": "2026-10-31",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-music/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-music/SKILL.md",
+     "line": 35,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 17,
+   "repository": "gencraft-labs/skills",
+   "skill": "image-to-video",
+   "date": "2026-10-31",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "image-to-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "image-to-video/SKILL.md",
+     "line": 28,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 18,
+   "repository": "uizze/uizze",
+   "skill": "uizze-ui",
+   "date": "2026-10-31",
+   "commit": "40b0ee439ba88aecb65d68bcb379da0e716b899e",
+   "skillPath": "skills/uizze-ui/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/uizze-ui/README.md",
+     "line": 12,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no actual usage code block in skill or README"
+  },
+  {
+   "rank": 19,
+   "repository": "vercel-labs/agent-browser",
+   "skill": "agent-browser",
+   "date": "2026-10-31",
+   "commit": "28898e4cc2d3ee47c7080ab653b4ad29340cef57",
+   "skillPath": "skills/agent-browser/SKILL.md",
+   "status": "passed",
+   "reasons": [],
+   "publishable": true
+  },
+  {
+   "rank": 20,
+   "repository": "101-skills/superpowers",
+   "skill": "ai-video-generation",
+   "date": "2026-10-31",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/ai-video-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 7,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 17,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 218,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 221,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 224,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 227,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 230,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 233,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 236,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 239,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 242,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  }
+ ],
+ "counts": {
+  "passed": 2,
+  "warning": 15,
+  "blocked": 3
+ }
+}

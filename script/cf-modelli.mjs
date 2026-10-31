@@ -102,5 +102,7 @@ export const AUDIO_PER_VISITATORE = 6;
 // notizie: articoli del blog dai siti ufficiali e di notizie (22/10, ~230 neurons ad articolo)
 // 24/10/2026: notizie 1.000 -> 1.500 tolti ai video (misurato in KV: video 967 il 22/10 e 412 il 23/10, notizie 858 per 5 articoli
 // e il 23 sera DeepInfer è rimasto fuori per il tetto); con le fonti tagliate a 6.000 caratteri un articolo costa ~120-170
-export const TETTI_SCRIVI = { bozze: 1000, traduzioni: 2500, video: 3000, notizie: 1500 };
+// 31/10: 400 neurons dai piani video alle spiegazioni skill/tutorial. Totale
+// invariato a 10.000, notizie sempre 1.500; contatori dedicati e fallback a quota finita.
+export const TETTI_SCRIVI = { bozze: 1000, traduzioni: 2500, video: 2600, notizie: 1500, skill: 200, tutorial: 200 };
 export const TETTO_SCRIVI = TETTI_SCRIVI.bozze;

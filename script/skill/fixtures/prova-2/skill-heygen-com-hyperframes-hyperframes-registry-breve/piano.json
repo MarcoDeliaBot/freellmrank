@@ -1,0 +1,110 @@
+{
+ "formato": "verticale",
+ "tempiFissi": true,
+ "copertina": 1,
+ "musica": "vivace",
+ "cardHash": "4703f4c9697116e9248a709bc6dd520ec71d5a9f80c957f0da2550b672a9404e",
+ "scene": [
+  {
+   "stampo": "passo",
+   "etichetta": "The problem",
+   "capitolo": "Need blocks and components?",
+   "dati": {
+    "titolo": "Need blocks and components?",
+    "apertura": true
+   },
+   "parlato": [
+    "Need blocks and components?"
+   ],
+   "voce": "Need blocks and components?",
+   "durata": 3
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Feature",
+   "capitolo": "hyperframes-registry",
+   "dati": {
+    "titolo": "hyperframes-registry",
+    "comando": "npx hyperframes catalog --query \"<what the beat should do, in English>\" --json\nnpx hyperframes add <name> --json        # prints the written files and the mount snippet"
+   },
+   "parlato": [
+    "About 450 ready-made HyperFrames blocks and components installed as editable source"
+   ],
+   "voce": "About 450 ready-made HyperFrames blocks and components installed as editable source",
+   "durata": 7
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Feature",
+   "capitolo": "Search",
+   "dati": {
+    "titolo": "Search",
+    "comando": "npx hyperframes catalog --query \"<what the beat should do, in English>\" --json"
+   },
+   "parlato": [
+    "Search is local and sends nothing."
+   ],
+   "voce": "Search is local and sends nothing.",
+   "durata": 7
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Feature",
+   "capitolo": "Block",
+   "dati": {
+    "titolo": "Block",
+    "comando": "npx hyperframes add <name> --json        # prints the written files and the mount snippet"
+   },
+   "parlato": [
+    "Block: installs to compositions/<name>.html."
+   ],
+   "voce": "Block: installs to compositions/<name>.html.",
+   "durata": 7
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Feature",
+   "capitolo": "Component",
+   "dati": {
+    "titolo": "Component",
+    "comando": "<!-- Paste the overlay div into your composition -->\n<div\n  id=\"grain-overlay\"\n  style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100;\"\n>\n  <div class=\"grain-texture\"></div>\n</div>"
+   },
+   "parlato": [
+    "Component: installs to compositions/components/<name>.html."
+   ],
+   "voce": "Component: installs to compositions/components/<name>.html.",
+   "durata": 8
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Install",
+   "capitolo": "Install",
+   "dati": {
+    "titolo": "Install",
+    "testo": "In the installer, select only hyperframes-registry. This review covers skills/hyperframes-registry.",
+    "comando": "npx skills add heygen-com/hyperframes"
+   },
+   "parlato": [
+    "npx skills add heygen-com/hyperframes"
+   ],
+   "voce": "npx skills add heygen-com/hyperframes",
+   "durata": 8
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Read the source",
+   "capitolo": "Read the source",
+   "dati": {
+    "titolo": "Read the source",
+    "elementi": [
+     "github.com/heygen-com/hyperframes"
+    ]
+   },
+   "parlato": [
+    "github.com/heygen-com/hyperframes"
+   ],
+   "voce": "github.com/heygen-com/hyperframes",
+   "durata": 5
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "totale": 45,
+ "scene": [
+  {
+   "n": "01",
+   "stampo": "passo",
+   "inizio": 0,
+   "durata": 3,
+   "testo": "Need open models?",
+   "etichetta": "The problem",
+   "capitolo": "Need open models?",
+   "titolo": "Need open models?"
+  },
+  {
+   "n": "02",
+   "stampo": "passo",
+   "inizio": 3,
+   "durata": 7,
+   "testo": "Start building with open models.",
+   "etichetta": "Feature",
+   "capitolo": "Ollama",
+   "titolo": "Ollama"
+  },
+  {
+   "n": "03",
+   "stampo": "passo",
+   "inizio": 10,
+   "durata": 7,
+   "testo": "Run and chat with Gemma 4:",
+   "etichetta": "Feature",
+   "capitolo": "Chat with a model",
+   "titolo": "Chat with a model"
+  },
+  {
+   "n": "04",
+   "stampo": "passo",
+   "inizio": 17,
+   "durata": 7,
+   "testo": "To launch a specific integration:",
+   "etichetta": "Feature",
+   "capitolo": "Coding",
+   "titolo": "Coding"
+  },
+  {
+   "n": "05",
+   "stampo": "passo",
+   "inizio": 24,
+   "durata": 8,
+   "testo": "Ollama has a REST API for running and managing models.",
+   "etichetta": "Feature",
+   "capitolo": "REST API",
+   "titolo": "REST API"
+  },
+  {
+   "n": "06",
+   "stampo": "passo",
+   "inizio": 32,
+   "durata": 8,
+   "testo": "Install the official tool",
+   "etichetta": "Install",
+   "capitolo": "Install",
+   "titolo": "Install"
+  },
+  {
+   "n": "07",
+   "stampo": "passo",
+   "inizio": 40,
+   "durata": 5,
+   "testo": "github.com/ollama/ollama",
+   "etichetta": "Read the source",
+   "capitolo": "Read the source",
+   "titolo": "Read the source"
+  }
+ ]
+}

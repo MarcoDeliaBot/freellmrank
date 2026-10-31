@@ -15,3 +15,6 @@ for (const f of file) {
     STAMPI[m.nome] = m;
   } catch (e) { console.error(`Stampo ${f} escluso: ${e.message}`); }
 }
+// Il pianificatore delle notizie/guide conserva il catalogo che usava prima
+// delle nuove sezioni; gli stampi specializzati hanno il gate DOM delle schede.
+export const STAMPI_NOTIZIE = Object.fromEntries(Object.entries(STAMPI).filter(([,st]) => !st.soloSkillTutorial));

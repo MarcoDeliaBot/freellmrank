@@ -1,0 +1,1 @@
+Install the documented tool for your operating system before running these commands. curl -fsSL https://ollama.com/install.sh | sh

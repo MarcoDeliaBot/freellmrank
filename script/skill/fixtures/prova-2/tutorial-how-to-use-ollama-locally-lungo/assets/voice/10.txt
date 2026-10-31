@@ -1,0 +1,1 @@
+Warning: the official installer downloads and executes a script. Review it before running. Static checks cannot prove that a skill is safe. Review the pinned source and its dependencies before installing. Updates require a new check.

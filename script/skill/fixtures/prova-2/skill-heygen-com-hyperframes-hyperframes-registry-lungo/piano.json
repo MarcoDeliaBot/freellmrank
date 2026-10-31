@@ -1,0 +1,155 @@
+{
+ "formato": "orizzontale",
+ "tempiFissi": true,
+ "copertina": 1,
+ "musica": "calma",
+ "cardHash": "4703f4c9697116e9248a709bc6dd520ec71d5a9f80c957f0da2550b672a9404e",
+ "scene": [
+  {
+   "stampo": "passo",
+   "etichetta": "The problem",
+   "capitolo": "Need blocks and components?",
+   "dati": {
+    "titolo": "Need blocks and components?",
+    "apertura": true
+   },
+   "parlato": [
+    "About 450 ready-made HyperFrames blocks and components installed as editable source - transitions, overlays, titles, kinetic type, captions, charts, map overlays, 3D, camera moves.",
+    "For the complete instructions and any prerequisites, open the official source linked on this page."
+   ],
+   "voce": "About 450 ready-made HyperFrames blocks and components installed as editable source - transitions, overlays, titles, kinetic type, captions, charts, map overlays, 3D, camera moves. For the complete instructions and any prerequisites, open the official source linked on this page.",
+   "durata": 16
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "What it is",
+   "capitolo": "What it is",
+   "dati": {
+    "titolo": "What it is",
+    "testo": "About 450 ready-made HyperFrames blocks and components installed as editable source - transitions, overlays, titles, kinetic type, captions, charts, map overlays, 3D, camera moves.",
+    "comando": "npx hyperframes catalog --query \"<what the beat should do, in English>\" --json\nnpx hyperframes add <name> --json        # prints the written files and the mount snippet"
+   },
+   "parlato": [
+    "About 450 ready-made HyperFrames blocks and components installed as editable source - transitions, overlays, titles, kinetic type, captions, charts, map overlays, 3D, camera moves.",
+    "This is a source-based walkthrough. Commands are displayed for you to review; this pipeline does not execute the skill."
+   ],
+   "voce": "About 450 ready-made HyperFrames blocks and components installed as editable source - transitions, overlays, titles, kinetic type, captions, charts, map overlays, 3D, camera moves. This is a source-based walkthrough. Commands are displayed for you to review; this pipeline does not execute the skill.",
+   "durata": 18
+  },
+  {
+   "stampo": "diagramma",
+   "etichetta": "How it works",
+   "capitolo": "How it works",
+   "dati": {
+    "titolo": "How it works",
+    "nodi": [
+     "npx hyperframes catalog",
+     "npx hyperframes add",
+     "Wiring"
+    ]
+   },
+   "parlato": [
+    "npx hyperframes catalog",
+    "npx hyperframes add",
+    "Wiring"
+   ],
+   "voce": "npx hyperframes catalog npx hyperframes add Wiring",
+   "durata": 20
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Install",
+   "capitolo": "Install",
+   "dati": {
+    "titolo": "Install",
+    "testo": "In the installer, select only hyperframes-registry. This review covers skills/hyperframes-registry.",
+    "comando": "npx skills add heygen-com/hyperframes"
+   },
+   "parlato": [
+    "Open the pinned README and check the command. Run it from the project where you want to use the skill.",
+    "In the installer, select only hyperframes-registry. This review covers skills/hyperframes-registry.",
+    "npx skills add heygen-com/hyperframes"
+   ],
+   "voce": "Open the pinned README and check the command. Run it from the project where you want to use the skill. In the installer, select only hyperframes-registry. This review covers skills/hyperframes-registry. npx skills add heygen-com/hyperframes",
+   "durata": 20
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Feature",
+   "capitolo": "Search",
+   "dati": {
+    "titolo": "Search",
+    "comando": "npx hyperframes catalog --query \"<what the beat should do, in English>\" --json"
+   },
+   "parlato": [
+    "Search is local and sends nothing. The default words tier only finds items that reuse your words; --on-device ranks by meaning after a one-time ~33 MB download."
+   ],
+   "voce": "Search is local and sends nothing. The default words tier only finds items that reuse your words; --on-device ranks by meaning after a one-time ~33 MB download.",
+   "durata": 16
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Feature",
+   "capitolo": "Block",
+   "dati": {
+    "titolo": "Block",
+    "comando": "npx hyperframes add <name> --json        # prints the written files and the mount snippet"
+   },
+   "parlato": [
+    "Block: installs to compositions/<name>.html. Mount it with data-composition-src, data-composition-id matching the block's own id, data-start and the data-duration you need; the snippet add prints is the starting point."
+   ],
+   "voce": "Block: installs to compositions/<name>.html. Mount it with data-composition-src, data-composition-id matching the block's own id, data-start and the data-duration you need; the snippet add prints is the starting point.",
+   "durata": 16
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Feature",
+   "capitolo": "Component",
+   "dati": {
+    "titolo": "Component",
+    "comando": "<!-- Paste the overlay div into your composition -->\n<div\n  id=\"grain-overlay\"\n  style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100;\"\n>\n  <div class=\"grain-texture\"></div>\n</div>"
+   },
+   "parlato": [
+    "Component: installs to compositions/components/<name>.html. Copy its markup, <style> and script into your scene, and follow its comment block if it hooks into your timeline."
+   ],
+   "voce": "Component: installs to compositions/components/<name>.html. Copy its markup, <style> and script into your scene, and follow its comment block if it hooks into your timeline.",
+   "durata": 16
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Limits and review",
+   "capitolo": "Limits and review",
+   "dati": {
+    "titolo": "Limits and review",
+    "elementi": [
+     "Warning: Markdown includes installer or remote code instructions. Review the documented source before use.",
+     "Review the pinned source and its dependencies before installing."
+    ]
+   },
+   "parlato": [
+    "remote-code-load: skills/hyperframes-registry/references/demo-html-pattern.md:22",
+    "Warning: Markdown includes installer or remote code instructions. Review the documented source before use.",
+    "Static checks cannot prove that a skill is safe. Review the pinned source and its dependencies before installing. Updates require a new check."
+   ],
+   "voce": "remote-code-load: skills/hyperframes-registry/references/demo-html-pattern.md:22 Warning: Markdown includes installer or remote code instructions. Review the documented source before use. Static checks cannot prove that a skill is safe. Review the pinned source and its dependencies before installing. Updates require a new check.",
+   "durata": 24
+  },
+  {
+   "stampo": "passo",
+   "etichetta": "Read the source",
+   "capitolo": "Read the source",
+   "dati": {
+    "titolo": "Read the source",
+    "elementi": [
+     "github.com/heygen-com/hyperframes"
+    ]
+   },
+   "parlato": [
+    "For the complete instructions and any prerequisites, open the official source linked on this page.",
+    "github.com/heygen-com/hyperframes"
+   ],
+   "voce": "For the complete instructions and any prerequisites, open the official source linked on this page. github.com/heygen-com/hyperframes",
+   "durata": 14
+  }
+ ]
+}
