@@ -1989,5 +1989,16 @@
   "contestoMax": 65536,
   "moe": false,
   "attivi": 7760786896
+ },
+ "microsoft/Mage-VL-Cowork": {
+  "strati": 36,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 36,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": false,
+  "attivi": 4741793792
  }
 }
