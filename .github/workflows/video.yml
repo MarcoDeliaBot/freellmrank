@@ -161,13 +161,19 @@ jobs:
         run: node script/bluesky.mjs || echo "Bluesky non riuscito"
       - name: Post del blog dei video (commit)
         run: |
-          git add contenuti/video contenuti/legami-video.json
+          node script/aggiorna-pagine-pubblicate.mjs
+          git add contenuti/video contenuti/legami-video.json dati/pagine-pubblicate.json dati/pagine-archivio.json
           if git diff --cached --quiet; then echo "Nessun post nuovo"; exit 0; fi
           git config user.name "freellmarena-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Post dei video $(date -u +%F)"
           for i in 1 2 3 4 5; do
-            git pull --rebase -X theirs origin main && git push && break
+            if git pull --rebase -X theirs origin main; then
+              node script/aggiorna-pagine-pubblicate.mjs --recupera
+              git add dati/pagine-pubblicate.json dati/pagine-archivio.json
+              git diff --cached --quiet || git commit --amend --no-edit
+              git push && break
+            fi
             [ "$i" = 5 ] && exit 1
             sleep $((i * 10))
           done

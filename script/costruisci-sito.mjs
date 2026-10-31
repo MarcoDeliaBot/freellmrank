@@ -18,6 +18,7 @@ import { paginaSegnala } from './sito/segnala.mjs';
 import { paginaMusica } from './sito/musica.mjs';
 import { pagina3d } from './sito/tred.mjs';
 import { paginaRam } from './sito/ram.mjs';
+import { preparaPubblicate, verificaPubblicate } from './sito/pagine-pubblicate.mjs';
 import { paginaPc } from './sito/pc.mjs';
 import { coloreLab, nomeLab, chiaveLab, laboratoriDi } from './sito/laboratori.mjs';
 import { scriviLlms } from './sito/llms.mjs';
@@ -36,7 +37,8 @@ const modelli = unisci(dati, storia);
 const coppie = preparaConfronti(modelli); // prima delle pagine dei modelli: le linkano
 const perNome = new Map();
 for (const m of modelli) for (const n of Object.values(m.nomi)) perNome.set(n, m);
-const blog = preparaBlog(dati, storia, modelli);
+const pubblicate = preparaPubblicate({ modelli, coppie, blog: preparaBlog(dati, storia, modelli), date: dati.aggiornato });
+const blog = pubblicate.blog;
 const usabileGratis = (m) => m.aperto || m.or?.gratis;
 // riferimento per la colonna velocità: RTX 4090, 4 bit, 8K di contesto, 64 GB di DDR5
 const RIF = daScheda(dati.schede.schede.find((x) => x.id === 'rtx4090'), { n: 1, ram: 64, bandaRam: 96, ctx: 8192 });
@@ -469,9 +471,10 @@ paginaGpu(dati, modelli, blog);
 paginaRam(dati, modelli, blog);
 paginaPc(dati, modelli, blog);
 paginaArena(dati, modelli, blog);
-pagineModelli(dati, storia, modelli, blog);
-pagineConfronti(dati, coppie, blog);
+pagineModelli(dati, storia, pubblicate.modelli, blog);
+pagineConfronti(dati, pubblicate.coppie, blog);
 pagineBlog(dati, blog);
+verificaPubblicate(pubblicate.registry, SITO, { englishOnly: true });
 feedRss(blog);
 paginaTelefono(dati, modelli, blog);
 paginaAudio(dati, blog);
@@ -519,11 +522,10 @@ fs.writeFileSync(path.join(SITO, 'cerca.json'), JSON.stringify(indiceRicerca()))
 fs.writeFileSync(path.join(SITO, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${URL_SITO}/sitemap.xml\n`);
 const registryURLs = new Set(skillArchive.registry.map(p=>p.url));
 const indirizzi = pagineScritte().filter((f) => f !== '404.html').map((f) => URL_SITO + (registryURLs.has('/'+f)?'/'+f:'/' + f.replace(/index\.html$/, '').replace(/\.html$/, '')));
-fs.writeFileSync(path.join(SITO, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${indirizzi.map((u) => `<url><loc>${u}</loc><lastmod>${skillArchive.registry.find(p=>URL_SITO+p.url===u&&p.tipo==='mese')?.primaPubblicazione||dati.aggiornato}</lastmod></url>`).join('\n')}
-</urlset>
-`);
+// Both historically linked spellings remain in the inventory, sharing one canonical.
+const sitemap = new Map(indirizzi.map(u => [u, skillArchive.registry.find(p => URL_SITO + p.url === u && p.tipo === 'mese')?.primaPubblicazione || dati.aggiornato]));
+for (const p of pubblicate.registry.filter(p => p.lingua === 'en')) sitemap.set(URL_SITO + p.url, p.ultimaVista);
+fs.writeFileSync(path.join(SITO, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...sitemap].map(([u, d]) => `<url><loc>${u}</loc><lastmod>${d}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 // _routes.json: con functions/_middleware.js ogni richiesta (anche un'icona) passava da una Function, più lenta e
 // contata nelle 100.000 gratis al giorno. Le Functions restano per le pagine (rimando da www e pages.dev) e /api/;
 // i file statici della radice e le cartelle di soli file statici le saltano (massimo 100 regole).

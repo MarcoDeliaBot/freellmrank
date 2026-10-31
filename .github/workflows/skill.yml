@@ -115,6 +115,8 @@ jobs:
         if: env.PROVA != 'true'
         run: |
           git add dati/skill.json dati/skill-scartate.json dati/skill-storico dati/skill-pagine.json dati/skill-categorie.json contenuti/legami-video.json
+          node script/aggiorna-pagine-pubblicate.mjs
+          git add dati/pagine-pubblicate.json dati/pagine-archivio.json
           if [ -d dati/skill-mesi ]; then git add dati/skill-mesi; fi
           for dir in contenuti/skills contenuti/tutorials; do
             if [ -d "$dir" ]; then git add "$dir"; fi
@@ -124,7 +126,12 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m "Skill e tutorial verificati $(date -u +%F)"
           for i in 1 2 3 4 5; do
-            git pull --rebase origin main && git push && break
+            if git pull --rebase origin main; then
+              node script/aggiorna-pagine-pubblicate.mjs --recupera
+              git add dati/pagine-pubblicate.json dati/pagine-archivio.json
+              git diff --cached --quiet || git commit --amend --no-edit
+              git push && break
+            fi
             [ "$i" = 5 ] && exit 1
             sleep $((i * 10))
           done
