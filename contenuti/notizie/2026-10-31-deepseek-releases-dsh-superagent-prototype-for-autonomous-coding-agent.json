@@ -1,0 +1,28 @@
+{
+ "nome": "2026-10-31-deepseek-releases-dsh-superagent-prototype-for-autonomous-coding-agent",
+ "titolo": "DeepSeek releases dsh-superagent prototype for autonomous coding agents",
+ "descr": "DeepSeek publishes a research‑grade coding agent prototype that can listen to GitHub, create work items and submit pull requests.",
+ "tema": "Research",
+ "paragrafi": [
+  "DeepSeek AI opened the dsh-superagent‑prototype repository on GitHub, describing it as a research prototype for a more autonomous agent system.",
+  "The code is packaged as a bundle for DeepSeek Harness and can monitor GitHub activity, optionally integrate with Feishu, and respond to user requests by opening work items and generating pull requests.",
+  "The repository includes documentation, setup scripts, and a web panel that displays tasks needing human attention, aiming to minimize manual effort while maximizing value.",
+  "DeepSeek emphasizes that the prototype is not an official product, may contain bugs, and requires users to review and adapt it before deployment.",
+  "The project has attracted 1.3k stars and 96 forks, indicating community interest in autonomous coding agents."
+ ],
+ "perche": [
+  "For developers, the prototype offers a starting point to experiment with autonomous coding agents that can handle routine repository tasks. For users seeking free or locally run models, it showcases how AI can be integrated into development workflows without relying on paid services."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "deepseek-ai/dsh-superagent-prototype: Towards a More Autonomous Agent System",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+   "titolo": "deepseek-ai/dsh-superagent-prototype: Towards a More Autonomous Agent System",
+   "ufficiale": true,
+   "data": "2026-10-31"
+  }
+ ],
+ "frasiTolte": 0
+}

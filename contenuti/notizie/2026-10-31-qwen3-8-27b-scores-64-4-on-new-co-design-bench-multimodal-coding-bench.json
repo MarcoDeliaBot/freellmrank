@@ -1,0 +1,27 @@
+{
+ "nome": "2026-10-31-qwen3-8-27b-scores-64-4-on-new-co-design-bench-multimodal-coding-bench",
+ "titolo": "Qwen3.8-27B scores 64.4% on new Co-Design Bench multimodal coding benchmark",
+ "descr": "The model ranks fourth overall, second on repository editing, and leads text‑only multimodal editing with 77.9% strict completion.",
+ "tema": "Research",
+ "paragrafi": [
+  "Hugging Face released Co-Design Bench, a benchmark that evaluates coding agents on real user requests involving multimodal inputs and application revisions.",
+  "Tasks are split into Multimodal Editing (100 tasks) and Repository Editing (173 tasks), requiring agents to understand intent, edit code, and satisfy detailed criteria.",
+  "Across ten model endpoints tested, the strongest, gpt‑6‑astra, passed 69.9% of criteria per task but fully satisfied only 26.4% of tasks.",
+  "Qwen3.8‑27B achieved a 64.4% overall strict completion rate, placing fourth overall, and scored 64.5% on Repository Editing (second on that track). It topped the text‑only Multimodal Editing subset with 77.9%."
+ ],
+ "perche": [
+  "The benchmark highlights how current coding agents still struggle to fully satisfy complex, multimodal editing requests, even for top‑performing models. Users seeking free or locally run models should note that while Qwen3.8‑27B shows strong text‑only performance, full task completion remains limited, underscoring the need for continued research and more capable open‑source alternatives."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "Qwen paper: Co-Design Bench: Multimodal Collaborative Coding Evaluation for Agentic Models",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.35138",
+   "titolo": "Qwen paper: Co-Design Bench: Multimodal Collaborative Coding Evaluation for Agentic Models",
+   "ufficiale": true,
+   "data": "2026-10-25"
+  }
+ ],
+ "frasiTolte": 1
+}

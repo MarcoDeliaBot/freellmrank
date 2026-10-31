@@ -1,0 +1,35 @@
+{
+ "nome": "2026-10-31-diy-ai-tamagotchi-built-on-meta-s-muse-charm-hardware-for-50",
+ "titolo": "DIY AI Tamagotchi built on Meta’s Muse Charm hardware for $50",
+ "descr": "A creator modified a $50 Waveshare ESP32‑S3 pendant to run Meta’s Muse AI, adding voice, avatars and a remote camera viewfinder.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "Sean Hollister bought a 1.75‑inch touchscreen pendant from Waveshare for $50 and used it as a Muse Charm‑style AI gadget.",
+  "The device, an ESP32‑S3 board, is officially supported by Meta as a “Muse Gadget” that connects to the Muse AI cloud using open‑source code and tokens.",
+  "Initial setup paired the pendant with the Muse phone app, but the AI only displayed short text and responded slowly, lacking voice output and smart‑home discovery.",
+  "Hollister used Claude to rewrite the firmware, adding a conversation history view, a British ElevenLabs voice for spoken replies, and a Bluetooth‑enabled remote camera preview.",
+  "The updated gadget can trigger the phone’s camera, stream a low‑quality preview, and display custom avatars and a Tamagotchi‑style minigame."
+ ],
+ "perche": [
+  "The hack shows that inexpensive ESP32 hardware can run Meta’s Muse AI with community‑built software, giving hobbyists a low‑cost entry to voice‑enabled AI assistants. It also highlights how open‑source tools like Claude can extend the functionality of proprietary AI platforms for personal projects."
+ ],
+ "pubblicato": "2026-10-31",
+ "titoloFonte": "I built an AI Tamagotchi before Meta could",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code",
+   "titolo": "I built an AI Tamagotchi before Meta could",
+   "ufficiale": false,
+   "data": "2026-10-31"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/facebookincubator/muse-gadget-sdk/tree/main/android/musegadgetstest",
+   "titolo": "muse-gadget-sdk/android/musegadgetstest at main · facebookincubator/muse-gadget-sdk · GitHub",
+   "ufficiale": true,
+   "data": "2026-10-31"
+  }
+ ],
+ "frasiTolte": 0
+}
