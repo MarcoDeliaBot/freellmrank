@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-01-prime-intellect-unveils-prime-mega-moe-a-trainable-fused-moe-kernel-wi",
+ "titolo": "Prime Intellect unveils Prime Mega MoE, a trainable fused MoE kernel with 3.11× faster forward pass",
+ "descr": "The new Prime Mega MoE kernel speeds Qwen3 MoE training by up to 34% and adds backward‑pass support for DeepSeek’s Mega MoE.",
+ "tema": "Software",
+ "paragrafi": [
+  "Prime Intellect announced Prime Mega MoE, a trainable version of DeepSeek’s fused Mega MoE kernel.",
+  "The kernel delivers a 3.11× faster forward pass and improves Qwen3 MoE training steps by up to 34% in the prime‑rl benchmark.",
+  "Prime Mega MoE adds backward‑pass capability, enabling full training of models that use the Mega MoE architecture.",
+  "The release follows ongoing work in DeepSeek’s DeepGEMM library, which provides high‑performance GPU kernels for GEMM, fused MoE, and other primitives used in large language models.",
+  "DeepGEMM’s recent updates include Mega MoE kernels, FP8/FP4 GEMM support, and optimizations for NVIDIA SM90/SM100 GPUs."
+ ],
+ "perche": [
+  "For users of free or locally hosted models, the underlying DeepGEMM library offers a lightweight, open‑source path to high‑performance GPU kernels without proprietary dependencies."
+ ],
+ "pubblicato": "2026-11-01",
+ "titoloFonte": "Prime Intellect Releases Prime Mega MoE: Trainable Fused MoE Kernel, 3.11x Faster Forward Pass",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/29/prime-intellect-prime-mega-moe-fused-moe-kernel-training/",
+   "titolo": "Prime Intellect Releases Prime Mega MoE: Trainable Fused MoE Kernel, 3.11x Faster Forward Pass",
+   "ufficiale": false,
+   "data": "2026-10-29"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/deepseek-ai/DeepGEMM",
+   "titolo": "GitHub - deepseek-ai/DeepGEMM: DeepGEMM: clean and efficient BLAS kernel library on GPU · GitHub",
+   "ufficiale": true,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 1
+}

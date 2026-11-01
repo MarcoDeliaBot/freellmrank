@@ -19939,6 +19939,42 @@
     "tipo": "News"
    },
    "data": "2026-10-31"
+  },
+  "/blog/news-2026-11-01-datasette-llm-0-1a9-adds-default-llm-model-support.html": {
+   "post": {
+    "slug": "news-2026-11-01-datasette-llm-0-1a9-adds-default-llm-model-support",
+    "titolo": "datasette-llm 0.1a9 adds default LLM model support",
+    "descr": "The new pre‑release lets the plugin automatically use the default LLM model, simplifying Datasette Agent setup.",
+    "data": "2026-11-01",
+    "tema": "Software",
+    "corpo": "On 31 October 2026 Simon Willison announced the 0.1a9 pre‑release of the datasette-llm plugin.\n\nThe update makes the plugin pick up the default model used by LLM, removing the need to set a model explicitly for Datasette Agent.\n\nPreviously users had to add a command‑line flag such as -s plugins.datasette-agent.default_model gpt-6-astra.\n\nThe release is listed on GitHub as a pre‑release with commit 9db9d61, signed with a verified GPG key.\n\n## What it means for you\n\nUsers seeking free or locally hosted models benefit from a smoother integration workflow.\n\n## Sources\n\n- [datasette-llm 0.1a9](https://simonwillison.net/2026/Oct/31/datasette-llm/), Simon Willison, 31 Oct 2026\n- [Release 0.1a9 · datasette/datasette-llm · GitHub](https://github.com/datasette/datasette-llm/releases/tag/0.1a9), github.com (official), 31 Oct 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-01-datasette-llm-0-1a9-adds-default-llm-model-support).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-10-31"
+  },
+  "/blog/news-2026-11-01-nvidia-releases-open-source-gds-diag-for-gpudirect-storage-diagnostics.html": {
+   "post": {
+    "slug": "news-2026-11-01-nvidia-releases-open-source-gds-diag-for-gpudirect-storage-diagnostics",
+    "titolo": "NVIDIA releases open-source gds-diag for GPUDirect Storage diagnostics",
+    "descr": "The new gds-diag utility helps admins assess and optimize GPUDirect Storage on Linux systems.",
+    "data": "2026-11-01",
+    "tema": "Guides",
+    "corpo": "NVIDIA announced gds-diag, an open-source command-line utility that checks GPUDirect Storage environments and suggests improvements.\n\nThe tool runs on Linux with Python 3.8 or newer and does not depend on GPU or CUDA Toolkit versions, though GPUDirect Storage itself requires a datacenter-class GPU and CUDA 12.2 or later.\n\ngds-diag offers subcommands grouped into end-to-end checks, pre‑install validation, post‑install verification, and deep diagnostics for containers and specific mount points.\n\nAn optional AI agent skill adds a natural‑language interface that can interpret intent, orchestrate multi‑step workflows, and apply model‑guided reasoning to propose remediation.\n\nThe utility is distributed via the NVIDIA Magnum IO GitHub repository and can be installed by cloning https://github.com/NVIDIA/MagnumIO.git.\n\n## What it means for you\n\nAdmins can use gds-diag to quickly identify configuration issues and improve storage bandwidth for GPU workloads. The natural‑language agent makes diagnostics accessible without deep command‑line expertise, supporting both on‑prem and cloud deployments.\n\n## Sources\n\n- [How to Check and Configure NVIDIA GPUDirect Storage for Your Platform](https://developer.nvidia.com/blog/how-to-check-and-configure-nvidia-gpudirect-storage-for-your-platform/), NVIDIA Developer (official), 30 Oct 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-01-nvidia-releases-open-source-gds-diag-for-gpudirect-storage-diagnostics).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-10-31"
+  },
+  "/blog/news-2026-11-01-prime-intellect-unveils-prime-mega-moe-a-trainable-fused-moe-kernel-wi.html": {
+   "post": {
+    "slug": "news-2026-11-01-prime-intellect-unveils-prime-mega-moe-a-trainable-fused-moe-kernel-wi",
+    "titolo": "Prime Intellect unveils Prime Mega MoE, a trainable fused MoE kernel with 3.11× faster forward pass",
+    "descr": "The new Prime Mega MoE kernel speeds Qwen3 MoE training by up to 34% and adds backward‑pass support for DeepSeek’s Mega MoE.",
+    "data": "2026-11-01",
+    "tema": "Software",
+    "corpo": "Prime Intellect announced Prime Mega MoE, a trainable version of DeepSeek’s fused Mega MoE kernel.\n\nThe kernel delivers a 3.11× faster forward pass and improves Qwen3 MoE training steps by up to 34% in the prime‑rl benchmark.\n\nPrime Mega MoE adds backward‑pass capability, enabling full training of models that use the Mega MoE architecture.\n\nThe release follows ongoing work in DeepSeek’s DeepGEMM library, which provides high‑performance GPU kernels for GEMM, fused MoE, and other primitives used in large language models.\n\nDeepGEMM’s recent updates include Mega MoE kernels, FP8/FP4 GEMM support, and optimizations for NVIDIA SM90/SM100 GPUs.\n\n## What it means for you\n\nFor users of free or locally hosted models, the underlying DeepGEMM library offers a lightweight, open‑source path to high‑performance GPU kernels without proprietary dependencies.\n\n## Sources\n\n- [Prime Intellect Releases Prime Mega MoE: Trainable Fused MoE Kernel, 3.11x Faster Forward Pass](https://www.marktechpost.com/2026/10/29/prime-intellect-prime-mega-moe-fused-moe-kernel-training/), MarkTechPost, 29 Oct 2026\n- [GitHub - deepseek-ai/DeepGEMM: DeepGEMM: clean and efficient BLAS kernel library on GPU · GitHub](https://github.com/deepseek-ai/DeepGEMM), github.com (official), 29 Oct 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-01-prime-intellect-unveils-prime-mega-moe-a-trainable-fused-moe-kernel-wi).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-10-31"
   }
  },
  "ricostruzione": {

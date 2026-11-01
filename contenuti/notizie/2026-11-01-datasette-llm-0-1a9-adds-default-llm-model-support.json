@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-01-datasette-llm-0-1a9-adds-default-llm-model-support",
+ "titolo": "datasette-llm 0.1a9 adds default LLM model support",
+ "descr": "The new pre‑release lets the plugin automatically use the default LLM model, simplifying Datasette Agent setup.",
+ "tema": "Software",
+ "paragrafi": [
+  "On 31 October 2026 Simon Willison announced the 0.1a9 pre‑release of the datasette-llm plugin.",
+  "The update makes the plugin pick up the default model used by LLM, removing the need to set a model explicitly for Datasette Agent.",
+  "Previously users had to add a command‑line flag such as -s plugins.datasette-agent.default_model gpt-6-astra.",
+  "The release is listed on GitHub as a pre‑release with commit 9db9d61, signed with a verified GPG key."
+ ],
+ "perche": [
+  "Users seeking free or locally hosted models benefit from a smoother integration workflow."
+ ],
+ "pubblicato": "2026-11-01",
+ "titoloFonte": "datasette-llm 0.1a9",
+ "fonti": [
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Oct/31/datasette-llm/",
+   "titolo": "datasette-llm 0.1a9",
+   "ufficiale": false,
+   "data": "2026-10-31"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/datasette/datasette-llm/releases/tag/0.1a9",
+   "titolo": "Release 0.1a9 · datasette/datasette-llm · GitHub",
+   "ufficiale": true,
+   "data": "2026-10-31"
+  }
+ ],
+ "frasiTolte": 2
+}

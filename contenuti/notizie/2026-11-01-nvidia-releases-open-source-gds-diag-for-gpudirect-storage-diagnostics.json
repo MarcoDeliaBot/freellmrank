@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-01-nvidia-releases-open-source-gds-diag-for-gpudirect-storage-diagnostics",
+ "titolo": "NVIDIA releases open-source gds-diag for GPUDirect Storage diagnostics",
+ "descr": "The new gds-diag utility helps admins assess and optimize GPUDirect Storage on Linux systems.",
+ "tema": "Guides",
+ "paragrafi": [
+  "NVIDIA announced gds-diag, an open-source command-line utility that checks GPUDirect Storage environments and suggests improvements.",
+  "The tool runs on Linux with Python 3.8 or newer and does not depend on GPU or CUDA Toolkit versions, though GPUDirect Storage itself requires a datacenter-class GPU and CUDA 12.2 or later.",
+  "gds-diag offers subcommands grouped into end-to-end checks, pre‑install validation, post‑install verification, and deep diagnostics for containers and specific mount points.",
+  "An optional AI agent skill adds a natural‑language interface that can interpret intent, orchestrate multi‑step workflows, and apply model‑guided reasoning to propose remediation.",
+  "The utility is distributed via the NVIDIA Magnum IO GitHub repository and can be installed by cloning https://github.com/NVIDIA/MagnumIO.git."
+ ],
+ "perche": [
+  "Admins can use gds-diag to quickly identify configuration issues and improve storage bandwidth for GPU workloads. The natural‑language agent makes diagnostics accessible without deep command‑line expertise, supporting both on‑prem and cloud deployments."
+ ],
+ "pubblicato": "2026-11-01",
+ "titoloFonte": "How to Check and Configure NVIDIA GPUDirect Storage for Your Platform",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/how-to-check-and-configure-nvidia-gpudirect-storage-for-your-platform/",
+   "titolo": "How to Check and Configure NVIDIA GPUDirect Storage for Your Platform",
+   "ufficiale": true,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 0
+}
