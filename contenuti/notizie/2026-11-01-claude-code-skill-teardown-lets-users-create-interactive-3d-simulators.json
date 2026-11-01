@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-01-claude-code-skill-teardown-lets-users-create-interactive-3d-simulators",
+ "titolo": "Claude Code skill \"teardown\" lets users create interactive 3D simulators of machines",
+ "descr": "The open‑source skill builds offline HTML simulators that can be taken apart, using Node.js, Playwright and Three.js.",
+ "tema": "Software",
+ "paragrafi": [
+  "A new GitHub repository, elvarofficial/teardown, offers a Claude Code skill that generates interactive 3D simulators for any machine.",
+  "The skill produces a single offline HTML page that visualises the machine, shows live data on surrounding panels, and lets users isolate individual parts with a button.",
+  "Installation requires Node.js 20+, npm install, and Playwright with Chromium; ffmpeg and Python 3 are needed for video output.",
+  "Three example machines – a Telson SC‑8 robotic scorpion, a Pelagos OC‑8 robotic octopus, and a hydraulic excavator arm – are bundled as complete simulators.",
+  "The project uses three.js for rendering, includes procedural sound, and is released under the MIT licence."
+ ],
+ "perche": [
+  "The skill enables engineers, educators and hobbyists to explore mechanical systems without physical hardware, lowering costs for prototyping and learning. Because it runs entirely in the browser, it supports offline use and can complement free or locally hosted AI models for generating custom simulations."
+ ],
+ "pubblicato": "2026-11-01",
+ "titoloFonte": "elvarofficial/teardown: A Claude Code skill that turns any machine into a 3D simulator you can take apart",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/elvarofficial/teardown",
+   "titolo": "elvarofficial/teardown: A Claude Code skill that turns any machine into a 3D simulator you can take apart",
+   "ufficiale": false,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 0
+}

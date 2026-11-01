@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-01-nace-ai-releases-drex-max-v1-a-27b-decision-model-for-apple-silicon",
+ "titolo": "Nace AI releases Drex Max v1, a 27B decision model for Apple Silicon",
+ "descr": "The open‑sourced Drex Max v1 model scores 67.52 and runs locally on Apple Silicon devices.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Nace AI announced the open‑source release of Drex Max v1, a multimodal decision model with 27 billion parameters.",
+  "The model achieves a score of 67.52 on its evaluation benchmark.",
+  "According to the release, Drex Max v1 can run locally on Apple Silicon hardware, enabling on‑device inference.",
+  "The model is available through Hugging Face under the repository nace‑ai/drex‑max‑v1‑Q8_0.",
+  "This addition expands the pool of large language models that can be used without cloud services."
+ ],
+ "perche": [
+  "Running a 27B model on Apple Silicon lets users keep data private and avoid subscription fees."
+ ],
+ "pubblicato": "2026-11-01",
+ "titoloFonte": "Nace AI Open-Sources Drex Max v1: A 27B Decision Model That Runs Locally on Apple Silicon",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/01/nace-ai-open-sources-drex-max-v1-local-inference/",
+   "titolo": "Nace AI Open-Sources Drex Max v1: A 27B Decision Model That Runs Locally on Apple Silicon",
+   "ufficiale": false,
+   "data": "2026-11-01"
+  },
+  {
+   "nome": "huggingface.co",
+   "url": "https://huggingface.co/nace-ai/drex-max-v1-Q8_0",
+   "titolo": "nace-ai/drex-max-v1-Q8_0 · Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-01"
+  }
+ ],
+ "frasiTolte": 1
+}
