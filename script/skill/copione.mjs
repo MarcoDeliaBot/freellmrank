@@ -149,7 +149,7 @@ export function lessonFor(card) {
   const ordered=new Set(['Inspect before acting','Instructions come from the installed tool','Refresh your view after changes','Download your model','Your first local conversation']);
   for(const scene of [...lesson.short,...lesson.long]){
     if(scene.nodes&&ordered.has(scene.title))scene.order=true;
-    if(scene.code)scene.result=scene.result||outcomes[scene.code]||(scene.code.startsWith('curl http://localhost:11434/api/chat')?'You will receive the model response to the question about the sky.':scene.code===card.install?'The instructions are available to your assistant.':'Compare the output with the example in the project documentation.');
+    if(scene.code)scene.result=scene.result||outcomes[scene.code]||(scene.code.startsWith('curl http://localhost:11434/api/chat')?'You will receive the model response to the question about the sky.':scene.code===card.install?(card.tipo==='tutorial'&&!card.skillSource?'The documented tool is available for the usage steps.':'The instructions are available to your assistant.'):'Compare the output with the example in the project documentation.');
   }
   return lesson;
 }

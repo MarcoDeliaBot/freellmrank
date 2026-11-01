@@ -46,6 +46,7 @@ test('Q2 documented generic tutorials cite pinned steps, preserve commands and n
     assert.ok(extractProcedure(card).length>=3);
     for(const short of [false,true]){
       const p=plan(card,short);assert.deepEqual(validatePlan(card,p),[]);
+      if(!card.skillSource)assert.ok(!/assistant|instructions are available/i.test(p.scene.find(s=>s.dati.comando===card.install).dati.risultato));
       for(const scene of p.scene.filter(s=>s.role==='feature'||s.role==='verify'||s.role==='next')){
         assert.ok(scene.evidence.length);assert.ok(scene.evidence.every(q=>card.fonti.some(s=>s.url.includes(card.commit)&&s.testo.includes(q))));
         assert.deepEqual(textIssues(scene.voce,{voice:true,tool:!card.skillSource}),[]);
