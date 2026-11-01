@@ -172,5 +172,9 @@
  "claude-seo-plugin-tutorial": {
   "lungo": "tutorial-claude-seo",
   "breve": "breve-tutorial-claude-seo-voto"
+ },
+ "search-files-by-meaning-with-ollama": {
+  "lungo": "tutorial-ricerca-file",
+  "breve": "breve-tutorial-ricerca-file-parole"
  }
 }

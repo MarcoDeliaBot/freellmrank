@@ -1,0 +1,42 @@
+{
+ "tipo": "guida",
+ "nome": "search-files-by-meaning-with-ollama",
+ "url": "https://freellmarena.com/blog/search-files-by-meaning-with-ollama",
+ "titolo": "How to search your own files by meaning with Ollama, on your PC",
+ "descr": "Build a free tool that finds text files, photos and voice memos by meaning with Ollama and EmbeddingGemma 2. The full script, every command and where it failed.",
+ "tema": "Guides",
+ "pubblicato": "2026-11-01",
+ "paragrafi": [
+  "A normal search looks for the exact words, so a search for moving out found nothing in our test folder.",
+  "Download EmbeddingGemma 2 with Ollama, save a script of about 60 lines and index a test folder. Thirteen files took about 5 seconds.",
+  "The meaning search put the right file first for a lease question, a dog photo, a train ticket and a voice memo.",
+  "It can fail: it missed our mountain photo, and it always shows three results, even when nothing matches.",
+  "To remove it, run ollama rm and delete index.json."
+ ],
+ "perche": [
+  "The script does not read PDF or Word files, and we did not test video files, MP3 audio, a whole hard disk or a run with the network unplugged."
+ ],
+ "titoliSezioni": [
+  "Download the model",
+  "Save the script",
+  "Index your files",
+  "Search by meaning",
+  "Read the scores"
+ ],
+ "fonti": [
+  {
+   "nome": "Ollama",
+   "url": "https://ollama.com/library/embeddinggemma-2",
+   "titolo": "EmbeddingGemma 2 on Ollama",
+   "ufficiale": true,
+   "data": "2026-11-01"
+  },
+  {
+   "nome": "Python",
+   "url": "https://www.python.org/downloads/",
+   "titolo": "Download Python",
+   "ufficiale": true,
+   "data": "2026-11-01"
+  }
+ ]
+}
