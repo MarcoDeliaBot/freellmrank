@@ -157,3 +157,36 @@ fixture and results. Tests inject `SKILL_ARCHIVE_ROOT`, `SKILL_ARCHIVE_DATE` and
 requested 360/1280 screenshots and checks HTTP 200, themes and mobile overflow.
 
 Round 4 reproducible trial inputs: prova=true, catalogo=2026-11-01, skill=hyperframes-registry, tutorial=Ollama. The compressed catalogue is byte-identical to artifact 13075106849 of run 41285105674. catalogo.mjs audits the same 26 pinned cards before/after. prove-video.mjs simulates truncated responses and runs real video gates for Workers retry, Groq and deterministic reserve, reusing footage only when both complete scene arrays (speech, evidence, timing included) are identical.
+
+
+## Round 4b: complete facts and documented procedures
+
+The general lesson takes feature titles from source section headings (40
+characters, numbering and symbols removed). Screen facts are complete sentences,
+never character slices; quoted or em-dash sentences and oversized facts are skipped.
+Three-node diagrams require an actual three-item enumeration in the cited fact.
+Other facts use a quotation panel. Short feature voices can join complete facts
+from the same section without repeating the identity fact. Identity combines the
+description with the first unused complete fact, retains at least five seconds,
+and cannot slow speech to fill that window. Other short reserve windows still
+adapt under the previous reading and speech limits.
+
+`procedura.mjs` reads numbered instructions and documented commands from pinned
+Install/Quick Start/Getting Started/Usage sections and their subheadings. Usage
+lists with an exact inline command and its explanation are supported too (the
+LM Studio README documents its operations this way). Code comments and adjacent
+prose describe commands; command syntax never enters narration. Three real
+teaching steps plus source-backed verification and next actions are mandatory.
+Unusable or thin candidates remain rejected. Tool setup facts keep their
+platform/version prerequisites; a health check retains the documented endpoint
+and success condition. Reviewed skill procedures can add relevant source context
+to the long format. The seven-day topic exclusion is unchanged.
+
+The 2026-11-01 trial also pins LM Studio and llama.cpp documentation to their
+observed commits in `fixtures/tutorials-2026-11-01.json.gz`. Production resolves
+and fetches new official commits normally. `prove-4b.mjs` renders the three Q1
+skills, two Q2 tools and an additional skill-installation tutorial, reusing media
+only after equality of both scene arrays. It saves the 56-candidate before/after
+audit alongside actual gate results. The old source generator revision is
+recorded in the baseline fixture. These proof steps run only with `prova=true`
+and the dated catalogue. A normal scheduled run does not render this proof suite.

@@ -15,7 +15,7 @@ export function createFixture(root,{days=14}={}) {
     const repository=name==='video-planning'?'fixture/media':'fixture/coding';
     const descr='This skill helps an assistant review project changes.';
     const facts=['Read the request carefully.','Check the proposed changes.','Report the review findings.'];
-    const raw=[name,descr,'review a proposed change',`npx skills add ${repository}`,'Review the project.',...facts].join('\n');
+    const raw=[name,descr,'review a proposed change',`npx skills add ${repository}`,'Review the project.',...facts,'Review each finding against the original request before you share the finished review.'].join('\n');
     const c={tipo:'skill',slug:`fixture-${name}`,key:`agent skill ${repository} ${name}`,name,repository,skillPath:`skills/${name}/SKILL.md`,date:'2026-10-31',commit:'a'.repeat(40),titolo:`${name}: Agent Skill`,descr,problem:'review a proposed change',install:`npx skills add ${repository}`,example:'Review the project.',claims:[descr],limits:[GENERIC[1]],features:facts.map(detail=>({label:detail,detail})),fonti:[{url:`https://github.com/${repository}/blob/${'a'.repeat(40)}/README.md`,testo:raw,sha256:digest(raw),tipo:'Synthetic test source'}],metrics:{date:'2026-10-31',stars:1000,license:'MIT',lastCommit:'2026-10-31T00:00:00Z'},security:{passed:true,complete:true,date:'2026-10-31',commit:'a'.repeat(40),scope:`skills/${name}`,files:2,checked:['all-files','installation-scope'],errors:[],warnings:[]}};
     cards.push({...c,videoVerified:{cardHash:digest(JSON.stringify(c)),testOnly:true},category:name==='video-planning'?'video-media':'coding'});
   }

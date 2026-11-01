@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { plain } from './fonti.mjs';
 import { controllore } from '../video-hf/piano.mjs';
 import { lessonFor, lessonStrings, textIssues } from './copione.mjs';
+import { extractProcedure } from './procedura.mjs';
 export const digest = s => createHash('sha256').update(s).digest('hex');
 export const normalized = s => String(s).replace(/\s+/g, ' ').trim();
 export const DISCLAIMER = 'Static checks cannot prove that a skill is safe. Review the pinned source and its dependencies before installing. Updates require a new check.';
@@ -47,10 +48,13 @@ export function validateCard(card) {
   if (!card.install || !backed(card.install) || (!documentedInstaller&&/[;&|]|\$\(|[<>…]/.test(card.install))) errors.push('installation command is absent, altered or unsafe');
   if (card.tipo==='tutorial' && /\bnpx\s+skills(?:@[\w.-]+)?\s+add\b/.test(card.install || '') && !card.skillSource) errors.push('skill installation tutorial requires a reviewed target repository');
   const stepTitles=['Read the source','Install the skill','Try the documented example','Review the result','Prepare your machine','Run the documented command','Review the output','Install the official tool','Use the documented command','Check the result'];
+  const procedure=(card.steps||[]).some(s=>s.evidence)?extractProcedure(card):[];
   for (const step of card.steps || []) {
+    const cited=step.evidence&&procedure.some(s=>s.url===step.evidence.url&&s.quote===step.evidence.quote&&s.title===step.title&&s.text===step.text&&s.code===step.command)&&card.fonti.some(s=>s.url===step.evidence.url&&s.url.includes(card.commit)&&s.testo.includes(step.evidence.quote)&&(!step.command||step.evidence.quote.includes(step.command)));
+    if(step.evidence&&!cited)errors.push('step citation does not support its command');
     if (step.command && !backed(step.command)) errors.push(`unsupported step command: ${step.command}`);
-    if (step.text && !GENERIC.includes(step.text) && !backed(step.text)) errors.push('unsupported step explanation');
-    if (!stepTitles.includes(step.title) && !backed(step.title)) errors.push('unsupported step heading');
+    if (step.text && !GENERIC.includes(step.text) && !backed(step.text)&&!cited) errors.push('unsupported step explanation');
+    if (!stepTitles.includes(step.title) && !backed(step.title)&&!cited) errors.push('unsupported step heading');
   }
   if (card.tipo === 'skill' || card.skillSource) {
     const s = card.security;

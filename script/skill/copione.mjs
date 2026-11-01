@@ -1,4 +1,5 @@
-import { extractFacts } from './fatti.mjs';
+import { extractFacts, sectionTitle, screenSentence, factNodes } from './fatti.mjs';
+import { tutorialLesson } from './procedura.mjs';
 import { plain, labelFrom } from './fonti.mjs';
 // Deterministic teaching scripts. Source excerpts are assertions, never prompts.
 // If a pinned source changes, an adapter stops instead of making up missing facts.
@@ -13,8 +14,8 @@ export function textIssues(text, {voice=false, tool=false}={}) {
   if(tool&&/\bskills?\b/i.test(text))errors.push('skill wording in a tool tutorial');
   return errors;
 }
-const s=(label,title,text,voice,{code,nodes,quotes=[],duration=12,role='feature'}={})=>
-  ({label,title,text,voice,code,nodes,quotes,duration,role});
+const s=(label,title,text,voice,{code,nodes,elements,quotes=[],duration=12,role='feature'}={})=>
+  ({label,title,text,voice,code,nodes,elements,quotes,duration,role});
 
 const outcomes={
   'curl -fsSL https://ollama.com/install.sh | sh':'You will have the official tool installed for your next step.',
@@ -104,58 +105,39 @@ export function lessonFor(card) {
         s('Source','Explore the documented workflows','github.com/vercel-labs/agent-browser','Link in the description.',{role:'link',duration:5}),
       ],
     };
-  } else if(card.repository==='heygen-com/hyperframes'&&card.name==='hyperframes-registry'&&card.tipo==='skill') {
-    const editable=need('installed as editable source'),search=need('Search is local and sends nothing.');
-    const block=corpus.split('\n').find(l=>l.startsWith('- **Block**:'));
-    const component=corpus.split('\n').find(l=>l.startsWith('- **Component**:'));
-    if(!block||!component)throw Error('Registry block/component evidence missing');
-    need(card.install);need(card.example);
-    lesson={problem:'Need a video starting point?',description:'Find ready-made blocks and components, then edit their source in your project.',
-      prerequisites:'Use a HyperFrames project and read the requirements for the item you choose.',
-      check:'Compare your scene with the supplied example, then check the item in your own project.',
-      next:'Adapt the installed source to your scene and keep the complete project instructions handy.',
-      limits:'Review the installed source and any downloads before using them in your project.',
-      short:[
-        s('The problem','Need a video starting point?','Begin with an existing block or component.','Need a starting point for your next video scene?',{role:'problem',duration:3,nodes:['Your video scene','Existing item','Editable source'],quotes:[editable]}),
-        s('What it is','HyperFrames registry','Find blocks and components you can edit.','This skill finds ready-made video blocks and components. You can edit the installed source inside your own project.',{role:'identity',duration:7,nodes:['Ready-made items','Your project','Editable source'],quotes:[editable]}),
-        s('Feature 1','Search locally','The search does not send your query away.','First, search for the effect you need. Search runs locally and sends nothing, so you can choose an item from the available results.',{duration:7,nodes:['Describe the effect','Local search','Choose an item'],quotes:[search]}),
-        s('Feature 2','Start with a block','Use an editable composition as your starting point.','A block gives you a ready-made composition. Add its source to the project, then adapt the result for your scene.',{duration:7,nodes:['Ready-made block','Installed source','Your composition'],quotes:[block,editable]}),
-        s('Feature 3','Reuse a component','Bring the supplied parts into your own scene.','A component works inside an existing scene. Bring its markup, style, and script together, then follow the instructions supplied with that component.',{duration:8,nodes:['Existing scene','Reusable component','Supplied instructions'],quotes:[component]}),
-        s('Install','Add the instructions','Read the project requirements before installation.','Add the skill with the documented installer. Read the project requirements, then choose the block or component that fits the scene you want to build.',{role:'install',duration:8,code:card.install,quotes:[card.install]}),
-        s('Repository','Open the complete guide',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5}),
-      ],
-      long:[
-        s('Goal','Start from an editable item','Find an existing visual and adapt it to your project.','Start with a ready-made block or component, then edit its source. This gives your scene a concrete starting point that you can adapt to the project.',{role:'goal',duration:14,nodes:['Find an item','Install its source','Adapt your scene'],quotes:[editable]}),
-        s('Requirements','Prepare your video project','Read the item instructions before adding it to a scene.','Use the project instructions to prepare your video work. Read how the chosen item fits a composition, and keep its supplied guidance beside the scene you are editing.',{role:'prerequisites',duration:14,nodes:['Project instructions','Chosen item','Your video scene'],quotes:[block,component]}),
-        s('Installation','Add the Agent Skill','Use the repository installation command shown here.','Install the assistant instructions with the documented command. Then return to the project documentation before choosing a visual item or editing the source added to your project.',{role:'step',duration:14,code:card.install,quotes:[card.install,editable]}),
-        s('Step 1','Search for your effect','Describe the visual you need and inspect the local results.','Search for the effect that fits your scene. The search runs locally and sends nothing. Use the results to choose a concrete starting point for the work.',{role:'step',duration:14,nodes:['Desired effect','Local results','Chosen starting point'],quotes:[search]}),
-        s('Step 2','Choose a block','A block supplies a composition you can adapt.','Choose a block when you want an existing composition. Add it to the project using the documented example, then adjust its source for the scene you are building.',{role:'step',duration:14,nodes:['Existing composition','Installed block','Adapted source'],quotes:[block,editable]}),
-        s('Step 3','Fit a component into a scene','Keep the supplied markup, style and script together.','Choose a component when the visual belongs inside your own scene. Copy its supplied parts together, and follow the component instructions when connecting it to your animation.',{role:'step',duration:14,nodes:['Your existing scene','Component parts','Animation instructions'],quotes:[component]}),
-        s('Verify','Try the documented example','Compare the result with the item guidance.','Use the documented example to check the workflow in your project. Inspect the installed source, then compare the scene with the behavior and guidance supplied for that item.',{role:'verify',duration:14,code:card.example,quotes:[card.example,block,component]}),
-        s('Next steps','Make the source your own','Adapt the item while keeping its instructions available.','Continue by editing the source for your project. Keep the supplied instructions available while changing the composition, and return to them when the scene needs another reusable item.',{role:'next',duration:14,nodes:['Editable item','Project changes','Complete instructions'],quotes:[editable,component]}),
-        s('Source','Keep the reference handy',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5}),
-      ],
-    };
+  } else if(card.tipo==='tutorial') {
+    lesson=tutorialLesson(card);
   } else {
-    // Conservative general fallback: complete source sentences only. A source
-    // too thin for three distinct facts is ineligible, rather than padded.
-    if(card.tipo==='tutorial')throw Error('A tutorial needs a documented step-by-step procedure, not a reused feature list');
-    const safe=t=>!textIssues(t,{voice:true,tool:card.tipo==='tutorial'&&!card.skillSource}).length&&/[.!?]$/.test(t)&&t.split(/\s+/).length<=28;
-    const exact=(card.features||[]).map(f=>({label:f.label,detail:f.detail,voice:f.detail.split(/(?<=[.!?])\s+/).find(safe),quote:f.evidence?.quote}));
+    const safe=t=>screenSentence(t)&&!textIssues(t,{voice:true}).length&&t.split(/\s+/).length<=28&&!/^(?:Plugin installs:|During |After |\[)|data-|[a-z][A-Z]/.test(t);
     const extracted=extractFacts(card,safe);
-    const selected=[];
-    for(const fact of [...exact,...extracted]) {
-      if(!fact.voice||norm(fact.voice)===norm(card.descr)||selected.some(f=>norm(f.voice)===norm(fact.voice)))continue;
-      if(!corpus.includes(fact.quote||fact.voice)&&!plain(corpus).includes(fact.voice))continue;
-      selected.push(fact);if(selected.length===3)break;
+    const description=card.descr.split(/(?<=[.!?])\s+/).find(safe)||extracted.find(f=>f.voice.split(/\s+/).length<=16)?.voice;
+    if(!description)throw Error('Source lacks a safe spoken description');
+    const extra=extracted.find(f=>norm(f.voice)!==norm(description));
+    if(!extra)throw Error('Source lacks an unused complete identity fact');
+    const selected=[],titles=new Set(),used=new Set([norm(description),norm(extra.voice)]);
+    const enough=f=>!f.heading||extracted.filter(x=>x.heading===f.heading).reduce((n,x)=>n+x.voice.split(/\s+/).length,0)>=14;
+    for(const distinct of [true,false])for(const f of [...extracted.filter(f=>f.heading&&!/overview|when to use/i.test(f.heading)&&enough(f)),...extracted.filter(enough),...extracted]) {
+      const title=sectionTitle(f.heading||f.label,f.heading?40:20);
+      if(!title||title==='Documented workflow'||used.has(norm(f.voice))||norm(card.descr).includes(norm(f.voice))||distinct&&titles.has(title))continue;
+      if(selected.length===3)break;
+      selected.push({...f,title,quotes:[f.quote]});titles.add(title);used.add(norm(f.voice));
     }
     if(selected.length!==3)throw Error('Source lacks three complete teachable facts');
-    const description=card.descr.split(/(?<=[.!?])\s+/).find(safe)||extracted.find(f=>!selected.some(s=>s.voice===f.voice))?.voice;
-    if(!description)throw Error('Source lacks a safe spoken description');
-    const features=selected.map((f,i)=>s(`Feature ${i+1}`,`Documented action ${i+1}`,labelFrom(f.voice,70),`${['First','Next','Finally'][i]}, ${f.voice[0].toLowerCase()+f.voice.slice(1)}`,{quotes:[f.quote?need(f.quote):plain(corpus).includes(f.voice)?f.voice:need(f.voice)],nodes:[['Read the instructions','Choose your task','Apply the workflow'],['Inspect the project','Follow the guidance','Review your changes'],['Try the example','Check the result','Continue your work']][i]}));
-    lesson={problem:card.problem,description,prerequisites:'Read the documented requirements before installation.',check:'Follow the example and check the result against the documented behavior.',next:'Continue with the complete project documentation.',limits:'Review the instructions before granting access to your project.',
-      short:[s('The problem',card.problem,'Start with the task you need to solve.','Choose the workflow for your task.',{role:'problem',duration:3,nodes:['Your task','Instructions','Result']}),s('What it is',card.name,labelFrom(description,70),description,{role:'identity',duration:7,nodes:['Assistant','Instructions','Your project']}),...features.map((f,i)=>({...f,duration:[7,7,8][i]})),s('Install','Add the instructions','Use the documented command for your assistant.','Read the project requirements and choose your assistant. Use the installation command on screen, then follow the documented example in your own project.',{code:card.install,role:'install',duration:8}),s('Repository','Read the full guide',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5})],
-      long:[s('Goal',card.name,description,description,{role:'goal',nodes:['Your task','Agent Skill','Project workflow'],duration:14}),s('Requirements','Prepare your assistant','Read the requirements before granting access.','Check the project documentation for the supported assistant and setup. Review the instructions before installing.',{role:'prerequisites',nodes:['Project documentation','Assistant setup','Permissions'],duration:14}),s('Installation','Install the instructions','Use the exact command documented by the project.','Use the installation command and choose your assistant. Then return to the usage example in the project documentation.',{role:'step',code:card.install,duration:14}),...features.map(f=>({...f,duration:14})),s('Verify and continue','Compare with the documented example','Review the result in your own project.','Check the result against the documented behavior. Continue with the complete instructions for your next task.',{role:'verify',code:card.example,duration:14}),s('Source','Open the complete documentation',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5})]};
+    for(const f of selected){
+      while(f.voice.split(/\s+/).length<15){
+      const more=extracted.find(x=>x.heading===f.heading&&!used.has(norm(x.voice))&&(f.voice+' '+x.voice).split(/\s+/).length<=29);
+      if(more){used.add(norm(more.voice));f.voice+=' '+more.voice;f.quotes.push(more.quote);}else break;
+      }
+    }
+    const panel=(label,title,f,options={})=>s(label,title,undefined,f.voice,{quotes:(f.quotes||[f.quote]).map(need),nodes:factNodes({voice:f.detail||f.voice}),...(!factNodes({voice:f.detail||f.voice})?{elements:[/[.!?]$/.test(f.detail||'')?f.detail:f.detail?f.detail+'.':f.voice]}:{}),...options});
+    const features=selected.map((f,i)=>panel(`Feature ${i+1}`,f.title,f));
+    const identity=panel('What it is',sectionTitle(card.name),extra,{role:'identity',duration:7});
+    identity.voice=description+' '+extra.voice;
+    // The description can be YAML metadata; the added fact is pinned prose.
+    identity.quotes.push(description);
+    lesson={profile:'general',problem:card.problem,description,prerequisites:'Read the documented requirements before installation.',check:'Follow the example and check the result against the documented behavior.',next:'Continue with the complete project documentation.',limits:'Review the instructions before granting access to your project.',
+      short:[s('The problem',card.problem,'Start with the task you need to solve.','Choose the workflow for your task.',{role:'problem',duration:3,nodes:['Your task','Instructions','Result']}),identity,...features.map((f,i)=>({...f,duration:[7,7,8][i]})),s('Install','Add the instructions','Use the documented command for your assistant.','Read the project requirements and choose your assistant. Use the installation command on screen, then follow the documented example in your own project.',{code:card.install,role:'install',duration:8}),s('Repository','Read the full guide',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5})],
+      long:[s('Goal',sectionTitle(card.name),undefined,identity.voice,{role:'goal',elements:[extra.voice],quotes:identity.quotes,duration:14}),s('Requirements','Prepare your assistant','Read the requirements before granting access.','Check the project documentation for the supported assistant and setup. Review the instructions before installing.',{role:'prerequisites',nodes:['Project documentation','Assistant setup','Permissions'],duration:14}),s('Installation','Install the instructions','Use the exact command documented by the project.','Use the installation command and choose your assistant. Then return to the usage example in the project documentation.',{role:'step',code:card.install,duration:14}),...features.map(f=>({...f,duration:14})),s('Verify and continue','Compare with the documented example',card.example.length<=180&&card.example.split('\n').length<=5?'Review the result in your own project.':undefined,'Check the result against the documented behavior. Continue with the complete instructions for your next task.',{role:'verify',...(card.example.length<=180&&card.example.split('\n').length<=5?{code:card.example}:{elements:['Review the result in your own project.']}),duration:14}),s('Source','Open the complete documentation',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5})]};
   }
   if(card.tipo==='skill'&&!lesson.long.some(s=>s.role==='limits')){
     const reasons=(card.security?.warnings||[]).map(w=>w.reason).join(' ');
@@ -167,13 +149,13 @@ export function lessonFor(card) {
   const ordered=new Set(['Inspect before acting','Instructions come from the installed tool','Refresh your view after changes','Download your model','Your first local conversation']);
   for(const scene of [...lesson.short,...lesson.long]){
     if(scene.nodes&&ordered.has(scene.title))scene.order=true;
-    if(scene.code)scene.result=outcomes[scene.code]||(scene.code.startsWith('curl http://localhost:11434/api/chat')?'You will receive the model response to the question about the sky.':scene.code===card.install?'The instructions are available to your assistant.':'Compare the output with the example in the project documentation.');
+    if(scene.code)scene.result=scene.result||outcomes[scene.code]||(scene.code.startsWith('curl http://localhost:11434/api/chat')?'You will receive the model response to the question about the sky.':scene.code===card.install?'The instructions are available to your assistant.':'Compare the output with the example in the project documentation.');
   }
   return lesson;
 }
 
 export function lessonStrings(lesson) {
-  return [lesson.problem,lesson.description,lesson.prerequisites,lesson.check,lesson.next,lesson.limits,...[...lesson.short,...lesson.long].flatMap(s=>[s.label,s.title,s.text,s.voice,s.code,s.result,...(s.nodes||[])])].filter(Boolean);
+  return [lesson.problem,lesson.description,lesson.prerequisites,lesson.check,lesson.next,lesson.limits,...[...lesson.short,...lesson.long].flatMap(s=>[s.label,s.title,s.text,s.voice,s.code,s.result,...(s.nodes||[]),...(s.elements||[])])].filter(Boolean);
 }
 
 export function duplicateIssues(scenes) {

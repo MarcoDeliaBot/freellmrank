@@ -13,7 +13,7 @@ import { lessonFor } from './copione.mjs';
 function fixture() {
   const descr='Demo reviews code. It explains proposed corrections.';
   const facts=['Read the request carefully.','Check the proposed changes.','Report the review findings.'];
-  const raw=[descr,'npx skills add owner/demo','Review the project.',...facts].join('\n');
+  const raw=[descr,'npx skills add owner/demo','Review the project.',...facts,'Review each finding against the original request before you share the finished review.'].join('\n');
   return {tipo:'skill',slug:'owner-demo',key:'agent skill owner/demo',name:'Demo',repository:'owner/demo',skillPath:'skills/demo/SKILL.md',date:'2026-11-01',commit:'a'.repeat(40),
     titolo:'Demo: Agent Skill',descr,problem:'reviews code',install:'npx skills add owner/demo',example:'Review the project.',features:facts.map(detail=>({label:detail,detail})),claims:[descr],limits:[],
     fonti:[{url:'https://github.com/owner/demo/blob/'+ 'a'.repeat(40)+'/README.md',testo:raw,sha256:digest(raw)}],metrics:{date:'2026-11-01',stars:10},security:{passed:true,complete:true,scope:'skills/demo',files:2,checked:['all-files','installation-scope'],errors:[],date:'2026-11-01',commit:'a'.repeat(40)}};
@@ -53,7 +53,7 @@ test('a Workers retry refused by its cap after truncation reaches the free Groq 
   assert.equal(calls,2);assert.equal(card.writing.writer,'groq');assert.equal(card.writing.attempts[1].status,429);
 });
 test('P2 short reserve adapts the scene before enforcing the 0.5x floor; news is unchanged',()=>{
-  const p=plan(fixture(),true),scene=p.scene[1];
+  const p=plan(fixture(),true),scene=p.scene[2];
   const fit=fitWindow(p,scene,1.9);
   assert.equal(fit.adapted,true);assert.ok(fit.fixed>=2&&fit.fixed<7);assert.ok(fit.speed>=.5);
   assert.throws(()=>fitWindow(p,scene,.1),/too short/);
@@ -96,5 +96,5 @@ test('the measured top20 registry has three cited actions and a compact spoken i
   assert.ok(short.scene[1].voce.split(/\s+/).length<=22);
   assert.ok(short.scene.slice(2,5).every(s=>s.evidence.length));
   const bad=structuredClone(card);for(const f of bad.fonti){f.testo=f.testo.replace('Search is local and sends nothing.','Changed search policy.');f.sha256=digest(f.testo);}
-  assert.throws(()=>lessonFor(bad),/Teaching evidence missing/);
+  const lesson=lessonFor(bad);assert.ok([...lesson.short,...lesson.long].every(s=>s.quotes.every(q=>!q.includes('Search is local and sends nothing.'))));
 });
