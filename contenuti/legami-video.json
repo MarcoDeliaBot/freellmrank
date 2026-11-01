@@ -176,5 +176,13 @@
  "search-files-by-meaning-with-ollama": {
   "lungo": "tutorial-ricerca-file",
   "breve": "breve-tutorial-ricerca-file-parole"
+ },
+ "news-2026-11-01-deepseek-releases-mit-licensed-dsh-superagent-routing-prototype": {
+  "lungo": "notizia-deepseek-releases-mit-licensed-dsh-superagent-routing-pr",
+  "breve": "breve-deepseek-releases-mit-licensed-dsh-superagent-routing-pr"
+ },
+ "news-2026-10-30-anthropic-openai-google-and-cloudflare-launch-ai-agents-that-hunt-code": {
+  "lungo": "notizia-anthropic-openai-google-and-cloudflare-launch-ai-agents",
+  "breve": "breve-anthropic-openai-google-and-cloudflare-launch-ai-agents"
  }
 }
