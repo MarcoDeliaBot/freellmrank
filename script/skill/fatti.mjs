@@ -1,7 +1,7 @@
 import { plain, labelFrom } from './fonti.mjs';
 
 export function sectionTitle(value, max=40) {
-  const clean=plain(value).replace(/^(?:(?:step|level|phase)\s+)?\d+[.:)\s-]+/i,'').replace(/[^\p{L}\p{N}\s'-]/gu,' ').replace(/\s+/g,' ').trim();
+  const clean=plain(value).replace(/^(?:(?:step|level|phase)\s+)?\d+[.:)\s-]+/i,'').replace(/[^\p{L}\p{N}\s'.-]|(?<![\p{L}\p{N}])\.|\.(?![\p{L}\p{N}])/gu,' ').replace(/\s+/g,' ').trim();
   return labelFrom(clean,max);
 }
 
