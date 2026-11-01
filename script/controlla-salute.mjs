@@ -42,7 +42,8 @@ export async function controllaSalute({ root = ROOT, base = 'https://freellmaren
   let guaste = await aGruppi(pagine, 8, misura);
   // Un errore di rete o un 5xx vale solo se si ripete: il 1/11/2026 324 errori di rete e un 500 erano spariti pochi minuti dopo,
   // e la mail parlava di 347 problemi con soli 24 indirizzi rotti davvero. Il 404 è una risposta del sito e non si riprova.
-  const riprovate = guaste.filter(g => g.riprova).length;
+  const riprovate = guaste.filter(g => g.riprova).length, perEsito = {};
+  for (const g of guaste) if (g.riprova) perEsito[g.esito] = (perEsito[g.esito] || 0) + 1;
   for (let giro = 0; giro < 2 && guaste.some(g => g.riprova); giro++) {
     await new Promise(fine => setTimeout(fine, pausa));
     guaste = [...guaste.filter(g => !g.riprova), ...await aGruppi(guaste.filter(g => g.riprova), 4, g => misura(g.u))];
@@ -71,12 +72,13 @@ export async function controllaSalute({ root = ROOT, base = 'https://freellmaren
       } catch (e) { problemi.push(`${method} ${p}: ${e.name}`); }
     }
   }
-  return { checked: pagine.length, fromRegistry: new Set(registryURLs).size, onlyRegistry: registryURLs.filter(u => !sitemapSet.has(u)).length, riprovate, rotte, problemi };
+  return { checked: pagine.length, fromRegistry: new Set(registryURLs).size, onlyRegistry: registryURLs.filter(u => !sitemapSet.has(u)).length, riprovate, perEsito, rotte, problemi };
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const option = name => process.argv.find(a => a.startsWith(`--${name}=`))?.split('=').slice(1).join('=');
   const result = await controllaSalute({ root: option('radice') || ROOT, base: option('sito') || 'https://freellmarena.com', onlyPages: process.argv.includes('--solo-pagine') });
   console.log(`Pagine controllate: ${result.checked}; registro: ${result.fromRegistry}; fuori sitemap: ${result.onlyRegistry}; riprovate: ${result.riprovate}. Problemi: ${result.problemi.length}`);
+  if (result.riprovate) console.log('Riprovate per esito:', JSON.stringify(result.perEsito));
   for (const p of result.problemi) console.log('-', p);
   if (option('json')) fs.writeFileSync(option('json'), JSON.stringify(result, null, 2) + '\n');
   if (result.problemi.length && !process.argv.includes('--prova')) {

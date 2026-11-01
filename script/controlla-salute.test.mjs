@@ -37,6 +37,7 @@ test('un errore di rete o un 500 che spariscono alla riprova non sono problemi',
   const r = await controllaSalute({ root: radice(['/model/a.html', '/pt/audio']), base, fetcher, onlyPages: true, pausa: 0 });
   assert.deepEqual(r.problemi, []);
   assert.equal(r.riprovate, 2);
+  assert.deepEqual(r.perEsito, { 'TypeError (ECONNRESET)': 1, 500: 1 });
   assert.equal(chiamate[a], 2);
   assert.equal(chiamate[b], 2);
 });
