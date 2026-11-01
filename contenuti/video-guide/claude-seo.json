@@ -1,0 +1,42 @@
+{
+ "tipo": "guida",
+ "nome": "claude-seo-plugin-tutorial",
+ "url": "https://freellmarena.com/blog/claude-seo-plugin-tutorial",
+ "titolo": "How to use the Claude SEO plugin on your site, and how to check its report",
+ "descr": "Install the free Claude SEO plugin for Claude Code, check one page and verify the report. Every command, the Windows error we hit, and what the report got wrong.",
+ "tema": "Guides",
+ "pubblicato": "2026-11-01",
+ "paragrafi": [
+  "Claude SEO is a free plugin for Claude Code. It reads a page of your website and tells you what could stop search engines from finding it.",
+  "Add the marketplace, install the plugin, and run the first setup. On our PC it took 2 minutes 14 seconds and about 1.3 GB of disk.",
+  "Our home page scored 85/100 with the plugin tools, and 82/100 when Claude checked it by hand.",
+  "The report found a real redirect problem, but it was wrong about our sitemap: 6,013 of 12,417 addresses still ended in .html.",
+  "To remove it, uninstall the plugin and press Y to delete its data."
+ ],
+ "perche": [
+  "We did not run the full site audit, speed was not measured, and Claude Code itself needs a paid plan or API credit."
+ ],
+ "titoliSezioni": [
+  "Install the plugin",
+  "Run the first setup",
+  "Fix the not ready error",
+  "Check one page",
+  "Check the report yourself"
+ ],
+ "fonti": [
+  {
+   "nome": "Claude SEO",
+   "url": "https://github.com/AgriciDaniel/claude-seo",
+   "titolo": "Claude SEO on GitHub",
+   "ufficiale": true,
+   "data": "2026-11-01"
+  },
+  {
+   "nome": "Claude Code",
+   "url": "https://code.claude.com/docs/en/discover-plugins",
+   "titolo": "Discover and install plugins",
+   "ufficiale": true,
+   "data": "2026-11-01"
+  }
+ ]
+}
