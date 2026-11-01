@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-01-anthropic-claude-vs-code-extension-backdoored-on-cursor-marketplace-fo",
+ "titolo": "Anthropic Claude VS Code extension backdoored on Cursor marketplace for hours",
+ "descr": "A malicious version of Anthropic’s Claude‑code extension was distributed via Cursor, affecting up to 5,000 developers before removal.",
+ "tema": "Software",
+ "paragrafi": [
+  "Between 5:27 am ET and 4:35 pm ET on October 29, 2026, a compromised version (2.1.313) of Anthropic’s Claude‑code VS Code extension was published in Cursor’s marketplace.",
+  "Both Cursor and Anthropic have not publicly explained how the attackers gained access to the official distribution channel, and Anthropic has not issued a customer warning.",
+  "Users who installed or updated the extension during the window are advised to run the provided remediation scripts, check for the “svc‑telemetry” SSH key, and rotate any credentials."
+ ],
+ "perche": [
+  "Developers relying on AI‑assisted tooling must verify the integrity of extensions, as supply‑chain attacks can expose code and credentials. The incident underscores the need for vigilant security practices, especially for those using free or locally hosted models that may depend on third‑party plugins."
+ ],
+ "pubblicato": "2026-11-01",
+ "titoloFonte": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+ "fonti": [
+  {
+   "nome": "Ars Technica",
+   "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/",
+   "titolo": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+   "ufficiale": false,
+   "data": "2026-10-30"
+  },
+  {
+   "nome": "cursor.com",
+   "url": "https://cursor.com/blog/claude-code-extension-security-notice",
+   "titolo": "Security notice — malicious version of Anthropic.claude-code (2.1.312 and 2.1.313) identified in the Cursor VS Code Extension Marketplace · Cursor",
+   "ufficiale": true,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 2
+}

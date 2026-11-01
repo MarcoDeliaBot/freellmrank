@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-01-anthropic-expands-project-glasswing-as-ai-models-spark-cyber-risk-deba",
+ "titolo": "Anthropic expands Project Glasswing as AI models spark cyber risk debate",
+ "descr": "Anthropic adds new tiers to its Cyber Verification Program while experts weigh the security impact of frontier models like Claude Mythos and GLM‑5.3.",
+ "tema": "Policy",
+ "paragrafi": [
+  "On October 6, 2026 Anthropic announced an expanded Cyber Verification Program that offers three access tiers and includes its most capable models such as Claude Opus 5.5, Claude Sonnet 5.5 and Claude Mythos 5.1.",
+  "The original Project Glasswing, announced on April 7, 2026, gathered major partners including AWS, Apple, Google and Microsoft to use the Claude Mythos 2 Preview for defensive security, noting the model’s ability to find thousands of high‑severity vulnerabilities across major operating systems and browsers.",
+  "In a separate commentary, Nathan Lambert described a surge of vulnerability disclosures as “Black October” and cited an experiment where GLM‑5.3 generated a website that could exfiltrate files from a Firefox user without additional interaction.",
+  "Rob Wiblin warned that “It would be an actual disaster” if open‑weight models fell into hostile hands, while Anthropic’s blog warned that unchecked AI coding power could have severe economic and national‑security fallout.",
+  "FreeLLMArena’s November 1, 2026 blind vote placed Kimi K3 at the top of free chat models with 1,488 votes, GLM‑5.3 close behind at 1,481, and named Gemini 4 Carbon the leading paid chat model with 1,528 votes."
+ ],
+ "perche": [
+  "For users of free or locally run models, the rankings show powerful options like GLM‑5.3 are already capable of advanced code analysis, which can aid research but also be misused. Anthropic’s tiered program aims to give vetted security teams controlled access to the same capabilities, helping defenders stay ahead while limiting exposure to malicious actors."
+ ],
+ "pubblicato": "2026-11-01",
+ "titoloFonte": "Was I wrong about open models & cyber risks?",
+ "fonti": [
+  {
+   "nome": "Interconnects",
+   "url": "https://www.interconnects.ai/p/was-i-wrong-about-open-models-and",
+   "titolo": "Was I wrong about open models & cyber risks?",
+   "ufficiale": false,
+   "data": "2026-10-30"
+  },
+  {
+   "nome": "anthropic.com",
+   "url": "https://www.anthropic.com/glasswing?utm_source=chatgpt.com",
+   "titolo": "Project Glasswing: Securing critical software for the AI era \\ Anthropic",
+   "ufficiale": true,
+   "data": "2026-10-06"
+  }
+ ],
+ "frasiTolte": 0
+}

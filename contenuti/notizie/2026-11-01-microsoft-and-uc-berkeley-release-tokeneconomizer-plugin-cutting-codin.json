@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-01-microsoft-and-uc-berkeley-release-tokeneconomizer-plugin-cutting-codin",
+ "titolo": "Microsoft and UC Berkeley release TokenEconomizer plugin cutting coding agent costs up to 30.9%",
+ "descr": "The open‑source TokenEconomizer learns from prior sessions to lower token usage for coding agents by 18.4%‑30.9% on SWE‑Bench without altering the agent.",
+ "tema": "Software",
+ "paragrafi": [
+  "Tests on the SWE‑Bench suite show mean token cost reductions ranging from 18.4% to 30.9% across five agent‑model combinations, with cheaper runs in all 30 repository‑combination cells.",
+  "The plugin works by learning repository‑specific facts, pruning unused tools, and intervening in repeated failure loops, all while keeping the original agent unchanged.",
+  "Costs include every model call made by TokenEconomizer, and savings persisted on Web‑Bench (16%‑21% lower) and two security‑auditing benchmarks (6%‑20% lower).",
+  "Installation requires Python 3.10+, a supported coding agent, and no additional API key; learned data stays locally in ~/.tokeneconomizer."
+ ],
+ "perche": [
+  "Developers using coding agents can lower operational expenses without modifying their existing workflows. The plugin’s local‑only learning may benefit users of free or self‑hosted models by reducing token consumption while preserving model performance."
+ ],
+ "pubblicato": "2026-11-01",
+ "titoloFonte": "Meet TokenEconomizer: Microsoft’s Plugin That Cuts Coding Agent Costs by Up to 30.9%",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/30/microsoft-tokeneconomizer-coding-agent-cost-control/",
+   "titolo": "Meet TokenEconomizer: Microsoft’s Plugin That Cuts Coding Agent Costs by Up to 30.9%",
+   "ufficiale": false,
+   "data": "2026-10-30"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/microsoft/TokenEconomizer",
+   "titolo": "GitHub - microsoft/TokenEconomizer: Experience-Driven Black-Box Cost Control for Coding Agents · GitHub",
+   "ufficiale": true,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 1
+}
