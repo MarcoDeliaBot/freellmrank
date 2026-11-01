@@ -1,0 +1,132 @@
+[
+  {
+    "name": "hyperframes-registry",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "slideshow",
+    "passed": false,
+    "reason": "Source lacks a safe spoken description"
+  },
+  {
+    "name": "code-review-and-quality",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "context-engineering",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "doubt-driven-development",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "frontend-ui-engineering",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "api-and-interface-design",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "test-driven-development",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "browser-testing-with-devtools",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "git-workflow-and-versioning",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "performance-optimization",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "code-simplification",
+    "passed": true,
+    "reason": null
+  },
+  {
+    "name": "shipping-and-launch",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "documentation-and-adrs",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "debugging-and-error-recovery",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "spec-driven-development",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "constraint-driven-development",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "ci-cd-and-automation",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "idea-refine",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "planning-and-task-breakdown",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "source-driven-development",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "interview-me",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "deprecation-and-migration",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "incremental-implementation",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  },
+  {
+    "name": "observability-and-instrumentation",
+    "passed": false,
+    "reason": "Teaching evidence missing: Rule of thumb: metrics tell you that something is wrong, traces tell you where, logs tell "
+  },
+  {
+    "name": "using-agent-skills",
+    "passed": false,
+    "reason": "Source lacks three complete teachable facts"
+  }
+]

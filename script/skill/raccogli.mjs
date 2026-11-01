@@ -4,6 +4,8 @@ import path from 'node:path';
 import { api, directory, scanRepository, growth, installFrom, licenseFrom, labelFrom, plain, read, write, text, slug, ROOT } from './fonti.mjs';
 import { digest, validateCard, GENERIC, DISCLAIMER } from './verifica.mjs';
 import { refreshPublished, assignCategory, load, readCards } from './archivio.mjs';
+import { teachingCard, extractFacts } from './fatti.mjs';
+import { textIssues } from './copione.mjs';
 
 export function cardFrom(repo, entry, result, date, history) {
   const {scan,meta,commit}=result;
@@ -56,12 +58,16 @@ export function cardFrom(repo, entry, result, date, history) {
       featureSources.add(ref);
     }
   }
+  if(features.length!==3) {
+    const scoped=Object.entries(scan.texts).filter(([p])=>/\.(?:md|mdx)$/i.test(p)).map(([p,testo])=>({testo,url:`https://github.com/${repo}/blob/${commit.sha}/${p}`,tipo:p===skillPath?'SKILL.md':'Skill reference'}));
+    features.splice(0,features.length,...extractFacts({fonti:scoped},t=>!textIssues(t,{voice:true}).length).slice(0,3).map(({label,detail,quote,url})=>({label,detail,evidence:{quote,url}})));
+  }
   if(features.length!==3)throw Error('not enough scoped skill facts');
   const blocks=[...content.matchAll(/```[^\n]*\n([\s\S]*?)```/g)].map(m=>m[1].trim()).filter(t=>t&&t.length<=1100&&!/^(?:curl|wget).*\|/s.test(t)&&!t.includes('npx skills add'));
   const example=blocks.find(s=>s.length<=600)||blocks[0];
   if(!example)throw Error('no actual usage code block in skill or README');
   const exampleLine=skillText.slice(0,skillText.indexOf(example)).split('\n').length;
-  const fonti=Object.entries(evidence).filter(([p])=>p===readmePath||p===skillPath||featureSources.has(p)||scan.warnings.some(w=>w.file===p)).map(([p,t])=>({url:`https://github.com/${repo}/blob/${commit.sha}/${p}`,testo:t,sha256:digest(t),tipo:p===readmePath?'README':p===skillPath?'SKILL.md':'Skill reference'}));
+  const fonti=Object.entries(evidence).filter(([p])=>p===readmePath||p===skillPath||p.startsWith(scan.scope+'/')&&/\.(?:md|mdx)$/i.test(p)||featureSources.has(p)||scan.warnings.some(w=>w.file===p)).map(([p,t])=>({url:`https://github.com/${repo}/blob/${commit.sha}/${p}`,testo:t,sha256:digest(t),tipo:p===readmePath?'README':p===skillPath?'SKILL.md':'Skill reference'}));
   const corpus=plain(skillText);
   const task=['browser automation','blocks and components','video editing','find skills','mobile app screens','AI images','videos','images','skills'].find(t=>corpus.toLowerCase().includes(t.toLowerCase()))||name;
   const problem=`Need ${task}?`;
@@ -80,8 +86,9 @@ export function cardFrom(repo, entry, result, date, history) {
     claims:[descr,install,example,...features.flatMap(f=>[f.label,f.detail])],...(flow?{flow}:{}),
     topics:meta.topics||[],metrics:{date,stars:meta.stargazers_count,growth7d:growth(history,repo,meta.stargazers_count,date),installs:entry.totalInstalls??null,installs24h:entry.trendingInstalls??null,license:licenseFrom(readme,meta.license?.spdx_id),lastCommit:commit.commit.committer.date},
     security:{passed:true,complete:true,date,commit:commit.sha,scope:scan.scope,skillPath,files:scan.files,checked:scan.checked,errors:[],warnings:scan.warnings,status:scan.status,version:scan.version,policySha256:scan.policySha256,manifest:scan.manifest}};
-  const errors=validateCard(card);if(errors.length)throw Error(errors.join('; '));
-  return card;
+  const taught=teachingCard(card,t=>!textIssues(t,{voice:true}).length);
+  const errors=validateCard(taught);if(errors.length)throw Error(errors.join('; '));
+  return taught;
 }
 
 export async function collect({maxRepos=24,date=new Date().toISOString().slice(0,10)}={}) {

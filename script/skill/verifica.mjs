@@ -58,6 +58,7 @@ export function validateCard(card) {
     if (s.commit !== card.commit || s.date !== card.metrics?.date) errors.push('security/metrics/source revision mismatch');
   }
   if (!card.features || card.features.length !== 3 || card.features.some(f => (!backed(f.detail)&&!ollamaFact(f)) || !backed(f.label))) errors.push('three source-backed features required');
+  for(const f of card.features||[])if(f.evidence&&!card.fonti.some(s=>s.url===f.evidence.url&&s.testo.includes(f.evidence.quote)&&plain(f.evidence.quote).includes(f.detail)))errors.push('feature citation does not support its fact');
   if (!card.example || !backed(card.example)) errors.push('usage example absent from official source');
   if((card.features||[]).some(f=>f.example&&!backed(f.example)))errors.push('feature example absent from official source');
   if(Object.values(card.explanations||{}).some(x=>!x.sentences?.length||x.sentences.some(s=>!groundedExplanation(card,s))))errors.push('unsupported generated explanation');

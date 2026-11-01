@@ -35,7 +35,7 @@ export function skillTutorial(skill, date) {
     ], selection: { reason: 'Measured skill popularity', metrics: skill.metrics } };
 }
 
-function documentedTutorial({ name, command, url, raw, date, steps, features, descr, score, key, hardware, officialInstaller=false, problemEvidence=name }) {
+export function documentedTutorial({ name, command, url, raw, date, steps, features, descr, score, key, hardware, officialInstaller=false, problemEvidence=name }) {
   const sourceURL=new URL(url);
   const githubSource=['github.com','raw.githubusercontent.com'].includes(sourceURL.hostname);
   const repository=githubSource?sourceURL.pathname.slice(1).split('/').slice(0,2).join('/'):sourceURL.hostname;
@@ -82,9 +82,9 @@ export async function tutorials(skills, date, existing = existingTopics()) {
     { repo:'ollama/ollama', name:'Ollama', pattern:/^ollama (?:run|pull|list|show|stop|rm)[^\n`]+/gm },
     { repo:'lmstudio-ai/lms', name:'LM Studio', pattern:/^lms (?:get|load|chat|ls|server start)[^\n`]*/gm },
     { repo:'ggml-org/llama.cpp', name:'llama.cpp', pattern:/^(?:llama-cli|llama-server)\s[^\n`]+/gm },
-    { repo:'vercel-labs/skills', name:'Agent Skills in Claude Code', pattern:/^npx skills add [^\n`]+(?:-a|--agent) claude-code[^\n`]*/gm },
-    { repo:'vercel-labs/skills', name:'Agent Skills in Codex', pattern:/^npx skills add [^\n`]+(?:-a|--agent) codex[^\n`]*/gm },
-    { repo:'vercel-labs/skills', name:'Agent Skills in Gemini CLI', pattern:/^npx skills add [^\n`]+(?:-a|--agent) gemini-cli[^\n`]*/gm },
+    // Installer hosts are not tool names or reviewed target repositories.
+    // Their lessons come from skillTutorial(reviewedTarget), never from an
+    // invented "Agent Skills in ..." subject absent from the source.
   ]) {
     const key = `How to use ${spec.name} locally`;
     if (topicExists({key,titolo:key,slug:slug(key)},existing)) continue;

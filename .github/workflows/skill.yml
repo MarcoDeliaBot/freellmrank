@@ -21,9 +21,14 @@ on:
         description: 'Solo prova: URL di anteprima del progetto freellmrank.pages.dev per Workers AI'
         type: string
         default: ''
+      catalogo:
+        description: 'Solo prova riproducibile: 2026-11-01 usa il catalogo reale della corsa 41285105674; vuoto raccoglie quello corrente'
+        type: string
+        default: ''
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: video
@@ -40,6 +45,7 @@ jobs:
       PROVA_SKILL: ${{ inputs.skill }}
       PROVA_TUTORIAL: ${{ inputs.tutorial }}
       SCRIVI_URL: ${{ inputs.prova == true && inputs.preview_url || '' }}
+      PROVA_CATALOGO: ${{ inputs.prova == true && inputs.catalogo || '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -80,7 +86,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
           BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
+          GROQ_KEY: ${{ secrets.GROQ_KEY }}
         run: node script/skill.mjs
+      - name: P1 e P2 - risposte troncate e riserva con video reali
+        if: env.PROVA == 'true' && env.PROVA_CATALOGO == '2026-11-01' && inputs.skill == 'code-simplification'
+        run: node script/skill/prove-video.mjs
       - name: Build esistente, link e heading
         run: |
           npm run build

@@ -9,6 +9,7 @@ import { STAMPI } from './stampi/index.mjs';
 import { parla, ascolta, allinea, quando, hf } from './voce.mjs';
 import { gruppi, composizione, srt } from './sottotitoli.mjs';
 import { formatoDi } from './base.mjs';
+import { fitWindow } from './tempo.mjs';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
 const CODA = 0.45; // secondi di respiro dopo la voce di ogni scena
@@ -40,15 +41,11 @@ export async function monta(piano, dir) {
     let durVoce = parla(testo, wav);
     // Optional editorial timing contract (skills/tutorials): fit the voice to its
     // window, then hold the finished slide. Existing news plans are unchanged.
-    const fixed = piano.tempiFissi === true ? Number(sc.durata) : null;
+    const fit=fitWindow(piano,sc,durVoce);
+    const {fixed,target,speed,sustained}=fit;
     if (fixed != null) {
-      if (!(fixed >= 2 && fixed <= 60)) throw new Error(`Invalid fixed scene duration: ${fixed}`);
       // Teaching Shorts sustain narration in every beat. Fit real speech to
       // 92% of the scene, in either direction, without padding it with silence.
-      const sustained=piano.teaching && formato==='verticale' && sc.role!=='link';
-      const target = sustained ? fixed * .92 : fixed - .15;
-      const speed = durVoce / target;
-      if (speed > 1.8) throw new Error(`Narration exceeds its reading window (${speed.toFixed(2)}x)`);
       if (speed > 1 || (sustained && speed < 1)) {
         if(speed<.5)throw new Error(`Narration is too short for its teaching window (${speed.toFixed(2)}x)`);
         const fitted = wav.replace(/\.wav$/, '-fit.wav');
@@ -59,7 +56,7 @@ export async function monta(piano, dir) {
     }
     const parole = allinea(testo, ascolta(wav, d('lavoro', `t${n}`)), durVoce);
     const durata = fixed ?? +Math.max(4, durVoce + CODA).toFixed(3);
-    const out = { ...sc, n, testo, wav: `assets/voice/${n}.wav`, durVoce, durata, inizio: +inizio.toFixed(3), parole };
+    const out = { ...sc, n, testo, wav: `assets/voice/${n}.wav`, durVoce, durata, timingFit:fit, inizio: +inizio.toFixed(3), parole };
     inizio += durata;
     return out;
   });
@@ -133,7 +130,7 @@ export async function monta(piano, dir) {
   }
   fs.writeFileSync(d('index.html'), indice(scene, totale, F, musica));
   // etichetta, capitolo e titolo della scena: per i capitoli di YouTube nella descrizione (26/10/2026, script/brag/capitoli-yt.mjs)
-  fs.writeFileSync(d('tempi.json'), JSON.stringify({ totale, scene: scene.map(({ n, stampo, inizio: a, durata, durVoce, parole, testo, etichetta, capitolo, dati }) => ({ n, stampo, inizio: a, durata, durVoce, voiceStart:parole[0]?.start, voiceEnd:parole.at(-1)?.end, testo, etichetta, capitolo, titolo: dati?.titolo })) }, null, 1));
+  fs.writeFileSync(d('tempi.json'), JSON.stringify({ totale, scene: scene.map(({ n, stampo, inizio: a, durata, durVoce, timingFit, parole, testo, etichetta, capitolo, dati }) => ({ n, stampo, inizio: a, durata, durVoce, timingFit, voiceStart:parole[0]?.start, voiceEnd:parole.at(-1)?.end, testo, etichetta, capitolo, titolo: dati?.titolo })) }, null, 1));
 
   // 4. controllo e montaggio
   const controllo = hf(['lint'], { cwd: dir });

@@ -24,7 +24,7 @@ video = next(s for s in probe['streams'] if s['codec_type']=='video')
 duration = float(probe['format']['duration'])
 if (video['width'],video['height']) != (w,h):
     errors.append('wrong encoded dimensions')
-if abs(duration-times['totale']) > .15 or (vertical and abs(duration-45)>.15):
+if abs(duration-times['totale']) > .15 or (vertical and (not 14 <= duration <= 45.15 if plan.get('teaching') else abs(duration-45)>.15)):
     errors.append('wrong encoded duration')
 if not vertical and not 90 <= duration <= 240:
     errors.append('encoded long video is outside 90 seconds to 4 minutes')
