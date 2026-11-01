@@ -7,7 +7,8 @@ import { plan, validatePlan } from './video.mjs';
 import { fitWindow } from '../video-hf/tempo.mjs';
 import { runCandidates, finishNight } from './notte.mjs';
 import { extractFacts } from './fatti.mjs';
-import { auditCatalogue } from './catalogo.mjs';
+import { auditCatalogue, loadTrialCatalogue } from './catalogo.mjs';
+import { lessonFor } from './copione.mjs';
 
 function fixture() {
   const descr='Demo reviews code. It explains proposed corrections.';
@@ -46,6 +47,11 @@ test('P1 Groq uses identical prompt and cannot accept invented or technical narr
     assert.equal(card.writing.writer,'deterministic');assert.equal(card.writing.accepted,0);
   }finally{if(old===undefined)delete process.env.SCRIVI_URL;else process.env.SCRIVI_URL=old;}
 });
+test('a Workers retry refused by its cap after truncation reaches the free Groq reserve',async()=>{
+  let calls=0;
+  const card=await explain(fixture(),async()=>{if(++calls===1)return truncated;throw Object.assign(Error('daily cap'),{status:429});},{groqWriter:async messages=>valid(messages)});
+  assert.equal(calls,2);assert.equal(card.writing.writer,'groq');assert.equal(card.writing.attempts[1].status,429);
+});
 test('P2 short reserve adapts the scene before enforcing the 0.5x floor; news is unchanged',()=>{
   const p=plan(fixture(),true),scene=p.scene[1];
   const fit=fitWindow(p,scene,1.9);
@@ -82,4 +88,13 @@ test('the current pinned evergreen tutorial passes both source and teaching gate
   const card=JSON.parse(fs.readFileSync(new URL('./fixtures/ollama-2026-11-01.json',import.meta.url)));
   assert.deepEqual(validateCard(card),[]);plan(card);plan(card,true);
   const bad=structuredClone(card);bad.fonti[0].testo+='tampered';assert.ok(validateCard(bad).length);
+});
+test('the measured top20 registry has three cited actions and a compact spoken identity',()=>{
+  const data=loadTrialCatalogue('2026-11-01'),card=data.skills.find(c=>c.name==='hyperframes-registry');
+  assert.ok(data.audit.entries.some(e=>e.skill===card.name&&e.rank<=20&&e.publishable));
+  const short=plan(card,true);plan(card);
+  assert.ok(short.scene[1].voce.split(/\s+/).length<=22);
+  assert.ok(short.scene.slice(2,5).every(s=>s.evidence.length));
+  const bad=structuredClone(card);for(const f of bad.fonti){f.testo=f.testo.replace('Search is local and sends nothing.','Changed search policy.');f.sha256=digest(f.testo);}
+  assert.throws(()=>lessonFor(bad),/Teaching evidence missing/);
 });

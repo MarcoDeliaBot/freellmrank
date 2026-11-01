@@ -104,6 +104,38 @@ export function lessonFor(card) {
         s('Source','Explore the documented workflows','github.com/vercel-labs/agent-browser','Link in the description.',{role:'link',duration:5}),
       ],
     };
+  } else if(card.repository==='heygen-com/hyperframes'&&card.name==='hyperframes-registry'&&card.tipo==='skill') {
+    const editable=need('installed as editable source'),search=need('Search is local and sends nothing.');
+    const block=corpus.split('\n').find(l=>l.startsWith('- **Block**:'));
+    const component=corpus.split('\n').find(l=>l.startsWith('- **Component**:'));
+    if(!block||!component)throw Error('Registry block/component evidence missing');
+    need(card.install);need(card.example);
+    lesson={problem:'Need a video starting point?',description:'Find ready-made blocks and components, then edit their source in your project.',
+      prerequisites:'Use a HyperFrames project and read the requirements for the item you choose.',
+      check:'Compare your scene with the supplied example, then check the item in your own project.',
+      next:'Adapt the installed source to your scene and keep the complete project instructions handy.',
+      limits:'Review the installed source and any downloads before using them in your project.',
+      short:[
+        s('The problem','Need a video starting point?','Begin with an existing block or component.','Need a starting point for your next video scene?',{role:'problem',duration:3,nodes:['Your video scene','Existing item','Editable source'],quotes:[editable]}),
+        s('What it is','HyperFrames registry','Find blocks and components you can edit.','This skill finds ready-made video blocks and components. You can edit the installed source inside your own project.',{role:'identity',duration:7,nodes:['Ready-made items','Your project','Editable source'],quotes:[editable]}),
+        s('Feature 1','Search locally','The search does not send your query away.','First, search for the effect you need. Search runs locally and sends nothing, so you can choose an item from the available results.',{duration:7,nodes:['Describe the effect','Local search','Choose an item'],quotes:[search]}),
+        s('Feature 2','Start with a block','Use an editable composition as your starting point.','A block gives you a ready-made composition. Add its source to the project, then adapt the result for your scene.',{duration:7,nodes:['Ready-made block','Installed source','Your composition'],quotes:[block,editable]}),
+        s('Feature 3','Reuse a component','Bring the supplied parts into your own scene.','A component works inside an existing scene. Bring its markup, style, and script together, then follow the instructions supplied with that component.',{duration:8,nodes:['Existing scene','Reusable component','Supplied instructions'],quotes:[component]}),
+        s('Install','Add the instructions','Read the project requirements before installation.','Add the skill with the documented installer. Read the project requirements, then choose the block or component that fits the scene you want to build.',{role:'install',duration:8,code:card.install,quotes:[card.install]}),
+        s('Repository','Open the complete guide',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5}),
+      ],
+      long:[
+        s('Goal','Start from an editable item','Find an existing visual and adapt it to your project.','Start with a ready-made block or component, then edit its source. This gives your scene a concrete starting point that you can adapt to the project.',{role:'goal',duration:14,nodes:['Find an item','Install its source','Adapt your scene'],quotes:[editable]}),
+        s('Requirements','Prepare your video project','Read the item instructions before adding it to a scene.','Use the project instructions to prepare your video work. Read how the chosen item fits a composition, and keep its supplied guidance beside the scene you are editing.',{role:'prerequisites',duration:14,nodes:['Project instructions','Chosen item','Your video scene'],quotes:[block,component]}),
+        s('Installation','Add the Agent Skill','Use the repository installation command shown here.','Install the assistant instructions with the documented command. Then return to the project documentation before choosing a visual item or editing the source added to your project.',{role:'step',duration:14,code:card.install,quotes:[card.install,editable]}),
+        s('Step 1','Search for your effect','Describe the visual you need and inspect the local results.','Search for the effect that fits your scene. The search runs locally and sends nothing. Use the results to choose a concrete starting point for the work.',{role:'step',duration:14,nodes:['Desired effect','Local results','Chosen starting point'],quotes:[search]}),
+        s('Step 2','Choose a block','A block supplies a composition you can adapt.','Choose a block when you want an existing composition. Add it to the project using the documented example, then adjust its source for the scene you are building.',{role:'step',duration:14,nodes:['Existing composition','Installed block','Adapted source'],quotes:[block,editable]}),
+        s('Step 3','Fit a component into a scene','Keep the supplied markup, style and script together.','Choose a component when the visual belongs inside your own scene. Copy its supplied parts together, and follow the component instructions when connecting it to your animation.',{role:'step',duration:14,nodes:['Your existing scene','Component parts','Animation instructions'],quotes:[component]}),
+        s('Verify','Try the documented example','Compare the result with the item guidance.','Use the documented example to check the workflow in your project. Inspect the installed source, then compare the scene with the behavior and guidance supplied for that item.',{role:'verify',duration:14,code:card.example,quotes:[card.example,block,component]}),
+        s('Next steps','Make the source your own','Adapt the item while keeping its instructions available.','Continue by editing the source for your project. Keep the supplied instructions available while changing the composition, and return to them when the scene needs another reusable item.',{role:'next',duration:14,nodes:['Editable item','Project changes','Complete instructions'],quotes:[editable,component]}),
+        s('Source','Keep the reference handy',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5}),
+      ],
+    };
   } else {
     // Conservative general fallback: complete source sentences only. A source
     // too thin for three distinct facts is ineligible, rather than padded.

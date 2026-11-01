@@ -47,7 +47,7 @@ export async function explain(card, writer=scriviWorkers, {trial=false,groqWrite
       quota.error=quota.error||error.message;quota.status=error.status||quota.status||null;
       // An exhausted Workers daily cap stays a hard scope stop. Never borrow
       // another scope, and preserve the established quota-exhaustion behavior.
-      if(provider==='workers'&&error.status===429)break;
+      if(provider==='workers'&&error.status===429&&!quota.attempts.some(a=>a.truncated))break;
       // Retry Workers once only for a truncated response. Other failures can go
       // straight to the separately authorized free Groq reserve.
       if(provider==='workers'&&!attempt.truncated&&max===3200)stages.splice(1,1);
