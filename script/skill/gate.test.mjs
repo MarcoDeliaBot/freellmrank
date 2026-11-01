@@ -144,5 +144,5 @@ test('the same forbidden-word gate covers the visible label and code annotations
 test('the general skill fallback keeps a plain-language permissions scene',()=>{
   const card=fixture();card.security.warnings=[{reason:'remote-code-load',file:'SKILL.md',line:5}];
   const scene=plan(card,false).scene.find(s=>s.role==='limits');assert.ok(scene);
-  assert.match(scene.dati.testo,/internet/);assert.equal(scene.dati.testo.includes('remote-code-load'),false);
+  const visible=scene.dati.testo||scene.dati.elementi.join(' ');assert.match(visible,/internet/);assert.equal(visible.includes('remote-code-load'),false);
 });

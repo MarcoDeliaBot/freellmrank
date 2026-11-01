@@ -7,6 +7,7 @@ import {sectionTitle,screenSentence,factNodes} from './fatti.mjs';
 import {trialTutorials,skillTutorial} from './tutorial.mjs';
 import {extractProcedure} from './procedura.mjs';
 import {validateCard,digest} from './verifica.mjs';
+import {plain} from './fonti.mjs';
 import {fitWindow} from '../video-hf/tempo.mjs';
 
 const catalogue=loadTrialCatalogue('2026-11-01');
@@ -15,6 +16,7 @@ test('Q1 all 26 pinned skills keep complete screen sentences and source section 
     const lesson=lessonFor(card);if(lesson.profile!=='general')continue;
     for(const short of [false,true])assert.deepEqual(validatePlan(card,plan(card,short)),[]);
     const features=lesson.short.slice(2,5);
+    assert.ok([...lesson.short,...lesson.long].every(s=>!s.nodes||s.nodes.every(n=>s.quotes.some(q=>plain(q).includes(n)))));
     for(const scene of features){
       assert.ok(scene.title.length<=40&&!/Documented action|^\d+[.)]|^Step \d/i.test(scene.title));
       assert.ok(scene.quotes.every(q=>card.fonti.some(s=>s.testo.includes(q))));
