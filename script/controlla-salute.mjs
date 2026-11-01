@@ -17,8 +17,8 @@ export function registeredURLs(root, base) {
   }
   return [...urls, ...Object.keys(LINGUE).map(l => new URL(`/${l}/sitemap.xml`, base).href)];
 }
-export async function controllaSalute({ root = ROOT, base = 'https://freellmarena.com', fetcher = fetch, onlyPages = false } = {}) {
-  const problemi = [], rotte = [];
+export async function controllaSalute({ root = ROOT, base = 'https://freellmarena.com', fetcher = fetch, onlyPages = false, pausa = 20000 } = {}) {
+  const problemi = [];
   const prendi = (url, opts = {}) => fetcher(url, { redirect: 'follow', signal: AbortSignal.timeout(20000), headers: { 'User-Agent': 'freellmarena-salute' }, ...opts });
   let sitemapURLs = [];
   try {
@@ -30,10 +30,24 @@ export async function controllaSalute({ root = ROOT, base = 'https://freellmaren
   let registryURLs = [];
   try { registryURLs = registeredURLs(root, base); } catch (e) { problemi.push(`Registro non leggibile: ${e.message}`); }
   const pagine = [...new Set([...sitemapURLs, ...registryURLs])], sitemapSet = new Set(sitemapURLs);
-  for (let i = 0; i < pagine.length; i += 8) await Promise.all(pagine.slice(i, i + 8).map(async u => {
-    try { const r = await prendi(u, { method: 'HEAD' }); if (r.status !== 200) rotte.push(`${u} → ${r.status}`); await r.body?.cancel(); }
-    catch (e) { rotte.push(`${u} → ${e.name}`); }
-  }));
+  const misura = async u => {
+    try { const r = await prendi(u, { method: 'HEAD' }); await r.body?.cancel(); return r.status === 200 ? null : { u, esito: String(r.status), riprova: r.status >= 500 }; }
+    catch (e) { const causa = e.cause?.code || e.cause?.message; return { u, esito: causa ? `${e.name} (${causa})` : e.name, riprova: true }; }
+  };
+  const aGruppi = async (lista, quanti, lavoro) => {
+    const esiti = [];
+    for (let i = 0; i < lista.length; i += quanti) esiti.push(...await Promise.all(lista.slice(i, i + quanti).map(lavoro)));
+    return esiti.filter(Boolean);
+  };
+  let guaste = await aGruppi(pagine, 8, misura);
+  // Un errore di rete o un 5xx vale solo se si ripete: il 1/11/2026 324 errori di rete e un 500 erano spariti pochi minuti dopo,
+  // e la mail parlava di 347 problemi con soli 24 indirizzi rotti davvero. Il 404 è una risposta del sito e non si riprova.
+  const riprovate = guaste.filter(g => g.riprova).length;
+  for (let giro = 0; giro < 2 && guaste.some(g => g.riprova); giro++) {
+    await new Promise(fine => setTimeout(fine, pausa));
+    guaste = [...guaste.filter(g => !g.riprova), ...await aGruppi(guaste.filter(g => g.riprova), 4, g => misura(g.u))];
+  }
+  const rotte = guaste.map(g => `${g.u} → ${g.esito}`);
   problemi.push(...rotte.map(u => `Pagina non 200: ${u}`));
   if (!onlyPages) {
     try {
@@ -57,12 +71,12 @@ export async function controllaSalute({ root = ROOT, base = 'https://freellmaren
       } catch (e) { problemi.push(`${method} ${p}: ${e.name}`); }
     }
   }
-  return { checked: pagine.length, fromRegistry: new Set(registryURLs).size, onlyRegistry: registryURLs.filter(u => !sitemapSet.has(u)).length, rotte, problemi };
+  return { checked: pagine.length, fromRegistry: new Set(registryURLs).size, onlyRegistry: registryURLs.filter(u => !sitemapSet.has(u)).length, riprovate, rotte, problemi };
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const option = name => process.argv.find(a => a.startsWith(`--${name}=`))?.split('=').slice(1).join('=');
   const result = await controllaSalute({ root: option('radice') || ROOT, base: option('sito') || 'https://freellmarena.com', onlyPages: process.argv.includes('--solo-pagine') });
-  console.log(`Pagine controllate: ${result.checked}; registro: ${result.fromRegistry}; fuori sitemap: ${result.onlyRegistry}. Problemi: ${result.problemi.length}`);
+  console.log(`Pagine controllate: ${result.checked}; registro: ${result.fromRegistry}; fuori sitemap: ${result.onlyRegistry}; riprovate: ${result.riprovate}. Problemi: ${result.problemi.length}`);
   for (const p of result.problemi) console.log('-', p);
   if (option('json')) fs.writeFileSync(option('json'), JSON.stringify(result, null, 2) + '\n');
   if (result.problemi.length && !process.argv.includes('--prova')) {

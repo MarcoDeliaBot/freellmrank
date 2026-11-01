@@ -15,7 +15,8 @@ permissions:
 jobs:
   controllo:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # 12.500 indirizzi dal 31/10/2026: 9 minuti e mezzo, più le riprove degli errori di rete
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

@@ -49,6 +49,14 @@ for (const file of pagine) {
     }
   }
 }
+// anche i rimandi di _redirects devono arrivare a una pagina che esiste (24 indirizzi in 404 dal 25/10 al 1/11/2026)
+const fileRimandi = path.join(SITO, '_redirects');
+for (const riga of fs.existsSync(fileRimandi) ? fs.readFileSync(fileRimandi, 'utf8').split('\n') : []) {
+  const [da, arrivo] = riga.trim().split(/\s+/);
+  if (!da?.startsWith('/') || !arrivo?.startsWith('/')) continue;
+  controllati++;
+  if (!esiste(arrivo)) rotti.set(arrivo, [...(rotti.get(arrivo) || []), `_redirects (${da})`]);
+}
 console.log(`pagine ${pagine.length}, link controllati ${controllati}, rotti ${rotti.size}`);
 for (const [url, dove] of rotti) console.log(`ROTTO ${url}  (in ${dove.length} pagine, es. ${dove.slice(0, 3).join(', ')})`);
 process.exit(rotti.size ? 1 : 0);

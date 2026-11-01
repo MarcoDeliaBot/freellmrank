@@ -522,9 +522,9 @@ fs.writeFileSync(path.join(SITO, 'cerca.json'), JSON.stringify(indiceRicerca()))
 fs.writeFileSync(path.join(SITO, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${URL_SITO}/sitemap.xml\n`);
 const registryURLs = new Set(skillArchive.registry.map(p=>p.url));
 const indirizzi = pagineScritte().filter((f) => f !== '404.html').map((f) => URL_SITO + (registryURLs.has('/'+f)?'/'+f:'/' + f.replace(/index\.html$/, '').replace(/\.html$/, '')));
-// Both historically linked spellings remain in the inventory, sharing one canonical.
+// Both historically linked spellings stay in the registry, but the sitemap lists only the canonical one: /x.html is a 308 to /x.
 const sitemap = new Map(indirizzi.map(u => [u, skillArchive.registry.find(p => URL_SITO + p.url === u && p.tipo === 'mese')?.primaPubblicazione || dati.aggiornato]));
-for (const p of pubblicate.registry.filter(p => p.lingua === 'en')) sitemap.set(URL_SITO + p.url, p.ultimaVista);
+for (const p of pubblicate.registry.filter(p => p.lingua === 'en' && !p.url.endsWith('.html'))) sitemap.set(URL_SITO + p.url, p.ultimaVista);
 fs.writeFileSync(path.join(SITO, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...sitemap].map(([u, d]) => `<url><loc>${u}</loc><lastmod>${d}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 // _routes.json: con functions/_middleware.js ogni richiesta (anche un'icona) passava da una Function, più lenta e
 // contata nelle 100.000 gratis al giorno. Le Functions restano per le pagine (rimando da www e pages.dev) e /api/;

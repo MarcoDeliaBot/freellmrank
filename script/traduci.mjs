@@ -219,6 +219,16 @@ const FILE_PUBBLICATE = path.join(CARTELLA, 'pubblicate.json');
 const pubblicate = fs.existsSync(FILE_PUBBLICATE) ? JSON.parse(fs.readFileSync(FILE_PUBBLICATE, 'utf8')) : {};
 const registro = leggi(publicationRoot(), 'dati/pagine-pubblicate.json', []);
 
+// La pagina di arrivo di un rimando di _redirects deve esistere in quella lingua. Dal 25/10/2026 /it/blog/best-free-ai-models
+// rimandava a /it/best-free-ai, mai uscita perché le mancava il 14% delle frasi: 24 indirizzi in 404 in 6 lingue, scoperti il 1/11.
+// Esce subito, con le frasi mancanti in inglese, e quelle frasi vanno in testa alla coda delle traduzioni.
+const arrivi = Object.fromEntries(Object.keys(LINGUE).map((l) => [l, new Set()]));
+const fileRimandi = path.join(SITO, '_redirects');
+for (const riga of fs.existsSync(fileRimandi) ? fs.readFileSync(fileRimandi, 'utf8').split('\n') : []) {
+  const m = /^\/\S+\s+\/([a-z]{2})(\/\S+)/.exec(riga);
+  if (m && arrivi[m[1]] && html.has(fileDi(m[2]))) arrivi[m[1]].add(fileDi(m[2]));
+}
+
 // primo giro: quali pagine sono complete in ogni lingua (i link portano solo a quelle)
 const complete = {}, mancantiPer = {};
 const finto = (t) => t;
@@ -226,7 +236,7 @@ for (const l of Object.keys(LINGUE)) {
   complete[l] = new Set();
   mancantiPer[l] = new Map();
   const giaUscite = new Set(pubblicate[l] || []);
-  const obbligatorie = new Set(registro.filter(p => p.lingua === l).map(p => filePerURL(p.url).replace(new RegExp(`^${l}/`), '')));
+  const obbligatorie = new Set([...registro.filter(p => p.lingua === l).map(p => filePerURL(p.url).replace(new RegExp(`^${l}/`), '')), ...arrivi[l]]);
   for (const f of pagine) {
     const { mancanti, frasi } = traduciPagina(html.get(f), dizionari[l], finto);
     if (obbligatorie.has(f) || (mancanti.size < frasi && (mancanti.size <= Math.max(3, frasi * 0.03) || giaUscite.has(f)))) complete[l].add(f);
@@ -321,7 +331,7 @@ for (const f of pagine) {
   const h = html.get(f);
   const testa = (h.match(TESTA) || []).join('\n');
   for (const k of traduciPagina(testa, {}, finto).mancanti) pesa(k, principale(f) ? 3 : 2);
-  if (principale(f)) for (const k of traduciPagina(h, {}, finto).mancanti) pesa(k, 1);
+  if (principale(f)) for (const k of traduciPagina(h, {}, finto).mancanti) pesa(k, Object.values(arrivi).some((s) => s.has(f)) ? 3 : 1);
 }
 fs.mkdirSync(path.join(CARTELLA, 'mancanti'), { recursive: true });
 for (const l of Object.keys(LINGUE)) {
@@ -335,7 +345,7 @@ if (fs.existsSync(fileSitemap)) {
   const urls = new Map([...fs.readFileSync(fileSitemap, 'utf8').matchAll(/<url><loc>([^<]+)<\/loc>(?:<lastmod>([^<]+)<\/lastmod>)?<\/url>/g)].map(m => [m[1], m[2]]));
   const date = JSON.parse(fs.readFileSync(path.join(SITO, 'data.json'), 'utf8')).aggiornato;
   for (const l of Object.keys(LINGUE)) for (const f of complete[l]) if (!f.startsWith('cat/')) urls.set(urlDi(f, l), date);
-  for (const p of registro) urls.set(URL_SITO + p.url, p.ultimaVista);
+  for (const p of registro) if (!p.url.endsWith('.html')) urls.set(URL_SITO + p.url, p.ultimaVista);
   const xml = entries => `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.map(([u, d]) => `<url><loc>${u}</loc><lastmod>${d || date}</lastmod></url>`).join('\n')}\n</urlset>\n`;
   fs.writeFileSync(fileSitemap, xml([...urls]));
   for (const l of Object.keys(LINGUE)) fs.writeFileSync(path.join(SITO, l, 'sitemap.xml'), xml([...urls].filter(([u]) => u.startsWith(`${URL_SITO}/${l}/`))));

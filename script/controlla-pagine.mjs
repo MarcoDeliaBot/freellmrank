@@ -1,5 +1,5 @@
 // Build gate: permanent inventory, self canonicals, one H1, title/H1, heading order,
-// one keyword owner per language and every historical URL in the sitemap.
+// one keyword owner per language and every historical canonical URL in the sitemap.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,7 +12,8 @@ export function controllaPubblicate(root = publicationRoot(), output = SITO) {
   const errors = [], files = new Set(registry.map(p => filePerURL(p.url))), keywords = new Map();
   const sitemap = fs.readFileSync(path.join(output, 'sitemap.xml'), 'utf8');
   const listed = new Map([...sitemap.matchAll(/<url><loc>([^<]+)<\/loc><lastmod>([^<]+)<\/lastmod><\/url>/g)].map(m => [m[1], m[2]]));
-  for (const p of registry) if (!/^\d{4}-\d{2}-\d{2}$/.test(listed.get(URL_SITO + p.url) || '')) errors.push(`${p.url}: missing sitemap/lastmod`);
+  for (const p of registry) if (!p.url.endsWith('.html') && !/^\d{4}-\d{2}-\d{2}$/.test(listed.get(URL_SITO + p.url) || '')) errors.push(`${p.url}: missing sitemap/lastmod`);
+  for (const url of listed.keys()) if (url.endsWith('.html')) { errors.push(`${url}: the sitemap lists only canonical URLs`); break; }
   for (const file of files) {
     const html = fs.readFileSync(path.join(output, file), 'utf8'), main = /<main\b[^>]*>([\s\S]*?)<\/main>/.exec(html)?.[1] || '';
     const h = [...main.matchAll(/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>/g)];
