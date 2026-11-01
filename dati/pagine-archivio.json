@@ -20120,6 +20120,42 @@
     "tipo": "News"
    },
    "data": "2026-11-01"
+  },
+  "/blog/news-2026-11-01-nvidia-considers-co-signing-debt-for-nscale-s-west-virginia-ai-data-ce.html": {
+   "post": {
+    "slug": "news-2026-11-01-nvidia-considers-co-signing-debt-for-nscale-s-west-virginia-ai-data-ce",
+    "titolo": "Nvidia considers co‑signing debt for Nscale’s West Virginia AI data centre",
+    "descr": "Nvidia may guarantee billions in loans for Nscale’s Anthropic‑backed data centre, deepening its financial ties to the project.",
+    "data": "2026-11-01",
+    "tema": "Business",
+    "corpo": "Nvidia is in talks to act as a cosigner for debt financing on Nscale’s planned AI data centre in West Virginia, according to The Information and Bloomberg.\n\nThe arrangement would provide a residual‑value guarantee, stepping in if Nscale defaults on construction payments and helping to find a buyer or new tenant for the facility.\n\nNscale seeks a public valuation of up to $35 billion, but has faced challenges including limited chip deployment and construction site runoff that flooded nearby homes.\n\nNvidia’s prior support for cloud providers has focused on leases and chip purchases; this would be its first involvement in construction financing, adding to roughly $170 billion in sector investments and a $1 billion convertible financing commitment to Nscale made in September.\n\n## What it means for you\n\nFor AI users, Nvidia’s backing could keep the West Virginia facility on schedule, preserving access to Vera Rubin‑based compute capacity. For developers of free or locally hosted models, the move highlights the growing reliance on large chip makers for infrastructure, underscoring the need for diversified, cost‑effective hardware options.\n\n## Sources\n\n- [Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia](https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/), TechCrunch, 31 Oct 2026\n- [S-1](https://www.sec.gov/Archives/edgar/data/2110365/000119312526395475/ck0002110365-20260918.htm), sec.gov (official), 18 Sept 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-01-nvidia-considers-co-signing-debt-for-nscale-s-west-virginia-ai-data-ce).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-01"
+  },
+  "/blog/news-2026-11-01-openai-releases-fair-use-court-brief-excerpts-to-aid-ai-training.html": {
+   "post": {
+    "slug": "news-2026-11-01-openai-releases-fair-use-court-brief-excerpts-to-aid-ai-training",
+    "titolo": "OpenAI releases fair‑use court brief excerpts to aid AI training",
+    "descr": "OpenAI shares excerpts from court briefs showing how fair use benefits AI training, amid a thriving market of free and paid chat models.",
+    "data": "2026-11-01",
+    "tema": "Policy",
+    "corpo": "OpenAI announced that it will publish excerpts from court briefs submitted by creators, academics, accessibility advocates and legal experts.\n\nThe excerpts illustrate how fair use can support AI training and foster innovation.\n\nThe move comes as the AI chat model market shows strong competition, with Kimi K3 (Max) leading free chat rankings and Gemini 4 Carbon (High) topping paid models.\n\nOpenAI says the shared material demonstrates the legal foundation for using copyrighted content in model development.\n\nThe organization hopes the transparency will guide developers and policymakers in navigating fair‑use considerations.\n\n## What it means for you\n\nFor AI users, clearer fair‑use guidance can reduce uncertainty about data sources and improve model quality. For developers of free or local models, the shared briefs provide concrete legal arguments that support using publicly available content without costly licensing.\n\n## On FreeLLMArena\n\nFrom our rankings on 1 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [Fair use benefits everyone](https://openai.com/index/fair-use-benefits-everyone), OpenAI (official), 30 Oct 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-01-openai-releases-fair-use-court-brief-excerpts-to-aid-ai-training).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-01"
+  },
+  "/blog/news-2026-11-01-spacexsi-releases-grok-bot-1-0-0-with-upcoming-teams-discord-and-texti.html": {
+   "post": {
+    "slug": "news-2026-11-01-spacexsi-releases-grok-bot-1-0-0-with-upcoming-teams-discord-and-texti",
+    "titolo": "SpaceXSI releases Grok Bot 1.0.0 with upcoming Teams, Discord and texting features",
+    "descr": "SpaceXSI makes its autonomous AI teammate Grok Bot 1.0.0 available for download, previewing integration with Microsoft Teams, Discord and native messaging.",
+    "data": "2026-11-01",
+    "tema": "Software",
+    "corpo": "The bot already works with Slack and can trigger routines from Teams messages, while a dedicated Tasks tab is being built to show ongoing processes outside chat.\n\nDevelopers have spotted a new Texting tab in Settings that includes permissions for the bot to read and send text messages, hinting at future iMessage or RCS support.\n\nEarly indications also show Discord integration is under exploration, allowing users to add a Discord bot token and receive replies in servers and DMs.\n\nGrok Bot is offered in beta for SuperGrok, SuperGrok Plus, SuperGrok Heavy, Cursor Pro tiers and Cursor Teams subscribers on desktop and iOS, with separate usage limits from existing plans.\n\n## What it means for you\n\nFor AI users, Grok Bot provides a cloud‑based teammate that can act across apps without requiring custom workflows, potentially speeding up routine tasks. Those preferring free or locally hosted models may view Grok Bot as a commercial alternative that leverages cloud resources rather than on‑device inference.\n\n## Sources\n\n- [SpaceXSI prepares Texting and Tasks hub support for Grok Bot](https://www.testingcatalog.com/spacexsi-prepares-texting-and-tasks-hub-support-for-grok-bot/), TestingCatalog, 30 Oct 2026\n- [Introducing Grok Bot | SpaceXSI](https://x.ai/news/introducing-grok-bot?ref=testingcatalog.com), x.ai (official), 11 Aug 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-01-spacexsi-releases-grok-bot-1-0-0-with-upcoming-teams-discord-and-texti).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-01"
   }
  },
  "ricostruzione": {

@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-01-openai-releases-fair-use-court-brief-excerpts-to-aid-ai-training",
+ "titolo": "OpenAI releases fair‑use court brief excerpts to aid AI training",
+ "descr": "OpenAI shares excerpts from court briefs showing how fair use benefits AI training, amid a thriving market of free and paid chat models.",
+ "tema": "Policy",
+ "paragrafi": [
+  "OpenAI announced that it will publish excerpts from court briefs submitted by creators, academics, accessibility advocates and legal experts.",
+  "The excerpts illustrate how fair use can support AI training and foster innovation.",
+  "The move comes as the AI chat model market shows strong competition, with Kimi K3 (Max) leading free chat rankings and Gemini 4 Carbon (High) topping paid models.",
+  "OpenAI says the shared material demonstrates the legal foundation for using copyrighted content in model development.",
+  "The organization hopes the transparency will guide developers and policymakers in navigating fair‑use considerations."
+ ],
+ "perche": [
+  "For AI users, clearer fair‑use guidance can reduce uncertainty about data sources and improve model quality. For developers of free or local models, the shared briefs provide concrete legal arguments that support using publicly available content without costly licensing."
+ ],
+ "pubblicato": "2026-11-01",
+ "titoloFonte": "Fair use benefits everyone",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/fair-use-benefits-everyone",
+   "titolo": "Fair use benefits everyone",
+   "ufficiale": true,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 0
+}
