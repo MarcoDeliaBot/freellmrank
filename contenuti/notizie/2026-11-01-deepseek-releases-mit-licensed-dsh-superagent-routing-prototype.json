@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-01-deepseek-releases-mit-licensed-dsh-superagent-routing-prototype",
+ "titolo": "DeepSeek releases MIT‑licensed dsh‑superagent routing prototype",
+ "descr": "DeepSeek announced the release of dsh‑superagent, an MIT‑licensed research prototype designed to turn GitHub and Feishu requests into parallel worker sessions.",
+ "tema": "Research",
+ "paragrafi": [
+  "DeepSeek announced the release of dsh‑superagent, an MIT‑licensed research prototype designed to turn GitHub and Feishu requests into parallel worker sessions.",
+  "In DeepSeek’s internal simulation, the 95th‑percentile task completion time dropped from 29.5 minutes to 15.7 minutes when using the router‑worker system.",
+  "The code and documentation are hosted on GitHub under the deepseek‑ai organization, providing detailed definitions of each domain concept and their governing rules."
+ ],
+ "perche": [
+  "The open‑source release gives developers a blueprint for building parallel coding agents that can speed up request handling. Users of free or locally run models can integrate the router‑worker architecture without licensing fees, potentially improving productivity in AI‑assisted development workflows."
+ ],
+ "pubblicato": "2026-11-01",
+ "titoloFonte": "DeepSeek Open-Sources dsh-superagent, a Router-Worker Coding Agent",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/01/deepseek-dsh-superagent-router-worker-coding-agent/",
+   "titolo": "DeepSeek Open-Sources dsh-superagent, a Router-Worker Coding Agent",
+   "ufficiale": false,
+   "data": "2026-11-01"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/001-domain.md",
+   "titolo": "dsh-superagent-prototype/docs/001-domain.md at main · deepseek-ai/dsh-superagent-prototype · GitHub",
+   "ufficiale": true,
+   "data": "2026-11-01"
+  }
+ ],
+ "frasiTolte": 2
+}

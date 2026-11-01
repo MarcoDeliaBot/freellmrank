@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-01-baidu-launches-unlimited-ocr-2-on-hugging-face-with-unlimited-horizon-",
+ "titolo": "Baidu launches Unlimited-OCR-2 on Hugging Face with unlimited‑horizon parsing",
+ "descr": "The new OCR model uses Sparse Reference Sliding Window Attention to handle ultra‑long documents and is available on Hugging Face, ModelScope and Baidu Cloud.",
+ "tema": "Research",
+ "paragrafi": [
+  "Baidu released Unlimited-OCR-2 on Hugging Face on 28 October 2026. The model page shows 109,519 downloads and 496 likes.",
+  "Unlimited-OCR-2 introduces Sparse Reference Sliding Window Attention (SR‑SWA), which limits attention to a fixed set of 512 reference tokens regardless of document length.",
+  "The model claims state‑of‑the‑art results on long‑document benchmarks such as MPDocBench and the newly released MarathonDocBench, which targets hundred‑page parsing.",
+  "It is distributed under an MIT license and can be run with Transformers or the recommended SGLang serving stack.",
+  "Baidu made the model available on ModelScope, Baidu Cloud and a Hugging Face Space demo created by AK."
+ ],
+ "perche": [
+  "Unlimited-OCR-2 lets developers parse multi‑page documents in a single request, reducing latency and memory use for very long texts."
+ ],
+ "pubblicato": "2026-11-01",
+ "titoloFonte": "Baidu releases Unlimited-OCR-2 on Hugging Face",
+ "fonti": [
+  {
+   "nome": "Hugging Face trending",
+   "url": "https://huggingface.co/baidu/Unlimited-OCR-2",
+   "titolo": "Baidu releases Unlimited-OCR-2 on Hugging Face",
+   "ufficiale": true,
+   "data": "2026-10-26"
+  }
+ ],
+ "frasiTolte": 2
+}

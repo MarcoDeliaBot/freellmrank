@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-01-openai-expands-teen-safety-safeguards-in-chatgpt",
+ "titolo": "OpenAI expands teen safety safeguards in ChatGPT",
+ "descr": "OpenAI adds stronger violence prevention, earlier interventions, and public safety reporting for teen users of ChatGPT.",
+ "tema": "Policy",
+ "paragrafi": [
+  "The company is strengthening violence prevention with expanded safeguards that trigger earlier interventions when risky content is detected.",
+  "A new commitment to public safety reporting will allow OpenAI to share information about harmful interactions with external partners and regulators.",
+  "These measures aim to reduce exposure of minors to violent or harmful material while using the AI chat service."
+ ],
+ "perche": [
+  "For AI users, the updated safeguards mean a safer chat experience for younger audiences and greater transparency about safety incidents. For those seeking free or locally hosted models, the move highlights the growing emphasis on built‑in protection features that may not be present in open‑source alternatives."
+ ],
+ "pubblicato": "2026-11-01",
+ "titoloFonte": "Community safety report and new protections for teens",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+   "titolo": "Community safety report and new protections for teens",
+   "ufficiale": true,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 1
+}
