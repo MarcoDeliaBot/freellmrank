@@ -160,5 +160,13 @@
  "install-ollama-run-ai-on-your-pc": {
   "lungo": "tutorial-ollama",
   "breve": "breve-tutorial-ollama-privato"
+ },
+ "news-2026-10-30-tencent-releases-youtu-parsing-omni-a-5b-omni-modal-parsing-model": {
+  "lungo": "notizia-tencent-releases-youtu-parsing-omni-a-5b-omni-modal-pars",
+  "breve": "breve-tencent-releases-youtu-parsing-omni-a-5b-omni-modal-pars"
+ },
+ "news-2026-10-31-patch-gg-releases-pixelfx-library-with-244-pixel-art-effects-and-claud": {
+  "lungo": "notizia-patch-gg-releases-pixelfx-library-with-244-pixel-art-eff",
+  "breve": "breve-patch-gg-releases-pixelfx-library-with-244-pixel-art-eff"
  }
 }
