@@ -48,16 +48,16 @@ export function pagineSkillTutorial(dati, blog) {
     const seenCode=new Set();
     const once=t=>{if(!t||seenCode.has(t))return '';seenCode.add(t);return code(t);};
     const verification=lesson.long.find(s=>s.role==='verify');
-    const publicText=[lesson.description,lesson.prerequisites,lesson.check,lesson.next,lesson.limits,...teaching.flatMap(s=>[s.title,s.text])];
+    const publicText=[lesson.description,lesson.prerequisites,lesson.check,lesson.next,lesson.limits,...teaching.flatMap(s=>[s.title,s.text].filter(Boolean))];
     const wording=publicText.flatMap(t=>textIssues(t,{tool}));
     if(wording.length)throw Error(`${c.slug}: page wording gate: ${wording.join('; ')}`);
     const body = [videoDelPost(`${c.tipo}-${c.slug}`,c.titolo,{breveRelease:true,legami:load(context.root,'contenuti/legami-video.json',{})}),
       section(skill?'What it does':'What you will build',p(lesson.description)),
       section('What you need',p(lesson.prerequisites)),
       ...(c.audience?.length?[section('Who it is for',p(`The README names these assistants: ${c.audience.join(', ')}.`))]:[]),
-      section(skill?'Setup and use':'Step by step',`<ol>${teaching.map((s,i)=>`<li><h3>Step ${i+1}. ${esc(s.title)}</h3>${p(s.text)}${once(s.code)}${s.result?p(s.result):''}</li>`).join('')}</ol>`),
+      section(skill?'Setup and use':'Step by step',`<ol>${teaching.map((s,i)=>`<li><h3>Step ${i+1}. ${esc(s.title)}</h3>${p(s.text||s.elements?.join(' ')||s.voice)}${once(s.code)}${s.result?p(s.result):''}</li>`).join('')}</ol>`),
       section('Check that it works',p(lesson.check)+once(verification?.code)),
-      ...(skill?[section('Features explained',lesson.short.slice(2,5).map(f=>`<article><h3>${esc(f.title)}</h3>${p(f.text)}</article>`).join(''))]:[]),
+      ...(skill?[section('Features explained',lesson.short.slice(2,5).map(f=>`<article><h3>${esc(f.title)}</h3>${p(f.text||f.elements?.join(' ')||f.voice)}</article>`).join(''))]:[]),
       section('Next steps',p(lesson.next)),
       section('Limits',p(lesson.limits)),
       ...(c.hardware ? [section('Hardware requirements',p(c.hardware.note)+p(c.hardware.parameters ? `The site records ${c.hardware.parameters} parameters on ${c.hardware.date}. This is not a measured RAM requirement.` : 'No measured RAM requirement is available.')+`<p><a href="/home.html">Check your machine in the Run at home simulator</a></p>`)] : []),

@@ -12,7 +12,7 @@ import { STAMPI, STAMPI_NOTIZIE } from '../video-hf/stampi/index.mjs';
 import { duplicateIssues, textIssues } from './copione.mjs';
 
 function fixture() {
-  const raw='Demo teaches agents to review a proposed change.\nnpx skills add owner/demo\nReview the project.\nRead the request carefully.\nCheck the proposed changes.\nReport the review findings.';
+  const raw='Demo teaches agents to review a proposed change.\nnpx skills add owner/demo\nReview the project.\nRead the request carefully.\nCheck the proposed changes.\nReport the review findings.\nReview each finding against the original request before you share the finished review.';
   return {tipo:'skill',slug:'owner-demo',key:'agent skill owner/demo',name:'Demo',repository:'owner/demo',skillPath:'skills/demo/SKILL.md',date:'2026-10-30',commit:'a'.repeat(40),
     titolo:'Demo: Agent Skill',descr:'Demo teaches agents to review a proposed change.',problem:'review a proposed change',install:'npx skills add owner/demo',example:'Review the project.',
     features:['Read the request carefully.','Check the proposed changes.','Report the review findings.'].map(s=>({label:s,detail:s})),
@@ -128,11 +128,12 @@ test('speech and public text reject internal phrases, technical strings and colo
   assert.ok(textIssues('Install the skill.',{tool:true}).length);
   assert.deepEqual(textIssues('Download the model and start a conversation.',{voice:true,tool:true}),[]);
 });
-test('recipe gate rejects a generic Feature identity label and missing diagrams',()=>{
+test('recipe gate rejects a generic Feature identity label and unsupported panels',()=>{
   const card=fixture(),p=plan(card,true);p.scene[1].etichetta='Feature';
   assert.ok(validatePlan(card,p).some(e=>e.includes('identity')));
-  for(const scene of p.scene.slice(2,5))scene.stampo='passo';
-  assert.ok(validatePlan(card,p).some(e=>e.includes('three features')));
+  p.scene[1].etichetta='What it is';
+  for(const scene of p.scene.slice(2,5)){scene.stampo='passo';delete scene.dati.elementi;delete scene.dati.comando;}
+  assert.ok(validatePlan(card,p).some(e=>e.includes('visual code or fact panel')));
 });
 test('the same forbidden-word gate covers the visible label and code annotations',()=>{
   const card=fixture(),p=plan(card,true);p.scene[3].etichetta='This pipeline';
@@ -143,5 +144,5 @@ test('the same forbidden-word gate covers the visible label and code annotations
 test('the general skill fallback keeps a plain-language permissions scene',()=>{
   const card=fixture();card.security.warnings=[{reason:'remote-code-load',file:'SKILL.md',line:5}];
   const scene=plan(card,false).scene.find(s=>s.role==='limits');assert.ok(scene);
-  assert.match(scene.dati.testo,/internet/);assert.equal(scene.dati.testo.includes('remote-code-load'),false);
+  const visible=scene.dati.testo||scene.dati.elementi.join(' ');assert.match(visible,/internet/);assert.equal(visible.includes('remote-code-load'),false);
 });

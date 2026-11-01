@@ -1,8 +1,39 @@
 import fs from 'node:fs';
+import { gunzipSync } from 'node:zlib';
 import path from 'node:path';
 import { api, text, read, plain, slug, ROOT } from './fonti.mjs';
 import { digest, GENERIC, topicExists, validateCard } from './verifica.mjs';
 import { rank } from './raccogli.mjs';
+import { extractFacts } from './fatti.mjs';
+import { extractProcedure } from './procedura.mjs';
+
+export function proceduralTool({repository,commit,fonti,stars},name,date) {
+  const seed={tipo:'tutorial',repository,commit,fonti};
+  const facts=extractFacts(seed);
+  if(facts.length<3)throw Error('Official documentation lacks three prose facts');
+  const raw=fonti.map(f=>f.testo).join('\n');
+  const install=repository==='lmstudio-ai/lms'?'npx lmstudio install-cli':raw.match(/^brew install llama\.cpp$/m)?.[0];
+  if(!install||!raw.includes(install))throw Error('Documented safe installation missing');
+  const card={...seed,name,date,slug:slug(`how to use ${name} locally`),key:`How to use ${name} locally`,titolo:`How to use ${name} locally`,descr:facts[0].detail,
+    problem:`Need ${name}?`,problemEvidence:name,install,example:install,audience:[],limits:[GENERIC[6]],screenshots:[],claims:[facts[0].detail],features:facts.slice(0,3).map(f=>({label:f.label,detail:f.detail,evidence:{quote:f.quote,url:f.url}})),selection:{reason:'Official pinned usage procedure',score:2e12+stars}};
+  if(repository==='lmstudio-ai/lms'){
+    const quote=raw.match(/`lms` ships with [^\n]+/)?.[0];
+    if(!quote)throw Error('LM Studio setup requirement missing');
+    card.introduction={quote,voice:'LM Studio includes a command line tool for working with local models. Its documented commands inspect the application, list models, and load a model.',text:'Work with local models from the command line.'};
+    // The introduction also cites the operations it summarizes.
+    card.introduction.quote=fonti[0].testo.slice(fonti[0].testo.indexOf('# Installation'),fonti[0].testo.indexOf('## Local app selection'));
+    card.requirements={quote,voice:'Use LM Studio version zero point two point twenty two or newer. The command line tool ships with that application.',text:'LM Studio 0.2.22 or newer includes the tool.'};
+  }else{
+    const quote=raw.match(/The main goal of `llama\.cpp`[^\n]+\n[^\n]+/)?.[0];
+    const setup=raw.match(/## Homebrew \(Mac and Linux\)[\s\S]*?```sh\n[^`]+```/)?.[0];
+    if(!quote||!setup)throw Error('Local inference goal or Homebrew platforms missing');
+    card.introduction={quote,voice:'This tool runs language models locally and in the cloud. It supports a wide range of hardware with minimal setup.',text:'Run language models locally or in the cloud.'};
+    card.requirements={quote:setup,voice:'This installation example uses Homebrew on Mac or Linux. Choose another installation method from the documentation if you use a different system.',text:'This installation example uses Mac or Linux.'};
+  }
+  card.steps=extractProcedure(card).map(s=>({title:s.title,text:s.text,command:s.code,evidence:{quote:s.quote,url:s.url}}));
+  card.example=card.steps.find(s=>s.command)?.command||install;
+  const errors=validateCard(card);if(errors.length)throw Error(errors.join('; '));return card;
+}
 
 export function existingTopics() {
   const out = [];
@@ -35,7 +66,7 @@ export function skillTutorial(skill, date) {
     ], selection: { reason: 'Measured skill popularity', metrics: skill.metrics } };
 }
 
-function documentedTutorial({ name, command, url, raw, date, steps, features, descr, score, key, hardware, officialInstaller=false, problemEvidence=name }) {
+export function documentedTutorial({ name, command, url, raw, date, steps, features, descr, score, key, hardware, officialInstaller=false, problemEvidence=name }) {
   const sourceURL=new URL(url);
   const githubSource=['github.com','raw.githubusercontent.com'].includes(sourceURL.hostname);
   const repository=githubSource?sourceURL.pathname.slice(1).split('/').slice(0,2).join('/'):sourceURL.hostname;
@@ -50,12 +81,19 @@ function documentedTutorial({ name, command, url, raw, date, steps, features, de
   return card;
 }
 
+export function trialTutorials(date){
+  if(date!=='2026-11-01')throw Error('Unknown pinned tutorial catalogue');
+  return JSON.parse(gunzipSync(fs.readFileSync(new URL('./fixtures/tutorials-2026-11-01.json.gz',import.meta.url))));
+}
+
 export async function tutorials(skills, date, existing = existingTopics()) {
   const candidates = [];
+  const pinned=process.env.PROVA==='true'&&process.env.PROVA_CATALOGO==='2026-11-01';
+  if(pinned)candidates.push(...trialTutorials(date),JSON.parse(fs.readFileSync(new URL('./fixtures/ollama-2026-11-01.json',import.meta.url))));
   // New/free models are considered using the site's measured data. Publish only
   // when their own model card provides an exact local command; never invent tags.
   const models = [...read('dati/nuovi.json', []), ...read('dati/piccoli.json', [])].filter(m => !m.gated && m.repo && m.cat?.includes('chat')).sort((a,b) => (b.creato || '').localeCompare(a.creato || '') || (b.download || 0) - (a.download || 0));
-  for (const m of [...new Map(models.map(m => [m.repo,m])).values()].slice(0,8)) {
+  for (const m of [...new Map((pinned?[]:models).map(m => [m.repo,m])).values()].slice(0,8)) {
     const key = `How to run ${m.nome} locally for free`;
     if (topicExists({ key, titolo: key, slug: slug(key) }, existing)) continue;
     try {
@@ -78,14 +116,14 @@ export async function tutorials(skills, date, existing = existingTopics()) {
     if (!topicExists(c,existing)&&!conflictsRecent(c,existing,date)) candidates.push(c);
   }
   // Evergreen fallbacks use exact commands from official maintained documentation.
-  for (const spec of [
+  for (const spec of (pinned?[]:[
     { repo:'ollama/ollama', name:'Ollama', pattern:/^ollama (?:run|pull|list|show|stop|rm)[^\n`]+/gm },
     { repo:'lmstudio-ai/lms', name:'LM Studio', pattern:/^lms (?:get|load|chat|ls|server start)[^\n`]*/gm },
     { repo:'ggml-org/llama.cpp', name:'llama.cpp', pattern:/^(?:llama-cli|llama-server)\s[^\n`]+/gm },
-    { repo:'vercel-labs/skills', name:'Agent Skills in Claude Code', pattern:/^npx skills add [^\n`]+(?:-a|--agent) claude-code[^\n`]*/gm },
-    { repo:'vercel-labs/skills', name:'Agent Skills in Codex', pattern:/^npx skills add [^\n`]+(?:-a|--agent) codex[^\n`]*/gm },
-    { repo:'vercel-labs/skills', name:'Agent Skills in Gemini CLI', pattern:/^npx skills add [^\n`]+(?:-a|--agent) gemini-cli[^\n`]*/gm },
-  ]) {
+    // Installer hosts are not tool names or reviewed target repositories.
+    // Their lessons come from skillTutorial(reviewedTarget), never from an
+    // invented "Agent Skills in ..." subject absent from the source.
+  ])) {
     const key = `How to use ${spec.name} locally`;
     if (topicExists({key,titolo:key,slug:slug(key)},existing)) continue;
     try {
@@ -111,13 +149,13 @@ export async function tutorials(skills, date, existing = existingTopics()) {
         candidates.push(card);
         continue;
       }
-      const commands = [...raw.matchAll(spec.pattern)].map(m=>m[0].trim()).filter(c=> !/[<>|;&]|\.\.\.|\$\(/.test(c));
-      if (!commands.length) continue;
-      const paragraphs = raw.split('\n').map(l=>plain(l.replace(/^[-*#]+\s*/,''))).filter(s=>s.length>30 && s.length<180 && !/^\||https?:|!|\[|<|npx|curl|irm/.test(s));
-      if (paragraphs.length<4) continue;
-      const features = paragraphs.slice(1,4).map(detail=>({ label:detail.split(' ').slice(0,6).join(' '),detail }));
-      candidates.push(documentedTutorial({name:spec.name, command:commands[0], url, raw, date, key, descr:paragraphs[0], features, score:2e12+meta.stargazers_count,
-        steps:[{title:'Install the official tool',text:GENERIC[2]},...commands.slice(0,3).map(command=>({title:'Use the documented command',text:GENERIC[9],command})),{title:'Check the result',text:GENERIC[7]}] }));
+      const fonti=[source(url,raw)];
+      if(spec.repo==='ggml-org/llama.cpp')for(const file of ['docs/install.md','tools/server/README.md']){
+        const extraURL=`https://raw.githubusercontent.com/${spec.repo}/${commit.sha}/${file}`;
+        fonti.push(source(extraURL,await text(extraURL)));
+      }
+      candidates.push(proceduralTool({repository:spec.repo,commit:commit.sha,fonti,stars:meta.stargazers_count},spec.name,date));
+      continue;
     } catch (e) { console.log(`Evergreen skipped ${spec.name}: ${e.message.slice(0,160)}`); }
   }
   return candidates.sort((a,b)=>(b.selection?.score ?? (b.skillSource?1e9:0))-(a.selection?.score ?? (a.skillSource?1e9:0))).filter(c=> !topicExists(c,existing)&&!conflictsRecent(c,existing,date));

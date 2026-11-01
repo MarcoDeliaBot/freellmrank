@@ -10,6 +10,11 @@ import { read, write, ROOT } from './skill/fonti.mjs';
 import { digest, topicExists } from './skill/verifica.mjs';
 import { plan } from './skill/video.mjs';
 import { prepareArchive } from './skill/archivio.mjs';
+import { runCandidates, finishNight } from './skill/notte.mjs';
+import { apriIssue } from './bozze.mjs';
+import { teachingCard } from './skill/fatti.mjs';
+import { textIssues } from './skill/copione.mjs';
+import { loadTrialCatalogue, auditCatalogue } from './skill/catalogo.mjs';
 
 function run(command,args) {
   const r=spawnSync(command,args,{cwd:ROOT,encoding:'utf8',timeout:300000,maxBuffer:8e6});
@@ -46,30 +51,38 @@ if(args.includes('--pubblica')) {
   console.log(`Published ${delivery.completed.length*2} verified releases`);
   process.exit(0);
 }
-const summary={prova:!!prova,started:new Date().toISOString(),completed:[],errors:[]};
+const summary={prova:!!prova,started:new Date().toISOString(),completed:[],rejected:[],errors:[]};
 try {
-  const catalogue=offline?read('dati/skill.json'):await collect();
+  if(process.env.PROVA_CATALOGO&&!prova)throw Error('Pinned trial catalogue is disabled in production');
+  const catalogue=process.env.PROVA_CATALOGO?loadTrialCatalogue(process.env.PROVA_CATALOGO):(offline?read('dati/skill.json'):await collect());
   if(!catalogue)throw Error('missing reviewed catalogue');
+  catalogue.skills=catalogue.skills.map(c=>teachingCard(c,t=>!textIssues(t,{voice:true}).length));
+  write('dati/skill.json',catalogue);
+  if(process.env.PROVA_CATALOGO)write('video/skill-tutorial/catalogo-prima-dopo.json',auditCatalogue());
   const existing=existingTopics();
-  const teaches=c=>{try{plan(c,false);plan(c,true);return true;}catch(error){console.log(`Teaching skipped ${c.name}: ${error.message.slice(0,200)}`);return false;}};
   const wanted=prova?process.env.PROVA_SKILL:null;
   const eligible=catalogue.skills.filter(c=>!topicExists(c,existing)&&(!wanted||c.name===wanted));
-  const skillCards=eligible.filter(teaches).slice(0,count);
   if(wanted&&!catalogue.audit.entries.some(e=>e.skill===wanted&&['passed','warning'].includes(e.status)))throw Error('Requested trial skill is not eligible in the measured top20');
   const requestedTutorial=prova?process.env.PROVA_TUTORIAL:null;
-  const tutorialCards=(await tutorials(catalogue.skills,catalogue.aggiornato,[...existing,...skillCards])).filter(c=>(!requestedTutorial||c.name===requestedTutorial)&&teaches(c)).slice(0,1);
-  if(prova&&(skillCards.length!==1||tutorialCards.length!==1))throw Error('Trial requires one eligible skill and one eligible tutorial');
-  // No content is published until BOTH formats of EVERY selected card pass.
   const staged=[];
-  for(const candidate of [...skillCards,...tutorialCards]) {
+  const processCard=async candidate=>{
     const {category,archiveMetrics,retirement,licenseReview,revoked,revokedOn,...lessonCandidate}=candidate;
+    plan(lessonCandidate,false);plan(lessonCandidate,true);
     const card=await explain(lessonCandidate,undefined,{trial:prova});
     const result=await render(card,path.join(folder,`${card.tipo}-${card.slug}`));
     if(result.cardHash!==digest(JSON.stringify(card))||result.evidence.length!==2||result.evidence.some(e=>!e.qa.passed))throw Error('incomplete video evidence');
     staged.push({...card,videoVerified:{date:new Date().toISOString(),cardHash:result.cardHash,formats:result.evidence.map(e=>({release:e.release,seconds:e.seconds,frames:e.qa.frames}))}});
-    summary.completed.push({tipo:card.tipo,slug:card.slug,writing:card.writing,evidence:result});
-    write('video/skill-tutorial/esito.json',summary);
-  }
+    return {tipo:card.tipo,slug:card.slug,writing:card.writing,evidence:result};
+  };
+  const onProgress=()=>write('video/skill-tutorial/esito.json',summary);
+  await runCandidates({candidates:eligible,limit:count,processCard,summary,onProgress});
+  // Only successful skill topics exclude tutorials. A rejected skill must not
+  // suppress a different, documented lesson for the same day.
+  let tutorialCards=[];
+  try { tutorialCards=(await tutorials(catalogue.skills,catalogue.aggiornato,[...existing,...staged])).filter(c=>!requestedTutorial||c.name===requestedTutorial); }
+  catch(error){summary.rejected.push({tipo:'tutorial',name:'discovery',reason:error.message});}
+  await runCandidates({candidates:tutorialCards,limit:1,processCard,summary,onProgress});
+  await finishNight(summary,{notify:apriIssue,trial:prova,date:catalogue.aggiornato});
   // Trial pages are written only in the disposable runner checkout, then uploaded.
   // Production pages use the same legami-video/youtube mechanism as news.
   for(const card of staged) {
@@ -77,10 +90,13 @@ try {
     run(process.execPath,['script/brag/lega.mjs',`${card.tipo}-${card.slug}`,`${card.tipo}-${card.slug}`,`breve-${card.tipo}-${card.slug}`]);
   }
   prepareArchive({root:ROOT,date:catalogue.aggiornato});
-  summary.finished=new Date().toISOString();
   write('video/skill-tutorial/esito.json',summary);
   console.log(`${prova?'Trial':'Production'}: ${staged.length} pages, ${summary.completed.length*2} videos, all publication gates passed.`);
 } catch(error) {
-  summary.errors.push(error.stack || error.message);write('video/skill-tutorial/esito.json',summary);
+  if(!summary.errors.includes(error.message))summary.errors.push(error.stack || error.message);
+  if(!summary.completed.length&&!summary.healthAttempted&&!prova) {
+    try { await finishNight(summary,{notify:apriIssue,trial:prova}); } catch(issueError) { if(issueError.message!==error.message)summary.healthError=issueError.message; }
+  }
+  write('video/skill-tutorial/esito.json',summary);
   console.error(`::error::Skill/tutorial publication stopped: ${error.message}`);process.exitCode=1;
 }

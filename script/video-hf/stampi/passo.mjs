@@ -21,12 +21,13 @@ export default {
       #${px}titolo{font-size:${opening?(v?116:108):(v?82:76)}px;font-weight:600;line-height:1.06;overflow-wrap:anywhere;}
       #${px}testo{font:400 ${v?46:40}px/1.22 'Source Serif 4',Georgia,serif;color:${C.crema2};}
       #${px}risultato{padding:${v?42:32}px;border:2px solid ${C.crema2};background:${C.pannello};font:500 ${v?50:42}px/1.24 'Source Serif 4',Georgia,serif;min-height:${v?390:290}px;display:flex;align-items:center;}
-      #${px}comando{font:500 ${size}px/1.3 'JetBrains Mono',monospace;white-space:break-spaces;overflow-wrap:anywhere;word-break:break-word;tab-size:2;padding:${v?42:28}px;border:2px solid ${C.accento};border-radius:6px;background:${C.scuro};color:${C.crema};min-height:${v?640:0}px;display:flex;align-items:center;}
+      #${px}comando{font:500 ${size}px/1.3 'JetBrains Mono',monospace;white-space:break-spaces;overflow-wrap:anywhere;word-break:break-word;tab-size:2;padding:${v?42:28}px;border:2px solid ${C.accento};border-radius:6px;background:${C.scuro};color:${C.crema};min-height:${v?680:0}px;display:flex;align-items:center;}
       #${px}link{font:500 ${v?54:74}px/1.35 'JetBrains Mono',monospace;overflow-wrap:anywhere;padding:${v?52:60}px;border:2px solid ${C.accento};background:${C.scuro};min-height:${v?1150:570}px;display:flex;align-items:center;}`;
     const result=d.risultato?`<div id="${px}risultato" data-visual>${esc(d.risultato)}</div>`:'';
     const intro=`<div id="${px}intro"><div id="${px}titolo">${esc(d.titolo)}</div>${d.testo&&!d.link?`<div id="${px}testo">${esc(d.testo)}</div>`:''}${!v?result:''}</div>`;
-    const corpo=`<div id="${px}slide" data-content-area>${intro}${d.link?`<div id="${px}link" data-visual>${esc(d.testo)}</div>`:''}${d.comando?`<pre id="${px}comando" data-visual>${esc(d.comando)}</pre>`:''}${v?result:''}</div>`;
-    const keys=['titolo',...(!d.link&&d.testo?['testo']:[]),...(d.comando?['comando']:[]),...(d.risultato?['risultato']:[]),...(d.link?['link']:[])];
+    const facts=(d.elementi||[]).map((value,i)=>`<blockquote id="${px}e${i}" data-visual style="padding:${v?48:42}px;border:2px solid ${C.accento};background:${C.scuro};min-height:${v?1100:600}px;display:flex;align-items:center;font:400 ${v?58:48}px/1.3 'Source Serif 4',Georgia,serif">${esc(value)}</blockquote>`).join('');
+    const corpo=`<div id="${px}slide" data-content-area>${intro}${d.link?`<div id="${px}link" data-visual>${esc(d.testo)}</div>`:''}${d.comando?`<pre id="${px}comando" data-visual>${esc(d.comando)}</pre>`:''}${facts}${v?result:''}</div>`;
+    const keys=['titolo',...(!d.link&&d.testo?['testo']:[]),...(d.comando?['comando']:[]),...(d.risultato?['risultato']:[]),...(d.link?['link']:[]),...(d.elementi||[]).map((_,i)=>`e${i}`)];
     const anima=keys.map((k,i)=>`tl.fromTo(q('#${px}${k}'),{opacity:0,y:20},{opacity:1,y:0,duration:.3,ease:'power3.out'},${s3(Math.min(i*.1,.3))});`).join('\n');
     const header=`.${px}barra{gap:36px;letter-spacing:.08em;font-size:${v?26:28}px}.${px}barra span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(100% - 160px);flex:1}.${px}barra span:last-child{white-space:nowrap;flex:none}`;
     return scena({id,px,durata,etichetta,numero,css:header+css,corpo,anima,formato});

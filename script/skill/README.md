@@ -17,7 +17,7 @@ Sources are stored with their SHA-256 and pinned commit. Screens, speech, comman
 workflow steps and feature claims must have evidence in the source card. Explicit
 editorial instructions and the security disclaimer are separately allowlisted.
 Cards cannot reuse video approval after their content changes. Both formats of
-every selected card must finish before any page is staged. Artifact hashes are
+each card must finish before its page is staged. Rejected candidates advance to the next item without vetoing other successes. Zero successes fails the night and opens one dated salute issue via the existing issue flow; trials never send alerts. Artifact hashes are
 checked again before release creation. An existing incomplete release fails
 closed instead of being overwritten.
 
@@ -48,14 +48,14 @@ cannot cover a skill topic published or staged in the previous seven days.
 Existing Strata/MiniMax guides remain links. Official installer commands are shown
 as documented instructions with a warning; this pipeline never runs them.
 
-Slide explanations use one bounded Workers AI request per selected card through
+Slide explanations use a 3200-token Workers AI request, retry once at 4000 on truncation, then the existing free Groq gpt-oss-120b account (GROQ_KEY) with the same prompt and grounding, then deterministic reserve. A Workers 429 remains a hard scope stop. Each attempt records provider/model, usage, tokens, neurons, accepted slides and failure reason in esito.json. They use
 the shared writing transport. Dedicated daily caps: skill 200 neurons, tutorial
 200. They come from the video-plan budget (3000 to 2600); news remains 1500 and
 the sum of site caps remains 10000. The client first verifies the authenticated
 budget-policy contract, so an older endpoint cannot charge an unknown scope to
 bozze. An undeployed contract, exhausted cap, invalid output or unavailable writer
 uses deterministic text, with the reason and usage retained in the delivery.
-There is no fallback to another scope/provider. Each generated sentence cites
+There is no fallback to another Workers scope. Each generated sentence cites
 exact card facts and passes the existing news names/numbers gate plus a content
 word check against its cited evidence. Commands and examples remain exact source
 text. Usage is provider neurons when returned, otherwise a token-cost estimate.
@@ -68,16 +68,16 @@ frame checks remain separate from DOM fact/layout checks.
 
 The spoken script is separate from screen text. `copione.mjs` asserts the
 required excerpts in pinned sources and supplies distinct actions and expected
-results. Thin sources are ineligible instead of padded with repeated excerpts.
+results. Thin sources are ineligible instead of padded with repeated excerpts. fatti.mjs joins wrapped Markdown prose, excludes YAML/code/table fragments, and retains the exact raw quote and pinned URL for every extracted feature from SKILL.md and references.
 Tool tutorials have a goal, prerequisites, commands for distinct steps, a working
 check, next steps and a link. Empty audience sections are omitted. The static
 security disclaimer appears only in the page's Security check box.
 
 The whole-video gate rejects repeated normalized sentences and code, internal
 procedure wording, technical speech, colon fragments and skill wording in tool
-tutorials. Short timing remains 3/7/7/7/8/8/5 seconds: scene two is What it is,
+tutorials. Planned Short windows remain 3/7/7/7/8/8/5 seconds: scene two is What it is,
 followed by exactly three features or steps, an installer and a repository card.
-Kokoro speech is fitted to 92% of each non-link Short scene; final link speech is
+When a teaching voice would need stretching below 0.5x, its scene contracts with at least two readable seconds (three for code). The 0.5x floor is then enforced. News timing is unchanged. Actual durations and fit evidence are retained in tempi.json; Shorts never exceed 45 seconds. Kokoro speech is fitted to 92% of each non-link Short scene; final link speech is
 just “Link in the description.” Real WAV speech coverage must exceed 75%, onset
 must be within 0.3 seconds, and SRT coverage must exceed 80% in every scene.
 The SRT and burned-in captions share their held intervals and scene boundaries.
@@ -155,3 +155,38 @@ fixture and results. Tests inject `SKILL_ARCHIVE_ROOT`, `SKILL_ARCHIVE_DATE` and
 `SITO_OUTPUT` into child builds; synthetic data never enters the real `dati/`.
 `archivio_layout.py --fixture <evidence>/fixture --output <delivery>` creates the
 requested 360/1280 screenshots and checks HTTP 200, themes and mobile overflow.
+
+Round 4 reproducible trial inputs: prova=true, catalogo=2026-11-01, skill=hyperframes-registry, tutorial=Ollama. The compressed catalogue is byte-identical to artifact 13075106849 of run 41285105674. catalogo.mjs audits the same 26 pinned cards before/after. prove-video.mjs simulates truncated responses and runs real video gates for Workers retry, Groq and deterministic reserve, reusing footage only when both complete scene arrays (speech, evidence, timing included) are identical.
+
+
+## Round 4b: complete facts and documented procedures
+
+The general lesson takes feature titles from source section headings (40
+characters, numbering and symbols removed). Screen facts are complete sentences,
+never character slices; quoted or em-dash sentences and oversized facts are skipped.
+Three-node diagrams require an actual three-item enumeration in the cited fact.
+Other facts use a quotation panel. Short feature voices can join complete facts
+from the same section without repeating the identity fact. Identity combines the
+description with the first unused complete fact, retains at least five seconds,
+and cannot slow speech to fill that window. Other short reserve windows still
+adapt under the previous reading and speech limits.
+
+`procedura.mjs` reads numbered instructions and documented commands from pinned
+Install/Quick Start/Getting Started/Usage sections and their subheadings. Usage
+lists with an exact inline command and its explanation are supported too (the
+LM Studio README documents its operations this way). Code comments and adjacent
+prose describe commands; command syntax never enters narration. Three real
+teaching steps plus source-backed verification and next actions are mandatory.
+Unusable or thin candidates remain rejected. Tool setup facts keep their
+platform/version prerequisites; a health check retains the documented endpoint
+and success condition. Reviewed skill procedures can add relevant source context
+to the long format. The seven-day topic exclusion is unchanged.
+
+The 2026-11-01 trial also pins LM Studio and llama.cpp documentation to their
+observed commits in `fixtures/tutorials-2026-11-01.json.gz`. Production resolves
+and fetches new official commits normally. `prove-4b.mjs` renders the three Q1
+skills, two Q2 tools and an additional skill-installation tutorial, reusing media
+only after equality of both scene arrays. It saves the 56-candidate before/after
+audit alongside actual gate results. The old source generator revision is
+recorded in the baseline fixture. These proof steps run only with `prova=true`
+and the dated catalogue. A normal scheduled run does not render this proof suite.

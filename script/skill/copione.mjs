@@ -1,3 +1,6 @@
+import { extractFacts, sectionTitle, screenSentence, factNodes } from './fatti.mjs';
+import { tutorialLesson } from './procedura.mjs';
+import { plain, labelFrom } from './fonti.mjs';
 // Deterministic teaching scripts. Source excerpts are assertions, never prompts.
 // If a pinned source changes, an adapter stops instead of making up missing facts.
 export const norm = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
@@ -11,8 +14,8 @@ export function textIssues(text, {voice=false, tool=false}={}) {
   if(tool&&/\bskills?\b/i.test(text))errors.push('skill wording in a tool tutorial');
   return errors;
 }
-const s=(label,title,text,voice,{code,nodes,quotes=[],duration=12,role='feature'}={})=>
-  ({label,title,text,voice,code,nodes,quotes,duration,role});
+const s=(label,title,text,voice,{code,nodes,elements,quotes=[],duration=12,role='feature'}={})=>
+  ({label,title,text,voice,code,nodes,elements,quotes,duration,role});
 
 const outcomes={
   'curl -fsSL https://ollama.com/install.sh | sh':'You will have the official tool installed for your next step.',
@@ -102,37 +105,57 @@ export function lessonFor(card) {
         s('Source','Explore the documented workflows','github.com/vercel-labs/agent-browser','Link in the description.',{role:'link',duration:5}),
       ],
     };
+  } else if(card.tipo==='tutorial') {
+    lesson=tutorialLesson(card);
   } else {
-    // Conservative general fallback: complete source sentences only. A source
-    // too thin for three distinct facts is ineligible, rather than padded.
-    if(card.tipo==='tutorial')throw Error('A tutorial needs a documented step-by-step procedure, not a reused feature list');
-    const safe=t=>!textIssues(t,{voice:true,tool:card.tipo==='tutorial'&&!card.skillSource}).length&&/[.!?]$/.test(t)&&t.split(/\s+/).length<=28;
-    const facts=(card.features||[]).map(f=>f.detail.split(/(?<=[.!?])\s+/).find(safe));
-    if(facts.some(f=>!f)||new Set(facts.map(norm)).size!==3)throw Error('Source lacks three complete teachable facts');
-    const description=card.descr.split(/(?<=[.!?])\s+/).find(safe);
+    const safe=t=>screenSentence(t)&&!textIssues(t,{voice:true}).length&&t.split(/\s+/).length<=28&&!/^(?:Plugin installs:|During |After |\[)|data-|[a-z][A-Z]/.test(t);
+    const extracted=extractFacts(card,safe);
+    const description=card.descr.split(/(?<=[.!?])\s+/).find(safe)||extracted.find(f=>f.voice.split(/\s+/).length<=16)?.voice;
     if(!description)throw Error('Source lacks a safe spoken description');
-    const features=facts.map((f,i)=>s(`Feature ${i+1}`,norm(card.features[i].label)===norm(f)?`Documented action ${i+1}`:card.features[i].label,f,`${['First','Next','Finally'][i]}, ${f[0].toLowerCase()+f.slice(1)}`,{quotes:[need(f)],nodes:['Instructions','Your assistant','Project task']}));
-    lesson={problem:card.problem,description,prerequisites:'Read the documented requirements before installation.',check:'Follow the example and check the result against the documented behavior.',next:'Continue with the complete project documentation.',limits:'Review the instructions before granting access to your project.',
-      short:[s('The problem',card.problem,'Start with the task you need to solve.','Choose the workflow for your task.',{role:'problem',duration:3,nodes:['Your task','Instructions','Result']}),s('What it is',card.name,description,description,{role:'identity',duration:7,nodes:['Assistant','Instructions','Your project']}),...features.map((f,i)=>({...f,duration:[7,7,8][i]})),s('Install','Add the instructions','Use the documented command for your assistant.','Read the project requirements and choose your assistant. Use the installation command on screen, then follow the documented example in your own project.',{code:card.install,role:'install',duration:8}),s('Repository','Read the full guide',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5})],
-      long:[s('Goal',card.name,description,description,{role:'goal',nodes:['Your task','Agent Skill','Project workflow'],duration:14}),s('Requirements','Prepare your assistant','Read the requirements before granting access.','Check the project documentation for the supported assistant and setup. Review the instructions before installing.',{role:'prerequisites',nodes:['Project documentation','Assistant setup','Permissions'],duration:14}),s('Installation','Install the instructions','Use the exact command documented by the project.','Use the installation command and choose your assistant. Then return to the usage example in the project documentation.',{role:'step',code:card.install,duration:14}),...features.map(f=>({...f,duration:14})),s('Verify and continue','Compare with the documented example','Review the result in your own project.','Check the result against the documented behavior. Continue with the complete instructions for your next task.',{role:'verify',code:card.example,duration:14}),s('Source','Open the complete documentation',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5})]};
+    const extra=extracted.find(f=>norm(f.voice)!==norm(description));
+    if(!extra)throw Error('Source lacks an unused complete identity fact');
+    const selected=[],titles=new Set(),used=new Set([norm(description),norm(extra.voice)]);
+    const enough=f=>!f.heading||extracted.filter(x=>x.heading===f.heading).reduce((n,x)=>n+x.voice.split(/\s+/).length,0)>=14;
+    for(const distinct of [true,false])for(const f of [...extracted.filter(f=>f.heading&&!/overview|when to use/i.test(f.heading)&&enough(f)),...extracted.filter(enough),...extracted]) {
+      const title=sectionTitle(f.heading||f.label,f.heading?40:20);
+      if(!title||title==='Documented workflow'||used.has(norm(f.voice))||norm(card.descr).includes(norm(f.voice))||distinct&&titles.has(title))continue;
+      if(selected.length===3)break;
+      selected.push({...f,title,quotes:[f.quote]});titles.add(title);used.add(norm(f.voice));
+    }
+    if(selected.length!==3)throw Error('Source lacks three complete teachable facts');
+    for(const f of selected){
+      while(f.voice.split(/\s+/).length<15){
+      const more=extracted.find(x=>x.heading===f.heading&&!used.has(norm(x.voice))&&(f.voice+' '+x.voice).split(/\s+/).length<=29);
+      if(more){used.add(norm(more.voice));f.voice+=' '+more.voice;f.quotes.push(more.quote);}else break;
+      }
+    }
+    const panel=(label,title,f,options={})=>s(label,title,undefined,f.voice,{quotes:(f.quotes||[f.quote]).map(need),nodes:factNodes({voice:f.detail||f.voice}),...(!factNodes({voice:f.detail||f.voice})?{elements:[/[.!?]$/.test(f.detail||'')?f.detail:f.detail?f.detail+'.':f.voice]}:{}),...options});
+    const features=selected.map((f,i)=>panel(`Feature ${i+1}`,f.title,f));
+    const identity=panel('What it is',sectionTitle(card.name),extra,{role:'identity',duration:7});
+    identity.voice=description+' '+extra.voice;
+    // The description can be YAML metadata; the added fact is pinned prose.
+    identity.quotes.push(description);
+    lesson={profile:'general',problem:card.problem,description,prerequisites:'Read the documented requirements before installation.',check:'Follow the example and check the result against the documented behavior.',next:'Continue with the complete project documentation.',limits:'Review the instructions before granting access to your project.',
+      short:[s('The problem',card.problem,undefined,'Choose the workflow for your task.',{role:'problem',duration:3,elements:['Start with the task you need to solve.']}),identity,...features.map((f,i)=>({...f,duration:[7,7,8][i]})),s('Install','Add the instructions','Use the documented command for your assistant.','Read the project requirements and choose your assistant. Use the installation command on screen, then follow the documented example in your own project.',{code:card.install,role:'install',duration:8}),s('Repository','Read the full guide',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5})],
+      long:[s('Goal',sectionTitle(card.name),undefined,identity.voice,{role:'goal',elements:[extra.voice],quotes:identity.quotes,duration:14}),s('Requirements','Prepare your assistant',undefined,'Check the project documentation for the supported assistant and setup. Review the instructions before installing.',{role:'prerequisites',elements:['Read the requirements before granting access.'],duration:14}),s('Installation','Install the instructions','Use the exact command documented by the project.','Use the installation command and choose your assistant. Then return to the usage example in the project documentation.',{role:'step',code:card.install,duration:14}),...features.map(f=>({...f,duration:14})),s('Verify and continue','Compare with the documented example',card.example.length<=180&&card.example.split('\n').length<=5?'Review the result in your own project.':undefined,'Check the result against the documented behavior. Continue with the complete instructions for your next task.',{role:'verify',...(card.example.length<=180&&card.example.split('\n').length<=5?{code:card.example}:{elements:['Review the result in your own project.']}),duration:14}),s('Source','Open the complete documentation',`github.com/${card.repository}`,'Link in the description.',{role:'link',duration:5})]};
   }
   if(card.tipo==='skill'&&!lesson.long.some(s=>s.role==='limits')){
     const reasons=(card.security?.warnings||[]).map(w=>w.reason).join(' ');
     const warning=/remote|download/.test(reasons)?'Some instructions can load code from the internet. Read them before use.':/sensitive|secret|credential/.test(reasons)?'Some instructions refer to credentials or configuration files. Check what access they require.':/api|send/.test(reasons)?'Some instructions contact a service. Check which data is sent.':'Review the instructions before granting access to your project.';
     lesson.limits=warning;
-    lesson.long.splice(-1,0,s('Permissions','Review access before use',warning,'Check which files the instructions read and which services they contact. Grant only the access your task needs.',{role:'limits',duration:14,nodes:['Read the instructions','Check file access','Check network access']}));
+    lesson.long.splice(-1,0,s('Permissions','Review access before use',undefined,'Check which files the instructions read and which services they contact. Grant only the access your task needs.',{role:'limits',duration:14,elements:[warning]}));
   }
   // Arrows only on source-documented sequences; alternatives stay unconnected.
   const ordered=new Set(['Inspect before acting','Instructions come from the installed tool','Refresh your view after changes','Download your model','Your first local conversation']);
   for(const scene of [...lesson.short,...lesson.long]){
     if(scene.nodes&&ordered.has(scene.title))scene.order=true;
-    if(scene.code)scene.result=outcomes[scene.code]||(scene.code.startsWith('curl http://localhost:11434/api/chat')?'You will receive the model response to the question about the sky.':scene.code===card.install?'The instructions are available to your assistant.':'Compare the output with the example in the project documentation.');
+    if(scene.code)scene.result=scene.result||outcomes[scene.code]||(scene.code.startsWith('curl http://localhost:11434/api/chat')?'You will receive the model response to the question about the sky.':scene.code===card.install?(card.tipo==='tutorial'&&!card.skillSource?'The documented tool is available for the usage steps.':'The instructions are available to your assistant.'):'Compare the output with the example in the project documentation.');
   }
   return lesson;
 }
 
 export function lessonStrings(lesson) {
-  return [lesson.problem,lesson.description,lesson.prerequisites,lesson.check,lesson.next,lesson.limits,...[...lesson.short,...lesson.long].flatMap(s=>[s.label,s.title,s.text,s.voice,s.code,s.result,...(s.nodes||[])])].filter(Boolean);
+  return [lesson.problem,lesson.description,lesson.prerequisites,lesson.check,lesson.next,lesson.limits,...[...lesson.short,...lesson.long].flatMap(s=>[s.label,s.title,s.text,s.voice,s.code,s.result,...(s.nodes||[]),...(s.elements||[])])].filter(Boolean);
 }
 
 export function duplicateIssues(scenes) {

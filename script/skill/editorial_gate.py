@@ -85,7 +85,10 @@ def inspect_video(folder,tool=None,check_frames=True,recorded_voice=False):
         if [s.get('durata') for s in plan['scene']]!=[3,7,7,7,8,8,5]:errors.append('incorrect Short timing or scene count')
         if len(plan['scene'])<2 or plan['scene'][1].get('etichetta')!='What it is':errors.append('Short scene 2 must be What it is')
         if sum(s.get('role')=='feature' for s in plan['scene'])!=3:errors.append('Short needs exactly three features or steps')
-        if not any(s.get('stampo')=='diagramma' for s in plan['scene'][2:5]):errors.append('Short feature diagram missing')
+        for scene in plan['scene'][2:5]:
+            if not any(scene.get('dati',{}).get(k) for k in ['nodi','elementi','comando']):errors.append('Short step needs a documented diagram, quotation or command panel')
+        if times['scene'][1]['durata']<5:errors.append('Short identity shorter than five seconds')
+        if times['scene'][1].get('timingFit',{}).get('speed',1)<.999:errors.append('Short identity speech was slowed down')
         if len(plan['scene'][0].get('dati',{}).get('titolo','').split())>6:errors.append('hook exceeds six words')
         if not plan['scene'][5].get('dati',{}).get('comando'):errors.append('Short installation command missing')
         if plan['scene'][-1].get('voce')!='Link in the description.':errors.append('Short link narration incorrect')

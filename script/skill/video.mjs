@@ -5,7 +5,8 @@ import { STAMPI } from '../video-hf/stampi/index.mjs';
 import { monta } from '../video-hf/monta.mjs';
 import { titoloYT, capitoliYT, conCapitoli, controlli } from '../brag/controllo-yt.mjs';
 import { approvedText, validateCard, digest } from './verifica.mjs';
-import { ROOT } from './fonti.mjs';
+import { ROOT, plain } from './fonti.mjs';
+import { screenSentence } from './fatti.mjs';
 import { lessonFor, textIssues, duplicateIssues, FORBIDDEN } from './copione.mjs';
 
 const words=(s,n)=>String(s).split(/\s+/).slice(0,n).join(' ');
@@ -17,10 +18,11 @@ export function plan(card,short=false) {
   const scenes=(short?lesson.short:lesson.long).map((s,i)=>{
     const explanation=card.explanations?.[`${short?'short':'long'}:${i}`];
     const speech=explanation?explanation.sentences.map(s=>s.text):[s.voice];
-    const data={titolo:s.title,testo:s.text,...(s.code?{comando:s.code,risultato:s.result}:{}),...(s.nodes?{nodi:s.nodes,ordine:!!s.order}:{}),...(s.role==='problem'?{apertura:true}:{}),...(s.role==='link'?{link:true}:{})};
-    return {stampo:s.nodes?'diagramma':'passo',etichetta:s.label,capitolo:s.title,role:s.role,dati:data,parlato:speech,voce:speech.join(' '),durata:s.duration,evidence:s.quotes};
+    const data={titolo:s.title,testo:s.text,...(s.code?{comando:s.code,risultato:s.result}:{}),...(s.nodes?{nodi:s.nodes,ordine:!!s.order}:{}),...(s.elements?{elementi:s.elements}:{}),...(s.role==='problem'?{apertura:true}:{}),...(s.role==='link'?{link:true}:{})};
+    const citations=(s.quotes||[]).map(quote=>({quote,urls:(card.fonti||[]).filter(f=>f.testo.includes(quote)||f.testo.replace(/\s+/g,' ').includes(quote)||quote===card.descr&&plain(f.testo).includes(card.descr)).map(f=>f.url)}));
+    return {stampo:s.nodes?'diagramma':'passo',etichetta:s.label,capitolo:s.title,role:s.role,dati:data,parlato:speech,voce:speech.join(' '),durata:s.duration,evidence:s.quotes,citations};
   });
-  const out={formato:short?'verticale':'orizzontale',tempiFissi:true,teaching:true,copertina:1,musica:short?'vivace':'calma',cardHash:digest(JSON.stringify(card)),scene:scenes};
+  const out={formato:short?'verticale':'orizzontale',tempiFissi:true,teaching:true,lessonProfile:lesson.profile||'source-adapter',copertina:1,musica:short?'vivace':'calma',cardHash:digest(JSON.stringify(card)),scene:scenes};
   const check=validatePlan(card,out);if(check.length)throw Error(check.join('; '));return out;
 }
 
@@ -41,6 +43,10 @@ export function validatePlan(card,piano) {
       if(!approvedText(card,t))errors.push(`scene ${i+1}: unsupported on-screen text ${t}`);
       errors.push(...textIssues(t,{tool}).map(e=>`scene ${i+1}: ${e}`));
     }
+    if(s.role==='feature'&&lessonFor(card).profile==='general'){
+      if(s.dati.titolo.length>40||/Documented action/i.test(s.dati.titolo))errors.push('generic or oversized feature title');
+      if((s.dati.elementi||[]).some(t=>!screenSentence(t)))errors.push('incomplete visible sentence');
+    }
     if(s.dati?.comando&&!approvedText(card,s.dati.comando))errors.push(`scene ${i+1}: unsupported code`);
     if(s.dati?.comando&&FORBIDDEN.test(s.dati.comando))errors.push(`scene ${i+1}: forbidden internal wording in code`);
   }
@@ -49,11 +55,11 @@ export function validatePlan(card,piano) {
     if(total!==45||piano.scene.length!==7||piano.scene.map(s=>s.durata).join(',')!=='3,7,7,7,8,8,5')errors.push('Short timing does not match 0-3 / 3-10 / 10-32 / 32-40 / 40-45');
     if(piano.scene[0]?.dati.titolo.split(/\s+/).length>6)errors.push('hook exceeds six words');
     if(piano.scene[1]?.etichetta!=='What it is'||piano.scene[1]?.role!=='identity')errors.push('Short identity scene required');
-    if(piano.scene.slice(2,5).some(s=>s.role!=='feature')||!piano.scene.slice(2,5).some(s=>s.stampo==='diagramma'))errors.push('Short needs exactly three features including a diagram');
+    if(piano.scene.slice(2,5).some(s=>s.role!=='feature'))errors.push('Short needs exactly three features or documented steps');
     if(piano.scene[5]?.dati.comando!==card.install||piano.scene[6]?.dati.testo!==`github.com/${card.repository}`||piano.scene[6]?.voce!=='Link in the description.')errors.push('exact command or repository missing');
   }else{
     if(!(total>=90&&total<=240))errors.push(`long video outside 90 seconds to 4 minutes: ${total}`);
-    if(piano.scene.filter(s=>s.stampo==='diagramma').length<2)errors.push('long video needs at least two diagrams');
+    // Source-backed quotation panels are valid when there is no real enumeration.
     if(tool){const roles=piano.scene.map(s=>s.role);if(roles[0]!=='goal'||roles[1]!=='prerequisites'||!roles.includes('verify')||!roles.includes('next')||roles.at(-1)!=='link')errors.push('tutorial structure incomplete');}
   }
   return errors;
