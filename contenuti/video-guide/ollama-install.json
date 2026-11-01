@@ -1,0 +1,42 @@
+{
+ "tipo": "guida",
+ "nome": "install-ollama-run-ai-on-your-pc",
+ "url": "https://freellmarena.com/blog/install-ollama-run-ai-on-your-pc",
+ "titolo": "How to install Ollama and run AI on your own PC, with real speed numbers",
+ "descr": "Install Ollama on Windows, download a 4B model and chat offline. Every command, what you should see, and the speed we measured with a GPU and without one.",
+ "tema": "Guides",
+ "pubblicato": "2026-11-01",
+ "paragrafi": [
+  "Ollama runs AI models on your own computer. Your prompts stay on your machine, you need no account, and the model keeps working without the internet.",
+  "Install it with the official command from ollama.com, then download a model with ollama pull. We used Qwen3.5 4B, about 3 GB on disk.",
+  "On a Radeon RX 7900 XTX it wrote about 133 tokens per second. With a Ryzen 9 9950X3D alone it wrote about 15.",
+  "Use ollama ps to check that it runs on the GPU. The model took 8.1 GB in memory, far more than its file size.",
+  "To free your disk, remove a model with ollama rm."
+ ],
+ "perche": [
+  "Names ending in cloud do not run on your computer, and small models make mistakes, so check important answers."
+ ],
+ "titoliSezioni": [
+  "Install Ollama",
+  "Download a model",
+  "Ask a question",
+  "How fast it is",
+  "Check your GPU"
+ ],
+ "fonti": [
+  {
+   "nome": "Ollama",
+   "url": "https://ollama.com/download/windows",
+   "titolo": "Download Ollama for Windows",
+   "ufficiale": true,
+   "data": "2026-11-01"
+  },
+  {
+   "nome": "Ollama",
+   "url": "https://ollama.com/library/qwen3.5/tags",
+   "titolo": "Qwen3.5 versions on Ollama",
+   "ufficiale": true,
+   "data": "2026-11-01"
+  }
+ ]
+}

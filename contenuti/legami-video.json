@@ -156,5 +156,9 @@
  "news-2026-10-31-deepseek-releases-dsh-superagent-prototype-for-autonomous-coding-agent": {
   "lungo": "notizia-deepseek-releases-dsh-superagent-prototype-for-autonomou",
   "breve": "breve-deepseek-releases-dsh-superagent-prototype-for-autonomou"
+ },
+ "install-ollama-run-ai-on-your-pc": {
+  "lungo": "tutorial-ollama",
+  "breve": "breve-tutorial-ollama-privato"
  }
 }
