@@ -7,14 +7,18 @@ import { explain } from './spiega.mjs';
 import { plan, render } from './video.mjs';
 import { digest } from './verifica.mjs';
 import { ROOT, read, write } from './fonti.mjs';
+import { loadTrialCatalogue } from './catalogo.mjs';
+import { teachingCard } from './fatti.mjs';
+import { textIssues } from './copione.mjs';
 
 if(process.env.PROVA!=='true'||process.env.PROVA_CATALOGO!=='2026-11-01')throw Error('Video integration proofs require the pinned trial');
 const delivery=read('video/skill-tutorial/esito.json');
 const success=delivery.completed.find(c=>c.tipo==='skill');
 if(!success)throw Error('P1 needs a successful real skill first');
 const original=read(`contenuti/skills/${success.slug}.json`);
-assert.equal(original.name,'code-simplification');
-const {videoVerified,writing,explanations,...card}=original;
+// This reproduces the exact failed production subject as a technical fixture;
+// it is not selected for trial publication, which retains its top20 rule.
+const card=teachingCard(loadTrialCatalogue('2026-11-01').skills.find(c=>c.name==='code-simplification'),t=>!textIssues(t,{voice:true}).length);
 const shape=c=>digest(JSON.stringify([plan(c,false).scene,plan(c,true).scene]));
 const cache=new Map([[shape(original),{mode:'P6',evidence:success.evidence}]]);
 const cases=[];

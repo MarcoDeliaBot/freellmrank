@@ -89,7 +89,7 @@ jobs:
           GROQ_KEY: ${{ secrets.GROQ_KEY }}
         run: node script/skill.mjs
       - name: P1 e P2 - risposte troncate e riserva con video reali
-        if: env.PROVA == 'true' && env.PROVA_CATALOGO == '2026-11-01' && inputs.skill == 'code-simplification'
+        if: env.PROVA == 'true' && env.PROVA_CATALOGO == '2026-11-01'
         run: node script/skill/prove-video.mjs
       - name: Build esistente, link e heading
         run: |
