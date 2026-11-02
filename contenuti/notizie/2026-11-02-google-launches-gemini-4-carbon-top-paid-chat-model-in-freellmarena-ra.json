@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-02-google-launches-gemini-4-carbon-top-paid-chat-model-in-freellmarena-ra",
+ "titolo": "Google launches Gemini 4 Carbon, top paid chat model in FreeLLMArena ranking",
+ "descr": "Google unveiled Gemini 4 Carbon, a frontier model for cybersecurity and long‑horizon tasks, now ranked highest among paid chat models.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "In October 2026 Google announced Gemini 4 Carbon, described as its strongest model for long‑horizon engineering and cybersecurity defense.",
+  "FreeLLMArena’s November 2026 blind vote ranks Gemini 4 Carbon as the best paid chat model with a score of 1528, ahead of all free alternatives.",
+  "Google also introduced related tools in October, including Genie 4 for real‑time interactive simulations and the SynthID Detector for AI‑generated content verification."
+ ],
+ "perche": [
+  "Gemini 4 Carbon offers advanced reasoning and security capabilities that can benefit enterprises and developers seeking cutting‑edge AI. For users preferring free or locally run models, the ranking highlights the performance gap and underscores the need to evaluate trade‑offs between cost, capability and data privacy."
+ ],
+ "pubblicato": "2026-11-02",
+ "titoloFonte": "The latest AI news we announced in October 2026",
+ "fonti": [
+  {
+   "nome": "Google",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
+   "titolo": "The latest AI news we announced in October 2026",
+   "ufficiale": true,
+   "data": "2026-11-02"
+  }
+ ],
+ "frasiTolte": 2
+}

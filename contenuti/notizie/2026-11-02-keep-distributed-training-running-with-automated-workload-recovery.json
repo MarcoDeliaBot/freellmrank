@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-02-keep-distributed-training-running-with-automated-workload-recovery",
+ "titolo": "Keep Distributed Training Running with Automated Workload Recovery",
+ "descr": "NVIDIA Recovery automates detection and restart of failed training jobs across Slurm clusters, cutting downtime and manual effort.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced NVIDIA Recovery, an open‑source service that automates workload‑level recovery for distributed AI training.",
+  "The system monitors application logs, GPU metrics and scheduler signals to spot anomalies, then attributes failures, isolates affected nodes and restarts jobs from checkpoints.",
+  "Integration with Slurm is provided via a Helm‑deployed Advisor Controller, which can run in‑cluster or via SSH and starts in monitor mode to let operators validate recommendations before enabling autonomous actions.",
+  "In a production run from July 9 to October 9, the service logged about 8,550 anomalies across nearly 200 daily jobs, with average detection latency of 69 seconds and recovery‑action latency of 94 seconds.",
+  "NVIDIA Recovery is part of the DSX OS stack and works alongside existing health tools like NVSentinel and NVRx to deliver a coordinated recovery loop."
+ ],
+ "perche": [
+  "For AI researchers and engineers, automated recovery reduces manual debugging and keeps GPU resources productive, lowering overall compute costs. While the service targets large clusters, its open‑source nature allows smaller teams to adopt similar resilience practices, supporting both commercial and free‑model development workflows."
+ ],
+ "pubblicato": "2026-11-02",
+ "titoloFonte": "Keep Distributed Training Running with Automated Workload Recovery",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/keep-distributed-training-running-with-automated-workload-recovery/",
+   "titolo": "Keep Distributed Training Running with Automated Workload Recovery",
+   "ufficiale": true,
+   "data": "2026-11-02"
+  }
+ ],
+ "frasiTolte": 1
+}
