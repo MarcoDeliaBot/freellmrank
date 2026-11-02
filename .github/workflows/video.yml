@@ -63,6 +63,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
+          cache: npm
+      # servono al passo del blog: script/aggiorna-pagine-pubblicate.mjs carica script/sito/blog.mjs, che usa marked
+      - run: npm ci
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

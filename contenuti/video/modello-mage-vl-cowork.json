@@ -1,0 +1,155 @@
+{
+ "nome": "modello-mage-vl-cowork",
+ "titolo": "Mage-VL-Cowork: Hardware Needed and How to Run It Free",
+ "descrizione": "The video explains its architecture, new curriculum, benchmark results, strengths, limits, and who should try it.\n\nSize: 4.7B parameters · context 256K · memory at 4-bit about 6 GB.\nRTX 3060 12 GB + 32 GB RAM: about 65 tokens/s\nRTX 4090 + 64 GB RAM: about 162 tokens/s\nRTX 5090 + 64 GB RAM: about 256 tokens/s\nMac M4 Max 128 GB: about 77 tokens/s\nNVIDIA DGX Spark 128 GB: about 50 tokens/s\nRyzen AI Max+ 395 128 GB: about 47 tokens/s\nMac Studio M3 Ultra 512 GB: about 102 tokens/s\nModel card: https://huggingface.co/microsoft/Mage-VL-Cowork\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Mage-VL-Cowork",
+  "Microsoft"
+ ],
+ "condividi": "Mage-VL-Cowork by Microsoft: 4.7B parameters, about 6 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "Mage-VL-Cowork: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Mage-VL-Cowork: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Mage-VL-Cowork: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Mage-VL-Cowork : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Mage-VL-Cowork: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Mage-VL-Cowork",
+    "gb": 6,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "Mage-VL-Cowork",
+    "vel": 65,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Mage-VL-Cowork",
+    "vel": 162,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Mage-VL-Cowork",
+    "vel": 256,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Mage-VL-Cowork",
+    "vel": 77,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Mage-VL-Cowork",
+    "vel": 50,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Mage-VL-Cowork",
+    "vel": 47,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Mage-VL-Cowork",
+    "vel": 102,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "Mage-VL-Cowork is a 4 billion-parameter model that can click and code within a single policy. It reaches 66.0 % success on the OSWorld-Verified benchmark, the highest score among 4 B models.",
+  "According to Microsoft, Mage-VL-Cowork is a multimodal hybrid computer-use agent built on the llava_onevision2 architecture. It combines a Mage-ViT visual encoder with the Qwen3-4B-Instruct-2507 language model, totaling 4 billion parameters and 9.48 GB in bfloat16 across two safetensors shards. The model accepts images and text and outputs text, supporting two action channels: a normalized GUI primitive set called computer_use and a persistent bash channel for shell and Python execution. It operates with a context window of 32,768 tokens, while the architecture can handle up to 262,144 tokens. Its asymmetric sliding-window memory keeps the three most recent screenshots and the four most recent full responses, plus folded action history, enabling long-horizon desktop tasks without exceeding the token budget.",
+  "What sets Mage-VL-Cowork apart is that the policy internally decides when to use the computer_use channel and when to switch to bash, removing the need for a separate multi-agent router. Microsoft evolved the teacher harness before large-scale trajectory collection, pruning redundant tools and pre-installing domain libraries such as python-pptx and pandas. The workflow-first engine, Mage-CUA-Forge, generates reusable skill-conditioned task workflows once per atomic skill, creating 293,806 distinct tasks across 6,915 skills while cutting recurring generation cost by 82.6 %. Training follows a five-stage specialize-then-unify curriculum, starting from an intermediate Mage-VL checkpoint and ending with online hybrid reinforcement learning that adds 10.16 percentage points over Hybrid SFT.",
+  "The model card reports that Mage-VL-Cowork achieves 66.0 % on the OSWorld-Verified benchmark under a 50-step budget, the highest score among 4 B models. On the OS task subset it reaches 87.5 %, and on multi-application workflows it scores 62.7 %. The headline figure is a two-run average across 361 held-out tasks, with runs of 65.33 % and 66.75 % respectively. Compared to other open-weight models at the same scale, such as ScaleCUA-Qwen3.5-9B (68.7 % overall) and ComputerRL-9B (48.0 % overall), Mage-VL-Cowork shows a clear advantage in both overall accuracy and specialized OS performance.",
+  "Mage-VL-Cowork’s main strength is its unified ability to perform visual GUI manipulation and structured terminal commands without an external router, which translates into high accuracy on OSWorld tasks. Online reinforcement learning reduces mean model calls from 21.57 to 18.77 per task and output tokens from 7,374 to 5,499, a 25.4 % token saving. Its 4 B size and 32,768-token context make it feasible for on-device use; the model runs on a single RTX 4060 with full weights in GPU memory. Limitations include the evaluation budget of 50 steps, meaning longer workflows have not been measured, and the lack of a free hosted API, users must run the weights locally. Performance may also vary on hardware that cannot hold the model in GPU memory.",
+  "The model is well suited for anyone who runs AI at home and wants a free, open-weight agent capable of both clicking and coding. Its Apache-2.0 license lets developers fine-tune or integrate it without restrictions. Because the full checkpoint fits on an RTX 4060, users with modest GPUs can experiment locally. Researchers exploring hybrid computer-use agents will benefit from the five-stage curriculum and the detailed teacher-harness evolution described in the model card. Anyone looking for a compact VLM that can handle desktop automation without paying for an API can download it from Hugging Face and start building custom workflows today.",
+  "What do you need to run it at home? At 4-bit it takes about 6 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 65 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 162 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the Apache 2.0 license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare Mage VL Cowork with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-mage-vl-cowork",
+ "pubblicato": "2026-10-31"
+}

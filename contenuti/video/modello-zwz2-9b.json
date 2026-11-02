@@ -1,0 +1,155 @@
+{
+ "nome": "modello-zwz2-9b",
+ "titolo": "ZwZ2-9B: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "ZwZ2-9B adds multi-region visual reasoning to the Qwen3.5-9B backbone, improving accuracy on 25 benchmarks. It’s free, runs on a modest GPU, and is ideal for home AI enthusiasts.\n\nSize: 9.4B parameters · context 256K · memory at 4-bit about 8 GB.\nRTX 3060 12 GB + 32 GB RAM: about 45 tokens/s\nRTX 4090 + 64 GB RAM: about 116 tokens/s\nRTX 5090 + 64 GB RAM: about 190 tokens/s\nMac M4 Max 128 GB: about 57 tokens/s\nNVIDIA DGX Spark 128 GB: about 34 tokens/s\nRyzen AI Max+ 395 128 GB: about 32 tokens/s\nMac Studio M3 Ultra 512 GB: about 78 tokens/s\nModel card: https://huggingface.co/inclusionAI/ZwZ2-9B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "ZwZ2-9B",
+  "InclusionAI"
+ ],
+ "condividi": "ZwZ2-9B by InclusionAI: 9.4B parameters, about 8 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "ZwZ2-9B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "ZwZ2-9B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "ZwZ2-9B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "ZwZ2-9B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "ZwZ2-9B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "ZwZ2-9B",
+    "gb": 8,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "ZwZ2-9B",
+    "vel": 45,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "ZwZ2-9B",
+    "vel": 116,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "ZwZ2-9B",
+    "vel": 190,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "ZwZ2-9B",
+    "vel": 57,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "ZwZ2-9B",
+    "vel": 34,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "ZwZ2-9B",
+    "vel": 32,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "ZwZ2-9B",
+    "vel": 78,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "ZwZ2-9B lifts overall accuracy from 51.63 % to 56.59 % across 25 benchmarks. It does this without any extra supervised fine-tuning.",
+  "ZwZ2-9B is a 9.4 billion-parameter model built on the Qwen3.5-9B backbone. The model is trained on whole images, not cropped patches, and can handle a context window of 256 K tokens. It is released by InclusionAI and available for free on Hugging Face. The model card lists the size, the base model, and the training approach, giving hobbyists a clear picture of what they are downloading.",
+  "The core novelty is the EvidenceConnect pipeline. It builds verified questions that span three to seven related image regions, using privileged zoomed views just for data construction. Answers are checked through cross-model agreement and drop-one-region tests, then turned into four-option tasks. Training uses the GRPO method and skips any additional supervised fine-tuning stage, keeping the process simple and efficient.",
+  "According to the model card, ZwZ2-9B was evaluated on twenty-five benchmarks covering fine-grained perception, spatial reasoning, long-context understanding, multimodal agents, and general visual reasoning. Across all of them the model improves over its Qwen3.5-9B base, raising the average accuracy from 51.63 % to 56.59 %, a gain of 4.96 points. The improvement is consistent on every benchmark, showing the method’s broad impact.",
+  "The model’s strengths lie in its enhanced ability to connect visual evidence across regions, which translates into better fine-grained perception and stronger spatial and long-context reasoning. However, the model card warns that it can still hallucinate details, misread text, and make counting or spatial errors. Performance also depends on image resolution, context length, and prompt format, so careful prompt engineering helps mitigate these limits.",
+  "ZwZ2-9B is a good fit for hobbyists who run AI models at home and need visual reasoning capabilities without paying for an API. The model can run on a modest RTX 4060, making it accessible to many desktop setups. If you want a free, open-weight model that improves visual understanding over a strong base, ZwZ2-9B is worth a try.",
+  "What do you need to run it at home? At 4-bit it takes about 8 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 45 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 116 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face, under the license written in its model card. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare ZwZ2 9B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-zwz2-9b",
+ "pubblicato": "2026-11-01"
+}
