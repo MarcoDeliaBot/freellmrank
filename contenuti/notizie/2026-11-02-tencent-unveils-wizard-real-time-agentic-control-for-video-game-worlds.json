@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-02-tencent-unveils-wizard-real-time-agentic-control-for-video-game-worlds",
+ "titolo": "Tencent unveils Wizard: real‑time agentic control for video game worlds",
+ "descr": "Wizard decouples animation, scene and logic to let players manipulate characters and environments at 24 FPS, generalising zero‑shot to new scenes.",
+ "tema": "Research",
+ "paragrafi": [
+  "The system uses structured visual proxies—skeletons and geometry—to control articulated characters and scene geometry, while adaptive masking preserves the appearance of reference assets.",
+  "Wizard was trained on 50.3 hours of aligned proxy‑video pairs covering 750 scenes and 178 characters, enabling interaction at 24 FPS and zero‑shot generalisation to unseen characters, motions and environments.",
+  "The framework maintains explicit world states, allowing adaptive boss behaviour and mechanics‑consistent combat, and supports actions such as character summoning, transformation and scene alteration.",
+  "Code for Wizard will be released soon, and the project page is https://wyzardwu.github.io/wizard/."
+ ],
+ "perche": [
+  "Wizard shows how structured proxies can give fine‑grained, real‑time control in video game generation, opening new possibilities for player‑driven content creation. For developers of free or locally‑run models, the approach suggests a path to richer interactive experiences without relying on massive visual datasets."
+ ],
+ "pubblicato": "2026-11-02",
+ "titoloFonte": "Tencent paper: Wizard: Manipulate Any World in Real Time via Agentic Control",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2610.40339",
+   "titolo": "Tencent paper: Wizard: Manipulate Any World in Real Time via Agentic Control",
+   "ufficiale": true,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 1
+}

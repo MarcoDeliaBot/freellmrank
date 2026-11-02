@@ -193,6 +193,14 @@
   "lungo": "notizia-openai-releases-fair-use-court-brief-excerpts-to-aid-ai",
   "breve": "breve-openai-releases-fair-use-court-brief-excerpts-to-aid-ai"
  },
+ "news-2026-11-02-tencent-unveils-wizard-real-time-agentic-control-for-video-game-worlds": {
+  "lungo": "notizia-tencent-unveils-wizard-real-time-agentic-control-for-vid",
+  "breve": "breve-tencent-unveils-wizard-real-time-agentic-control-for-vid"
+ },
+ "news-2026-11-01-nace-ai-releases-drex-max-v1-a-27b-decision-model-for-apple-silicon": {
+  "lungo": "notizia-nace-ai-releases-drex-max-v1-a-27b-decision-model-for-ap",
+  "breve": "breve-nace-ai-releases-drex-max-v1-a-27b-decision-model-for-ap"
+ },
  "skill-vercel-labs-agent-browser-agent-browser": {
   "lungo": "skill-vercel-labs-agent-browser-agent-browser"
  }

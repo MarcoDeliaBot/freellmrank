@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-02-claude-code-skill-reanimate-automates-frame-by-frame-animation-cloning",
+ "titolo": "Claude Code skill 'reanimate' automates frame‑by‑frame animation cloning",
+ "descr": "The new GitHub project lets Claude Code reverse‑engineer web animations and rebuild them with matching motion and timing.",
+ "tema": "Software",
+ "paragrafi": [
+  "A GitHub repository named reanimate, authored by NiazMorshed2007, offers a Claude Code skill that reverse‑engineers any animation from a live site, screen recording, MP4, GIF or Lottie file.",
+  "The skill records the reference animation in a headless browser, captures each frame, CSS, Web Animations API data and even GPU calls for canvas and WebGL, then writes a clone using the project's existing stack such as CSS, Framer Motion, GSAP or three.js.",
+  "Verification runs the cloned animation through the same recording process, compares timing, easing and pixel output, and iterates until differences fall within configurable thresholds, typically after two to five rounds.",
+  "Installation requires Bun 1.1 or later on macOS or Linux, and the first run adds a static ffmpeg binary and Playwright’s Chromium cache, totaling about 250 MB. No API keys are needed, and the skill has only been tested with Claude Code.",
+  "The repository demonstrates clones of animations from sites like vercel.com, stripe.com and workos.com, achieving frame‑by‑frame matches with deviations as low as 0.4 px or under 2 % pixel mismatch."
+ ],
+ "perche": [
+  "For developers, reanimate provides a repeatable workflow to copy complex web animations without manual tweaking, speeding up UI prototyping."
+ ],
+ "pubblicato": "2026-11-02",
+ "titoloFonte": "NiazMorshed2007/reanimate: A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/NiazMorshed2007/reanimate",
+   "titolo": "NiazMorshed2007/reanimate: A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same.",
+   "ufficiale": false,
+   "data": "2026-10-29"
+  }
+ ],
+ "frasiTolte": 1
+}
