@@ -184,5 +184,13 @@
  "news-2026-10-30-anthropic-openai-google-and-cloudflare-launch-ai-agents-that-hunt-code": {
   "lungo": "notizia-anthropic-openai-google-and-cloudflare-launch-ai-agents",
   "breve": "breve-anthropic-openai-google-and-cloudflare-launch-ai-agents"
+ },
+ "news-2026-11-01-spacexsi-releases-grok-bot-1-0-0-with-upcoming-teams-discord-and-texti": {
+  "lungo": "notizia-spacexsi-releases-grok-bot-1-0-0-with-upcoming-teams-dis",
+  "breve": "breve-spacexsi-releases-grok-bot-1-0-0-with-upcoming-teams-dis"
+ },
+ "news-2026-11-01-openai-releases-fair-use-court-brief-excerpts-to-aid-ai-training": {
+  "lungo": "notizia-openai-releases-fair-use-court-brief-excerpts-to-aid-ai",
+  "breve": "breve-openai-releases-fair-use-court-brief-excerpts-to-aid-ai"
  }
 }
