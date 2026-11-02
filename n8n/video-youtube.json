@@ -95,7 +95,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Sceglie UN video a ogni giro (Marco, 30/10/2026: «fai il lavoro completo»).\n// Già sul canale = nella memoria del flusso oppure in contenuti/youtube.json (lì ci sono anche quelli pubblicati da Chrome).\n// Ordine: prima le skill; poi i più vecchi prima; a parità di ora il video lungo prima del suo Short (così lo Short rimanda al lungo).\n// La memoria resta fra un giro e l'altro solo quando il flusso è ATTIVO (le prove a mano non se la ricordano).\nconst memoria = $getWorkflowStaticData('global');\nmemoria.fatti = memoria.fatti || [];\nmemoria.ids = memoria.ids || {};\n// Quota YouTube (tabella ufficiale, controllata il 30/10/2026): i caricamenti hanno un conto a parte, 100 al giorno a 1 unità\n// l'uno; le altre chiamate stanno nelle 10.000 unità al giorno: sottotitoli 400 + lingua 51 + controllo del canale 1 = 452\n// a video, quindi ~22 video al giorno. Tetto a 15: margine per il limite di caricamenti del canale (si azzera a mezzanotte del Pacifico).\nconst TETTO = 15;\nconst giorno = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });\nif (memoria.giorno !== giorno) { memoria.giorno = giorno; memoria.oggi = 0; }\n// 30/10/2026: il 30/10 i video li caricava anche il compito di Chrome sul PC: 3 copie di n8n sono state cancellate (Marco)\n// e restano quelle di Chrome. Qui la memoria prende gli id giusti, una volta sola. Da qui in poi carica solo n8n.\nconst GIUSTI = { 'video-notizia-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai': 'NT-pCaERZbk', 'video-breve-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai': 'O7KEomzUnL0', 'video-notizia-google-expands-gemini-and-search-with-connected-apps-pla': 'g0Rpj7w9HOU' };\nif (!memoria.doppioni30) { for (const [t, id] of Object.entries(GIUSTI)) { memoria.ids[t] = id; if (!memoria.fatti.includes(t)) memoria.fatti.push(t); } memoria.doppioni30 = true; }\nif (memoria.pieno === giorno || (memoria.oggi || 0) >= TETTO) return [];\nconst canale = $('Leggi i video già sul canale').first().json || {};\nconst gia = (tag) => memoria.fatti.includes(tag) || !!memoria.ids[tag] || !!canale[tag.slice(6)];\nconst pronti = [];\nfor (const it of $('Leggi i video pronti su GitHub').all()) {\n  const r = it.json;\n  const tag = String(r.tag_name || '');\n  if (!tag.startsWith('video-') || tag.endsWith('-it') || gia(tag)) continue;\n  // solo in inglese (Marco, 22/10/2026) e solo i video nati dopo quelli pubblicati a mano fino al 25/10/2026\n  if (String(r.created_at) < '2026-10-25T00:00:00Z') continue;\n  const file = (fine) => (r.assets || []).find((a) => a.name.endsWith(fine));\n  if (!file('.mp4') || !file('.json')) continue;\n  pronti.push({\n    tag, nome: tag.slice(6), creato: r.created_at,\n    breve: /^video-(breve|nuovo|settimana)-/.test(tag) ? 1 : 0,\n    mp4: file('.mp4').browser_download_url, info: file('.json').browser_download_url,\n    srt: file('.srt') ? file('.srt').browser_download_url : '',\n  });\n}\nif (!pronti.length) return [];\n// 30/10/2026 (Marco): prima le skill, poi tutto il resto. Le skill escono come release «video-skill-<nome>» (lungo)\n// e «video-breve-skill-<nome>» (Short collegato): dentro ogni gruppo i più vecchi prima, il lungo prima del suo Short.\nconst prima = (p) => (/^video-(breve-)?skill-/.test(p.tag) ? 0 : 1);\npronti.sort((a, b) => prima(a) - prima(b) || a.creato.localeCompare(b.creato) || a.breve - b.breve);\nreturn [{ json: { ...pronti[0], inCoda: pronti.length, oggi: memoria.oggi || 0 } }];"
+        "jsCode": "// Sceglie UN video a ogni giro (Marco, 30/10/2026: «fai il lavoro completo»).\n// Già sul canale = nella memoria del flusso oppure in contenuti/youtube.json (lì ci sono anche quelli pubblicati da Chrome).\n// Ordine: prima le skill; poi i più vecchi prima; a parità di ora il video lungo prima del suo Short (così lo Short rimanda al lungo).\n// La memoria resta fra un giro e l'altro solo quando il flusso è ATTIVO (le prove a mano non se la ricordano).\nconst memoria = $getWorkflowStaticData('global');\nmemoria.fatti = memoria.fatti || [];\nmemoria.ids = memoria.ids || {};\n// Quota YouTube (tabella ufficiale, controllata il 30/10/2026): i caricamenti hanno un conto a parte, 100 al giorno a 1 unità\n// l'uno; le altre chiamate stanno nelle 10.000 unità al giorno: sottotitoli 400 + lingua 51 + controllo del canale 1 = 452\n// a video, più 50 per la miniatura dei lunghi: ~20 video al giorno. Tetto a 15: margine per il limite di caricamenti del canale (si azzera a mezzanotte del Pacifico).\nconst TETTO = 15;\nconst giorno = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });\nif (memoria.giorno !== giorno) { memoria.giorno = giorno; memoria.oggi = 0; }\n// 30/10/2026: il 30/10 i video li caricava anche il compito di Chrome sul PC: 3 copie di n8n sono state cancellate (Marco)\n// e restano quelle di Chrome. Qui la memoria prende gli id giusti, una volta sola. Da qui in poi carica solo n8n.\nconst GIUSTI = { 'video-notizia-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai': 'NT-pCaERZbk', 'video-breve-chrome-adds-gmail-sourced-autofill-powered-by-gemini-ai': 'O7KEomzUnL0', 'video-notizia-google-expands-gemini-and-search-with-connected-apps-pla': 'g0Rpj7w9HOU' };\nif (!memoria.doppioni30) { for (const [t, id] of Object.entries(GIUSTI)) { memoria.ids[t] = id; if (!memoria.fatti.includes(t)) memoria.fatti.push(t); } memoria.doppioni30 = true; }\nif (memoria.pieno === giorno || (memoria.oggi || 0) >= TETTO) return [];\nconst canale = $('Leggi i video già sul canale').first().json || {};\nconst gia = (tag) => memoria.fatti.includes(tag) || !!memoria.ids[tag] || !!canale[tag.slice(6)];\nconst pronti = [];\nfor (const it of $('Leggi i video pronti su GitHub').all()) {\n  const r = it.json;\n  const tag = String(r.tag_name || '');\n  if (!tag.startsWith('video-') || tag.endsWith('-it') || gia(tag)) continue;\n  // solo in inglese (Marco, 22/10/2026) e solo i video nati dopo quelli pubblicati a mano fino al 25/10/2026\n  if (String(r.created_at) < '2026-10-25T00:00:00Z') continue;\n  const file = (fine) => (r.assets || []).find((a) => a.name.endsWith(fine));\n  if (!file('.mp4') || !file('.json')) continue;\n  pronti.push({\n    tag, nome: tag.slice(6), creato: r.created_at,\n    breve: /^video-(breve|nuovo|settimana)-/.test(tag) ? 1 : 0,\n    mp4: file('.mp4').browser_download_url, info: file('.json').browser_download_url,\n    srt: file('.srt') ? file('.srt').browser_download_url : '',\n    jpg: file('.jpg') ? file('.jpg').browser_download_url : '',\n  });\n}\nif (!pronti.length) return [];\n// 30/10/2026 (Marco): prima le skill, poi tutto il resto. Le skill escono come release «video-skill-<nome>» (lungo)\n// e «video-breve-skill-<nome>» (Short collegato): dentro ogni gruppo i più vecchi prima, il lungo prima del suo Short.\nconst prima = (p) => (/^video-(breve-)?skill-/.test(p.tag) ? 0 : 1);\npronti.sort((a, b) => prima(a) - prima(b) || a.creato.localeCompare(b.creato) || a.breve - b.breve);\nreturn [{ json: { ...pronti[0], inCoda: pronti.length, oggi: memoria.oggi || 0 } }];"
       },
       "name": "Scegli il video da caricare",
       "type": "n8n-nodes-base.code",
@@ -358,7 +358,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Gli id vanno in contenuti/youtube.json: il blog mette il video in cima al post (script/sito/blog.mjs).\n// Stesso formato di script/youtube-link.mjs: { \"<nome del video>\": \"<id YouTube>\" }, rientro di 1 spazio.\n// Scrive TUTTI gli id caricati dal flusso che mancano nel file: se un salvataggio non è riuscito, lo recupera il giro dopo.\nconst memoria = $getWorkflowStaticData('global');\nconst v = $('Segna come caricato').first().json;\nconst f = $json;\nif (!f.content || !f.sha) return [];\nconst mappa = JSON.parse(Buffer.from(f.content, 'base64').toString('utf8'));\nconst nuovi = [];\nfor (const [tag, id] of Object.entries({ ...(memoria.ids || {}), [v.tag]: v.id })) {\n  const nome = tag.replace(/^video-/, '');\n  if (mappa[nome] !== id) { mappa[nome] = id; nuovi.push(nome); }\n}\nif (!nuovi.length) return [];\nconst testo = JSON.stringify(mappa, null, 1) + '\\n';\nreturn [{ json: { message: 'YouTube: ' + nuovi.join(', ').slice(0, 200), sha: f.sha, content: Buffer.from(testo, 'utf8').toString('base64'), nuovi } }];"
+        "jsCode": "// Gli id vanno in contenuti/youtube.json: il blog mette il video in cima al post (script/sito/blog.mjs).\n// Dal 31/10/2026 il file non si scrive più da qui (il token di n8n ha solo il permesso Actions): le voci nuove vanno\n// al workflow GitHub youtube-link.yml, che le salva con GITHUB_TOKEN (script/youtube-voci.mjs, stesso formato).\n// Manda TUTTI gli id caricati dal flusso che mancano nel file: se un salvataggio non è riuscito, lo recupera il giro dopo.\nconst memoria = $getWorkflowStaticData('global');\nconst v = $('Segna come caricato').first().json;\nconst f = $json;\nif (!f.content) return [];\nconst mappa = JSON.parse(Buffer.from(f.content, 'base64').toString('utf8'));\nconst voci = {};\nfor (const [tag, id] of Object.entries({ ...(memoria.ids || {}), [v.tag]: v.id })) {\n  const nome = tag.replace(/^video-/, '');\n  if (!/^[a-z0-9][\\w.-]*$/i.test(nome) || !/^[\\w-]{11}$/.test(String(id))) continue;\n  if (mappa[nome] !== id) voci[nome] = id;\n}\nconst nuovi = Object.keys(voci);\nif (!nuovi.length) return [];\nreturn [{ json: { voci, nuovi } }];"
       },
       "name": "Aggiungi il video a youtube.json",
       "type": "n8n-nodes-base.code",
@@ -371,8 +371,8 @@
     },
     {
       "parameters": {
-        "method": "PUT",
-        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/contents/contenuti/youtube.json",
+        "method": "POST",
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/actions/workflows/youtube-link.yml/dispatches",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
@@ -390,7 +390,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ message: $json.message, content: $json.content, sha: $json.sha }) }}",
+        "jsonBody": "={{ JSON.stringify({ ref: 'main', inputs: { voci: JSON.stringify($json.voci) } }) }}",
         "options": {}
       },
       "name": "Salva youtube.json su GitHub",
@@ -470,6 +470,73 @@
           "name": "YouTube FreeLLMArena"
         }
       },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Miniatura nostra (<nome>.jpg della release) solo sui video lunghi: senza, YouTube mostra un fotogramma automatico (Marco, 1/11/2026).\n// Agli Short no: la pagina ufficiale dice che la loro miniatura si mette solo da YouTube Studio sul computer (controllato il 1/11/2026).\n// I video «gpu» sono Short anche se breve è 0, per questo si guarda anche #Shorts nel titolo. Senza .jpg il ramo finisce qui, il resto del flusso va avanti.\nconst v = $('Prepara la descrizione').first().json;\nif (!v.jpg || v.breve || /#shorts/i.test(v.titolo)) return [];\nreturn [{ json: { id: $('Segna come caricato').first().json.id, jpg: v.jpg } }];"
+      },
+      "name": "Serve la miniatura?",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2432,
+        480
+      ],
+      "id": "7c1f0c52-6b0e-4a7e-9d3a-2f6d1e8b4a01"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.jpg }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "name": "Scarica la miniatura",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2640,
+        480
+      ],
+      "id": "7c1f0c52-6b0e-4a7e-9d3a-2f6d1e8b4a02",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://www.googleapis.com/upload/youtube/v3/thumbnails/set?uploadType=media&videoId={{ $('Serve la miniatura?').first().json.id }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "youTubeOAuth2Api",
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "data",
+        "options": {}
+      },
+      "name": "Carica la miniatura",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2864,
+        480
+      ],
+      "id": "7c1f0c52-6b0e-4a7e-9d3a-2f6d1e8b4a03",
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube FreeLLMArena"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000,
       "onError": "continueRegularOutput"
     }
   ],
@@ -608,6 +675,11 @@
             "node": "Leggi i dati del video",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Serve la miniatura?",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -672,6 +744,28 @@
         [
           {
             "node": "Imposta la lingua del video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Serve la miniatura?": {
+      "main": [
+        [
+          {
+            "node": "Scarica la miniatura",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scarica la miniatura": {
+      "main": [
+        [
+          {
+            "node": "Carica la miniatura",
             "type": "main",
             "index": 0
           }
