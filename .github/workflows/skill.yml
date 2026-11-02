@@ -1,8 +1,11 @@
 name: Agent Skills e tutorial
 
 on:
-  schedule:
-    - cron: '10 3 * * *'
+  # 02/11/2026: corsa notturna spenta finché Marco non ha visto i primi video automatici.
+  # Accesa pubblica fino a 6 video a notte, e n8n carica le skill prima di tutto il resto.
+  # Per riaccenderla togli il commento alle due righe sotto.
+  # schedule:
+  #   - cron: '10 3 * * *'
   workflow_dispatch:
     inputs:
       prova:
@@ -127,7 +130,7 @@ jobs:
       - name: Salva dati, pagine e legami dopo i controlli
         if: env.PROVA != 'true'
         run: |
-          git add dati/skill.json dati/skill-scartate.json dati/skill-storico dati/skill-pagine.json dati/skill-categorie.json contenuti/legami-video.json
+          git add dati/skill.json dati/skill-scartate.json dati/skill-audit-top20.json dati/skill-storico dati/skill-pagine.json dati/skill-categorie.json contenuti/legami-video.json
           node script/aggiorna-pagine-pubblicate.mjs
           git add dati/pagine-pubblicate.json dati/pagine-archivio.json
           if [ -d dati/skill-mesi ]; then git add dati/skill-mesi; fi
@@ -138,8 +141,10 @@ jobs:
           git config user.name freellmarena-bot
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m "Skill e tutorial verificati $(date -u +%F)"
+          # quello che serve è nel commit: un file tracciato rimasto modificato fa rifiutare git pull --rebase
+          git checkout -- .
           for i in 1 2 3 4 5; do
-            if git pull --rebase origin main; then
+            if git pull --rebase -X theirs origin main; then
               node script/aggiorna-pagine-pubblicate.mjs --recupera
               git add dati/pagine-pubblicate.json dati/pagine-archivio.json
               git diff --cached --quiet || git commit --amend --no-edit
