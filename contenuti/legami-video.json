@@ -192,5 +192,8 @@
  "news-2026-11-01-openai-releases-fair-use-court-brief-excerpts-to-aid-ai-training": {
   "lungo": "notizia-openai-releases-fair-use-court-brief-excerpts-to-aid-ai",
   "breve": "breve-openai-releases-fair-use-court-brief-excerpts-to-aid-ai"
+ },
+ "skill-vercel-labs-agent-browser-agent-browser": {
+  "lungo": "skill-vercel-labs-agent-browser-agent-browser"
  }
 }

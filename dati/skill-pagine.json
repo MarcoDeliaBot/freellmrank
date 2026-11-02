@@ -1,1 +1,11 @@
-[]
+[
+ {
+  "url": "/skills/vercel-labs-agent-browser-agent-browser.html",
+  "slug": "vercel-labs-agent-browser-agent-browser",
+  "tipo": "skill",
+  "repository": "vercel-labs/agent-browser",
+  "skillPath": "skills/agent-browser/SKILL.md",
+  "primaPubblicazione": "2026-11-02",
+  "stato": "attiva"
+ }
+]

@@ -1,11 +1,11 @@
 {
- "aggiornato": "2026-10-31",
+ "aggiornato": "2026-11-02",
  "scartate": [
   {
    "rank": 1,
    "repository": "skills-shell/superpowers",
    "skill": "ai-image-generation",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/image/ai-image-generation/SKILL.md",
    "status": "warning",
@@ -23,7 +23,7 @@
    "rank": 2,
    "repository": "skills-shell/superpowers",
    "skill": "ai-video-generation",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/ai-video-generation/SKILL.md",
    "status": "warning",
@@ -40,26 +40,8 @@
   {
    "rank": 3,
    "repository": "skills-shell/superpowers",
-   "skill": "ai-avatar-video",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/ai-avatar-video/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 4,
-   "repository": "skills-shell/superpowers",
    "skill": "twitter-automation",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/social/twitter-automation/SKILL.md",
    "status": "warning",
@@ -74,10 +56,28 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 64,
+   "rank": 4,
+   "repository": "skills-shell/superpowers",
+   "skill": "ai-avatar-video",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/ai-avatar-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 57,
    "repository": "skills-shell/superpowers",
    "skill": "agent-browser",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/utilities/agent-browser/SKILL.md",
    "status": "warning",
@@ -92,10 +92,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 122,
+   "rank": 116,
    "repository": "skills-shell/superpowers",
    "skill": "web-search",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/llm/web-search/SKILL.md",
    "status": "warning",
@@ -110,64 +110,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 123,
-   "repository": "skills-shell/superpowers",
-   "skill": "agent-tools",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/agent-tools/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/agent-tools/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 124,
-   "repository": "skills-shell/superpowers",
-   "skill": "infsh-cli",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/infsh-cli/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/infsh-cli/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 125,
-   "repository": "skills-shell/superpowers",
-   "skill": "python-executor",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/utilities/python-executor/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/utilities/python-executor/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 126,
+   "rank": 117,
    "repository": "skills-shell/superpowers",
    "skill": "remotion-render",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/remotion-render/SKILL.md",
    "status": "warning",
@@ -182,16 +128,16 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 177,
+   "rank": 118,
    "repository": "skills-shell/superpowers",
-   "skill": "youtube-thumbnail-design",
-   "date": "2026-10-31",
+   "skill": "python-executor",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/youtube-thumbnail-design/SKILL.md",
+   "skillPath": "tools/utilities/python-executor/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "guides/design/youtube-thumbnail-design/SKILL.md",
+     "file": "tools/utilities/python-executor/SKILL.md",
      "line": 1,
      "reason": "no exact installation command for this repository in README"
     }
@@ -200,10 +146,46 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 178,
+   "rank": 119,
+   "repository": "skills-shell/superpowers",
+   "skill": "agent-tools",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/agent-tools/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/agent-tools/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 120,
+   "repository": "skills-shell/superpowers",
+   "skill": "infsh-cli",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/infsh-cli/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/infsh-cli/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 163,
    "repository": "skills-shell/superpowers",
    "skill": "landing-page-design",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "guides/design/landing-page-design/SKILL.md",
    "status": "warning",
@@ -218,10 +200,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 179,
+   "rank": 164,
    "repository": "skills-shell/superpowers",
    "skill": "app-store-screenshots",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "guides/design/app-store-screenshots/SKILL.md",
    "status": "warning",
@@ -236,28 +218,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 180,
-   "repository": "skills-shell/superpowers",
-   "skill": "video-ad-specs",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/video/video-ad-specs/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/video/video-ad-specs/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 181,
+   "rank": 165,
    "repository": "skills-shell/superpowers",
    "skill": "product-photography",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "guides/photo/product-photography/SKILL.md",
    "status": "warning",
@@ -272,10 +236,28 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 182,
+   "rank": 166,
+   "repository": "skills-shell/superpowers",
+   "skill": "youtube-thumbnail-design",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/youtube-thumbnail-design/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/youtube-thumbnail-design/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 167,
    "repository": "skills-shell/superpowers",
    "skill": "character-design-sheet",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "guides/design/character-design-sheet/SKILL.md",
    "status": "warning",
@@ -290,64 +272,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 183,
-   "repository": "skills-shell/superpowers",
-   "skill": "product-hunt-launch",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/product/product-hunt-launch/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/product/product-hunt-launch/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 184,
-   "repository": "skills-shell/superpowers",
-   "skill": "storyboard-creation",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/video/storyboard-creation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/video/storyboard-creation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 185,
-   "repository": "skills-shell/superpowers",
-   "skill": "competitor-teardown",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/product/competitor-teardown/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/product/competitor-teardown/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 186,
+   "rank": 168,
    "repository": "skills-shell/superpowers",
    "skill": "image-to-video",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/image-to-video/SKILL.md",
    "status": "warning",
@@ -362,10 +290,82 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
+   "rank": 169,
+   "repository": "skills-shell/superpowers",
+   "skill": "video-ad-specs",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/video/video-ad-specs/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/video/video-ad-specs/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 170,
+   "repository": "skills-shell/superpowers",
+   "skill": "storyboard-creation",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/video/storyboard-creation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/video/storyboard-creation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 171,
+   "repository": "skills-shell/superpowers",
+   "skill": "product-hunt-launch",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/product/product-hunt-launch/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/product/product-hunt-launch/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 172,
+   "repository": "skills-shell/superpowers",
+   "skill": "competitor-teardown",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/product/competitor-teardown/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/product/competitor-teardown/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
    "rank": 5,
    "repository": "uizze.sh",
    "skill": "ui-taste",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "status": "blocked",
    "reasons": [
     {
@@ -377,9 +377,45 @@
   },
   {
    "rank": 6,
+   "repository": "uizze/uizze",
+   "skill": "uizze-ui",
+   "date": "2026-11-02",
+   "commit": "fc401e9e654cbafe427b0c98142fc8bccd0c4e7e",
+   "skillPath": "skills/uizze-ui/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/uizze-ui/SKILL.md",
+     "line": 1,
+     "reason": "no actual usage code block in skill or README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no actual usage code block in skill or README"
+  },
+  {
+   "rank": 42,
+   "repository": "uizze/uizze",
+   "skill": "image-to-ui",
+   "date": "2026-11-02",
+   "commit": "fc401e9e654cbafe427b0c98142fc8bccd0c4e7e",
+   "skillPath": "skills/image-to-ui/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "skills/image-to-ui/SKILL.md",
+     "line": 1,
+     "reason": "no actual usage code block in skill or README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no actual usage code block in skill or README"
+  },
+  {
+   "rank": 7,
    "repository": "designed-by-ai/skills",
    "skill": "design-mobile-apps",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "03c20aec6dcedb5fabfb03dc37982eb52ef19ed6",
    "skillPath": "skills/design-mobile-apps/SKILL.md",
    "status": "warning",
@@ -394,11 +430,137 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 7,
+   "rank": 8,
+   "repository": "vercel-labs/skills",
+   "skill": "find-skills",
+   "date": "2026-11-02",
+   "commit": "92a9a34ac3bf88e695e468b90c7bf32f163d32c8",
+   "skillPath": "skills/find-skills/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/find-skills/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 9,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-video-generation",
+   "date": "2026-11-02",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-video-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-video-generation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 10,
+   "repository": "gencraft-labs/skills",
+   "skill": "image-to-video",
+   "date": "2026-11-02",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "image-to-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "image-to-video/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 12,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-image-generation",
+   "date": "2026-11-02",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-image-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-image-generation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 13,
+   "repository": "gencraft-labs/skills",
+   "skill": "video-edit",
+   "date": "2026-11-02",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "video-edit/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "video-edit/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 14,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-music",
+   "date": "2026-11-02",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-music/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-music/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 11,
+   "repository": "flowkit-labs/skills",
+   "skill": "reddit-automation",
+   "date": "2026-11-02",
+   "commit": "0c9e2b63f504a296a86e45ed3a60a426dd979ca6",
+   "skillPath": "reddit-automation/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "reddit-automation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 15,
    "repository": "heygen-com/hyperframes",
    "skill": "media-use",
-   "date": "2026-10-31",
-   "commit": "164d6c7a36eba26e9126b364beab98437e2eeec7",
+   "date": "2026-11-02",
+   "commit": "618c486734b3cbb697bd432bace7e9642e48b6be",
    "skillPath": "skills/media-use/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -449,27 +611,27 @@
     },
     {
      "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 46,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
      "line": 47,
      "reason": "sensitive-read"
     },
     {
      "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 48,
+     "line": 114,
      "reason": "sensitive-read"
     },
     {
      "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 115,
+     "line": 116,
      "reason": "sensitive-read"
     },
     {
      "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 117,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 195,
+     "line": 189,
      "reason": "environment-secret-read"
     },
     {
@@ -479,12 +641,7 @@
     },
     {
      "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 7,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 83,
+     "line": 80,
      "reason": "undocumented-network-host"
     },
     {
@@ -540,11 +697,11 @@
    ]
   },
   {
-   "rank": 8,
+   "rank": 16,
    "repository": "heygen-com/hyperframes",
    "skill": "hyperframes-cli",
-   "date": "2026-10-31",
-   "commit": "164d6c7a36eba26e9126b364beab98437e2eeec7",
+   "date": "2026-11-02",
+   "commit": "618c486734b3cbb697bd432bace7e9642e48b6be",
    "skillPath": "skills/hyperframes-cli/SKILL.md",
    "status": "warning",
    "reasons": [
@@ -558,11 +715,11 @@
    "contentReason": "no actual usage code block in skill or README"
   },
   {
-   "rank": 12,
+   "rank": 18,
    "repository": "heygen-com/hyperframes",
    "skill": "hyperframes",
-   "date": "2026-10-31",
-   "commit": "164d6c7a36eba26e9126b364beab98437e2eeec7",
+   "date": "2026-11-02",
+   "commit": "618c486734b3cbb697bd432bace7e9642e48b6be",
    "skillPath": "skills/hyperframes/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -764,11 +921,11 @@
    ]
   },
   {
-   "rank": 46,
+   "rank": 68,
    "repository": "heygen-com/hyperframes",
    "skill": "remotion-to-hyperframes",
-   "date": "2026-10-31",
-   "commit": "164d6c7a36eba26e9126b364beab98437e2eeec7",
+   "date": "2026-11-02",
+   "commit": "618c486734b3cbb697bd432bace7e9642e48b6be",
    "skillPath": "skills/remotion-to-hyperframes/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -795,11 +952,11 @@
    ]
   },
   {
-   "rank": 63,
+   "rank": 78,
    "repository": "heygen-com/hyperframes",
    "skill": "figma",
-   "date": "2026-10-31",
-   "commit": "164d6c7a36eba26e9126b364beab98437e2eeec7",
+   "date": "2026-11-02",
+   "commit": "618c486734b3cbb697bd432bace7e9642e48b6be",
    "skillPath": "skills/figma/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -813,160 +970,16 @@
    "contentReason": "no actual usage code block in skill or README"
   },
   {
-   "rank": 9,
-   "repository": "vercel-labs/skills",
-   "skill": "find-skills",
-   "date": "2026-10-31",
-   "commit": "92a9a34ac3bf88e695e468b90c7bf32f163d32c8",
-   "skillPath": "skills/find-skills/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "skills/find-skills/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 11,
-   "repository": "gencraft-labs/skills",
-   "skill": "video-edit",
-   "date": "2026-10-31",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "video-edit/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "video-edit/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 13,
-   "repository": "gencraft-labs/skills",
-   "skill": "ai-video-generation",
-   "date": "2026-10-31",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "ai-video-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "ai-video-generation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 14,
-   "repository": "gencraft-labs/skills",
-   "skill": "ai-image-generation",
-   "date": "2026-10-31",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "ai-image-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "ai-image-generation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 16,
-   "repository": "gencraft-labs/skills",
-   "skill": "ai-music",
-   "date": "2026-10-31",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "ai-music/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "ai-music/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 17,
-   "repository": "gencraft-labs/skills",
-   "skill": "image-to-video",
-   "date": "2026-10-31",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "image-to-video/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "image-to-video/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 15,
-   "repository": "flowkit-labs/skills",
-   "skill": "reddit-automation",
-   "date": "2026-10-31",
-   "commit": "0c9e2b63f504a296a86e45ed3a60a426dd979ca6",
-   "skillPath": "reddit-automation/SKILL.md",
+   "rank": 343,
+   "repository": "heygen-com/hyperframes",
+   "skill": "reverse-any-video",
+   "date": "2026-11-02",
+   "commit": "618c486734b3cbb697bd432bace7e9642e48b6be",
+   "skillPath": "skills/reverse-any-video/SKILL.md",
    "status": "passed",
    "reasons": [
     {
-     "file": "reddit-automation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 18,
-   "repository": "uizze/uizze",
-   "skill": "uizze-ui",
-   "date": "2026-10-31",
-   "commit": "40b0ee439ba88aecb65d68bcb379da0e716b899e",
-   "skillPath": "skills/uizze-ui/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "skills/uizze-ui/SKILL.md",
-     "line": 1,
-     "reason": "no actual usage code block in skill or README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no actual usage code block in skill or README"
-  },
-  {
-   "rank": 68,
-   "repository": "uizze/uizze",
-   "skill": "image-to-ui",
-   "date": "2026-10-31",
-   "commit": "40b0ee439ba88aecb65d68bcb379da0e716b899e",
-   "skillPath": "skills/image-to-ui/SKILL.md",
-   "status": "passed",
-   "reasons": [
-    {
-     "file": "skills/image-to-ui/SKILL.md",
+     "file": "skills/reverse-any-video/SKILL.md",
      "line": 1,
      "reason": "no actual usage code block in skill or README"
     }
@@ -976,9 +989,9 @@
   },
   {
    "rank": 20,
-   "repository": "101-skills/superpowers",
+   "repository": "qu-skills/superpowers",
    "skill": "ai-video-generation",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/ai-video-generation/SKILL.md",
    "status": "warning",
@@ -993,376 +1006,16 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 25,
-   "repository": "101-skills/superpowers",
-   "skill": "ai-image-generation",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/image/ai-image-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 26,
-   "repository": "101-skills/superpowers",
-   "skill": "twitter-automation",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/social/twitter-automation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 27,
-   "repository": "101-skills/superpowers",
+   "rank": 21,
+   "repository": "qu-skills/superpowers",
    "skill": "ai-avatar-video",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/ai-avatar-video/SKILL.md",
    "status": "warning",
    "reasons": [
     {
      "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 161,
-   "repository": "101-skills/superpowers",
-   "skill": "agent-browser",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/utilities/agent-browser/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/utilities/agent-browser/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 236,
-   "repository": "101-skills/superpowers",
-   "skill": "web-search",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/llm/web-search/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/llm/web-search/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 239,
-   "repository": "101-skills/superpowers",
-   "skill": "infsh-cli",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/infsh-cli/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/infsh-cli/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 241,
-   "repository": "101-skills/superpowers",
-   "skill": "remotion-render",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/remotion-render/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/remotion-render/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 242,
-   "repository": "101-skills/superpowers",
-   "skill": "python-executor",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/utilities/python-executor/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/utilities/python-executor/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 243,
-   "repository": "101-skills/superpowers",
-   "skill": "agent-tools",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/agent-tools/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/agent-tools/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 495,
-   "repository": "101-skills/superpowers",
-   "skill": "landing-page-design",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/landing-page-design/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/design/landing-page-design/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 513,
-   "repository": "101-skills/superpowers",
-   "skill": "youtube-thumbnail-design",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/youtube-thumbnail-design/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/design/youtube-thumbnail-design/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 524,
-   "repository": "101-skills/superpowers",
-   "skill": "app-store-screenshots",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/app-store-screenshots/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/design/app-store-screenshots/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 527,
-   "repository": "101-skills/superpowers",
-   "skill": "product-photography",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/photo/product-photography/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/photo/product-photography/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 538,
-   "repository": "101-skills/superpowers",
-   "skill": "character-design-sheet",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/character-design-sheet/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/design/character-design-sheet/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 539,
-   "repository": "101-skills/superpowers",
-   "skill": "image-to-video",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/image-to-video/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/image-to-video/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 540,
-   "repository": "101-skills/superpowers",
-   "skill": "video-ad-specs",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/video/video-ad-specs/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/video/video-ad-specs/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 541,
-   "repository": "101-skills/superpowers",
-   "skill": "competitor-teardown",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/product/competitor-teardown/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/product/competitor-teardown/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 542,
-   "repository": "101-skills/superpowers",
-   "skill": "storyboard-creation",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/video/storyboard-creation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/video/storyboard-creation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 543,
-   "repository": "101-skills/superpowers",
-   "skill": "product-hunt-launch",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/product/product-hunt-launch/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/product/product-hunt-launch/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 357,
-   "repository": "addyosmani/agent-skills",
-   "skill": "security-and-hardening",
-   "date": "2026-10-31",
-   "commit": "eb07f19f52c2669f2364897aaa293e2aaddd7b1c",
-   "skillPath": "skills/security-and-hardening/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "skills/security-and-hardening/SKILL.md",
-     "line": 1,
-     "reason": "no actual usage code block in skill or README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no actual usage code block in skill or README"
-  },
-  {
-   "rank": 21,
-   "repository": "its-a-skill-issue/superpowers",
-   "skill": "ai-video-generation",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/ai-video-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/ai-video-generation/SKILL.md",
      "line": 1,
      "reason": "no exact installation command for this repository in README"
     }
@@ -1372,45 +1025,9 @@
   },
   {
    "rank": 22,
-   "repository": "its-a-skill-issue/superpowers",
-   "skill": "twitter-automation",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/social/twitter-automation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 23,
-   "repository": "its-a-skill-issue/superpowers",
-   "skill": "ai-avatar-video",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/ai-avatar-video/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 24,
-   "repository": "its-a-skill-issue/superpowers",
+   "repository": "qu-skills/superpowers",
    "skill": "ai-image-generation",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/image/ai-image-generation/SKILL.md",
    "status": "warning",
@@ -1425,10 +1042,28 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 165,
-   "repository": "its-a-skill-issue/superpowers",
+   "rank": 23,
+   "repository": "qu-skills/superpowers",
+   "skill": "twitter-automation",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/social/twitter-automation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 174,
+   "repository": "qu-skills/superpowers",
    "skill": "agent-browser",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/utilities/agent-browser/SKILL.md",
    "status": "warning",
@@ -1443,28 +1078,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 283,
-   "repository": "its-a-skill-issue/superpowers",
-   "skill": "remotion-render",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/remotion-render/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/remotion-render/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 284,
-   "repository": "its-a-skill-issue/superpowers",
+   "rank": 251,
+   "repository": "qu-skills/superpowers",
    "skill": "infsh-cli",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/infsh-cli/SKILL.md",
    "status": "warning",
@@ -1479,28 +1096,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 285,
-   "repository": "its-a-skill-issue/superpowers",
-   "skill": "web-search",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/llm/web-search/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/llm/web-search/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 286,
-   "repository": "its-a-skill-issue/superpowers",
+   "rank": 252,
+   "repository": "qu-skills/superpowers",
    "skill": "agent-tools",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/agent-tools/SKILL.md",
    "status": "warning",
@@ -1515,10 +1114,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 287,
-   "repository": "its-a-skill-issue/superpowers",
+   "rank": 253,
+   "repository": "qu-skills/superpowers",
    "skill": "python-executor",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/utilities/python-executor/SKILL.md",
    "status": "warning",
@@ -1533,16 +1132,16 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 515,
-   "repository": "its-a-skill-issue/superpowers",
-   "skill": "video-ad-specs",
-   "date": "2026-10-31",
+   "rank": 254,
+   "repository": "qu-skills/superpowers",
+   "skill": "remotion-render",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/video/video-ad-specs/SKILL.md",
+   "skillPath": "tools/video/remotion-render/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "guides/video/video-ad-specs/SKILL.md",
+     "file": "tools/video/remotion-render/SKILL.md",
      "line": 1,
      "reason": "no exact installation command for this repository in README"
     }
@@ -1551,10 +1150,28 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 516,
-   "repository": "its-a-skill-issue/superpowers",
+   "rank": 255,
+   "repository": "qu-skills/superpowers",
+   "skill": "web-search",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/llm/web-search/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/llm/web-search/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 499,
+   "repository": "qu-skills/superpowers",
    "skill": "app-store-screenshots",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "guides/design/app-store-screenshots/SKILL.md",
    "status": "warning",
@@ -1569,46 +1186,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 517,
-   "repository": "its-a-skill-issue/superpowers",
-   "skill": "storyboard-creation",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/video/storyboard-creation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/video/storyboard-creation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 519,
-   "repository": "its-a-skill-issue/superpowers",
-   "skill": "competitor-teardown",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/product/competitor-teardown/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/product/competitor-teardown/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 520,
-   "repository": "its-a-skill-issue/superpowers",
+   "rank": 500,
+   "repository": "qu-skills/superpowers",
    "skill": "product-photography",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "guides/photo/product-photography/SKILL.md",
    "status": "warning",
@@ -1623,82 +1204,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 521,
-   "repository": "its-a-skill-issue/superpowers",
-   "skill": "youtube-thumbnail-design",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/youtube-thumbnail-design/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/design/youtube-thumbnail-design/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 522,
-   "repository": "its-a-skill-issue/superpowers",
-   "skill": "image-to-video",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/image-to-video/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/image-to-video/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 523,
-   "repository": "its-a-skill-issue/superpowers",
-   "skill": "character-design-sheet",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/character-design-sheet/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/design/character-design-sheet/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 525,
-   "repository": "its-a-skill-issue/superpowers",
-   "skill": "product-hunt-launch",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/product/product-hunt-launch/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/product/product-hunt-launch/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 526,
-   "repository": "its-a-skill-issue/superpowers",
+   "rank": 501,
+   "repository": "qu-skills/superpowers",
    "skill": "landing-page-design",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "guides/design/landing-page-design/SKILL.md",
    "status": "warning",
@@ -1713,10 +1222,172 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 28,
+   "rank": 502,
+   "repository": "qu-skills/superpowers",
+   "skill": "image-to-video",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/image-to-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/image-to-video/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 503,
+   "repository": "qu-skills/superpowers",
+   "skill": "youtube-thumbnail-design",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/youtube-thumbnail-design/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/youtube-thumbnail-design/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 505,
+   "repository": "qu-skills/superpowers",
+   "skill": "video-ad-specs",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/video/video-ad-specs/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/video/video-ad-specs/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 506,
+   "repository": "qu-skills/superpowers",
+   "skill": "character-design-sheet",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/character-design-sheet/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/character-design-sheet/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 507,
+   "repository": "qu-skills/superpowers",
+   "skill": "storyboard-creation",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/video/storyboard-creation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/video/storyboard-creation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 508,
+   "repository": "qu-skills/superpowers",
+   "skill": "product-hunt-launch",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/product/product-hunt-launch/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/product/product-hunt-launch/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 509,
+   "repository": "qu-skills/superpowers",
+   "skill": "competitor-teardown",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/product/competitor-teardown/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/product/competitor-teardown/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 24,
+   "repository": "bankai-skills/superpowers",
+   "skill": "ai-image-generation",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/image/ai-image-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 25,
+   "repository": "bankai-skills/superpowers",
+   "skill": "twitter-automation",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/social/twitter-automation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 26,
    "repository": "bankai-skills/superpowers",
    "skill": "ai-video-generation",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/ai-video-generation/SKILL.md",
    "status": "warning",
@@ -1731,10 +1402,676 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 29,
+   "rank": 27,
    "repository": "bankai-skills/superpowers",
+   "skill": "ai-avatar-video",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/ai-avatar-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 177,
+   "repository": "bankai-skills/superpowers",
+   "skill": "agent-browser",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/utilities/agent-browser/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/utilities/agent-browser/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 241,
+   "repository": "bankai-skills/superpowers",
+   "skill": "python-executor",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/utilities/python-executor/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/utilities/python-executor/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 242,
+   "repository": "bankai-skills/superpowers",
+   "skill": "web-search",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/llm/web-search/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/llm/web-search/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 243,
+   "repository": "bankai-skills/superpowers",
+   "skill": "agent-tools",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/agent-tools/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/agent-tools/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 244,
+   "repository": "bankai-skills/superpowers",
+   "skill": "remotion-render",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/remotion-render/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/remotion-render/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 245,
+   "repository": "bankai-skills/superpowers",
+   "skill": "infsh-cli",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/infsh-cli/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/infsh-cli/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 471,
+   "repository": "bankai-skills/superpowers",
+   "skill": "landing-page-design",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/landing-page-design/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/landing-page-design/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 472,
+   "repository": "bankai-skills/superpowers",
+   "skill": "youtube-thumbnail-design",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/youtube-thumbnail-design/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/youtube-thumbnail-design/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 473,
+   "repository": "bankai-skills/superpowers",
+   "skill": "competitor-teardown",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/product/competitor-teardown/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/product/competitor-teardown/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 474,
+   "repository": "bankai-skills/superpowers",
+   "skill": "storyboard-creation",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/video/storyboard-creation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/video/storyboard-creation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 476,
+   "repository": "bankai-skills/superpowers",
+   "skill": "video-ad-specs",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/video/video-ad-specs/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/video/video-ad-specs/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 477,
+   "repository": "bankai-skills/superpowers",
+   "skill": "product-photography",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/photo/product-photography/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/photo/product-photography/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 478,
+   "repository": "bankai-skills/superpowers",
+   "skill": "character-design-sheet",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/character-design-sheet/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/character-design-sheet/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 479,
+   "repository": "bankai-skills/superpowers",
+   "skill": "product-hunt-launch",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/product/product-hunt-launch/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/product/product-hunt-launch/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 480,
+   "repository": "bankai-skills/superpowers",
+   "skill": "image-to-video",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/image-to-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/image-to-video/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 481,
+   "repository": "bankai-skills/superpowers",
+   "skill": "app-store-screenshots",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/app-store-screenshots/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/app-store-screenshots/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 28,
+   "repository": "101-skills/superpowers",
+   "skill": "ai-video-generation",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/ai-video-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 31,
+   "repository": "101-skills/superpowers",
    "skill": "ai-image-generation",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/image/ai-image-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 34,
+   "repository": "101-skills/superpowers",
+   "skill": "ai-avatar-video",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/ai-avatar-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 35,
+   "repository": "101-skills/superpowers",
+   "skill": "twitter-automation",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/social/twitter-automation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 175,
+   "repository": "101-skills/superpowers",
+   "skill": "agent-browser",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/utilities/agent-browser/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/utilities/agent-browser/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 204,
+   "repository": "101-skills/superpowers",
+   "skill": "web-search",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/llm/web-search/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/llm/web-search/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 216,
+   "repository": "101-skills/superpowers",
+   "skill": "python-executor",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/utilities/python-executor/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/utilities/python-executor/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 219,
+   "repository": "101-skills/superpowers",
+   "skill": "remotion-render",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/remotion-render/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/remotion-render/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 220,
+   "repository": "101-skills/superpowers",
+   "skill": "agent-tools",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/agent-tools/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/agent-tools/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 225,
+   "repository": "101-skills/superpowers",
+   "skill": "infsh-cli",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/infsh-cli/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/infsh-cli/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 412,
+   "repository": "101-skills/superpowers",
+   "skill": "landing-page-design",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/landing-page-design/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/landing-page-design/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 437,
+   "repository": "101-skills/superpowers",
+   "skill": "youtube-thumbnail-design",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/youtube-thumbnail-design/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/youtube-thumbnail-design/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 442,
+   "repository": "101-skills/superpowers",
+   "skill": "storyboard-creation",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/video/storyboard-creation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/video/storyboard-creation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 443,
+   "repository": "101-skills/superpowers",
+   "skill": "app-store-screenshots",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/app-store-screenshots/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/app-store-screenshots/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 444,
+   "repository": "101-skills/superpowers",
+   "skill": "product-photography",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/photo/product-photography/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/photo/product-photography/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 445,
+   "repository": "101-skills/superpowers",
+   "skill": "video-ad-specs",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/video/video-ad-specs/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/video/video-ad-specs/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 446,
+   "repository": "101-skills/superpowers",
+   "skill": "character-design-sheet",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/character-design-sheet/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/character-design-sheet/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 447,
+   "repository": "101-skills/superpowers",
+   "skill": "competitor-teardown",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/product/competitor-teardown/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/product/competitor-teardown/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 448,
+   "repository": "101-skills/superpowers",
+   "skill": "image-to-video",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/image-to-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/image-to-video/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 449,
+   "repository": "101-skills/superpowers",
+   "skill": "product-hunt-launch",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/product/product-hunt-launch/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/product/product-hunt-launch/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 29,
+   "repository": "magentosh/superpowers",
+   "skill": "ai-image-generation",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/image/ai-image-generation/SKILL.md",
    "status": "warning",
@@ -1750,351 +2087,9 @@
   },
   {
    "rank": 30,
-   "repository": "bankai-skills/superpowers",
-   "skill": "twitter-automation",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/social/twitter-automation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 31,
-   "repository": "bankai-skills/superpowers",
-   "skill": "ai-avatar-video",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/ai-avatar-video/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 162,
-   "repository": "bankai-skills/superpowers",
-   "skill": "agent-browser",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/utilities/agent-browser/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/utilities/agent-browser/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 213,
-   "repository": "bankai-skills/superpowers",
-   "skill": "python-executor",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/utilities/python-executor/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/utilities/python-executor/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 214,
-   "repository": "bankai-skills/superpowers",
-   "skill": "web-search",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/llm/web-search/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/llm/web-search/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 215,
-   "repository": "bankai-skills/superpowers",
-   "skill": "agent-tools",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/agent-tools/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/agent-tools/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 216,
-   "repository": "bankai-skills/superpowers",
-   "skill": "remotion-render",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/remotion-render/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/remotion-render/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 217,
-   "repository": "bankai-skills/superpowers",
-   "skill": "infsh-cli",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/infsh-cli/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/infsh-cli/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 548,
-   "repository": "bankai-skills/superpowers",
-   "skill": "character-design-sheet",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/character-design-sheet/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/design/character-design-sheet/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 549,
-   "repository": "bankai-skills/superpowers",
-   "skill": "youtube-thumbnail-design",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/youtube-thumbnail-design/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/design/youtube-thumbnail-design/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 550,
-   "repository": "bankai-skills/superpowers",
-   "skill": "storyboard-creation",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/video/storyboard-creation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/video/storyboard-creation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 551,
-   "repository": "bankai-skills/superpowers",
-   "skill": "competitor-teardown",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/product/competitor-teardown/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/product/competitor-teardown/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 552,
-   "repository": "bankai-skills/superpowers",
-   "skill": "app-store-screenshots",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/app-store-screenshots/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/design/app-store-screenshots/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 553,
-   "repository": "bankai-skills/superpowers",
-   "skill": "landing-page-design",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/landing-page-design/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/design/landing-page-design/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 554,
-   "repository": "bankai-skills/superpowers",
-   "skill": "product-photography",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/photo/product-photography/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/photo/product-photography/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 555,
-   "repository": "bankai-skills/superpowers",
-   "skill": "product-hunt-launch",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/product/product-hunt-launch/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/product/product-hunt-launch/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 556,
-   "repository": "bankai-skills/superpowers",
-   "skill": "image-to-video",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/image-to-video/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/image-to-video/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 557,
-   "repository": "bankai-skills/superpowers",
-   "skill": "video-ad-specs",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/video/video-ad-specs/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/video/video-ad-specs/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 32,
-   "repository": "qu-skills/superpowers",
-   "skill": "ai-avatar-video",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/ai-avatar-video/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 33,
-   "repository": "qu-skills/superpowers",
+   "repository": "magentosh/superpowers",
    "skill": "ai-video-generation",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/ai-video-generation/SKILL.md",
    "status": "warning",
@@ -2109,28 +2104,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 34,
-   "repository": "qu-skills/superpowers",
-   "skill": "ai-image-generation",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/image/ai-image-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 35,
-   "repository": "qu-skills/superpowers",
+   "rank": 32,
+   "repository": "magentosh/superpowers",
    "skill": "twitter-automation",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/social/twitter-automation/SKILL.md",
    "status": "warning",
@@ -2145,10 +2122,28 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 164,
-   "repository": "qu-skills/superpowers",
+   "rank": 33,
+   "repository": "magentosh/superpowers",
+   "skill": "ai-avatar-video",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/ai-avatar-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 176,
+   "repository": "magentosh/superpowers",
    "skill": "agent-browser",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/utilities/agent-browser/SKILL.md",
    "status": "warning",
@@ -2163,10 +2158,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 227,
-   "repository": "qu-skills/superpowers",
+   "rank": 257,
+   "repository": "magentosh/superpowers",
    "skill": "web-search",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/llm/web-search/SKILL.md",
    "status": "warning",
@@ -2181,10 +2176,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 228,
-   "repository": "qu-skills/superpowers",
+   "rank": 258,
+   "repository": "magentosh/superpowers",
    "skill": "python-executor",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/utilities/python-executor/SKILL.md",
    "status": "warning",
@@ -2199,46 +2194,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 229,
-   "repository": "qu-skills/superpowers",
-   "skill": "agent-tools",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/agent-tools/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/agent-tools/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 230,
-   "repository": "qu-skills/superpowers",
-   "skill": "remotion-render",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/remotion-render/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/remotion-render/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 231,
-   "repository": "qu-skills/superpowers",
+   "rank": 259,
+   "repository": "magentosh/superpowers",
    "skill": "infsh-cli",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/infsh-cli/SKILL.md",
    "status": "warning",
@@ -2253,16 +2212,16 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 560,
-   "repository": "qu-skills/superpowers",
-   "skill": "app-store-screenshots",
-   "date": "2026-10-31",
+   "rank": 260,
+   "repository": "magentosh/superpowers",
+   "skill": "agent-tools",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/app-store-screenshots/SKILL.md",
+   "skillPath": "tools/agent-tools/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "guides/design/app-store-screenshots/SKILL.md",
+     "file": "tools/agent-tools/SKILL.md",
      "line": 1,
      "reason": "no exact installation command for this repository in README"
     }
@@ -2271,16 +2230,16 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 561,
-   "repository": "qu-skills/superpowers",
-   "skill": "video-ad-specs",
-   "date": "2026-10-31",
+   "rank": 261,
+   "repository": "magentosh/superpowers",
+   "skill": "remotion-render",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/video/video-ad-specs/SKILL.md",
+   "skillPath": "tools/video/remotion-render/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "guides/video/video-ad-specs/SKILL.md",
+     "file": "tools/video/remotion-render/SKILL.md",
      "line": 1,
      "reason": "no exact installation command for this repository in README"
     }
@@ -2289,82 +2248,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 562,
-   "repository": "qu-skills/superpowers",
-   "skill": "youtube-thumbnail-design",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/design/youtube-thumbnail-design/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/design/youtube-thumbnail-design/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 563,
-   "repository": "qu-skills/superpowers",
-   "skill": "storyboard-creation",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/video/storyboard-creation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/video/storyboard-creation/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 564,
-   "repository": "qu-skills/superpowers",
-   "skill": "product-hunt-launch",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/product/product-hunt-launch/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/product/product-hunt-launch/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 565,
-   "repository": "qu-skills/superpowers",
-   "skill": "competitor-teardown",
-   "date": "2026-10-31",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/product/competitor-teardown/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "guides/product/competitor-teardown/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 566,
-   "repository": "qu-skills/superpowers",
+   "rank": 475,
+   "repository": "magentosh/superpowers",
    "skill": "landing-page-design",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "guides/design/landing-page-design/SKILL.md",
    "status": "warning",
@@ -2379,16 +2266,16 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 567,
-   "repository": "qu-skills/superpowers",
-   "skill": "product-photography",
-   "date": "2026-10-31",
+   "rank": 483,
+   "repository": "magentosh/superpowers",
+   "skill": "competitor-teardown",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "guides/photo/product-photography/SKILL.md",
+   "skillPath": "guides/product/competitor-teardown/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "guides/photo/product-photography/SKILL.md",
+     "file": "guides/product/competitor-teardown/SKILL.md",
      "line": 1,
      "reason": "no exact installation command for this repository in README"
     }
@@ -2397,10 +2284,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 568,
-   "repository": "qu-skills/superpowers",
+   "rank": 484,
+   "repository": "magentosh/superpowers",
    "skill": "image-to-video",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/image-to-video/SKILL.md",
    "status": "warning",
@@ -2415,10 +2302,28 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 569,
-   "repository": "qu-skills/superpowers",
+   "rank": 485,
+   "repository": "magentosh/superpowers",
+   "skill": "product-photography",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/photo/product-photography/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/photo/product-photography/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 486,
+   "repository": "magentosh/superpowers",
    "skill": "character-design-sheet",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "guides/design/character-design-sheet/SKILL.md",
    "status": "warning",
@@ -2433,11 +2338,101 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
+   "rank": 487,
+   "repository": "magentosh/superpowers",
+   "skill": "youtube-thumbnail-design",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/youtube-thumbnail-design/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/youtube-thumbnail-design/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 490,
+   "repository": "magentosh/superpowers",
+   "skill": "video-ad-specs",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/video/video-ad-specs/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/video/video-ad-specs/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 491,
+   "repository": "magentosh/superpowers",
+   "skill": "product-hunt-launch",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/product/product-hunt-launch/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/product/product-hunt-launch/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 492,
+   "repository": "magentosh/superpowers",
+   "skill": "storyboard-creation",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/video/storyboard-creation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/video/storyboard-creation/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 493,
+   "repository": "magentosh/superpowers",
+   "skill": "app-store-screenshots",
+   "date": "2026-11-02",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "guides/design/app-store-screenshots/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "guides/design/app-store-screenshots/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
    "rank": 0,
    "repository": "morluto/rea",
    "skill": "rea-analysis-optimization",
-   "date": "2026-10-31",
-   "commit": "d48e472fa6a664cacbb400560e673533005795ce",
+   "date": "2026-11-02",
+   "commit": "93b8b82db70279e40f484114cff9dc1958dc14ee",
    "skillPath": ".agents/skills/rea-analysis-optimization/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -2454,8 +2449,8 @@
    "rank": 0,
    "repository": "morluto/rea",
    "skill": "rea-changelog-update",
-   "date": "2026-10-31",
-   "commit": "d48e472fa6a664cacbb400560e673533005795ce",
+   "date": "2026-11-02",
+   "commit": "93b8b82db70279e40f484114cff9dc1958dc14ee",
    "skillPath": ".agents/skills/rea-changelog-update/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -2472,8 +2467,8 @@
    "rank": 0,
    "repository": "morluto/rea",
    "skill": "rea-ci-tests-audit",
-   "date": "2026-10-31",
-   "commit": "d48e472fa6a664cacbb400560e673533005795ce",
+   "date": "2026-11-02",
+   "commit": "93b8b82db70279e40f484114cff9dc1958dc14ee",
    "skillPath": ".agents/skills/rea-ci-tests-audit/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -2490,8 +2485,8 @@
    "rank": 0,
    "repository": "morluto/rea",
    "skill": "rea-tool-design",
-   "date": "2026-10-31",
-   "commit": "d48e472fa6a664cacbb400560e673533005795ce",
+   "date": "2026-11-02",
+   "commit": "93b8b82db70279e40f484114cff9dc1958dc14ee",
    "skillPath": ".agents/skills/rea-tool-design/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -2508,8 +2503,8 @@
    "rank": 0,
    "repository": "morluto/rea",
    "skill": "reverse-engineer-anything",
-   "date": "2026-10-31",
-   "commit": "d48e472fa6a664cacbb400560e673533005795ce",
+   "date": "2026-11-02",
+   "commit": "93b8b82db70279e40f484114cff9dc1958dc14ee",
    "skillPath": ".agents/skills/reverse-engineer-anything/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -2523,10 +2518,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 108,
+   "rank": 113,
    "repository": "anthropics/skills",
    "skill": "frontend-design",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "ca45fc496a3436251f191354091d557da31c15b5",
    "skillPath": "skills/frontend-design/SKILL.md",
    "status": "passed",
@@ -2541,10 +2536,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 335,
+   "rank": 334,
    "repository": "anthropics/skills",
    "skill": "webapp-testing",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "ca45fc496a3436251f191354091d557da31c15b5",
    "skillPath": "skills/webapp-testing/SKILL.md",
    "status": "passed",
@@ -2559,10 +2554,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 336,
+   "rank": 335,
    "repository": "anthropics/skills",
    "skill": "skill-creator",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "ca45fc496a3436251f191354091d557da31c15b5",
    "skillPath": "skills/skill-creator/SKILL.md",
    "status": "blocked",
@@ -2605,28 +2600,10 @@
    ]
   },
   {
-   "rank": 434,
-   "repository": "anthropics/skills",
-   "skill": "brand-guidelines",
-   "date": "2026-10-31",
-   "commit": "ca45fc496a3436251f191354091d557da31c15b5",
-   "skillPath": "skills/brand-guidelines/SKILL.md",
-   "status": "passed",
-   "reasons": [
-    {
-     "file": "skills/brand-guidelines/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 573,
+   "rank": 513,
    "repository": "anthropics/skills",
    "skill": "pptx",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "ca45fc496a3436251f191354091d557da31c15b5",
    "skillPath": "skills/pptx/SKILL.md",
    "status": "blocked",
@@ -2714,10 +2691,28 @@
    ]
   },
   {
-   "rank": 575,
+   "rank": 530,
+   "repository": "anthropics/skills",
+   "skill": "pdf",
+   "date": "2026-11-02",
+   "commit": "ca45fc496a3436251f191354091d557da31c15b5",
+   "skillPath": "skills/pdf/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/pdf/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 589,
    "repository": "anthropics/skills",
    "skill": "docx",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "ca45fc496a3436251f191354091d557da31c15b5",
    "skillPath": "skills/docx/SKILL.md",
    "status": "blocked",
@@ -2805,64 +2800,10 @@
    ]
   },
   {
-   "rank": 578,
-   "repository": "anthropics/skills",
-   "skill": "pdf",
-   "date": "2026-10-31",
-   "commit": "ca45fc496a3436251f191354091d557da31c15b5",
-   "skillPath": "skills/pdf/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "skills/pdf/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 579,
-   "repository": "anthropics/skills",
-   "skill": "canvas-design",
-   "date": "2026-10-31",
-   "commit": "ca45fc496a3436251f191354091d557da31c15b5",
-   "skillPath": "skills/canvas-design/SKILL.md",
-   "status": "passed",
-   "reasons": [
-    {
-     "file": "skills/canvas-design/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 581,
-   "repository": "anthropics/skills",
-   "skill": "mcp-builder",
-   "date": "2026-10-31",
-   "commit": "ca45fc496a3436251f191354091d557da31c15b5",
-   "skillPath": "skills/mcp-builder/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "skills/mcp-builder/SKILL.md",
-     "line": 1,
-     "reason": "no exact installation command for this repository in README"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
    "rank": 0,
    "repository": "DietrichGebert/ponytail",
    "skill": "ponytail-audit",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
    "skillPath": ".openclaw/skills/ponytail-audit/SKILL.md",
    "status": "passed",
@@ -2880,7 +2821,7 @@
    "rank": 0,
    "repository": "DietrichGebert/ponytail",
    "skill": "ponytail-debt",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
    "skillPath": ".openclaw/skills/ponytail-debt/SKILL.md",
    "status": "passed",
@@ -2898,7 +2839,7 @@
    "rank": 0,
    "repository": "DietrichGebert/ponytail",
    "skill": "ponytail-gain",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
    "skillPath": ".openclaw/skills/ponytail-gain/SKILL.md",
    "status": "passed",
@@ -2916,7 +2857,7 @@
    "rank": 0,
    "repository": "DietrichGebert/ponytail",
    "skill": "ponytail-help",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
    "skillPath": ".openclaw/skills/ponytail-help/SKILL.md",
    "status": "warning",
@@ -2934,7 +2875,7 @@
    "rank": 0,
    "repository": "DietrichGebert/ponytail",
    "skill": "ponytail-review",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
    "skillPath": ".openclaw/skills/ponytail-review/SKILL.md",
    "status": "passed",
@@ -2952,7 +2893,7 @@
    "rank": 0,
    "repository": "DietrichGebert/ponytail",
    "skill": "ponytail",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
    "skillPath": ".openclaw/skills/ponytail/SKILL.md",
    "status": "passed",
@@ -2970,7 +2911,7 @@
    "rank": 0,
    "repository": "DietrichGebert/ponytail",
    "skill": "ponytail-audit",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
    "skillPath": ".openclaw/skills/ponytail-audit/SKILL.md",
    "status": "passed",
@@ -2988,7 +2929,7 @@
    "rank": 0,
    "repository": "DietrichGebert/ponytail",
    "skill": "ponytail-debt",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
    "skillPath": ".openclaw/skills/ponytail-debt/SKILL.md",
    "status": "passed",
@@ -3006,7 +2947,7 @@
    "rank": 0,
    "repository": "DietrichGebert/ponytail",
    "skill": "ponytail-gain",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
    "skillPath": ".openclaw/skills/ponytail-gain/SKILL.md",
    "status": "passed",
@@ -3024,7 +2965,7 @@
    "rank": 0,
    "repository": "DietrichGebert/ponytail",
    "skill": "ponytail-help",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
    "skillPath": ".openclaw/skills/ponytail-help/SKILL.md",
    "status": "warning",
@@ -3042,7 +2983,7 @@
    "rank": 0,
    "repository": "DietrichGebert/ponytail",
    "skill": "ponytail-review",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
    "skillPath": ".openclaw/skills/ponytail-review/SKILL.md",
    "status": "passed",
@@ -3060,7 +3001,7 @@
    "rank": 0,
    "repository": "DietrichGebert/ponytail",
    "skill": "ponytail",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
    "skillPath": ".openclaw/skills/ponytail/SKILL.md",
    "status": "passed",
@@ -3073,13 +3014,31 @@
    ],
    "publishable": false,
    "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 336,
+   "repository": "addyosmani/agent-skills",
+   "skill": "security-and-hardening",
+   "date": "2026-11-02",
+   "commit": "301b02b12bff98e4688e6984af6556802322bbde",
+   "skillPath": "skills/security-and-hardening/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/security-and-hardening/SKILL.md",
+     "line": 1,
+     "reason": "no actual usage code block in skill or README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no actual usage code block in skill or README"
   },
   {
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "add-product-e2e-eval",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/add-product-e2e-eval/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3096,8 +3055,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "add-runner-eval",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/add-runner-eval/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3114,8 +3073,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "check-pr",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/check-pr/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3132,8 +3091,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "company-creator",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/company-creator/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3150,8 +3109,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "create-agent-adapter",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/create-agent-adapter/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3168,8 +3127,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "create-case",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/create-case/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3186,8 +3145,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "create-external-bot-integration",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/create-external-bot-integration/SKILL.md",
    "status": "warning",
    "reasons": [
@@ -3204,8 +3163,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "create-issue-interaction-ui",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/create-issue-interaction-ui/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3222,8 +3181,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "create-paperclip-bundled-skill",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/create-paperclip-bundled-skill/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3240,8 +3199,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "create-runner-adapter",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/create-runner-adapter/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3258,8 +3217,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "create-verification-skill",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/create-verification-skill/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3276,8 +3235,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "deal-with-security-advisory",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/deal-with-security-advisory/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3294,8 +3253,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "diagnose-why-work-stopped",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/diagnose-why-work-stopped/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3312,8 +3271,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "directions-lab",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/directions-lab/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -3333,8 +3292,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "doc-maintenance",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/doc-maintenance/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3351,8 +3310,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "fix-failed-paperclip-run",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/fix-failed-paperclip-run/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3369,8 +3328,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "fix-slow-queries",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/fix-slow-queries/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3387,8 +3346,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "garden-inbox",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/garden-inbox/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -3418,8 +3377,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "honeycomb-tracing",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/honeycomb-tracing/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3436,8 +3395,8 @@
    "rank": 0,
    "repository": "paperclipai/paperclip",
    "skill": "maintain-storybook",
-   "date": "2026-10-31",
-   "commit": "59da15066acd2077b1161b06217acfbd11f8da04",
+   "date": "2026-11-02",
+   "commit": "8ea240218dc1d3a94afea1294b377021045dd9c9",
    "skillPath": ".agents/skills/maintain-storybook/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -3454,7 +3413,7 @@
    "rank": 0,
    "repository": "Leonxlnx/taste-skill",
    "skill": "taste-skill",
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "commit": "12af471f627f866411b4bd785b19646d3672784c",
    "skillPath": "skills/taste-skill/SKILL.md",
    "status": "blocked",
@@ -6675,8 +6634,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "od-contribute",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": ".claude/skills/od-contribute/SKILL.md",
    "status": "warning",
    "reasons": [
@@ -6693,8 +6652,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "aster-atelier",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/aster-atelier/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -6714,8 +6673,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "audio-jingle",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/audio-jingle/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -6732,8 +6691,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "blog-post",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/blog-post/SKILL.md",
    "status": "warning",
    "reasons": [
@@ -6750,8 +6709,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "clinical-case-report",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/clinical-case-report/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -6768,8 +6727,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "contact-widget",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/contact-widget/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -6784,8 +6743,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "critique",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/critique/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -6802,8 +6761,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "dashboard",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/dashboard/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -6820,8 +6779,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "dating-web",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/dating-web/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -6838,8 +6797,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "dcf-valuation",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/dcf-valuation/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -6856,8 +6815,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "digital-eguide",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/digital-eguide/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -6874,8 +6833,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "docs-page",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/docs-page/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -6895,8 +6854,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "email-marketing",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/email-marketing/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -6913,8 +6872,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "eng-runbook",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/eng-runbook/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -6931,8 +6890,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "finance-report",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/finance-report/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -6949,8 +6908,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "flowai-live-dashboard-template",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/flowai-live-dashboard-template/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -6967,8 +6926,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "gamified-app",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/gamified-app/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -6985,8 +6944,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "github-dashboard",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/github-dashboard/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -7001,8 +6960,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "guizang-ppt",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/guizang-ppt/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -7017,8 +6976,8 @@
    "rank": 0,
    "repository": "nexu-io/open-design",
    "skill": "hr-onboarding",
-   "date": "2026-10-31",
-   "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+   "date": "2026-11-02",
+   "commit": "5a0c47777975ddb91d09c1c16b423a3ef74bf572",
    "skillPath": "design-templates/hr-onboarding/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -7032,17 +6991,17 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 153,
+   "rank": 143,
    "repository": "pbakaus/impeccable",
    "skill": "impeccable",
-   "date": "2026-10-31",
-   "commit": "df3a4abe7d0840d5f60324812c432e00b66a4e75",
+   "date": "2026-11-02",
+   "commit": "e89e3ada3e875a89ac2c5d33d11e65ebef6fe285",
    "skillPath": ".agent/skills/impeccable/SKILL.md",
    "status": "blocked",
    "reasons": [
     {
      "file": ".agent/skills/impeccable/scripts/impeccable",
-     "line": 222,
+     "line": 225,
      "reason": "download-and-execute"
     },
     {
@@ -7138,908 +7097,16 @@
    ]
   },
   {
-   "rank": 189,
+   "rank": 430,
    "repository": "tt-a1i/archify",
    "skill": "archify",
-   "date": "2026-10-31",
-   "commit": "a23058abdcb6be9d0feaf2fa0d7f5ae9d6c595ba",
-   "skillPath": "archify/SKILL.md",
+   "date": "2026-11-02",
    "status": "blocked",
    "reasons": [
     {
-     "file": "archify/assets/template.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/assets/template.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/assets/template.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/assets/template.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/assets/template.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/assets/template.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/bin/preview.mjs",
-     "line": 104,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/bin/visual-check.mjs",
-     "line": 1678,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/delta/architecture-delta.mjs",
-     "line": 764,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "archify/examples/class-payment-processors-rendered.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/class-payment-processors-rendered.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/class-payment-processors-rendered.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/class-payment-processors-rendered.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/class-payment-processors-rendered.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/class-payment-processors-rendered.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/class-payment-processors-rendered.html",
-     "line": 5203,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/class-payments-rendered.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/class-payments-rendered.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/class-payments-rendered.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/class-payments-rendered.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/class-payments-rendered.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/class-payments-rendered.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/class-payments-rendered.html",
-     "line": 5203,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/dataflow-product-analytics.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/dataflow-product-analytics.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/dataflow-product-analytics.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/dataflow-product-analytics.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/dataflow-product-analytics.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/dataflow-product-analytics.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/dataflow-product-analytics.html",
-     "line": 5202,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/erd-orders-rendered.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/erd-orders-rendered.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/erd-orders-rendered.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/erd-orders-rendered.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/erd-orders-rendered.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/erd-orders-rendered.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/erd-orders-rendered.html",
-     "line": 5202,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/lifecycle-agent-run.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/lifecycle-agent-run.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/lifecycle-agent-run.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/lifecycle-agent-run.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/lifecycle-agent-run.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/lifecycle-agent-run.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/lifecycle-agent-run.html",
-     "line": 5202,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/locales/de.json",
-     "line": 145,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/locales/fr.json",
-     "line": 145,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/locales/it.json",
-     "line": 145,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/locales/ja.json",
-     "line": 145,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/locales/pt.json",
-     "line": 145,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/locales/ru.json",
-     "line": 145,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/sequence-cache-miss-request.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/sequence-cache-miss-request.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/sequence-cache-miss-request.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/sequence-cache-miss-request.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/sequence-cache-miss-request.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/sequence-cache-miss-request.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/sequence-cache-miss-request.html",
-     "line": 5202,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/subscription-billing-rendered.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/subscription-billing-rendered.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/subscription-billing-rendered.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/subscription-billing-rendered.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/subscription-billing-rendered.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/subscription-billing-rendered.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/subscription-billing-rendered.html",
-     "line": 5202,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/timeline-archify-dev-activity-rendered.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/timeline-archify-dev-activity-rendered.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/timeline-archify-dev-activity-rendered.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/timeline-archify-dev-activity-rendered.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/timeline-archify-dev-activity-rendered.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/timeline-archify-dev-activity-rendered.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/timeline-archify-dev-activity-rendered.html",
-     "line": 5203,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 5203,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 983,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 989,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 1002,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 1015,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 1023,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 1024,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 1026,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 1027,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 1042,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 1054,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 1066,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 2250,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 2262,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 2277,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 2287,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 2730,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 2737,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 2827,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 2832,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3225,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3233,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3245,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3251,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3257,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3265,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3275,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3282,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3291,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3300,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3445,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3459,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3621,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3627,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3634,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3639,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3655,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3666,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3682,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 3688,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 6105,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 6130,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 6177,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 6178,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 7148,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 7984,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 9574,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 11230,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 12270,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/timeline-payment-incident-rendered.html",
-     "line": 13291,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "archify/examples/tree-archify-repository-rendered.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/tree-archify-repository-rendered.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/tree-archify-repository-rendered.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/tree-archify-repository-rendered.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/tree-archify-repository-rendered.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/tree-archify-repository-rendered.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/tree-archify-repository-rendered.html",
-     "line": 5203,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/tree-payment-platform-rendered.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/tree-payment-platform-rendered.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/tree-payment-platform-rendered.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/tree-payment-platform-rendered.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/tree-payment-platform-rendered.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/tree-payment-platform-rendered.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/tree-payment-platform-rendered.html",
-     "line": 5203,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/waterfall-checkout-request-rendered.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/waterfall-checkout-request-rendered.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/waterfall-checkout-request-rendered.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/waterfall-checkout-request-rendered.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/waterfall-checkout-request-rendered.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/waterfall-checkout-request-rendered.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/waterfall-checkout-request-rendered.html",
-     "line": 5203,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/waterfall-example-rebuild-rendered.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/waterfall-example-rebuild-rendered.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/waterfall-example-rebuild-rendered.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/waterfall-example-rebuild-rendered.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/waterfall-example-rebuild-rendered.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/waterfall-example-rebuild-rendered.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/waterfall-example-rebuild-rendered.html",
-     "line": 5203,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/web-app-rendered.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/web-app-rendered.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/web-app-rendered.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/web-app-rendered.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/web-app-rendered.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/web-app-rendered.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/web-app-rendered.html",
-     "line": 5202,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/examples/workflow-agent-tool-call-rendered.html",
-     "line": 146,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/workflow-agent-tool-call-rendered.html",
-     "line": 150,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/workflow-agent-tool-call-rendered.html",
-     "line": 154,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/workflow-agent-tool-call-rendered.html",
-     "line": 158,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/workflow-agent-tool-call-rendered.html",
-     "line": 162,
-     "reason": "obfuscation"
-    },
-    {
-     "file": "archify/examples/workflow-agent-tool-call-rendered.html",
-     "line": 12,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/examples/workflow-agent-tool-call-rendered.html",
-     "line": 5202,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/explainer/browser-check.mjs",
-     "line": 60,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "archify/explainer/reader.js",
-     "line": 290,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/locales/ar.json",
-     "line": 151,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/locales/en.json",
-     "line": 151,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/locales/es.json",
-     "line": 159,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/locales/ko.json",
-     "line": 153,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/locales/zh-CN.json",
-     "line": 151,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/locales/zh-TW.json",
-     "line": 151,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "archify/renderers/shared/diagnostics.mjs",
-     "line": 1,
-     "reason": "opaque-binary"
-    },
-    {
-     "file": "archify/scripts/check-render-output.mjs",
-     "line": 1419,
-     "reason": "sensitive-read"
+     "file": null,
+     "line": null,
+     "reason": "incomplete review: fetch failed"
     }
    ]
   },
@@ -8047,8 +7114,8 @@
    "rank": 0,
    "repository": "career-ops-hq/career-ops",
    "skill": "career-ops",
-   "date": "2026-10-31",
-   "commit": "5faf02498b2e36d1af212472d390254f849e68db",
+   "date": "2026-11-02",
+   "commit": "20b9fd3a9c86d28c847e021f4dbbe93ce9a39a00",
    "skillPath": ".agents/skills/career-ops/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -8065,8 +7132,8 @@
    "rank": 0,
    "repository": "career-ops-hq/career-ops",
    "skill": "career-ops",
-   "date": "2026-10-31",
-   "commit": "5faf02498b2e36d1af212472d390254f849e68db",
+   "date": "2026-11-02",
+   "commit": "20b9fd3a9c86d28c847e021f4dbbe93ce9a39a00",
    "skillPath": ".agents/skills/career-ops/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -8083,8 +7150,8 @@
    "rank": 0,
    "repository": "career-ops-hq/career-ops",
    "skill": "career-ops",
-   "date": "2026-10-31",
-   "commit": "5faf02498b2e36d1af212472d390254f849e68db",
+   "date": "2026-11-02",
+   "commit": "20b9fd3a9c86d28c847e021f4dbbe93ce9a39a00",
    "skillPath": ".agents/skills/career-ops/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -8101,8 +7168,8 @@
    "rank": 0,
    "repository": "career-ops-hq/career-ops",
    "skill": "career-ops",
-   "date": "2026-10-31",
-   "commit": "5faf02498b2e36d1af212472d390254f849e68db",
+   "date": "2026-11-02",
+   "commit": "20b9fd3a9c86d28c847e021f4dbbe93ce9a39a00",
    "skillPath": ".agents/skills/career-ops/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -8119,8 +7186,8 @@
    "rank": 0,
    "repository": "career-ops-hq/career-ops",
    "skill": "career-ops",
-   "date": "2026-10-31",
-   "commit": "5faf02498b2e36d1af212472d390254f849e68db",
+   "date": "2026-11-02",
+   "commit": "20b9fd3a9c86d28c847e021f4dbbe93ce9a39a00",
    "skillPath": ".agents/skills/career-ops/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -8137,8 +7204,8 @@
    "rank": 0,
    "repository": "career-ops-hq/career-ops",
    "skill": "career-ops",
-   "date": "2026-10-31",
-   "commit": "5faf02498b2e36d1af212472d390254f849e68db",
+   "date": "2026-11-02",
+   "commit": "20b9fd3a9c86d28c847e021f4dbbe93ce9a39a00",
    "skillPath": ".agents/skills/career-ops/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -8155,8 +7222,8 @@
    "rank": 0,
    "repository": "career-ops-hq/career-ops",
    "skill": "career-ops",
-   "date": "2026-10-31",
-   "commit": "5faf02498b2e36d1af212472d390254f849e68db",
+   "date": "2026-11-02",
+   "commit": "20b9fd3a9c86d28c847e021f4dbbe93ce9a39a00",
    "skillPath": ".agents/skills/career-ops/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -8173,8 +7240,8 @@
    "rank": 0,
    "repository": "career-ops-hq/career-ops",
    "skill": "career-ops",
-   "date": "2026-10-31",
-   "commit": "5faf02498b2e36d1af212472d390254f849e68db",
+   "date": "2026-11-02",
+   "commit": "20b9fd3a9c86d28c847e021f4dbbe93ce9a39a00",
    "skillPath": ".agents/skills/career-ops/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -8191,8 +7258,8 @@
    "rank": 0,
    "repository": "career-ops-hq/career-ops",
    "skill": "career-ops",
-   "date": "2026-10-31",
-   "commit": "5faf02498b2e36d1af212472d390254f849e68db",
+   "date": "2026-11-02",
+   "commit": "20b9fd3a9c86d28c847e021f4dbbe93ce9a39a00",
    "skillPath": ".agents/skills/career-ops/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -8209,8 +7276,8 @@
    "rank": 0,
    "repository": "career-ops-hq/career-ops",
    "skill": "career-ops",
-   "date": "2026-10-31",
-   "commit": "5faf02498b2e36d1af212472d390254f849e68db",
+   "date": "2026-11-02",
+   "commit": "20b9fd3a9c86d28c847e021f4dbbe93ce9a39a00",
    "skillPath": ".agents/skills/career-ops/SKILL.md",
    "status": "passed",
    "reasons": [
@@ -8227,13 +7294,1217 @@
    "rank": 0,
    "repository": "career-ops-hq/career-ops",
    "skill": "career-ops",
-   "date": "2026-10-31",
-   "commit": "5faf02498b2e36d1af212472d390254f849e68db",
+   "date": "2026-11-02",
+   "commit": "20b9fd3a9c86d28c847e021f4dbbe93ce9a39a00",
    "skillPath": ".agents/skills/career-ops/SKILL.md",
    "status": "passed",
    "reasons": [
     {
      "file": ".agents/skills/career-ops/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "agent-cost-report",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "claude-mem-cursor/skills/agent-cost-report/SKILL.md",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 59,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 6,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 19,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/measure.py",
+     "line": 4,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/measure.py",
+     "line": 18,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/prices.py",
+     "line": 14,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/render.py",
+     "line": 451,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 19,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 21,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 22,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/wins.py",
+     "line": 144,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/prices_sample.json",
+     "line": 1,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-1day.json",
+     "line": 665,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-1day.json",
+     "line": 648,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-30day.json",
+     "line": 1571,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-30day.json",
+     "line": 1554,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-7day.json",
+     "line": 1001,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-7day.json",
+     "line": 984,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-empty.json",
+     "line": 422,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-empty.json",
+     "line": 405,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-session.json",
+     "line": 544,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-session.json",
+     "line": 527,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_behavior.py",
+     "line": 199,
+     "reason": "download-and-execute"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_pdf_windows.py",
+     "line": 17,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_period.py",
+     "line": 54,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_prices.py",
+     "line": 80,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_prices.py",
+     "line": 104,
+     "reason": "undocumented-network-host"
+    }
+   ]
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "install",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "claude-mem-cursor/skills/install/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "claude-mem-cursor/skills/install/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "mem-search",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "claude-mem-cursor/skills/mem-search/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "claude-mem-cursor/skills/mem-search/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "agent-cost-report",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "claude-mem-cursor/skills/agent-cost-report/SKILL.md",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 59,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 6,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 19,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/measure.py",
+     "line": 4,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/measure.py",
+     "line": 18,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/prices.py",
+     "line": 14,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/render.py",
+     "line": 451,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 19,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 21,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 22,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/wins.py",
+     "line": 144,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/prices_sample.json",
+     "line": 1,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-1day.json",
+     "line": 665,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-1day.json",
+     "line": 648,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-30day.json",
+     "line": 1571,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-30day.json",
+     "line": 1554,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-7day.json",
+     "line": 1001,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-7day.json",
+     "line": 984,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-empty.json",
+     "line": 422,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-empty.json",
+     "line": 405,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-session.json",
+     "line": 544,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-session.json",
+     "line": 527,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_behavior.py",
+     "line": 199,
+     "reason": "download-and-execute"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_pdf_windows.py",
+     "line": 17,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_period.py",
+     "line": 54,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_prices.py",
+     "line": 80,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_prices.py",
+     "line": 104,
+     "reason": "undocumented-network-host"
+    }
+   ]
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "host-observer",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "claude-mem-grok-bot/skills/host-observer/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "claude-mem-grok-bot/skills/host-observer/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "install",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "claude-mem-cursor/skills/install/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "claude-mem-cursor/skills/install/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "mem-search",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "claude-mem-cursor/skills/mem-search/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "claude-mem-cursor/skills/mem-search/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "agent-cost-report",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "claude-mem-cursor/skills/agent-cost-report/SKILL.md",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 59,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 6,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 19,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/measure.py",
+     "line": 4,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/measure.py",
+     "line": 18,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/prices.py",
+     "line": 14,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/render.py",
+     "line": 451,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 19,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 21,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 22,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/wins.py",
+     "line": 144,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/prices_sample.json",
+     "line": 1,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-1day.json",
+     "line": 665,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-1day.json",
+     "line": 648,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-30day.json",
+     "line": 1571,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-30day.json",
+     "line": 1554,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-7day.json",
+     "line": 1001,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-7day.json",
+     "line": 984,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-empty.json",
+     "line": 422,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-empty.json",
+     "line": 405,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-session.json",
+     "line": 544,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-session.json",
+     "line": 527,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_behavior.py",
+     "line": 199,
+     "reason": "download-and-execute"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_pdf_windows.py",
+     "line": 17,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_period.py",
+     "line": 54,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_prices.py",
+     "line": 80,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_prices.py",
+     "line": 104,
+     "reason": "undocumented-network-host"
+    }
+   ]
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "mem-search",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "claude-mem-cursor/skills/mem-search/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "claude-mem-cursor/skills/mem-search/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "mem-setup",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "cowork/skills/mem-setup/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "cowork/skills/mem-setup/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "openclaw",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "openclaw/SKILL.md",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": "openclaw/install.sh",
+     "line": 419,
+     "reason": "download-and-execute"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 422,
+     "reason": "download-and-execute"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 479,
+     "reason": "download-and-execute"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 482,
+     "reason": "download-and-execute"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 969,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 1551,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 1591,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 868,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 877,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 928,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 931,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 941,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 169,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 477,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 481,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 540,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 903,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 919,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 1108,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 1110,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 1139,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 1167,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/install.sh",
+     "line": 1558,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/openclaw.plugin.json",
+     "line": 65,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "openclaw/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 59,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "openclaw/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 6,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 19,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/skills/agent-cost-report/scripts/acr/measure.py",
+     "line": 4,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/skills/agent-cost-report/scripts/acr/measure.py",
+     "line": 18,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/skills/agent-cost-report/scripts/acr/prices.py",
+     "line": 14,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/skills/agent-cost-report/scripts/acr/render.py",
+     "line": 451,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "openclaw/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 19,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "openclaw/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 21,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 22,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "openclaw/skills/agent-cost-report/scripts/acr/wins.py",
+     "line": 144,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "openclaw/skills/do/SKILL.md",
+     "line": 1,
+     "reason": "symlink-outside-skill"
+    },
+    {
+     "file": "openclaw/skills/make-plan/SKILL.md",
+     "line": 1,
+     "reason": "symlink-outside-skill"
+    },
+    {
+     "file": "openclaw/src/index.ts",
+     "line": 319,
+     "reason": "multiline-data-send"
+    },
+    {
+     "file": "openclaw/src/index.ts",
+     "line": 348,
+     "reason": "multiline-data-send"
+    },
+    {
+     "file": "openclaw/src/index.ts",
+     "line": 478,
+     "reason": "multiline-data-send"
+    },
+    {
+     "file": "openclaw/src/index.ts",
+     "line": 469,
+     "reason": "undocumented-network-host"
+    }
+   ]
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "agent-cost-report",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "claude-mem-cursor/skills/agent-cost-report/SKILL.md",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 59,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 6,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 19,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/measure.py",
+     "line": 4,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/measure.py",
+     "line": 18,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/prices.py",
+     "line": 14,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/render.py",
+     "line": 451,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 19,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 21,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 22,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/wins.py",
+     "line": 144,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/prices_sample.json",
+     "line": 1,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-1day.json",
+     "line": 665,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-1day.json",
+     "line": 648,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-30day.json",
+     "line": 1571,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-30day.json",
+     "line": 1554,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-7day.json",
+     "line": 1001,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-7day.json",
+     "line": 984,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-empty.json",
+     "line": 422,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-empty.json",
+     "line": 405,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-session.json",
+     "line": 544,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-session.json",
+     "line": 527,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_behavior.py",
+     "line": 199,
+     "reason": "download-and-execute"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_pdf_windows.py",
+     "line": 17,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_period.py",
+     "line": 54,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_prices.py",
+     "line": 80,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_prices.py",
+     "line": 104,
+     "reason": "undocumented-network-host"
+    }
+   ]
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "do",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "openclaw/skills/do/SKILL.md",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": "openclaw/skills/do/SKILL.md",
+     "line": 1,
+     "reason": "symlink-outside-skill"
+    },
+    {
+     "file": "openclaw/skills/do/SKILL.md",
+     "line": 1,
+     "reason": "missing-SKILL.md"
+    }
+   ]
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "make-plan",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "openclaw/skills/make-plan/SKILL.md",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": "openclaw/skills/make-plan/SKILL.md",
+     "line": 1,
+     "reason": "symlink-outside-skill"
+    },
+    {
+     "file": "openclaw/skills/make-plan/SKILL.md",
+     "line": 1,
+     "reason": "missing-SKILL.md"
+    }
+   ]
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "agent-cost-report",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "claude-mem-cursor/skills/agent-cost-report/SKILL.md",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 59,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 6,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/classify.py",
+     "line": 19,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/measure.py",
+     "line": 4,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/measure.py",
+     "line": 18,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/prices.py",
+     "line": 14,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/render.py",
+     "line": 451,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 19,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 21,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/rollup.py",
+     "line": 22,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/acr/wins.py",
+     "line": 144,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/prices_sample.json",
+     "line": 1,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-1day.json",
+     "line": 665,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-1day.json",
+     "line": 648,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-30day.json",
+     "line": 1571,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-30day.json",
+     "line": 1554,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-7day.json",
+     "line": 1001,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-7day.json",
+     "line": 984,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-empty.json",
+     "line": 422,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-empty.json",
+     "line": 405,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-session.json",
+     "line": 544,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/fixtures/report-session.json",
+     "line": 527,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_behavior.py",
+     "line": 199,
+     "reason": "download-and-execute"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_pdf_windows.py",
+     "line": 17,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_period.py",
+     "line": 54,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_prices.py",
+     "line": 80,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "claude-mem-cursor/skills/agent-cost-report/scripts/tests/test_prices.py",
+     "line": 104,
+     "reason": "undocumented-network-host"
+    }
+   ]
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "babysit",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "plugin/skills/babysit/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "plugin/skills/babysit/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "backup-setup",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "plugin/skills/backup-setup/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "plugin/skills/backup-setup/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "build-and-release",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "plugin/skills/build-and-release/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "plugin/skills/build-and-release/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "build",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "plugin/skills/build/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "plugin/skills/build/SKILL.md",
+     "line": 1,
+     "reason": "no exact installation command for this repository in README"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 0,
+   "repository": "thedotmack/claude-mem",
+   "skill": "ccs-align",
+   "date": "2026-11-02",
+   "commit": "26ccf4d8a029d97fb5fb88a9f1ddd73729ad1b1a",
+   "skillPath": "plugin/skills/ccs-align/SKILL.md",
+   "status": "passed",
+   "reasons": [
+    {
+     "file": "plugin/skills/ccs-align/SKILL.md",
      "line": 1,
      "reason": "no exact installation command for this repository in README"
     }
