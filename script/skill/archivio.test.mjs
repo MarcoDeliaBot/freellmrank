@@ -119,7 +119,9 @@ test('permanent archive acceptance T1–T8',async t=>{
   await t.test('T7 full build sitemap contains every registered URL with lastmod',()=>{
     const built=build(root,{full:true});output=built.output;
     const sitemap=fs.readFileSync(path.join(output,'sitemap.xml'),'utf8'),registry=load(root,'dati/skill-pagine.json');
-    for(const p of registry)assert.ok(sitemap.includes(`<loc>https://freellmarena.com${p.url}</loc><lastmod>`),p.url);
+    // The sitemap lists canonical URLs only: /x.html is a 308 to /x on Cloudflare.
+    assert.doesNotMatch(sitemap,/\.html<\/loc>/);
+    for(const p of registry)assert.ok(sitemap.includes(`<loc>https://freellmarena.com${p.url.replace(/\.html$/,'')}</loc><lastmod>`),p.url);
     results.T7={registered:registry.length,listed:registry.length};
   });
   await t.test('T8 all internal links resolve after the complete fixture build',()=>{
