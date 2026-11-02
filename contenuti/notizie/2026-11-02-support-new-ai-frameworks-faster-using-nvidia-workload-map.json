@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-02-support-new-ai-frameworks-faster-using-nvidia-workload-map",
+ "titolo": "Support New AI Frameworks Faster Using NVIDIA Workload Map",
+ "descr": "NVIDIA introduces Workload Map, a common CRD for interpreting distributed AI workloads across frameworks on Kubernetes.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced Workload Map, a Kubernetes custom resource definition that provides a unified description of AI workloads.",
+  "The catalog includes prebuilt definitions for JobSet, PyTorchJob, RayCluster, KServe, MPIJob, NVIDIA NIM and others, enabling schedulers and platforms to interpret jobs without framework‑specific code.",
+  "A single JobSet definition can be used for workload inspection via the Workload Map CLI, gang scheduling with KAI Scheduler, and management in NVIDIA Run:ai.",
+  "Elotl's Nova leverages Workload Map to understand workload structure and resource needs for multi‑cluster scheduling decisions.",
+  "Developers can explore the workload catalog and join the NVIDIA DSX AI Factory Slack to discuss integrations."
+ ],
+ "perche": [
+  "Standardizing workload definitions reduces the engineering effort needed to support new AI frameworks, allowing faster adoption of emerging models. For users of free or locally hosted models, this could simplify deployment on shared Kubernetes clusters and improve resource allocation across diverse workloads."
+ ],
+ "pubblicato": "2026-11-02",
+ "titoloFonte": "Support New AI Frameworks Faster Using NVIDIA Workload Map",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/support-new-ai-frameworks-faster-using-nvidia-workload-map/",
+   "titolo": "Support New AI Frameworks Faster Using NVIDIA Workload Map",
+   "ufficiale": true,
+   "data": "2026-11-02"
+  }
+ ],
+ "frasiTolte": 1
+}
