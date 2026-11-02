@@ -20192,6 +20192,42 @@
     "tipo": "News"
    },
    "data": "2026-11-01"
+  },
+  "/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono.html": {
+   "post": {
+    "slug": "news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono",
+    "titolo": "Anthropic IPO prospectus highlights 88 risk factors but omits diseconomies of scale",
+    "descr": "Anthropic’s filing lists extensive risks yet fails to address rising costs from specialized hardware and talent as the company grows.",
+    "data": "2026-11-02",
+    "tema": "Business",
+    "corpo": "Anthropic filed its S‑1 on October 26, 2026, listing 88 risk factors across 93 pages of the prospectus.\n\nThe filing notes typical AI risks such as existential threats and blackmail, but does not mention diseconomies of scale.\n\nUnlike cloud hyperscalers that achieve lower unit costs with commodity servers, Anthropic must continually invest in more expensive hardware as model requirements advance.\n\nThe company also needs to expand its expert workforce, since each new model demands fresh human expertise, creating additional scaling challenges.\n\n## What it means for you\n\nRising hardware and talent expenses could limit Anthropic’s ability to offer lower‑cost services, pushing users toward open‑source or locally run models that avoid such overhead. Free or community‑driven models may become more attractive as they can run on commodity hardware without the same scaling pressures.\n\n## Sources\n\n- [The hidden threat in Anthropic’s prospectus: diseconomies of scale](https://siliconangle.com/2026/10/30/the-hidden-threat-in-anthropics-prospectus-diseconomies-of-scale/), SiliconANGLE, 30 Oct 2026\n- [Anthropic, PBC - S-1 (Q2)](https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm), sec.gov (official), 26 Oct 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-01"
+  },
+  "/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora.html": {
+   "post": {
+    "slug": "news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora",
+    "titolo": "DoorDash reports only several hundred AI‑agent orders amid new corporate AI connector launch",
+    "descr": "DoorDash saw a few hundred orders from third‑party AI agents, while unveiling a beta connector for internal AI tools to handle office meals and supplies.",
+    "data": "2026-11-02",
+    "tema": "Business",
+    "corpo": "During its third‑quarter earnings call, DoorDash disclosed that third‑party AI agents such as Muse, Instinct and Fo have placed only \"several hundred\" orders to date.\n\nThe company processes about 3 million deliveries daily, according to its 2025 report, highlighting the small share of AI‑agent ordering.\n\nCEO Tony Xu noted that most users still order through the DoorDash app and that the company is exploring advertising opportunities within agents.\n\nOn September 30, DoorDash introduced a corporate ordering connector that lets internal AI tools place and track meals and supplies for employees.\n\nEarly beta partners include SpaceXAI, Vercel, Cognition, Tempo and Mercor, and the connector relies on the Model Context Protocol (MCP) to interact with DoorDash services.\n\nAccess begins at the company level with a waitlist, and a separate beta for the DoorDash CLI is also opening for individual developers.\n\n## What it means for you\n\nFor AI users, the limited current uptake of third‑party agents suggests that most ordering still happens via traditional apps, but the new connector could broaden AI‑driven workflows in workplaces. For those favoring free or locally hosted models, the modest AI‑agent activity underscores that large‑scale commercial integration still favors proprietary platforms, keeping demand for open‑source alternatives steady.\n\n## Sources\n\n- [DoorDash said it's only received ‘several hundred' orders from AI agents](https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/), TechCrunch, 30 Oct 2026\n- [DoorDash brings office ordering to the AI tools teams already use | DoorDash](https://about.doordash.com/en-us/news/doordash-ordering-connector), about.doordash.com (official), 30 Sept 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-01"
+  },
+  "/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face.html": {
+   "post": {
+    "slug": "news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face",
+    "titolo": "Microsoft launches Mage‑VL‑Cowork model on Hugging Face",
+    "descr": "Microsoft added the new Mage‑VL‑Cowork multimodal model to Hugging Face, expanding its AI offerings.",
+    "data": "2026-11-02",
+    "tema": "LLMs",
+    "corpo": "The model appears under the repository microsoft/Mage‑VL‑Cowork and is listed among recent uploads.\n\nMage‑VL‑Cowork is positioned as a visual‑language model, extending Microsoft’s portfolio of AI tools.\n\nThe release follows a period of rapid model publishing on Hugging Face, where both free and paid models compete for attention.\n\n## What it means for you\n\nFor users seeking free or locally runnable models, Microsoft’s addition adds another option to explore, though no information is provided about hardware requirements. The broader model ecosystem remains dominated by free models such as Kimi K3 (Max) and GLM‑5.3 (Max), which topped recent community rankings.\n\n## On FreeLLMArena\n\nFrom our rankings on 1 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [Microsoft releases Mage-VL-Cowork on Hugging Face](https://huggingface.co/microsoft/Mage-VL-Cowork), Hugging Face trending (official), 30 Oct 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-01"
   }
  },
  "ricostruzione": {

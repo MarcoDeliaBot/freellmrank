@@ -1,0 +1,36 @@
+{
+ "nome": "2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora",
+ "titolo": "DoorDash reports only several hundred AI‑agent orders amid new corporate AI connector launch",
+ "descr": "DoorDash saw a few hundred orders from third‑party AI agents, while unveiling a beta connector for internal AI tools to handle office meals and supplies.",
+ "tema": "Business",
+ "paragrafi": [
+  "During its third‑quarter earnings call, DoorDash disclosed that third‑party AI agents such as Muse, Instinct and Fo have placed only \"several hundred\" orders to date.",
+  "The company processes about 3 million deliveries daily, according to its 2025 report, highlighting the small share of AI‑agent ordering.",
+  "CEO Tony Xu noted that most users still order through the DoorDash app and that the company is exploring advertising opportunities within agents.",
+  "On September 30, DoorDash introduced a corporate ordering connector that lets internal AI tools place and track meals and supplies for employees.",
+  "Early beta partners include SpaceXAI, Vercel, Cognition, Tempo and Mercor, and the connector relies on the Model Context Protocol (MCP) to interact with DoorDash services.",
+  "Access begins at the company level with a waitlist, and a separate beta for the DoorDash CLI is also opening for individual developers."
+ ],
+ "perche": [
+  "For AI users, the limited current uptake of third‑party agents suggests that most ordering still happens via traditional apps, but the new connector could broaden AI‑driven workflows in workplaces. For those favoring free or locally hosted models, the modest AI‑agent activity underscores that large‑scale commercial integration still favors proprietary platforms, keeping demand for open‑source alternatives steady."
+ ],
+ "pubblicato": "2026-11-02",
+ "titoloFonte": "DoorDash said it's only received ‘several hundred' orders from AI agents",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/",
+   "titolo": "DoorDash said it's only received ‘several hundred' orders from AI agents",
+   "ufficiale": false,
+   "data": "2026-10-30"
+  },
+  {
+   "nome": "about.doordash.com",
+   "url": "https://about.doordash.com/en-us/news/doordash-ordering-connector",
+   "titolo": "DoorDash brings office ordering to the AI tools teams already use | DoorDash",
+   "ufficiale": true,
+   "data": "2026-09-30"
+  }
+ ],
+ "frasiTolte": 0
+}

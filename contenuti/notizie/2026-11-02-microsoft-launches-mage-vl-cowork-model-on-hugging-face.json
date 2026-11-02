@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face",
+ "titolo": "Microsoft launches Mage‑VL‑Cowork model on Hugging Face",
+ "descr": "Microsoft added the new Mage‑VL‑Cowork multimodal model to Hugging Face, expanding its AI offerings.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "The model appears under the repository microsoft/Mage‑VL‑Cowork and is listed among recent uploads.",
+  "Mage‑VL‑Cowork is positioned as a visual‑language model, extending Microsoft’s portfolio of AI tools.",
+  "The release follows a period of rapid model publishing on Hugging Face, where both free and paid models compete for attention."
+ ],
+ "perche": [
+  "For users seeking free or locally runnable models, Microsoft’s addition adds another option to explore, though no information is provided about hardware requirements. The broader model ecosystem remains dominated by free models such as Kimi K3 (Max) and GLM‑5.3 (Max), which topped recent community rankings."
+ ],
+ "pubblicato": "2026-11-02",
+ "titoloFonte": "Microsoft releases Mage-VL-Cowork on Hugging Face",
+ "fonti": [
+  {
+   "nome": "Hugging Face trending",
+   "url": "https://huggingface.co/microsoft/Mage-VL-Cowork",
+   "titolo": "Microsoft releases Mage-VL-Cowork on Hugging Face",
+   "ufficiale": true,
+   "data": "2026-10-30"
+  }
+ ],
+ "frasiTolte": 1
+}

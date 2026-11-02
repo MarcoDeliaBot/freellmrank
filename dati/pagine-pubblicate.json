@@ -2400,6 +2400,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "en",
@@ -9017,6 +9065,54 @@
  },
  {
   "url": "/de/blog/news-2026-11-01-spacexsi-releases-grok-bot-1-0-0-with-upcoming-teams-discord-and-texti.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face.html",
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-01",
@@ -23256,6 +23352,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "es",
@@ -37481,6 +37625,54 @@
  },
  {
   "url": "/fr/blog/news-2026-11-01-spacexsi-releases-grok-bot-1-0-0-with-upcoming-teams-discord-and-texti.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face.html",
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-01",
@@ -51720,6 +51912,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "it",
@@ -65945,6 +66185,54 @@
  },
  {
   "url": "/ja/blog/news-2026-11-01-spacexsi-releases-grok-bot-1-0-0-with-upcoming-teams-discord-and-texti.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face.html",
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-01",
@@ -87785,6 +88073,54 @@
  },
  {
   "url": "/pt/blog/news-2026-11-01-spacexsi-releases-grok-bot-1-0-0-with-upcoming-teams-discord-and-texti.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-02-anthropic-ipo-prospectus-highlights-88-risk-factors-but-omits-disecono.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-02-doordash-reports-only-several-hundred-ai-agent-orders-amid-new-corpora.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-01",
+  "ultimaVista": "2026-11-01",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-02-microsoft-launches-mage-vl-cowork-model-on-hugging-face.html",
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-01",
