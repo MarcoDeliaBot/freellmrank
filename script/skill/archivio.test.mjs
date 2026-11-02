@@ -9,6 +9,7 @@ import { prepareArchive, assertRegistry, save, load, pageURL, monthURL, readCard
 import { createFixture } from './archivio-fixture.mjs';
 import { validateCard } from './verifica.mjs';
 import { checkDirectory, checkPage } from './heading.mjs';
+import { LINGUE } from '../traduci-lingue.mjs';
 
 const temp=()=>fs.mkdtempSync(path.join(os.tmpdir(),'skill-archive-test-'));
 const run=(args,env)=>{
@@ -123,6 +124,10 @@ test('permanent archive acceptance T1–T8',async t=>{
   });
   await t.test('T8 all internal links resolve after the complete fixture build',()=>{
     assert.ok(output,'The full fixture build must have succeeded');
+    // The fixture builds only the English site. Translated redirect targets
+    // exist only after script/traduci.mjs, so the real build checks them.
+    const rimandi=path.join(output,'_redirects');
+    if(fs.existsSync(rimandi))fs.writeFileSync(rimandi,fs.readFileSync(rimandi,'utf8').split('\n').filter(l=>{const lang=/^\/([a-z]{2})\//.exec(l.trim().split(/\s+/)[1]||'')?.[1];return !lang||!LINGUE[lang]||fs.existsSync(path.join(output,lang));}).join('\n'));
     const log=run(['script/controlla-link.mjs'],{SITO_OUTPUT:output});
     assert.match(log,/rotti 0/);const numbers=log.match(/pagine (\d+), link controllati (\d+), rotti (\d+)/);
     const context=prepareArchive({root,date:'2026-12-01'});assertRegistry(context,output);
