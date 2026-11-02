@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-02-anymodelbot-launches-as-open-source-local-first-ai-agent-supporting-70",
+ "titolo": "AnyModelBot launches as open‑source, local‑first AI agent supporting 70+ models",
+ "descr": "The MIT‑licensed AnyModelBot lets users run personal AI bots on Windows, macOS or Linux, connecting to any Modelflare model via pay‑per‑use tokens.",
+ "tema": "Software",
+ "paragrafi": [
+  "AnyModelBot, developed by modelflare‑ai, is an open‑source AI agent that runs on Windows, macOS and Linux.",
+  "The app lets users create multiple bots, each with its own persona, default model, workspace and memory, and interact through the UI or chat platforms such as WeChat, Feishu, Telegram, Slack and Discord.",
+  "All model calls are routed through Modelflare, which offers access to over 70 text, image and video models from 13 providers, billed per token without a subscription.",
+  "The software is distributed as native installers for x64 and arm64 architectures and as a Docker image that supports both platforms.",
+  "Features include file read/write, sandboxed command execution, background tasks, scheduled rules and budget limits for each bot."
+ ],
+ "perche": [
+  "For users seeking privacy and control, AnyModelBot keeps conversation data, memory and API keys on the local device while still accessing the latest SOTA models via Modelflare. Developers and hobbyists can experiment with a wide range of models without locking into a single vendor subscription."
+ ],
+ "pubblicato": "2026-11-02",
+ "titoloFonte": "modelflare-ai/AnyModelBot: 🤖 Open-source, local-first alternative to Grok Bot, OpenAI dots and Claude Duet. Your own AI bots on any model: GPT, Claude, Gemini, Grok, DeepSeek, Kimi, GLM and 70+ more ",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/modelflare-ai/AnyModelBot",
+   "titolo": "modelflare-ai/AnyModelBot: 🤖 Open-source, local-first alternative to Grok Bot, OpenAI dots and Claude Duet. Your own AI bots on any model: GPT, Claude, Gemini, Grok, DeepSeek, Kimi, GLM and 70+ more ",
+   "ufficiale": false,
+   "data": "2026-10-27"
+  }
+ ],
+ "frasiTolte": 0
+}

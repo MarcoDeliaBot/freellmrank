@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-02-openai-to-merge-chatgpt-s-chat-and-work-tabs-in-december",
+ "titolo": "OpenAI to merge ChatGPT's Chat and Work tabs in December",
+ "descr": "OpenAI will combine the Chat and Work tabs for Plus, Pro and Business plans, sharing token allowances with Codex.",
+ "tema": "Software",
+ "paragrafi": [
+  "OpenAI announced that it will merge the Chat and Work tabs in the ChatGPT desktop app starting in December.",
+  "The change will first be tested with select users before a wider rollout, according to an email sent to current users.",
+  "Both ChatGPT and Codex will draw tokens from a shared allowance pool for Plus, Pro and Business plans, while instant chat remains free of usage charges.",
+  "OpenAI says most users will not notice disruption, though some may experience longer wait times for token resets depending on model and task complexity.",
+  "Codex will continue to be a separate experience within the desktop app, and the merged interface will let users bring files and plugins to build websites, presentations, or perform web tasks."
+ ],
+ "perche": [
+  "The unified tabs simplify navigation for users who switch between brainstorming and execution, reducing the need to manage separate windows. For those preferring free or locally hosted models, the change does not affect token limits for open models listed on FreeLLMArena."
+ ],
+ "pubblicato": "2026-11-02",
+ "titoloFonte": "OpenAI will merge ChatGPT’s chat and work tabs – here’s when, and what to expect",
+ "fonti": [
+  {
+   "nome": "ZDNet",
+   "url": "https://www.zdnet.com/innovation/openai-merge-chatgpt-chat-work-tabs/",
+   "titolo": "OpenAI will merge ChatGPT’s chat and work tabs – here’s when, and what to expect",
+   "ufficiale": false,
+   "data": "2026-11-02"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/02/openai-is-finally-merging-chatgpts-chat-and-work-tabs/",
+   "titolo": "OpenAI is finally merging ChatGPT's Chat and Work tabs",
+   "ufficiale": false,
+   "data": "2026-11-02"
+  }
+ ],
+ "frasiTolte": 0
+}

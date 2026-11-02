@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-02-ny-times-and-other-publishers-sue-brave-over-alleged-ai-content-scrapi",
+ "titolo": "NY Times and other publishers sue Brave over alleged AI content scraping",
+ "descr": "Major news outlets allege Brave browser indexed and sold copyrighted articles to AI firms, bypassing paywalls.",
+ "tema": "Policy",
+ "paragrafi": [
+  "The New York Times filed a federal lawsuit in Manhattan on November 2, 2026, accusing Brave of scraping its copyrighted articles and distributing them to AI companies.",
+  "The complaint lists Anthropic, Perplexity, Mistral, xAI and Cohere as recipients of the alleged stolen content and claims Brave built an index of over 30 billion web pages without publisher permission.",
+  "A separate suit was filed by the Daily News, Chicago Tribune and Orlando Sentinel, alleging Brave monetized the scraped index by giving AI firms paid access to real‑time online content.",
+  "The plaintiffs say Brave’s “Paywall blocker” lets users bypass publisher paywalls and that the company blocks publishers from restricting its crawler.",
+  "Brave, founded in 2015 and backed by roughly $250 million, has not responded to comment requests. The Times seeks an injunction and damages."
+ ],
+ "perche": [
+  "If the lawsuits succeed, AI developers may lose a convenient source of up‑to‑date news content, pushing them to seek licensed data or build smaller, locally hosted models. Publishers could see stronger enforcement of copyright, potentially encouraging the use of free or open‑source models that do not rely on scraped paywalled material."
+ ],
+ "pubblicato": "2026-11-02",
+ "titoloFonte": "New York Times and other outlets sue web browser Brave over alleged content scraping",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/",
+   "titolo": "New York Times and other outlets sue web browser Brave over alleged content scraping",
+   "ufficiale": false,
+   "data": "2026-11-02"
+  },
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times",
+   "titolo": "The New York Times sues Brave web browser for AI scraping and bypassing paywalls",
+   "ufficiale": false,
+   "data": "2026-11-02"
+  }
+ ],
+ "frasiTolte": 0
+}
