@@ -1,0 +1,67 @@
+{
+ "nome": "nuovo-mage-vl-cowork",
+ "titolo": "Mage-VL-Cowork: 5B parameters, free to download #Shorts",
+ "descrizione": "Mage-VL-Cowork by Microsoft came out on 30 Oct 2026, with open weights on Hugging Face. At 4-bit it needs about 6 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Mage-VL-Cowork"
+ ],
+ "condividi": "Mage-VL-Cowork is out: 5B parameters and open weights. At 4-bit it needs about 6 GB, so the smallest card that holds it fully is the RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "Mage-VL-Cowork: 5 miliardi di parametri, gratis #Shorts",
+   "descrizione": "Mage-VL-Cowork di Microsoft è uscito il 30 ottobre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 6 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Mage-VL-Cowork: 5 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "Mage-VL-Cowork de Microsoft salió el 30 de octubre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 6 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Mage-VL-Cowork: 5 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "Mage-VL-Cowork von Microsoft ist am 30. Oktober 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 6 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Mage-VL-Cowork : 5 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "Mage-VL-Cowork de Microsoft est sorti le 30 octobre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 6 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Mage-VL-Cowork: 5 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "Mage-VL-Cowork da Microsoft saiu em 30 de outubro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 6 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Mage-VL-Cowork",
+    "gb": 6,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "schede": [
+   {
+    "id": "rtx4060",
+    "nome": "RTX 4060",
+    "gb": 8,
+    "tiene": true
+   }
+  ]
+ },
+ "voce": [
+  "A new free AI model with 5 billion parameters.",
+  "It comes from Microsoft, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 6 gigabytes. You need at least an RTX 40 60.",
+  "It reads up to 256 thousand tokens at once.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-mage-vl-cowork",
+ "pubblicato": "2026-10-31"
+}
