@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute",
+ "titolo": "NVIDIA releases open‑source Attribution tool for diagnosing distributed AI failures",
+ "descr": "The new NVIDIA Attribution system correlates logs, metrics and scheduler data to pinpoint root causes in multi‑GPU workloads.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced an open‑source diagnostic suite called NVIDIA Attribution on 2 Nov 2026.",
+  "The system consists of an Attribution Service exposing a REST API and a Python‑based Attribution Blueprint that links cluster schedulers and telemetry sources to the service.",
+  "Connectors are provided for Slurm, Kueue, static inputs, Loki logs, local files, Kubernetes pod logs and PromQL metrics.",
+  "A worked example shows the tool isolating an NVLink signal‑integrity issue as the root cause while preserving downstream NCCL errors as symptoms."
+ ],
+ "perche": [
+  "For AI operators, the tool offers a reproducible, workload‑centric view of failures, helping reduce downtime and target hardware repairs. Free‑or‑local model users gain a template for building similar diagnostics without relying on proprietary monitoring stacks."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "Diagnose Distributed AI Workload Failures with NVIDIA Attribution",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/diagnose-distributed-ai-workload-failures-with-nvidia-attribution/",
+   "titolo": "Diagnose Distributed AI Workload Failures with NVIDIA Attribution",
+   "ufficiale": true,
+   "data": "2026-11-02"
+  }
+ ],
+ "frasiTolte": 1
+}

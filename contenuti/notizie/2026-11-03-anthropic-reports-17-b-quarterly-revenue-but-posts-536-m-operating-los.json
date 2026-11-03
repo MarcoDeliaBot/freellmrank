@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los",
+ "titolo": "Anthropic reports $17 B quarterly revenue but posts $536 M operating loss ahead of IPO",
+ "descr": "Anthropic filed an updated S‑1 on Nov 2, 2026 showing $17 billion in revenue for the quarter ended Sept.",
+ "tema": "Business",
+ "paragrafi": [
+  "Anthropic filed an updated S‑1 on Nov 2, 2026 showing $17 billion in revenue for the quarter ended Sept. 30, a 47% quarterly increase but a slowdown from the prior 144% growth.",
+  "The company recorded a $536 million operating loss, reversing a $974 million operating income three months earlier, after taking a $5 billion charge for premium‑priced computing hardware and a $2 billion charge for a non‑cash employee donation matching program.",
+  "Infrastructure commitments rose sharply, with total commitments reaching $895.4 billion and purchase commitments climbing from $55 billion at end‑2025 to about $314 billion in the quarter.",
+  "Anthropic has deals with Google, Broadcom, Amazon, Oracle and SpaceX, each worth more than $100 billion, and plans to both rent additional capacity and build its own data centers.",
+  "The filing notes the company is considering human review for certain model‑generated research tasks and believes its models will soon accelerate AI development dramatically."
+ ],
+ "perche": [
+  "The strong revenue growth shows market demand for Anthropic’s services, but the widening loss highlights the high cost of scaling AI infrastructure. Users may see faster model improvements, while developers of free or locally‑run models must contend with the growing hardware gap between large providers and open‑source alternatives."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "Anthropic’s quarterly revenue jumps to $17B, losses grow ahead of IPO",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/02/anthropics-quarterly-revenue-jumps-to-17b-losses-grow-ahead-of-ipo/",
+   "titolo": "Anthropic’s quarterly revenue jumps to $17B, losses grow ahead of IPO",
+   "ufficiale": false,
+   "data": "2026-11-02"
+  },
+  {
+   "nome": "sec.gov",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm",
+   "titolo": "Anthropic, PBC - S-1/A-1",
+   "ufficiale": true,
+   "data": "2026-09-30"
+  }
+ ],
+ "frasiTolte": 1
+}

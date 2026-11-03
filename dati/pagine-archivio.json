@@ -20419,6 +20419,42 @@
     "tipo": "News"
    },
    "data": "2026-11-02"
+  },
+  "/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los.html": {
+   "post": {
+    "slug": "news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los",
+    "titolo": "Anthropic reports $17 B quarterly revenue but posts $536 M operating loss ahead of IPO",
+    "descr": "Anthropic filed an updated S‑1 on Nov 2, 2026 showing $17 billion in revenue for the quarter ended Sept.",
+    "data": "2026-11-03",
+    "tema": "Business",
+    "corpo": "Anthropic filed an updated S‑1 on Nov 2, 2026 showing $17 billion in revenue for the quarter ended Sept. 30, a 47% quarterly increase but a slowdown from the prior 144% growth.\n\nThe company recorded a $536 million operating loss, reversing a $974 million operating income three months earlier, after taking a $5 billion charge for premium‑priced computing hardware and a $2 billion charge for a non‑cash employee donation matching program.\n\nInfrastructure commitments rose sharply, with total commitments reaching $895.4 billion and purchase commitments climbing from $55 billion at end‑2025 to about $314 billion in the quarter.\n\nAnthropic has deals with Google, Broadcom, Amazon, Oracle and SpaceX, each worth more than $100 billion, and plans to both rent additional capacity and build its own data centers.\n\nThe filing notes the company is considering human review for certain model‑generated research tasks and believes its models will soon accelerate AI development dramatically.\n\n## What it means for you\n\nThe strong revenue growth shows market demand for Anthropic’s services, but the widening loss highlights the high cost of scaling AI infrastructure. Users may see faster model improvements, while developers of free or locally‑run models must contend with the growing hardware gap between large providers and open‑source alternatives.\n\n## Sources\n\n- [Anthropic’s quarterly revenue jumps to $17B, losses grow ahead of IPO](https://siliconangle.com/2026/11/02/anthropics-quarterly-revenue-jumps-to-17b-losses-grow-ahead-of-ipo/), SiliconANGLE, 2 Nov 2026\n- [Anthropic, PBC - S-1/A-1](https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm), sec.gov (official), 30 Sept 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-02"
+  },
+  "/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute.html": {
+   "post": {
+    "slug": "news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute",
+    "titolo": "NVIDIA releases open‑source Attribution tool for diagnosing distributed AI failures",
+    "descr": "The new NVIDIA Attribution system correlates logs, metrics and scheduler data to pinpoint root causes in multi‑GPU workloads.",
+    "data": "2026-11-03",
+    "tema": "Software",
+    "corpo": "NVIDIA announced an open‑source diagnostic suite called NVIDIA Attribution on 2 Nov 2026.\n\nThe system consists of an Attribution Service exposing a REST API and a Python‑based Attribution Blueprint that links cluster schedulers and telemetry sources to the service.\n\nConnectors are provided for Slurm, Kueue, static inputs, Loki logs, local files, Kubernetes pod logs and PromQL metrics.\n\nA worked example shows the tool isolating an NVLink signal‑integrity issue as the root cause while preserving downstream NCCL errors as symptoms.\n\n## What it means for you\n\nFor AI operators, the tool offers a reproducible, workload‑centric view of failures, helping reduce downtime and target hardware repairs. Free‑or‑local model users gain a template for building similar diagnostics without relying on proprietary monitoring stacks.\n\n## Sources\n\n- [Diagnose Distributed AI Workload Failures with NVIDIA Attribution](https://developer.nvidia.com/blog/diagnose-distributed-ai-workload-failures-with-nvidia-attribution/), NVIDIA Developer (official), 2 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-02"
+  },
+  "/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d.html": {
+   "post": {
+    "slug": "news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d",
+    "titolo": "OpenAI launches Pando, a Git‑compatible backend for large‑scale Codex development",
+    "descr": "OpenAI released Pando, a Git‑compatible system built to handle the massive development workflows driven by Codex.",
+    "data": "2026-11-03",
+    "tema": "Software",
+    "corpo": "OpenAI announced a new backend called Pando that works with Git protocols.\n\nPando is designed to support the scale of development projects that Codex enables.\n\nThe system aims to manage large codebases and many contributors without breaking Git compatibility.\n\nOpenAI says the backend will help teams handle the increased volume of changes generated by AI‑assisted coding.\n\n## What it means for you\n\nDevelopers using AI‑powered coding tools will benefit from a backend that can keep up with rapid, large‑scale changes. For users of free or local models, the move highlights the infrastructure demands of extensive AI‑driven development, underscoring why open‑source alternatives may need similar scaling solutions.\n\n## Sources\n\n- [Scaling Git at OpenAI](https://openai.com/index/scaling-git-at-openai), OpenAI (official), 2 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-02"
   }
  },
  "ricostruzione": {

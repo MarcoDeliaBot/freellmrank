@@ -2592,6 +2592,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "en",
@@ -9497,6 +9545,54 @@
  },
  {
   "url": "/de/blog/news-2026-11-02-tencent-unveils-wizard-real-time-agentic-control-for-video-game-worlds.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d.html",
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-02",
@@ -24026,6 +24122,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "es",
@@ -38541,6 +38685,54 @@
  },
  {
   "url": "/fr/blog/news-2026-11-02-tencent-unveils-wizard-real-time-agentic-control-for-video-game-worlds.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d.html",
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-02",
@@ -53070,6 +53262,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "it",
@@ -67585,6 +67825,54 @@
  },
  {
   "url": "/ja/blog/news-2026-11-02-tencent-unveils-wizard-real-time-agentic-control-for-video-game-worlds.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d.html",
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-02",
@@ -89717,6 +90005,54 @@
  },
  {
   "url": "/pt/blog/news-2026-11-02-tencent-unveils-wizard-real-time-agentic-control-for-video-game-worlds.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-03-anthropic-reports-17-b-quarterly-revenue-but-posts-536-m-operating-los.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-03-nvidia-releases-open-source-attribution-tool-for-diagnosing-distribute.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d.html",
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-02",
