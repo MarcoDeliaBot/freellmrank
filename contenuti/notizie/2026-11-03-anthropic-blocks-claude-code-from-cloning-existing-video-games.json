@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-03-anthropic-blocks-claude-code-from-cloning-existing-video-games",
+ "titolo": "Anthropic blocks Claude Code from cloning existing video games",
+ "descr": "Anthropic updated the system prompt for its coding assistant Claude Code on the Opus 5.5 version.",
+ "tema": "Policy",
+ "paragrafi": [
+  "Anthropic updated the system prompt for its coding assistant Claude Code on the Opus 5.5 version.",
+  "The new prompt includes two sentences that direct the model to build original games, genre titles, or games using the user’s own assets, and to refuse recreations of specific existing games.",
+  "Addy Osmani confirmed on X that the change enforces Anthropic’s usage policy against intellectual‑property infringement and has been active for several days.",
+  "The rule applies even when a cloned game is renamed or presented as original, though users can still develop new games with custom assets.",
+  "The move follows a surge of AI‑driven cloning projects that used Claude Code, Opus 5.5 and GPT‑6 Astra to produce unofficial browser ports of titles such as Halo and GTA Vice City."
+ ],
+ "perche": [
+  "For AI users, the update limits Claude Code’s ability to generate direct copies of copyrighted games, reducing legal risk but also restricting some creative workflows. For developers of free or local models, it highlights the growing enforcement of IP policies by commercial providers, prompting the community to consider similar safeguards or alternative approaches."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "Anthropic cracks down on game cloning in Claude Code after wave of AI-built knockoffs",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/anthropic-cracks-down-on-game-cloning-in-claude-code-after-wave-of-ai-built-knockoffs/",
+   "titolo": "Anthropic cracks down on game cloning in Claude Code after wave of AI-built knockoffs",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  },
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones",
+   "titolo": "Anthropic clamps down on Claude’s AI video game clones",
+   "ufficiale": false,
+   "data": "2026-11-02"
+  }
+ ],
+ "frasiTolte": 1
+}

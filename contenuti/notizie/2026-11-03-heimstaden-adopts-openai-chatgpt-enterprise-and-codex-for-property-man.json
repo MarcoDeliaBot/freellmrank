@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-03-heimstaden-adopts-openai-chatgpt-enterprise-and-codex-for-property-man",
+ "titolo": "Heimstaden adopts OpenAI ChatGPT Enterprise and Codex for property management",
+ "descr": "Swedish real‑estate firm Heimstaden uses ChatGPT Enterprise and Codex to cut costs and boost staff productivity across Europe.",
+ "tema": "Business",
+ "paragrafi": [
+  "Heimstaden announced the deployment of OpenAI’s ChatGPT Enterprise and Codex in its residential real‑estate operations.",
+  "The AI tools are being used to automate routine tasks, streamline communication with tenants, and support internal workflows.",
+  "OpenAI’s enterprise‑grade models provide the security and scalability required for large‑scale property management.",
+  "Heimstaden’s initiative reflects a growing trend of real‑estate firms adopting generative AI to modernize legacy processes."
+ ],
+ "perche": [
+  "For AI users, the case shows how enterprise‑focused models can deliver tangible cost savings in a traditional industry. It also highlights why free or locally hosted models may be less suitable for large organizations that need robust security, compliance and support."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "Heimstaden is changing residential real estate management with AI",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/heimstaden",
+   "titolo": "Heimstaden is changing residential real estate management with AI",
+   "ufficiale": true,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 1
+}

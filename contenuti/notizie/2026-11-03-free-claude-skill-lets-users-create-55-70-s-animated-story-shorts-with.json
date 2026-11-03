@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-03-free-claude-skill-lets-users-create-55-70-s-animated-story-shorts-with",
+ "titolo": "Free Claude skill lets users create 55‑70 s animated story shorts with three.js and Remotion",
+ "descr": "The open‑source Claude skill renders 2D characters in a 3D world on a local PC without AI video generators.",
+ "tema": "Guides",
+ "paragrafi": [
+  "A new GitHub repo called mromidev/claude-animated-shorts offers a free Claude skill for making short vertical animated stories.",
+  "The skill produces 55‑70 second videos that combine 2D characters, ink outlines, lens blur and a painted town rendered with three.js inside Remotion.",
+  "All rendering happens on the user’s own computer; the pipeline uses Node, Python 3, ffmpeg and requires Remotion with @remotion/three.",
+  "The repository includes the full source for a sample short called “The Bridge That Fell for a Song,” along with templates, scripts and reference frames for style guidance.",
+  "The code and documentation are released under the MIT license, and the project has gathered 1.0k stars and 236 forks on GitHub."
+ ],
+ "perche": [
+  "This skill enables creators to produce high‑quality animated content without relying on cloud AI video services, keeping data local and costs low. It also showcases how free, community‑driven tools can extend Claude’s capabilities for users seeking cost‑effective, on‑premise media generation."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "mromidev/claude-animated-shorts: Free Claude skill: viral animated story shorts (2D characters in a 3D world) with three.js + Remotion",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/mromidev/claude-animated-shorts",
+   "titolo": "mromidev/claude-animated-shorts: Free Claude skill: viral animated story shorts (2D characters in a 3D world) with three.js + Remotion",
+   "ufficiale": false,
+   "data": "2026-11-01"
+  }
+ ],
+ "frasiTolte": 0
+}
