@@ -2640,6 +2640,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "en",
@@ -9593,6 +9625,38 @@
  },
  {
   "url": "/de/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee.html",
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-02",
@@ -24170,6 +24234,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "es",
@@ -38733,6 +38829,38 @@
  },
  {
   "url": "/fr/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee.html",
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-02",
@@ -53310,6 +53438,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "it",
@@ -67873,6 +68033,38 @@
  },
  {
   "url": "/ja/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee.html",
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-02",
@@ -90053,6 +90245,38 @@
  },
  {
   "url": "/pt/blog/news-2026-11-03-openai-launches-pando-a-git-compatible-backend-for-large-scale-codex-d.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-02",
+  "ultimaVista": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee.html",
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-02",

@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers",
+ "titolo": "OpenAI raises bug bounty rewards for independent security researchers",
+ "descr": "OpenAI expands its bug bounty program with higher payouts and new bonuses for report quality, loyalty, and priority campaigns.",
+ "tema": "Policy",
+ "paragrafi": [
+  "OpenAI announced a change to its Security Bug Bounty program on 2 November 2026.",
+  "The company will increase the monetary rewards offered to independent security researchers who report vulnerabilities.",
+  "In addition to larger base rewards, OpenAI is adding three new bonus categories: report quality, loyalty, and priority campaign incentives.",
+  "These bonuses aim to recognize thorough, repeat, and high‑impact findings from the research community.",
+  "The update is part of OpenAI’s ongoing effort to strengthen the security of its AI systems."
+ ],
+ "perche": [
+  "Higher payouts and targeted bonuses encourage more researchers to look for flaws, improving overall safety of OpenAI products. For users of free or locally hosted models, stronger security at the source can reduce the risk of compromised services they rely on."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "Rewarding defenders with bigger bug bounties",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
+   "titolo": "Rewarding defenders with bigger bug bounties",
+   "ufficiale": true,
+   "data": "2026-11-02"
+  }
+ ],
+ "frasiTolte": 0
+}

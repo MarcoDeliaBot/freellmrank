@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee",
+ "titolo": "Weight Space Programming lets LLMs edit other models’ weights, while DeepSeek releases a super‑agent harness prototype",
+ "descr": "Researchers show LLMs can directly read and modify neural network weights, and DeepSeek unveils a prototype that coordinates multiple agents for faster task completion.",
+ "tema": "Research",
+ "paragrafi": [
+  "A new paper demonstrates that a large language model can read and edit the weights of a smaller model, a capability dubbed “Weight Space Programming.” The approach bypasses traditional code‑level interventions and can fix bugs or improve performance in a few steps.",
+  "The authors claim the technique can write entire network weights from scratch, sometimes outperforming independently trained models, though it currently works only on modest‑size networks and simple tasks such as games and RL policies.",
+  "In parallel, DeepSeek published a design article and the dsh‑superagent‑prototype repository, describing a “super‑agent” harness that routes a long‑lived session to multiple isolated workers triggered by GitHub events.",
+  "DeepSeek’s internal tests show the 95th‑percentile completion time dropped from 29.5 minutes to 15.7 minutes compared with a single‑session baseline, highlighting gains in throughput when delegating work across sub‑agents.",
+  "Both developments arrive amid a bearish AI market, with firms like Anthropic and OpenAI facing financing challenges, yet the community continues to push forward novel capabilities."
+ ],
+ "perche": [
+  "For AI users, weight‑space editing could accelerate model debugging and customization without writing low‑level code. For those favoring free or locally run models, the DeepSeek‑V4.1‑Flash entry—ranked among the top free chat models—shows that advanced coordination frameworks are being built on open‑source foundations, potentially enabling richer offline agent ecosystems."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "[AINews] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop",
+ "fonti": [
+  {
+   "nome": "Latent Space",
+   "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/",
+   "titolo": "[AINews] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  },
+  {
+   "nome": "huggingface.co",
+   "url": "https://huggingface.co/ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF",
+   "titolo": "ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF · Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 0
+}

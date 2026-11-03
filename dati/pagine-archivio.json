@@ -20455,6 +20455,30 @@
     "tipo": "News"
    },
    "data": "2026-11-02"
+  },
+  "/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers.html": {
+   "post": {
+    "slug": "news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers",
+    "titolo": "OpenAI raises bug bounty rewards for independent security researchers",
+    "descr": "OpenAI expands its bug bounty program with higher payouts and new bonuses for report quality, loyalty, and priority campaigns.",
+    "data": "2026-11-03",
+    "tema": "Policy",
+    "corpo": "OpenAI announced a change to its Security Bug Bounty program on 2 November 2026.\n\nThe company will increase the monetary rewards offered to independent security researchers who report vulnerabilities.\n\nIn addition to larger base rewards, OpenAI is adding three new bonus categories: report quality, loyalty, and priority campaign incentives.\n\nThese bonuses aim to recognize thorough, repeat, and high‑impact findings from the research community.\n\nThe update is part of OpenAI’s ongoing effort to strengthen the security of its AI systems.\n\n## What it means for you\n\nHigher payouts and targeted bonuses encourage more researchers to look for flaws, improving overall safety of OpenAI products. For users of free or locally hosted models, stronger security at the source can reduce the risk of compromised services they rely on.\n\n## Sources\n\n- [Rewarding defenders with bigger bug bounties](https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties), OpenAI (official), 2 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-03-openai-raises-bug-bounty-rewards-for-independent-security-researchers).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-02"
+  },
+  "/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee.html": {
+   "post": {
+    "slug": "news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee",
+    "titolo": "Weight Space Programming lets LLMs edit other models’ weights, while DeepSeek releases a super‑agent harness prototype",
+    "descr": "Researchers show LLMs can directly read and modify neural network weights, and DeepSeek unveils a prototype that coordinates multiple agents for faster task completion.",
+    "data": "2026-11-03",
+    "tema": "Research",
+    "corpo": "A new paper demonstrates that a large language model can read and edit the weights of a smaller model, a capability dubbed “Weight Space Programming.” The approach bypasses traditional code‑level interventions and can fix bugs or improve performance in a few steps.\n\nThe authors claim the technique can write entire network weights from scratch, sometimes outperforming independently trained models, though it currently works only on modest‑size networks and simple tasks such as games and RL policies.\n\nIn parallel, DeepSeek published a design article and the dsh‑superagent‑prototype repository, describing a “super‑agent” harness that routes a long‑lived session to multiple isolated workers triggered by GitHub events.\n\nDeepSeek’s internal tests show the 95th‑percentile completion time dropped from 29.5 minutes to 15.7 minutes compared with a single‑session baseline, highlighting gains in throughput when delegating work across sub‑agents.\n\nBoth developments arrive amid a bearish AI market, with firms like Anthropic and OpenAI facing financing challenges, yet the community continues to push forward novel capabilities.\n\n## What it means for you\n\nFor AI users, weight‑space editing could accelerate model debugging and customization without writing low‑level code. For those favoring free or locally run models, the DeepSeek‑V4.1‑Flash entry—ranked among the top free chat models—shows that advanced coordination frameworks are being built on open‑source foundations, potentially enabling richer offline agent ecosystems.\n\n## Sources\n\n- [\\[AINews\\] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop](https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/), Latent Space, 3 Nov 2026\n- [ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF · Hugging Face](https://huggingface.co/ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF), huggingface.co (official), 3 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-02"
   }
  },
  "ricostruzione": {
