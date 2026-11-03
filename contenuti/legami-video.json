@@ -203,5 +203,13 @@
  },
  "skill-vercel-labs-agent-browser-agent-browser": {
   "lungo": "skill-vercel-labs-agent-browser-agent-browser"
+ },
+ "news-2026-11-03-weight-space-programming-lets-llms-edit-other-models-weights-while-dee": {
+  "lungo": "notizia-weight-space-programming-lets-llms-edit-other-models-wei",
+  "breve": "breve-weight-space-programming-lets-llms-edit-other-models-wei"
+ },
+ "news-2026-11-02-google-launches-gemini-4-carbon-top-paid-chat-model-in-freellmarena-ra": {
+  "lungo": "notizia-google-launches-gemini-4-carbon-top-paid-chat-model-in-f",
+  "breve": "breve-google-launches-gemini-4-carbon-top-paid-chat-model-in-f"
  }
 }
