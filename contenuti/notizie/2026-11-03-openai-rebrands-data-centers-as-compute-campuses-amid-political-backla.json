@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-03-openai-rebrands-data-centers-as-compute-campuses-amid-political-backla",
+ "titolo": "OpenAI rebrands data centers as “compute campuses” amid political backlash",
+ "descr": "OpenAI launches a “Grid Protectors Program” and renames its facilities to defuse criticism over power use and environmental impact.",
+ "tema": "Policy",
+ "paragrafi": [
+  "OpenAI announced on Nov. 3, 2026 that it will refer to its data centers as “compute campuses.”",
+  "The change appears in a 900‑word statement introducing the “Grid Protectors Program,” which starts with a site in Effingham County, Georgia.",
+  "The program promises to pay for electricity costs and help communities keep power on during extreme weather, citing flexible power demand.",
+  "Critics say the new name does not address the environmental footprint or local resource strain of the facilities.",
+  "OpenAI’s chief global affairs officer Chris Lehane told Axios the rebrand is part of a broader effort to shape AI policy after the midterm elections."
+ ],
+ "perche": [
+  "For AI users, the rebrand signals OpenAI’s attempt to improve community relations, but it does not change how models are accessed. For those favoring free or locally hosted models, the move underscores growing concerns about large‑scale AI infrastructure and may drive interest in smaller, community‑run alternatives."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "OpenAI is quietly renaming data centers ‘compute campuses’",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1025242/openai-quietly-renames-data-centers-as-compute-campuses",
+   "titolo": "OpenAI is quietly renaming data centers ‘compute campuses’",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/",
+   "titolo": "OpenAI might rebrand its data centers as ‘AI compute campuses’",
+   "ufficiale": false,
+   "data": "2026-11-01"
+  }
+ ],
+ "frasiTolte": 1
+}

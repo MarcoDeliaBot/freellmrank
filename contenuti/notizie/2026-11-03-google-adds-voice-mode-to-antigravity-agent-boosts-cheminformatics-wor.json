@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-03-google-adds-voice-mode-to-antigravity-agent-boosts-cheminformatics-wor",
+ "titolo": "Google adds Voice Mode to Antigravity agent, boosts cheminformatics workflow",
+ "descr": "Google's Antigravity 2.0 gains a live‑voice Chief of Staff agent and new Cheminformatics Skills that can design lung‑cancer drugs in an hour.",
+ "tema": "Research",
+ "paragrafi": [
+  "Google announced that Antigravity 2.0 will receive a new voice mode built for an agent currently called Chief of Staff. The mode supports live voice conversations, selectable voices, speech‑speed controls and optional text display.",
+  "Chief of Staff is presented as a dashboard‑style interface that can review pending conversations, generate personalized rules, flag attention‑requiring topics and discover skills or plugins. It may also coordinate subagents and scheduled tasks, extending Antigravity’s multi‑agent architecture.",
+  "In parallel, DeepMind released a technical walkthrough of Cheminformatics Skills for Antigravity. The skills integrate RDKit, ChEMBL and PubChem to let the agent extract, clean and analyze chemical data without manual wrangling.",
+  "Using these skills, the agent searched literature on lung‑cancer treatments, filtered thousands of compounds and proposed rigidified macrocycles such as lorlatinib within an hour, illustrating a dramatic speed‑up over traditional multi‑day cycles.",
+  "The combined voice interface and chemistry capabilities aim to turn Antigravity into a collaborative science workbench where language models orchestrate workflows while deterministic tools perform calculations."
+ ],
+ "perche": [
+  "For AI practitioners, the voice‑first agent lowers the barrier to managing complex, multi‑step workflows on Antigravity, especially for developers handling many concurrent tasks. Researchers gain a faster, more interactive way to explore large chemical datasets, though the platform remains proprietary, highlighting the need for free or locally runnable alternatives for users who prefer open‑source or on‑premise solutions."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "Agentic cheminformatics with Google Antigravity",
+ "fonti": [
+  {
+   "nome": "Google DeepMind",
+   "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+   "titolo": "Agentic cheminformatics with Google Antigravity",
+   "ufficiale": true,
+   "data": "2026-11-03"
+  },
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/google-prepares-new-ai-agent-for-antigravity-with-voice-mode/",
+   "titolo": "Google prepares new AI agent for Antigravity with Voice Mode",
+   "ufficiale": false,
+   "data": "2026-11-01"
+  }
+ ],
+ "frasiTolte": 0
+}

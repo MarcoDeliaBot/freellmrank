@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-03-nvidia-ai-tools-accelerate-semiconductor-fab-simulations-up-to-35x",
+ "titolo": "NVIDIA AI tools accelerate semiconductor fab simulations up to 35x",
+ "descr": "NVIDIA’s cuDSS, PhysicsNeMo and Omniverse libraries speed up multiphysics, lithography and digital twin workloads, reshaping fab engineering.",
+ "tema": "Research",
+ "paragrafi": [
+  "NVIDIA reports that AI is shortening simulation cycles in semiconductor manufacturing, letting engineers test more alternatives before physical trials.",
+  "Using the cuDSS library, COMSOL sees up to 10× faster multiphysics simulations, while Applied Materials’ Ginestra platform also gains a 10× speed boost.",
+  "Applied’s ACE+ platform, powered by NVIDIA PhysicsNeMo, delivers topography simulations up to 35× faster, and Siemens’ Calibre lithography software gains up to 17× acceleration with cuLitho.",
+  "PhysicsNeMo can predict plasma behavior in milliseconds, replacing days‑long full simulations, and NVIDIA Omniverse tools enable fab‑level digital twins for layout and throughput optimization.",
+  "AI agents such as NVIDIA NeMo Switchyard reduce model selection time from hours to minutes, further streamlining decision‑making on the factory floor."
+ ],
+ "perche": [
+  "These speedups let fab engineers iterate faster and lower costs, which can shorten time‑to‑market for new chips. For AI users, the advances showcase how specialized AI frameworks can boost domain‑specific workloads, highlighting the value of both free and commercial AI tools in high‑performance computing environments."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "AI Is Changing How Semiconductor Fabs Work — and Engineers Are Moving Faster Because of It",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/ai-semiconductor-fabs/",
+   "titolo": "AI Is Changing How Semiconductor Fabs Work — and Engineers Are Moving Faster Because of It",
+   "ufficiale": true,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 0
+}
