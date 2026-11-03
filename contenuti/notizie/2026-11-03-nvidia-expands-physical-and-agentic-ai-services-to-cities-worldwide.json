@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-03-nvidia-expands-physical-and-agentic-ai-services-to-cities-worldwide",
+ "titolo": "NVIDIA expands physical and agentic AI services to cities worldwide",
+ "descr": "NVIDIA partners with local governments and firms to deploy AI workstations, RTX PRO GPUs and Nemotron models for services, vision agents and digital twins.",
+ "tema": "Business",
+ "paragrafi": [
+  "Projects use NVIDIA RTX workstations or small GPU systems for resident‑service agents, while larger workloads run on RTX PRO 6000 GPUs and Dell PowerEdge servers with NVIDIA accelerators.",
+  "LiveX in the San Francisco Bay Area uses NVIDIA Cosmos world models, Nemotron open models, Omniverse and Metropolis libraries on RTX PRO GPUs to power conversational AI in public spaces.",
+  "K2K in Wrocław builds shared AI infrastructure with NVIDIA accelerated computing and Metropolis Blueprint for video search and summarization, turning camera streams into actionable intelligence.",
+  "ITMAX in Malaysia scales SamurAI V2 vision agents on RTX PRO 6000 GPUs to support over 17,000 cameras, integrating the open‑source TeraSim traffic simulator to cut peak‑hour travel times by up to 26%."
+ ],
+ "perche": [
+  "Cities gain AI capabilities without massive infrastructure investments, enabling faster public services and smarter infrastructure planning. For users of free or locally hosted models, NVIDIA’s approach shows how shared AI factories and open‑source components can complement community‑driven initiatives such as the Barcelona Supercomputing Center’s AI Factory."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/cities-physical-agentic-ai-applications/",
+   "titolo": "Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI",
+   "ufficiale": true,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 2
+}

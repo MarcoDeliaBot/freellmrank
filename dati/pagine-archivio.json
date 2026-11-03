@@ -20578,6 +20578,42 @@
     "tipo": "News"
    },
    "data": "2026-11-03"
+  },
+  "/blog/news-2026-11-03-clickup-begins-gradual-rollout-of-browser-use-feature-for-its-brain-ai.html": {
+   "post": {
+    "slug": "news-2026-11-03-clickup-begins-gradual-rollout-of-browser-use-feature-for-its-brain-ai",
+    "titolo": "ClickUp begins gradual rollout of browser‑use feature for its Brain AI assistant",
+    "descr": "ClickUp's Brain can now open websites in a live cloud browser, interact with pages and log actions for later review.",
+    "data": "2026-11-03",
+    "tema": "Business",
+    "corpo": "ClickUp started deploying a browser‑use capability for Brain, the AI built into its work platform.\n\nThe feature lets Brain open a website in a cloud browser, navigate pages, fill forms and download files, then return the information to ClickUp.\n\nEach session runs inside ClickUp as a live view, allowing users to watch the AI click through a site and to intervene when a login is required.\n\nAfter a run, ClickUp stores a step log and a recording of the session so teams can replay the actions later.\n\nThe browsers are provided by Browserbase, so the sessions occur on remote machines rather than the user's computer.\n\nRollout is gradual and ClickUp has not set a date for full availability.\n\n## What it means for you\n\nThe addition closes a gap where many work tasks involve sites without native integrations, giving teams AI assistance for routine web interactions. Users of free or locally hosted models still need external tools for web browsing, while ClickUp's integrated approach may reduce reliance on separate automation services.\n\n## Sources\n\n- [ClickUp starts rolling out Browser Use support on Brain](https://www.testingcatalog.com/clickup-starts-rolling-out-browser-use-support-on-brain/), TestingCatalog, 3 Nov 2026\n- [ClickUp™ | Maximize productivity • Software, AI, and humans converge](https://try.web.clickup.com/o5ho4v7sk03y?ref=testingcatalog.com), try.web.clickup.com (official), 3 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-03-clickup-begins-gradual-rollout-of-browser-use-feature-for-its-brain-ai).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-03"
+  },
+  "/blog/news-2026-11-03-nvidia-expands-physical-and-agentic-ai-services-to-cities-worldwide.html": {
+   "post": {
+    "slug": "news-2026-11-03-nvidia-expands-physical-and-agentic-ai-services-to-cities-worldwide",
+    "titolo": "NVIDIA expands physical and agentic AI services to cities worldwide",
+    "descr": "NVIDIA partners with local governments and firms to deploy AI workstations, RTX PRO GPUs and Nemotron models for services, vision agents and digital twins.",
+    "data": "2026-11-03",
+    "tema": "Business",
+    "corpo": "Projects use NVIDIA RTX workstations or small GPU systems for resident‑service agents, while larger workloads run on RTX PRO 6000 GPUs and Dell PowerEdge servers with NVIDIA accelerators.\n\nLiveX in the San Francisco Bay Area uses NVIDIA Cosmos world models, Nemotron open models, Omniverse and Metropolis libraries on RTX PRO GPUs to power conversational AI in public spaces.\n\nK2K in Wrocław builds shared AI infrastructure with NVIDIA accelerated computing and Metropolis Blueprint for video search and summarization, turning camera streams into actionable intelligence.\n\nITMAX in Malaysia scales SamurAI V2 vision agents on RTX PRO 6000 GPUs to support over 17,000 cameras, integrating the open‑source TeraSim traffic simulator to cut peak‑hour travel times by up to 26%.\n\n## What it means for you\n\nCities gain AI capabilities without massive infrastructure investments, enabling faster public services and smarter infrastructure planning. For users of free or locally hosted models, NVIDIA’s approach shows how shared AI factories and open‑source components can complement community‑driven initiatives such as the Barcelona Supercomputing Center’s AI Factory.\n\n## Sources\n\n- [Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI](https://blogs.nvidia.com/blog/cities-physical-agentic-ai-applications/), NVIDIA (official), 3 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-03-nvidia-expands-physical-and-agentic-ai-services-to-cities-worldwide).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-03"
+  },
+  "/blog/news-2026-11-03-openai-highlights-chatgpt-and-codex-boosting-engineering-workflows.html": {
+   "post": {
+    "slug": "news-2026-11-03-openai-highlights-chatgpt-and-codex-boosting-engineering-workflows",
+    "titolo": "OpenAI highlights ChatGPT and Codex boosting engineering workflows",
+    "descr": "OpenAI reports its AI tools are speeding up CAD, PCB design, simulation and related physical‑world tasks.",
+    "data": "2026-11-03",
+    "tema": "Software",
+    "corpo": "OpenAI released a statement on 2026-11-03 describing how its models are being used in engineering.\n\nThe company says ChatGPT and Codex help engineers accelerate computer‑aided design, printed‑circuit‑board design and simulation.\n\nThese tools are positioned to improve productivity across physical‑world workflows.\n\nOpenAI frames the development as part of its broader effort to support engineering tasks with AI.\n\n## What it means for you\n\nFor engineers, the claim suggests faster design cycles and reduced manual effort. For users of free or local models, it signals a benchmark for capabilities that open‑source alternatives may aim to match.\n\n## Sources\n\n- [Accelerating engineering for the physical world](https://openai.com/index/accelerating-engineering-for-the-physical-world), OpenAI (official), 3 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-03-openai-highlights-chatgpt-and-codex-boosting-engineering-workflows).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-03"
   }
  },
  "ricostruzione": {

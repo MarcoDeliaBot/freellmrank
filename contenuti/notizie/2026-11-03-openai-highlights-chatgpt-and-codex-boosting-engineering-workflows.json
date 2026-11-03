@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-03-openai-highlights-chatgpt-and-codex-boosting-engineering-workflows",
+ "titolo": "OpenAI highlights ChatGPT and Codex boosting engineering workflows",
+ "descr": "OpenAI reports its AI tools are speeding up CAD, PCB design, simulation and related physical‑world tasks.",
+ "tema": "Software",
+ "paragrafi": [
+  "OpenAI released a statement on 2026-11-03 describing how its models are being used in engineering.",
+  "The company says ChatGPT and Codex help engineers accelerate computer‑aided design, printed‑circuit‑board design and simulation.",
+  "These tools are positioned to improve productivity across physical‑world workflows.",
+  "OpenAI frames the development as part of its broader effort to support engineering tasks with AI."
+ ],
+ "perche": [
+  "For engineers, the claim suggests faster design cycles and reduced manual effort. For users of free or local models, it signals a benchmark for capabilities that open‑source alternatives may aim to match."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "Accelerating engineering for the physical world",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
+   "titolo": "Accelerating engineering for the physical world",
+   "ufficiale": true,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 0
+}

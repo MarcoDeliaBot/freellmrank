@@ -1,0 +1,36 @@
+{
+ "nome": "2026-11-03-clickup-begins-gradual-rollout-of-browser-use-feature-for-its-brain-ai",
+ "titolo": "ClickUp begins gradual rollout of browser‑use feature for its Brain AI assistant",
+ "descr": "ClickUp's Brain can now open websites in a live cloud browser, interact with pages and log actions for later review.",
+ "tema": "Business",
+ "paragrafi": [
+  "ClickUp started deploying a browser‑use capability for Brain, the AI built into its work platform.",
+  "The feature lets Brain open a website in a cloud browser, navigate pages, fill forms and download files, then return the information to ClickUp.",
+  "Each session runs inside ClickUp as a live view, allowing users to watch the AI click through a site and to intervene when a login is required.",
+  "After a run, ClickUp stores a step log and a recording of the session so teams can replay the actions later.",
+  "The browsers are provided by Browserbase, so the sessions occur on remote machines rather than the user's computer.",
+  "Rollout is gradual and ClickUp has not set a date for full availability."
+ ],
+ "perche": [
+  "The addition closes a gap where many work tasks involve sites without native integrations, giving teams AI assistance for routine web interactions. Users of free or locally hosted models still need external tools for web browsing, while ClickUp's integrated approach may reduce reliance on separate automation services."
+ ],
+ "pubblicato": "2026-11-03",
+ "titoloFonte": "ClickUp starts rolling out Browser Use support on Brain",
+ "fonti": [
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/clickup-starts-rolling-out-browser-use-support-on-brain/",
+   "titolo": "ClickUp starts rolling out Browser Use support on Brain",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  },
+  {
+   "nome": "try.web.clickup.com",
+   "url": "https://try.web.clickup.com/o5ho4v7sk03y?ref=testingcatalog.com",
+   "titolo": "ClickUp™ | Maximize productivity • Software, AI, and humans converge",
+   "ufficiale": true,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 0
+}
