@@ -14756,6 +14756,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/de/model/crouton-alpha",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-03",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/crouton-alpha.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-03",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/model/d1-2b",
   "tipo": "modello",
   "lingua": "de",
@@ -29452,6 +29468,22 @@
   "tipo": "modello",
   "lingua": "es",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/crouton-alpha",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-03",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/crouton-alpha.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-03",
   "stato": "attiva"
  },
@@ -44156,6 +44188,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/model/crouton-alpha",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-03",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/crouton-alpha.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-03",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/model/d1-2b",
   "tipo": "modello",
   "lingua": "fr",
@@ -58852,6 +58900,22 @@
   "tipo": "modello",
   "lingua": "it",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/crouton-alpha",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-03",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/crouton-alpha.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-03",
   "stato": "attiva"
  },
@@ -73556,6 +73620,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/model/crouton-alpha",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-03",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/crouton-alpha.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-03",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/model/d1-2b",
   "tipo": "modello",
   "lingua": "ja",
@@ -81164,6 +81244,22 @@
   "tipo": "modello",
   "lingua": "en",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/crouton-alpha",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-03",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/crouton-alpha.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-03",
   "stato": "attiva"
  },
@@ -95864,6 +95960,22 @@
   "tipo": "modello",
   "lingua": "pt",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/crouton-alpha",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-03",
+  "ultimaVista": "2026-11-03",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/crouton-alpha.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-03",
   "stato": "attiva"
  },

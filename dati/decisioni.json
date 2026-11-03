@@ -69,7 +69,10 @@
     "tools": 84.7,
     "arts": 60.5
    },
-   "vision": null,
+   "vision": {
+    "punti": 65.2,
+    "ms": 1637.8
+   },
    "licenza": "apache-2.0"
   },
   {

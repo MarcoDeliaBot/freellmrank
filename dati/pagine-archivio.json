@@ -16484,6 +16484,33 @@
     "categoriaMigliore": null
    },
    "data": "2026-11-03"
+  },
+  "/model/crouton-alpha.html": {
+   "modello": {
+    "chiave": "stealth/crouton-alpha",
+    "nome": "Crouton Alpha",
+    "org": "stealth",
+    "licenza": "",
+    "aperto": false,
+    "or": {
+     "id": "stealth/crouton-alpha",
+     "gratis": true
+    },
+    "hf": null,
+    "cat": {},
+    "nomi": {},
+    "senzaVoti": true,
+    "nuovo": true,
+    "download": 0,
+    "catPiccoli": [
+     "chat"
+    ],
+    "primo": null,
+    "slug": "crouton-alpha",
+    "href": "/model/crouton-alpha.html",
+    "categoriaMigliore": null
+   },
+   "data": "2026-11-03"
   }
  },
  "confronti": {
