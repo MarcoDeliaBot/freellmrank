@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-04-anthropic-unveils-flashprove-a-zksnark-system-proving-ai-replies-came-",
+ "titolo": "Anthropic unveils FlashProve, a zkSNARK system proving AI replies came from committed weights",
+ "descr": "FlashProve can prove a 400B MoE model's output at ~110 tokens/second on a single H100, with 18.78 MB proofs verified on a CPU in seconds.",
+ "tema": "Research",
+ "paragrafi": [
+  "Anthropic's Frontier Red Team released FlashProve, an open‑source prototype that generates zero‑knowledge proofs that a model's reply was produced by a specific committed weight set.",
+  "The system targets the Llama 4 Maverick 400B mixture‑of‑experts model, which uses about 17 B active parameters per token and a 1,024‑token context window.",
+  "Proving runs on one NVIDIA H100 80 GB GPU together with 24 CPU cores and roughly 290 GB of host RAM, achieving about 110 tokens per second; proof size is 18.78 MB and verification on a 24‑thread CPU takes around 17 seconds.",
+  "Compared with prior open‑source zkML solutions, FlashProve is orders of magnitude faster, though proving costs roughly 70–95× the GPU time of standard vLLM inference.",
+  "The protocol’s soundness and zero‑knowledge properties are formalized in Lean, giving post‑quantum security guarantees and ensuring a cheating provider is caught with negligible probability."
+ ],
+ "perche": [
+  "For developers and regulators, FlashProve offers a way to verify that an API response truly originates from a declared model, closing a gap that could be exploited by model swapping or tampered inference servers. While the prototype remains research‑grade and requires high‑end hardware, its open‑source release may spur further work toward trustworthy AI services, benefiting users who prefer free or locally hosted models by providing a path to provable model provenance."
+ ],
+ "pubblicato": "2026-11-04",
+ "titoloFonte": "Anthropic Releases FlashProve: Cryptographic Proofs That a Reply Came From Committed Weights",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/03/anthropic-flashprove-provable-inference-zksnark/",
+   "titolo": "Anthropic Releases FlashProve: Cryptographic Proofs That a Reply Came From Committed Weights",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/anthropics/FlashProve",
+   "titolo": "GitHub - anthropics/FlashProve: A research prototype for zero-knowledge proofs of AI inference. Not maintained. · GitHub",
+   "ufficiale": true,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 0
+}

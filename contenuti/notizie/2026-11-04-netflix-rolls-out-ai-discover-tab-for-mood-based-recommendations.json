@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-04-netflix-rolls-out-ai-discover-tab-for-mood-based-recommendations",
+ "titolo": "Netflix rolls out AI Discover tab for mood‑based recommendations",
+ "descr": "Netflix adds an AI‑powered Discover tab that suggests shows and movies based on themed moods, starting in the US on supported TVs.",
+ "tema": "Business",
+ "paragrafi": [
+  "Netflix announced a new \"AI Discover\" tab that lets users pick themed moods such as \"Something Light\" or \"Family Movie Night\" to receive tailored recommendations.",
+  "Each recommendation includes a \"Tune Your Recommendations\" button next to \"Play\" and \"My List\" so users can save or exclude titles, and they can select a \"something different\" option to restart the search.",
+  "Netflix says the tab runs on a new intelligence layer that learns from real‑time user feedback and will be tested before any broader rollout.",
+  "The rollout follows recent layoffs at Netflix and a slowdown in user growth, as the company seeks to improve content discovery beyond endless scrolling."
+ ],
+ "perche": [
+  "The AI Discover tab shows how streaming services are using real‑time AI to personalize content, offering a more interactive way to find shows. For users of free or locally hosted models, it highlights the growing gap between proprietary AI features and open‑source alternatives that may lack such integrated, large‑scale recommendation engines."
+ ],
+ "pubblicato": "2026-11-04",
+ "titoloFonte": "Netflix's new AI Discover tab helps you find something to watch based on your mood",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/03/netflixs-new-ai-discover-tab-helps-you-find-something-to-watch-based-on-your-mood/",
+   "titolo": "Netflix's new AI Discover tab helps you find something to watch based on your mood",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  },
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/streaming/1025029/netflix-ai-discover-recommendations",
+   "titolo": "Netflix will show you themed recommendations through a new ‘AI Discover’ tab",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 1
+}

@@ -20614,6 +20614,42 @@
     "tipo": "News"
    },
    "data": "2026-11-03"
+  },
+  "/blog/news-2026-11-04-anthropic-unveils-flashprove-a-zksnark-system-proving-ai-replies-came-.html": {
+   "post": {
+    "slug": "news-2026-11-04-anthropic-unveils-flashprove-a-zksnark-system-proving-ai-replies-came-",
+    "titolo": "Anthropic unveils FlashProve, a zkSNARK system proving AI replies came from committed weights",
+    "descr": "FlashProve can prove a 400B MoE model's output at ~110 tokens/second on a single H100, with 18.78 MB proofs verified on a CPU in seconds.",
+    "data": "2026-11-04",
+    "tema": "Research",
+    "corpo": "Anthropic's Frontier Red Team released FlashProve, an open‑source prototype that generates zero‑knowledge proofs that a model's reply was produced by a specific committed weight set.\n\nThe system targets the Llama 4 Maverick 400B mixture‑of‑experts model, which uses about 17 B active parameters per token and a 1,024‑token context window.\n\nProving runs on one NVIDIA H100 80 GB GPU together with 24 CPU cores and roughly 290 GB of host RAM, achieving about 110 tokens per second; proof size is 18.78 MB and verification on a 24‑thread CPU takes around 17 seconds.\n\nCompared with prior open‑source zkML solutions, FlashProve is orders of magnitude faster, though proving costs roughly 70–95× the GPU time of standard vLLM inference.\n\nThe protocol’s soundness and zero‑knowledge properties are formalized in Lean, giving post‑quantum security guarantees and ensuring a cheating provider is caught with negligible probability.\n\n## What it means for you\n\nFor developers and regulators, FlashProve offers a way to verify that an API response truly originates from a declared model, closing a gap that could be exploited by model swapping or tampered inference servers. While the prototype remains research‑grade and requires high‑end hardware, its open‑source release may spur further work toward trustworthy AI services, benefiting users who prefer free or locally hosted models by providing a path to provable model provenance.\n\n## Sources\n\n- [Anthropic Releases FlashProve: Cryptographic Proofs That a Reply Came From Committed Weights](https://www.marktechpost.com/2026/11/03/anthropic-flashprove-provable-inference-zksnark/), MarkTechPost, 3 Nov 2026\n- [GitHub - anthropics/FlashProve: A research prototype for zero-knowledge proofs of AI inference. Not maintained. · GitHub](https://github.com/anthropics/FlashProve), github.com (official), 3 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-04-anthropic-unveils-flashprove-a-zksnark-system-proving-ai-replies-came-).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-03"
+  },
+  "/blog/news-2026-11-04-fal-raises-1-3-b-valuation-hits-16-b-as-inference-demand-soars.html": {
+   "post": {
+    "slug": "news-2026-11-04-fal-raises-1-3-b-valuation-hits-16-b-as-inference-demand-soars",
+    "titolo": "Fal raises $1.3 B, valuation hits $16 B as inference demand soars",
+    "descr": "Generative media inference startup Fal secured $1.3 billion, doubling its valuation to $16 billion amid rising AI model usage.",
+    "data": "2026-11-04",
+    "tema": "Business",
+    "corpo": "Fal announced a $1.3 billion funding round led by Bessemer Venture Partners, valuing the San Francisco‑based startup at $16 billion.\n\nThe round combined Series E and F financing, bringing total new capital to $1.65 billion; investors included Nvidia, Sound Ventures and T. Rowe Price.\n\nFal provides a cloud platform that lets developers run image, video and audio generation models through a single API, serving studios, advertisers and game makers.\n\nAnnualized revenue surpassed $800 million earlier this year, and the company now employs 185 people, planning to expand compute capacity and staff.\n\nFal was founded in 2021 with CTO Gorkem Yurtseven, both previously working at major tech firms, and has raised over $1.9 billion to date.\n\n## What it means for you\n\nThe influx of capital underscores rapid growth in AI inference services, which rely on costly compute. Users can expect broader access to high‑quality generative media, but thin margins may keep prices high. For those preferring free or locally‑run models, the trend highlights the challenge of matching cloud‑scale performance without substantial hardware investment.\n\n## Sources\n\n- [Generative media inference startup fal raises $1.3B at a $16B valuation](https://siliconangle.com/2026/11/03/generative-media-inference-startup-fal-raises-1-3b-at-a-16b-valuation/), SiliconANGLE, 3 Nov 2026\n- [AI inference startup Fal doubles its valuation to $16B as demand surges](https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges/), TechCrunch, 3 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-04-fal-raises-1-3-b-valuation-hits-16-b-as-inference-demand-soars).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-03"
+  },
+  "/blog/news-2026-11-04-netflix-rolls-out-ai-discover-tab-for-mood-based-recommendations.html": {
+   "post": {
+    "slug": "news-2026-11-04-netflix-rolls-out-ai-discover-tab-for-mood-based-recommendations",
+    "titolo": "Netflix rolls out AI Discover tab for mood‑based recommendations",
+    "descr": "Netflix adds an AI‑powered Discover tab that suggests shows and movies based on themed moods, starting in the US on supported TVs.",
+    "data": "2026-11-04",
+    "tema": "Business",
+    "corpo": "Netflix announced a new \"AI Discover\" tab that lets users pick themed moods such as \"Something Light\" or \"Family Movie Night\" to receive tailored recommendations.\n\nEach recommendation includes a \"Tune Your Recommendations\" button next to \"Play\" and \"My List\" so users can save or exclude titles, and they can select a \"something different\" option to restart the search.\n\nNetflix says the tab runs on a new intelligence layer that learns from real‑time user feedback and will be tested before any broader rollout.\n\nThe rollout follows recent layoffs at Netflix and a slowdown in user growth, as the company seeks to improve content discovery beyond endless scrolling.\n\n## What it means for you\n\nThe AI Discover tab shows how streaming services are using real‑time AI to personalize content, offering a more interactive way to find shows. For users of free or locally hosted models, it highlights the growing gap between proprietary AI features and open‑source alternatives that may lack such integrated, large‑scale recommendation engines.\n\n## Sources\n\n- [Netflix's new AI Discover tab helps you find something to watch based on your mood](https://techcrunch.com/2026/11/03/netflixs-new-ai-discover-tab-helps-you-find-something-to-watch-based-on-your-mood/), TechCrunch, 3 Nov 2026\n- [Netflix will show you themed recommendations through a new ‘AI Discover’ tab](https://www.theverge.com/streaming/1025029/netflix-ai-discover-recommendations), The Verge, 3 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-04-netflix-rolls-out-ai-discover-tab-for-mood-based-recommendations).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-03"
   }
  },
  "ricostruzione": {
