@@ -153,7 +153,7 @@ export default {
     const top = (r) => Math.round(r[0]);
     const css = `
     #${px}alone { position: absolute; left: ${CX - 500}px; top: ${CY - 500}px; width: 1000px; height: 1000px; border-radius: 50%;
-      background: radial-gradient(circle at 50% 50%, rgba(76,203,139,0.20) 0%, rgba(76,203,139,0.07) 38%, rgba(76,203,139,0) 68%); }
+      background: radial-gradient(circle at 50% 50%, rgba(${C.aloneRgb},0.20) 0%, rgba(${C.aloneRgb},0.07) 38%, rgba(${C.aloneRgb},0) 68%); }
     #${px}quadrante { position: absolute; left: ${CX - 400 * k}px; top: ${CY - 400 * k}px; width: ${800 * k}px; height: ${800 * k}px; overflow: visible; }
     .${px}tacche { fill: none; stroke: ${C.accentoScuro}; stroke-width: ${SW}; stroke-dasharray: 3 ${(2 * Math.PI * RT / 120 - 3).toFixed(2)}; }
     .${px}anello { fill: none; stroke: ${C.accento}; stroke-width: 2; stroke-linecap: round; }
