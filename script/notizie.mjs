@@ -203,6 +203,35 @@ const simili = (a, b) => {
   return c >= 2 && propria ? c / Math.max(1, Math.min(A.size, B.size)) : 0;
 };
 
+// 2c. storia già pubblicata (4/11/2026: FlashProve uscì due volte, alle 00:53 da TechCrunch e alle 06:41 da MarkTechPost.
+// Il titolo di TechCrunch non nomina FlashProve e si confrontava solo con quello; il link GitHub del progetto, fonte di
+// entrambi, differiva per una «/» finale). Ora contano tutti i titoli dei post recenti (del post, della fonte, delle fonti),
+// i link senza differenze di forma e il nome del prodotto dello stesso laboratorio anche nel sommario della voce
+const GIORNI_DOPPIONI = 14; // il radar guarda 10 giorni indietro
+export const linkNorma = (u) => {
+  try { const x = new URL(u); return (x.hostname.replace(/^www\./, '') + x.pathname.replace(/\/+$/, '')).toLowerCase(); } catch { return String(u).trim().toLowerCase(); }
+};
+const labDi = (t) => (String(t).match(new RegExp(LABORATORI.source, 'gi')) || []).map((x) => x.toLowerCase());
+// restituisce il nome del post che racconta già la storia, o null
+export function doppione(voci, fatte, ora = Date.now()) {
+  const linkVoci = new Set(voci.map((v) => linkNorma(v.link)));
+  for (const n of fatte) {
+    if ((n.fonti || []).some((f) => linkVoci.has(linkNorma(f.url)))) return n.nome;
+    // come prima: le parole in comune col titolo della fonte
+    if (voci.some((v) => simili(n.titoloFonte || n.titolo, v.titolo) >= 0.5)) return n.nome;
+    if (ora - new Date(n.pubblicato || 0) >= GIORNI_DOPPIONI * 864e5) continue;
+    // post recenti: lo stesso nome forte di prodotto (FlashProve) nel titolo del post e nel titolo della voce; se la voce
+    // lo nomina solo nel sommario («Anthropic is working on a system to prove AI models' identity»), serve anche lo stesso
+    // laboratorio nei due titoli. Solo nomi forti e solo il titolo del post: le parole comuni univano Kimi K3.1 Pro e
+    // Claude Opus 5.5, i titoli delle fonti AnyModelBot e Grok Bot («alternative to Grok Bot»)
+    const prodotti = forti(n.titolo), labs = labDi(n.titolo);
+    const stesso = (v) => prodotti.some((w) => nomina(w, v.titolo)) || forti(v.titolo).some((w) => nomina(w, n.titolo))
+      || (labDi(v.titolo).some((l) => labs.includes(l)) && prodotti.some((w) => nomina(w, v.sommario || '')));
+    if (voci.some(stesso)) return n.nome;
+  }
+  return null;
+}
+
 // 2b. fonte primaria (Marco, 30/10/2026: «Ma stai rubando notizie dai competitors?»; 46 notizie su 99 riscrivevano il
 // lavoro di una sola testata). Se la storia ha una sola fonte non ufficiale, si cerca fra i link dell'articolo la pagina
 // del laboratorio, il modello, il codice o la ricerca: se c'è e parla della stessa storia diventa una fonte, se no la
@@ -291,19 +320,19 @@ async function main() {
   fs.mkdirSync(DIR, { recursive: true });
   // già pubblicate: non si riscrive la stessa storia
   const fatte = fs.readdirSync(DIR).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8')));
-  const linkFatti = new Set(fatte.flatMap((n) => n.fonti.map((f) => f.url)));
+  const linkFatti = new Set(fatte.flatMap((n) => n.fonti.map((f) => linkNorma(f.url))));
   const limite = Date.now() - GIORNI * 864e5;
   const voci = [];
   for (const f of FONTI) {
-    try { const v = await leggiFeed(f); voci.push(...v.filter((x) => x.data.getTime() > limite && !linkFatti.has(x.link) && AI.test(`${x.titolo} ${x.sommario}`))); }
+    try { const v = await leggiFeed(f); voci.push(...v.filter((x) => x.data.getTime() > limite && !linkFatti.has(linkNorma(x.link)) && AI.test(`${x.titolo} ${x.sommario}`))); }
     catch (e) { console.log(`notizie: salto ${f.nome} (${e.message})`); }
   }
-  const recenti = (x) => x.data.getTime() > limite && !linkFatti.has(x.link);
+  const recenti = (x) => x.data.getTime() > limite && !linkFatti.has(linkNorma(x.link));
   for (const p of PAGINE) {
     try { voci.push(...(await leggiPagina(p, linkFatti)).filter(recenti)); } catch (e) { console.log(`notizie: salto ${p.nome} (${e.message})`); }
   }
   // il radar guarda una settimana: un modello di tendenza è notizia anche se è uscito 5 giorni fa e nessun giornale l'ha scritto
-  voci.push(...(await radar()).filter((x) => !linkFatti.has(x.link) && x.data.getTime() > Date.now() - 10 * 864e5));
+  voci.push(...(await radar()).filter((x) => !linkFatti.has(linkNorma(x.link)) &&x.data.getTime() > Date.now() - 10 * 864e5));
   const perFonte = {};
   for (const v of voci) perFonte[v.fonte] = (perFonte[v.fonte] || 0) + 1;
   console.log(`notizie: voci per fonte ${JSON.stringify(perFonte)}`);
@@ -313,7 +342,6 @@ async function main() {
     const s = storie.find((x) => x.voci.some((y) => simili(y.titolo, v.titolo) >= 0.5));
     if (s) { if (!s.voci.some((y) => y.fonte === v.fonte)) s.voci.push(v); } else storie.push({ voci: [v] });
   }
-  const fatteTitoli = fatte.map((n) => n.titoloFonte || n.titolo);
   // conta soprattutto quante fonti diverse ne parlano; una fonte ufficiale aiuta poco (i comunicati commerciali sono tanti)
   const lancio = (s) => s.voci.some((v) => LABORATORI.test(v.titolo) && LANCIO.test(`${v.titolo} ${v.sommario}`));
   // i creator che Marco segue: se ne parlano, la storia sale (+3 per canale, al massimo +6). Non sono fonti dei fatti
@@ -326,17 +354,25 @@ async function main() {
   const usate = new Set();
   const scelte = [];
   const inizio = Date.now();
-  for (const s of storie.filter((x) => !fatteTitoli.some((t) => simili(t, x.voci[0].titolo) >= 0.5)).sort((a, b) => punti(b) - punti(a))) {
+  for (const s of storie.sort((a, b) => punti(b) - punti(a))) {
     if (scelte.length >= MAX) break;
     if (usate.has(s.voci[0].fonte)) continue; // una storia per fonte a giro
+    const gia = doppione(s.voci, fatte);
+    if (gia) { console.log(`notizie: già raccontata in ${gia}: salto «${s.voci[0].titolo}» (${s.voci[0].fonte})`); continue; }
     if (s.voci.length === 1 && !s.voci[0].ufficiale && s.voci[0].fonte !== 'GitHub trending') {
       // la ricerca ha un tetto di tempo: il lavoro su GitHub muore dopo 15 minuti e deve ancora scrivere gli articoli
       const primaria = Date.now() - inizio < 4 * 6e4 ? await cercaPrimaria(s.voci[0]) : null;
       if (!primaria) { console.log(`notizie: una sola fonte, nessuna primaria: salto «${s.voci[0].titolo}» (${s.voci[0].fonte})`); continue; }
+      // la fonte primaria può essere quella di un post già uscito (il progetto GitHub di FlashProve, 4/11/2026)
+      const giaPrimaria = doppione([primaria], fatte);
+      if (giaPrimaria) { console.log(`notizie: fonte primaria già in ${giaPrimaria}: salto «${s.voci[0].titolo}» (${s.voci[0].fonte})`); continue; }
       s.voci.push(primaria);
     }
     usate.add(s.voci[0].fonte);
     scelte.push(s);
+    // le storie scelte in questo giro valgono come pubblicate per le successive
+    fatte.push({ nome: `(questo giro) ${s.voci[0].titolo}`, pubblicato: new Date().toISOString().slice(0, 10), titolo: s.voci[0].titolo, titoloFonte: s.voci[0].titolo,
+      fonti: s.voci.map((v) => ({ url: v.link, titolo: v.titolo })) });
   }
   console.log(`notizie: ${voci.length} voci nuove, ${storie.length} storie, scelte ${scelte.length}`);
   for (const s of scelte) console.log(`  scelta (${punti(s)} punti): ${s.voci.map((v) => `${v.fonte}: ${v.titolo}`).join(' | ')}${creator(s).length ? ` [creator: ${creator(s).join(', ')}]` : ''}`);
