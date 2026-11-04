@@ -1,0 +1,29 @@
+{
+ "nome": "2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme",
+ "titolo": "NVIDIA launches CUDA 13.5 with Vera Rubin support and MPS v3 enhancements",
+ "descr": "CUDA Toolkit 13.5 reaches GA, adds production-ready Vera Rubin GPU support, Windows on Arm for DGX Station, and new locality and MPS features.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced CUDA Toolkit 13.5 on Nov 04, 2026. The release is marked as general availability.",
+  "The update brings general‑availability support for the NVIDIA Vera Rubin GPU architecture. Developers can now target Vera Rubin in production workloads.",
+  "Windows on Arm support is extended to the NVIDIA DGX Station for Windows, allowing the workstation to run CUDA under the ARM ecosystem.",
+  "Locality domain enhancements let applications choose between uniform SM partitions or partitions that include all SMs. The new cudaDevSmResourceSplit() API reports each partition’s SM count.",
+  "MPS version 3 adds weighted timeslicing, SM partition load balancing, cgroup‑based routing, per‑namespace SM assignments, and a polling fallback for memory accounting.",
+  "CUDA Tile now supports multi‑GPU unicast and multicast pointers on NVLink and NVSwitch, while CUDA Python 1.2 adds batched memory copies and more flexible graph updates. CCCL 3.5 introduces tuning APIs for CUB and integrated FlashInfer Top‑K selection."
+ ],
+ "perche": [
+  "The new scheduling controls help shared GPU servers run multiple inference jobs more predictably, which benefits developers of free and locally hosted models. Better partitioning and load balancing can lower the cost of running large open‑source chat models such as Kimi K3 or GLM‑5.3 on Vera Rubin hardware."
+ ],
+ "pubblicato": "2026-11-04",
+ "titoloFonte": "NVIDIA CUDA 13.5 Brings NVIDIA Vera Rubin GA Support",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/nvidia-cuda-13-5-brings-nvidia-vera-rubin-ga-support/",
+   "titolo": "NVIDIA CUDA 13.5 Brings NVIDIA Vera Rubin GA Support",
+   "ufficiale": true,
+   "data": "2026-11-04"
+  }
+ ],
+ "frasiTolte": 0
+}

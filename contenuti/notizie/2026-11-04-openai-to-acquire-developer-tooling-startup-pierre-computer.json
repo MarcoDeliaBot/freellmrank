@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer",
+ "titolo": "OpenAI to acquire developer tooling startup Pierre Computer",
+ "descr": "OpenAI announced it will buy Pierre Computer, adding its code‑storage cloud service and open‑source Trees and Diffs libraries to Codex.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI Group PBC said it will acquire Pierre Computer Company Inc.; the deal terms were not disclosed.",
+  "Pierre runs a cloud service that lets AI agents store generated code, licenses and design files, and helped Lovable Inc. cut code‑retrieval latency by about 70%.",
+  "The startup also maintains the open‑source libraries Trees and Diffs, which power folder navigation sidebars and diff views in OpenAI’s Codex programming tool.",
+  "OpenAI will keep Trees and Diffs available under an open‑source license and plans to fold Pierre’s paid code‑hosting service into Codex, using the team to streamline agent workflows that involve Git.",
+  "Analysts see the acquisition as a move against Microsoft’s GitHub for AI agents, complementing OpenAI’s internal Pando engine that speeds its own Git environment."
+ ],
+ "perche": [
+  "Developers using Codex can expect faster code storage and richer navigation features, while the open‑source Trees and Diffs remain free for any project. The focus on Git‑based agent workflows may raise the bar for AI‑assisted coding, but it does not directly affect the availability of free or locally run large language models."
+ ],
+ "pubblicato": "2026-11-04",
+ "titoloFonte": "OpenAI to acquire developer tooling startup Pierre Computer",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/04/openai-to-acquire-developer-tooling-startup-pierre-computer/",
+   "titolo": "OpenAI to acquire developer tooling startup Pierre Computer",
+   "ufficiale": false,
+   "data": "2026-11-04"
+  },
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/openai-to-acquire-pierre",
+   "titolo": "OpenAI to acquire Pierre Computer Company, Inc.",
+   "ufficiale": true,
+   "data": "2026-11-04"
+  }
+ ],
+ "frasiTolte": 0
+}

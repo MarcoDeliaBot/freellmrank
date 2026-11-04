@@ -2960,6 +2960,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/news-2026-11-04-tencent-launches-hy4-a-770-billion-parameter-llm-with-visual-and-compu",
   "tipo": "articolo",
   "lingua": "en",
@@ -10265,6 +10313,54 @@
  },
  {
   "url": "/de/blog/news-2026-11-04-nvidia-boosts-ling-3-0-flash-moe-inference-on-dgx-spark-by-42-5-with-t.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer.html",
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-04",
@@ -25212,6 +25308,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/news-2026-11-04-tencent-launches-hy4-a-770-billion-parameter-llm-with-visual-and-compu",
   "tipo": "articolo",
   "lingua": "es",
@@ -40145,6 +40289,54 @@
  },
  {
   "url": "/fr/blog/news-2026-11-04-nvidia-boosts-ling-3-0-flash-moe-inference-on-dgx-spark-by-42-5-with-t.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer.html",
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-04",
@@ -55092,6 +55284,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/news-2026-11-04-tencent-launches-hy4-a-770-billion-parameter-llm-with-visual-and-compu",
   "tipo": "articolo",
   "lingua": "it",
@@ -70025,6 +70265,54 @@
  },
  {
   "url": "/ja/blog/news-2026-11-04-nvidia-boosts-ling-3-0-flash-moe-inference-on-dgx-spark-by-42-5-with-t.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer.html",
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-04",
@@ -92593,6 +92881,54 @@
  },
  {
   "url": "/pt/blog/news-2026-11-04-nvidia-boosts-ling-3-0-flash-moe-inference-on-dgx-spark-by-42-5-with-t.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-04",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer.html",
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-04",

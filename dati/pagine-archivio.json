@@ -20748,6 +20748,42 @@
     "tipo": "News"
    },
    "data": "2026-11-04"
+  },
+  "/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme.html": {
+   "post": {
+    "slug": "news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme",
+    "titolo": "NVIDIA launches CUDA 13.5 with Vera Rubin support and MPS v3 enhancements",
+    "descr": "CUDA Toolkit 13.5 reaches GA, adds production-ready Vera Rubin GPU support, Windows on Arm for DGX Station, and new locality and MPS features.",
+    "data": "2026-11-04",
+    "tema": "Software",
+    "corpo": "NVIDIA announced CUDA Toolkit 13.5 on Nov 04, 2026. The release is marked as general availability.\n\nThe update brings general‑availability support for the NVIDIA Vera Rubin GPU architecture. Developers can now target Vera Rubin in production workloads.\n\nWindows on Arm support is extended to the NVIDIA DGX Station for Windows, allowing the workstation to run CUDA under the ARM ecosystem.\n\nLocality domain enhancements let applications choose between uniform SM partitions or partitions that include all SMs. The new cudaDevSmResourceSplit() API reports each partition’s SM count.\n\nMPS version 3 adds weighted timeslicing, SM partition load balancing, cgroup‑based routing, per‑namespace SM assignments, and a polling fallback for memory accounting.\n\nCUDA Tile now supports multi‑GPU unicast and multicast pointers on NVLink and NVSwitch, while CUDA Python 1.2 adds batched memory copies and more flexible graph updates. CCCL 3.5 introduces tuning APIs for CUB and integrated FlashInfer Top‑K selection.\n\n## What it means for you\n\nThe new scheduling controls help shared GPU servers run multiple inference jobs more predictably, which benefits developers of free and locally hosted models. Better partitioning and load balancing can lower the cost of running large open‑source chat models such as Kimi K3 or GLM‑5.3 on Vera Rubin hardware.\n\n## On FreeLLMArena\n\nFrom our rankings on 4 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [NVIDIA CUDA 13.5 Brings NVIDIA Vera Rubin GA Support](https://developer.nvidia.com/blog/nvidia-cuda-13-5-brings-nvidia-vera-rubin-ga-support/), NVIDIA Developer (official), 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-04-nvidia-launches-cuda-13-5-with-vera-rubin-support-and-mps-v3-enhanceme).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-04"
+  },
+  "/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model.html": {
+   "post": {
+    "slug": "news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model",
+    "titolo": "OpenAI adds GIF creation to ChatGPT with Images 2.6 model",
+    "descr": "ChatGPT can now generate animated GIFs from text or photos, adjust speed and edit frames, as Images 2.6 rolls out to all users.",
+    "data": "2026-11-04",
+    "tema": "Software",
+    "corpo": "OpenAI released the Images 2.6 model, extending ChatGPT and Codex on web, desktop and mobile with native animated GIF generation.\n\nUsers can start a GIF from a written prompt or an uploaded image, then change playback speed or modify individual frames inside the chat interface.\n\nOpenAI demonstrated a cat‑dancing GIF, showing the model keeps the character recognizable across frames, a task earlier models struggled with.\n\nThe update also speeds up ordinary image generation; OpenAI says more than four billion images are produced each week across ChatGPT and its API, up from three billion in September.\n\nFor developers, the API now offers GPT‑Image‑2.6 “Flare” for efficient generation and “Sunburst” for higher‑quality output, both first introduced with Image 2.5.\n\n## What it means for you\n\nFor everyday users, the feature turns a simple prompt into shareable animations without extra tools. For developers and those preferring free or local models, the shift highlights OpenAI’s focus on cloud‑based image services, underscoring the need for open‑source alternatives that can run locally.\n\n## Sources\n\n- [ChatGPT can now turn text prompts and photos into animated GIFs with OpenAI's Images 2.6 model](https://the-decoder.com/chatgpt-can-now-turn-text-prompts-and-photos-into-animated-gifs-with-openais-images-2-6-model/), The Decoder, 4 Nov 2026\n- [ChatGPT will now make you animated GIFs](https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6), The Verge, 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-04"
+  },
+  "/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer.html": {
+   "post": {
+    "slug": "news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer",
+    "titolo": "OpenAI to acquire developer tooling startup Pierre Computer",
+    "descr": "OpenAI announced it will buy Pierre Computer, adding its code‑storage cloud service and open‑source Trees and Diffs libraries to Codex.",
+    "data": "2026-11-04",
+    "tema": "Business",
+    "corpo": "OpenAI Group PBC said it will acquire Pierre Computer Company Inc.; the deal terms were not disclosed.\n\nPierre runs a cloud service that lets AI agents store generated code, licenses and design files, and helped Lovable Inc. cut code‑retrieval latency by about 70%.\n\nThe startup also maintains the open‑source libraries Trees and Diffs, which power folder navigation sidebars and diff views in OpenAI’s Codex programming tool.\n\nOpenAI will keep Trees and Diffs available under an open‑source license and plans to fold Pierre’s paid code‑hosting service into Codex, using the team to streamline agent workflows that involve Git.\n\nAnalysts see the acquisition as a move against Microsoft’s GitHub for AI agents, complementing OpenAI’s internal Pando engine that speeds its own Git environment.\n\n## What it means for you\n\nDevelopers using Codex can expect faster code storage and richer navigation features, while the open‑source Trees and Diffs remain free for any project. The focus on Git‑based agent workflows may raise the bar for AI‑assisted coding, but it does not directly affect the availability of free or locally run large language models.\n\n## Sources\n\n- [OpenAI to acquire developer tooling startup Pierre Computer](https://siliconangle.com/2026/11/04/openai-to-acquire-developer-tooling-startup-pierre-computer/), SiliconANGLE, 4 Nov 2026\n- [OpenAI to acquire Pierre Computer Company, Inc.](https://openai.com/index/openai-to-acquire-pierre), OpenAI (official), 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-04"
   }
  },
  "ricostruzione": {
