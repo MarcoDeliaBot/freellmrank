@@ -1,0 +1,80 @@
+# Short «Top 10 Free AI Models» (Marco, 4/11/2026: i video automatici «escono da soli»). Nato in OpenMontage il 3-4/11
+# e approvato da Marco (colori chiari di Claude, logo): gli script in script/top10 rifanno lo stesso video coi dati nuovi,
+# senza Claude e senza spese. Uno per ogni classifica di Arena: se la release video-breve-top10-<data di Arena> c'è già,
+# non fa niente. La release la carica n8n su YouTube (una ogni mezz'ora, al massimo 15 al giorno).
+# Prova del 4/11: coi dati del 28/10 il video esce identico byte per byte a quello pubblicato (sha256 3792a037…).
+name: Top 10 settimanale
+
+on:
+  schedule:
+    - cron: '41 4 * * *' # dopo l'aggiornamento dei dati delle 03:17; esce solo quando Arena ha una classifica nuova
+  workflow_dispatch:
+    inputs:
+      prova:
+        description: 'Solo prova: fa il video ma non crea la release (resta come artefatto della corsa)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: video
+  cancel-in-progress: false
+
+jobs:
+  top10:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TOP10_DIR: ${{ github.workspace }}/video/top10
+      HYPERFRAMES_NO_TELEMETRY: '1'
+      PYTHONIOENCODING: utf-8
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Dati della settimana
+        id: dati
+        run: |
+          python script/top10/dati_top10.py
+          nome="breve-top10-$(python -c "import json,os;print(json.load(open(os.environ['TOP10_DIR']+'/top10_data.json'))['arena_date'])")"
+          echo "nome=$nome" >> "$GITHUB_OUTPUT"
+          if gh release view "video-$nome" >/dev/null 2>&1 && [ "${{ inputs.prova }}" != "true" ]; then
+            echo "Già fatto: video-$nome (Arena non ha una classifica nuova)"; echo "fatto=1" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Strumenti (ffmpeg, fontTools, HyperFrames)
+        if: steps.dati.outputs.fatto != '1'
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+          pip install fonttools playwright
+          python -m playwright install --with-deps chromium
+          npx --yes hyperframes@0.9.9 --version
+          npx --yes hyperframes@0.9.9 browser ensure
+      - name: Video
+        if: steps.dati.outputs.fatto != '1'
+        run: |
+          python script/top10/genera_composizione.py
+          mkdir -p "$TOP10_DIR/renders"
+          npx --yes hyperframes@0.9.9 render "$TOP10_DIR/hyperframes" -o "$TOP10_DIR/renders/top10.mp4" --strict --quality high --quiet
+          python script/top10/testi_youtube.py
+          d="$TOP10_DIR/pubblica/${{ steps.dati.outputs.nome }}"
+          ffprobe -v error -show_entries format=duration -of csv=p=0 "$d/${{ steps.dati.outputs.nome }}.mp4"
+          ls -la "$d"
+      - name: Release per n8n
+        if: steps.dati.outputs.fatto != '1' && inputs.prova != true
+        run: |
+          nome="${{ steps.dati.outputs.nome }}"; d="$TOP10_DIR/pubblica/$nome"
+          titolo=$(python -c "import json,sys;print(json.load(open(sys.argv[1]))['titolo'])" "$d/$nome.json")
+          gh release create "video-$nome" "$d/$nome.mp4" "$d/$nome.jpg" "$d/$nome.json" --title "$titolo" --notes-file "$TOP10_DIR/renders/top10-youtube.txt" --latest=false
+      - uses: actions/upload-artifact@v4
+        if: steps.dati.outputs.fatto != '1'
+        with:
+          name: top10-${{ steps.dati.outputs.nome }}
+          path: video/top10/pubblica
+          retention-days: 7

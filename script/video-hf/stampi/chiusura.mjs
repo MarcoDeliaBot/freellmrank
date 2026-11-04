@@ -1,7 +1,11 @@
 // Stampo «chiusura»: le due promesse del sito, il marchio FreeLLMArena che si compone, l'indirizzo e «link in the description».
 // Testo e voce fissi: è l'ultima scena di ogni video (dalla prova DeepInfer del 24/10/2026, quadro 6).
 // Negli Short (verticale) dice «link in bio»; con dati.invito = 'canale' (Short delle notizie) rimanda prima al video lungo.
+import fs from 'node:fs';
 import { C, scena, s3 } from '../base.mjs';
+
+// Bit, la mascotte scelta da Marco il 4/11/2026 («Sì, mettilo» anche nelle notizie): saluta accanto al marchio, entra con lui e poi sta fermo
+const BIT = fs.readFileSync(new URL('../../../sorgente/mascotte/bit-saluta.svg', import.meta.url), 'utf8').trim();
 
 const VOCE_ORIZZONTALE = 'For AI news every day, and to compare every free AI model, visit FreeLLMArena. The link is in the description.';
 const VOCE_BIO = 'Find it all on FreeLLMArena. Link in bio.';
@@ -35,7 +39,9 @@ export default {
     #${px}indirizzo-box { position: absolute; left: 0; right: 0; top: 59%; display: flex; justify-content: center; }
     #${px}indirizzo { border: 2px solid ${C.accento}; border-radius: 8px; padding: 13px 42px 16px; font-weight: 500; font-size: 61px; line-height: 1; color: ${C.crema}; }
     #${px}link { position: absolute; left: 0; right: 0; top: 71%; display: flex; justify-content: center; align-items: center; gap: 17px;
-      font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 30px; letter-spacing: 0.16em; text-transform: uppercase; color: ${C.crema2}; }`;
+      font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 30px; letter-spacing: 0.16em; text-transform: uppercase; color: ${C.crema2}; }
+    #${px}bit { position: absolute; left: 1560px; top: 530px; width: 250px; height: 300px; opacity: 0; }
+    #${px}bit svg { width: 100%; height: 100%; display: block; }`;
     const parole = (testo, n) => testo.split(' ').map((w) => `<span class="${px}parola ${px}w${n}">${w}</span>`).join('');
     const corpo = `
       <div id="${px}alone"></div>
@@ -43,6 +49,7 @@ export default {
       <div id="${px}marchio"><span id="${px}m1">FreeLLM</span><span id="${px}m2">Arena</span></div>
       <div id="${px}riga"></div>
       <div id="${px}indirizzo-box"><div id="${px}indirizzo">freellmarena.com</div></div>
+      <div id="${px}bit">${BIT}</div>
       <div id="${px}link"><span>link in the description</span><svg width="26" height="34" viewBox="0 0 26 34" fill="none"><path d="M13 2 V30" stroke="${C.accento}" stroke-width="2.5" stroke-linecap="round"/><path d="M3 21 L13 31 L23 21" stroke="${C.accento}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
     const anima = `
       tl.fromTo(qa(".${px}w1"), { opacity: 0, y: 46 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.14 }, ${s3(r1)});
@@ -51,6 +58,7 @@ export default {
       tl.fromTo(q("#${px}m1"), { x: -560, opacity: 0, filter: "blur(10px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 1.1, ease: "power3.out" }, ${s3(m)});
       tl.fromTo(q("#${px}m2"), { x: 560, opacity: 0, filter: "blur(10px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 1.1, ease: "power3.out" }, ${s3(m)});
       tl.fromTo(q("#${px}alone"), { opacity: 0, scale: 0.85 }, { opacity: 0.26, scale: 1, duration: 1.05, ease: "power2.out" }, ${s3(m + 0.05)});
+      tl.fromTo(q("#${px}bit"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, ${s3(m + 0.2)});
       tl.fromTo(q("#${px}riga"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, ${s3(l - 0.4)});
       tl.fromTo(q("#${px}indirizzo"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, ${s3(l - 0.3)});
       tl.fromTo(q("#${px}link"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, ${s3(l)});`;
@@ -65,10 +73,14 @@ function verticale({ id, px, durata, t, etichetta, numero, dati = {} }) {
   const b = Math.min(t('bio', durata * 0.7), durata - 1.6);
   const c = t('canale', 0.3);
   const y = canale ? 80 : 0;
+  // Bit grande sotto i sottotitoli (1220-1420), come negli Short dei concorrenti (Marco, 4/11: «può essere più grande»)
+  const bit = { top: 1405, w: 420, h: 504 }; // piedi a 1888: intero nei 1920
   const css = `
     #${px}alone { position: absolute; left: 50%; top: 38%; width: 1000px; height: 1000px; margin-left: -500px; margin-top: -500px; border-radius: 50%;
       background: radial-gradient(closest-side, rgba(47,158,104,0.85), rgba(47,158,104,0) 100%); opacity: 0; }
     #${px}canale { position: absolute; left: 0; right: 0; top: 260px; text-align: center; }
+    #${px}bit { position: absolute; left: ${(1080 - bit.w) / 2}px; top: ${bit.top}px; width: ${bit.w}px; height: ${bit.h}px; opacity: 0; }
+    #${px}bit svg { width: 100%; height: 100%; display: block; }
     .${px}linea { display: block; font-weight: 500; font-size: 88px; line-height: 1.1; letter-spacing: -0.02em; font-variation-settings: "opsz" 60; }
     .${px}linea2 { color: ${C.accento}; }
     #${px}marchio { position: absolute; left: 0; right: 0; top: ${560 + y}px; display: flex; justify-content: center;
@@ -81,6 +93,7 @@ function verticale({ id, px, durata, t, etichetta, numero, dati = {} }) {
       font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 44px; letter-spacing: 0.14em; text-transform: uppercase; color: ${C.crema2}; }`;
   const corpo = `
       <div id="${px}alone"></div>
+      <div id="${px}bit">${BIT}</div>
       ${canale ? `<div id="${px}canale"><span class="${px}linea" id="${px}c1">Full story</span><span class="${px}linea ${px}linea2" id="${px}c2">on our channel</span></div>` : ''}
       <div id="${px}marchio"><span id="${px}m1">FreeLLM</span><span id="${px}m2">Arena</span></div>
       <div id="${px}riga"></div>
@@ -92,6 +105,7 @@ function verticale({ id, px, durata, t, etichetta, numero, dati = {} }) {
       tl.fromTo(q("#${px}m1"), { x: -420, opacity: 0, filter: "blur(10px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 1.0, ease: "power3.out" }, ${s3(m)});
       tl.fromTo(q("#${px}m2"), { x: 420, opacity: 0, filter: "blur(10px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 1.0, ease: "power3.out" }, ${s3(m)});
       tl.fromTo(q("#${px}alone"), { opacity: 0, scale: 0.85 }, { opacity: 0.26, scale: 1, duration: 1.0, ease: "power2.out" }, ${s3(m + 0.05)});
+      tl.fromTo(q("#${px}bit"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, ${s3(Math.min(c, m))});
       tl.fromTo(q("#${px}riga"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, ${s3(m + 0.6)});
       tl.fromTo(q("#${px}indirizzo"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, ${s3(m + 0.7)});
       tl.fromTo(q("#${px}bio"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, ${s3(b)});`;
