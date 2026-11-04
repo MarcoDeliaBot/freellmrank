@@ -20650,6 +20650,18 @@
     "tipo": "News"
    },
    "data": "2026-11-03"
+  },
+  "/blog/news-2026-11-04-anthropic-releases-open-source-flashprove-to-cryptographically-verify-.html": {
+   "post": {
+    "slug": "news-2026-11-04-anthropic-releases-open-source-flashprove-to-cryptographically-verify-",
+    "titolo": "Anthropic releases open‑source FlashProve to cryptographically verify AI model outputs",
+    "descr": "Anthropic's FlashProve lets anyone prove which model generated a response without exposing model weights, using zero‑knowledge proofs.",
+    "data": "2026-11-04",
+    "tema": "Research",
+    "corpo": "Anthropic announced a prototype called FlashProve that can produce a cryptographic proof linking an AI output to a specific model.\n\nThe system relies on labs publishing a non‑revealing fingerprint for each model, enabling verification even if the model's weights stay private.\n\nFlashProve runs on a full‑size Llama 4 Maverick model with a 1,024‑token context window using a single NVIDIA H100 GPU, achieving about 110 tokens per second.\n\nVerification can be performed on a regular CPU in seconds, and the code, technical specifications, and examples are available under an Apache 2.0 license on GitHub.\n\nAnthropic emphasizes that the prototype is not slated for deployment yet and is shared for the community to build upon.\n\n## What it means for you\n\nFor AI users, FlashProve offers a way to confirm that a response truly comes from a claimed model, protecting against hidden model swaps. Developers of free or locally run models can adopt the open‑source tools to add provenance guarantees without exposing proprietary weights.\n\n## Sources\n\n- [Anthropic is working on a system to prove AI models' identity](https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/), TechCrunch, 3 Nov 2026\n- [GitHub - anthropics/FlashProve: A research prototype for zero-knowledge proofs of AI inference. Not maintained. · GitHub](https://github.com/anthropics/FlashProve/), github.com (official), 3 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-04-anthropic-releases-open-source-flashprove-to-cryptographically-verify-).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-03"
   }
  },
  "ricostruzione": {
