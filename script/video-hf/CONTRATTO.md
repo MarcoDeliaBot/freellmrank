@@ -32,12 +32,15 @@ export default {
 
 ## Regole di disegno (dalla prova DeepInfer e da faceless-explainer)
 
-- Colori solo da `C` (fondo verde scuro, pannelli `pannello`/`scuro`, testo `crema`/`crema2`, UN accento `accento`).
-  Niente rosso, niente gradienti viola/blu, niente ombre.
+- Colori solo da `C`. Dal 4/11/2026 sono i chiari di Claude dello Short Top 10 (prima: fondo verde scuro): fondo crema
+  `fondo` che sfuma verso `pannello` in basso, pannelli `pannello`/`scuro`, testo `crema` quasi nero e `crema2` grigio,
+  UN accento arancio `accento`; `marchio` è il verde del logo, solo per logo e «Arena». Per le scritte piccole meglio
+  `crema2`: l'arancio piccolo sul crema si legge male. Niente rosso, niente gradienti viola/blu, niente ombre.
 - Caratteri: «Source Serif 4» per titoli e numeri (`font-variant-numeric: tabular-nums` sulle cifre), «JetBrains Mono»
   per etichette, nomi tecnici, versioni. **Nessun testo sotto 28 px.** Dimensioni dei testi variabili decise con
   `misura()` (nel codice, mai nel browser).
-- Tutto il contenuto sopra y = 860 (sotto ci sono i sottotitoli). Barra in alto già messa da `scena()` (y 56–110).
+- Tutto il contenuto sopra y = 860 (sotto ci sono i sottotitoli). Barra in alto già messa da `scena()` (y 56–110):
+  a sinistra il logo con «FreeLLMArena», a destra etichetta e numero della scena (nella chiusura solo etichetta e numero).
 - L'elemento principale occupa il 40–60% dello schermo: niente scene vuote con un gruppetto al centro.
 - Movimento: entrate con `tl.fromTo` e curve lunghe (`power3.out`, `expo.out` per arrivi veloci); niente rimbalzi
   (`back`, `bounce`, `elastic`), niente `repeat`/`yoyo`, niente `Math.random`/`Date.now`, niente transizioni CSS,

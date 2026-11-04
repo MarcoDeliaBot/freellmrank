@@ -1,6 +1,6 @@
-import { formatoDi } from './base.mjs';
-// Sottotitoli dei video a stampi (24/10/2026): una pillola crema in basso, una frase corta alla volta, la parola detta
-// si accende in verde (come la prova DeepInfer). Si costruiscono dalle parole del copione con i tempi di voce.mjs.
+import { C, formatoDi } from './base.mjs';
+// Sottotitoli dei video a stampi (24/10/2026): una pillola chiara in basso, una frase corta alla volta, la parola detta
+// si accende nel colore dell'accento (verde fino al 3/11/2026, arancio con i colori chiari; C in base.mjs). Si costruiscono dalle parole del copione con i tempi di voce.mjs.
 // Scrive anche il file .srt per YouTube, con lo stesso testo.
 const SILENZIO = 0.18; // secondi di pausa che spezzano una frase
 const MAX_PAROLE = 4;
@@ -37,12 +37,12 @@ export function composizione(lista, durata, formato = 'orizzontale', {teaching=f
   .cap-strato { position: absolute; inset: 0; z-index: 20; pointer-events: none; }
   .cap-fascia { position: absolute; left: 0; right: 0; top: ${capTop}px; height: ${capH}px; display: flex; align-items: center; justify-content: center; }
   .cap-gruppo { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; }
-  .cap-pillola { max-width: ${vert ? 88 : 78}%; padding: 20px 44px 24px; background: #eef5f0; border: 2px solid #4ccb8b; border-radius: 6px; }
+  .cap-pillola { max-width: ${vert ? 88 : 78}%; padding: 20px 44px 24px; background: ${C.pillola}; border: 2px solid ${C.accento}; border-radius: 6px; }
   .cap-riga { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.1em 0.34em; font-family: "Source Serif 4", Georgia, serif;
     font-weight: 500; font-size: ${vert ? 64 : 58}px; line-height: 1.1; letter-spacing: -0.02em; }
-  .cap-parola { display: inline-block; padding: 0 0.06em; color: #8a918d; }
-  .cap-parola.attiva { color: #0b0f0d; background: #4ccb8b; box-shadow: 0 0 0 0.05em #4ccb8b; border-radius: 6px; }
-  .cap-parola.detta { color: #0b0f0d; background: transparent; box-shadow: none; }
+  .cap-parola { display: inline-block; padding: 0 0.06em; color: ${C.futura}; }
+  .cap-parola.attiva { color: ${C.inchiostro}; background: ${C.accento}; box-shadow: 0 0 0 0.05em ${C.accento}; border-radius: 6px; }
+  .cap-parola.detta { color: ${C.inchiostro}; background: transparent; box-shadow: none; }
 </style>
 <div id="captions-root" data-composition-id="captions" data-timeline-locked data-start="0" data-duration="${durata}" data-fps="30" data-width="${W}" data-height="${H}">
   <div class="cap-strato" aria-hidden="true"><div id="cap-fascia" class="cap-fascia"></div></div>

@@ -8,7 +8,7 @@ import { spawnSync } from 'node:child_process';
 import { STAMPI } from './stampi/index.mjs';
 import { parla, ascolta, allinea, quando, hf } from './voce.mjs';
 import { gruppi, composizione, srt } from './sottotitoli.mjs';
-import { formatoDi } from './base.mjs';
+import { C, formatoDi } from './base.mjs';
 import { fitWindow } from './tempo.mjs';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
@@ -162,7 +162,7 @@ function indice(scene, totale, { W, H }, musica = false) {
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body { width: ${W}px; height: ${H}px; overflow: hidden; background: #000; }
-      #root { position: relative; width: ${W}px; height: ${H}px; overflow: hidden; background: #31433a; }
+      #root { position: relative; width: ${W}px; height: ${H}px; overflow: hidden; background: ${C.fondo}; }
       .scene { position: absolute; inset: 0; width: 100%; height: 100%; }
     </style>
   </head>

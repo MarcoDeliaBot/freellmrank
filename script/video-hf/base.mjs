@@ -1,13 +1,23 @@
 // Parti comuni degli stampi dei video (deciso da Marco il 24/10/2026: i video delle notizie nello stile della prova DeepInfer,
 // fatti ogni giorno da n8n sui computer di GitHub, senza Claude). Uno stampo è una scena HyperFrames già disegnata e animata,
 // con i buchi (testi, numeri, tempi) riempiti dal piano del video (script/video-hf/piano.mjs).
-// Colori e caratteri vengono dal preset «editorial-forest» rimappato sul verde del sito (#4ccb8b).
+// Caratteri dal preset «editorial-forest»; dal 4/11/2026 colori chiari di Claude al posto del verde del sito (#4ccb8b).
+import fs from 'node:fs';
 
+// Colori chiari di Claude (Marco, 4/11/2026: prova «Sì, prepara la prova», poi «Sì, passali» per tutti i video a stampi),
+// gli stessi dello Short Top 10 (d-022), col logo del sito come in quello Short (d-023). I nomi restano quelli del verde
+// per non toccare gli stampi: «crema» è il testo principale (ora scuro), «fondo» il fondo (ora chiaro), «accentoScuro»
+// l'arancio tenue delle tacche. marchio: il verde del logo e di «Arena»; aloneRgb/aloneScuroRgb: gli accenti in r,g,b
+// per gli aloni; pillola e futura: i sottotitoli.
 export const C = {
-  fondo: '#31433a', pannello: '#3d5348', scuro: '#27352e',
-  accento: '#4ccb8b', accentoScuro: '#2f9e68',
-  crema: '#eef5f0', crema2: '#cfdbd5', inchiostro: '#0b0f0d',
+  fondo: '#faf9f5', pannello: '#e8e6dc', scuro: '#d9d6cb',
+  accento: '#d97757', accentoScuro: '#e39e86',
+  crema: '#141413', crema2: '#6b6b69', inchiostro: '#141413',
+  marchio: '#0d7a47', aloneRgb: '217,119,87', aloneScuroRgb: '227,158,134',
+  pillola: '#ffffff', futura: '#b0aea5',
 };
+// il logo del sito (quadrato verde con tre barre), in linea nella barra in alto e nella chiusura
+export const LOGO = fs.readFileSync(new URL('../../sorgente/favicon.svg', import.meta.url), 'utf8').trim();
 export const W = 1920;
 export const H = 1080;
 export const FONDO_SOTTOTITOLI = 860; // sotto questa riga ci sono i sottotitoli: niente contenuto
@@ -61,20 +71,21 @@ export function scena({ id, px, durata, etichetta = '', numero = '', css = '', c
   <style>
     ${FONT}
     #root { position: absolute; inset: 0; width: ${W}px; height: ${H}px; overflow: hidden; container-type: size; color: ${C.crema}; font-family: "Source Serif 4", Georgia, serif; }
-    #${px}fondo { position: absolute; inset: 0; background-color: ${C.fondo};
-      background-image: linear-gradient(to right, ${C.pannello} 2px, transparent 2px), linear-gradient(to bottom, ${C.pannello} 2px, transparent 2px);
-      background-size: 120px 120px; background-position: center center; }
-    #${px}velo { position: absolute; inset: 0; background: ${C.fondo}; opacity: 0.55; }
+    #${px}fondo { position: absolute; inset: 0; background: linear-gradient(to bottom, ${C.fondo} 0%, ${C.fondo} 50%, ${C.pannello} 100%); }
     #${px}palco { position: absolute; inset: 0; }
     .${px}barra { position: absolute; left: ${M}px; right: ${M}px; top: ${alto}px; display: flex; justify-content: space-between; align-items: center;
-      font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.18em; text-transform: uppercase; color: ${C.accento}; }
-    .${px}riga-barra { position: absolute; left: ${M}px; right: ${M}px; top: ${alto + 52}px; height: 2px; background: ${C.accento}; transform-origin: left center; }
+      font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.18em; text-transform: uppercase; color: ${C.crema2}; }
+    .${px}riga-barra { position: absolute; left: ${M}px; right: ${M}px; top: ${alto + 52}px; height: 2px; background: ${C.crema2}; opacity: 0.35; transform-origin: left center; }
+    .${px}firma { display: inline-flex; align-items: center; gap: 14px; text-transform: none; letter-spacing: 0; }
+    .${px}firma svg { width: 40px; height: 40px; display: block; }
+    .${px}firma-nome { font-family: "Source Serif 4", Georgia, serif; font-weight: 600; font-size: 32px; letter-spacing: -0.01em; color: ${C.crema}; }
+    .${px}firma-arena { color: ${C.marchio}; }
     ${css}
   </style>
   <div id="root" data-composition-id="${id}" data-width="${W}" data-height="${H}" data-duration="${D}">
-    <div id="${px}fondo" class="clip" data-start="0" data-duration="${D}" data-track-index="0"><div id="${px}velo"></div></div>
+    <div id="${px}fondo" class="clip" data-start="0" data-duration="${D}" data-track-index="0"></div>
     <div id="${px}palco" class="clip" data-start="0" data-duration="${D}" data-track-index="1">
-      <div class="${px}barra" id="${px}barra"><span>${esc(etichetta)}</span><span>${esc(numero)}</span></div>
+      <div class="${px}barra" id="${px}barra"><span>${ultima ? esc(etichetta) : `<span class="${px}firma">${LOGO}<span class="${px}firma-nome">FreeLLM<span class="${px}firma-arena">Arena</span></span></span>`}</span><span>${(ultima ? [numero] : [etichetta, numero]).filter(Boolean).map(esc).join(' · ')}</span></div>
       <div class="${px}riga-barra" id="${px}riga-barra"></div>
       ${corpo}
     </div>
