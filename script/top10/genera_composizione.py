@@ -27,6 +27,9 @@ import serie as S  # noqa: E402
 
 FONTI = S.RADICE / "script" / "video-hf" / "fonti"
 LOGO = S.RADICE / "sorgente" / "favicon.svg"  # il logo del sito, lo stesso dei video delle notizie
+# Bit, la mascotte scelta da Marco il 4/11/2026: sorpreso sotto «WHO'S #1?» (anche copertina), saluta nella chiusura.
+# Entra e poi sta fermo, come il resto della serie. Box 200×240 dei file, qui a 260×312 e 230×276
+MASCOTTE = S.RADICE / "sorgente" / "mascotte"
 
 
 def trova_gsap() -> Path:
@@ -162,6 +165,9 @@ def genera() -> dict:
     logo = LOGO.read_text(encoding="utf-8").strip()
     if not (logo.startswith("<svg") and logo.endswith("</svg>")) or "<script" in logo:
         raise ValueError(f"logo inatteso: {LOGO}")
+    bit = {k: (MASCOTTE / f"{n}.svg").read_text(encoding="utf-8").strip() for k, n in (("who", "bit-sorpreso"), ("outro", "bit-saluta"))}
+    if not all(b.startswith("<svg") and b.endswith("</svg>") and "<script" not in b for b in bit.values()):
+        raise ValueError(f"mascotte inattesa in {MASCOTTE}")
     controlli: list[str] = []
 
     def verifica(nome: str, larghezza: float, limite: float = L) -> None:
@@ -274,6 +280,9 @@ def genera() -> dict:
     #brand-arena {{ color: {C['marchio']}; }}
     #o-logo {{ left: {M}px; top: 250px; width: 150px; height: 150px; opacity: 0; }}
     #o-logo svg {{ width: 150px; height: 150px; display: block; }}
+    #who-bit {{ left: {(W - 260) // 2}px; top: 790px; width: 260px; height: 312px; opacity: 0; }}
+    #o-bit {{ left: {W - M - 230}px; top: 170px; width: 230px; height: 276px; opacity: 0; }}
+    #who-bit svg, #o-bit svg {{ width: 100%; height: 100%; display: block; }}
     """
 
     ticks = "".join(
@@ -316,6 +325,7 @@ def genera() -> dict:
     </div>
     <div id="who" class="clip" data-start="{f3(S.WHO[0])}" data-duration="{f3(S.WHO[1] - S.WHO[0])}" data-track-index="2">
       <div id="who-text" class="abs">{esc(S.DOMANDA)}</div>
+      <div id="who-bit" class="abs">{bit["who"]}</div>
     </div>
     <div id="top1" class="clip" data-start="{f3(S.TOP1[0])}" data-duration="{f3(S.TOP1[1] - S.TOP1[0])}" data-track-index="2">
       <div id="t1-wrap">
@@ -329,6 +339,7 @@ def genera() -> dict:
     </div>
     <div id="outro" class="clip" data-start="{f3(S.OUTRO[0])}" data-duration="{f3(S.OUTRO[1] - S.OUTRO[0])}" data-track-index="2">
       <div id="o-logo" class="abs">{logo}</div>
+      <div id="o-bit" class="abs">{bit["outro"]}</div>
       <div id="o-lead" class="abs">{esc(S.CHIUSURA_1)}</div>
       <div id="o-url" class="abs">{esc(S.CHIUSURA_URL)}</div>
       <div id="o-rule" class="abs"></div>
@@ -374,7 +385,9 @@ def genera() -> dict:
         f'tl.fromTo(["#score-label", "#tk"], {{ opacity: 1 }}, {{ ...F, opacity: 0, duration: 0.16, ease: "power2.in" }}, {f3(S.COUNTDOWN[1] - 0.16)});',
         "// pausa",
         f'tl.fromTo("#who-text", {{ opacity: 0, scale: 0.9 }}, {{ ...F, opacity: 1, scale: 1, duration: 0.18, ease: "circ.out" }}, {f3(S.WHO[0])});',
+        f'tl.fromTo("#who-bit", {{ opacity: 0, y: 40 }}, {{ ...F, opacity: 1, y: 0, duration: 0.2, ease: "expo.out" }}, {f3(S.WHO[0] + 0.04)});',
         f'tl.fromTo("#who-text", {{ opacity: 1 }}, {{ ...F, opacity: 0, duration: 0.08, ease: "power2.in" }}, {f3(S.WHO[1] - 0.08)});',
+        f'tl.fromTo("#who-bit", {{ opacity: 1 }}, {{ ...F, opacity: 0, duration: 0.08, ease: "power2.in" }}, {f3(S.WHO[1] - 0.08)});',
         "// n. 1",
         f'tl.fromTo("#t1-rank-row", {{ opacity: 0, y: 30 }}, {{ ...F, opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }}, {f3(S.TOP1[0])});',
         f'tl.fromTo("#t1-name", {{ opacity: 0, y: 30 }}, {{ ...F, opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }}, {f3(S.TOP1[0] + 0.06)});',
@@ -386,6 +399,7 @@ def genera() -> dict:
         f'tl.fromTo("#brand-row", {{ opacity: 1 }}, {{ ...F, opacity: 0, duration: 0.16, ease: "power2.in" }}, {f3(S.TOP1[1] - 0.16)});',
         "// chiusura: entra e poi sta ferma fino all'ultimo fotogramma",
         f'tl.fromTo("#o-logo", {{ opacity: 0, y: 40 }}, {{ ...F, opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }}, {f3(S.OUTRO[0])});',
+        f'tl.fromTo("#o-bit", {{ opacity: 0, y: 40 }}, {{ ...F, opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }}, {f3(S.OUTRO[0] + 0.12)});',
         f'tl.fromTo("#o-lead", {{ opacity: 0, y: 40 }}, {{ ...F, opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }}, {f3(S.OUTRO[0])});',
         f'tl.fromTo("#o-url", {{ opacity: 0, y: 40 }}, {{ ...F, opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }}, {f3(S.OUTRO[0] + 0.08)});',
         f'tl.fromTo("#o-rule", {{ scaleX: 0 }}, {{ ...F, scaleX: 1, duration: 0.4, ease: "power3.out" }}, {f3(S.OUTRO[0] + 0.2)});',
