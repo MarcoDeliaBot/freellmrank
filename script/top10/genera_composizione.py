@@ -28,6 +28,7 @@ import serie as S  # noqa: E402
 FONTI = S.RADICE / "script" / "video-hf" / "fonti"
 LOGO = S.RADICE / "sorgente" / "favicon.svg"  # il logo del sito, lo stesso dei video delle notizie
 # Bit, la mascotte scelta da Marco il 4/11/2026: sorpreso sotto «WHO'S #1?» (anche copertina), saluta nella chiusura.
+# Grande, sotto la riga della fonte (Marco, 4/11: «negli short può essere più grande», come i concorrenti).
 # Entra e poi sta fermo, come il resto della serie. Box 200×240 dei file, qui a 260×312 e 230×276
 MASCOTTE = S.RADICE / "sorgente" / "mascotte"
 
@@ -280,8 +281,8 @@ def genera() -> dict:
     #brand-arena {{ color: {C['marchio']}; }}
     #o-logo {{ left: {M}px; top: 250px; width: 150px; height: 150px; opacity: 0; }}
     #o-logo svg {{ width: 150px; height: 150px; display: block; }}
-    #who-bit {{ left: {(W - 260) // 2}px; top: 790px; width: 260px; height: 312px; opacity: 0; }}
-    #o-bit {{ left: {W - M - 230}px; top: 170px; width: 230px; height: 276px; opacity: 0; }}
+    #who-bit {{ left: {(W - 480) // 2}px; top: 1190px; width: 480px; height: 576px; opacity: 0; }}
+    #o-bit {{ left: {(W - 480) // 2}px; top: 1190px; width: 480px; height: 576px; opacity: 0; }}
     #who-bit svg, #o-bit svg {{ width: 100%; height: 100%; display: block; }}
     """
 

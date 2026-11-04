@@ -72,12 +72,13 @@ function verticale({ id, px, durata, t, etichetta, numero, dati = {} }) {
   const m = t('marchio', canale ? durata * 0.45 : 0.2);
   const b = Math.min(t('bio', durata * 0.7), durata - 1.6);
   const c = t('canale', 0.3);
-  const y = canale ? 160 : 0;
-  const bit = canale ? { top: 150, w: 150, h: 180 } : { top: 230, w: 230, h: 276 }; // sopra il marchio (560 + y)
+  const y = canale ? 80 : 0;
+  // Bit grande sotto i sottotitoli (1220-1420), come negli Short dei concorrenti (Marco, 4/11: «può essere più grande»)
+  const bit = { top: 1405, w: 420, h: 504 }; // piedi a 1888: intero nei 1920
   const css = `
     #${px}alone { position: absolute; left: 50%; top: 38%; width: 1000px; height: 1000px; margin-left: -500px; margin-top: -500px; border-radius: 50%;
       background: radial-gradient(closest-side, rgba(47,158,104,0.85), rgba(47,158,104,0) 100%); opacity: 0; }
-    #${px}canale { position: absolute; left: 0; right: 0; top: 340px; text-align: center; }
+    #${px}canale { position: absolute; left: 0; right: 0; top: 260px; text-align: center; }
     #${px}bit { position: absolute; left: ${(1080 - bit.w) / 2}px; top: ${bit.top}px; width: ${bit.w}px; height: ${bit.h}px; opacity: 0; }
     #${px}bit svg { width: 100%; height: 100%; display: block; }
     .${px}linea { display: block; font-weight: 500; font-size: 88px; line-height: 1.1; letter-spacing: -0.02em; font-variation-settings: "opsz" 60; }
