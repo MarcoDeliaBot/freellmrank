@@ -227,5 +227,13 @@
  "news-2026-11-04-anthropic-unveils-flashprove-a-zksnark-system-proving-ai-replies-came-": {
   "lungo": "notizia-anthropic-unveils-flashprove-a-zksnark-system-proving-ai",
   "breve": "breve-anthropic-unveils-flashprove-a-zksnark-system-proving-ai"
+ },
+ "news-2026-11-04-tencent-launches-hy4-a-770-billion-parameter-llm-with-visual-and-compu": {
+  "lungo": "notizia-tencent-launches-hy4-a-770-billion-parameter-llm-with-vi",
+  "breve": "breve-tencent-launches-hy4-a-770-billion-parameter-llm-with-vi"
+ },
+ "news-2026-11-04-openai-to-acquire-developer-tooling-startup-pierre-computer": {
+  "lungo": "notizia-openai-to-acquire-developer-tooling-startup-pierre-compu",
+  "breve": "breve-openai-to-acquire-developer-tooling-startup-pierre-compu"
  }
 }
