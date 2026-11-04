@@ -225,7 +225,7 @@ export function doppione(voci, fatte, ora = Date.now()) {
     // laboratorio nei due titoli. Solo nomi forti e solo il titolo del post: le parole comuni univano Kimi K3.1 Pro e
     // Claude Opus 5.5, i titoli delle fonti AnyModelBot e Grok Bot («alternative to Grok Bot»)
     const prodotti = forti(n.titolo), labs = labDi(n.titolo);
-    const stesso = (v) => prodotti.some((w) => nomina(w, v.titolo)) || forti(v.titolo).some((w) => nomina(w, n.titolo))
+    const stesso = (v) => prodotti.some((w) => nomina(w, v.titolo))
       || (labDi(v.titolo).some((l) => labs.includes(l)) && prodotti.some((w) => nomina(w, v.sommario || '')));
     if (voci.some(stesso)) return n.nome;
   }

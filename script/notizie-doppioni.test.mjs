@@ -28,7 +28,8 @@ test('FlashProve: MarkTechPost dopo TechCrunch è un doppione (nome del prodotto
 });
 
 test('FlashProve: TechCrunch dopo MarkTechPost è un doppione (stessa fonte primaria, link con «/» finale)', () => {
-  assert.equal(doppione([primaria(techcrunch)], [marktechpost], ORA), marktechpost.nome);
+  // titolo tolto apposta: deve bastare il link (github.com/anthropics/FlashProve/ contro …/FlashProve)
+  assert.equal(doppione([{ ...primaria(techcrunch), titolo: 'GitHub' }], [marktechpost], ORA), marktechpost.nome);
 });
 
 test('FlashProve: il titolo di TechCrunch non nomina il prodotto, il sommario sì (stesso laboratorio)', () => {
