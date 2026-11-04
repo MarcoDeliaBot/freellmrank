@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-04-anthropic-compute-costs-surge-to-10-billion-eating-58-of-revenue",
+ "titolo": "Anthropic compute costs surge to $10 billion, eating 58% of revenue",
+ "descr": "Anthropic's Q3 compute spend hit $10 billion, raising its compute share of revenue to 58% as demand outpaces in‑house capacity.",
+ "tema": "Business",
+ "paragrafi": [
+  "Anthropic reported Q3 revenue of $17 billion, up from $11.5 billion in the prior quarter.",
+  "Compute expenses rose to $10 billion, representing 58% of revenue, up from 48% the quarter before.",
+  "The spike reflects $5 billion of short‑term compute commitments that cost more than the company’s multi‑year deals.",
+  "Anthropic is paying SpaceX $1.25 billion per month for compute, alongside multibillion‑dollar contracts with firms such as Nscale, Akamai and Volta.",
+  "The filing notes that compute and infrastructure will remain the largest operating expense as the firm expands its own “Anthropic Direct” capacity."
+ ],
+ "perche": [
+  "Higher compute costs reduce Anthropic’s operating margins, which could affect pricing and availability of its models for enterprises. For users of free or locally run models, the pressure on large labs underscores the value of efficient, open‑source alternatives that avoid expensive cloud contracts."
+ ],
+ "pubblicato": "2026-11-04",
+ "titoloFonte": "Anthropic is still grappling with the economics of compute",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/03/anthropic-is-still-grappling-with-the-economics-of-compute/",
+   "titolo": "Anthropic is still grappling with the economics of compute",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  },
+  {
+   "nome": "sec.gov",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm",
+   "titolo": "Anthropic, PBC - S-1/A-1",
+   "ufficiale": true,
+   "data": "2026-09-30"
+  }
+ ],
+ "frasiTolte": 0
+}

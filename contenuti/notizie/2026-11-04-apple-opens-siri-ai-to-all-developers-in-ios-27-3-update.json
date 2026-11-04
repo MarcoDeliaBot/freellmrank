@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-04-apple-opens-siri-ai-to-all-developers-in-ios-27-3-update",
+ "titolo": "Apple opens Siri AI to all developers in iOS 27.3 update",
+ "descr": "Apple's iOS 27.3 preview lets third‑party apps integrate Siri AI, adding context‑aware voice actions across the ecosystem.",
+ "tema": "Software",
+ "paragrafi": [
+  "The new Developer Preview adds \"app skills\" so developers can combine several actions into a single voice command, and users no longer need to name the app when it is in the foreground or in a Live Activity.",
+  "Apple is rolling out the feature to its own apps, including Calendar, Files, Mail, Maps, Messages, Music, Notes, Photos, Safari, Shortcuts and Weather, enabling requests such as finding a past coffee shop visit or archiving old files.",
+  "Siri AI supports English, French, Japanese, Korean, Portuguese and Spanish, with plans to add Traditional Chinese, Norwegian, Turkish and Vietnamese. It is not yet available in the EU for iOS, iPadOS and watchOS, and is restricted to users 13 and older.",
+  "Developers can test the integration through App Intents and attend Apple Intelligence Group Labs sessions on November 4‑5 for guidance."
+ ],
+ "perche": [
+  "For AI users, Siri AI’s broader app access means more natural, voice‑driven interactions across everyday services. For developers of free or locally hosted models, Apple’s move underscores the advantage of tightly integrated, cloud‑backed assistants and may shift attention away from open‑source alternatives that lack such system‑level integration."
+ ],
+ "pubblicato": "2026-11-04",
+ "titoloFonte": "Apple starts giving Siri AI access to third-party apps",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/tech/1025694/apple-siri-ai-third-party-apps",
+   "titolo": "Apple starts giving Siri AI access to third-party apps",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  },
+  {
+   "nome": "developer.apple.com",
+   "url": "https://developer.apple.com/news/?id=gdk2umrf",
+   "titolo": "Siri AI is now open to all developers - Latest News - Apple Developer",
+   "ufficiale": true,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 1
+}

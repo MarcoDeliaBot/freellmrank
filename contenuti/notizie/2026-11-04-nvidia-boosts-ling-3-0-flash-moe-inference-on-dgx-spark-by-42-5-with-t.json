@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-04-nvidia-boosts-ling-3-0-flash-moe-inference-on-dgx-spark-by-42-5-with-t",
+ "titolo": "NVIDIA boosts Ling-3.0-flash MoE inference on DGX Spark by 42.5% with three optimizations",
+ "descr": "Three stacked techniques—Humming MXFP4 kernels, online FP8 LM‑head quantization, and speculative multi‑token decoding—raise decode throughput 42.5% on a single DGX Spark.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "NVIDIA demonstrated three optimizations that together improve inference speed for the 124‑billion‑parameter Ling-3.0‑flash mixture‑of‑experts model on a single DGX Spark system.",
+  "Speculative multi‑token prediction using the model’s NEXTN layer achieved 3.90 accepted tokens per round, raising throughput by 185.1% on a synthetic workload.",
+  "When all three techniques are applied, decode throughput on the GSM8K test set increased by 42.5% and mean latency fell 24.5% without any statistically detectable accuracy change."
+ ],
+ "perche": [
+  "The speed‑up lets developers run large MoE models like Ling-3.0‑flash more efficiently on existing DGX Spark hardware, reducing cost per token. For users of free or locally hosted models, the results highlight how kernel‑level and quantization tricks can mitigate memory bottlenecks, suggesting similar gains may be achievable on other platforms with appropriate software stacks."
+ ],
+ "pubblicato": "2026-11-04",
+ "titoloFonte": "NVIDIA Shows 3 Ways to Speed Up MoE Inference on DGX Spark, Lifting Ling-3.0-flash Throughput 42.5%",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/03/nvidia-dgx-spark-moe-inference-ling-3-0-flash/",
+   "titolo": "NVIDIA Shows 3 Ways to Speed Up MoE Inference on DGX Spark, Lifting Ling-3.0-flash Throughput 42.5%",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  },
+  {
+   "nome": "developer.nvidia.com",
+   "url": "https://developer.nvidia.com/blog/3-ways-to-boost-moe-inference-on-nvidia-dgx-spark/",
+   "titolo": "3 Ways to Boost MoE Inference on NVIDIA DGX Spark | NVIDIA Technical Blog",
+   "ufficiale": true,
+   "data": "2026-10-27"
+  }
+ ],
+ "frasiTolte": 2
+}
