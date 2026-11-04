@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-04-tencent-launches-hy4-a-770-billion-parameter-llm-with-visual-and-compu",
+ "titolo": "Tencent launches Hy4, a 770‑billion‑parameter LLM with visual and computer‑use abilities",
+ "descr": "Tencent announced Hy4, its newest large language model, on 4 November 2026.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Tencent announced Hy4, its newest large language model, on 4 November 2026. The model contains 770 billion total parameters and 49 billion active parameters, and offers a 1 million‑token context window.",
+  "Hy4 introduces visual understanding, fine‑grained image processing, chart analysis and mathematical visual reasoning, plus the ability to interact with command‑line and graphical user interfaces for real‑world tasks.",
+  "The model shows a 19.1 % gain on the GameDev benchmark and a 9.8 % gain on the GameLogic benchmark over the earlier Hy4 Preview, while also achieving the highest score among open‑source models in a financial‑task evaluation of 579 tasks.",
+  "Tencent makes Hy4 available via Tencent Cloud services such as TokenHub, WorkBuddy, CodeBuddy and WeCom’s AI Assistant, and through third‑party platforms like OpenRouter and Hermes."
+ ],
+ "perche": [
+  "For AI users, Hy4 provides a high‑parameter model that can handle visual inputs and automate software tasks without higher costs. For developers of free or locally hosted models, the upcoming open‑source release offers a new benchmark to compare against, while the pricing details show that large‑scale capabilities can remain affordable."
+ ],
+ "pubblicato": "2026-11-04",
+ "titoloFonte": "Tencent releases Hy4, a powerful frontier AI model introducing visual understanding and computer use",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/04/tencent-releases-hy4-powerful-frontier-llm-introducing-visual-understanding-and-computer-use/",
+   "titolo": "Tencent releases Hy4, a powerful frontier AI model introducing visual understanding and computer use",
+   "ufficiale": false,
+   "data": "2026-11-04"
+  },
+  {
+   "nome": "tencent.com",
+   "url": "https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+   "titolo": "Tencent Launches Hy4, Joining the Ranks of the World's Leading Open-Source AI Models - Tencent",
+   "ufficiale": true,
+   "data": "2026-11-04"
+  }
+ ],
+ "frasiTolte": 3
+}

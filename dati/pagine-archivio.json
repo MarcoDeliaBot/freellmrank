@@ -20712,6 +20712,42 @@
     "tipo": "News"
    },
    "data": "2026-11-04"
+  },
+  "/blog/news-2026-11-04-google-threatens-to-cut-school-search-access-unless-ai-tools-are-enabl.html": {
+   "post": {
+    "slug": "news-2026-11-04-google-threatens-to-cut-school-search-access-unless-ai-tools-are-enabl",
+    "titolo": "Google threatens to cut school Search access unless AI tools are enabled",
+    "descr": "Google will disable Search for K‑12 schools that block its Gemini AI, sparking political backlash.",
+    "data": "2026-11-04",
+    "tema": "Policy",
+    "corpo": "On November 4, 2026 Google announced that schools using its K‑12 software will lose Search unless they enable AI tools such as Gemini.\n\nSchools can turn each service on individually, but a version of Search without AI will not be offered.\n\nChris Phillips, Google’s vice president for education, said “Search and AI are deeply integrated,” and warned that students will not have access to search if their school does not opt in.\n\nSenators Bernie Sanders and Richard Blumenthal criticized the move as extortion and a forced rollout of Gemini. Lina Khan and New York City mayor Zohran Mamdani also called the policy anticompetitive.\n\nGoogle responded that it has listened to educators and is giving schools more choice, adding a “Guided Learning” feature to help students solve problems without receiving direct answers.\n\n## What it means for you\n\nThe policy could push schools toward Google’s AI ecosystem and limit the use of independent tools. Free and locally run models such as Kimi K3 or GLM‑5.3 remain available for educators who prefer non‑Google solutions.\n\n## On FreeLLMArena\n\nFrom our rankings on 4 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [Google faces backlash for plan that would turn off Search for schools that restrict AI](https://techcrunch.com/2026/11/04/google-faces-backlash-for-plan-that-would-turn-off-search-for-schools-that-restrict-ai/), TechCrunch, 4 Nov 2026\n- [Schools that turn off Google's AI will lose search too starting in 2027](https://the-decoder.com/schools-that-turn-off-googles-ai-will-lose-search-too-starting-in-2027/), The Decoder, 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-04-google-threatens-to-cut-school-search-access-unless-ai-tools-are-enabl).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-04"
+  },
+  "/blog/news-2026-11-04-moonshot-ai-launches-kimi-k3-1-pro-a-2-8-trillion-parameter-multimodal.html": {
+   "post": {
+    "slug": "news-2026-11-04-moonshot-ai-launches-kimi-k3-1-pro-a-2-8-trillion-parameter-multimodal",
+    "titolo": "Moonshot AI launches Kimi‑K3.1‑Pro, a 2.8‑trillion‑parameter multimodal model on Hugging Face",
+    "descr": "The new Kimi‑K3.1‑Pro model adds a 1‑million‑token context window and shows strong results on coding, 3D and finance benchmarks.",
+    "data": "2026-11-04",
+    "tema": "LLMs",
+    "corpo": "The model is open‑weight and multimodal, built on a 2.8 trillion‑parameter Mixture‑of‑Experts architecture with 104 billion activated parameters.\n\nIt supports a 1 million‑token context length and uses a Vision Encoder called MoonViT‑V2. Quantization is MXFP4 for weights and MXFP8 for activations.\n\nBenchmarks show Kimi‑K3.1‑Pro leading in several tasks: 92.7 % on BenchCAD with tools, 77.1 on Kimi Code Bench 2.0, and 95.4 % on BabyVision. It also scores 66.4 on Terminal‑Bench coding, close to DeepSeek‑V4.1‑Flash‑1017’s 66.4.\n\nFreeLLMArena’s latest blind vote ranks the earlier Kimi K3 model as the top free chat model, indicating strong community interest in Moonshot’s releases.\n\n## What it means for you\n\nKimi‑K3.1‑Pro offers a high‑capacity, open‑weight option for developers needing extensive context and multimodal capabilities, expanding the free‑model ecosystem.\n\n## Sources\n\n- [Moonshot AI releases Kimi-K3.1-Pro on Hugging Face](https://huggingface.co/moonshotai/Kimi-K3.1-Pro), Hugging Face trending (official), 2 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-04-moonshot-ai-launches-kimi-k3-1-pro-a-2-8-trillion-parameter-multimodal).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-04"
+  },
+  "/blog/news-2026-11-04-tencent-launches-hy4-a-770-billion-parameter-llm-with-visual-and-compu.html": {
+   "post": {
+    "slug": "news-2026-11-04-tencent-launches-hy4-a-770-billion-parameter-llm-with-visual-and-compu",
+    "titolo": "Tencent launches Hy4, a 770‑billion‑parameter LLM with visual and computer‑use abilities",
+    "descr": "Tencent announced Hy4, its newest large language model, on 4 November 2026.",
+    "data": "2026-11-04",
+    "tema": "LLMs",
+    "corpo": "Tencent announced Hy4, its newest large language model, on 4 November 2026. The model contains 770 billion total parameters and 49 billion active parameters, and offers a 1 million‑token context window.\n\nHy4 introduces visual understanding, fine‑grained image processing, chart analysis and mathematical visual reasoning, plus the ability to interact with command‑line and graphical user interfaces for real‑world tasks.\n\nThe model shows a 19.1 % gain on the GameDev benchmark and a 9.8 % gain on the GameLogic benchmark over the earlier Hy4 Preview, while also achieving the highest score among open‑source models in a financial‑task evaluation of 579 tasks.\n\nTencent makes Hy4 available via Tencent Cloud services such as TokenHub, WorkBuddy, CodeBuddy and WeCom’s AI Assistant, and through third‑party platforms like OpenRouter and Hermes.\n\n## What it means for you\n\nFor AI users, Hy4 provides a high‑parameter model that can handle visual inputs and automate software tasks without higher costs. For developers of free or locally hosted models, the upcoming open‑source release offers a new benchmark to compare against, while the pricing details show that large‑scale capabilities can remain affordable.\n\n## On FreeLLMArena\n\nFrom our rankings on 4 Nov 2026, based on Arena's blind votes:\n\n- [Hy4 preview](/model/hy4-preview.html): #4 among free coding models\n\n## Sources\n\n- [Tencent releases Hy4, a powerful frontier AI model introducing visual understanding and computer use](https://siliconangle.com/2026/11/04/tencent-releases-hy4-powerful-frontier-llm-introducing-visual-understanding-and-computer-use/), SiliconANGLE, 4 Nov 2026\n- [Tencent Launches Hy4, Joining the Ranks of the World's Leading Open-Source AI Models - Tencent](https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/), tencent.com (official), 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-04-tencent-launches-hy4-a-770-billion-parameter-llm-with-visual-and-compu).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-04"
   }
  },
  "ricostruzione": {

@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-04-google-threatens-to-cut-school-search-access-unless-ai-tools-are-enabl",
+ "titolo": "Google threatens to cut school Search access unless AI tools are enabled",
+ "descr": "Google will disable Search for K‑12 schools that block its Gemini AI, sparking political backlash.",
+ "tema": "Policy",
+ "paragrafi": [
+  "On November 4, 2026 Google announced that schools using its K‑12 software will lose Search unless they enable AI tools such as Gemini.",
+  "Schools can turn each service on individually, but a version of Search without AI will not be offered.",
+  "Chris Phillips, Google’s vice president for education, said “Search and AI are deeply integrated,” and warned that students will not have access to search if their school does not opt in.",
+  "Senators Bernie Sanders and Richard Blumenthal criticized the move as extortion and a forced rollout of Gemini. Lina Khan and New York City mayor Zohran Mamdani also called the policy anticompetitive.",
+  "Google responded that it has listened to educators and is giving schools more choice, adding a “Guided Learning” feature to help students solve problems without receiving direct answers."
+ ],
+ "perche": [
+  "The policy could push schools toward Google’s AI ecosystem and limit the use of independent tools. Free and locally run models such as Kimi K3 or GLM‑5.3 remain available for educators who prefer non‑Google solutions."
+ ],
+ "pubblicato": "2026-11-04",
+ "titoloFonte": "Google faces backlash for plan that would turn off Search for schools that restrict AI",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/04/google-faces-backlash-for-plan-that-would-turn-off-search-for-schools-that-restrict-ai/",
+   "titolo": "Google faces backlash for plan that would turn off Search for schools that restrict AI",
+   "ufficiale": false,
+   "data": "2026-11-04"
+  },
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/schools-that-turn-off-googles-ai-will-lose-search-too-starting-in-2027/",
+   "titolo": "Schools that turn off Google's AI will lose search too starting in 2027",
+   "ufficiale": false,
+   "data": "2026-11-04"
+  }
+ ],
+ "frasiTolte": 1
+}

@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-04-moonshot-ai-launches-kimi-k3-1-pro-a-2-8-trillion-parameter-multimodal",
+ "titolo": "Moonshot AI launches Kimi‑K3.1‑Pro, a 2.8‑trillion‑parameter multimodal model on Hugging Face",
+ "descr": "The new Kimi‑K3.1‑Pro model adds a 1‑million‑token context window and shows strong results on coding, 3D and finance benchmarks.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "The model is open‑weight and multimodal, built on a 2.8 trillion‑parameter Mixture‑of‑Experts architecture with 104 billion activated parameters.",
+  "It supports a 1 million‑token context length and uses a Vision Encoder called MoonViT‑V2. Quantization is MXFP4 for weights and MXFP8 for activations.",
+  "Benchmarks show Kimi‑K3.1‑Pro leading in several tasks: 92.7 % on BenchCAD with tools, 77.1 on Kimi Code Bench 2.0, and 95.4 % on BabyVision. It also scores 66.4 on Terminal‑Bench coding, close to DeepSeek‑V4.1‑Flash‑1017’s 66.4.",
+  "FreeLLMArena’s latest blind vote ranks the earlier Kimi K3 model as the top free chat model, indicating strong community interest in Moonshot’s releases."
+ ],
+ "perche": [
+  "Kimi‑K3.1‑Pro offers a high‑capacity, open‑weight option for developers needing extensive context and multimodal capabilities, expanding the free‑model ecosystem."
+ ],
+ "pubblicato": "2026-11-04",
+ "titoloFonte": "Moonshot AI releases Kimi-K3.1-Pro on Hugging Face",
+ "fonti": [
+  {
+   "nome": "Hugging Face trending",
+   "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+   "titolo": "Moonshot AI releases Kimi-K3.1-Pro on Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-02"
+  }
+ ],
+ "frasiTolte": 3
+}
