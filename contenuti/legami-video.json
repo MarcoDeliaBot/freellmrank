@@ -219,5 +219,13 @@
  "news-2026-11-02-openai-launches-grid-protectors-program-to-aid-utilities-with-compute-": {
   "lungo": "notizia-openai-launches-grid-protectors-program-to-aid-utilities",
   "breve": "breve-openai-launches-grid-protectors-program-to-aid-utilities"
+ },
+ "news-2026-11-04-anthropic-releases-open-source-flashprove-to-cryptographically-verify-": {
+  "lungo": "notizia-anthropic-releases-open-source-flashprove-to-cryptograph",
+  "breve": "breve-anthropic-releases-open-source-flashprove-to-cryptograph"
+ },
+ "news-2026-11-04-anthropic-unveils-flashprove-a-zksnark-system-proving-ai-replies-came-": {
+  "lungo": "notizia-anthropic-unveils-flashprove-a-zksnark-system-proving-ai",
+  "breve": "breve-anthropic-unveils-flashprove-a-zksnark-system-proving-ai"
  }
 }
