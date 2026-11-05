@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-05-openai-launches-gpt-6-cyber-a-security-focused-ai-model",
+ "titolo": "OpenAI launches GPT-6 Cyber, a security‑focused AI model",
+ "descr": "GPT-6 Cyber finds hundreds of new bugs, builds exploits and stays within guardrails, but is limited to select customers.",
+ "tema": "Research",
+ "paragrafi": [
+  "OpenAI announced GPT-6 Cyber, a variant of GPT-6 Astra trained to discover software vulnerabilities, create working exploits and suggest patches.",
+  "In a test on Firefox, the model uncovered 81 previously unknown critical flaws that Mozilla has already patched, and flagged 30 known issues as more severe.",
+  "A Linux‑kernel campaign scanned about 5,034 security‑relevant locations, confirmed 1,724 vulnerabilities and produced 948 exploits, reporting 304 critical findings to maintainers.",
+  "On the ExploitGym benchmark the model achieved a 48.5 % success rate, compared with 32.1 % for its predecessor, and a 40.3 % hit rate on source‑code‑free web‑app testing versus 32.0 % for GPT‑6 Astra."
+ ],
+ "perche": [
+  "For defenders, GPT-6 Cyber offers a powerful, vetted tool that can accelerate vulnerability research while staying within strict guardrails. The limited rollout means free or local models still lack comparable security capabilities, underscoring the gap between open‑source options and specialized, paid AI services."
+ ],
+ "pubblicato": "2026-11-05",
+ "titoloFonte": "OpenAIs GPT-6 Cyber can both break into systems and propose how to fix them",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/openais-gpt-6-cyber-can-both-break-into-systems-and-propose-how-to-fix-them/",
+   "titolo": "OpenAIs GPT-6 Cyber can both break into systems and propose how to fix them",
+   "ufficiale": false,
+   "data": "2026-11-05"
+  },
+  {
+   "nome": "deploymentsafety.openai.com",
+   "url": "https://deploymentsafety.openai.com/gpt-6-cyber",
+   "titolo": "GPT-6 Cyber System Card - OpenAI Deployment Safety Hub",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 2
+}

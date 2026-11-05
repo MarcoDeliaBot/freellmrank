@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-05-ricursive-ai-launches-65b-open-weight-model-ripple-preview-with-top-us",
+ "titolo": "Ricursive AI launches 65B open-weight model Ripple‑Preview with top US benchmark score",
+ "descr": "The 65‑billion‑parameter Ripple‑65B Preview scores 80.5 on Terminal‑Bench 2.1, cost $32 M to train and is released under Apache 2.0 on several platforms.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "On November 4 2026 Ricursive Intelligence announced Ripple‑65B Preview, a dense 65 billion‑parameter language model.",
+  "The model was pretrained on 12 trillion tokens, supports up to 1 million context length and uses a thin‑and‑deep transformer with a d_model of 5120 across 80 layers.",
+  "Ripple‑65B achieved an 80.5 score on Terminal‑Bench 2.1, the highest reported by any U.S. open‑weight model, surpassing larger mixture‑of‑experts rivals such as Reflection Beam (501 B, 80.1) and Meta Muse Spark Open (816 B, 76.4). It also posted 79.1 on SWE‑bench Pro Hard and strong math results.",
+  "Ricursive reports the full research and development cost at $32 million, about one‑tenth of the expense of the previous open‑weight leader. Training used simple sharding, no custom kernels and no quantization, achieving a 16 times compute‑efficiency gain at 4 B scale.",
+  "Weights are hosted on Hugging Face and the model is listed on Together AI, GMI Cloud, OpenRouter and Fireworks. On datacenter GPUs it runs at 250 tokens per second on two B200 cards, and an experimental NVFP4 build targets NVIDIA DGX Spark."
+ ],
+ "perche": [
+  "The release provides a high‑performing open‑weight model at a fraction of typical training cost, widening research access. However, the 65 B size still requires datacenter‑class hardware, so local or low‑resource users will continue to rely on smaller free models."
+ ],
+ "pubblicato": "2026-11-05",
+ "titoloFonte": "Ricursive AI Releases Ripple-65B Preview: A 65B Dense Open-Weight Model Scoring 80.5 on Terminal-Bench 2.1",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/04/ricursive-ripple-65b-preview-open-weight-model/",
+   "titolo": "Ricursive AI Releases Ripple-65B Preview: A 65B Dense Open-Weight Model Scoring 80.5 on Terminal-Bench 2.1",
+   "ufficiale": false,
+   "data": "2026-11-04"
+  },
+  {
+   "nome": "ricursive.com",
+   "url": "https://www.ricursive.com/ripple",
+   "titolo": "Recursive Self-Improvement via AI for Chip Design & Chip Design for AI - Ricursive Intelligence",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 0
+}
