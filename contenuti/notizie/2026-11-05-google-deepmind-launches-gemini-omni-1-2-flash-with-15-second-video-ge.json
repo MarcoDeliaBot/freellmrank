@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-05-google-deepmind-launches-gemini-omni-1-2-flash-with-15-second-video-ge",
+ "titolo": "Google DeepMind launches Gemini Omni 1.2 Flash with 15‑second video generation at lower cost",
+ "descr": "Gemini Omni 1.2 Flash adds native 15‑second clips, multi‑turn editing and a 30% price cut to $0.07 per second for 720p video.",
+ "tema": "Business",
+ "paragrafi": [
+  "Google DeepMind announced Gemini Omni 1.2 Flash as generally available on the Gemini API and Google Cloud on 5 Nov 2026.",
+  "The model supports native video creation up to 15 seconds, an increase from the previous 10‑second limit, and allows duration selection in one‑second steps from 3 to 15 seconds.",
+  "Pricing has been reduced by 30% compared with Omni 1.1, now costing $0.07 per second for 720p video, with the option to draft at 360p or 720p and upscale later to 1080p or 4K.",
+  "New features include multi‑turn conversational editing, stronger reference adherence for characters, products and brand elements, and more natural speech with clearer lip‑sync.",
+  "The update also promises steadier camera movements, fewer jump cuts and a more cinematic look, aiming to improve consistency across frames."
+ ],
+ "perche": [
+  "The lower price and longer clip length make high‑quality video generation more affordable for marketers and creators, while multi‑turn editing reduces re‑generation costs. For users of free or locally hosted models, the launch highlights the growing gap in capabilities and cost efficiency that commercial services can offer."
+ ],
+ "pubblicato": "2026-11-05",
+ "titoloFonte": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+ "fonti": [
+  {
+   "nome": "Google DeepMind",
+   "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/",
+   "titolo": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  },
+  {
+   "nome": "Google",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+   "titolo": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 0
+}

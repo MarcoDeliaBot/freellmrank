@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-05-anthropic-adds-read-only-personal-finance-tool-to-claude-for-u-s-pro-m",
+ "titolo": "Anthropic adds read‑only Personal Finance tool to Claude for U.S. Pro, Max and Ultra users",
+ "descr": "Claude can now link bank and credit‑card accounts via Plaid, summarise spending and flag issues, but cannot move money.",
+ "tema": "Business",
+ "paragrafi": [
+  "Anthropic announced on Thursday that Claude now includes a Personal Finance tool that lets users connect bank and credit‑card accounts through Plaid.",
+  "Users can ask Claude questions such as where their money went this month, whether spending exceeds income, or for explanations of financial terms like APR, and the bot will generate summaries, charts and tables.",
+  "Conversations inside the Personal Finance hub are excluded from model training, and the tool contains no ads or sponsored recommendations."
+ ],
+ "perche": [
+  "The tool gives Claude users a natural‑language way to review their finances without leaving the chat interface, which may appeal to those already using Claude for daily tasks. Free‑model users still lack a comparable built‑in finance assistant, so they will need to rely on external apps or wait for similar features in open‑source offerings."
+ ],
+ "pubblicato": "2026-11-05",
+ "titoloFonte": "Claude can now analyze your spending with its new Personal Finance tool",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/",
+   "titolo": "Claude can now analyze your spending with its new Personal Finance tool",
+   "ufficiale": false,
+   "data": "2026-11-05"
+  },
+  {
+   "nome": "ZDNet",
+   "url": "https://www.zdnet.com/innovation/personal-finance-claude-anthropic/",
+   "titolo": "Claude’s new Personal Finance tool aims to help analyze your spending – read-only, of course",
+   "ufficiale": false,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 2
+}
