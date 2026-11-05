@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-05-google-ai-launches-agile-deliberation-framework-for-subjective-image-c",
+ "titolo": "Google AI launches Agile Deliberation framework for subjective image classification",
+ "descr": "The new human‑in‑the‑loop system boosts F1 scores by about 10 points on gray‑area concepts like healthy food and clickbait.",
+ "tema": "Research",
+ "paragrafi": [
+  "Google Research released Agile Deliberation, a framework that helps users define vague image categories through an interactive workflow.",
+  "Agile Deliberation splits the process into concept scoping, where users break a broad idea into up to three sub‑concepts, and concept iteration, which retrieves borderline images and refines prompts based on user feedback.",
+  "The code and algorithms are open‑sourced on GitHub, and a demo notebook walks through the healthy‑food example, requiring a Gemini API key."
+ ],
+ "perche": [
+  "The framework reduces manual effort and fatigue when building classifiers for subjective categories, making it easier for developers to create aligned vision models without large label sets. For users of free or locally hosted models, Agile Deliberation shows how a human‑in‑the‑loop approach can improve performance without needing massive datasets or fine‑tuning."
+ ],
+ "pubblicato": "2026-11-05",
+ "titoloFonte": "Google AI Research Releases Agile Deliberation Framework for Gray-Area Image Classifiers",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/04/google-agile-deliberation-subjective-image-classifiers/",
+   "titolo": "Google AI Research Releases Agile Deliberation Framework for Gray-Area Image Classifiers",
+   "ufficiale": false,
+   "data": "2026-11-05"
+  },
+  {
+   "nome": "research.google",
+   "url": "https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas/",
+   "titolo": "Agile Deliberation: How AI helps humans define the gray areas",
+   "ufficiale": true,
+   "data": "2026-11-04"
+  }
+ ],
+ "frasiTolte": 2
+}

@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-05-openai-s-autonomous-pipeline-patches-948-linux-kernel-privilege-escala",
+ "titolo": "OpenAI's autonomous pipeline patches 948 Linux kernel privilege‑escalation bugs",
+ "descr": "OpenAI created a self‑running system that identified, validated and fixed 948 local privilege‑escalation flaws in the Linux kernel.",
+ "tema": "Research",
+ "paragrafi": [
+  "OpenAI announced a new autonomous pipeline that targets security flaws in the Linux kernel.",
+  "The system discovered 948 local privilege‑escalation vulnerabilities, a class of bugs that allow attackers to gain higher system rights.",
+  "After finding the issues, the pipeline validated each one and generated patches to fix them.",
+  "OpenAI’s effort reduces the number of vulnerable code paths, improving the overall security of Linux distributions.",
+  "The work demonstrates how AI can be applied to large‑scale software security tasks."
+ ],
+ "perche": [
+  "For AI users, the project shows that automated AI tools can enhance system security without human intervention. For developers of free or locally run models, it highlights a benchmark for applying AI to code analysis and patch generation."
+ ],
+ "pubblicato": "2026-11-05",
+ "titoloFonte": "A thousand fewer paths to root",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+   "titolo": "A thousand fewer paths to root",
+   "ufficiale": true,
+   "data": "2026-11-04"
+  }
+ ],
+ "frasiTolte": 0
+}

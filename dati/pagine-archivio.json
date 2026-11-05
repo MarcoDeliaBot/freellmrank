@@ -20820,6 +20820,42 @@
     "tipo": "News"
    },
    "data": "2026-11-04"
+  },
+  "/blog/news-2026-11-05-google-ai-launches-agile-deliberation-framework-for-subjective-image-c.html": {
+   "post": {
+    "slug": "news-2026-11-05-google-ai-launches-agile-deliberation-framework-for-subjective-image-c",
+    "titolo": "Google AI launches Agile Deliberation framework for subjective image classification",
+    "descr": "The new human‑in‑the‑loop system boosts F1 scores by about 10 points on gray‑area concepts like healthy food and clickbait.",
+    "data": "2026-11-05",
+    "tema": "Research",
+    "corpo": "Google Research released Agile Deliberation, a framework that helps users define vague image categories through an interactive workflow.\n\nAgile Deliberation splits the process into concept scoping, where users break a broad idea into up to three sub‑concepts, and concept iteration, which retrieves borderline images and refines prompts based on user feedback.\n\nThe code and algorithms are open‑sourced on GitHub, and a demo notebook walks through the healthy‑food example, requiring a Gemini API key.\n\n## What it means for you\n\nThe framework reduces manual effort and fatigue when building classifiers for subjective categories, making it easier for developers to create aligned vision models without large label sets. For users of free or locally hosted models, Agile Deliberation shows how a human‑in‑the‑loop approach can improve performance without needing massive datasets or fine‑tuning.\n\n## Sources\n\n- [Google AI Research Releases Agile Deliberation Framework for Gray-Area Image Classifiers](https://www.marktechpost.com/2026/11/04/google-agile-deliberation-subjective-image-classifiers/), MarkTechPost, 5 Nov 2026\n- [Agile Deliberation: How AI helps humans define the gray areas](https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas/), research.google (official), 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-05-google-ai-launches-agile-deliberation-framework-for-subjective-image-c).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-04"
+  },
+  "/blog/news-2026-11-05-nvidia-deploys-ai-factory-operations-agent-on-dgx-h100-b200-gb300-clus.html": {
+   "post": {
+    "slug": "news-2026-11-05-nvidia-deploys-ai-factory-operations-agent-on-dgx-h100-b200-gb300-clus",
+    "titolo": "NVIDIA Deploys AI Factory Operations Agent on DGX H100, B200, GB300 Clusters",
+    "descr": "NVIDIA announced an AI Factory Operations Agent that runs on‑premises across its DGX H100, DGX B200, and DGX GB300 production clusters.",
+    "data": "2026-11-05",
+    "tema": "Software",
+    "corpo": "NVIDIA announced an AI Factory Operations Agent that runs on‑premises across its DGX H100, DGX B200, and DGX GB300 production clusters.\n\nThe agent follows the NemoClaw blueprint, uses OpenShell for sandboxed execution, and relies on locally served Nemotron open models for inference.\n\nSpecialized sub‑agents cover domains such as Job Recovery, Hardware, Observability, Research, Kubernetes, and Cluster Management, communicating via the Model Context Protocol (MCP).\n\nUsers interact through a chat interface that routes queries to the appropriate domain agent, presenting recommendations and audit trails for site reliability engineers.\n\nThe framework is deployed as a Kubernetes control‑plane application with Helm, and enforces security through read‑only credentials, RBAC, and per‑session sandboxing.\n\n## What it means for you\n\nFor AI operators, the agent promises faster fault diagnosis and reduced manual effort by consolidating multi‑layer data into a single chat view. For developers of free or locally hosted models, the on‑premises design showcases a path to build similar agent ecosystems without relying on cloud services.\n\n## Sources\n\n- [How NVIDIA Uses AI Agents to Streamline AI Factory Operations](https://developer.nvidia.com/blog/how-nvidia-uses-ai-agents-to-streamline-ai-factory-operations/), NVIDIA Developer (official), 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-05-nvidia-deploys-ai-factory-operations-agent-on-dgx-h100-b200-gb300-clus).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-04"
+  },
+  "/blog/news-2026-11-05-openai-s-autonomous-pipeline-patches-948-linux-kernel-privilege-escala.html": {
+   "post": {
+    "slug": "news-2026-11-05-openai-s-autonomous-pipeline-patches-948-linux-kernel-privilege-escala",
+    "titolo": "OpenAI's autonomous pipeline patches 948 Linux kernel privilege‑escalation bugs",
+    "descr": "OpenAI created a self‑running system that identified, validated and fixed 948 local privilege‑escalation flaws in the Linux kernel.",
+    "data": "2026-11-05",
+    "tema": "Research",
+    "corpo": "OpenAI announced a new autonomous pipeline that targets security flaws in the Linux kernel.\n\nThe system discovered 948 local privilege‑escalation vulnerabilities, a class of bugs that allow attackers to gain higher system rights.\n\nAfter finding the issues, the pipeline validated each one and generated patches to fix them.\n\nOpenAI’s effort reduces the number of vulnerable code paths, improving the overall security of Linux distributions.\n\nThe work demonstrates how AI can be applied to large‑scale software security tasks.\n\n## What it means for you\n\nFor AI users, the project shows that automated AI tools can enhance system security without human intervention. For developers of free or locally run models, it highlights a benchmark for applying AI to code analysis and patch generation.\n\n## Sources\n\n- [A thousand fewer paths to root](https://openai.com/index/a-thousand-fewer-paths-to-root), OpenAI (official), 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-05-openai-s-autonomous-pipeline-patches-948-linux-kernel-privilege-escala).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-04"
   }
  },
  "ricostruzione": {

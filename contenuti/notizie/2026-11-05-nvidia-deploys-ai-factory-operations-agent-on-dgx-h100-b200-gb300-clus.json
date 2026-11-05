@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-05-nvidia-deploys-ai-factory-operations-agent-on-dgx-h100-b200-gb300-clus",
+ "titolo": "NVIDIA Deploys AI Factory Operations Agent on DGX H100, B200, GB300 Clusters",
+ "descr": "NVIDIA announced an AI Factory Operations Agent that runs on‑premises across its DGX H100, DGX B200, and DGX GB300 production clusters.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced an AI Factory Operations Agent that runs on‑premises across its DGX H100, DGX B200, and DGX GB300 production clusters.",
+  "The agent follows the NemoClaw blueprint, uses OpenShell for sandboxed execution, and relies on locally served Nemotron open models for inference.",
+  "Specialized sub‑agents cover domains such as Job Recovery, Hardware, Observability, Research, Kubernetes, and Cluster Management, communicating via the Model Context Protocol (MCP).",
+  "Users interact through a chat interface that routes queries to the appropriate domain agent, presenting recommendations and audit trails for site reliability engineers.",
+  "The framework is deployed as a Kubernetes control‑plane application with Helm, and enforces security through read‑only credentials, RBAC, and per‑session sandboxing."
+ ],
+ "perche": [
+  "For AI operators, the agent promises faster fault diagnosis and reduced manual effort by consolidating multi‑layer data into a single chat view. For developers of free or locally hosted models, the on‑premises design showcases a path to build similar agent ecosystems without relying on cloud services."
+ ],
+ "pubblicato": "2026-11-05",
+ "titoloFonte": "How NVIDIA Uses AI Agents to Streamline AI Factory Operations",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/how-nvidia-uses-ai-agents-to-streamline-ai-factory-operations/",
+   "titolo": "How NVIDIA Uses AI Agents to Streamline AI Factory Operations",
+   "ufficiale": true,
+   "data": "2026-11-04"
+  }
+ ],
+ "frasiTolte": 1
+}
