@@ -24,6 +24,8 @@ export default {
   html(arg) {
     if (arg.formato === 'verticale') return verticale(arg);
     const { id, px, durata, t, etichetta, numero } = arg;
+    // con bitParla (monta.mjs, 5/11/2026) Bit è già in scena e viene qui da solo: niente secondo Bit fermo
+    const bitFermo = !arg.bitParla;
     const r1 = t('riga1', 0.15), r2 = t('riga2', durata * 0.25), m = t('marchio', durata * 0.5);
     // l'ultima riga deve restare a schermo almeno 2 secondi
     const l = Math.min(t('link', durata * 0.72), durata - 2.3);
@@ -53,7 +55,7 @@ export default {
       <div id="${px}marchio"><span id="${px}logo">${LOGO}</span><span id="${px}m1">FreeLLM</span><span id="${px}m2">Arena</span></div>
       <div id="${px}riga"></div>
       <div id="${px}indirizzo-box"><div id="${px}indirizzo">freellmarena.com</div></div>
-      <div id="${px}bit">${BIT}</div>
+      ${bitFermo ? `<div id="${px}bit">${BIT}</div>` : ''}
       <div id="${px}link"><span>link in the description</span><svg width="26" height="34" viewBox="0 0 26 34" fill="none"><path d="M13 2 V30" stroke="${C.accento}" stroke-width="2.5" stroke-linecap="round"/><path d="M3 21 L13 31 L23 21" stroke="${C.accento}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
     const anima = `
       tl.fromTo(qa(".${px}w1"), { opacity: 0, y: 46 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.14 }, ${s3(r1)});
@@ -63,7 +65,7 @@ export default {
       tl.fromTo(q("#${px}m2"), { x: 560, opacity: 0, filter: "blur(10px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 1.1, ease: "power3.out" }, ${s3(m)});
       tl.fromTo(q("#${px}logo"), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.9, ease: "power3.out" }, ${s3(m)});
       tl.fromTo(q("#${px}alone"), { opacity: 0, scale: 0.85 }, { opacity: 0.26, scale: 1, duration: 1.05, ease: "power2.out" }, ${s3(m + 0.05)});
-      tl.fromTo(q("#${px}bit"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, ${s3(m + 0.2)});
+      ${bitFermo ? `tl.fromTo(q("#${px}bit"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, ${s3(m + 0.2)});` : ''}
       tl.fromTo(q("#${px}riga"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, ${s3(l - 0.4)});
       tl.fromTo(q("#${px}indirizzo"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, ${s3(l - 0.3)});
       tl.fromTo(q("#${px}link"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, ${s3(l)});`;
@@ -72,8 +74,9 @@ export default {
 };
 
 // Short: in alto «Full story / on our channel» (solo con invito «canale»), poi il marchio, l'indirizzo e «Link in bio ↑»
-function verticale({ id, px, durata, t, etichetta, numero, dati = {} }) {
+function verticale({ id, px, durata, t, etichetta, numero, dati = {}, bitParla = false }) {
   const canale = dati.invito === 'canale';
+  const bitFermo = !bitParla;
   const m = t('marchio', canale ? durata * 0.45 : 0.2);
   const b = Math.min(t('bio', durata * 0.7), durata - 1.6);
   const c = t('canale', 0.3);
@@ -100,7 +103,7 @@ function verticale({ id, px, durata, t, etichetta, numero, dati = {} }) {
       font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 44px; letter-spacing: 0.14em; text-transform: uppercase; color: ${C.crema2}; }`;
   const corpo = `
       <div id="${px}alone"></div>
-      <div id="${px}bit">${BIT}</div>
+      ${bitFermo ? `<div id="${px}bit">${BIT}</div>` : ''}
       ${canale ? `<div id="${px}canale"><span class="${px}linea" id="${px}c1">Full story</span><span class="${px}linea ${px}linea2" id="${px}c2">on our channel</span></div>` : ''}
       <div id="${px}logo">${LOGO}</div>
       <div id="${px}marchio"><span id="${px}m1">FreeLLM</span><span id="${px}m2">Arena</span></div>
@@ -114,7 +117,7 @@ function verticale({ id, px, durata, t, etichetta, numero, dati = {} }) {
       tl.fromTo(q("#${px}m2"), { x: 420, opacity: 0, filter: "blur(10px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 1.0, ease: "power3.out" }, ${s3(m)});
       tl.fromTo(q("#${px}logo"), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.9, ease: "power3.out" }, ${s3(m)});
       tl.fromTo(q("#${px}alone"), { opacity: 0, scale: 0.85 }, { opacity: 0.26, scale: 1, duration: 1.0, ease: "power2.out" }, ${s3(m + 0.05)});
-      tl.fromTo(q("#${px}bit"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, ${s3(Math.min(c, m))});
+      ${bitFermo ? `tl.fromTo(q("#${px}bit"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, ${s3(Math.min(c, m))});` : ''}
       tl.fromTo(q("#${px}riga"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, ${s3(m + 0.6)});
       tl.fromTo(q("#${px}indirizzo"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, ${s3(m + 0.7)});
       tl.fromTo(q("#${px}bio"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, ${s3(b)});`;
