@@ -8,6 +8,7 @@ import { spawnSync } from 'node:child_process';
 import { STAMPI } from './stampi/index.mjs';
 import { parla, ascolta, allinea, quando, hf } from './voce.mjs';
 import { gruppi, composizione, srt } from './sottotitoli.mjs';
+import { composizione as bitCheParla } from './bit.mjs';
 import { C, formatoDi } from './base.mjs';
 import { fitWindow } from './tempo.mjs';
 
@@ -92,7 +93,8 @@ export async function monta(piano, dir) {
     }
     const t = (chiave, riserva) => Math.min(sc.durata - 0.6, istanti[chiave] ?? riserva);
     const id = `s${i + 1}-${sc.stampo}`;
-    const html = st.html({ id, px: `s${i + 1}-`, dati: sc.dati || {}, durata: sc.durata, t, etichetta: sc.etichetta || '', formato, numero: `${sc.n} / ${String(scene.length).padStart(2, '0')}` });
+    // bitParla: Bit è in scena per tutto il video (bit.mjs), quindi la chiusura non mette il suo
+    const html = st.html({ id, px: `s${i + 1}-`, dati: sc.dati || {}, durata: sc.durata, t, etichetta: sc.etichetta || '', formato, numero: `${sc.n} / ${String(scene.length).padStart(2, '0')}`, bitParla: true });
     sc.file = `compositions/frames/${sc.n}-${sc.stampo}.html`;
     sc.id = id;
     fs.writeFileSync(d(sc.file), html);
@@ -117,6 +119,7 @@ export async function monta(piano, dir) {
   }
   fs.writeFileSync(d('compositions/captions.html'), composizione(g, totale, formato,{teaching:piano.teaching}));
   fs.writeFileSync(d('video.srt'), srt(g));
+  fs.writeFileSync(d('compositions/bit.html'), bitCheParla(scene, totale, formato));
   // musica di sottofondo (24/10/2026 sera, Marco: rimetterla): generata qui da musica.py, più presente negli Short,
   // bassa nei video lunghi; piano.musica = 'calma' | 'vivace' | 'nessuna'. Se Python o numpy mancano, video senza musica
   const stile = piano.musica || (formato === 'verticale' ? 'vivace' : 'calma');
@@ -169,6 +172,7 @@ function indice(scene, totale, { W, H }, musica = false) {
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="${totale}" data-width="${W}" data-height="${H}">${pezzi}
       <div id="el-captions" class="scene" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="${totale}" data-track-index="2" data-track-kind="captions"></div>
+      <div id="el-bit" class="scene" data-composition-id="bit" data-composition-src="compositions/bit.html" data-start="0" data-duration="${totale}" data-track-index="3"></div>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
