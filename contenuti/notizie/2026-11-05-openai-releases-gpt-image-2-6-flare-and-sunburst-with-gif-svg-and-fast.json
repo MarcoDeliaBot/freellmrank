@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-05-openai-releases-gpt-image-2-6-flare-and-sunburst-with-gif-svg-and-fast",
+ "titolo": "OpenAI releases GPT-Image-2.6 Flare and Sunburst with GIF, SVG and faster generation",
+ "descr": "The new GPT-Image-2.6 models add animated GIF output, SVG export and a complexity setting, claiming 50% faster image creation.",
+ "tema": "Software",
+ "paragrafi": [
+  "OpenAI announced GPT-Image-2.6 on November 5, 2026, offering two API models: Flare for quick iteration and Sunburst for higher‑quality compositions.",
+  "Both models accept text and image inputs and can return images, GIFs and SVG files. Flare can produce a low‑quality image in as little as six seconds.",
+  "A new complexity parameter lets developers choose low, medium or high planning depth; higher settings may add latency but cost nothing extra.",
+  "Pricing remains token‑based: $5 per 1M text tokens, $8 per 1M image input tokens and $30 per 1M image output tokens, identical for Flare and Sunburst.",
+  "OpenAI reports that weekly image generation across ChatGPT and the API has risen to over 4 billion, up from more than 3 billion eight weeks earlier."
+ ],
+ "perche": [
+  "The added GIF and SVG capabilities simplify creation of animated and scalable graphics without extra processing steps, benefiting developers of UI assets and social media content. Users seeking free or locally hosted models still lack an on‑premise option, as GPT-Image-2.6 runs only on OpenAI’s infrastructure."
+ ],
+ "pubblicato": "2026-11-05",
+ "titoloFonte": "OpenAI Launches GPT-Image-2.6 Flare and Sunburst: Adds GIFs, SVG Export and 6-Second API Generation",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/04/openai-gpt-image-2-6-flare-sunburst/",
+   "titolo": "OpenAI Launches GPT-Image-2.6 Flare and Sunburst: Adds GIFs, SVG Export and 6-Second API Generation",
+   "ufficiale": false,
+   "data": "2026-11-05"
+  },
+  {
+   "nome": "developers.openai.com",
+   "url": "https://developers.openai.com/api/docs/models/gpt-image-2.6-flare",
+   "titolo": "GPT-Image-2.6 Flare Model | OpenAI API",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 0
+}

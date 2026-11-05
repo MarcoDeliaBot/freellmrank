@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-05-apple-reduces-internal-ai-daily-token-budget-from-300-to-200-plans-fur",
+ "titolo": "Apple reduces internal AI daily token budget from $300 to $200, plans further cuts",
+ "descr": "Apple lowered its engineering teams' AI spending cap to $200 per day and may drop limits to $100 or $25 for other groups.",
+ "tema": "Business",
+ "paragrafi": [
+  "Apple announced a reduction in the daily token budget allocated to its engineers for AI services, cutting the limit from $300 to $200.",
+  "Bloomberg reports that additional reductions are being considered, with some teams potentially receiving only $100 per day and non‑technical groups as low as $25.",
+  "Employees can request exceptions from management if higher usage is needed, and the company encourages a shift toward cheaper models or on‑device AI.",
+  "The cuts align with CEO John Ternus' push for a leaner operation, even as Apple’s overall R&D spending rose 32 percent in fiscal year 2026 due to higher infrastructure and AI costs."
+ ],
+ "perche": [
+  "The tighter caps may limit how frequently engineers can experiment with large language models, encouraging more efficient or local AI use. Users of free or locally run models could see increased interest as companies seek lower‑cost alternatives."
+ ],
+ "pubblicato": "2026-11-05",
+ "titoloFonte": "Apple slashes internal AI budgets, with deeper cuts still planned",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/apple-slashes-internal-ai-budgets-with-deeper-cuts-still-planned/",
+   "titolo": "Apple slashes internal AI budgets, with deeper cuts still planned",
+   "ufficiale": false,
+   "data": "2026-11-05"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/",
+   "titolo": "Apple is reportedly cutting budgets for its internal AI usage",
+   "ufficiale": false,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 1
+}

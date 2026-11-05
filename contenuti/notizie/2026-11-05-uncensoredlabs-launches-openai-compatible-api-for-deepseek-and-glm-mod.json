@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-05-uncensoredlabs-launches-openai-compatible-api-for-deepseek-and-glm-mod",
+ "titolo": "UncensoredLabs launches OpenAI‑compatible API for DeepSeek and GLM models",
+ "descr": "The new API offers six text models with per‑token pricing, trial credits and streaming support.",
+ "tema": "Software",
+ "paragrafi": [
+  "UncensoredLabs released an OpenAI‑compatible API that gives access to DeepSeek and GLM text models, including abliterated and uncensored variants.",
+  "The catalog lists six models, each with a 65,536‑token context (130,000 for glm-5.3‑abliterated) and per‑million‑token rates ranging from $0.30 to $1.40.",
+  "New accounts receive $0.10 in trial credits; prepaid top‑ups start at $3. The API supports streaming, function calls and Python or TypeScript SDK examples.",
+  "All models support text generation, streaming and function tools, though catalog inclusion does not guarantee current health.",
+  "The service is independent of OpenAI, DeepSeek and Zhipu AI, and the repository is MIT‑licensed."
+ ],
+ "perche": [
+  "The API gives developers a low‑cost alternative to commercial LLM services, especially for tasks that benefit from reduced refusal behavior. Free‑model users can compare it with top community models such as GLM‑5.3 (Max) and DeepSeek‑V4.1‑Flash, while paid‑model users may weigh the trial credits and per‑token pricing against higher‑tier offerings."
+ ],
+ "pubblicato": "2026-11-05",
+ "titoloFonte": "UncensoredLabs/uncensored-ai-api: Uncensored AI API and browser chat: DeepSeek and GLM models, streaming, Python and TypeScript examples, pricing and setup guides.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/UncensoredLabs/uncensored-ai-api",
+   "titolo": "UncensoredLabs/uncensored-ai-api: Uncensored AI API and browser chat: DeepSeek and GLM models, streaming, Python and TypeScript examples, pricing and setup guides.",
+   "ufficiale": false,
+   "data": "2026-11-01"
+  }
+ ],
+ "frasiTolte": 0
+}
