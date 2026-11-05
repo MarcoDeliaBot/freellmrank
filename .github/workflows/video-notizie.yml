@@ -126,6 +126,9 @@ jobs:
             # la notizia (o la guida) da cui nasce il piano
             if [ "$tipo" = "guida" ]; then sorgente="$valore"; else sorgente="contenuti/notizie/$(node -p "require('./video/brag/info-notizia.json').notizia").json"; fi
             node script/video-hf/piano.mjs "$sorgente" "video/hf/piano-$nome.json"
+            # 5/11/2026: foto della pagina e immagini vere della fonte (solo fonti ufficiali o GitHub, mai giornali);
+            # se non riesce il piano resta com'era (script/video-hf/media-fonte.mjs)
+            [ "$tipo" = "notizia" ] && { node script/video-hf/media-fonte.mjs "$sorgente" "video/hf/media-$nome" "video/hf/piano-$nome.json" || true; }
             rm -rf "video/hf/$nome"
             node script/video-hf/monta.mjs "video/hf/piano-$nome.json" "video/hf/$nome"
             d="video/esito/$nome"; mkdir -p "$d"
