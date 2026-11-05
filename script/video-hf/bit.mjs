@@ -147,6 +147,8 @@ export function composizione(scene, durata, formato = 'orizzontale') {
     const coppia = scegli(sc, i, prima);
     prima = coppia[0];
     return { inizio: sc.inizio, faccia: coppia[0], posa: coppia[1], chiusura: sc.stampo === 'chiusura',
+      // bocca dal volume vero della voce (bocca.mjs); senza, come prima dai tempi delle parole
+      bocca: sc.bocca ? sc.bocca.map(([a, b]) => [+(a + sc.inizio).toFixed(3), +(b + sc.inizio).toFixed(3)]) : null,
       parole: sc.parole.map((w) => [+(w.start + sc.inizio).toFixed(3), +(w.end + sc.inizio).toFixed(3)]) };
   });
   return `<template id="bit-template" data-composition-id="bit" data-width="${W}" data-height="${H}">
@@ -201,7 +203,15 @@ export function composizione(scene, durata, formato = 'orizzontale') {
       if (sc.chiusura) tl.to(el("bit-posto"), { x: MOSSA.x, y: MOSSA.y, scale: MOSSA.scale, duration: 0.7, ease: "power3.inOut" }, t0);
       // la bocca: aperta e chiusa sulle parole (nelle parole lunghe si apre e si chiude più volte)
       var chiusa = el("bit-chiusa-" + sc.faccia), apri = el("bit-aperta-" + sc.faccia);
-      sc.parole.forEach(function (w) {
+      if (sc.bocca) sc.bocca.forEach(function (w) {
+        var a = Math.max(t0, w[0]), b = Math.min(fine, w[1]);
+        if (b - a < 0.05) return;
+        tl.set(apri, { visibility: "visible" }, a);
+        tl.set(chiusa, { visibility: "hidden" }, a);
+        tl.set(apri, { visibility: "hidden" }, b);
+        tl.set(chiusa, { visibility: "visible" }, b);
+      });
+      else sc.parole.forEach(function (w) {
         var a = Math.max(t0, w[0]), b = Math.min(fine, Math.max(w[1], a + 0.08));
         for (var t = a; t < b - 0.04; t += 0.2) {
           tl.set(apri, { visibility: "visible" }, t);
