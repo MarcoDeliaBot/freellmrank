@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-05-meta-buys-ai-coding-startup-conductor-expands-its-coding-agent-platfor",
+ "titolo": "Meta buys AI coding startup Conductor, expands its coding‑agent platform",
+ "descr": "Meta acquires Conductor, whose Mac app runs multiple coding agents, with cloud services ending in November and a new interface planned for early 2027.",
+ "tema": "Business",
+ "paragrafi": [
+  "Meta Platforms announced on November 4, 2026 that it has acquired Conductor, an AI coding startup founded in 2024. The deal was first reported by Axios and confirmed by Meta, though the financial terms were not disclosed.",
+  "Conductor’s software lets developers run several coding agents in parallel, each in an isolated copy of a codebase. Users pay for the agents with their own subscriptions and API keys.",
+  "The desktop app runs on Macs, while Conductor Cloud places agents in sandboxed virtual machines that can operate for hours. Users can monitor cloud workspaces from an iPhone app. The cloud service will become read‑only on November 13 and shut down on November 20, after which user data will be deleted.",
+  "More than 100,000 people use Conductor. The startup raised a $22 million Series A round in March from Spark Capital, Matrix, Y Combinator and other backers. Local copies of the Mac app will continue to work until early 2027, when a new, undisclosed interface is expected.",
+  "Meta’s acquisition follows its recent AI releases, including Muse Spark Open on October 15 and the closed‑source Muse Wonder models. The same day, OpenAI announced plans to acquire developer‑tools startup Pierre Computer."
+ ],
+ "perche": [
+  "Existing Conductor users must export their cloud work or move it to local machines before November 20, and they will lose new updates after early 2027. Developers looking for free or locally hosted alternatives can consider top free chat models such as Kimi K3, GLM‑5.3 or DeepSeek‑V4.1‑Flash, while Meta’s own Muse coding agents may become a new option for those staying within the Meta ecosystem."
+ ],
+ "pubblicato": "2026-11-05",
+ "titoloFonte": "Meta acquires AI coding startup Conductor, whose app runs several coding agents at once",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/04/meta-acquires-ai-coding-startup-conductor-whose-app-runs-several-coding-agents-at-once/",
+   "titolo": "Meta acquires AI coding startup Conductor, whose app runs several coding agents at once",
+   "ufficiale": false,
+   "data": "2026-11-04"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/",
+   "titolo": "Meta acquires AI coding startup Conductor",
+   "ufficiale": false,
+   "data": "2026-11-04"
+  }
+ ],
+ "frasiTolte": 1
+}
