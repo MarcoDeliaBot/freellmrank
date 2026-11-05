@@ -13,11 +13,20 @@ export function pianoBreve(lungo) {
   const apertura = scene[0];
   const altre = scene.slice(1);
   const forte = PREFERENZA.map((st) => altre.find((s) => s.stampo === st)).find(Boolean);
+  // 5/11/2026: le scene con le immagini vere della fonte (media-fonte.mjs) vanno anche nello Short: la pagina dopo
+  // l'apertura (nella foto stretta, come sul telefono), le immagini dopo la scena forte
+  const media = altre.filter((s) => s.media);
+  const verticale = (s) => (s.dati?.mediaVerticale
+    ? { ...s, dati: { ...s.dati, media: s.dati.mediaVerticale, rapporto: s.dati.rapportoVerticale } }
+    : s.stampo === 'immagine' ? { ...s, dati: { ...s.dati, cornice: Math.min(Number(s.dati.rapporto) || 1.78, 1.3) } }
+    // nello Short la griglia tiene 2 immagini, una sopra l'altra: con 4 erano piccole e mezza pagina restava vuota
+    : s.stampo === 'griglia' ? { ...s, dati: { ...s.dati, immagini: s.dati.immagini.slice(0, 2) } } : s);
   return {
     formato: 'verticale',
     copertina: 0,
     notizia: lungo.notizia,
-    scene: [apertura, ...(forte ? [forte] : []), { stampo: 'chiusura', etichetta: 'FreeLLMArena', dati: { invito: 'canale' } }],
+    scene: [apertura, ...media.slice(0, 1).map(verticale), ...(forte ? [forte] : []), ...media.slice(1, 2).map(verticale),
+      { stampo: 'chiusura', etichetta: 'FreeLLMArena', dati: { invito: 'canale' } }],
   };
 }
 
