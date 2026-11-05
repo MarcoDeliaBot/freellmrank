@@ -9,6 +9,7 @@ import { STAMPI } from './stampi/index.mjs';
 import { parla, ascolta, allinea, quando, hf } from './voce.mjs';
 import { gruppi, composizione, srt } from './sottotitoli.mjs';
 import { composizione as bitCheParla } from './bit.mjs';
+import { aperture } from './bocca.mjs';
 import { C, formatoDi } from './base.mjs';
 import { fitWindow } from './tempo.mjs';
 
@@ -24,11 +25,14 @@ export async function monta(piano, dir) {
   for (const f of ['Source_Serif_4.ttf', 'JetBrains_Mono.ttf']) fs.copyFileSync(path.join(QUI, 'fonti', f), d('assets/fonts', f));
   // immagini e clip delle scene «immagine» (26/10/2026): il piano dà il percorso del file, lo stampo usa assets/media/<nome>
   for (const sc of piano.scene) {
-    const m = sc.dati?.media;
-    if (typeof m !== 'string' || !m) continue;
-    if (!fs.existsSync(m)) throw new Error(`File della scena immagine non trovato: ${m}`);
-    fs.mkdirSync(d('assets/media'), { recursive: true });
-    fs.copyFileSync(m, d('assets/media', path.basename(m)));
+    // anche le immagini della «griglia» (5/11/2026)
+    const tutti = [sc.dati?.media, ...(Array.isArray(sc.dati?.immagini) ? sc.dati.immagini.map((x) => x?.media) : [])];
+    for (const m of tutti) {
+      if (typeof m !== 'string' || !m) continue;
+      if (!fs.existsSync(m)) throw new Error(`File della scena immagine non trovato: ${m}`);
+      fs.mkdirSync(d('assets/media'), { recursive: true });
+      fs.copyFileSync(m, d('assets/media', path.basename(m)));
+    }
   }
 
   // 1. voce e tempi, scena per scena
@@ -57,7 +61,9 @@ export async function monta(piano, dir) {
     }
     const parole = allinea(testo, ascolta(wav, d('lavoro', `t${n}`)), durVoce);
     const durata = fixed ?? +Math.max(4, durVoce + CODA).toFixed(3);
-    const out = { ...sc, n, testo, wav: `assets/voice/${n}.wav`, durVoce, durata, timingFit:fit, inizio: +inizio.toFixed(3), parole };
+    // bocca di Bit dal volume vero della voce (bocca.mjs), mai oltre la fine dell'audio
+    const bocca = aperture(wav).filter(([a]) => a < durVoce).map(([a, b]) => [a, Math.min(b, durVoce)]);
+    const out = { ...sc, n, testo, wav: `assets/voice/${n}.wav`, durVoce, durata, timingFit:fit, inizio: +inizio.toFixed(3), parole, bocca };
     inizio += durata;
     return out;
   });

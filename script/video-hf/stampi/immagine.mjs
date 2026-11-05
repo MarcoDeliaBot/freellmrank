@@ -21,6 +21,8 @@ export default {
     if (typeof dati.media !== 'string' || !/\.(mp4|jpg|jpeg|png|webp)$/i.test(dati.media)) p.push('media deve essere un file .mp4, .jpg, .png o .webp');
     const r = Number(dati.rapporto ?? 16 / 9);
     if (!(r >= 0.5 && r <= 4)) p.push(`rapporto fuori misura (${dati.rapporto})`);
+    // cornice (5/11/2026): forma della cornice diversa dal file, per avere immagini più grandi nello Short (il file si ritaglia)
+    if (dati.cornice != null && !(Number(dati.cornice) >= 0.5 && Number(dati.cornice) <= 4)) p.push(`cornice fuori misura (${dati.cornice})`);
     const di = testo(dati.didascalia), cr = testo(dati.credito);
     if (!di) p.push('didascalia mancante');
     else if (di.length > MAX_DIDASCALIA) p.push(`didascalia troppo lunga (${di.length} > ${MAX_DIDASCALIA})`);
@@ -33,7 +35,7 @@ export default {
   html({ id, px, dati, durata, t, etichetta, numero, formato = 'orizzontale' }) {
     const { W, fondo, margine: M } = formatoDi(formato);
     const vert = formato === 'verticale';
-    const r = Number(dati.rapporto ?? 16 / 9);
+    const r = Number(dati.cornice ?? dati.rapporto ?? 16 / 9);
     // la cornice più grande che sta fra la barra e la didascalia, col rapporto del file
     const alto = vert ? 230 : 160;
     const spazioTesti = vert ? 260 : 170;
