@@ -259,5 +259,17 @@
  "chiranko/PKU-KCL-Meteor-0.8B": "cc-by-nc-4.0",
  "PelaAI/KnowLine-0.8B-Gen1": "apache-2.0",
  "newsbang/adjudex-0.8b": "apache-2.0",
- "Ajeet-001/embeddinggemma2-decision-router": "other"
+ "Ajeet-001/embeddinggemma2-decision-router": "other",
+ "decisionmodels/REAX-1.3": "apache-2.0",
+ "fastino/GLiDE-27B": "other",
+ "PelaAI/KnowLine-31B-Gen1.5": "apache-2.0",
+ "1000luca/FlexDM-LoRA-v2.1": "cc-by-sa-4.0",
+ "fastino/GLiDE-9B": "other",
+ "h2oai/h2o-lightning-bolt-74b": "other",
+ "newsbang/adjudex-9b-v2": "apache-2.0",
+ "WangSenQWQ/Senova-4B-v4": "apache-2.0",
+ "fastino/GLiDE-2B": "other",
+ "fastino/GLiDE-0.8B": "other",
+ "fastino/GLiDE-0.4B": "other",
+ "GyrTechnology/saif-0.8-lightening": "cc-by-nc-4.0"
 }

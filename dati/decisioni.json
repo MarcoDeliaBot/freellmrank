@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-04",
+ "aggiornato": "2026-11-06",
  "suite": {
   "versione": "decision-index-0.3",
   "test": 42,
@@ -47,62 +47,108 @@
  },
  "modelli": [
   {
-   "id": "knowline-31b-gen1",
-   "nome": "KnowLine 31B Gen1",
+   "id": "reax-1.3",
+   "nome": "REAX 1.3",
+   "org": "",
+   "tipo": "inference technique",
+   "b": 57.4,
+   "stimato": false,
+   "repo": "decisionmodels/REAX-1.3",
+   "base": null,
+   "nota": null,
+   "punti": 73.98,
+   "pubblico": 73.71,
+   "ms": 245.9,
+   "p95": 2683.7,
+   "ece": 0.0179,
+   "acc": 0.8195,
+   "aree": {
+    "knowledge": 65,
+    "language": 75.5,
+    "retrieval": 73.6,
+    "tools": 88.7,
+    "arts": 64.5
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "glide-v1.2.1-loop",
+   "nome": "GLiDE 27B",
+   "org": "Fastino",
+   "tipo": "full fine-tune",
+   "b": 26.1,
+   "stimato": false,
+   "repo": "fastino/GLiDE-27B",
+   "base": "Qwen/Qwen3.8-27B",
+   "nota": null,
+   "punti": 73.37,
+   "pubblico": 72.49,
+   "ms": 122.4,
+   "p95": 1545.1,
+   "ece": 0.0209,
+   "acc": 0.8216,
+   "aree": {
+    "knowledge": 62.3,
+    "language": 75.8,
+    "retrieval": 72.8,
+    "tools": 87.3,
+    "arts": 62.6
+   },
+   "vision": null,
+   "licenza": "other"
+  },
+  {
+   "id": "knowline-31b-gen1.5",
+   "nome": "KnowLine 31B Gen1.5",
    "org": "PelaAI",
    "tipo": "LoRA",
    "b": 31.3,
    "stimato": false,
-   "repo": "PelaAI/KnowLine-31B-Gen1",
+   "repo": "PelaAI/KnowLine-31B-Gen1.5",
    "base": "google/gemma-4-31B-it",
    "nota": null,
-   "punti": 71.86,
-   "pubblico": 70.13,
-   "ms": 203.7,
-   "p95": 1822,
-   "ece": 0.0321,
-   "acc": 0.7973,
+   "punti": 71.91,
+   "pubblico": 70.5,
+   "ms": 202.4,
+   "p95": 2633.4,
+   "ece": 0.0325,
+   "acc": 0.7989,
    "aree": {
     "knowledge": 59.4,
-    "language": 72,
-    "retrieval": 73,
-    "tools": 84.7,
+    "language": 72.8,
+    "retrieval": 73.2,
+    "tools": 85.4,
     "arts": 60.5
    },
-   "vision": {
-    "punti": 65.2,
-    "ms": 1637.8
-   },
+   "vision": null,
    "licenza": "apache-2.0"
   },
   {
-   "id": "glide-v1.2",
-   "nome": "Fastino GLiDE 1.2",
-   "org": "Fastino",
-   "tipo": "full fine-tune",
-   "b": 27.8,
+   "id": "flexdm-lora-2.1-gemma-4-31b",
+   "nome": "FlexDM-LoRA 2.1 · Gemma-4-31B",
+   "org": "",
+   "tipo": "LoRA",
+   "b": 31.3,
    "stimato": false,
-   "repo": "fastino/GLiDE",
-   "base": "Qwen/Qwen3.8-27B",
+   "repo": "1000luca/FlexDM-LoRA-v2.1",
+   "base": "google/gemma-4-31B-it",
    "nota": null,
-   "punti": 71.52,
-   "pubblico": 71.99,
-   "ms": 92.9,
-   "p95": 1121.1,
-   "ece": 0.0204,
-   "acc": 0.8149,
+   "punti": 71.61,
+   "pubblico": 68.99,
+   "ms": 155,
+   "p95": 1695,
+   "ece": 0.0536,
+   "acc": 0.7787,
    "aree": {
-    "knowledge": 60.6,
-    "language": 75.5,
-    "retrieval": 72.2,
-    "tools": 88,
-    "arts": 62.6
+    "knowledge": 58,
+    "language": 71.3,
+    "retrieval": 71,
+    "tools": 86,
+    "arts": 56.1
    },
-   "vision": {
-    "punti": 71.5,
-    "ms": 346.6
-   },
-   "licenza": "other"
+   "vision": null,
+   "licenza": "cc-by-sa-4.0"
   },
   {
    "id": "sieve-31b-v3",
@@ -373,10 +419,7 @@
     "tools": 81.8,
     "arts": 57.7
    },
-   "vision": {
-    "punti": 70.6,
-    "ms": 343.7
-   },
+   "vision": null,
    "licenza": "apache-2.0"
   },
   {
@@ -1210,6 +1253,32 @@
    "licenza": null
   },
   {
+   "id": "glide-9b",
+   "nome": "GLiDE 9B",
+   "org": "Fastino",
+   "tipo": "full fine-tune",
+   "b": 7.9,
+   "stimato": false,
+   "repo": "fastino/GLiDE-9B",
+   "base": "Qwen/Qwen3.5-9B",
+   "nota": null,
+   "punti": 62.48,
+   "pubblico": 68.77,
+   "ms": 86,
+   "p95": 975.6,
+   "ece": 0.0169,
+   "acc": 0.7946,
+   "aree": {
+    "knowledge": 51.7,
+    "language": 72.9,
+    "retrieval": 71.8,
+    "tools": 87.8,
+    "arts": 61.5
+   },
+   "vision": null,
+   "licenza": "other"
+  },
+  {
    "id": "cerno-27b",
    "nome": "Cerno 27B",
    "org": "",
@@ -1866,6 +1935,35 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "h2o-lightning-bolt-74b-v1.1",
+   "nome": "H2O Lightning Bolt 74B v1.1",
+   "org": "H2O.ai",
+   "tipo": "full fine-tune",
+   "b": 74,
+   "stimato": false,
+   "repo": "h2oai/h2o-lightning-bolt-74b",
+   "base": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+   "nota": null,
+   "punti": 58.42,
+   "pubblico": 65.51,
+   "ms": 290,
+   "p95": 1227.1,
+   "ece": 0.031,
+   "acc": 0.7912,
+   "aree": {
+    "knowledge": 50.4,
+    "language": 68.1,
+    "retrieval": 63.3,
+    "tools": 88.3,
+    "arts": 60.7
+   },
+   "vision": {
+    "punti": 63.5,
+    "ms": 142.3
+   },
+   "licenza": "other"
+  },
+  {
    "id": "startlux-decision-v1.1-9b-instant",
    "nome": "StartLux-Decision v1.1 9B",
    "org": "StartLux",
@@ -1996,6 +2094,32 @@
     "punti": 63.6,
     "ms": 218.1
    },
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "adjudex-9b-v2",
+   "nome": "Adjudex-9B v2",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 8.4,
+   "stimato": false,
+   "repo": "newsbang/adjudex-9b-v2",
+   "base": "Qwen/Qwen3.5-9B",
+   "nota": null,
+   "punti": 57.18,
+   "pubblico": 63.52,
+   "ms": 50.2,
+   "p95": 359.7,
+   "ece": 0.0397,
+   "acc": 0.7729,
+   "aree": {
+    "knowledge": 45.4,
+    "language": 71.9,
+    "retrieval": 69.3,
+    "tools": 78.3,
+    "arts": 50
+   },
+   "vision": null,
    "licenza": "apache-2.0"
   },
   {
@@ -2534,6 +2658,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "senova-4b-v4",
+   "nome": "Senova-4B v4",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 4.5,
+   "stimato": false,
+   "repo": "WangSenQWQ/Senova-4B-v4",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 52.79,
+   "pubblico": 67.02,
+   "ms": 79.7,
+   "p95": 719.3,
+   "ece": 0.1383,
+   "acc": 0.7854,
+   "aree": {
+    "knowledge": 49.4,
+    "language": 69.5,
+    "retrieval": 72.4,
+    "tools": 86.4,
+    "arts": 59.8
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "drex-v2.0",
    "nome": "Nace.AI Drex v2.0 (35B-A3B)",
    "org": "Nace.AI",
@@ -2714,32 +2864,6 @@
    },
    "vision": null,
    "licenza": null
-  },
-  {
-   "id": "senova-4b-v3",
-   "nome": "Senova-4B v3",
-   "org": "",
-   "tipo": "full fine-tune",
-   "b": 4.5,
-   "stimato": false,
-   "repo": "WangSenQWQ/Senova-4B-v3",
-   "base": "Qwen/Qwen3.5-4B",
-   "nota": null,
-   "punti": 50.8,
-   "pubblico": 67.27,
-   "ms": 97.2,
-   "p95": 703.7,
-   "ece": 0.1266,
-   "acc": 0.7854,
-   "aree": {
-    "knowledge": 49.3,
-    "language": 70,
-    "retrieval": 73.5,
-    "tools": 86.2,
-    "arts": 59.8
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
   },
   {
    "id": "piccolo-4b",
@@ -3549,6 +3673,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "glide-2b",
+   "nome": "GLiDE 2B",
+   "org": "Fastino",
+   "tipo": "full fine-tune",
+   "b": 1.9,
+   "stimato": false,
+   "repo": "fastino/GLiDE-2B",
+   "base": "Qwen/Qwen3.5-2B",
+   "nota": null,
+   "punti": 43.72,
+   "pubblico": 60.64,
+   "ms": 36.9,
+   "p95": 204,
+   "ece": 0.066,
+   "acc": 0.7462,
+   "aree": {
+    "knowledge": 37.9,
+    "language": 63.2,
+    "retrieval": 67.6,
+    "tools": 85.7,
+    "arts": 53.2
+   },
+   "vision": null,
+   "licenza": "other"
+  },
+  {
    "id": "solomon-v11-bf16-encoding",
    "nome": "Solomon v1.1",
    "org": "Doccy Health",
@@ -4252,6 +4402,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "glide-0.8b",
+   "nome": "GLiDE 0.8B",
+   "org": "Fastino",
+   "tipo": "full fine-tune",
+   "b": 0.8,
+   "stimato": false,
+   "repo": "fastino/GLiDE-0.8B",
+   "base": "Qwen/Qwen3.5-0.8B",
+   "nota": null,
+   "punti": 36.36,
+   "pubblico": 54.32,
+   "ms": 36.7,
+   "p95": 121.5,
+   "ece": 0.076,
+   "acc": 0.7018,
+   "aree": {
+    "knowledge": 29,
+    "language": 55.7,
+    "retrieval": 63.6,
+    "tools": 80.7,
+    "arts": 49.3
+   },
+   "vision": null,
+   "licenza": "other"
+  },
+  {
    "id": "decider-4b",
    "nome": "Decider 4B",
    "org": "",
@@ -4652,6 +4828,32 @@
    },
    "vision": null,
    "licenza": "apache-2.0"
+  },
+  {
+   "id": "glide-0.4b",
+   "nome": "GLiDE 0.4B",
+   "org": "Fastino",
+   "tipo": "full fine-tune",
+   "b": 0.4,
+   "stimato": false,
+   "repo": "fastino/GLiDE-0.4B",
+   "base": "jhu-clsp/ettin-encoder-400m",
+   "nota": null,
+   "punti": 33.84,
+   "pubblico": 51.1,
+   "ms": 18.3,
+   "p95": 85.1,
+   "ece": 0.0487,
+   "acc": 0.6828,
+   "aree": {
+    "knowledge": 24.8,
+    "language": 57.5,
+    "retrieval": 58.6,
+    "tools": 73.1,
+    "arts": 47.5
+   },
+   "vision": null,
+   "licenza": "other"
   },
   {
    "id": "tev1-4b",
@@ -5256,6 +5458,32 @@
    },
    "vision": null,
    "licenza": "apache-2.0"
+  },
+  {
+   "id": "saif-0.8-lightening",
+   "nome": "Saif 0.8 Lightening v0.1 (0.8B)",
+   "org": "Gyr Technology",
+   "tipo": "full fine-tune",
+   "b": 0.8,
+   "stimato": false,
+   "repo": "GyrTechnology/saif-0.8-lightening",
+   "base": "Qwen/Qwen3.5-0.8B",
+   "nota": null,
+   "punti": 27.5,
+   "pubblico": 42.79,
+   "ms": 52.7,
+   "p95": 223.8,
+   "ece": 0.0931,
+   "acc": 0.6766,
+   "aree": {
+    "knowledge": 20.1,
+    "language": 47.1,
+    "retrieval": 53.8,
+    "tools": 54.2,
+    "arts": 47.4
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
   },
   {
    "id": "semif",
