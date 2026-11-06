@@ -793,5 +793,15 @@
   "repo": "zai-org/GLM-Image",
   "parametri": 6926882880,
   "fonte": "hf-auto"
+ },
+ "MiniMax H3": {
+  "repo": "MiniMaxAI/MiniMax-H3",
+  "parametri": 33122992896,
+  "fonte": "hf-auto"
+ },
+ "Kimi K3.1 Pro (Max)": {
+  "repo": "moonshotai/Kimi-K3.1-Pro",
+  "parametri": 2780110363392,
+  "fonte": "hf-auto"
  }
 }

@@ -2011,5 +2011,27 @@
   "contestoMax": 262144,
   "moe": false,
   "attivi": 9409813744
+ },
+ "moonshotai/Kimi-K3.1-Pro": {
+  "strati": 93,
+  "tipo": "MLA",
+  "kvPerStrato": 1152,
+  "pieni": 93,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 1048576,
+  "moe": true,
+  "attivi": 104815500032
+ },
+ "microsoft/UserLM-2.0": {
+  "strati": 32,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 32,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 131072,
+  "moe": false,
+  "attivi": 8030277632
  }
 }
