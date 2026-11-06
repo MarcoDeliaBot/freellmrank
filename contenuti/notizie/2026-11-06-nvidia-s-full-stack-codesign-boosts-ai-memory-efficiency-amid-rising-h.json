@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-06-nvidia-s-full-stack-codesign-boosts-ai-memory-efficiency-amid-rising-h",
+ "titolo": "NVIDIA’s full‑stack codesign boosts AI memory efficiency amid rising HBM pressure",
+ "descr": "The company has introduced full‑stack codesign, integrating GPUs, CPUs, networking, storage and software to use each byte of high‑bandwidth memory (HBM) more ef",
+ "tema": "Hardware",
+ "paragrafi": [
+  "The company has introduced full‑stack codesign, integrating GPUs, CPUs, networking, storage and software to use each byte of high‑bandwidth memory (HBM) more efficiently.",
+  "Techniques include the NVFP4 4‑bit format for model weights, distributing weights across up to 72 GPUs, and offloading inactive KV‑cache to lower‑cost tiers like NVIDIA CMX storage.",
+  "NVIDIA Dynamo inference software moves paused context to CMX, while the Vera CPU’s large LPDDR memory and NVLink‑C2C link provide fast access for resumed context."
+ ],
+ "perche": [
+  "For AI developers, the tighter memory hierarchy means larger models can run with lower latency and cost, especially in multi‑user settings. Users of free or locally hosted models may see slower progress as high‑end memory optimizations stay tied to NVIDIA’s ecosystem, making it harder for open‑source solutions to match the same efficiency without similar hardware support."
+ ],
+ "pubblicato": "2026-11-06",
+ "titoloFonte": "More Performance From Every Byte: How Full-Stack Codesign Solves AI’s Memory Challenge",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/memory-full-stack-codesign/",
+   "titolo": "More Performance From Every Byte: How Full-Stack Codesign Solves AI’s Memory Challenge",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 3
+}

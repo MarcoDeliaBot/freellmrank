@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-06-metr-audit-suggests-anthropic-may-have-crossed-ai-acceleration-warning",
+ "titolo": "METR audit suggests Anthropic may have crossed AI acceleration warning threshold in July 2026",
+ "descr": "Independent review finds Anthropic's model improvement rate roughly doubled, with AI tools driving most of the speedup.",
+ "tema": "Research",
+ "paragrafi": [
+  "METR, a nonprofit focused on AI safety, examined internal data from Anthropic between August 12 and October 29, 2026.",
+  "The audit shows Anthropic's model test scores grew about 1.9 times faster after October 2025 than between March 2024 and October 2025, according to the AECI metric.",
+  "Anthropic redacted much of the detailed evidence, but METR estimates that roughly 80 % of the acceleration stems from AI being used in the company's own research.",
+  "Employees reported productivity gains of up to twelve times with the latest internal model, though METR treats these self‑assessments as loose evidence.",
+  "The auditors warn that no bottlenecks were observed, leaving a significant risk that the acceleration could continue to increase over the next year."
+ ],
+ "perche": [
+  "If AI tools can double the pace of model development, progress may outstrip existing safety oversight, raising concerns for regulators and developers. Users of free or locally hosted models should watch for faster capability jumps that could affect model availability and competition."
+ ],
+ "pubblicato": "2026-11-06",
+ "titoloFonte": "METR finds Anthropic may have crossed its own AI acceleration warning threshold back in July",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/metr-finds-anthropic-may-have-crossed-its-own-ai-acceleration-warning-threshold-back-in-july/",
+   "titolo": "METR finds Anthropic may have crossed its own AI acceleration warning threshold back in July",
+   "ufficiale": false,
+   "data": "2026-11-06"
+  },
+  {
+   "nome": "metr.org",
+   "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+   "titolo": "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026 - METR",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 0
+}
