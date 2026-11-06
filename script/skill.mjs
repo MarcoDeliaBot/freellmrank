@@ -7,7 +7,7 @@ import { tutorials, existingTopics } from './skill/tutorial.mjs';
 import { render } from './skill/video.mjs';
 import { explain } from './skill/spiega.mjs';
 import { read, write, ROOT } from './skill/fonti.mjs';
-import { digest, topicExists } from './skill/verifica.mjs';
+import { digest, topicExists, releasedTopics } from './skill/verifica.mjs';
 import { plan } from './skill/video.mjs';
 import { prepareArchive } from './skill/archivio.mjs';
 import { runCandidates, finishNight } from './skill/notte.mjs';
@@ -20,6 +20,13 @@ function run(command,args) {
   const r=spawnSync(command,args,{cwd:ROOT,encoding:'utf8',timeout:300000,maxBuffer:8e6});
   if(r.status!==0)throw Error(`${command}: ${(r.stderr||r.stdout||r.error?.message||'').slice(-2000)}`);
   return r.stdout;
+}
+// 6/11/2026: «social» was released on YouTube on 3/11 but its page was never saved, so every night picked it again,
+// rendered it with a new card and the publish step refused to overwrite the release (see releasedTopics).
+function releaseTags() {
+  const r=spawnSync('gh',['release','list','--limit','1000','--json','tagName','--jq','.[].tagName'],{cwd:ROOT,encoding:'utf8',timeout:120000,maxBuffer:8e6});
+  if(r.status!==0)return null;
+  return r.stdout.split('\n').map(s=>s.trim()).filter(Boolean);
 }
 const args=process.argv.slice(2);
 const prova=args.includes('--prova') || process.env.PROVA==='true' || process.env.GITHUB_REF!=='refs/heads/main';
@@ -60,6 +67,12 @@ try {
   write('dati/skill.json',catalogue);
   if(process.env.PROVA_CATALOGO)write('video/skill-tutorial/catalogo-prima-dopo.json',auditCatalogue());
   const existing=existingTopics();
+  if(!offline) {
+    const tags=releaseTags();
+    if(!tags&&!prova)throw Error('cannot list GitHub releases: a topic already on YouTube could be picked again');
+    if(!tags)console.warn('::warning::cannot list GitHub releases; already released topics are not excluded in this trial');
+    else existing.push(...releasedTopics(tags));
+  }
   const wanted=prova?process.env.PROVA_SKILL:null;
   const eligible=catalogue.skills.filter(c=>!topicExists(c,existing)&&(!wanted||c.name===wanted));
   if(wanted&&!catalogue.audit.entries.some(e=>e.skill===wanted&&['passed','warning'].includes(e.status)))throw Error('Requested trial skill is not eligible in the measured top20');

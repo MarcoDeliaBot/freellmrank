@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { directory, growth, installFrom, licenseFrom, labelFrom, plain } from './fonti.mjs';
-import { validateCard, digest, topicExists, GENERIC } from './verifica.mjs';
+import { validateCard, digest, topicExists, GENERIC, releasedTopics } from './verifica.mjs';
 import { plan, validatePlan } from './video.mjs';
 import { skillTutorial, conflictsRecent } from './tutorial.mjs';
 import { onRequestPost } from '../../functions/api/scrivi.js';
@@ -145,4 +145,11 @@ test('the general skill fallback keeps a plain-language permissions scene',()=>{
   const card=fixture();card.security.warnings=[{reason:'remote-code-load',file:'SKILL.md',line:5}];
   const scene=plan(card,false).scene.find(s=>s.role==='limits');assert.ok(scene);
   const visible=scene.dati.testo||scene.dati.elementi.join(' ');assert.match(visible,/internet/);assert.equal(visible.includes('remote-code-load'),false);
+});
+
+test('a topic already released on YouTube counts as done even without its page (6/11/2026, social)', () => {
+  const found=releasedTopics(['video-skill-coreyhaines31-marketingskills-social','video-breve-skill-coreyhaines31-marketingskills-social','video-breve-tutorial-ollama','video-notizia-x','video-modello-y']);
+  assert.deepEqual(found.map(f=>f.slug),['coreyhaines31-marketingskills-social','coreyhaines31-marketingskills-social','ollama']);
+  assert.ok(topicExists({key:'social',titolo:'Social',slug:'coreyhaines31-marketingskills-social'},found));
+  assert.equal(topicExists({key:'seo',titolo:'SEO',slug:'coreyhaines31-marketingskills-seo-audit'},found),false);
 });
