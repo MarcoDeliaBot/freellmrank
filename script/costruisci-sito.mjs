@@ -505,6 +505,8 @@ function temaManuale(css) {
 
 // copia di sorgente/: gli import fra moduli prendono la stessa versione delle pagine
 for (const f of fs.readdirSync(SORGENTE)) {
+  // cartelle (sorgente/mascotte dal 4/11/2026): copia intera; prima copyFileSync falliva con EISDIR e fermava «Aggiorna dati»
+  if (fs.statSync(path.join(SORGENTE, f)).isDirectory()) { fs.cpSync(path.join(SORGENTE, f), path.join(SITO, f), { recursive: true }); continue; }
   // immagini e altri file binari: copia esatta
   if (!/\.(m?js|css|svg|txt)$/.test(f)) { fs.copyFileSync(path.join(SORGENTE, f), path.join(SITO, f)); continue; }
   const testo = fs.readFileSync(path.join(SORGENTE, f), 'utf8');
