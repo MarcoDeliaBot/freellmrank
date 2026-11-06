@@ -1,6 +1,7 @@
 // Scarica i voti di Arena (Hugging Face, CC-BY-4.0) e il listino OpenRouter,
 // li collega per nome e scrive sito/data.json.
 // Uso: node script/costruisci-dati.mjs [--offline]
+import { apertiCoerenti } from './aperti-coerenti.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -115,6 +116,9 @@ for (const c of CATEGORIE) {
   });
   uscita.categorie.push({ id: c.id, nome: c.nome, ...(c.scala ? { scala: c.scala } : {}), data: righe[0]?.leaderboard_publish_date, totale: modelli.length, modelli });
 }
+
+const resiAperti = apertiCoerenti(uscita.categorie, infoHf);
+if (resiAperti.length) console.log(`Licenza aperta presa da un'altra classifica Arena: ${resiAperti.join(', ')}`);
 
 // modelli gratuiti di OpenRouter, anche quelli che Arena non vota
 const SCARTA = /^openrouter\/free$|lyria|content-safety/;
