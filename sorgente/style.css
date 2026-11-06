@@ -1043,3 +1043,16 @@ dialog.cerca::backdrop{background:rgba(2,6,23,.55)}
 .skill-history figcaption { font-size: .9rem; line-height: 1.6; margin-top: .75rem; }
 .skill-status { font-weight: 600; line-height: 1.7; }
 .skill-withdrawn { border: 2px solid #de8f05; padding: 1rem; margin-bottom: 1.5rem; border-radius: .6rem; }
+/* /always-on-agents (6/11/2026): schede del comparatore */
+.agenti{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,21rem),1fr));gap:.8rem}
+.agente{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:.9rem 1rem;display:grid;gap:.55rem;align-content:start;min-width:0}
+.agente-testa{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem .6rem}
+.agente-testa h3{margin:0;font-size:1.2rem}
+.agente p{margin:0}
+.agente-righe{display:grid;gap:.4rem;border-top:1px solid var(--line);padding-top:.55rem}
+.agente-riga{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.1rem .5rem;align-items:center}
+.agente-riga>.small:not(.muted){grid-column:1/-1;color:var(--muted)}
+.agente-dati{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.25rem .7rem;margin:0;border-top:1px solid var(--line);padding-top:.55rem}
+.agente-dati dt{color:var(--muted)}
+.agente-dati dd{margin:0;overflow-wrap:anywhere}
+.agenti-filtri{margin-bottom:.6rem}
