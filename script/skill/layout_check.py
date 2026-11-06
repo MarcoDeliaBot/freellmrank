@@ -50,7 +50,12 @@ CHECK_QUALITY = r'''({w,limit,opening=false}) => {
   const [label,counter]=spans.map(e=>e.getBoundingClientRect());
   const range=document.createRange();range.selectNodeContents(spans[0]);
   const rects=[...range.getClientRects()];
-  if(rects.length>1||spans[0].scrollWidth>spans[0].clientWidth+1)issues.push('label wraps or truncates');
+  // 6/11/2026: since the logo signature (logo + "FreeLLM" + "Arena") the label has several boxes on ONE line, so
+  // count lines by vertical position, and look for clipping in every element of the label, not only the outer one.
+  const boxes=rects.filter(r=>r.width>0&&r.height>0),tall=Math.max(0,...boxes.map(r=>r.height));
+  const wraps=boxes.length>1&&Math.max(...boxes.map(r=>r.top))-Math.min(...boxes.map(r=>r.top))>tall*0.6;
+  const clipped=[spans[0],...spans[0].querySelectorAll('*')].some(e=>!(e instanceof SVGElement)&&e.scrollWidth>e.clientWidth+1);
+  if(wraps||clipped)issues.push('label wraps or truncates');
   if(label.right+24>counter.left)issues.push('label touches counter');
  }
  const leaves=[...root.querySelectorAll('*')].filter(e=>!e.children.length&&e.textContent.trim()&&!e.closest('svg')&&!e.closest('[id$="barra"]'));

@@ -46,6 +46,19 @@ class LayoutGate(unittest.TestCase):
         result=self.page.evaluate(CHECK_QUALITY,{'w':1080,'limit':1180})
         self.assertIn('label wraps or truncates',result)
 
+    # 6/11/2026: the logo signature is several boxes on one line and must pass; the same signature squeezed
+    # into a clipped first span (the old ".barra span:first-child" rule) must fail.
+    FIRMA='<span class="firma" style="display:inline-flex;align-items:center;gap:14px"><svg width="40" height="40"><rect width="40" height="40"/></svg><span style="font:600 32px Georgia">FreeLLM<span style="color:green">Arena</span></span></span>'
+
+    def test_logo_signature_on_one_line_passes(self):
+        self.page.set_content(f'<div id="test-palco"><div id="test-barra" style="display:flex;justify-content:space-between;width:936px;font:26px monospace"><span>{self.FIRMA}</span><span>01 / 07</span></div></div>')
+        self.assertNotIn('label wraps or truncates',self.page.evaluate(CHECK_QUALITY,{'w':1080,'limit':1180}))
+
+    def test_clipped_logo_signature_fails(self):
+        firma=self.FIRMA.replace('display:inline-flex','display:inline-flex;max-width:150px;overflow:hidden;white-space:nowrap')
+        self.page.set_content(f'<div id="test-palco"><div id="test-barra" style="display:flex;justify-content:space-between;width:936px;font:26px monospace"><span>{firma}</span><span>01 / 07</span></div></div>')
+        self.assertIn('label wraps or truncates',self.page.evaluate(CHECK_QUALITY,{'w':1080,'limit':1180}))
+
     def test_title_intersecting_a_body_field_is_rejected(self):
         title='<div style="position:absolute;left:72px;top:205px;width:936px;font:116px/1.1 Georgia">Need reliable browser automation?</div>'
         body='<div style="position:absolute;left:72px;top:350px;width:936px;font:46px/1.2 Georgia">Give your assistant a browser workflow.</div>'
