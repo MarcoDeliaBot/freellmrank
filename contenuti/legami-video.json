@@ -263,5 +263,13 @@
  "tutorial-how-to-use-llama-cpp-locally": {
   "lungo": "tutorial-how-to-use-llama-cpp-locally",
   "breve": "breve-tutorial-how-to-use-llama-cpp-locally"
+ },
+ "news-2026-11-05-openai-unveils-gpt-6-cyber-a-critical-level-ai-for-vulnerability-resea": {
+  "lungo": "notizia-openai-unveils-gpt-6-cyber-a-critical-level-ai-for-vulne",
+  "breve": "breve-openai-unveils-gpt-6-cyber-a-critical-level-ai-for-vulne"
+ },
+ "news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model": {
+  "lungo": "notizia-openai-adds-gif-creation-to-chatgpt-with-images-2-6-mode",
+  "breve": "breve-openai-adds-gif-creation-to-chatgpt-with-images-2-6-mode"
  }
 }
