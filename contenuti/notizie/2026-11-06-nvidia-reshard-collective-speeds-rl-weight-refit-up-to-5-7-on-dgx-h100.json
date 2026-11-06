@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100",
+ "titolo": "NVIDIA Reshard collective speeds RL weight refit up to 5.7× on DGX H100 and DGX GB200",
+ "descr": "Reshard reduces communication payload for reinforcement‑learning refit, delivering 2.7‑5.7× faster updates on large models like Qwen 3 235B and DeepSeek v3 671B.",
+ "tema": "Research",
+ "paragrafi": [
+  "Current gather‑and‑broadcast refit methods duplicate the full model tensor, creating payloads of roughly twice the model size; for the largest open‑weight models the payload reaches about 10 TB per refit.",
+  "A hybrid approach applies Reshard to the dominant feed‑forward projection weights while keeping gather‑and‑broadcast for smaller weights, preserving functional coverage.",
+  "The open‑source NCCL M2N Reshard implementation is available via the NVIDIA/nccl‑extensions GitHub repository, with documentation on supported backends, layouts, and precision modes."
+ ],
+ "perche": [
+  "For developers running reinforcement‑learning pipelines, Reshard cuts the data moved between training and inference GPUs, lowering network traffic and reducing iteration time. Users of free or locally hosted models, such as the top‑ranked Kimi K3, can benefit from faster weight updates when scaling to large model sizes, making RL experimentation more practical on existing hardware."
+ ],
+ "pubblicato": "2026-11-06",
+ "titoloFonte": "Accelerating Reinforcement Learning Weight Refit with the Reshard Collective",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/accelerating-reinforcement-learning-weight-refit-with-the-reshard-collective/",
+   "titolo": "Accelerating Reinforcement Learning Weight Refit with the Reshard Collective",
+   "ufficiale": true,
+   "data": "2026-11-06"
+  }
+ ],
+ "frasiTolte": 2
+}

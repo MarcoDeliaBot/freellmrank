@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-",
+ "titolo": "RuyiJS launches lightweight headless Firefox engine for AI-driven web automation",
+ "descr": "The open‑source ruyijs library offers a minimal Firefox‑based browser without a UI, targeting AI agents for scraping and reverse‑engineering tasks.",
+ "tema": "Software",
+ "paragrafi": [
+  "The GitHub project cutetailbud/ff-ruyijs provides a headless browser built on Firefox 159 internals, aimed at AI agents like Codex or Claude Code.",
+  "It embeds the SpiderMonkey JavaScript engine and Necko networking stack, omitting windows, rendering and GPU components to stay lightweight.",
+  "Pre‑built wheels are available for Windows x64, macOS arm64 and Linux x86_64 on PyPI, requiring Python 3.10+ and specific system libraries such as glibc 2.39 on Linux.",
+  "Each browser context runs in its own process with isolated JavaScript state and optional proxy support, allowing reproducible sessions and offline script execution.",
+  "The project is released under AGPL‑3.0; commercial or proprietary use needs a separate license, and the maintainers stress that brute‑force reverse engineering is prohibited."
+ ],
+ "perche": [
+  "For developers building AI agents, ruyijs offers a fast, low‑resource way to execute real Firefox JavaScript, improving success against anti‑bot measures. It also provides a free, open‑source option for local automation, complementing the growing ecosystem of free chat models such as Kimi K3 and GLM‑5.3."
+ ],
+ "pubblicato": "2026-11-06",
+ "titoloFonte": "cutetailbud/ff-ruyijs: This is a lightweight, headless browser purpose-built for AI agents (such as Codex or Claude Code) to perform browser automation tasks; it is designed to navigate through variou",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/cutetailbud/ff-ruyijs",
+   "titolo": "cutetailbud/ff-ruyijs: This is a lightweight, headless browser purpose-built for AI agents (such as Codex or Claude Code) to perform browser automation tasks; it is designed to navigate through variou",
+   "ufficiale": false,
+   "data": "2026-10-28"
+  }
+ ],
+ "frasiTolte": 0
+}

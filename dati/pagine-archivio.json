@@ -21375,6 +21375,42 @@
     "tipo": "News"
    },
    "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100.html": {
+   "post": {
+    "slug": "news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100",
+    "titolo": "NVIDIA Reshard collective speeds RL weight refit up to 5.7× on DGX H100 and DGX GB200",
+    "descr": "Reshard reduces communication payload for reinforcement‑learning refit, delivering 2.7‑5.7× faster updates on large models like Qwen 3 235B and DeepSeek v3 671B.",
+    "data": "2026-11-06",
+    "tema": "Research",
+    "corpo": "Current gather‑and‑broadcast refit methods duplicate the full model tensor, creating payloads of roughly twice the model size; for the largest open‑weight models the payload reaches about 10 TB per refit.\n\nA hybrid approach applies Reshard to the dominant feed‑forward projection weights while keeping gather‑and‑broadcast for smaller weights, preserving functional coverage.\n\nThe open‑source NCCL M2N Reshard implementation is available via the NVIDIA/nccl‑extensions GitHub repository, with documentation on supported backends, layouts, and precision modes.\n\n## What it means for you\n\nFor developers running reinforcement‑learning pipelines, Reshard cuts the data moved between training and inference GPUs, lowering network traffic and reducing iteration time. Users of free or locally hosted models, such as the top‑ranked Kimi K3, can benefit from faster weight updates when scaling to large model sizes, making RL experimentation more practical on existing hardware.\n\n## Sources\n\n- [Accelerating Reinforcement Learning Weight Refit with the Reshard Collective](https://developer.nvidia.com/blog/accelerating-reinforcement-learning-weight-refit-with-the-reshard-collective/), NVIDIA Developer (official), 6 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-.html": {
+   "post": {
+    "slug": "news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-",
+    "titolo": "RuyiJS launches lightweight headless Firefox engine for AI-driven web automation",
+    "descr": "The open‑source ruyijs library offers a minimal Firefox‑based browser without a UI, targeting AI agents for scraping and reverse‑engineering tasks.",
+    "data": "2026-11-06",
+    "tema": "Software",
+    "corpo": "The GitHub project cutetailbud/ff-ruyijs provides a headless browser built on Firefox 159 internals, aimed at AI agents like Codex or Claude Code.\n\nIt embeds the SpiderMonkey JavaScript engine and Necko networking stack, omitting windows, rendering and GPU components to stay lightweight.\n\nPre‑built wheels are available for Windows x64, macOS arm64 and Linux x86_64 on PyPI, requiring Python 3.10+ and specific system libraries such as glibc 2.39 on Linux.\n\nEach browser context runs in its own process with isolated JavaScript state and optional proxy support, allowing reproducible sessions and offline script execution.\n\nThe project is released under AGPL‑3.0; commercial or proprietary use needs a separate license, and the maintainers stress that brute‑force reverse engineering is prohibited.\n\n## What it means for you\n\nFor developers building AI agents, ruyijs offers a fast, low‑resource way to execute real Firefox JavaScript, improving success against anti‑bot measures. It also provides a free, open‑source option for local automation, complementing the growing ecosystem of free chat models such as Kimi K3 and GLM‑5.3.\n\n## On FreeLLMArena\n\nFrom our rankings on 6 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [cutetailbud/ff-ruyijs: This is a lightweight, headless browser purpose-built for AI agents (such as Codex or Claude Code) to perform browser automation tasks; it is designed to navigate through variou](https://github.com/cutetailbud/ff-ruyijs), GitHub trending, 28 Oct 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod.html": {
+   "post": {
+    "slug": "news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod",
+    "titolo": "Thinking Machines launches Inkling 2 Small, top western open‑weight model",
+    "descr": "Inkling 2 Small, a 594 B‑parameter mixture‑of‑experts model, scores 31 on the AI Index, outpacing Western rivals.",
+    "data": "2026-11-06",
+    "tema": "LLMs",
+    "corpo": "Thinking Machines, founded by former OpenAI CTO Mira Murati, unveiled Inkling 2 Small, a 594 billion‑parameter mixture‑of‑experts model with 17 billion active parameters per inference.\n\nThe model accepts text and image inputs, outputs only text, and scores 31 on the Artificial Analysis Intelligence Index, matching Google’s Gemini 3.8 Flash and surpassing its own predecessor by 18 points.\n\nBenchmarks show large gains in agentic tasks, with AutomationBench‑AA rising from 5 % to 46 % and FrontierCode 2.0 improving from 5 % to 25 %; hallucination rates fell from 61 % to 27 % while output tokens per task increased to about 150,000.\n\nInkling 2 Small is initially offered as a proprietary service on the Tinker platform, with plans to release its weights under an Apache 2.0 license next week; pricing is $1.18 per task, higher than its predecessor but far below Gemini 3.8 Flash ($7.77) and Claude Sonnet 5.5 ($10.02).\n\nThe release follows a trend of Western labs producing competitive open models, challenging Chinese leaders such as DeepSeek and Moonshot and narrowing the gap with closed‑source offerings from OpenAI and Anthropic.\n\n## What it means for you\n\nFor developers, Inkling 2 Small provides a high‑performing open‑weight option that can be fine‑tuned for specialized tasks, though its higher token usage and cost may limit some use cases. Free‑model enthusiasts gain a new benchmark for open‑source development, while the upcoming Apache‑licensed weights could spur community‑driven improvements and broader accessibility.\n\n## On FreeLLMArena\n\nFrom our rankings on 6 Nov 2026, based on Arena's blind votes:\n\n- [Inkling](/model/inkling.html): #18 among free chat models\n\n## Sources\n\n- [Thinking Machines’ new model takes the lead in western open-weight AI](https://www.zdnet.com/innovation/thinking-machines-inkling-2-small-open-weight/), ZDNet, 6 Nov 2026\n- [Thinking Machines' Inkling 2 Small claims top spot among western open-weight models](https://the-decoder.com/thinking-machines-inkling-2-small-claims-top-spot-among-western-open-weight-models/), The Decoder, 6 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
   }
  },
  "ricostruzione": {

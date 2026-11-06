@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod",
+ "titolo": "Thinking Machines launches Inkling 2 Small, top western open‑weight model",
+ "descr": "Inkling 2 Small, a 594 B‑parameter mixture‑of‑experts model, scores 31 on the AI Index, outpacing Western rivals.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Thinking Machines, founded by former OpenAI CTO Mira Murati, unveiled Inkling 2 Small, a 594 billion‑parameter mixture‑of‑experts model with 17 billion active parameters per inference.",
+  "The model accepts text and image inputs, outputs only text, and scores 31 on the Artificial Analysis Intelligence Index, matching Google’s Gemini 3.8 Flash and surpassing its own predecessor by 18 points.",
+  "Benchmarks show large gains in agentic tasks, with AutomationBench‑AA rising from 5 % to 46 % and FrontierCode 2.0 improving from 5 % to 25 %; hallucination rates fell from 61 % to 27 % while output tokens per task increased to about 150,000.",
+  "Inkling 2 Small is initially offered as a proprietary service on the Tinker platform, with plans to release its weights under an Apache 2.0 license next week; pricing is $1.18 per task, higher than its predecessor but far below Gemini 3.8 Flash ($7.77) and Claude Sonnet 5.5 ($10.02).",
+  "The release follows a trend of Western labs producing competitive open models, challenging Chinese leaders such as DeepSeek and Moonshot and narrowing the gap with closed‑source offerings from OpenAI and Anthropic."
+ ],
+ "perche": [
+  "For developers, Inkling 2 Small provides a high‑performing open‑weight option that can be fine‑tuned for specialized tasks, though its higher token usage and cost may limit some use cases. Free‑model enthusiasts gain a new benchmark for open‑source development, while the upcoming Apache‑licensed weights could spur community‑driven improvements and broader accessibility."
+ ],
+ "pubblicato": "2026-11-06",
+ "titoloFonte": "Thinking Machines’ new model takes the lead in western open-weight AI",
+ "fonti": [
+  {
+   "nome": "ZDNet",
+   "url": "https://www.zdnet.com/innovation/thinking-machines-inkling-2-small-open-weight/",
+   "titolo": "Thinking Machines’ new model takes the lead in western open-weight AI",
+   "ufficiale": false,
+   "data": "2026-11-06"
+  },
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/thinking-machines-inkling-2-small-claims-top-spot-among-western-open-weight-models/",
+   "titolo": "Thinking Machines' Inkling 2 Small claims top spot among western open-weight models",
+   "ufficiale": false,
+   "data": "2026-11-06"
+  }
+ ],
+ "frasiTolte": 0
+}

@@ -3360,6 +3360,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/news-2026-11-06-nvidia-s-chris-alexiuk-champions-open-nemotron-models-for-developers",
   "tipo": "articolo",
   "lingua": "en",
@@ -3404,6 +3420,38 @@
   "tipo": "articolo",
   "lingua": "en",
   "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-06",
   "stato": "attiva"
  },
@@ -11104,6 +11152,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/de/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/blog/news-2026-11-06-nvidia-s-chris-alexiuk-champions-open-nemotron-models-for-developers",
   "tipo": "articolo",
   "lingua": "de",
@@ -11148,6 +11212,38 @@
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-06",
   "stato": "attiva"
  },
@@ -26616,6 +26712,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/news-2026-11-06-nvidia-s-chris-alexiuk-champions-open-nemotron-models-for-developers",
   "tipo": "articolo",
   "lingua": "es",
@@ -26660,6 +26772,38 @@
   "tipo": "articolo",
   "lingua": "es",
   "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-06",
   "stato": "attiva"
  },
@@ -42128,6 +42272,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/blog/news-2026-11-06-nvidia-s-chris-alexiuk-champions-open-nemotron-models-for-developers",
   "tipo": "articolo",
   "lingua": "fr",
@@ -42172,6 +42332,38 @@
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-06",
   "stato": "attiva"
  },
@@ -57640,6 +57832,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/news-2026-11-06-nvidia-s-chris-alexiuk-champions-open-nemotron-models-for-developers",
   "tipo": "articolo",
   "lingua": "it",
@@ -57684,6 +57892,38 @@
   "tipo": "articolo",
   "lingua": "it",
   "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-06",
   "stato": "attiva"
  },
@@ -73152,6 +73392,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/blog/news-2026-11-06-nvidia-s-chris-alexiuk-champions-open-nemotron-models-for-developers",
   "tipo": "articolo",
   "lingua": "ja",
@@ -73196,6 +73452,38 @@
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-06",
   "stato": "attiva"
  },
@@ -96432,6 +96720,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/pt/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-06-nvidia-reshard-collective-speeds-rl-weight-refit-up-to-5-7-on-dgx-h100.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/blog/news-2026-11-06-nvidia-s-chris-alexiuk-champions-open-nemotron-models-for-developers",
   "tipo": "articolo",
   "lingua": "pt",
@@ -96476,6 +96780,38 @@
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-04",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-06-ruyijs-launches-lightweight-headless-firefox-engine-for-ai-driven-web-.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-06",
+  "ultimaVista": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-06-thinking-machines-launches-inkling-2-small-top-western-open-weight-mod.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-06",
   "stato": "attiva"
  },
