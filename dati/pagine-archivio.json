@@ -21267,6 +21267,42 @@
     "tipo": "News"
    },
    "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-06-australian-universities-expand-chatgpt-access-to-train-ai-native-gradu.html": {
+   "post": {
+    "slug": "news-2026-11-06-australian-universities-expand-chatgpt-access-to-train-ai-native-gradu",
+    "titolo": "Australian universities expand ChatGPT access to train AI‑native graduates",
+    "descr": "Universities in Australia are integrating ChatGPT into curricula to prepare students for an AI‑enabled workforce.",
+    "data": "2026-11-06",
+    "tema": "Research",
+    "corpo": "Australian higher‑education institutions are increasing the availability of ChatGPT for students.\n\nThe move aims to embed artificial intelligence tools directly into teaching and learning processes.\n\nUniversities say the initiative will help graduates develop skills needed in an AI‑driven job market.\n\nExpanding AI access aligns with broader efforts to modernise education and meet industry demand for AI‑savvy talent.\n\n## What it means for you\n\nStudents gain hands‑on experience with leading AI models, improving employability in AI‑focused roles. Educators can leverage free tools like ChatGPT to enhance instruction without relying on costly proprietary solutions.\n\n## Sources\n\n- [Australian universities are creating AI-native graduates](https://openai.com/index/australian-universities-ai-native-graduates), OpenAI (official), 5 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-06-australian-universities-expand-chatgpt-access-to-train-ai-native-gradu).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-06-nvidia-launches-open-source-dsx-os-to-certify-and-run-gpu-kubernetes-c.html": {
+   "post": {
+    "slug": "news-2026-11-06-nvidia-launches-open-source-dsx-os-to-certify-and-run-gpu-kubernetes-c",
+    "titolo": "NVIDIA launches open‑source DSX OS to certify and run GPU‑Kubernetes clusters",
+    "descr": "The DSX AI Factory Platform adds tools for configuring, certifying and operating accelerated Kubernetes clusters.",
+    "data": "2026-11-06",
+    "tema": "Guides",
+    "corpo": "NVIDIA announced the DSX AI Factory Platform, which includes an open‑source software layer called DSX OS.\n\nDSX OS bundles three projects: AI Cluster Runtime (AICR) for reproducible configuration, Cluster Readiness Engine (NVCRE) for certification, and NVSentinel for ongoing health monitoring.\n\nAICR creates version‑locked recipes that can be deployed with Argo CD, Flux or Helm, while NVCRE runs NCCL tests and training workloads to verify GPU, network and storage readiness.\n\nNVSentinel continuously watches GPU, node and network signals, can cordon or drain unhealthy nodes, and triggers revalidation with NVCRE after remediation.\n\nAll three components are released under the Apache 2.0 license and are intended to keep GPU clusters reliable throughout their lifecycle.\n\n## What it means for you\n\nFor AI practitioners, DSX OS offers a repeatable way to keep large GPU clusters healthy, reducing silent failures that waste compute. For users of free or locally hosted models, the platform could improve access to stable, certified infrastructure without relying on proprietary tooling.\n\n## Sources\n\n- [Configure, Certify, and Operate Kubernetes GPU Clusters with NVIDIA DSX OS](https://developer.nvidia.com/blog/configure-certify-and-operate-kubernetes-gpu-clusters-with-nvidia-dsx-os/), NVIDIA Developer (official), 5 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-06-nvidia-launches-open-source-dsx-os-to-certify-and-run-gpu-kubernetes-c).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-06-nvidia-s-chris-alexiuk-champions-open-nemotron-models-for-developers.html": {
+   "post": {
+    "slug": "news-2026-11-06-nvidia-s-chris-alexiuk-champions-open-nemotron-models-for-developers",
+    "titolo": "NVIDIA’s Chris Alexiuk champions open Nemotron models for developers",
+    "descr": "NVIDIA senior engineer Chris Alexiuk urges loud promotion of fully open Nemotron LLMs, highlighting models for high‑frequency tasks and autonomous agents.",
+    "data": "2026-11-06",
+    "tema": "LLMs",
+    "corpo": "NVIDIA posted a blog on Nov 5 2026 highlighting senior product research engineer Chris Alexiuk’s push for open source large language models.\n\nAlexiuk argues that fully open source AI is a precondition for democratization, insisting on access to weights, data, training recipes and everything else needed to build AI.\n\nIn the broader AI ecosystem, free‑model rankings list Kimi K3 (Max) as the top free chat model, while the leading paid chat model is Gemini 4 Carbon, showing strong demand for accessible alternatives.\n\n## What it means for you\n\nOpen Nemotron models give developers free access to weights and training details, enabling local experimentation and faster skill development. For users seeking free or locally runnable AI, the top free chat models and open Nemotron options provide viable paths without costly licenses.\n\n## Sources\n\n- [The Wizard of Open Weights: Chris Alexiuk Makes AI Easy With Open Models](https://blogs.nvidia.com/blog/nvidia-life-chris-alexiuk/), NVIDIA (official), 5 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-06-nvidia-s-chris-alexiuk-champions-open-nemotron-models-for-developers).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
   }
  },
  "ricostruzione": {

@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-06-nvidia-launches-open-source-dsx-os-to-certify-and-run-gpu-kubernetes-c",
+ "titolo": "NVIDIA launches open‑source DSX OS to certify and run GPU‑Kubernetes clusters",
+ "descr": "The DSX AI Factory Platform adds tools for configuring, certifying and operating accelerated Kubernetes clusters.",
+ "tema": "Guides",
+ "paragrafi": [
+  "NVIDIA announced the DSX AI Factory Platform, which includes an open‑source software layer called DSX OS.",
+  "DSX OS bundles three projects: AI Cluster Runtime (AICR) for reproducible configuration, Cluster Readiness Engine (NVCRE) for certification, and NVSentinel for ongoing health monitoring.",
+  "AICR creates version‑locked recipes that can be deployed with Argo CD, Flux or Helm, while NVCRE runs NCCL tests and training workloads to verify GPU, network and storage readiness.",
+  "NVSentinel continuously watches GPU, node and network signals, can cordon or drain unhealthy nodes, and triggers revalidation with NVCRE after remediation.",
+  "All three components are released under the Apache 2.0 license and are intended to keep GPU clusters reliable throughout their lifecycle."
+ ],
+ "perche": [
+  "For AI practitioners, DSX OS offers a repeatable way to keep large GPU clusters healthy, reducing silent failures that waste compute. For users of free or locally hosted models, the platform could improve access to stable, certified infrastructure without relying on proprietary tooling."
+ ],
+ "pubblicato": "2026-11-06",
+ "titoloFonte": "Configure, Certify, and Operate Kubernetes GPU Clusters with NVIDIA DSX OS",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/configure-certify-and-operate-kubernetes-gpu-clusters-with-nvidia-dsx-os/",
+   "titolo": "Configure, Certify, and Operate Kubernetes GPU Clusters with NVIDIA DSX OS",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 0
+}

@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-06-nvidia-s-chris-alexiuk-champions-open-nemotron-models-for-developers",
+ "titolo": "NVIDIA’s Chris Alexiuk champions open Nemotron models for developers",
+ "descr": "NVIDIA senior engineer Chris Alexiuk urges loud promotion of fully open Nemotron LLMs, highlighting models for high‑frequency tasks and autonomous agents.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "NVIDIA posted a blog on Nov 5 2026 highlighting senior product research engineer Chris Alexiuk’s push for open source large language models.",
+  "Alexiuk argues that fully open source AI is a precondition for democratization, insisting on access to weights, data, training recipes and everything else needed to build AI.",
+  "In the broader AI ecosystem, free‑model rankings list Kimi K3 (Max) as the top free chat model, while the leading paid chat model is Gemini 4 Carbon, showing strong demand for accessible alternatives."
+ ],
+ "perche": [
+  "Open Nemotron models give developers free access to weights and training details, enabling local experimentation and faster skill development. For users seeking free or locally runnable AI, the top free chat models and open Nemotron options provide viable paths without costly licenses."
+ ],
+ "pubblicato": "2026-11-06",
+ "titoloFonte": "The Wizard of Open Weights: Chris Alexiuk Makes AI Easy With Open Models",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/nvidia-life-chris-alexiuk/",
+   "titolo": "The Wizard of Open Weights: Chris Alexiuk Makes AI Easy With Open Models",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 2
+}
