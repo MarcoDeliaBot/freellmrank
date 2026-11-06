@@ -29,7 +29,7 @@ export default {
     const corpo=`<div id="${px}slide" data-content-area>${intro}${d.link?`<div id="${px}link" data-visual>${esc(d.testo)}</div>`:''}${d.comando?`<pre id="${px}comando" data-visual>${esc(d.comando)}</pre>`:''}${facts}${v?result:''}</div>`;
     const keys=['titolo',...(!d.link&&d.testo?['testo']:[]),...(d.comando?['comando']:[]),...(d.risultato?['risultato']:[]),...(d.link?['link']:[]),...(d.elementi||[]).map((_,i)=>`e${i}`)];
     const anima=keys.map((k,i)=>`tl.fromTo(q('#${px}${k}'),{opacity:0,y:20},{opacity:1,y:0,duration:.3,ease:'power3.out'},${s3(Math.min(i*.1,.3))});`).join('\n');
-    const header=`.${px}barra{gap:36px;letter-spacing:.08em;font-size:${v?26:28}px}.${px}barra span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(100% - 160px);flex:1}.${px}barra span:last-child{white-space:nowrap;flex:none}`;
+    const header=`.${px}barra{gap:36px;letter-spacing:.08em;font-size:${v?26:28}px}.${px}barra > span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(100% - 160px);flex:1}.${px}barra > span:last-child{white-space:nowrap;flex:none}`;
     return scena({id,px,durata,etichetta,numero,css:header+css,corpo,anima,formato});
   },
 };
