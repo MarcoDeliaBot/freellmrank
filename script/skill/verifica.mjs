@@ -107,3 +107,9 @@ export function topicExists(card, existing) {
   const norm = s => normalized(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   return existing.some(x => (x.key && norm(x.key) === norm(card.key)) || (x.slug && x.slug === card.slug) || (x.titolo && norm(x.titolo) === norm(card.titolo)));
 }
+
+// 6/11/2026: a topic that already has a video release (video-skill-<slug>, video-breve-tutorial-<slug>…) counts as done,
+// even when its page was never saved: otherwise the night renders it again and publishing refuses to overwrite it.
+export function releasedTopics(tags) {
+  return tags.map(t => /^video-(?:breve-)?(skill|tutorial)-(.+)$/.exec(t)).filter(Boolean).map(m => ({ tipo: m[1], slug: m[2] }));
+}
