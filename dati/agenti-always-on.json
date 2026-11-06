@@ -1,5 +1,5 @@
 {
-  "_nota": "Pagina /always-on-agents (6/11/2026, Marco: «Comparatore Agenti AI Always-On»). Solo fatti letti sulle fonti indicate per ogni agente il 6/11/2026; dove la fonte non lo dice: \"unclear\". Valori: yes / no / partial / unclear.",
+  "_nota": "Pagina /always-on-agents (6/11/2026, Marco: «Comparatore Agenti AI Always-On»). Solo fatti letti sulle fonti indicate per ogni agente il 6/11/2026; dove la fonte non lo dice: \"unclear\". Valori: yes / no / partial / unclear. Affidabilità (6/11): stadio e dal; per i lab aggiornato e incidenti; per gli open source commit30 (100 = 100 o più, ramo principale) e rilasci90, misurati con gh api il 6/11/2026.",
   "verificato": "2026-11-06",
   "agenti": [
     {
@@ -21,7 +21,18 @@
       "approvazioniNota": "Default rules plus Custom rules: allow, ask for approval or block an action",
       "canali": "ChatGPT (desktop, web, mobile), Slack, Microsoft Teams; texting coming",
       "punti": "Works 24/7 on its own cloud computer, voice calls, keeps context across channels, can use your laptop if you allow it",
-      "fonti": [["OpenAI: Introducing dots", "https://openai.com/index/introducing-dots/"]]
+      "fonti": [
+        [
+          "OpenAI: Introducing dots",
+          "https://openai.com/index/introducing-dots/"
+        ]
+      ],
+      "tipo": "lab",
+      "stadio": "early",
+      "stadioNota": "Rolling out to Pro and Business Premium; beta for Enterprise",
+      "dal": "2026-09-29",
+      "aggiornato": "2026-11-03",
+      "incidenti": []
     },
     {
       "id": "claude-duet",
@@ -42,7 +53,22 @@
       "approvazioniNota": "Shows what it is about to do and waits before sending, paying, signing or deleting",
       "canali": "Claude Duet app for iOS and Android, claude.ai on the web",
       "punti": "Morning brief, checks your apps every few hours, carries over your Claude memory, skills and connected apps",
-      "fonti": [["Anthropic: Introducing Claude Duet", "https://claude.com/resources/articles/claude-duet"], ["Claude Duet product page", "https://claude.com/duet"]]
+      "fonti": [
+        [
+          "Anthropic: Introducing Claude Duet",
+          "https://claude.com/resources/articles/claude-duet"
+        ],
+        [
+          "Claude Duet product page",
+          "https://claude.com/duet"
+        ]
+      ],
+      "tipo": "lab",
+      "stadio": "preview",
+      "stadioNota": "Research preview with a US waitlist",
+      "dal": "2026-10-21",
+      "aggiornato": "2026-10-21",
+      "incidenti": []
     },
     {
       "id": "grok-bot",
@@ -63,7 +89,31 @@
       "approvazioniNota": "Sensitive actions can stop for approval; “Ask first” rules",
       "canali": "Apps for macOS, Windows, Linux, iOS and Android; X, Slack, email",
       "punti": "Several bots in parallel that message each other in group chats, sharing one persistent cloud computer with browser, files and terminal",
-      "fonti": [["SpaceXSI docs: Grok Bot overview", "https://docs.x.ai/grok-bot/overview"], ["Grok Bot computer and apps", "https://docs.x.ai/grok-bot/computer-and-apps"], ["Grok Bot in the X Subscription", "https://docs.x.ai/x-subscription/grok-bot"], ["Tag @bot on X", "https://docs.x.ai/grok-bot/tag-on-x"]]
+      "fonti": [
+        [
+          "SpaceXSI docs: Grok Bot overview",
+          "https://docs.x.ai/grok-bot/overview"
+        ],
+        [
+          "Grok Bot computer and apps",
+          "https://docs.x.ai/grok-bot/computer-and-apps"
+        ],
+        [
+          "Grok Bot in the X Subscription",
+          "https://docs.x.ai/x-subscription/grok-bot"
+        ],
+        [
+          "Tag @bot on X",
+          "https://docs.x.ai/grok-bot/tag-on-x"
+        ]
+      ],
+      "tipo": "lab",
+      "stadio": "early",
+      "stadioNota": "Launched as a beta according to reviews; the official docs do not say",
+      "dal": "2026-08-11",
+      "dalNota": "launch date from third-party reviews",
+      "aggiornato": "2026-10-31",
+      "incidenti": []
     },
     {
       "id": "meta-muse",
@@ -84,7 +134,27 @@
       "approvazioniNota": "Checks with you before sending an email or buying; a “Sentinel” approves every request to the internet",
       "canali": "Muse app (iOS, Android), muse.ai, WhatsApp",
       "punti": "Talk to it like a contact on WhatsApp, full audit trail, checkout with Link by Stripe and one-time cards",
-      "fonti": [["Meta: Introducing Muse", "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"], ["Meta: Muse in Singapore", "https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/"]]
+      "fonti": [
+        [
+          "Meta: Introducing Muse",
+          "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
+        ],
+        [
+          "Meta: Muse in Singapore",
+          "https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/"
+        ]
+      ],
+      "tipo": "lab",
+      "stadio": "stable",
+      "stadioNota": "Publicly available in the US and Singapore",
+      "dal": "2026-09-08",
+      "aggiornato": "2026-10-27",
+      "incidenti": [
+        [
+          "About 6,800 shared chat links were found reachable; Meta paused chat sharing (October 2026)",
+          "https://www.ibtimes.co.uk/meta-muse-ai-sharing-links-privacy-concerns-1827190"
+        ]
+      ]
     },
     {
       "id": "gemini-agent",
@@ -105,7 +175,22 @@
       "approvazioniNota": "Permissions approved by your security admins; audit trail and real-time spend caps",
       "canali": "Web, iOS, Android, Windows, Mac, command line, Google Workspace, Microsoft 365, Slack",
       "punti": "Coworker agents get their own Workspace account: @agents.company.com email, calendar and Drive",
-      "fonti": [["Google Cloud: Gemini at Work 2026", "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026"], ["TechCrunch, 8 October 2026", "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/"]]
+      "fonti": [
+        [
+          "Google Cloud: Gemini at Work 2026",
+          "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026"
+        ],
+        [
+          "TechCrunch, 8 October 2026",
+          "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/"
+        ]
+      ],
+      "tipo": "lab",
+      "stadio": "announced",
+      "stadioNota": "Announced; no availability date, preview only for two industries",
+      "dal": "2026-10-08",
+      "aggiornato": "2026-10-08",
+      "incidenti": []
     },
     {
       "id": "openclaw",
@@ -127,7 +212,20 @@
       "approvazioniNota": "Unknown senders must be paired and approved before they can talk to it",
       "canali": "WhatsApp, Telegram, Slack, Discord, Teams, Signal, iMessage, Google Chat and 20+ more; apps for macOS, iOS, Android",
       "punti": "Your data and credentials stay on your hardware; runs as a background service",
-      "fonti": [["openclaw/openclaw on GitHub", "https://github.com/openclaw/openclaw"]]
+      "fonti": [
+        [
+          "openclaw/openclaw on GitHub",
+          "https://github.com/openclaw/openclaw"
+        ]
+      ],
+      "tipo": "open",
+      "stadio": "stable",
+      "stadioNota": "Regular dated releases, latest v2026.11.1",
+      "dal": "2025-11-24",
+      "repo": "openclaw/openclaw",
+      "stelle": 394014,
+      "commit30": 100,
+      "rilasci90": 49
     },
     {
       "id": "hermes-agent",
@@ -149,7 +247,232 @@
       "approvazioniNota": "Not stated in the README",
       "canali": "Telegram, Discord, Slack, WhatsApp, Signal, command line",
       "punti": "Built-in scheduler for daily reports and unattended jobs, memory, writes and improves its own skills",
-      "fonti": [["NousResearch/hermes-agent on GitHub", "https://github.com/NousResearch/hermes-agent"]]
+      "fonti": [
+        [
+          "NousResearch/hermes-agent on GitHub",
+          "https://github.com/NousResearch/hermes-agent"
+        ]
+      ],
+      "tipo": "open",
+      "stadio": "early",
+      "stadioNota": "Version 0.x, latest v0.23.0",
+      "dal": "2025-07-22",
+      "repo": "NousResearch/hermes-agent",
+      "stelle": 260977,
+      "commit30": 100,
+      "rilasci90": 23
+    },
+    {
+      "tipo": "open",
+      "gratis": true,
+      "italia": "yes",
+      "italiaNota": "Runs on your own computer or server, anywhere",
+      "lancio": "",
+      "id": "nanobot",
+      "nome": "nanobot",
+      "azienda": "HKUDS (open source, MIT)",
+      "prezzo": "Free software; you pay only the model, or use a free or local one",
+      "modello": "Any provider you configure, with fallback models",
+      "computer": "partial",
+      "computerNota": "Your own computer or server; always on only while it runs",
+      "browserLive": "unclear",
+      "browserNota": "Web search and fetch tools; a live browser view is not described",
+      "mcp": "yes",
+      "mcpNota": "MCP integrations listed in the README",
+      "approvazioni": "unclear",
+      "approvazioniNota": "Security settings documented; approvals not described in the README",
+      "canali": "Browser WebUI, terminal, Telegram, Discord, Slack, WeChat, Email, Mattermost, Linear",
+      "punti": "Very small Python agent with memory, scheduled automations, long-running goals and multi-agent delegation",
+      "fonti": [
+        [
+          "HKUDS/nanobot on GitHub",
+          "https://github.com/HKUDS/nanobot"
+        ]
+      ],
+      "stadio": "early",
+      "stadioNota": "Version 0.x, latest v0.4.0",
+      "dal": "2026-02-01",
+      "repo": "HKUDS/nanobot",
+      "stelle": 49871,
+      "commit30": 100,
+      "rilasci90": 2
+    },
+    {
+      "tipo": "open",
+      "gratis": true,
+      "italia": "yes",
+      "italiaNota": "Runs on your own computer or server, anywhere",
+      "lancio": "",
+      "id": "zeroclaw",
+      "nome": "ZeroClaw",
+      "azienda": "ZeroClaw Labs (open source, Apache-2.0)",
+      "prezzo": "Free software; you pay only the model, or use a local one with Ollama",
+      "modello": "Anthropic, OpenAI, local Ollama and about 20 other providers, with fallback chains",
+      "computer": "partial",
+      "computerNota": "A single Rust program that runs as a background service on your machine or server",
+      "browserLive": "unclear",
+      "browserNota": "Not described in the README",
+      "mcp": "unclear",
+      "mcpNota": "Not named in the README",
+      "approvazioni": "yes",
+      "approvazioniNota": "Default supervised mode: medium-risk actions need approval, high-risk ones are blocked; OS sandboxes",
+      "canali": "30+ channels: Discord, Telegram, Matrix, email, voice, webhooks, command line; web dashboard",
+      "punti": "Small and fast, scheduled jobs and event-triggered procedures with approval gates",
+      "fonti": [
+        [
+          "zeroclaw-labs/zeroclaw on GitHub",
+          "https://github.com/zeroclaw-labs/zeroclaw"
+        ]
+      ],
+      "stadio": "early",
+      "stadioNota": "Version 0.x, latest v0.8.7",
+      "dal": "2026-02-13",
+      "repo": "zeroclaw-labs/zeroclaw",
+      "stelle": 33143,
+      "commit30": 100,
+      "rilasci90": 3
+    },
+    {
+      "tipo": "open",
+      "gratis": true,
+      "italia": "yes",
+      "italiaNota": "Runs on your own computer or server, anywhere",
+      "lancio": "",
+      "id": "nanoclaw",
+      "nome": "NanoClaw",
+      "azienda": "nanoco (open source, MIT)",
+      "prezzo": "Free software, but it uses Claude through your Anthropic account, so the model is paid",
+      "modello": "Claude, through the Claude Agent SDK",
+      "computer": "partial",
+      "computerNota": "Each agent runs in its own Linux container on your machine or server",
+      "browserLive": "unclear",
+      "browserNota": "Not described in the README",
+      "mcp": "unclear",
+      "mcpNota": "Not named in the README",
+      "approvazioni": "partial",
+      "approvazioniNota": "Safety by isolation: agents see only the folders you mount",
+      "canali": "Slack (one app per agent), WhatsApp, Telegram, Discord through channel adapters",
+      "punti": "Spawn teammates from chat, each with its own bot identity, container and memory; scheduled tasks",
+      "fonti": [
+        [
+          "nanocoai/nanoclaw on GitHub",
+          "https://github.com/nanocoai/nanoclaw"
+        ]
+      ],
+      "stadio": "early",
+      "stadioNota": "Latest release is a release candidate, v2026.10.1-rc.2",
+      "dal": "2026-01-31",
+      "repo": "nanocoai/nanoclaw",
+      "stelle": 31088,
+      "commit30": 100,
+      "rilasci90": 8,
+      "modelloPagato": true
+    },
+    {
+      "tipo": "open",
+      "gratis": true,
+      "italia": "yes",
+      "italiaNota": "Runs on your own computer or server, anywhere",
+      "lancio": "",
+      "id": "picoclaw",
+      "nome": "PicoClaw",
+      "azienda": "Sipeed (open source, MIT)",
+      "prezzo": "Free software; you pay only the model, and simple questions can go to cheaper models",
+      "modello": "Many providers, with rule-based routing between light and strong models",
+      "computer": "partial",
+      "computerNota": "Tiny program for your computer, a server or small boards",
+      "browserLive": "unclear",
+      "browserNota": "Web UI for settings and chat; a live browser view is not described",
+      "mcp": "yes",
+      "mcpNota": "Native MCP support, MCP servers managed from the Web UI",
+      "approvazioni": "unclear",
+      "approvazioniNota": "Not described in the README",
+      "canali": "Web UI, Matrix, IRC, WeCom, Discord and others",
+      "punti": "Easiest install: download, double-click, set it up in the browser; schedules and memory",
+      "fonti": [
+        [
+          "sipeed/picoclaw on GitHub",
+          "https://github.com/sipeed/picoclaw"
+        ]
+      ],
+      "stadio": "early",
+      "stadioNota": "Version 0.x, last stable v0.2.9 (May 2026), nightly builds since",
+      "dal": "2026-02-04",
+      "repo": "sipeed/picoclaw",
+      "stelle": 30104,
+      "commit30": 0,
+      "rilasci90": 0
+    },
+    {
+      "tipo": "open",
+      "gratis": true,
+      "italia": "yes",
+      "italiaNota": "Runs on your own computer or server, anywhere",
+      "lancio": "",
+      "id": "anymodelbot",
+      "nome": "AnyModelBot",
+      "azienda": "Modelflare (open source, MIT)",
+      "prezzo": "Free app; models through Modelflare (pay per token) or your own provider keys",
+      "modello": "Any model; each bot has its own default model",
+      "computer": "partial",
+      "computerNota": "Desktop app for Windows, macOS and Linux; works in the background while your computer is on",
+      "browserLive": "unclear",
+      "browserNota": "Not described in the README",
+      "mcp": "unclear",
+      "mcpNota": "Not named in the README",
+      "approvazioni": "yes",
+      "approvazioniNota": "Works in the background and asks you when a decision is needed",
+      "canali": "Desktop app for Windows, macOS and Linux",
+      "punti": "Presents itself as the open, local-first alternative to Grok Bot, ChatGPT dots and Claude Duet; several bots, each with its own persona, workspace and memory",
+      "fonti": [
+        [
+          "modelflare-ai/AnyModelBot on GitHub",
+          "https://github.com/modelflare-ai/AnyModelBot"
+        ]
+      ],
+      "stadio": "early",
+      "stadioNota": "Version 0.x, latest v0.1.22",
+      "dal": "2026-10-27",
+      "repo": "modelflare-ai/AnyModelBot",
+      "stelle": 2722,
+      "commit30": 100,
+      "rilasci90": 21
+    },
+    {
+      "tipo": "open",
+      "gratis": true,
+      "italia": "yes",
+      "italiaNota": "Runs on your own computer or server, anywhere",
+      "lancio": "",
+      "id": "trustclaw",
+      "nome": "TrustClaw",
+      "azienda": "Composio (open source, MIT)",
+      "prezzo": "Free code; needs a Composio API key for the tools and a Claude model",
+      "modello": "Claude",
+      "computer": "yes",
+      "computerNota": "You deploy it to the cloud (for example Vercel); every action runs in a temporary cloud sandbox",
+      "browserLive": "unclear",
+      "browserNota": "Not described in the README",
+      "mcp": "unclear",
+      "mcpNota": "1,000+ Composio tools via OAuth; MCP not named",
+      "approvazioni": "partial",
+      "approvazioniNota": "Tools limited to the accounts you connect; actions run in a sandbox",
+      "canali": "Web dashboard, Telegram",
+      "punti": "24/7 assistant with scheduled runs, vector memory and Gmail, GitHub, Slack, Notion and Calendar tools",
+      "fonti": [
+        [
+          "ComposioHQ/trustclaw on GitHub",
+          "https://github.com/ComposioHQ/trustclaw"
+        ]
+      ],
+      "stadio": "preview",
+      "stadioNota": "No releases yet",
+      "dal": "2026-05-05",
+      "repo": "ComposioHQ/trustclaw",
+      "stelle": 911,
+      "commit30": 1,
+      "rilasci90": 0,
+      "modelloPagato": true
     }
   ]
 }

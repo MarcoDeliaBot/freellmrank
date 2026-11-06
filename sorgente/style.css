@@ -1056,3 +1056,29 @@ dialog.cerca::backdrop{background:rgba(2,6,23,.55)}
 .agente-dati dt{color:var(--muted)}
 .agente-dati dd{margin:0;overflow-wrap:anywhere}
 .agenti-filtri{margin-bottom:.6rem}
+/* /always-on-agents (6/11/2026 sera): cursori di priorità, barre di affinità, indice di affidabilità */
+.aff{display:grid;grid-template-columns:minmax(0,18rem) minmax(0,1fr);gap:1.2rem;align-items:start}
+@media (max-width:760px){.aff{grid-template-columns:minmax(0,1fr)}}
+.aff-cursori{display:grid;gap:.7rem}
+.aff-cursore{display:grid;grid-template-columns:minmax(0,1fr) 2rem;gap:.15rem .5rem;align-items:center;font-size:.92rem}
+.aff-cursore span{grid-column:1/-1}
+.aff-cursore input{width:100%;accent-color:var(--accent);min-height:28px}
+.aff-cursore output{font-variant-numeric:tabular-nums;text-align:right;font-weight:600}
+.aff-top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:.1rem .8rem;background:var(--soft);border-radius:8px;padding:.7rem .9rem;margin-bottom:.7rem}
+.aff-top>.small{grid-column:1/-1}
+.aff-top b{font-size:1.35rem}
+.aff-top-pc{font-size:1.8rem;font-weight:600;font-variant-numeric:tabular-nums}
+.aff-barre{display:grid;gap:.35rem}
+.aff-riga{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr) 3rem;gap:.6rem;align-items:center;color:var(--ink);text-decoration:none;padding:.15rem 0}
+.aff-riga:hover .aff-nome{text-decoration:underline}
+.aff-nome{overflow-wrap:anywhere}
+.aff-nome .small{display:block}
+.aff-pc{text-align:right;font-variant-numeric:tabular-nums}
+.aff-barra{display:block;height:.6rem;border-radius:999px;background:var(--soft);overflow:hidden}
+.aff-barra span{display:block;height:100%;border-radius:999px;background:var(--accent);transition:width .25s}
+@media (max-width:480px){.aff-riga{grid-template-columns:minmax(0,1fr) 3rem}.aff-riga .aff-barra{grid-column:1/-1;grid-row:2}}
+.agente-indice{display:grid;gap:.3rem;background:var(--soft);border-radius:6px;padding:.55rem .7rem}
+.agente-indice-testa{display:flex;justify-content:space-between;align-items:baseline}
+.agente-indice-testa b{font-size:1.25rem;font-variant-numeric:tabular-nums}
+.agente-incidente{color:var(--bad)}
+.agente-incidente a{color:var(--bad)}
