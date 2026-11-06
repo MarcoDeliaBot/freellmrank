@@ -251,5 +251,17 @@
  "news-2026-11-05-openai-launches-gpt-6-cyber-a-security-focused-ai-model": {
   "lungo": "notizia-openai-launches-gpt-6-cyber-a-security-focused-ai-model",
   "breve": "breve-openai-launches-gpt-6-cyber-a-security-focused-ai-model"
+ },
+ "skill-addyosmani-agent-skills-spec-driven-development": {
+  "lungo": "skill-addyosmani-agent-skills-spec-driven-development",
+  "breve": "breve-skill-addyosmani-agent-skills-spec-driven-development"
+ },
+ "skill-addyosmani-agent-skills-performance-optimization": {
+  "lungo": "skill-addyosmani-agent-skills-performance-optimization",
+  "breve": "breve-skill-addyosmani-agent-skills-performance-optimization"
+ },
+ "tutorial-how-to-use-llama-cpp-locally": {
+  "lungo": "tutorial-how-to-use-llama-cpp-locally",
+  "breve": "breve-tutorial-how-to-use-llama-cpp-locally"
  }
 }

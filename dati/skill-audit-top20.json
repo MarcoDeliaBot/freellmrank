@@ -1,13 +1,13 @@
 {
- "date": "2026-11-02",
+ "date": "2026-11-06",
  "source": "https://skills.sh/trending",
- "observedAt": "2026-11-02T10:57:10.566Z",
+ "observedAt": "2026-11-06T15:10:27.404Z",
  "entries": [
   {
    "rank": 1,
    "repository": "skills-shell/superpowers",
    "skill": "ai-image-generation",
-   "date": "2026-11-02",
+   "date": "2026-11-06",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/image/ai-image-generation/SKILL.md",
    "status": "warning",
@@ -70,7 +70,7 @@
    "rank": 2,
    "repository": "skills-shell/superpowers",
    "skill": "ai-video-generation",
-   "date": "2026-11-02",
+   "date": "2026-11-06",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/ai-video-generation/SKILL.md",
    "status": "warning",
@@ -138,7 +138,7 @@
    "rank": 3,
    "repository": "skills-shell/superpowers",
    "skill": "twitter-automation",
-   "date": "2026-11-02",
+   "date": "2026-11-06",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/social/twitter-automation/SKILL.md",
    "status": "warning",
@@ -181,7 +181,7 @@
    "rank": 4,
    "repository": "skills-shell/superpowers",
    "skill": "ai-avatar-video",
-   "date": "2026-11-02",
+   "date": "2026-11-06",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/ai-avatar-video/SKILL.md",
    "status": "warning",
@@ -234,7 +234,7 @@
    "rank": 5,
    "repository": "uizze.sh",
    "skill": "ui-taste",
-   "date": "2026-11-02",
+   "date": "2026-11-06",
    "status": "blocked",
    "reasons": [
     {
@@ -246,27 +246,9 @@
   },
   {
    "rank": 6,
-   "repository": "uizze/uizze",
-   "skill": "uizze-ui",
-   "date": "2026-11-02",
-   "commit": "fc401e9e654cbafe427b0c98142fc8bccd0c4e7e",
-   "skillPath": "skills/uizze-ui/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "skills/uizze-ui/README.md",
-     "line": 12,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no actual usage code block in skill or README"
-  },
-  {
-   "rank": 7,
    "repository": "designed-by-ai/skills",
    "skill": "design-mobile-apps",
-   "date": "2026-11-02",
+   "date": "2026-11-06",
    "commit": "03c20aec6dcedb5fabfb03dc37982eb52ef19ed6",
    "skillPath": "skills/design-mobile-apps/SKILL.md",
    "status": "warning",
@@ -306,11 +288,22 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
+   "rank": 7,
+   "repository": "vercel-labs/agent-browser",
+   "skill": "agent-browser",
+   "date": "2026-11-06",
+   "commit": "71850a021c5cb694513d720d61c156dd317d63cf",
+   "skillPath": "skills/agent-browser/SKILL.md",
+   "status": "passed",
+   "reasons": [],
+   "publishable": true
+  },
+  {
    "rank": 8,
    "repository": "vercel-labs/skills",
    "skill": "find-skills",
-   "date": "2026-11-02",
-   "commit": "92a9a34ac3bf88e695e468b90c7bf32f163d32c8",
+   "date": "2026-11-06",
+   "commit": "d3701c11b1101251af14c9d148f026e1a47ebe17",
    "skillPath": "skills/find-skills/SKILL.md",
    "status": "warning",
    "reasons": [
@@ -335,448 +328,10 @@
   },
   {
    "rank": 9,
-   "repository": "gencraft-labs/skills",
-   "skill": "ai-video-generation",
-   "date": "2026-11-02",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "ai-video-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "ai-video-generation/SKILL.md",
-     "line": 50,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 10,
-   "repository": "gencraft-labs/skills",
-   "skill": "image-to-video",
-   "date": "2026-11-02",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "image-to-video/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "image-to-video/SKILL.md",
-     "line": 28,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 11,
-   "repository": "flowkit-labs/skills",
-   "skill": "reddit-automation",
-   "date": "2026-11-02",
-   "commit": "0c9e2b63f504a296a86e45ed3a60a426dd979ca6",
-   "skillPath": "reddit-automation/SKILL.md",
-   "status": "passed",
-   "reasons": [],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 12,
-   "repository": "gencraft-labs/skills",
-   "skill": "ai-image-generation",
-   "date": "2026-11-02",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "ai-image-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "ai-image-generation/SKILL.md",
-     "line": 52,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "ai-image-generation/SKILL.md",
-     "line": 479,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 13,
-   "repository": "gencraft-labs/skills",
-   "skill": "video-edit",
-   "date": "2026-11-02",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "video-edit/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "video-edit/SKILL.md",
-     "line": 28,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 14,
-   "repository": "gencraft-labs/skills",
-   "skill": "ai-music",
-   "date": "2026-11-02",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "ai-music/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "ai-music/SKILL.md",
-     "line": 35,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 15,
-   "repository": "heygen-com/hyperframes",
-   "skill": "media-use",
-   "date": "2026-11-02",
-   "commit": "618c486734b3cbb697bd432bace7e9642e48b6be",
-   "skillPath": "skills/media-use/SKILL.md",
-   "status": "blocked",
-   "reasons": [
-    {
-     "file": "skills/media-use/audio/scripts/lib/bgm.mjs",
-     "line": 22,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/bgm.mjs",
-     "line": 17,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
-     "line": 7,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
-     "line": 8,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
-     "line": 9,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
-     "line": 15,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/gemini-auth.py",
-     "line": 21,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/gemini-auth.py",
-     "line": 46,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/gemini-tts.mjs",
-     "line": 38,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 46,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 47,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 114,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 116,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 189,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 4,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
-     "line": 80,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/openverse.mjs",
-     "line": 2,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
-     "line": 31,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
-     "line": 46,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
-     "line": 50,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
-     "line": 236,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
-     "line": 51,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lyria-recipe.py",
-     "line": 8,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lyria-recipe.py",
-     "line": 58,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/scripts/lib/telemetry.mjs",
-     "line": 193,
-     "reason": "multiline-data-send"
-    },
-    {
-     "file": "skills/media-use/scripts/lib/telemetry.mjs",
-     "line": 10,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/media-use/audio/references/bgm.md",
-     "line": 72,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/audio/references/bgm.md",
-     "line": 44,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/audio/references/captions/transcript-handling.md",
-     "line": 71,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/audio/references/captions/transcript-handling.md",
-     "line": 84,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/audio/references/requirements.md",
-     "line": 10,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/audio/references/requirements.md",
-     "line": 11,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/audio/references/requirements.md",
-     "line": 12,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/audio/references/requirements.md",
-     "line": 13,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/audio/references/requirements.md",
-     "line": 23,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/audio/references/requirements.md",
-     "line": 24,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/audio/references/requirements.md",
-     "line": 25,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/audio/references/requirements.md",
-     "line": 9,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/audio/references/requirements.md",
-     "line": 10,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/audio/references/requirements.md",
-     "line": 11,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/audio/references/tts.md",
-     "line": 120,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/references/tts.md",
-     "line": 25,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/audio/references/tts.md",
-     "line": 45,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/audio/references/tts.md",
-     "line": 46,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/audio/references/tts.md",
-     "line": 62,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/media-use/references/operations.md",
-     "line": 45,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/references/operations.md",
-     "line": 46,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/references/operations.md",
-     "line": 118,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/references/setup-providers.md",
-     "line": 5,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/references/setup-providers.md",
-     "line": 80,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/references/setup-providers.md",
-     "line": 82,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/media-use/references/setup-providers.md",
-     "line": 84,
-     "reason": "documented-installer"
-    }
-   ]
-  },
-  {
-   "rank": 16,
-   "repository": "heygen-com/hyperframes",
-   "skill": "hyperframes-cli",
-   "date": "2026-11-02",
-   "commit": "618c486734b3cbb697bd432bace7e9642e48b6be",
-   "skillPath": "skills/hyperframes-cli/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "skills/hyperframes-cli/references/cloud.md",
-     "line": 21,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/hyperframes-cli/references/cloud.md",
-     "line": 25,
-     "reason": "environment-secret-read"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no actual usage code block in skill or README"
-  },
-  {
-   "rank": 17,
-   "repository": "heygen-com/hyperframes",
-   "skill": "hyperframes-registry",
-   "date": "2026-11-02",
-   "commit": "618c486734b3cbb697bd432bace7e9642e48b6be",
-   "skillPath": "skills/hyperframes-registry/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "skills/hyperframes-registry/references/demo-html-pattern.md",
-     "line": 22,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes-registry/references/templates.md",
-     "line": 16,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes-registry/references/templates.md",
-     "line": 191,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes-registry/references/templates.md",
-     "line": 192,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes-registry/references/templates.md",
-     "line": 377,
-     "reason": "remote-code-load"
-    }
-   ],
-   "publishable": true
-  },
-  {
-   "rank": 18,
    "repository": "heygen-com/hyperframes",
    "skill": "hyperframes",
-   "date": "2026-11-02",
-   "commit": "618c486734b3cbb697bd432bace7e9642e48b6be",
+   "date": "2026-11-06",
+   "commit": "4cf26b5b49e6c4f2b42fb28738a1fb576e7494de",
    "skillPath": "skills/hyperframes/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -982,90 +537,535 @@
     },
     {
      "file": "skills/hyperframes/references/plugin-installation.md",
-     "line": 12,
+     "line": 11,
      "reason": "documented-installer"
     },
     {
      "file": "skills/hyperframes/references/skill-lifecycle.md",
-     "line": 37,
+     "line": 42,
      "reason": "documented-installer"
     }
    ]
   },
   {
-   "rank": 19,
-   "repository": "vercel-labs/agent-browser",
-   "skill": "agent-browser",
-   "date": "2026-11-02",
-   "commit": "5868f7c05020e047c00e68e4abf9253cce864f41",
-   "skillPath": "skills/agent-browser/SKILL.md",
-   "status": "passed",
-   "reasons": [],
-   "publishable": true
-  },
-  {
-   "rank": 20,
-   "repository": "qu-skills/superpowers",
-   "skill": "ai-video-generation",
-   "date": "2026-11-02",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/ai-video-generation/SKILL.md",
+   "rank": 10,
+   "repository": "heygen-com/hyperframes",
+   "skill": "hyperframes-cli",
+   "date": "2026-11-06",
+   "commit": "4cf26b5b49e6c4f2b42fb28738a1fb576e7494de",
+   "skillPath": "skills/hyperframes-cli/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 7,
-     "reason": "documented-installer"
+     "file": "skills/hyperframes-cli/references/cloud.md",
+     "line": 21,
+     "reason": "sensitive-read"
     },
     {
-     "file": "tools/video/ai-video-generation/SKILL.md",
+     "file": "skills/hyperframes-cli/references/cloud.md",
+     "line": 25,
+     "reason": "environment-secret-read"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no actual usage code block in skill or README"
+  },
+  {
+   "rank": 11,
+   "repository": "heygen-com/hyperframes",
+   "skill": "media-use",
+   "date": "2026-11-06",
+   "commit": "4cf26b5b49e6c4f2b42fb28738a1fb576e7494de",
+   "skillPath": "skills/media-use/SKILL.md",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": "skills/media-use/audio/scripts/lib/bgm.mjs",
+     "line": 22,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/bgm.mjs",
      "line": 17,
+     "reason": "download-and-execute"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
+     "line": 7,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
+     "line": 8,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
+     "line": 9,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
+     "line": 15,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.py",
+     "line": 21,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.py",
+     "line": 46,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-tts.mjs",
+     "line": 38,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 48,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 114,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 116,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 195,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 4,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/heygen.mjs",
+     "line": 80,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/openverse.mjs",
+     "line": 2,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
+     "line": 32,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
+     "line": 47,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
+     "line": 51,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
+     "line": 237,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
+     "line": 52,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lyria-recipe.py",
+     "line": 8,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lyria-recipe.py",
+     "line": 58,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/scripts/lib/telemetry.mjs",
+     "line": 198,
+     "reason": "multiline-data-send"
+    },
+    {
+     "file": "skills/media-use/scripts/lib/telemetry.mjs",
+     "line": 10,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/media-use/audio/references/bgm.md",
+     "line": 72,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 218,
+     "file": "skills/media-use/audio/references/bgm.md",
+     "line": 44,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/captions/transcript-handling.md",
+     "line": 71,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/captions/transcript-handling.md",
+     "line": 84,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 10,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 221,
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 11,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 224,
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 12,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 227,
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 13,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 230,
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 23,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 233,
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 24,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 236,
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 25,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 239,
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 9,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 10,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/requirements.md",
+     "line": 11,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/tts.md",
+     "line": 121,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/tts.md",
+     "line": 25,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/tts.md",
+     "line": 45,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/tts.md",
+     "line": 46,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/audio/references/tts.md",
+     "line": 62,
+     "reason": "environment-secret-read"
+    },
+    {
+     "file": "skills/media-use/references/operations.md",
+     "line": 45,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 242,
+     "file": "skills/media-use/references/operations.md",
+     "line": 46,
      "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/references/operations.md",
+     "line": 119,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/references/setup-providers.md",
+     "line": 5,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/references/setup-providers.md",
+     "line": 80,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/references/setup-providers.md",
+     "line": 82,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/media-use/references/setup-providers.md",
+     "line": 84,
+     "reason": "documented-installer"
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "repository": "heygen-com/hyperframes",
+   "skill": "hyperframes-registry",
+   "date": "2026-11-06",
+   "commit": "4cf26b5b49e6c4f2b42fb28738a1fb576e7494de",
+   "skillPath": "skills/hyperframes-registry/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/hyperframes-registry/references/demo-html-pattern.md",
+     "line": 22,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes-registry/references/templates.md",
+     "line": 16,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes-registry/references/templates.md",
+     "line": 191,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes-registry/references/templates.md",
+     "line": 192,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes-registry/references/templates.md",
+     "line": 377,
+     "reason": "remote-code-load"
+    }
+   ],
+   "publishable": true
+  },
+  {
+   "rank": 13,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-image-generation",
+   "date": "2026-11-06",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-image-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-image-generation/SKILL.md",
+     "line": 52,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "ai-image-generation/SKILL.md",
+     "line": 479,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 14,
+   "repository": "gencraft-labs/skills",
+   "skill": "image-to-video",
+   "date": "2026-11-06",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "image-to-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "image-to-video/SKILL.md",
+     "line": 28,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 15,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-video-generation",
+   "date": "2026-11-06",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-video-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-video-generation/SKILL.md",
+     "line": 50,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 16,
+   "repository": "flowkit-labs/skills",
+   "skill": "reddit-automation",
+   "date": "2026-11-06",
+   "commit": "0c9e2b63f504a296a86e45ed3a60a426dd979ca6",
+   "skillPath": "reddit-automation/SKILL.md",
+   "status": "passed",
+   "reasons": [],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 17,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-music",
+   "date": "2026-11-06",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-music/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-music/SKILL.md",
+     "line": 35,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 18,
+   "repository": "gencraft-labs/skills",
+   "skill": "video-edit",
+   "date": "2026-11-06",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "video-edit/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "video-edit/SKILL.md",
+     "line": 28,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 19,
+   "repository": "uizze/uizze",
+   "skill": "uizze-ui",
+   "date": "2026-11-06",
+   "commit": "fc401e9e654cbafe427b0c98142fc8bccd0c4e7e",
+   "skillPath": "skills/uizze-ui/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/uizze-ui/README.md",
+     "line": 12,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no actual usage code block in skill or README"
+  },
+  {
+   "rank": 20,
+   "repository": "microsoft/azure-skills",
+   "skill": "azure-ai",
+   "date": "2026-11-06",
+   "commit": "f5ae01d7d0d790528b336431d78e4063397505f5",
+   "skillPath": "skills/azure-ai/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/azure-ai/references/sdk/azure-ai-contentsafety-py.md",
+     "line": 8,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/azure-ai/references/sdk/azure-ai-contentsafety-ts.md",
+     "line": 8,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/azure-ai/references/sdk/azure-ai-document-intelligence-ts.md",
+     "line": 8,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/azure-ai/references/sdk/azure-ai-transcription-py.md",
+     "line": 8,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/azure-ai/references/sdk/azure-ai-transcription-py.md",
+     "line": 16,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/azure-ai/references/sdk/azure-ai-translation-text-py.md",
+     "line": 8,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/azure-ai/references/sdk/azure-ai-translation-ts.md",
+     "line": 8,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/azure-ai/references/sdk/azure-ai-translation-ts.md",
+     "line": 14,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/azure-ai/references/sdk/azure-ai-vision-imageanalysis-py.md",
+     "line": 8,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/azure-ai/references/sdk/azure-search-documents-py.md",
+     "line": 8,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/azure-ai/references/sdk/azure-search-documents-ts.md",
+     "line": 8,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/azure-ai/references/speech/azure-checks.md",
+     "line": 39,
+     "reason": "sensitive-read"
     }
    ],
    "publishable": false,

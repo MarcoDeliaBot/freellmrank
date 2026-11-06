@@ -1,11 +1,38 @@
 [
  {
+  "url": "/skills/addyosmani-agent-skills-performance-optimization.html",
+  "slug": "addyosmani-agent-skills-performance-optimization",
+  "tipo": "skill",
+  "repository": "addyosmani/agent-skills",
+  "skillPath": "skills/performance-optimization/SKILL.md",
+  "primaPubblicazione": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/skills/addyosmani-agent-skills-spec-driven-development.html",
+  "slug": "addyosmani-agent-skills-spec-driven-development",
+  "tipo": "skill",
+  "repository": "addyosmani/agent-skills",
+  "skillPath": "skills/spec-driven-development/SKILL.md",
+  "primaPubblicazione": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
   "url": "/skills/vercel-labs-agent-browser-agent-browser.html",
   "slug": "vercel-labs-agent-browser-agent-browser",
   "tipo": "skill",
   "repository": "vercel-labs/agent-browser",
   "skillPath": "skills/agent-browser/SKILL.md",
   "primaPubblicazione": "2026-11-02",
+  "stato": "attiva"
+ },
+ {
+  "url": "/tutorials/how-to-use-llama-cpp-locally.html",
+  "slug": "how-to-use-llama-cpp-locally",
+  "tipo": "tutorial",
+  "repository": "ggml-org/llama.cpp",
+  "skillPath": "",
+  "primaPubblicazione": "2026-11-06",
   "stato": "attiva"
  }
 ]
