@@ -20964,6 +20964,42 @@
     "tipo": "News"
    },
    "data": "2026-11-04"
+  },
+  "/blog/news-2026-11-06-airbnb-to-launch-ai-native-travel-agent-in-first-half-of-2027.html": {
+   "post": {
+    "slug": "news-2026-11-06-airbnb-to-launch-ai-native-travel-agent-in-first-half-of-2027",
+    "titolo": "Airbnb to launch AI‑native travel agent in first half of 2027",
+    "descr": "Airbnb announced its AI travel assistant will debut in early 2027, offering a custom interface built around travel‑specific UI components.",
+    "data": "2026-11-06",
+    "tema": "Business",
+    "corpo": "Airbnb said in its Q3 2026 earnings shareholder letter that an AI travel agent will roll out in the first half of 2027.\n\nThe company argues that traditional chatbots are ill‑suited for trip planning and is developing a custom‑designed, AI‑native experience that assembles maps, photos, calendars and itineraries in real time.\n\nCEO Brian Chesky reiterated that the agent will provide a richer interface than a conventional chatbot, letting guests explore options, compare homes, and make decisions with travel companions.\n\nBeyond booking, the agent will handle reservation changes, payment issues, refunds, rebooking and 24‑hour safety support, and may later cover services and experiences.\n\nThe announcement came alongside strong Q3 results, with revenue up 19% to $4.87 billion and an outlook for high‑teen growth in 2026.\n\n## What it means for you\n\nFor AI users, Airbnb’s approach shows a shift toward domain‑specific generative UI rather than generic chat, highlighting the value of tailored interfaces. For those seeking free or local models, it underscores the growing demand for specialized AI tools that integrate tightly with platform data, a niche where open‑source alternatives could compete.\n\n## Sources\n\n- [Airbnb is working on an AI travel agent](https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings), The Verge, 6 Nov 2026\n- [Airbnb says it's launching an AI travel agent in the first half of 2027](https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/), TechCrunch, 5 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-06-airbnb-to-launch-ai-native-travel-agent-in-first-half-of-2027).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-04"
+  },
+  "/blog/news-2026-11-06-nvidia-releases-four-open-weight-cosmos-3-nano-checkpoints-for-interac.html": {
+   "post": {
+    "slug": "news-2026-11-06-nvidia-releases-four-open-weight-cosmos-3-nano-checkpoints-for-interac",
+    "titolo": "NVIDIA releases four open‑weight Cosmos 3‑Nano checkpoints for interactive world simulation",
+    "descr": "The new checkpoints add multi‑view driving, streaming sensor, video‑transfer and bimanual robot simulation capabilities, each with 16 B parameters.",
+    "data": "2026-11-06",
+    "tema": "Research",
+    "corpo": "NVIDIA announced four new open‑weight checkpoints for its Cosmos 3‑Nano model family on November 5, 2026.\n\nCosmos3‑Nano‑Transfer‑Auto generates synchronized video from up to 11 camera views and LiDAR, allowing offline synthetic driving data creation with weather, lighting and text‑prompt control.\n\nCosmos3‑Nano‑Sim‑Auto is a streaming variant that produces small chunks of synchronized camera video and LiDAR in a few denoising steps, supporting fast interactive rollouts.\n\nCosmos3‑Nano‑Sim‑Transfer turns simulator controls and text prompts into photorealistic RGB video, adding depth, segmentation and edge outputs.\n\nCosmos3‑Nano‑Sim‑Bimanual predicts video from bimanual robot actions, supporting two‑arm embodiments such as YAM and AgiBot.\n\nAll four checkpoints share 16 B trainable parameters, use OpenMDW 1.1 licensing for commercial and non‑commercial use, and come with download links, a technical report and demo videos.\n\n## What it means for you\n\nThese open checkpoints give researchers and developers a shared starting point for building richer simulated worlds, reducing the cost of creating multi‑sensor driving data and robot interaction videos. Free‑or‑local AI users can experiment with high‑capacity world models without needing proprietary weights, while paid services may adopt the models to accelerate training pipelines.\n\n## Sources\n\n- [New NVIDIA Cosmos 3 Open Models for Interactive World Simulation](https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation), Hugging Face (official), 5 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-06-nvidia-releases-four-open-weight-cosmos-3-nano-checkpoints-for-interac).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-04"
+  },
+  "/blog/news-2026-11-06-nvidia-vera-cpu-offers-top-agent-speed-and-efficiency-beating-leading-.html": {
+   "post": {
+    "slug": "news-2026-11-06-nvidia-vera-cpu-offers-top-agent-speed-and-efficiency-beating-leading-",
+    "titolo": "NVIDIA Vera CPU offers top agent speed and efficiency, beating leading x86 chips",
+    "descr": "NVIDIA reports Vera CPU delivers 2× faster agent performance and 1.6× more agents per watt versus top x86 CPUs.",
+    "data": "2026-11-06",
+    "tema": "Hardware",
+    "corpo": "NVIDIA introduced the Vera CPU, designed for AI agent workloads that move between GPU reasoning and CPU execution.\n\nIn a 100‑megawatt data‑center test, Vera outperformed the fastest x86 CPU in speed and the most energy‑efficient x86 CPU in power use.\n\nVera achieved 2× faster agent speed compared with the most energy‑efficient x86 chip and supported 1.6× more agents per watt than the fastest x86 processor.\n\nEarly adopters reported gains: Perplexity saw 1.5× faster coding tasks, DeepInfra up to 2.2× speed on agentic orchestration, and Modal doubled sandbox throughput per core.\n\nOther partners noted near‑linear scaling across 176 cores on ClickBench and rapid sandbox deployment, with Daytona launching 1,000 sandboxes in 10.8 seconds.\n\n## What it means for you\n\nThe Vera CPU can reduce latency and power costs for AI factories that run many agents, making large‑scale deployments more affordable. For developers relying on free or locally hosted models, the improved efficiency may lower the hardware barrier to running agentic workloads without needing multiple x86 servers.\n\n## Sources\n\n- [Vera Delivers the Best of Both Worlds: Highest Throughput and Fastest Agents](https://blogs.nvidia.com/blog/vera-cpu-highest-throughput-fastest-agents/), NVIDIA (official), 5 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-06-nvidia-vera-cpu-offers-top-agent-speed-and-efficiency-beating-leading-).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-04"
   }
  },
  "ricostruzione": {

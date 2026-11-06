@@ -1,0 +1,29 @@
+{
+ "nome": "2026-11-06-nvidia-releases-four-open-weight-cosmos-3-nano-checkpoints-for-interac",
+ "titolo": "NVIDIA releases four open‑weight Cosmos 3‑Nano checkpoints for interactive world simulation",
+ "descr": "The new checkpoints add multi‑view driving, streaming sensor, video‑transfer and bimanual robot simulation capabilities, each with 16 B parameters.",
+ "tema": "Research",
+ "paragrafi": [
+  "NVIDIA announced four new open‑weight checkpoints for its Cosmos 3‑Nano model family on November 5, 2026.",
+  "Cosmos3‑Nano‑Transfer‑Auto generates synchronized video from up to 11 camera views and LiDAR, allowing offline synthetic driving data creation with weather, lighting and text‑prompt control.",
+  "Cosmos3‑Nano‑Sim‑Auto is a streaming variant that produces small chunks of synchronized camera video and LiDAR in a few denoising steps, supporting fast interactive rollouts.",
+  "Cosmos3‑Nano‑Sim‑Transfer turns simulator controls and text prompts into photorealistic RGB video, adding depth, segmentation and edge outputs.",
+  "Cosmos3‑Nano‑Sim‑Bimanual predicts video from bimanual robot actions, supporting two‑arm embodiments such as YAM and AgiBot.",
+  "All four checkpoints share 16 B trainable parameters, use OpenMDW 1.1 licensing for commercial and non‑commercial use, and come with download links, a technical report and demo videos."
+ ],
+ "perche": [
+  "These open checkpoints give researchers and developers a shared starting point for building richer simulated worlds, reducing the cost of creating multi‑sensor driving data and robot interaction videos. Free‑or‑local AI users can experiment with high‑capacity world models without needing proprietary weights, while paid services may adopt the models to accelerate training pipelines."
+ ],
+ "pubblicato": "2026-11-06",
+ "titoloFonte": "New NVIDIA Cosmos 3 Open Models for Interactive World Simulation",
+ "fonti": [
+  {
+   "nome": "Hugging Face",
+   "url": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
+   "titolo": "New NVIDIA Cosmos 3 Open Models for Interactive World Simulation",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 0
+}

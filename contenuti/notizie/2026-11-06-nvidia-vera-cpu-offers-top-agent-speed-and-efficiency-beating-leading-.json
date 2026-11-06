@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-06-nvidia-vera-cpu-offers-top-agent-speed-and-efficiency-beating-leading-",
+ "titolo": "NVIDIA Vera CPU offers top agent speed and efficiency, beating leading x86 chips",
+ "descr": "NVIDIA reports Vera CPU delivers 2× faster agent performance and 1.6× more agents per watt versus top x86 CPUs.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "NVIDIA introduced the Vera CPU, designed for AI agent workloads that move between GPU reasoning and CPU execution.",
+  "In a 100‑megawatt data‑center test, Vera outperformed the fastest x86 CPU in speed and the most energy‑efficient x86 CPU in power use.",
+  "Vera achieved 2× faster agent speed compared with the most energy‑efficient x86 chip and supported 1.6× more agents per watt than the fastest x86 processor.",
+  "Early adopters reported gains: Perplexity saw 1.5× faster coding tasks, DeepInfra up to 2.2× speed on agentic orchestration, and Modal doubled sandbox throughput per core.",
+  "Other partners noted near‑linear scaling across 176 cores on ClickBench and rapid sandbox deployment, with Daytona launching 1,000 sandboxes in 10.8 seconds."
+ ],
+ "perche": [
+  "The Vera CPU can reduce latency and power costs for AI factories that run many agents, making large‑scale deployments more affordable. For developers relying on free or locally hosted models, the improved efficiency may lower the hardware barrier to running agentic workloads without needing multiple x86 servers."
+ ],
+ "pubblicato": "2026-11-06",
+ "titoloFonte": "Vera Delivers the Best of Both Worlds: Highest Throughput and Fastest Agents",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/vera-cpu-highest-throughput-fastest-agents/",
+   "titolo": "Vera Delivers the Best of Both Worlds: Highest Throughput and Fastest Agents",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 0
+}
