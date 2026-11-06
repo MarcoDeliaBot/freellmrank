@@ -18,6 +18,7 @@ This guide covers what we could verify on 25 October 2026: the rankings, what th
 - Arena: 1st in image-to-video (1495), 8th in text-to-video (1460), 3rd in video editing (1392).
 - A 33-billion-parameter video model plus a 32-billion-parameter encoder: about 196 GB at full precision; ComfyUI's smallest build of the video part is 16 GB.
 - License: free, including commercial use, everywhere except the EU, UK, South Korea and the US.
+- Updated 6 November 2026: fine-tunes such as Singularity carry the same limits; Wan 2.2 and LTX-2.5 have no territory ban (see the update below the license section).
 
 ## Where it ranks
 
@@ -102,6 +103,23 @@ MiniMax explains why: the rules for video models that can generate real people's
 - MiniMax claims no rights over the videos you make; you are responsible for them.
 
 One more detail: ComfyUI's official guide states that commercial use of videos generated locally requires a MiniMax commercial license, sold through Comfy, and that videos made on Comfy Cloud already include commercial rights. Read the current terms before you sell anything made with H3.
+
+## Update, 6 November 2026: fine-tunes, and video models without a territory ban
+
+Since this guide came out, fine-tuned versions of H3 have spread fast, and many videos present H3 as free for everyone. We read the licenses again on 6 November 2026.
+
+**Fine-tunes keep the same limits.** The license counts every modification of H3 as a "Model Derivative" (section I.11), and derivatives are bound by the same territory rules. One example: [Minimax-h3_Singularity](https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity), with over a million downloads in the last month, is tagged Apache 2.0 on Hugging Face, but its page names MiniMax H3 as the base model. The tag on a fine-tune does not replace the license of the model it comes from, so in the EU, UK, South Korea and the US it is not covered either.
+
+**MiniMax is not the only one.** The [license of Tencent's HunyuanVideo 1.5](https://huggingface.co/tencent/HunyuanVideo-1.5/blob/main/LICENSE) also excludes the European Union, the United Kingdom and South Korea.
+
+**Open video models whose license text has no territory ban:**
+
+| Model | License | Note |
+|---|---|---|
+| [Wan 2.2 TI2V-5B](https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B) (Alibaba) | Apache 2.0 | Alibaba says it runs on a single GPU with 24 GB |
+| [LTX-2.5](https://huggingface.co/Lightricks/LTX-2.5) (Lightricks) | LTX-2.x Community License | free for companies under $10 million a year in revenue |
+
+Neither is at H3's level in the Arena rankings, but you can download and run them in Europe under their own terms. As always, this is a summary of the license texts, not legal advice: read the license of any model, and of any fine-tune's base model, before you use it.
 
 ## Where to try it for free
 
