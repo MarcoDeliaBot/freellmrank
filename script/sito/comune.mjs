@@ -95,6 +95,7 @@ export function pagina({ file, titolo, descr, attiva, corpo, script, dati, blog 
       ['/models.html', `${icona('modelli')}All free models`],
       ['/compare.html', `${icona('confronto')}Try and compare`],
       ['/3d-models.html', `${icona('tred')}3D models${nuovo('2026-10-21')}`],
+      ['/always-on-agents.html', `${icona('app')}Always-on AI agents${nuovo('2026-11-06')}`],
     ]],
     ['Run it yourself', [
       ['/home.html', `${icona('casa')}Run at home`],
