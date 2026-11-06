@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-06-meta-launches-spaces-for-muse-agents-enabling-custom-collaborative-das",
+ "titolo": "Meta launches ‘Spaces’ for Muse agents, enabling custom collaborative dashboards",
+ "descr": "Spaces let users describe a goal and Muse builds a dedicated tab that syncs with apps like Gmail and Notion.",
+ "tema": "Software",
+ "paragrafi": [
+  "Meta introduced a new feature called Spaces within its Muse AI agents. Spaces appear as sidebar tabs that focus on a single project such as vacation planning or recipe collection.",
+  "Users create a Space by describing the desired outcome; Muse then generates a tracker, planner, or project board. The feature works with third‑party services such as Gmail, Google Calendar, OpenTable, and Notion, automatically updating information in the background.",
+  "Meta also rolled out Muse Voice, allowing video chat and verbal commands, and added Active Memory and Active Focus from its Muse Wonder model to improve goal‑oriented behavior.",
+  "The company says Spaces are rolling out to all Muse users.",
+  "Competitors include OpenAI’s dots and SpaceXAI’s Grokbot, which also use cartoon‑style avatars."
+ ],
+ "perche": [
+  "Spaces turn Muse into a plug‑in‑free productivity hub, letting users consolidate tasks without switching apps. For people who rely on free or locally hosted models, the announcement shows how integrated cloud agents can streamline workflows, highlighting a trade‑off between convenience and the openness of self‑hosted alternatives."
+ ],
+ "pubblicato": "2026-11-06",
+ "titoloFonte": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+   "titolo": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
+   "ufficiale": false,
+   "data": "2026-11-06"
+  },
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
+   "titolo": "Meta's Muse AI can create custom ‘spaces' for the version of the app you need right now",
+   "ufficiale": false,
+   "data": "2026-11-06"
+  }
+ ],
+ "frasiTolte": 2
+}

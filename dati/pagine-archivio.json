@@ -21411,6 +21411,42 @@
     "tipo": "News"
    },
    "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-06-meta-launches-spaces-for-muse-agents-enabling-custom-collaborative-das.html": {
+   "post": {
+    "slug": "news-2026-11-06-meta-launches-spaces-for-muse-agents-enabling-custom-collaborative-das",
+    "titolo": "Meta launches ‘Spaces’ for Muse agents, enabling custom collaborative dashboards",
+    "descr": "Spaces let users describe a goal and Muse builds a dedicated tab that syncs with apps like Gmail and Notion.",
+    "data": "2026-11-06",
+    "tema": "Software",
+    "corpo": "Meta introduced a new feature called Spaces within its Muse AI agents. Spaces appear as sidebar tabs that focus on a single project such as vacation planning or recipe collection.\n\nUsers create a Space by describing the desired outcome; Muse then generates a tracker, planner, or project board. The feature works with third‑party services such as Gmail, Google Calendar, OpenTable, and Notion, automatically updating information in the background.\n\nMeta also rolled out Muse Voice, allowing video chat and verbal commands, and added Active Memory and Active Focus from its Muse Wonder model to improve goal‑oriented behavior.\n\nThe company says Spaces are rolling out to all Muse users.\n\nCompetitors include OpenAI’s dots and SpaceXAI’s Grokbot, which also use cartoon‑style avatars.\n\n## What it means for you\n\nSpaces turn Muse into a plug‑in‑free productivity hub, letting users consolidate tasks without switching apps. For people who rely on free or locally hosted models, the announcement shows how integrated cloud agents can streamline workflows, highlighting a trade‑off between convenience and the openness of self‑hosted alternatives.\n\n## Sources\n\n- [Meta introduces Spaces, a new way to collaborate with your Muse agent](https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/), TechCrunch, 6 Nov 2026\n- [Meta's Muse AI can create custom ‘spaces' for the version of the app you need right now](https://www.theverge.com/tech/1028871/meta-muse-ai-spaces), The Verge, 6 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-06-meta-launches-spaces-for-muse-agents-enabling-custom-collaborative-das).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-06-nvidia-s-open-source-ai-tools-accelerate-6g-research-and-real-world-tr.html": {
+   "post": {
+    "slug": "news-2026-11-06-nvidia-s-open-source-ai-tools-accelerate-6g-research-and-real-world-tr",
+    "titolo": "NVIDIA’s Open‑Source AI Tools Accelerate 6G Research and Real‑World Trials",
+    "descr": "NVIDIA’s Aerial and Sionna platforms see 10× adoption, 1 M+ downloads and enable faster, smarter 6G network experiments.",
+    "data": "2026-11-06",
+    "tema": "Research",
+    "corpo": "A year after open‑sourcing its Aerial wireless software, NVIDIA reports a ten‑fold rise in global developer adoption and over one million downloads of its 5G/6G tools.\n\nMore than 8,000 research and academic institutions now use the AI‑native Aerial and Sionna suites to simulate, train and test next‑generation networks on real over‑the‑air systems.\n\nAt King’s College London, a robot arm linked to a Jetson AGX Orin running Sionna cut task completion time by up to 52.6 % by sending compact semantic descriptions instead of full images.\n\nSoftBank integrated a neural receiver into NVIDIA’s CUDA‑Accelerated RAN, achieving up to a 60 % uplink throughput gain under interference, while ETH Zurich showed a one‑third block‑error reduction by locally tuning receivers.\n\nUniversity of Leeds researchers used a DGX Spark‑powered 5G “network‑in‑a‑box” to predict demand ten minutes ahead, reducing RAN power consumption by 45.6 % without losing connectivity.\n\n## What it means for you\n\nThese tools let researchers prototype and evaluate 6G concepts far faster than traditional simulations, lowering costs and speeding innovation. For AI users, the open‑source stack provides free, GPU‑accelerated components that can be combined with local models, supporting experiments without costly proprietary licenses.\n\n## Sources\n\n- [How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks](https://blogs.nvidia.com/blog/telco-open-source-tools-research-6g-networks/), NVIDIA (official), 6 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-06-nvidia-s-open-source-ai-tools-accelerate-6g-research-and-real-world-tr).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-06-openai-teams-up-with-hacktron-to-hunt-vulnerabilities-in-its-systems.html": {
+   "post": {
+    "slug": "news-2026-11-06-openai-teams-up-with-hacktron-to-hunt-vulnerabilities-in-its-systems",
+    "titolo": "OpenAI teams up with Hacktron to hunt vulnerabilities in its systems",
+    "descr": "OpenAI partners with Hacktron to locate bugs, test third‑party connections and boost defenses for frontier AI.",
+    "data": "2026-11-06",
+    "tema": "Business",
+    "corpo": "OpenAI announced a partnership with security firm Hacktron.\n\nThe collaboration is meant to find vulnerabilities in OpenAI’s systems.\n\nHacktron will also test connections with third‑party services used by OpenAI.\n\nThe work is aimed at strengthening defenses as OpenAI advances frontier AI.\n\n## What it means for you\n\nThe partnership should make OpenAI’s services more reliable and safer for end users. Meanwhile, users who prefer free or locally run models can still choose top‑ranked options such as Kimi K3, GLM‑5.3, MiMo‑V2.6‑Pro, GLM‑5.3‑Flash and DeepSeek‑V4.1‑Flash, which remain the leading free chat models.\n\n## On FreeLLMArena\n\nFrom our rankings on 6 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [Partnering with Hacktron to find vulnerabilities in OpenAI’s systems](https://openai.com/index/partnering-with-hacktron), OpenAI (official), 6 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-06-openai-teams-up-with-hacktron-to-hunt-vulnerabilities-in-its-systems).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
   }
  },
  "ricostruzione": {

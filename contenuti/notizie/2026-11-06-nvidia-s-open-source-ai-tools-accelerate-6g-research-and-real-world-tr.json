@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-06-nvidia-s-open-source-ai-tools-accelerate-6g-research-and-real-world-tr",
+ "titolo": "NVIDIA’s Open‑Source AI Tools Accelerate 6G Research and Real‑World Trials",
+ "descr": "NVIDIA’s Aerial and Sionna platforms see 10× adoption, 1 M+ downloads and enable faster, smarter 6G network experiments.",
+ "tema": "Research",
+ "paragrafi": [
+  "A year after open‑sourcing its Aerial wireless software, NVIDIA reports a ten‑fold rise in global developer adoption and over one million downloads of its 5G/6G tools.",
+  "More than 8,000 research and academic institutions now use the AI‑native Aerial and Sionna suites to simulate, train and test next‑generation networks on real over‑the‑air systems.",
+  "At King’s College London, a robot arm linked to a Jetson AGX Orin running Sionna cut task completion time by up to 52.6 % by sending compact semantic descriptions instead of full images.",
+  "SoftBank integrated a neural receiver into NVIDIA’s CUDA‑Accelerated RAN, achieving up to a 60 % uplink throughput gain under interference, while ETH Zurich showed a one‑third block‑error reduction by locally tuning receivers.",
+  "University of Leeds researchers used a DGX Spark‑powered 5G “network‑in‑a‑box” to predict demand ten minutes ahead, reducing RAN power consumption by 45.6 % without losing connectivity."
+ ],
+ "perche": [
+  "These tools let researchers prototype and evaluate 6G concepts far faster than traditional simulations, lowering costs and speeding innovation. For AI users, the open‑source stack provides free, GPU‑accelerated components that can be combined with local models, supporting experiments without costly proprietary licenses."
+ ],
+ "pubblicato": "2026-11-06",
+ "titoloFonte": "How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/telco-open-source-tools-research-6g-networks/",
+   "titolo": "How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks",
+   "ufficiale": true,
+   "data": "2026-11-06"
+  }
+ ],
+ "frasiTolte": 0
+}

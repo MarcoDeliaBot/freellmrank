@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-06-openai-teams-up-with-hacktron-to-hunt-vulnerabilities-in-its-systems",
+ "titolo": "OpenAI teams up with Hacktron to hunt vulnerabilities in its systems",
+ "descr": "OpenAI partners with Hacktron to locate bugs, test third‑party connections and boost defenses for frontier AI.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI announced a partnership with security firm Hacktron.",
+  "The collaboration is meant to find vulnerabilities in OpenAI’s systems.",
+  "Hacktron will also test connections with third‑party services used by OpenAI.",
+  "The work is aimed at strengthening defenses as OpenAI advances frontier AI."
+ ],
+ "perche": [
+  "The partnership should make OpenAI’s services more reliable and safer for end users. Meanwhile, users who prefer free or locally run models can still choose top‑ranked options such as Kimi K3, GLM‑5.3, MiMo‑V2.6‑Pro, GLM‑5.3‑Flash and DeepSeek‑V4.1‑Flash, which remain the leading free chat models."
+ ],
+ "pubblicato": "2026-11-06",
+ "titoloFonte": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/partnering-with-hacktron",
+   "titolo": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+   "ufficiale": true,
+   "data": "2026-11-06"
+  }
+ ],
+ "frasiTolte": 0
+}
