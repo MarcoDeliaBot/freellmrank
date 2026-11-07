@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-07-openai-secures-11-b-in-new-funding-valuation-reaches-1-25-trillion",
+ "titolo": "OpenAI secures $11 B in new funding, valuation reaches $1.25 trillion",
+ "descr": "The AI lab raised $11 billion in a fresh round, pushing its market value to $1.25 trillion amid talks of a larger $20 billion close.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI Group PBC received $11 billion in a funding round that values the company at $1.25 trillion, according to Bloomberg sources reported by SiliconANGLE and TechCrunch on 6 Nov 2026.",
+  "Investors have not been named, but Microsoft, which has backed previous rounds, is a possible participant. Earlier rounds included Nvidia, Amazon and about two dozen others.",
+  "The round is still open; a source told Bloomberg it could close at roughly $20 billion, and the company may raise up to $9 billion more before the round ends.",
+  "OpenAI plans to go public in 2027, and the cash infusion is intended to cover steep infrastructure costs, including a custom inference accelerator built with Broadcom.",
+  "The funding comes as OpenAI reported $50 billion in net annualized revenue, a 77 % year‑over‑year increase, driven by enterprise sales that more than doubled."
+ ],
+ "perche": [
+  "The new capital helps OpenAI sustain its large‑scale compute needs, keeping its flagship models like GPT‑6 Astra and GPT‑6 Cyber available to enterprise customers. For users of free or locally hosted models, the funding highlights the growing gap between the resources required for cutting‑edge AI and what open‑source projects can currently provide."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "OpenAI reportedly raises $11B in new funding at $1.25T valuation",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/06/openai-reportedly-raises-11b-in-new-funding-at-1-25t-valuation/",
+   "titolo": "OpenAI reportedly raises $11B in new funding at $1.25T valuation",
+   "ufficiale": false,
+   "data": "2026-11-06"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/",
+   "titolo": "OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation",
+   "ufficiale": false,
+   "data": "2026-11-06"
+  }
+ ],
+ "frasiTolte": 0
+}

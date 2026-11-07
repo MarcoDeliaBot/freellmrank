@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-07-nvidia-blackwell-gpus-cut-flux-3-image-klein-latency-up-to-3-46-on-sin",
+ "titolo": "NVIDIA Blackwell GPUs cut FLUX 3 Image Klein latency up to 3.46× on single B200",
+ "descr": "TensorRT LLM VisualGen optimizations deliver up to 3.46× faster text‑to‑image and 4.45× faster image‑to‑image generation on a Blackwell B200 GPU.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "NVIDIA’s TensorRT LLM VisualGen runtime was used to accelerate FLUX 3 Image Klein, a diffusion model from Black Forest Labs, on Blackwell GPUs.",
+  "On a single B200 GPU, NVFP4 precision already gave 1.62× faster text‑to‑image (T2I) and 1.58× faster image‑to‑image (I2I) compared with BF16.",
+  "Further optimizations—fused GEMM kernels, FP8 attention, cache‑DiT step caching and sparse Sol‑Attention—boosted performance to 3.46× faster T2I and 4.45× faster I2I at 2048×2048 resolution.",
+  "Multi‑GPU scaling with eight B200 cards reduced median T2I latency from 14.90 s to 3.00 s and I2I from 2.73 s to 1.08 s, achieving 6.01× and 4.44× denoising speedups respectively.",
+  "The optimized pipeline keeps most of the generation time in denoising, which dropped from 96.8% to around half when caching was applied."
+ ],
+ "perche": [
+  "Developers can now integrate FLUX 3 Image Klein into design tools with markedly lower latency, enabling real‑time image editing workflows. The gains also show that high‑resolution diffusion models can run efficiently on a single Blackwell GPU, reducing reliance on large GPU clusters for many users."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "Speed Up Image Generation with FLUX 3 Image Klein on NVIDIA Blackwell GPUs",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/",
+   "titolo": "Speed Up Image Generation with FLUX 3 Image Klein on NVIDIA Blackwell GPUs",
+   "ufficiale": true,
+   "data": "2026-11-06"
+  }
+ ],
+ "frasiTolte": 0
+}

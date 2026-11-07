@@ -21447,6 +21447,42 @@
     "tipo": "News"
    },
    "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-07-chainalysis-breach-exposes-credentials-and-tokens-for-all-customers.html": {
+   "post": {
+    "slug": "news-2026-11-07-chainalysis-breach-exposes-credentials-and-tokens-for-all-customers",
+    "titolo": "Chainalysis breach exposes credentials and tokens for all customers",
+    "descr": "Hackers accessed names, usernames, password hashes and live tokens of every Chainalysis user, prompting mandatory password resets.",
+    "data": "2026-11-07",
+    "tema": "Business",
+    "corpo": "Chainalysis reported that a cyberattack in October led to theft of personal data for all its users. The breach exposed names, usernames, password hashes and live tokens.\n\nThe attackers employed AI‑agent‑assisted techniques and an on‑path, or adversary‑in‑the‑middle, attack that revealed a subset of customer passwords.\n\nAffected customers include the FBI, US Immigration and Customs Enforcement, the US Air Force, Microsoft, Coinbase and Barclays.\n\nChainalysis responded by taking Reactor, Data Solutions, KYT and address screening offline, locking accounts and requiring every user to reset passwords and rotate API keys.\n\nOn Nov 6 the company began a phased restoration of KYT and address screening, asking customers to submit trusted IP addresses for an allowlist.\n\n## What it means for you\n\nThe incident shows that credentials used to access AI and blockchain services can be compromised at scale, so users must treat passwords and API keys as high‑value secrets.\n\n## Sources\n\n- [Chainalysis says hackers stole credentials and tokens for all of its customers](https://arstechnica.com/security/2026/11/chainalysis-says-hackers-stole-credentials-and-tokens-for-all-of-its-customers/), Ars Technica, 6 Nov 2026\n- [Updated Nov 6: Chainalysis Security Incident Information - Chainalysis](https://www.chainalysis.com/blog/security-incident-october-30/), chainalysis.com (official), 30 Oct 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-07-chainalysis-breach-exposes-credentials-and-tokens-for-all-customers).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-07-nvidia-blackwell-gpus-cut-flux-3-image-klein-latency-up-to-3-46-on-sin.html": {
+   "post": {
+    "slug": "news-2026-11-07-nvidia-blackwell-gpus-cut-flux-3-image-klein-latency-up-to-3-46-on-sin",
+    "titolo": "NVIDIA Blackwell GPUs cut FLUX 3 Image Klein latency up to 3.46× on single B200",
+    "descr": "TensorRT LLM VisualGen optimizations deliver up to 3.46× faster text‑to‑image and 4.45× faster image‑to‑image generation on a Blackwell B200 GPU.",
+    "data": "2026-11-07",
+    "tema": "Hardware",
+    "corpo": "NVIDIA’s TensorRT LLM VisualGen runtime was used to accelerate FLUX 3 Image Klein, a diffusion model from Black Forest Labs, on Blackwell GPUs.\n\nOn a single B200 GPU, NVFP4 precision already gave 1.62× faster text‑to‑image (T2I) and 1.58× faster image‑to‑image (I2I) compared with BF16.\n\nFurther optimizations—fused GEMM kernels, FP8 attention, cache‑DiT step caching and sparse Sol‑Attention—boosted performance to 3.46× faster T2I and 4.45× faster I2I at 2048×2048 resolution.\n\nMulti‑GPU scaling with eight B200 cards reduced median T2I latency from 14.90 s to 3.00 s and I2I from 2.73 s to 1.08 s, achieving 6.01× and 4.44× denoising speedups respectively.\n\nThe optimized pipeline keeps most of the generation time in denoising, which dropped from 96.8% to around half when caching was applied.\n\n## What it means for you\n\nDevelopers can now integrate FLUX 3 Image Klein into design tools with markedly lower latency, enabling real‑time image editing workflows. The gains also show that high‑resolution diffusion models can run efficiently on a single Blackwell GPU, reducing reliance on large GPU clusters for many users.\n\n## Sources\n\n- [Speed Up Image Generation with FLUX 3 Image Klein on NVIDIA Blackwell GPUs](https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/), NVIDIA Developer (official), 6 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-07-nvidia-blackwell-gpus-cut-flux-3-image-klein-latency-up-to-3-46-on-sin).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-07-openai-secures-11-b-in-new-funding-valuation-reaches-1-25-trillion.html": {
+   "post": {
+    "slug": "news-2026-11-07-openai-secures-11-b-in-new-funding-valuation-reaches-1-25-trillion",
+    "titolo": "OpenAI secures $11 B in new funding, valuation reaches $1.25 trillion",
+    "descr": "The AI lab raised $11 billion in a fresh round, pushing its market value to $1.25 trillion amid talks of a larger $20 billion close.",
+    "data": "2026-11-07",
+    "tema": "Business",
+    "corpo": "OpenAI Group PBC received $11 billion in a funding round that values the company at $1.25 trillion, according to Bloomberg sources reported by SiliconANGLE and TechCrunch on 6 Nov 2026.\n\nInvestors have not been named, but Microsoft, which has backed previous rounds, is a possible participant. Earlier rounds included Nvidia, Amazon and about two dozen others.\n\nThe round is still open; a source told Bloomberg it could close at roughly $20 billion, and the company may raise up to $9 billion more before the round ends.\n\nOpenAI plans to go public in 2027, and the cash infusion is intended to cover steep infrastructure costs, including a custom inference accelerator built with Broadcom.\n\nThe funding comes as OpenAI reported $50 billion in net annualized revenue, a 77 % year‑over‑year increase, driven by enterprise sales that more than doubled.\n\n## What it means for you\n\nThe new capital helps OpenAI sustain its large‑scale compute needs, keeping its flagship models like GPT‑6 Astra and GPT‑6 Cyber available to enterprise customers. For users of free or locally hosted models, the funding highlights the growing gap between the resources required for cutting‑edge AI and what open‑source projects can currently provide.\n\n## Sources\n\n- [OpenAI reportedly raises $11B in new funding at $1.25T valuation](https://siliconangle.com/2026/11/06/openai-reportedly-raises-11b-in-new-funding-at-1-25t-valuation/), SiliconANGLE, 6 Nov 2026\n- [OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation](https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/), TechCrunch, 6 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-07-openai-secures-11-b-in-new-funding-valuation-reaches-1-25-trillion).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
   }
  },
  "ricostruzione": {
