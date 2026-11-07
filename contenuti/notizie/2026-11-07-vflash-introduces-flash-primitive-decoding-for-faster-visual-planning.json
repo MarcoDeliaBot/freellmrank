@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-07-vflash-introduces-flash-primitive-decoding-for-faster-visual-planning",
+ "titolo": "VFlash introduces Flash Primitive Decoding for faster visual planning",
+ "descr": "The new VFlash method predicts visual plan coordinates jointly, cutting inference time for robotics and autonomous driving tasks.",
+ "tema": "Research",
+ "paragrafi": [
+  "Researchers released VFlash, a visual planning technique that replaces autoregressive token generation with joint coordinate prediction.",
+  "The method uses a lightweight drafter to output an entire visual primitive—such as a bounding box or trajectory—in a single forward pass.",
+  "VFlash adapts its layout to the primitive type, handling compact boxes and long, variable‑length trajectories without extra cost.",
+  "By training on annotated primitives, VFlash maintains spatial accuracy while avoiding the need to reproduce an autoregressive model’s token sequence.",
+  "The paper lists related works from 2026, including Jag, PDRVLA, VITAL, Forward Dynamics Models, ObjDream, DiffAdapterVLA, and Memory‑as‑Plans."
+ ],
+ "perche": [
+  "For AI practitioners, VFlash offers a way to speed up visual plan generation in robotics and self‑driving systems, potentially reducing compute budgets. Free‑model enthusiasts may see faster inference as a step toward more efficient local deployments, though the paper does not detail hardware requirements or open‑source releases."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "NVIDIA paper: VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2611.08449",
+   "titolo": "NVIDIA paper: VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+   "ufficiale": true,
+   "data": "2026-11-04"
+  }
+ ],
+ "frasiTolte": 0
+}

@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-07-merge-launches-product-and-business-tools-powered-by-gpt-6-astra-chatg",
+ "titolo": "Merge launches product and business tools powered by GPT-6 Astra, ChatGPT and Codex",
+ "descr": "OpenAI announced that its subsidiary Merge has released a suite of tools for product and business teams.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI announced that its subsidiary Merge has released a suite of tools for product and business teams.",
+  "The tools employ GPT-6 Astra, ChatGPT and Codex to automatically review product code and assist marketing efforts.",
+  "Merge also uses the same AI models to plan executive dinners and generate sales update reports.",
+  "The announcement was made on 5 November 2026 and highlights the expanding role of generative AI in everyday business workflows."
+ ],
+ "perche": [
+  "For users seeking free or locally hosted models, the top free chat models remain Kimi K3, GLM-5.3 and MiMo-V2.6-Pro, according to recent arena votes. Paid users may consider Gemini 4 Carbon, which leads the paid category."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "Merge builds product and business tools with OpenAI technology",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/merge-builds-with-openai",
+   "titolo": "Merge builds product and business tools with OpenAI technology",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 1
+}

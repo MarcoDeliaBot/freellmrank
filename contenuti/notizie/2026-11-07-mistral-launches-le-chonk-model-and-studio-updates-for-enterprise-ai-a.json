@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-07-mistral-launches-le-chonk-model-and-studio-updates-for-enterprise-ai-a",
+ "titolo": "Mistral launches Le Chonk model and Studio updates for enterprise AI agents, workflows and apps",
+ "descr": "Mistral Large 4 (Le Chonk) adds coding, cybersecurity and document reasoning, while Studio now supports managed agents and enterprise context.",
+ "tema": "Business",
+ "paragrafi": [
+  "Mistral announced the Mistral Large 4 model, nicknamed Le Chonk, aimed at enterprise AI tasks such as advanced coding, defensive cybersecurity and complex document reasoning.",
+  "The company also refreshed Mistral Studio, its platform for building AI agents, workflows and applications that can run in cloud, VPC or on‑premises environments.",
+  "New Studio features include managed agents, enterprise context, workflow enhancements, agent observability and evaluation tools, allowing faster development and reuse across business units.",
+  "Customers like ABANCA, Accenture, BNP Paribas, Capgemini and Tata Consultancy Services are already using Studio to automate processes and keep full control over data and deployment.",
+  "Mistral emphasizes that the platform lets teams activate models quickly, connect to enterprise data via connectors and MCP servers, and retain governance over AI outputs."
+ ],
+ "perche": [
+  "Enterprises gain a turnkey solution for building trusted AI applications while maintaining data sovereignty. For users preferring free or local models, the release highlights a contrast: community‑driven models such as Kimi K3 or DeepSeek‑V4.1 rank highly in free chat benchmarks, but lack the integrated deployment and security features offered by Mistral’s enterprise stack."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "Le Chonk brings the brains. Studio puts it to work.",
+ "fonti": [
+  {
+   "nome": "Mistral",
+   "url": "https://mistral.ai/news/build-with-studio/",
+   "titolo": "Le Chonk brings the brains. Studio puts it to work.",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 0
+}
