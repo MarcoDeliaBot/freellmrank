@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-07-voyager-so-vork-headless-3d-and-vfx-engine-for-agents-research-preview",
+ "titolo": "voyager-so/vork: Headless 3D and VFX engine for agents. Research preview.",
+ "descr": "Vork, a Rust and Slang based engine, enables agents to code, render and edit 3D scenes without a traditional editor.",
+ "tema": "Research",
+ "paragrafi": [
+  "The Voyager team posted Vork on GitHub on November 5, 2026 as a research preview.",
+  "Vork is a headless 3D and visual effects engine written in Rust and Slang, using Vulkan and Metal for GPU rendering.",
+  "Agents can generate scene code, run simulations such as a million‑bird flock, and produce rendered images without a dedicated UI.",
+  "Examples include a black‑hole light‑propagation demo, fluid simulation, and compositing of real footage with rendered 3D assets.",
+  "The project is source‑available and free during the preview, with large assets fetched separately from external sources."
+ ],
+ "perche": [
+  "Vork lets developers experiment with AI‑driven content creation, removing the need for manual 3D tools. For users seeking free or locally run models, the engine offers a way to integrate generative agents with custom visual pipelines without licensing costs."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "voyager-so/vork: Headless 3D and VFX engine for agents. Research preview.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/voyager-so/vork",
+   "titolo": "voyager-so/vork: Headless 3D and VFX engine for agents. Research preview.",
+   "ufficiale": false,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 1
+}

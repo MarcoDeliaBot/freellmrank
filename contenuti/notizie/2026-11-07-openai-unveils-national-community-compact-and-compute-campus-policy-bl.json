@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-07-openai-unveils-national-community-compact-and-compute-campus-policy-bl",
+ "titolo": "OpenAI unveils National Community Compact and Compute Campus Policy Blueprint",
+ "descr": "OpenAI releases a policy framework aimed at protecting local resources, fostering job creation, and guiding responsible AI infrastructure development.",
+ "tema": "Policy",
+ "paragrafi": [
+  "OpenAI announced a new policy document on November 5, 2026.",
+  "The National Community Compact and Compute Campus Policy Blueprint outlines guidelines for AI infrastructure projects.",
+  "Key goals include safeguarding local resources and promoting employment opportunities in host communities.",
+  "The blueprint also provides a framework for responsible development of AI compute campuses.",
+  "OpenAI positions the initiative as a standard for future AI infrastructure planning."
+ ],
+ "perche": [
+  "The blueprint offers communities clear expectations for AI projects, helping ensure that deployments do not strain local utilities. For developers and users, it signals that future AI services may be built with more transparent, community‑focused practices."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "Setting a new standard for responsible AI infrastructure",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure",
+   "titolo": "Setting a new standard for responsible AI infrastructure",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 0
+}
