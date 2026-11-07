@@ -271,5 +271,13 @@
  "news-2026-11-04-openai-adds-gif-creation-to-chatgpt-with-images-2-6-model": {
   "lungo": "notizia-openai-adds-gif-creation-to-chatgpt-with-images-2-6-mode",
   "breve": "breve-openai-adds-gif-creation-to-chatgpt-with-images-2-6-mode"
+ },
+ "news-2026-11-06-meta-launches-spaces-for-muse-agents-enabling-custom-collaborative-das": {
+  "lungo": "notizia-meta-launches-spaces-for-muse-agents-enabling-custom-col",
+  "breve": "breve-meta-launches-spaces-for-muse-agents-enabling-custom-col"
+ },
+ "news-2026-11-07-openai-launches-biobasicsbench-a-100-task-wet-lab-science-benchmark": {
+  "lungo": "notizia-openai-launches-biobasicsbench-a-100-task-wet-lab-scienc",
+  "breve": "breve-openai-launches-biobasicsbench-a-100-task-wet-lab-scienc"
  }
 }
