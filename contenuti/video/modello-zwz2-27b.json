@@ -1,0 +1,155 @@
+{
+ "nome": "modello-zwz2-27b",
+ "titolo": "ZwZ2-27B: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "ZwZ2-27B is a free, 27-billion-parameter multimodal model that improves visual reasoning across 25 benchmarks. It runs on modest consumer GPUs, so home users and researchers can explore its evidence-connecting abilities today.\n\nSize: 27.4B parameters · context 256K · memory at 4-bit about 19 GB.\nRTX 3060 12 GB + 32 GB RAM: about 8.5 tokens/s\nRTX 4090 + 64 GB RAM: about 44 tokens/s\nRTX 5090 + 64 GB RAM: about 75 tokens/s\nMac M4 Max 128 GB: about 23 tokens/s\nNVIDIA DGX Spark 128 GB: about 12 tokens/s\nRyzen AI Max+ 395 128 GB: about 12 tokens/s\nMac Studio M3 Ultra 512 GB: about 33 tokens/s\nModel card: https://huggingface.co/inclusionAI/ZwZ2-27B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "ZwZ2-27B",
+  "InclusionAI"
+ ],
+ "condividi": "ZwZ2-27B by InclusionAI: 27.4B parameters, about 19 GB at 4-bit; smallest home machine that holds it: RX 7900 XT. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "ZwZ2-27B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "ZwZ2-27B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "ZwZ2-27B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "ZwZ2-27B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "ZwZ2-27B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "ZwZ2-27B",
+    "gb": 19,
+    "scheda": {
+     "id": "rx7900xt",
+     "nome": "RX 7900 XT",
+     "gb": 20,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "ZwZ2-27B",
+    "vel": 8.5,
+    "dove": "ram"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "ZwZ2-27B",
+    "vel": 44,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "ZwZ2-27B",
+    "vel": 75,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "ZwZ2-27B",
+    "vel": 23,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "ZwZ2-27B",
+    "vel": 12,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "ZwZ2-27B",
+    "vel": 12,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "ZwZ2-27B",
+    "vel": 33,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "ZwZ2-27B builds on Qwen3.6-27B and lifts overall accuracy from 55.52 to 60.51 across 25 benchmarks. It learns to connect visual evidence across image regions without any zoom-in tools at inference.",
+  "ZwZ2-27B is a 27.4 billion-parameter model that uses the Qwen3.6-27B backbone. According to the model card, it can handle a context window of 256 K tokens, which is far larger than many earlier multimodal models. The model is released by InclusionAI on Hugging Face and is available for free download. Its size and context make it suitable for tasks that need both detailed visual understanding and long textual reasoning.",
+  "The core innovation is the EvidenceConnect pipeline. It groups three to seven related image regions, creates questions with privileged zoomed views, and verifies answers through cross-model agreement and drop-one region tests. The verified questions become four-option tasks and the model is trained with GRPO, all without an additional supervised fine-tuning stage. During inference the model sees the whole image and does not require any zooming tools, keeping the workflow simple.",
+  "The model card reports results on twenty-five benchmarks spanning six domains. Compared with its Qwen3.6-27B base, ZwZ2-27B raises the overall accuracy from 55.52 to 60.51, a gain of 4.99 points. Importantly, the improvement appears on every single benchmark, indicating consistent benefits across fine-grained perception, spatial reasoning, long-context understanding, multimodal agents, and general visual reasoning.",
+  "According to InclusionAI, the model excels at fine-grained visual perception and multi-step spatial reasoning, especially when long textual context is involved. However, the model can still hallucinate details, misread text, and make mistakes in counting or spatial relationships. Performance also depends on image resolution, context length, and prompt format, so careful prompt engineering can help mitigate some of these issues.",
+  "ZwZ2-27B runs at about 8.5 tokens per second on an RTX 3060 with 12 GB VRAM, making it reachable for many hobbyists. Researchers interested in visual evidence connection or developers building multimodal agents will find the model’s capabilities useful. Because the weights are freely downloadable, anyone can experiment without waiting for an API.",
+  "What do you need to run it at home? At 4-bit it takes about 19 gigabytes of memory. The smallest home machine that holds it fully is an RX 7900 XT. On an RTX 40 90 with 64 gigabytes of RAM it writes about 44 tokens per second. On an RTX 50 90 with 64 gigabytes of RAM it writes about 75 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face, under the license written in its model card. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare ZwZ2 27B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-zwz2-27b",
+ "pubblicato": "2026-11-07"
+}
