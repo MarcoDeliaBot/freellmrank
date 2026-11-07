@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-07-buoyant-releases-kinference-an-open-source-inference-control-plane-for",
+ "titolo": "Buoyant Releases Kinference: An Open Source Inference Control Plane for Kubernetes and vLLM",
+ "descr": "Kinference adds declarative routing, KV‑cache‑aware load balancing and per‑tenant metrics, cutting median TTFT by 95% in Buoyant’s benchmark.",
+ "tema": "Software",
+ "paragrafi": [
+  "Buoyant announced Kinference, an Apache‑2.0 licensed control plane designed for large‑language‑model inference on Kubernetes.",
+  "The project runs on top of inference engines such as vLLM and introduces token rate limiting, tenant usage tracking, intelligent load balancing and policy‑driven routing.",
+  "Kinference’s load balancer considers GPU queue sizes, historical performance and KV‑cache content, directing requests to the worker that will do the least work.",
+  "In Buoyant’s own benchmark, the new control plane reduced median time‑to‑first‑token by 95% compared with standard Kubernetes service load balancing.",
+  "The system can be paired with existing stacks via an HTTP endpoint that accepts OpenAI‑ or Anthropic‑compatible traffic, and it can operate alongside Linkerd though it does not require it."
+ ],
+ "perche": [
+  "For AI teams, Kinference offers a way to share limited GPU resources more fairly and efficiently, improving response times for LLM applications. Users of free or locally hosted models gain a scalable platform that can manage multiple tenants and models without building custom routing logic."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "Buoyant Releases Kinference: An Open Source Inference Control Plane for Kubernetes and vLLM",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/07/buoyant-kinference-open-source-inference-control-plane-kubernetes-vllm/",
+   "titolo": "Buoyant Releases Kinference: An Open Source Inference Control Plane for Kubernetes and vLLM",
+   "ufficiale": false,
+   "data": "2026-11-07"
+  },
+  {
+   "nome": "buoyant.io",
+   "url": "https://www.buoyant.io/blog/introducing-kinference",
+   "titolo": "Kinference: Scalable Inference Control Plane for Kubernetes",
+   "ufficiale": true,
+   "data": "2026-11-02"
+  }
+ ],
+ "frasiTolte": 1
+}

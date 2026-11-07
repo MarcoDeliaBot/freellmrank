@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-07-nous-research-fine-tunes-qwen3-8-27b-to-cut-chinese-state-propaganda-t",
+ "titolo": "Nous Research fine‑tunes Qwen3.8‑27B to cut Chinese state propaganda to under 1%",
+ "descr": "Supervised fine‑tuning on 53 M tokens creates Arete‑27B, dropping propaganda from 22% to 0.9% while preserving capabilities.",
+ "tema": "Research",
+ "paragrafi": [
+  "Nous Research applied supervised fine‑tuning to Alibaba's Qwen3.8‑27B, training on about 53 million tokens over two epochs.",
+  "The resulting open‑weight model, Arete‑27B, reduced the rate of propagandistic answers from 22 percent to under one percent, according to the team’s internal tests.",
+  "Factual accuracy rose from 2.32 to 2.98 on the same benchmark, and reasoning mode pushed the score to 3.07, while overall capability scores stayed essentially unchanged.",
+  "The study used 803 prompts across seven value categories, with a politically right‑leaning Grok 4.7 model judging whether responses contained propaganda."
+ ],
+ "perche": [
+  "For users seeking models without state‑mandated narratives, Arete‑27B offers a free, open‑weight alternative that aligns with Western values while keeping performance intact. The work shows that targeted fine‑tuning can quickly cleanse political bias, encouraging more developers to adopt or adapt similar techniques for local, privacy‑focused deployments."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "State propaganda in some Chinese AI models is only \"a thin layer\" that fine-tuning can strip away",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/state-propaganda-in-some-chinese-ai-models-is-only-a-thin-layer-that-fine-tuning-can-strip-away/",
+   "titolo": "State propaganda in some Chinese AI models is only \"a thin layer\" that fine-tuning can strip away",
+   "ufficiale": false,
+   "data": "2026-11-07"
+  },
+  {
+   "nome": "huggingface.co",
+   "url": "https://huggingface.co/NousResearch/Arete-27B",
+   "titolo": "NousResearch/Arete-27B · Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-07"
+  }
+ ],
+ "frasiTolte": 1
+}

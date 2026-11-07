@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-07-hundreds-of-artex-ai-hacking-tools-exposed-online-linked-to-large-scal",
+ "titolo": "Hundreds of Artex AI hacking tools exposed online, linked to large‑scale cyberattacks",
+ "descr": "Publicly accessible copies of the Chinese AI penetration testing framework Artex were found, enabling rapid nation‑state attacks on cloud services.",
+ "tema": "Policy",
+ "paragrafi": [
+  "Security researchers reported more than 800 openly reachable deployments of Artex, an open‑source AI hacking tool, across the internet.",
+  "Censys principal researcher Silas Cutler noted that while some instances serve authorized testing, many are unintentionally exposed, increasing misuse risk.",
+  "Microsoft confirmed that a China‑state aligned actor, Storm‑0940, used Artex from September 2026 to automate attacks on hundreds of organizations, including the ConnectWise supply chain breach.",
+  "The AI framework accelerated steps such as reconnaissance, password spraying and OAuth abuse, allowing privileged cloud access in under three hours.",
+  "Microsoft advises customers to monitor service‑principal sign‑ins, investigate unexpected credential changes, and follow ConnectWise containment guidance."
+ ],
+ "perche": [
+  "Open‑source AI tools like Artex can be repurposed for offensive operations, raising the threat landscape for enterprises using cloud services. For users of free or locally hosted models, the incident underscores the importance of securing deployment environments and monitoring for unauthorized AI agents."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+   "titolo": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
+   "ufficiale": false,
+   "data": "2026-11-06"
+  },
+  {
+   "nome": "microsoft.com",
+   "url": "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/",
+   "titolo": "AI-driven, large-scale nation-state campaign using ARTEX enables supply chain compromise | Microsoft Security Blog",
+   "ufficiale": true,
+   "data": "2026-10-21"
+  }
+ ],
+ "frasiTolte": 0
+}
