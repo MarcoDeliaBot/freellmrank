@@ -279,5 +279,13 @@
  "news-2026-11-07-openai-launches-biobasicsbench-a-100-task-wet-lab-science-benchmark": {
   "lungo": "notizia-openai-launches-biobasicsbench-a-100-task-wet-lab-scienc",
   "breve": "breve-openai-launches-biobasicsbench-a-100-task-wet-lab-scienc"
+ },
+ "news-2026-11-07-merge-launches-product-and-business-tools-powered-by-gpt-6-astra-chatg": {
+  "lungo": "notizia-merge-launches-product-and-business-tools-powered-by-gpt",
+  "breve": "breve-merge-launches-product-and-business-tools-powered-by-gpt"
+ },
+ "news-2026-11-07-mistral-launches-le-chonk-model-and-studio-updates-for-enterprise-ai-a": {
+  "lungo": "notizia-mistral-launches-le-chonk-model-and-studio-updates-for-e",
+  "breve": "breve-mistral-launches-le-chonk-model-and-studio-updates-for-e"
  }
 }
