@@ -2033,5 +2033,27 @@
   "contestoMax": 131072,
   "moe": false,
   "attivi": 8030277632
+ },
+ "ibm-granite/granite-3.2-8b-instruct": {
+  "strati": 40,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 40,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 131072,
+  "moe": false,
+  "attivi": 8170848256
+ },
+ "inclusionAI/ZwZ2-27B": {
+  "strati": 64,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 16,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": false,
+  "attivi": 27356728560
  }
 }
