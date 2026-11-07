@@ -25,9 +25,18 @@ async function idDi(handle) {
   return (await r.text()).match(/"externalId":"(UC[\w-]{22})"/)?.[1] || null;
 }
 
+// 7/11/2026: dal 3/11 il radar leggeva 0 o 1 canale su 25 («feed 404/500»); un'ora dopo gli stessi feed
+// rispondevano tutti 200. YouTube sbaglia a tratti: si riprova con pause crescenti.
+const PAUSE = [5000, 20000, 60000];
+const dormi = (ms) => new Promise((ok) => setTimeout(ok, ms));
 async function feed(id) {
-  const r = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`);
-  if (!r.ok) throw new Error(`feed ${r.status}`);
+  let r;
+  for (let i = 0; ; i++) {
+    r = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`).catch((e) => ({ ok: false, status: e.message }));
+    if (r.ok || i >= PAUSE.length) break;
+    await dormi(PAUSE[i]);
+  }
+  if (!r.ok) throw new Error(`feed ${r.status} dopo ${PAUSE.length + 1} tentativi`);
   const x = await r.text();
   const nome = testo(x.match(/<title>([^<]*)<\/title>/)?.[1] || id);
   const video = [...x.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(([, e]) => ({
