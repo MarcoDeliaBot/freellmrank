@@ -21745,6 +21745,42 @@
     "tipo": "News"
    },
    "data": "2026-11-07"
+  },
+  "/blog/news-2026-11-07-flipsnack-boosts-signups-by-optimizing-chatgpt-ads-campaign.html": {
+   "post": {
+    "slug": "news-2026-11-07-flipsnack-boosts-signups-by-optimizing-chatgpt-ads-campaign",
+    "titolo": "Flipsnack boosts signups by optimizing ChatGPT Ads campaign",
+    "descr": "Flipsnack focused its ChatGPT Ads on trial conversions, increasing registrations while cutting cost per signup.",
+    "data": "2026-11-07",
+    "tema": "Business",
+    "corpo": "Flipsnack ran a series of ChatGPT Ads aimed at encouraging users to try its platform.\n\nThe campaign targeted product signups rather than generic traffic.\n\nResults showed a rise in registrations alongside a lower cost per signup.\n\n## What it means for you\n\nFor AI users, the success shows that targeted AI‑driven ads can lower barriers to trying new tools. For those seeking free or local models, it underscores the value of conversion optimization in promoting accessible AI services.\n\n## Sources\n\n- [Flipsnack grows product signups with conversion optimization](https://openai.com/ads/customers/flipsnack), OpenAI (official), 5 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-07-flipsnack-boosts-signups-by-optimizing-chatgpt-ads-campaign).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-07"
+  },
+  "/blog/news-2026-11-07-nvidia-dory-1-0-4b-model-can-be-run-locally-with-llama-cpp-guide-relea.html": {
+   "post": {
+    "slug": "news-2026-11-07-nvidia-dory-1-0-4b-model-can-be-run-locally-with-llama-cpp-guide-relea",
+    "titolo": "NVIDIA Dory 1.0 4B model can be run locally with llama.cpp, guide released",
+    "descr": "A November 2026 MarkTechPost guide shows how to compile and run NVIDIA's 4‑billion‑parameter Dory 1.0 BF16 model using llama.cpp.",
+    "data": "2026-11-07",
+    "tema": "Guides",
+    "corpo": "NVIDIA made its Dory 1.0 4B language model available on Hugging Face under the repository nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16.\n\nThe tutorial walks users through building a pinned llama.cpp branch, analyzing compute costs per loop, testing memory caching, and executing paired evaluations.\n\nThe guide targets developers who want to run Dory locally, but it does not state a specific consumer machine that can hold the entire model in memory.\n\nDory joins other highly ranked free chat models such as Kimi K3 Max and GLM‑5.3 Max, expanding options for offline AI use.\n\n## What it means for you\n\nFor users seeking alternatives to paid offerings, Dory adds another high‑quality, open‑access model that can be experimented with on compatible hardware.\n\n## On FreeLLMArena\n\nFrom our rankings on 7 Nov 2026, based on Arena's blind votes:\n\n- [NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16](/model/nvidia-nemotron-labs-dory1-0-4b-bf16.html): on our model list\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [How to Run NVIDIA Dory 4B with llama.cpp: Loop by Loop Guide](https://www.marktechpost.com/2026/11/07/coding-guide-nvidia-dory-4b-llama-cpp/), MarkTechPost, 7 Nov 2026\n- [nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 · Hugging Face](https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16), huggingface.co (official), 16 Oct 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-07-nvidia-dory-1-0-4b-model-can-be-run-locally-with-llama-cpp-guide-relea).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-07"
+  },
+  "/blog/news-2026-11-07-utah-s-redtail-ai-supercomputer-expands-access-while-keeping-universit.html": {
+   "post": {
+    "slug": "news-2026-11-07-utah-s-redtail-ai-supercomputer-expands-access-while-keeping-universit",
+    "titolo": "Utah’s Redtail AI supercomputer expands access while keeping university sovereignty",
+    "descr": "The Redtail AI Factory, funded with $50 million, ranks 159 on TOP500, offers statewide AI resources and lets the University of Utah retain operational control.",
+    "data": "2026-11-07",
+    "tema": "Research",
+    "corpo": "The University of Utah launched Redtail, an AI Factory supercomputer that serves the state’s higher‑education, government and commercial sectors.\n\nHewlett Packard Enterprise designed and deployed Redtail as a turnkey system, and the Center for High Performance Computing operates it.\n\nThe platform reflects a $50 million investment from public and private partners over five years.\n\nRedtail placed 159 on the June 2026 TOP500 list and 76 on the Green500 list, showing strong performance and efficiency.\n\nOperational sovereignty lets the university control allocations, security and hybrid on‑prem and cloud usage, supporting both open and regulated research.\n\n## What it means for you\n\nResearchers across Utah gain high‑end GPU capacity without sacrificing data control, accelerating AI projects and workforce training. Free‑model users benefit from a more open research environment that can free up resources for regulated workloads, while local institutions see a template for balancing access with sovereignty.\n\n## Sources\n\n- [University of Utah retains operational sovereignty as Redtail expands research access](https://siliconangle.com/2026/11/05/university-utah-retains-operational-sovereignty-redtail-expands-research-access-hpesovereignai/), SiliconANGLE, 5 Nov 2026\n- [Redtail: Utah's AI Supercomputer - Center for High Performance Computing - The University of Utah](https://www.chpc.utah.edu/redtail/index.php), chpc.utah.edu (official), 8 Jul 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-07-utah-s-redtail-ai-supercomputer-expands-access-while-keeping-universit).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-07"
   }
  },
  "ricostruzione": {

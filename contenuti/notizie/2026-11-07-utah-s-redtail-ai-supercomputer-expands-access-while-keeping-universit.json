@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-07-utah-s-redtail-ai-supercomputer-expands-access-while-keeping-universit",
+ "titolo": "Utah’s Redtail AI supercomputer expands access while keeping university sovereignty",
+ "descr": "The Redtail AI Factory, funded with $50 million, ranks 159 on TOP500, offers statewide AI resources and lets the University of Utah retain operational control.",
+ "tema": "Research",
+ "paragrafi": [
+  "The University of Utah launched Redtail, an AI Factory supercomputer that serves the state’s higher‑education, government and commercial sectors.",
+  "Hewlett Packard Enterprise designed and deployed Redtail as a turnkey system, and the Center for High Performance Computing operates it.",
+  "The platform reflects a $50 million investment from public and private partners over five years.",
+  "Redtail placed 159 on the June 2026 TOP500 list and 76 on the Green500 list, showing strong performance and efficiency.",
+  "Operational sovereignty lets the university control allocations, security and hybrid on‑prem and cloud usage, supporting both open and regulated research."
+ ],
+ "perche": [
+  "Researchers across Utah gain high‑end GPU capacity without sacrificing data control, accelerating AI projects and workforce training. Free‑model users benefit from a more open research environment that can free up resources for regulated workloads, while local institutions see a template for balancing access with sovereignty."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "University of Utah retains operational sovereignty as Redtail expands research access",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/05/university-utah-retains-operational-sovereignty-redtail-expands-research-access-hpesovereignai/",
+   "titolo": "University of Utah retains operational sovereignty as Redtail expands research access",
+   "ufficiale": false,
+   "data": "2026-11-05"
+  },
+  {
+   "nome": "chpc.utah.edu",
+   "url": "https://www.chpc.utah.edu/redtail/index.php",
+   "titolo": "Redtail: Utah's AI Supercomputer - Center for High Performance Computing - The University of Utah",
+   "ufficiale": true,
+   "data": "2026-07-08"
+  }
+ ],
+ "frasiTolte": 0
+}

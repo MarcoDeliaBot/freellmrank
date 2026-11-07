@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-07-nvidia-dory-1-0-4b-model-can-be-run-locally-with-llama-cpp-guide-relea",
+ "titolo": "NVIDIA Dory 1.0 4B model can be run locally with llama.cpp, guide released",
+ "descr": "A November 2026 MarkTechPost guide shows how to compile and run NVIDIA's 4‑billion‑parameter Dory 1.0 BF16 model using llama.cpp.",
+ "tema": "Guides",
+ "paragrafi": [
+  "NVIDIA made its Dory 1.0 4B language model available on Hugging Face under the repository nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16.",
+  "The tutorial walks users through building a pinned llama.cpp branch, analyzing compute costs per loop, testing memory caching, and executing paired evaluations.",
+  "The guide targets developers who want to run Dory locally, but it does not state a specific consumer machine that can hold the entire model in memory.",
+  "Dory joins other highly ranked free chat models such as Kimi K3 Max and GLM‑5.3 Max, expanding options for offline AI use."
+ ],
+ "perche": [
+  "For users seeking alternatives to paid offerings, Dory adds another high‑quality, open‑access model that can be experimented with on compatible hardware."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "How to Run NVIDIA Dory 4B with llama.cpp: Loop by Loop Guide",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/07/coding-guide-nvidia-dory-4b-llama-cpp/",
+   "titolo": "How to Run NVIDIA Dory 4B with llama.cpp: Loop by Loop Guide",
+   "ufficiale": false,
+   "data": "2026-11-07"
+  },
+  {
+   "nome": "huggingface.co",
+   "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+   "titolo": "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 · Hugging Face",
+   "ufficiale": true,
+   "data": "2026-10-16"
+  }
+ ],
+ "frasiTolte": 2
+}
