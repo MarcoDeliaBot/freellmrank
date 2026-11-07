@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-07-nvidia-adds-dlss-5-with-3d-guided-neural-rendering-to-hogwarts-legacy-",
+ "titolo": "NVIDIA adds DLSS 5 with 3D‑Guided Neural Rendering to Hogwarts Legacy on GeForce NOW",
+ "descr": "GeForce NOW streams Hogwarts Legacy with DLSS 5, Multi‑Frame Generation and Ray Reconstruction, delivering enhanced lighting and materials.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced that Hogwarts Legacy now runs with DLSS 5 on its GeForce NOW cloud service.",
+  "The upgrade uses 3D‑Guided Neural Rendering to improve lighting and material detail while keeping original geometry and textures.",
+  "Avalanche Software tuned the integration via DLSS 5 developer controls to preserve the game’s artistic style.",
+  "GeForce NOW also supports DLSS Multi Frame Generation and Ray Reconstruction, boosting ray‑traced graphics performance.",
+  "Ultimate members can experience RTX 5080‑class performance on PCs, Macs, handhelds, browsers, mobile devices and compatible TVs without a hardware upgrade."
+ ],
+ "perche": [
+  "For AI enthusiasts, it highlights the practical impact of neural networks beyond chat models, reinforcing the value of free or locally hosted AI solutions that can be leveraged in similar cloud services."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "‘Hogwarts Legacy’ Gets a Magical NVIDIA DLSS 5 Upgrade on GeForce NOW",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/",
+   "titolo": "‘Hogwarts Legacy’ Gets a Magical NVIDIA DLSS 5 Upgrade on GeForce NOW",
+   "ufficiale": true,
+   "data": "2026-11-05"
+  }
+ ],
+ "frasiTolte": 1
+}

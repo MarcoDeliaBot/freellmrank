@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-07-openai-launches-biobasicsbench-a-100-task-wet-lab-science-benchmark",
+ "titolo": "OpenAI launches BioBasicsBench, a 100‑task wet‑lab science benchmark",
+ "descr": "OpenAI's new BioBasicsBench evaluates AI agents on interpreting raw experimental data and everyday wet‑lab tasks across 100 challenges.",
+ "tema": "Research",
+ "paragrafi": [
+  "The benchmark contains 100 tasks that test how AI agents handle raw experimental data and routine wet‑lab procedures.",
+  "It aims to measure the ability of AI systems to interpret everyday scientific observations.",
+  "The release follows a growing interest in applying AI to laboratory automation and research workflows.",
+  "OpenAI positions BioBasicsBench as a tool for developers to gauge and improve their models' scientific reasoning."
+ ],
+ "perche": [
+  "Researchers can use BioBasicsBench to identify gaps in AI‑driven lab assistance, guiding model improvements. For users of free or local models, the benchmark highlights current limitations and may encourage community efforts to build more capable, open alternatives."
+ ],
+ "pubblicato": "2026-11-07",
+ "titoloFonte": "Measuring how AI agents handle everyday wet-lab science",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+   "titolo": "Measuring how AI agents handle everyday wet-lab science",
+   "ufficiale": true,
+   "data": "2026-11-06"
+  }
+ ],
+ "frasiTolte": 1
+}

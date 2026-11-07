@@ -21483,6 +21483,42 @@
     "tipo": "News"
    },
    "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-07-google-acquires-crusoe-s-unfinished-wyoming-ai-data-center-project.html": {
+   "post": {
+    "slug": "news-2026-11-07-google-acquires-crusoe-s-unfinished-wyoming-ai-data-center-project",
+    "titolo": "Google acquires Crusoe’s unfinished Wyoming AI data center project",
+    "descr": "Google buys Crusoe’s pre‑developed Wyoming site and plans a $17 billion campus, while Crusoe continues other AI‑focused data centers.",
+    "data": "2026-11-07",
+    "tema": "Business",
+    "corpo": "Denver‑based Crusoe announced that Google has purchased its unfinished data center site in southeast Wyoming.\n\nThe transaction completes Crusoe’s pre‑development work, which covered site selection, government approvals and a hybrid power plan with Tallgrass Energy.\n\nGoogle did not reveal the purchase price but said it will invest $17 billion to build a data center campus on the site.\n\nCrusoe, valued at $30.9 billion, remains a partner for Google’s new data center near Amarillo, Texas, and continues building AI‑focused facilities for Oracle, OpenAI, Microsoft and Meta.\n\nThe sale follows Crusoe’s recent $3.9 billion funding round and its strategy of leasing space for customers’ GPUs, renting its own GPUs and selling AI inference compute.\n\n## What it means for you\n\nFor AI developers, Google’s investment may speed up access to large‑scale, energy‑efficient compute resources. For users of free or locally hosted models, the deal underscores the growing reliance on hyperscaler‑backed infrastructure, highlighting why independent providers like Crusoe focus on flexible leasing and inference services.\n\n## Sources\n\n- [Crusoe sells troubled Wyoming data center project to Google](https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/), TechCrunch, 7 Nov 2026\n- [Google Acquires Crusoe’s Wyoming Data Center Site](https://www.crusoe.ai/resources/newsroom/crusoe-wyoming-data-center-campus-update), crusoe.ai (official), 6 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-07-google-acquires-crusoe-s-unfinished-wyoming-ai-data-center-project).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-07-nvidia-adds-dlss-5-with-3d-guided-neural-rendering-to-hogwarts-legacy-.html": {
+   "post": {
+    "slug": "news-2026-11-07-nvidia-adds-dlss-5-with-3d-guided-neural-rendering-to-hogwarts-legacy-",
+    "titolo": "NVIDIA adds DLSS 5 with 3D‑Guided Neural Rendering to Hogwarts Legacy on GeForce NOW",
+    "descr": "GeForce NOW streams Hogwarts Legacy with DLSS 5, Multi‑Frame Generation and Ray Reconstruction, delivering enhanced lighting and materials.",
+    "data": "2026-11-07",
+    "tema": "Software",
+    "corpo": "NVIDIA announced that Hogwarts Legacy now runs with DLSS 5 on its GeForce NOW cloud service.\n\nThe upgrade uses 3D‑Guided Neural Rendering to improve lighting and material detail while keeping original geometry and textures.\n\nAvalanche Software tuned the integration via DLSS 5 developer controls to preserve the game’s artistic style.\n\nGeForce NOW also supports DLSS Multi Frame Generation and Ray Reconstruction, boosting ray‑traced graphics performance.\n\nUltimate members can experience RTX 5080‑class performance on PCs, Macs, handhelds, browsers, mobile devices and compatible TVs without a hardware upgrade.\n\n## What it means for you\n\nFor AI enthusiasts, it highlights the practical impact of neural networks beyond chat models, reinforcing the value of free or locally hosted AI solutions that can be leveraged in similar cloud services.\n\n## Sources\n\n- [‘Hogwarts Legacy’ Gets a Magical NVIDIA DLSS 5 Upgrade on GeForce NOW](https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/), NVIDIA (official), 5 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-07-nvidia-adds-dlss-5-with-3d-guided-neural-rendering-to-hogwarts-legacy-).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
+  },
+  "/blog/news-2026-11-07-openai-launches-biobasicsbench-a-100-task-wet-lab-science-benchmark.html": {
+   "post": {
+    "slug": "news-2026-11-07-openai-launches-biobasicsbench-a-100-task-wet-lab-science-benchmark",
+    "titolo": "OpenAI launches BioBasicsBench, a 100‑task wet‑lab science benchmark",
+    "descr": "OpenAI's new BioBasicsBench evaluates AI agents on interpreting raw experimental data and everyday wet‑lab tasks across 100 challenges.",
+    "data": "2026-11-07",
+    "tema": "Research",
+    "corpo": "The benchmark contains 100 tasks that test how AI agents handle raw experimental data and routine wet‑lab procedures.\n\nIt aims to measure the ability of AI systems to interpret everyday scientific observations.\n\nThe release follows a growing interest in applying AI to laboratory automation and research workflows.\n\nOpenAI positions BioBasicsBench as a tool for developers to gauge and improve their models' scientific reasoning.\n\n## What it means for you\n\nResearchers can use BioBasicsBench to identify gaps in AI‑driven lab assistance, guiding model improvements. For users of free or local models, the benchmark highlights current limitations and may encourage community efforts to build more capable, open alternatives.\n\n## Sources\n\n- [Measuring how AI agents handle everyday wet-lab science](https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science), OpenAI (official), 6 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-07-openai-launches-biobasicsbench-a-100-task-wet-lab-science-benchmark).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-06"
   }
  },
  "ricostruzione": {
