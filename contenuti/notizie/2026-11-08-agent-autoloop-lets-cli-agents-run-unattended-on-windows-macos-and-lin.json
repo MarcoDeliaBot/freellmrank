@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-08-agent-autoloop-lets-cli-agents-run-unattended-on-windows-macos-and-lin",
+ "titolo": "Agent‑Autoloop lets CLI agents run unattended on Windows, macOS and Linux",
+ "descr": "The open‑source tool provides a lightweight automation hub that schedules tasks, routes events to agents and sends approval cards without needing cloud servers.",
+ "tema": "Software",
+ "paragrafi": [
+  "Agent‑Autoloop is a GitHub project that enables command‑line agents to operate in the background and handle tasks automatically.",
+  "It runs on a single machine with Node 24+, Git and, on macOS/Linux, curl, requiring no external dependencies, cloud servers, or open ports.",
+  "Users install it via a one‑line PowerShell or curl command, then configure rules in a JSON file to schedule jobs, react to GitHub events, or process alerts.",
+  "Supported agents include Claude Code, Codex and ACP; plugins can add new event sources, agents or delivery channels."
+ ],
+ "perche": [
+  "For AI practitioners, Agent‑Autoloop offers a simple way to keep CLI agents productive while away from the terminal, reducing manual monitoring. It also aligns with the growing demand for free, locally‑run automation tools that avoid cloud costs and data exposure."
+ ],
+ "pubblicato": "2026-11-08",
+ "titoloFonte": "KKKKhazix/agent-autoloop: 让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/KKKKhazix/agent-autoloop",
+   "titolo": "KKKKhazix/agent-autoloop: 让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 1
+}

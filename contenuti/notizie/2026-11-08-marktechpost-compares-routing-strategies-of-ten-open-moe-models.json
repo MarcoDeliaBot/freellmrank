@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-08-marktechpost-compares-routing-strategies-of-ten-open-moe-models",
+ "titolo": "MarkTechPost compares routing strategies of ten open MoE models",
+ "descr": "The article lists each model’s total and active parameters, number of experts, top‑k selection, shared experts, gating functions and load‑balancing techniques.",
+ "tema": "Research",
+ "paragrafi": [
+  "The article lists each model’s total and active parameters, number of experts, top‑k selection, shared experts, gating functions and load‑balancing techniques.",
+  "The comparison helps clarify how each model routes tokens during inference, a key factor for performance and scalability.",
+  "OpenAI’s gpt‑oss‑120b model, hosted on Hugging Face, is among the models examined, though the article focuses on routing architecture rather than model capabilities."
+ ],
+ "perche": [
+  "Understanding routing mechanisms lets developers choose MoE models that match their hardware and latency requirements. For users seeking free or locally runnable AI, insights into expert distribution and load‑balancing can guide selection of models that run efficiently on available resources."
+ ],
+ "pubblicato": "2026-11-08",
+ "titoloFonte": "Which Routing Does Each MoE Model Use? DeepSeek, Qwen, Mixtral, Llama 4, gpt-oss Compared",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/08/moe-model-routing-comparison/",
+   "titolo": "Which Routing Does Each MoE Model Use? DeepSeek, Qwen, Mixtral, Llama 4, gpt-oss Compared",
+   "ufficiale": false,
+   "data": "2026-11-08"
+  },
+  {
+   "nome": "huggingface.co",
+   "url": "https://huggingface.co/openai/gpt-oss-120b",
+   "titolo": "openai/gpt-oss-120b · Hugging Face",
+   "ufficiale": true,
+   "data": "2025-08-07"
+  }
+ ],
+ "frasiTolte": 3
+}
