@@ -26,7 +26,7 @@ const outcomes={
   'agent-browser skills get core':'You will get the current workflow instructions for the installed tool.',
   'agent-browser open example.com':'You will have the example website open for inspection.',
   'agent-browser snapshot':'You will see page elements and their current references.',
-  'agent-browser click @e2':'The selected element receives the click. Inspect the page again afterwards.',
+  'agent-browser click @e1':'The selected element receives the click. Inspect the page again afterwards.',
   'npm install -g agent-browser\nagent-browser install':'You will have the command line tool and its Chrome browser ready.',
   'npx skills add vercel-labs/agent-browser':'Your selected assistant will have the browser skill instructions.',
 };
@@ -34,6 +34,8 @@ const outcomes={
 export function lessonFor(card) {
   const corpus=(card.fonti||[]).map(f=>f.testo).join('\n').replace(/\r/g,'');
   const need=q=>{if(!corpus.includes(q))throw Error(`Teaching evidence missing: ${q.slice(0,90)}`);return q;};
+  // the upstream README was rewritten on 2026-11-05: accept the old or the new wording of the same instruction
+  const needAny=(...qs)=>{const q=qs.find(x=>corpus.includes(x));if(!q)throw Error(`Teaching evidence missing: ${qs[0].slice(0,90)}`);return q;};
   let lesson;
   if(card.repository==='ollama/ollama'&&card.tipo==='tutorial') {
     const chat=need('Run and chat with [Gemma 4]'), api=need('Ollama has a REST API for running and managing models.'),
@@ -74,9 +76,9 @@ export function lessonFor(card) {
   } else if(card.repository==='vercel-labs/agent-browser'&&card.name==='agent-browser') {
     const desc=need('Browser automation CLI for AI agents.'), core=need('agent-browser skills get core'),
       snapshot=need('agent-browser snapshot'), open=need('agent-browser open example.com'),
-      click=need('agent-browser click @e2'), refs=need('Accessibility-tree snapshots with element refs for reliable interaction'),
+      click=need('agent-browser click @e1'), refs=need('Accessibility-tree snapshots with element refs for reliable interaction'),
       specialized=need('Specialized skills for Electron apps, Slack, exploratory testing, cloud providers'),
-      install=need(card.install),chrome=need('Chrome/Chromium via CDP'),refresh=need('Re-snapshot after page changes');
+      install=need(card.install),chrome=need('Chrome/Chromium via CDP'),refresh=needAny('Re-snapshot after page changes','After navigation or a DOM change, take a new snapshot before using refs again.');
     lesson={problem:'Need browser automation?',description:'An Agent Skill that teaches an assistant how to use the agent-browser tool.',
       prerequisites:'Use an assistant that supports Agent Skills. Install the browser tool and Chrome separately as documented.',
       check:'Take a fresh snapshot after the page changes. Use references from the current snapshot for the next action.',
@@ -85,7 +87,7 @@ export function lessonFor(card) {
       short:[
         s('The problem','Need browser automation?','Give your assistant a browser workflow.','Does your assistant need to operate a website?',{role:'problem',duration:3,nodes:['A website','Your assistant','Browser actions'],quotes:[desc]}),
         s('What it is','agent-browser skill','Teach an assistant to navigate, inspect and interact with websites.','The agent browser skill teaches an assistant to navigate websites, inspect pages, and use their controls.',{role:'identity',duration:7,nodes:['Agent Skill','Browser tool','Website'],quotes:[desc,open,snapshot,click]}),
-        s('Feature 1','Load the right workflow','Get instructions that match the installed tool version.','First, load the core workflow from the installed tool. Its instructions match the version you are actually using.',{role:'feature',duration:7,code:core,quotes:[core,need('The CLI serves skill content that always matches the installed version')]}),
+        s('Feature 1','Load the right workflow','Get instructions that match the installed tool version.','First, load the core workflow from the installed tool. Its instructions match the version you are actually using.',{role:'feature',duration:7,code:core,quotes:[core,needAny('The CLI serves skill content that always matches the installed version','The CLI serves skill content that matches the installed version')]}),
         s('Feature 2','Inspect before acting','A snapshot supplies references for the next browser action.','Next, inspect the page through a snapshot. Use the element references to choose the control your assistant should interact with.',{role:'feature',duration:7,nodes:['Open a page','Inspect a snapshot','Act on a reference'],quotes:[open,snapshot,click,refs]}),
         s('Feature 3','Go beyond web pages','Choose a specialized workflow when your task needs it.','Specialized workflows cover desktop apps, exploratory testing, and cloud browsers. Choose the workflow for your task.',{role:'feature',duration:8,nodes:['Desktop apps','Exploratory testing','Cloud browsers'],quotes:[specialized]}),
         s('Install','Add the Agent Skill','Install the skill in a supported assistant.','Add the skill with the documented installer. Set up the browser tool and Chrome separately before starting your first task.',{role:'install',duration:8,code:install,quotes:[install,chrome,need('agent-browser install')]}),
@@ -93,13 +95,13 @@ export function lessonFor(card) {
       ],
       long:[
         s('The problem','Automate a website with an assistant','Use an Agent Skill to guide browser tasks.','An assistant needs a clear workflow to operate websites. This skill points it to the browser instructions and the commands for navigating, inspecting, and interacting with a page.',{role:'goal',nodes:['Assistant','Browser instructions','Website interaction'],quotes:[desc,open,snapshot,click],duration:14}),
-        s('How it works','Instructions come from the installed tool','The skill loads workflow content that matches your tool version.','The installed skill is a small entry point. It loads the actual workflow from the browser tool, so the instructions match the version installed on your computer.',{role:'prerequisites',nodes:['Installed skill','Installed tool','Current workflow'],quotes:[core,need('The CLI serves skill content that always matches the installed version')],duration:15}),
+        s('How it works','Instructions come from the installed tool','The skill loads workflow content that matches your tool version.','The installed skill is a small entry point. It loads the actual workflow from the browser tool, so the instructions match the version installed on your computer.',{role:'prerequisites',nodes:['Installed skill','Installed tool','Current workflow'],quotes:[core,needAny('The CLI serves skill content that always matches the installed version','The CLI serves skill content that matches the installed version')],duration:15}),
         s('Setup','Prepare the browser tool','Install the command line tool and its Chrome browser before use.','The Agent Skill and the browser tool have separate jobs. Set up the tool and Chrome using the documented installation instructions. Then choose an assistant supported by the skill installer.',{role:'step',code:'npm install -g agent-browser\nagent-browser install',quotes:[need('npm install -g agent-browser'),need('agent-browser install'),install],duration:16}),
         s('Add the skill','Install the assistant instructions','The installer adds the skill to your selected assistant.','Add the browser skill with the command shown here. The project lists supported assistants in its installation guide. Choose the host you use for the work.',{role:'step',code:install,quotes:[install],duration:14}),
-        s('Load instructions','Start with the core workflow','Get the main workflow before issuing browser commands.','Before opening a website, load the core workflow. This gives the assistant the usage patterns and troubleshooting guidance served by the installed tool.',{role:'step',code:core,quotes:[core,need('workflows, common patterns, troubleshooting')],duration:13}),
+        s('Load instructions','Start with the core workflow','Get the main workflow before issuing browser commands.','Before opening a website, load the core workflow. This gives the assistant the usage patterns and troubleshooting guidance served by the installed tool.',{role:'step',code:core,quotes:[core,needAny('workflows, common patterns, troubleshooting','the loop, waits, common tasks, troubleshooting')],duration:13}),
         s('Navigate','Open a page','The example opens a website in the browser.','The first browser action is navigation. Open the example page, then inspect what is on it before deciding which control to use. Navigation gives you the page for that inspection.',{role:'step',code:open,quotes:[open,snapshot],duration:14}),
         s('Inspect','Read the current snapshot','The accessibility tree includes references to page elements.','Take a snapshot of the page. The accessibility tree provides element references that the assistant can use for interaction. Choose references from what the page shows now.',{role:'step',code:'agent-browser snapshot',quotes:[snapshot,refs],duration:14}),
-        s('Interact','Use an element reference','Pick a reference from your own snapshot for the next action.','The example demonstrates clicking by reference. Use the reference from your current page rather than copying an example blindly. After the page changes, inspect it again before the next action.',{role:'step',code:'agent-browser click @e2',quotes:[click,refresh],duration:15}),
+        s('Interact','Use an element reference','Pick a reference from your own snapshot for the next action.','The example demonstrates clicking by reference. Use the reference from your current page rather than copying an example blindly. After the page changes, inspect it again before the next action.',{role:'step',code:click,quotes:[click,refresh],duration:15}),
         s('Check and continue','Refresh your view after changes','A new snapshot keeps the next action tied to the current page.','Check the browser state after your action. A new snapshot is the basis for the next interaction. When the task moves beyond websites, load the matching specialized workflow.',{role:'verify',nodes:['Page changes','Fresh snapshot','Next interaction'],quotes:[refresh,specialized],duration:14}),
         s('Permissions','Review what the browser can access','Read the loaded instructions before granting access to a site or account.','Browser tasks can involve websites and signed in accounts. Read the workflow before granting access. Check the setup and permissions for the task you are about to perform.',{role:'limits',nodes:['Read the workflow','Check site access','Grant needed permissions'],quotes:[need('Sessions, authentication vault, state persistence, video recording')],duration:14}),
         s('Source','Explore the documented workflows','github.com/vercel-labs/agent-browser','Link in the description.',{role:'link',duration:5}),
