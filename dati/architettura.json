@@ -2055,5 +2055,27 @@
   "contestoMax": 262144,
   "moe": false,
   "attivi": 27356728560
+ },
+ "Qwen/Qwen2.5-VL-7B-Instruct": {
+  "strati": 28,
+  "tipo": "GQA",
+  "kvPerStrato": 2048,
+  "pieni": 28,
+  "finestra": 0,
+  "larghezzaFinestra": 32768,
+  "contestoMax": 128000,
+  "moe": false,
+  "attivi": 8292166656
+ },
+ "swiss-ai/Apertus-v1.1-0.5B-Instruct": {
+  "strati": 20,
+  "tipo": "GQA",
+  "kvPerStrato": 1024,
+  "pieni": 20,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 4096,
+  "moe": false,
+  "attivi": 572567080
  }
 }
