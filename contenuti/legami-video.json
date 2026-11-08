@@ -287,5 +287,13 @@
  "news-2026-11-07-mistral-launches-le-chonk-model-and-studio-updates-for-enterprise-ai-a": {
   "lungo": "notizia-mistral-launches-le-chonk-model-and-studio-updates-for-e",
   "breve": "breve-mistral-launches-le-chonk-model-and-studio-updates-for-e"
+ },
+ "news-2026-11-07-nvidia-dory-1-0-4b-model-can-be-run-locally-with-llama-cpp-guide-relea": {
+  "lungo": "notizia-nvidia-dory-1-0-4b-model-can-be-run-locally-with-llama-c",
+  "breve": "breve-nvidia-dory-1-0-4b-model-can-be-run-locally-with-llama-c"
+ },
+ "news-2026-11-07-openai-unveils-national-community-compact-and-compute-campus-policy-bl": {
+  "lungo": "notizia-openai-unveils-national-community-compact-and-compute-ca",
+  "breve": "breve-openai-unveils-national-community-compact-and-compute-ca"
  }
 }
