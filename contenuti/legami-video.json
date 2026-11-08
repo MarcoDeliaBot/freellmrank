@@ -295,5 +295,13 @@
  "news-2026-11-07-openai-unveils-national-community-compact-and-compute-campus-policy-bl": {
   "lungo": "notizia-openai-unveils-national-community-compact-and-compute-ca",
   "breve": "breve-openai-unveils-national-community-compact-and-compute-ca"
+ },
+ "news-2026-11-08-google-releases-open-source-elephant-goldfish-model-plugin-for-spec-fi": {
+  "lungo": "notizia-google-releases-open-source-elephant-goldfish-model-plug",
+  "breve": "breve-google-releases-open-source-elephant-goldfish-model-plug"
+ },
+ "news-2026-11-08-marktechpost-compares-routing-strategies-of-ten-open-moe-models": {
+  "lungo": "notizia-marktechpost-compares-routing-strategies-of-ten-open-moe",
+  "breve": "breve-marktechpost-compares-routing-strategies-of-ten-open-moe"
  }
 }
