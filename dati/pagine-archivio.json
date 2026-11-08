@@ -21968,6 +21968,30 @@
     "tipo": "News"
    },
    "data": "2026-11-08"
+  },
+  "/blog/news-2026-11-08-c-and-rust-sqlite-parse-number-extensions-benchmark-shows-fast-c-beats.html": {
+   "post": {
+    "slug": "news-2026-11-08-c-and-rust-sqlite-parse-number-extensions-benchmark-shows-fast-c-beats",
+    "titolo": "C and Rust SQLite parse_number extensions benchmark shows fast C beats Rust",
+    "descr": "A study of four parse_number() SQLite extensions finds a compact C fast‑path runs at 16–19 ns per row, twice as fast as Rust versions.",
+    "data": "2026-11-08",
+    "tema": "Research",
+    "corpo": "Simon Willison compared four SQLite scalar functions named parse_number() that strip commas, currency symbols and percent signs, handle a leading minus, and return NULL for unparsable strings.\n\nThe implementations include plain C (using strtod()), a C fast‑path version, a Rust version built with rusqlite, and a Rust version built with sqlite-loadable. All behaved identically across 8 million fuzz tests.\n\nOn a 2 vCPU Linux VM (SQLite 3.53.1), the plain C version cost 67 ns per row on mixed data, while the fast‑path C version achieved 16–19 ns per row, about twice the speed of the Rust variants (41–46 ns).\n\nThe fast‑path C extension is also far smaller: the .so file is 14 KB versus roughly 300 KB for the Rust builds. Rust code is shorter (30–36 lines plus a shared parser) but carries the standard library, increasing binary size.\n\n## What it means for you\n\nFor developers extending SQLite, a compact C fast‑path offers the best performance and smallest footprint, useful for embedded or resource‑constrained deployments. Users of free or local AI tools can benefit from faster numeric parsing in data pipelines that rely on SQLite, while the Rust versions provide safer code at the cost of larger binaries.\n\n## Sources\n\n- [parse\\_number() as a SQLite extension: C vs Rust](https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/), Simon Willison, 8 Nov 2026\n- [research/sqlite-parse-number-c-vs-rust at main · simonw/research · GitHub](https://github.com/simonw/research/tree/main/sqlite-parse-number-c-vs-rust), github.com (official), 8 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-08-c-and-rust-sqlite-parse-number-extensions-benchmark-shows-fast-c-beats).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-08"
+  },
+  "/blog/news-2026-11-08-wquguru-cicada-cicada-ai-mac-windows-linux-android-live-subtitles-inte.html": {
+   "post": {
+    "slug": "news-2026-11-08-wquguru-cicada-cicada-ai-mac-windows-linux-android-live-subtitles-inte",
+    "titolo": "wquguru/cicada: 知了 Cicada · 任何会议和直播的实时字幕、同声传译、AI 会议纪要，Mac、Windows、Linux、Android 免费开源。Live subtitles, interpret",
+    "descr": "The Cicada app provides real‑time subtitles, bilingual transcripts and AI‑powered meeting minutes on macOS, Windows, Linux and Android.",
+    "data": "2026-11-08",
+    "tema": "Software",
+    "corpo": "Cicada, released by wquguru, is a free open‑source tool that adds live subtitles, simultaneous interpretation and AI‑generated meeting summaries to any call or stream.\n\nIt runs on macOS 14.4+, Windows 10 (x64/ARM64), Ubuntu 22.04/24.04 and Android 10+, with separate installers for Apple‑silicon, Intel, Linux and Android available on the project’s website and GitHub releases.\n\nFeatures include bilingual text records, searchable minutes, speaker‑identification, on‑the‑fly correction of mis‑recognized terms, and optional voice cloning for simultaneous translation.\n\nAll recordings and transcripts stay on the local machine; only text sent to translation services leaves the device, and the app does not collect analytics or run its own servers.\n\n## What it means for you\n\nCicada lets users conduct multilingual meetings without paying for commercial transcription services, supporting privacy‑first workflows by keeping data local. It also offers a free alternative for teams that need cross‑platform live captioning and AI‑driven note‑taking, complementing the growing ecosystem of free chat models listed on FreeLLMArena.\n\n## Sources\n\n- [wquguru/cicada: 知了 Cicada · 任何会议和直播的实时字幕、同声传译、AI 会议纪要，Mac、Windows、Linux、Android 免费开源。Live subtitles, interpreting and meeting notes for any call or stream, on Mac, Windows, Linux and Android.](https://github.com/wquguru/cicada), GitHub trending, 1 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-08-wquguru-cicada-cicada-ai-mac-windows-linux-android-live-subtitles-inte).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-08"
   }
  },
  "ricostruzione": {

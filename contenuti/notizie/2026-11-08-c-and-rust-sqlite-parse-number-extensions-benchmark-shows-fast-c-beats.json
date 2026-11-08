@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-08-c-and-rust-sqlite-parse-number-extensions-benchmark-shows-fast-c-beats",
+ "titolo": "C and Rust SQLite parse_number extensions benchmark shows fast C beats Rust",
+ "descr": "A study of four parse_number() SQLite extensions finds a compact C fast‑path runs at 16–19 ns per row, twice as fast as Rust versions.",
+ "tema": "Research",
+ "paragrafi": [
+  "Simon Willison compared four SQLite scalar functions named parse_number() that strip commas, currency symbols and percent signs, handle a leading minus, and return NULL for unparsable strings.",
+  "The implementations include plain C (using strtod()), a C fast‑path version, a Rust version built with rusqlite, and a Rust version built with sqlite-loadable. All behaved identically across 8 million fuzz tests.",
+  "On a 2 vCPU Linux VM (SQLite 3.53.1), the plain C version cost 67 ns per row on mixed data, while the fast‑path C version achieved 16–19 ns per row, about twice the speed of the Rust variants (41–46 ns).",
+  "The fast‑path C extension is also far smaller: the .so file is 14 KB versus roughly 300 KB for the Rust builds. Rust code is shorter (30–36 lines plus a shared parser) but carries the standard library, increasing binary size."
+ ],
+ "perche": [
+  "For developers extending SQLite, a compact C fast‑path offers the best performance and smallest footprint, useful for embedded or resource‑constrained deployments. Users of free or local AI tools can benefit from faster numeric parsing in data pipelines that rely on SQLite, while the Rust versions provide safer code at the cost of larger binaries."
+ ],
+ "pubblicato": "2026-11-08",
+ "titoloFonte": "parse_number() as a SQLite extension: C vs Rust",
+ "fonti": [
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/",
+   "titolo": "parse_number() as a SQLite extension: C vs Rust",
+   "ufficiale": false,
+   "data": "2026-11-08"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/simonw/research/tree/main/sqlite-parse-number-c-vs-rust",
+   "titolo": "research/sqlite-parse-number-c-vs-rust at main · simonw/research · GitHub",
+   "ufficiale": true,
+   "data": "2026-11-08"
+  }
+ ],
+ "frasiTolte": 1
+}

@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-08-wquguru-cicada-cicada-ai-mac-windows-linux-android-live-subtitles-inte",
+ "titolo": "wquguru/cicada: 知了 Cicada · 任何会议和直播的实时字幕、同声传译、AI 会议纪要，Mac、Windows、Linux、Android 免费开源。Live subtitles, interpret",
+ "descr": "The Cicada app provides real‑time subtitles, bilingual transcripts and AI‑powered meeting minutes on macOS, Windows, Linux and Android.",
+ "tema": "Software",
+ "paragrafi": [
+  "Cicada, released by wquguru, is a free open‑source tool that adds live subtitles, simultaneous interpretation and AI‑generated meeting summaries to any call or stream.",
+  "It runs on macOS 14.4+, Windows 10 (x64/ARM64), Ubuntu 22.04/24.04 and Android 10+, with separate installers for Apple‑silicon, Intel, Linux and Android available on the project’s website and GitHub releases.",
+  "Features include bilingual text records, searchable minutes, speaker‑identification, on‑the‑fly correction of mis‑recognized terms, and optional voice cloning for simultaneous translation.",
+  "All recordings and transcripts stay on the local machine; only text sent to translation services leaves the device, and the app does not collect analytics or run its own servers."
+ ],
+ "perche": [
+  "Cicada lets users conduct multilingual meetings without paying for commercial transcription services, supporting privacy‑first workflows by keeping data local. It also offers a free alternative for teams that need cross‑platform live captioning and AI‑driven note‑taking, complementing the growing ecosystem of free chat models listed on FreeLLMArena."
+ ],
+ "pubblicato": "2026-11-08",
+ "titoloFonte": "wquguru/cicada: 知了 Cicada · 任何会议和直播的实时字幕、同声传译、AI 会议纪要，Mac、Windows、Linux、Android 免费开源。Live subtitles, interpreting and meeting notes for any call or stream, on Mac, Windows, Linux and Android.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/wquguru/cicada",
+   "titolo": "wquguru/cicada: 知了 Cicada · 任何会议和直播的实时字幕、同声传译、AI 会议纪要，Mac、Windows、Linux、Android 免费开源。Live subtitles, interpreting and meeting notes for any call or stream, on Mac, Windows, Linux and Android.",
+   "ufficiale": false,
+   "data": "2026-11-01"
+  }
+ ],
+ "frasiTolte": 2
+}
