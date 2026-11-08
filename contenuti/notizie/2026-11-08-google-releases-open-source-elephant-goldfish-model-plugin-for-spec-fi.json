@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-08-google-releases-open-source-elephant-goldfish-model-plugin-for-spec-fi",
+ "titolo": "Google releases open‑source Elephant‑Goldfish Model plugin for spec‑first coding",
+ "descr": "The new plugin lets AI agents draft software specs and run five zero‑context review stages before code is written.",
+ "tema": "Software",
+ "paragrafi": [
+  "The tool is open‑source and hosted on GitHub.",
+  "EGM splits the design process into two agents: an “Elephant” that holds project context and creates a specification, and a “Goldfish” that reviews the draft without prior conversation context.",
+  "The review consists of five zero‑context stages that aim to expose hidden assumptions and risks before any code is generated.",
+  "Installation commands are provided in the repository readme.",
+  "Google notes that the plugin is not an officially supported product and that fresh sub‑agents are required for the review loop; otherwise the review stops."
+ ],
+ "perche": [
+  "Developers gain a structured, spec‑first workflow that adds automated peer review without replacing human testing. For users who prefer free or local AI tools, the open‑source nature of EGM means they can run the plugin on their own hardware without a paid service."
+ ],
+ "pubblicato": "2026-11-08",
+ "titoloFonte": "Google AI Releases Elephant-Goldfish Model Plugin for Spec-First Coding",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/",
+   "titolo": "Google AI Releases Elephant-Goldfish Model Plugin for Spec-First Coding",
+   "ufficiale": false,
+   "data": "2026-11-08"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/google/elephant-goldfish-model",
+   "titolo": "GitHub - google/elephant-goldfish-model: Open-source plugin for designing and reviewing software with agents · GitHub",
+   "ufficiale": true,
+   "data": "2026-11-08"
+  }
+ ],
+ "frasiTolte": 2
+}

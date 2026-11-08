@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-08-sand3d-launches-python-library-for-llm-driven-3d-modeling",
+ "titolo": "sand3d launches Python library for LLM‑driven 3D modeling",
+ "descr": "The new sand3d package lets large language models generate Blender‑compatible 3D objects with concise token‑efficient code.",
+ "tema": "Software",
+ "paragrafi": [
+  "The open‑source project sand3d, hosted on GitHub, provides a Python API for creating 3D models using short, readable programs that can be authored by large language models.",
+  "Its API fits in roughly 3,600 tokens, allowing parts to be described with two to six times fewer tokens than traditional Blender Python, CadQuery, or FeatureScript scripts.",
+  "Models built with sand3d can be exported directly to formats such as GLB, URDF, USD, OBJ, and STL, supporting pipelines for game engines, robotics simulators, and standard 3D tools.",
+  "Installation requires Python 3.13 (recommended) or 3.11, with Blender’s bpy module version 5.2 for Python 3.13 or 4.5 for Python 3.11; Python 3.12 is not supported.",
+  "The repository includes datasets of sand3d programs for everyday objects, CAD parts, articulated items, simulation‑ready assets, and mechanical assemblies, all shared under a CC BY 4.0 license."
+ ],
+ "perche": [
+  "Developers can now prompt LLMs to produce compact, deterministic 3D code that integrates smoothly with Blender, reducing token usage and simplifying asset creation. This benefits users of free or locally hosted models by lowering the cost of prompting while still delivering exportable assets for a range of applications."
+ ],
+ "pubblicato": "2026-11-08",
+ "titoloFonte": "Sandflow-ai/sand3d: 3D modeling in Python, built for LLMs.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/Sandflow-ai/sand3d",
+   "titolo": "Sandflow-ai/sand3d: 3D modeling in Python, built for LLMs.",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 0
+}
