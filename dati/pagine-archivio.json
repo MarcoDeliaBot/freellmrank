@@ -21944,6 +21944,30 @@
     "tipo": "News"
    },
    "data": "2026-11-08"
+  },
+  "/blog/news-2026-11-08-gputaskman-launches-as-a-cross-platform-gpu-task-manager-for-windows-l.html": {
+   "post": {
+    "slug": "news-2026-11-08-gputaskman-launches-as-a-cross-platform-gpu-task-manager-for-windows-l",
+    "titolo": "GPUTaskMan launches as a cross‑platform GPU task manager for Windows, Linux and WSL",
+    "descr": "GPUTaskMan, created by shanselman, is a terminal‑based GPU task manager that works on Windows, Linux and WSL.",
+    "data": "2026-11-08",
+    "tema": "Software",
+    "corpo": "GPUTaskMan, created by shanselman, is a terminal‑based GPU task manager that works on Windows, Linux and WSL.\n\nIt reports per‑process VRAM consumption, engine activity and can break down LLM model weights and KV‑cache usage.\n\nInstallation is available via PyPI, pipx, uv or portable ZIPs for Windows (x64 and ARM64) and tar.gz for Linux (x64 and ARM64).\n\nThe tool requires Python 3.11+, a supported GPU driver and no CUDA Toolkit or model downloads to monitor workloads.\n\n## What it means for you\n\nFor users of free or locally hosted models, the visibility can guide resource allocation and avoid out‑of‑memory crashes.\n\n## Sources\n\n- [shanselman/gputaskman: A GPU task manager for Windows, Linux, and WSL: per-process VRAM, GPU activity, and LLM model/KV-cache insights (Windows AMD and NVIDIA).](https://github.com/shanselman/gputaskman), GitHub trending, 3 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-08-gputaskman-launches-as-a-cross-platform-gpu-task-manager-for-windows-l).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-08"
+  },
+  "/blog/news-2026-11-08-meta-releases-llama-4-scout-and-maverick-17b-parameter-moe-models-with.html": {
+   "post": {
+    "slug": "news-2026-11-08-meta-releases-llama-4-scout-and-maverick-17b-parameter-moe-models-with",
+    "titolo": "Meta releases Llama 4 Scout and Maverick, 17B‑parameter MoE models with 10M context",
+    "descr": "Llama 4 Scout fits a single H100 GPU, while Maverick runs on a single H100 host, both using MoE routing for multimodal AI.",
+    "data": "2026-11-08",
+    "tema": "LLMs",
+    "corpo": "Meta announced two new mixture‑of‑experts (MoE) models: Llama 4 Scout and Llama 4 Maverick.\n\nBoth models have 17 billion active parameters. Scout uses 16 experts and fits on a single NVIDIA H100 GPU with Int4 quantisation.\n\nMaverick employs 128 experts, fits on a single H100 host, and activates 17 B of its 400 B total parameters per token.\n\n\"best multimodal model in its class\" is used to describe both Scout and Maverick in Meta’s release.\n\n## What it means for you\n\nFor developers, the models provide high‑quality multimodal performance on a single H100, lowering hardware costs for inference. Users of free or locally hosted models still rely on smaller, non‑MoE solutions, but the open‑weight release may inspire community‑driven equivalents.\n\n## Sources\n\n- [MoE Routing Strategies Explained: Top-K, Expert-Choice, Sigmoid Gating and Dynamic Routing (2026 Guide)](https://www.marktechpost.com/2026/11/07/moe-routing-strategies-explained/), MarkTechPost, 8 Nov 2026\n- [The Llama 4 herd: The beginning of a new era of natively multimodal AI innovation](https://ai.meta.com/blog/llama-4-multimodal-intelligence/), ai.meta.com (official), 5 Apr 2025\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-08-meta-releases-llama-4-scout-and-maverick-17b-parameter-moe-models-with).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-08"
   }
  },
  "ricostruzione": {

@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-08-gputaskman-launches-as-a-cross-platform-gpu-task-manager-for-windows-l",
+ "titolo": "GPUTaskMan launches as a cross‑platform GPU task manager for Windows, Linux and WSL",
+ "descr": "GPUTaskMan, created by shanselman, is a terminal‑based GPU task manager that works on Windows, Linux and WSL.",
+ "tema": "Software",
+ "paragrafi": [
+  "GPUTaskMan, created by shanselman, is a terminal‑based GPU task manager that works on Windows, Linux and WSL.",
+  "It reports per‑process VRAM consumption, engine activity and can break down LLM model weights and KV‑cache usage.",
+  "Installation is available via PyPI, pipx, uv or portable ZIPs for Windows (x64 and ARM64) and tar.gz for Linux (x64 and ARM64).",
+  "The tool requires Python 3.11+, a supported GPU driver and no CUDA Toolkit or model downloads to monitor workloads."
+ ],
+ "perche": [
+  "For users of free or locally hosted models, the visibility can guide resource allocation and avoid out‑of‑memory crashes."
+ ],
+ "pubblicato": "2026-11-08",
+ "titoloFonte": "shanselman/gputaskman: A GPU task manager for Windows, Linux, and WSL: per-process VRAM, GPU activity, and LLM model/KV-cache insights (Windows AMD and NVIDIA).",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/shanselman/gputaskman",
+   "titolo": "shanselman/gputaskman: A GPU task manager for Windows, Linux, and WSL: per-process VRAM, GPU activity, and LLM model/KV-cache insights (Windows AMD and NVIDIA).",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 3
+}

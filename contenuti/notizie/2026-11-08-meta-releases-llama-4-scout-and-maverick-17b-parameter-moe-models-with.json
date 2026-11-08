@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-08-meta-releases-llama-4-scout-and-maverick-17b-parameter-moe-models-with",
+ "titolo": "Meta releases Llama 4 Scout and Maverick, 17B‑parameter MoE models with 10M context",
+ "descr": "Llama 4 Scout fits a single H100 GPU, while Maverick runs on a single H100 host, both using MoE routing for multimodal AI.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Meta announced two new mixture‑of‑experts (MoE) models: Llama 4 Scout and Llama 4 Maverick.",
+  "Both models have 17 billion active parameters. Scout uses 16 experts and fits on a single NVIDIA H100 GPU with Int4 quantisation.",
+  "Maverick employs 128 experts, fits on a single H100 host, and activates 17 B of its 400 B total parameters per token.",
+  "\"best multimodal model in its class\" is used to describe both Scout and Maverick in Meta’s release."
+ ],
+ "perche": [
+  "For developers, the models provide high‑quality multimodal performance on a single H100, lowering hardware costs for inference. Users of free or locally hosted models still rely on smaller, non‑MoE solutions, but the open‑weight release may inspire community‑driven equivalents."
+ ],
+ "pubblicato": "2026-11-08",
+ "titoloFonte": "MoE Routing Strategies Explained: Top-K, Expert-Choice, Sigmoid Gating and Dynamic Routing (2026 Guide)",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/07/moe-routing-strategies-explained/",
+   "titolo": "MoE Routing Strategies Explained: Top-K, Expert-Choice, Sigmoid Gating and Dynamic Routing (2026 Guide)",
+   "ufficiale": false,
+   "data": "2026-11-08"
+  },
+  {
+   "nome": "ai.meta.com",
+   "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/",
+   "titolo": "The Llama 4 herd: The beginning of a new era of natively multimodal AI innovation",
+   "ufficiale": true,
+   "data": "2025-04-05"
+  }
+ ],
+ "frasiTolte": 1
+}
