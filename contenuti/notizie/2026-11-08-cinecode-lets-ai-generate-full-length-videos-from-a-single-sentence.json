@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-08-cinecode-lets-ai-generate-full-length-videos-from-a-single-sentence",
+ "titolo": "Cinecode lets AI generate full‑length videos from a single sentence",
+ "descr": "The open‑source Cinecode project uses an AI coding agent to write scripts, render frames, and produce MP4 videos without paid services.",
+ "tema": "Software",
+ "paragrafi": [
+  "Cinecode is an open‑source repository that enables users to create short films, YouTube videos, ads, explainers and music videos entirely from code.",
+  "The workflow starts with a one‑sentence brief; the AI agent asks follow‑up questions about style, length, format, sound and music before presenting a storyboard with two draft scenes.",
+  "Cinecode runs locally on a desktop application called Claude Code, a VS Code extension, or within the Cursor IDE, requiring no external paid service.",
+  "The project includes examples ranging from 15‑second clips to five‑minute documentaries, demonstrating both a fast mode that can finish a film in about three minutes and a more detailed film mode."
+ ],
+ "perche": [
+  "For creators, Cinecode offers a zero‑cost path to generate custom video content without hiring editors or voice talent. For the free‑model community, it showcases how AI‑driven pipelines can run entirely on local hardware, aligning with the growing demand for open, locally executable AI tools."
+ ],
+ "pubblicato": "2026-11-08",
+ "titoloFonte": "sarpstar/cinecode: Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and han",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/sarpstar/cinecode",
+   "titolo": "sarpstar/cinecode: Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and han",
+   "ufficiale": false,
+   "data": "2026-11-03"
+  }
+ ],
+ "frasiTolte": 1
+}

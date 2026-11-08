@@ -21781,6 +21781,30 @@
     "tipo": "News"
    },
    "data": "2026-11-07"
+  },
+  "/blog/news-2026-11-08-cinecode-lets-ai-generate-full-length-videos-from-a-single-sentence.html": {
+   "post": {
+    "slug": "news-2026-11-08-cinecode-lets-ai-generate-full-length-videos-from-a-single-sentence",
+    "titolo": "Cinecode lets AI generate full‑length videos from a single sentence",
+    "descr": "The open‑source Cinecode project uses an AI coding agent to write scripts, render frames, and produce MP4 videos without paid services.",
+    "data": "2026-11-08",
+    "tema": "Software",
+    "corpo": "Cinecode is an open‑source repository that enables users to create short films, YouTube videos, ads, explainers and music videos entirely from code.\n\nThe workflow starts with a one‑sentence brief; the AI agent asks follow‑up questions about style, length, format, sound and music before presenting a storyboard with two draft scenes.\n\nCinecode runs locally on a desktop application called Claude Code, a VS Code extension, or within the Cursor IDE, requiring no external paid service.\n\nThe project includes examples ranging from 15‑second clips to five‑minute documentaries, demonstrating both a fast mode that can finish a film in about three minutes and a more detailed film mode.\n\n## What it means for you\n\nFor creators, Cinecode offers a zero‑cost path to generate custom video content without hiring editors or voice talent. For the free‑model community, it showcases how AI‑driven pipelines can run entirely on local hardware, aligning with the growing demand for open, locally executable AI tools.\n\n## Sources\n\n- [sarpstar/cinecode: Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and han](https://github.com/sarpstar/cinecode), GitHub trending, 3 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-08-cinecode-lets-ai-generate-full-length-videos-from-a-single-sentence).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-07"
+  },
+  "/blog/news-2026-11-08-together-ai-launches-together-compiler-boosting-inference-speed-up-to-.html": {
+   "post": {
+    "slug": "news-2026-11-08-together-ai-launches-together-compiler-boosting-inference-speed-up-to-",
+    "titolo": "Together AI launches Together Compiler, boosting inference speed up to 2.6×",
+    "descr": "The new agent‑driven compiler re‑optimizes models in under 24 hours, delivering up to 2.6× higher TPS on frontier open‑source LLMs.",
+    "data": "2026-11-08",
+    "tema": "Software",
+    "corpo": "Together AI announced the Together Compiler, an agent‑driven loop that continuously re‑optimizes the inference forward pass as traffic patterns change.\n\nIn less than 24 hours the system achieved up to 2.6× higher throughput per second (TPS) compared with the best InferenceX configurations on models such as Kimi K3, GLM‑5.3, MiniMax M3.1‑Flash and DeepSeek v4.1‑Flash.\n\nThe compiler set new records on the SemiAnalysis InferenceX benchmark, reaching 1,111 TPS on MiniMax M3.1‑Flash and 1,205 TPS on DeepSeek v4.1‑Flash, and outperformed open‑source megakernels by 1.7× on Llama 1B batch‑size‑1 workloads.\n\nTogether Compiler’s agents run on persistent engines, eliminating the minutes‑long restarts typical of prior systems and delivering 252× higher experiment throughput.\n\nThe platform serves trillions of tokens daily and adapts to diverse hardware (H100, B200, B300, NVL72, Groq, etc.) and traffic shapes, from batch size to prompt length variations.\n\n## What it means for you\n\nFor AI users, the compiler means faster response times and lower costs when running popular free models such as Kimi K3 and GLM‑5.3, which rank at the top of FreeLLMArena. Developers of local or self‑hosted models can benefit from the continual optimization loop without manual tuning, making it easier to keep performance high as workloads evolve.\n\n## On FreeLLMArena\n\nFrom our rankings on 7 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [Together AI Releases Together Compiler: Agents Make Inference Up to 2.6x Faster](https://www.marktechpost.com/2026/11/05/together-ai-together-compiler-continual-compilation-ai-inference/), MarkTechPost, 5 Nov 2026\n- [Together Compiler: Continual Compilation for AI inference](https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference), together.ai (official), 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-08-together-ai-launches-together-compiler-boosting-inference-speed-up-to-).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-07"
   }
  },
  "ricostruzione": {

@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-08-together-ai-launches-together-compiler-boosting-inference-speed-up-to-",
+ "titolo": "Together AI launches Together Compiler, boosting inference speed up to 2.6×",
+ "descr": "The new agent‑driven compiler re‑optimizes models in under 24 hours, delivering up to 2.6× higher TPS on frontier open‑source LLMs.",
+ "tema": "Software",
+ "paragrafi": [
+  "Together AI announced the Together Compiler, an agent‑driven loop that continuously re‑optimizes the inference forward pass as traffic patterns change.",
+  "In less than 24 hours the system achieved up to 2.6× higher throughput per second (TPS) compared with the best InferenceX configurations on models such as Kimi K3, GLM‑5.3, MiniMax M3.1‑Flash and DeepSeek v4.1‑Flash.",
+  "The compiler set new records on the SemiAnalysis InferenceX benchmark, reaching 1,111 TPS on MiniMax M3.1‑Flash and 1,205 TPS on DeepSeek v4.1‑Flash, and outperformed open‑source megakernels by 1.7× on Llama 1B batch‑size‑1 workloads.",
+  "Together Compiler’s agents run on persistent engines, eliminating the minutes‑long restarts typical of prior systems and delivering 252× higher experiment throughput.",
+  "The platform serves trillions of tokens daily and adapts to diverse hardware (H100, B200, B300, NVL72, Groq, etc.) and traffic shapes, from batch size to prompt length variations."
+ ],
+ "perche": [
+  "For AI users, the compiler means faster response times and lower costs when running popular free models such as Kimi K3 and GLM‑5.3, which rank at the top of FreeLLMArena. Developers of local or self‑hosted models can benefit from the continual optimization loop without manual tuning, making it easier to keep performance high as workloads evolve."
+ ],
+ "pubblicato": "2026-11-08",
+ "titoloFonte": "Together AI Releases Together Compiler: Agents Make Inference Up to 2.6x Faster",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/05/together-ai-together-compiler-continual-compilation-ai-inference/",
+   "titolo": "Together AI Releases Together Compiler: Agents Make Inference Up to 2.6x Faster",
+   "ufficiale": false,
+   "data": "2026-11-05"
+  },
+  {
+   "nome": "together.ai",
+   "url": "https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference",
+   "titolo": "Together Compiler: Continual Compilation for AI inference",
+   "ufficiale": true,
+   "data": "2026-11-04"
+  }
+ ],
+ "frasiTolte": 0
+}
