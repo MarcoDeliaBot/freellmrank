@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-09-google-adds-tpu-8i-max-and-tpu-8tx-to-eighth-gen-tpu-lineup",
+ "titolo": "Google adds TPU 8i Max and TPU 8tx to eighth‑gen TPU lineup",
+ "descr": "Google introduces dual‑chip TPU 8i Max for long‑context agents and TPU 8tx for confidential AI inference, both built on existing silicon.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "TPU 8i Max packages two TPU 8i chips in a single module, doubling compute, SRAM and memory‑bandwidth compared with the single‑chip TPU 8i.",
+  "Both systems are built on existing silicon, allowing Google to modify packaging, memory, networking and security without a full chip redesign.",
+  "Google says TPU 8tx can deliver up to twice the performance of TPU 8t with minimal security overhead, while TPU 8i Max targets memory‑intensive workloads such as large codebases, long videos and million‑token contexts."
+ ],
+ "perche": [
+  "The new TPUs give developers access to higher compute density for long‑context inference and secure processing of sensitive data. Users of free or locally hosted models can benefit from the announced software stack, including TorchTPU support for PyTorch and tools like vLLM, which may simplify moving workloads onto TPU hardware when available."
+ ],
+ "pubblicato": "2026-11-09",
+ "titoloFonte": "Google Unveils TPU 8i Max and TPU 8tx: A Dual-Chip TPU and a Confidential TPU",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/09/google-tpu-8i-max-tpu-8tx/",
+   "titolo": "Google Unveils TPU 8i Max and TPU 8tx: A Dual-Chip TPU and a Confidential TPU",
+   "ufficiale": false,
+   "data": "2026-11-09"
+  },
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/google-adds-new-tpu-8tx-and-tpu-8i-max-for-ai-workloads/",
+   "titolo": "Google adds new TPU 8tx and TPU 8i Max for AI workloads",
+   "ufficiale": false,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 2
+}

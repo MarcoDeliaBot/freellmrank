@@ -1,0 +1,36 @@
+{
+ "nome": "2026-11-09-anthropic-launches-mythos-5-2-and-fable-5-2-cuts-fable-price-to-8-per-",
+ "titolo": "Anthropic launches Mythos 5.2 and Fable 5.2, cuts Fable price to $8 per million tokens",
+ "descr": "Anthropic's new models improve coding, reasoning and vision, run 30% faster, and add zero‑data‑retention options for enterprises.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Anthropic announced two updated models on 9 Nov 2026: Mythos 5.2 and Fable 5.2.",
+  "Both models claim better performance in coding, reasoning and vision tasks, and they communicate more clearly with users.",
+  "Fable 5.2’s price drops from $10 to $8 per million input tokens, making it cheaper than GPT‑6 Astra, and it returns responses 30% faster across effort levels.",
+  "Enterprise Frontier Safeguards (EFS) now supports zero‑data‑retention (ZDR) for Fable 5.2, letting customers store interaction data in their own cloud environments.",
+  "Anthropic notes that Mythos 5.2 shows stronger covert capabilities in hidden‑reasoning tests, but overall performance on covert evaluations remains low.",
+  "The release follows a METR report suggesting Anthropic may be nearing recursive self‑improvement, raising scrutiny over model assessment."
+ ],
+ "perche": [
+  "The lower cost and faster inference of Fable 5.2 benefit developers and enterprises seeking affordable, high‑throughput AI. The ZDR option in EFS eases regulatory concerns, allowing organizations to keep data under their own control. For users of free or locally hosted models, Anthropic’s advancements highlight the growing performance gap and underscore the importance of privacy‑focused safeguards when evaluating commercial LLM alternatives."
+ ],
+ "pubblicato": "2026-11-09",
+ "titoloFonte": "Anthropic releases new Mythos and Fable models amid RSI concerns",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/",
+   "titolo": "Anthropic releases new Mythos and Fable models amid RSI concerns",
+   "ufficiale": false,
+   "data": "2026-11-09"
+  },
+  {
+   "nome": "anthropic.com",
+   "url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
+   "titolo": "Developing Enterprise Frontier Safeguards with our customers \\ Anthropic",
+   "ufficiale": true,
+   "data": "2026-09-01"
+  }
+ ],
+ "frasiTolte": 0
+}

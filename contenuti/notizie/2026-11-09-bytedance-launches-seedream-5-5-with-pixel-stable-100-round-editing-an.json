@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-09-bytedance-launches-seedream-5-5-with-pixel-stable-100-round-editing-an",
+ "titolo": "ByteDance launches Seedream 5.5 with pixel‑stable 100‑round editing and native RGBA output",
+ "descr": "Seedream 5.5 adds reliable multi‑turn image edits, transparent‑background assets and sharper text rendering for professional workflows.",
+ "tema": "Software",
+ "paragrafi": [
+  "ByteDance announced the release of Seedream 5.5, its next‑generation image creation model aimed at professional visual production.",
+  "The model can preserve unedited regions at the pixel level across up to 100 successive edits, preventing color shifts and detail loss.",
+  "It now generates native RGBA images, providing full or partial transparency so assets can be used directly without background removal.",
+  "Improvements also cover lighting, material, skin texture realism and denser, more accurate rendering of small and complex text.",
+  "Seedream 5.5 is being rolled out gradually through Jimeng, Doubao, Doubao Work and Volcengine Ark, with a Pro version planned."
+ ],
+ "perche": [
+  "For creators, the ability to edit images repeatedly without degradation streamlines iterative design and reduces cleanup work. The transparent‑background output simplifies asset integration, making the model more practical for studios that rely on fast, high‑quality visuals. Users seeking free or locally hosted alternatives still need to watch for availability, as the rollout is platform‑specific and no local deployment details were given."
+ ],
+ "pubblicato": "2026-11-09",
+ "titoloFonte": "Bytedance's Seedream 5.5 promises pixel-stable image editing across 100 rounds without color drift",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/bytedances-seedream-5-5-promises-pixel-stable-image-editing-across-100-rounds-without-color-drift/",
+   "titolo": "Bytedance's Seedream 5.5 promises pixel-stable image editing across 100 rounds without color drift",
+   "ufficiale": false,
+   "data": "2026-11-09"
+  },
+  {
+   "nome": "seed.bytedance.com",
+   "url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5",
+   "titolo": "Seed News - ByteDance Seed Team",
+   "ufficiale": true,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 0
+}
