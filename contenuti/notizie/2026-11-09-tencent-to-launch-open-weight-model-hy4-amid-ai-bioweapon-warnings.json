@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-09-tencent-to-launch-open-weight-model-hy4-amid-ai-bioweapon-warnings",
+ "titolo": "Tencent to launch open-weight model Hy4 amid AI bioweapon warnings",
+ "descr": "Tencent plans to release Hy4 as an open-weight model with safety report, while recent Hugging Face breach highlights open models' role in security.",
+ "tema": "Policy",
+ "paragrafi": [
+  "Tencent's chief AI scientist warned that AI could soon be used to create bioweapons and said that neither fully open nor fully closed models alone can solve the risk.",
+  "The company announced that its upcoming model, Hy4, will be released with open weights and an accompanying safety report, claiming its biological capabilities are below a high‑risk threshold.",
+  "Hy4's training data were filtered to remove hacking capabilities, a measure the article says survives attempts to strip safety filters (abliteration).",
+  "In July 2026, Hugging Face disclosed an intrusion driven by an autonomous AI agent system; the forensic analysis was performed on the open‑weight model GLM‑5.2 because hosted models blocked the necessary data.",
+  "The incident showed that open models can aid defenders when safety guardrails on commercial APIs prevent analysis, but also underscored the difficulty of controlling model misuse."
+ ],
+ "perche": [
+  "For users, the release of Hy4 means a new free, open-weight option that may be suitable for local deployment, provided its safety limits meet their needs. The Hugging Face breach illustrates why having a capable, self‑hosted model like GLM‑5.2 is valuable for security teams, while also reminding the community that open models can be repurposed for offensive tasks if not properly guarded."
+ ],
+ "pubblicato": "2026-11-09",
+ "titoloFonte": "Tencent's AI chief says AI bioweapons are coming, but closing off models isn't the answer",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/tencents-ai-chief-says-ai-bioweapons-are-coming-but-closing-off-models-isnt-the-answer/",
+   "titolo": "Tencent's AI chief says AI bioweapons are coming, but closing off models isn't the answer",
+   "ufficiale": false,
+   "data": "2026-11-09"
+  },
+  {
+   "nome": "huggingface.co",
+   "url": "https://huggingface.co/blog/security-incident-july-2026",
+   "titolo": "Security incident disclosure — July 2026",
+   "ufficiale": true,
+   "data": "2026-07-16"
+  }
+ ],
+ "frasiTolte": 0
+}

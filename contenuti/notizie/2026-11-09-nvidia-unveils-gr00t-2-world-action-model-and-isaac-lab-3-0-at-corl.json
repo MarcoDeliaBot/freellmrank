@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-09-nvidia-unveils-gr00t-2-world-action-model-and-isaac-lab-3-0-at-corl",
+ "titolo": "NVIDIA unveils GR00T 2 world action model and Isaac Lab 3.0 at CoRL",
+ "descr": "At the Conference on Robot Learning, NVIDIA introduced GR00T 2 for dexterous manipulation and Isaac Lab 3.0 with Newton physics.",
+ "tema": "Research",
+ "paragrafi": [
+  "During the Conference on Robot Learning in Austin, Texas, NVIDIA presented new open robotics technologies, including the GR00T 2 world action model and the Isaac Lab 3.0 simulation framework.",
+  "GR00T 2, built on NVIDIA Cosmos, was trained on 100,000 hours of open‑source human egocentric data and can complete 40 of 50 benchmark tasks without task‑specific demonstrations.",
+  "The model achieved a 71% average success rate with a single demonstration per task, rising to 95% when five demonstrations are provided, and ranks among the top three models on RoboCasa365, RoboLab, RoboDojo and MolmoSpaces benchmarks.",
+  "Isaac Lab 3.0 now supports both NVIDIA PhysX and the open‑source Newton physics engine, allowing realistic simulation of deformable objects and complex articulated hands, and delivers up to 2.5× higher training throughput than the previous PhysX‑only version.",
+  "NVIDIA highlighted collaborations with partners such as Nexuni, Foxconn, Siemens and MicroAGI, which are testing GR00T 2 for laundry handling, server‑manufacturing automation and Ethernet cable swapping."
+ ],
+ "perche": [
+  "The release of GR00T 2 and the enhanced Isaac Lab give researchers a more capable, open‑source pipeline for training manipulation skills in simulation before deploying on real robots. For developers of free or locally run AI models, the open data and tools—Video to Data workflow, EgoHand model and Newton integration—provide reusable assets that can be adapted without relying on proprietary cloud services."
+ ],
+ "pubblicato": "2026-11-09",
+ "titoloFonte": "Practice Makes Precise: At CoRL, NVIDIA and Partners Reveal How Robots Rehearse Delicate Work in Simulation",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/",
+   "titolo": "Practice Makes Precise: At CoRL, NVIDIA and Partners Reveal How Robots Rehearse Delicate Work in Simulation",
+   "ufficiale": true,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 0
+}

@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-09-tencent-launches-qwen3-8-27b-dspine-b16-draft-model-on-hugging-face",
+ "titolo": "Tencent launches Qwen3.8-27B-DSpine-b16 draft model on Hugging Face",
+ "descr": "The new five‑layer draft model adds parallel token generation for Qwen3.8‑27B with improved benchmarks and open‑source tooling.",
+ "tema": "Research",
+ "paragrafi": [
+  "Tencent released Qwen3.8-27B-DSpine-b16 on Hugging Face, a five‑layer draft model for the Qwen3.8‑27B base.",
+  "The model uses a block size of 16, an 8,192‑token sliding window and supports up to 4,096 new tokens per request.",
+  "Benchmarks show DSpine outperforms DFlash2 and autoregressive decoding, e.g., GSM8K scores rise from 5.69 to 7.20 and throughput gains reach 2.71× over AR.",
+  "Installation requires cloning the DSpine repository and running a pip install, then serving with SGLang using the provided command line options.",
+  "No inference provider currently hosts the model, and it is available under an Apache 2.0 license with 1,464 downloads last month."
+ ],
+ "perche": [
+  "The open release lets developers experiment with speculative decoding without waiting for commercial services. For users seeking free or locally run models, the draft model offers a way to speed up generation on compatible hardware while remaining fully open source."
+ ],
+ "pubblicato": "2026-11-09",
+ "titoloFonte": "Tencent releases Qwen3.8-27B-DSpine-b16 on Hugging Face",
+ "fonti": [
+  {
+   "nome": "Hugging Face trending",
+   "url": "https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16",
+   "titolo": "Tencent releases Qwen3.8-27B-DSpine-b16 on Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-07"
+  }
+ ],
+ "frasiTolte": 0
+}
