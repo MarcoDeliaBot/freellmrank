@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-09-nvidia-partners-with-samsung-kakao-mobility-and-lg-to-boost-korea-s-ph",
+ "titolo": "NVIDIA partners with Samsung, Kakao Mobility and LG to boost Korea's physical AI",
+ "descr": "NVIDIA expands collaborations in semiconductor design, autonomous driving and robotics, delivering massive speedups with GPU‑accelerated tools.",
+ "tema": "Business",
+ "paragrafi": [
+  "Samsung Electronics will use NVIDIA cuISS, cuDSS, cuEST and cuEquivariance to speed up sparse linear system solves, quantum chemistry calculations and tensor operations for atomistic AI models.",
+  "Kakao Mobility plans to build a level‑4 autonomous driving system on NVIDIA Hyperion and DRIVE AGX Thor, integrating its software with NVIDIA Halos for safety validation.",
+  "LG Electronics demonstrated a workflow that combines NVIDIA Isaac GR00T, Cosmos data augmentation, Jetson AGX Thor onboard computing and simulation to train and evaluate its CLOiD factory robot.",
+  "One AI homogenization case reported a 1,600× speedup, cutting simulation time from 18 hours on a 32‑core CPU to 41 seconds on a GPU."
+ ],
+ "perche": [
+  "These collaborations show how GPU‑accelerated AI can dramatically reduce engineering cycles, making advanced simulation and robotics more accessible. For users of free or locally hosted models, the trend highlights the growing gap between high‑performance cloud tools and on‑device inference, underscoring the need for efficient, lightweight models."
+ ],
+ "pubblicato": "2026-11-09",
+ "titoloFonte": "Korea Advances Physical AI Across Industries With NVIDIA",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/korea-physical-ai-ecosystem/",
+   "titolo": "Korea Advances Physical AI Across Industries With NVIDIA",
+   "ufficiale": true,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 1
+}

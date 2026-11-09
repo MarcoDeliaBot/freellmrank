@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-09-pinky-lets-ai-agents-control-iphone-and-android-phones-with-user-appro",
+ "titolo": "Pinky lets AI agents control iPhone and Android phones with user‑approved safety layer",
+ "descr": "Open‑source Pinky enables Claude, Codex, Cursor and other agents to operate mobile devices from macOS, Windows or Linux while keeping the user in control.",
+ "tema": "Software",
+ "paragrafi": [
+  "Pinky is a free, Apache‑2.0 licensed app that bridges AI agents and smartphones. It runs on macOS 13+, Windows 10/11 64‑bit, and Linux (Ubuntu 20.04+, Debian 11+).",
+  "The tool supports Android 10‑17 and iOS 17.4 or later, connecting via USB or Wi‑Fi. No additional software is needed on iOS 27+, while older iOS versions require a helper app installed once from Xcode.",
+  "Agents such as Claude Code, Claude Desktop, Codex or Cursor can be linked through Pinky’s MCP gateway. Every risky action – payments, installs, calls – must be approved by the user, and the gateway enforces these rules.",
+  "Users can pause, take over, or stop the agent at any time, and each session is recorded as an HTML report.",
+  "The project is in pre‑alpha; Claude Code has completed end‑to‑end runs on an Android phone and an iPhone running iOS 27. Documentation lists current capabilities and how to try the software."
+ ],
+ "perche": [
+  "For AI users, Pinky offers a way to extend agent capabilities to real mobile devices while retaining strict human oversight, reducing the risk of unauthorized actions. For those seeking free or locally run models, Pinky demonstrates how open‑source tooling can safely integrate powerful agents with everyday hardware without requiring cloud services."
+ ],
+ "pubblicato": "2026-11-09",
+ "titoloFonte": "DIYgod/pinky: Let AI agents use your phone, with you in the loop.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/DIYgod/pinky",
+   "titolo": "DIYgod/pinky: Let AI agents use your phone, with you in the loop.",
+   "ufficiale": false,
+   "data": "2026-11-06"
+  }
+ ],
+ "frasiTolte": 1
+}

@@ -21992,6 +21992,42 @@
     "tipo": "News"
    },
    "data": "2026-11-08"
+  },
+  "/blog/news-2026-11-09-datasette-adds-pagination-bar-with-row-counts-and-navigation-buttons.html": {
+   "post": {
+    "slug": "news-2026-11-09-datasette-adds-pagination-bar-with-row-counts-and-navigation-buttons",
+    "titolo": "Datasette adds pagination bar with row counts and navigation buttons",
+    "descr": "The new PR introduces a top‑and‑bottom pagination bar showing current rows, total rows, and back/next controls.",
+    "data": "2026-11-09",
+    "tema": "Software",
+    "corpo": "A pull request merged on 7 Nov 2026 adds a pagination bar to Datasette table pages that span multiple pages.\n\nThe bar appears above the table and repeats below, displaying ranges like “Rows 101–150 of 1,761” and offering a Next page button.\n\nOn pages after the first, a Back to first page button appears, preserving filters and sort while resetting pagination parameters.\n\nThe implementation uses a new ?_count=before option on the /‑/count endpoint to fetch the number of rows ahead of the cursor, improving performance from 69 ms to 3 ms on a 1 M‑row table.\n\nTable schema sections are also collapsed into a closed‑by‑default details/summary block, reducing visual clutter.\n\n## What it means for you\n\nThe enhanced pagination gives users clearer navigation and faster page loads, especially on large datasets. For developers building open‑source tools, the changes demonstrate how modest UI tweaks and backend optimisations can improve usability without sacrificing free software principles.\n\n## Sources\n\n- [Hide your slop PR descriptions behind](https://simonwillison.net/2026/Nov/9/details-summary/), Simon Willison, 9 Nov 2026\n- [Pagination bar showing which rows are on the current page by simonw · Pull Request #3043 · simonw/datasette · GitHub](https://github.com/simonw/datasette/pull/3043), github.com (official), 7 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-09-datasette-adds-pagination-bar-with-row-counts-and-navigation-buttons).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-08"
+  },
+  "/blog/news-2026-11-09-nvidia-partners-with-samsung-kakao-mobility-and-lg-to-boost-korea-s-ph.html": {
+   "post": {
+    "slug": "news-2026-11-09-nvidia-partners-with-samsung-kakao-mobility-and-lg-to-boost-korea-s-ph",
+    "titolo": "NVIDIA partners with Samsung, Kakao Mobility and LG to boost Korea's physical AI",
+    "descr": "NVIDIA expands collaborations in semiconductor design, autonomous driving and robotics, delivering massive speedups with GPU‑accelerated tools.",
+    "data": "2026-11-09",
+    "tema": "Business",
+    "corpo": "Samsung Electronics will use NVIDIA cuISS, cuDSS, cuEST and cuEquivariance to speed up sparse linear system solves, quantum chemistry calculations and tensor operations for atomistic AI models.\n\nKakao Mobility plans to build a level‑4 autonomous driving system on NVIDIA Hyperion and DRIVE AGX Thor, integrating its software with NVIDIA Halos for safety validation.\n\nLG Electronics demonstrated a workflow that combines NVIDIA Isaac GR00T, Cosmos data augmentation, Jetson AGX Thor onboard computing and simulation to train and evaluate its CLOiD factory robot.\n\nOne AI homogenization case reported a 1,600× speedup, cutting simulation time from 18 hours on a 32‑core CPU to 41 seconds on a GPU.\n\n## What it means for you\n\nThese collaborations show how GPU‑accelerated AI can dramatically reduce engineering cycles, making advanced simulation and robotics more accessible. For users of free or locally hosted models, the trend highlights the growing gap between high‑performance cloud tools and on‑device inference, underscoring the need for efficient, lightweight models.\n\n## Sources\n\n- [Korea Advances Physical AI Across Industries With NVIDIA](https://blogs.nvidia.com/blog/korea-physical-ai-ecosystem/), NVIDIA (official), 9 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-09-nvidia-partners-with-samsung-kakao-mobility-and-lg-to-boost-korea-s-ph).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-08"
+  },
+  "/blog/news-2026-11-09-pinky-lets-ai-agents-control-iphone-and-android-phones-with-user-appro.html": {
+   "post": {
+    "slug": "news-2026-11-09-pinky-lets-ai-agents-control-iphone-and-android-phones-with-user-appro",
+    "titolo": "Pinky lets AI agents control iPhone and Android phones with user‑approved safety layer",
+    "descr": "Open‑source Pinky enables Claude, Codex, Cursor and other agents to operate mobile devices from macOS, Windows or Linux while keeping the user in control.",
+    "data": "2026-11-09",
+    "tema": "Software",
+    "corpo": "Pinky is a free, Apache‑2.0 licensed app that bridges AI agents and smartphones. It runs on macOS 13+, Windows 10/11 64‑bit, and Linux (Ubuntu 20.04+, Debian 11+).\n\nThe tool supports Android 10‑17 and iOS 17.4 or later, connecting via USB or Wi‑Fi. No additional software is needed on iOS 27+, while older iOS versions require a helper app installed once from Xcode.\n\nAgents such as Claude Code, Claude Desktop, Codex or Cursor can be linked through Pinky’s MCP gateway. Every risky action – payments, installs, calls – must be approved by the user, and the gateway enforces these rules.\n\nUsers can pause, take over, or stop the agent at any time, and each session is recorded as an HTML report.\n\nThe project is in pre‑alpha; Claude Code has completed end‑to‑end runs on an Android phone and an iPhone running iOS 27. Documentation lists current capabilities and how to try the software.\n\n## What it means for you\n\nFor AI users, Pinky offers a way to extend agent capabilities to real mobile devices while retaining strict human oversight, reducing the risk of unauthorized actions. For those seeking free or locally run models, Pinky demonstrates how open‑source tooling can safely integrate powerful agents with everyday hardware without requiring cloud services.\n\n## Sources\n\n- [DIYgod/pinky: Let AI agents use your phone, with you in the loop.](https://github.com/DIYgod/pinky), GitHub trending, 6 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-09-pinky-lets-ai-agents-control-iphone-and-android-phones-with-user-appro).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-08"
   }
  },
  "ricostruzione": {

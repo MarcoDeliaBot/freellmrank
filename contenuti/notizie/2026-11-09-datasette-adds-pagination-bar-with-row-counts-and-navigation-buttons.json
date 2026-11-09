@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-09-datasette-adds-pagination-bar-with-row-counts-and-navigation-buttons",
+ "titolo": "Datasette adds pagination bar with row counts and navigation buttons",
+ "descr": "The new PR introduces a top‑and‑bottom pagination bar showing current rows, total rows, and back/next controls.",
+ "tema": "Software",
+ "paragrafi": [
+  "A pull request merged on 7 Nov 2026 adds a pagination bar to Datasette table pages that span multiple pages.",
+  "The bar appears above the table and repeats below, displaying ranges like “Rows 101–150 of 1,761” and offering a Next page button.",
+  "On pages after the first, a Back to first page button appears, preserving filters and sort while resetting pagination parameters.",
+  "The implementation uses a new ?_count=before option on the /‑/count endpoint to fetch the number of rows ahead of the cursor, improving performance from 69 ms to 3 ms on a 1 M‑row table.",
+  "Table schema sections are also collapsed into a closed‑by‑default details/summary block, reducing visual clutter."
+ ],
+ "perche": [
+  "The enhanced pagination gives users clearer navigation and faster page loads, especially on large datasets. For developers building open‑source tools, the changes demonstrate how modest UI tweaks and backend optimisations can improve usability without sacrificing free software principles."
+ ],
+ "pubblicato": "2026-11-09",
+ "titoloFonte": "Hide your slop PR descriptions behind",
+ "fonti": [
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Nov/9/details-summary/",
+   "titolo": "Hide your slop PR descriptions behind",
+   "ufficiale": false,
+   "data": "2026-11-09"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/simonw/datasette/pull/3043",
+   "titolo": "Pagination bar showing which rows are on the current page by simonw · Pull Request #3043 · simonw/datasette · GitHub",
+   "ufficiale": true,
+   "data": "2026-11-07"
+  }
+ ],
+ "frasiTolte": 0
+}
