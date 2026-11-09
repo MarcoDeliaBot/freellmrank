@@ -323,5 +323,13 @@
  "news-2026-11-09-datasette-adds-pagination-bar-with-row-counts-and-navigation-buttons": {
   "lungo": "notizia-datasette-adds-pagination-bar-with-row-counts-and-naviga",
   "breve": "breve-datasette-adds-pagination-bar-with-row-counts-and-naviga"
+ },
+ "news-2026-11-09-tencent-to-launch-open-weight-model-hy4-amid-ai-bioweapon-warnings": {
+  "lungo": "notizia-tencent-to-launch-open-weight-model-hy4-amid-ai-bioweapo",
+  "breve": "breve-tencent-to-launch-open-weight-model-hy4-amid-ai-bioweapo"
+ },
+ "news-2026-11-09-tencent-launches-qwen3-8-27b-dspine-b16-draft-model-on-hugging-face": {
+  "lungo": "notizia-tencent-launches-qwen3-8-27b-dspine-b16-draft-model-on-h",
+  "breve": "breve-tencent-launches-qwen3-8-27b-dspine-b16-draft-model-on-h"
  }
 }
