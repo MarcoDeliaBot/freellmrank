@@ -2077,5 +2077,16 @@
   "contestoMax": 4096,
   "moe": false,
   "attivi": 572567080
+ },
+ "swiss-ai/Apertus-v1.1-4B-Instruct": {
+  "strati": 24,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 24,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 4096,
+  "moe": false,
+  "attivi": 3825361968
  }
 }
