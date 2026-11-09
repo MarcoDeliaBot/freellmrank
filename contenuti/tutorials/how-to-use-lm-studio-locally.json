@@ -1,0 +1,198 @@
+{
+ "tipo": "tutorial",
+ "repository": "lmstudio-ai/lms",
+ "commit": "43d4b2680e3cf679ad19753fcc7af0cb0e4a12a2",
+ "fonti": [
+  {
+   "url": "https://raw.githubusercontent.com/lmstudio-ai/lms/43d4b2680e3cf679ad19753fcc7af0cb0e4a12a2/README.md",
+   "testo": "<p align=\"center\">\n  <br/>\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://files.lmstudio.ai/lms-dark.png\">\n    <source media=\"(prefers-color-scheme: light)\" srcset=\"https://files.lmstudio.ai/lms-light.png\">\n    <img alt=\"lmstudio cli logo\" src=\"https://files.lmstudio.ai/lms-light.png\" width=\"180\">\n  </picture>\n  <br/>\n  <br/>\n</p>\n\n<p align=\"center\"><bold><code>lms</code> - Command Line Tool for <a href=\"https://lmstudio.ai/\">LM Studio</a></bold></p>\n<p align=\"center\">Built with <bold><code><a href=\"https://github.com/lmstudio-ai/lmstudio.js\">lmstudio.js</a></code></bold></p>\n\n# Installation\n\n`lms` ships with [LM Studio](https://lmstudio.ai/) 0.2.22 and newer.\n\nIf you have trouble running the command, try running `npx lmstudio install-cli` to add it to path.\n\nTo check if the bootstrapping was successful, run the following in a **👉 new terminal window 👈**:\n\n```shell\nlms\n```\n\n# Usage\n\nYou can use `lms --help` to see a list of all available subcommands.\n\nFor details about each subcommand, run `lms <subcommand> --help`.\n\nHere are some frequently used commands:\n\n- `lms status` - To check the status of LM Studio.\n- `lms server start` - To start the local API server.\n- `lms server stop` - To stop the local API server.\n- `lms ls` - To list all downloaded models.\n  - `lms ls --json` - To list all downloaded models in machine-readable JSON format.\n  - `lms ls --decision` - To list only downloaded decision models.\n- `lms ps` - To list all loaded models available for inferencing.\n  - `lms ps --json` - To list all loaded models available for inferencing in machine-readable JSON format.\n- `lms load` - To load a model\n  - `lms load <model path> -y` - To load a model with maximum GPU acceleration without confirmation\n- `lms unload <model identifier>` - To unload a model\n  - `lms unload --all` - To unload all models\n- `lms create` - To create a new project with LM Studio SDK\n- `lms log stream` - To stream logs from LM Studio\n\n## Local app selection\n\n`lms` prefers a running LM Studio or llmster over Bionic. It connects to Bionic when Bionic is the\nonly running app, without starting another backend. When none are running, it tries valid recorded\ninstallations in this order: llmster, LM Studio, Bionic. Missing or stale installations are skipped.\n\nDiscovery, CLI authentication, and REST server settings all come from the selected app. Bionic uses\n`~/.lmstudio/apps/bionic/.internal`; LM Studio and llmster retain `~/.lmstudio/.internal` (under your\nconfigured LM Studio home). Shared model and runtime storage is unchanged.\n\n`lms status`, `lms server status`, and `lms server stop` do not start an app. In development,\n`LMS_API_SERVER_INFO_PATH` selects one exact instance and never falls back to another app or starts\none if that instance is unavailable.\n\n# Contributing\n\nThe CLI is part of the [lmstudio.js monorepo](https://github.com/lmstudio-ai/lmstudio.js) and cannot be built standalone.\n\n## Building and Testing the CLI\n\n```bash\n# Clone and build the entire monorepo\ngit clone https://github.com/lmstudio-ai/lmstudio-js.git --recursive\ncd lmstudio-js\nnpm install\nnpm run build\n\n# Test your CLI changes\nnode publish/cli/dist/index.js <subcommand>\n```\n\n**Example:**\n\n```bash\nnode publish/cli/dist/index.js --help\nnode publish/cli/dist/index.js status\n```\n\nSee [CONTRIBUTING.md](CONTRIBUTING.md) for more information.\n",
+   "sha256": "d7d6c07f9a7ff25c3b9859ddc5af65c21831405f7b2529fc99d7f8247ce2a2ef",
+   "tipo": "Official documentation"
+  }
+ ],
+ "name": "LM Studio",
+ "date": "2026-11-09",
+ "slug": "how-to-use-lm-studio-locally",
+ "key": "How to use LM Studio locally",
+ "titolo": "How to use LM Studio locally",
+ "descr": "lms ships with LM Studio 0.2.22 and newer.",
+ "problem": "Need LM Studio?",
+ "problemEvidence": "LM Studio",
+ "install": "npx lmstudio install-cli",
+ "example": "lms status",
+ "audience": [],
+ "limits": [
+  "The guide covers the commands documented by the project. Model downloads, memory use and performance depend on the model and your machine."
+ ],
+ "screenshots": [],
+ "claims": [
+  "lms ships with LM Studio 0.2.22 and newer."
+ ],
+ "features": [
+  {
+   "label": "Installation",
+   "detail": "lms ships with LM Studio 0.2.22 and newer.",
+   "evidence": {
+    "quote": "`lms` ships with [LM Studio](https://lmstudio.ai/) 0.2.22 and newer.",
+    "url": "https://raw.githubusercontent.com/lmstudio-ai/lms/43d4b2680e3cf679ad19753fcc7af0cb0e4a12a2/README.md"
+   }
+  },
+  {
+   "label": "Installation",
+   "detail": "If you have trouble running the command, try running npx lmstudio install-cli to add it to path.",
+   "evidence": {
+    "quote": "If you have trouble running the command, try running `npx lmstudio install-cli` to add it to path.",
+    "url": "https://raw.githubusercontent.com/lmstudio-ai/lms/43d4b2680e3cf679ad19753fcc7af0cb0e4a12a2/README.md"
+   }
+  },
+  {
+   "label": "Usage",
+   "detail": "You can use lms --help to see a list of all available subcommands.",
+   "evidence": {
+    "quote": "You can use `lms --help` to see a list of all available subcommands.",
+    "url": "https://raw.githubusercontent.com/lmstudio-ai/lms/43d4b2680e3cf679ad19753fcc7af0cb0e4a12a2/README.md"
+   }
+  }
+ ],
+ "selection": {
+  "reason": "Official pinned usage procedure",
+  "score": 2000000005412
+ },
+ "introduction": {
+  "quote": "# Installation\n\n`lms` ships with [LM Studio](https://lmstudio.ai/) 0.2.22 and newer.\n\nIf you have trouble running the command, try running `npx lmstudio install-cli` to add it to path.\n\nTo check if the bootstrapping was successful, run the following in a **👉 new terminal window 👈**:\n\n```shell\nlms\n```\n\n# Usage\n\nYou can use `lms --help` to see a list of all available subcommands.\n\nFor details about each subcommand, run `lms <subcommand> --help`.\n\nHere are some frequently used commands:\n\n- `lms status` - To check the status of LM Studio.\n- `lms server start` - To start the local API server.\n- `lms server stop` - To stop the local API server.\n- `lms ls` - To list all downloaded models.\n  - `lms ls --json` - To list all downloaded models in machine-readable JSON format.\n  - `lms ls --decision` - To list only downloaded decision models.\n- `lms ps` - To list all loaded models available for inferencing.\n  - `lms ps --json` - To list all loaded models available for inferencing in machine-readable JSON format.\n- `lms load` - To load a model\n  - `lms load <model path> -y` - To load a model with maximum GPU acceleration without confirmation\n- `lms unload <model identifier>` - To unload a model\n  - `lms unload --all` - To unload all models\n- `lms create` - To create a new project with LM Studio SDK\n- `lms log stream` - To stream logs from LM Studio\n\n",
+  "voice": "LM Studio includes a command line tool for working with local models. Its documented commands inspect the application, list models, and load a model.",
+  "text": "Work with local models from the command line."
+ },
+ "requirements": {
+  "quote": "`lms` ships with [LM Studio](https://lmstudio.ai/) 0.2.22 and newer.",
+  "voice": "Use LM Studio version zero point two point twenty two or newer. The command line tool ships with that application.",
+  "text": "LM Studio 0.2.22 or newer includes the tool."
+ },
+ "steps": [
+  {
+   "title": "Check application status",
+   "text": "Check the status of the local application.",
+   "command": "lms status",
+   "evidence": {
+    "quote": "- `lms status` - To check the status of LM Studio.",
+    "url": "https://raw.githubusercontent.com/lmstudio-ai/lms/43d4b2680e3cf679ad19753fcc7af0cb0e4a12a2/README.md"
+   }
+  },
+  {
+   "title": "Start the local server",
+   "text": "Start the local API server.",
+   "command": "lms server start",
+   "evidence": {
+    "quote": "- `lms server start` - To start the local API server.",
+    "url": "https://raw.githubusercontent.com/lmstudio-ai/lms/43d4b2680e3cf679ad19753fcc7af0cb0e4a12a2/README.md"
+   }
+  },
+  {
+   "title": "Stop the local server",
+   "text": "Stop the local API server when you finish using it.",
+   "command": "lms server stop",
+   "evidence": {
+    "quote": "- `lms server stop` - To stop the local API server.",
+    "url": "https://raw.githubusercontent.com/lmstudio-ai/lms/43d4b2680e3cf679ad19753fcc7af0cb0e4a12a2/README.md"
+   }
+  },
+  {
+   "title": "List downloaded models",
+   "text": "List the models that have already been downloaded.",
+   "command": "lms ls",
+   "evidence": {
+    "quote": "- `lms ls` - To list all downloaded models.",
+    "url": "https://raw.githubusercontent.com/lmstudio-ai/lms/43d4b2680e3cf679ad19753fcc7af0cb0e4a12a2/README.md"
+   }
+  },
+  {
+   "title": "Check loaded models",
+   "text": "List all loaded models available for inference.",
+   "command": "lms ps",
+   "evidence": {
+    "quote": "- `lms ps` - To list all loaded models available for inferencing.",
+    "url": "https://raw.githubusercontent.com/lmstudio-ai/lms/43d4b2680e3cf679ad19753fcc7af0cb0e4a12a2/README.md"
+   }
+  },
+  {
+   "title": "Load a model",
+   "text": "Load a model for inference.",
+   "command": "lms load",
+   "evidence": {
+    "quote": "- `lms load` - To load a model",
+    "url": "https://raw.githubusercontent.com/lmstudio-ai/lms/43d4b2680e3cf679ad19753fcc7af0cb0e4a12a2/README.md"
+   }
+  },
+  {
+   "title": "Read application logs",
+   "text": "Stream the application logs.",
+   "command": "lms log stream",
+   "evidence": {
+    "quote": "- `lms log stream` - To stream logs from LM Studio",
+    "url": "https://raw.githubusercontent.com/lmstudio-ai/lms/43d4b2680e3cf679ad19753fcc7af0cb0e4a12a2/README.md"
+   }
+  }
+ ],
+ "writing": {
+  "scope": "tutorial",
+  "dailyCap": 200,
+  "calls": 1,
+  "neurons": 0,
+  "tokens": 0,
+  "accepted": 0,
+  "fallback": 9,
+  "writer": "deterministic",
+  "attempts": [
+   {
+    "provider": "workers",
+    "model": "gpt-oss-120b",
+    "max": 3200,
+    "usage": null,
+    "tokens": 0,
+    "neurons": 0,
+    "accepted": 0,
+    "error": "/api/scrivi 429: Daily writing budget used. Try tomorrow.",
+    "status": 429
+   }
+  ],
+  "endpoint": "https://freellmarena.com",
+  "error": "/api/scrivi 429: Daily writing budget used. Try tomorrow.",
+  "status": 429,
+  "factsHash": "053afb42ca5333016ac47c8ad596663c84cabcb071c4089aea8beda0e54077bf"
+ },
+ "videoVerified": {
+  "date": "2026-11-09T06:05:12.537Z",
+  "cardHash": "102b2dee44ea5a118f52805d492e4cd3fc99d1903dd09f7d3a5011e7a8dfe30c",
+  "formats": [
+   {
+    "release": "video-tutorial-how-to-use-lm-studio-locally",
+    "seconds": 117,
+    "frames": [
+     "fotogrammi/scena-01.jpg",
+     "fotogrammi/scena-02.jpg",
+     "fotogrammi/scena-03.jpg",
+     "fotogrammi/scena-04.jpg",
+     "fotogrammi/scena-05.jpg",
+     "fotogrammi/scena-06.jpg",
+     "fotogrammi/scena-07.jpg",
+     "fotogrammi/scena-08.jpg",
+     "fotogrammi/scena-09.jpg"
+    ]
+   },
+   {
+    "release": "video-breve-tutorial-how-to-use-lm-studio-locally",
+    "seconds": 45,
+    "frames": [
+     "fotogrammi/scena-01.jpg",
+     "fotogrammi/scena-02.jpg",
+     "fotogrammi/scena-03.jpg",
+     "fotogrammi/scena-04.jpg",
+     "fotogrammi/scena-05.jpg",
+     "fotogrammi/scena-06.jpg",
+     "fotogrammi/scena-07.jpg"
+    ]
+   }
+  ]
+ },
+ "category": "other"
+}

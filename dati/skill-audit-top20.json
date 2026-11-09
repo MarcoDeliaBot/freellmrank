@@ -1,13 +1,13 @@
 {
- "date": "2026-11-06",
+ "date": "2026-11-09",
  "source": "https://skills.sh/trending",
- "observedAt": "2026-11-06T15:10:27.404Z",
+ "observedAt": "2026-11-09T04:43:17.188Z",
  "entries": [
   {
    "rank": 1,
    "repository": "skills-shell/superpowers",
    "skill": "ai-image-generation",
-   "date": "2026-11-06",
+   "date": "2026-11-09",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/image/ai-image-generation/SKILL.md",
    "status": "warning",
@@ -70,7 +70,7 @@
    "rank": 2,
    "repository": "skills-shell/superpowers",
    "skill": "ai-video-generation",
-   "date": "2026-11-06",
+   "date": "2026-11-09",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/ai-video-generation/SKILL.md",
    "status": "warning",
@@ -138,7 +138,7 @@
    "rank": 3,
    "repository": "skills-shell/superpowers",
    "skill": "twitter-automation",
-   "date": "2026-11-06",
+   "date": "2026-11-09",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/social/twitter-automation/SKILL.md",
    "status": "warning",
@@ -181,7 +181,7 @@
    "rank": 4,
    "repository": "skills-shell/superpowers",
    "skill": "ai-avatar-video",
-   "date": "2026-11-06",
+   "date": "2026-11-09",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/ai-avatar-video/SKILL.md",
    "status": "warning",
@@ -234,7 +234,7 @@
    "rank": 5,
    "repository": "uizze.sh",
    "skill": "ui-taste",
-   "date": "2026-11-06",
+   "date": "2026-11-09",
    "status": "blocked",
    "reasons": [
     {
@@ -248,7 +248,7 @@
    "rank": 6,
    "repository": "designed-by-ai/skills",
    "skill": "design-mobile-apps",
-   "date": "2026-11-06",
+   "date": "2026-11-09",
    "commit": "03c20aec6dcedb5fabfb03dc37982eb52ef19ed6",
    "skillPath": "skills/design-mobile-apps/SKILL.md",
    "status": "warning",
@@ -289,20 +289,116 @@
   },
   {
    "rank": 7,
-   "repository": "vercel-labs/agent-browser",
-   "skill": "agent-browser",
-   "date": "2026-11-06",
-   "commit": "71850a021c5cb694513d720d61c156dd317d63cf",
-   "skillPath": "skills/agent-browser/SKILL.md",
-   "status": "passed",
-   "reasons": [],
-   "publishable": true
+   "repository": "gencraft-labs/skills",
+   "skill": "image-to-video",
+   "date": "2026-11-09",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "image-to-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "image-to-video/SKILL.md",
+     "line": 28,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
   },
   {
    "rank": 8,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-video-generation",
+   "date": "2026-11-09",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-video-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-video-generation/SKILL.md",
+     "line": 50,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 9,
+   "repository": "flowkit-labs/skills",
+   "skill": "reddit-automation",
+   "date": "2026-11-09",
+   "commit": "0c9e2b63f504a296a86e45ed3a60a426dd979ca6",
+   "skillPath": "reddit-automation/SKILL.md",
+   "status": "passed",
+   "reasons": [],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 10,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-image-generation",
+   "date": "2026-11-09",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-image-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-image-generation/SKILL.md",
+     "line": 52,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "ai-image-generation/SKILL.md",
+     "line": 479,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 11,
+   "repository": "gencraft-labs/skills",
+   "skill": "video-edit",
+   "date": "2026-11-09",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "video-edit/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "video-edit/SKILL.md",
+     "line": 28,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 12,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-music",
+   "date": "2026-11-09",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-music/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-music/SKILL.md",
+     "line": 35,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 13,
    "repository": "vercel-labs/skills",
    "skill": "find-skills",
-   "date": "2026-11-06",
+   "date": "2026-11-09",
    "commit": "d3701c11b1101251af14c9d148f026e1a47ebe17",
    "skillPath": "skills/find-skills/SKILL.md",
    "status": "warning",
@@ -327,232 +423,11 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 9,
-   "repository": "heygen-com/hyperframes",
-   "skill": "hyperframes",
-   "date": "2026-11-06",
-   "commit": "4cf26b5b49e6c4f2b42fb28738a1fb576e7494de",
-   "skillPath": "skills/hyperframes/SKILL.md",
-   "status": "blocked",
-   "reasons": [
-    {
-     "file": "skills/hyperframes/assets/frame-presets/biennale-yellow/caption-skin.html",
-     "line": 28,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/biennale-yellow/caption-skin.html",
-     "line": 156,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/blockframe/caption-skin.html",
-     "line": 29,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/blockframe/caption-skin.html",
-     "line": 159,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/blue-professional/caption-skin.html",
-     "line": 28,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/blue-professional/caption-skin.html",
-     "line": 158,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/bold-poster/caption-skin.html",
-     "line": 29,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/bold-poster/caption-skin.html",
-     "line": 165,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/broadside/caption-skin.html",
-     "line": 28,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/broadside/caption-skin.html",
-     "line": 160,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/capsule/caption-skin.html",
-     "line": 28,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/capsule/caption-skin.html",
-     "line": 159,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/cartesian/caption-skin.html",
-     "line": 28,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/cartesian/caption-skin.html",
-     "line": 157,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/cobalt-grid/caption-skin.html",
-     "line": 30,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/cobalt-grid/caption-skin.html",
-     "line": 173,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/code-editorial/caption-skin.html",
-     "line": 28,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/code-editorial/caption-skin.html",
-     "line": 159,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/coral/caption-skin.html",
-     "line": 29,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/coral/caption-skin.html",
-     "line": 161,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/creative-mode/caption-skin.html",
-     "line": 28,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/creative-mode/caption-skin.html",
-     "line": 162,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/daisy-days/caption-skin.html",
-     "line": 28,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/daisy-days/caption-skin.html",
-     "line": 165,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/editorial-forest/caption-skin.html",
-     "line": 29,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/assets/frame-presets/editorial-forest/caption-skin.html",
-     "line": 158,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 150,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 151,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 181,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 64,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 67,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 70,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 88,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 89,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 90,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 157,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/hyperframes/scripts/locate.mjs",
-     "line": 192,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/hyperframes/scripts/locate.mjs",
-     "line": 215,
-     "reason": "multiline-data-send"
-    },
-    {
-     "file": "skills/hyperframes/scripts/locate.mjs",
-     "line": 178,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/hyperframes/references/film.md",
-     "line": 28,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/hyperframes/references/plugin-installation.md",
-     "line": 11,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/hyperframes/references/skill-lifecycle.md",
-     "line": 42,
-     "reason": "documented-installer"
-    }
-   ]
-  },
-  {
-   "rank": 10,
+   "rank": 14,
    "repository": "heygen-com/hyperframes",
    "skill": "hyperframes-cli",
-   "date": "2026-11-06",
-   "commit": "4cf26b5b49e6c4f2b42fb28738a1fb576e7494de",
+   "date": "2026-11-09",
+   "commit": "7bf65995b34fc2293bdd0b8e6273e86e56e1c3b1",
    "skillPath": "skills/hyperframes-cli/SKILL.md",
    "status": "warning",
    "reasons": [
@@ -571,11 +446,11 @@
    "contentReason": "no actual usage code block in skill or README"
   },
   {
-   "rank": 11,
+   "rank": 15,
    "repository": "heygen-com/hyperframes",
    "skill": "media-use",
-   "date": "2026-11-06",
-   "commit": "4cf26b5b49e6c4f2b42fb28738a1fb576e7494de",
+   "date": "2026-11-09",
+   "commit": "7bf65995b34fc2293bdd0b8e6273e86e56e1c3b1",
    "skillPath": "skills/media-use/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -837,11 +712,250 @@
    ]
   },
   {
-   "rank": 12,
+   "rank": 16,
+   "repository": "heygen-com/hyperframes",
+   "skill": "hyperframes",
+   "date": "2026-11-09",
+   "commit": "7bf65995b34fc2293bdd0b8e6273e86e56e1c3b1",
+   "skillPath": "skills/hyperframes/SKILL.md",
+   "status": "blocked",
+   "reasons": [
+    {
+     "file": "skills/hyperframes/assets/frame-presets/biennale-yellow/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/biennale-yellow/caption-skin.html",
+     "line": 156,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/blockframe/caption-skin.html",
+     "line": 29,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/blockframe/caption-skin.html",
+     "line": 159,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/blue-professional/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/blue-professional/caption-skin.html",
+     "line": 158,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/bold-poster/caption-skin.html",
+     "line": 29,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/bold-poster/caption-skin.html",
+     "line": 165,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/broadside/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/broadside/caption-skin.html",
+     "line": 160,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/capsule/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/capsule/caption-skin.html",
+     "line": 159,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/cartesian/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/cartesian/caption-skin.html",
+     "line": 157,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/cobalt-grid/caption-skin.html",
+     "line": 30,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/cobalt-grid/caption-skin.html",
+     "line": 173,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/code-editorial/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/code-editorial/caption-skin.html",
+     "line": 159,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/coral/caption-skin.html",
+     "line": 29,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/coral/caption-skin.html",
+     "line": 161,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/creative-mode/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/creative-mode/caption-skin.html",
+     "line": 162,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/daisy-days/caption-skin.html",
+     "line": 28,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/daisy-days/caption-skin.html",
+     "line": 165,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/editorial-forest/caption-skin.html",
+     "line": 29,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/assets/frame-presets/editorial-forest/caption-skin.html",
+     "line": 158,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 150,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 151,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 181,
+     "reason": "dynamic-evaluation"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 64,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 67,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 70,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 88,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 89,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 90,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 157,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/locate.mjs",
+     "line": 192,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/hyperframes/scripts/locate.mjs",
+     "line": 215,
+     "reason": "multiline-data-send"
+    },
+    {
+     "file": "skills/hyperframes/scripts/locate.mjs",
+     "line": 178,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/references/film.md",
+     "line": 28,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/hyperframes/references/plugin-installation.md",
+     "line": 11,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "skills/hyperframes/references/skill-lifecycle.md",
+     "line": 42,
+     "reason": "documented-installer"
+    }
+   ]
+  },
+  {
+   "rank": 17,
+   "repository": "uizze/uizze",
+   "skill": "uizze-ui",
+   "date": "2026-11-09",
+   "commit": "fc401e9e654cbafe427b0c98142fc8bccd0c4e7e",
+   "skillPath": "skills/uizze-ui/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "skills/uizze-ui/README.md",
+     "line": 12,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no actual usage code block in skill or README"
+  },
+  {
+   "rank": 18,
    "repository": "heygen-com/hyperframes",
    "skill": "hyperframes-registry",
-   "date": "2026-11-06",
-   "commit": "4cf26b5b49e6c4f2b42fb28738a1fb576e7494de",
+   "date": "2026-11-09",
+   "commit": "7bf65995b34fc2293bdd0b8e6273e86e56e1c3b1",
    "skillPath": "skills/hyperframes-registry/SKILL.md",
    "status": "warning",
    "reasons": [
@@ -874,198 +988,79 @@
    "publishable": true
   },
   {
-   "rank": 13,
-   "repository": "gencraft-labs/skills",
-   "skill": "ai-image-generation",
-   "date": "2026-11-06",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "ai-image-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "ai-image-generation/SKILL.md",
-     "line": 52,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "ai-image-generation/SKILL.md",
-     "line": 479,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 14,
-   "repository": "gencraft-labs/skills",
-   "skill": "image-to-video",
-   "date": "2026-11-06",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "image-to-video/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "image-to-video/SKILL.md",
-     "line": 28,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 15,
-   "repository": "gencraft-labs/skills",
-   "skill": "ai-video-generation",
-   "date": "2026-11-06",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "ai-video-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "ai-video-generation/SKILL.md",
-     "line": 50,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 16,
-   "repository": "flowkit-labs/skills",
-   "skill": "reddit-automation",
-   "date": "2026-11-06",
-   "commit": "0c9e2b63f504a296a86e45ed3a60a426dd979ca6",
-   "skillPath": "reddit-automation/SKILL.md",
+   "rank": 19,
+   "repository": "vercel-labs/agent-browser",
+   "skill": "agent-browser",
+   "date": "2026-11-09",
+   "commit": "4b0e9f01fa8d214d39bbfe5391257640634fb9a0",
+   "skillPath": "skills/agent-browser/SKILL.md",
    "status": "passed",
    "reasons": [],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 17,
-   "repository": "gencraft-labs/skills",
-   "skill": "ai-music",
-   "date": "2026-11-06",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "ai-music/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "ai-music/SKILL.md",
-     "line": 35,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 18,
-   "repository": "gencraft-labs/skills",
-   "skill": "video-edit",
-   "date": "2026-11-06",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "video-edit/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "video-edit/SKILL.md",
-     "line": 28,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 19,
-   "repository": "uizze/uizze",
-   "skill": "uizze-ui",
-   "date": "2026-11-06",
-   "commit": "fc401e9e654cbafe427b0c98142fc8bccd0c4e7e",
-   "skillPath": "skills/uizze-ui/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "skills/uizze-ui/README.md",
-     "line": 12,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no actual usage code block in skill or README"
+   "publishable": true
   },
   {
    "rank": 20,
-   "repository": "microsoft/azure-skills",
-   "skill": "azure-ai",
-   "date": "2026-11-06",
-   "commit": "f5ae01d7d0d790528b336431d78e4063397505f5",
-   "skillPath": "skills/azure-ai/SKILL.md",
+   "repository": "101-skills/superpowers",
+   "skill": "ai-video-generation",
+   "date": "2026-11-09",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/ai-video-generation/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "skills/azure-ai/references/sdk/azure-ai-contentsafety-py.md",
-     "line": 8,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 7,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-ai/references/sdk/azure-ai-contentsafety-ts.md",
-     "line": 8,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 17,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-ai/references/sdk/azure-ai-document-intelligence-ts.md",
-     "line": 8,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 218,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-ai/references/sdk/azure-ai-transcription-py.md",
-     "line": 8,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 221,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-ai/references/sdk/azure-ai-transcription-py.md",
-     "line": 16,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-ai/references/sdk/azure-ai-translation-text-py.md",
-     "line": 8,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 224,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-ai/references/sdk/azure-ai-translation-ts.md",
-     "line": 8,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 227,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-ai/references/sdk/azure-ai-translation-ts.md",
-     "line": 14,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-ai/references/sdk/azure-ai-vision-imageanalysis-py.md",
-     "line": 8,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 230,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-ai/references/sdk/azure-search-documents-py.md",
-     "line": 8,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 233,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-ai/references/sdk/azure-search-documents-ts.md",
-     "line": 8,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 236,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-ai/references/speech/azure-checks.md",
-     "line": 39,
-     "reason": "sensitive-read"
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 239,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 242,
+     "reason": "documented-installer"
     }
    ],
    "publishable": false,

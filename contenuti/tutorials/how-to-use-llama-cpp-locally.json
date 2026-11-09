@@ -178,5 +178,15 @@
    }
   ]
  },
- "category": "devops"
+ "category": "devops",
+ "licenseReview": {
+  "date": "2026-11-09",
+  "spdx": "MIT"
+ },
+ "archiveMetrics": {
+  "date": "2026-11-09",
+  "stars": 133781,
+  "growth7d": null,
+  "license": "MIT"
+ }
 }

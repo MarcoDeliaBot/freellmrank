@@ -303,5 +303,17 @@
  "news-2026-11-08-marktechpost-compares-routing-strategies-of-ten-open-moe-models": {
   "lungo": "notizia-marktechpost-compares-routing-strategies-of-ten-open-moe",
   "breve": "breve-marktechpost-compares-routing-strategies-of-ten-open-moe"
+ },
+ "skill-addyosmani-agent-skills-code-simplification": {
+  "lungo": "skill-addyosmani-agent-skills-code-simplification",
+  "breve": "breve-skill-addyosmani-agent-skills-code-simplification"
+ },
+ "skill-addyosmani-agent-skills-incremental-implementation": {
+  "lungo": "skill-addyosmani-agent-skills-incremental-implementation",
+  "breve": "breve-skill-addyosmani-agent-skills-incremental-implementation"
+ },
+ "tutorial-how-to-use-lm-studio-locally": {
+  "lungo": "tutorial-how-to-use-lm-studio-locally",
+  "breve": "breve-tutorial-how-to-use-lm-studio-locally"
  }
 }

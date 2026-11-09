@@ -210,12 +210,20 @@
  },
  "category": "coding",
  "archiveMetrics": {
-  "date": "2026-11-06",
-  "stars": 113650,
-  "growth7d": null,
-  "installs": 72813,
-  "installs24h": 653,
+  "date": "2026-11-09",
+  "stars": 114201,
+  "growth7d": {
+   "value": 1544,
+   "from": "2026-11-02",
+   "to": "2026-11-09"
+  },
+  "installs": 74142,
+  "installs24h": 529,
   "license": "MIT",
   "lastCommit": "2026-11-01T19:24:49Z"
+ },
+ "licenseReview": {
+  "date": "2026-11-09",
+  "spdx": "MIT"
  }
 }

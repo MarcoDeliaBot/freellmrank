@@ -1,5 +1,23 @@
 [
  {
+  "url": "/skills/addyosmani-agent-skills-code-simplification.html",
+  "slug": "addyosmani-agent-skills-code-simplification",
+  "tipo": "skill",
+  "repository": "addyosmani/agent-skills",
+  "skillPath": "skills/code-simplification/SKILL.md",
+  "primaPubblicazione": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/skills/addyosmani-agent-skills-incremental-implementation.html",
+  "slug": "addyosmani-agent-skills-incremental-implementation",
+  "tipo": "skill",
+  "repository": "addyosmani/agent-skills",
+  "skillPath": "skills/incremental-implementation/SKILL.md",
+  "primaPubblicazione": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/skills/addyosmani-agent-skills-performance-optimization.html",
   "slug": "addyosmani-agent-skills-performance-optimization",
   "tipo": "skill",
@@ -18,6 +36,15 @@
   "stato": "attiva"
  },
  {
+  "url": "/skills/for-coding.html",
+  "slug": "for-coding",
+  "tipo": "categoria",
+  "repository": "",
+  "skillPath": "",
+  "primaPubblicazione": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/skills/vercel-labs-agent-browser-agent-browser.html",
   "slug": "vercel-labs-agent-browser-agent-browser",
   "tipo": "skill",
@@ -33,6 +60,15 @@
   "repository": "ggml-org/llama.cpp",
   "skillPath": "",
   "primaPubblicazione": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/tutorials/how-to-use-lm-studio-locally.html",
+  "slug": "how-to-use-lm-studio-locally",
+  "tipo": "tutorial",
+  "repository": "lmstudio-ai/lms",
+  "skillPath": "",
+  "primaPubblicazione": "2026-11-09",
   "stato": "attiva"
  }
 ]
