@@ -17739,7 +17739,8 @@
   "lingua": "de",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/de/model/crouton-alpha.html",
@@ -17747,7 +17748,8 @@
   "lingua": "de",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/de/model/d1-2b",
@@ -20068,6 +20070,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/de/model/inkling-2-small",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/inkling-2-small.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/model/inkling-small",
   "tipo": "modello",
   "lingua": "de",
@@ -21382,6 +21400,22 @@
   "ultimaVista": "2026-10-20",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-10-20"
+ },
+ {
+  "url": "/de/model/longcat-2-5",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/longcat-2-5.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
  },
  {
   "url": "/de/model/longcat-flash-chat",
@@ -34157,7 +34191,8 @@
   "lingua": "es",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/es/model/crouton-alpha.html",
@@ -34165,7 +34200,8 @@
   "lingua": "es",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/es/model/d1-2b",
@@ -36486,6 +36522,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/model/inkling-2-small",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/inkling-2-small.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/model/inkling-small",
   "tipo": "modello",
   "lingua": "es",
@@ -37800,6 +37852,22 @@
   "ultimaVista": "2026-10-20",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-10-20"
+ },
+ {
+  "url": "/es/model/longcat-2-5",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/longcat-2-5.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
  },
  {
   "url": "/es/model/longcat-flash-chat",
@@ -50575,7 +50643,8 @@
   "lingua": "fr",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/fr/model/crouton-alpha.html",
@@ -50583,7 +50652,8 @@
   "lingua": "fr",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/fr/model/d1-2b",
@@ -52904,6 +52974,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/model/inkling-2-small",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/inkling-2-small.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/model/inkling-small",
   "tipo": "modello",
   "lingua": "fr",
@@ -54218,6 +54304,22 @@
   "ultimaVista": "2026-10-20",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-10-20"
+ },
+ {
+  "url": "/fr/model/longcat-2-5",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/longcat-2-5.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
  },
  {
   "url": "/fr/model/longcat-flash-chat",
@@ -66993,7 +67095,8 @@
   "lingua": "it",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/it/model/crouton-alpha.html",
@@ -67001,7 +67104,8 @@
   "lingua": "it",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/it/model/d1-2b",
@@ -69322,6 +69426,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/model/inkling-2-small",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/inkling-2-small.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/model/inkling-small",
   "tipo": "modello",
   "lingua": "it",
@@ -70636,6 +70756,22 @@
   "ultimaVista": "2026-10-20",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-10-20"
+ },
+ {
+  "url": "/it/model/longcat-2-5",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/longcat-2-5.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
  },
  {
   "url": "/it/model/longcat-flash-chat",
@@ -83411,7 +83547,8 @@
   "lingua": "ja",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/ja/model/crouton-alpha.html",
@@ -83419,7 +83556,8 @@
   "lingua": "ja",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/ja/model/d1-2b",
@@ -85740,6 +85878,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/model/inkling-2-small",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/inkling-2-small.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/model/inkling-small",
   "tipo": "modello",
   "lingua": "ja",
@@ -87054,6 +87208,22 @@
   "ultimaVista": "2026-10-20",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-10-20"
+ },
+ {
+  "url": "/ja/model/longcat-2-5",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/longcat-2-5.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
  },
  {
   "url": "/ja/model/longcat-flash-chat",
@@ -91269,7 +91439,8 @@
   "lingua": "en",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/model/crouton-alpha.html",
@@ -91277,7 +91448,8 @@
   "lingua": "en",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/model/d1-2b",
@@ -93598,6 +93770,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/model/inkling-2-small",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/inkling-2-small.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/model/inkling-small",
   "tipo": "modello",
   "lingua": "en",
@@ -94912,6 +95100,22 @@
   "ultimaVista": "2026-10-20",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-10-20"
+ },
+ {
+  "url": "/model/longcat-2-5",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/longcat-2-5.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
  },
  {
   "url": "/model/longcat-flash-chat",
@@ -107687,7 +107891,8 @@
   "lingua": "pt",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/pt/model/crouton-alpha.html",
@@ -107695,7 +107900,8 @@
   "lingua": "pt",
   "primaVista": "2026-11-03",
   "ultimaVista": "2026-11-09",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-09"
  },
  {
   "url": "/pt/model/d1-2b",
@@ -110016,6 +110222,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/pt/model/inkling-2-small",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/inkling-2-small.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/model/inkling-small",
   "tipo": "modello",
   "lingua": "pt",
@@ -111330,6 +111552,22 @@
   "ultimaVista": "2026-10-20",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-10-20"
+ },
+ {
+  "url": "/pt/model/longcat-2-5",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/longcat-2-5.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
  },
  {
   "url": "/pt/model/longcat-flash-chat",

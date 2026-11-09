@@ -2088,5 +2088,16 @@
   "contestoMax": 4096,
   "moe": false,
   "attivi": 3825361968
+ },
+ "meituan-longcat/LongCat-2.5": {
+  "strati": 38,
+  "tipo": "MLA",
+  "kvPerStrato": 1152,
+  "pieni": 38,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 524288,
+  "moe": true,
+  "attivi": 332482887296
  }
 }
