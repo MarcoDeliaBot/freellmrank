@@ -3984,6 +3984,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/news-2026-11-09-datasette-adds-pagination-bar-with-row-counts-and-navigation-buttons",
   "tipo": "articolo",
   "lingua": "en",
@@ -4009,6 +4025,38 @@
  },
  {
   "url": "/blog/news-2026-11-09-google-adds-tpu-8i-max-and-tpu-8tx-to-eighth-gen-tpu-lineup.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb.html",
   "tipo": "articolo",
   "lingua": "en",
   "primaVista": "2026-11-09",
@@ -12496,6 +12544,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/de/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/blog/news-2026-11-09-datasette-adds-pagination-bar-with-row-counts-and-navigation-buttons",
   "tipo": "articolo",
   "lingua": "de",
@@ -12521,6 +12585,38 @@
  },
  {
   "url": "/de/blog/news-2026-11-09-google-adds-tpu-8i-max-and-tpu-8tx-to-eighth-gen-tpu-lineup.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb.html",
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-09",
@@ -28866,6 +28962,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/news-2026-11-09-datasette-adds-pagination-bar-with-row-counts-and-navigation-buttons",
   "tipo": "articolo",
   "lingua": "es",
@@ -28891,6 +29003,38 @@
  },
  {
   "url": "/es/blog/news-2026-11-09-google-adds-tpu-8i-max-and-tpu-8tx-to-eighth-gen-tpu-lineup.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb.html",
   "tipo": "articolo",
   "lingua": "es",
   "primaVista": "2026-11-09",
@@ -45236,6 +45380,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/blog/news-2026-11-09-datasette-adds-pagination-bar-with-row-counts-and-navigation-buttons",
   "tipo": "articolo",
   "lingua": "fr",
@@ -45261,6 +45421,38 @@
  },
  {
   "url": "/fr/blog/news-2026-11-09-google-adds-tpu-8i-max-and-tpu-8tx-to-eighth-gen-tpu-lineup.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb.html",
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-09",
@@ -61606,6 +61798,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/news-2026-11-09-datasette-adds-pagination-bar-with-row-counts-and-navigation-buttons",
   "tipo": "articolo",
   "lingua": "it",
@@ -61631,6 +61839,38 @@
  },
  {
   "url": "/it/blog/news-2026-11-09-google-adds-tpu-8i-max-and-tpu-8tx-to-eighth-gen-tpu-lineup.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb.html",
   "tipo": "articolo",
   "lingua": "it",
   "primaVista": "2026-11-09",
@@ -77976,6 +78216,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/blog/news-2026-11-09-datasette-adds-pagination-bar-with-row-counts-and-navigation-buttons",
   "tipo": "articolo",
   "lingua": "ja",
@@ -78001,6 +78257,38 @@
  },
  {
   "url": "/ja/blog/news-2026-11-09-google-adds-tpu-8i-max-and-tpu-8tx-to-eighth-gen-tpu-lineup.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb.html",
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-09",
@@ -102204,6 +102492,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/pt/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/blog/news-2026-11-09-datasette-adds-pagination-bar-with-row-counts-and-navigation-buttons",
   "tipo": "articolo",
   "lingua": "pt",
@@ -102229,6 +102533,38 @@
  },
  {
   "url": "/pt/blog/news-2026-11-09-google-adds-tpu-8i-max-and-tpu-8tx-to-eighth-gen-tpu-lineup.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-09",
+  "ultimaVista": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb.html",
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-09",

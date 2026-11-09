@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb",
+ "titolo": "NVIDIA Holoscan 5 Enables Low‑Latency Gravity‑Compensation Loop on ReBot Arm",
+ "descr": "A new Holoscan 5 tutorial shows 400 Hz torque control for a Seeed Studio reBot Arm using CPU‑GPU partitions and drop‑oldest queues.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA released a Holoscan 5 tutorial that builds a gravity‑compensation loop for the Seeed Studio reBot Arm B601‑DM.",
+  "Three custom Holoscan operators are grouped in a partition on a single thread, avoiding cross‑thread handoffs and using drop‑oldest queues to discard stale data.",
+  "Nsight Systems profiling shows pinning the control partition to a CPU core cuts p99.99 latency by about five times for C++ and 9.6 × for Python implementations."
+ ],
+ "perche": [
+  "Developers can now prototype high‑speed torque‑control loops without rewriting existing algorithms, leveraging Holoscan’s unified CPU‑GPU model. This lowers the barrier for building responsive robotic applications on affordable hardware, benefiting both hobbyists and researchers seeking open, low‑latency control frameworks."
+ ],
+ "pubblicato": "2026-11-09",
+ "titoloFonte": "Make a Robot Arm Feel Weightless with NVIDIA Holoscan 5",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/make-a-robot-arm-feel-weightless-with-nvidia-holoscan-5/",
+   "titolo": "Make a Robot Arm Feel Weightless with NVIDIA Holoscan 5",
+   "ufficiale": true,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 2
+}

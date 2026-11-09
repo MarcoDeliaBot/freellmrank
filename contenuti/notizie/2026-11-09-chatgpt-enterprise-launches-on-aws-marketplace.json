@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace",
+ "titolo": "ChatGPT Enterprise launches on AWS Marketplace",
+ "descr": "OpenAI adds ChatGPT Enterprise to AWS Marketplace, letting firms buy via existing AWS contracts.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI announced that ChatGPT Enterprise is now listed on AWS Marketplace.",
+  "The new listing allows organizations to procure the service through their current AWS purchasing and billing relationships.",
+  "ChatGPT Enterprise offers the same capabilities as the standalone offering, aimed at business users who need higher security and compliance.",
+  "The move aligns with AWS’s strategy to expand its AI portfolio and simplify cloud‑based software acquisition for enterprise customers."
+ ],
+ "perche": [
+  "Businesses can now integrate ChatGPT Enterprise into their existing AWS spend, reducing procurement friction. Users of free or locally hosted models still have alternatives, but enterprise customers gain a streamlined path to a managed, high‑performance AI service."
+ ],
+ "pubblicato": "2026-11-09",
+ "titoloFonte": "ChatGPT Enterprise now available in AWS Marketplace",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+   "titolo": "ChatGPT Enterprise now available in AWS Marketplace",
+   "ufficiale": true,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 0
+}

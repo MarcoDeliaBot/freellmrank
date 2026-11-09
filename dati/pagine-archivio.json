@@ -22131,6 +22131,42 @@
     "tipo": "News"
    },
    "data": "2026-11-09"
+  },
+  "/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace.html": {
+   "post": {
+    "slug": "news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace",
+    "titolo": "ChatGPT Enterprise launches on AWS Marketplace",
+    "descr": "OpenAI adds ChatGPT Enterprise to AWS Marketplace, letting firms buy via existing AWS contracts.",
+    "data": "2026-11-09",
+    "tema": "Business",
+    "corpo": "OpenAI announced that ChatGPT Enterprise is now listed on AWS Marketplace.\n\nThe new listing allows organizations to procure the service through their current AWS purchasing and billing relationships.\n\nChatGPT Enterprise offers the same capabilities as the standalone offering, aimed at business users who need higher security and compliance.\n\nThe move aligns with AWS’s strategy to expand its AI portfolio and simplify cloud‑based software acquisition for enterprise customers.\n\n## What it means for you\n\nBusinesses can now integrate ChatGPT Enterprise into their existing AWS spend, reducing procurement friction. Users of free or locally hosted models still have alternatives, but enterprise customers gain a streamlined path to a managed, high‑performance AI service.\n\n## Sources\n\n- [ChatGPT Enterprise now available in AWS Marketplace](https://openai.com/index/chatgpt-enterprise-aws-marketplace), OpenAI (official), 9 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-09-chatgpt-enterprise-launches-on-aws-marketplace).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-09"
+  },
+  "/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups.html": {
+   "post": {
+    "slug": "news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups",
+    "titolo": "NVIDIA Announces New Investments in Korean AI Startups",
+    "descr": "NVIDIA plans to invest in Point2, Motif Technologies, RLWRLD, and Upstage after a partnership forum with Korea's Ministry of Science and ICT.",
+    "data": "2026-11-09",
+    "tema": "Business",
+    "corpo": "NVIDIA and Korea's Ministry of Science and ICT held the MSIT‑NVIDIA AI Startup Partnership Forum at COEX, meeting over 20 Korean startups.\n\nThe company announced an investment in Point2, an AI interconnect firm that uses radio frequency technology for chip‑to‑rack data transfer.\n\nAdditional planned investments target Motif Technologies, which released the open‑weight large language model Motif‑3, RLWRLD, a physical AI startup developing robotics foundation models, and Upstage, which builds Solar language models and document AI tools.\n\nThese startups cover the full AI stack, from infrastructure and models to robotics applications, and join more than 1,000 Korean members in NVIDIA Inception.\n\nNVIDIA highlighted the partnership as part of its broader collaboration with Korea on sovereign AI and the development of next‑generation AI infrastructure.\n\n## What it means for you\n\nThe funding supports Korean companies that could provide alternatives to traditional copper and optical interconnects, expand open‑weight foundation models, and advance robotics AI. Users may see faster, more efficient AI services, while free‑model enthusiasts gain new open‑weight models and hardware innovations to run locally.\n\n## Sources\n\n- [NVIDIA Announces New Planned Investments in Korean Startups at the MSIT-NVIDIA AI Startup Partnership Forum](https://blogs.nvidia.com/blog/korean-startup-investments-msit/), NVIDIA (official), 9 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-09"
+  },
+  "/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb.html": {
+   "post": {
+    "slug": "news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb",
+    "titolo": "NVIDIA Holoscan 5 Enables Low‑Latency Gravity‑Compensation Loop on ReBot Arm",
+    "descr": "A new Holoscan 5 tutorial shows 400 Hz torque control for a Seeed Studio reBot Arm using CPU‑GPU partitions and drop‑oldest queues.",
+    "data": "2026-11-09",
+    "tema": "Software",
+    "corpo": "NVIDIA released a Holoscan 5 tutorial that builds a gravity‑compensation loop for the Seeed Studio reBot Arm B601‑DM.\n\nThree custom Holoscan operators are grouped in a partition on a single thread, avoiding cross‑thread handoffs and using drop‑oldest queues to discard stale data.\n\nNsight Systems profiling shows pinning the control partition to a CPU core cuts p99.99 latency by about five times for C++ and 9.6 × for Python implementations.\n\n## What it means for you\n\nDevelopers can now prototype high‑speed torque‑control loops without rewriting existing algorithms, leveraging Holoscan’s unified CPU‑GPU model. This lowers the barrier for building responsive robotic applications on affordable hardware, benefiting both hobbyists and researchers seeking open, low‑latency control frameworks.\n\n## Sources\n\n- [Make a Robot Arm Feel Weightless with NVIDIA Holoscan 5](https://developer.nvidia.com/blog/make-a-robot-arm-feel-weightless-with-nvidia-holoscan-5/), NVIDIA Developer (official), 9 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-09-nvidia-holoscan-5-enables-low-latency-gravity-compensation-loop-on-reb).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-09"
   }
  },
  "ricostruzione": {

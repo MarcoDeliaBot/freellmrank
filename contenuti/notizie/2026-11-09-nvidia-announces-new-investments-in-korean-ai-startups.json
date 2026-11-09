@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-09-nvidia-announces-new-investments-in-korean-ai-startups",
+ "titolo": "NVIDIA Announces New Investments in Korean AI Startups",
+ "descr": "NVIDIA plans to invest in Point2, Motif Technologies, RLWRLD, and Upstage after a partnership forum with Korea's Ministry of Science and ICT.",
+ "tema": "Business",
+ "paragrafi": [
+  "NVIDIA and Korea's Ministry of Science and ICT held the MSIT‑NVIDIA AI Startup Partnership Forum at COEX, meeting over 20 Korean startups.",
+  "The company announced an investment in Point2, an AI interconnect firm that uses radio frequency technology for chip‑to‑rack data transfer.",
+  "Additional planned investments target Motif Technologies, which released the open‑weight large language model Motif‑3, RLWRLD, a physical AI startup developing robotics foundation models, and Upstage, which builds Solar language models and document AI tools.",
+  "These startups cover the full AI stack, from infrastructure and models to robotics applications, and join more than 1,000 Korean members in NVIDIA Inception.",
+  "NVIDIA highlighted the partnership as part of its broader collaboration with Korea on sovereign AI and the development of next‑generation AI infrastructure."
+ ],
+ "perche": [
+  "The funding supports Korean companies that could provide alternatives to traditional copper and optical interconnects, expand open‑weight foundation models, and advance robotics AI. Users may see faster, more efficient AI services, while free‑model enthusiasts gain new open‑weight models and hardware innovations to run locally."
+ ],
+ "pubblicato": "2026-11-09",
+ "titoloFonte": "NVIDIA Announces New Planned Investments in Korean Startups at the MSIT-NVIDIA AI Startup Partnership Forum",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/korean-startup-investments-msit/",
+   "titolo": "NVIDIA Announces New Planned Investments in Korean Startups at the MSIT-NVIDIA AI Startup Partnership Forum",
+   "ufficiale": true,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 0
+}
