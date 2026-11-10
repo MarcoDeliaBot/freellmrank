@@ -343,5 +343,13 @@
  "tutorial-install-and-use-vercel-labs-agent-browser-agent-browser": {
   "lungo": "tutorial-install-and-use-vercel-labs-agent-browser-agent-browser",
   "breve": "breve-tutorial-install-and-use-vercel-labs-agent-browser-agent-browser"
+ },
+ "news-2026-11-09-anthropic-launches-mythos-5-2-and-fable-5-2-cuts-fable-price-to-8-per-": {
+  "lungo": "notizia-anthropic-launches-mythos-5-2-and-fable-5-2-cuts-fable-p",
+  "breve": "breve-anthropic-launches-mythos-5-2-and-fable-5-2-cuts-fable-p"
+ },
+ "news-2026-11-09-bytedance-launches-seedream-5-5-with-pixel-stable-100-round-editing-an": {
+  "lungo": "notizia-bytedance-launches-seedream-5-5-with-pixel-stable-100-ro",
+  "breve": "breve-bytedance-launches-seedream-5-5-with-pixel-stable-100-ro"
  }
 }
