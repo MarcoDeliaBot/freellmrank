@@ -35,6 +35,9 @@ jobs:
           node-version-file: .node-version
           cache: npm
       - run: npm ci
+      # 10/11/2026: se i controlli sulla storia o sui doppioni non passano, non si pubblica niente
+      - name: Prove delle notizie
+        run: node --test script/notizie-guide.test.mjs script/notizie-doppioni.test.mjs
       - name: Scrivi le notizie
         env:
           BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
