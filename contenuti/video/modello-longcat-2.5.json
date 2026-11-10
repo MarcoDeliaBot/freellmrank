@@ -1,0 +1,65 @@
+{
+ "nome": "modello-longcat-2.5",
+ "titolo": "LongCat-2.5: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "LongCat-2.5 is a 1.6 trillion-parameter multimodal MoE model with 512 K token context and native visual capabilities. We break down its new features, benchmark scores, strengths, and who should consider using it.\n\nSize: 1779.8B parameters (332.5B active) · context 512K · memory at 4-bit about 1081 GB.\n\nModel card: https://huggingface.co/meituan-longcat/LongCat-2.5\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "LongCat-2.5",
+  "Meituan-longcat"
+ ],
+ "condividi": "LongCat-2.5 by Meituan-longcat: 1779.8B parameters, about 1081 GB at 4-bit. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "LongCat-2.5: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "LongCat-2.5: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "LongCat-2.5: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "LongCat-2.5 : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "LongCat-2.5: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "LongCat-2.5",
+    "gb": 1081,
+    "scheda": null
+   }
+  ],
+  "casa": []
+ },
+ "voce": [
+  "LongCat-2.5 packs 1.6 trillion parameters but only activates about 48 billion per token. It’s a multimodal MoE model that can read up to 512 K tokens in one go.",
+  "LongCat-2.5 is a native multimodal mixture-of-experts model designed for long-horizon, agentic tasks. According to Meituan-longcat, the model contains 1.6 trillion parameters in total, but only about 48 billion are active for each token, which lets it handle a 512 K token context. It combines visual understanding with agentic coding, aiming at complex codebase development, full-project builds, creative design, and 3D tasks.",
+  "The model builds on LongCat-2.0 with several new features. First, visual inputs are turned into discrete tokens and aligned with text in a shared semantic space. Second, it uses long-horizon agentic reinforcement learning that mixes real-world engineering tasks with controlled rollouts. Third, specialized teachers guide the model through full-vocabulary KL distillation and Tree Attention. Finally, the training system achieves 86 % higher per-device throughput than a standard data-parallel baseline, according to the model card.",
+  "The evaluation table shows LongCat-2.5 performing strongly across coding, agentic, and visual benchmarks. In the BrowseComp general-agent test it scores 91.9, the highest among the listed models. For code execution, Terminal Bench version 2.1 records 88.4. On the DeepSWE coding benchmark it reaches 64.6, and in the visual Vision2Web task it attains 78.6. All scores were measured with thinking mode enabled, temperature 1.0 and top-p 0.95.",
+  "LongCat-2.5 shines in tasks that need very long context and multimodal reasoning. Its INT4 quantization (W4A4) keeps accuracy close to the full-precision model while delivering up to 43.3 % higher prefill throughput compared to an 8-bit baseline. However, the model card notes that it has not been comprehensively evaluated for every downstream application, and performance can vary across languages and domains. Users should test safety and fairness before deploying in high-risk scenarios.",
+  "If you are a researcher exploring long-range reasoning, a developer building multimodal agents, or an open-source enthusiast who can handle downloading and running a 1.6 trillion-parameter model, LongCat-2.5 is worth a look. The weights are released under the MIT license, and the model can be run on domestic AI accelerators that support INT4 computation. Just remember that it requires substantial hardware resources and careful evaluation for your specific use case.",
+  "What do you need to run it at home? At 4-bit it takes about 1081 gigabytes of memory. No single home machine on our list holds it fully. ",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the MIT license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare LongCat 2.5 with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-longcat-2.5",
+ "pubblicato": "2026-11-09"
+}

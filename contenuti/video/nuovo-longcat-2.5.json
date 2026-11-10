@@ -1,0 +1,80 @@
+{
+ "nome": "nuovo-longcat-2.5",
+ "titolo": "LongCat-2.5: 1780B parameters, free to download #Shorts",
+ "descrizione": "LongCat-2.5 by Meituan-longcat came out on 4 Nov 2026, with open weights on Hugging Face. At 4-bit it needs about 1081 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "LongCat-2.5"
+ ],
+ "condividi": "LongCat-2.5 is out: 1780B parameters and open weights. At 4-bit it needs about 1081 GB, more than any single home machine on our list can hold. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "LongCat-2.5: 1780 miliardi di parametri, gratis #Shorts",
+   "descrizione": "LongCat-2.5 di Meituan-longcat è uscito il 4 novembre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 1081 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "LongCat-2.5: 1780 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "LongCat-2.5 de Meituan-longcat salió el 4 de noviembre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 1081 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "LongCat-2.5: 1780 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "LongCat-2.5 von Meituan-longcat ist am 4. November 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 1081 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "LongCat-2.5 : 1780 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "LongCat-2.5 de Meituan-longcat est sorti le 4 novembre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 1081 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "LongCat-2.5: 1780 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "LongCat-2.5 da Meituan-longcat saiu em 4 de novembro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 1081 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "LongCat-2.5",
+    "gb": 1081,
+    "scheda": null
+   }
+  ],
+  "schede": [
+   {
+    "id": "rtx4090",
+    "nome": "RTX 4090",
+    "gb": 24,
+    "tiene": false
+   },
+   {
+    "id": "rtx5090",
+    "nome": "RTX 5090",
+    "gb": 32,
+    "tiene": false
+   },
+   {
+    "id": "rtxpro6000",
+    "nome": "RTX PRO 6000 Blackwell",
+    "gb": 96,
+    "tiene": false
+   },
+   {
+    "id": "m3ultra-512",
+    "nome": "Mac Studio M3 Ultra 512 GB",
+    "gb": 512,
+    "tiene": false
+   }
+  ]
+ },
+ "voce": [
+  "A new free AI model with 1780 billion parameters.",
+  "It comes from Meituan-longcat, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 1081 gigabytes. No single home machine on our list can hold it.",
+  "It reads up to 512 thousand tokens at once.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-longcat-2.5",
+ "pubblicato": "2026-11-09"
+}
