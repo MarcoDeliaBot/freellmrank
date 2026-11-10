@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-10-openai-launches-businesses-in-chatgpt-to-manage-and-promote-company-da",
+ "titolo": "OpenAI launches Businesses in ChatGPT to manage and promote company data",
+ "descr": "OpenAI adds a Business feature to ChatGPT, letting users edit business info, view visibility insights, and drive actions directly in the chat interface.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI announced a new Businesses in ChatGPT capability on November 10, 2026.",
+  "The feature lets owners add and edit their business information within the ChatGPT environment.",
+  "Users can see how their business appears in search results and receive insights on visibility.",
+  "It also provides tools to convert interest into actions, such as contacting the business or making purchases.",
+  "The rollout is part of OpenAI's broader effort to integrate commercial utilities into its conversational platform."
+ ],
+ "perche": [
+  "For AI users, the addition offers a streamlined way to manage brand presence without leaving ChatGPT. For those seeking free or local models, it highlights OpenAI's focus on built‑in services rather than self‑hosted alternatives."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "Introducing Businesses in ChatGPT",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/introducing-businesses-chatgpt",
+   "titolo": "Introducing Businesses in ChatGPT",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 0
+}

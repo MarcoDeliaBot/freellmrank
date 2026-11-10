@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-10-nvidia-donates-openshell-to-cncf-and-expands-ai-factory-tools-at-kubec",
+ "titolo": "NVIDIA donates OpenShell to CNCF and expands AI factory tools at KubeCon",
+ "descr": "NVIDIA contributes OpenShell runtime and Agent Substrate to CNCF, launches NVIDIA Kubernetes Engine, Recipes and Snapshot for AI workloads.",
+ "tema": "Software",
+ "paragrafi": [
+  "At KubeCon + CloudNativeCon, NVIDIA announced the donation of OpenShell, an open‑source runtime for securing autonomous agents, to the Cloud Native Computing Foundation (CNCF).",
+  "OpenShell will be a CNCF Sandbox project, allowing the community to govern and extend the runtime for policy enforcement, tool access, and inference services.",
+  "NVIDIA also contributed to Agent Substrate, a Google‑originated framework for scaling long‑running agent workloads on Kubernetes, and integrated it with NVIDIA Dynamo and KAI Scheduler.",
+  "Design partners Crusoe and Saturn Cloud tested Snapshot, cutting model warm‑up times from minutes to seconds on NVIDIA HGX B300 systems."
+ ],
+ "perche": [
+  "These open‑source tools give developers a shared foundation for governing and scaling AI agents, reducing operational complexity and cost. For users of free or locally hosted models, the ability to run secure agents and fast‑starting inference on standard Kubernetes clusters can make advanced AI more accessible without relying on proprietary cloud services."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "NVIDIA Expands Open Source Commitment With OpenShell Donation and New AI Infrastructure",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/open-source-openshell-infrastructure/",
+   "titolo": "NVIDIA Expands Open Source Commitment With OpenShell Donation and New AI Infrastructure",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 1
+}
