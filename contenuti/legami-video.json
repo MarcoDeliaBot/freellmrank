@@ -331,5 +331,17 @@
  "news-2026-11-09-tencent-launches-qwen3-8-27b-dspine-b16-draft-model-on-hugging-face": {
   "lungo": "notizia-tencent-launches-qwen3-8-27b-dspine-b16-draft-model-on-h",
   "breve": "breve-tencent-launches-qwen3-8-27b-dspine-b16-draft-model-on-h"
+ },
+ "skill-addyosmani-agent-skills-interview-me": {
+  "lungo": "skill-addyosmani-agent-skills-interview-me",
+  "breve": "breve-skill-addyosmani-agent-skills-interview-me"
+ },
+ "skill-addyosmani-agent-skills-test-driven-development": {
+  "lungo": "skill-addyosmani-agent-skills-test-driven-development",
+  "breve": "breve-skill-addyosmani-agent-skills-test-driven-development"
+ },
+ "tutorial-install-and-use-vercel-labs-agent-browser-agent-browser": {
+  "lungo": "tutorial-install-and-use-vercel-labs-agent-browser-agent-browser",
+  "breve": "breve-tutorial-install-and-use-vercel-labs-agent-browser-agent-browser"
  }
 }

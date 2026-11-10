@@ -18,6 +18,15 @@
   "stato": "attiva"
  },
  {
+  "url": "/skills/addyosmani-agent-skills-interview-me.html",
+  "slug": "addyosmani-agent-skills-interview-me",
+  "tipo": "skill",
+  "repository": "addyosmani/agent-skills",
+  "skillPath": "skills/interview-me/SKILL.md",
+  "primaPubblicazione": "2026-11-10",
+  "stato": "attiva"
+ },
+ {
   "url": "/skills/addyosmani-agent-skills-performance-optimization.html",
   "slug": "addyosmani-agent-skills-performance-optimization",
   "tipo": "skill",
@@ -33,6 +42,15 @@
   "repository": "addyosmani/agent-skills",
   "skillPath": "skills/spec-driven-development/SKILL.md",
   "primaPubblicazione": "2026-11-06",
+  "stato": "attiva"
+ },
+ {
+  "url": "/skills/addyosmani-agent-skills-test-driven-development.html",
+  "slug": "addyosmani-agent-skills-test-driven-development",
+  "tipo": "skill",
+  "repository": "addyosmani/agent-skills",
+  "skillPath": "skills/test-driven-development/SKILL.md",
+  "primaPubblicazione": "2026-11-10",
   "stato": "attiva"
  },
  {
@@ -69,6 +87,15 @@
   "repository": "lmstudio-ai/lms",
   "skillPath": "",
   "primaPubblicazione": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/tutorials/install-and-use-vercel-labs-agent-browser-agent-browser.html",
+  "slug": "install-and-use-vercel-labs-agent-browser-agent-browser",
+  "tipo": "tutorial",
+  "repository": "vercel-labs/agent-browser",
+  "skillPath": "skills/agent-browser/SKILL.md",
+  "primaPubblicazione": "2026-11-10",
   "stato": "attiva"
  }
 ]
