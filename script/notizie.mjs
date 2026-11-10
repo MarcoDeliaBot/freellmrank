@@ -72,7 +72,7 @@ const scarica = async (url, ms = 20000) => {
   return r.text();
 };
 const entita = (s) => String(s).replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#0?39;|&apos;|&#8217;/g, "'").replace(/&#8211;|&#8212;/g, '-').replace(/&#8220;|&#8221;/g, '"').replace(/&nbsp;/g, ' ').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));
-const testoDa = (html) => entita(String(html).replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<noscript[\s\S]*?<\/noscript>|<nav[\s\S]*?<\/nav>|<footer[\s\S]*?<\/footer>|<header[\s\S]*?<\/header>/gi, ' ').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+export const testoDa = (html) => entita(String(html).replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<noscript[\s\S]*?<\/noscript>|<nav[\s\S]*?<\/nav>|<footer[\s\S]*?<\/footer>|<header[\s\S]*?<\/header>/gi, ' ').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 const campo = (xml, nomi) => { for (const n of nomi) { const m = xml.match(new RegExp(`<${n}[^>]*>([\\s\\S]*?)</${n}>`, 'i')); if (m) return entita(m[1]).trim(); } return ''; };
 
 // 1. feed: RSS (<item>) o Atom (<entry>)
@@ -314,6 +314,63 @@ export function controlla(paragrafi, fontiTesto) {
   return { paragrafi: tenuti, tolte };
 }
 
+// 5. la storia giusta (8/11/2026: uscì «Meta releases Llama 4 Scout and Maverick», ma Llama 4 è di aprile 2025. L'unica
+// fonte era la guida di MarkTechPost «MoE Routing Strategies Explained», che usa Llama 4 solo come esempio; la «fonte
+// primaria» trovata fra i suoi link era il blog di Meta del 2025. Lo stesso il 1/11 con «NVIDIA releases gds-diag», da una
+// guida «How to Check and Configure…» del 30/10 su uno strumento pubblicato su GitHub il 14/9)
+// a. una guida o una spiegazione non diventa mai un lancio
+export const GUIDA = /\b(explained|explainer|guide|tutorial|how[- ]to|walkthrough|deep[- ]dive|primer|cheat[- ]?sheet|vs\.?|versus|top \d+|\d+ best|best \d+|what is|introduction to)\b/i;
+export const guidaDiventataLancio = (titoloScritto, titoloFonte) => GUIDA.test(titoloFonte) && LANCIO.test(titoloScritto);
+// trattini e spazi tipografici (il modello scrive «17B‑parameter» con U+2011) come quelli normali
+const piano = (s) => String(s).replace(/[‐-―−]/g, '-').replace(/[   ]/g, ' ');
+// b. il titolo scritto parla della storia della fonte principale: almeno 2 parole in comune col suo titolo (223 dei 253
+// post usciti fino al 10/11), oppure il suo soggetto (nome di modello come «Llama 4 Scout» o «Qwen3.8-27B», nome di
+// prodotto come FlashProve) sta nel titolo o nel testo della fonte: i blog ufficiali hanno titoli come «A
+// thousand fewer paths to root». Senza un soggetto riconoscibile decidono gli altri controlli: sigle generiche come «MoE»
+// stanno in mille testi e non provano niente (la guida su Llama 4 passava proprio per «MoE»)
+// nomi di modello: con una cifra, anche con spazi («Llama 4 Scout») o con pezzi dopo il numero («Qwen3.8-27B-DSpine-b16»)
+export const nomiModello = (titolo) => [...new Set([...piano(titolo).matchAll(/\b([A-Z][A-Za-z]*(?:[- ]?\d[\w.]*)+(?:-[A-Za-z0-9][\w.]*)*(?: [A-Z][a-z]+)?)/g)].map((m) => m[1].replace(/[.-]+$/, '').replace(/ /g, '-')))];
+export const LANCIO_VERBO = /\b(launch(es|ed)?|releases?|released|introduc(es|ed|ing)|unveil(s|ed)?|debut(s|ed)?|open[- ]sourc(es|ed)|rolls? out|announc(es|ed))\b/i;
+const compatto = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '');
+export const soggetti = (titolo) => [...new Set([...nomiModello(titolo), ...forti(piano(titolo))].map(compatto).filter((n) => n.length >= 4))];
+export function stessaStoria(titoloScritto, fonte) {
+  const A = parole(piano(titoloScritto)), B = parole(piano(fonte.titolo));
+  if ([...A].filter((w) => B.has(w)).length >= 2) return true;
+  const nomi = soggetti(titoloScritto);
+  if (!nomi.length) return true;
+  // tutto il testo letto (al massimo 6000 caratteri): nelle notizie buone il soggetto compare entro i primi 3000,
+  // nella guida di MarkTechPost «Llama 4 Scout» non compariva mai
+  const testo = compatto(piano(`${fonte.titolo} ${fonte.testo || ''}`));
+  return nomi.some((n) => testo.includes(n));
+}
+// c. l'uscita di un modello è notizia solo nei primi 30 giorni: data nei dati del sito (modelli nuovi e piccoli) e prima
+// pubblicazione su Hugging Face del nome (la copia più vecchia è l'originale; le quantizzate arrivano dopo)
+const GIORNI_LANCIO = 30;
+export async function uscitaVecchia(titoloScritto, dati, leggi = scarica, ora = Date.now()) {
+  // solo i verbi di lancio: «Open-weight GLM-5.3 builds exploit chains» non annuncia un modello (misura del 10/11)
+  if (!LANCIO_VERBO.test(titoloScritto)) return null;
+  const soglia = ora - GIORNI_LANCIO * 864e5;
+  const norma = (s) => String(s).toLowerCase().replace(/[\s_]+/g, '-');
+  // stesso nome, o il nome seguito da un separatore (Llama-4-Scout-17B-16E): «hy4Q43Y7» non è Hy4, «ml4se» non è ML4
+  // un'anteprima uscita prima non toglie la notizia dell'uscita vera (Hy4-preview del 27/8, Hy4 il 4/11)
+  const eLui = (candidato, n) => { const c = norma(candidato); return c === n || (c.startsWith(n) && /[-.]/.test(c[n.length]) && !/(^|-)(preview|beta|alpha|exp|experimental|rc\d*)(-|$)/.test(c.slice(n.length))); };
+  const conData = [...(dati?.nuovi || []), ...(dati?.piccoli || [])];
+  // solo il primo nome: è il modello che esce; gli altri sono spesso la base (10/11: «Arete-27B, a Qwen3.8-27B fine-tune»)
+  for (const nome of nomiModello(titoloScritto).slice(0, 1)) {
+    const n = norma(nome);
+    for (const m of conData) {
+      if (m.creato && eLui(m.nome, n) && Date.parse(m.creato) < soglia) return `${m.nome} è nei dati del sito dal ${m.creato}`;
+    }
+    try {
+      // solo i laboratori: su Hugging Face chiunque può avere un repo «genie-4» del 2024 (misura del 10/11 sui post usciti)
+      const lista = JSON.parse(await leggi(`https://huggingface.co/api/models?search=${encodeURIComponent(nome)}&sort=createdAt&direction=1&limit=50`, 15000));
+      const primo = lista.filter((m) => ORG_HF[m.id.split('/')[0]] && eLui(m.id.split('/')[1] || '', n) && m.createdAt).sort((a, b) => Date.parse(a.createdAt) - Date.parse(b.createdAt))[0];
+      if (primo && Date.parse(primo.createdAt) < soglia) return `${primo.id} è su Hugging Face dal ${primo.createdAt.slice(0, 10)}`;
+    } catch (e) { console.log(`notizie: Hugging Face non risponde per ${nome} (${e.message})`); }
+  }
+  return null;
+}
+
 const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 70);
 
 async function main() {
@@ -409,6 +466,10 @@ async function main() {
     const tolte = [...corpo.tolte, ...perche.tolte, ...cTitolo.tolte, ...cDescr.tolte];
     for (const t of tolte) console.log(`  tolta: «${t.s.slice(0, 110)}» ${t.n.length ? 'numeri ' + t.n.join(',') : ''} ${t.nomi.length ? 'nomi ' + t.nomi.join(',') : ''} ${t.copia ? 'copiata' : ''}`);
     if (!titolo || !descr || corpo.paragrafi.length < 3) { console.log(`notizie: NON pubblicata «${s.voci[0].titolo}» (dopo il controllo restano ${corpo.paragrafi.length} paragrafi)`); continue; }
+    if (guidaDiventataLancio(titolo, s.voci[0].titolo)) { console.log(`notizie: NON pubblicata «${titolo}»: la fonte è una guida («${s.voci[0].titolo}»), non un lancio`); continue; }
+    if (!stessaStoria(titolo, fonti[0])) { console.log(`notizie: NON pubblicata «${titolo}»: non è la storia della fonte «${fonti[0].titolo}»`); continue; }
+    const vecchia = await uscitaVecchia(titolo, dati);
+    if (vecchia) { console.log(`notizie: NON pubblicata «${titolo}»: uscita di più di ${GIORNI_LANCIO} giorni fa (${vecchia})`); continue; }
     const giorno = new Date().toISOString().slice(0, 10);
     const nome = `${giorno}-${slug(titolo)}`;
     const uscita = { nome, titolo, descr, tema: r.tema || 'LLMs', paragrafi: corpo.paragrafi, perche: perche.paragrafi, pubblicato: giorno, titoloFonte: s.voci[0].titolo,
