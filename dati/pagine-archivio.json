@@ -22301,6 +22301,42 @@
     "tipo": "News"
    },
    "data": "2026-11-09"
+  },
+  "/blog/news-2026-11-10-cisco-research-trust-not-technology-is-now-the-speed-limit-on-enterpri.html": {
+   "post": {
+    "slug": "news-2026-11-10-cisco-research-trust-not-technology-is-now-the-speed-limit-on-enterpri",
+    "titolo": "Cisco research: Trust, not technology, is now the speed limit on enterprise AI",
+    "descr": "Research of 25 Australian firms shows cultural trust gaps slow AI scaling more than infrastructure or models.",
+    "data": "2026-11-10",
+    "tema": "Research",
+    "corpo": "Cisco released the report \"Permission to Scale\" at its Melbourne Cisco Live APJC event, highlighting trust as the main barrier to enterprise AI.\n\nThe study, authored by Brad Howarth, surveyed 25 Australian organisations and found only 36% of Australians trust AI, the lowest among 47 countries.\n\nPanelists including Cisco ANZ CTO Carl Solder and Elmo Software chief people officer Anna Tosky noted that companies often invest in infrastructure but overlook cultural readiness.\n\nCisco’s AI Readiness Index shows 85% of firms lack fully AI-ready networks, while 91% of top performers have change‑management plans, underscoring the people‑technology gap.\n\nLeaders such as Flight Center’s CTO Chris Locke cited executives using AI daily, but broader employee adoption stalls without calibrated trust and transparent processes.\n\n## What it means for you\n\nEnterprises must prioritize cultural programs, clear AI governance and measurable trust metrics to move beyond pilot projects. For users of free or local models, the findings stress that technical capability alone won’t drive adoption; building confidence and transparent use cases is essential.\n\n## Sources\n\n- [Cisco research: Trust, not technology, is now the speed limit on enterprise AI](https://siliconangle.com/2026/11/09/cisco-research-trust-not-technology-is-now-the-speed-limit-on-enterprise-ai/), SiliconANGLE, 9 Nov 2026\n- [Cisco AI Readiness Index - Cisco](https://www.cisco.com/c/m/en_au/solutions/ai/readiness-index.html), cisco.com (official), 9 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-10-cisco-research-trust-not-technology-is-now-the-speed-limit-on-enterpri).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-09"
+  },
+  "/blog/news-2026-11-10-open-source-beep-locator-lets-phones-and-laptops-triangulate-mysteriou.html": {
+   "post": {
+    "slug": "news-2026-11-10-open-source-beep-locator-lets-phones-and-laptops-triangulate-mysteriou",
+    "titolo": "Open‑source Beep Locator lets phones and laptops triangulate mysterious sounds",
+    "descr": "A Python‑based web app turns browsers into a microphone array, using acoustic ranging to pinpoint beeps within about 40 cm.",
+    "data": "2026-11-10",
+    "tema": "Software",
+    "corpo": "Simon Willison built Beep Locator after a mysterious beep began sounding in his storage room.\n\nListeners first calibrate by chirping to estimate their relative positions, then a sync chirp aligns recordings when a target beep occurs, allowing time‑difference‑of‑arrival calculations.\n\nThe GitHub repository provides a full setup script, including uv and cloudflared for HTTPS, and supports remote code updates to listener pages without page reloads.\n\nIn testing, the tool located the source within roughly 40 cm, leading Willison to replace the batteries of an old carbon‑monoxide detector.\n\n## What it means for you\n\nBeep Locator shows how AI‑assisted development can produce practical, open‑source hardware tools using only commodity devices.\n\n## Sources\n\n- [Locating the source of a mysterious beep with Claude](https://simonwillison.net/2026/Nov/9/mysterious-beeps/), Simon Willison, 9 Nov 2026\n- [GitHub - simonw/beep-locator: Locate annoying beeps · GitHub](https://github.com/simonw/beep-locator), github.com (official), 9 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-10-open-source-beep-locator-lets-phones-and-laptops-triangulate-mysteriou).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-09"
+  },
+  "/blog/news-2026-11-10-openai-powered-coderabbit-boosts-software-output-20-fold-for-engineeri.html": {
+   "post": {
+    "slug": "news-2026-11-10-openai-powered-coderabbit-boosts-software-output-20-fold-for-engineeri",
+    "titolo": "OpenAI-powered CodeRabbit boosts software output 20‑fold for engineering teams",
+    "descr": "CodeRabbit leverages OpenAI models and Codex to increase software shipping rates twenty times without expanding staff.",
+    "data": "2026-11-10",
+    "tema": "Business",
+    "corpo": "OpenAI announced that its CodeRabbit tool can scale agentic software development, delivering twenty times more shipped code with the same engineering team.\n\nThe system relies on OpenAI models to govern and trust AI‑generated code, while using Codex for code creation.\n\nAccording to the release, CodeRabbit enables teams to maintain productivity without hiring additional engineers.\n\nThe announcement comes as interest grows in AI‑assisted development tools across the industry.\n\n## What it means for you\n\nFor developers, CodeRabbit offers a way to accelerate delivery without expanding headcount, potentially lowering costs. Users seeking free or local models can compare its capabilities against top free chat models like Kimi K3 Max or GLM‑5.3 Max, though CodeRabbit remains a proprietary OpenAI service.\n\n## On FreeLLMArena\n\nFrom our rankings on 9 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [CodeRabbit scales agentic software development and ships 20x more](https://openai.com/index/coderabbit-codex-daybreak), OpenAI (official), 9 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-10-openai-powered-coderabbit-boosts-software-output-20-fold-for-engineeri).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-09"
   }
  },
  "ricostruzione": {

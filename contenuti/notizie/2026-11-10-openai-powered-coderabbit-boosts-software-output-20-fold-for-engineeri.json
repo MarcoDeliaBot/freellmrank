@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-10-openai-powered-coderabbit-boosts-software-output-20-fold-for-engineeri",
+ "titolo": "OpenAI-powered CodeRabbit boosts software output 20‑fold for engineering teams",
+ "descr": "CodeRabbit leverages OpenAI models and Codex to increase software shipping rates twenty times without expanding staff.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI announced that its CodeRabbit tool can scale agentic software development, delivering twenty times more shipped code with the same engineering team.",
+  "The system relies on OpenAI models to govern and trust AI‑generated code, while using Codex for code creation.",
+  "According to the release, CodeRabbit enables teams to maintain productivity without hiring additional engineers.",
+  "The announcement comes as interest grows in AI‑assisted development tools across the industry."
+ ],
+ "perche": [
+  "For developers, CodeRabbit offers a way to accelerate delivery without expanding headcount, potentially lowering costs. Users seeking free or local models can compare its capabilities against top free chat models like Kimi K3 Max or GLM‑5.3 Max, though CodeRabbit remains a proprietary OpenAI service."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "CodeRabbit scales agentic software development and ships 20x more",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/coderabbit-codex-daybreak",
+   "titolo": "CodeRabbit scales agentic software development and ships 20x more",
+   "ufficiale": true,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 0
+}

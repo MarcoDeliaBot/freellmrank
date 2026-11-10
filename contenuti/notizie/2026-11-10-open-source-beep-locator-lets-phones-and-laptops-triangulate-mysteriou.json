@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-10-open-source-beep-locator-lets-phones-and-laptops-triangulate-mysteriou",
+ "titolo": "Open‑source Beep Locator lets phones and laptops triangulate mysterious sounds",
+ "descr": "A Python‑based web app turns browsers into a microphone array, using acoustic ranging to pinpoint beeps within about 40 cm.",
+ "tema": "Software",
+ "paragrafi": [
+  "Simon Willison built Beep Locator after a mysterious beep began sounding in his storage room.",
+  "Listeners first calibrate by chirping to estimate their relative positions, then a sync chirp aligns recordings when a target beep occurs, allowing time‑difference‑of‑arrival calculations.",
+  "The GitHub repository provides a full setup script, including uv and cloudflared for HTTPS, and supports remote code updates to listener pages without page reloads.",
+  "In testing, the tool located the source within roughly 40 cm, leading Willison to replace the batteries of an old carbon‑monoxide detector."
+ ],
+ "perche": [
+  "Beep Locator shows how AI‑assisted development can produce practical, open‑source hardware tools using only commodity devices."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "Locating the source of a mysterious beep with Claude",
+ "fonti": [
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
+   "titolo": "Locating the source of a mysterious beep with Claude",
+   "ufficiale": false,
+   "data": "2026-11-09"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/simonw/beep-locator",
+   "titolo": "GitHub - simonw/beep-locator: Locate annoying beeps · GitHub",
+   "ufficiale": true,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 2
+}

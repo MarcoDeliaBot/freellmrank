@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-10-cisco-research-trust-not-technology-is-now-the-speed-limit-on-enterpri",
+ "titolo": "Cisco research: Trust, not technology, is now the speed limit on enterprise AI",
+ "descr": "Research of 25 Australian firms shows cultural trust gaps slow AI scaling more than infrastructure or models.",
+ "tema": "Research",
+ "paragrafi": [
+  "Cisco released the report \"Permission to Scale\" at its Melbourne Cisco Live APJC event, highlighting trust as the main barrier to enterprise AI.",
+  "The study, authored by Brad Howarth, surveyed 25 Australian organisations and found only 36% of Australians trust AI, the lowest among 47 countries.",
+  "Panelists including Cisco ANZ CTO Carl Solder and Elmo Software chief people officer Anna Tosky noted that companies often invest in infrastructure but overlook cultural readiness.",
+  "Cisco’s AI Readiness Index shows 85% of firms lack fully AI-ready networks, while 91% of top performers have change‑management plans, underscoring the people‑technology gap.",
+  "Leaders such as Flight Center’s CTO Chris Locke cited executives using AI daily, but broader employee adoption stalls without calibrated trust and transparent processes."
+ ],
+ "perche": [
+  "Enterprises must prioritize cultural programs, clear AI governance and measurable trust metrics to move beyond pilot projects. For users of free or local models, the findings stress that technical capability alone won’t drive adoption; building confidence and transparent use cases is essential."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "Cisco research: Trust, not technology, is now the speed limit on enterprise AI",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/09/cisco-research-trust-not-technology-is-now-the-speed-limit-on-enterprise-ai/",
+   "titolo": "Cisco research: Trust, not technology, is now the speed limit on enterprise AI",
+   "ufficiale": false,
+   "data": "2026-11-09"
+  },
+  {
+   "nome": "cisco.com",
+   "url": "https://www.cisco.com/c/m/en_au/solutions/ai/readiness-index.html",
+   "titolo": "Cisco AI Readiness Index - Cisco",
+   "ufficiale": true,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 1
+}
