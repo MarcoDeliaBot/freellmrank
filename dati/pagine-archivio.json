@@ -22488,6 +22488,42 @@
     "tipo": "News"
    },
    "data": "2026-11-10"
+  },
+  "/blog/news-2026-11-10-google-expands-gemini-intelligence-to-pixel-10-series-and-motorola-sig.html": {
+   "post": {
+    "slug": "news-2026-11-10-google-expands-gemini-intelligence-to-pixel-10-series-and-motorola-sig",
+    "titolo": "Google expands Gemini Intelligence to Pixel 10 series and Motorola Signature 27 with new features",
+    "descr": "Gemini Intelligence adds real‑time speech transcription, task automation and custom widgets to Pixel 10 devices and the Motorola Signature 27, while rolling out widget creation to Pixel Watch.",
+    "data": "2026-11-10",
+    "tema": "Software",
+    "corpo": "New capabilities include Rambler, a real‑time spoken‑thought‑to‑text feature, and expanded task automation for ordering food, hailing rides and booking reservations in the UK, India and Japan.\n\nCreate My Widget lets users design personalized home‑screen widgets without coding, pulling data from Gmail, Calendar and Search; the feature will reach Pixel Watch in the coming weeks.\n\nDevice Assistance provides voice‑driven device management such as clearing storage or muting apps, and Gemini Intelligence will soon offer proactive suggestions on Android Auto.\n\nThe paid Gemini 4 Carbon model ranks as the top paid chat model in FreeLLMArena’s latest blind vote.\n\n## What it means for you\n\nThese updates make Gemini’s AI more integrated into everyday Android experiences, giving users hands‑free productivity tools across phones, watches and cars. For those who prefer free or locally hosted models, the rollout highlights Google’s focus on cloud‑based, subscription‑driven AI, reinforcing the appeal of open‑source alternatives that can run on personal hardware.\n\n## Sources\n\n- [Gemini Intelligence: New features, on more devices](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/), Google (official), 10 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-10-google-expands-gemini-intelligence-to-pixel-10-series-and-motorola-sig).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-10"
+  },
+  "/blog/news-2026-11-10-nvidia-snapshot-cuts-gpu-inference-startup-to-seconds-up-to-36-faster.html": {
+   "post": {
+    "slug": "news-2026-11-10-nvidia-snapshot-cuts-gpu-inference-startup-to-seconds-up-to-36-faster",
+    "titolo": "NVIDIA Snapshot cuts GPU inference startup to seconds, up to 36× faster",
+    "descr": "Open‑source Snapshot restores GPU workloads in 3.6‑42.7 seconds, delivering 8‑36× speedups over cold starts on tested B200 and HGX systems.",
+    "data": "2026-11-10",
+    "tema": "Software",
+    "corpo": "Restoring a snapshot brings an inference replica online in 3.6 to 42.7 seconds, which is 8 to 36 times faster than a cold start that can take minutes.\n\nCreating a checkpoint takes between 15 seconds and 5.5 minutes, and the system can handle checkpoints up to 1 TB across eight GPUs.\n\nPartners reported that GLM‑5.3 pod readiness dropped from roughly eight minutes to 31 seconds on an HGX B300, and vLLM startup fell from two‑8.5 minutes to six‑34 seconds on the same hardware.\n\nSnapshot works only on nodes with the same GPU model and driver; it skips weight loading, compilation and CUDA‑graph capture, but still requires the underlying provisioning and container loading steps.\n\n## What it means for you\n\nFor AI operators, the ability to restart replicas in seconds reduces scaling latency and improves fault tolerance. The tool targets Kubernetes clusters with compatible GPUs, so it does not directly benefit single‑home or CPU‑only setups, but the speed gains may inspire similar checkpoint approaches for free or locally hosted models.\n\n## Sources\n\n- [Start and Restore GPU Workloads in Seconds with NVIDIA Snapshot](https://developer.nvidia.com/blog/start-and-restore-gpu-workloads-in-seconds-with-nvidia-snapshot/), NVIDIA Developer (official), 10 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-10-nvidia-snapshot-cuts-gpu-inference-startup-to-seconds-up-to-36-faster).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-10"
+  },
+  "/blog/news-2026-11-10-openai-launches-beta-businesses-in-chatgpt-with-verified-ai-business-a.html": {
+   "post": {
+    "slug": "news-2026-11-10-openai-launches-beta-businesses-in-chatgpt-with-verified-ai-business-a",
+    "titolo": "OpenAI launches beta “Businesses in ChatGPT” with verified AI Business Agents",
+    "descr": "OpenAI’s new beta lets US e‑commerce and online service firms create AI agents that answer customer queries inside ChatGPT.",
+    "data": "2026-11-10",
+    "tema": "Business",
+    "corpo": "OpenAI announced a beta feature called “Businesses in ChatGPT” that places company profiles directly inside the conversational AI.\n\nEligible US e‑commerce and online service providers can register through a Business Hub, add product feeds with prices and availability, and create “Business Agents” that answer customer questions and help with product comparisons.\n\nThe agents appear in ChatGPT responses when a business is mentioned, and chats with them are labeled separately from the main conversation.\n\nCompanies can claim and verify their organization in the Business Hub, view insights such as mentions and discovery topics, and, for Shopify merchants, link their store directly.\n\nOpenAI says user conversations are not shared with businesses, and the feature is being rolled out in beta with plans to expand to more markets and industries.\n\n## What it means for you\n\nFor consumers, the agents aim to make product information and comparisons easier within ChatGPT. For businesses, the tool offers a new channel to reach customers, track engagement, and showcase up‑to‑date offerings without sharing user chats.\n\n## Sources\n\n- [OpenAI turns ChatGPT into a business directory with AI agents that handle customer questions](https://the-decoder.com/openai-turns-chatgpt-into-a-business-directory-with-ai-agents-that-handle-customer-questions/), The Decoder, 10 Nov 2026\n- [ChatGPT is getting verified AI ‘Business Agents’](https://www.theverge.com/ai-artificial-intelligence/1030552/openai-chatgpt-business-agents-hub), The Verge, 10 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-10-openai-launches-beta-businesses-in-chatgpt-with-verified-ai-business-a).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-10"
   }
  },
  "ricostruzione": {

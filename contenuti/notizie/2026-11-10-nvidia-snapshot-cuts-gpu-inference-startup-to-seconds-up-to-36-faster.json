@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-10-nvidia-snapshot-cuts-gpu-inference-startup-to-seconds-up-to-36-faster",
+ "titolo": "NVIDIA Snapshot cuts GPU inference startup to seconds, up to 36× faster",
+ "descr": "Open‑source Snapshot restores GPU workloads in 3.6‑42.7 seconds, delivering 8‑36× speedups over cold starts on tested B200 and HGX systems.",
+ "tema": "Software",
+ "paragrafi": [
+  "Restoring a snapshot brings an inference replica online in 3.6 to 42.7 seconds, which is 8 to 36 times faster than a cold start that can take minutes.",
+  "Creating a checkpoint takes between 15 seconds and 5.5 minutes, and the system can handle checkpoints up to 1 TB across eight GPUs.",
+  "Partners reported that GLM‑5.3 pod readiness dropped from roughly eight minutes to 31 seconds on an HGX B300, and vLLM startup fell from two‑8.5 minutes to six‑34 seconds on the same hardware.",
+  "Snapshot works only on nodes with the same GPU model and driver; it skips weight loading, compilation and CUDA‑graph capture, but still requires the underlying provisioning and container loading steps."
+ ],
+ "perche": [
+  "For AI operators, the ability to restart replicas in seconds reduces scaling latency and improves fault tolerance. The tool targets Kubernetes clusters with compatible GPUs, so it does not directly benefit single‑home or CPU‑only setups, but the speed gains may inspire similar checkpoint approaches for free or locally hosted models."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "Start and Restore GPU Workloads in Seconds with NVIDIA Snapshot",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/start-and-restore-gpu-workloads-in-seconds-with-nvidia-snapshot/",
+   "titolo": "Start and Restore GPU Workloads in Seconds with NVIDIA Snapshot",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 1
+}

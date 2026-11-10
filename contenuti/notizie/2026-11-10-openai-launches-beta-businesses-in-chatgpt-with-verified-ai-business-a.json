@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-10-openai-launches-beta-businesses-in-chatgpt-with-verified-ai-business-a",
+ "titolo": "OpenAI launches beta “Businesses in ChatGPT” with verified AI Business Agents",
+ "descr": "OpenAI’s new beta lets US e‑commerce and online service firms create AI agents that answer customer queries inside ChatGPT.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI announced a beta feature called “Businesses in ChatGPT” that places company profiles directly inside the conversational AI.",
+  "Eligible US e‑commerce and online service providers can register through a Business Hub, add product feeds with prices and availability, and create “Business Agents” that answer customer questions and help with product comparisons.",
+  "The agents appear in ChatGPT responses when a business is mentioned, and chats with them are labeled separately from the main conversation.",
+  "Companies can claim and verify their organization in the Business Hub, view insights such as mentions and discovery topics, and, for Shopify merchants, link their store directly.",
+  "OpenAI says user conversations are not shared with businesses, and the feature is being rolled out in beta with plans to expand to more markets and industries."
+ ],
+ "perche": [
+  "For consumers, the agents aim to make product information and comparisons easier within ChatGPT. For businesses, the tool offers a new channel to reach customers, track engagement, and showcase up‑to‑date offerings without sharing user chats."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "OpenAI turns ChatGPT into a business directory with AI agents that handle customer questions",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/openai-turns-chatgpt-into-a-business-directory-with-ai-agents-that-handle-customer-questions/",
+   "titolo": "OpenAI turns ChatGPT into a business directory with AI agents that handle customer questions",
+   "ufficiale": false,
+   "data": "2026-11-10"
+  },
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1030552/openai-chatgpt-business-agents-hub",
+   "titolo": "ChatGPT is getting verified AI ‘Business Agents’",
+   "ufficiale": false,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 0
+}

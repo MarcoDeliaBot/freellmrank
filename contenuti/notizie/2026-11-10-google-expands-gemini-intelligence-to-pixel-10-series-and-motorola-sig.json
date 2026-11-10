@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-10-google-expands-gemini-intelligence-to-pixel-10-series-and-motorola-sig",
+ "titolo": "Google expands Gemini Intelligence to Pixel 10 series and Motorola Signature 27 with new features",
+ "descr": "Gemini Intelligence adds real‑time speech transcription, task automation and custom widgets to Pixel 10 devices and the Motorola Signature 27, while rolling out widget creation to Pixel Watch.",
+ "tema": "Software",
+ "paragrafi": [
+  "New capabilities include Rambler, a real‑time spoken‑thought‑to‑text feature, and expanded task automation for ordering food, hailing rides and booking reservations in the UK, India and Japan.",
+  "Create My Widget lets users design personalized home‑screen widgets without coding, pulling data from Gmail, Calendar and Search; the feature will reach Pixel Watch in the coming weeks.",
+  "Device Assistance provides voice‑driven device management such as clearing storage or muting apps, and Gemini Intelligence will soon offer proactive suggestions on Android Auto.",
+  "The paid Gemini 4 Carbon model ranks as the top paid chat model in FreeLLMArena’s latest blind vote."
+ ],
+ "perche": [
+  "These updates make Gemini’s AI more integrated into everyday Android experiences, giving users hands‑free productivity tools across phones, watches and cars. For those who prefer free or locally hosted models, the rollout highlights Google’s focus on cloud‑based, subscription‑driven AI, reinforcing the appeal of open‑source alternatives that can run on personal hardware."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "Gemini Intelligence: New features, on more devices",
+ "fonti": [
+  {
+   "nome": "Google",
+   "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
+   "titolo": "Gemini Intelligence: New features, on more devices",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 1
+}
