@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-10-anthropic-launches-nasdaq-ipo-roadshow-offering-825-m-shares-at-70-78",
+ "titolo": "Anthropic launches Nasdaq IPO roadshow, offering 825 M shares at $70‑$78",
+ "descr": "Anthropic plans to sell 825 M Class A shares, raise up to $90.4 B and target a $1.02 T valuation.",
+ "tema": "Business",
+ "paragrafi": [
+  "Anthropic announced a roadshow for its proposed initial public offering of 825 million Class A common shares.",
+  "The offering includes 801,351,354 shares from Anthropic and 23,648,646 shares from existing shareholders, with no proceeds to the company from the secondary sale.",
+  "Anthropic aims to raise up to $90.4 billion, combining the public offering with a $26 billion private placement, targeting a valuation of up to $1.02 trillion.",
+  "The company will list on the Nasdaq Global Select Market under the ticker “ANT,” with Goldman Sachs and Morgan Stanley leading the underwriting syndicate."
+ ],
+ "perche": [
+  "The IPO could fund Anthropic’s massive compute commitments, which run near $900 billion with partners such as Amazon and Google. For users of free or locally hosted models, the scale of Anthropic’s financing underscores the growing gap between large‑scale commercial AI providers and smaller, open‑source efforts, highlighting the importance of community‑driven alternatives."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "Anthropic kicks off IPO roadshow, offering shares at $70 to $78 and targeting a trillion-dollar valuation",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/anthropic-kicks-off-ipo-roadshow-offering-shares-at-70-to-78-and-targeting-a-trillion-dollar-valuation/",
+   "titolo": "Anthropic kicks off IPO roadshow, offering shares at $70 to $78 and targeting a trillion-dollar valuation",
+   "ufficiale": false,
+   "data": "2026-11-10"
+  },
+  {
+   "nome": "Anthropic",
+   "url": "https://www.anthropic.com/news/roadshow-launch",
+   "titolo": "Anthropic launches roadshow for proposed initial public offering",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 1
+}

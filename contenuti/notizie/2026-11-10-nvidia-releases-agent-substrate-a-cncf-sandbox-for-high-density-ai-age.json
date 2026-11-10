@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-10-nvidia-releases-agent-substrate-a-cncf-sandbox-for-high-density-ai-age",
+ "titolo": "NVIDIA releases Agent Substrate, a CNCF sandbox for high‑density AI agent workloads",
+ "descr": "NVIDIA announced Agent Substrate, an open‑source runtime for sandboxed AI agents that runs as a CNCF Sandbox project.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced Agent Substrate, an open‑source runtime for sandboxed AI agents that runs as a CNCF Sandbox project.",
+  "The system pairs with NVIDIA Dynamo and the KAI Scheduler inside the DSX AI Factory Platform to coordinate inference, agent environments, and shared cluster resources.",
+  "Agent Substrate keeps a small pool of ready worker Pods and checkpoints idle agents, including full memory and filesystem state, to restore them on any free worker.",
+  "The design adds request parking, per‑container limits for microVM sandboxes, and a vendor‑neutral approach to pausing and restoring GPU state via Kubernetes Dynamic Resource Allocation."
+ ],
+ "perche": [
+  "For AI platform operators, Agent Substrate promises up to ten‑fold higher agent density and eliminates costly cold‑starts, improving responsiveness for coding assistants and RL training. Users of free or locally hosted models benefit from a more efficient runtime that can host many agents on shared hardware, reducing the need for dedicated resources per session."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "Agent Substrate: Advancing Kubernetes for Agents at Scale",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/agent-substrate-advancing-kubernetes-for-agents-at-scale/",
+   "titolo": "Agent Substrate: Advancing Kubernetes for Agents at Scale",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 2
+}

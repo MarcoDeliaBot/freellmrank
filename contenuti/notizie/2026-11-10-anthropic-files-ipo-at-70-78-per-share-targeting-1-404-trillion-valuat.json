@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-10-anthropic-files-ipo-at-70-78-per-share-targeting-1-404-trillion-valuat",
+ "titolo": "Anthropic files IPO at $70‑$78 per share, targeting $1.404 trillion valuation",
+ "descr": "Anthropic disclosed an IPO price range of $70 to $78 per share.",
+ "tema": "Business",
+ "paragrafi": [
+  "Anthropic disclosed an IPO price range of $70 to $78 per share. That range would place the company’s market value at up to $1.404 trillion.",
+  "The filing shows the firm will offer 825 million Class A shares. The sale could raise between $57.75 billion and $64.35 billion.",
+  "Anthropic also arranged a private sale of $26 billion of non‑voting Class N stock. Buyers include AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC, with Google and Nvidia each investing $10 billion.",
+  "The company intends to list on the Nasdaq under the symbol “ANT” and start trading around November 19. Underwriters may purchase up to 123.75 million additional shares at the IPO price.",
+  "Run‑rate revenue reached $81 billion at the end of October, up $10 billion from September. Third‑quarter revenue was $17 billion and nine‑month revenue $33.2 billion. Net loss for nine months was $104 billion, while cash and short‑term investments total $132 billion. OpenAI, Anthropic’s biggest rival, was valued at $1.25 trillion last week."
+ ],
+ "perche": [
+  "The IPO highlights how much capital large AI firms can attract, but it does not change the landscape for free and locally‑run models. FreeLLMArena’s latest rankings still place Kimi K3, GLM‑5.3 and other open models at the top, showing strong user demand for free alternatives. For developers and hobbyists, the continued availability of high‑performing free models means they can experiment without needing to access proprietary services tied to massive valuations."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "Anthropic targets $1.4 trillion IPO",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1030703/anthropic-ipo-1-4-trillion",
+   "titolo": "Anthropic targets $1.4 trillion IPO",
+   "ufficiale": false,
+   "data": "2026-11-10"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/",
+   "titolo": "Anthropic sets IPO price range of $70 to $78 per share to reach an implied valuation of $1.404 trillion",
+   "ufficiale": false,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 1
+}
