@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-10-openai-launches-control-room-to-monitor-and-halt-model-workloads",
+ "titolo": "OpenAI launches Control Room to monitor and halt model workloads",
+ "descr": "OpenAI introduces a central system called Control Room to track and stop model workloads when safety or security concerns arise.",
+ "tema": "Research",
+ "paragrafi": [
+  "OpenAI announced a new system named Control Room.",
+  "The system tracks model workloads across the company's research infrastructure.",
+  "It can rapidly stop workloads if safety or security concerns emerge.",
+  "Control Room aims to improve oversight of AI experiments and deployments.",
+  "The feature complements OpenAI's broader safety initiatives."
+ ],
+ "perche": [
+  "For AI users, Control Room offers an additional safety layer, potentially reducing accidental harmful outputs. For those relying on free or local models, it highlights the growing emphasis on centralized oversight in large‑scale AI research."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/control-room",
+   "titolo": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+   "ufficiale": true,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 0
+}

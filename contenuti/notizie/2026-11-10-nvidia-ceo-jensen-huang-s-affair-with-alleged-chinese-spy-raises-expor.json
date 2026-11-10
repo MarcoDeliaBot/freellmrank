@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-10-nvidia-ceo-jensen-huang-s-affair-with-alleged-chinese-spy-raises-expor",
+ "titolo": "Nvidia CEO Jensen Huang’s affair with alleged Chinese spy raises export‑control concerns",
+ "descr": "U.S. officials say Jensen Huang’s relationship with Megaspeed executive Alice Huang could affect Nvidia’s China chip sales and export‑control policy.",
+ "tema": "Policy",
+ "paragrafi": [
+  "Nvidia CEO Jensen Huang admitted to an affair with Alice Huang, a former Megaspeed executive described by U.S. officials as a Chinese intelligence asset.",
+  "Megaspeed, a Singapore‑based cloud provider and Nvidia customer, spent at least $4.8 billion on Nvidia chips between June 2024 and February 2026, according to trade records cited by The New York Times.",
+  "U.S. intelligence believes Alice Huang was recruited to gather information on Nvidia’s export‑control stance, Huang’s conversations with the Trump administration, and details of chip sales.",
+  "Congress is demanding answers and Nvidia’s independent directors are investigating the matter with outside counsel.",
+  "The controversy comes as Nvidia recorded $7.9 billion in revenue from Chinese customers in the three months ended July 26, about 8 % of total revenue, while U.S. export restrictions on its H200 processors remain a focal point."
+ ],
+ "perche": [
+  "The investigation could tighten scrutiny on Nvidia’s ability to sell advanced AI chips to China, potentially limiting access for Chinese firms. For users of free or locally‑run models, tighter export controls may increase reliance on open‑source alternatives that can run on less restricted hardware."
+ ],
+ "pubblicato": "2026-11-10",
+ "titoloFonte": "What could China get from Jensen Huang?",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1030328/what-could-china-get-from-jensen-huang",
+   "titolo": "What could China get from Jensen Huang?",
+   "ufficiale": false,
+   "data": "2026-11-09"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny/",
+   "titolo": "Jensen Huang’s affair with alleged Chinese spy puts Nvidia’s China ambitions under scrutiny",
+   "ufficiale": false,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 0
+}

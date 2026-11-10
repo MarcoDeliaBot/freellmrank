@@ -22277,6 +22277,30 @@
     "copertina": "/video/nuovo-longcat-2.5.jpg"
    },
    "data": "2026-11-09"
+  },
+  "/blog/news-2026-11-10-nvidia-ceo-jensen-huang-s-affair-with-alleged-chinese-spy-raises-expor.html": {
+   "post": {
+    "slug": "news-2026-11-10-nvidia-ceo-jensen-huang-s-affair-with-alleged-chinese-spy-raises-expor",
+    "titolo": "Nvidia CEO Jensen Huang’s affair with alleged Chinese spy raises export‑control concerns",
+    "descr": "U.S. officials say Jensen Huang’s relationship with Megaspeed executive Alice Huang could affect Nvidia’s China chip sales and export‑control policy.",
+    "data": "2026-11-10",
+    "tema": "Policy",
+    "corpo": "Nvidia CEO Jensen Huang admitted to an affair with Alice Huang, a former Megaspeed executive described by U.S. officials as a Chinese intelligence asset.\n\nMegaspeed, a Singapore‑based cloud provider and Nvidia customer, spent at least $4.8 billion on Nvidia chips between June 2024 and February 2026, according to trade records cited by The New York Times.\n\nU.S. intelligence believes Alice Huang was recruited to gather information on Nvidia’s export‑control stance, Huang’s conversations with the Trump administration, and details of chip sales.\n\nCongress is demanding answers and Nvidia’s independent directors are investigating the matter with outside counsel.\n\nThe controversy comes as Nvidia recorded $7.9 billion in revenue from Chinese customers in the three months ended July 26, about 8 % of total revenue, while U.S. export restrictions on its H200 processors remain a focal point.\n\n## What it means for you\n\nThe investigation could tighten scrutiny on Nvidia’s ability to sell advanced AI chips to China, potentially limiting access for Chinese firms. For users of free or locally‑run models, tighter export controls may increase reliance on open‑source alternatives that can run on less restricted hardware.\n\n## Sources\n\n- [What could China get from Jensen Huang?](https://www.theverge.com/ai-artificial-intelligence/1030328/what-could-china-get-from-jensen-huang), The Verge, 9 Nov 2026\n- [Jensen Huang’s affair with alleged Chinese spy puts Nvidia’s China ambitions under scrutiny](https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny/), TechCrunch, 9 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-10-nvidia-ceo-jensen-huang-s-affair-with-alleged-chinese-spy-raises-expor).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-09"
+  },
+  "/blog/news-2026-11-10-openai-launches-control-room-to-monitor-and-halt-model-workloads.html": {
+   "post": {
+    "slug": "news-2026-11-10-openai-launches-control-room-to-monitor-and-halt-model-workloads",
+    "titolo": "OpenAI launches Control Room to monitor and halt model workloads",
+    "descr": "OpenAI introduces a central system called Control Room to track and stop model workloads when safety or security concerns arise.",
+    "data": "2026-11-10",
+    "tema": "Research",
+    "corpo": "OpenAI announced a new system named Control Room.\n\nThe system tracks model workloads across the company's research infrastructure.\n\nIt can rapidly stop workloads if safety or security concerns emerge.\n\nControl Room aims to improve oversight of AI experiments and deployments.\n\nThe feature complements OpenAI's broader safety initiatives.\n\n## What it means for you\n\nFor AI users, Control Room offers an additional safety layer, potentially reducing accidental harmful outputs. For those relying on free or local models, it highlights the growing emphasis on centralized oversight in large‑scale AI research.\n\n## Sources\n\n- [Control Room: A central system to track and stop model workloads across our research infrastructure](https://openai.com/index/control-room), OpenAI (official), 9 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-10-openai-launches-control-room-to-monitor-and-halt-model-workloads).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-09"
   }
  },
  "ricostruzione": {
