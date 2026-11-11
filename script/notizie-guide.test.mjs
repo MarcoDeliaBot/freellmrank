@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { RADICE } from './sito/comune.mjs';
-import { guidaDiventataLancio, stessaStoria, uscitaVecchia, soggetti } from './notizie.mjs';
+import { guidaDiventataLancio, stessaStoria, uscitaVecchia, soggetti, annuncioNonAncora } from './notizie.mjs';
 
 const DIR = path.join(RADICE, 'contenuti', 'notizie');
 const post = (inizio) => JSON.parse(fs.readFileSync(path.join(DIR, fs.readdirSync(DIR).find((f) => f.startsWith(inizio))), 'utf8'));
@@ -54,7 +54,7 @@ test('b. il titolo scritto deve parlare della storia della fonte', () => {
 test('c. un modello uscito da più di 30 giorni non è una notizia: Llama 4 Scout è su Hugging Face dal 2/4/2025', async () => {
   const hf = hfFinto(LLAMA_HF);
   const motivo = await uscitaVecchia(llama.titolo, { nuovi: [], piccoli: [] }, hf, ORA);
-  assert.match(motivo || '', /Llama-4-Scout-17B-16E-Instruct.*2025-04-02/);
+  assert.match(motivo || '', /Llama-4-Scout.*dal 2025-04-02/);
   assert.match(hf.chiamate[0], /search=Llama-4-Scout&sort=createdAt&direction=1/);
 });
 
@@ -81,4 +81,29 @@ test('c. controlli positivi: modello nuovo, dati del sito, titolo che non è un 
   // non è un lancio: nessun controllo di data
   assert.equal(await uscitaVecchia('How Llama 4 Scout routes tokens across experts', dati, nessuno, ORA), null);
   assert.equal(nessuno.chiamate.length, 0);
+});
+
+// controllo di tutti i 264 post (11/11/2026): i casi che i controlli dell'8/11 sbagliavano o non vedevano
+const grokBot = post('2026-11-01-spacexsi-releases-grok-bot');
+const voceDi = (n, i) => ({ titolo: n.fonti[i].titolo, link: n.fonti[i].url });
+
+test('a. «how to» in mezzo al titolo non è una guida; una guida dichiarata nel titolo scritto è onesta', () => {
+  assert.equal(guidaDiventataLancio('OpenAI launches GPT-6 Cyber, a security-focused AI model', 'OpenAIs GPT-6 Cyber can both break into systems and propose how to fix them'), false);
+  assert.equal(guidaDiventataLancio('NVIDIA Dory 1.0 4B model can be run locally with llama.cpp, guide released', 'How to Run NVIDIA Dory 4B with llama.cpp: Loop by Loop Guide'), false);
+  // a inizio titolo resta una guida
+  assert.equal(guidaDiventataLancio('NVIDIA releases Dory 1.0 4B', 'How to Run NVIDIA Dory 4B with llama.cpp'), true);
+});
+
+test('c. una serie con un modello uscito prima resta nuova se le altre copie ufficiali sono recenti (LFM3, 28/10)', async () => {
+  const lfm3 = hfFinto([{ id: 'LiquidAI/LFM3-Audio-2B', createdAt: '2026-09-08T10:00:00.000Z' }, { id: 'LiquidAI/LFM3-VL-2B', createdAt: '2026-10-19T10:00:00.000Z' },
+    { id: 'LiquidAI/LFM3-1.7B', createdAt: '2026-10-23T10:00:00.000Z' }]);
+  assert.equal(await uscitaVecchia('Liquid AI launches LFM3 series with six 2B-class multimodal models', { nuovi: [], piccoli: [] }, lfm3, Date.parse('2026-10-28T23:00:00Z')), null);
+});
+
+test('d. la fonte dice «in preparazione», il titolo dice «esce»: Grok Bot (1/11)', () => {
+  assert.equal(annuncioNonAncora(grokBot.titolo, grokBot.fonti.map((_, i) => voceDi(grokBot, i))), true);
+  // controlli positivi: il codice pubblicato fra le fonti (FlashProve), un titolo al futuro (Airbnb), una fonte che non dice «in preparazione»
+  assert.equal(annuncioNonAncora(flashprove.titolo, flashprove.fonti.map((_, i) => voceDi(flashprove, i))), false);
+  assert.equal(annuncioNonAncora('Airbnb to launch AI-native travel agent in first half of 2027', [{ titolo: 'Airbnb is working on an AI travel agent', link: 'https://techcrunch.com/x' }]), false);
+  assert.equal(annuncioNonAncora(llama.titolo, llama.fonti.map((_, i) => voceDi(llama, i))), false);
 });

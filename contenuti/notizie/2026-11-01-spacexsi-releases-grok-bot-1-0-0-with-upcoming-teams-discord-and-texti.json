@@ -2,6 +2,7 @@
  "nome": "2026-11-01-spacexsi-releases-grok-bot-1-0-0-with-upcoming-teams-discord-and-texti",
  "titolo": "SpaceXSI releases Grok Bot 1.0.0 with upcoming Teams, Discord and texting features",
  "descr": "SpaceXSI makes its autonomous AI teammate Grok Bot 1.0.0 available for download, previewing integration with Microsoft Teams, Discord and native messaging.",
+ "nota": "**Correction, 11 November 2026:** Grok Bot 1.0.0 had not been released when we published this. Our source reported that SpaceXSI was preparing to release it: a build could be downloaded, but it had not officially rolled out. Grok Bot itself was introduced in beta on 11 August 2026. The Teams, Tasks, texting and Discord features were spotted in development, with no confirmed date.",
  "tema": "Software",
  "paragrafi": [
   "The bot already works with Slack and can trigger routines from Teams messages, while a dedicated Tasks tab is being built to show ongoing processes outside chat.",
