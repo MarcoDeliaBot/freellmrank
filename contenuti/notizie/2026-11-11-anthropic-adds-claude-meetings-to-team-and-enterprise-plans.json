@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-11-anthropic-adds-claude-meetings-to-team-and-enterprise-plans",
+ "titolo": "Anthropic adds Claude Meetings to Team and Enterprise plans",
+ "descr": "Claude can join video calls, take notes and update shared docs, rolling out soon for paid Anthropic customers.",
+ "tema": "Business",
+ "paragrafi": [
+  "Anthropic announced that Claude Meetings will let users add the Claude agent to a live call to capture notes and edit team documents in real time.",
+  "The feature is enabled by default for Team plans, while Enterprise admins can control which users receive it.",
+  "Claude will not join calls with external participants unless an admin permits it, and it will leave if an unauthorized guest joins.",
+  "The tool will be unavailable for organizations using zero data retention, HIPAA‑ready settings, or customer‑managed encryption keys.",
+  "Anthropic also released new Whiteboards, Sheets, and Data artifacts, with Whiteboards and Sheets off by default for Enterprise plans but on for Team plans."
+ ],
+ "perche": [
+  "For teams that rely on video conferencing, Claude Meetings could reduce manual note‑taking and keep project artifacts up to date without switching apps. Users of free or locally hosted models will not have access to this proprietary feature, highlighting a gap between enterprise‑grade AI services and open‑source alternatives."
+ ],
+ "pubblicato": "2026-11-11",
+ "titoloFonte": "Claude can collaborate in your team meetings soon – like an intern",
+ "fonti": [
+  {
+   "nome": "ZDNet",
+   "url": "https://www.zdnet.com/innovation/claude-meetings-workplace-features/",
+   "titolo": "Claude can collaborate in your team meetings soon – like an intern",
+   "ufficiale": false,
+   "data": "2026-11-11"
+  },
+  {
+   "nome": "claude.com",
+   "url": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors",
+   "titolo": "Working with Claude Sheets, Whiteboards, and Interactive Connectors | Claude by Anthropic",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 0
+}

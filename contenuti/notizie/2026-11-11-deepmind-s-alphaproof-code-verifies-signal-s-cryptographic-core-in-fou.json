@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-11-deepmind-s-alphaproof-code-verifies-signal-s-cryptographic-core-in-fou",
+ "titolo": "DeepMind's AlphaProof Code verifies Signal's cryptographic core in four weeks",
+ "descr": "AlphaProof Code used AI agents to formally prove the security of Signal's actual code, cutting verification time from years to weeks.",
+ "tema": "Research",
+ "paragrafi": [
+  "The team applied the system to Signal's encryption protocol, completing verification of the live cryptographic core in four weeks, a task that normally requires years of expert work.",
+  "Human experts defined formal security requirements, then AI agents built on Gemini Carbon generated over six million lines of Lean proofs, flagging about one percent of the code for human review.",
+  "Two deliberately inserted bugs were detected immediately, confirming the system's ability to distinguish correct from faulty code."
+ ],
+ "perche": [
+  "For AI users, AlphaProof Code shows that AI can dramatically accelerate security audits, potentially making high‑assurance software more accessible. For developers of free or local models, the open‑sourced verification artifacts could provide a template for building similar formal‑verification pipelines without relying on large proprietary AI resources."
+ ],
+ "pubblicato": "2026-11-11",
+ "titoloFonte": "Google Deepmind's AlphaProof Code verified Signal's cryptographic core in four weeks instead of years",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/google-deepminds-alphaproof-code-verified-signals-cryptographic-core-in-four-weeks-instead-of-years/",
+   "titolo": "Google Deepmind's AlphaProof Code verified Signal's cryptographic core in four weeks instead of years",
+   "ufficiale": false,
+   "data": "2026-11-11"
+  },
+  {
+   "nome": "Google DeepMind",
+   "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+   "titolo": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 2
+}

@@ -1,0 +1,36 @@
+{
+ "nome": "2026-11-11-deepmind-launches-gemini-robotics-2-5-and-alphagenome-2-for-advanced-r",
+ "titolo": "DeepMind launches Gemini Robotics 2.5 and AlphaGenome 2 for advanced robotics and gene prediction",
+ "descr": "Google DeepMind unveils Gemini Robotics 2.5 with higher dexterity and safety, and AlphaGenome 2 for detailed DNA variant impact on cell types.",
+ "tema": "Research",
+ "paragrafi": [
+  "Google DeepMind announced Gemini Robotics 2.5, the latest vision‑language‑action model designed to improve robot dexterity, reliability and safety in real‑world settings.",
+  "The model was tested on more than 200 tasks and showed a 30%‑100% success rate depending on the task, completing actions 20%‑30% faster than its predecessor.",
+  "In a proof‑of‑concept at Mercedes‑Benz, robots using Gemini Robotics 2.5 packed automotive parts with a 96% success rate.",
+  "DeepMind also released AlphaGenome 2, a next‑generation AI that predicts how DNA sequences and variants affect specific human cell types, adding DNA methylation to its readouts.",
+  "AlphaGenome 2 was trained on over 100 million cell profiles across 68 tissues and identifies nearly twice as many expression‑changing variants as the previous model.",
+  "Both models are available now: Gemini Robotics 2.5 rolls out through partners such as Agile Robots SE, Apptronik and Boston Dynamics, while AlphaGenome 2 is offered for non‑commercial research via an API and in private preview for commercial use."
+ ],
+ "perche": [
+  "For AI practitioners, Gemini Robotics 2.5 provides a more capable platform for deploying robots in unstructured environments, potentially reducing development cycles. AlphaGenome 2 gives researchers a finer‑grained tool for linking genetic variants to cell‑type specific effects, accelerating disease research. Users of free or locally run models may note that these advances remain cloud‑based services, highlighting the growing gap between high‑performance proprietary AI and accessible open‑source alternatives."
+ ],
+ "pubblicato": "2026-11-11",
+ "titoloFonte": "Google DeepMind releases new advanced robotics AI model and next-generation gene prediction model",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/11/google-deepmind-releases-new-advanced-robotics-ai-model-and-next-generation-gene-prediction-model/",
+   "titolo": "Google DeepMind releases new advanced robotics AI model and next-generation gene prediction model",
+   "ufficiale": false,
+   "data": "2026-11-11"
+  },
+  {
+   "nome": "deepmind.google",
+   "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+   "titolo": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease — Google DeepMind",
+   "ufficiale": true,
+   "data": "2026-11-11"
+  }
+ ],
+ "frasiTolte": 0
+}
