@@ -355,6 +355,29 @@ export function stessaStoria(titoloScritto, fonte) {
   const testo = compatto(piano(`${fonte.titolo} ${fonte.testo || ''}`));
   return nomi.some((n) => testo.includes(n));
 }
+// e. lo stesso lancio già raccontato, visto sul titolo scritto (11/11/2026: Gemini 4 Carbon uscì 4 volte fra il 28/10 e il
+// 2/11; «Gemini 4 Carbon» ha uno spazio e non è un nome forte per doppione(), e il 2/11 veniva da «The latest AI news we
+// announced in October 2026», che non nomina il modello). Blocca se il titolo scritto è un lancio e un post degli ultimi
+// GIORNI_DOPPIONI giorni, anch'esso lancio, ha lo stesso nome di modello: uguale, mai per prefisso (GPT-6 non è GPT-6
+// Cyber). Non contano i post nati da un'indiscrezione («early test results ahead of public release», 24/10): l'uscita vera passa.
+// Conta solo il modello lanciato, non quello di paragone: si taglia il titolo a «than», «powered by»… (Flora «125× cheaper than
+// GPT-6 Astra» e Merge «tools powered by GPT-6 Astra» non sono lanci di GPT-6 Astra). I pesi aperti arrivati almeno 2 giorni dopo
+// l'API sono una notizia nuova (Kimi K3.1 Pro: API il 23/10, Hugging Face il 2/11); lo stesso giorno sono la stessa uscita (Mistral Large 4)
+const PARAGONE = /\b(than|powered by|built on|based on|using|vs\.?|versus|rivals?|beats?|like|alternative to)\b/i;
+const PESI = /\b(open[- ]?weights?|open[- ]sourc\w*|hugging face|weights)\b/i;
+const lanciati = (t) => nomiModello(piano(t).split(PARAGONE)[0]).map(compatto).filter((n) => n.length >= 4);
+export function modelloGiaRaccontato(titoloScritto, fatte, ora = Date.now()) {
+  if (!LANCIO_VERBO.test(titoloScritto)) return null;
+  const nomi = new Set(lanciati(titoloScritto));
+  if (!nomi.size) return null;
+  for (const n of fatte) {
+    if (String(n.nome).startsWith('(questo giro)') || ora - new Date(n.pubblicato || 0) >= GIORNI_DOPPIONI * 864e5) continue;
+    if (!LANCIO_VERBO.test(n.titolo || '') || NON_ANCORA.test(n.titoloFonte || '')) continue;
+    if (PESI.test(titoloScritto) && !PESI.test(n.titolo) && ora - new Date(n.pubblicato) >= 3 * 864e5) continue;
+    if (lanciati(n.titolo).some((x) => nomi.has(x))) return n.nome;
+  }
+  return null;
+}
 // c. l'uscita di un modello è notizia solo nei primi 30 giorni: data nei dati del sito (modelli nuovi e piccoli) e prima
 // pubblicazione su Hugging Face del nome (la copia più vecchia è l'originale; le quantizzate arrivano dopo)
 const GIORNI_LANCIO = 30;
@@ -484,6 +507,8 @@ async function main() {
     if (annuncioNonAncora(titolo, s.voci)) { console.log(`notizie: NON pubblicata «${titolo}»: la fonte dice che è in preparazione («${s.voci[0].titolo}»)`); continue; }
     if (guidaDiventataLancio(titolo, s.voci[0].titolo)) { console.log(`notizie: NON pubblicata «${titolo}»: la fonte è una guida («${s.voci[0].titolo}»), non un lancio`); continue; }
     if (!stessaStoria(titolo, fonti[0])) { console.log(`notizie: NON pubblicata «${titolo}»: non è la storia della fonte «${fonti[0].titolo}»`); continue; }
+    const giaLancio = modelloGiaRaccontato(titolo, fatte);
+    if (giaLancio) { console.log(`notizie: NON pubblicata «${titolo}»: lo stesso lancio è già in ${giaLancio}`); continue; }
     const vecchia = await uscitaVecchia(titolo, dati);
     if (vecchia) { console.log(`notizie: NON pubblicata «${titolo}»: uscita di più di ${GIORNI_LANCIO} giorni fa (${vecchia})`); continue; }
     const giorno = new Date().toISOString().slice(0, 10);
@@ -491,6 +516,7 @@ async function main() {
     const uscita = { nome, titolo, descr, tema: r.tema || 'LLMs', paragrafi: corpo.paragrafi, perche: perche.paragrafi, pubblicato: giorno, titoloFonte: s.voci[0].titolo,
       fonti: fonti.map((f) => ({ nome: f.fonte, url: f.link, titolo: f.titolo, ufficiale: f.ufficiale, data: f.data.toISOString().slice(0, 10) })), frasiTolte: tolte.length };
     fs.writeFileSync(path.join(DIR, `${nome}.json`), JSON.stringify(uscita, null, 1) + '\n');
+    fatte.push(uscita); // due fonti diverse sullo stesso lancio nello stesso giro: la seconda la ferma modelloGiaRaccontato
     console.log(`notizie: pubblicata ${nome} (${fonti.map((f) => f.fonte).join(', ')}; frasi tolte dal controllo: ${tolte.length})`);
   }
 }
