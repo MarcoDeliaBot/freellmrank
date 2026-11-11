@@ -1,0 +1,66 @@
+{
+ "nome": "nuovo-cola2",
+ "titolo": "Cola2: 9B parameters, free to download #Shorts",
+ "descrizione": "Cola2 by ByteDance-Seed came out on 6 Nov 2026, with open weights on Hugging Face. At 4-bit it needs about 8 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Cola2"
+ ],
+ "condividi": "Cola2 is out: 9B parameters and open weights. At 4-bit it needs about 8 GB, so the smallest card that holds it fully is the RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "Cola2: 9 miliardi di parametri, gratis #Shorts",
+   "descrizione": "Cola2 di ByteDance-Seed è uscito il 6 novembre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 8 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Cola2: 9 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "Cola2 de ByteDance-Seed salió el 6 de noviembre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 8 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Cola2: 9 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "Cola2 von ByteDance-Seed ist am 6. November 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 8 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Cola2 : 9 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "Cola2 de ByteDance-Seed est sorti le 6 novembre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 8 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Cola2: 9 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "Cola2 da ByteDance-Seed saiu em 6 de novembro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 8 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Cola2",
+    "gb": 8,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "schede": [
+   {
+    "id": "rtx4060",
+    "nome": "RTX 4060",
+    "gb": 8,
+    "tiene": true
+   }
+  ]
+ },
+ "voce": [
+  "A new free AI model with 9 billion parameters.",
+  "It comes from ByteDance-Seed, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 8 gigabytes. You need at least an RTX 40 60.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-cola2",
+ "pubblicato": "2026-11-11"
+}

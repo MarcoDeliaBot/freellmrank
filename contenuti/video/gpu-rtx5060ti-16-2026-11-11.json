@@ -1,0 +1,74 @@
+{
+ "nome": "gpu-rtx5060ti-16-2026-11-11",
+ "titolo": "The best free AI for the RTX 5060 Ti 16 GB #Shorts",
+ "descrizione": "The best free AI models on the RTX 5060 Ti 16 GB (16 GB, 448 GB/s) with 32 GB of DDR5 RAM, at 4-bit with 8K context:\n1. Gemma 4 26B A4B: about 80 tokens/s (Arena 1437, GPU + RAM)\n2. Qwen3.8-27B: about 14 tokens/s (Arena 1433, GPU + RAM)\n3. Qwen3.5-27B: about 14 tokens/s (Arena 1409, GPU + RAM)\nEstimates from our simulator. Try your own card: https://freellmarena.com/home",
+ "tag": [
+  "free AI",
+  "local LLM",
+  "RTX 5060 Ti 16 GB",
+  "GPU for AI"
+ ],
+ "condividi": "On the RTX 5060 Ti 16 GB with 32 GB of RAM, the best free model is Gemma 4 26B A4B, at about 80 tokens/s. https://freellmarena.com/home",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "La miglior AI gratis per RTX 5060 Ti 16 GB #Shorts",
+   "descrizione": "I migliori modelli AI gratis su RTX 5060 Ti 16 GB (16 GB, 448 GB/s) con 32 GB di RAM DDR5, a 4 bit con 8K di contesto:\n1. Gemma 4 26B A4B: ~80 tok/s (Arena 1437, GPU + RAM)\n2. Qwen3.8-27B: ~14 tok/s (Arena 1433, GPU + RAM)\n3. Qwen3.5-27B: ~14 tok/s (Arena 1409, GPU + RAM)\nStime del nostro simulatore. Prova la tua scheda: https://freellmarena.com/it/home"
+  },
+  "es": {
+   "titolo": "La mejor IA gratis para la RTX 5060 Ti 16 GB #Shorts",
+   "descrizione": "Los mejores modelos de IA gratis en la RTX 5060 Ti 16 GB (16 GB, 448 GB/s) con 32 GB de RAM DDR5, a 4 bits con 8K de contexto:\n1. Gemma 4 26B A4B: ~80 tok/s (Arena 1437, GPU + RAM)\n2. Qwen3.8-27B: ~14 tok/s (Arena 1433, GPU + RAM)\n3. Qwen3.5-27B: ~14 tok/s (Arena 1409, GPU + RAM)\nEstimaciones de nuestro simulador. Prueba tu tarjeta: https://freellmarena.com/es/home"
+  },
+  "de": {
+   "titolo": "Die beste kostenlose KI für die RTX 5060 Ti 16 GB #Shorts",
+   "descrizione": "Die besten kostenlosen KI-Modelle auf der RTX 5060 Ti 16 GB (16 GB, 448 GB/s) mit 32 GB DDR5-RAM, in 4 Bit mit 8K Kontext:\n1. Gemma 4 26B A4B: ~80 tok/s (Arena 1437, GPU + RAM)\n2. Qwen3.8-27B: ~14 tok/s (Arena 1433, GPU + RAM)\n3. Qwen3.5-27B: ~14 tok/s (Arena 1409, GPU + RAM)\nSchätzungen unseres Simulators. Teste deine Karte: https://freellmarena.com/de/home"
+  },
+  "fr": {
+   "titolo": "La meilleure IA gratuite pour la RTX 5060 Ti 16 GB #Shorts",
+   "descrizione": "Les meilleurs modèles d'IA gratuits sur la RTX 5060 Ti 16 GB (16 Go, 448 Go/s) avec 32 Go de RAM DDR5, en 4 bits avec 8K de contexte :\n1. Gemma 4 26B A4B: ~80 tok/s (Arena 1437, GPU + RAM)\n2. Qwen3.8-27B: ~14 tok/s (Arena 1433, GPU + RAM)\n3. Qwen3.5-27B: ~14 tok/s (Arena 1409, GPU + RAM)\nEstimations de notre simulateur. Testez votre carte : https://freellmarena.com/fr/home"
+  },
+  "pt": {
+   "titolo": "A melhor IA grátis para a RTX 5060 Ti 16 GB #Shorts",
+   "descrizione": "Os melhores modelos de IA grátis na RTX 5060 Ti 16 GB (16 GB, 448 GB/s) com 32 GB de RAM DDR5, em 4 bits com 8K de contexto:\n1. Gemma 4 26B A4B: ~80 tok/s (Arena 1437, GPU + RAM)\n2. Qwen3.8-27B: ~14 tok/s (Arena 1433, GPU + RAM)\n3. Qwen3.5-27B: ~14 tok/s (Arena 1409, GPU + RAM)\nEstimativas do nosso simulador. Teste sua placa: https://freellmarena.com/pt/home"
+  }
+ },
+ "hardware": {
+  "schede": [
+   {
+    "id": "rtx5060ti-16",
+    "nome": "RTX 5060 Ti 16 GB",
+    "gb": 16,
+    "tiene": true
+   }
+  ],
+  "modelli": [
+   {
+    "nome": "Gemma 4 26B A4B",
+    "gb": 18,
+    "vel": 80,
+    "dove": "ram"
+   },
+   {
+    "nome": "Qwen3.8-27B",
+    "gb": 20,
+    "vel": 14,
+    "dove": "ram"
+   },
+   {
+    "nome": "Qwen3.5-27B",
+    "gb": 20,
+    "vel": 14,
+    "dove": "ram"
+   }
+  ]
+ },
+ "voce": [
+  "What's the best free AI for an RTX 50 60 Ti?",
+  "It has 16 gigabytes of memory.",
+  "With 32 gigabytes of RAM, the best one is from Google, at about 80 tokens per second.",
+  "Try your own card in our free simulator.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-gpu-rtx5060ti-16-2026-11-11",
+ "pubblicato": "2026-11-11"
+}

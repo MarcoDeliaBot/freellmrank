@@ -1,0 +1,155 @@
+{
+ "nome": "modello-cola2",
+ "titolo": "Cola2: What's New, Hardware Needed, How to Run It Free",
+ "descrizione": "Cola2 is a free 8.8 billion-parameter model that combines continuous compression with discrete generation. It offers a novel architecture for researchers and hobbyists who want to experiment with latent-space language modeling.\n\nSize: 8.8B parameters · context 0K · memory at 4-bit about 8 GB.\nRTX 3060 12 GB + 32 GB RAM: about 48 tokens/s\nRTX 4090 + 64 GB RAM: about 123 tokens/s\nRTX 5090 + 64 GB RAM: about 199 tokens/s\nMac M4 Max 128 GB: about 60 tokens/s\nNVIDIA DGX Spark 128 GB: about 36 tokens/s\nRyzen AI Max+ 395 128 GB: about 34 tokens/s\nMac Studio M3 Ultra 512 GB: about 81 tokens/s\nModel card: https://huggingface.co/ByteDance-Seed/Cola2\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Cola2",
+  "ByteDance-Seed"
+ ],
+ "condividi": "Cola2 by ByteDance-Seed: 8.8B parameters, about 8 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "Cola2: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Cola2: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Cola2: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Cola2 : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Cola2: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Cola2",
+    "gb": 8,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "Cola2",
+    "vel": 48,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Cola2",
+    "vel": 123,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Cola2",
+    "vel": 199,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Cola2",
+    "vel": 60,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Cola2",
+    "vel": 36,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Cola2",
+    "vel": 34,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Cola2",
+    "vel": 81,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "Cola2 blends continuous semantic compression with discrete token generation. According to the model card, it reaches a 60.10 % average on eight tasks after training on just 346 B source tokens, far fewer than the trillions used by many larger models.",
+  "Cola2 is a base language model released by ByteDance-Seed. It has 8.8 billion parameters and follows a continuous-latent architecture. The model uses a dynamic-compression variational auto-encoder to turn spans of text into compact continuous representations. Those latents are then processed by a block-causal Diffusion Transformer, and finally a span-causal token decoder turns the latents back into ordinary tokens. The repository provides the weights, tokenizer, and generation configuration, all ready to run with Hugging Face Transformers using remote code. The model is not instruction-tuned, so it behaves like a classic text generator rather than a chat assistant.",
+  "What sets Cola2 apart is its co-adaptive hierarchy. In Stage I the VAE learns to compress text into continuous latent spans while the token decoder learns to reconstruct them. Stage II adds a roughly 4 billion parameter Diffusion Transformer that learns the latent distribution through flow matching. During inference, the model proposes a latent block, decodes it into tokens, and then re-encodes the newly generated text under the same span layout. This feedback loop ensures the continuous and discrete representations stay synchronized, a design not found in standard autoregressive models.",
+  "The model card reports results on eight evaluation tasks. Cola2 achieves an aggregate average of 60.10 percent, which is lower than the 66.25 percent of Llama-3-8B but higher on specific benchmarks. It scores 41.75 percent on HellaSwag and 80.42 percent on StoryCloze, both better than Llama-3-8B’s 39.21 and 79.49 respectively. The checkpoint was trained on 346.03 billion source tokens, a fraction of the 15 trillion tokens used by Llama-3-8B, highlighting the efficiency of its compression approach.",
+  "Cola2 shows clear strengths in tasks that require narrative understanding and commonsense reasoning, such as StoryCloze and HellaSwag. However, its performance drops on knowledge-heavy benchmarks like MMLU (51.32 percent) and TruthfulQA (54.10 percent), where larger models still lead. Because latent generation starts from Gaussian noise, the model’s outputs are stochastic even when greedy token selection is used. Users can seed the random generator to obtain reproducible runs, but the inherent randomness remains a characteristic limitation.",
+  "Cola2 is a good fit for anyone interested in experimenting with continuous latent representations in language models. Researchers can study the co-adaptive VAE and diffusion components without building their own infrastructure. Hobbyists with a modest GPU, an RTX 4060 is enough to hold the model in memory, can run it locally and explore its unique generation style. Since the model is a base, not instruction-tuned, it suits tasks that need raw text generation rather than conversational agents.",
+  "What do you need to run it at home? At 4-bit it takes about 8 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 48 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 123 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face, under the license written in its model card. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare Cola2 with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-cola2",
+ "pubblicato": "2026-11-11"
+}
