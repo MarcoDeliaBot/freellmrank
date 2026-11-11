@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-06",
+ "aggiornato": "2026-11-11",
  "suite": {
   "versione": "decision-index-0.3",
   "test": 42,
@@ -73,6 +73,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "karpo-decision-31b",
+   "nome": "karpo-decision-31B",
+   "org": "MachinePulse",
+   "tipo": "full fine-tune",
+   "b": 31.3,
+   "stimato": false,
+   "repo": "MachinePulseAI/karpo-decision-31B",
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 73.86,
+   "pubblico": 75.05,
+   "ms": 94.3,
+   "p95": 585.9,
+   "ece": 0.0477,
+   "acc": 0.8319,
+   "aree": {
+    "knowledge": 65.5,
+    "language": 76.8,
+    "retrieval": 76.4,
+    "tools": 88.4,
+    "arts": 68.2
+   },
+   "vision": null,
+   "licenza": "other"
+  },
+  {
    "id": "glide-v1.2.1-loop",
    "nome": "GLiDE 27B",
    "org": "Fastino",
@@ -97,6 +123,58 @@
    },
    "vision": null,
    "licenza": "other"
+  },
+  {
+   "id": "logits-sigma-1-duo",
+   "nome": "Logits Sigma-1 Duo",
+   "org": "Logits",
+   "tipo": "inference technique",
+   "b": 57.4,
+   "stimato": false,
+   "repo": "logitshq/Logits-Sigma-1-Duo",
+   "base": null,
+   "nota": null,
+   "punti": 72.28,
+   "pubblico": 72.93,
+   "ms": 368.3,
+   "p95": 2642.4,
+   "ece": 0.0269,
+   "acc": 0.8192,
+   "aree": {
+    "knowledge": 62.9,
+    "language": 74.6,
+    "retrieval": 73.7,
+    "tools": 88.3,
+    "arts": 64.8
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "copernicus-31b",
+   "nome": "Copernicus-31B",
+   "org": "Poindexter Labs",
+   "tipo": "full fine-tune",
+   "b": 31.3,
+   "stimato": false,
+   "repo": "Poindexter-Labs/Copernicus-31B",
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 72.11,
+   "pubblico": 70.37,
+   "ms": 154.8,
+   "p95": 1888.7,
+   "ece": 0.018,
+   "acc": 0.7946,
+   "aree": {
+    "knowledge": 61.4,
+    "language": 71.2,
+    "retrieval": 73.2,
+    "tools": 85,
+    "arts": 59.3
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
   },
   {
    "id": "knowline-31b-gen1.5",
@@ -180,6 +258,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "onejev1.6g-31b",
+   "nome": "OneJev1.6g-31B",
+   "org": "OmniJev",
+   "tipo": "full fine-tune",
+   "b": 31.3,
+   "stimato": false,
+   "repo": "OmniJev/OneJev1.6g-31B",
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 70.86,
+   "pubblico": 69.82,
+   "ms": 94.5,
+   "p95": 629.3,
+   "ece": 0.0726,
+   "acc": 0.8095,
+   "aree": {
+    "knowledge": 58.9,
+    "language": 71.5,
+    "retrieval": 72.7,
+    "tools": 84.1,
+    "arts": 61.9
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "turion-jev-31b",
    "nome": "Turion Jev 31B",
    "org": "Turion.AI",
@@ -201,6 +305,58 @@
     "retrieval": 71.2,
     "tools": 78.7,
     "arts": 51.3
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "eshbar-lulilla",
+   "nome": "eshbar-lulilla (Gemma 4 31B)",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 31.3,
+   "stimato": false,
+   "repo": "plantwaterer/eshbar-lulilla",
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 70.3,
+   "pubblico": 70.27,
+   "ms": 340.9,
+   "p95": 1949.5,
+   "ece": 0.0478,
+   "acc": 0.7899,
+   "aree": {
+    "knowledge": 59.4,
+    "language": 72.9,
+    "retrieval": 71.3,
+    "tools": 86.4,
+    "arts": 60.2
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "jeffan-27b-1211",
+   "nome": "Jeffan-27B-1211",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 26.9,
+   "stimato": false,
+   "repo": "tattrongvu/Jeffan-27B-1211",
+   "base": "Qwen/Qwen3.8-27B",
+   "nota": null,
+   "punti": 70.3,
+   "pubblico": 73.39,
+   "ms": 100.1,
+   "p95": 1178.6,
+   "ece": 0.0366,
+   "acc": 0.8217,
+   "aree": {
+    "knowledge": 62.5,
+    "language": 75.3,
+    "retrieval": 76.1,
+    "tools": 89.5,
+    "arts": 61.9
    },
    "vision": null,
    "licenza": "apache-2.0"
@@ -316,6 +472,32 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "logits-sigma-1",
+   "nome": "Logits Sigma-1",
+   "org": "Logits",
+   "tipo": "LoRA",
+   "b": 31.3,
+   "stimato": false,
+   "repo": "logitshq/Logits-Sigma-1",
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 69.47,
+   "pubblico": 67.1,
+   "ms": 119.9,
+   "p95": 1702,
+   "ece": 0.0999,
+   "acc": 0.7694,
+   "aree": {
+    "knowledge": 55.2,
+    "language": 70.4,
+    "retrieval": 71.3,
+    "tools": 83.9,
+    "arts": 50.3
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "liquamen",
    "nome": "liquamen (Gemma 4 31B)",
    "org": "",
@@ -337,6 +519,32 @@
     "retrieval": 65.1,
     "tools": 81.4,
     "arts": 52.4
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "cerno-27b-v1.1",
+   "nome": "Cerno 27B v1.1",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 26.9,
+   "stimato": false,
+   "repo": "apertixai/cerno-27b-v1.1",
+   "base": "Qwen/Qwen3.8-27B",
+   "nota": null,
+   "punti": 68.96,
+   "pubblico": 69.73,
+   "ms": 82.2,
+   "p95": 675.5,
+   "ece": 0.0629,
+   "acc": 0.7949,
+   "aree": {
+    "knowledge": 57.1,
+    "language": 72.3,
+    "retrieval": 72.6,
+    "tools": 87.8,
+    "arts": 57.2
    },
    "vision": null,
    "licenza": "apache-2.0"
@@ -666,6 +874,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "decy-preview",
+   "nome": "decy-preview (31B)",
+   "org": "PNPM",
+   "tipo": "full fine-tune",
+   "b": 31.3,
+   "stimato": false,
+   "repo": "PNPM244/decy-preview",
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 67.48,
+   "pubblico": 68.03,
+   "ms": 119.9,
+   "p95": 1558.7,
+   "ece": 0.0375,
+   "acc": 0.7979,
+   "aree": {
+    "knowledge": 56.9,
+    "language": 72.2,
+    "retrieval": 68.8,
+    "tools": 83,
+    "arts": 56.9
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
    "id": "lychee-27b",
    "nome": "Lychee-27B",
    "org": "",
@@ -886,6 +1120,35 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "vera-large-2o",
+   "nome": "vera-large-2o",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 25.6,
+   "stimato": false,
+   "repo": "scar-ai/vera-large-2o",
+   "base": "Qwen/Qwen3.8-27B",
+   "nota": null,
+   "punti": 66.26,
+   "pubblico": 69.35,
+   "ms": 150,
+   "p95": 1259.9,
+   "ece": 0.0232,
+   "acc": 0.7981,
+   "aree": {
+    "knowledge": 53.5,
+    "language": 75.7,
+    "retrieval": 69.8,
+    "tools": 87.5,
+    "arts": 59.9
+   },
+   "vision": {
+    "punti": 71.5,
+    "ms": 370.8
+   },
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "decider-31b",
    "nome": "Decider 31B (NVFP4)",
    "org": "",
@@ -964,29 +1227,32 @@
    "licenza": null
   },
   {
-   "id": "vera-large",
-   "nome": "vera-large",
-   "org": "",
+   "id": "valen-1.5-27b",
+   "nome": "Valen-Decision 1.5 27B",
+   "org": "Valen",
    "tipo": "full fine-tune",
-   "b": 25.6,
+   "b": 26.1,
    "stimato": false,
-   "repo": "scar-ai/vera-large",
-   "base": "Qwen/Qwen3.8-27B",
+   "repo": "Valen-Team/Valen-Decision-1.5-27B",
+   "base": "Qwen/Qwen3.5-27B",
    "nota": null,
-   "punti": 65.26,
-   "pubblico": 67.75,
-   "ms": 159.7,
-   "p95": 1265.2,
-   "ece": 0.0507,
-   "acc": 0.7898,
+   "punti": 65.21,
+   "pubblico": 74.66,
+   "ms": 111.1,
+   "p95": 529.8,
+   "ece": 0.0307,
+   "acc": 0.8291,
    "aree": {
-    "knowledge": 51.2,
-    "language": 75.7,
-    "retrieval": 69.5,
-    "tools": 83,
-    "arts": 58.5
+    "knowledge": 64.7,
+    "language": 75.9,
+    "retrieval": 76.2,
+    "tools": 89.1,
+    "arts": 67.7
    },
-   "vision": null,
+   "vision": {
+    "punti": 73.3,
+    "ms": 304.3
+   },
    "licenza": "apache-2.0"
   },
   {
@@ -1279,32 +1545,6 @@
    "licenza": "other"
   },
   {
-   "id": "cerno-27b",
-   "nome": "Cerno 27B",
-   "org": "",
-   "tipo": "full fine-tune",
-   "b": 26.9,
-   "stimato": false,
-   "repo": "apertixai/cerno-27b",
-   "base": "Qwen/Qwen3.8-27B",
-   "nota": null,
-   "punti": 61.68,
-   "pubblico": 65.19,
-   "ms": 53.9,
-   "p95": 418,
-   "ece": 0.0723,
-   "acc": 0.7612,
-   "aree": {
-    "knowledge": 49,
-    "language": 71.1,
-    "retrieval": 65.9,
-    "tools": 86.7,
-    "arts": 50.9
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
-  },
-  {
    "id": "decider-chat-gemma4-31b",
    "nome": "Decider chat · Gemma-4-31B",
    "org": "",
@@ -1355,6 +1595,32 @@
    },
    "vision": null,
    "licenza": "cc-by-nc-4.0"
+  },
+  {
+   "id": "jeffan-9b-1211",
+   "nome": "Jeffan-9B-1211",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 9,
+   "stimato": false,
+   "repo": "tattrongvu/Jeffan-9B-1211",
+   "base": "Qwen/Qwen3.5-9B",
+   "nota": null,
+   "punti": 61.48,
+   "pubblico": 70.55,
+   "ms": 77.3,
+   "p95": 631.8,
+   "ece": 0.0449,
+   "acc": 0.81,
+   "aree": {
+    "knowledge": 56.8,
+    "language": 72.7,
+    "retrieval": 74.3,
+    "tools": 88.6,
+    "arts": 60
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
   },
   {
    "id": "onejev1.6-27b",
@@ -1719,6 +1985,32 @@
    },
    "vision": null,
    "licenza": null
+  },
+  {
+   "id": "adjudex-9b-v5",
+   "nome": "Adjudex-9B v5",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 8.4,
+   "stimato": false,
+   "repo": "newsbang/adjudex-9b-v5",
+   "base": "Qwen/Qwen3.5-9B",
+   "nota": null,
+   "punti": 59.19,
+   "pubblico": 69.28,
+   "ms": 65.3,
+   "p95": 588.3,
+   "ece": 0.0467,
+   "acc": 0.8072,
+   "aree": {
+    "knowledge": 53.7,
+    "language": 73.1,
+    "retrieval": 72.2,
+    "tools": 87.8,
+    "arts": 60
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
   },
   {
    "id": "span-02",
@@ -2090,35 +2382,6 @@
     "tools": 75.1,
     "arts": 45.7
    },
-   "vision": {
-    "punti": 63.6,
-    "ms": 218.1
-   },
-   "licenza": "apache-2.0"
-  },
-  {
-   "id": "adjudex-9b-v2",
-   "nome": "Adjudex-9B v2",
-   "org": "",
-   "tipo": "full fine-tune",
-   "b": 8.4,
-   "stimato": false,
-   "repo": "newsbang/adjudex-9b-v2",
-   "base": "Qwen/Qwen3.5-9B",
-   "nota": null,
-   "punti": 57.18,
-   "pubblico": 63.52,
-   "ms": 50.2,
-   "p95": 359.7,
-   "ece": 0.0397,
-   "acc": 0.7729,
-   "aree": {
-    "knowledge": 45.4,
-    "language": 71.9,
-    "retrieval": 69.3,
-    "tools": 78.3,
-    "arts": 50
-   },
    "vision": null,
    "licenza": "apache-2.0"
   },
@@ -2279,6 +2542,35 @@
     "arts": 47
    },
    "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "valen-1.5-9b",
+   "nome": "Valen-Decision 1.5 9B",
+   "org": "Valen",
+   "tipo": "full fine-tune",
+   "b": 8.4,
+   "stimato": false,
+   "repo": "Valen-Team/Valen-Decision-1.5-9B",
+   "base": "Qwen/Qwen3.5-9B",
+   "nota": null,
+   "punti": 55.85,
+   "pubblico": 70.61,
+   "ms": 117.5,
+   "p95": 393.2,
+   "ece": 0.038,
+   "acc": 0.8033,
+   "aree": {
+    "knowledge": 55,
+    "language": 71.5,
+    "retrieval": 75.8,
+    "tools": 88.3,
+    "arts": 66.2
+   },
+   "vision": {
+    "punti": 69.7,
+    "ms": 152.5
+   },
    "licenza": "apache-2.0"
   },
   {
@@ -2551,6 +2843,32 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "chinese-decision-pointer-4b",
+   "nome": "chinese-decision-pointer-4b",
+   "org": "",
+   "tipo": "LoRA + head",
+   "b": 4.2,
+   "stimato": false,
+   "repo": "quincyqiang/chinese-decision-pointer-4b",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 53.96,
+   "pubblico": 61.69,
+   "ms": 46.9,
+   "p95": 263.4,
+   "ece": 0.0595,
+   "acc": 0.7339,
+   "aree": {
+    "knowledge": 40.8,
+    "language": 63.2,
+    "retrieval": 70.6,
+    "tools": 85.2,
+    "arts": 50.7
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "cerno-4b-v1.2",
    "nome": "Cerno 4B v1.2",
    "org": "",
@@ -2653,6 +2971,32 @@
     "retrieval": 71.7,
     "tools": 83,
     "arts": 56
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "vera-medium-omni",
+   "nome": "vera-medium-omni",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 4.2,
+   "stimato": false,
+   "repo": "scar-ai/vera-medium-omni",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 53.02,
+   "pubblico": 62.17,
+   "ms": 89.8,
+   "p95": 309.8,
+   "ece": 0.0267,
+   "acc": 0.7598,
+   "aree": {
+    "knowledge": 43.6,
+    "language": 65.5,
+    "retrieval": 65,
+    "tools": 86.4,
+    "arts": 51.5
    },
    "vision": null,
    "licenza": "apache-2.0"
@@ -2788,6 +3132,87 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "latentmesh-blitz-4b-v1",
+   "nome": "LatentMesh Blitz 4B v1",
+   "org": "LatentMesh Labs",
+   "tipo": "LoRA",
+   "b": 4.5,
+   "stimato": false,
+   "repo": "LatentMesh-Labs/latentmesh-blitz-4b-v1",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 51.94,
+   "pubblico": 59.66,
+   "ms": 69.1,
+   "p95": 503.2,
+   "ece": 0.1215,
+   "acc": 0.7529,
+   "aree": {
+    "knowledge": 37.9,
+    "language": 67.7,
+    "retrieval": 64.4,
+    "tools": 80.5,
+    "arts": 47.6
+   },
+   "vision": null,
+   "licenza": "other"
+  },
+  {
+   "id": "saif-4b-v2",
+   "nome": "Saif 4B v2",
+   "org": "Gyr Technology",
+   "tipo": "full fine-tune",
+   "b": 4.2,
+   "stimato": false,
+   "repo": "GyrTechnology/saif-4b",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 51.68,
+   "pubblico": 57.71,
+   "ms": 71.4,
+   "p95": 310.9,
+   "ece": 0.0743,
+   "acc": 0.7454,
+   "aree": {
+    "knowledge": 34.2,
+    "language": 63.4,
+    "retrieval": 59.9,
+    "tools": 83.1,
+    "arts": 53.1
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
+   "id": "vev-4b-v2",
+   "nome": "vev-4b-v2",
+   "org": "",
+   "tipo": "LoRA",
+   "b": 4.5,
+   "stimato": false,
+   "repo": "CountingSheep/vev-4b-v2",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 51.11,
+   "pubblico": 60.32,
+   "ms": 59.5,
+   "p95": 471.9,
+   "ece": 0.1029,
+   "acc": 0.7393,
+   "aree": {
+    "knowledge": 38.6,
+    "language": 64.7,
+    "retrieval": 73.5,
+    "tools": 72.8,
+    "arts": 56.4
+   },
+   "vision": {
+    "punti": 64.8,
+    "ms": 203
+   },
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
    "id": "nimble-v3",
    "nome": "Bespoke Nimble 9B v3",
    "org": "Bespoke Labs",
@@ -2888,10 +3313,7 @@
     "tools": 73.8,
     "arts": 43.8
    },
-   "vision": {
-    "punti": 60.8,
-    "ms": 178.4
-   },
+   "vision": null,
    "licenza": "apache-2.0"
   },
   {
@@ -2924,6 +3346,61 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "rsi-jev-v7.0-vl-4b",
+   "nome": "RSI-Jev v7.0 VL 4B",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 4.7,
+   "stimato": false,
+   "repo": "shgao/rsi-jev-v7.0-vl-4b",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 49.93,
+   "pubblico": 60.61,
+   "ms": 63.6,
+   "p95": 234.2,
+   "ece": 0.031,
+   "acc": 0.7599,
+   "aree": {
+    "knowledge": 42.3,
+    "language": 62.6,
+    "retrieval": 67.8,
+    "tools": 82.4,
+    "arts": 48.4
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "valen-1.5-4b",
+   "nome": "Valen-Decision 1.5 4B",
+   "org": "Valen",
+   "tipo": "full fine-tune",
+   "b": 4.5,
+   "stimato": false,
+   "repo": "Valen-Team/Valen-Decision-1.5-4B",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 49.87,
+   "pubblico": 69.01,
+   "ms": 50.6,
+   "p95": 119.9,
+   "ece": 0.0425,
+   "acc": 0.7955,
+   "aree": {
+    "knowledge": 51.5,
+    "language": 69.8,
+    "retrieval": 75.5,
+    "tools": 87.6,
+    "arts": 65.4
+   },
+   "vision": {
+    "punti": 66.6,
+    "ms": 182.6
+   },
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "jegue-0.2",
    "nome": "Jegue 0.2 (9B)",
    "org": "",
@@ -2945,6 +3422,32 @@
     "retrieval": 72,
     "tools": 73.1,
     "arts": 34.6
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "rsi-jev-v7.0-vl-3b",
+   "nome": "RSI-Jev v7.0 VL 3B",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 3.3,
+   "stimato": false,
+   "repo": "shgao/rsi-jev-v7.0-vl-3b",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 49.68,
+   "pubblico": 60,
+   "ms": 97.4,
+   "p95": 459.8,
+   "ece": 0.0263,
+   "acc": 0.7587,
+   "aree": {
+    "knowledge": 40.8,
+    "language": 62.1,
+    "retrieval": 67.7,
+    "tools": 81.9,
+    "arts": 48.8
    },
    "vision": null,
    "licenza": "apache-2.0"
@@ -3401,6 +3904,32 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "jevora-9b-v1.6",
+   "nome": "Jevora 9B v1.6",
+   "org": "",
+   "tipo": "LoRA + head",
+   "b": 9.1,
+   "stimato": false,
+   "repo": "kadirbekovvv/jevora-9b-v1",
+   "base": "Qwen/Qwen3.5-9B",
+   "nota": null,
+   "punti": 45.57,
+   "pubblico": 49.83,
+   "ms": 122.3,
+   "p95": 1063,
+   "ece": 0.1957,
+   "acc": 0.6939,
+   "aree": {
+    "knowledge": 34.4,
+    "language": 53.8,
+    "retrieval": 54.5,
+    "tools": 69.2,
+    "arts": 34.5
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "coco-decision-2.4-4b",
    "nome": "CoCo-Decision-4B 2.4",
    "org": "Corners",
@@ -3532,35 +4061,6 @@
    },
    "vision": null,
    "licenza": null
-  },
-  {
-   "id": "rsi-jev-v6.1-vl-4b",
-   "nome": "RSI-Jev v6.1 VL 4B",
-   "org": "",
-   "tipo": "full fine-tune",
-   "b": 4.7,
-   "stimato": false,
-   "repo": "shgao/rsi-jev-v6.1-vl-4b",
-   "base": "Qwen/Qwen3.5-4B-Base",
-   "nota": null,
-   "punti": 44.27,
-   "pubblico": 50.98,
-   "ms": 57.9,
-   "p95": 157.7,
-   "ece": 0.049,
-   "acc": 0.7248,
-   "aree": {
-    "knowledge": 31.6,
-    "language": 55.3,
-    "retrieval": 57.1,
-    "tools": 68.4,
-    "arts": 45.7
-   },
-   "vision": {
-    "punti": 57.4,
-    "ms": 86
-   },
-   "licenza": "apache-2.0"
   },
   {
    "id": "jiwo-4b-v2",
@@ -3775,32 +4275,6 @@
     "retrieval": 68.9,
     "tools": 84.9,
     "arts": 55.3
-   },
-   "vision": null,
-   "licenza": "cc-by-nc-4.0"
-  },
-  {
-   "id": "saif-4b",
-   "nome": "Saif 4B",
-   "org": "Gyr Technology",
-   "tipo": "LoRA + head",
-   "b": 4.2,
-   "stimato": false,
-   "repo": "GyrTechnology/saif-4b",
-   "base": "Qwen/Qwen3.5-4B",
-   "nota": null,
-   "punti": 42.47,
-   "pubblico": 50.75,
-   "ms": 94.9,
-   "p95": 354,
-   "ece": 0.05,
-   "acc": 0.692,
-   "aree": {
-    "knowledge": 29.9,
-    "language": 54.4,
-    "retrieval": 62,
-    "tools": 71.3,
-    "arts": 35.1
    },
    "vision": null,
    "licenza": "cc-by-nc-4.0"
@@ -4205,35 +4679,6 @@
    "licenza": "apache-2.0"
   },
   {
-   "id": "rsi-jev-v5.0-vl-3b",
-   "nome": "RSI-Jev v5.0 VL 3B",
-   "org": "",
-   "tipo": "full fine-tune",
-   "b": 4.7,
-   "stimato": false,
-   "repo": "shgao/rsi-jev-v5.0-vl-3b",
-   "base": "Qwen/Qwen3.5-4B-Base",
-   "nota": null,
-   "punti": 38.65,
-   "pubblico": 38.11,
-   "ms": 18.7,
-   "p95": 78.7,
-   "ece": 0.0478,
-   "acc": 0.6404,
-   "aree": {
-    "knowledge": 24.1,
-    "language": 45,
-    "retrieval": 43,
-    "tools": 52.8,
-    "arts": 19.9
-   },
-   "vision": {
-    "punti": 57.3,
-    "ms": 144.2
-   },
-   "licenza": "apache-2.0"
-  },
-  {
    "id": "djev",
    "nome": "djev",
    "org": "",
@@ -4289,31 +4734,31 @@
    "licenza": "apache-2.0"
   },
   {
-   "id": "valen-4b-r2",
-   "nome": "Valen-4B",
+   "id": "valen-1.5-2b",
+   "nome": "Valen-Decision 1.5 2B",
    "org": "Valen",
    "tipo": "full fine-tune",
-   "b": 4.5,
+   "b": 2.2,
    "stimato": false,
-   "repo": "Valen-Team/Valen-4B",
-   "base": "Qwen/Qwen3.5-4B",
+   "repo": "Valen-Team/Valen-Decision-1.5-2B",
+   "base": "Qwen/Qwen3.5-2B",
    "nota": null,
-   "punti": 37.88,
-   "pubblico": 38.68,
-   "ms": 236.3,
-   "p95": 714.8,
-   "ece": 0.107,
-   "acc": 0.6411,
+   "punti": 37.97,
+   "pubblico": 61.89,
+   "ms": 37.9,
+   "p95": 62.1,
+   "ece": 0.0485,
+   "acc": 0.7555,
    "aree": {
-    "knowledge": 27.4,
-    "language": 46.3,
-    "retrieval": 41.9,
-    "tools": 52,
-    "arts": 17.4
+    "knowledge": 38.2,
+    "language": 60.6,
+    "retrieval": 73.4,
+    "tools": 85.2,
+    "arts": 60.9
    },
    "vision": {
-    "punti": 56.7,
-    "ms": 374
+    "punti": 59.6,
+    "ms": 102.4
    },
    "licenza": "apache-2.0"
   },
@@ -4532,6 +4977,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "jev-style-2b-v4.2",
+   "nome": "Jev-Style 2B v4.2",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 2.2,
+   "stimato": false,
+   "repo": "chaoliangUNSW/Jev-Style-2B-Decision-v4.2",
+   "base": "Qwen/Qwen3.5-2B",
+   "nota": null,
+   "punti": 35.13,
+   "pubblico": 46.74,
+   "ms": 25.6,
+   "p95": 183.7,
+   "ece": 0.1233,
+   "acc": 0.669,
+   "aree": {
+    "knowledge": 23.8,
+    "language": 45.5,
+    "retrieval": 64.4,
+    "tools": 67.1,
+    "arts": 36.7
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "kev-4b-r10",
    "nome": "Kev 4B r10",
    "org": "",
@@ -4582,35 +5053,6 @@
    },
    "vision": null,
    "licenza": "cc-by-nc-4.0"
-  },
-  {
-   "id": "jev-style-2b-v4",
-   "nome": "Jev-Style 2B v4",
-   "org": "",
-   "tipo": "full fine-tune",
-   "b": 2.2,
-   "stimato": false,
-   "repo": "chaoliangUNSW/Jev-Style-2B-Decision-v4",
-   "base": "Qwen/Qwen3.5-2B",
-   "nota": null,
-   "punti": 34.53,
-   "pubblico": 44.37,
-   "ms": 39.8,
-   "p95": 92,
-   "ece": 0.1099,
-   "acc": 0.6422,
-   "aree": {
-    "knowledge": 23.6,
-    "language": 42.5,
-    "retrieval": 65.4,
-    "tools": 61.8,
-    "arts": 29
-   },
-   "vision": {
-    "punti": 51.9,
-    "ms": 406.8
-   },
-   "licenza": "apache-2.0"
   },
   {
    "id": "sieve-2b-v3",
@@ -4911,6 +5353,32 @@
    "licenza": "other"
   },
   {
+   "id": "adjudex-0.8b-v5",
+   "nome": "Adjudex-0.8B v5",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 0.9,
+   "stimato": false,
+   "repo": "newsbang/adjudex-0.8b-v5",
+   "base": "Qwen/Qwen3.5-0.8B",
+   "nota": null,
+   "punti": 32.81,
+   "pubblico": 54.69,
+   "ms": 49.9,
+   "p95": 156.9,
+   "ece": 0.0685,
+   "acc": 0.7223,
+   "aree": {
+    "knowledge": 30,
+    "language": 54.5,
+    "retrieval": 66.7,
+    "tools": 79.5,
+    "arts": 49.5
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "winnow-e4b-q8",
    "nome": "Winnow-E4B",
    "org": "",
@@ -4964,6 +5432,32 @@
    },
    "vision": null,
    "licenza": "apache-2.0"
+  },
+  {
+   "id": "gliclass-v4.1-edge",
+   "nome": "GLiClass v4.1 edge (0.4B)",
+   "org": "Knowledgator Engineering",
+   "tipo": "full fine-tune",
+   "b": 0.4,
+   "stimato": false,
+   "repo": "knowledgator/gliclass-v4.1-edge",
+   "base": "microsoft/deberta-v3-large",
+   "nota": null,
+   "punti": 32.47,
+   "pubblico": 51.99,
+   "ms": 21.6,
+   "p95": 54.9,
+   "ece": 0.1181,
+   "acc": 0.6979,
+   "aree": {
+    "knowledge": 24.6,
+    "language": 58.6,
+    "retrieval": 65.2,
+    "tools": 71.6,
+    "arts": 43.3
+   },
+   "vision": null,
+   "licenza": null
   },
   {
    "id": "jevstral-8b",
@@ -5068,32 +5562,6 @@
    },
    "vision": null,
    "licenza": "cc-by-nc-4.0"
-  },
-  {
-   "id": "gliclass-v4-edge",
-   "nome": "GLiClass v4 edge (0.4B)",
-   "org": "Knowledgator Engineering",
-   "tipo": "full fine-tune",
-   "b": 0.4,
-   "stimato": false,
-   "repo": "knowledgator/gliclass-v4-edge",
-   "base": "microsoft/deberta-v3-large",
-   "nota": null,
-   "punti": 31.21,
-   "pubblico": 47.49,
-   "ms": 21.8,
-   "p95": 188.2,
-   "ece": 0.0887,
-   "acc": 0.68,
-   "aree": {
-    "knowledge": 21.4,
-    "language": 54.6,
-    "retrieval": 66.7,
-    "tools": 58.1,
-    "arts": 38.6
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
   },
   {
    "id": "d1-3b",
@@ -5278,6 +5746,32 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "mode-l",
+   "nome": "MoDe-L",
+   "org": "newrexlabs",
+   "tipo": "full fine-tune",
+   "b": 5.3,
+   "stimato": false,
+   "repo": "newrexlabs/MoDe-L",
+   "base": "facebook/MobileMoE-L-Base",
+   "nota": null,
+   "punti": 29.35,
+   "pubblico": 51.36,
+   "ms": 98.6,
+   "p95": 210.1,
+   "ece": 0.0723,
+   "acc": 0.7079,
+   "aree": {
+    "knowledge": 24.8,
+    "language": 51.3,
+    "retrieval": 65.3,
+    "tools": 75.2,
+    "arts": 48.8
+   },
+   "vision": null,
+   "licenza": "other"
+  },
+  {
    "id": "vela3-fast",
    "nome": "vLLM-SR vela3-fast (Vela 3.0, 0.4B)",
    "org": "vLLM Semantic Router",
@@ -5434,56 +5928,59 @@
    "licenza": null
   },
   {
-   "id": "adjudex-0.8b",
-   "nome": "Adjudex-0.8B",
+   "id": "amber-0.4b-v2",
+   "nome": "Amber 0.4B v2",
    "org": "",
    "tipo": "full fine-tune",
-   "b": 0.9,
+   "b": 0.4,
    "stimato": false,
-   "repo": "newsbang/adjudex-0.8b",
-   "base": "Qwen/Qwen3.5-0.8B",
+   "repo": "MLukauskas/amber-0.4b-v2",
+   "base": "cross-encoder/ettin-reranker-400m-v1",
    "nota": null,
-   "punti": 28.55,
-   "pubblico": 42.28,
-   "ms": 42.5,
-   "p95": 132,
-   "ece": 0.0504,
-   "acc": 0.6623,
+   "punti": 27.77,
+   "pubblico": 47.42,
+   "ms": 15.9,
+   "p95": 39,
+   "ece": 0.0603,
+   "acc": 0.6419,
    "aree": {
-    "knowledge": 18.6,
-    "language": 52.3,
-    "retrieval": 55.3,
-    "tools": 56.6,
-    "arts": 25.3
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
-  },
-  {
-   "id": "saif-0.8-lightening",
-   "nome": "Saif 0.8 Lightening v0.1 (0.8B)",
-   "org": "Gyr Technology",
-   "tipo": "full fine-tune",
-   "b": 0.8,
-   "stimato": false,
-   "repo": "GyrTechnology/saif-0.8-lightening",
-   "base": "Qwen/Qwen3.5-0.8B",
-   "nota": null,
-   "punti": 27.5,
-   "pubblico": 42.79,
-   "ms": 52.7,
-   "p95": 223.8,
-   "ece": 0.0931,
-   "acc": 0.6766,
-   "aree": {
-    "knowledge": 20.1,
-    "language": 47.1,
-    "retrieval": 53.8,
-    "tools": 54.2,
-    "arts": 47.4
+    "knowledge": 17.8,
+    "language": 53.3,
+    "retrieval": 68,
+    "tools": 62.5,
+    "arts": 40.1
    },
    "vision": null,
    "licenza": "cc-by-nc-4.0"
+  },
+  {
+   "id": "valen-1.5-0.8b",
+   "nome": "Valen-Decision 1.5 0.8B",
+   "org": "Valen",
+   "tipo": "full fine-tune",
+   "b": 0.9,
+   "stimato": false,
+   "repo": "Valen-Team/Valen-Decision-1.5-0.8B",
+   "base": "Qwen/Qwen3.5-0.8B",
+   "nota": null,
+   "punti": 27.6,
+   "pubblico": 54.71,
+   "ms": 38.1,
+   "p95": 52.7,
+   "ece": 0.0591,
+   "acc": 0.7097,
+   "aree": {
+    "knowledge": 27.9,
+    "language": 49,
+    "retrieval": 70.6,
+    "tools": 82.5,
+    "arts": 56.2
+   },
+   "vision": {
+    "punti": 49.3,
+    "ms": 84.3
+   },
+   "licenza": "apache-2.0"
   },
   {
    "id": "semif",
@@ -5541,6 +6038,58 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "mode-m",
+   "nome": "MoDe-M",
+   "org": "newrexlabs",
+   "tipo": "full fine-tune",
+   "b": 2.8,
+   "stimato": false,
+   "repo": "newrexlabs/MoDe-M",
+   "base": "facebook/MobileMoE-M-Base",
+   "nota": null,
+   "punti": 26.49,
+   "pubblico": 47.1,
+   "ms": 121.5,
+   "p95": 221.9,
+   "ece": 0.0929,
+   "acc": 0.6764,
+   "aree": {
+    "knowledge": 20.6,
+    "language": 46.6,
+    "retrieval": 62.5,
+    "tools": 68.4,
+    "arts": 47
+   },
+   "vision": null,
+   "licenza": "other"
+  },
+  {
+   "id": "saif-0.8b-lightning-v0.3",
+   "nome": "Saif 0.8B Lightning v0.3",
+   "org": "Gyr Technology",
+   "tipo": "full fine-tune",
+   "b": 0.8,
+   "stimato": false,
+   "repo": "GyrTechnology/saif-0.8b-lightning",
+   "base": "Qwen/Qwen3.5-0.8B",
+   "nota": null,
+   "punti": 26.37,
+   "pubblico": 47.75,
+   "ms": 57.1,
+   "p95": 237.5,
+   "ece": 0.0384,
+   "acc": 0.6865,
+   "aree": {
+    "knowledge": 24.8,
+    "language": 43.9,
+    "retrieval": 64.1,
+    "tools": 68.1,
+    "arts": 47.1
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
    "id": "vllm-sr-d3-lite",
    "nome": "vLLM-SR d3-lite (0.8B)",
    "org": "vLLM Semantic Router",
@@ -5568,32 +6117,6 @@
     "ms": 80.1
    },
    "licenza": "apache-2.0"
-  },
-  {
-   "id": "amber-0.4b",
-   "nome": "Amber 0.4B",
-   "org": "",
-   "tipo": "full fine-tune",
-   "b": 0.4,
-   "stimato": false,
-   "repo": "MLukauskas/amber-0.4b",
-   "base": "answerdotai/ModernBERT-large",
-   "nota": null,
-   "punti": 26,
-   "pubblico": 49.74,
-   "ms": 42.5,
-   "p95": 47.2,
-   "ece": 0.0747,
-   "acc": 0.6509,
-   "aree": {
-    "knowledge": 18.9,
-    "language": 48.7,
-    "retrieval": 64.3,
-    "tools": 78.9,
-    "arts": 49.5
-   },
-   "vision": null,
-   "licenza": "cc-by-nc-4.0"
   },
   {
    "id": "jiwo-0.8b-v2-r2",
@@ -5672,6 +6195,58 @@
    },
    "vision": null,
    "licenza": "mit"
+  },
+  {
+   "id": "amber-150m",
+   "nome": "Amber 150M",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 0.2,
+   "stimato": false,
+   "repo": "MLukauskas/amber-150m",
+   "base": "cross-encoder/ettin-reranker-150m-v1",
+   "nota": null,
+   "punti": 24.67,
+   "pubblico": 42.75,
+   "ms": 17,
+   "p95": 74.1,
+   "ece": 0.096,
+   "acc": 0.6191,
+   "aree": {
+    "knowledge": 13.8,
+    "language": 43.5,
+    "retrieval": 65,
+    "tools": 61.3,
+    "arts": 37.5
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
+   "id": "mode-s",
+   "nome": "MoDe-S",
+   "org": "newrexlabs",
+   "tipo": "full fine-tune",
+   "b": 1.3,
+   "stimato": false,
+   "repo": "newrexlabs/MoDe-S",
+   "base": "facebook/MobileMoE-S-Base",
+   "nota": null,
+   "punti": 24.52,
+   "pubblico": 42.02,
+   "ms": 122.4,
+   "p95": 187.5,
+   "ece": 0.1127,
+   "acc": 0.6524,
+   "aree": {
+    "knowledge": 18.4,
+    "language": 40.9,
+    "retrieval": 54.5,
+    "tools": 61.6,
+    "arts": 45.1
+   },
+   "vision": null,
+   "licenza": "other"
   },
   {
    "id": "gevva-e2b",
@@ -5828,35 +6403,6 @@
    },
    "vision": null,
    "licenza": null
-  },
-  {
-   "id": "valen-2b-r2",
-   "nome": "Valen-2B",
-   "org": "Valen",
-   "tipo": "full fine-tune",
-   "b": 2.2,
-   "stimato": false,
-   "repo": "Valen-Team/Valen-2B",
-   "base": "Qwen/Qwen3.5-2B",
-   "nota": null,
-   "punti": 22.2,
-   "pubblico": 26.95,
-   "ms": 160.7,
-   "p95": 421.8,
-   "ece": 0.1053,
-   "acc": 0.5763,
-   "aree": {
-    "knowledge": 14.8,
-    "language": 30.4,
-    "retrieval": 26.2,
-    "tools": 45.1,
-    "arts": 17.8
-   },
-   "vision": {
-    "punti": 49.5,
-    "ms": 384.1
-   },
-   "licenza": "apache-2.0"
   },
   {
    "id": "vela3-fast-vision-text",
@@ -6091,6 +6637,32 @@
     "retrieval": 48.8,
     "tools": 64,
     "arts": 20.9
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
+   "id": "amber-68m",
+   "nome": "Amber 68M",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 0.1,
+   "stimato": false,
+   "repo": "MLukauskas/amber-68m",
+   "base": "cross-encoder/ettin-reranker-68m-v1",
+   "nota": null,
+   "punti": 19.24,
+   "pubblico": 37.89,
+   "ms": 12.4,
+   "p95": 24.8,
+   "ece": 0.112,
+   "acc": 0.5803,
+   "aree": {
+    "knowledge": 9.9,
+    "language": 32.7,
+    "retrieval": 63.4,
+    "tools": 59.6,
+    "arts": 32.9
    },
    "vision": null,
    "licenza": "cc-by-nc-4.0"
@@ -6333,35 +6905,6 @@
    "licenza": "apache-2.0"
   },
   {
-   "id": "valen-0.8b-r2",
-   "nome": "Valen-0.8B",
-   "org": "Valen",
-   "tipo": "full fine-tune",
-   "b": 0.9,
-   "stimato": false,
-   "repo": "Valen-Team/Valen-0.8B",
-   "base": "Qwen/Qwen3.5-0.8B",
-   "nota": null,
-   "punti": 16.55,
-   "pubblico": 20.79,
-   "ms": 200.1,
-   "p95": 556.2,
-   "ece": 0.1084,
-   "acc": 0.5279,
-   "aree": {
-    "knowledge": 10.2,
-    "language": 24.8,
-    "retrieval": 20.6,
-    "tools": 35.6,
-    "arts": 11.2
-   },
-   "vision": {
-    "punti": 43.7,
-    "ms": 340.1
-   },
-   "licenza": "apache-2.0"
-  },
-  {
    "id": "bosun-v3.1-1.7b",
    "nome": "Bosun v3.1 1.7B",
    "org": "Hanno Labs",
@@ -6464,6 +7007,32 @@
    },
    "vision": null,
    "licenza": "apache-2.0"
+  },
+  {
+   "id": "amber-32m",
+   "nome": "Amber 32M",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 0,
+   "stimato": false,
+   "repo": "MLukauskas/amber-32m",
+   "base": "cross-encoder/ettin-reranker-32m-v1",
+   "nota": null,
+   "punti": 15.98,
+   "pubblico": 33.16,
+   "ms": 7.5,
+   "p95": 16.6,
+   "ece": 0.1378,
+   "acc": 0.5409,
+   "aree": {
+    "knowledge": 7.7,
+    "language": 27,
+    "retrieval": 59.9,
+    "tools": 51,
+    "arts": 28.8
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
   },
   {
    "id": "pick-150m-v5",
@@ -6756,6 +7325,32 @@
    },
    "vision": null,
    "licenza": null
+  },
+  {
+   "id": "amber-17m",
+   "nome": "Amber 17M",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 0,
+   "stimato": false,
+   "repo": "MLukauskas/amber-17m",
+   "base": "cross-encoder/ettin-reranker-17m-v1",
+   "nota": null,
+   "punti": 11.99,
+   "pubblico": 28.4,
+   "ms": 6,
+   "p95": 14.6,
+   "ece": 0.1294,
+   "acc": 0.513,
+   "aree": {
+    "knowledge": 5.4,
+    "language": 19.5,
+    "retrieval": 56.2,
+    "tools": 43.7,
+    "arts": 27.4
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
   },
   {
    "id": "d1-omni-600m",

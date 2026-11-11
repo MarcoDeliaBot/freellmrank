@@ -2110,5 +2110,16 @@
   "contestoMax": 65536,
   "moe": false,
   "attivi": 14974182400
+ },
+ "tencent/Qwen3.8-27B-DSpine-b16": {
+  "strati": 5,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 0,
+  "finestra": 5,
+  "larghezzaFinestra": 8192,
+  "contestoMax": 262144,
+  "moe": false,
+  "attivi": 2025912064
  }
 }

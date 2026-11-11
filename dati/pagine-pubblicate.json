@@ -25484,6 +25484,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/de/model/qwen3-8-27b-dspine-b16",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-11",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/qwen3-8-27b-dspine-b16.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-11",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/model/qwen3-8-27b.html",
   "tipo": "modello",
   "lingua": "de",
@@ -42684,6 +42700,22 @@
   "tipo": "modello",
   "lingua": "es",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/qwen3-8-27b-dspine-b16",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-11",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/qwen3-8-27b-dspine-b16.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-11",
   "stato": "attiva"
  },
@@ -59892,6 +59924,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/model/qwen3-8-27b-dspine-b16",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-11",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/qwen3-8-27b-dspine-b16.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-11",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/model/qwen3-8-27b.html",
   "tipo": "modello",
   "lingua": "fr",
@@ -77092,6 +77140,22 @@
   "tipo": "modello",
   "lingua": "it",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/qwen3-8-27b-dspine-b16",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-11",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/qwen3-8-27b-dspine-b16.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-11",
   "stato": "attiva"
  },
@@ -94300,6 +94364,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/model/qwen3-8-27b-dspine-b16",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-11",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/qwen3-8-27b-dspine-b16.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-11",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/model/qwen3-8-27b.html",
   "tipo": "modello",
   "lingua": "ja",
@@ -102236,6 +102316,22 @@
   "tipo": "modello",
   "lingua": "en",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/qwen3-8-27b-dspine-b16",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-11",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/qwen3-8-27b-dspine-b16.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-11",
   "stato": "attiva"
  },
@@ -119440,6 +119536,22 @@
   "tipo": "modello",
   "lingua": "pt",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/qwen3-8-27b-dspine-b16",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-11",
+  "ultimaVista": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/qwen3-8-27b-dspine-b16.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-11",
   "stato": "attiva"
  },

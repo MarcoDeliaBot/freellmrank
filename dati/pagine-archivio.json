@@ -17066,7 +17066,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 195,
+    "download": 490,
     "catPiccoli": [
      "chat",
      "vision"
@@ -17125,7 +17125,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 720,
+    "download": 863,
     "catPiccoli": [
      "chat"
     ],
@@ -17159,6 +17159,37 @@
     "primo": null,
     "slug": "baidu-ernie-5-5-flash-preview",
     "href": "/model/baidu-ernie-5-5-flash-preview.html",
+    "categoriaMigliore": null
+   },
+   "data": "2026-11-11"
+  },
+  "/model/qwen3-8-27b-dspine-b16.html": {
+   "modello": {
+    "chiave": "tencent/Qwen3.8-27B-DSpine-b16",
+    "nome": "Qwen3.8-27B-DSpine-b16",
+    "org": "tencent",
+    "licenza": "open",
+    "aperto": true,
+    "hf": {
+     "repo": "tencent/Qwen3.8-27B-DSpine-b16",
+     "b": 2,
+     "att": 2,
+     "kv": 4096,
+     "pf": 0,
+     "fw": 5,
+     "w": 8192,
+     "ctx": 262144
+    },
+    "cat": {},
+    "nomi": {},
+    "senzaVoti": true,
+    "download": 3241,
+    "catPiccoli": [
+     "chat"
+    ],
+    "primo": "2026-11-07",
+    "slug": "qwen3-8-27b-dspine-b16",
+    "href": "/model/qwen3-8-27b-dspine-b16.html",
     "categoriaMigliore": null
    },
    "data": "2026-11-11"
@@ -18413,7 +18444,7 @@
     "descr": "A plain explanation of model size, 4-bit files, context memory and speed, with the numbers our simulator uses.",
     "data": "2026-10-18",
     "tema": "Hardware",
-    "corpo": "\nThree things decide whether a model runs on your computer: the size of its weights, the memory its context needs, and the speed of your graphics card's memory.\n\n## 1. The weights\n\nA model is a long list of numbers, its parameters. Stored at full precision each one takes 2 bytes. Almost everyone at home uses a compressed 4-bit file instead (the common format is called Q4_K_M), which takes about 0.6 bytes per parameter with little loss of quality.\n\nSo, roughly:\n\n| Model size | 4-bit file | 8-bit file |\n|---|---|---|\n| 4 B | 2.4 GB | 4.3 GB |\n| 9 B | 5.5 GB | 9.6 GB |\n| 14 B | 8.5 GB | 15 GB |\n| 31 B | 19 GB | 33 GB |\n| 120 B | 73 GB | 128 GB |\n\n## 2. The context\n\nWhile it writes, a model keeps a memory of the conversation, called the KV cache. It grows with every token of the conversation, and it depends on how the model is built: newer models share or compress this memory, older ones do not. At 32,000 tokens it can be under 1 GB or more than 10 GB.\n\nWe read each model's real architecture from its configuration file on Hugging Face to compute this, instead of guessing.\n\n## 3. The speed\n\nTo write one token, the card reads all the active weights once. So speed is mostly memory bandwidth divided by the size of what it reads. An RTX 4090 reads about 1,000 GB/s; a 19 GB model gives roughly 35 to 40 tokens per second, faster than anyone reads.\n\nMixture-of-experts models read only a part of their weights per token, so they are much faster than their size suggests.\n\n## Several cards, or system RAM\n\nWith two or more cards, tools like llama.cpp and Ollama split the layers across them. You get the memory of all cards together, but the speed stays close to that of one card.\n\nIf a model does not fit, part of it can live in system RAM. It works, but RAM is 10 to 20 times slower than GPU memory, so speed drops sharply.\n\n## Try it\n\nThe [Run at home simulator](/home.html) does all of this for your exact card, number of cards and RAM, and shows the best-voted model that fits. There are also 71 small models for 4 to 12 GB cards that Arena has not voted on yet; we mark them clearly.\n",
+    "corpo": "\nThree things decide whether a model runs on your computer: the size of its weights, the memory its context needs, and the speed of your graphics card's memory.\n\n## 1. The weights\n\nA model is a long list of numbers, its parameters. Stored at full precision each one takes 2 bytes. Almost everyone at home uses a compressed 4-bit file instead (the common format is called Q4_K_M), which takes about 0.6 bytes per parameter with little loss of quality.\n\nSo, roughly:\n\n| Model size | 4-bit file | 8-bit file |\n|---|---|---|\n| 4 B | 2.4 GB | 4.3 GB |\n| 9 B | 5.5 GB | 9.6 GB |\n| 14 B | 8.5 GB | 15 GB |\n| 31 B | 19 GB | 33 GB |\n| 120 B | 73 GB | 128 GB |\n\n## 2. The context\n\nWhile it writes, a model keeps a memory of the conversation, called the KV cache. It grows with every token of the conversation, and it depends on how the model is built: newer models share or compress this memory, older ones do not. At 32,000 tokens it can be under 1 GB or more than 10 GB.\n\nWe read each model's real architecture from its configuration file on Hugging Face to compute this, instead of guessing.\n\n## 3. The speed\n\nTo write one token, the card reads all the active weights once. So speed is mostly memory bandwidth divided by the size of what it reads. An RTX 4090 reads about 1,000 GB/s; a 19 GB model gives roughly 35 to 40 tokens per second, faster than anyone reads.\n\nMixture-of-experts models read only a part of their weights per token, so they are much faster than their size suggests.\n\n## Several cards, or system RAM\n\nWith two or more cards, tools like llama.cpp and Ollama split the layers across them. You get the memory of all cards together, but the speed stays close to that of one card.\n\nIf a model does not fit, part of it can live in system RAM. It works, but RAM is 10 to 20 times slower than GPU memory, so speed drops sharply.\n\n## Try it\n\nThe [Run at home simulator](/home.html) does all of this for your exact card, number of cards and RAM, and shows the best-voted model that fits. There are also 72 small models for 4 to 12 GB cards that Arena has not voted on yet; we mark them clearly.\n",
     "tipo": "Guide",
     "automatico": true
    },
@@ -22325,7 +22356,7 @@
     "descr": "The new five‑layer draft model adds parallel token generation for Qwen3.8‑27B with improved benchmarks and open‑source tooling.",
     "data": "2026-11-09",
     "tema": "Research",
-    "corpo": "<div class=\"video-post\"><iframe src=\"https://www.youtube-nocookie.com/embed/0TC2USGfXR4\" title=\"Tencent launches Qwen3.8-27B-DSpine-b16 draft model on Hugging Face\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; picture-in-picture\" allowfullscreen></iframe></div>\n\n[Watch on YouTube](https://youtu.be/0TC2USGfXR4) · [Watch the Short](https://youtube.com/shorts/MgSqarVFVb0)\n\nTencent released Qwen3.8-27B-DSpine-b16 on Hugging Face, a five‑layer draft model for the Qwen3.8‑27B base.\n\nThe model uses a block size of 16, an 8,192‑token sliding window and supports up to 4,096 new tokens per request.\n\nBenchmarks show DSpine outperforms DFlash2 and autoregressive decoding, e.g., GSM8K scores rise from 5.69 to 7.20 and throughput gains reach 2.71× over AR.\n\nInstallation requires cloning the DSpine repository and running a pip install, then serving with SGLang using the provided command line options.\n\nNo inference provider currently hosts the model, and it is available under an Apache 2.0 license with 1,464 downloads last month.\n\n## What it means for you\n\nThe open release lets developers experiment with speculative decoding without waiting for commercial services. For users seeking free or locally run models, the draft model offers a way to speed up generation on compatible hardware while remaining fully open source.\n\n## Sources\n\n- [Tencent releases Qwen3.8-27B-DSpine-b16 on Hugging Face](https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16), Hugging Face trending (official), 7 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-09-tencent-launches-qwen3-8-27b-dspine-b16-draft-model-on-hugging-face).</small>\n",
+    "corpo": "<div class=\"video-post\"><iframe src=\"https://www.youtube-nocookie.com/embed/0TC2USGfXR4\" title=\"Tencent launches Qwen3.8-27B-DSpine-b16 draft model on Hugging Face\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; picture-in-picture\" allowfullscreen></iframe></div>\n\n[Watch on YouTube](https://youtu.be/0TC2USGfXR4) · [Watch the Short](https://youtube.com/shorts/MgSqarVFVb0)\n\nTencent released Qwen3.8-27B-DSpine-b16 on Hugging Face, a five‑layer draft model for the Qwen3.8‑27B base.\n\nThe model uses a block size of 16, an 8,192‑token sliding window and supports up to 4,096 new tokens per request.\n\nBenchmarks show DSpine outperforms DFlash2 and autoregressive decoding, e.g., GSM8K scores rise from 5.69 to 7.20 and throughput gains reach 2.71× over AR.\n\nInstallation requires cloning the DSpine repository and running a pip install, then serving with SGLang using the provided command line options.\n\nNo inference provider currently hosts the model, and it is available under an Apache 2.0 license with 1,464 downloads last month.\n\n## What it means for you\n\nThe open release lets developers experiment with speculative decoding without waiting for commercial services. For users seeking free or locally run models, the draft model offers a way to speed up generation on compatible hardware while remaining fully open source.\n\n## On FreeLLMArena\n\nFrom our rankings on 11 Nov 2026, based on Arena's blind votes:\n\n- [Qwen3.8-27B-DSpine-b16](/model/qwen3-8-27b-dspine-b16.html): on our model list\n\n## Sources\n\n- [Tencent releases Qwen3.8-27B-DSpine-b16 on Hugging Face](https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16), Hugging Face trending (official), 7 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-09-tencent-launches-qwen3-8-27b-dspine-b16-draft-model-on-hugging-face).</small>\n",
     "tipo": "News"
    },
    "data": "2026-11-11"
