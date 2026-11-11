@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-11-meta-fair-launches-e-means-a-k-means-drop-in-that-converges-10-faster",
+ "titolo": "Meta FAIR launches e-means, a k‑means drop‑in that converges 10× faster",
+ "descr": "e-means reaches Lloyd's 25‑epoch loss in 1.4‑2.6 epochs, offering up to 45× GPU speedup and MIT licensing via FAISS 1.16.0.",
+ "tema": "Research",
+ "paragrafi": [
+  "Meta FAIR researchers introduced e-means, a mini‑batch k‑means variant that updates centroids with exponential moving averages.",
+  "The algorithm matches the loss of Lloyd's k‑means after 25 epochs in just 1.4 to 2.6 epochs, according to self‑reported tests on 24 dataset configurations.",
+  "Benchmarks show 10‑45× GPU wall‑clock speedup over Flash‑KMeans and 8‑15× CPU speedup versus FAISS k‑means, with a 2.5‑epoch run on 10 billion 1,024‑dim embeddings split into 16.7 M clusters.",
+  "The code is released under the MIT license, making it immediately available for vector‑indexing, quantization and data‑curation pipelines."
+ ],
+ "perche": [
+  "For developers, e-means reduces clustering time dramatically, enabling faster indexing of massive embedding collections on existing hardware. Free‑software users gain a high‑performance, MIT‑licensed alternative to proprietary k‑means implementations, supporting both CPU and GPU workflows."
+ ],
+ "pubblicato": "2026-11-11",
+ "titoloFonte": "Meta FAIR Releases e-means: An Algorithm Beating k-means in 10x Fewer Epochs",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/10/meta-fair-e-means-k-means-faiss/",
+   "titolo": "Meta FAIR Releases e-means: An Algorithm Beating k-means in 10x Fewer Epochs",
+   "ufficiale": false,
+   "data": "2026-11-10"
+  },
+  {
+   "nome": "arxiv.org",
+   "url": "https://arxiv.org/abs/2611.09501",
+   "titolo": "[2611.09501] e-means: outperforming k-means (in one-tenth the epochs)",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 1
+}

@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-11-google-expands-adobe-partnership-adding-ai-tools-to-drive-gmail-and-se",
+ "titolo": "Google expands Adobe partnership, adding AI tools to Drive, Gmail and Search",
+ "descr": "Google will embed Adobe Acrobat and creative tools in its apps and bring Gemini AI models into Adobe software.",
+ "tema": "Business",
+ "paragrafi": [
+  "At Adobe MAX on Nov 10, 2026 Google announced an expanded partnership with Adobe.",
+  "The integration will add a direct \"Edit with\" link from Google Drive and Gmail to Adobe Acrobat, showing as a suggested app in file previews.",
+  "Adobe’s creative tools will appear in Google Search’s AI Mode and in Gemini and Gemini Enterprise connectors, allowing users to create content while searching or chatting.",
+  "Gemini Enterprise will host Adobe’s CX Enterprise Coworker agent, an AI assistant that can design graphics, handle PDFs and launch marketing campaigns without leaving the Google environment.",
+  "Google DeepMind and Adobe will explore new Photoshop editing capabilities, starting with an image model that could enable near‑real‑time edits."
+ ],
+ "perche": [
+  "The deeper integration of Adobe’s productivity suite into Google’s everyday apps could reduce the need to switch between platforms, speeding up workflows for creators and businesses. Users of free or locally hosted models may see a shift toward cloud‑based AI services, as the top paid chat model Gemini 4 Carbon leads the arena rankings."
+ ],
+ "pubblicato": "2026-11-11",
+ "titoloFonte": "We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.",
+ "fonti": [
+  {
+   "nome": "Google",
+   "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/",
+   "titolo": "We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 0
+}
