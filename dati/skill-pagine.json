@@ -54,6 +54,24 @@
   "stato": "attiva"
  },
  {
+  "url": "/skills/coreyhaines31-marketingskills-ad-creative.html",
+  "slug": "coreyhaines31-marketingskills-ad-creative",
+  "tipo": "skill",
+  "repository": "coreyhaines31/marketingskills",
+  "skillPath": "skills/ad-creative/SKILL.md",
+  "primaPubblicazione": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
+  "url": "/skills/coreyhaines31-marketingskills-ai-seo.html",
+  "slug": "coreyhaines31-marketingskills-ai-seo",
+  "tipo": "skill",
+  "repository": "coreyhaines31/marketingskills",
+  "skillPath": "skills/ai-seo/SKILL.md",
+  "primaPubblicazione": "2026-11-11",
+  "stato": "attiva"
+ },
+ {
   "url": "/skills/for-coding.html",
   "slug": "for-coding",
   "tipo": "categoria",
