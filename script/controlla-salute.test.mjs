@@ -58,3 +58,24 @@ test('un 404 è una risposta vera: si segnala subito, senza riprove', async () =
   assert.equal(r.riprovate, 0);
   assert.equal(chiamate[a], 1);
 });
+
+test('un 404 su una pagina registrata oggi si riprova dopo la messa online', async () => {
+  const a = `${base}/blog/news-oggi`, vecchia = `${base}/blog/news-vecchia`, ora = Date.parse('2026-11-11T15:00:00Z');
+  const { fetcher } = sito({ [a]: (n) => risposta(n === 1 ? 404 : 200), [vecchia]: 404 });
+  const root = radice(['/blog/news-oggi', '/blog/news-vecchia']);
+  fs.writeFileSync(path.join(root, 'dati/pagine-pubblicate.json'), JSON.stringify([
+    { url: '/blog/news-oggi', primaVista: '2026-11-11' }, { url: '/blog/news-vecchia', primaVista: '2026-10-01' }]));
+  const r = await controllaSalute({ root, base, fetcher, onlyPages: true, pausa: 0, pausaNuove: 0, ora });
+  assert.equal(r.nuoveAttese, 1);
+  assert.ok(!r.problemi.some(p => p.includes('news-oggi')), 'la pagina nuova tornata 200 non è un problema');
+  assert.ok(r.problemi.some(p => p.includes('news-vecchia') && p.includes('404')), 'il 404 vecchio resta segnalato');
+});
+
+test('un 404 su una pagina nuova che resta 404 si segnala', async () => {
+  const a = `${base}/blog/news-oggi`, ora = Date.parse('2026-11-11T15:00:00Z');
+  const { fetcher } = sito({ [a]: 404 });
+  const root = radice(['/blog/news-oggi']);
+  fs.writeFileSync(path.join(root, 'dati/pagine-pubblicate.json'), JSON.stringify([{ url: '/blog/news-oggi', primaVista: '2026-11-11' }]));
+  const r = await controllaSalute({ root, base, fetcher, onlyPages: true, pausa: 0, pausaNuove: 0, ora });
+  assert.ok(r.problemi.some(p => p.includes('news-oggi') && p.includes('404')));
+});

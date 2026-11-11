@@ -17,7 +17,16 @@ export function registeredURLs(root, base) {
   }
   return [...urls, ...Object.keys(LINGUE).map(l => new URL(`/${l}/sitemap.xml`, base).href)];
 }
-export async function controllaSalute({ root = ROOT, base = 'https://freellmarena.com', fetcher = fetch, onlyPages = false, pausa = 20000 } = {}) {
+// Le pagine entrate nel registro oggi o ieri: il registro si aggiorna col commit, il sito va online un paio di minuti dopo.
+export function nuoveURLs(root, base, ora = Date.now()) {
+  const nuove = new Set(), giorni = new Set([0, 1].map(g => new Date(ora - g * 864e5).toISOString().slice(0, 10)));
+  for (const file of ['pagine-pubblicate.json', 'skill-pagine.json']) {
+    const records = JSON.parse(fs.readFileSync(path.join(root, 'dati', file), 'utf8'));
+    for (const p of records) if (typeof p.url === 'string' && giorni.has(p.primaVista)) nuove.add(new URL(p.url, base).href);
+  }
+  return nuove;
+}
+export async function controllaSalute({ root = ROOT, base = 'https://freellmarena.com', fetcher = fetch, onlyPages = false, pausa = 20000, pausaNuove = 240000, ora = Date.now() } = {}) {
   const problemi = [];
   const prendi = (url, opts = {}) => fetcher(url, { redirect: 'follow', signal: AbortSignal.timeout(20000), headers: { 'User-Agent': 'freellmarena-salute' }, ...opts });
   let sitemapURLs = [];
@@ -29,6 +38,8 @@ export async function controllaSalute({ root = ROOT, base = 'https://freellmaren
   } catch (e) { problemi.push(`Sitemap non leggibile: ${e.message}`); }
   let registryURLs = [];
   try { registryURLs = registeredURLs(root, base); } catch (e) { problemi.push(`Registro non leggibile: ${e.message}`); }
+  let nuove = new Set();
+  try { nuove = nuoveURLs(root, base, ora); } catch { /* il registro illeggibile è già fra i problemi */ }
   const pagine = [...new Set([...sitemapURLs, ...registryURLs])], sitemapSet = new Set(sitemapURLs);
   const misura = async u => {
     try { const r = await prendi(u, { method: 'HEAD' }); await r.body?.cancel(); return r.status === 200 ? null : { u, esito: String(r.status), riprova: r.status >= 500 }; }
@@ -47,6 +58,13 @@ export async function controllaSalute({ root = ROOT, base = 'https://freellmaren
   for (let giro = 0; giro < 2 && guaste.some(g => g.riprova); giro++) {
     await new Promise(fine => setTimeout(fine, pausa));
     guaste = [...guaste.filter(g => !g.riprova), ...await aGruppi(guaste.filter(g => g.riprova), 4, g => misura(g.u))];
+  }
+  // Un 404 su una pagina registrata oggi o ieri può essere solo il sito non ancora online: l'11/11/2026 la mail contava 28
+  // problemi per 2 notizie appena uscite, tutte a posto poco dopo. Si aspetta la messa online e si riprova una volta sola.
+  const attese = guaste.filter(g => g.esito === '404' && nuove.has(g.u));
+  if (attese.length) {
+    await new Promise(fine => setTimeout(fine, pausaNuove));
+    guaste = [...guaste.filter(g => !attese.includes(g)), ...await aGruppi(attese, 4, g => misura(g.u))];
   }
   const rotte = guaste.map(g => `${g.u} → ${g.esito}`);
   problemi.push(...rotte.map(u => `Pagina non 200: ${u}`));
@@ -72,7 +90,7 @@ export async function controllaSalute({ root = ROOT, base = 'https://freellmaren
       } catch (e) { problemi.push(`${method} ${p}: ${e.name}`); }
     }
   }
-  return { checked: pagine.length, fromRegistry: new Set(registryURLs).size, onlyRegistry: registryURLs.filter(u => !sitemapSet.has(u)).length, riprovate, perEsito, rotte, problemi };
+  return { nuoveAttese: attese.length, checked: pagine.length, fromRegistry: new Set(registryURLs).size, onlyRegistry: registryURLs.filter(u => !sitemapSet.has(u)).length, riprovate, perEsito, rotte, problemi };
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const option = name => process.argv.find(a => a.startsWith(`--${name}=`))?.split('=').slice(1).join('=');
