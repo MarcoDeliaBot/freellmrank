@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-11-plurai-raises-13m-to-boost-ai-agents-with-simulation-based-post-traini",
+ "titolo": "Plurai raises $13M to boost AI agents with simulation‑based post‑training",
+ "descr": "Startup uses synthetic data and digital twins to turn open models into cheaper, higher‑quality task‑specific agents.",
+ "tema": "Business",
+ "paragrafi": [
+  "The company builds digital twins of a client’s systems and runs simulations to generate synthetic training data for AI agents, then post‑trains small open‑weight models for specific tasks.",
+  "The same model matched OpenAI’s GPT‑6 Luna on real production chats at 40 times lower cost, and Qwen 3.5 showed similar gains after post‑training.",
+  "Plurai’s platform integrates with tools such as Claude Code, Codex, Copilot and Cursor, and offers a web UI and IDE plugins for engineers to run the workflow in about 20 minutes."
+ ],
+ "perche": [
+  "For enterprises, the approach promises lower AI‑operating costs and higher reliability without hiring large ML teams. For users of free or local models, the ability to post‑train open models to frontier quality may reduce dependence on costly closed APIs."
+ ],
+ "pubblicato": "2026-11-11",
+ "titoloFonte": "Plurai wants to help AI agents work better using the same approach that helped get self-driving cars to roads",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/11/plurai-wants-to-help-ai-agents-work-better-using-the-same-approach-that-helped-get-self-driving-cars-to-roads/",
+   "titolo": "Plurai wants to help AI agents work better using the same approach that helped get self-driving cars to roads",
+   "ufficiale": false,
+   "data": "2026-11-11"
+  },
+  {
+   "nome": "plurai.ai",
+   "url": "https://www.plurai.ai/blog/vibe-post-training-turn-any-open-model-into-a-frontier-beating-model-at-44x-lower-cost",
+   "titolo": "Plurai, Nebius and NVIDIA: Turn any open model into a frontier-beating model at 44x lower cost",
+   "ufficiale": true,
+   "data": "2026-10-21"
+  }
+ ],
+ "frasiTolte": 2
+}

@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-11-fish-audio-launches-live-3-full-duplex-voice-model-with-186-ms-reactio",
+ "titolo": "Fish Audio launches Live 3 full‑duplex voice model with 186 ms reaction time",
+ "descr": "Live 3 can listen while speaking and reply to short cues in as little as 186 ms, available via API, Agent Platform and on‑prem for enterprises.",
+ "tema": "Software",
+ "paragrafi": [
+  "Fish Audio announced Live 3, a full‑duplex voice model designed for real‑time voice agents that can listen and speak simultaneously.",
+  "The model can decide to respond to brief prompts such as “mm‑hmm” or “okay” in as little as 186 ms, with the full answer prepared in parallel.",
+  "Developers can access Live 3 through the Fish Agent Platform, the Fish Audio API, or on‑premises for enterprise customers; the Agents platform is in public beta.",
+  "Pricing is listed at $0.035 per minute until 31 December 2026, after which the rate returns to $0.07 per minute and includes STT, TTS, basic LLMs, knowledge retrieval and tool calls."
+ ],
+ "perche": [
+  "Live 3 offers developers a way to build more natural voice interactions without custom turn‑taking logic, which can lower engineering effort for real‑time agents. For users of free or locally hosted models, the service remains cloud‑based, so it does not directly affect those seeking fully offline solutions."
+ ],
+ "pubblicato": "2026-11-11",
+ "titoloFonte": "Fish Audio Releases Live 3, a Full-Duplex Voice Model That Reacts in 186 ms",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/10/fish-audio-live-3-full-duplex-voice-model/",
+   "titolo": "Fish Audio Releases Live 3, a Full-Duplex Voice Model That Reacts in 186 ms",
+   "ufficiale": false,
+   "data": "2026-11-11"
+  },
+  {
+   "nome": "fish.audio",
+   "url": "https://fish.audio/blog/introducing-live-3/",
+   "titolo": "Introducing Live 3: Built for the rhythm of conversation - Fish Audio Blog",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 1
+}
