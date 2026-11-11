@@ -2,6 +2,7 @@
  "nome": "2026-11-01-nvidia-releases-open-source-gds-diag-for-gpudirect-storage-diagnostics",
  "titolo": "NVIDIA releases open-source gds-diag for GPUDirect Storage diagnostics",
  "descr": "The new gds-diag utility helps admins assess and optimize GPUDirect Storage on Linux systems.",
+ "nota": "**Correction, 11 November 2026:** gds-diag was not released on this date. NVIDIA published it on GitHub (NVIDIA/MagnumIO) on 14 September 2026; the source of this article is NVIDIA's 30 October guide to checking and configuring GPUDirect Storage. The facts about the tool are unchanged.",
  "tema": "Guides",
  "paragrafi": [
   "NVIDIA announced gds-diag, an open-source command-line utility that checks GPUDirect Storage environments and suggests improvements.",

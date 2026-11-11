@@ -2,6 +2,7 @@
  "nome": "2026-11-08-meta-releases-llama-4-scout-and-maverick-17b-parameter-moe-models-with",
  "titolo": "Meta releases Llama 4 Scout and Maverick, 17B‑parameter MoE models with 10M context",
  "descr": "Llama 4 Scout fits a single H100 GPU, while Maverick runs on a single H100 host, both using MoE routing for multimodal AI.",
+ "nota": "**Correction, 11 November 2026:** this is not new. Meta released Llama 4 Scout and Maverick on 5 April 2025. Our system wrote this article from a MarkTechPost guide to MoE routing (7 November 2026) that used Llama 4 only as an example. The model facts below come from Meta's April 2025 announcement.",
  "tema": "LLMs",
  "paragrafi": [
   "Meta announced two new mixture‑of‑experts (MoE) models: Llama 4 Scout and Llama 4 Maverick.",
