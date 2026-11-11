@@ -319,8 +319,20 @@ export function controlla(paragrafi, fontiTesto) {
 // primaria» trovata fra i suoi link era il blog di Meta del 2025. Lo stesso il 1/11 con «NVIDIA releases gds-diag», da una
 // guida «How to Check and Configure…» del 30/10 su uno strumento pubblicato su GitHub il 14/9)
 // a. una guida o una spiegazione non diventa mai un lancio
-export const GUIDA = /\b(explained|explainer|guide|tutorial|how[- ]to|walkthrough|deep[- ]dive|primer|cheat[- ]?sheet|vs\.?|versus|top \d+|\d+ best|best \d+|what is|introduction to)\b/i;
-export const guidaDiventataLancio = (titoloScritto, titoloFonte) => GUIDA.test(titoloFonte) && LANCIO.test(titoloScritto);
+// «how to», «what is» contano solo a inizio titolo o dopo i due punti: «GPT-6 Cyber can break into systems and propose how
+// to fix them» (the-decoder, 5/11) è un lancio vero (controllo di tutti i post, 11/11/2026)
+export const GUIDA = /\b(explained|explainer|guide|tutorial|walkthrough|deep[- ]dive|primer|cheat[- ]?sheet|vs\.?|versus|top \d+|\d+ best|best \d+)\b|(^|:\s*)(how[- ]to|what is|introduction to)\b/i;
+// se il titolo scritto dice anch'esso che è una guida («…can be run locally with llama.cpp, guide released», 7/11) è onesto
+export const guidaDiventataLancio = (titoloScritto, titoloFonte) => GUIDA.test(titoloFonte) && LANCIO.test(titoloScritto) && !GUIDA.test(titoloScritto);
+// d. la fonte dice «in preparazione», il titolo dice «esce» (1/11/2026: «SpaceXSI releases Grok Bot 1.0.0» da TestingCatalog
+// «SpaceXSI prepares Texting and Tasks hub support for Grok Bot»; Grok Bot esisteva dall'11/8). Passa se fra le fonti c'è
+// il codice o il modello pubblicato (FlashProve, 4/11: TechCrunch «is working on», il repo GitHub era uscito il 30/10)
+export const NON_ANCORA = /\b(prepares?|preparing|plans? to|planning to|tests?|testing|spotted|working on|could|may|might|reportedly|rumou?r\w*|leak\w*|upcoming|coming soon|in the works)\b/i;
+const FUTURO = /\b(to (launch|release|introduce|unveil|debut|roll out)|will|plans?|prepares?)\b/i;
+export function annuncioNonAncora(titoloScritto, voci) {
+  if (!LANCIO_VERBO.test(titoloScritto) || FUTURO.test(titoloScritto) || !NON_ANCORA.test(voci[0]?.titolo || '')) return false;
+  return !voci.slice(1).some((v) => /^https:\/\/(github\.com|huggingface\.co)\/[^/]+\/[^/]+/.test(v.link || v.url || ''));
+}
 // trattini e spazi tipografici (il modello scrive «17B‑parameter» con U+2011) come quelli normali
 const piano = (s) => String(s).replace(/[‐-―−]/g, '-').replace(/[   ]/g, ' ');
 // b. il titolo scritto parla della storia della fonte principale: almeno 2 parole in comune col suo titolo (223 dei 253
@@ -364,8 +376,11 @@ export async function uscitaVecchia(titoloScritto, dati, leggi = scarica, ora = 
     try {
       // solo i laboratori: su Hugging Face chiunque può avere un repo «genie-4» del 2024 (misura del 10/11 sui post usciti)
       const lista = JSON.parse(await leggi(`https://huggingface.co/api/models?search=${encodeURIComponent(nome)}&sort=createdAt&direction=1&limit=50`, 15000));
-      const primo = lista.filter((m) => ORG_HF[m.id.split('/')[0]] && eLui(m.id.split('/')[1] || '', n) && m.createdAt).sort((a, b) => Date.parse(a.createdAt) - Date.parse(b.createdAt))[0];
-      if (primo && Date.parse(primo.createdAt) < soglia) return `${primo.id} è su Hugging Face dal ${primo.createdAt.slice(0, 10)}`;
+      // vecchio solo se anche la copia ufficiale più recente lo è: la serie LFM3 è uscita fra il 19 e il 27/10 anche se
+      // LFM3-Audio-2B era dell'8/9 (controllo di tutti i post, 11/11/2026); di Llama 4 Scout l'ultima è del 3/4/2025
+      const ufficiali = lista.filter((m) => ORG_HF[m.id.split('/')[0]] && eLui(m.id.split('/')[1] || '', n) && m.createdAt).sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
+      const ultimo = ufficiali[0];
+      if (ultimo && Date.parse(ultimo.createdAt) < soglia) return `${ultimo.id} è su Hugging Face dal ${ufficiali.at(-1).createdAt.slice(0, 10)}, l'ultima copia ufficiale dal ${ultimo.createdAt.slice(0, 10)}`;
     } catch (e) { console.log(`notizie: Hugging Face non risponde per ${nome} (${e.message})`); }
   }
   return null;
@@ -466,6 +481,7 @@ async function main() {
     const tolte = [...corpo.tolte, ...perche.tolte, ...cTitolo.tolte, ...cDescr.tolte];
     for (const t of tolte) console.log(`  tolta: «${t.s.slice(0, 110)}» ${t.n.length ? 'numeri ' + t.n.join(',') : ''} ${t.nomi.length ? 'nomi ' + t.nomi.join(',') : ''} ${t.copia ? 'copiata' : ''}`);
     if (!titolo || !descr || corpo.paragrafi.length < 3) { console.log(`notizie: NON pubblicata «${s.voci[0].titolo}» (dopo il controllo restano ${corpo.paragrafi.length} paragrafi)`); continue; }
+    if (annuncioNonAncora(titolo, s.voci)) { console.log(`notizie: NON pubblicata «${titolo}»: la fonte dice che è in preparazione («${s.voci[0].titolo}»)`); continue; }
     if (guidaDiventataLancio(titolo, s.voci[0].titolo)) { console.log(`notizie: NON pubblicata «${titolo}»: la fonte è una guida («${s.voci[0].titolo}»), non un lancio`); continue; }
     if (!stessaStoria(titolo, fonti[0])) { console.log(`notizie: NON pubblicata «${titolo}»: non è la storia della fonte «${fonti[0].titolo}»`); continue; }
     const vecchia = await uscitaVecchia(titolo, dati);
