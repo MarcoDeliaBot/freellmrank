@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-11-nvidia-ai-powers-startups-to-boost-waste-sorting-and-recycling-efficie",
+ "titolo": "NVIDIA AI powers startups to boost waste sorting and recycling efficiency",
+ "descr": "Vision AI and robotics from NVIDIA help startups sort plastics, detect objects and monitor waste streams, cutting costs and emissions.",
+ "tema": "Business",
+ "paragrafi": [
+  "NVIDIA’s AI platform is being used by four Inception startups to improve recycling of mixed waste streams.",
+  "Taiwan’s AIRECO employs Jetson Orin NX modules for vision AI that sorts plastics with over 95% accuracy, aiming to raise capacity from 18,000 to 48,000 tons next year while cutting operating costs by 85%.",
+  "U.S. firm EverestLabs AI runs inference on RTX GPUs at the edge, deploying about 150 robots across North America and Australia; its systems have identified roughly 40 billion objects, recycled 25,000 tons and avoided 30,000 metric tons of CO₂.",
+  "U.K. startup Greyparrot uses NVIDIA GPUs for model training and Jetson modules for edge detection, operating more than 300 Analyzer units in over 20 countries, reducing inspection time for 15 tons of waste from 375 hours to six and delivering 10‑30% efficiency gains.",
+  "These deployments illustrate how AI can automate real‑time sorting on fast conveyor belts, improving material recovery and supporting circular‑economy goals highlighted at COP31."
+ ],
+ "perche": [
+  "For AI users, the case studies show that NVIDIA’s edge hardware and GPU ecosystem enable high‑throughput vision models without large data‑center resources. For advocates of free or locally hosted models, the success of Jetson‑based inference demonstrates that powerful AI can run on compact, affordable devices, expanding access to advanced recycling solutions."
+ ],
+ "pubblicato": "2026-11-11",
+ "titoloFonte": "How AI Helps Recyclers Turn Mixed Waste Into Reusable Material",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/ai-recycling-startups/",
+   "titolo": "How AI Helps Recyclers Turn Mixed Waste Into Reusable Material",
+   "ufficiale": true,
+   "data": "2026-11-11"
+  }
+ ],
+ "frasiTolte": 0
+}

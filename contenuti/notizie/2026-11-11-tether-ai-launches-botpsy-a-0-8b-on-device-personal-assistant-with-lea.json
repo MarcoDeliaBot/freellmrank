@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-11-tether-ai-launches-botpsy-a-0-8b-on-device-personal-assistant-with-lea",
+ "titolo": "Tether AI launches BotPsy, a 0.8B on‑device personal assistant with leading tool‑use performance",
+ "descr": "BotPsy doubles the agentic capability of its Qwen3.5‑0.8B base and outperforms all models under 1.2B parameters on six benchmarks.",
+ "tema": "Research",
+ "paragrafi": [
+  "Tether AI Research announced BotPsy, a 0.8 billion‑parameter language model built on Qwen3.5‑0.8B‑Think and optimized for on‑device deployment.",
+  "The model targets function calling and agentic workflows across domains such as web search, travel, finance, device control, calendar, and email.",
+  "Benchmark results show BotPsy roughly doubles its base model’s scores, reaching 44.0 on BFCL v4 and 58.7 on ACEBench, and leading five of six tool‑use and agentic tests.",
+  "It beats larger competitors, including Qwen3.5‑2B‑Think, on five benchmarks while only lagging on Claw‑Eval. Safety testing reports a 21% unsafe response rate versus 36% for the base model."
+ ],
+ "perche": [
+  "For users seeking AI that runs locally, BotPsy offers state‑of‑the‑art tool use without cloud fees or data exposure. Its strong performance in the sub‑billion‑parameter range narrows the gap between free, on‑device models and larger paid services, expanding options for privacy‑focused and cost‑conscious developers."
+ ],
+ "pubblicato": "2026-11-11",
+ "titoloFonte": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
+ "fonti": [
+  {
+   "nome": "Hugging Face",
+   "url": "https://huggingface.co/blog/qvac/botpsy",
+   "titolo": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
+   "ufficiale": true,
+   "data": "2026-11-11"
+  }
+ ],
+ "frasiTolte": 1
+}
