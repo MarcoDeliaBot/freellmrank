@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-11-jiostar-chief-architect-shares-ai-scaling-insights-as-freellmarena-ran",
+ "titolo": "JioStar chief architect shares AI scaling insights as FreeLLMArena ranks top chat models",
+ "descr": "Vijay Seshadri outlines evaluation, guardrails and production steps for 500 M‑user AI, while FreeLLMArena lists the leading free and paid chat models.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "JioStar’s chief architect Vijay Seshadri described how the company scales AI discovery to 500 million users.",
+  "He stressed that rigorous evaluation and clear guardrails are essential for safe large‑scale deployment.",
+  "Seshadri also explained the practical steps needed to move AI systems into production at that magnitude.",
+  "In a separate update, FreeLLMArena’s blind vote ranks Kimi K3 (Max) as the top free chat model, followed closely by Kimi K3.1 Pro and GLM‑5.3.",
+  "The same vote places Gemini 4 Carbon (High) as the leading paid chat model."
+ ],
+ "perche": [
+  "These scaling lessons help developers build more reliable AI services for massive audiences. The model rankings give users clear guidance on the strongest free and paid chat options, supporting choices for local or cloud‑based deployments."
+ ],
+ "pubblicato": "2026-11-11",
+ "titoloFonte": "JioStar’s chief architect on AI discovery at 500M-user scale",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/jiostar-vijay-seshadri",
+   "titolo": "JioStar’s chief architect on AI discovery at 500M-user scale",
+   "ufficiale": true,
+   "data": "2026-11-11"
+  }
+ ],
+ "frasiTolte": 0
+}

@@ -22814,6 +22814,18 @@
     "tipo": "News"
    },
    "data": "2026-11-11"
+  },
+  "/blog/news-2026-11-11-jiostar-chief-architect-shares-ai-scaling-insights-as-freellmarena-ran.html": {
+   "post": {
+    "slug": "news-2026-11-11-jiostar-chief-architect-shares-ai-scaling-insights-as-freellmarena-ran",
+    "titolo": "JioStar chief architect shares AI scaling insights as FreeLLMArena ranks top chat models",
+    "descr": "Vijay Seshadri outlines evaluation, guardrails and production steps for 500 M‑user AI, while FreeLLMArena lists the leading free and paid chat models.",
+    "data": "2026-11-11",
+    "tema": "LLMs",
+    "corpo": "JioStar’s chief architect Vijay Seshadri described how the company scales AI discovery to 500 million users.\n\nHe stressed that rigorous evaluation and clear guardrails are essential for safe large‑scale deployment.\n\nSeshadri also explained the practical steps needed to move AI systems into production at that magnitude.\n\nIn a separate update, FreeLLMArena’s blind vote ranks Kimi K3 (Max) as the top free chat model, followed closely by Kimi K3.1 Pro and GLM‑5.3.\n\nThe same vote places Gemini 4 Carbon (High) as the leading paid chat model.\n\n## What it means for you\n\nThese scaling lessons help developers build more reliable AI services for massive audiences. The model rankings give users clear guidance on the strongest free and paid chat options, supporting choices for local or cloud‑based deployments.\n\n## On FreeLLMArena\n\nFrom our rankings on 11 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html): #2 among free chat models\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [JioStar’s chief architect on AI discovery at 500M-user scale](https://openai.com/index/jiostar-vijay-seshadri), OpenAI (official), 11 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-11-jiostar-chief-architect-shares-ai-scaling-insights-as-freellmarena-ran).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-11"
   }
  },
  "ricostruzione": {
