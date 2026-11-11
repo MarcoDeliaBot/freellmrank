@@ -2099,5 +2099,16 @@
   "contestoMax": 524288,
   "moe": true,
   "attivi": 332482887296
+ },
+ "ServiceNow-AI/Apriel-Nemotron-15b-Thinker": {
+  "strati": 50,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 50,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 65536,
+  "moe": false,
+  "attivi": 14974182400
  }
 }
