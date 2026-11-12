@@ -11,6 +11,8 @@ permissions:
   contents: read
   issues: write
   actions: read
+  # il controllo legge su GitHub quale commit Cloudflare Pages ha messo online
+  checks: read
 
 jobs:
   controllo:

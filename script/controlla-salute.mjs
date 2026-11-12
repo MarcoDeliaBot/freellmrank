@@ -26,6 +26,35 @@ export function nuoveURLs(root, base, ora = Date.now()) {
   }
   return nuove;
 }
+// Il commit più recente che Cloudflare Pages ha pubblicato (controllo «Cloudflare Pages» riuscito su GitHub) e gli
+// indirizzi del registro a quel commit. Se gli ultimi commit aspettano da più di 3 ore, è un problema da solo.
+const ATTESA_MASSIMA_ORE = 3;
+export async function commitOnline(prendi, base, ora = Date.now()) {
+  const gh = async (percorso) => {
+    const r = await prendi(`https://api.github.com/repos/${REPO}${percorso}`, { headers: { Accept: 'application/vnd.github+json', ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}) } });
+    if (r.status !== 200) throw Error(`GitHub ${percorso.split('?')[0]}: HTTP ${r.status}`);
+    return r.json();
+  };
+  const commit = await gh('/commits?per_page=20');
+  let online = null, inAttesa = [];
+  for (const c of commit) {
+    const corse = (await gh(`/commits/${c.sha}/check-runs?check_name=${encodeURIComponent('Cloudflare Pages')}`)).check_runs || [];
+    if (corse.some(x => x.status === 'completed' && x.conclusion === 'success')) { online = c; break; }
+    inAttesa.push({ sha: c.sha, data: c.commit.committer.date, esito: corse[0] ? (corse[0].conclusion || corse[0].status) : 'nessuna costruzione' });
+  }
+  if (!online) throw Error('nessuna pubblicazione Cloudflare riuscita negli ultimi 20 commit');
+  const urls = new Set();
+  for (const file of ['pagine-pubblicate.json', 'skill-pagine.json']) {
+    const r = await prendi(`https://raw.githubusercontent.com/${REPO}/${online.sha}/dati/${file}`);
+    if (r.status !== 200) throw Error(`registro ${file} al commit ${online.sha.slice(0, 7)}: HTTP ${r.status}`);
+    for (const p of await r.json()) if (typeof p.url === 'string') urls.add(new URL(p.url, base).href);
+  }
+  const piuVecchio = inAttesa.at(-1), ore = piuVecchio ? (ora - Date.parse(piuVecchio.data)) / 36e5 : 0;
+  const ferma = ore > ATTESA_MASSIMA_ORE
+    ? `Cloudflare non pubblica da ${Math.floor(ore)} ore: online c'è ${online.sha.slice(0, 7)}, ${inAttesa.length} commit dopo in attesa (ultima costruzione: ${inAttesa[0].esito}).`
+    : null;
+  return { sha: online.sha, urls, inAttesa: inAttesa.length, ferma };
+}
 export async function controllaSalute({ root = ROOT, base = 'https://freellmarena.com', fetcher = fetch, onlyPages = false, pausa = 20000, pausaNuove = 240000, ora = Date.now() } = {}) {
   const problemi = [];
   const prendi = (url, opts = {}) => fetcher(url, { redirect: 'follow', signal: AbortSignal.timeout(20000), headers: { 'User-Agent': 'freellmarena-salute' }, ...opts });
@@ -66,6 +95,18 @@ export async function controllaSalute({ root = ROOT, base = 'https://freellmaren
     await new Promise(fine => setTimeout(fine, pausaNuove));
     guaste = [...guaste.filter(g => !attese.includes(g)), ...await aGruppi(attese, 4, g => misura(g.u))];
   }
+  // L'attesa di 4 minuti non basta se Cloudflare è in ritardo: l'11/11/2026 la prima costruzione fallì e le 2 notizie andarono online
+  // 38 minuti dopo il commit. Un 404 conta solo se la pagina era già nel registro del commit che Cloudflare ha messo online.
+  let pubblicazione = null;
+  if (guaste.some(g => g.esito === '404')) {
+    try {
+      pubblicazione = await commitOnline(prendi, base, ora);
+      const nonAncora = guaste.filter(g => g.esito === '404' && !pubblicazione.urls.has(g.u));
+      guaste = guaste.filter(g => !nonAncora.includes(g));
+      pubblicazione.nonAncora = nonAncora.map(g => g.u);
+    } catch (e) { pubblicazione = { errore: e.message }; }
+  }
+  if (pubblicazione?.ferma) problemi.push(pubblicazione.ferma);
   const rotte = guaste.map(g => `${g.u} → ${g.esito}`);
   problemi.push(...rotte.map(u => `Pagina non 200: ${u}`));
   if (!onlyPages) {
@@ -90,13 +131,15 @@ export async function controllaSalute({ root = ROOT, base = 'https://freellmaren
       } catch (e) { problemi.push(`${method} ${p}: ${e.name}`); }
     }
   }
-  return { nuoveAttese: attese.length, checked: pagine.length, fromRegistry: new Set(registryURLs).size, onlyRegistry: registryURLs.filter(u => !sitemapSet.has(u)).length, riprovate, perEsito, rotte, problemi };
+  return { nuoveAttese: attese.length, nonAncoraOnline: pubblicazione?.nonAncora || [], commitOnline: pubblicazione?.sha || null, erroreCommitOnline: pubblicazione?.errore || null, checked: pagine.length, fromRegistry: new Set(registryURLs).size, onlyRegistry: registryURLs.filter(u => !sitemapSet.has(u)).length, riprovate, perEsito, rotte, problemi };
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const option = name => process.argv.find(a => a.startsWith(`--${name}=`))?.split('=').slice(1).join('=');
   const result = await controllaSalute({ root: option('radice') || ROOT, base: option('sito') || 'https://freellmarena.com', onlyPages: process.argv.includes('--solo-pagine') });
   console.log(`Pagine controllate: ${result.checked}; registro: ${result.fromRegistry}; fuori sitemap: ${result.onlyRegistry}; riprovate: ${result.riprovate}. Problemi: ${result.problemi.length}`);
   if (result.riprovate) console.log('Riprovate per esito:', JSON.stringify(result.perEsito));
+  if (result.commitOnline) console.log(`Online su Cloudflare: ${result.commitOnline.slice(0, 7)}; 404 non ancora pubblicati (non contati): ${result.nonAncoraOnline.length}`);
+  if (result.erroreCommitOnline) console.log(`Commit online non letto (i 404 restano tutti problemi): ${result.erroreCommitOnline}`);
   for (const p of result.problemi) console.log('-', p);
   if (option('json')) fs.writeFileSync(option('json'), JSON.stringify(result, null, 2) + '\n');
   if (result.problemi.length && !process.argv.includes('--prova')) {
