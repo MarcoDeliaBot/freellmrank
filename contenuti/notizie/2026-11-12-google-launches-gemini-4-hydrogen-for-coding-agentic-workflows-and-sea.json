@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-12-google-launches-gemini-4-hydrogen-for-coding-agentic-workflows-and-sea",
+ "titolo": "Google launches Gemini 4 Hydrogen for coding, agentic workflows and Search",
+ "descr": "Gemini 4 Hydrogen offers fast, efficient AI for developers and powers a visual upgrade to Google Search worldwide.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Google DeepMind announced Gemini 4 Hydrogen on 12 November 2026 as a model aimed at rapid execution in everyday coding and agentic workflows.",
+  "The model pairs with frontier models Gemini 4 Carbon and Argon via the new Orchestrator, delivering 24% less quota use and 19% faster completion on Terminal‑Bench 4.0.",
+  "Hydrogen ranks #5 on Agent Arena, leads its class on HLE‑Diamond (58.8%), tops Vals Tax Agent Bench (52.3%) and ties for first on Vals Legal Research Bench (55.8%).",
+  "Google Search globally integrates Hydrogen, adding more visual, structured answers, better intent understanding and simultaneous query fan‑out.",
+  "The upgrade is available to all Search users, with no additional subscription required."
+ ],
+ "perche": [
+  "Hydrogen gives developers a faster, lower‑cost alternative to Carbon for routine coding tasks while still supporting multi‑model pipelines."
+ ],
+ "pubblicato": "2026-11-12",
+ "titoloFonte": "Introducing Gemini 4 Hydrogen",
+ "fonti": [
+  {
+   "nome": "Google DeepMind",
+   "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+   "titolo": "Introducing Gemini 4 Hydrogen",
+   "ufficiale": true,
+   "data": "2026-11-12"
+  },
+  {
+   "nome": "Google",
+   "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+   "titolo": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+   "ufficiale": true,
+   "data": "2026-11-12"
+  }
+ ],
+ "frasiTolte": 2
+}

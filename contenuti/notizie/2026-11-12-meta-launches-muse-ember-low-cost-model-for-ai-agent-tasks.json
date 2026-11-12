@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-12-meta-launches-muse-ember-low-cost-model-for-ai-agent-tasks",
+ "titolo": "Meta launches Muse Ember, low‑cost model for AI agent tasks",
+ "descr": "Muse Ember offers a 1 M‑token context window and pricing of $0.10 per million input tokens, targeting high‑volume agent workloads.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "The model supports text, images, audio and video, has a 1 million‑token context window and can generate up to 512,000 output tokens, allowing it to ingest full codebases or large documents in a single request.",
+  "In Meta’s internal Artificial Analysis Index, Muse Ember matched Claude Haiku 5.5’s score while costing about a third per task, and outperformed OpenAI’s GPT‑6 Luna on seven of nine benchmarks, showing a 17% lead on the AutomationBench‑AA suite.",
+  "Early partners such as Box, Cline, Oracle, Cloudflare and You.com have begun testing the model for contract risk scoring, candidate screening, coding subagents and document analysis."
+ ],
+ "perche": [
+  "Muse Ember gives developers a cheaper option for high‑volume agent workloads, which could lower operating costs for businesses that rely on repetitive AI tasks. For users of free or locally hosted models, the launch highlights the growing price‑performance gap of cloud‑based offerings, emphasizing the need to balance cost against the capabilities of open‑source alternatives."
+ ],
+ "pubblicato": "2026-11-12",
+ "titoloFonte": "Meta introduces Muse Ember to power cost-efficient AI agents",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/09/meta-introduces-muse-ember-to-power-cost-efficient-ai-agents/",
+   "titolo": "Meta introduces Muse Ember to power cost-efficient AI agents",
+   "ufficiale": false,
+   "data": "2026-11-10"
+  },
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/meta-launches-muse-ember-for-low-cost-agentic-tasks/",
+   "titolo": "Meta launches Muse Ember for low-cost agentic tasks",
+   "ufficiale": false,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 2
+}

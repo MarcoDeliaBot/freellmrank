@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen",
+ "titolo": "AWS launches free local emulator for 200+ AWS services built by AI agents",
+ "descr": "AWS Emulator offers a headless, local copy of over 200 AWS services, created entirely by autonomous AI agents, for fast testing without an AWS account.",
+ "tema": "Software",
+ "paragrafi": [
+  "AWS announced AWS Emulator, a local program that mimics more than 200 AWS services using 438 API models.",
+  "The emulator runs on Linux x86_64/aarch64 via RPM or Debian packages, or in Docker on macOS and Windows with a 2 GiB memory cap, and requires at least 100 GB of free disk for source builds.",
+  "All code was written and reviewed by autonomous agents; humans provided test scenarios and merge gates, with the release pipeline using AWS Developer Tools.",
+  "In version v1.0.322, the emulator passed 24,243 of 42,857 fidelity tests (56.6%), scoring highest on KMS (93.9%) and SQS (89.8%) and lowest on CloudFormation (15.8%).",
+  "Limitations include no IAM policy evaluation, a single region/account, in‑memory resources, and telemetry enabled by default; it is not intended for security or load testing."
+ ],
+ "perche": [
+  "Developers can now run extensive AWS‑compatible tests locally or in CI without incurring service fees or needing an AWS account, accelerating development cycles. However, the emulator's partial fidelity and security constraints mean it complements rather than replaces cloud testing, especially for teams relying on free or on‑premise AI tooling."
+ ],
+ "pubblicato": "2026-11-12",
+ "titoloFonte": "AWS Releases AWS Emulator: A Local Copy of 200+ AWS Services Built by AI Agents",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/12/aws-emulator-local-aws-api-emulator-ai-agents/",
+   "titolo": "AWS Releases AWS Emulator: A Local Copy of 200+ AWS Services Built by AI Agents",
+   "ufficiale": false,
+   "data": "2026-11-12"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/aws/aws-emulator",
+   "titolo": "GitHub - aws/aws-emulator: AWS Emulator is a local emulator of the AWS APIs. · GitHub",
+   "ufficiale": true,
+   "data": "2026-11-12"
+  }
+ ],
+ "frasiTolte": 0
+}
