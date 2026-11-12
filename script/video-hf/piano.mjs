@@ -32,14 +32,17 @@ export function controllore(n) {
 // chi scorre resta. La prima frase della prima scena: breve, concreta, senza preamboli. Restituisce i problemi (vuoto = va bene).
 export const APERTURE = ['titolo', 'cartello'];
 const PREAMBOLI = /^(today\b|in this video|this video|welcome|hello|hi\b|hey\b|so\b|let's|let us|here is|here's what|we\b|freellmarena\b|in today's|did you know|ever wondered)/i;
-const CONCRETO = /\d|\b(free|without|instead|beats?|cheaper|faster|first|only|no longer|now|new|just|launch(es|ed)?|open[- ]source)\b/i;
+// 12/11 sera, prova vera su GitHub: «Meta launches Muse Ember, a low-cost model for AI agent tasks.» passava solo perché c'era
+// un nome. Ora serve un numero, «free» o un confronto; e una seconda frase che crei attesa (l'anello aperto).
+const CONCRETO = /\d|\b(free|without|instead|beats?|cheaper|faster|slower|smaller|bigger|half|a third|double|twice|only|first|no longer|open[- ]source|open weights)\b/i;
 export function gancio(voce) {
   const prima = frasi(voce)[0] || '';
   const e = [];
   if (!prima) return ['prima scena senza voce'];
   if (parole(prima) > 16) e.push(`prima frase di ${parole(prima)} parole (al massimo 16)`);
   if (PREAMBOLI.test(prima)) e.push(`prima frase che parte con un preambolo («${prima.split(' ').slice(0, 3).join(' ')}…»)`);
-  if (!CONCRETO.test(prima) && !/\s[A-Z][\w.-]*\d|\s[A-Z][a-z]+[A-Z]/.test(` ${prima}`) && !/\s[A-Z]/.test(prima.slice(1))) e.push('prima frase senza niente di concreto (un numero, un nome, «free», un confronto)');
+  if (!CONCRETO.test(prima)) e.push('prima frase senza un numero, «free» o un confronto');
+  if (frasi(voce).length < 2) e.push("manca la seconda frase che crea attesa (l'anello aperto)");
   return e;
 }
 

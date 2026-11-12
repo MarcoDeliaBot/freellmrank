@@ -11,12 +11,14 @@ test('aperture deboli rifiutate', () => {
   assert.ok(gancio('It is a nice update for everyone.').length, 'niente di concreto');
   assert.ok(gancio('Meta FAIR releases e-means, an MIT-licensed k-means that converges up to 45 times faster on GPU and is good.').length, 'troppo lunga');
   assert.ok(gancio('').length, 'voce vuota');
+  assert.ok(gancio('Meta launches Muse Ember, a low-cost model for AI agent tasks.').length, 'titolo letto (prova vera del 12/11)');
+  assert.ok(gancio('A free model now beats GPT-6 at coding.').length, 'senza anello aperto');
 });
 
 test('aperture buone accettate (controllo positivo)', () => {
   assert.deepEqual(gancio('Google just launched an API that answers 1,000 questions in one go. But the price is the real story.'), []);
-  assert.deepEqual(gancio('A free model now beats GPT-6 at coding.'), []);
-  assert.deepEqual(gancio('Kimi K3 is open, and you can run it at home.'), []);
+  assert.deepEqual(gancio('A free model now beats GPT-6 at coding. But one detail changes everything.'), []);
+  assert.deepEqual(gancio('Meta now sells a model at a third of the price. And it reads video too.'), []);
 });
 
 test('il cartello può aprire', () => {

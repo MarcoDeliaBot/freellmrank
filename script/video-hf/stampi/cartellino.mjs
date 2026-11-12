@@ -6,7 +6,7 @@ import { scena, s3, esc, misura, attacchi, CARTA } from '../base.mjs';
 export default {
   nome: 'cartellino',
   descrizione: 'paper price tag swinging on a string, then a red rubber stamp slams on it; use for a price, a cost or something free (e.g. $0.10 per 1M input tokens, stamp FREE)',
-  schema: '{ "prezzo": "the price, max 7, e.g. $0.10 or $0 or 20 €", "sotto": "what the price is for, max 22, e.g. per 1M input tokens", "timbro": "stamp word, max 8, e.g. FREE", "timbroSopra": "optional small word above the stamp, max 10, e.g. OUTPUT" }',
+  schema: '{ "prezzo": "the price, max 7, e.g. $0.10 or $0 or 20 €", "sotto": "what the price is for, max 22, e.g. per 1M input tokens", "timbro": "a verdict stamp, max 8, e.g. FREE, CHEAP, HALF OFF; never the word PRICE", "timbroSopra": "optional small word above the stamp, max 10, e.g. OUTPUT" }',
   valida(d) {
     const e = [];
     const tx = (k) => (d?.[k] == null ? '' : String(d[k]).trim());
