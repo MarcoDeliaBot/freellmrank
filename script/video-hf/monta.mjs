@@ -22,7 +22,7 @@ export async function monta(piano, dir) {
   const F = formatoDi(formato);
   const d = (...p) => path.join(dir, ...p);
   for (const c of ['assets/voice', 'assets/fonts', 'compositions/frames', 'lavoro']) fs.mkdirSync(d(c), { recursive: true });
-  for (const f of ['Source_Serif_4.ttf', 'JetBrains_Mono.ttf']) fs.copyFileSync(path.join(QUI, 'fonti', f), d('assets/fonts', f));
+  for (const f of ['Source_Serif_4.ttf', 'JetBrains_Mono.ttf', 'Inter_700.woff2', 'Caveat_700.woff2']) fs.copyFileSync(path.join(QUI, 'fonti', f), d('assets/fonts', f));
   // immagini e clip delle scene «immagine» (26/10/2026): il piano dà il percorso del file, lo stampo usa assets/media/<nome>
   for (const sc of piano.scene) {
     // anche le immagini della «griglia» (5/11/2026)
