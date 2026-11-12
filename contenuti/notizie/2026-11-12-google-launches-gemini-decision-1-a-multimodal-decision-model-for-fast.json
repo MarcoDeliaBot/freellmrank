@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-12-google-launches-gemini-decision-1-a-multimodal-decision-model-for-fast",
+ "titolo": "Google launches Gemini Decision 1, a multimodal decision model for fast classification",
+ "descr": "Gemini Decision 1 handles up to 1,000 questions per request, supports multiple input types, and costs $0.10 per million input tokens.",
+ "tema": "Business",
+ "paragrafi": [
+  "At the System One track of the AIE CODE event on November 11, 2026, Google announced Gemini Decision 1, a calibrated multimodal decision model.",
+  "The model processes yes/no, multiple‑choice and rubric scoring in a single pass, supporting text, image, audio, video and PDF inputs with up to 255 answer options.",
+  "Pricing is $0.10 per million input tokens with no charge for output, which Google says is about five times cheaper than the competing Flash‑Lite service.",
+  "Early adopters such as Stitch and LangChain have integrated the API, and independent benchmarks show mixed results, with Decision 1 scoring 66 on the Decision Index."
+ ],
+ "perche": [
+  "For AI users, Gemini Decision 1 provides a low‑cost, low‑latency option for structured routing and scoring tasks, reducing the need for token‑by‑token generation. Free‑model enthusiasts can compare its performance and price against top free chat models like Kimi K3 (Max) and GLM‑5.3, which dominate the FreeLLMArena rankings."
+ ],
+ "pubblicato": "2026-11-12",
+ "titoloFonte": "[AINews] D-Day (Decision Models Day)",
+ "fonti": [
+  {
+   "nome": "Latent Space",
+   "url": "https://latent.space/p/ainews-d-day-decision-models-day/",
+   "titolo": "[AINews] D-Day (Decision Models Day)",
+   "ufficiale": false,
+   "data": "2026-11-12"
+  },
+  {
+   "nome": "Hugging Face",
+   "url": "https://huggingface.co/blog/decision",
+   "titolo": "Decision Models in Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 1
+}

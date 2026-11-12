@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-12-google-launches-gemini-decisions-api-with-fast-multimodal-decision-mod",
+ "titolo": "Google launches Gemini Decisions API with fast multimodal decision model",
+ "descr": "Gemini Decision 1 processes up to 1,000 closed‑set questions in a single pass, costing $0.10 per million input tokens.",
+ "tema": "Software",
+ "paragrafi": [
+  "Google DeepMind announced the Gemini Decisions API, powered by the new Gemini Decision 1 model.",
+  "The model can evaluate up to 1,000 yes/no, multiple‑choice, or rubric‑scoring questions in a single forward pass across text, images, audio, video and PDFs.",
+  "Latency is reported at 150‑250 ms end‑to‑end, and pricing is $0.10 per million input tokens with no charge for output tokens.",
+  "Gemini Decision 1 leads benchmark suites in agent routing, reasoning and multimodal understanding, achieving the lowest calibration error.",
+  "Google says internal teams already use the API for dynamic model routing in Gemini Notebook, rapid design prototyping in Stitch, and safety checks in Search."
+ ],
+ "perche": [
+  "The API offers developers a cheap, low‑latency way to make probabilistic decisions without token‑by‑token generation, useful for routing, grading or policy checks. While Google’s paid Gemini 4 Carbon tops FreeLLMArena’s paid model list, free‑tier users may still prefer open models such as Kimi K3 or GLM‑5.3, which remain the top‑ranked free chat options."
+ ],
+ "pubblicato": "2026-11-12",
+ "titoloFonte": "Google joins the decision-model wave with Gemini Decision 1, scoring 1,000 questions in a single pass",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/google-joins-the-decision-model-wave-with-gemini-decision-1-scoring-1000-questions-in-a-single-pass/",
+   "titolo": "Google joins the decision-model wave with Gemini Decision 1, scoring 1,000 questions in a single pass",
+   "ufficiale": false,
+   "data": "2026-11-11"
+  },
+  {
+   "nome": "blog.google",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+   "titolo": "Gemini Decisions API: Fast multimodal decisions",
+   "ufficiale": true,
+   "data": "2026-11-11"
+  }
+ ],
+ "frasiTolte": 0
+}
