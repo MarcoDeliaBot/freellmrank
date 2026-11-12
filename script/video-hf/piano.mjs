@@ -31,6 +31,8 @@ export function controllore(n) {
 // Il gancio (12/11/2026, Marco: «Aggiungi ganci nei video in modo che la gente ci segua»): i primi 2-3 secondi decidono se
 // chi scorre resta. La prima frase della prima scena: breve, concreta, senza preamboli. Restituisce i problemi (vuoto = va bene).
 export const APERTURE = ['titolo', 'cartello'];
+// dopo un errore di tutti gli scrittori: fermarsi solo se è quota o chiave, non se qualcuno ha risposto con JSON rotto
+export const fermaTentativi = (msg) => /\/api\/scrivi 4\d\d/.test(msg) && !/JSON|senza JSON|Unexpected|Expected/i.test(msg);
 const PREAMBOLI = /^(today\b|in this video|this video|welcome|hello|hi\b|hey\b|so\b|let's|let us|here is|here's what|we\b|freellmarena\b|in today's|did you know|ever wondered)/i;
 // 12/11 sera, prova vera su GitHub: «Meta launches Muse Ember, a low-cost model for AI agent tasks.» passava solo perché c'era
 // un nome. Ora serve un numero, «free» o un confronto; e una seconda frase che crei attesa (l'anello aperto).
@@ -183,8 +185,10 @@ Return JSON: {"scene": [{"stampo": "...", "etichetta": "...", "voce": "...", "da
       if (!c.completo) domanda.push({ role: 'assistant', content: JSON.stringify(grezzo) }, { role: 'user', content: `Problems found by the checker:\n- ${c.problemi.join('\n- ')}\nFix them and return the whole JSON again. Remember: 4 to 6 scenes, 110 to 190 words in total, respect every max length and item count, only facts from ARTICLE.` });
     } catch (e) {
       problemi.push(`tentativo ${tentativo}: nessun modello ha risposto (${e.message})`);
-      // quota finita o chiave sbagliata: inutile riprovare; JSON rotto: si riprova
-      if (/\/api\/scrivi 4\d\d/.test(e.message)) break;
+      // quota finita o chiave sbagliata: inutile riprovare; JSON rotto: si riprova. 12/11/2026: col 429 di Workers e il JSON
+      // rotto di Groq nello stesso messaggio si usciva al secondo tentativo (piano di riserva): ora si esce solo se nessuno
+      // scrittore ha dato una risposta da correggere
+      if (fermaTentativi(e.message)) break;
     }
   }
   // un piano quasi buono (almeno 3 scene e 45 parole, tutte controllate) è meglio della riserva, che mostra solo i titoli

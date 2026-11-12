@@ -33,3 +33,10 @@ test('la chiusura chiede di seguire il canale, e le parole di attacco stanno nel
     for (const { parola } of ch.parole(dati, formato)) assert.ok(voce.toLowerCase().includes(parola.toLowerCase()), `«${parola}» manca in «${voce}»`);
   }
 });
+
+test('i tentativi continuano se Groq risponde con JSON rotto mentre Workers è senza quota (12/11)', async () => {
+  const { fermaTentativi } = await import('./video-hf/piano.mjs');
+  assert.equal(fermaTentativi('workers: /api/scrivi 429: Daily writing budget used. Try tomorrow. | groq: risposta senza JSON: '), false);
+  assert.equal(fermaTentativi('workers: /api/scrivi 429: Daily writing budget used. Try tomorrow.'), true);
+  assert.equal(fermaTentativi('workers: /api/scrivi 401: bad key'), true);
+});
