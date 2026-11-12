@@ -1,0 +1,52 @@
+# Ogni ora controlla che n8n risponda (script/guardia-n8n.sh). Il 12/11/2026 il Linux di casa è crollato all'01:00
+# e per 10 ore non è uscito nulla senza che nessuno lo sapesse. Se n8n è giù apre UNA issue «n8n non risponde»
+# (niente doppioni nelle ore dopo) e la corsa risulta fallita; quando torna su la chiude con l'ora del ritorno.
+# Attenzione: le mail delle issue di solito le manda n8n (n8n/avvisi-github.json), che qui è proprio quello spento;
+# a Marco arrivano la mail di GitHub per la corsa fallita e la notifica dell'issue, se le ha accese.
+name: Guardia n8n
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: guardia-n8n
+  cancel-in-progress: false
+
+jobs:
+  guardia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Controlla n8n e aggiorna l'issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITOLO: n8n non risponde
+        run: |
+          set -u
+          esito=$(bash script/guardia-n8n.sh) && su=1 || su=0
+          echo "$esito"
+          aperta=$(gh issue list --state open --search "in:title \"$TITOLO\"" --json number,title \
+            --jq "map(select(.title == \"$TITOLO\")) | .[0].number // empty")
+          ora=$(TZ=Europe/Rome date '+%d/%m/%Y %H:%M')
+          if [ "$su" = 1 ]; then
+            if [ -n "$aperta" ]; then
+              gh issue close "$aperta" --comment "n8n risponde di nuovo alle $ora (ora italiana): $esito. I video in coda escono da soli; le corse delle notizie perse no, vanno rilanciate a mano (Actions → Video notizie)."
+            fi
+            exit 0
+          fi
+          if [ -z "$aperta" ]; then
+            gh issue create --title "$TITOLO" --label salute --body "Alle $ora (ora italiana) https://n8n.primisugoogle.com non risponde: $esito, 3 tentativi a un minuto l'uno dall'altro.
+
+          Finché n8n è giù non escono video su YouTube, non partono le notizie delle 10 e delle 19 e non arrivano le mail degli avvisi.
+          530 di Cloudflare (errore 1033) = il tunnel non è collegato: di solito il Linux di casa (192.168.1.104) è spento o bloccato. Va riacceso a mano.
+
+          Questa issue si chiude da sola quando n8n torna su."
+          fi
+          exit 1
