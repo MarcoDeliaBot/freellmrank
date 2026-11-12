@@ -16,6 +16,16 @@ export const C = {
   marchio: '#0d7a47', aloneRgb: '217,119,87', aloneScuroRgb: '227,158,134',
   pillola: '#ffffff', futura: '#b0aea5',
 };
+// Stile «notte» (PROVA 12/11/2026, Marco: «Mi piace questo stile», video EarnixLab iO2sNuzaCxU): fondo quasi nero con un
+// alone caldo, un accento rosa-rosso. Si accende con VIDEO_STILE=notte; senza, tutto resta com'è.
+export const STILE = process.env.VIDEO_STILE === 'notte' ? 'notte' : 'chiaro';
+if (STILE === 'notte') Object.assign(C, {
+  fondo: '#121016', pannello: '#221c27', scuro: '#2e2633',
+  accento: '#ff3b6b', accentoScuro: '#a8324f',
+  crema: '#f5f1f4', crema2: '#9b93a0', inchiostro: '#ffffff',
+  marchio: '#4ccb8b', aloneRgb: '255,59,107', aloneScuroRgb: '255,122,69',
+  pillola: '#1c1720', futura: '#7d7482',
+});
 // il logo del sito (quadrato verde con tre barre), in linea nella barra in alto e nella chiusura
 export const LOGO = fs.readFileSync(new URL('../../sorgente/favicon.svg', import.meta.url), 'utf8').trim();
 export const W = 1920;
@@ -71,7 +81,9 @@ export function scena({ id, px, durata, etichetta = '', numero = '', css = '', c
   <style>
     ${FONT}
     #root { position: absolute; inset: 0; width: ${W}px; height: ${H}px; overflow: hidden; container-type: size; color: ${C.crema}; font-family: "Source Serif 4", Georgia, serif; }
-    #${px}fondo { position: absolute; inset: 0; background: linear-gradient(to bottom, ${C.fondo} 0%, ${C.fondo} 50%, ${C.pannello} 100%); }
+    #${px}fondo { position: absolute; inset: 0; background: ${STILE === 'notte'
+      ? `radial-gradient(ellipse 55% 60% at 78% 72%, rgba(${C.aloneScuroRgb},0.16) 0%, rgba(${C.aloneRgb},0.07) 45%, rgba(0,0,0,0) 75%), radial-gradient(ellipse 50% 45% at 18% 20%, rgba(${C.aloneRgb},0.08) 0%, rgba(0,0,0,0) 70%), ${C.fondo}`
+      : `linear-gradient(to bottom, ${C.fondo} 0%, ${C.fondo} 50%, ${C.pannello} 100%)`}; }
     #${px}palco { position: absolute; inset: 0; }
     .${px}barra { position: absolute; left: ${M}px; right: ${M}px; top: ${alto}px; display: flex; justify-content: space-between; align-items: center;
       font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.18em; text-transform: uppercase; color: ${C.crema2}; }
