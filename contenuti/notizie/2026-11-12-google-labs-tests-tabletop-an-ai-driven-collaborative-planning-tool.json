@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-12-google-labs-tests-tabletop-an-ai-driven-collaborative-planning-tool",
+ "titolo": "Google Labs tests Tabletop, an AI‑driven collaborative planning tool",
+ "descr": "Tabletop lets groups create itineraries, polls, expense splitters and brackets via an AI agent, rolling out to U.S. users 18+ on a waitlist.",
+ "tema": "Software",
+ "paragrafi": [
+  "Google Labs launched Tabletop, an experiment that lets groups share an online space and ask an AI agent to build planning tools.",
+  "Users add links, files and ideas, then prompt @tabletop or choose a starter template to generate interactive itineraries, dinner polls, expense splitters or tournament brackets.",
+  "Tabletop is currently limited to U.S. users aged 18 and older who sign up through a waitlist at labs.google/tabletop; pricing and broader release details were not disclosed.",
+  "Google did not specify which model powers Tabletop, though its prior Labs experiment Disco used Gemini 3, and the company recently allowed up to six household members to share its CC agent."
+ ],
+ "perche": [
+  "For users, Tabletop offers a fast way to co‑create common planning tools without manual setup, leveraging an AI assistant. For those preferring free or locally hosted models, the service remains cloud‑based and limited to a waitlist, highlighting the need for open alternatives that can run on personal hardware."
+ ],
+ "pubblicato": "2026-11-12",
+ "titoloFonte": "Google tests Tabletop, letting groups build planning tools with an AI agent",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/11/google-tests-tabletop-letting-groups-build-planning-tools-with-an-ai-agent/",
+   "titolo": "Google tests Tabletop, letting groups build planning tools with an AI agent",
+   "ufficiale": false,
+   "data": "2026-11-11"
+  },
+  {
+   "nome": "blog.google",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
+   "titolo": "Tabletop: Collaborative group planning with Google Labs",
+   "ufficiale": true,
+   "data": "2026-11-11"
+  }
+ ],
+ "frasiTolte": 1
+}

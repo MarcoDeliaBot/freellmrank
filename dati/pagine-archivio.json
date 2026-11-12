@@ -22826,6 +22826,30 @@
     "tipo": "News"
    },
    "data": "2026-11-11"
+  },
+  "/blog/news-2026-11-12-google-labs-tests-tabletop-an-ai-driven-collaborative-planning-tool.html": {
+   "post": {
+    "slug": "news-2026-11-12-google-labs-tests-tabletop-an-ai-driven-collaborative-planning-tool",
+    "titolo": "Google Labs tests Tabletop, an AI‑driven collaborative planning tool",
+    "descr": "Tabletop lets groups create itineraries, polls, expense splitters and brackets via an AI agent, rolling out to U.S. users 18+ on a waitlist.",
+    "data": "2026-11-12",
+    "tema": "Software",
+    "corpo": "Google Labs launched Tabletop, an experiment that lets groups share an online space and ask an AI agent to build planning tools.\n\nUsers add links, files and ideas, then prompt @tabletop or choose a starter template to generate interactive itineraries, dinner polls, expense splitters or tournament brackets.\n\nTabletop is currently limited to U.S. users aged 18 and older who sign up through a waitlist at labs.google/tabletop; pricing and broader release details were not disclosed.\n\nGoogle did not specify which model powers Tabletop, though its prior Labs experiment Disco used Gemini 3, and the company recently allowed up to six household members to share its CC agent.\n\n## What it means for you\n\nFor users, Tabletop offers a fast way to co‑create common planning tools without manual setup, leveraging an AI assistant. For those preferring free or locally hosted models, the service remains cloud‑based and limited to a waitlist, highlighting the need for open alternatives that can run on personal hardware.\n\n## Sources\n\n- [Google tests Tabletop, letting groups build planning tools with an AI agent](https://siliconangle.com/2026/11/11/google-tests-tabletop-letting-groups-build-planning-tools-with-an-ai-agent/), SiliconANGLE, 11 Nov 2026\n- [Tabletop: Collaborative group planning with Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/), blog.google (official), 11 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-12-google-labs-tests-tabletop-an-ai-driven-collaborative-planning-tool).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-11"
+  },
+  "/blog/news-2026-11-12-nvidia-dsx-ai-factory-adds-aibom-to-gpu-kubernetes-runtime-for-workloa.html": {
+   "post": {
+    "slug": "news-2026-11-12-nvidia-dsx-ai-factory-adds-aibom-to-gpu-kubernetes-runtime-for-workloa",
+    "titolo": "NVIDIA DSX AI Factory adds AIBOM to GPU‑Kubernetes runtime for workload tracking",
+    "descr": "NVIDIA AI Cluster Runtime now integrates k8s‑aibom to inventory AI workloads on Kubernetes, improving visibility and compliance.",
+    "data": "2026-11-12",
+    "tema": "Software",
+    "corpo": "The integration creates CycloneDX 1.6 AIBOM records for supported AI workloads, automatically classifying categories and serving runtimes such as vLLM inference deployments.\n\nDuring validation with AICR v1.2.0 and k8s‑aibom 1.6.2, the system generated about four API‑server requests per minute, used 2.2 millicores of CPU on average, and maintained a 28‑34 MiB controller memory working set.\n\nAICR continues to generate version‑locked recipes and reproducible deployment bundles, while k8s‑aibom adds higher‑level workload discovery and traceability.\n\n## What it means for you\n\nThe added inventory layer helps operators detect unregistered AI workloads, track model versions, and support security audits. For developers of free or locally hosted models, the visibility can guide compliance and ensure that runtime configurations match the intended AI assets.\n\n## Sources\n\n- [Validating GPU Platforms with Runtime AI Inventory via the NVIDIA DSX AI Factory](https://developer.nvidia.com/blog/validating-gpu-platforms-with-runtime-ai-inventory-via-the-nvidia-dsx-ai-factory/), NVIDIA Developer (official), 11 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-12-nvidia-dsx-ai-factory-adds-aibom-to-gpu-kubernetes-runtime-for-workloa).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-11"
   }
  },
  "ricostruzione": {
