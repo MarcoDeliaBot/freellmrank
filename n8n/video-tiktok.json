@@ -1,0 +1,345 @@
+{
+  "name": "FreeLLMArena · Short su TikTok (Buffer)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "20 9,14,19 * * *"
+            }
+          ]
+        }
+      },
+      "id": "5252bb6c-f4e6-4d32-b5cc-e498e447c6e2",
+      "name": "Tre volte al giorno",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "ee446ae0-e4a2-4baf-a89d-b2a0fceb9225",
+      "name": "Prova a mano",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/releases?per_page=100",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7e805cd5-4f3d-4262-b4ff-f6b76f0c316c",
+      "name": "Leggi i video pronti su GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        224,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Sceglie UNO Short a ogni giro per TikTok (Marco, 11/11/2026: «renderla automatica la pubblicazione», via Buffer).\n// Solo gli Short (video-breve-*), in inglese, degli ultimi 7 giorni: per un canale nuovo prima le notizie più fresche.\n// La memoria resta fra un giro e l'altro solo quando il flusso è ATTIVO (le prove a mano non se la ricordano).\nconst memoria = $getWorkflowStaticData('global');\nmemoria.fatti = memoria.fatti || [];\n// TikTok: circa 15 post al giorno per account (regole ufficiali, lette l'11/11/2026); Buffer Free: 10 post in coda per canale\n// e 600 richieste al giorno. Tetto a 3 al giorno: il flusso gira 3 volte al giorno, uno per giro.\nconst TETTO = 3;\nconst giorno = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Rome' });\nif (memoria.giorno !== giorno) { memoria.giorno = giorno; memoria.oggi = 0; }\nif ((memoria.oggi || 0) >= TETTO) return [];\nconst limite = new Date(Date.now() - 7 * 864e5).toISOString();\nconst pronti = [];\nfor (const it of $('Leggi i video pronti su GitHub').all()) {\n  const r = it.json;\n  const tag = String(r.tag_name || '');\n  if (!tag.startsWith('video-breve-') || tag.endsWith('-it') || r.draft || memoria.fatti.includes(tag)) continue;\n  if (String(r.created_at) < limite) continue;\n  const file = (fine) => (r.assets || []).find((a) => a.name.endsWith(fine));\n  if (!file('.mp4') || !file('.json')) continue;\n  pronti.push({ tag, creato: r.created_at, mp4: file('.mp4').browser_download_url, info: file('.json').browser_download_url });\n}\nif (!pronti.length) return [];\npronti.sort((a, b) => b.creato.localeCompare(a.creato));\nreturn [{ json: { ...pronti[0], inCoda: pronti.length, oggi: memoria.oggi || 0 } }];"
+      },
+      "id": "e6a8533a-3490-443b-9563-1bd75ca1d041",
+      "name": "Scegli lo Short",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.info }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "057f665a-7f5e-4a0b-91c7-ec542c6f8b63",
+      "name": "Leggi titolo e descrizione",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        672,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.buffer.com",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"query\": \"query { account { organizations { id name } } }\"}",
+        "options": {}
+      },
+      "id": "af755598-2512-4d9d-80c6-3fffd4c62fd4",
+      "name": "Leggi l'organizzazione Buffer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        896,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "Buffer API"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 30000
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.buffer.com",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ query: `query { channels(input: { organizationId: ${JSON.stringify($json.data.account.organizations[0].id)} }) { id name service isQueuePaused } }` }) }}",
+        "options": {}
+      },
+      "id": "886ff889-5328-41f9-a561-e5e924925852",
+      "name": "Leggi i canali Buffer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1120,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "Buffer API"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 30000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Il canale TikTok collegato a Buffer. Se manca, il flusso si ferma con un errore chiaro e non pubblica niente\n// (come il controllo del canale giusto nel flusso YouTube, 23/10/2026).\nconst canali = $json.data?.channels || [];\nconst tiktok = canali.filter((c) => String(c.service).toLowerCase() === 'tiktok');\nif (tiktok.length !== 1) throw new Error(`Serve esattamente un canale TikTok in Buffer, trovati ${tiktok.length}: ${JSON.stringify(canali.map((c) => [c.service, c.name]))}`);\nif (tiktok[0].isQueuePaused) throw new Error(`La coda Buffer di ${tiktok[0].name} è in pausa: riattivarla in Buffer.`);\nreturn [{ json: { canale: tiktok[0].id, nome: tiktok[0].name } }];"
+      },
+      "id": "51b9f03f-c91b-4525-ab5b-25bc20a856b3",
+      "name": "Solo il canale TikTok",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1344,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Testo del post TikTok: titolo senza #Shorts, la frase della notizia e il sito. Su TikTok i link non si cliccano:\n// resta il nome del sito (la voce del video dice «link in bio»). Buffer: al massimo 5 hashtag per post (support.buffer.com, 11/11/2026).\nconst scelto = $('Scegli lo Short').first().json;\nconst info = $('Leggi titolo e descrizione').first().json;\nconst canale = $('Solo il canale TikTok').first().json.canale;\nconst titolo = String(info.titolo || '').replace(/#shorts/gi, '').trim();\nconst frase = String(info.descrizione || '').split('\\n')[0].trim();\nconst hashtag = ['#AI', '#AInews', '#LLM', '#FreeLLMArena'];\nconst testo = [titolo, frase && frase !== titolo ? frase : '', 'More on freellmarena.com', hashtag.join(' ')].filter(Boolean).join('\\n\\n').slice(0, 2000);\nif (!titolo || !/^https:\\/\\//.test(scelto.mp4)) throw new Error('Dati dello Short incompleti: ' + JSON.stringify({ tag: scelto.tag, titolo, mp4: scelto.mp4 }));\n// JSON.stringify produce una stringa valida anche per GraphQL (stesse sequenze di escape)\nconst query = `mutation CreatePost { createPost(input: { text: ${JSON.stringify(testo)} channelId: ${JSON.stringify(canale)} schedulingType: automatic mode: addToQueue assets: [ { video: { url: ${JSON.stringify(scelto.mp4)} } } ] }) { ... on PostActionSuccess { post { id text } } ... on MutationError { message } } }`;\nreturn [{ json: { tag: scelto.tag, testo, query } }];"
+      },
+      "id": "09773e78-27f5-409e-8a26-24606f182b84",
+      "name": "Prepara il post",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1568,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.buffer.com",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ query: $json.query }) }}",
+        "options": {}
+      },
+      "id": "b5286518-6dc1-4cdc-86af-c3fd381735c0",
+      "name": "Manda a Buffer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1792,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "Buffer API"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 30000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Segna lo Short come mandato a Buffer, così non riparte. Se Buffer risponde con un errore, il flusso si ferma e lo mostra.\nconst memoria = $getWorkflowStaticData('global');\nconst v = $('Prepara il post').first().json;\nconst r = $json.data?.createPost || {};\nif (!r.post?.id) throw new Error('Buffer non ha creato il post: ' + JSON.stringify($json).slice(0, 500));\nmemoria.fatti = [...(memoria.fatti || []).filter((t) => t !== v.tag), v.tag].slice(-300);\nmemoria.oggi = (memoria.oggi || 0) + 1;\nreturn [{ json: { tag: v.tag, buffer: r.post.id, oggi: memoria.oggi } }];"
+      },
+      "id": "41685099-956a-4ce1-abe8-28eed91e3fa9",
+      "name": "Segna come mandato",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2016,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Tre volte al giorno": {
+      "main": [
+        [
+          {
+            "node": "Leggi i video pronti su GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prova a mano": {
+      "main": [
+        [
+          {
+            "node": "Leggi i video pronti su GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leggi i video pronti su GitHub": {
+      "main": [
+        [
+          {
+            "node": "Scegli lo Short",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scegli lo Short": {
+      "main": [
+        [
+          {
+            "node": "Leggi titolo e descrizione",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leggi titolo e descrizione": {
+      "main": [
+        [
+          {
+            "node": "Leggi l'organizzazione Buffer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leggi l'organizzazione Buffer": {
+      "main": [
+        [
+          {
+            "node": "Leggi i canali Buffer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leggi i canali Buffer": {
+      "main": [
+        [
+          {
+            "node": "Solo il canale TikTok",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Solo il canale TikTok": {
+      "main": [
+        [
+          {
+            "node": "Prepara il post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara il post": {
+      "main": [
+        [
+          {
+            "node": "Manda a Buffer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manda a Buffer": {
+      "main": [
+        [
+          {
+            "node": "Segna come mandato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Rome"
+  }
+}
