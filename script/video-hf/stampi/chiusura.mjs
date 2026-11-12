@@ -9,9 +9,10 @@ import { C, LOGO, scena, s3 } from '../base.mjs';
 // Bit, la mascotte scelta da Marco il 4/11/2026 («Sì, mettilo» anche nelle notizie): saluta accanto al marchio, entra con lui e poi sta fermo
 const BIT = fs.readFileSync(new URL('../../../sorgente/mascotte/bit-saluta.svg', import.meta.url), 'utf8').trim();
 
-const VOCE_ORIZZONTALE = 'For AI news every day, and to compare every free AI model, visit FreeLLMArena. The link is in the description.';
-const VOCE_BIO = 'Find it all on FreeLLMArena. Link in bio.';
-const VOCE_CANALE = 'Watch the full story on our channel. Find it all on FreeLLMArena. Link in bio.';
+// 12/11/2026 (Marco: «Dobbiamo diventare virali e seguiti»): la chiusura chiede di seguire il canale, con un motivo (domani c'è altro)
+const VOCE_ORIZZONTALE = "AI news every day. Compare every free AI model. Follow FreeLLMArena so you don't miss tomorrow's news. The link is in the description.";
+const VOCE_BIO = 'Follow FreeLLMArena for free AI news every day. Link in bio.';
+const VOCE_CANALE = 'Full story on our channel. Follow FreeLLMArena for free AI news every day. Link in bio.';
 
 export default {
   nome: 'chiusura',
@@ -19,7 +20,7 @@ export default {
   voceFissa: (dati = {}, formato = 'orizzontale') => (formato !== 'verticale' ? VOCE_ORIZZONTALE : dati.invito === 'canale' ? VOCE_CANALE : VOCE_BIO),
   valida: (dati = {}) => (dati.invito && !['canale', 'bio'].includes(dati.invito) ? ['invito: «canale» o «bio»'] : []),
   parole: (dati = {}, formato = 'orizzontale') => (formato !== 'verticale'
-    ? [{ chiave: 'riga1', parola: 'news' }, { chiave: 'riga2', parola: 'compare' }, { chiave: 'marchio', parola: 'visit' }, { chiave: 'link', parola: 'link' }]
+    ? [{ chiave: 'riga1', parola: 'news' }, { chiave: 'riga2', parola: 'compare' }, { chiave: 'marchio', parola: 'Follow' }, { chiave: 'link', parola: 'link' }]
     : [...(dati.invito === 'canale' ? [{ chiave: 'canale', parola: 'channel' }] : []), { chiave: 'marchio', parola: 'FreeLLMArena' }, { chiave: 'bio', parola: 'bio' }]),
   html(arg) {
     if (arg.formato === 'verticale') return verticale(arg);
