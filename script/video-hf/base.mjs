@@ -56,14 +56,39 @@ export const attacchi = (dati, coppie) => coppie.filter(([, testo]) => testo != 
 export const s3 = (x) => Math.round(Math.max(0, x) * 1000) / 1000;
 
 const FONT = `@font-face { font-family: "Source Serif 4"; src: url("assets/fonts/Source_Serif_4.ttf") format("truetype"); font-weight: 200 900; font-style: normal; font-display: block; }
-    @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrains_Mono.ttf") format("truetype"); font-weight: 100 800; font-style: normal; font-display: block; }`;
+    @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrains_Mono.ttf") format("truetype"); font-weight: 100 800; font-style: normal; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter_700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: block; }
+    @font-face { font-family: "Caveat"; src: url("assets/fonts/Caveat_700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: block; }`;
+
+// Stampi «carta» (12/11/2026, Marco: «Sì, fai gli stampi» dopo la prova dei movimenti del video EarnixLab iO2sNuzaCxU):
+// fondo di cartone con grana, oggetti come adesivi di carta (bordo crema e ombra). Colori propri, fissi: la carta resta carta.
+export const CARTA = {
+  fondo: `radial-gradient(ellipse 70% 60% at 50% 40%, rgba(255,250,235,0.35), rgba(0,0,0,0) 70%), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.27 0 0 0 0 0.15 0 0 0 0.22 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>"), linear-gradient(160deg, #d6c29b, #c4ad82)`,
+  bordo: '#fffaf0', foglio: '#fbf7ee', inchiostro: '#1d1d1f', grigio: '#8a8174', riga: '#d8d0c0', filo: '#6b5a3e',
+  rosso: '#d6463c', giallo: '#f2b134', verde: '#2e9e6b', blu: '#3b6fd8', rosa: '#e8475f',
+  ombra: 'drop-shadow(0 10px 0 rgba(60,40,10,0.18)) drop-shadow(0 18px 24px rgba(60,40,10,0.22))',
+};
+// coriandoli deterministici per gli stampi carta: elementi e righe di animazione (nessun Math.random nel video)
+export function coriandoli(px, n, seme, { raggio = 300 } = {}) {
+  let x = seme >>> 0;
+  const r = () => ((x = (x * 1664525 + 1013904223) >>> 0) / 4294967296);
+  const colori = [CARTA.rosa, CARTA.giallo, CARTA.verde, CARTA.blu, CARTA.inchiostro];
+  const pezzi = Array.from({ length: n }, (_, i) => {
+    const a = r() * Math.PI * 2, d = raggio * (0.5 + r() * 0.9);
+    return { i, c: colori[i % 5], x: Math.cos(a) * d, y: Math.sin(a) * d * 0.7 - 60, rot: (r() - 0.5) * 540, w: 10 + r() * 10, h: 5 + r() * 6 };
+  });
+  const html = pezzi.map((p) => `<i class="${px}cf" id="${px}cf${p.i}" style="background:${p.c};width:${p.w.toFixed(1)}px;height:${p.h.toFixed(1)}px"></i>`).join('');
+  const anima = (t) => pezzi.map((p) => `tl.fromTo(q("#${px}cf${p.i}"),{x:0,y:0,rotation:0,opacity:0,scale:0.4},{x:${p.x.toFixed(1)},y:${p.y.toFixed(1)},rotation:${p.rot.toFixed(0)},scale:1,opacity:1,duration:0.9,ease:"power3.out"},${t});tl.to(q("#${px}cf${p.i}"),{y:"+=140",opacity:0,duration:0.8,ease:"power1.in"},${s3(t + 0.9)});`).join(' ');
+  const css = `.${px}cf { position: absolute; left: 0; top: 0; border-radius: 2px; opacity: 0; }`;
+  return { html, anima, css };
+}
 
 // la scena completa: fondo verde con griglia, barra in alto, il corpo dello stampo e la sua animazione.
 // id: identificativo della composizione (es. "s3-numeri"); px: prefisso di classi e id dello stampo (es. "s3-");
 // css, corpo: dello stampo, con classi e id che iniziano con px; anima: righe JS che usano tl, q(sel), qa(sel), DUR
 // fuori: pezzi messi fuori dal palco (che ha data-start): un <video data-start> non può stare dentro un contenitore temporizzato
 // (regola di HyperFrames «video_nested_in_timed_element»), quindi le clip dello stampo «immagine» vanno qui (26/10/2026)
-export function scena({ id, px, durata, etichetta = '', numero = '', css = '', corpo = '', anima = '', ultima = false, formato = 'orizzontale', fuori = '' }) {
+export function scena({ id, px, durata, etichetta = '', numero = '', css = '', corpo = '', anima = '', ultima = false, formato = 'orizzontale', fuori = '', carta = false }) {
   const D = s3(durata);
   const { W, H, margine: M } = formatoDi(formato);
   const alto = formato === 'verticale' ? 72 : 56;
@@ -71,7 +96,7 @@ export function scena({ id, px, durata, etichetta = '', numero = '', css = '', c
   <style>
     ${FONT}
     #root { position: absolute; inset: 0; width: ${W}px; height: ${H}px; overflow: hidden; container-type: size; color: ${C.crema}; font-family: "Source Serif 4", Georgia, serif; }
-    #${px}fondo { position: absolute; inset: 0; background: linear-gradient(to bottom, ${C.fondo} 0%, ${C.fondo} 50%, ${C.pannello} 100%); }
+    #${px}fondo { position: absolute; inset: 0; background: ${carta ? CARTA.fondo : `linear-gradient(to bottom, ${C.fondo} 0%, ${C.fondo} 50%, ${C.pannello} 100%)`}; }
     #${px}palco { position: absolute; inset: 0; }
     .${px}barra { position: absolute; left: ${M}px; right: ${M}px; top: ${alto}px; display: flex; justify-content: space-between; align-items: center;
       font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 28px; letter-spacing: 0.18em; text-transform: uppercase; color: ${C.crema2}; }

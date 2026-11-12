@@ -61,6 +61,18 @@ export default {
 | `punti` | 2–4 punti chiave, notizie senza numeri | `{ "titolo": "What changed, max 32", "punti": ["max 60 chars each, 2-4"] }` |
 | `mappa` | dove succede: sede di un laboratorio, lancio in un paese, data center (29/10/2026) | `{ "titolo": "Where it comes from, max 32", "luoghi": [{ "luogo": "un nome dell'elenco LUOGHI di stampi/mappa.mjs (o US, UK, EU, Bengaluru…)", "nome": "DeepSeek, max 18, facoltativo" }] (1–5), "rotte": false }` (con `rotte` archi dal primo luogo agli altri; spilli troppo vicini o etichette senza posto = scena scartata) |
 | `chiusura` | sempre l'ultima | nessun dato, voce fissa |
+| `cartello` | apertura «carta»: cartello di stop + parola o numero a tessere + coriandoli | `{ "segnale": "WAIT, max 8", "parola": "1,000, 2-6 chars, no spaces", "striscia": "questions in one go, max 26" }` |
+| `scontrino` | scontrino che si stampa, 2-4 voci, totale cerchiato a mano | `{ "sopra": "max 24", "titolo": "max 22", "righe": ["max 22, 2-4"], "totale": { "nome": "max 10", "valore": "max 6" }, "nota": "max 16, optional" }` |
+| `cartellino` | prezzo appeso che dondola + timbro | `{ "prezzo": "$0.10, max 7, with a digit", "sotto": "max 22", "timbro": "FREE, max 8", "timbroSopra": "max 10, optional" }` |
+| `percorso` | sentiero tratteggiato con 2-5 tappe | `{ "titolo": "max 32", "tappe": ["max 10 each, 2-5"] }` |
+
+## Stampi «carta» (12/11/2026)
+
+Marco ha chiesto gli stampi coi movimenti del video EarnixLab iO2sNuzaCxU (cartello, scontrino, cartellino, percorso).
+Usano `scena({ ..., carta: true })`: fondo di cartone con grana e colori fissi `CARTA` di `base.mjs` (non `C`), caratteri
+«Inter» 700 per gli adesivi e «Caveat» per le note a mano (in `fonti/`). Eccezioni volute alle regole di sopra, solo per
+questi stampi: entrate con rimbalzo (`back.out`), dondolio del cartellino, scatti della stampante (`steps`). Restano vietati
+`repeat`/`yoyo` e `Math.random`: i coriandoli vengono da `coriandoli()` di `base.mjs`, con un seme fisso.
 
 ## Formato verticale (Short di YouTube) — dal 24/10/2026 sera
 
