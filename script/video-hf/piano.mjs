@@ -28,6 +28,21 @@ export function controllore(n) {
   const regge = (t) => mancanti(t).length === 0;
   return { POST, regge, mancanti };
 }
+// Il gancio (12/11/2026, Marco: «Aggiungi ganci nei video in modo che la gente ci segua»): i primi 2-3 secondi decidono se
+// chi scorre resta. La prima frase della prima scena: breve, concreta, senza preamboli. Restituisce i problemi (vuoto = va bene).
+export const APERTURE = ['titolo', 'cartello'];
+const PREAMBOLI = /^(today\b|in this video|this video|welcome|hello|hi\b|hey\b|so\b|let's|let us|here is|here's what|we\b|freellmarena\b|in today's|did you know|ever wondered)/i;
+const CONCRETO = /\d|\b(free|without|instead|beats?|cheaper|faster|first|only|no longer|now|new|just|launch(es|ed)?|open[- ]source)\b/i;
+export function gancio(voce) {
+  const prima = frasi(voce)[0] || '';
+  const e = [];
+  if (!prima) return ['prima scena senza voce'];
+  if (parole(prima) > 16) e.push(`prima frase di ${parole(prima)} parole (al massimo 16)`);
+  if (PREAMBOLI.test(prima)) e.push(`prima frase che parte con un preambolo («${prima.split(' ').slice(0, 3).join(' ')}…»)`);
+  if (!CONCRETO.test(prima) && !/\s[A-Z][\w.-]*\d|\s[A-Z][a-z]+[A-Z]/.test(` ${prima}`) && !/\s[A-Z]/.test(prima.slice(1))) e.push('prima frase senza niente di concreto (un numero, un nome, «free», un confronto)');
+  return e;
+}
+
 // tutti i testi dentro «dati» (anche annidati), tranne le parole di attacco
 const testi = (v, k = '') => k === 'quando' ? [] : typeof v === 'string' ? [v] : Array.isArray(v) ? v.flatMap((x) => testi(x)) : v && typeof v === 'object' ? Object.entries(v).flatMap(([kk, x]) => testi(x, kk)) : [];
 
@@ -97,13 +112,19 @@ export function controllaPiano(grezzo, n) {
     scene.push({ stampo: sc.stampo, etichetta: semplice(sc.etichetta).slice(0, 24), voce, dati });
   }
   // si apre sempre col titolo: se manca, quello costruito dalla notizia (riassunto letto così com'è)
-  if (scene.length && scene[0].stampo !== 'titolo') { scene.unshift(titoloDiRiserva(n)); problemi.push('titolo di apertura aggiunto dalla notizia'); }
+  // 12/11/2026: anche il «cartello» (stampo carta) può aprire: è fatto apposta per fermare lo scorrimento
+  const aggiunto = scene.length > 0 && !APERTURE.includes(scene[0].stampo);
+  if (aggiunto) { scene.unshift(titoloDiRiserva(n)); problemi.push('titolo di apertura aggiunto dalla notizia'); }
   const totale = scene.reduce((s, x) => s + parole(x.voce), 0);
   // 26/10/2026: soglia allineata alle regole date al modello (4-6 scene, 110-190 parole); prima bastavano 3 scene e 60 parole
   // e passavano piani da 40 secondi
   const ok = scene.length >= 4 && totale >= 100 && totale <= 230;
   if (!ok) problemi.push(`piano scartato: ${scene.length} scene buone, ${totale} parole (servono almeno 4 scene e 100-230 parole)`);
-  return { ok, completo: ok && tolte === 0, tolte, scene, problemi, totale };
+  // 12/11/2026 (Marco: «Aggiungi ganci nei video… dobbiamo diventare virali»): la prima frase deve agganciare.
+  // Un'apertura debole non toglie la scena (i fatti reggono), ma il piano non è completo e il modello riprova.
+  const debole = scene.length && !aggiunto ? gancio(scene[0].voce) : [];
+  if (debole.length) problemi.push(`apertura debole: ${debole.join('; ')}`);
+  return { ok, completo: ok && tolte === 0 && !debole.length, tolte, scene, problemi, totale };
 }
 
 // riserva: titolo con il riassunto, poi una scena per paragrafo con la voce che legge il paragrafo; a schermo i punti
@@ -132,7 +153,10 @@ Use ONLY facts, numbers and names from ARTICLE. Never add a number, name, date o
 Available stampi:
 ${elenco}
 Rules:
-- 4 to 6 scenes. The first scene is always "titolo"; its "sopra" is ${n.tipo === 'guida' ? '"Guide · ' : '"AI news · '}${giorno(n.pubblicato)}" exactly. Do NOT add a closing scene (it is added automatically).
+- 4 to 6 scenes. The first scene is "titolo" (its "sopra" is ${n.tipo === 'guida' ? '"Guide · ' : '"AI news · '}${giorno(n.pubblicato)}" exactly) or, when ARTICLE has one striking number or one short striking word, "cartello". Do NOT add a closing scene (it is added automatically).
+- THE HOOK. Viewers decide in 2 seconds whether to keep watching. The first sentence of scene 1 is the hook: at most 12 words, the most surprising concrete fact of ARTICLE first (a number, a name, "free", a comparison), stated plainly. Never start with "Today", "In this video", "Welcome", "Hi", "So", "Let's", "Here's", "We" or the channel name. Good: "Google just made 1,000 answers cost one cent." Bad: "Today we look at a new API from Google."
+- THE OPEN LOOP. Scene 1 ends with one short sentence (at most 10 words) that promises something a LATER scene really delivers, using only ARTICLE facts, e.g. "But the price is the real story." Then deliver it later. Never promise what ARTICLE does not contain.
+- Keep every scene moving: no scene repeats what an earlier scene already said.
 - Use "numero", "numeri", "lista", "confronto" or "mappa" only when ARTICLE really has that kind of content ("mappa": ARTICLE names the cities or countries); otherwise "punti".
 - "voce" is what the narrator says during the scene: 1 to 3 short spoken sentences (6 to 45 words, never more than 50), plain English, numbers written as digits. All scenes together: 110 to 190 words.
 - Everything shown on screen ("dati") must also be said in that scene's "voce", in the same order. Show about one on-screen item for every 12 to 15 spoken words: a long voice needs more items, or split it into two scenes.
