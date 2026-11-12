@@ -19140,6 +19140,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/de/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/model/apriel-5b-instruct",
   "tipo": "modello",
   "lingua": "de",
@@ -25028,6 +25044,22 @@
   "tipo": "modello",
   "lingua": "de",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -36618,6 +36650,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/model/apriel-5b-instruct",
   "tipo": "modello",
   "lingua": "es",
@@ -42506,6 +42554,22 @@
   "tipo": "modello",
   "lingua": "es",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -54096,6 +54160,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/model/apriel-5b-instruct",
   "tipo": "modello",
   "lingua": "fr",
@@ -59984,6 +60064,22 @@
   "tipo": "modello",
   "lingua": "fr",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -71574,6 +71670,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/model/apriel-5b-instruct",
   "tipo": "modello",
   "lingua": "it",
@@ -77462,6 +77574,22 @@
   "tipo": "modello",
   "lingua": "it",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -89052,6 +89180,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/model/apriel-5b-instruct",
   "tipo": "modello",
   "lingua": "ja",
@@ -94944,6 +95088,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/model/phi-3-5-vision-instruct",
   "tipo": "modello",
   "lingua": "ja",
@@ -97022,6 +97182,22 @@
   "tipo": "modello",
   "lingua": "en",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -102914,6 +103090,22 @@
   "tipo": "modello",
   "lingua": "en",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -114504,6 +114696,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/pt/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/model/apriel-5b-instruct",
   "tipo": "modello",
   "lingua": "pt",
@@ -120392,6 +120600,22 @@
   "tipo": "modello",
   "lingua": "pt",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },

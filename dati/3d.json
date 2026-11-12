@@ -41,7 +41,7 @@
    "licenza": "mit",
    "demo": "microsoft/TRELLIS.2",
    "download": 2566439,
-   "like": 1478,
+   "like": 1482,
    "creato": "2025-12-01",
    "b": null
   },
@@ -53,7 +53,7 @@
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2",
    "download": 321779,
-   "like": 1876,
+   "like": 1877,
    "creato": "2025-01-20",
    "b": null
   },
@@ -77,7 +77,7 @@
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2.1",
    "download": 108843,
-   "like": 1373,
+   "like": 1376,
    "creato": "2025-06-13",
    "b": null
   },
@@ -101,7 +101,7 @@
    "licenza": "stability",
    "demo": "stabilityai/stable-fast-3d",
    "download": 32751,
-   "like": 1501,
+   "like": 1503,
    "creato": "2024-07-17",
    "b": 1
   },

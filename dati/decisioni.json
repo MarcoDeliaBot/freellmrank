@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-11",
+ "aggiornato": "2026-11-12",
  "suite": {
   "versione": "decision-index-0.3",
   "test": 42,
@@ -46,32 +46,6 @@
   }
  },
  "modelli": [
-  {
-   "id": "reax-1.3",
-   "nome": "REAX 1.3",
-   "org": "",
-   "tipo": "inference technique",
-   "b": 57.4,
-   "stimato": false,
-   "repo": "decisionmodels/REAX-1.3",
-   "base": null,
-   "nota": null,
-   "punti": 73.98,
-   "pubblico": 73.71,
-   "ms": 245.9,
-   "p95": 2683.7,
-   "ece": 0.0179,
-   "acc": 0.8195,
-   "aree": {
-    "knowledge": 65,
-    "language": 75.5,
-    "retrieval": 73.6,
-    "tools": 88.7,
-    "arts": 64.5
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
-  },
   {
    "id": "karpo-decision-31b",
    "nome": "karpo-decision-31B",
@@ -123,6 +97,32 @@
    },
    "vision": null,
    "licenza": "other"
+  },
+  {
+   "id": "reax-1.3",
+   "nome": "REAX 1.3",
+   "org": "",
+   "tipo": "inference technique",
+   "b": 57.4,
+   "stimato": false,
+   "repo": "decisionmodels/REAX-1.3",
+   "base": null,
+   "nota": null,
+   "punti": 72.64,
+   "pubblico": 73.71,
+   "ms": 245.9,
+   "p95": 2683.7,
+   "ece": 0.0179,
+   "acc": 0.8195,
+   "aree": {
+    "knowledge": 65,
+    "language": 75.5,
+    "retrieval": 73.6,
+    "tools": 88.7,
+    "arts": 64.5
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
   },
   {
    "id": "logits-sigma-1-duo",
@@ -198,6 +198,32 @@
     "retrieval": 73.2,
     "tools": 85.4,
     "arts": 60.5
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "copernicus-57b-fla",
+   "nome": "Copernicus-57B",
+   "org": "Poindexter Labs",
+   "tipo": "inference technique",
+   "b": 57.4,
+   "stimato": false,
+   "repo": "Poindexter-Labs/Copernicus-57B",
+   "base": null,
+   "nota": null,
+   "punti": 71.8,
+   "pubblico": 75.34,
+   "ms": 248.7,
+   "p95": 3535.9,
+   "ece": 0.0143,
+   "acc": 0.8219,
+   "aree": {
+    "knowledge": 67.8,
+    "language": 76.7,
+    "retrieval": 76.7,
+    "tools": 88,
+    "arts": 65.7
    },
    "vision": null,
    "licenza": "apache-2.0"
@@ -768,6 +794,35 @@
     "ms": 251.9
    },
    "licenza": "cc-by-nc-4.0"
+  },
+  {
+   "id": "pplx-decider-v1.3",
+   "nome": "Perplexity Decider v1.3 (27B)",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 26.1,
+   "stimato": false,
+   "repo": null,
+   "base": "Qwen/Qwen3.8-27B",
+   "nota": "Open weights coming soon",
+   "punti": 67.67,
+   "pubblico": 69.72,
+   "ms": 139.4,
+   "p95": 1513.3,
+   "ece": 0.0421,
+   "acc": 0.8032,
+   "aree": {
+    "knowledge": 60.7,
+    "language": 72.5,
+    "retrieval": 70.5,
+    "tools": 85.9,
+    "arts": 54.7
+   },
+   "vision": {
+    "punti": 72.8,
+    "ms": 391.1
+   },
+   "licenza": null
   },
   {
    "id": "oak-1.1",
@@ -2679,6 +2734,35 @@
    },
    "vision": null,
    "licenza": "apache-2.0"
+  },
+  {
+   "id": "pplx-decider-flash-v1.3",
+   "nome": "Perplexity Decider Flash v1.3 (4B)",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 4.5,
+   "stimato": false,
+   "repo": null,
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": "Open weights coming soon",
+   "punti": 55.14,
+   "pubblico": 63.35,
+   "ms": 94,
+   "p95": 812.4,
+   "ece": 0.0721,
+   "acc": 0.7461,
+   "aree": {
+    "knowledge": 49,
+    "language": 68,
+    "retrieval": 67.1,
+    "tools": 83.6,
+    "arts": 43.9
+   },
+   "vision": {
+    "punti": 65.2,
+    "ms": 175.5
+   },
+   "licenza": null
   },
   {
    "id": "clef",

@@ -20,7 +20,7 @@
   "org": "meituan-longcat",
   "parametri": 1779752648320,
   "download": 710,
-  "like": 182,
+  "like": 186,
   "tipo": "image-text-to-text",
   "creato": "2026-11-04",
   "gated": false,
@@ -67,7 +67,7 @@
   "org": "LiquidAI",
   "parametri": 1918181888,
   "download": 11703,
-  "like": 274,
+  "like": 275,
   "tipo": "image-text-to-text",
   "creato": "2026-10-24",
   "gated": false,
@@ -83,7 +83,7 @@
   "org": "RecursiveSI",
   "parametri": 39785287456,
   "download": 51087,
-  "like": 1390,
+  "like": 1391,
   "tipo": "text-generation",
   "creato": "2026-10-21",
   "gated": false,
@@ -159,7 +159,7 @@
   "org": "deepseek-ai",
   "parametri": 763205315794,
   "download": 374631,
-  "like": 5546,
+  "like": 5571,
   "tipo": "image-text-to-text",
   "creato": "2026-10-17",
   "gated": false,
@@ -175,7 +175,7 @@
   "org": "nvidia",
   "parametri": 3975229440,
   "download": 14315,
-  "like": 254,
+  "like": 255,
   "tipo": "text-generation",
   "creato": "2026-10-16",
   "gated": false,
@@ -297,7 +297,7 @@
   "org": "black-forest-labs",
   "parametri": 5548681984,
   "download": 196852,
-  "like": 935,
+  "like": 941,
   "tipo": "image-to-image",
   "creato": "2026-10-13",
   "gated": true,
@@ -369,6 +369,28 @@
   "nome": "LiquidAI: LFM3-1.7B",
   "org": "liquid",
   "or": "liquid/lfm-3-1.7b:free",
+  "contesto": 262144,
+  "cat": [
+   "chat"
+  ],
+  "fonte": "openrouter"
+ },
+ {
+  "repo": null,
+  "nome": "Particle AI: Particle-1",
+  "org": "particle-ai",
+  "or": "particle-ai/particle-1:free",
+  "contesto": 1048576,
+  "cat": [
+   "chat"
+  ],
+  "fonte": "openrouter"
+ },
+ {
+  "repo": null,
+  "nome": "Apodex: Apodex 1.1 Mini",
+  "org": "apodex",
+  "or": "apodex/apodex-1.1-mini:free",
   "contesto": 262144,
   "cat": [
    "chat"

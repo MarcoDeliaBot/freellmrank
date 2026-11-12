@@ -17224,6 +17224,60 @@
     "categoriaMigliore": null
    },
    "data": "2026-11-12"
+  },
+  "/model/particle-ai-particle-1.html": {
+   "modello": {
+    "chiave": "particle-ai/particle-1:free",
+    "nome": "Particle AI: Particle-1",
+    "org": "particle-ai",
+    "licenza": "",
+    "aperto": false,
+    "or": {
+     "id": "particle-ai/particle-1:free",
+     "gratis": true
+    },
+    "hf": null,
+    "cat": {},
+    "nomi": {},
+    "senzaVoti": true,
+    "nuovo": true,
+    "download": 0,
+    "catPiccoli": [
+     "chat"
+    ],
+    "primo": null,
+    "slug": "particle-ai-particle-1",
+    "href": "/model/particle-ai-particle-1.html",
+    "categoriaMigliore": null
+   },
+   "data": "2026-11-12"
+  },
+  "/model/apodex-apodex-1-1-mini.html": {
+   "modello": {
+    "chiave": "apodex/apodex-1.1-mini:free",
+    "nome": "Apodex: Apodex 1.1 Mini",
+    "org": "apodex",
+    "licenza": "",
+    "aperto": false,
+    "or": {
+     "id": "apodex/apodex-1.1-mini:free",
+     "gratis": true
+    },
+    "hf": null,
+    "cat": {},
+    "nomi": {},
+    "senzaVoti": true,
+    "nuovo": true,
+    "download": 0,
+    "catPiccoli": [
+     "chat"
+    ],
+    "primo": null,
+    "slug": "apodex-apodex-1-1-mini",
+    "href": "/model/apodex-apodex-1-1-mini.html",
+    "categoriaMigliore": null
+   },
+   "data": "2026-11-12"
   }
  },
  "confronti": {
