@@ -99,3 +99,13 @@ test('e. i pesi aperti dopo l\'API sono una notizia nuova; lo stesso giorno no (
   const [pesi, primo] = [mistral.find((n) => /open weights/i.test(n.titolo)), mistral.find((n) => !/open weights/i.test(n.titolo))];
   assert.equal(modelloGiaRaccontato(pesi.titolo, [primo], giorno(pesi)), primo.nome);
 });
+
+test('Gemini Decision 1 e «Gemini Decisions API» nello stesso giro: stessa uscita (12/11/2026)', () => {
+  const primo = { nome: 'decision-1', titolo: 'Google launches Gemini Decision 1, a multimodal decision model for fast classification', pubblicato: '2026-11-12' };
+  const ora = Date.parse('2026-11-12T12:00:00Z');
+  assert.equal(modelloGiaRaccontato('Google launches Gemini Decisions API with fast multimodal decision model', [primo], ora), 'decision-1');
+  // controllo positivo: un altro lancio dello stesso laboratorio passa
+  assert.equal(modelloGiaRaccontato('Google launches Gemini Canvas for teams', [primo], ora), null);
+  // e la stessa radice dopo 2 giorni è una notizia nuova
+  assert.equal(modelloGiaRaccontato('Google launches Gemini Decisions API with fast multimodal decision model', [primo], ora + 3 * 864e5), null);
+});
