@@ -366,15 +366,27 @@ export function stessaStoria(titoloScritto, fonte) {
 const PARAGONE = /\b(than|powered by|built on|based on|using|vs\.?|versus|rivals?|beats?|like|alternative to)\b/i;
 const PESI = /\b(open[- ]?weights?|open[- ]sourc\w*|hugging face|weights)\b/i;
 const lanciati = (t) => nomiModello(piano(t).split(PARAGONE)[0]).map(compatto).filter((n) => n.length >= 4);
+// 12/11/2026: «Google launches Gemini Decision 1…» e «Google launches Gemini Decisions API…» uscirono nello stesso giro: il
+// secondo titolo non ha numero, quindi nessun nome di modello. La radice del nome (la parola prima del numero: «decision»)
+// vale se è propria (non un laboratorio come Llama o Qwen, non una parola comune), se l'altro titolo la scrive anche al
+// plurale, se i due titoli hanno lo stesso laboratorio e se i post sono a meno di 2 giorni l'uno dall'altro
+const radici = (t) => nomiModello(piano(t).split(PARAGONE)[0])
+  .map((n) => n.toLowerCase().split(/[-.]?\d/)[0].split('-').pop())
+  .filter((r) => r && r.length >= 5 && !LABORATORI.test(r) && !COMUNI.test(r));
+const scriveRadice = (r, t) => new RegExp(`(?<![a-z0-9])${r}(s|es)?(?![a-z0-9])`, 'i').test(piano(t).split(PARAGONE)[0]);
+export function stessaRadice(a, b) {
+  if (!labDi(a).some((l) => labDi(b).includes(l))) return false;
+  return radici(a).some((r) => scriveRadice(r, b)) || radici(b).some((r) => scriveRadice(r, a));
+}
 export function modelloGiaRaccontato(titoloScritto, fatte, ora = Date.now()) {
   if (!LANCIO_VERBO.test(titoloScritto)) return null;
   const nomi = new Set(lanciati(titoloScritto));
-  if (!nomi.size) return null;
   for (const n of fatte) {
     if (String(n.nome).startsWith('(questo giro)') || ora - new Date(n.pubblicato || 0) >= GIORNI_DOPPIONI * 864e5) continue;
     if (!LANCIO_VERBO.test(n.titolo || '') || NON_ANCORA.test(n.titoloFonte || '')) continue;
     if (PESI.test(titoloScritto) && !PESI.test(n.titolo) && ora - new Date(n.pubblicato) >= 3 * 864e5) continue;
     if (lanciati(n.titolo).some((x) => nomi.has(x))) return n.nome;
+    if (ora - new Date(n.pubblicato) < 2 * 864e5 && stessaRadice(titoloScritto, n.titolo)) return n.nome;
   }
   return null;
 }
