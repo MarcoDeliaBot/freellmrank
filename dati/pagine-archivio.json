@@ -17224,6 +17224,60 @@
     "categoriaMigliore": null
    },
    "data": "2026-11-12"
+  },
+  "/model/particle-ai-particle-1.html": {
+   "modello": {
+    "chiave": "particle-ai/particle-1:free",
+    "nome": "Particle AI: Particle-1",
+    "org": "particle-ai",
+    "licenza": "",
+    "aperto": false,
+    "or": {
+     "id": "particle-ai/particle-1:free",
+     "gratis": true
+    },
+    "hf": null,
+    "cat": {},
+    "nomi": {},
+    "senzaVoti": true,
+    "nuovo": true,
+    "download": 0,
+    "catPiccoli": [
+     "chat"
+    ],
+    "primo": null,
+    "slug": "particle-ai-particle-1",
+    "href": "/model/particle-ai-particle-1.html",
+    "categoriaMigliore": null
+   },
+   "data": "2026-11-12"
+  },
+  "/model/apodex-apodex-1-1-mini.html": {
+   "modello": {
+    "chiave": "apodex/apodex-1.1-mini:free",
+    "nome": "Apodex: Apodex 1.1 Mini",
+    "org": "apodex",
+    "licenza": "",
+    "aperto": false,
+    "or": {
+     "id": "apodex/apodex-1.1-mini:free",
+     "gratis": true
+    },
+    "hf": null,
+    "cat": {},
+    "nomi": {},
+    "senzaVoti": true,
+    "nuovo": true,
+    "download": 0,
+    "catPiccoli": [
+     "chat"
+    ],
+    "primo": null,
+    "slug": "apodex-apodex-1-1-mini",
+    "href": "/model/apodex-apodex-1-1-mini.html",
+    "categoriaMigliore": null
+   },
+   "data": "2026-11-12"
   }
  },
  "confronti": {
@@ -22829,7 +22883,7 @@
     "descr": "Google DeepMind unveils Gemini Robotics 2.5 with higher dexterity and safety, and AlphaGenome 2 for detailed DNA variant impact on cell types.",
     "data": "2026-11-11",
     "tema": "Research",
-    "corpo": "<div class=\"video-post\"><iframe src=\"https://www.youtube-nocookie.com/embed/8Mf1ZAIeZIY\" title=\"DeepMind launches Gemini Robotics 2.5 and AlphaGenome 2 for advanced robotics and gene prediction\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; picture-in-picture\" allowfullscreen></iframe></div>\n\n[Watch on YouTube](https://youtu.be/8Mf1ZAIeZIY)\n\nGoogle DeepMind announced Gemini Robotics 2.5, the latest vision‑language‑action model designed to improve robot dexterity, reliability and safety in real‑world settings.\n\nThe model was tested on more than 200 tasks and showed a 30%‑100% success rate depending on the task, completing actions 20%‑30% faster than its predecessor.\n\nIn a proof‑of‑concept at Mercedes‑Benz, robots using Gemini Robotics 2.5 packed automotive parts with a 96% success rate.\n\nDeepMind also released AlphaGenome 2, a next‑generation AI that predicts how DNA sequences and variants affect specific human cell types, adding DNA methylation to its readouts.\n\nAlphaGenome 2 was trained on over 100 million cell profiles across 68 tissues and identifies nearly twice as many expression‑changing variants as the previous model.\n\nBoth models are available now: Gemini Robotics 2.5 rolls out through partners such as Agile Robots SE, Apptronik and Boston Dynamics, while AlphaGenome 2 is offered for non‑commercial research via an API and in private preview for commercial use.\n\n## What it means for you\n\nFor AI practitioners, Gemini Robotics 2.5 provides a more capable platform for deploying robots in unstructured environments, potentially reducing development cycles. AlphaGenome 2 gives researchers a finer‑grained tool for linking genetic variants to cell‑type specific effects, accelerating disease research. Users of free or locally run models may note that these advances remain cloud‑based services, highlighting the growing gap between high‑performance proprietary AI and accessible open‑source alternatives.\n\n## Sources\n\n- [Google DeepMind releases new advanced robotics AI model and next-generation gene prediction model](https://siliconangle.com/2026/11/11/google-deepmind-releases-new-advanced-robotics-ai-model-and-next-generation-gene-prediction-model/), SiliconANGLE, 11 Nov 2026\n- [AlphaGenome 2: Deciphering how cells read DNA to better understand disease — Google DeepMind](https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/), deepmind.google (official), 11 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-11-deepmind-launches-gemini-robotics-2-5-and-alphagenome-2-for-advanced-r).</small>\n",
+    "corpo": "<div class=\"video-post\"><iframe src=\"https://www.youtube-nocookie.com/embed/8Mf1ZAIeZIY\" title=\"DeepMind launches Gemini Robotics 2.5 and AlphaGenome 2 for advanced robotics and gene prediction\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; picture-in-picture\" allowfullscreen></iframe></div>\n\n[Watch on YouTube](https://youtu.be/8Mf1ZAIeZIY) · [Watch the Short](https://youtube.com/shorts/OZUUSUwkGtA)\n\nGoogle DeepMind announced Gemini Robotics 2.5, the latest vision‑language‑action model designed to improve robot dexterity, reliability and safety in real‑world settings.\n\nThe model was tested on more than 200 tasks and showed a 30%‑100% success rate depending on the task, completing actions 20%‑30% faster than its predecessor.\n\nIn a proof‑of‑concept at Mercedes‑Benz, robots using Gemini Robotics 2.5 packed automotive parts with a 96% success rate.\n\nDeepMind also released AlphaGenome 2, a next‑generation AI that predicts how DNA sequences and variants affect specific human cell types, adding DNA methylation to its readouts.\n\nAlphaGenome 2 was trained on over 100 million cell profiles across 68 tissues and identifies nearly twice as many expression‑changing variants as the previous model.\n\nBoth models are available now: Gemini Robotics 2.5 rolls out through partners such as Agile Robots SE, Apptronik and Boston Dynamics, while AlphaGenome 2 is offered for non‑commercial research via an API and in private preview for commercial use.\n\n## What it means for you\n\nFor AI practitioners, Gemini Robotics 2.5 provides a more capable platform for deploying robots in unstructured environments, potentially reducing development cycles. AlphaGenome 2 gives researchers a finer‑grained tool for linking genetic variants to cell‑type specific effects, accelerating disease research. Users of free or locally run models may note that these advances remain cloud‑based services, highlighting the growing gap between high‑performance proprietary AI and accessible open‑source alternatives.\n\n## Sources\n\n- [Google DeepMind releases new advanced robotics AI model and next-generation gene prediction model](https://siliconangle.com/2026/11/11/google-deepmind-releases-new-advanced-robotics-ai-model-and-next-generation-gene-prediction-model/), SiliconANGLE, 11 Nov 2026\n- [AlphaGenome 2: Deciphering how cells read DNA to better understand disease — Google DeepMind](https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/), deepmind.google (official), 11 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-11-deepmind-launches-gemini-robotics-2-5-and-alphagenome-2-for-advanced-r).</small>\n",
     "tipo": "News"
    },
    "data": "2026-11-12"
@@ -22913,7 +22967,7 @@
     "descr": "OpenAI offers hands‑on AI training to caregivers, teaching practical ChatGPT skills across five locations.",
     "data": "2026-11-12",
     "tema": "Guides",
-    "corpo": "<div class=\"video-post\"><iframe src=\"https://www.youtube-nocookie.com/embed/D_ZEli4_LtE\" title=\"OpenAI Academy launches free ChatGPT workshops for caregivers in five U.S. cities\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; picture-in-picture\" allowfullscreen></iframe></div>\n\n[Watch on YouTube](https://youtu.be/D_ZEli4_LtE)\n\nOpenAI announced a new initiative called OpenAI Academy aimed at caregivers.\n\nThe program will hold free, hands‑on ChatGPT workshops in five U.S. cities.\n\nWorkshops focus on building practical AI skills for everyday caregiving tasks.\n\nThe effort seeks to make AI tools more accessible to a community that often lacks technical training.\n\n## What it means for you\n\nCaregivers gain direct experience with ChatGPT, helping them integrate AI into daily routines. For those interested in free or local models, the ranking shows Kimi K3 and other free chat models remain top choices, offering alternatives to paid services like Gemini 4 Carbon.\n\n## On FreeLLMArena\n\nFrom our rankings on 12 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [Helping caregivers use AI in everyday life](https://openai.com/index/helping-caregivers-use-ai-in-everyday-life), OpenAI (official), 10 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-12-openai-academy-launches-free-chatgpt-workshops-for-caregivers-in-five-).</small>\n",
+    "corpo": "<div class=\"video-post\"><iframe src=\"https://www.youtube-nocookie.com/embed/D_ZEli4_LtE\" title=\"OpenAI Academy launches free ChatGPT workshops for caregivers in five U.S. cities\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; picture-in-picture\" allowfullscreen></iframe></div>\n\n[Watch on YouTube](https://youtu.be/D_ZEli4_LtE) · [Watch the Short](https://youtube.com/shorts/t0nSHBX48jQ)\n\nOpenAI announced a new initiative called OpenAI Academy aimed at caregivers.\n\nThe program will hold free, hands‑on ChatGPT workshops in five U.S. cities.\n\nWorkshops focus on building practical AI skills for everyday caregiving tasks.\n\nThe effort seeks to make AI tools more accessible to a community that often lacks technical training.\n\n## What it means for you\n\nCaregivers gain direct experience with ChatGPT, helping them integrate AI into daily routines. For those interested in free or local models, the ranking shows Kimi K3 and other free chat models remain top choices, offering alternatives to paid services like Gemini 4 Carbon.\n\n## On FreeLLMArena\n\nFrom our rankings on 12 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [Helping caregivers use AI in everyday life](https://openai.com/index/helping-caregivers-use-ai-in-everyday-life), OpenAI (official), 10 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-12-openai-academy-launches-free-chatgpt-workshops-for-caregivers-in-five-).</small>\n",
     "tipo": "News"
    },
    "data": "2026-11-12"
@@ -22986,6 +23040,42 @@
     "data": "2026-11-12",
     "tema": "LLMs",
     "corpo": "The model supports text, images, audio and video, has a 1 million‑token context window and can generate up to 512,000 output tokens, allowing it to ingest full codebases or large documents in a single request.\n\nIn Meta’s internal Artificial Analysis Index, Muse Ember matched Claude Haiku 5.5’s score while costing about a third per task, and outperformed OpenAI’s GPT‑6 Luna on seven of nine benchmarks, showing a 17% lead on the AutomationBench‑AA suite.\n\nEarly partners such as Box, Cline, Oracle, Cloudflare and You.com have begun testing the model for contract risk scoring, candidate screening, coding subagents and document analysis.\n\n## What it means for you\n\nMuse Ember gives developers a cheaper option for high‑volume agent workloads, which could lower operating costs for businesses that rely on repetitive AI tasks. For users of free or locally hosted models, the launch highlights the growing price‑performance gap of cloud‑based offerings, emphasizing the need to balance cost against the capabilities of open‑source alternatives.\n\n## Sources\n\n- [Meta introduces Muse Ember to power cost-efficient AI agents](https://siliconangle.com/2026/11/09/meta-introduces-muse-ember-to-power-cost-efficient-ai-agents/), SiliconANGLE, 10 Nov 2026\n- [Meta launches Muse Ember for low-cost agentic tasks](https://www.testingcatalog.com/meta-launches-muse-ember-for-low-cost-agentic-tasks/), TestingCatalog, 9 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-12-meta-launches-muse-ember-low-cost-model-for-ai-agent-tasks).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-12"
+  },
+  "/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a.html": {
+   "post": {
+    "slug": "news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a",
+    "titolo": "agentes.chat launches open-source self-hosted Slack alternative with AI agent support",
+    "descr": "agentes.chat delivers a free, self-hosted Slack alternative where AI agents powered by Claude, ChatGPT, Gemini or Grok collaborate in channels, with budgeted model calls and approval workflows.",
+    "data": "2026-11-12",
+    "tema": "Software",
+    "corpo": "agentes.chat is an open‑source project on GitHub that provides a self‑hosted Slack‑style workspace where people and AI agents converse in shared channels and direct messages.\n\nAgents can run on Claude, OpenAI’s ChatGPT/Codex, Google Gemini, Grok or any OpenRouter model, each with its own role, monthly budget and approval process, plus a personal computer and browser.\n\nFeatures include threaded channels, memory that records decisions, scheduled routines, file storage in Postgres or S3‑compatible buckets, and MCP connectors to services such as Linear, Notion, Stripe, Google Drive and many more.\n\nThe repository records 7,967 commits and is released under the AGPL‑3.0 license, allowing free self‑hosting or use of the hosted cloud service at agentes.chat.\n\n## What it means for you\n\nBecause the platform accepts any model key, users can connect top‑ranking free models like Kimi K3 or Kimi K3.1 Pro, enabling low‑cost AI assistance without a paid subscription.\n\n## On FreeLLMArena\n\nFrom our rankings on 12 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html): #2 among free chat models\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [agentes-chat/agentes-chat: Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP too](https://github.com/agentes-chat/agentes-chat), GitHub trending, 9 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-12"
+  },
+  "/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents.html": {
+   "post": {
+    "slug": "news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents",
+    "titolo": "Amplitude speeds product updates to 1–2 days using OpenAI agents",
+    "descr": "Amplitude’s Wave agent, built on OpenAI models, identifies features, assists coding, and tracks impact, cutting rollout time to under two days.",
+    "data": "2026-11-12",
+    "tema": "Business",
+    "corpo": "Amplitude announced that its proactive product agent, Wave, now runs on OpenAI models.\n\nWave scans user data, suggests what to build, and hands off tasks to coding agents that generate implementation code.\n\nThe system also measures the effect of changes, allowing teams to see results quickly.\n\nAmplitude reports that the end‑to‑end cycle from idea to shipped change now takes 1–2 days.\n\nThe approach demonstrates how commercial products can use large language models to accelerate development.\n\n## What it means for you\n\nFor AI users, the case shows how OpenAI models can automate feature ideation and code generation, shortening development cycles. Free‑model enthusiasts see a contrast with top‑ranked community models like Kimi K3 and GLM‑5.3, which remain popular alternatives for those seeking open or local solutions.\n\n## On FreeLLMArena\n\nFrom our rankings on 12 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [How Amplitude ships product improvements in 1–2 days with OpenAI](https://openai.com/index/amplitude), OpenAI (official), 12 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-12"
+  },
+  "/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig.html": {
+   "post": {
+    "slug": "news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig",
+    "titolo": "ElevenLabs launches Scribe v3 and v3 Live with higher accuracy but higher cost",
+    "descr": "The new speech‑to‑text models cut word errors by up to 27% for recordings and 43% for real‑time, but run slower and cost $3.33 per 1,000 minutes.",
+    "data": "2026-11-12",
+    "tema": "Software",
+    "corpo": "ElevenLabs announced two new speech‑to‑text models, Scribe v3 for recorded audio and Scribe v3 Live for low‑latency real‑time use. Both are reachable through the ElevenAPI developer interface and the ElevenAgents platform.\n\nScribe v3 reduces word errors by 27% compared with Scribe v2 across 102 languages. German accuracy improves by 42%, Spanish by 35% and English by 23%. The model also lowers speaker diarization errors by 17% on recordings with three or more speakers. Scribe v3 Live trims errors by 43% versus Scribe v2 Realtime and achieves a diarization error rate of 3.1%, better than the 5.9‑7.3% of other realtime models.\n\nIndependent benchmarks list a price of $3.33 per 1,000 minutes for Scribe v3. The same tests show the model runs slower and costs roughly twice as much as comparable models from Microsoft and xAI, which process audio many times faster.\n\nThe company expands its Nvidia partnership to run the Nemotron 3.5 Super VL model on Nvidia hardware and forms an alliance with McKinsey.\n\nThe launch targets noisy environments such as overlapping speakers, street‑side calls and multilingual conversations. Real‑time turn detection uses conversational context so voice agents no longer cut callers off during brief pauses.\n\n## What it means for you\n\nHigher accuracy and reliable diarization improve transcription quality for meeting notes, clinical records and voice agents, especially in messy audio settings. Users with large transcription volumes may prefer cheaper, faster rivals, while developers of free or locally hosted models will need to match these accuracy gains without the commercial price tag.\n\n## Sources\n\n- [ElevenLabs Scribe v3 Live uses conversational context to stop voice agents from cutting off callers mid-sentence](https://the-decoder.com/elevenlabs-scribe-v3-live-uses-conversational-context-to-stop-voice-agents-from-cutting-off-callers-mid-sentence/), The Decoder, 12 Nov 2026\n- [Introducing Scribe v3 and v3 Live, our most accurate speech to text models](https://elevenlabs.io/blog/scribe-v3), elevenlabs.io (official), 10 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig).</small>\n",
     "tipo": "News"
    },
    "data": "2026-11-12"

@@ -307,5 +307,6 @@
  "newrexlabs/MoDe-S": "other",
  "MLukauskas/amber-68m": "cc-by-nc-4.0",
  "MLukauskas/amber-32m": "cc-by-nc-4.0",
- "MLukauskas/amber-17m": "cc-by-nc-4.0"
+ "MLukauskas/amber-17m": "cc-by-nc-4.0",
+ "Poindexter-Labs/Copernicus-57B": "apache-2.0"
 }

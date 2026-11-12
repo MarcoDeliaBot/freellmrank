@@ -4544,6 +4544,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen",
   "tipo": "articolo",
   "lingua": "en",
@@ -4553,6 +4585,22 @@
  },
  {
   "url": "/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig.html",
   "tipo": "articolo",
   "lingua": "en",
   "primaVista": "2026-11-12",
@@ -14000,6 +14048,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/de/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen",
   "tipo": "articolo",
   "lingua": "de",
@@ -14009,6 +14089,22 @@
  },
  {
   "url": "/de/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig.html",
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-12",
@@ -19040,6 +19136,22 @@
   "tipo": "modello",
   "lingua": "de",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -24932,6 +25044,22 @@
   "tipo": "modello",
   "lingua": "de",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -31430,6 +31558,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen",
   "tipo": "articolo",
   "lingua": "es",
@@ -31439,6 +31599,22 @@
  },
  {
   "url": "/es/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig.html",
   "tipo": "articolo",
   "lingua": "es",
   "primaVista": "2026-11-12",
@@ -36470,6 +36646,22 @@
   "tipo": "modello",
   "lingua": "es",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -42362,6 +42554,22 @@
   "tipo": "modello",
   "lingua": "es",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -48860,6 +49068,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen",
   "tipo": "articolo",
   "lingua": "fr",
@@ -48869,6 +49109,22 @@
  },
  {
   "url": "/fr/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig.html",
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-12",
@@ -53900,6 +54156,22 @@
   "tipo": "modello",
   "lingua": "fr",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -59792,6 +60064,22 @@
   "tipo": "modello",
   "lingua": "fr",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -66290,6 +66578,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen",
   "tipo": "articolo",
   "lingua": "it",
@@ -66299,6 +66619,22 @@
  },
  {
   "url": "/it/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig.html",
   "tipo": "articolo",
   "lingua": "it",
   "primaVista": "2026-11-12",
@@ -71330,6 +71666,22 @@
   "tipo": "modello",
   "lingua": "it",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -77222,6 +77574,22 @@
   "tipo": "modello",
   "lingua": "it",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -83720,6 +84088,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen",
   "tipo": "articolo",
   "lingua": "ja",
@@ -83729,6 +84129,22 @@
  },
  {
   "url": "/ja/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig.html",
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-12",
@@ -88760,6 +89176,22 @@
   "tipo": "modello",
   "lingua": "ja",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -94656,6 +95088,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/model/phi-3-5-vision-instruct",
   "tipo": "modello",
   "lingua": "ja",
@@ -96734,6 +97182,22 @@
   "tipo": "modello",
   "lingua": "en",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -102626,6 +103090,22 @@
   "tipo": "modello",
   "lingua": "en",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -109124,6 +109604,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/pt/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-12-agentes-chat-launches-open-source-self-hosted-slack-alternative-with-a.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen",
   "tipo": "articolo",
   "lingua": "pt",
@@ -109133,6 +109645,22 @@
  },
  {
   "url": "/pt/blog/news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig.html",
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-12",
@@ -114164,6 +114692,22 @@
   "tipo": "modello",
   "lingua": "pt",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/apodex-apodex-1-1-mini",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/apodex-apodex-1-1-mini.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
@@ -120056,6 +120600,22 @@
   "tipo": "modello",
   "lingua": "pt",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/particle-ai-particle-1",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
+  "ultimaVista": "2026-11-12",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/particle-ai-particle-1.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-12",
   "ultimaVista": "2026-11-12",
   "stato": "attiva"
  },
