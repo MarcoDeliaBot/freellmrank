@@ -36,15 +36,17 @@ export const fermaTentativi = (msg) => /\/api\/scrivi 4\d\d/.test(msg) && !/JSON
 const PREAMBOLI = /^(today\b|in this video|this video|welcome|hello|hi\b|hey\b|so\b|let's|let us|here is|here's what|we\b|freellmarena\b|in today's|did you know|ever wondered)/i;
 // 12/11 sera, prova vera su GitHub: «Meta launches Muse Ember, a low-cost model for AI agent tasks.» passava solo perché c'era
 // un nome. Ora serve un numero, «free» o un confronto; e una seconda frase che crei attesa (l'anello aperto).
-const CONCRETO = /\d|\b(free|without|instead|beats?|cheaper|faster|slower|smaller|bigger|half|a third|double|twice|only|first|no longer|open[- ]source|open weights)\b/i;
-export function gancio(voce) {
+const CONCRETO = /\d|\b(free|without|instead|beats?|cheaper|faster|slower|smaller|bigger|half|a third|double|twice|only|first|no longer|open[- ]source|open weights|hundreds?|thousands?|millions?|billions?)\b/i;
+// seguito: la prima frase della scena 2, che può portare l'anello quando la scena 1 è il cartello (una frase sola)
+const ATTESA = /\b(but|why|how|catch|surprise|real story|wait|here's|the twist|turns out)\b/i;
+export function gancio(voce, seguito = '') {
   const prima = frasi(voce)[0] || '';
   const e = [];
   if (!prima) return ['prima scena senza voce'];
   if (parole(prima) > 16) e.push(`prima frase di ${parole(prima)} parole (al massimo 16)`);
   if (PREAMBOLI.test(prima)) e.push(`prima frase che parte con un preambolo («${prima.split(' ').slice(0, 3).join(' ')}…»)`);
   if (!CONCRETO.test(prima)) e.push('prima frase senza un numero, «free» o un confronto');
-  if (frasi(voce).length < 2) e.push("manca la seconda frase che crea attesa (l'anello aperto)");
+  if (frasi(voce).length < 2 && !ATTESA.test(frasi(seguito)[0] || '')) e.push("manca la seconda frase che crea attesa (l'anello aperto)");
   return e;
 }
 
@@ -127,7 +129,7 @@ export function controllaPiano(grezzo, n) {
   if (!ok) problemi.push(`piano scartato: ${scene.length} scene buone, ${totale} parole (servono almeno 4 scene e 100-230 parole)`);
   // 12/11/2026 (Marco: «Aggiungi ganci nei video… dobbiamo diventare virali»): la prima frase deve agganciare.
   // Un'apertura debole non toglie la scena (i fatti reggono), ma il piano non è completo e il modello riprova.
-  const debole = scene.length && !aggiunto ? gancio(scene[0].voce) : [];
+  const debole = scene.length && !aggiunto ? gancio(scene[0].voce, scene[1]?.voce) : [];
   if (debole.length) problemi.push(`apertura debole: ${debole.join('; ')}`);
   return { ok, completo: ok && tolte === 0 && !debole.length, tolte, scene, problemi, totale };
 }

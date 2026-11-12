@@ -40,3 +40,9 @@ test('i tentativi continuano se Groq risponde con JSON rotto mentre Workers è s
   assert.equal(fermaTentativi('workers: /api/scrivi 429: Daily writing budget used. Try tomorrow.'), true);
   assert.equal(fermaTentativi('workers: /api/scrivi 401: bad key'), true);
 });
+
+test("cartello di una frase: l'anello può aprirsi all'inizio della scena 2; i numeri in lettere contano (prove del 12/11 con Qwen 3.6)", () => {
+  assert.deepEqual(gancio('Google launched Gemini 4 Hydrogen for coding and agentic workflows.', 'But the speed improvements reveal why developers care.'), []);
+  assert.ok(gancio('Google launched Gemini 4 Hydrogen for coding and agentic workflows.', 'Google DeepMind introduced this model on 12 November 2026.').length);
+  assert.deepEqual(gancio('AWS has released a local emulator for over two hundred AWS services. It is completely free.'), []);
+});
