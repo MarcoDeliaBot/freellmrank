@@ -391,5 +391,13 @@
  "news-2026-11-12-google-launches-gemini-decisions-api-with-fast-multimodal-decision-mod": {
   "lungo": "notizia-google-launches-gemini-decisions-api-with-fast-multimoda",
   "breve": "breve-google-launches-gemini-decisions-api-with-fast-multimoda"
+ },
+ "news-2026-11-11-deepmind-launches-gemini-robotics-2-5-and-alphagenome-2-for-advanced-r": {
+  "lungo": "notizia-deepmind-launches-gemini-robotics-2-5-and-alphagenome-2",
+  "breve": "breve-deepmind-launches-gemini-robotics-2-5-and-alphagenome-2"
+ },
+ "news-2026-11-12-openai-academy-launches-free-chatgpt-workshops-for-caregivers-in-five-": {
+  "lungo": "notizia-openai-academy-launches-free-chatgpt-workshops-for-careg",
+  "breve": "breve-openai-academy-launches-free-chatgpt-workshops-for-careg"
  }
 }
