@@ -2121,5 +2121,16 @@
   "contestoMax": 262144,
   "moe": false,
   "attivi": 2025912064
+ },
+ "LiquidAI/LFM3-VL-2B": {
+  "strati": 24,
+  "tipo": "GQA",
+  "kvPerStrato": 2048,
+  "pieni": 6,
+  "finestra": 5,
+  "larghezzaFinestra": 256,
+  "contestoMax": 128000,
+  "moe": false,
+  "attivi": 1918181888
  }
 }
