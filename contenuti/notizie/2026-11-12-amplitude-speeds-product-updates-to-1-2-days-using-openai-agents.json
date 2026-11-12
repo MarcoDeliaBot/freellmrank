@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-12-amplitude-speeds-product-updates-to-1-2-days-using-openai-agents",
+ "titolo": "Amplitude speeds product updates to 1–2 days using OpenAI agents",
+ "descr": "Amplitude’s Wave agent, built on OpenAI models, identifies features, assists coding, and tracks impact, cutting rollout time to under two days.",
+ "tema": "Business",
+ "paragrafi": [
+  "Amplitude announced that its proactive product agent, Wave, now runs on OpenAI models.",
+  "Wave scans user data, suggests what to build, and hands off tasks to coding agents that generate implementation code.",
+  "The system also measures the effect of changes, allowing teams to see results quickly.",
+  "Amplitude reports that the end‑to‑end cycle from idea to shipped change now takes 1–2 days.",
+  "The approach demonstrates how commercial products can use large language models to accelerate development."
+ ],
+ "perche": [
+  "For AI users, the case shows how OpenAI models can automate feature ideation and code generation, shortening development cycles. Free‑model enthusiasts see a contrast with top‑ranked community models like Kimi K3 and GLM‑5.3, which remain popular alternatives for those seeking open or local solutions."
+ ],
+ "pubblicato": "2026-11-12",
+ "titoloFonte": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/amplitude",
+   "titolo": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+   "ufficiale": true,
+   "data": "2026-11-12"
+  }
+ ],
+ "frasiTolte": 0
+}

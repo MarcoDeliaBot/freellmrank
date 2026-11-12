@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-12-elevenlabs-launches-scribe-v3-and-v3-live-with-higher-accuracy-but-hig",
+ "titolo": "ElevenLabs launches Scribe v3 and v3 Live with higher accuracy but higher cost",
+ "descr": "The new speech‑to‑text models cut word errors by up to 27% for recordings and 43% for real‑time, but run slower and cost $3.33 per 1,000 minutes.",
+ "tema": "Software",
+ "paragrafi": [
+  "ElevenLabs announced two new speech‑to‑text models, Scribe v3 for recorded audio and Scribe v3 Live for low‑latency real‑time use. Both are reachable through the ElevenAPI developer interface and the ElevenAgents platform.",
+  "Scribe v3 reduces word errors by 27% compared with Scribe v2 across 102 languages. German accuracy improves by 42%, Spanish by 35% and English by 23%. The model also lowers speaker diarization errors by 17% on recordings with three or more speakers. Scribe v3 Live trims errors by 43% versus Scribe v2 Realtime and achieves a diarization error rate of 3.1%, better than the 5.9‑7.3% of other realtime models.",
+  "Independent benchmarks list a price of $3.33 per 1,000 minutes for Scribe v3. The same tests show the model runs slower and costs roughly twice as much as comparable models from Microsoft and xAI, which process audio many times faster.",
+  "The company expands its Nvidia partnership to run the Nemotron 3.5 Super VL model on Nvidia hardware and forms an alliance with McKinsey.",
+  "The launch targets noisy environments such as overlapping speakers, street‑side calls and multilingual conversations. Real‑time turn detection uses conversational context so voice agents no longer cut callers off during brief pauses."
+ ],
+ "perche": [
+  "Higher accuracy and reliable diarization improve transcription quality for meeting notes, clinical records and voice agents, especially in messy audio settings. Users with large transcription volumes may prefer cheaper, faster rivals, while developers of free or locally hosted models will need to match these accuracy gains without the commercial price tag."
+ ],
+ "pubblicato": "2026-11-12",
+ "titoloFonte": "ElevenLabs Scribe v3 Live uses conversational context to stop voice agents from cutting off callers mid-sentence",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/elevenlabs-scribe-v3-live-uses-conversational-context-to-stop-voice-agents-from-cutting-off-callers-mid-sentence/",
+   "titolo": "ElevenLabs Scribe v3 Live uses conversational context to stop voice agents from cutting off callers mid-sentence",
+   "ufficiale": false,
+   "data": "2026-11-12"
+  },
+  {
+   "nome": "elevenlabs.io",
+   "url": "https://elevenlabs.io/blog/scribe-v3",
+   "titolo": "Introducing Scribe v3 and v3 Live, our most accurate speech to text models",
+   "ufficiale": true,
+   "data": "2026-11-10"
+  }
+ ],
+ "frasiTolte": 2
+}
