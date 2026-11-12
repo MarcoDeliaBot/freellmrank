@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-12-openai-pledges-2-million-for-research-on-ai-safety-for-children",
+ "titolo": "OpenAI pledges $2 million for research on AI safety for children",
+ "descr": "OpenAI will fund research to develop tools that assess risks and opportunities of AI for young users.",
+ "tema": "Research",
+ "paragrafi": [
+  "OpenAI announced a $2 million commitment to study AI and children’s safety.",
+  "The funding will support research that creates shared tools for measuring risks and opportunities faced by young people using AI.",
+  "The initiative aims to improve understanding of how AI systems affect children and to guide safer deployment.",
+  "OpenAI’s move follows growing public concern about AI’s impact on minors and the need for transparent safety standards."
+ ],
+ "perche": [
+  "For users, the research could lead to clearer safety guidelines and safer AI experiences for children. For developers of free or local models, the tools may help assess and mitigate child‑related risks without relying on proprietary solutions."
+ ],
+ "pubblicato": "2026-11-12",
+ "titoloFonte": "Supporting research on AI and children’s safety",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/children-first-declaration",
+   "titolo": "Supporting research on AI and children’s safety",
+   "ufficiale": true,
+   "data": "2026-11-12"
+  }
+ ],
+ "frasiTolte": 0
+}

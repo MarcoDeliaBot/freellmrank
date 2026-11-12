@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-12-fireworks-ai-breach-exposes-notion-ai-chat-transcripts-for-1-of-worksp",
+ "titolo": "Fireworks AI breach exposes Notion AI chat transcripts for <1% of workspaces",
+ "descr": "Hackers accessed billing data and chat logs from Notion users after breaching Fireworks AI's cloud provider.",
+ "tema": "Business",
+ "paragrafi": [
+  "Fireworks AI confirmed a cyberattack that let attackers breach its cloud provider and access a development system.",
+  "The breach gave the hackers billing information and datasets from Fireworks' customers, including Notion.",
+  "Notion disclosed that about 1% of its workspaces were affected, with chat transcripts from the Notion AI \"Insights\" feature stolen.",
+  "On November 3, Notion disconnected from Fireworks, deleted stored data, and halted all connectivity and training runs.",
+  "The company now provides affected workspace owners with CSV files to review and download the exposed content."
+ ],
+ "perche": [
+  "The incident highlights the risk of relying on third‑party AI infrastructure, underscoring the appeal of free or locally hosted models that avoid external data pipelines."
+ ],
+ "pubblicato": "2026-11-12",
+ "titoloFonte": "Cyberattack on Fireworks AI allowed hackers to access Notion customers' chat transcripts",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/",
+   "titolo": "Cyberattack on Fireworks AI allowed hackers to access Notion customers' chat transcripts",
+   "ufficiale": false,
+   "data": "2026-11-12"
+  },
+  {
+   "nome": "notion.com",
+   "url": "https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor",
+   "titolo": "Notice about the Fireworks AI incident that may impact some Notion workspaces – Notion Help Center",
+   "ufficiale": true,
+   "data": "2026-11-12"
+  }
+ ],
+ "frasiTolte": 1
+}
