@@ -383,5 +383,13 @@
  "news-2026-11-10-openai-launches-businesses-in-chatgpt-to-manage-and-promote-company-da": {
   "lungo": "notizia-openai-launches-businesses-in-chatgpt-to-manage-and-prom",
   "breve": "breve-openai-launches-businesses-in-chatgpt-to-manage-and-prom"
+ },
+ "news-2026-11-12-google-launches-gemini-decision-1-a-multimodal-decision-model-for-fast": {
+  "lungo": "notizia-google-launches-gemini-decision-1-a-multimodal-decision",
+  "breve": "breve-google-launches-gemini-decision-1-a-multimodal-decision"
+ },
+ "news-2026-11-12-google-launches-gemini-decisions-api-with-fast-multimodal-decision-mod": {
+  "lungo": "notizia-google-launches-gemini-decisions-api-with-fast-multimoda",
+  "breve": "breve-google-launches-gemini-decisions-api-with-fast-multimoda"
  }
 }
