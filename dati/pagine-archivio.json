@@ -23213,6 +23213,30 @@
     "tipo": "News"
    },
    "data": "2026-11-13"
+  },
+  "/blog/news-2026-11-13-langchain-raises-300m-series-c-valuation-hits-3-billion.html": {
+   "post": {
+    "slug": "news-2026-11-13-langchain-raises-300m-series-c-valuation-hits-3-billion",
+    "titolo": "LangChain raises $300M Series C, valuation hits $3 billion",
+    "descr": "LangChain secured $300 million in a Series C led by CapitalG, bringing its value to $3 billion and expanding its AI‑agent tooling portfolio.",
+    "data": "2026-11-13",
+    "tema": "Business",
+    "corpo": "LangChain announced a $300 million Series C round that values the company at $3 billion. CapitalG led the round, with participation from GIC, DFJ Growth, IVP and Sapphire Ventures.\n\nThe San‑Francisco startup began in 2022 with an open‑source framework that simplifies building AI agents and connecting them to large language models.\n\nIts product lineup now includes LangSmith for agent creation and management, LangGraph for linking multiple agents into workflows, and Deep Agents that add a virtual file system, planning tools and sub‑agent generation.\n\nLangSmith reports 7,000 customers such as Harvey, Rippling, Clay, Nvidia, Toyota and Salesforce, and is also used by Autodesk and Cisco.\n\nAfter last year’s funding, LangChain said its open‑source tools were downloaded about 90 million times per month and it aims to grow its workforce to 850 employees by the end of 2027.\n\n## What it means for you\n\nThe financing confirms strong market interest in AI‑agent platforms, which could accelerate new features and broader support. Developers who rely on free, open‑source tools still have access to LangChain’s core framework, while the paid LangSmith suite may become more capable for teams that need production‑grade observability and version control.\n\n## Sources\n\n- [AI agent startup LangChain hits $3B valuation](https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/), TechCrunch, 13 Nov 2026\n- [AI agent tooling provider LangChain secures $300M investment](https://siliconangle.com/2026/11/12/ai-agent-tooling-provider-langchain-secures-300m-investment/), SiliconANGLE, 12 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-13-langchain-raises-300m-series-c-valuation-hits-3-billion).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-13"
+  },
+  "/blog/news-2026-11-13-meta-s-muse-adds-paid-us-business-calling-feature.html": {
+   "post": {
+    "slug": "news-2026-11-13-meta-s-muse-adds-paid-us-business-calling-feature",
+    "titolo": "Meta's Muse adds paid US business calling feature",
+    "descr": "Muse can now dial US businesses for paying subscribers, though many firms still hang up on AI callers.",
+    "data": "2026-11-13",
+    "tema": "Business",
+    "corpo": "Meta has expanded its consumer AI agent Muse to include the ability to place phone calls to US businesses.\n\nMuse, which recently reported over 10 million users, offers subscription tiers starting at $20 per month for 500 million tokens per week and $100 per month for 3 billion tokens.\n\nBusinesses often terminate the call once they recognise an AI voice; during the September test Meta briefly employed human operators, a pattern similar to Google Duplex’s early rollout where one in four calls needed a human.\n\nMeta also announced that a free Muse email address will roll out to non‑paying users in the near future.\n\n## What it means for you\n\nUsers can offload routine phone tasks to an always‑on AI, saving time and effort, but acceptance by the businesses they call remains uncertain. Since the calling feature is limited to paid plans, free‑or‑local model enthusiasts will need to rely on alternative tools that do not yet offer phone integration.\n\n## Sources\n\n- [Meta's Muse now calls businesses for you, but many companies might just hang up on the AI](https://the-decoder.com/metas-muse-now-calls-businesses-for-you-but-many-companies-might-just-hang-up-on-the-ai/), The Decoder, 13 Nov 2026\n- [Muse can now place calls to US businesses — if you pay](https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/), TechCrunch, 12 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-13-meta-s-muse-adds-paid-us-business-calling-feature).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-13"
   }
  },
  "ricostruzione": {

@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-13-langchain-raises-300m-series-c-valuation-hits-3-billion",
+ "titolo": "LangChain raises $300M Series C, valuation hits $3 billion",
+ "descr": "LangChain secured $300 million in a Series C led by CapitalG, bringing its value to $3 billion and expanding its AI‑agent tooling portfolio.",
+ "tema": "Business",
+ "paragrafi": [
+  "LangChain announced a $300 million Series C round that values the company at $3 billion. CapitalG led the round, with participation from GIC, DFJ Growth, IVP and Sapphire Ventures.",
+  "The San‑Francisco startup began in 2022 with an open‑source framework that simplifies building AI agents and connecting them to large language models.",
+  "Its product lineup now includes LangSmith for agent creation and management, LangGraph for linking multiple agents into workflows, and Deep Agents that add a virtual file system, planning tools and sub‑agent generation.",
+  "LangSmith reports 7,000 customers such as Harvey, Rippling, Clay, Nvidia, Toyota and Salesforce, and is also used by Autodesk and Cisco.",
+  "After last year’s funding, LangChain said its open‑source tools were downloaded about 90 million times per month and it aims to grow its workforce to 850 employees by the end of 2027."
+ ],
+ "perche": [
+  "The financing confirms strong market interest in AI‑agent platforms, which could accelerate new features and broader support. Developers who rely on free, open‑source tools still have access to LangChain’s core framework, while the paid LangSmith suite may become more capable for teams that need production‑grade observability and version control."
+ ],
+ "pubblicato": "2026-11-13",
+ "titoloFonte": "AI agent startup LangChain hits $3B valuation",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
+   "titolo": "AI agent startup LangChain hits $3B valuation",
+   "ufficiale": false,
+   "data": "2026-11-13"
+  },
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/12/ai-agent-tooling-provider-langchain-secures-300m-investment/",
+   "titolo": "AI agent tooling provider LangChain secures $300M investment",
+   "ufficiale": false,
+   "data": "2026-11-12"
+  }
+ ],
+ "frasiTolte": 0
+}

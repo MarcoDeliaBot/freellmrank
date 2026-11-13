@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-13-meta-s-muse-adds-paid-us-business-calling-feature",
+ "titolo": "Meta's Muse adds paid US business calling feature",
+ "descr": "Muse can now dial US businesses for paying subscribers, though many firms still hang up on AI callers.",
+ "tema": "Business",
+ "paragrafi": [
+  "Meta has expanded its consumer AI agent Muse to include the ability to place phone calls to US businesses.",
+  "Muse, which recently reported over 10 million users, offers subscription tiers starting at $20 per month for 500 million tokens per week and $100 per month for 3 billion tokens.",
+  "Businesses often terminate the call once they recognise an AI voice; during the September test Meta briefly employed human operators, a pattern similar to Google Duplex’s early rollout where one in four calls needed a human.",
+  "Meta also announced that a free Muse email address will roll out to non‑paying users in the near future."
+ ],
+ "perche": [
+  "Users can offload routine phone tasks to an always‑on AI, saving time and effort, but acceptance by the businesses they call remains uncertain. Since the calling feature is limited to paid plans, free‑or‑local model enthusiasts will need to rely on alternative tools that do not yet offer phone integration."
+ ],
+ "pubblicato": "2026-11-13",
+ "titoloFonte": "Meta's Muse now calls businesses for you, but many companies might just hang up on the AI",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/metas-muse-now-calls-businesses-for-you-but-many-companies-might-just-hang-up-on-the-ai/",
+   "titolo": "Meta's Muse now calls businesses for you, but many companies might just hang up on the AI",
+   "ufficiale": false,
+   "data": "2026-11-13"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/",
+   "titolo": "Muse can now place calls to US businesses — if you pay",
+   "ufficiale": false,
+   "data": "2026-11-12"
+  }
+ ],
+ "frasiTolte": 2
+}
