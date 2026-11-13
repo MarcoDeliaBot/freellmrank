@@ -1,240 +1,13 @@
 {
- "date": "2026-11-11",
+ "date": "2026-11-13",
  "source": "https://skills.sh/trending",
- "observedAt": "2026-11-11T04:43:24.974Z",
+ "observedAt": "2026-11-13T04:44:16.223Z",
  "entries": [
   {
    "rank": 1,
-   "repository": "bankai-skills/superpowers",
-   "skill": "ai-video-generation",
-   "date": "2026-11-11",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/ai-video-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 7,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 17,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 218,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 221,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 224,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 227,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 230,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 233,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 236,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 239,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-video-generation/SKILL.md",
-     "line": 242,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 2,
-   "repository": "bankai-skills/superpowers",
-   "skill": "ai-image-generation",
-   "date": "2026-11-11",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/image/ai-image-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 7,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 17,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 140,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 143,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 146,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 149,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 152,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 155,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 158,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 161,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 3,
-   "repository": "bankai-skills/superpowers",
-   "skill": "twitter-automation",
-   "date": "2026-11-11",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/social/twitter-automation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 7,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 17,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 138,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 141,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 144,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 147,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 4,
-   "repository": "bankai-skills/superpowers",
-   "skill": "ai-avatar-video",
-   "date": "2026-11-11",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/video/ai-avatar-video/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 7,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 17,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 243,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 246,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 249,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 252,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 255,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/video/ai-avatar-video/SKILL.md",
-     "line": 258,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 5,
    "repository": "designed-by-ai/skills",
    "skill": "design-mobile-apps",
-   "date": "2026-11-11",
+   "date": "2026-11-13",
    "commit": "03c20aec6dcedb5fabfb03dc37982eb52ef19ed6",
    "skillPath": "skills/design-mobile-apps/SKILL.md",
    "status": "warning",
@@ -274,22 +47,22 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 6,
+   "rank": 2,
    "repository": "vercel-labs/agent-browser",
    "skill": "agent-browser",
-   "date": "2026-11-11",
-   "commit": "d129226078e0fc8ee5dec48fbc96a46df5d0aafd",
+   "date": "2026-11-13",
+   "commit": "1cc19526f3641c8543d55aa6700e7c55b37ac356",
    "skillPath": "skills/agent-browser/SKILL.md",
    "status": "passed",
    "reasons": [],
    "publishable": true
   },
   {
-   "rank": 7,
+   "rank": 3,
    "repository": "vercel-labs/skills",
    "skill": "find-skills",
-   "date": "2026-11-11",
-   "commit": "e781cb4d07433dfe1d19e924ed45cc61738c55ec",
+   "date": "2026-11-13",
+   "commit": "b716f9dc2ba36b6aa8f0080615e5a3a6caeac63b",
    "skillPath": "skills/find-skills/SKILL.md",
    "status": "warning",
    "reasons": [
@@ -313,34 +86,11 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 8,
-   "repository": "heygen-com/hyperframes",
-   "skill": "reverse-any-video",
-   "date": "2026-11-11",
-   "commit": "5a88c9938edaf464f7953e762bb40f604623f1b1",
-   "skillPath": "skills/reverse-any-video/SKILL.md",
-   "status": "passed",
-   "reasons": [],
-   "publishable": false,
-   "contentReason": "no actual usage code block in skill or README"
-  },
-  {
-   "rank": 9,
-   "repository": "heygen-com/hyperframes",
-   "skill": "style-sampling",
-   "date": "2026-11-11",
-   "commit": "5a88c9938edaf464f7953e762bb40f604623f1b1",
-   "skillPath": "skills/style-sampling/SKILL.md",
-   "status": "passed",
-   "reasons": [],
-   "publishable": true
-  },
-  {
-   "rank": 10,
+   "rank": 4,
    "repository": "heygen-com/hyperframes",
    "skill": "hyperframes",
-   "date": "2026-11-11",
-   "commit": "5a88c9938edaf464f7953e762bb40f604623f1b1",
+   "date": "2026-11-13",
+   "commit": "7e04f3cce8a4d3e7c4e04590828104c37c2be8cb",
    "skillPath": "skills/hyperframes/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -476,37 +226,32 @@
     },
     {
      "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 150,
-     "reason": "remote-code-load"
-    },
-    {
-     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
      "line": 151,
      "reason": "remote-code-load"
     },
     {
      "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 181,
+     "line": 152,
+     "reason": "remote-code-load"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 182,
      "reason": "dynamic-evaluation"
     },
     {
      "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 64,
+     "line": 65,
      "reason": "undocumented-network-host"
     },
     {
      "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 67,
+     "line": 68,
      "reason": "undocumented-network-host"
     },
     {
      "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 70,
-     "reason": "undocumented-network-host"
-    },
-    {
-     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 88,
+     "line": 71,
      "reason": "undocumented-network-host"
     },
     {
@@ -521,22 +266,27 @@
     },
     {
      "file": "skills/hyperframes/scripts/bake-basemap.mjs",
-     "line": 157,
+     "line": 91,
+     "reason": "undocumented-network-host"
+    },
+    {
+     "file": "skills/hyperframes/scripts/bake-basemap.mjs",
+     "line": 158,
      "reason": "undocumented-network-host"
     },
     {
      "file": "skills/hyperframes/scripts/locate.mjs",
-     "line": 192,
+     "line": 193,
      "reason": "sensitive-read"
     },
     {
      "file": "skills/hyperframes/scripts/locate.mjs",
-     "line": 215,
+     "line": 216,
      "reason": "multiline-data-send"
     },
     {
      "file": "skills/hyperframes/scripts/locate.mjs",
-     "line": 178,
+     "line": 179,
      "reason": "undocumented-network-host"
     },
     {
@@ -557,28 +307,23 @@
    ]
   },
   {
-   "rank": 11,
+   "rank": 5,
    "repository": "heygen-com/hyperframes",
    "skill": "media-use",
-   "date": "2026-11-11",
-   "commit": "5a88c9938edaf464f7953e762bb40f604623f1b1",
+   "date": "2026-11-13",
+   "commit": "7e04f3cce8a4d3e7c4e04590828104c37c2be8cb",
    "skillPath": "skills/media-use/SKILL.md",
    "status": "blocked",
    "reasons": [
     {
      "file": "skills/media-use/audio/scripts/lib/bgm.mjs",
-     "line": 22,
+     "line": 23,
      "reason": "sensitive-read"
     },
     {
      "file": "skills/media-use/audio/scripts/lib/bgm.mjs",
-     "line": 17,
+     "line": 18,
      "reason": "download-and-execute"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
-     "line": 7,
-     "reason": "sensitive-read"
     },
     {
      "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
@@ -592,7 +337,12 @@
     },
     {
      "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
-     "line": 15,
+     "line": 10,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/gemini-auth.mjs",
+     "line": 16,
      "reason": "sensitive-read"
     },
     {
@@ -647,27 +397,27 @@
     },
     {
      "file": "skills/media-use/audio/scripts/lib/tts.mjs",
-     "line": 32,
+     "line": 33,
      "reason": "sensitive-read"
     },
     {
      "file": "skills/media-use/audio/scripts/lib/tts.mjs",
-     "line": 47,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
-     "line": 51,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
-     "line": 247,
+     "line": 48,
      "reason": "sensitive-read"
     },
     {
      "file": "skills/media-use/audio/scripts/lib/tts.mjs",
      "line": 52,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
+     "line": 266,
+     "reason": "sensitive-read"
+    },
+    {
+     "file": "skills/media-use/audio/scripts/lib/tts.mjs",
+     "line": 53,
      "reason": "environment-secret-read"
     },
     {
@@ -823,11 +573,11 @@
    ]
   },
   {
-   "rank": 12,
+   "rank": 6,
    "repository": "heygen-com/hyperframes",
    "skill": "hyperframes-cli",
-   "date": "2026-11-11",
-   "commit": "5a88c9938edaf464f7953e762bb40f604623f1b1",
+   "date": "2026-11-13",
+   "commit": "7e04f3cce8a4d3e7c4e04590828104c37c2be8cb",
    "skillPath": "skills/hyperframes-cli/SKILL.md",
    "status": "warning",
    "reasons": [
@@ -846,11 +596,34 @@
    "contentReason": "no actual usage code block in skill or README"
   },
   {
-   "rank": 13,
+   "rank": 7,
+   "repository": "heygen-com/hyperframes",
+   "skill": "reverse-any-video",
+   "date": "2026-11-13",
+   "commit": "7e04f3cce8a4d3e7c4e04590828104c37c2be8cb",
+   "skillPath": "skills/reverse-any-video/SKILL.md",
+   "status": "passed",
+   "reasons": [],
+   "publishable": false,
+   "contentReason": "no actual usage code block in skill or README"
+  },
+  {
+   "rank": 8,
+   "repository": "heygen-com/hyperframes",
+   "skill": "style-sampling",
+   "date": "2026-11-13",
+   "commit": "7e04f3cce8a4d3e7c4e04590828104c37c2be8cb",
+   "skillPath": "skills/style-sampling/SKILL.md",
+   "status": "passed",
+   "reasons": [],
+   "publishable": true
+  },
+  {
+   "rank": 9,
    "repository": "heygen-com/hyperframes",
    "skill": "hyperframes-registry",
-   "date": "2026-11-11",
-   "commit": "5a88c9938edaf464f7953e762bb40f604623f1b1",
+   "date": "2026-11-13",
+   "commit": "7e04f3cce8a4d3e7c4e04590828104c37c2be8cb",
    "skillPath": "skills/hyperframes-registry/SKILL.md",
    "status": "warning",
    "reasons": [
@@ -883,73 +656,78 @@
    "publishable": true
   },
   {
-   "rank": 14,
-   "repository": "microsoft/azure-skills",
-   "skill": "azure-ai",
-   "date": "2026-11-11",
-   "commit": "9aa7f618563713f47481af67b7b9dcaafdc2154a",
-   "skillPath": "skills/azure-ai/SKILL.md",
+   "rank": 10,
+   "repository": "flowkit-labs/skills",
+   "skill": "website-builder",
+   "date": "2026-11-13",
+   "commit": "ec2c807d4eb948de69f290c4561c570d9935dae4",
+   "skillPath": "website-builder/SKILL.md",
+   "status": "passed",
+   "reasons": [],
+   "publishable": false,
+   "contentReason": "no actual usage code block in skill or README"
+  },
+  {
+   "rank": 11,
+   "repository": "flowkit-labs/skills",
+   "skill": "reddit-automation",
+   "date": "2026-11-13",
+   "commit": "ec2c807d4eb948de69f290c4561c570d9935dae4",
+   "skillPath": "reddit-automation/SKILL.md",
+   "status": "passed",
+   "reasons": [],
+   "publishable": false,
+   "contentReason": "no actual usage code block in skill or README"
+  },
+  {
+   "rank": 12,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-video-generation",
+   "date": "2026-11-13",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-video-generation/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "skills/azure-ai/references/sdk/azure-ai-contentsafety-py.md",
-     "line": 8,
+     "file": "ai-video-generation/SKILL.md",
+     "line": 50,
      "reason": "documented-installer"
-    },
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 13,
+   "repository": "gencraft-labs/skills",
+   "skill": "image-to-video",
+   "date": "2026-11-13",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "image-to-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
     {
-     "file": "skills/azure-ai/references/sdk/azure-ai-contentsafety-ts.md",
-     "line": 8,
+     "file": "image-to-video/SKILL.md",
+     "line": 28,
      "reason": "documented-installer"
-    },
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 14,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-music",
+   "date": "2026-11-13",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-music/SKILL.md",
+   "status": "warning",
+   "reasons": [
     {
-     "file": "skills/azure-ai/references/sdk/azure-ai-document-intelligence-ts.md",
-     "line": 8,
+     "file": "ai-music/SKILL.md",
+     "line": 35,
      "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-ai/references/sdk/azure-ai-transcription-py.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-ai/references/sdk/azure-ai-transcription-py.md",
-     "line": 16,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-ai/references/sdk/azure-ai-translation-text-py.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-ai/references/sdk/azure-ai-translation-ts.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-ai/references/sdk/azure-ai-translation-ts.md",
-     "line": 14,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-ai/references/sdk/azure-ai-vision-imageanalysis-py.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-ai/references/sdk/azure-search-documents-py.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-ai/references/sdk/azure-search-documents-ts.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-ai/references/speech/azure-checks.md",
-     "line": 39,
-     "reason": "sensitive-read"
     }
    ],
    "publishable": false,
@@ -957,547 +735,39 @@
   },
   {
    "rank": 15,
-   "repository": "microsoft/azure-skills",
-   "skill": "microsoft-foundry",
-   "date": "2026-11-11",
-   "commit": "9aa7f618563713f47481af67b7b9dcaafdc2154a",
-   "skillPath": "skills/microsoft-foundry/SKILL.md",
-   "status": "blocked",
-   "reasons": [
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/calibrate_grader.py",
-     "line": 203,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/calibrate_grader.py",
-     "line": 54,
-     "reason": "dynamic-evaluation"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/check_training.py",
-     "line": 173,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/check_training.py",
-     "line": 13,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/cleanup.py",
-     "line": 236,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/common.py",
-     "line": 106,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/convert_dataset.py",
-     "line": 230,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/evaluate_model.py",
-     "line": 31,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/evaluate_model.py",
-     "line": 184,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/generate_distillation_data.py",
-     "line": 140,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/monitor_training.py",
-     "line": 119,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/score_dataset.py",
-     "line": 108,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/submit_training.py",
-     "line": 84,
-     "reason": "external-data-send"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/submit_training.py",
-     "line": 158,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/scripts/get-catalog-inputs.ps1",
-     "line": 46,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/scripts/get-catalog-inputs.ps1",
-     "line": 58,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/scripts/get-catalog-inputs.ps1",
-     "line": 63,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/scripts/get-catalog-inputs.ps1",
-     "line": 64,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/scripts/get-catalog-inputs.ps1",
-     "line": 71,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/scripts/get-catalog-inputs.ps1",
-     "line": 80,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/scripts/get-catalog-inputs.sh",
-     "line": 56,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/scripts/get-catalog-inputs.sh",
-     "line": 81,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/validate/references/default-rules.yaml",
-     "line": 121,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/common.py",
-     "line": 34,
-     "reason": "documented-service-api"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/scripts/deploy_model.py",
-     "line": 79,
-     "reason": "documented-service-api"
-    },
-    {
-     "file": "skills/microsoft-foundry/finetuning/workflows/quickstart.md",
-     "line": 24,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/quick-start-hosted.md",
-     "line": 248,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/enable-incoming-a2a.md",
-     "line": 75,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/enable-incoming-a2a.md",
-     "line": 95,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/foundry-tool-catalog.md",
-     "line": 87,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/foundry-tool-catalog.md",
-     "line": 89,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/foundry-tool-catalog.md",
-     "line": 301,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/foundry-tool-catalog.md",
-     "line": 427,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/foundry-tool-catalog.md",
-     "line": 457,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/local-run.md",
-     "line": 29,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/local-run.md",
-     "line": 32,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/sdk-operations.md",
-     "line": 17,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/tools/prompt-agent/tool-azure-ai-search.md",
-     "line": 13,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/tools/prompt-agent/tool-code-interpreter.md",
-     "line": 3,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/tools/prompt-agent/tool-mcp.md",
-     "line": 8,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/tools/prompt-agent/tool-mcp.md",
-     "line": 13,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/tools/prompt-agent/tool-memory.md",
-     "line": 10,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/tools/prompt-agent/tool-memory.md",
-     "line": 69,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/tools/prompt-agent/tool-web-search.md",
-     "line": 48,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/voice-agent/gpt-live-voice-smoke-test.md",
-     "line": 26,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/voice-agent/prompt-and-hosted-voice-settings.md",
-     "line": 76,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/voice-agent/prompt-and-hosted-voice-settings.md",
-     "line": 83,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/voice-agent/prompt-and-hosted-voice-smoke-test.md",
-     "line": 55,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/references/voice-agent/prompt-and-hosted-voice-smoke-test.md",
-     "line": 122,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/create/scripts/smoke_test_gpt_live.py",
-     "line": 232,
-     "reason": "documented-service-api"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/invocations-ws/invocations-ws.md",
-     "line": 126,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/invocations-ws/references/invocations-ws-protocol.md",
-     "line": 89,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/observe/references/analyze-results.md",
-     "line": 10,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/test-endpoint.md",
-     "line": 22,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/test-endpoint.md",
-     "line": 34,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/test-endpoint.md",
-     "line": 43,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/test-endpoint.md",
-     "line": 47,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-azure-ai-search.md",
-     "line": 74,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-browser-automation.md",
-     "line": 22,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-code-interpreter.md",
-     "line": 16,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-fabric-iq.md",
-     "line": 35,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-file-search.md",
-     "line": 38,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-file-search.md",
-     "line": 11,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-file-search.md",
-     "line": 18,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-file-search.md",
-     "line": 22,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-file-search.md",
-     "line": 26,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-file-search.md",
-     "line": 18,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-file-search.md",
-     "line": 22,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-file-search.md",
-     "line": 26,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-agent-identity.md",
-     "line": 30,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-custom-oauth-azure-starter.md",
-     "line": 40,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-custom-oauth-azure-starter.md",
-     "line": 61,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-custom-oauth.md",
-     "line": 47,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-key-auth.md",
-     "line": 14,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-key-auth.md",
-     "line": 3,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-managed-oauth.md",
-     "line": 31,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-managed-oauth.md",
-     "line": 3,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-managed-oauth.md",
-     "line": 69,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-noauth.md",
-     "line": 14,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-user-entra-token.md",
-     "line": 29,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-user-entra-token.md",
-     "line": 3,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-user-entra-token.md",
-     "line": 16,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-mcp-user-entra-token.md",
-     "line": 17,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-openapi.md",
-     "line": 35,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-openapi.md",
-     "line": 145,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-tool-search.md",
-     "line": 22,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-web-search.md",
-     "line": 16,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-work-iq.md",
-     "line": 28,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-work-iq.md",
-     "line": 56,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-work-iq.md",
-     "line": 78,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/tool-work-iq.md",
-     "line": 137,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/references/toolbox-azd.md",
-     "line": 9,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/scripts/get-catalog-inputs.sh",
-     "line": 8,
-     "reason": "documented-service-api"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/scripts/get-catalog-inputs.sh",
-     "line": 10,
-     "reason": "documented-service-api"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/toolbox/toolbox.md",
-     "line": 56,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/foundry-agent/trace/references/conversation-detail.md",
-     "line": 3,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/models/deploy-model/customize/references/customize-workflow.md",
-     "line": 124,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/quota/quota.md",
-     "line": 186,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/quota/references/capacity-planning.md",
-     "line": 10,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/quota/references/capacity-planning.md",
-     "line": 77,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/microsoft-foundry/resource/private-network/references/end-to-end-test.md",
-     "line": 32,
-     "reason": "documented-installer"
-    }
-   ]
-  },
-  {
-   "rank": 16,
-   "repository": "microsoft/azure-skills",
-   "skill": "azure-validate",
-   "date": "2026-11-11",
-   "commit": "9aa7f618563713f47481af67b7b9dcaafdc2154a",
-   "skillPath": "skills/azure-validate/SKILL.md",
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-image-generation",
+   "date": "2026-11-13",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-image-generation/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "skills/azure-validate/references/recipes/azcli/README.md",
-     "line": 69,
+     "file": "ai-image-generation/SKILL.md",
+     "line": 52,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-validate/references/recipes/azcli/errors.md",
-     "line": 9,
+     "file": "ai-image-generation/SKILL.md",
+     "line": 479,
      "reason": "documented-installer"
-    },
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 16,
+   "repository": "gencraft-labs/skills",
+   "skill": "video-edit",
+   "date": "2026-11-13",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "video-edit/SKILL.md",
+   "status": "warning",
+   "reasons": [
     {
-     "file": "skills/azure-validate/references/recipes/azd/README.md",
-     "line": 137,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-validate/references/recipes/azd/errors.md",
-     "line": 17,
+     "file": "video-edit/SKILL.md",
+     "line": 28,
      "reason": "documented-installer"
     }
    ],
@@ -1506,177 +776,67 @@
   },
   {
    "rank": 17,
-   "repository": "microsoft/azure-skills",
-   "skill": "azure-prepare",
-   "date": "2026-11-11",
-   "commit": "9aa7f618563713f47481af67b7b9dcaafdc2154a",
-   "skillPath": "skills/azure-prepare/SKILL.md",
+   "repository": "bankai-skills/superpowers",
+   "skill": "ai-video-generation",
+   "date": "2026-11-13",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/ai-video-generation/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "skills/azure-prepare/references/functional-verification.md",
-     "line": 59,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 7,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-prepare/references/functional-verification.md",
-     "line": 60,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 17,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-prepare/references/functional-verification.md",
-     "line": 25,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-prepare/references/recipes/azd/azure-yaml.md",
-     "line": 137,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 218,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-prepare/references/recipes/azd/azure-yaml.md",
-     "line": 173,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 221,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-prepare/references/recipes/azd/docker.md",
-     "line": 34,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 224,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-prepare/references/runtimes/nodejs.md",
-     "line": 29,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-prepare/references/runtimes/nodejs.md",
-     "line": 119,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-prepare/references/sdk/azd-deployment.md",
-     "line": 8,
-     "reason": "download-and-execute"
-    },
-    {
-     "file": "skills/azure-prepare/references/sdk/azure-appconfiguration-py.md",
-     "line": 8,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 227,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-prepare/references/sdk/azure-appconfiguration-ts.md",
-     "line": 8,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 230,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-prepare/references/sdk/azure-identity-dotnet.md",
-     "line": 4,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-prepare/references/sdk/azure-identity-py.md",
-     "line": 9,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 233,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-prepare/references/sdk/azure-identity-ts.md",
-     "line": 8,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 236,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-prepare/references/security.md",
-     "line": 255,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 239,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-prepare/references/security.md",
-     "line": 256,
+     "file": "tools/video/ai-video-generation/SKILL.md",
+     "line": 242,
      "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/app-service/bicep.md",
-     "line": 123,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/app-service/templates/recipes/auth/README.md",
-     "line": 20,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/app-service/templates/recipes/auth/source/nodejs.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/app-service/templates/recipes/cosmos/source/nodejs.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/app-service/templates/recipes/redis/source/nodejs.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/app-service/templates/recipes/sql/source/nodejs.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/app-service/templates/recipes/sql/source/nodejs.md",
-     "line": 9,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/app-service/templates/web-api.md",
-     "line": 112,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/durable-task-scheduler/bicep.md",
-     "line": 107,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/event-grid/bicep.md",
-     "line": 51,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/event-grid/bicep.md",
-     "line": 70,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/functions/templates/base/eval/typescript.md",
-     "line": 25,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/functions/templates/recipes/cosmosdb/eval/typescript.md",
-     "line": 27,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/functions/templates/recipes/servicebus/eval/typescript.md",
-     "line": 27,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/key-vault/sdk.md",
-     "line": 12,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/key-vault/sdk.md",
-     "line": 29,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/azure-prepare/references/services/static-web-apps/deployment.md",
-     "line": 38,
-     "reason": "environment-secret-read"
     }
    ],
    "publishable": false,
@@ -1684,72 +844,62 @@
   },
   {
    "rank": 18,
-   "repository": "microsoft/azure-skills",
-   "skill": "entra-app-registration",
-   "date": "2026-11-11",
-   "commit": "9aa7f618563713f47481af67b7b9dcaafdc2154a",
-   "skillPath": "skills/entra-app-registration/SKILL.md",
+   "repository": "bankai-skills/superpowers",
+   "skill": "ai-image-generation",
+   "date": "2026-11-13",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/image/ai-image-generation/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "skills/entra-app-registration/SKILL.md",
-     "line": 83,
-     "reason": "external-data-send"
-    },
-    {
-     "file": "skills/entra-app-registration/references/console-app-example.md",
-     "line": 128,
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 7,
      "reason": "documented-installer"
     },
     {
-     "file": "skills/entra-app-registration/references/console-app-example.md",
-     "line": 257,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/entra-app-registration/references/console-app-example.md",
-     "line": 85,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/entra-app-registration/references/sdk/azure-identity-dotnet.md",
-     "line": 4,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/entra-app-registration/references/sdk/azure-identity-py.md",
-     "line": 9,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/entra-app-registration/references/sdk/azure-identity-rust.md",
-     "line": 4,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/entra-app-registration/references/sdk/azure-identity-ts.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/entra-app-registration/references/sdk/azure-keyvault-py.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/entra-app-registration/references/sdk/azure-keyvault-secrets-ts.md",
-     "line": 8,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "skills/entra-app-registration/references/sdk/microsoft-azure-webjobs-extensions-authentication-events-dotnet.md",
-     "line": 13,
-     "reason": "sensitive-read"
-    },
-    {
-     "file": "skills/entra-app-registration/references/sdk/microsoft-azure-webjobs-extensions-authentication-events-dotnet.md",
+     "file": "tools/image/ai-image-generation/SKILL.md",
      "line": 17,
-     "reason": "sensitive-read"
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 140,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 143,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 146,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 149,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 152,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 155,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 158,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 161,
+     "reason": "documented-installer"
     }
    ],
    "publishable": false,
@@ -1757,62 +907,52 @@
   },
   {
    "rank": 19,
-   "repository": "microsoft/azure-skills",
-   "skill": "azure-cloud-migrate",
-   "date": "2026-11-11",
-   "commit": "9aa7f618563713f47481af67b7b9dcaafdc2154a",
-   "skillPath": "skills/azure-cloud-migrate/SKILL.md",
+   "repository": "bankai-skills/superpowers",
+   "skill": "ai-avatar-video",
+   "date": "2026-11-13",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/video/ai-avatar-video/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "skills/azure-cloud-migrate/references/services/container-apps/cloudrun-deployment-guide.md",
-     "line": 166,
-     "reason": "environment-secret-read"
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 7,
+     "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-cloud-migrate/references/services/container-apps/cloudrun-deployment-guide.md",
-     "line": 173,
-     "reason": "environment-secret-read"
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 17,
+     "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-cloud-migrate/references/services/container-apps/fargate-deployment-guide.md",
-     "line": 21,
-     "reason": "environment-secret-read"
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 243,
+     "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-cloud-migrate/references/services/container-apps/fargate-deployment-guide.md",
-     "line": 22,
-     "reason": "environment-secret-read"
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 246,
+     "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-cloud-migrate/references/services/container-apps/spring-deployment-guide.md",
-     "line": 104,
-     "reason": "environment-secret-read"
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 249,
+     "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-cloud-migrate/references/services/container-apps/spring-deployment-guide.md",
-     "line": 123,
-     "reason": "environment-secret-read"
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 252,
+     "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-cloud-migrate/references/services/container-apps/spring-deployment-guide.md",
-     "line": 124,
-     "reason": "environment-secret-read"
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 255,
+     "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-cloud-migrate/references/services/container-apps/spring-deployment-guide.md",
-     "line": 126,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/azure-cloud-migrate/references/services/container-apps/spring-deployment-guide.md",
-     "line": 127,
-     "reason": "environment-secret-read"
-    },
-    {
-     "file": "skills/azure-cloud-migrate/references/services/functions/lambda-to-functions.md",
-     "line": 174,
-     "reason": "multiline-data-send"
+     "file": "tools/video/ai-avatar-video/SKILL.md",
+     "line": 258,
+     "reason": "documented-installer"
     }
    ],
    "publishable": false,
@@ -1820,22 +960,42 @@
   },
   {
    "rank": 20,
-   "repository": "microsoft/azure-skills",
-   "skill": "azure-diagnostics",
-   "date": "2026-11-11",
-   "commit": "9aa7f618563713f47481af67b7b9dcaafdc2154a",
-   "skillPath": "skills/azure-diagnostics/SKILL.md",
+   "repository": "bankai-skills/superpowers",
+   "skill": "twitter-automation",
+   "date": "2026-11-13",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/social/twitter-automation/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "skills/azure-diagnostics/troubleshooting/messaging/azure-eventhubs-py.md",
-     "line": 11,
-     "reason": "sensitive-read"
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 7,
+     "reason": "documented-installer"
     },
     {
-     "file": "skills/azure-diagnostics/troubleshooting/messaging/azure-servicebus-py.md",
-     "line": 9,
-     "reason": "sensitive-read"
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 17,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 138,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 141,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 144,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 147,
+     "reason": "documented-installer"
     }
    ],
    "publishable": false,
@@ -1843,8 +1003,8 @@
   }
  ],
  "counts": {
-  "passed": 3,
-  "warning": 14,
-  "blocked": 3
+  "passed": 5,
+  "warning": 13,
+  "blocked": 2
  }
 }

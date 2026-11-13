@@ -9,6 +9,15 @@
   "stato": "attiva"
  },
  {
+  "url": "/skills/addyosmani-agent-skills-context-engineering.html",
+  "slug": "addyosmani-agent-skills-context-engineering",
+  "tipo": "skill",
+  "repository": "addyosmani/agent-skills",
+  "skillPath": "skills/context-engineering/SKILL.md",
+  "primaPubblicazione": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/skills/addyosmani-agent-skills-incremental-implementation.html",
   "slug": "addyosmani-agent-skills-incremental-implementation",
   "tipo": "skill",
@@ -54,6 +63,15 @@
   "stato": "attiva"
  },
  {
+  "url": "/skills/addyosmani-agent-skills-using-agent-skills.html",
+  "slug": "addyosmani-agent-skills-using-agent-skills",
+  "tipo": "skill",
+  "repository": "addyosmani/agent-skills",
+  "skillPath": "skills/using-agent-skills/SKILL.md",
+  "primaPubblicazione": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/skills/coreyhaines31-marketingskills-ad-creative.html",
   "slug": "coreyhaines31-marketingskills-ad-creative",
   "tipo": "skill",
@@ -78,6 +96,15 @@
   "repository": "",
   "skillPath": "",
   "primaPubblicazione": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/skills/for-productivity.html",
+  "slug": "for-productivity",
+  "tipo": "categoria",
+  "repository": "",
+  "skillPath": "",
+  "primaPubblicazione": "2026-11-13",
   "stato": "attiva"
  },
  {
