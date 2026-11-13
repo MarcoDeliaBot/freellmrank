@@ -23091,6 +23091,18 @@
     "tipo": "News"
    },
    "data": "2026-11-12"
+  },
+  "/blog/news-2026-11-13-gondola-doubles-revenue-as-its-team-builds-more-with-codex.html": {
+   "post": {
+    "slug": "news-2026-11-13-gondola-doubles-revenue-as-its-team-builds-more-with-codex",
+    "titolo": "Gondola doubles revenue as its team builds more with Codex",
+    "descr": "Gondola reports revenue doubling as Codex raises its lead engineer’s productivity, while ChatGPT streamlines daily tasks.",
+    "data": "2026-11-13",
+    "tema": "Business",
+    "corpo": "The company says Codex lifted its lead engineer’s output by half, improving development speed.\n\nChatGPT is also used by the team to simplify routine work, further supporting productivity gains.\n\nThe revenue jump reflects the value of AI‑assisted tools for creative‑focused businesses.\n\nGondola’s experience underscores the commercial impact of integrating large language models into daily workflows.\n\n## What it means for you\n\nFor AI users, the case shows how code‑generation models can accelerate development and reduce costs. Free‑model enthusiasts can note that while paid tools drive revenue, community‑ranked free chat models like Kimi K3 still lead in user preference.\n\n## On FreeLLMArena\n\nFrom our rankings on 12 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [Gondola doubles revenue as its team builds more with Codex](https://openai.com/business/customer-stories/gondola), OpenAI (official), 12 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-13-gondola-doubles-revenue-as-its-team-builds-more-with-codex).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-12"
   }
  },
  "ricostruzione": {
