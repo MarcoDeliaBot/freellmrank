@@ -407,5 +407,13 @@
  "skill-addyosmani-agent-skills-using-agent-skills": {
   "lungo": "skill-addyosmani-agent-skills-using-agent-skills",
   "breve": "breve-skill-addyosmani-agent-skills-using-agent-skills"
+ },
+ "news-2026-11-12-google-launches-gemini-4-hydrogen-for-coding-agentic-workflows-and-sea": {
+  "lungo": "notizia-google-launches-gemini-4-hydrogen-for-coding-agentic-wor",
+  "breve": "breve-google-launches-gemini-4-hydrogen-for-coding-agentic-wor"
+ },
+ "news-2026-11-13-liquid-ai-launches-74m-parameter-liquidcodec-for-ultra-fast-streaming-": {
+  "lungo": "notizia-liquid-ai-launches-74m-parameter-liquidcodec-for-ultra-f",
+  "breve": "breve-liquid-ai-launches-74m-parameter-liquidcodec-for-ultra-f"
  }
 }
