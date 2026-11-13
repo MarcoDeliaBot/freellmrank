@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-13-liquid-ai-launches-74m-parameter-liquidcodec-for-ultra-fast-streaming-",
+ "titolo": "Liquid AI launches 74M‑parameter LiquidCodec for ultra‑fast streaming audio",
+ "descr": "LiquidCodec tokenizes and reconstructs 24 kHz audio at 12.5 Hz, achieving 361× faster‑than‑real‑time encoding on a single CPU thread.",
+ "tema": "Research",
+ "paragrafi": [
+  "Liquid AI announced the release of LiquidCodec, a streaming audio codec built with roughly 74 million parameters.",
+  "The codec powers the newly released LFM3-Audio-2B and LFM3-Omni-2B models that arrived at the end of October.",
+  "LiquidCodec operates at a frame rate of 12.5 Hz, using 12 codebooks to encode audio and decode it back to waveform.",
+  "Benchmark tests show it can encode audio about 361 times faster than real time on a single CPU thread.",
+  "Designed for on‑device use, the codec combines traditional spectral processing with a symmetric encoder‑decoder architecture optimized for speed."
+ ],
+ "perche": [
+  "LiquidCodec’s speed and low‑parameter count make high‑fidelity audio tokenization feasible on edge devices, enabling real‑time speech applications without cloud resources. For users of free or locally run AI models, the codec could lower hardware requirements and improve latency in multimodal projects."
+ ],
+ "pubblicato": "2026-11-13",
+ "titoloFonte": "Liquid AI Releases LiquidCodec, a 74M-Parameter Streaming Audio Codec",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/12/liquid-ai-liquidcodec-streaming-audio-codec/",
+   "titolo": "Liquid AI Releases LiquidCodec, a 74M-Parameter Streaming Audio Codec",
+   "ufficiale": false,
+   "data": "2026-11-12"
+  },
+  {
+   "nome": "liquid.ai",
+   "url": "https://www.liquid.ai/blog/liquidcodec",
+   "titolo": "LiquidCodec: High-Fidelity Audio Tokenization Optimized for Speed | Blog | Liquid AI",
+   "ufficiale": true,
+   "data": "2026-11-12"
+  }
+ ],
+ "frasiTolte": 0
+}

@@ -23079,6 +23079,18 @@
     "tipo": "News"
    },
    "data": "2026-11-12"
+  },
+  "/blog/news-2026-11-13-liquid-ai-launches-74m-parameter-liquidcodec-for-ultra-fast-streaming-.html": {
+   "post": {
+    "slug": "news-2026-11-13-liquid-ai-launches-74m-parameter-liquidcodec-for-ultra-fast-streaming-",
+    "titolo": "Liquid AI launches 74M‑parameter LiquidCodec for ultra‑fast streaming audio",
+    "descr": "LiquidCodec tokenizes and reconstructs 24 kHz audio at 12.5 Hz, achieving 361× faster‑than‑real‑time encoding on a single CPU thread.",
+    "data": "2026-11-13",
+    "tema": "Research",
+    "corpo": "Liquid AI announced the release of LiquidCodec, a streaming audio codec built with roughly 74 million parameters.\n\nThe codec powers the newly released LFM3-Audio-2B and LFM3-Omni-2B models that arrived at the end of October.\n\nLiquidCodec operates at a frame rate of 12.5 Hz, using 12 codebooks to encode audio and decode it back to waveform.\n\nBenchmark tests show it can encode audio about 361 times faster than real time on a single CPU thread.\n\nDesigned for on‑device use, the codec combines traditional spectral processing with a symmetric encoder‑decoder architecture optimized for speed.\n\n## What it means for you\n\nLiquidCodec’s speed and low‑parameter count make high‑fidelity audio tokenization feasible on edge devices, enabling real‑time speech applications without cloud resources. For users of free or locally run AI models, the codec could lower hardware requirements and improve latency in multimodal projects.\n\n## Sources\n\n- [Liquid AI Releases LiquidCodec, a 74M-Parameter Streaming Audio Codec](https://www.marktechpost.com/2026/11/12/liquid-ai-liquidcodec-streaming-audio-codec/), MarkTechPost, 12 Nov 2026\n- [LiquidCodec: High-Fidelity Audio Tokenization Optimized for Speed | Blog | Liquid AI](https://www.liquid.ai/blog/liquidcodec), liquid.ai (official), 12 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-13-liquid-ai-launches-74m-parameter-liquidcodec-for-ultra-fast-streaming-).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-12"
   }
  },
  "ricostruzione": {
