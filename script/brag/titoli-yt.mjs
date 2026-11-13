@@ -35,10 +35,13 @@ export function metaYoutube({ n, yt = {}, regge, punti = [], nomi = [], url, rig
     return s;
   };
   const titolo = prova(yt.titolo, MAX_TITOLO) || titoloCorto(n.titolo);
+  // 13/11/2026 (missione di Marco «diventare virali e seguiti»): una domanda per i commenti, in descrizione e nel commento fissato
+  const domanda = domandaValida(yt.domanda, regge) || domandaDiRiserva(nomi, guida);
   const apertura = prova(yt.apertura, MAX_APERTURA) || pulito(n.descr);
   const elenco = [...new Set(punti.map(pulito).filter((p) => p && p !== apertura))].slice(0, 6);
   const descrizione = [
     apertura,
+    `💬 ${domanda} Tell us in the comments.`,
     elenco.length ? `${guida ? 'In this guide' : 'Key facts'}:\n${elenco.map((p) => `- ${p}`).join('\n')}` : '',
     `Full story: ${url}`,
     `Sources:\n${righeFonti}`,
@@ -54,8 +57,18 @@ export function metaYoutube({ n, yt = {}, regge, punti = [], nomi = [], url, rig
     if (lung + x.length + 1 > MAX_TAG) break;
     tag.push(x); lung += x.length + 1;
   }
-  return { titolo, descrizione, tag: tag.slice(0, 15), apertura, tolti };
+  return { titolo, descrizione, tag: tag.slice(0, 15), apertura, tolti, domanda };
 }
 
+// la domanda per i commenti: una domanda vera (finisce con «?»), corta, senza numeri (un numero non controllabile in una domanda
+// sembra un fatto), con i soli nomi della notizia
+export function domandaValida(d, regge = () => true) {
+  const s = pulito(d);
+  if (!s || s.length > 90 || !s.endsWith('?') || /[0-9]/.test(s) || !regge(s)) return '';
+  return s;
+}
+export const domandaDiRiserva = (nomi = [], guida = false) => (guida ? 'Which tool should we try next?'
+  : nomi[0] ? `Would you try ${nomi[0]}?` : 'Would you try it?');
+
 // la parte da chiedere a Workers AI, dentro il JSON che il generatore già chiede
-export const RICHIESTA_YT = `"yt": {"titolo": "YouTube title, max 60 characters, starting with the main name (lab, product or model) people would search for; plain words, no clickbait, no emojis, no ALL CAPS", "apertura": "first sentence of the YouTube description, max 155 characters, with the main names", "tag": ["8 to 12 YouTube search tags: the names in ARTICLE and short topic phrases"]}`;
+export const RICHIESTA_YT = `"yt": {"titolo": "YouTube title, max 60 characters, starting with the main name (lab, product or model) people would search for, then the most surprising concrete fact from ARTICLE (a number, free, or a comparison such as cheaper or faster); plain words, no clickbait, no emojis, no ALL CAPS", "apertura": "first sentence of the YouTube description, max 155 characters, with the main names", "tag": ["8 to 12 YouTube search tags: the names in ARTICLE and short topic phrases"], "domanda": "one short question that invites viewers to comment with their opinion or experience, max 80 characters, ending with ?, no numbers, only names from ARTICLE, e.g. Would you switch to Muse Ember for agent tasks?"}`;

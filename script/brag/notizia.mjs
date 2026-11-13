@@ -135,7 +135,7 @@ const infoC = {
   nome: GUIDA ? `breve-${nome}` : nome.replace(/^notizia-/, 'breve-'), titolo: titoloYT([yt.titolo], { shorts: true, max: 100 - 8 }), notizia: n.nome,
   // lo Short rimanda al video lungo (Marco, 23/10/2026): «lungo» per il «Video correlato» di YouTube, e il link nella descrizione
   lungo: `video-${nome}`,
-  descrizione: `${yt.apertura}\nFull story: ${url}\nSources: ${fonti.join(', ')}`,
+  descrizione: `${yt.apertura}\n💬 ${yt.domanda} Tell us in the comments.\nFull story: ${url}\nSources: ${fonti.join(', ')}`,
   tag: [...yt.tag.slice(0, 10), 'Shorts'],
   condividi: `${n.titolo} ${url}`,
   lingua: 'en', copertina: 0,
