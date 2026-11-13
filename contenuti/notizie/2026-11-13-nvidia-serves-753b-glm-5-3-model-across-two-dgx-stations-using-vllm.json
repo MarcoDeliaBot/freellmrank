@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm",
+ "titolo": "NVIDIA serves 753B GLM‑5.3 model across two DGX stations using vLLM",
+ "descr": "NVIDIA’s latest blog details how to run the 753‑billion‑parameter GLM‑5.3 NVFP4 model on two DGX stations linked by ConnectX‑8 RDMA.",
+ "tema": "Guides",
+ "paragrafi": [
+  "NVIDIA’s latest blog details how to run the 753‑billion‑parameter GLM‑5.3 NVFP4 model on two DGX stations linked by ConnectX‑8 RDMA.",
+  "The model needs about 464 GB of GPU memory, far beyond the 252 GB HBM3e on a single GB300 GPU, so tensor parallelism (TP=2) splits the weights across both GPUs.",
+  "Using vLLM, the two stations present a single OpenAI‑compatible endpoint, with each GPU holding and computing roughly half the model.",
+  "AIPerf benchmarks on the SPEED‑Bench Coding dataset show peak throughput of 607.8 tokens per second at 16 concurrent requests, dropping to 385.0 tokens per second at 32 concurrency with a mean latency of 453.5 seconds.",
+  "The guide walks users through prerequisites, network setup, container deployment, and performance testing, linking to the Connect Two DGX Stations playbook for hardware validation."
+ ],
+ "perche": [
+  "Running GLM‑5.3 locally requires multi‑GPU setups; this tutorial gives practitioners a concrete path to deploy frontier‑scale models without cloud services. For users of free or open‑source models, it demonstrates that large‑scale inference is possible on-premises, though hardware costs remain high."
+ ],
+ "pubblicato": "2026-11-13",
+ "titoloFonte": "When One GPU Isn’t Enough: Serving GLM-5.3 Across Two NVIDIA DGX Stations with vLLM",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/",
+   "titolo": "When One GPU Isn’t Enough: Serving GLM-5.3 Across Two NVIDIA DGX Stations with vLLM",
+   "ufficiale": true,
+   "data": "2026-11-13"
+  }
+ ],
+ "frasiTolte": 1
+}

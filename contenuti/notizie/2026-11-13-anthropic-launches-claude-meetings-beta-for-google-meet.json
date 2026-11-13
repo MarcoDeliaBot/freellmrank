@@ -1,0 +1,36 @@
+{
+ "nome": "2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet",
+ "titolo": "Anthropic launches Claude Meetings beta for Google Meet",
+ "descr": "Claude Meetings lets Anthropic's Claude join Google Meet calls, answer questions, create docs and whiteboards, and log notes.",
+ "tema": "Software",
+ "paragrafi": [
+  "Anthropic announced Claude Meetings, a beta feature that adds Claude as a visible participant in video calls.",
+  "During a meeting Claude can answer spoken or typed queries, generate documents, whiteboards and other artifacts, and record notes and action items.",
+  "The service currently supports only Google Meet and is available to Team and Enterprise plan customers; other platforms are promised later.",
+  "Privacy defaults keep Claude out of calls with external participants, though admins can override this setting.",
+  "Organizations with HIPAA, zero‑data‑retention, or customer‑managed encryption configurations cannot use the feature during the beta.",
+  "All meeting artifacts, including transcripts and generated files, are stored on a dedicated page in claude.ai after the call."
+ ],
+ "perche": [
+  "For AI users, Claude Meetings offers a hands‑free assistant that can capture minutes and produce collaborative content in real time, reducing manual note‑taking. Free‑model enthusiasts may see this as a reminder that advanced AI assistance often resides behind paid enterprise plans, reinforcing the value of exploring open‑source alternatives for similar workflow automation."
+ ],
+ "pubblicato": "2026-11-13",
+ "titoloFonte": "Claude Meetings lets Anthropic's AI join your video calls",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/claude-meetings-lets-anthropics-ai-join-your-video-calls/",
+   "titolo": "Claude Meetings lets Anthropic's AI join your video calls",
+   "ufficiale": false,
+   "data": "2026-11-12"
+  },
+  {
+   "nome": "claude.com",
+   "url": "https://claude.com/resources/articles/claude-meetings",
+   "titolo": "Introducing Claude Meetings, now in beta | Claude by Anthropic",
+   "ufficiale": true,
+   "data": "2026-11-12"
+  }
+ ],
+ "frasiTolte": 0
+}

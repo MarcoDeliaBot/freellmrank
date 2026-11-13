@@ -4784,6 +4784,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/news-2026-11-13-gondola-doubles-revenue-as-its-team-builds-more-with-codex",
   "tipo": "articolo",
   "lingua": "en",
@@ -4825,6 +4841,22 @@
  },
  {
   "url": "/blog/news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm.html",
   "tipo": "articolo",
   "lingua": "en",
   "primaVista": "2026-11-13",
@@ -14352,6 +14384,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/de/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/blog/news-2026-11-13-gondola-doubles-revenue-as-its-team-builds-more-with-codex",
   "tipo": "articolo",
   "lingua": "de",
@@ -14393,6 +14441,22 @@
  },
  {
   "url": "/de/blog/news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm.html",
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-13",
@@ -31946,6 +32010,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/news-2026-11-13-gondola-doubles-revenue-as-its-team-builds-more-with-codex",
   "tipo": "articolo",
   "lingua": "es",
@@ -31987,6 +32067,22 @@
  },
  {
   "url": "/es/blog/news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm.html",
   "tipo": "articolo",
   "lingua": "es",
   "primaVista": "2026-11-13",
@@ -49540,6 +49636,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/blog/news-2026-11-13-gondola-doubles-revenue-as-its-team-builds-more-with-codex",
   "tipo": "articolo",
   "lingua": "fr",
@@ -49581,6 +49693,22 @@
  },
  {
   "url": "/fr/blog/news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm.html",
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-13",
@@ -67134,6 +67262,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/news-2026-11-13-gondola-doubles-revenue-as-its-team-builds-more-with-codex",
   "tipo": "articolo",
   "lingua": "it",
@@ -67175,6 +67319,22 @@
  },
  {
   "url": "/it/blog/news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm.html",
   "tipo": "articolo",
   "lingua": "it",
   "primaVista": "2026-11-13",
@@ -84728,6 +84888,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/blog/news-2026-11-13-gondola-doubles-revenue-as-its-team-builds-more-with-codex",
   "tipo": "articolo",
   "lingua": "ja",
@@ -84769,6 +84945,22 @@
  },
  {
   "url": "/ja/blog/news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm.html",
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-13",
@@ -110348,6 +110540,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/pt/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/blog/news-2026-11-13-gondola-doubles-revenue-as-its-team-builds-more-with-codex",
   "tipo": "articolo",
   "lingua": "pt",
@@ -110389,6 +110597,22 @@
  },
  {
   "url": "/pt/blog/news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-13-nvidia-serves-753b-glm-5-3-model-across-two-dgx-stations-using-vllm.html",
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-13",
