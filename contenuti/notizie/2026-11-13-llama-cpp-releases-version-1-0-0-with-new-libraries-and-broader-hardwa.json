@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa",
+ "titolo": "llama.cpp releases version 1.0.0 with new libraries and broader hardware support",
+ "descr": "The open‑source llama.cpp project launches v1.0.0, adding libllama and libggml libraries and expanding platform compatibility.",
+ "tema": "Software",
+ "paragrafi": [
+  "On November 13, 2026 the llama.cpp team announced version 1.0.0, marking the first major release that introduces breaking changes to the public C API.",
+  "The release bundles two libraries: libllama for LLM inference in C/C++ and libggml, a tensor library for machine learning, both with updated public headers.",
+  "Version 1.0.0 adds pre‑release artifacts for Linux, macOS, Windows, Android and iOS, and is distributed through Docker, Homebrew, conda‑forge, Winget, MacPorts and XCFramework.",
+  "The team emphasizes stricter semantic versioning, with MAJOR bumps indicating API incompatibility, and notes ongoing investment in CI infrastructure and community contributions."
+ ],
+ "perche": [
+  "The update gives developers a stable, cross‑platform foundation for building private AI applications, especially those that run locally. Users seeking free or on‑device models benefit from broader hardware compatibility and the ability to run multi‑modal LLMs without cloud services."
+ ],
+ "pubblicato": "2026-11-13",
+ "titoloFonte": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem",
+ "fonti": [
+  {
+   "nome": "Hugging Face",
+   "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+   "titolo": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem",
+   "ufficiale": true,
+   "data": "2026-11-13"
+  }
+ ],
+ "frasiTolte": 1
+}

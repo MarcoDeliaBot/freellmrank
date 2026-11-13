@@ -23142,6 +23142,30 @@
     "tipo": "News"
    },
    "data": "2026-11-13"
+  },
+  "/blog/news-2026-11-13-ainews-jensen-huang-resigns-after-33-years-leading-nvidia.html": {
+   "post": {
+    "slug": "news-2026-11-13-ainews-jensen-huang-resigns-after-33-years-leading-nvidia",
+    "titolo": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
+    "descr": "Nvidia's founder steps down after 33 years, CFO Colette Kress becomes interim CEO as the company loses $1.4 trillion in market value.",
+    "data": "2026-11-13",
+    "tema": "Business",
+    "corpo": "Nvidia announced on November 12, 2026 that Jensen Huang has resigned as CEO, president and board member, ending a 33‑year tenure.\n\nThe resignation follows reports of two extramarital affairs, one involving a suspected Chinese spy, and a New York Times story on possible intelligence ties that triggered a $1.4 trillion drop in Nvidia’s market value.\n\nCFO Colette Kress, who has held the finance role since 2013, will serve as interim CEO while the board searches for a permanent replacement.\n\nHarvey C. Jones has been appointed the first independent board chair, emphasizing that business operations will continue without disruption.\n\nAnalysts note that Huang’s departure could unsettle Nvidia’s extensive ecosystem, which supports major AI customers such as Microsoft, Amazon, Alphabet, OpenAI and Anthropic.\n\n## What it means for you\n\nFor AI users, the leadership change may affect the timing of new GPU releases and pricing, influencing the cost of training and inference on Nvidia hardware. Developers of free or locally‑run models should watch Nvidia’s roadmap, as shifts in supply or pricing could impact the feasibility of running large open‑weight models like Inkling 2 Small on consumer‑grade GPUs.\n\n## On FreeLLMArena\n\nFrom our rankings on 13 Nov 2026, based on Arena's blind votes:\n\n- [Inkling](/model/inkling.html): #19 among free chat models\n\n## Sources\n\n- [\\[AINews\\] Jensen Huang resigns after 33 years leading NVIDIA](https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/), Latent Space, 13 Nov 2026\n- [Jensen Huang resigns as Nvidia CEO after espionage scandal wipes out $1.4 trillion in market value](https://the-decoder.com/jensen-huang-resigns-as-nvidia-ceo-after-espionage-scandal-wipes-out-1-4-trillion-in-market-value/), The Decoder, 12 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-13-ainews-jensen-huang-resigns-after-33-years-leading-nvidia).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-13"
+  },
+  "/blog/news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa.html": {
+   "post": {
+    "slug": "news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa",
+    "titolo": "llama.cpp releases version 1.0.0 with new libraries and broader hardware support",
+    "descr": "The open‑source llama.cpp project launches v1.0.0, adding libllama and libggml libraries and expanding platform compatibility.",
+    "data": "2026-11-13",
+    "tema": "Software",
+    "corpo": "On November 13, 2026 the llama.cpp team announced version 1.0.0, marking the first major release that introduces breaking changes to the public C API.\n\nThe release bundles two libraries: libllama for LLM inference in C/C++ and libggml, a tensor library for machine learning, both with updated public headers.\n\nVersion 1.0.0 adds pre‑release artifacts for Linux, macOS, Windows, Android and iOS, and is distributed through Docker, Homebrew, conda‑forge, Winget, MacPorts and XCFramework.\n\nThe team emphasizes stricter semantic versioning, with MAJOR bumps indicating API incompatibility, and notes ongoing investment in CI infrastructure and community contributions.\n\n## What it means for you\n\nThe update gives developers a stable, cross‑platform foundation for building private AI applications, especially those that run locally. Users seeking free or on‑device models benefit from broader hardware compatibility and the ability to run multi‑modal LLMs without cloud services.\n\n## Sources\n\n- [llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem](https://huggingface.co/blog/ggml-org/llama-cpp-v1), Hugging Face (official), 13 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-13"
   }
  },
  "ricostruzione": {

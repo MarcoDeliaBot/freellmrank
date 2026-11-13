@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-13-ainews-jensen-huang-resigns-after-33-years-leading-nvidia",
+ "titolo": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
+ "descr": "Nvidia's founder steps down after 33 years, CFO Colette Kress becomes interim CEO as the company loses $1.4 trillion in market value.",
+ "tema": "Business",
+ "paragrafi": [
+  "Nvidia announced on November 12, 2026 that Jensen Huang has resigned as CEO, president and board member, ending a 33‑year tenure.",
+  "The resignation follows reports of two extramarital affairs, one involving a suspected Chinese spy, and a New York Times story on possible intelligence ties that triggered a $1.4 trillion drop in Nvidia’s market value.",
+  "CFO Colette Kress, who has held the finance role since 2013, will serve as interim CEO while the board searches for a permanent replacement.",
+  "Harvey C. Jones has been appointed the first independent board chair, emphasizing that business operations will continue without disruption.",
+  "Analysts note that Huang’s departure could unsettle Nvidia’s extensive ecosystem, which supports major AI customers such as Microsoft, Amazon, Alphabet, OpenAI and Anthropic."
+ ],
+ "perche": [
+  "For AI users, the leadership change may affect the timing of new GPU releases and pricing, influencing the cost of training and inference on Nvidia hardware. Developers of free or locally‑run models should watch Nvidia’s roadmap, as shifts in supply or pricing could impact the feasibility of running large open‑weight models like Inkling 2 Small on consumer‑grade GPUs."
+ ],
+ "pubblicato": "2026-11-13",
+ "titoloFonte": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
+ "fonti": [
+  {
+   "nome": "Latent Space",
+   "url": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/",
+   "titolo": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
+   "ufficiale": false,
+   "data": "2026-11-13"
+  },
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/jensen-huang-resigns-as-nvidia-ceo-after-espionage-scandal-wipes-out-1-4-trillion-in-market-value/",
+   "titolo": "Jensen Huang resigns as Nvidia CEO after espionage scandal wipes out $1.4 trillion in market value",
+   "ufficiale": false,
+   "data": "2026-11-12"
+  }
+ ],
+ "frasiTolte": 1
+}
