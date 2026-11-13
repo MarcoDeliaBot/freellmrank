@@ -22,8 +22,11 @@ test('domande scartate: con numeri, senza «?», troppo lunghe, con nomi fuori d
 });
 
 test('senza domanda valida: domanda di riserva col primo nome della notizia', () => {
-  assert.equal(metaYoutube({ ...base, yt: { domanda: 'Is it 10 times faster?' } }).domanda, 'Would you try Meta?');
-  assert.equal(domandaDiRiserva([], false), 'Would you try it?');
+  const r = metaYoutube({ ...base, yt: { domanda: 'Is it 10 times faster?' } });
+  assert.equal(r.domanda, 'Would you use Muse Ember? Why or why not?');
+  assert.ok(r.tolti.some((x) => x.startsWith('domanda: Is it 10')), 'la domanda scartata va nel registro');
+  assert.ok(metaYoutube({ ...base, yt: {} }).tolti.some((x) => x.includes('non l')), 'anche se manca');
+  assert.equal(domandaDiRiserva([], false), 'Would you use this? Why or why not?');
   assert.equal(domandaDiRiserva(['X'], true), 'Which tool should we try next?');
 });
 

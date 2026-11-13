@@ -36,7 +36,10 @@ export function metaYoutube({ n, yt = {}, regge, punti = [], nomi = [], url, rig
   };
   const titolo = prova(yt.titolo, MAX_TITOLO) || titoloCorto(n.titolo);
   // 13/11/2026 (missione di Marco «diventare virali e seguiti»): una domanda per i commenti, in descrizione e nel commento fissato
-  const domanda = domandaValida(yt.domanda, regge) || domandaDiRiserva(nomi, guida);
+  // 13/11 sera: nei primi video la domanda era sempre quella di riserva, senza sapere perché: ora quella scartata va nel registro
+  const propria = domandaValida(yt.domanda, regge);
+  if (!propria) tolti.push(`domanda: ${pulito(yt.domanda) || '(il modello non l\'ha scritta)'}`);
+  const domanda = propria || domandaDiRiserva(nomi, guida);
   const apertura = prova(yt.apertura, MAX_APERTURA) || pulito(n.descr);
   const elenco = [...new Set(punti.map(pulito).filter((p) => p && p !== apertura))].slice(0, 6);
   const descrizione = [
@@ -68,7 +71,8 @@ export function domandaValida(d, regge = () => true) {
   return s;
 }
 export const domandaDiRiserva = (nomi = [], guida = false) => (guida ? 'Which tool should we try next?'
-  : nomi[0] ? `Would you try ${nomi[0]}?` : 'Would you try it?');
+  // l'ultimo nome del titolo è il prodotto («Meta launches Muse Ember» → Muse Ember), il primo è il laboratorio
+  : nomi.length ? `Would you use ${nomi.at(-1)}? Why or why not?` : 'Would you use this? Why or why not?');
 
 // la parte da chiedere a Workers AI, dentro il JSON che il generatore già chiede
 export const RICHIESTA_YT = `"yt": {"titolo": "YouTube title, max 60 characters, starting with the main name (lab, product or model) people would search for, then the most surprising concrete fact from ARTICLE (a number, free, or a comparison such as cheaper or faster); plain words, no clickbait, no emojis, no ALL CAPS", "apertura": "first sentence of the YouTube description, max 155 characters, with the main names", "tag": ["8 to 12 YouTube search tags: the names in ARTICLE and short topic phrases"], "domanda": "one short question that invites viewers to comment with their opinion or experience, max 80 characters, ending with ?, no numbers, only names from ARTICLE, e.g. Would you switch to Muse Ember for agent tasks?"}`;
