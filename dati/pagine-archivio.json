@@ -11668,10 +11668,6 @@
      "chat"
     ],
     "primo": "2026-07-28",
-    "or": {
-     "id": "liquid/lfm-2.5-2.6b:free",
-     "gratis": true
-    },
     "slug": "lfm2-5-2-6b",
     "href": "/model/lfm2-5-2-6b.html",
     "categoriaMigliore": null
@@ -17315,6 +17311,33 @@
     "slug": "minimax-h3-image",
     "href": "/model/minimax-h3-image.html",
     "categoriaMigliore": "image"
+   },
+   "data": "2026-11-13"
+  },
+  "/model/inclusionai-ling-3-2-flash.html": {
+   "modello": {
+    "chiave": "inclusionai/ling-3.2-flash:free",
+    "nome": "inclusionAI: Ling 3.2 Flash",
+    "org": "inclusionai",
+    "licenza": "",
+    "aperto": false,
+    "or": {
+     "id": "inclusionai/ling-3.2-flash:free",
+     "gratis": true
+    },
+    "hf": null,
+    "cat": {},
+    "nomi": {},
+    "senzaVoti": true,
+    "nuovo": true,
+    "download": 0,
+    "catPiccoli": [
+     "chat"
+    ],
+    "primo": null,
+    "slug": "inclusionai-ling-3-2-flash",
+    "href": "/model/inclusionai-ling-3-2-flash.html",
+    "categoriaMigliore": null
    },
    "data": "2026-11-13"
   }
@@ -23162,7 +23185,7 @@
     "descr": "The open‑source llama.cpp project launches v1.0.0, adding libllama and libggml libraries and expanding platform compatibility.",
     "data": "2026-11-13",
     "tema": "Software",
-    "corpo": "<div class=\"video-post\"><video controls preload=\"none\" playsinline poster=\"https://github.com/MarcoDeliaBot/freellmrank/releases/download/video-notizia-llama-cpp-releases-version-1-0-0-with-new-libraries-and/notizia-llama-cpp-releases-version-1-0-0-with-new-libraries-and.jpg\" src=\"https://github.com/MarcoDeliaBot/freellmrank/releases/download/video-notizia-llama-cpp-releases-version-1-0-0-with-new-libraries-and/notizia-llama-cpp-releases-version-1-0-0-with-new-libraries-and.mp4\"></video></div>\n\n[Watch on YouTube](https://www.youtube.com/@FreeLLMArena)\n\nOn November 13, 2026 the llama.cpp team announced version 1.0.0, marking the first major release that introduces breaking changes to the public C API.\n\nThe release bundles two libraries: libllama for LLM inference in C/C++ and libggml, a tensor library for machine learning, both with updated public headers.\n\nVersion 1.0.0 adds pre‑release artifacts for Linux, macOS, Windows, Android and iOS, and is distributed through Docker, Homebrew, conda‑forge, Winget, MacPorts and XCFramework.\n\nThe team emphasizes stricter semantic versioning, with MAJOR bumps indicating API incompatibility, and notes ongoing investment in CI infrastructure and community contributions.\n\n## What it means for you\n\nThe update gives developers a stable, cross‑platform foundation for building private AI applications, especially those that run locally. Users seeking free or on‑device models benefit from broader hardware compatibility and the ability to run multi‑modal LLMs without cloud services.\n\n## Sources\n\n- [llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem](https://huggingface.co/blog/ggml-org/llama-cpp-v1), Hugging Face (official), 13 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa).</small>\n",
+    "corpo": "<div class=\"video-post\"><iframe src=\"https://www.youtube-nocookie.com/embed/TYLstWlAvHM\" title=\"llama.cpp releases version 1.0.0 with new libraries and broader hardware support\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; picture-in-picture\" allowfullscreen></iframe></div>\n\n[Watch on YouTube](https://youtu.be/TYLstWlAvHM) · [Watch the Short](https://youtube.com/shorts/E0JlB5804p4)\n\nOn November 13, 2026 the llama.cpp team announced version 1.0.0, marking the first major release that introduces breaking changes to the public C API.\n\nThe release bundles two libraries: libllama for LLM inference in C/C++ and libggml, a tensor library for machine learning, both with updated public headers.\n\nVersion 1.0.0 adds pre‑release artifacts for Linux, macOS, Windows, Android and iOS, and is distributed through Docker, Homebrew, conda‑forge, Winget, MacPorts and XCFramework.\n\nThe team emphasizes stricter semantic versioning, with MAJOR bumps indicating API incompatibility, and notes ongoing investment in CI infrastructure and community contributions.\n\n## What it means for you\n\nThe update gives developers a stable, cross‑platform foundation for building private AI applications, especially those that run locally. Users seeking free or on‑device models benefit from broader hardware compatibility and the ability to run multi‑modal LLMs without cloud services.\n\n## Sources\n\n- [llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem](https://huggingface.co/blog/ggml-org/llama-cpp-v1), Hugging Face (official), 13 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa).</small>\n",
     "tipo": "News"
    },
    "data": "2026-11-13"

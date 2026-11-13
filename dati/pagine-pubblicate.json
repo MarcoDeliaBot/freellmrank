@@ -22210,6 +22210,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/de/model/inclusionai-ling-3-2-flash",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/inclusionai-ling-3-2-flash.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/model/inkling",
   "tipo": "modello",
   "lingua": "de",
@@ -22979,10 +22995,8 @@
   "lingua": "de",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/de/model/lfm2-5-2-6b",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/de/model/liquidai-lfm2-5-2-6b.html",
@@ -22990,10 +23004,8 @@
   "lingua": "de",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/de/model/lfm2-5-2-6b.html",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/de/model/llada-ui",
@@ -39836,6 +39848,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/model/inclusionai-ling-3-2-flash",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/inclusionai-ling-3-2-flash.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/model/inkling",
   "tipo": "modello",
   "lingua": "es",
@@ -40605,10 +40633,8 @@
   "lingua": "es",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/es/model/lfm2-5-2-6b",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/es/model/liquidai-lfm2-5-2-6b.html",
@@ -40616,10 +40642,8 @@
   "lingua": "es",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/es/model/lfm2-5-2-6b.html",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/es/model/llada-ui",
@@ -57462,6 +57486,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/model/inclusionai-ling-3-2-flash",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/inclusionai-ling-3-2-flash.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/model/inkling",
   "tipo": "modello",
   "lingua": "fr",
@@ -58231,10 +58271,8 @@
   "lingua": "fr",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/fr/model/lfm2-5-2-6b",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/fr/model/liquidai-lfm2-5-2-6b.html",
@@ -58242,10 +58280,8 @@
   "lingua": "fr",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/fr/model/lfm2-5-2-6b.html",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/fr/model/llada-ui",
@@ -75088,6 +75124,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/model/inclusionai-ling-3-2-flash",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/inclusionai-ling-3-2-flash.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/model/inkling",
   "tipo": "modello",
   "lingua": "it",
@@ -75857,10 +75909,8 @@
   "lingua": "it",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/it/model/lfm2-5-2-6b",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/it/model/liquidai-lfm2-5-2-6b.html",
@@ -75868,10 +75918,8 @@
   "lingua": "it",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/it/model/lfm2-5-2-6b.html",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/it/model/llada-ui",
@@ -92714,6 +92762,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/model/inclusionai-ling-3-2-flash",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/inclusionai-ling-3-2-flash.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/model/inkling",
   "tipo": "modello",
   "lingua": "ja",
@@ -93483,10 +93547,8 @@
   "lingua": "ja",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/ja/model/lfm2-5-2-6b",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/ja/model/liquidai-lfm2-5-2-6b.html",
@@ -93494,10 +93556,8 @@
   "lingua": "ja",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/ja/model/lfm2-5-2-6b.html",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/ja/model/llada-ui",
@@ -100740,6 +100800,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/model/inclusionai-ling-3-2-flash",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/inclusionai-ling-3-2-flash.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/model/inkling",
   "tipo": "modello",
   "lingua": "en",
@@ -101509,10 +101585,8 @@
   "lingua": "en",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/model/lfm2-5-2-6b",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/model/liquidai-lfm2-5-2-6b.html",
@@ -101520,10 +101594,8 @@
   "lingua": "en",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/model/lfm2-5-2-6b.html",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/model/llada-ui",
@@ -118366,6 +118438,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/pt/model/inclusionai-ling-3-2-flash",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/inclusionai-ling-3-2-flash.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/model/inkling",
   "tipo": "modello",
   "lingua": "pt",
@@ -119135,10 +119223,8 @@
   "lingua": "pt",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/pt/model/lfm2-5-2-6b",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/pt/model/liquidai-lfm2-5-2-6b.html",
@@ -119146,10 +119232,8 @@
   "lingua": "pt",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-10-21",
-  "stato": "rinominata",
-  "fuoriDal": "2026-10-21",
-  "nuovoURL": "/pt/model/lfm2-5-2-6b.html",
-  "prova": "openrouter:liquid/lfm-2.5-2.6b:free"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-10-21"
  },
  {
   "url": "/pt/model/llada-ui",
