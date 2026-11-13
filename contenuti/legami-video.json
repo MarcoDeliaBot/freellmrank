@@ -415,5 +415,13 @@
  "news-2026-11-13-liquid-ai-launches-74m-parameter-liquidcodec-for-ultra-fast-streaming-": {
   "lungo": "notizia-liquid-ai-launches-74m-parameter-liquidcodec-for-ultra-f",
   "breve": "breve-liquid-ai-launches-74m-parameter-liquidcodec-for-ultra-f"
+ },
+ "news-2026-11-12-meta-launches-muse-ember-low-cost-model-for-ai-agent-tasks": {
+  "lungo": "notizia-meta-launches-muse-ember-low-cost-model-for-ai-agent-tas",
+  "breve": "breve-meta-launches-muse-ember-low-cost-model-for-ai-agent-tas"
+ },
+ "news-2026-11-13-llama-cpp-releases-version-1-0-0-with-new-libraries-and-broader-hardwa": {
+  "lungo": "notizia-llama-cpp-releases-version-1-0-0-with-new-libraries-and",
+  "breve": "breve-llama-cpp-releases-version-1-0-0-with-new-libraries-and"
  }
 }
