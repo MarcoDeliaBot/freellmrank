@@ -431,5 +431,17 @@
  "skill-coreyhaines31-marketingskills-customer-research": {
   "lungo": "skill-coreyhaines31-marketingskills-customer-research",
   "breve": "breve-skill-coreyhaines31-marketingskills-customer-research"
+ },
+ "https://freeduet.com": {
+  "lungo": "guida-freeduet-a-team-of-ai-assistants-on-your-claude-subscrip",
+  "breve": "breve-guida-freeduet-a-team-of-ai-assistants-on-your-claude-subscrip"
+ },
+ "news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet": {
+  "lungo": "notizia-anthropic-launches-claude-meetings-beta-for-google-meet",
+  "breve": "breve-anthropic-launches-claude-meetings-beta-for-google-meet"
+ },
+ "news-2026-11-12-aws-launches-free-local-emulator-for-200-aws-services-built-by-ai-agen": {
+  "lungo": "notizia-aws-launches-free-local-emulator-for-200-aws-services-bu",
+  "breve": "breve-aws-launches-free-local-emulator-for-200-aws-services-bu"
  }
 }
