@@ -467,5 +467,13 @@
  "news-2026-11-13-meta-s-muse-adds-paid-us-business-calling-feature": {
   "lungo": "notizia-meta-s-muse-adds-paid-us-business-calling-feature",
   "breve": "breve-meta-s-muse-adds-paid-us-business-calling-feature"
+ },
+ "news-2026-11-14-anthropic-urges-users-to-drop-outdated-prompts-for-claude-opus-5-5": {
+  "lungo": "notizia-anthropic-urges-users-to-drop-outdated-prompts-for-claud",
+  "breve": "breve-anthropic-urges-users-to-drop-outdated-prompts-for-claud"
+ },
+ "news-2026-11-14-openai-moves-robotics-staff-as-gpt-6-astra-shows-strong-simulated-robo": {
+  "lungo": "notizia-openai-moves-robotics-staff-as-gpt-6-astra-shows-strong",
+  "breve": "breve-openai-moves-robotics-staff-as-gpt-6-astra-shows-strong"
  }
 }
