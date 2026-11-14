@@ -4,6 +4,7 @@
 // Uso: node script/video-hf/breve.mjs <piano del video lungo> <piano dello Short>
 import fs from 'node:fs';
 import path from 'node:path';
+import { conFissi } from './fissi.mjs';
 
 const PREFERENZA = ['numero', 'numeri', 'barre', 'nome', 'mappa', 'confronto', 'punti', 'lista', 'titolo'];
 
@@ -21,12 +22,17 @@ export function pianoBreve(lungo) {
     : s.stampo === 'immagine' ? { ...s, dati: { ...s.dati, cornice: Math.min(Number(s.dati.rapporto) || 1.78, 1.3) } }
     // nello Short la griglia tiene 2 immagini, una sopra l'altra: con 4 erano piccole e mezza pagina restava vuota
     : s.stampo === 'griglia' ? { ...s, dati: { ...s.dati, immagini: s.dati.immagini.slice(0, 2) } } : s);
+  let contenuto = [apertura, ...media.slice(0, 1).map(verticale), ...(forte ? [forte] : []), ...media.slice(1, 2).map(verticale)];
+  // 14/11/2026: se il piano lungo porta i testi fissi di una guida (piano.fissi, scritti da piano.mjs), lo Short comincia con
+  // l'apertura fissa e dice le frasi obbligatorie dello Short: se la scena scelta non le ha, il codice le mette dopo l'apertura.
+  // Le frasi che erano solo del video lungo si tolgono dalla prima scena.
+  const f = lungo.fissi;
+  if (f) contenuto = conFissi(contenuto, { apertura: f.apertura, obbligatorie: f.obbligatorieBreve, tutte: [...f.obbligatorie, ...f.obbligatorieBreve] }).scene;
   return {
     formato: 'verticale',
     copertina: 0,
     notizia: lungo.notizia,
-    scene: [apertura, ...media.slice(0, 1).map(verticale), ...(forte ? [forte] : []), ...media.slice(1, 2).map(verticale),
-      { stampo: 'chiusura', etichetta: 'FreeLLMArena', dati: { invito: 'canale' } }],
+    scene: [...contenuto, { stampo: 'chiusura', etichetta: 'FreeLLMArena', dati: { invito: 'canale' } }],
   };
 }
 

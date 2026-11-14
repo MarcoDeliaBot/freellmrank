@@ -97,6 +97,46 @@ Per classifiche, memoria e velocità (video della settimana, dei modelli, delle 
 Le barre crescono una dopo l'altra (lunghezza proporzionale a `valore` sulla scala), la voce `evidenza` (indice) in
 accento, le altre in pannello; `segno` mostra ✓ o ✕ accanto al nome. Parole di attacco: titolo, poi ogni voce nell'ordine.
 
+## Testi fissi delle guide (14/11/2026)
+
+Una guida (`contenuti/video-guide/*.json`, lanciata dal workflow con `inputs.guide`) può avere il campo facoltativo `fissi`. Titolo, prima
+frase e frasi di trasparenza vengono allora dal file della guida: il codice le mette nel video e le controlla, il modello non le riscrive.
+Senza `fissi` (notizie, skill, tutorial, le altre guide) non cambia niente. Perché: nella corsa 43579848323 il modello aveva scritto
+«FreeDuet runs eleven AI assistants locally for free» (titolo e apertura), non aveva mai pronunciato «made by the same author as FreeLLMArena»
+e nello Short mancava che serve un abbonamento Claude a pagamento.
+
+```json
+"fissi": {
+ "titolo": "titolo del video lungo, usato così com'è; lo Short ha lo stesso + « #Shorts» (al massimo 92 caratteri)",
+ "apertura": "la prima frase pronunciata, nel video lungo e nello Short (una frase sola)",
+ "obbligatorie": ["frasi da pronunciare parola per parola nel video lungo, una frase l'una"],
+ "obbligatorieBreve": ["lo stesso per lo Short; se manca vale «obbligatorie»"],
+ "rigaDescrizione": "una riga che deve stare nella descrizione di YouTube, del video lungo e dello Short",
+ "vietate": ["frasi che non devono comparire in titolo, descrizione e voce; maiuscole e minuscole non contano"]
+}
+```
+
+Dove entrano (tutti i campi sono facoltativi, ma un campo con un errore di battitura ferma la guida):
+
+| campo | chi lo applica | come |
+|---|---|---|
+| `titolo` | `brag/titoli-yt.mjs` `metaYoutube` | vince sul titolo del modello; lo Short è `titolo + " #Shorts"` (`brag/notizia.mjs`) |
+| `rigaDescrizione` | `metaYoutube` e lo Short in `brag/notizia.mjs` | seconda riga della descrizione, subito sotto la prima frase (i capitoli di YouTube vengono dopo) |
+| `apertura` | `piano.mjs` e `breve.mjs`, con `conFissi` di `fissi.mjs` | sostituisce la prima frase della prima scena; vale anche nel piano di riserva; il controllo del gancio non si fa (la frase è fissa) |
+| `obbligatorie` / `obbligatorieBreve` | `conFissi` | il modello le riceve nel prompt; quelle che nel piano non ci sono le mette il codice subito dopo l'apertura; lo Short ha la sua lista |
+| `vietate` | `piano.mjs` (`controllaPiano`), `metaYoutube`, `notizia.mjs` | una scena con la frase nella voce o sullo schermo si toglie e il modello riprova; titolo, domanda, apertura e tag proposti dal modello con la frase si scartano |
+
+Il controllo finale (`node script/video-hf/fissi.mjs <guida.json> <lungo|breve> <info.json> <video.srt>`, nel workflow dopo lo Short e prima di ogni
+`gh release create`) legge i file veri che vanno in release: titolo e descrizione del `.json`, parlato del `.srt`. Esce con 1, con un messaggio in
+italiano per ogni problema, se il titolo non è quello fisso, la riga manca dalla descrizione, il parlato non comincia con l'apertura, una frase
+obbligatoria non è pronunciata o una frase vietata compare in titolo, descrizione o parlato. Allora la corsa si ferma e di quella guida non esce
+nessun video (nemmeno in `prova`). Le frasi si confrontano per parole intere, senza badare a maiuscole e punteggiatura: una frase obbligatoria può
+stare dentro una frase più lunga («…paid Claude subscription; there is no API key»), ma le sue parole devono esserci tutte, in quell'ordine.
+La chiusura fissa del canale («Follow FreeLLMArena for free AI news every day») non conta fra le frasi vietate: promuove il canale, non la guida.
+
+Attenzione: il `scene[].voce` del `.json` di un video (`notizia.mjs`) è il copione della vecchia registrazione (`registra.py`, riserva dello
+Short), non quello pronunciato. Ciò che si sente è il `voce` del piano (`piano.mjs`) e il `.srt` ne ha lo stesso testo.
+
 ## Provare uno stampo
 
 ```bash

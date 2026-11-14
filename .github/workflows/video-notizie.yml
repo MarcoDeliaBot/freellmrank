@@ -147,6 +147,14 @@ jobs:
               cp "$s/brag.mp4" "$s/$breve.mp4"; cp "$s/brag.jpg" "$s/$breve.jpg"; cp "$s/brag.srt" "$s/$breve.srt"; cp video/brag/info-notizia-corto.json "$s/$breve.json"
               mkdir -p "video/esito/$breve"; cp "$s/$breve.mp4" "$s/$breve.jpg" "$s/$breve.json" "video/esito/$breve/"
             else echo "::warning::Short non registrato per $nome"; breve=""; fi
+            # 14/11/2026: testi fissi della guida (campo «fissi» del file, script/video-hf/fissi.mjs): il codice controlla i file veri
+            # (titolo e descrizione del .json, parlato del .srt). Se non reggono la corsa si ferma e NESSUN video di questa guida va in release
+            if [ "$tipo" = "guida" ]; then
+              node script/video-hf/fissi.mjs "$sorgente" lungo "$d/$nome.json" "$d/$nome.srt" || { echo "::error::Testi fissi della guida non rispettati nel video lungo di $nome: nessuna release"; exit 1; }
+              if [ -n "$breve" ]; then
+                node script/video-hf/fissi.mjs "$sorgente" breve "$s/$breve.json" "$s/$breve.srt" || { echo "::error::Testi fissi della guida non rispettati nello Short di $nome: nessuna release"; exit 1; }
+              fi
+            fi
             if [ "$PROVA" = "true" ]; then echo "Prova: $nome ${breve:+e $breve }fatti, non pubblicati"; continue; fi
             titolo=$(node -p "require('./$d/$nome.json').titolo")
             gh release create "video-$nome" "$d/$nome.mp4" "$d/$nome.jpg" "$d/$nome.srt" "$d/$nome.json" --title "$titolo" --notes-file "$d/share-copy.txt" --latest=false
