@@ -1,6 +1,6 @@
 {
  "tipo": "guida",
- "nome": "freeduet-your-own-team-of-ai-assistants",
+ "nome": "freeduet-ai-assistants-on-your-claude-plan",
  "url": "https://freeduet.com",
  "titolo": "FreeDuet: your own team of AI assistants, on your Claude plan",
  "descr": "FreeDuet is an open-source app that runs a team of eleven AI assistants on your own computer. The app itself costs nothing, but you need your own paid Claude subscription; there is no API key. FreeDuet is made by the same author as FreeLLMArena.",
