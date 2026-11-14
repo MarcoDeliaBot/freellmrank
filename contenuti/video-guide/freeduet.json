@@ -1,14 +1,14 @@
 {
  "tipo": "guida",
- "nome": "freeduet-ten-ai-assistants-on-your-own-subscription",
+ "nome": "freeduet-a-team-of-ai-assistants-on-your-claude-subscription",
  "url": "https://freeduet.com",
- "titolo": "FreeDuet: a team of ten AI assistants on your own Claude subscription",
- "descr": "FreeDuet is a free, open-source app that runs a team of ten AI assistants on your own computer, signed in with the Claude subscription you already pay for, with no API key.",
+ "titolo": "FreeDuet: a team of AI assistants on your own Claude subscription",
+ "descr": "FreeDuet is an open-source app that runs a team of eleven AI assistants on your own computer. The app costs nothing; it signs in with the Claude subscription you already pay for, with no API key.",
  "tema": "Software",
- "pubblicato": "2026-11-13",
+ "pubblicato": "2026-11-14",
  "paragrafi": [
-  "FreeDuet is released under the MIT license. It is a team of ten AI assistants that runs on your own computer. You talk to Iris, the coordinator, and she hands each piece of work to the right specialist: mail, contracts, invoices, errands, writing, repairs, cooking.",
-  "Most AI tools ask for an API key and bill every token. FreeDuet signs in with the Claude subscription you already have, through the official Claude Code app. You do the sign-in yourself, and FreeDuet never sees, stores or forwards your login.",
+  "FreeDuet is released under the MIT license and is made by the same author as FreeLLMArena. It is a team of eleven AI assistants that runs on your own computer, and the team keeps growing. You talk to Iris, the coordinator, and she hands each piece of work to the right specialist: mail, contracts, invoices, errands, writing, marketing, repairs, cooking.",
+  "Most AI tools ask for an API key and bill every token. FreeDuet itself costs nothing and signs in with the Claude subscription you already pay for, through the official Claude Code app. You do the sign-in yourself, and FreeDuet never sees, stores or forwards your login.",
   "Every assistant has its own separate browser, so it can look up prices, fill in forms and prepare drafts. Five actions always wait for your approval: send, pay, sign, book and delete. The one shortcut is a new email to an address you typed yourself.",
   "The project publishes its own tests. In the latest full run of version 0.1, 43 of 43 test cases passed, and the safety checks passed 45 times out of 45. The public report is in the repository. The assistants can still make mistakes, so read a draft before you approve it.",
   "To try it you need Docker, Bash and Bun, and a Claude subscription. Clone the repository, copy the example settings file, run the start script, sign in once, then open the page on port 3010. It is tested on Windows with WSL2 and on Linux."
