@@ -385,12 +385,16 @@
  },
  "category": "marketing-seo",
  "archiveMetrics": {
-  "date": "2026-11-11",
-  "stars": 59611,
+  "date": "2026-11-14",
+  "stars": 60199,
   "growth7d": null,
-  "installs": 162399,
-  "installs24h": 710,
+  "installs": 164567,
+  "installs24h": 646,
   "license": "MIT",
-  "lastCommit": "2026-11-11T02:25:46Z"
+  "lastCommit": "2026-11-11T17:49:09Z"
+ },
+ "licenseReview": {
+  "date": "2026-11-14",
+  "spdx": "MIT"
  }
 }

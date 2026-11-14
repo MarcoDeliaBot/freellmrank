@@ -1,13 +1,13 @@
 {
- "date": "2026-11-13",
+ "date": "2026-11-14",
  "source": "https://skills.sh/trending",
- "observedAt": "2026-11-13T04:44:16.223Z",
+ "observedAt": "2026-11-14T04:43:21.018Z",
  "entries": [
   {
    "rank": 1,
    "repository": "designed-by-ai/skills",
    "skill": "design-mobile-apps",
-   "date": "2026-11-13",
+   "date": "2026-11-14",
    "commit": "03c20aec6dcedb5fabfb03dc37982eb52ef19ed6",
    "skillPath": "skills/design-mobile-apps/SKILL.md",
    "status": "warning",
@@ -48,20 +48,9 @@
   },
   {
    "rank": 2,
-   "repository": "vercel-labs/agent-browser",
-   "skill": "agent-browser",
-   "date": "2026-11-13",
-   "commit": "1cc19526f3641c8543d55aa6700e7c55b37ac356",
-   "skillPath": "skills/agent-browser/SKILL.md",
-   "status": "passed",
-   "reasons": [],
-   "publishable": true
-  },
-  {
-   "rank": 3,
    "repository": "vercel-labs/skills",
    "skill": "find-skills",
-   "date": "2026-11-13",
+   "date": "2026-11-14",
    "commit": "b716f9dc2ba36b6aa8f0080615e5a3a6caeac63b",
    "skillPath": "skills/find-skills/SKILL.md",
    "status": "warning",
@@ -86,11 +75,22 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
+   "rank": 3,
+   "repository": "vercel-labs/agent-browser",
+   "skill": "agent-browser",
+   "date": "2026-11-14",
+   "commit": "f18b8bb5275ea2be22fca5e6856886827468f41e",
+   "skillPath": "skills/agent-browser/SKILL.md",
+   "status": "passed",
+   "reasons": [],
+   "publishable": true
+  },
+  {
    "rank": 4,
    "repository": "heygen-com/hyperframes",
    "skill": "hyperframes",
-   "date": "2026-11-13",
-   "commit": "7e04f3cce8a4d3e7c4e04590828104c37c2be8cb",
+   "date": "2026-11-14",
+   "commit": "3e69d0dff038e4b72bef0fa9395649a68c26eeed",
    "skillPath": "skills/hyperframes/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -308,10 +308,22 @@
   },
   {
    "rank": 5,
+   "repository": "flowkit-labs/skills",
+   "skill": "website-builder",
+   "date": "2026-11-14",
+   "commit": "ec2c807d4eb948de69f290c4561c570d9935dae4",
+   "skillPath": "website-builder/SKILL.md",
+   "status": "passed",
+   "reasons": [],
+   "publishable": false,
+   "contentReason": "no actual usage code block in skill or README"
+  },
+  {
+   "rank": 6,
    "repository": "heygen-com/hyperframes",
    "skill": "media-use",
-   "date": "2026-11-13",
-   "commit": "7e04f3cce8a4d3e7c4e04590828104c37c2be8cb",
+   "date": "2026-11-14",
+   "commit": "3e69d0dff038e4b72bef0fa9395649a68c26eeed",
    "skillPath": "skills/media-use/SKILL.md",
    "status": "blocked",
    "reasons": [
@@ -573,11 +585,29 @@
    ]
   },
   {
-   "rank": 6,
+   "rank": 7,
+   "repository": "gencraft-labs/skills",
+   "skill": "image-to-video",
+   "date": "2026-11-14",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "image-to-video/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "image-to-video/SKILL.md",
+     "line": 28,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 8,
    "repository": "heygen-com/hyperframes",
    "skill": "hyperframes-cli",
-   "date": "2026-11-13",
-   "commit": "7e04f3cce8a4d3e7c4e04590828104c37c2be8cb",
+   "date": "2026-11-14",
+   "commit": "3e69d0dff038e4b72bef0fa9395649a68c26eeed",
    "skillPath": "skills/hyperframes-cli/SKILL.md",
    "status": "warning",
    "reasons": [
@@ -596,34 +626,100 @@
    "contentReason": "no actual usage code block in skill or README"
   },
   {
-   "rank": 7,
-   "repository": "heygen-com/hyperframes",
-   "skill": "reverse-any-video",
-   "date": "2026-11-13",
-   "commit": "7e04f3cce8a4d3e7c4e04590828104c37c2be8cb",
-   "skillPath": "skills/reverse-any-video/SKILL.md",
+   "rank": 9,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-video-generation",
+   "date": "2026-11-14",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-video-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-video-generation/SKILL.md",
+     "line": 50,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 10,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-music",
+   "date": "2026-11-14",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-music/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-music/SKILL.md",
+     "line": 35,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 11,
+   "repository": "gencraft-labs/skills",
+   "skill": "ai-image-generation",
+   "date": "2026-11-14",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "ai-image-generation/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "ai-image-generation/SKILL.md",
+     "line": 52,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "ai-image-generation/SKILL.md",
+     "line": 479,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
+  },
+  {
+   "rank": 12,
+   "repository": "flowkit-labs/skills",
+   "skill": "reddit-automation",
+   "date": "2026-11-14",
+   "commit": "ec2c807d4eb948de69f290c4561c570d9935dae4",
+   "skillPath": "reddit-automation/SKILL.md",
    "status": "passed",
    "reasons": [],
    "publishable": false,
    "contentReason": "no actual usage code block in skill or README"
   },
   {
-   "rank": 8,
-   "repository": "heygen-com/hyperframes",
-   "skill": "style-sampling",
-   "date": "2026-11-13",
-   "commit": "7e04f3cce8a4d3e7c4e04590828104c37c2be8cb",
-   "skillPath": "skills/style-sampling/SKILL.md",
-   "status": "passed",
-   "reasons": [],
-   "publishable": true
+   "rank": 13,
+   "repository": "gencraft-labs/skills",
+   "skill": "video-edit",
+   "date": "2026-11-14",
+   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
+   "skillPath": "video-edit/SKILL.md",
+   "status": "warning",
+   "reasons": [
+    {
+     "file": "video-edit/SKILL.md",
+     "line": 28,
+     "reason": "documented-installer"
+    }
+   ],
+   "publishable": false,
+   "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 9,
+   "rank": 14,
    "repository": "heygen-com/hyperframes",
    "skill": "hyperframes-registry",
-   "date": "2026-11-13",
-   "commit": "7e04f3cce8a4d3e7c4e04590828104c37c2be8cb",
+   "date": "2026-11-14",
+   "commit": "3e69d0dff038e4b72bef0fa9395649a68c26eeed",
    "skillPath": "skills/hyperframes-registry/SKILL.md",
    "status": "warning",
    "reasons": [
@@ -656,118 +752,85 @@
    "publishable": true
   },
   {
-   "rank": 10,
-   "repository": "flowkit-labs/skills",
-   "skill": "website-builder",
-   "date": "2026-11-13",
-   "commit": "ec2c807d4eb948de69f290c4561c570d9935dae4",
-   "skillPath": "website-builder/SKILL.md",
-   "status": "passed",
-   "reasons": [],
-   "publishable": false,
-   "contentReason": "no actual usage code block in skill or README"
-  },
-  {
-   "rank": 11,
-   "repository": "flowkit-labs/skills",
-   "skill": "reddit-automation",
-   "date": "2026-11-13",
-   "commit": "ec2c807d4eb948de69f290c4561c570d9935dae4",
-   "skillPath": "reddit-automation/SKILL.md",
-   "status": "passed",
-   "reasons": [],
-   "publishable": false,
-   "contentReason": "no actual usage code block in skill or README"
-  },
-  {
-   "rank": 12,
-   "repository": "gencraft-labs/skills",
-   "skill": "ai-video-generation",
-   "date": "2026-11-13",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "ai-video-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "ai-video-generation/SKILL.md",
-     "line": 50,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 13,
-   "repository": "gencraft-labs/skills",
-   "skill": "image-to-video",
-   "date": "2026-11-13",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "image-to-video/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "image-to-video/SKILL.md",
-     "line": 28,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 14,
-   "repository": "gencraft-labs/skills",
-   "skill": "ai-music",
-   "date": "2026-11-13",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "ai-music/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "ai-music/SKILL.md",
-     "line": 35,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
    "rank": 15,
-   "repository": "gencraft-labs/skills",
-   "skill": "ai-image-generation",
-   "date": "2026-11-13",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "ai-image-generation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "ai-image-generation/SKILL.md",
-     "line": 52,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "ai-image-generation/SKILL.md",
-     "line": 479,
-     "reason": "documented-installer"
-    }
-   ],
+   "repository": "heygen-com/hyperframes",
+   "skill": "reverse-any-video",
+   "date": "2026-11-14",
+   "commit": "3e69d0dff038e4b72bef0fa9395649a68c26eeed",
+   "skillPath": "skills/reverse-any-video/SKILL.md",
+   "status": "passed",
+   "reasons": [],
    "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
+   "contentReason": "no actual usage code block in skill or README"
   },
   {
    "rank": 16,
-   "repository": "gencraft-labs/skills",
-   "skill": "video-edit",
-   "date": "2026-11-13",
-   "commit": "5d625f59c710d7a33316b50b302b7158cdee5971",
-   "skillPath": "video-edit/SKILL.md",
+   "repository": "heygen-com/hyperframes",
+   "skill": "style-sampling",
+   "date": "2026-11-14",
+   "commit": "3e69d0dff038e4b72bef0fa9395649a68c26eeed",
+   "skillPath": "skills/style-sampling/SKILL.md",
+   "status": "passed",
+   "reasons": [],
+   "publishable": true
+  },
+  {
+   "rank": 17,
+   "repository": "skills-shell/superpowers",
+   "skill": "ai-image-generation",
+   "date": "2026-11-14",
+   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
+   "skillPath": "tools/image/ai-image-generation/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "video-edit/SKILL.md",
-     "line": 28,
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 7,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 17,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 140,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 143,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 146,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 149,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 152,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 155,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 158,
+     "reason": "documented-installer"
+    },
+    {
+     "file": "tools/image/ai-image-generation/SKILL.md",
+     "line": 161,
      "reason": "documented-installer"
     }
    ],
@@ -775,10 +838,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 17,
-   "repository": "bankai-skills/superpowers",
+   "rank": 18,
+   "repository": "skills-shell/superpowers",
    "skill": "ai-video-generation",
-   "date": "2026-11-13",
+   "date": "2026-11-14",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/ai-video-generation/SKILL.md",
    "status": "warning",
@@ -843,62 +906,42 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 18,
-   "repository": "bankai-skills/superpowers",
-   "skill": "ai-image-generation",
-   "date": "2026-11-13",
+   "rank": 19,
+   "repository": "skills-shell/superpowers",
+   "skill": "twitter-automation",
+   "date": "2026-11-14",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/image/ai-image-generation/SKILL.md",
+   "skillPath": "tools/social/twitter-automation/SKILL.md",
    "status": "warning",
    "reasons": [
     {
-     "file": "tools/image/ai-image-generation/SKILL.md",
+     "file": "tools/social/twitter-automation/SKILL.md",
      "line": 7,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/image/ai-image-generation/SKILL.md",
+     "file": "tools/social/twitter-automation/SKILL.md",
      "line": 17,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 140,
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 138,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 143,
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 141,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 146,
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 144,
      "reason": "documented-installer"
     },
     {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 149,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 152,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 155,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 158,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/image/ai-image-generation/SKILL.md",
-     "line": 161,
+     "file": "tools/social/twitter-automation/SKILL.md",
+     "line": 147,
      "reason": "documented-installer"
     }
    ],
@@ -906,10 +949,10 @@
    "contentReason": "no exact installation command for this repository in README"
   },
   {
-   "rank": 19,
-   "repository": "bankai-skills/superpowers",
+   "rank": 20,
+   "repository": "skills-shell/superpowers",
    "skill": "ai-avatar-video",
-   "date": "2026-11-13",
+   "date": "2026-11-14",
    "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
    "skillPath": "tools/video/ai-avatar-video/SKILL.md",
    "status": "warning",
@@ -952,49 +995,6 @@
     {
      "file": "tools/video/ai-avatar-video/SKILL.md",
      "line": 258,
-     "reason": "documented-installer"
-    }
-   ],
-   "publishable": false,
-   "contentReason": "no exact installation command for this repository in README"
-  },
-  {
-   "rank": 20,
-   "repository": "bankai-skills/superpowers",
-   "skill": "twitter-automation",
-   "date": "2026-11-13",
-   "commit": "becc25649700d5457772a00e5143e28ccf9e5afa",
-   "skillPath": "tools/social/twitter-automation/SKILL.md",
-   "status": "warning",
-   "reasons": [
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 7,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 17,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 138,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 141,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 144,
-     "reason": "documented-installer"
-    },
-    {
-     "file": "tools/social/twitter-automation/SKILL.md",
-     "line": 147,
      "reason": "documented-installer"
     }
    ],

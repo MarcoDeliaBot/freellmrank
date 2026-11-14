@@ -224,20 +224,16 @@
  },
  "category": "browser-automation",
  "licenseReview": {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "spdx": "Apache-2.0"
  },
  "archiveMetrics": {
-  "date": "2026-11-13",
-  "stars": 50396,
-  "growth7d": {
-   "value": 4141,
-   "from": "2026-11-06",
-   "to": "2026-11-13"
-  },
-  "installs": 1506432,
-  "installs24h": 18504,
+  "date": "2026-11-14",
+  "stars": 50787,
+  "growth7d": null,
+  "installs": 1521836,
+  "installs24h": 15665,
   "license": "Apache-2.0",
-  "lastCommit": "2026-11-12T21:37:54Z"
+  "lastCommit": "2026-11-14T01:11:18Z"
  }
 }

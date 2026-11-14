@@ -90,12 +90,39 @@
   "stato": "attiva"
  },
  {
+  "url": "/skills/coreyhaines31-marketingskills-customer-research.html",
+  "slug": "coreyhaines31-marketingskills-customer-research",
+  "tipo": "skill",
+  "repository": "coreyhaines31/marketingskills",
+  "skillPath": "skills/customer-research/SKILL.md",
+  "primaPubblicazione": "2026-11-14",
+  "stato": "attiva"
+ },
+ {
+  "url": "/skills/coreyhaines31-marketingskills-offers.html",
+  "slug": "coreyhaines31-marketingskills-offers",
+  "tipo": "skill",
+  "repository": "coreyhaines31/marketingskills",
+  "skillPath": "skills/offers/SKILL.md",
+  "primaPubblicazione": "2026-11-14",
+  "stato": "attiva"
+ },
+ {
   "url": "/skills/for-coding.html",
   "slug": "for-coding",
   "tipo": "categoria",
   "repository": "",
   "skillPath": "",
   "primaPubblicazione": "2026-11-09",
+  "stato": "attiva"
+ },
+ {
+  "url": "/skills/for-marketing-seo.html",
+  "slug": "for-marketing-seo",
+  "tipo": "categoria",
+  "repository": "",
+  "skillPath": "",
+  "primaPubblicazione": "2026-11-14",
   "stato": "attiva"
  },
  {
