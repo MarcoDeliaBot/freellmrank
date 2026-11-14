@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs",
+ "titolo": "OpenAI's Shield assists IT technicians in legacy portal hand‑offs",
+ "descr": "Shield uses OpenAI agents to navigate legacy systems, letting technicians focus on judgment‑heavy tasks.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI introduced Shield, a tool aimed at IT technicians working with outdated portal interfaces.",
+  "Shield employs OpenAI‑powered Forge agents that automatically navigate legacy systems.",
+  "The agents perform routine steps, allowing technicians to concentrate on issues that require human judgment.",
+  "The solution targets the hand‑off phase, where technicians transition work from legacy portals to modern workflows.",
+  "OpenAI announced Shield on 13 November 2026."
+ ],
+ "perche": [
+  "For AI users, Shield demonstrates how language models can automate repetitive system navigation, reducing manual effort. For those seeking free or local models, the release highlights the growing availability of specialized AI tools that complement broader model ecosystems."
+ ],
+ "pubblicato": "2026-11-14",
+ "titoloFonte": "Shield helps technicians hand off legacy portal work with OpenAI",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/business/customer-stories/shield",
+   "titolo": "Shield helps technicians hand off legacy portal work with OpenAI",
+   "ufficiale": true,
+   "data": "2026-11-13"
+  }
+ ],
+ "frasiTolte": 0
+}

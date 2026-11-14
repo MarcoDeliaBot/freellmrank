@@ -4928,6 +4928,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "en",
@@ -14585,6 +14601,22 @@
  },
  {
   "url": "/de/blog/news-2026-11-14-nvidia-cublas-adds-ozaki-ii-and-2m-fp64-algorithms-in-cuda-13-4-2.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs.html",
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-13",
@@ -32294,6 +32326,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "es",
@@ -49989,6 +50037,22 @@
  },
  {
   "url": "/fr/blog/news-2026-11-14-nvidia-cublas-adds-ozaki-ii-and-2m-fp64-algorithms-in-cuda-13-4-2.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs.html",
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-13",
@@ -67698,6 +67762,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "it",
@@ -85393,6 +85473,22 @@
  },
  {
   "url": "/ja/blog/news-2026-11-14-nvidia-cublas-adds-ozaki-ii-and-2m-fp64-algorithms-in-cuda-13-4-2.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs.html",
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-13",
@@ -111133,6 +111229,22 @@
  },
  {
   "url": "/pt/blog/news-2026-11-14-nvidia-cublas-adds-ozaki-ii-and-2m-fp64-algorithms-in-cuda-13-4-2.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-13",
+  "ultimaVista": "2026-11-13",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-14-openai-s-shield-assists-it-technicians-in-legacy-portal-hand-offs.html",
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-13",
