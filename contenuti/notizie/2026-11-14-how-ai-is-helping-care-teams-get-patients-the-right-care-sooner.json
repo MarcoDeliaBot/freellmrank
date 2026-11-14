@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-14-how-ai-is-helping-care-teams-get-patients-the-right-care-sooner",
+ "titolo": "How AI Is Helping Care Teams Get Patients the Right Care, Sooner",
+ "descr": "Dyania Health, a New Jersey AI firm, launched Synapsis AI to analyze decades of patient records across notes, reports and labs.",
+ "tema": "Research",
+ "paragrafi": [
+  "Dyania Health, a New Jersey AI firm, launched Synapsis AI to analyze decades of patient records across notes, reports and labs.",
+  "The system runs on NVIDIA‑accelerated servers inside a health system’s firewall, keeping data on‑premise and never leaving the hospital.",
+  "Dyania builds the models with NVIDIA NeMo libraries and optimizes them with TensorRT and TensorRT‑LLM for faster GPU inference.",
+  "Cleveland Clinic used Synapsis AI on more than 7,800 aortic valve replacement cases from 2005‑2021, generating a predictive model of valve deterioration.",
+  "The AI platform completed chart review in hours that would have taken clinicians years, providing clinicians with evidence‑based signals to verify."
+ ],
+ "perche": [
+  "Hospitals can adopt advanced AI without exposing patient data, using existing GPU infrastructure. For developers of free or local models, NVIDIA’s open tools like NeMo and TensorRT illustrate a path to efficient on‑premise inference."
+ ],
+ "pubblicato": "2026-11-14",
+ "titoloFonte": "How AI Is Helping Care Teams Get Patients the Right Care, Sooner",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/how-ai-is-helping-care-teams/",
+   "titolo": "How AI Is Helping Care Teams Get Patients the Right Care, Sooner",
+   "ufficiale": true,
+   "data": "2026-11-13"
+  }
+ ],
+ "frasiTolte": 2
+}

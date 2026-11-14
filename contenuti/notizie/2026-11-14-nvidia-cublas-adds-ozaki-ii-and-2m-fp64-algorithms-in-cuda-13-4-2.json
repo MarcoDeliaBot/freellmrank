@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-14-nvidia-cublas-adds-ozaki-ii-and-2m-fp64-algorithms-in-cuda-13-4-2",
+ "titolo": "NVIDIA cuBLAS adds Ozaki-II and 2M FP64 algorithms in CUDA 13.4.2",
+ "descr": "NVIDIA announced that CUDA Toolkit 13.4.2 now includes two new double‑precision algorithms in cuBLAS: Ozaki‑II for real matrices and the 2M method for complex m",
+ "tema": "Research",
+ "paragrafi": [
+  "NVIDIA announced that CUDA Toolkit 13.4.2 now includes two new double‑precision algorithms in cuBLAS: Ozaki‑II for real matrices and the 2M method for complex matrices.",
+  "On the NVIDIA VR NVL72 GPU, DGEMM with Ozaki‑II runs 5.5× faster than native FP64; on the NVIDIA GB200 it is 3.9× faster. ZGEMM with 2M on GB200 gains a 5× speedup over native CFP64.",
+  "Real‑world tests show CCSD quantum chemistry calculations speed up 2× on NVL72 and 1.4× on GB200 in full FP64, with mixed‑precision gains of 5× and 3.5× respectively. BerkeleyGW simulations see 6.6× and 3.9× speedups on NVL72 and GB200.",
+  "The new algorithms run automatically in cuBLAS without code changes, using integer Tensor Cores and preserving exact double‑precision results."
+ ],
+ "perche": [
+  "These improvements let researchers run high‑precision simulations faster on existing NVIDIA hardware, reducing time‑to‑insight for quantum chemistry and materials science. For users of free or locally hosted AI models, the faster HPC back‑end may lower the cost of training or inference that relies on double‑precision math, while keeping the same accuracy."
+ ],
+ "pubblicato": "2026-11-14",
+ "titoloFonte": "Faster Scientific Simulations with New FP64 Algorithms in NVIDIA cuBLAS",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/faster-scientific-simulations-with-new-fp64-algorithms-in-nvidia-cublas/",
+   "titolo": "Faster Scientific Simulations with New FP64 Algorithms in NVIDIA cuBLAS",
+   "ufficiale": true,
+   "data": "2026-11-13"
+  }
+ ],
+ "frasiTolte": 2
+}
