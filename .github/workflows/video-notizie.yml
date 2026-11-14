@@ -60,6 +60,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
+      # 14/11/2026: prima di strumenti, modelli, voce e montaggio, i test della pipeline video che non chiedono rete, chiavi né
+      # installazioni (testi fissi delle guide, gancio dei video, domanda per i commenti, immagini della fonte). Se uno non regge
+      # la corsa si ferma in pochi secondi e nessun video va in release
+      - name: Test della pipeline video (senza rete né chiavi)
+        run: node --test script/guide-testi-fissi.test.mjs script/piano-gancio.test.mjs script/titoli-domanda.test.mjs script/skill/media-fonte.test.mjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
