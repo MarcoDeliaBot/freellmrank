@@ -433,8 +433,8 @@
   "breve": "breve-skill-coreyhaines31-marketingskills-customer-research"
  },
  "https://freeduet.com": {
-  "lungo": "guida-freeduet-your-own-team-of-ai-assistants",
-  "breve": "breve-guida-freeduet-your-own-team-of-ai-assistants"
+  "lungo": "guida-freeduet-ai-assistants-on-your-claude-plan",
+  "breve": "breve-guida-freeduet-ai-assistants-on-your-claude-plan"
  },
  "news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet": {
   "lungo": "notizia-anthropic-launches-claude-meetings-beta-for-google-meet",
@@ -459,5 +459,13 @@
  "news-2026-11-13-ainews-jensen-huang-resigns-after-33-years-leading-nvidia": {
   "lungo": "notizia-ainews-jensen-huang-resigns-after-33-years-leading-nvidi",
   "breve": "breve-ainews-jensen-huang-resigns-after-33-years-leading-nvidi"
+ },
+ "news-2026-11-13-langchain-raises-300m-series-c-valuation-hits-3-billion": {
+  "lungo": "notizia-langchain-raises-300m-series-c-valuation-hits-3-billion",
+  "breve": "breve-langchain-raises-300m-series-c-valuation-hits-3-billion"
+ },
+ "news-2026-11-13-meta-s-muse-adds-paid-us-business-calling-feature": {
+  "lungo": "notizia-meta-s-muse-adds-paid-us-business-calling-feature",
+  "breve": "breve-meta-s-muse-adds-paid-us-business-calling-feature"
  }
 }
