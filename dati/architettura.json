@@ -2132,5 +2132,16 @@
   "contestoMax": 128000,
   "moe": false,
   "attivi": 1918181888
+ },
+ "ibm-granite/granite-4.1-3b-llmon-preview": {
+  "strati": 40,
+  "tipo": "GQA",
+  "kvPerStrato": 2048,
+  "pieni": 40,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 131072,
+  "moe": false,
+  "attivi": 3659737600
  }
 }
