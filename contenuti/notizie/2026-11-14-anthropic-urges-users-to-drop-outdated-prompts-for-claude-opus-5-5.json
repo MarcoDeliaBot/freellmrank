@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-14-anthropic-urges-users-to-drop-outdated-prompts-for-claude-opus-5-5",
+ "titolo": "Anthropic urges users to drop outdated prompts for Claude Opus 5.5",
+ "descr": "Anthropic recommends removing phrases like “think hard” and starting at Medium effort to improve speed without quality loss in Opus 5.5.",
+ "tema": "Guides",
+ "paragrafi": [
+  "The company advises cutting phrases such as “think hard” or “think carefully” because the model reasons adaptively and those cues add no benefit.",
+  "Opus 5.5 defaults to the Medium effort level; internal tests show Medium matches the performance of the previous Opus 5 on High, while higher settings cost more and often do not improve results.",
+  "Anthropic also suggests describing the desired outcome in a single message, attaching diagrams or tables as files, and naming unwanted design patterns rather than using vague bans.",
+  "For teams that previously reserved Opus for complex tasks and used Sonnet for routine work, Anthropic recommends reconsidering this split, noting that a more capable model can finish tasks in fewer steps and offset its higher per‑token price."
+ ],
+ "perche": [
+  "Dropping legacy prompts can make Opus 5.5 faster and cheaper for knowledge‑work users, helping them get finished documents or analyses with fewer iterations. For those exploring free or local models, the guidance highlights how newer adaptive reasoning reduces the need for elaborate prompt engineering, a benefit that may also apply to high‑performing open‑source alternatives."
+ ],
+ "pubblicato": "2026-11-14",
+ "titoloFonte": "Anthropic says outdated prompting habits are slowing down Claude Opus 5.5",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5/",
+   "titolo": "Anthropic says outdated prompting habits are slowing down Claude Opus 5.5",
+   "ufficiale": false,
+   "data": "2026-11-14"
+  },
+  {
+   "nome": "claude.com",
+   "url": "https://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work",
+   "titolo": "Which Claude model is best to use for knowledge work | Claude by Anthropic",
+   "ufficiale": true,
+   "data": "2026-11-12"
+  }
+ ],
+ "frasiTolte": 1
+}

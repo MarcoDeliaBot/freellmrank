@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-14-nvidia-cuphoton-xbeam-correlates-10-tb-eht-dataset-in-70-seconds-on-64",
+ "titolo": "NVIDIA cuPhoton xBeam correlates 10 TB EHT dataset in 70 seconds on 64‑GPU system",
+ "descr": "cuPhoton’s GPU‑based xBeam processed a 10 TB black‑hole interferometry dataset in 70 seconds, a 460× speedup over CPU.",
+ "tema": "Research",
+ "paragrafi": [
+  "The FX correlator ingested VDIF frames, applied delay and fringe corrections, channelized signals via FFT, cross‑multiplied station pairs and wrote visibilities in DiFX SWIN or xbeam‑v1 format.",
+  "A 10 TB dataset from the Event Horizon Telescope was processed in 70 seconds, delivering a 460× speedup compared with an x86 CPU baseline that took 31,992 seconds (about 8.89 hours).",
+  "The team highlighted that AI agents can automate pipeline steps by parsing VDIF metadata, generating JSON job specs, launching xBeam jobs and monitoring execution."
+ ],
+ "perche": [
+  "The dramatic acceleration enables researchers to iterate on interferometry pipelines far faster, reducing analysis time from hours to minutes. For AI developers, the result showcases how GPU‑optimized software can unlock scientific workloads, encouraging similar optimizations for free or locally run models."
+ ],
+ "pubblicato": "2026-11-14",
+ "titoloFonte": "Run GPU-Powered Black Hole Interferometry with NVIDIA cuPhoton",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/run-gpu-powered-black-hole-interferometry-with-nvidia-cuphoton/",
+   "titolo": "Run GPU-Powered Black Hole Interferometry with NVIDIA cuPhoton",
+   "ufficiale": true,
+   "data": "2026-11-13"
+  }
+ ],
+ "frasiTolte": 2
+}
