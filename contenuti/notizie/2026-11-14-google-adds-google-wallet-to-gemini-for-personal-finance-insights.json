@@ -1,0 +1,36 @@
+{
+ "nome": "2026-11-14-google-adds-google-wallet-to-gemini-for-personal-finance-insights",
+ "titolo": "Google adds Google Wallet to Gemini for personal finance insights",
+ "descr": "Gemini users in the U.S. can link Wallet and bank accounts via Plaid to get budgeting charts and subscription alerts, with read‑only access.",
+ "tema": "Software",
+ "paragrafi": [
+  "Google announced that Google Wallet is now part of Gemini's Personal Intelligence system.",
+  "Users may connect their Wallet and optionally link credit‑card and bank accounts through Plaid. Gemini receives read‑only access to transaction data.",
+  "With the data, Gemini can produce cash‑flow charts, highlight recurring subscriptions, flag price increases, and suggest holiday budgets based on past spending.",
+  "The feature is available on the web and on Android and iOS apps. Users can enable or disable the connection at any time in the Connected Apps settings.",
+  "Google also introduced Memory Summary, a readable view of the preferences, interests and goals Gemini stores, which users can edit or delete.",
+  "Gemini sits alongside other connected services such as Gmail, Photos, YouTube and Search, and the paid Gemini 4 Carbon model tops FreeLLMArena’s paid chat rankings."
+ ],
+ "perche": [
+  "The integration gives Gemini users personalized finance assistance without leaving the chat, while keeping data read‑only and under user control. For people who rely on free or locally hosted models, it highlights the added value that large providers can deliver through deep personal data connections, underscoring the gap between free open models and premium services like Gemini 4 Carbon."
+ ],
+ "pubblicato": "2026-11-14",
+ "titoloFonte": "Google adds Wallet to Gemini for finance insights",
+ "fonti": [
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/google-adds-wallet-to-gemini-for-finance-insights/",
+   "titolo": "Google adds Wallet to Gemini for finance insights",
+   "ufficiale": false,
+   "data": "2026-11-14"
+  },
+  {
+   "nome": "blog.google",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/google-wallet-gemini-app/?ref=testingcatalog.com",
+   "titolo": "Gemini finance insights with Google Wallet integration",
+   "ufficiale": true,
+   "data": "2026-11-13"
+  }
+ ],
+ "frasiTolte": 1
+}

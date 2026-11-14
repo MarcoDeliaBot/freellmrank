@@ -23342,6 +23342,30 @@
     "tipo": "News"
    },
    "data": "2026-11-14"
+  },
+  "/blog/news-2026-11-14-cmpnd-launches-dspy-wsp-a-gradient-free-weight-space-optimizer-for-dsp.html": {
+   "post": {
+    "slug": "news-2026-11-14-cmpnd-launches-dspy-wsp-a-gradient-free-weight-space-optimizer-for-dsp",
+    "titolo": "Cmpnd launches dspy-wsp, a gradient‑free weight‑space optimizer for DSPy decision models",
+    "descr": "Cmpnd released dspy-wsp, a prototype DSPy optimizer that edits model weights directly using GPT‑6‑Astra, improving decision‑model accuracy without gradients.",
+    "data": "2026-11-14",
+    "tema": "Software",
+    "corpo": "The tool implements weight‑space programming, letting a frontier LLM such as GPT‑6‑Astra read and edit another model’s weights without gradients or training data. It is packaged as the WeightSpace optimizer, works with any DSPy program and metric, requires DSPy 3.5, and is available under an MIT license via pip.\n\nIn tests on five open decision models ranging from 0.6 B to 9 B parameters, each run used about $5–10 of GPT‑6‑Astra calls and 25 forward passes. All models improved; d1‑omni‑600M increased from 50.9 % to 69.1 % when WeightSpace was combined with ReAnchor, a gain of 18.3 points. The 9 B Clef‑Flash model saw a smaller rise of 1.9 points with WeightSpace alone and 6.5 points with ReAnchor.\n\nThe experiments ran on a single Mac, with 2 B models using roughly 6 GB of memory and the 600 M model needing at least 4 GB. Each optimization took between 78 and 167 minutes. Linux users can run the optimizer on PyTorch with an NVIDIA GPU.\n\nThe authors describe the tool as \"very experimental\" and note it is slower on larger models, while editing text‑generating LLMs remains costly.\n\n## What it means for you\n\nFor developers, dspy-wsp provides a cheap, gradient‑free method to boost decision‑model accuracy while keeping the model on local hardware. For users who prefer free or self‑hosted models, the release shows that weight‑space edits can be applied on modest machines, but the technique is still early and may not work well for larger models.\n\n## Sources\n\n- [Cmpnd Releases dspy-wsp: Weight-Space Programming Comes to DSPy](https://www.marktechpost.com/2026/11/14/cmpnd-dspy-wsp-weight-space-programming/), MarkTechPost, 14 Nov 2026\n- [Weight-Space Programming with DSPy — Cmpnd](https://www.cmpnd.ai/blog/weight-space-programming-dspy.html), cmpnd.ai (official), 13 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-14-cmpnd-launches-dspy-wsp-a-gradient-free-weight-space-optimizer-for-dsp).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-14"
+  },
+  "/blog/news-2026-11-14-google-adds-google-wallet-to-gemini-for-personal-finance-insights.html": {
+   "post": {
+    "slug": "news-2026-11-14-google-adds-google-wallet-to-gemini-for-personal-finance-insights",
+    "titolo": "Google adds Google Wallet to Gemini for personal finance insights",
+    "descr": "Gemini users in the U.S. can link Wallet and bank accounts via Plaid to get budgeting charts and subscription alerts, with read‑only access.",
+    "data": "2026-11-14",
+    "tema": "Software",
+    "corpo": "Google announced that Google Wallet is now part of Gemini's Personal Intelligence system.\n\nUsers may connect their Wallet and optionally link credit‑card and bank accounts through Plaid. Gemini receives read‑only access to transaction data.\n\nWith the data, Gemini can produce cash‑flow charts, highlight recurring subscriptions, flag price increases, and suggest holiday budgets based on past spending.\n\nThe feature is available on the web and on Android and iOS apps. Users can enable or disable the connection at any time in the Connected Apps settings.\n\nGoogle also introduced Memory Summary, a readable view of the preferences, interests and goals Gemini stores, which users can edit or delete.\n\nGemini sits alongside other connected services such as Gmail, Photos, YouTube and Search, and the paid Gemini 4 Carbon model tops FreeLLMArena’s paid chat rankings.\n\n## What it means for you\n\nThe integration gives Gemini users personalized finance assistance without leaving the chat, while keeping data read‑only and under user control. For people who rely on free or locally hosted models, it highlights the added value that large providers can deliver through deep personal data connections, underscoring the gap between free open models and premium services like Gemini 4 Carbon.\n\n## Sources\n\n- [Google adds Wallet to Gemini for finance insights](https://www.testingcatalog.com/google-adds-wallet-to-gemini-for-finance-insights/), TestingCatalog, 14 Nov 2026\n- [Gemini finance insights with Google Wallet integration](https://blog.google/innovation-and-ai/products/gemini-app/google-wallet-gemini-app/?ref=testingcatalog.com), blog.google (official), 13 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-14-google-adds-google-wallet-to-gemini-for-personal-finance-insights).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-14"
   }
  },
  "ricostruzione": {
