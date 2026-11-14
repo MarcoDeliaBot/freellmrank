@@ -433,8 +433,8 @@
   "breve": "breve-skill-coreyhaines31-marketingskills-customer-research"
  },
  "https://freeduet.com": {
-  "lungo": "guida-freeduet-a-team-of-ai-assistants-on-your-claude-subscrip",
-  "breve": "breve-guida-freeduet-a-team-of-ai-assistants-on-your-claude-subscrip"
+  "lungo": "guida-freeduet-your-own-team-of-ai-assistants",
+  "breve": "breve-guida-freeduet-your-own-team-of-ai-assistants"
  },
  "news-2026-11-13-anthropic-launches-claude-meetings-beta-for-google-meet": {
   "lungo": "notizia-anthropic-launches-claude-meetings-beta-for-google-meet",
@@ -451,5 +451,13 @@
  "news-2026-11-12-fireworks-ai-breach-exposes-notion-ai-chat-transcripts-for-1-of-worksp": {
   "lungo": "notizia-fireworks-ai-breach-exposes-notion-ai-chat-transcripts-f",
   "breve": "breve-fireworks-ai-breach-exposes-notion-ai-chat-transcripts-f"
+ },
+ "news-2026-11-12-google-labs-tests-tabletop-an-ai-driven-collaborative-planning-tool": {
+  "lungo": "notizia-google-labs-tests-tabletop-an-ai-driven-collaborative-pl",
+  "breve": "breve-google-labs-tests-tabletop-an-ai-driven-collaborative-pl"
+ },
+ "news-2026-11-13-ainews-jensen-huang-resigns-after-33-years-leading-nvidia": {
+  "lungo": "notizia-ainews-jensen-huang-resigns-after-33-years-leading-nvidi",
+  "breve": "breve-ainews-jensen-huang-resigns-after-33-years-leading-nvidi"
  }
 }
