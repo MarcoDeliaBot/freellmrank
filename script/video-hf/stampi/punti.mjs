@@ -80,7 +80,7 @@ function impagina(dati, formato = 'orizzontale') {
 export default {
   nome: 'punti',
   descrizione: '2-4 key points of a news story that has no striking numbers (the most common case): what changed, why it matters, what stays the same',
-  schema: '{ "titolo": "What changed, max 32 chars", "punti": ["one short sentence, max 90 chars", "2 to 4 points, in the order the voice says them"] }',
+  schema: '{ "titolo": "short heading that fits the points (news: What changed; guide: What it does), max 32 chars", "punti": ["one short sentence, max 90 chars", "2 to 4 points, in the order the voice says them"] }',
   valida(dati) {
     const e = [];
     if (!dati || typeof dati !== 'object') return ['dati mancanti'];
