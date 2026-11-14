@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-14-openai-moves-robotics-staff-as-gpt-6-astra-shows-strong-simulated-robo",
+ "titolo": "OpenAI moves robotics staff as GPT-6 Astra shows strong simulated robot performance",
+ "descr": "OpenAI shifts its robotics team to other groups, citing GPT-6 Astra’s ability to control robots without specialized models.",
+ "tema": "Research",
+ "paragrafi": [
+  "The change follows internal tests where the general‑purpose model GPT‑6 Astra achieved a 74.8% success rate on simulated pick‑and‑place tasks, surpassing the best specialized models that scored 51% in the same setting.",
+  "A new benchmark, StationeryBench, compared Astra with Ai2’s MolmoAct2 on dual‑arm YAM robots; Astra completed 7% of 100 tasks while MolmoAct2 completed none, and Astra’s average progress score was 46 versus 12.",
+  "Nvidia’s study of Astra on the RoboLab‑120 benchmark reported a 74.8% success rate for an Agentic Policy, though inference latency averaged 18.56 seconds per call and token cost reached $36.40 per episode.",
+  "OpenAI still plans a public robot demo for 2027 and aims to build everyday robots, but acknowledges that specialized models may retain advantages in cost, reliability, speed and energy use."
+ ],
+ "perche": [
+  "If general‑purpose models can handle many robot tasks, developers may rely less on bespoke robotics AI, reducing development overhead. Users of free or locally hosted models will still need specialized solutions for low‑latency, low‑cost deployments, as Astra’s performance comes with high latency and token expenses."
+ ],
+ "pubblicato": "2026-11-14",
+ "titoloFonte": "OpenAI reassigns robotics researchers to other teams as general-purpose models might make specialized robotics AI unnecessary",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/openai-reassigns-robotics-researchers-to-other-teams-as-general-purpose-models-might-make-specialized-robotics-ai-unnecessary/",
+   "titolo": "OpenAI reassigns robotics researchers to other teams as general-purpose models might make specialized robotics AI unnecessary",
+   "ufficiale": false,
+   "data": "2026-11-14"
+  },
+  {
+   "nome": "research.nvidia.com",
+   "url": "https://research.nvidia.com/labs/srl/projects/astranomy/",
+   "titolo": "Astranomy: An Empirical Study of GPT-6 Astra as a native robot policy",
+   "ufficiale": true,
+   "data": "2026-10-14"
+  }
+ ],
+ "frasiTolte": 1
+}
