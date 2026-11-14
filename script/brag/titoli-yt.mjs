@@ -5,6 +5,10 @@
 // (prima: «AI news», «free AI» e i nomi delle fonti, senza il laboratorio né il prodotto).
 // Workers AI propone; passa solo ciò che regge al controllo dei fatti (ogni numero e ogni nome stanno nel post).
 // Senza proposta valida si torna a testi costruiti in codice dal post.
+// 14/11/2026: una guida può avere «fissi» (script/video-hf/fissi.mjs): il titolo del file vince su quello del modello, la riga
+// di trasparenza va subito sotto la prima frase della descrizione, e ogni proposta del modello con una frase vietata si scarta.
+
+import { trovaVietate } from '../video-hf/fissi.mjs';
 
 const MAX_TITOLO = 60;
 const MAX_APERTURA = 160;
@@ -26,15 +30,16 @@ export function titoloCorto(titolo) {
 
 // n: la notizia; ai.yt: { titolo, apertura, tag } proposti da Workers AI; regge(t): il controllo dei fatti del generatore;
 // punti: i punti sullo schermo già controllati; nomi: i nomi propri del titolo del post
-export function metaYoutube({ n, yt = {}, regge, punti = [], nomi = [], url, righeFonti, guida = false }) {
+export function metaYoutube({ n, yt = {}, regge: reggeFatti, punti = [], nomi = [], url, righeFonti, guida = false, fissi = null }) {
   const tolti = [];
+  const regge = fissi?.vietate?.length ? (t) => reggeFatti(t) && !trovaVietate(t, fissi.vietate).length : reggeFatti;
   const prova = (t, max) => {
     const s = pulito(t);
     if (!s) return '';
     if (s.length > max || !regge(s)) { tolti.push(s); return ''; }
     return s;
   };
-  const titolo = prova(yt.titolo, MAX_TITOLO) || titoloCorto(n.titolo);
+  const titolo = fissi?.titolo || prova(yt.titolo, MAX_TITOLO) || titoloCorto(n.titolo);
   // 13/11/2026 (missione di Marco «diventare virali e seguiti»): una domanda per i commenti, in descrizione e nel commento fissato
   // 13/11 sera: nei primi video la domanda era sempre quella di riserva, senza sapere perché: ora quella scartata va nel registro
   const propria = domandaValida(yt.domanda, regge);
@@ -43,7 +48,7 @@ export function metaYoutube({ n, yt = {}, regge, punti = [], nomi = [], url, rig
   const apertura = prova(yt.apertura, MAX_APERTURA) || pulito(n.descr);
   const elenco = [...new Set(punti.map(pulito).filter((p) => p && p !== apertura))].slice(0, 6);
   const descrizione = [
-    apertura,
+    fissi?.rigaDescrizione ? `${apertura}\n${fissi.rigaDescrizione}` : apertura,
     `💬 ${domanda} Tell us in the comments.`,
     elenco.length ? `${guida ? 'In this guide' : 'Key facts'}:\n${elenco.map((p) => `- ${p}`).join('\n')}` : '',
     `Full story: ${url}`,

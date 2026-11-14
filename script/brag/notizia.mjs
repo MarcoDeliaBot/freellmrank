@@ -15,6 +15,7 @@ import { numeri } from '../video-post.mjs';
 import { nomiDi, LABORATORI, LANCIO } from '../notizie.mjs';
 import { metaYoutube, RICHIESTA_YT } from './titoli-yt.mjs';
 import { titoloYT } from './controllo-yt.mjs';
+import { leggiFissi, trovaVietate } from '../video-hf/fissi.mjs';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
 const RADICE = path.join(QUI, '..', '..');
@@ -45,13 +46,18 @@ if (!n) { console.log('Nessuna notizia nuova da raccontare'); process.exit(0); }
 const url = n.url || `https://freellmarena.com/blog/news-${n.nome}`;
 const GUIDA = n.tipo === 'guida';
 const ETICHETTA = GUIDA ? 'Guide' : 'AI news';
+// 14/11/2026: testi fissi della guida (campo «fissi», script/video-hf/fissi.mjs): titolo, apertura, frasi di trasparenza e frasi
+// vietate vengono dal file della guida, non dal modello. Se il campo non va, la guida non parte (messaggio in italiano).
+let FISSI = null;
+try { FISSI = GUIDA ? leggiFissi(n) : null; } catch (e) { console.error(`Testi fissi della guida non validi: ${e.message}`); process.exit(1); }
 
 // ---------- 2. titoli e punti sullo schermo (Workers AI), poi il controllo ----------
 const POST = [n.titolo, n.descr, ...n.paragrafi, ...(n.perche || [])].map(semplice).join('\n');
 const ammessi = numeri(POST);
 const basso = POST.toLowerCase();
-// un pezzo passa se ogni numero e ogni nome stanno nel post
-const regge = (t) => [...numeri(t)].every((x) => ammessi.has(x)) && nomiDi(`X ${t}`).every((x) => basso.includes(x.toLowerCase()));
+// un pezzo passa se ogni numero e ogni nome stanno nel post (e, per una guida con «fissi», nessuna frase vietata)
+const regge = (t) => [...numeri(t)].every((x) => ammessi.has(x)) && nomiDi(`X ${t}`).every((x) => basso.includes(x.toLowerCase()))
+  && !(FISSI && trovaVietate(t, FISSI.vietate).length);
 let ai = {};
 try {
   ai = await chiediModello([
@@ -74,6 +80,8 @@ const sezioni = n.paragrafi.map((p, i) => {
 // le frasi dello Short: quelle di Workers AI che reggono, se no le prime frasi del post
 let corto = (ai.corto || []).map((x) => tieni(x, null)).filter(Boolean).slice(0, 3);
 if (corto.length < 3) corto = [semplice(n.descr), prima(n.paragrafi[0]), prima((n.perche || [])[0] || n.paragrafi[1])].filter(Boolean);
+// con «fissi» lo Short alla vecchia maniera (riserva di registra.sh, se quello a stampi non riesce) dice l'apertura e le frasi dello Short
+if (FISSI) corto = [FISSI.apertura, ...FISSI.obbligatorieBreve].filter(Boolean);
 if (tolti.length) console.log(`Controllo dei fatti: tolti ${tolti.length} pezzi con numeri o nomi che non stanno nel post`);
 
 // ---------- 3. video lungo, orizzontale ----------
@@ -102,7 +110,7 @@ const nome = nomeVideo(n);
 const righeFonti = n.fonti.map((f) => `${f.nome}: ${f.url}`).join('\n');
 // titolo, descrizione e tag di YouTube (youtube-seo, 24/10/2026): script/brag/titoli-yt.mjs
 const nomiTitolo = [...new Set(nomiDi(`X ${semplice(n.titolo)}`).filter((x) => x.length >= 3))];
-const yt = metaYoutube({ n: { ...n, titolo: semplice(n.titolo), descr: semplice(n.descr) }, yt: ai.yt || {}, regge, punti: sezioni.flatMap((s) => s.punti.filter((p) => !p.endsWith('…'))), nomi: nomiTitolo, url, righeFonti, guida: GUIDA });
+const yt = metaYoutube({ n: { ...n, titolo: semplice(n.titolo), descr: semplice(n.descr) }, yt: ai.yt || {}, regge, punti: sezioni.flatMap((s) => s.punti.filter((p) => !p.endsWith('…'))), nomi: nomiTitolo, url, righeFonti, guida: GUIDA, fissi: FISSI });
 if (yt.tolti.length) console.log(`Titolo/descrizione YouTube: tolti ${yt.tolti.length} pezzi che non reggono: ${yt.tolti.join(' | ')}`);
 const info = {
   nome, titolo: yt.titolo, notizia: n.nome, post: GUIDA ? url.replace(/^.*\/blog\//, '') : `news-${n.nome}`,
@@ -135,7 +143,7 @@ const infoC = {
   nome: GUIDA ? `breve-${nome}` : nome.replace(/^notizia-/, 'breve-'), titolo: titoloYT([yt.titolo], { shorts: true, max: 100 - 8 }), notizia: n.nome,
   // lo Short rimanda al video lungo (Marco, 23/10/2026): «lungo» per il «Video correlato» di YouTube, e il link nella descrizione
   lungo: `video-${nome}`,
-  descrizione: `${yt.apertura}\n💬 ${yt.domanda} Tell us in the comments.\nFull story: ${url}\nSources: ${fonti.join(', ')}`,
+  descrizione: `${yt.apertura}\n${FISSI?.rigaDescrizione ? `${FISSI.rigaDescrizione}\n` : ''}💬 ${yt.domanda} Tell us in the comments.\nFull story: ${url}\nSources: ${fonti.join(', ')}`,
   tag: [...yt.tag.slice(0, 10), 'Shorts'],
   condividi: `${n.titolo} ${url}`,
   lingua: 'en', copertina: 0,

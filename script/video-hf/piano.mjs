@@ -11,6 +11,7 @@ import { chiediModello, ultimoScrittore } from '../bozze.mjs';
 import { numeri } from '../video-post.mjs';
 import { nomiDi } from '../notizie.mjs';
 import { titoloCorto } from '../brag/titoli-yt.mjs';
+import { leggiFissi, conFissi, trovaVietate } from './fissi.mjs';
 
 export const semplice = (t) => String(t || '').replace(/[‐‑‒]/g, '-').replace(/\s*[–—]\s*/g, ', ').replace(/[   ]/g, ' ').replace(/\s+/g, ' ').trim();
 const giorno = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
@@ -93,7 +94,9 @@ const titoloDiRiserva = (n) => {
   return { stampo: 'titolo', etichetta: tipo, voce: semplice(n.descr), dati: { testo: titoloCorto(semplice(n.titolo)), sopra: `${tipo} · ${giorno(n.pubblicato)}` } };
 };
 
-export function controllaPiano(grezzo, n) {
+// fissi: i testi fissi di una guida (fissi.mjs, 14/11/2026); una scena con una frase vietata nella voce o sullo schermo si toglie
+// come una con un fatto sbagliato, e il gancio non si controlla: la prima frase la mette il codice, dal file della guida
+export function controllaPiano(grezzo, n, fissi = n.tipo === 'guida' ? leggiFissi(n) : null) {
   const { POST, regge, mancanti } = controllore(n);
   const problemi = [];
   const scene = [];
@@ -111,6 +114,8 @@ export function controllaPiano(grezzo, n) {
       ...testi(grezzi).filter((t) => !regge(semplice(t))).map((t) => `testo non nella notizia: «${t}» (${mancanti(semplice(t)).join(', ')})`),
       // controlli dei fatti propri dello stampo (29/10/2026, «mappa»: ogni luogo deve stare nella notizia, anche se è una parola sola)
       ...(typeof st.fatti === 'function' ? st.fatti(grezzi, POST) : []),
+      // frasi vietate dall'autore della guida (voce e schermo)
+      ...(fissi?.vietate?.length ? [...new Set([voce, ...testi(grezzi)].flatMap((t) => trovaVietate(semplice(t), fissi.vietate)))].map((v) => `frase vietata «${v}» nella voce o sullo schermo`) : []),
     ];
     if (fatti.length) { problemi.push(`${dove}: ${fatti.join('; ')}`); tolte++; continue; }
     const dati = ripara(st, grezzi, n);
@@ -129,7 +134,7 @@ export function controllaPiano(grezzo, n) {
   if (!ok) problemi.push(`piano scartato: ${scene.length} scene buone, ${totale} parole (servono almeno 4 scene e 100-230 parole)`);
   // 12/11/2026 (Marco: «Aggiungi ganci nei video… dobbiamo diventare virali»): la prima frase deve agganciare.
   // Un'apertura debole non toglie la scena (i fatti reggono), ma il piano non è completo e il modello riprova.
-  const debole = scene.length && !aggiunto ? gancio(scene[0].voce, scene[1]?.voce) : [];
+  const debole = scene.length && !aggiunto && !fissi?.apertura ? gancio(scene[0].voce, scene[1]?.voce) : [];
   if (debole.length) problemi.push(`apertura debole: ${debole.join('; ')}`);
   return { ok, completo: ok && tolte === 0 && !debole.length, tolte, scene, problemi, totale };
 }
@@ -150,7 +155,13 @@ export function pianoDiRiserva(n) {
   return scene;
 }
 
-export async function pianoPer(n) {
+// il blocco del prompt per i testi fissi di una guida: vuoto se la guida non ne ha (il prompt resta com'era)
+const bloccoFissi = (f) => (!f ? '' : `
+FIXED TEXTS from the author of this guide. The code checks them and adds any you leave out. Never rewrite, shorten or contradict them:
+${f.apertura ? `- The narration of scene 1 starts with exactly this sentence (it is the hook, so the hook rules above do not apply to it): "${f.apertura}" Then add one short sentence that opens the loop. Scene 1 is a "titolo" scene.\n` : ''}${f.obbligatorie.length ? `- The narration says these sentences word for word, in any scene: ${f.obbligatorie.map((x) => `"${x}"`).join(' ')}\n` : ''}${f.vietate.length ? `- Never write these phrases, in the narration or on screen, not even inside a longer sentence: ${f.vietate.map((x) => `"${x}"`).join(', ')}.\n` : ''}`);
+
+export async function pianoPer(n, { chiedi = chiediModello } = {}) {
+  const fissi = n.tipo === 'guida' ? leggiFissi(n) : null;
   const elenco = Object.values(STAMPI).filter((s) => s.nome !== 'chiusura').map((s) => `- "${s.nome}": ${s.descrizione}\n  dati: ${s.schema}`).join('\n');
   const problemi = [], grezzi = [];
   let migliore = null;
@@ -169,16 +180,16 @@ Rules:
 - Everything shown on screen ("dati") must also be said in that scene's "voce", in the same order. Show about one on-screen item for every 12 to 15 spoken words: a long voice needs more items, or split it into two scenes.
 - "quando" (optional, inside dati): for each piece, the exact word of "voce" at which it should appear, e.g. {"etichetta": "day"}.
 - "etichetta": a 1-3 word label for the scene, shown small at the top (e.g. "The number", "What's inside").
-Return JSON: {"scene": [{"stampo": "...", "etichetta": "...", "voce": "...", "dati": {...}}]}` },
+Return JSON: {"scene": [{"stampo": "...", "etichetta": "...", "voce": "...", "dati": {...}}]}${bloccoFissi(fissi)}` },
       { role: 'user', content: `ARTICLE:\nTitle: ${semplice(n.titolo)}\nDate: ${giorno(n.pubblicato)}\nSummary: ${semplice(n.descr)}\n${(n.paragrafi || []).map((p, i) => `Paragraph ${i + 1}: ${semplice(p)}`).join('\n')}\nWhy it matters: ${(n.perche || []).map(semplice).join(' ')}\nSources: ${(n.fonti || []).map((f) => f.nome).join(', ')}` },
   ];
   // ogni tentativo riceve i problemi del precedente. 26/10/2026: 5 tentativi invece di 3, ora che c'è Groq come riserva
   // (con il solo tetto di Workers AI i tentativi erano pochi e i piani finivano scartati)
   for (let tentativo = 1; tentativo <= 5 && !migliore?.completo; tentativo++) {
     try {
-      const grezzo = await chiediModello(domanda, { json: true, max: 1800, scopo: 'video' });
+      const grezzo = await chiedi(domanda, { json: true, max: 1800, scopo: 'video' });
       grezzi.push(grezzo);
-      const c = controllaPiano(grezzo, n);
+      const c = controllaPiano(grezzo, n, fissi);
       problemi.push(...c.problemi.map((p) => `tentativo ${tentativo}: ${p}`));
       // il migliore: completo, poi accettabile, poi con meno scene perse, poi più parole
       const voto = (x) => [x.completo ? 1 : 0, x.ok ? 1 : 0, -x.tolte, x.totale];
@@ -196,9 +207,15 @@ Return JSON: {"scene": [{"stampo": "...", "etichetta": "...", "voce": "...", "da
   // un piano quasi buono (almeno 3 scene e 45 parole, tutte controllate) è meglio della riserva, che mostra solo i titoli
   const ok = !!migliore?.ok || (migliore?.scene.length >= 3 && migliore.totale >= 45);
   if (ok && !migliore.ok) problemi.push(`piano del modello quasi buono usato lo stesso (${migliore.scene.length} scene, ${migliore.totale} parole)`);
-  const scene = ok ? migliore.scene : pianoDiRiserva(n);
+  let scene = ok ? migliore.scene : pianoDiRiserva(n);
+  // 14/11/2026: l'apertura e le frasi di trasparenza della guida le mette il codice, anche nel piano di riserva
+  if (fissi) {
+    const r = conFissi(scene, { apertura: semplice(fissi.apertura), obbligatorie: fissi.obbligatorie.map(semplice), tutte: [...fissi.obbligatorie, ...fissi.obbligatorieBreve].map(semplice) });
+    scene = r.scene;
+    if (fissi.apertura || r.inserite.length) problemi.push(`testi fissi: ${fissi.apertura ? 'apertura della guida messa in testa' : 'apertura del modello'}${r.inserite.length ? `; frasi aggiunte dal codice perché il piano non le aveva: ${r.inserite.map((x) => `«${x}»`).join(' ')}` : ''}`);
+  }
   const copertina = Math.max(0, scene.findIndex((s) => s.stampo === 'numero' || s.stampo === 'numeri'));
-  return { notizia: n.nome, riserva: !ok, problemi, copertina, scene: [...scene, { stampo: 'chiusura', etichetta: 'FreeLLMArena' }], grezzi };
+  return { notizia: n.nome, riserva: !ok, problemi, copertina, ...(fissi ? { fissi } : {}), scene: [...scene, { stampo: 'chiusura', etichetta: 'FreeLLMArena' }], grezzi };
 }
 
 if (process.argv[1] && import.meta.url.endsWith(path.basename(process.argv[1]))) {
