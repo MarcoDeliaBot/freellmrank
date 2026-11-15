@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-15-nvidia-releases-soma-retargeter-v0-2-to-adapt-human-motion-for-five-hu",
+ "titolo": "NVIDIA releases SOMA Retargeter v0.2 to adapt human motion for five humanoid robots",
+ "descr": "The open‑source tool scales BVH motion, solves IK and exports CSV trajectories for robots like Unitree G1 and AgiBot X2 Ultra.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced the v0.2 release of its SOMA Retargeter, an open‑source pipeline that converts human motion data into joint trajectories for specific humanoid robots.",
+  "The retargeter reads BVH animations on the shared SOMA skeleton, scales the targets to a robot’s proportions, solves inverse kinematics with NVIDIA Warp, and applies post‑processing such as foot‑plant adjustment.",
+  "Developers can source motion from the BONES‑SEED capture dataset, video reconstruction with GEM‑X, or generative models like Kimodo and ARDY, all of which output on the SOMA skeleton.",
+  "Exported CSV files contain root position, orientation and joint angles per frame, ready for simulation, balance evaluation, or policy training workflows such as SONIC and ProtoMotions."
+ ],
+ "perche": [
+  "The tool lets robotics teams reuse existing human motion libraries without manual re‑authoring, speeding up robot skill development. For developers focused on free or locally run AI pipelines, the open‑source nature and CSV output enable integration with custom learning stacks without relying on proprietary services."
+ ],
+ "pubblicato": "2026-11-15",
+ "titoloFonte": "Adapt Human Motion for Robots with NVIDIA SOMA Retargeter",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/adapt-human-motion-for-robots-with-nvidia-soma-retargeter/",
+   "titolo": "Adapt Human Motion for Robots with NVIDIA SOMA Retargeter",
+   "ufficiale": true,
+   "data": "2026-11-13"
+  }
+ ],
+ "frasiTolte": 1
+}
