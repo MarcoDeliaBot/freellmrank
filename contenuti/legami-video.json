@@ -483,5 +483,13 @@
  "news-2026-11-15-runway-releases-open-source-praxis-1-robot-model-with-apache-2-0-licen": {
   "lungo": "notizia-runway-releases-open-source-praxis-1-robot-model-with-ap",
   "breve": "breve-runway-releases-open-source-praxis-1-robot-model-with-ap"
+ },
+ "news-2026-11-15-stanford-releases-memorilla-16-token-memory-module-for-frozen-llms": {
+  "lungo": "notizia-stanford-releases-memorilla-16-token-memory-module-for-f",
+  "breve": "breve-stanford-releases-memorilla-16-token-memory-module-for-f"
+ },
+ "news-2026-11-14-cmpnd-launches-dspy-wsp-a-gradient-free-weight-space-optimizer-for-dsp": {
+  "lungo": "notizia-cmpnd-launches-dspy-wsp-a-gradient-free-weight-space-opt",
+  "breve": "breve-cmpnd-launches-dspy-wsp-a-gradient-free-weight-space-opt"
  }
 }
