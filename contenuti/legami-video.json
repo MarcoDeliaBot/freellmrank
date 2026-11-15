@@ -475,5 +475,13 @@
  "news-2026-11-14-openai-moves-robotics-staff-as-gpt-6-astra-shows-strong-simulated-robo": {
   "lungo": "notizia-openai-moves-robotics-staff-as-gpt-6-astra-shows-strong",
   "breve": "breve-openai-moves-robotics-staff-as-gpt-6-astra-shows-strong"
+ },
+ "news-2026-11-15-datasette-llm-0-1a11-adds-openai-compatible-endpoint-support": {
+  "lungo": "notizia-datasette-llm-0-1a11-adds-openai-compatible-endpoint-sup",
+  "breve": "breve-datasette-llm-0-1a11-adds-openai-compatible-endpoint-sup"
+ },
+ "news-2026-11-15-runway-releases-open-source-praxis-1-robot-model-with-apache-2-0-licen": {
+  "lungo": "notizia-runway-releases-open-source-praxis-1-robot-model-with-ap",
+  "breve": "breve-runway-releases-open-source-praxis-1-robot-model-with-ap"
  }
 }
