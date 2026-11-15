@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-15-nvidia-adds-python-cudla-support-for-dla-inference-on-jetson-agx-orin-",
+ "titolo": "NVIDIA adds Python cuDLA support for DLA inference on Jetson AGX Orin and RTX Spark",
+ "descr": "The new cuda.bindings.cudla module lets developers run Deep Learning Accelerator inference from Python on Jetson AGX Orin and Windows RTX Spark laptops.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA released a technical blog on 13 November 2026 describing how the cuda.bindings.cudla Python module exposes the cuDLA C++ API for native DLA inference.",
+  "The module, introduced in cuda‑bindings 13.3.0, provides thirteen functions, nine data types and eight enums that let Python code create DLA devices, load compiled networks, register buffers and submit inference tasks.",
+  "On Jetson AGX Orin, the DLA hardware executes supported neural network layers, improving power efficiency and freeing GPU capacity for other work.",
+  "Installation requires only the JetPack‑provided libcudla.so and pip installing cuda‑bindings>=13.3.0; Python 3.12 is the minimum version."
+ ],
+ "perche": [
+  "Developers can now integrate low‑power DLA inference directly into Python pipelines without C++ code, simplifying edge AI deployments on Jetson devices. The identical API on RTX Spark also gives laptop users access to dedicated inference hardware, supporting a broader range of AI projects while keeping GPU resources free for other tasks."
+ ],
+ "pubblicato": "2026-11-15",
+ "titoloFonte": "Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/run-native-dla-inference-in-python-on-nvidia-jetson-agx-orin-using-cudla/",
+   "titolo": "Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA",
+   "ufficiale": true,
+   "data": "2026-11-13"
+  }
+ ],
+ "frasiTolte": 1
+}

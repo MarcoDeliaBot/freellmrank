@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-15-datasette-llm-0-1a11-adds-openai-compatible-endpoint-support",
+ "titolo": "datasette-llm 0.1a11 adds OpenAI‑compatible endpoint support",
+ "descr": "The new pre‑release lets Datasette configure any OpenAI‑compatible model, including local instances via LM Studio, Ollama or llama.cpp.",
+ "tema": "Software",
+ "paragrafi": [
+  "Simon Willison announced the 0.1a11 release of the datasette-llm plugin on 14 November 2026.",
+  "The update introduces direct configuration of OpenAI‑compatible endpoints, removing the need for extra LLM plugins.",
+  "Users can point Datasette at local models such as lmstudio-qwen (qwen3.8‑27b) running on http://localhost:1234/v1.",
+  "The release also adds faster model lookup, support for tools and streaming, and refined handling of credentials and allowlists.",
+  "Compatibility requires LLM 0.37.1 or newer, and the plugin now raises clearer errors for missing keys or unknown models."
+ ],
+ "perche": [
+  "This change makes it easier for developers to run private or locally hosted models with Datasette, supporting free and open‑source alternatives."
+ ],
+ "pubblicato": "2026-11-15",
+ "titoloFonte": "datasette-llm 0.1a11",
+ "fonti": [
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+   "titolo": "datasette-llm 0.1a11",
+   "ufficiale": false,
+   "data": "2026-11-14"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/datasette/datasette-llm/releases/tag/0.1a11",
+   "titolo": "Release 0.1a11 · datasette/datasette-llm · GitHub",
+   "ufficiale": true,
+   "data": "2026-11-14"
+  }
+ ],
+ "frasiTolte": 1
+}

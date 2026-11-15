@@ -23390,6 +23390,30 @@
     "tipo": "News"
    },
    "data": "2026-11-14"
+  },
+  "/blog/news-2026-11-15-datasette-llm-0-1a11-adds-openai-compatible-endpoint-support.html": {
+   "post": {
+    "slug": "news-2026-11-15-datasette-llm-0-1a11-adds-openai-compatible-endpoint-support",
+    "titolo": "datasette-llm 0.1a11 adds OpenAI‑compatible endpoint support",
+    "descr": "The new pre‑release lets Datasette configure any OpenAI‑compatible model, including local instances via LM Studio, Ollama or llama.cpp.",
+    "data": "2026-11-15",
+    "tema": "Software",
+    "corpo": "Simon Willison announced the 0.1a11 release of the datasette-llm plugin on 14 November 2026.\n\nThe update introduces direct configuration of OpenAI‑compatible endpoints, removing the need for extra LLM plugins.\n\nUsers can point Datasette at local models such as lmstudio-qwen (qwen3.8‑27b) running on http://localhost:1234/v1.\n\nThe release also adds faster model lookup, support for tools and streaming, and refined handling of credentials and allowlists.\n\nCompatibility requires LLM 0.37.1 or newer, and the plugin now raises clearer errors for missing keys or unknown models.\n\n## What it means for you\n\nThis change makes it easier for developers to run private or locally hosted models with Datasette, supporting free and open‑source alternatives.\n\n## Sources\n\n- [datasette-llm 0.1a11](https://simonwillison.net/2026/Nov/14/datasette-llm/), Simon Willison, 14 Nov 2026\n- [Release 0.1a11 · datasette/datasette-llm · GitHub](https://github.com/datasette/datasette-llm/releases/tag/0.1a11), github.com (official), 14 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-15-datasette-llm-0-1a11-adds-openai-compatible-endpoint-support).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-14"
+  },
+  "/blog/news-2026-11-15-nvidia-adds-python-cudla-support-for-dla-inference-on-jetson-agx-orin-.html": {
+   "post": {
+    "slug": "news-2026-11-15-nvidia-adds-python-cudla-support-for-dla-inference-on-jetson-agx-orin-",
+    "titolo": "NVIDIA adds Python cuDLA support for DLA inference on Jetson AGX Orin and RTX Spark",
+    "descr": "The new cuda.bindings.cudla module lets developers run Deep Learning Accelerator inference from Python on Jetson AGX Orin and Windows RTX Spark laptops.",
+    "data": "2026-11-15",
+    "tema": "Software",
+    "corpo": "NVIDIA released a technical blog on 13 November 2026 describing how the cuda.bindings.cudla Python module exposes the cuDLA C++ API for native DLA inference.\n\nThe module, introduced in cuda‑bindings 13.3.0, provides thirteen functions, nine data types and eight enums that let Python code create DLA devices, load compiled networks, register buffers and submit inference tasks.\n\nOn Jetson AGX Orin, the DLA hardware executes supported neural network layers, improving power efficiency and freeing GPU capacity for other work.\n\nInstallation requires only the JetPack‑provided libcudla.so and pip installing cuda‑bindings>=13.3.0; Python 3.12 is the minimum version.\n\n## What it means for you\n\nDevelopers can now integrate low‑power DLA inference directly into Python pipelines without C++ code, simplifying edge AI deployments on Jetson devices. The identical API on RTX Spark also gives laptop users access to dedicated inference hardware, supporting a broader range of AI projects while keeping GPU resources free for other tasks.\n\n## Sources\n\n- [Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA](https://developer.nvidia.com/blog/run-native-dla-inference-in-python-on-nvidia-jetson-agx-orin-using-cudla/), NVIDIA Developer (official), 13 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-15-nvidia-adds-python-cudla-support-for-dla-inference-on-jetson-agx-orin-).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-14"
   }
  },
  "ricostruzione": {
