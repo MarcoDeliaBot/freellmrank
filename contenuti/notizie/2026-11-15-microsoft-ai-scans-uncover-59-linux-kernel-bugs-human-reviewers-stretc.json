@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-15-microsoft-ai-scans-uncover-59-linux-kernel-bugs-human-reviewers-stretc",
+ "titolo": "Microsoft AI scans uncover 59 Linux kernel bugs, human reviewers stretched thin",
+ "descr": "AI tool MDASH reported 59 upstream Linux kernel issues, highlighting a reviewer shortage and long fix cycles.",
+ "tema": "Research",
+ "paragrafi": [
+  "Filtering reduced the set to 11,769 candidates, of which 621 had proof‑of‑concept evidence; this yielded 59 public upstream reports and 33 assigned CVEs, with eight confirmed privilege‑escalation exploits and 38 fixes merged into mainline.",
+  "The average age of the reported bugs was 8.1 years; the oldest, CVE‑2026‑74544, had existed for at least 21 years before MDASH highlighted it.",
+  "Linux maintainers say the influx of AI‑generated patches is overwhelming. Greg Kroah‑Hartman warned that \"we don't have enough people to review them,\" and veteran reviewer Lorenzo Stoakes said his bandwidth for code review is exhausted."
+ ],
+ "perche": [
+  "The episode shows that AI can surface deep‑seated kernel flaws quickly, but fixing them still relies on skilled reviewers. For developers and organisations that depend on Linux, the shortage of reviewers raises security‑risk concerns. For users of free or locally hosted AI models, the story reinforces that AI‑driven code analysis must be paired with expert oversight, as even the best models cannot replace human validation."
+ ],
+ "pubblicato": "2026-11-15",
+ "titoloFonte": "‘We need more reviewers’: Finding Linux bugs is easy now – fixing them is another story",
+ "fonti": [
+  {
+   "nome": "ZDNet",
+   "url": "https://www.zdnet.com/innovation/ai-bug-reports-linux-windows/",
+   "titolo": "‘We need more reviewers’: Finding Linux bugs is easy now – fixing them is another story",
+   "ufficiale": false,
+   "data": "2026-11-14"
+  },
+  {
+   "nome": "microsoft.com",
+   "url": "https://www.microsoft.com/en-us/security/blog/2026/11/11/lessons-from-59-linux-kernel-bug-reports/",
+   "titolo": "Lessons from 59 Linux Kernel Bug Reports | Microsoft Security Blog",
+   "ufficiale": true,
+   "data": "2026-11-11"
+  }
+ ],
+ "frasiTolte": 2
+}

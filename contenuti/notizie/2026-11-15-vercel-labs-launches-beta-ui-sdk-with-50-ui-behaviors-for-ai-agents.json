@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-15-vercel-labs-launches-beta-ui-sdk-with-50-ui-behaviors-for-ai-agents",
+ "titolo": "Vercel Labs launches beta UI SDK with 50+ UI behaviors for AI agents",
+ "descr": "The Apache‑2.0 UI SDK lets agents build React, Vue, Svelte, Solid and Web Component interfaces via reusable behaviors.",
+ "tema": "Software",
+ "paragrafi": [
+  "It is an Apache‑2.0 library that includes more than 50 UI behaviors.",
+  "The SDK bundles keyboard navigation, focus, selection, dismissal, pop‑ups, drag‑and‑drop and required ARIA into @ui-sdk/core, and provides adapters for React, Vue, Svelte, Solid and Web Components.",
+  "Developers install the core and a framework adapter with npm, for example `npm install @ui-sdk/react @ui-sdk/core`, then give agents the skill via `npx skills add vercel-labs/ui --skill ui-sdk`.",
+  "Sample code defines a search‑field primitive with state, API and slots, then renders the same parts across all five frameworks using `createParts`.",
+  "The GitHub repository shows 475 commits, documentation and contribution guidelines, and directs security reports to the address in SECURITY.md."
+ ],
+ "perche": [
+  "The SDK cuts the amount of hand‑written UI code that AI agents need to produce, letting developers who run free or locally hosted models create accessible interfaces quickly. Because the library is open‑source under Apache‑2.0, it can be integrated with free chat models such as Kimi K3, Kimi K3.1 Pro, GLM‑5.3 and others, supporting the growing free‑model ecosystem."
+ ],
+ "pubblicato": "2026-11-15",
+ "titoloFonte": "Vercel Releases UI SDK: 50+ UI Behaviors for AI Coding Agents",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/13/vercel-ui-sdk-agent-ui-behaviors/",
+   "titolo": "Vercel Releases UI SDK: 50+ UI Behaviors for AI Coding Agents",
+   "ufficiale": false,
+   "data": "2026-11-14"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/vercel-labs/ui",
+   "titolo": "GitHub - vercel-labs/ui: A library of behaviors for agents to build the next generation of user interfaces. · GitHub",
+   "ufficiale": true,
+   "data": "2026-11-14"
+  }
+ ],
+ "frasiTolte": 1
+}
