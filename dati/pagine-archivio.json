@@ -23366,6 +23366,30 @@
     "tipo": "News"
    },
    "data": "2026-11-14"
+  },
+  "/blog/news-2026-11-15-runway-releases-open-source-praxis-1-robot-model-with-apache-2-0-licen.html": {
+   "post": {
+    "slug": "news-2026-11-15-runway-releases-open-source-praxis-1-robot-model-with-apache-2-0-licen",
+    "titolo": "Runway releases open‑source Praxis‑1 robot model with Apache 2.0 license",
+    "descr": "Praxis‑1 turns video‑pretrained AI into robot control, ranking top on Nvidia’s RoboLab‑120 leaderboard.",
+    "data": "2026-11-15",
+    "tema": "Research",
+    "corpo": "Runway announced the open‑source release of Praxis‑1, a robot‑control model built on a 27 B‑parameter video foundation and fine‑tuned with robot data.\n\nThe model processes camera images, text instructions and robot pose to predict short‑term video frames and 1.6 seconds of motion, outputting 24 action rows at 15 Hz.\n\nPraxis‑1 scores 46.2 % success on Nvidia’s RoboLab‑120 benchmark, the highest among World Action Models, and ranks fifth overall on the leaderboard.\n\nRunway provides the code on GitHub and weights on Hugging Face under Apache 2.0, with a standard version needing an 80 GB GPU and a compressed version fitting a 32 GB RTX 5090.\n\n## What it means for you\n\nPraxis‑1 gives developers free access to a robot‑control foundation model that can be adapted to new hardware with modest additional data, lowering the barrier for robotics research. Its open licence also enables commercial use, supporting the growth of free and locally‑run AI solutions in robotics.\n\n## Sources\n\n- [Runway's open-source Praxis-1 turns video AI into a robot controller](https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller/), The Decoder, 14 Nov 2026\n- [Praxis-1: From Video Pretraining to Robot Control | Runway Research](https://runway.com/research/praxis-1-video-pretraining-to-robot-control), runway.com (official), 11 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-15-runway-releases-open-source-praxis-1-robot-model-with-apache-2-0-licen).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-14"
+  },
+  "/blog/news-2026-11-15-stanford-releases-memorilla-16-token-memory-module-for-frozen-llms.html": {
+   "post": {
+    "slug": "news-2026-11-15-stanford-releases-memorilla-16-token-memory-module-for-frozen-llms",
+    "titolo": "Stanford releases Memorilla: 16-token memory module for frozen LLMs",
+    "descr": "Memorilla compresses whole document collections into 16 tokens, boosting accuracy on benchmarks while cutting token usage by over 100×.",
+    "data": "2026-11-15",
+    "tema": "Research",
+    "corpo": "Stanford researchers have open‑sourced Memorilla, a latent memory system that encodes an entire document collection into a fixed set of 16 memory tokens for a frozen LLM.\n\nThe module uses a 194‑million‑parameter trainable memory network paired with a frozen Qwen3‑Embedding‑4B encoder and Qwen3‑8B decoder, running on Linux with CUDA GPUs and Python 3.11.\n\nOn the FactKG benchmark, a frozen Qwen3‑8B with Memorilla achieved 84.33% accuracy, surpassing the 80.43% score when the model sees every document and using 108× fewer tokens.\n\nAcross eight benchmarks Memorilla averaged 49.68 points, the highest reported score, and improved a TextWorld agent’s success rate from 18.6% to 24.2% with just eight memory tokens.\n\nTraining required about 19 hours on four NVIDIA H100 80 GB GPUs; inference needs a single 80 GB GPU, with response times of 0.74 s for 512 documents versus 19.9 s for full‑context prompting.\n\n## What it means for you\n\nMemorilla lets developers keep frozen, high‑performing LLMs while dramatically reducing context length, making retrieval‑augmented applications faster and cheaper. For users of free or locally hosted models, the approach offers a way to handle massive document stores without scaling hardware or token costs.\n\n## Sources\n\n- [Stanford Research Open-Sources Memorilla, a Latent Memory Module for Frozen LLMs](https://www.marktechpost.com/2026/11/14/stanford-memorilla-memory-system-16-memory-tokens/), MarkTechPost, 14 Nov 2026\n- [GitHub - snap-stanford/memorilla: 🦍 Memorilla: Latent Semantic Memory for LLMs · GitHub](https://github.com/snap-stanford/memorilla), github.com (official), 14 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-15-stanford-releases-memorilla-16-token-memory-module-for-frozen-llms).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-14"
   }
  },
  "ricostruzione": {

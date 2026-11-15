@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-15-runway-releases-open-source-praxis-1-robot-model-with-apache-2-0-licen",
+ "titolo": "Runway releases open‑source Praxis‑1 robot model with Apache 2.0 license",
+ "descr": "Praxis‑1 turns video‑pretrained AI into robot control, ranking top on Nvidia’s RoboLab‑120 leaderboard.",
+ "tema": "Research",
+ "paragrafi": [
+  "Runway announced the open‑source release of Praxis‑1, a robot‑control model built on a 27 B‑parameter video foundation and fine‑tuned with robot data.",
+  "The model processes camera images, text instructions and robot pose to predict short‑term video frames and 1.6 seconds of motion, outputting 24 action rows at 15 Hz.",
+  "Praxis‑1 scores 46.2 % success on Nvidia’s RoboLab‑120 benchmark, the highest among World Action Models, and ranks fifth overall on the leaderboard.",
+  "Runway provides the code on GitHub and weights on Hugging Face under Apache 2.0, with a standard version needing an 80 GB GPU and a compressed version fitting a 32 GB RTX 5090."
+ ],
+ "perche": [
+  "Praxis‑1 gives developers free access to a robot‑control foundation model that can be adapted to new hardware with modest additional data, lowering the barrier for robotics research. Its open licence also enables commercial use, supporting the growth of free and locally‑run AI solutions in robotics."
+ ],
+ "pubblicato": "2026-11-15",
+ "titoloFonte": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller/",
+   "titolo": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+   "ufficiale": false,
+   "data": "2026-11-14"
+  },
+  {
+   "nome": "runway.com",
+   "url": "https://runway.com/research/praxis-1-video-pretraining-to-robot-control",
+   "titolo": "Praxis-1: From Video Pretraining to Robot Control | Runway Research",
+   "ufficiale": true,
+   "data": "2026-11-11"
+  }
+ ],
+ "frasiTolte": 1
+}
