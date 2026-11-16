@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-16-nvidia-details-post-training-recipe-for-nemotron-3-5-super-vl-to-boost",
+ "titolo": "NVIDIA details post‑training recipe for Nemotron 3.5 Super VL to boost scientific accuracy",
+ "descr": "NVIDIA released a technical blog on 16 Nov 2026 describing a post‑training workflow for its open multimodal model Nemotron 3.5 Super VL.",
+ "tema": "Research",
+ "paragrafi": [
+  "NVIDIA released a technical blog on 16 Nov 2026 describing a post‑training workflow for its open multimodal model Nemotron 3.5 Super VL.",
+  "In a drug‑metabolism example, supervised fine‑tuning lifted accuracy by 12 % and reinforcement‑learning post‑training added another 17 % improvement within a 16,384‑token output limit.",
+  "The workflow relies on the Nemotron Litmus‑Bench V2.0 dataset, which evaluates molecular‑property reasoning across scientific benchmarks."
+ ],
+ "perche": [
+  "The guide shows how researchers can adapt a powerful open model to specific scientific tasks without building a model from scratch. For users preferring free or locally run models, the approach highlights the value of open‑source tools like NeMo Gym, though the large token budget may exceed the capacity of many consumer‑grade machines."
+ ],
+ "pubblicato": "2026-11-16",
+ "titoloFonte": "Post-Training NVIDIA Nemotron to Increase Accuracy in Your Scientific Domain",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/post-training-nvidia-nemotron-to-increase-accuracy-in-your-scientific-domain/",
+   "titolo": "Post-Training NVIDIA Nemotron to Increase Accuracy in Your Scientific Domain",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 3
+}
