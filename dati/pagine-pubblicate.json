@@ -25877,7 +25877,8 @@
   "lingua": "de",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/de/model/nvidia-nemotron-3-5-bolt-74b-a9b-bf16.html",
@@ -25885,7 +25886,8 @@
   "lingua": "de",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/de/model/nvidia-nemotron-3-5-lightning",
@@ -44075,7 +44077,8 @@
   "lingua": "es",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/es/model/nvidia-nemotron-3-5-bolt-74b-a9b-bf16.html",
@@ -44083,7 +44086,8 @@
   "lingua": "es",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/es/model/nvidia-nemotron-3-5-lightning",
@@ -62273,7 +62277,8 @@
   "lingua": "fr",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/fr/model/nvidia-nemotron-3-5-bolt-74b-a9b-bf16.html",
@@ -62281,7 +62286,8 @@
   "lingua": "fr",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/fr/model/nvidia-nemotron-3-5-lightning",
@@ -80471,7 +80477,8 @@
   "lingua": "it",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/it/model/nvidia-nemotron-3-5-bolt-74b-a9b-bf16.html",
@@ -80479,7 +80486,8 @@
   "lingua": "it",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/it/model/nvidia-nemotron-3-5-lightning",
@@ -98669,7 +98677,8 @@
   "lingua": "ja",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/ja/model/nvidia-nemotron-3-5-bolt-74b-a9b-bf16.html",
@@ -98677,7 +98686,8 @@
   "lingua": "ja",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/ja/model/nvidia-nemotron-3-5-lightning",
@@ -106723,7 +106733,8 @@
   "lingua": "en",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/model/nvidia-nemotron-3-5-bolt-74b-a9b-bf16.html",
@@ -106731,7 +106742,8 @@
   "lingua": "en",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/model/nvidia-nemotron-3-5-lightning",
@@ -124921,7 +124933,8 @@
   "lingua": "pt",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/pt/model/nvidia-nemotron-3-5-bolt-74b-a9b-bf16.html",
@@ -124929,7 +124942,8 @@
   "lingua": "pt",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-16",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-16"
  },
  {
   "url": "/pt/model/nvidia-nemotron-3-5-lightning",
