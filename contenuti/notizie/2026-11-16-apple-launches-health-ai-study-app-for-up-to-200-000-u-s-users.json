@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-16-apple-launches-health-ai-study-app-for-up-to-200-000-u-s-users",
+ "titolo": "Apple launches health‑AI study app for up to 200,000 U.S. users",
+ "descr": "Apple’s new iOS app lets participants ask medical questions, rate AI answers and share HealthKit data for a year‑long research study.",
+ "tema": "Research",
+ "paragrafi": [
+  "Apple announced the Apple Health AI Usage Study, a research program that runs through a new iOS app.",
+  "The study targets U.S. residents aged 21 or older who own an iPhone 15 Pro or later and run iOS 26 or later; up to 200,000 participants may enroll for more than 12 months.",
+  "Participants can optionally share HealthKit data—resting heart rate, activity, sleep, lab results—to receive more personalized responses, but Apple says the data is anonymized and not used to train AI models."
+ ],
+ "perche": [
+  "The study will generate real‑world feedback on how people evaluate AI‑generated health advice, helping shape future tools that balance accuracy with user understanding. For users of free or locally run models, the research highlights the importance of clinical grounding and privacy safeguards that many open‑source solutions still need to address."
+ ],
+ "pubblicato": "2026-11-16",
+ "titoloFonte": "Apple launches new app to study how people use AI for health",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/",
+   "titolo": "Apple launches new app to study how people use AI for health",
+   "ufficiale": false,
+   "data": "2026-11-16"
+  },
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/tech/1033355/apples-new-study-looks-to-improve-the-effectiveness-of-ai-health-tools",
+   "titolo": "Apple’s new study looks to improve the effectiveness of AI health tools",
+   "ufficiale": false,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 2
+}

@@ -23523,6 +23523,42 @@
     "tipo": "News"
    },
    "data": "2026-11-15"
+  },
+  "/blog/news-2026-11-16-apple-launches-health-ai-study-app-for-up-to-200-000-u-s-users.html": {
+   "post": {
+    "slug": "news-2026-11-16-apple-launches-health-ai-study-app-for-up-to-200-000-u-s-users",
+    "titolo": "Apple launches health‑AI study app for up to 200,000 U.S. users",
+    "descr": "Apple’s new iOS app lets participants ask medical questions, rate AI answers and share HealthKit data for a year‑long research study.",
+    "data": "2026-11-16",
+    "tema": "Research",
+    "corpo": "Apple announced the Apple Health AI Usage Study, a research program that runs through a new iOS app.\n\nThe study targets U.S. residents aged 21 or older who own an iPhone 15 Pro or later and run iOS 26 or later; up to 200,000 participants may enroll for more than 12 months.\n\nParticipants can optionally share HealthKit data—resting heart rate, activity, sleep, lab results—to receive more personalized responses, but Apple says the data is anonymized and not used to train AI models.\n\n## What it means for you\n\nThe study will generate real‑world feedback on how people evaluate AI‑generated health advice, helping shape future tools that balance accuracy with user understanding. For users of free or locally run models, the research highlights the importance of clinical grounding and privacy safeguards that many open‑source solutions still need to address.\n\n## Sources\n\n- [Apple launches new app to study how people use AI for health](https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/), TechCrunch, 16 Nov 2026\n- [Apple’s new study looks to improve the effectiveness of AI health tools](https://www.theverge.com/tech/1033355/apples-new-study-looks-to-improve-the-effectiveness-of-ai-health-tools), The Verge, 16 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-16-apple-launches-health-ai-study-app-for-up-to-200-000-u-s-users).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-15"
+  },
+  "/blog/news-2026-11-16-claude-code-plugin-lot-map-adds-live-visual-map-of-tool-calls-and-mode.html": {
+   "post": {
+    "slug": "news-2026-11-16-claude-code-plugin-lot-map-adds-live-visual-map-of-tool-calls-and-mode",
+    "titolo": "Claude Code plugin 'lot-map' adds live visual map of tool calls and model steps",
+    "descr": "New open‑source plugin shows Claude Code activity in a side pane, visualising tool calls, file actions and network requests locally.",
+    "data": "2026-11-16",
+    "tema": "Software",
+    "corpo": "A GitHub project called lot‑map provides a live map that appears beside Claude Code chats.\n\nThe pane lights up each tool call, model step, hook, skill and sub‑agent as they occur, turning red on errors.\n\nInstallation works via the Claude plugin command line or the desktop app, requiring at least 144 terminal columns for full view.\n\nThe plugin runs entirely on the user’s machine and does not transmit data elsewhere.\n\nIt was built and tested on Claude Code version 2.1.321 on macOS, with reports of Windows compatibility.\n\n## What it means for you\n\nThe visual feedback helps developers track Claude Code actions without reading logs, improving debugging and transparency. Because the plugin is local‑only, it aligns with users seeking free, privacy‑preserving AI tooling.\n\n## Sources\n\n- [alexeyw/lot-map: A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.](https://github.com/alexeyw/lot-map), GitHub trending, 9 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-16-claude-code-plugin-lot-map-adds-live-visual-map-of-tool-calls-and-mode).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-15"
+  },
+  "/blog/news-2026-11-16-nvidia-ai-day-seoul-draws-2-000-attendees-highlights-korean-ai-robotic.html": {
+   "post": {
+    "slug": "news-2026-11-16-nvidia-ai-day-seoul-draws-2-000-attendees-highlights-korean-ai-robotic",
+    "titolo": "NVIDIA AI Day Seoul draws 2,000 attendees, highlights Korean AI robotics and agents",
+    "descr": "Over two days at COEX, NVIDIA showcased Korean industry use of its platforms, awarded a DGX Spark to FlyGate, and hosted workshops and startup pitches.",
+    "data": "2026-11-16",
+    "tema": "Business",
+    "corpo": "NVIDIA hosted AI Day Seoul at COEX, attracting more than 2,000 participants from industry, startups and developer communities.\n\nKey speakers included Deepu Talla, who noted Korea is \"punching above its weight,\" and Jonathan Cohen, who demonstrated how enterprises can build controllable AI agents.\n\nThe event featured breakout sessions with companies such as Doosan Robotics, Hyundai Motor Group, LG Electronics, SK Telecom and Upstage, plus a hackathon where FlyGate won an NVIDIA DGX Spark system.\n\nMore than 500 developers attended full‑day Deep Learning Institute workshops covering AI inference scaling, robotics workflows with NVIDIA Isaac, and secure AI agents, and took NVIDIA certification exams in Korean.\n\nThe Physical AI Startup Connect segment showcased pitches from ten NVIDIA Inception startups, while the AI for Science Forum gathered Korean research institutions and NVIDIA researchers.\n\n## What it means for you\n\nThe day underscored how Korean firms are adopting NVIDIA hardware and software for robotics and agentic AI, signaling growing demand for scalable AI infrastructure. For users seeking free or locally hosted models, the event highlighted the importance of open‑source tools and community support, complementing the top‑ranked free chat models such as Kimi K3 and GLM‑5.3 listed in recent FreeLLMArena votes.\n\n## On FreeLLMArena\n\nFrom our rankings on 15 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [AI Day Seoul Brings Together Korea’s Industry Leaders, Startups and Developer Communities](https://blogs.nvidia.com/blog/ai-day-seoul-wrapup/), NVIDIA (official), 16 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-16-nvidia-ai-day-seoul-draws-2-000-attendees-highlights-korean-ai-robotic).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-15"
   }
  },
  "ricostruzione": {

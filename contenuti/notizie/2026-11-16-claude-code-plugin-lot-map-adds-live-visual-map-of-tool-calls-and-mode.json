@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-16-claude-code-plugin-lot-map-adds-live-visual-map-of-tool-calls-and-mode",
+ "titolo": "Claude Code plugin 'lot-map' adds live visual map of tool calls and model steps",
+ "descr": "New open‑source plugin shows Claude Code activity in a side pane, visualising tool calls, file actions and network requests locally.",
+ "tema": "Software",
+ "paragrafi": [
+  "A GitHub project called lot‑map provides a live map that appears beside Claude Code chats.",
+  "The pane lights up each tool call, model step, hook, skill and sub‑agent as they occur, turning red on errors.",
+  "Installation works via the Claude plugin command line or the desktop app, requiring at least 144 terminal columns for full view.",
+  "The plugin runs entirely on the user’s machine and does not transmit data elsewhere.",
+  "It was built and tested on Claude Code version 2.1.321 on macOS, with reports of Windows compatibility."
+ ],
+ "perche": [
+  "The visual feedback helps developers track Claude Code actions without reading logs, improving debugging and transparency. Because the plugin is local‑only, it aligns with users seeking free, privacy‑preserving AI tooling."
+ ],
+ "pubblicato": "2026-11-16",
+ "titoloFonte": "alexeyw/lot-map: A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/alexeyw/lot-map",
+   "titolo": "alexeyw/lot-map: A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
+   "ufficiale": false,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 0
+}

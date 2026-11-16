@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-16-nvidia-ai-day-seoul-draws-2-000-attendees-highlights-korean-ai-robotic",
+ "titolo": "NVIDIA AI Day Seoul draws 2,000 attendees, highlights Korean AI robotics and agents",
+ "descr": "Over two days at COEX, NVIDIA showcased Korean industry use of its platforms, awarded a DGX Spark to FlyGate, and hosted workshops and startup pitches.",
+ "tema": "Business",
+ "paragrafi": [
+  "NVIDIA hosted AI Day Seoul at COEX, attracting more than 2,000 participants from industry, startups and developer communities.",
+  "Key speakers included Deepu Talla, who noted Korea is \"punching above its weight,\" and Jonathan Cohen, who demonstrated how enterprises can build controllable AI agents.",
+  "The event featured breakout sessions with companies such as Doosan Robotics, Hyundai Motor Group, LG Electronics, SK Telecom and Upstage, plus a hackathon where FlyGate won an NVIDIA DGX Spark system.",
+  "More than 500 developers attended full‑day Deep Learning Institute workshops covering AI inference scaling, robotics workflows with NVIDIA Isaac, and secure AI agents, and took NVIDIA certification exams in Korean.",
+  "The Physical AI Startup Connect segment showcased pitches from ten NVIDIA Inception startups, while the AI for Science Forum gathered Korean research institutions and NVIDIA researchers."
+ ],
+ "perche": [
+  "The day underscored how Korean firms are adopting NVIDIA hardware and software for robotics and agentic AI, signaling growing demand for scalable AI infrastructure. For users seeking free or locally hosted models, the event highlighted the importance of open‑source tools and community support, complementing the top‑ranked free chat models such as Kimi K3 and GLM‑5.3 listed in recent FreeLLMArena votes."
+ ],
+ "pubblicato": "2026-11-16",
+ "titoloFonte": "AI Day Seoul Brings Together Korea’s Industry Leaders, Startups and Developer Communities",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/ai-day-seoul-wrapup/",
+   "titolo": "AI Day Seoul Brings Together Korea’s Industry Leaders, Startups and Developer Communities",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 0
+}
