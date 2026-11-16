@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare",
+ "titolo": "OpenAI adds computer-use agents and plugins to ChatGPT for Healthcare",
+ "descr": "OpenAI rolls out new tools for clinical answers, software integration and computer-use agents in its healthcare version of ChatGPT.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI announced new capabilities for ChatGPT aimed at the healthcare sector.",
+  "The update introduces computer-use agents that can operate software on behalf of clinicians.",
+  "Improved clinical answer generation is part of the release, targeting more accurate medical information.",
+  "New healthcare plugins will connect ChatGPT with existing healthcare software to automate tasks.",
+  "These features are intended to help providers move care forward by reducing manual work."
+ ],
+ "perche": [
+  "For AI users in health settings, the agents and plugins promise faster workflow and better data access. Free‑model users and those running local models will still need to rely on community tools, as OpenAI's new features are tied to its platform."
+ ],
+ "pubblicato": "2026-11-16",
+ "titoloFonte": "More ways to move care forward with ChatGPT for Healthcare",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
+   "titolo": "More ways to move care forward with ChatGPT for Healthcare",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 0
+}

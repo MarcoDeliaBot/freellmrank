@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob",
+ "titolo": "OpenAI's GPT-6 Astra contributes proof for lattice Standard Model problem",
+ "descr": "GPT-6 Astra helped turn a strategy into a detailed proof addressing a 50‑year‑old lattice issue in particle physics.",
+ "tema": "Research",
+ "paragrafi": [
+  "Physicist Nathaniel Craig presented a new approach to defining the full Standard Model on a lattice, a long‑standing challenge in particle physics.",
+  "OpenAI's GPT-6 Astra transformed Craig's idea into a working construction and led the detailed proof that corrects the phase of overlap fermions on progressively finer lattices.",
+  "Craig describes the achievement as a beginning, noting that realistic simulations remain far off."
+ ],
+ "perche": [
+  "The work shows that frontier AI models can assist in complex theoretical physics, potentially accelerating research that traditionally required years of human effort. For users of free or local models, it highlights the growing gap between cutting‑edge, proprietary systems and community‑run alternatives."
+ ],
+ "pubblicato": "2026-11-16",
+ "titoloFonte": "OpenAI's GPT-6 Astra tackles the Standard Model's toughest math problem on a lattice",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/openais-gpt-6-astra-tackles-the-standard-models-toughest-math-problem-on-a-lattice/",
+   "titolo": "OpenAI's GPT-6 Astra tackles the Standard Model's toughest math problem on a lattice",
+   "ufficiale": false,
+   "data": "2026-11-16"
+  },
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/step-toward-defining-the-standard-model",
+   "titolo": "A step toward defining the Standard Model on a lattice",
+   "ufficiale": true,
+   "data": "2026-11-15"
+  }
+ ],
+ "frasiTolte": 2
+}

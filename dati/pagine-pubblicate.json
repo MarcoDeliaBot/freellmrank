@@ -32,6 +32,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/best-free-vision-models",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/best-free-vision-models.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/best-gpu-for-local-llm",
   "tipo": "articolo",
   "lingua": "en",
@@ -5280,6 +5296,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "en",
@@ -10076,6 +10124,22 @@
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-10-31",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/best-free-vision-models",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/best-free-vision-models.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-16",
   "ultimaVista": "2026-11-16",
   "stato": "attiva"
  },
@@ -15321,6 +15385,38 @@
  },
  {
   "url": "/de/blog/news-2026-11-16-nvidia-details-post-training-recipe-for-nemotron-3-5-super-vl-to-boost.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob.html",
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-16",
@@ -28182,6 +28278,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/best-free-vision-models",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/best-free-vision-models.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/best-gpu-for-local-llm",
   "tipo": "articolo",
   "lingua": "es",
@@ -33423,6 +33535,38 @@
  },
  {
   "url": "/es/blog/news-2026-11-16-nvidia-details-post-training-recipe-for-nemotron-3-5-super-vl-to-boost.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob.html",
   "tipo": "articolo",
   "lingua": "es",
   "primaVista": "2026-11-16",
@@ -46284,6 +46428,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/blog/best-free-vision-models",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/best-free-vision-models.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/blog/best-gpu-for-local-llm",
   "tipo": "articolo",
   "lingua": "fr",
@@ -51525,6 +51685,38 @@
  },
  {
   "url": "/fr/blog/news-2026-11-16-nvidia-details-post-training-recipe-for-nemotron-3-5-super-vl-to-boost.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob.html",
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-16",
@@ -64386,6 +64578,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/best-free-vision-models",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/best-free-vision-models.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/best-gpu-for-local-llm",
   "tipo": "articolo",
   "lingua": "it",
@@ -69627,6 +69835,38 @@
  },
  {
   "url": "/it/blog/news-2026-11-16-nvidia-details-post-training-recipe-for-nemotron-3-5-super-vl-to-boost.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob.html",
   "tipo": "articolo",
   "lingua": "it",
   "primaVista": "2026-11-16",
@@ -82488,6 +82728,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/blog/best-free-vision-models",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/best-free-vision-models.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/blog/best-gpu-for-local-llm",
   "tipo": "articolo",
   "lingua": "ja",
@@ -87729,6 +87985,38 @@
  },
  {
   "url": "/ja/blog/news-2026-11-16-nvidia-details-post-training-recipe-for-nemotron-3-5-super-vl-to-boost.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob.html",
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-16",
@@ -108644,6 +108932,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/pt/blog/best-free-vision-models",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/best-free-vision-models.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/blog/best-gpu-for-local-llm",
   "tipo": "articolo",
   "lingua": "pt",
@@ -113885,6 +114189,38 @@
  },
  {
   "url": "/pt/blog/news-2026-11-16-nvidia-details-post-training-recipe-for-nemotron-3-5-super-vl-to-boost.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-16-openai-adds-computer-use-agents-and-plugins-to-chatgpt-for-healthcare.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-16",
+  "ultimaVista": "2026-11-16",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-16-openai-s-gpt-6-astra-contributes-proof-for-lattice-standard-model-prob.html",
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-16",
