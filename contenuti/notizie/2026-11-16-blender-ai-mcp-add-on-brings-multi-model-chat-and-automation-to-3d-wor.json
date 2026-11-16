@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-16-blender-ai-mcp-add-on-brings-multi-model-chat-and-automation-to-3d-wor",
+ "titolo": "Blender AI MCP Add‑on Brings Multi‑Model Chat and Automation to 3D Workflows",
+ "descr": "The new mcp‑for‑blender‑pro add‑on lets artists use ChatGPT, Claude, Gemini, Ollama and OpenCode inside Blender via a visual chat and MCP server.",
+ "tema": "Software",
+ "paragrafi": [
+  "The open‑source mcp‑for‑blender‑pro add‑on adds an AI assistant and Model Context Protocol (MCP) server directly into Blender 4.2 or later.",
+  "It supports cloud providers such as OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen and local Ollama models, allowing users to pick a model with tool‑calling or image‑capable features.",
+  "The add‑on offers 21 scene tools for creating, inspecting, editing, and exporting objects, plus asset search integration with Poly Haven, Sketchfab and Poly Pizza.",
+  "A visual Studio workspace provides chat, viewport snapshots, a task board and approval workflow, enabling single‑assistant or multi‑agent team configurations.",
+  "Installation involves downloading the ZIP from the release page, installing via Blender’s Extensions menu and enabling the MCP Pro panel in the 3D viewport."
+ ],
+ "perche": [
+  "Artists can accelerate iteration by letting AI handle repetitive modeling tasks while keeping full control of the scene. For users seeking free or local AI, the add‑on’s support for OpenCode and Ollama means they can run compatible models without cloud costs, complementing the top‑ranked free chat models listed in FreeLLMArena."
+ ],
+ "pubblicato": "2026-11-16",
+ "titoloFonte": "hitkeeen/blender-ai-mcp-addon: AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, cop",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/hitkeeen/blender-ai-mcp-addon",
+   "titolo": "hitkeeen/blender-ai-mcp-addon: AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, cop",
+   "ufficiale": false,
+   "data": "2026-11-12"
+  }
+ ],
+ "frasiTolte": 0
+}

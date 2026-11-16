@@ -23499,6 +23499,30 @@
     "tipo": "News"
    },
    "data": "2026-11-15"
+  },
+  "/blog/news-2026-11-16-blender-ai-mcp-add-on-brings-multi-model-chat-and-automation-to-3d-wor.html": {
+   "post": {
+    "slug": "news-2026-11-16-blender-ai-mcp-add-on-brings-multi-model-chat-and-automation-to-3d-wor",
+    "titolo": "Blender AI MCP Add‑on Brings Multi‑Model Chat and Automation to 3D Workflows",
+    "descr": "The new mcp‑for‑blender‑pro add‑on lets artists use ChatGPT, Claude, Gemini, Ollama and OpenCode inside Blender via a visual chat and MCP server.",
+    "data": "2026-11-16",
+    "tema": "Software",
+    "corpo": "The open‑source mcp‑for‑blender‑pro add‑on adds an AI assistant and Model Context Protocol (MCP) server directly into Blender 4.2 or later.\n\nIt supports cloud providers such as OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen and local Ollama models, allowing users to pick a model with tool‑calling or image‑capable features.\n\nThe add‑on offers 21 scene tools for creating, inspecting, editing, and exporting objects, plus asset search integration with Poly Haven, Sketchfab and Poly Pizza.\n\nA visual Studio workspace provides chat, viewport snapshots, a task board and approval workflow, enabling single‑assistant or multi‑agent team configurations.\n\nInstallation involves downloading the ZIP from the release page, installing via Blender’s Extensions menu and enabling the MCP Pro panel in the 3D viewport.\n\n## What it means for you\n\nArtists can accelerate iteration by letting AI handle repetitive modeling tasks while keeping full control of the scene. For users seeking free or local AI, the add‑on’s support for OpenCode and Ollama means they can run compatible models without cloud costs, complementing the top‑ranked free chat models listed in FreeLLMArena.\n\n## Sources\n\n- [hitkeeen/blender-ai-mcp-addon: AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, cop](https://github.com/hitkeeen/blender-ai-mcp-addon), GitHub trending, 12 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-16-blender-ai-mcp-add-on-brings-multi-model-chat-and-automation-to-3d-wor).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-15"
+  },
+  "/blog/news-2026-11-16-nvidia-ceo-jensen-huang-resigns-shaking-ai-industry-foundations.html": {
+   "post": {
+    "slug": "news-2026-11-16-nvidia-ceo-jensen-huang-resigns-shaking-ai-industry-foundations",
+    "titolo": "Nvidia CEO Jensen Huang resigns, shaking AI industry foundations",
+    "descr": "Jensen Huang stepped down amid affair scandals, prompting concerns over Nvidia's role in AI and its market value.",
+    "data": "2026-11-16",
+    "tema": "Business",
+    "corpo": "Nvidia announced on Thursday that CEO Jensen Huang resigned after reports of multiple affairs, including one with a former executive at a customer firm linked to Chinese intelligence.\n\nThe board appointed CFO Collette Kress as interim CEO, emphasizing expense management while the company searches for a permanent leader.\n\nIndustry analysts note that Huang’s departure could affect Nvidia’s dominant position in AI hardware, as the company supplies chips and software to firms like OpenAI, Anthropic, and many cloud providers.\n\nSiliconANGLE reports that the resignation may stem from pressure by U.S. intelligence agencies over alleged chip smuggling to China, highlighting national‑security concerns.\n\n## What it means for you\n\nFor AI users, the leadership change raises uncertainty about Nvidia’s product roadmap and pricing, which could impact the cost of running large models. Developers of free or locally hosted models may see shifts in hardware availability or pricing, influencing choices for training and inference.\n\n## Sources\n\n- [Is bad news for Jensen Huang also bad news for the AI industry?](https://techcrunch.com/2026/11/15/is-bad-news-for-jensen-huang-also-bad-news-for-the-ai-industry/), TechCrunch, 15 Nov 2026\n- [Nvidia CEO Jensen Huang's abrupt departure shakes AI industry's foundations](https://siliconangle.com/2026/11/13/nvidia-ceo-jensen-huangs-abrupt-departure-shakes-ai-industrys-foundations/), SiliconANGLE, 13 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-16-nvidia-ceo-jensen-huang-resigns-shaking-ai-industry-foundations).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-15"
   }
  },
  "ricostruzione": {

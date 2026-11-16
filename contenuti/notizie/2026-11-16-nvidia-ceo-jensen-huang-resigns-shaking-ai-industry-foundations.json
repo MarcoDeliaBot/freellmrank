@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-16-nvidia-ceo-jensen-huang-resigns-shaking-ai-industry-foundations",
+ "titolo": "Nvidia CEO Jensen Huang resigns, shaking AI industry foundations",
+ "descr": "Jensen Huang stepped down amid affair scandals, prompting concerns over Nvidia's role in AI and its market value.",
+ "tema": "Business",
+ "paragrafi": [
+  "Nvidia announced on Thursday that CEO Jensen Huang resigned after reports of multiple affairs, including one with a former executive at a customer firm linked to Chinese intelligence.",
+  "The board appointed CFO Collette Kress as interim CEO, emphasizing expense management while the company searches for a permanent leader.",
+  "Industry analysts note that Huang’s departure could affect Nvidia’s dominant position in AI hardware, as the company supplies chips and software to firms like OpenAI, Anthropic, and many cloud providers.",
+  "SiliconANGLE reports that the resignation may stem from pressure by U.S. intelligence agencies over alleged chip smuggling to China, highlighting national‑security concerns."
+ ],
+ "perche": [
+  "For AI users, the leadership change raises uncertainty about Nvidia’s product roadmap and pricing, which could impact the cost of running large models. Developers of free or locally hosted models may see shifts in hardware availability or pricing, influencing choices for training and inference."
+ ],
+ "pubblicato": "2026-11-16",
+ "titoloFonte": "Is bad news for Jensen Huang also bad news for the AI industry?",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/15/is-bad-news-for-jensen-huang-also-bad-news-for-the-ai-industry/",
+   "titolo": "Is bad news for Jensen Huang also bad news for the AI industry?",
+   "ufficiale": false,
+   "data": "2026-11-15"
+  },
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/13/nvidia-ceo-jensen-huangs-abrupt-departure-shakes-ai-industrys-foundations/",
+   "titolo": "Nvidia CEO Jensen Huang's abrupt departure shakes AI industry's foundations",
+   "ufficiale": false,
+   "data": "2026-11-13"
+  }
+ ],
+ "frasiTolte": 1
+}
