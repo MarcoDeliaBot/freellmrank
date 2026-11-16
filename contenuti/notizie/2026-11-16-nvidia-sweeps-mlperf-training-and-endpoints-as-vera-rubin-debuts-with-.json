@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-16-nvidia-sweeps-mlperf-training-and-endpoints-as-vera-rubin-debuts-with-",
+ "titolo": "NVIDIA Sweeps MLPerf Training and Endpoints as Vera Rubin Debuts With Leading Performance",
+ "descr": "Vera Rubin sweeps MLPerf Training v6.1 and delivers over 10× throughput per kilowatt in agentic inference versus GB300 NVL72.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "NVIDIA announced that its Vera Rubin platform achieved top results in the latest MLPerf benchmarks released on November 16, 2026.",
+  "In the first MLPerf Endpoints submission, Vera Rubin NVL72 delivered more than ten times the throughput per kilowatt for agentic AI workloads compared with the prior‑generation GB300 NVL72 system.",
+  "The platform uses NVIDIA’s CUDA stack, NVLink, Quantum‑X800 InfiniBand and Spectrum‑X Ethernet to keep thousands of GPUs coordinated for faster model development."
+ ],
+ "perche": [
+  "The gains mean AI developers can train larger models faster and serve more agentic workloads without proportionally higher power costs. For users of free or locally hosted models, the improved efficiency may lower cloud costs and make it easier to access powerful inference services."
+ ],
+ "pubblicato": "2026-11-16",
+ "titoloFonte": "NVIDIA Sweeps MLPerf Training and Endpoints as Vera Rubin Debuts With Leading Performance",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/mlperf-training-endpoints-vera-rubin/",
+   "titolo": "NVIDIA Sweeps MLPerf Training and Endpoints as Vera Rubin Debuts With Leading Performance",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  },
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/nvidia-vera-rubin-nvl72-leads-agentic-inference-performance-on-mlperf-endpoints-v1-0/",
+   "titolo": "NVIDIA Vera Rubin NVL72 Leads Agentic Inference Performance on MLPerf Endpoints v1.0",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 3
+}
