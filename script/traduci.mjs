@@ -49,7 +49,11 @@ const NOMI = (() => {
     if (!o || typeof o !== 'object') return;
     for (const [k, v] of Object.entries(o)) {
       if (typeof v === 'string' && k === 'org' && /^[a-z][a-z0-9-]{2,}$/.test(v)) lab.add(v);
-      if (typeof v === 'string' && ['nome', 'org', 'id', 'repo', 'modello'].includes(k)) nomi.add(v);
+      if (typeof v === 'string' && ['nome', 'org', 'id', 'repo', 'modello'].includes(k)) {
+        nomi.add(v);
+        // 17/11/2026: le pagine «A vs B» usano il nome senza variante («Gemini 3.8 Flash», non «… (High)»)
+        if (k === 'nome') nomi.add(v.replace(/\s*\([^)]*\)\s*$/, ''));
+      }
       else if (typeof v === 'object') raccogli(v);
     }
   };

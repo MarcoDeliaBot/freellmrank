@@ -474,7 +474,7 @@ paginaAgenti(dati, blog);
 paginaPc(dati, modelli, blog);
 paginaArena(dati, modelli, blog);
 pagineModelli(dati, storia, pubblicate.modelli, blog);
-pagineConfronti(dati, pubblicate.coppie, blog);
+pagineConfronti(dati, pubblicate.coppie, blog, undefined, new Set(coppie.map((c) => c.file)));
 pagineBlog(dati, blog);
 verificaPubblicate(pubblicate.registry, SITO, { englishOnly: true });
 feedRss(blog);

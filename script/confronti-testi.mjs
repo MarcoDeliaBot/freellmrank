@@ -18,25 +18,34 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { RADICE, leggiDati, chiediModello, REGOLE_SCRITTURA, senzaLineette, ultimoScrittore } from './bozze.mjs';
 import { unisci } from './sito/modelli.mjs';
-import { preparaConfronti, fattiCoppia, leggiTesti, testoAncoraVero, CARTELLA_TESTI } from './sito/confronti.mjs';
+import { preparaConfronti, fattiCoppia, leggiTesti, testoAncoraVero, CARTELLA_TESTI, VERSIONE_TESTI, nomeCorto } from './sito/confronti.mjs';
 
 const VIETATE = ['unlock', 'game-changer', 'game changer', 'revolutionary', 'delve', 'leverage', 'say goodbye', 'next level', "here's the thing", 'fast-paced', 'worth noting', 'in conclusion', 'landscape', 'powerhouse'];
 const GIORNO = 86400000;
 const PARI = ['about even', 'too close to call', 'too small to call', 'a tie', 'tied', 'no clear winner', 'dead heat', 'cannot claim', 'roughly equal', 'neck and neck', 'half the time'];
 
-// Il controllo: restituisce gli errori (vuoto = si pubblica). t = {angolo, descr, intro, sezioni:[{titolo,testo}], verdetto}
-export function controllaTesto(t, { a, b, testoDati, altriNomi = [], leader = '' }) {
+// Formato 2 (17/11/2026, Marco: title = H1 «A vs B», poi H2/H3/H4): i titoli li fissa la pagina, il modello scrive solo
+// i paragrafi sotto ciascuno. Campi e titolo sotto cui finiscono:
+const CAMPI = {
+  risposta: 'H2 «Which is better, B or A?»: 2 to 4 sentences that answer straight away',
+  dimensioni: 'H3 «Size and download»: 1 short paragraph',
+  velocita: 'H3 «Speed on home hardware»: 1 short paragraph',
+  gratisA: 'H3 with the first model name under «How to use them for free»: 1 short paragraph',
+  gratisB: 'H3 with the second model name under «How to use them for free»: 1 short paragraph',
+  sceglieA: 'H3 «When to pick <first model>»: 1 to 3 sentences',
+  sceglieB: 'H3 «When to pick <second model>»: 1 to 3 sentences',
+};
+
+// Il controllo: restituisce gli errori (vuoto = si pubblica). t = {descr, risposta, categorie:{<nome>: testo}, dimensioni, ...}
+export function controllaTesto(t, { a, b, A = a.nome, B = b.nome, testoDati, altriNomi = [], leader = '', categorie = [] }) {
   const err = [];
   if (!t || typeof t !== 'object') return ['no JSON object'];
-  const sezioni = Array.isArray(t.sezioni) ? t.sezioni : [];
-  if (!t.angolo || String(t.angolo).length > 70) err.push('angolo: missing or over 70 characters');
-  if (/[:|]/.test(String(t.angolo || ''))) err.push('angolo: no colon or pipe');
-  if (!t.descr || String(t.descr).length > 160) err.push('descr: missing or over 160 characters');
-  if (!t.intro) err.push('intro: missing');
-  if (!t.verdetto) err.push('verdetto: missing');
-  if (sezioni.length < 3 || sezioni.length > 5) err.push(`sezioni: ${sezioni.length}, need 3 to 5`);
-  if (sezioni.some((s) => !s?.titolo || !s?.testo)) err.push('sezioni: every section needs titolo and testo');
-  const tutto = [t.angolo, t.descr, t.intro, ...sezioni.flatMap((s) => [s?.titolo, s?.testo]), t.verdetto].map((x) => String(x || '')).join('\n');
+  if (!t.descr || String(t.descr).length > 110) err.push('descr: missing or over 110 characters');
+  for (const k of Object.keys(CAMPI)) if (!String(t[k] || '').trim()) err.push(`${k}: missing`);
+  const cat = t.categorie && typeof t.categorie === 'object' ? t.categorie : {};
+  for (const n of categorie) if (!String(cat[n] || '').trim()) err.push(`categorie: missing "${n}"`);
+  for (const n of Object.keys(cat)) if (!categorie.includes(n)) err.push(`categorie: "${n}" is not a category in DATA`);
+  const tutto = [t.descr, ...Object.keys(CAMPI).map((k) => t[k]), ...Object.values(cat)].map((x) => String(x || '')).join('\n');
   const parole = tutto.split(/\s+/).filter(Boolean).length;
   if (parole < 300 || parole > 1000) err.push(`length: ${parole} words, need 300 to 1000`);
   // ogni numero (tranne i piccoli e gli anni) deve essere UN numero dei fatti, intero contro intero (17/11, prima corsa vera:
@@ -49,17 +58,18 @@ export function controllaTesto(t, { a, b, testoDati, altriNomi = [], leader = ''
     if (!nostri.has(n)) err.push(`number not in DATA: ${n}`);
   }
   // nessun altro modello: si tolgono i due nomi della coppia, poi si cercano gli altri nomi del sito
-  const pulito = tutto.toLowerCase().split(a.nome.toLowerCase()).join(' ').split(b.nome.toLowerCase()).join(' ');
+  let pulito = tutto.toLowerCase();
+  for (const n of [a.nome, b.nome, A, B].sort((x, y) => y.length - x.length)) pulito = pulito.split(n.toLowerCase()).join(' ');
   for (const n of altriNomi) if (n.length >= 6 && pulito.includes(n.toLowerCase())) err.push(`other model named: ${n}`);
   const basso = tutto.toLowerCase();
   for (const v of VIETATE) if (basso.includes(v)) err.push(`banned phrase: ${v}`);
   // chi vince: come dice la riga «Call» dei fatti (17/11, prova con Qwen 3.6: 10 punti di distacco chiamati «pareggio»)
   if (leader) {
-    const intro = String(t.intro || '').toLowerCase();
+    const intro = String(t.risposta || '').toLowerCase();
     if (leader === 'even') {
-      if (!PARI.some((x) => intro.includes(x))) err.push('intro: DATA says too close to call, say they are about even');
+      if (!PARI.some((x) => intro.includes(x))) err.push('risposta: DATA says too close to call, say they are about even');
     } else {
-      if (!intro.includes(leader.toLowerCase())) err.push(`intro: must say ${leader} is ahead`);
+      if (!intro.includes(leader.toLowerCase())) err.push(`risposta: must say ${leader} is ahead`);
       const pari = PARI.filter((x) => x !== 'half the time').find((x) => basso.includes(x));
       if (pari) err.push(`DATA says ${leader} has a real lead, but the text says "${pari}"`);
     }
@@ -98,30 +108,28 @@ export function scegliCoppie(coppie, testi, fattiDi, { max = 4, perModello = 3, 
   return scelte;
 }
 
-const SISTEMA = `You write comparison articles for FreeLLMArena (freellmarena.com), a free site that ranks AI models you can use for free (open weights or a free API) using Arena's blind human votes, and estimates how fast they run on home hardware. Always write the site name as FreeLLMArena, one word. Readers are curious people and hobbyists who searched "A vs B" and want a straight answer.
+const SISTEMA = `You write the paragraphs of a comparison page on FreeLLMArena (freellmarena.com), a free site that ranks AI models you can use for free (open weights or a free API) using Arena's blind human votes, and estimates how fast they run on home hardware. Always write the site name as FreeLLMArena, one word. Readers are curious people and hobbyists who searched "A vs B" and want a straight answer. The page already has its headings and data tables: you write only the paragraphs that go under each heading.
 ${REGOLE_SCRITTURA}
-- Mention no AI model other than the two being compared. Do not mention prices: DATA has none.
-- Explain once, plainly, what an Arena score is. Say who leads exactly as the "Call" line in DATA says.
+- Mention no AI model other than the two being compared, and call them by the short names given in DATA. Do not mention prices: DATA has none.
+- Say who leads exactly as the "Call" line in DATA says.
 - Say a model can be tried on FreeLLMArena, used through a free API or run at home only if DATA says so for that model.
 - Write numbers exactly as DATA writes them (same digits). Round nothing. Percentages only if DATA has them.
+- Each paragraph must make sense on its own, under its heading. Do not repeat the heading as the first words.`;
 
-Return one JSON object with these keys:
-"angolo": the most telling concrete fact from DATA as a headline phrase, max 60 characters, no colon, it goes after "A vs B: " in the title (e.g. "One Runs on a 24 GB Card, the Other Only Online"),
-"descr": meta description, max 155 characters, with both names,
-"intro": 2 or 3 sentences that answer straight away which one is better and for what,
-"sezioni": 3 or 4 sections [{"titolo": "short heading", "testo": "1 or 2 paragraphs separated by a blank line"}]: who wins in blind votes and by how much; where each one is stronger (categories); running them at home (size, download, speed); how to use them free,
-"verdetto": 2 to 4 sentences, "Pick X if ... Pick Y if ...", based only on DATA.
-Total 450 to 750 words.`;
+const RICHIESTA = (A, B, categorie) => `Return one JSON object with these keys (first model = ${A}, second model = ${B}):
+"descr": meta description, max 100 characters, the answer in one sentence (it is shown after "${B} vs ${A}: "),
+${Object.entries(CAMPI).map(([k, v]) => `"${k}": ${v}`).join(',\n')},
+"categorie": an object with exactly these keys: ${categorie.map((n) => JSON.stringify(n)).join(', ')}; each value is 1 or 2 sentences on that Arena category for these two models (it goes under an H3 with the category name).
+Total 400 to 750 words.`;
 
 export function componi(t, { a, b, fatti, oggi, scritto, scrittore }) {
   const pulisci = (s) => senzaLineette(String(s || '').trim());
   return {
+    versione: VERSIONE_TESTI,
     coppia: [a.nome, b.nome],
-    angolo: pulisci(t.angolo).replace(/\.$/, ''),
     descr: pulisci(t.descr),
-    intro: pulisci(t.intro),
-    sezioni: t.sezioni.map((s) => ({ titolo: pulisci(s.titolo), testo: pulisci(s.testo) })),
-    verdetto: pulisci(t.verdetto),
+    ...Object.fromEntries(Object.keys(CAMPI).map((k) => [k, pulisci(t[k])])),
+    categorie: Object.fromEntries(Object.entries(t.categorie || {}).map(([k, v]) => [k, pulisci(v)])),
     scritto: scritto || oggi,
     aggiornato: oggi,
     scrittore,
@@ -140,20 +148,23 @@ export async function verifica(t, testoDati) {
   return Array.isArray(r?.errori) ? r.errori.map(String).filter(Boolean) : ['fact checker: no "errori" list'];
 }
 
-// i modelli a volte cambiano i nomi dei campi (title/text, paragrafi in un elenco): si accettano, poi si pulisce
+// i modelli a volte mettono i paragrafi in un elenco o scrivono «description»: si accetta, poi si pulisce
 export function normalizza(t) {
   if (!t || typeof t !== 'object') return t;
-  const testo = (x) => senzaLineette(Array.isArray(x) ? x.join(String.fromCharCode(10, 10)) : String(x || ''));
-  const sezioni = (Array.isArray(t.sezioni) ? t.sezioni : Array.isArray(t.sections) ? t.sections : []).map((s) => ({
-    titolo: testo(s?.titolo ?? s?.title ?? s?.heading), testo: testo(s?.testo ?? s?.text ?? s?.body ?? s?.paragraphs),
-  }));
-  return { angolo: testo(t.angolo ?? t.angle), descr: testo(t.descr ?? t.description), intro: testo(t.intro), sezioni, verdetto: testo(t.verdetto ?? t.verdict) };
+  const testo = (x) => senzaLineette(Array.isArray(x) ? x.join(String.fromCharCode(10, 10)) : String(x ?? ''));
+  const cat = t.categorie && typeof t.categorie === 'object' && !Array.isArray(t.categorie) ? t.categorie : {};
+  return {
+    descr: testo(t.descr ?? t.description),
+    ...Object.fromEntries(Object.keys(CAMPI).map((k) => [k, testo(t[k])])),
+    categorie: Object.fromEntries(Object.entries(cat).map(([k, v]) => [k, testo(v)])),
+  };
 }
 
 async function scrivi(c, f, altriNomi) {
+  const categorie = f.categorie.map((x) => x.nome);
   const domanda = [
     { role: 'system', content: SISTEMA },
-    { role: 'user', content: `Write the article "${c.a.nome} vs ${c.b.nome}".\n\nDATA:\n${f.testoDati}` },
+    { role: 'user', content: `Write the paragraphs for the page "${f.A} vs ${f.B}".\n\n${RICHIESTA(f.A, f.B, categorie)}\n\nDATA:\n${f.testoDati}` },
   ];
   let errori = [];
   for (let giro = 1; giro <= 3; giro++) {
@@ -161,7 +172,7 @@ async function scrivi(c, f, altriNomi) {
     let t;
     try { t = await chiediModello(msg, { json: true, max: 2600, scopo: 'bozze' }); } catch (e) { errori = [`writer: ${e.message}`]; continue; }
     const pulito = normalizza(t);
-    errori = controllaTesto(pulito, { a: c.a, b: c.b, testoDati: f.testoDati, altriNomi, leader: f.leader });
+    errori = controllaTesto(pulito, { a: c.a, b: c.b, A: f.A, B: f.B, testoDati: f.testoDati, altriNomi, leader: f.leaderCorto, categorie });
     if (errori.length) continue;
     const scrittore = ultimoScrittore;
     try { errori = await verifica(pulito, f.testoDati); } catch (e) { errori = [`fact checker: ${e.message}`]; }
@@ -187,12 +198,12 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const fattiDi = (c) => { if (!cache.has(c.file)) cache.set(c.file, fattiCoppia(dati, c.a, c.b)); return cache.get(c.file); };
   const scelte = scegliCoppie(coppie, testi, fattiDi, { max: MAX, oggi });
   console.log(`Coppie: ${coppie.length}, con testo: ${coppie.filter((c) => testi[c.file]).length}. Oggi: ${scelte.map((c) => `${c.a.nome} vs ${c.b.nome}`).join(' | ') || 'nessuna'}`);
-  const tuttiNomi = [...new Set(modelli.map((m) => m.nome))];
+  const tuttiNomi = [...new Set(modelli.flatMap((m) => [m.nome, nomeCorto(m)]))];
   fs.mkdirSync(CARTELLA_TESTI, { recursive: true });
   let fatti = 0;
   for (const c of scelte) {
     const f = fattiDi(c);
-    const altriNomi = tuttiNomi.filter((n) => n !== c.a.nome && n !== c.b.nome && !c.a.nome.includes(n) && !c.b.nome.includes(n));
+    const altriNomi = tuttiNomi.filter((n) => ![c.a.nome, c.b.nome].some((x) => x.includes(n)));
     const r = await scrivi(c, f, altriNomi);
     if (r.errori) { console.log(`SALTATA ${c.a.nome} vs ${c.b.nome}: ${r.errori.join('; ')}`); continue; }
     const vecchio = testi[c.file];
@@ -201,7 +212,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     if (PROVA) console.log(JSON.stringify(doc, null, 2));
     else fs.writeFileSync(file, JSON.stringify(doc, null, 2) + '\n');
     fatti++;
-    console.log(`${vecchio ? 'RISCRITTA' : 'NUOVA'} ${c.a.nome} vs ${c.b.nome}: ${doc.angolo} (${r.scrittore})`);
+    console.log(`${vecchio ? 'RISCRITTA' : 'NUOVA'} ${c.a.nome} vs ${c.b.nome}: ${doc.descr} (${r.scrittore})`);
   }
   console.log(`Scritte ${fatti} di ${scelte.length}.`);
   if (scelte.length && !fatti) process.exitCode = 1; // nessun testo passato: la corsa diventa rossa e si vede
