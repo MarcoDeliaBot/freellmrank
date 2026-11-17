@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-12",
+ "aggiornato": "2026-11-17",
  "suite": {
   "versione": "decision-index-0.3",
   "test": 42,
@@ -211,7 +211,7 @@
    "stimato": false,
    "repo": "Poindexter-Labs/Copernicus-57B",
    "base": null,
-   "nota": null,
+   "nota": "One private new-domain test is not counted for this model.",
    "punti": 71.8,
    "pubblico": 75.34,
    "ms": 248.7,
@@ -709,6 +709,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "aleria-judge-1.1.2",
+   "nome": "Aleria Judge 1.1.2 (Gemma 4 31B)",
+   "org": "",
+   "tipo": "inference technique",
+   "b": 31.3,
+   "stimato": false,
+   "repo": null,
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 68.08,
+   "pubblico": 64.66,
+   "ms": 138,
+   "p95": 1186.5,
+   "ece": 0.0863,
+   "acc": 0.7557,
+   "aree": {
+    "knowledge": 53,
+    "language": 67.3,
+    "retrieval": 67.7,
+    "tools": 81.7,
+    "arts": 50.8
+   },
+   "vision": null,
+   "licenza": null
+  },
+  {
    "id": "pplx-decider-v1.2",
    "nome": "Perplexity Decider v1.2 (27B)",
    "org": "Perplexity",
@@ -1092,32 +1118,6 @@
     "ms": 347.2
    },
    "licenza": "apache-2.0"
-  },
-  {
-   "id": "aleria-judge-1.1.1",
-   "nome": "Aleria Judge 1.1.1 (Gemma 4 31B)",
-   "org": "",
-   "tipo": "inference technique",
-   "b": 31.3,
-   "stimato": false,
-   "repo": null,
-   "base": "google/gemma-4-31B-it",
-   "nota": null,
-   "punti": 66.67,
-   "pubblico": 63.46,
-   "ms": 117.3,
-   "p95": 698,
-   "ece": 0.0887,
-   "acc": 0.7547,
-   "aree": {
-    "knowledge": 51,
-    "language": 67.9,
-    "retrieval": 66.2,
-    "tools": 79,
-    "arts": 50.3
-   },
-   "vision": null,
-   "licenza": null
   },
   {
    "id": "drex-max-v1",
@@ -3034,6 +3034,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "verdin-4b-v1.2",
+   "nome": "Verdin-4B v1.2",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 4.2,
+   "stimato": false,
+   "repo": "victorbennett/Verdin-4B-v1.2",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 53.12,
+   "pubblico": 61.84,
+   "ms": 99.9,
+   "p95": 189.8,
+   "ece": 0.0198,
+   "acc": 0.7701,
+   "aree": {
+    "knowledge": 43.6,
+    "language": 63.4,
+    "retrieval": 66.8,
+    "tools": 85,
+    "arts": 52.8
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "onejev1.6-9b",
    "nome": "OneJev1.6-9B",
    "org": "OmniJev",
@@ -3188,32 +3214,6 @@
    },
    "vision": null,
    "licenza": "apache-2.0"
-  },
-  {
-   "id": "verdin-4b-v1.1",
-   "nome": "Verdin-4B v1.1",
-   "org": "",
-   "tipo": "full fine-tune",
-   "b": 4.2,
-   "stimato": false,
-   "repo": "victorbennett/Verdin-4B-v1.1",
-   "base": "Qwen/Qwen3.5-4B",
-   "nota": null,
-   "punti": 51.99,
-   "pubblico": 60.96,
-   "ms": 199.9,
-   "p95": 505.4,
-   "ece": 0.0627,
-   "acc": 0.7435,
-   "aree": {
-    "knowledge": 43.7,
-    "language": 63.3,
-    "retrieval": 66.9,
-    "tools": 81,
-    "arts": 51.1
-   },
-   "vision": null,
-   "licenza": "cc-by-nc-4.0"
   },
   {
    "id": "latentmesh-blitz-4b-v1",
@@ -4257,32 +4257,6 @@
    "licenza": "apache-2.0"
   },
   {
-   "id": "glide-2b",
-   "nome": "GLiDE 2B",
-   "org": "Fastino",
-   "tipo": "full fine-tune",
-   "b": 1.9,
-   "stimato": false,
-   "repo": "fastino/GLiDE-2B",
-   "base": "Qwen/Qwen3.5-2B",
-   "nota": null,
-   "punti": 43.72,
-   "pubblico": 60.64,
-   "ms": 36.9,
-   "p95": 204,
-   "ece": 0.066,
-   "acc": 0.7462,
-   "aree": {
-    "knowledge": 37.9,
-    "language": 63.2,
-    "retrieval": 67.6,
-    "tools": 85.7,
-    "arts": 53.2
-   },
-   "vision": null,
-   "licenza": "other"
-  },
-  {
    "id": "solomon-v11-bf16-encoding",
    "nome": "Solomon v1.1",
    "org": "Doccy Health",
@@ -4310,6 +4284,32 @@
     "ms": 561.6
    },
    "licenza": "apache-2.0"
+  },
+  {
+   "id": "glide-2b",
+   "nome": "GLiDE 2B",
+   "org": "Fastino",
+   "tipo": "full fine-tune",
+   "b": 1.9,
+   "stimato": false,
+   "repo": "fastino/GLiDE-2B",
+   "base": "Qwen/Qwen3.5-2B",
+   "nota": null,
+   "punti": 43.22,
+   "pubblico": 60.64,
+   "ms": 36.9,
+   "p95": 204,
+   "ece": 0.066,
+   "acc": 0.7462,
+   "aree": {
+    "knowledge": 37.9,
+    "language": 63.2,
+    "retrieval": 67.6,
+    "tools": 85.7,
+    "arts": 53.2
+   },
+   "vision": null,
+   "licenza": "other"
   },
   {
    "id": "standard-one-8b-sh-v4",
@@ -4931,32 +4931,6 @@
    "licenza": "apache-2.0"
   },
   {
-   "id": "glide-0.8b",
-   "nome": "GLiDE 0.8B",
-   "org": "Fastino",
-   "tipo": "full fine-tune",
-   "b": 0.8,
-   "stimato": false,
-   "repo": "fastino/GLiDE-0.8B",
-   "base": "Qwen/Qwen3.5-0.8B",
-   "nota": null,
-   "punti": 36.36,
-   "pubblico": 54.32,
-   "ms": 36.7,
-   "p95": 121.5,
-   "ece": 0.076,
-   "acc": 0.7018,
-   "aree": {
-    "knowledge": 29,
-    "language": 55.7,
-    "retrieval": 63.6,
-    "tools": 80.7,
-    "arts": 49.3
-   },
-   "vision": null,
-   "licenza": "other"
-  },
-  {
    "id": "decider-4b",
    "nome": "Decider 4B",
    "org": "",
@@ -5007,6 +4981,32 @@
    },
    "vision": null,
    "licenza": "mit"
+  },
+  {
+   "id": "glide-0.8b",
+   "nome": "GLiDE 0.8B",
+   "org": "Fastino",
+   "tipo": "full fine-tune",
+   "b": 0.8,
+   "stimato": false,
+   "repo": "fastino/GLiDE-0.8B",
+   "base": "Qwen/Qwen3.5-0.8B",
+   "nota": null,
+   "punti": 35.91,
+   "pubblico": 54.32,
+   "ms": 36.7,
+   "p95": 121.5,
+   "ece": 0.076,
+   "acc": 0.7018,
+   "aree": {
+    "knowledge": 29,
+    "language": 55.7,
+    "retrieval": 63.6,
+    "tools": 80.7,
+    "arts": 49.3
+   },
+   "vision": null,
+   "licenza": "other"
   },
   {
    "id": "lev",
@@ -5752,6 +5752,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "crivo-prumo-1b",
+   "nome": "Crivo-Prumo 1B",
+   "org": "",
+   "tipo": "inference technique",
+   "b": 1,
+   "stimato": false,
+   "repo": "tardellirs/crivo-prumo-1b",
+   "base": "tardellirs/crivo-1b",
+   "nota": null,
+   "punti": 30.49,
+   "pubblico": 52.88,
+   "ms": 63.1,
+   "p95": 286.8,
+   "ece": 0.1165,
+   "acc": 0.7132,
+   "aree": {
+    "knowledge": 34.2,
+    "language": 56.3,
+    "retrieval": 55.8,
+    "tools": 78.7,
+    "arts": 39.4
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
    "id": "jobe",
    "nome": "Jobe",
    "org": "",
@@ -6012,6 +6038,32 @@
    "licenza": null
   },
   {
+   "id": "classone-qwen3.5-4b",
+   "nome": "ClassOne Qwen3.5 4B",
+   "org": "",
+   "tipo": "LoRA + head",
+   "b": 4.5,
+   "stimato": false,
+   "repo": "devops-thiago/classone-qwen3.5-4b",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 28.37,
+   "pubblico": 27.66,
+   "ms": 72.7,
+   "p95": 261.6,
+   "ece": 0.177,
+   "acc": 0.5551,
+   "aree": {
+    "knowledge": 14,
+    "language": 31.4,
+    "retrieval": 32.7,
+    "tools": 42.2,
+    "arts": 16.9
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "amber-0.4b-v2",
    "nome": "Amber 0.4B v2",
    "org": "",
@@ -6253,6 +6305,32 @@
    },
    "vision": null,
    "licenza": "apache-2.0"
+  },
+  {
+   "id": "crivo-prumo-400m",
+   "nome": "Crivo-Prumo 400M",
+   "org": "",
+   "tipo": "inference technique",
+   "b": 0.4,
+   "stimato": false,
+   "repo": "tardellirs/crivo-prumo-400m",
+   "base": "tardellirs/crivo-400m",
+   "nota": null,
+   "punti": 24.86,
+   "pubblico": 45.5,
+   "ms": 44,
+   "p95": 178.7,
+   "ece": 0.1075,
+   "acc": 0.6601,
+   "aree": {
+    "knowledge": 27.1,
+    "language": 44.6,
+    "retrieval": 51.3,
+    "tools": 71.6,
+    "arts": 36.2
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
   },
   {
    "id": "this-that-1.2",
@@ -6596,6 +6674,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "crivo-prumo-68m",
+   "nome": "Crivo-Prumo 68M",
+   "org": "",
+   "tipo": "inference technique",
+   "b": 0.1,
+   "stimato": false,
+   "repo": "tardellirs/crivo-prumo-68m",
+   "base": "tardellirs/crivo-68m",
+   "nota": null,
+   "punti": 20.88,
+   "pubblico": 38.75,
+   "ms": 34.8,
+   "p95": 89.4,
+   "ece": 0.0966,
+   "acc": 0.618,
+   "aree": {
+    "knowledge": 20.2,
+    "language": 31.1,
+    "retrieval": 48.8,
+    "tools": 68.7,
+    "arts": 31.9
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
    "id": "sieve-0.8b",
    "nome": "Sieve 0.8B",
    "org": "Sthānika AI",
@@ -6750,6 +6854,32 @@
    },
    "vision": null,
    "licenza": "cc-by-nc-4.0"
+  },
+  {
+   "id": "classone-qwen3.5-2b",
+   "nome": "ClassOne Qwen3.5 2B",
+   "org": "",
+   "tipo": "LoRA + head",
+   "b": 2.2,
+   "stimato": false,
+   "repo": "devops-thiago/classone-qwen3.5-2b",
+   "base": "Qwen/Qwen3.5-2B",
+   "nota": null,
+   "punti": 19.18,
+   "pubblico": 18.32,
+   "ms": 236.6,
+   "p95": 364.9,
+   "ece": 0.1442,
+   "acc": 0.5,
+   "aree": {
+    "knowledge": 8.6,
+    "language": 13.3,
+    "retrieval": 28.9,
+    "tools": 32.2,
+    "arts": 9.8
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
   },
   {
    "id": "jev-ettin-150m",
@@ -7093,6 +7223,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "crivo-prumo-32m",
+   "nome": "Crivo-Prumo 32M",
+   "org": "",
+   "tipo": "inference technique",
+   "b": 0,
+   "stimato": false,
+   "repo": "tardellirs/crivo-prumo-32m",
+   "base": "tardellirs/crivo-32m",
+   "nota": null,
+   "punti": 16.02,
+   "pubblico": 31.92,
+   "ms": 28.1,
+   "p95": 66.9,
+   "ece": 0.1248,
+   "acc": 0.5709,
+   "aree": {
+    "knowledge": 18,
+    "language": 24.4,
+    "retrieval": 42.9,
+    "tools": 50.9,
+    "arts": 30.5
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
    "id": "amber-32m",
    "nome": "Amber 32M",
    "org": "",
@@ -7247,6 +7403,32 @@
     "retrieval": 45.6,
     "tools": 50,
     "arts": 19
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
+   "id": "crivo-prumo-17m",
+   "nome": "Crivo-Prumo 17M",
+   "org": "",
+   "tipo": "inference technique",
+   "b": 0,
+   "stimato": false,
+   "repo": "tardellirs/crivo-prumo-17m",
+   "base": "tardellirs/crivo-17m",
+   "nota": null,
+   "punti": 14.08,
+   "pubblico": 29.79,
+   "ms": 57.6,
+   "p95": 109.9,
+   "ece": 0.0836,
+   "acc": 0.5546,
+   "aree": {
+    "knowledge": 17.1,
+    "language": 20.6,
+    "retrieval": 42.8,
+    "tools": 47.1,
+    "arts": 28.3
    },
    "vision": null,
    "licenza": "cc-by-nc-4.0"

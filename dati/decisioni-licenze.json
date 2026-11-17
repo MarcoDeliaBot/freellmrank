@@ -308,5 +308,13 @@
  "MLukauskas/amber-68m": "cc-by-nc-4.0",
  "MLukauskas/amber-32m": "cc-by-nc-4.0",
  "MLukauskas/amber-17m": "cc-by-nc-4.0",
- "Poindexter-Labs/Copernicus-57B": "apache-2.0"
+ "Poindexter-Labs/Copernicus-57B": "apache-2.0",
+ "victorbennett/Verdin-4B-v1.2": "apache-2.0",
+ "tardellirs/crivo-prumo-1b": "cc-by-nc-4.0",
+ "devops-thiago/classone-qwen3.5-4b": "apache-2.0",
+ "tardellirs/crivo-prumo-400m": "cc-by-nc-4.0",
+ "tardellirs/crivo-prumo-68m": "cc-by-nc-4.0",
+ "devops-thiago/classone-qwen3.5-2b": "apache-2.0",
+ "tardellirs/crivo-prumo-32m": "cc-by-nc-4.0",
+ "tardellirs/crivo-prumo-17m": "cc-by-nc-4.0"
 }
