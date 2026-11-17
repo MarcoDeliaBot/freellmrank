@@ -1,0 +1,39 @@
+{
+  "coppia": [
+    "Gemini 3.8 Flash (High)",
+    "Kimi K3 (Max)"
+  ],
+  "angolo": "Gemini Leads by 10 Points, Kimi Beats in Coding",
+  "descr": "Gemini 3.8 Flash (High) edges out Kimi K3 (Max) in Arena chat scores, while Kimi leads in coding. See scores, home feasibility, and free usage options.",
+  "intro": "Gemini 3.8 Flash (High) wins the overall blind vote with a chat score of 1497 against Kimi K3 (Max) at 1487. Kimi K3 (Max) scores higher in coding, posting 1658 versus Gemini's 1583. Choose based on whether you need general chat strength or coding ability.",
+  "sezioni": [
+    {
+      "titolo": "Blind vote result",
+      "testo": "Arena blind votes give Gemini 3.8 Flash (High) a lead of 10 points. With 62 675 votes for Gemini and 41 402 for Kimi, people pick Gemini about 51 % of the time. The Call line confirms Gemini is ahead."
+    },
+    {
+      "titolo": "Category strengths",
+      "testo": "In the chat category Gemini scores 1497, keeping it ahead of Kimi. In the coding category Kimi K3 (Max) leads with 1658 against Gemini's 1583. Pick Gemini for chat quality, pick Kimi for coding tasks."
+    },
+    {
+      "titolo": "Running at home",
+      "testo": "Gemini 3.8 Flash (High) is listed as online only for all tested hardware, so it cannot run on a typical home machine. Kimi K3 (Max) has a size of 2779.9 B (104.6 B active) and a 4-bit download of about 1686 GB, but it also does not fit on any of the listed GPUs or CPUs. Neither model can be run locally with the hardware assumptions provided."
+    },
+    {
+      "titolo": "Free usage options",
+      "testo": "Gemini 3.8 Flash (High) can be accessed through Google’s free API tier under a proprietary license. It cannot be tried directly on FreeLLMArena. Kimi K3 (Max) offers open weights that you can download and run at home under the Kimi K3 license, though the model size makes it impractical for most users. Both models are not available for free trial on the FreeLLMArena Try & Compare page."
+    }
+  ],
+  "verdetto": "Pick Gemini 3.8 Flash (High) if you value overall chat performance and want an easy free API. Pick Kimi K3 (Max) if coding ability is your priority and you can handle a large download and offline licensing.",
+  "scritto": "2026-11-17",
+  "aggiornato": "2026-11-17",
+  "scrittore": "groq",
+  "fatti": {
+    "leader": "Gemini 3.8 Flash (High)",
+    "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",
+    "gratisB": "download and run at home · Kimi K3 license",
+    "puntiA": 1497,
+    "puntiB": 1487,
+    "dataArena": "2026-11-11"
+  }
+}
