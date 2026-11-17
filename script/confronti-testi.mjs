@@ -70,7 +70,7 @@ export function controllaTesto(t, { a, b, testoDati, altriNomi = [], leader = ''
 }
 
 // Le coppie da scrivere oggi, in ordine di urgenza
-export function scegliCoppie(coppie, testi, fattiDi, { max = 4, oggi = new Date().toISOString().slice(0, 10) } = {}) {
+export function scegliCoppie(coppie, testi, fattiDi, { max = 4, perModello = 2, oggi = new Date().toISOString().slice(0, 10) } = {}) {
   const ora = Date.parse(oggi);
   const recente = (c) => Math.max(...[c.a.primo, c.b.primo].map((d) => (d ? Date.parse(d) : 0)));
   const punti = (c) => c.a.cat.chat.punti + c.b.cat.chat.punti;
@@ -85,7 +85,17 @@ export function scegliCoppie(coppie, testi, fattiDi, { max = 4, oggi = new Date(
   const fresca = (c) => ora - recente(c) <= 14 * GIORNO;
   nuove.sort((x, y) => (fresca(y) - fresca(x)) || (fresca(x) && fresca(y) ? recente(y) - recente(x) : 0) || punti(y) - punti(x));
   vecchie.sort((x, y) => Date.parse(testi[x.file].aggiornato) - Date.parse(testi[y.file].aggiornato));
-  return [...cambiate, ...nuove, ...vecchie].slice(0, max);
+  // 17/11/2026 (Marco: «Sì, limita»): al massimo PER_MODELLO coppie al giorno con lo stesso modello; senza, l'ordine per punti
+  // dava solo «Gemini 3.8 Flash contro tutti» per due settimane
+  const usi = new Map();
+  const scelte = [];
+  for (const c of [...cambiate, ...nuove, ...vecchie]) {
+    if (scelte.length >= max) break;
+    if ([c.a, c.b].some((m) => (usi.get(m.nome) || 0) >= perModello)) continue;
+    scelte.push(c);
+    for (const m of [c.a, c.b]) usi.set(m.nome, (usi.get(m.nome) || 0) + 1);
+  }
+  return scelte;
 }
 
 const SISTEMA = `You write comparison articles for FreeLLMArena (freellmarena.com), a free site that ranks AI models you can use for free (open weights or a free API) using Arena's blind human votes, and estimates how fast they run on home hardware. Always write the site name as FreeLLMArena, one word. Readers are curious people and hobbyists who searched "A vs B" and want a straight answer.
