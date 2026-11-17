@@ -39,13 +39,14 @@ export function controllaTesto(t, { a, b, testoDati, altriNomi = [], leader = ''
   const tutto = [t.angolo, t.descr, t.intro, ...sezioni.flatMap((s) => [s?.titolo, s?.testo]), t.verdetto].map((x) => String(x || '')).join('\n');
   const parole = tutto.split(/\s+/).filter(Boolean).length;
   if (parole < 300 || parole > 1000) err.push(`length: ${parole} words, need 300 to 1000`);
-  // ogni numero (tranne i piccoli e gli anni) deve stare nei fatti, scritto uguale o senza separatori delle migliaia
-  for (const m of tutto.matchAll(/\d[\d,.]*/g)) {
-    const n = m[0].replace(/[.,]+$/, '');
-    const nudo = n.replace(/,/g, '');
+  // ogni numero (tranne i piccoli e gli anni) deve essere UN numero dei fatti, intero contro intero (17/11, prima corsa vera:
+  // Workers AI scrive «62 675» con lo spazio; spezzato in 62 e 675 passava perché i pezzi stanno dentro altri numeri)
+  const numeri = (s) => [...String(s).replace(/(\d)[\s   ,](?=\d{3}(?!\d))/g, '$1').matchAll(/\d+(?:\.\d+)?/g)].map((m) => m[0]);
+  const nostri = new Set(numeri(testoDati));
+  for (const n of numeri(tutto)) {
     // interi piccoli e anni si saltano; i decimali (0.35) si controllano
-    if ((!nudo.includes('.') && Number(nudo) <= 10) ||/^(19|20)\d\d$/.test(nudo)) continue;
-    if (!testoDati.includes(n) && !testoDati.includes(nudo)) err.push(`number not in DATA: ${n}`);
+    if ((!n.includes('.') && Number(n) <= 10) || /^(19|20)\d\d$/.test(n)) continue;
+    if (!nostri.has(n)) err.push(`number not in DATA: ${n}`);
   }
   // nessun altro modello: si tolgono i due nomi della coppia, poi si cercano gli altri nomi del sito
   const pulito = tutto.toLowerCase().split(a.nome.toLowerCase()).join(' ').split(b.nome.toLowerCase()).join(' ');
