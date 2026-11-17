@@ -1,0 +1,98 @@
+{
+  "name": "FreeLLMArena · testi dei confronti",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "15 10 * * *"
+            }
+          ]
+        }
+      },
+      "id": "d1e2f3a4-0001-4000-8000-0000000000d1",
+      "name": "Ogni giorno alle 10:15",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "notes": "17/11/2026, Marco: pagine «A vs B» periodiche con n8n, 3-5 al giorno. Ogni giorno alle 10:15 (ora di Roma)."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/MarcoDeliaBot/freellmrank/actions/workflows/confronti-testi.yml/dispatches",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{ \"ref\": \"main\", \"inputs\": { \"max\": \"4\" } }",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "id": "d1e2f3a4-0002-4000-8000-0000000000d2",
+      "name": "Scrivi i testi dei confronti",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        260,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 60000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "GitHub freellmrank (Actions)"
+        }
+      },
+      "notes": "Fa partire .github/workflows/confronti-testi.yml su main, 4 testi al massimo. Credenziale: la stessa del flusso «controllo classifica Arena»."
+    }
+  ],
+  "connections": {
+    "Ogni giorno alle 10:15": {
+      "main": [
+        [
+          {
+            "node": "Scrivi i testi dei confronti",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Rome",
+    "saveExecutionProgress": true
+  },
+  "meta": {
+    "note": "17/11/2026, Marco: pagine periodiche «A vs B» con n8n. Ogni giorno fa partire .github/workflows/confronti-testi.yml (4 testi al massimo). Credenziale: la stessa di «controllo classifica Arena»."
+  },
+  "pinData": {},
+  "active": false
+}
