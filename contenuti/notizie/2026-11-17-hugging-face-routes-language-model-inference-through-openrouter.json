@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-17-hugging-face-routes-language-model-inference-through-openrouter",
+ "titolo": "Hugging Face routes language model inference through OpenRouter",
+ "descr": "Hugging Face now uses OpenRouter to select the best provider for each request, keeping the same API and token.",
+ "tema": "Business",
+ "paragrafi": [
+  "Hugging Face has replaced its custom inference router with OpenRouter for all language model calls.",
+  "The new system sends each request to the provider with the optimal mix of price, speed and reliability, based on live measurements from more than 80 providers.",
+  "If a provider slows down or fails, traffic is automatically shifted to the next best provider and the failed attempt is retried within the same call.",
+  "Developers keep the same Hugging Face token and API; they can still force a routing policy or specific provider by adding a suffix such as :fastest or :cheapest to the model ID.",
+  "Image, video and audio generation remain outside OpenRouter and continue to run directly through Hugging Face Inference Providers."
+ ],
+ "perche": [
+  "The change improves reliability and cost efficiency for users running open‑weight models, while preserving existing code."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "Hugging Face moves Inference Providers routing to OpenRouter",
+ "fonti": [
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/hugging-face-moves-inference-providers-routing-to-openrouter/",
+   "titolo": "Hugging Face moves Inference Providers routing to OpenRouter",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  },
+  {
+   "nome": "Hugging Face",
+   "url": "https://huggingface.co/blog/openrouter",
+   "titolo": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 2
+}

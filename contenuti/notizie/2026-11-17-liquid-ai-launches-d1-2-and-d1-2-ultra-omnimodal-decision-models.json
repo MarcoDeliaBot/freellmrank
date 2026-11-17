@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-17-liquid-ai-launches-d1-2-and-d1-2-ultra-omnimodal-decision-models",
+ "titolo": "Liquid AI launches d1.2 and d1.2-ultra omnimodal decision models",
+ "descr": "The new hosted models handle text, images and audio, add five answer types, and d1.2-ultra tops the AA Decision Index at 75.",
+ "tema": "Business",
+ "paragrafi": [
+  "Liquid AI announced the release of two decision models, d1.2 and d1.2-ultra, available through its hosted API.",
+  "Both models accept text, image and audio inputs and return calibrated probabilities without generating output tokens, billing only for input tokens.",
+  "The models introduce five new answer types: read a value, find spans, locate objects, estimate a number with range, and pick multiple options."
+ ],
+ "perche": [
+  "These models give developers a cost‑effective way to add multimodal decision capabilities to applications, especially where confidence calibration matters. Users of free or locally run models can compare the hosted offering’s performance and pricing to decide whether to rely on a cloud service or continue with open‑source alternatives."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "Liquid AI Releases d1.2 and d1.2-ultra: Omnimodal Decision Models That Top the AA Decision Index",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/17/liquid-ai-d1-2-omnimodal-decision-models/",
+   "titolo": "Liquid AI Releases d1.2 and d1.2-ultra: Omnimodal Decision Models That Top the AA Decision Index",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  },
+  {
+   "nome": "liquid.ai",
+   "url": "https://www.liquid.ai/blog/d1-2",
+   "titolo": "d1.2: State-of-the-Art Omnimodal Decision Models | Blog | Liquid AI",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 2
+}

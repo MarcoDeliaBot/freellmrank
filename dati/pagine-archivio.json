@@ -23760,6 +23760,42 @@
     "tipo": "News"
    },
    "data": "2026-11-17"
+  },
+  "/blog/news-2026-11-17-hugging-face-routes-language-model-inference-through-openrouter.html": {
+   "post": {
+    "slug": "news-2026-11-17-hugging-face-routes-language-model-inference-through-openrouter",
+    "titolo": "Hugging Face routes language model inference through OpenRouter",
+    "descr": "Hugging Face now uses OpenRouter to select the best provider for each request, keeping the same API and token.",
+    "data": "2026-11-17",
+    "tema": "Business",
+    "corpo": "Hugging Face has replaced its custom inference router with OpenRouter for all language model calls.\n\nThe new system sends each request to the provider with the optimal mix of price, speed and reliability, based on live measurements from more than 80 providers.\n\nIf a provider slows down or fails, traffic is automatically shifted to the next best provider and the failed attempt is retried within the same call.\n\nDevelopers keep the same Hugging Face token and API; they can still force a routing policy or specific provider by adding a suffix such as :fastest or :cheapest to the model ID.\n\nImage, video and audio generation remain outside OpenRouter and continue to run directly through Hugging Face Inference Providers.\n\n## What it means for you\n\nThe change improves reliability and cost efficiency for users running open‑weight models, while preserving existing code.\n\n## Sources\n\n- [Hugging Face moves Inference Providers routing to OpenRouter](https://www.testingcatalog.com/hugging-face-moves-inference-providers-routing-to-openrouter/), TestingCatalog, 17 Nov 2026\n- [Hugging Face and OpenRouter join forces to make open-weight models easy to run](https://huggingface.co/blog/openrouter), Hugging Face (official), 16 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-17-hugging-face-routes-language-model-inference-through-openrouter).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-17"
+  },
+  "/blog/news-2026-11-17-liquid-ai-launches-d1-2-and-d1-2-ultra-omnimodal-decision-models.html": {
+   "post": {
+    "slug": "news-2026-11-17-liquid-ai-launches-d1-2-and-d1-2-ultra-omnimodal-decision-models",
+    "titolo": "Liquid AI launches d1.2 and d1.2-ultra omnimodal decision models",
+    "descr": "The new hosted models handle text, images and audio, add five answer types, and d1.2-ultra tops the AA Decision Index at 75.",
+    "data": "2026-11-17",
+    "tema": "Business",
+    "corpo": "Liquid AI announced the release of two decision models, d1.2 and d1.2-ultra, available through its hosted API.\n\nBoth models accept text, image and audio inputs and return calibrated probabilities without generating output tokens, billing only for input tokens.\n\nThe models introduce five new answer types: read a value, find spans, locate objects, estimate a number with range, and pick multiple options.\n\n## What it means for you\n\nThese models give developers a cost‑effective way to add multimodal decision capabilities to applications, especially where confidence calibration matters. Users of free or locally run models can compare the hosted offering’s performance and pricing to decide whether to rely on a cloud service or continue with open‑source alternatives.\n\n## Sources\n\n- [Liquid AI Releases d1.2 and d1.2-ultra: Omnimodal Decision Models That Top the AA Decision Index](https://www.marktechpost.com/2026/11/17/liquid-ai-d1-2-omnimodal-decision-models/), MarkTechPost, 17 Nov 2026\n- [d1.2: State-of-the-Art Omnimodal Decision Models | Blog | Liquid AI](https://www.liquid.ai/blog/d1-2), liquid.ai (official), 16 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-17-liquid-ai-launches-d1-2-and-d1-2-ultra-omnimodal-decision-models).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-17"
+  },
+  "/blog/news-2026-11-17-openai-partners-with-chile-to-promote-responsible-ai-adoption.html": {
+   "post": {
+    "slug": "news-2026-11-17-openai-partners-with-chile-to-promote-responsible-ai-adoption",
+    "titolo": "OpenAI partners with Chile to promote responsible AI adoption",
+    "descr": "OpenAI announced a partnership with the Government of Chile on 17 November 2026.",
+    "data": "2026-11-17",
+    "tema": "Policy",
+    "corpo": "OpenAI announced a partnership with the Government of Chile on 17 November 2026.\n\nThe collaboration aims to support responsible AI adoption across the country.\n\nIt will focus on building AI skills within the public sector.\n\nLocal startups will receive assistance to develop AI applications.\n\nThe initiative seeks to foster a thriving AI ecosystem in Chile.\n\n## What it means for you\n\nFor AI users, the partnership could bring more reliable public services powered by AI. For developers, especially those exploring free or locally hosted models, the support for startups may create new opportunities to build and deploy applications.\n\n## Sources\n\n- [Introducing OpenAI for Chile](https://openai.com/index/introducing-openai-for-chile), OpenAI (official), 17 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-17-openai-partners-with-chile-to-promote-responsible-ai-adoption).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-17"
   }
  },
  "ricostruzione": {
