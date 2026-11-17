@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-17-google-extends-gemini-chat-retention-to-two-months-and-adds-separate-h",
+ "titolo": "Google extends Gemini chat retention to two months and adds separate history and training controls",
+ "descr": "Google announced that Gemini chats will be retained for roughly two months, up from the previous 72‑hour limit.",
+ "tema": "Policy",
+ "paragrafi": [
+  "Google announced that Gemini chats will be retained for roughly two months, up from the previous 72‑hour limit.",
+  "New controls let users keep their chat history while opting out of using that data to train Google’s generative‑AI models; both settings default to off for users who previously disabled “Keep Activity”.",
+  "By comparison, OpenAI may keep temporary ChatGPT chats for up to 30 days and Anthropic retains Claude incognito chats for 30 days by default."
+ ],
+ "perche": [
+  "Users gain more privacy control, keeping conversation logs without contributing to model training, while still benefiting from safety‑related retention. For those favoring free or locally‑run models, the move highlights Google’s emphasis on data handling, contrasting with the top‑ranked free chat models like Kimi K3 (Max) and the leading paid Gemini 4 Carbon (High) on FreeLLMArena."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "Google to keep Gemini chats for 2 months, up from 72 hours, even with history off",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/17/google-to-keep-gemini-chats-for-two-months-up-from-72-hours-even-with-history-off/",
+   "titolo": "Google to keep Gemini chats for 2 months, up from 72 hours, even with history off",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  },
+  {
+   "nome": "blog.google",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/updated-controls/",
+   "titolo": "Gemini app updates: New chat history and training controls",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 3
+}

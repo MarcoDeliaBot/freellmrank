@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-17-openai-releases-gpt-6-2-astra-and-sol-for-chatgpt-work-codex-and-api",
+ "titolo": "OpenAI releases GPT-6.2 Astra and Sol for ChatGPT Work, Codex and API",
+ "descr": "OpenAI launches two new professional models, Astra and Sol, with lower costs and higher benchmark scores, now available to Plus, Pro, Enterprise and Edu users.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Astra is positioned as a frontier model for complex projects, while Sol targets everyday tasks with higher efficiency.",
+  "Both models are live in ChatGPT Work, Codex and the API, accessible to Plus, Pro, Enterprise and Edu users, with Ultrafast mode for Pro 500 (and Pro 200 for Sol).",
+  "Benchmark results show Astra leading on Agents' Last Exam and Terminal‑Bench‑Science 0.1, while Sol scores 57.3 on the Artificial Intelligence Index and approaches Astra on FrontierCode 2.0 at a fraction of the cost."
+ ],
+ "perche": [
+  "The new models give professional users higher performance while reducing token usage costs, which can accelerate complex workflows. For users preferring free or local models, the launch underscores the widening gap between commercial offerings and open‑source alternatives, highlighting the importance of evaluating cost and capability trade‑offs."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "OpenAI launches GPT-6.2 Astra and Sol on ChatGPT and APIs",
+ "fonti": [
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/openai-launches-gpt-6-2-astra-and-sol-on-chatgpt-and-apis/",
+   "titolo": "OpenAI launches GPT-6.2 Astra and Sol on ChatGPT and APIs",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  },
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+   "titolo": "Introducing GPT-6.2 Astra and Sol",
+   "ufficiale": true,
+   "data": "2026-11-17"
+  }
+ ],
+ "frasiTolte": 2
+}

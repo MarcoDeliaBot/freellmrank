@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-17-apple-sets-tiered-daily-limits-for-siri-ai-with-ios-27-3-launch",
+ "titolo": "Apple sets tiered daily limits for Siri AI with iOS 27.3 launch",
+ "descr": "iOS 27.3 will enforce per‑device daily caps on advanced Siri tasks, with higher limits for paid iCloud+ plans.",
+ "tema": "Business",
+ "paragrafi": [
+  "Apple announced that iOS 27.3, expected in early December, will introduce per‑device daily usage limits for Siri AI and Apple Intelligence features that require server‑side processing.",
+  "Basic Siri commands such as timers or standard texts remain unlimited, while advanced tasks like multi‑step personal requests, image generation in Photos, and Shortcut automations will count against the limits.",
+  "Limits vary by iCloud+ subscription: the free tier and $0.99 / month 50 GB plan receive a “Standard Device Limit”; $2.99 / month 200 GB gets twice that, $9.99 / month 2 TB gets five times, $29.99 / month 6 TB gets ten times, and $59.99 / month 12 TB gets twenty times the standard limit.",
+  "Users will receive notifications when approaching or reaching their daily cap; basic tasks remain functional, but advanced features pause until the next day.",
+  "Family members sharing an iCloud+ plan share a common usage pool on a first‑come, first‑served basis, and Apple plans to offer “Intelligence Usage Packs” for creator apps at $49.99 each."
+ ],
+ "perche": [
+  "The limits push frequent Siri AI users toward higher‑priced iCloud+ tiers, affecting anyone who relies on advanced voice features. For users preferring free or local AI models, the change highlights the cost of cloud‑dependent assistants and may encourage exploration of on‑device alternatives."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "Apple reveals daily limits on your Siri AI use – here’s how much you’ll have to pay",
+ "fonti": [
+  {
+   "nome": "ZDNet",
+   "url": "https://www.zdnet.com/innovation/apple-siri-ai-daily-limits-cost-icloud-plus-plan/",
+   "titolo": "Apple reveals daily limits on your Siri AI use – here’s how much you’ll have to pay",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  },
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/tech/1034581/apple-intelligence-siri-ai-daily-usage-limits-icloud-subscription",
+   "titolo": "Apple is testing daily usage limits for more complex Siri AI interactions",
+   "ufficiale": false,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 0
+}
