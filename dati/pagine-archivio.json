@@ -23832,6 +23832,42 @@
     "tipo": "News"
    },
    "data": "2026-11-17"
+  },
+  "/blog/news-2026-11-17-microsoft-unveils-mai-code-2-and-code-2-flash-claiming-near-claude-per.html": {
+   "post": {
+    "slug": "news-2026-11-17-microsoft-unveils-mai-code-2-and-code-2-flash-claiming-near-claude-per",
+    "titolo": "Microsoft unveils MAI Code 2 and Code 2 Flash, claiming near‑Claude performance at a fraction of the cost",
+    "descr": "At Ignite 2026 Microsoft introduced two enterprise coding models that deliver 96% of Claude Opus 5.5 performance for just 5% of its price.",
+    "data": "2026-11-17",
+    "tema": "Business",
+    "corpo": "Microsoft announced two new AI coding models, MAI Code 2 and MAI Code 2 Flash, during its Ignite 2026 keynote.\n\nThe models are positioned as optional back‑ends for GitHub Copilot, Microsoft 365 and Fabric, aiming to reduce Microsoft’s reliance on external providers like OpenAI and Anthropic.\n\nMicrosoft notes that the benchmark figures are based on its own tests and include a 50% introductory discount, so independent validation may differ.\n\n## What it means for you\n\nFor developers, the lower‑cost models could make API usage cheaper for everyday coding tasks, potentially lowering project budgets. For users of free or locally hosted models, Microsoft’s push for cheaper in‑house models highlights the trade‑off between performance and cost, and may influence the market for open‑source alternatives.\n\n## Sources\n\n- [Microsoft says its new AI coding model rivals Claude Opus 5.5 at 5% of the cost](https://www.zdnet.com/innovation/microsoft-ai-coding-model-rivals-claude-opus-5-5-ignite/), ZDNet, 17 Nov 2026\n- [MAI Code 2 and Code 2 Flash: Everyday coding at scalable prices | Microsoft AI](https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/), microsoft.ai (official), 17 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-17-microsoft-unveils-mai-code-2-and-code-2-flash-claiming-near-claude-per).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-17"
+  },
+  "/blog/news-2026-11-17-nvidia-details-sparse-attention-design-for-faster-long-context-inferen.html": {
+   "post": {
+    "slug": "news-2026-11-17-nvidia-details-sparse-attention-design-for-faster-long-context-inferen",
+    "titolo": "NVIDIA details sparse‑attention design for faster long‑context inference",
+    "descr": "NVIDIA published a technical blog on Nov 17, 2026 describing a co‑design approach for sparse attention on GPUs.",
+    "data": "2026-11-17",
+    "tema": "Research",
+    "corpo": "NVIDIA published a technical blog on Nov 17, 2026 describing a co‑design approach for sparse attention on GPUs.\n\nSparse attention limits each query to a small set of keys, moving most scoring work to an indexer that runs as a batched matrix multiply.\n\nThe indexer and Top‑k stages together account for 47% of the pre‑fill time in DeepSeek V3.2 when processing 128 K tokens.\n\nFusing Top‑k into the indexer kernel removes logit write‑back and reusing the previous selection speeds Top‑k by 2.1‑2.4×.\n\n## What it means for you\n\nFor AI practitioners, the guidance helps build models that keep inference fast even with very long documents.\n\n## Sources\n\n- [Co-Designing Sparse Attention for Efficient Long-Context Inference](https://developer.nvidia.com/blog/co-designing-sparse-attention-for-efficient-long-context-inference/), NVIDIA Developer (official), 17 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-17-nvidia-details-sparse-attention-design-for-faster-long-context-inferen).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-17"
+  },
+  "/blog/news-2026-11-17-nvidia-unveils-nemotron-for-science-and-rubin-hpc-gpu-at-sc26.html": {
+   "post": {
+    "slug": "news-2026-11-17-nvidia-unveils-nemotron-for-science-and-rubin-hpc-gpu-at-sc26",
+    "titolo": "NVIDIA unveils Nemotron for Science and Rubin HPC GPU at SC26",
+    "descr": "At SC26, NVIDIA announced Nemotron for Science, a new Rubin HPC GPU, expanded Vera CPUs, and AI agent tools for research labs.",
+    "data": "2026-11-17",
+    "tema": "Research",
+    "corpo": "Ian Buck opened NVIDIA’s week at SC26 in Chicago with a focus on AI agents for science. He highlighted new software that can plan experiments, run code and verify results on researchers’ own systems.\n\nIt can run on a DGX Spark, a workstation or a supercomputer, letting scientists keep data and models in‑house.\n\nThe Rubin HPC GPU is part of the Vera Rubin platform. With over 50,000 CUDA cores it offers roughly three times the core count of Hopper and is slated for 2028.\n\nVera CPUs are being used for the German Climate Computing Center’s HLRE‑5 supercomputer, expected in early 2028. NVIDIA also announced a quantum co‑design effort with IBM and Fermilab, and a new CUDA‑Q decoder that cuts latency from about 300 µs to 10 µs.\n\nAgent demos showed rapid results. At Argonne, an agent took a single prompt, planned hypotheses and identified two new binding sites. A GROMACS agent repaired 81 % of test cases in one overnight DGX Spark run, and the Nsight AI Porting Agent sped up a weather model more than fivefold using about 150 million tokens.\n\n## What it means for you\n\nResearchers can now run powerful open models and agent tools on local or on‑premise hardware, reducing reliance on external services.\n\n## Sources\n\n- [Ian Buck Kicks Off NVIDIA’s Week at SC26 as Science Enters the Age of Agents](https://blogs.nvidia.com/blog/ian-buck-sc26/), NVIDIA (official), 17 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-17-nvidia-unveils-nemotron-for-science-and-rubin-hpc-gpu-at-sc26).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-17"
   }
  },
  "ricostruzione": {

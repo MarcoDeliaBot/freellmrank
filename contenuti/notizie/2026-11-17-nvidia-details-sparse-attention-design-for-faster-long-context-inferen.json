@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-17-nvidia-details-sparse-attention-design-for-faster-long-context-inferen",
+ "titolo": "NVIDIA details sparse‑attention design for faster long‑context inference",
+ "descr": "NVIDIA published a technical blog on Nov 17, 2026 describing a co‑design approach for sparse attention on GPUs.",
+ "tema": "Research",
+ "paragrafi": [
+  "NVIDIA published a technical blog on Nov 17, 2026 describing a co‑design approach for sparse attention on GPUs.",
+  "Sparse attention limits each query to a small set of keys, moving most scoring work to an indexer that runs as a batched matrix multiply.",
+  "The indexer and Top‑k stages together account for 47% of the pre‑fill time in DeepSeek V3.2 when processing 128 K tokens.",
+  "Fusing Top‑k into the indexer kernel removes logit write‑back and reusing the previous selection speeds Top‑k by 2.1‑2.4×."
+ ],
+ "perche": [
+  "For AI practitioners, the guidance helps build models that keep inference fast even with very long documents."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "Co-Designing Sparse Attention for Efficient Long-Context Inference",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/co-designing-sparse-attention-for-efficient-long-context-inference/",
+   "titolo": "Co-Designing Sparse Attention for Efficient Long-Context Inference",
+   "ufficiale": true,
+   "data": "2026-11-17"
+  }
+ ],
+ "frasiTolte": 3
+}

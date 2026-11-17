@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-17-nvidia-unveils-nemotron-for-science-and-rubin-hpc-gpu-at-sc26",
+ "titolo": "NVIDIA unveils Nemotron for Science and Rubin HPC GPU at SC26",
+ "descr": "At SC26, NVIDIA announced Nemotron for Science, a new Rubin HPC GPU, expanded Vera CPUs, and AI agent tools for research labs.",
+ "tema": "Research",
+ "paragrafi": [
+  "Ian Buck opened NVIDIA’s week at SC26 in Chicago with a focus on AI agents for science. He highlighted new software that can plan experiments, run code and verify results on researchers’ own systems.",
+  "It can run on a DGX Spark, a workstation or a supercomputer, letting scientists keep data and models in‑house.",
+  "The Rubin HPC GPU is part of the Vera Rubin platform. With over 50,000 CUDA cores it offers roughly three times the core count of Hopper and is slated for 2028.",
+  "Vera CPUs are being used for the German Climate Computing Center’s HLRE‑5 supercomputer, expected in early 2028. NVIDIA also announced a quantum co‑design effort with IBM and Fermilab, and a new CUDA‑Q decoder that cuts latency from about 300 µs to 10 µs.",
+  "Agent demos showed rapid results. At Argonne, an agent took a single prompt, planned hypotheses and identified two new binding sites. A GROMACS agent repaired 81 % of test cases in one overnight DGX Spark run, and the Nsight AI Porting Agent sped up a weather model more than fivefold using about 150 million tokens."
+ ],
+ "perche": [
+  "Researchers can now run powerful open models and agent tools on local or on‑premise hardware, reducing reliance on external services."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "Ian Buck Kicks Off NVIDIA’s Week at SC26 as Science Enters the Age of Agents",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/ian-buck-sc26/",
+   "titolo": "Ian Buck Kicks Off NVIDIA’s Week at SC26 as Science Enters the Age of Agents",
+   "ufficiale": true,
+   "data": "2026-11-17"
+  }
+ ],
+ "frasiTolte": 3
+}

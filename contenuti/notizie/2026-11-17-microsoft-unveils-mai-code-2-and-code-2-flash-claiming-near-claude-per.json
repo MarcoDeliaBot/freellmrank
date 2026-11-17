@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-17-microsoft-unveils-mai-code-2-and-code-2-flash-claiming-near-claude-per",
+ "titolo": "Microsoft unveils MAI Code 2 and Code 2 Flash, claiming near‑Claude performance at a fraction of the cost",
+ "descr": "At Ignite 2026 Microsoft introduced two enterprise coding models that deliver 96% of Claude Opus 5.5 performance for just 5% of its price.",
+ "tema": "Business",
+ "paragrafi": [
+  "Microsoft announced two new AI coding models, MAI Code 2 and MAI Code 2 Flash, during its Ignite 2026 keynote.",
+  "The models are positioned as optional back‑ends for GitHub Copilot, Microsoft 365 and Fabric, aiming to reduce Microsoft’s reliance on external providers like OpenAI and Anthropic.",
+  "Microsoft notes that the benchmark figures are based on its own tests and include a 50% introductory discount, so independent validation may differ."
+ ],
+ "perche": [
+  "For developers, the lower‑cost models could make API usage cheaper for everyday coding tasks, potentially lowering project budgets. For users of free or locally hosted models, Microsoft’s push for cheaper in‑house models highlights the trade‑off between performance and cost, and may influence the market for open‑source alternatives."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "Microsoft says its new AI coding model rivals Claude Opus 5.5 at 5% of the cost",
+ "fonti": [
+  {
+   "nome": "ZDNet",
+   "url": "https://www.zdnet.com/innovation/microsoft-ai-coding-model-rivals-claude-opus-5-5-ignite/",
+   "titolo": "Microsoft says its new AI coding model rivals Claude Opus 5.5 at 5% of the cost",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  },
+  {
+   "nome": "microsoft.ai",
+   "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+   "titolo": "MAI Code 2 and Code 2 Flash: Everyday coding at scalable prices | Microsoft AI",
+   "ufficiale": true,
+   "data": "2026-11-17"
+  }
+ ],
+ "frasiTolte": 2
+}
