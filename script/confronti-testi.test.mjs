@@ -148,3 +148,15 @@ test('title corti senza doppioni: la variante resta solo dove serve a distinguer
   assert.equal(t['compare/deepseek-v4-pro-high-20260813-vs-kimi-k2-6.html'], 'DeepSeek-V4-Pro (High, 20260813) vs Kimi K2.6');
   assert.equal(new Set(Object.values(t)).size, 3);
 });
+
+test('«primo in classifica» solo se lo è davvero', () => {
+  // 17/11: il testo diceva «leads the overall Arena ranking among all 421 entries» di un modello 9°
+  const t = buono(); t.sceglieA += ' The model also leads the overall Arena ranking among all 421 entries.';
+  const dati = `${testoDati} rank 9 of 421`;
+  assert.ok(controllaTesto(t, { ...opz, testoDati: dati }).some((e) => e.startsWith('neither model is #1')));
+  // controllo positivo: se è davvero primo, la frase passa
+  const primoVero = { ...a, cat: { chat: { ...a.cat.chat, pos: 1 } } };
+  assert.ok(!controllaTesto(t, { ...opz, a: primoVero, testoDati: dati }).some((e) => e.startsWith('neither')));
+  // «leads in Coding» non è un vanto sulla classifica intera
+  assert.deepEqual(controllaTesto(buono(), opz).filter((e) => e.startsWith('neither')), []);
+});
