@@ -1,0 +1,57 @@
+# Testi delle pagine «A vs B» (Marco, 17/11/2026: «pagine periodiche (quindi con n8n) di arena», tipo «Qwen4-Max vs GLM-5.5»).
+# Lo fa partire n8n ogni giorno (flusso «FreeLLMArena · testi dei confronti», n8n/confronti-testi.json): niente cron qui,
+# così un solo orologio decide. script/confronti-testi.mjs scrive 4 testi al massimo con Workers AI (poi Groq) e salva
+# solo quelli che passano i controlli dei fatti in codice. Il commit fa ripubblicare il sito da Cloudflare.
+name: Testi dei confronti
+
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: 'Quanti testi al massimo'
+        default: '4'
+      prova:
+        description: 'Prova: scrive e mostra i testi nel registro, senza salvarli né pubblicarli'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: confronti-testi
+  cancel-in-progress: false
+
+jobs:
+  testi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - name: Prove dei controlli
+        run: node --test script/confronti-testi.test.mjs
+      - name: Scrivi i testi
+        env:
+          BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
+          GROQ_KEY: ${{ secrets.GROQ_KEY }}
+        run: node script/confronti-testi.mjs --max "${{ inputs.max || '4' }}" ${{ inputs.prova && '--prova' || '' }}
+      - name: Commit dei testi
+        if: ${{ !inputs.prova }}
+        run: |
+          git add contenuti/confronti
+          if git diff --cached --quiet; then echo "Nessun testo nuovo"; exit 0; fi
+          git config user.name "freellmarena-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Testi dei confronti $(date -u +%F)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs origin main && git push && break
+            [ "$i" = 5 ] && exit 1
+            sleep $((i * 10))
+          done
