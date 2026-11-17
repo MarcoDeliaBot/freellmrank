@@ -89,12 +89,12 @@ test('scelta: prima i testi smentiti, poi le coppie nuove con un modello appena 
   assert.equal(scegliCoppie(coppie, testi, () => fatti, { max: 2, oggi: '2026-11-17' }).length, 2);
 });
 
-test('al massimo 2 coppie al giorno con lo stesso modello', () => {
+test('al massimo 3 coppie al giorno con lo stesso modello', () => {
   const m = (nome, punti) => ({ nome, cat: { chat: { punti } } });
   const g = m('Gemini', 1500), altri = ['B', 'C', 'D', 'E'].map((n, i) => m(n, 1400 - i));
   const coppie = [...altri.map((x) => ({ a: g, b: x, file: `compare/g-${x.nome}.html` })), { a: altri[2], b: altri[3], file: 'compare/d-e.html' }];
   const scelte = scegliCoppie(coppie, {}, () => ({}), { max: 4, oggi: '2026-11-17' }).map((x) => x.file);
-  assert.deepEqual(scelte, ['compare/g-B.html', 'compare/g-C.html', 'compare/d-e.html']);
+  assert.deepEqual(scelte, ['compare/g-B.html', 'compare/g-C.html', 'compare/g-D.html', 'compare/d-e.html']);
   // controllo positivo: senza limite le prime 4 sono tutte con Gemini
   assert.equal(scegliCoppie(coppie, {}, () => ({}), { max: 4, perModello: 99, oggi: '2026-11-17' }).filter((x) => x.a === g).length, 4);
 });
