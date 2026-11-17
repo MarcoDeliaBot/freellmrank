@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-17-nvidia-s-supply-chain-chief-highlights-partner-network-as-ai-demand-su",
+ "titolo": "NVIDIA’s supply chain chief highlights partner network as AI demand surges",
+ "descr": "Deb Shoquist discusses how deep ties with manufacturers like TSMC and Foxconn enable NVIDIA to scale new AI systems.",
+ "tema": "Business",
+ "paragrafi": [
+  "She works with long‑standing partners such as TSMC, Foxconn, Wistron, SPIL, KYEC, Amkor, Lumentum and Coherent.",
+  "Shoquist recently received the 2026 Dr. Lisa Su Woman of Innovation Award and said the network’s precision allowed complex parts like Amphenol’s 1,500‑leg cable cartridge to be produced at less than 1 DPPM.",
+  "The article notes that as NVIDIA moved from chips to full data‑center systems, it added new optics partners and created co‑packaged optics supply chains.",
+  "In parallel, FreeLLMArena’s latest blind vote ranks Kimi K3 (Max) as the top free chat model and Gemini 4 Carbon (High) as the leading paid chat model."
+ ],
+ "perche": [
+  "For AI users, NVIDIA’s robust supply chain means faster access to high‑performance AI hardware, supporting both cloud and on‑premise workloads. For developers of free or local models, the ranking shows which chat models currently lead the community, guiding choices for cost‑effective deployment."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "How the World’s Most Advanced AI Infrastructure Supply Chain Invents the Future",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/ai-infrastructure-supply-chain/",
+   "titolo": "How the World’s Most Advanced AI Infrastructure Supply Chain Invents the Future",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 1
+}

@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-17-openai-partners-with-nato-to-boost-allied-cyber-defenses-using-ai",
+ "titolo": "OpenAI partners with NATO to boost allied cyber defenses using AI",
+ "descr": "OpenAI announced a partnership with NATO and allied cyber agencies.",
+ "tema": "Policy",
+ "paragrafi": [
+  "OpenAI announced a partnership with NATO and allied cyber agencies.",
+  "The collaboration aims to use AI tools to help trusted defenders identify system vulnerabilities.",
+  "AI will also be employed to test remediation measures and strengthen protection of essential infrastructure.",
+  "The effort focuses on enhancing cyber defense capabilities across NATO member states and partners."
+ ],
+ "perche": [
+  "For AI users, the partnership could lead to more robust security tools powered by advanced models. Those seeking free or locally hosted models may see increased emphasis on trusted, secure AI deployments in critical sectors."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "Strengthening NATO and allied cyber defenses with AI",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
+   "titolo": "Strengthening NATO and allied cyber defenses with AI",
+   "ufficiale": true,
+   "data": "2026-11-17"
+  }
+ ],
+ "frasiTolte": 1
+}

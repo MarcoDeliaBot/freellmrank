@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-17-nvidia-unveils-rubin-hpc-gpu-with-over-50-000-cuda-cores-for-scientifi",
+ "titolo": "Nvidia unveils Rubin HPC GPU with over 50,000 CUDA cores for scientific workloads",
+ "descr": "At SC26 in Chicago, Nvidia announced the Rubin HPC GPU, part of its Vera Rubin platform, targeting scientific, engineering and analytics agents.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "At SC26 in Chicago, Nvidia announced the Rubin HPC GPU, part of its Vera Rubin platform, targeting scientific, engineering and analytics agents.",
+  "The chip will house more than 50,000 CUDA cores and 898 Tensor cores, with a new sparse data acceleration feature to keep cores fed during simulations.",
+  "Rubin HPC also integrates seventh‑generation NVLink, moving up to 3.6 terabits per second per GPU, and will ship with an updated CUDA‑X library suite.",
+  "Software additions include cuPhoton.xBeam for Event Horizon Telescope data, cuPhoton.xLens for fusion plasma simulation, and open‑source cuSpa for cell polygon calculations.",
+  "Nvidia paired the hardware with Nemotron for Science, built on the 124‑billion‑parameter Nemotron 3.5 Super VL model, offering post‑training workflows for scientific tasks."
+ ],
+ "perche": [
+  "Researchers will gain faster simulation cycles, potentially cutting weeks‑long analyses to minutes, accelerating discovery in fields like astrophysics and biology. For AI practitioners focused on free or local models, the announcement highlights Nvidia’s push toward large, proprietary hardware, underscoring the need to balance cloud‑based GPU access with lightweight, open‑source alternatives."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "At SC26, Nvidia debuts new Rubin HPC chip, scientific research libraries",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/16/nvidia-debuts-new-rubin-hpc-chip-scientific-research-libraries/",
+   "titolo": "At SC26, Nvidia debuts new Rubin HPC chip, scientific research libraries",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  },
+  {
+   "nome": "blogs.nvidia.com",
+   "url": "https://blogs.nvidia.com/blog/rubin-hpc/",
+   "titolo": "NVIDIA Announces Rubin HPC — A New GPU to Accelerate Agents for Science, Engineering and Analytics",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 1
+}

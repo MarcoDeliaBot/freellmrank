@@ -23692,6 +23692,42 @@
     "tipo": "News"
    },
    "data": "2026-11-16"
+  },
+  "/blog/news-2026-11-17-nvidia-s-supply-chain-chief-highlights-partner-network-as-ai-demand-su.html": {
+   "post": {
+    "slug": "news-2026-11-17-nvidia-s-supply-chain-chief-highlights-partner-network-as-ai-demand-su",
+    "titolo": "NVIDIA’s supply chain chief highlights partner network as AI demand surges",
+    "descr": "Deb Shoquist discusses how deep ties with manufacturers like TSMC and Foxconn enable NVIDIA to scale new AI systems.",
+    "data": "2026-11-17",
+    "tema": "Business",
+    "corpo": "She works with long‑standing partners such as TSMC, Foxconn, Wistron, SPIL, KYEC, Amkor, Lumentum and Coherent.\n\nShoquist recently received the 2026 Dr. Lisa Su Woman of Innovation Award and said the network’s precision allowed complex parts like Amphenol’s 1,500‑leg cable cartridge to be produced at less than 1 DPPM.\n\nThe article notes that as NVIDIA moved from chips to full data‑center systems, it added new optics partners and created co‑packaged optics supply chains.\n\nIn parallel, FreeLLMArena’s latest blind vote ranks Kimi K3 (Max) as the top free chat model and Gemini 4 Carbon (High) as the leading paid chat model.\n\n## What it means for you\n\nFor AI users, NVIDIA’s robust supply chain means faster access to high‑performance AI hardware, supporting both cloud and on‑premise workloads. For developers of free or local models, the ranking shows which chat models currently lead the community, guiding choices for cost‑effective deployment.\n\n## Sources\n\n- [How the World’s Most Advanced AI Infrastructure Supply Chain Invents the Future](https://blogs.nvidia.com/blog/ai-infrastructure-supply-chain/), NVIDIA (official), 16 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-17-nvidia-s-supply-chain-chief-highlights-partner-network-as-ai-demand-su).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-16"
+  },
+  "/blog/news-2026-11-17-nvidia-unveils-rubin-hpc-gpu-with-over-50-000-cuda-cores-for-scientifi.html": {
+   "post": {
+    "slug": "news-2026-11-17-nvidia-unveils-rubin-hpc-gpu-with-over-50-000-cuda-cores-for-scientifi",
+    "titolo": "Nvidia unveils Rubin HPC GPU with over 50,000 CUDA cores for scientific workloads",
+    "descr": "At SC26 in Chicago, Nvidia announced the Rubin HPC GPU, part of its Vera Rubin platform, targeting scientific, engineering and analytics agents.",
+    "data": "2026-11-17",
+    "tema": "Hardware",
+    "corpo": "At SC26 in Chicago, Nvidia announced the Rubin HPC GPU, part of its Vera Rubin platform, targeting scientific, engineering and analytics agents.\n\nThe chip will house more than 50,000 CUDA cores and 898 Tensor cores, with a new sparse data acceleration feature to keep cores fed during simulations.\n\nRubin HPC also integrates seventh‑generation NVLink, moving up to 3.6 terabits per second per GPU, and will ship with an updated CUDA‑X library suite.\n\nSoftware additions include cuPhoton.xBeam for Event Horizon Telescope data, cuPhoton.xLens for fusion plasma simulation, and open‑source cuSpa for cell polygon calculations.\n\nNvidia paired the hardware with Nemotron for Science, built on the 124‑billion‑parameter Nemotron 3.5 Super VL model, offering post‑training workflows for scientific tasks.\n\n## What it means for you\n\nResearchers will gain faster simulation cycles, potentially cutting weeks‑long analyses to minutes, accelerating discovery in fields like astrophysics and biology. For AI practitioners focused on free or local models, the announcement highlights Nvidia’s push toward large, proprietary hardware, underscoring the need to balance cloud‑based GPU access with lightweight, open‑source alternatives.\n\n## Sources\n\n- [At SC26, Nvidia debuts new Rubin HPC chip, scientific research libraries](https://siliconangle.com/2026/11/16/nvidia-debuts-new-rubin-hpc-chip-scientific-research-libraries/), SiliconANGLE, 17 Nov 2026\n- [NVIDIA Announces Rubin HPC — A New GPU to Accelerate Agents for Science, Engineering and Analytics](https://blogs.nvidia.com/blog/rubin-hpc/), blogs.nvidia.com (official), 16 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-17-nvidia-unveils-rubin-hpc-gpu-with-over-50-000-cuda-cores-for-scientifi).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-16"
+  },
+  "/blog/news-2026-11-17-openai-partners-with-nato-to-boost-allied-cyber-defenses-using-ai.html": {
+   "post": {
+    "slug": "news-2026-11-17-openai-partners-with-nato-to-boost-allied-cyber-defenses-using-ai",
+    "titolo": "OpenAI partners with NATO to boost allied cyber defenses using AI",
+    "descr": "OpenAI announced a partnership with NATO and allied cyber agencies.",
+    "data": "2026-11-17",
+    "tema": "Policy",
+    "corpo": "OpenAI announced a partnership with NATO and allied cyber agencies.\n\nThe collaboration aims to use AI tools to help trusted defenders identify system vulnerabilities.\n\nAI will also be employed to test remediation measures and strengthen protection of essential infrastructure.\n\nThe effort focuses on enhancing cyber defense capabilities across NATO member states and partners.\n\n## What it means for you\n\nFor AI users, the partnership could lead to more robust security tools powered by advanced models. Those seeking free or locally hosted models may see increased emphasis on trusted, secure AI deployments in critical sectors.\n\n## Sources\n\n- [Strengthening NATO and allied cyber defenses with AI](https://openai.com/index/strengthening-nato-allied-cyber-defences-ai), OpenAI (official), 17 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-17-openai-partners-with-nato-to-boost-allied-cyber-defenses-using-ai).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-16"
   }
  },
  "ricostruzione": {
