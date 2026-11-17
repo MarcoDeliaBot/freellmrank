@@ -51,6 +51,15 @@ test('chi vince: come la riga «Call» dei fatti', () => {
   assert.ok(controllaTesto(t3, ok).includes('intro: must say Qwen 3.6 Plus is ahead'));
 });
 
+test('numeri interi contro interi: «62 675» vale 62675, un pezzo di un altro numero non basta', () => {
+  const dati = 'votes 62675, coding 1686, size 2780.1 B';
+  const t = buono(); t.intro += ' It has 62 675 votes and 1,686 points in coding, size 2 780.1 B.';
+  const testo = (x) => controllaTesto(x, { a, b, testoDati: `${testoDati} ${dati}` }).filter((e) => e.startsWith('number'));
+  assert.deepEqual(testo(t), []);
+  const t2 = buono(); t2.intro += ' It has 627 votes and 268 fans.';
+  assert.deepEqual(testo(t2), ['number not in DATA: 627', 'number not in DATA: 268']);
+});
+
 test('struttura: titolo con i due punti, sezioni e lunghezza', () => {
   const t = buono(); t.angolo = 'Winner: Qwen'; t.sezioni = t.sezioni.slice(0, 1);
   const e = controllaTesto(t, { a, b, testoDati });
