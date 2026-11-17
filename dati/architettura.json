@@ -2143,5 +2143,16 @@
   "contestoMax": 131072,
   "moe": false,
   "attivi": 3659737600
+ },
+ "Qwen/Qwen3.5-2B": {
+  "strati": 24,
+  "tipo": "GQA",
+  "kvPerStrato": 2048,
+  "pieni": 6,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": false,
+  "attivi": 2274069824
  }
 }
