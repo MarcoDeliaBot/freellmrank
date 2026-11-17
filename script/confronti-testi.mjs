@@ -70,7 +70,7 @@ export function controllaTesto(t, { a, b, testoDati, altriNomi = [], leader = ''
 }
 
 // Le coppie da scrivere oggi, in ordine di urgenza
-export function scegliCoppie(coppie, testi, fattiDi, { max = 4, perModello = 2, oggi = new Date().toISOString().slice(0, 10) } = {}) {
+export function scegliCoppie(coppie, testi, fattiDi, { max = 4, perModello = 3, oggi = new Date().toISOString().slice(0, 10) } = {}) {
   const ora = Date.parse(oggi);
   const recente = (c) => Math.max(...[c.a.primo, c.b.primo].map((d) => (d ? Date.parse(d) : 0)));
   const punti = (c) => c.a.cat.chat.punti + c.b.cat.chat.punti;
@@ -85,7 +85,7 @@ export function scegliCoppie(coppie, testi, fattiDi, { max = 4, perModello = 2, 
   const fresca = (c) => ora - recente(c) <= 14 * GIORNO;
   nuove.sort((x, y) => (fresca(y) - fresca(x)) || (fresca(x) && fresca(y) ? recente(y) - recente(x) : 0) || punti(y) - punti(x));
   vecchie.sort((x, y) => Date.parse(testi[x.file].aggiornato) - Date.parse(testi[y.file].aggiornato));
-  // 17/11/2026 (Marco: «Sì, limita»): al massimo PER_MODELLO coppie al giorno con lo stesso modello; senza, l'ordine per punti
+  // 17/11/2026 (Marco: «Sì, limita»): al massimo perModello coppie al giorno con lo stesso modello (3 dal 17/11 sera, Marco: «porta a 3 il limite»); senza, l'ordine per punti
   // dava solo «Gemini 3.8 Flash contro tutti» per due settimane
   const usi = new Map();
   const scelte = [];
