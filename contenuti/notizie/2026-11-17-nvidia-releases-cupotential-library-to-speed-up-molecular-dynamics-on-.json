@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-17-nvidia-releases-cupotential-library-to-speed-up-molecular-dynamics-on-",
+ "titolo": "NVIDIA releases cuPotential library to speed up molecular dynamics on GPUs",
+ "descr": "cuPotential offers modular C API primitives that double to triple MD simulation speed on GPUs from T4 to RTX PRO 6000 Blackwell.",
+ "tema": "Research",
+ "paragrafi": [
+  "The library provides drop‑in replacements for OpenMM’s nonbonded force, Langevin integrator and Monte‑Carlo barostat, requiring minimal code changes.",
+  "Benchmarks show end‑to‑end speedups of 2× to over 3× on GPU architectures ranging from T4 to RTX PRO 6000 Blackwell for systems of 24,000 to 400,000 atoms under NPT conditions.",
+  "New continuous splitting and spreading functions, co‑developed with D. E.",
+  "Energy drift over 10 ns simulations is reduced by several hundredfold versus default PME settings, while dispersion energy accuracy improves by several thousandfold with comparable force errors."
+ ],
+ "perche": [
+  "Researchers can obtain faster MD runs without sacrificing accuracy, enabling larger or longer simulations on existing GPU hardware. Developers of free or locally hosted AI tools can integrate cuPotential via its OpenMM plugin to boost performance in scientific workloads that rely on molecular dynamics."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "Accelerate Molecular Dynamics Simulations with Accurate, Flexible Primitives Using NVIDIA cuPotential",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/accelerate-molecular-dynamics-simulations-with-accurate-flexible-primitives-using-nvidia-cupotential/",
+   "titolo": "Accelerate Molecular Dynamics Simulations with Accurate, Flexible Primitives Using NVIDIA cuPotential",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 2
+}

@@ -23656,6 +23656,42 @@
     "tipo": "News"
    },
    "data": "2026-11-16"
+  },
+  "/blog/news-2026-11-17-nvidia-launches-dgx-spark-developer-kit-a-four-node-desktop-supercompu.html": {
+   "post": {
+    "slug": "news-2026-11-17-nvidia-launches-dgx-spark-developer-kit-a-four-node-desktop-supercompu",
+    "titolo": "NVIDIA launches DGX Spark Developer Kit, a four‑node desktop supercomputing solution",
+    "descr": "The DGX Spark kit brings a four‑node GPU cluster with Grace Blackwell chips to researchers' desks, offering 512 GB memory and 20 TB storage.",
+    "data": "2026-11-17",
+    "tema": "Hardware",
+    "corpo": "At SC26 in Chicago, NVIDIA unveiled the DGX Spark Developer Kit, a four‑node cluster built around the GB10 Grace Blackwell Superchip.\n\nEach node connects directly to its two neighbors via NVIDIA ConnectX‑7 networking, forming a ring topology that requires no external switch.\n\nCombined, the kit provides 512 GB of memory and 20 TB of NVMe storage, allowing deployment of models up to 700 B parameters using NVFP4 quantization.\n\nThe kit supports scientific workloads such as LAMMPS, NAMD, GROMACS, OpenFOAM, WRF and AI models like DeepSeek V4.1, OpenFold3 and Nemotron 3.5 Super VL.\n\nA playbook for the NVIDIA HPC SDK, featuring GPU‑accelerated C, C++, Fortran compilers and MPI tools, will be released soon.\n\n## What it means for you\n\nResearchers can run multi‑node AI and simulation jobs locally, avoiding queue times on shared clusters. The kit also enables developers of free or open‑source models to test large‑scale workloads on‑premise without relying on cloud resources.\n\n## Sources\n\n- [NVIDIA DGX Spark Developer Kit Turns a Desk Into a Supercomputing Lab](https://blogs.nvidia.com/blog/dgx-spark-hpc-developer-kit-sc26/), NVIDIA (official), 16 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-17-nvidia-launches-dgx-spark-developer-kit-a-four-node-desktop-supercompu).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-16"
+  },
+  "/blog/news-2026-11-17-nvidia-releases-cupotential-library-to-speed-up-molecular-dynamics-on-.html": {
+   "post": {
+    "slug": "news-2026-11-17-nvidia-releases-cupotential-library-to-speed-up-molecular-dynamics-on-",
+    "titolo": "NVIDIA releases cuPotential library to speed up molecular dynamics on GPUs",
+    "descr": "cuPotential offers modular C API primitives that double to triple MD simulation speed on GPUs from T4 to RTX PRO 6000 Blackwell.",
+    "data": "2026-11-17",
+    "tema": "Research",
+    "corpo": "The library provides drop‑in replacements for OpenMM’s nonbonded force, Langevin integrator and Monte‑Carlo barostat, requiring minimal code changes.\n\nBenchmarks show end‑to‑end speedups of 2× to over 3× on GPU architectures ranging from T4 to RTX PRO 6000 Blackwell for systems of 24,000 to 400,000 atoms under NPT conditions.\n\nNew continuous splitting and spreading functions, co‑developed with D. E.\n\nEnergy drift over 10 ns simulations is reduced by several hundredfold versus default PME settings, while dispersion energy accuracy improves by several thousandfold with comparable force errors.\n\n## What it means for you\n\nResearchers can obtain faster MD runs without sacrificing accuracy, enabling larger or longer simulations on existing GPU hardware. Developers of free or locally hosted AI tools can integrate cuPotential via its OpenMM plugin to boost performance in scientific workloads that rely on molecular dynamics.\n\n## Sources\n\n- [Accelerate Molecular Dynamics Simulations with Accurate, Flexible Primitives Using NVIDIA cuPotential](https://developer.nvidia.com/blog/accelerate-molecular-dynamics-simulations-with-accurate-flexible-primitives-using-nvidia-cupotential/), NVIDIA Developer (official), 16 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-17-nvidia-releases-cupotential-library-to-speed-up-molecular-dynamics-on-).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-16"
+  },
+  "/blog/news-2026-11-17-openai-expands-free-chatgpt-for-academic-researchers-to-200-000-scient.html": {
+   "post": {
+    "slug": "news-2026-11-17-openai-expands-free-chatgpt-for-academic-researchers-to-200-000-scient",
+    "titolo": "OpenAI expands free ChatGPT for Academic Researchers to 200,000 scientists",
+    "descr": "OpenAI will give 200,000 researchers worldwide free access to its frontier models via the ChatGPT for Academic Researchers program.",
+    "data": "2026-11-17",
+    "tema": "Policy",
+    "corpo": "OpenAI announced on 16 November 2026 that it is widening its ChatGPT for Academic Researchers program.\n\nThe expansion will provide free access to frontier models for 200,000 researchers around the globe.\n\nThe move targets scientists who need advanced AI tools for their work without cost barriers.\n\nOpenAI describes the initiative as a step toward broader AI accessibility in research.\n\nNo details were given about eligibility criteria beyond the researcher designation.\n\n## What it means for you\n\nResearchers gain unrestricted use of cutting‑edge models, potentially accelerating scientific discovery. For users seeking free AI, the program shows a growing trend of major providers offering no‑cost access to advanced models.\n\n## Sources\n\n- [Broadening access to AI for scientists](https://openai.com/index/expanding-chatgpt-for-academic-researchers), OpenAI (official), 16 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-17-openai-expands-free-chatgpt-for-academic-researchers-to-200-000-scient).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-16"
   }
  },
  "ricostruzione": {

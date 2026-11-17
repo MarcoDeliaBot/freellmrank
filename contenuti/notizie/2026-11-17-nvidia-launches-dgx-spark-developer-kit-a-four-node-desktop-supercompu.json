@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-17-nvidia-launches-dgx-spark-developer-kit-a-four-node-desktop-supercompu",
+ "titolo": "NVIDIA launches DGX Spark Developer Kit, a four‑node desktop supercomputing solution",
+ "descr": "The DGX Spark kit brings a four‑node GPU cluster with Grace Blackwell chips to researchers' desks, offering 512 GB memory and 20 TB storage.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "At SC26 in Chicago, NVIDIA unveiled the DGX Spark Developer Kit, a four‑node cluster built around the GB10 Grace Blackwell Superchip.",
+  "Each node connects directly to its two neighbors via NVIDIA ConnectX‑7 networking, forming a ring topology that requires no external switch.",
+  "Combined, the kit provides 512 GB of memory and 20 TB of NVMe storage, allowing deployment of models up to 700 B parameters using NVFP4 quantization.",
+  "The kit supports scientific workloads such as LAMMPS, NAMD, GROMACS, OpenFOAM, WRF and AI models like DeepSeek V4.1, OpenFold3 and Nemotron 3.5 Super VL.",
+  "A playbook for the NVIDIA HPC SDK, featuring GPU‑accelerated C, C++, Fortran compilers and MPI tools, will be released soon."
+ ],
+ "perche": [
+  "Researchers can run multi‑node AI and simulation jobs locally, avoiding queue times on shared clusters. The kit also enables developers of free or open‑source models to test large‑scale workloads on‑premise without relying on cloud resources."
+ ],
+ "pubblicato": "2026-11-17",
+ "titoloFonte": "NVIDIA DGX Spark Developer Kit Turns a Desk Into a Supercomputing Lab",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/dgx-spark-hpc-developer-kit-sc26/",
+   "titolo": "NVIDIA DGX Spark Developer Kit Turns a Desk Into a Supercomputing Lab",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 0
+}
