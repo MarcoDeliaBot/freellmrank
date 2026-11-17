@@ -74,6 +74,11 @@ export function controllaTesto(t, { a, b, A = a.nome, B = b.nome, testoDati, alt
       if (pari) err.push(`DATA says ${leader} has a real lead, but the text says "${pari}"`);
     }
   }
+  // primo in classifica solo se lo è davvero (17/11, prima corsa del formato 2: «leads the overall Arena ranking among all
+  // 421 entries» per un modello 9°, sfuggito anche al secondo lettore)
+  const primo = [a, b].some((m) => m.cat?.chat?.pos === 1);
+  const vanto = /\b(leads?|leading|tops?|heads?|ranks? first|first place|number one|no\. ?1|#1|best)\b[^.]{0,50}\b(overall|ranking|leaderboard|all \d+|entries|every model|all models)\b/i.exec(tutto);
+  if (vanto && !primo) err.push(`neither model is #1 on Arena, but the text says "${vanto[0]}"`);
   if (/[—–]/.test(tutto)) err.push('em dash');
   if (/[\u{1F300}-\u{1FAFF}]/u.test(tutto)) err.push('emoji');
   return [...new Set(err)];
@@ -111,7 +116,8 @@ export function scegliCoppie(coppie, testi, fattiDi, { max = 4, perModello = 3, 
 const SISTEMA = `You write the paragraphs of a comparison page on FreeLLMArena (freellmarena.com), a free site that ranks AI models you can use for free (open weights or a free API) using Arena's blind human votes, and estimates how fast they run on home hardware. Always write the site name as FreeLLMArena, one word. Readers are curious people and hobbyists who searched "A vs B" and want a straight answer. The page already has its headings and data tables: you write only the paragraphs that go under each heading.
 ${REGOLE_SCRITTURA}
 - Mention no AI model other than the two being compared, and call them by the short names given in DATA. Do not mention prices: DATA has none.
-- Say who leads exactly as the "Call" line in DATA says.
+- Say who leads exactly as the "Call" line in DATA says, in your own words (do not quote the Call line).
+- A model's place in the whole Arena ranking is its "rank X of Y": never say it leads or tops the overall ranking unless its rank is 1.
 - Say a model can be tried on FreeLLMArena, used through a free API or run at home only if DATA says so for that model.
 - Write numbers exactly as DATA writes them (same digits). Round nothing. Percentages only if DATA has them.
 - Each paragraph must make sense on its own, under its heading. Do not repeat the heading as the first words.`;
@@ -142,7 +148,7 @@ export function componi(t, { a, b, fatti, oggi, scritto, scrittore }) {
 // i numeri e i nomi li controlla il codice, il senso delle frasi (chi vince, dove entra, come si usa gratis) un modello.
 export async function verifica(t, testoDati) {
   const r = await chiediModello([
-    { role: 'system', content: 'You are a strict fact checker. Compare ARTICLE with DATA. List every statement in ARTICLE that DATA does not support or that contradicts DATA: who leads, which hardware a model fits on or not, how each model can be used for free, whether it can be tried on FreeLLMArena, sizes, category results, open weights. Ignore style. Return JSON {"errori": ["short description of each unsupported statement"]}, with an empty list if everything is supported.' },
+    { role: 'system', content: 'You are a strict fact checker. Compare ARTICLE with DATA. List every statement in ARTICLE that DATA does not support or that contradicts DATA: who leads, the rank of each model in the whole Arena ranking, which hardware a model fits on or not, how each model can be used for free, whether it can be tried on FreeLLMArena, sizes, category results, open weights. Ignore style. Return JSON {"errori": ["short description of each unsupported statement"]}, with an empty list if everything is supported.' },
     { role: 'user', content: `DATA:\n${testoDati}\n\nARTICLE (JSON):\n${JSON.stringify(t)}` },
   ], { json: true, max: 1200, scopo: 'bozze' });
   return Array.isArray(r?.errori) ? r.errori.map(String).filter(Boolean) : ['fact checker: no "errori" list'];
