@@ -1,0 +1,39 @@
+{
+  "coppia": [
+    "Kimi K3.1 Pro (Max)",
+    "Kimi K3 (Max)"
+  ],
+  "angolo": "Chat scores differ by 2 points, both miss home fit",
+  "descr": "Kimi K3.1 Pro (Max) and Kimi K3 (Max) score almost the same in Arena, cannot run on typical home GPUs, both free to download.",
+  "intro": "Kimi K3.1 Pro (Max) and Kimi K3 (Max) are essentially tied in Arena. The chat scores differ by only two points, so neither model clearly outperforms the other.",
+  "sezioni": [
+    {
+      "titolo": "Blind vote result",
+      "testo": "Arena uses blind human votes to rank models. Each answer is anonymous and the better one is chosen. The chat scores are 1485 for Kimi K3.1 Pro (Max) and 1487 for Kimi K3 (Max). The difference is two points, which the data describes as too close to call. Both models win roughly half of the votes."
+    },
+    {
+      "titolo": "Strengths by category",
+      "testo": "In the chat category the two models are about even. For coding, Kimi K3.1 Pro (Max) scores 1686 while Kimi K3 (Max) scores 1658, giving the Pro version a slight edge in code generation."
+    },
+    {
+      "titolo": "Running at home",
+      "testo": "Both models are 4-bit and require a download of about 1686 GB. Their full size is 2780.1 B (104.8 B active) for Kimi K3.1 Pro (Max) and 2779.9 B (104.6 B active) for Kimi K3 (Max). The estimated speed table shows they do not fit on any listed consumer GPU or high-end workstation, including RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB and Ryzen AI Max+ 395 128 GB.\n\nBecause they do not fit, running them locally will require very large memory or custom offload solutions beyond the listed hardware."
+    },
+    {
+      "titolo": "Free use options",
+      "testo": "Both models have open weights and can be used for free by downloading and running them at home. The Kimi K3.1 Pro (Max) license is called Kimi K3.1 Pro License, while Kimi K3 (Max) uses the Kimi K3 license. Neither can be tried directly on the FreeLLMArena Try & compare page."
+    }
+  ],
+  "verdetto": "Pick Kimi K3.1 Pro (Max) if you need a slight coding edge. Pick Kimi K3 (Max) if you prefer the higher overall rank and more votes. Both require massive storage and do not fit typical home GPUs.",
+  "scritto": "2026-11-17",
+  "aggiornato": "2026-11-17",
+  "scrittore": "groq",
+  "fatti": {
+    "leader": "even",
+    "gratisA": "download and run at home · Kimi K3.1 Pro License",
+    "gratisB": "download and run at home · Kimi K3 license",
+    "puntiA": 1485,
+    "puntiB": 1487,
+    "dataArena": "2026-11-11"
+  }
+}
