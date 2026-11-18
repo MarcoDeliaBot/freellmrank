@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-18-microsoft-launches-autopilot-personal-ai-teammate-for-microsoft-365-in",
+ "titolo": "Microsoft launches Autopilot personal AI teammate for Microsoft 365 in preview",
+ "descr": "Autopilot, built on Microsoft IQ, acts as a cloud‑based personal agent in Teams and Outlook for eligible Copilot users.",
+ "tema": "Business",
+ "paragrafi": [
+  "The agent works across Teams and Outlook, runs in the cloud, and has its own identity, persistent memory, workspace and remote computer.",
+  "Users name the agent, assign a role and a goal; the agent can send emails, schedule meetings, draft replies and handle recurring tasks such as weekly summary emails.",
+  "Examples include blocking calendar time for travel, removing selected meeting occurrences while preserving series, and preparing 40 draft replies to unanswered Teams conversations.",
+  "Autopilot operates under user‑defined approval rules and can be governed through Microsoft Agent 365 and Microsoft’s security capabilities."
+ ],
+ "perche": [
+  "For AI users, Autopilot offers a hands‑free way to manage routine work within familiar Microsoft 365 tools, reducing manual effort. For those preferring free or locally hosted models, the preview highlights Microsoft’s push toward cloud‑centric, enterprise‑grade agents, underscoring the gap between such services and community‑driven free models."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "Microsoft launches Autopilot, a personal agent for Copilot",
+ "fonti": [
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/microsoft-launches-autopilot-a-personal-agent-for-copilot/",
+   "titolo": "Microsoft launches Autopilot, a personal agent for Copilot",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  },
+  {
+   "nome": "techcommunity.microsoft.com",
+   "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/autopilot-meet-your-trusted-personal-teammate/4572611?ref=testingcatalog.com",
+   "titolo": "Autopilot: meet your trusted personal teammate | Microsoft Community Hub",
+   "ufficiale": true,
+   "data": "2026-11-17"
+  }
+ ],
+ "frasiTolte": 1
+}

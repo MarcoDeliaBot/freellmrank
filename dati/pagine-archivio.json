@@ -23904,6 +23904,30 @@
     "tipo": "News"
    },
    "data": "2026-11-17"
+  },
+  "/blog/news-2026-11-18-microsoft-launches-autopilot-personal-ai-teammate-for-microsoft-365-in.html": {
+   "post": {
+    "slug": "news-2026-11-18-microsoft-launches-autopilot-personal-ai-teammate-for-microsoft-365-in",
+    "titolo": "Microsoft launches Autopilot personal AI teammate for Microsoft 365 in preview",
+    "descr": "Autopilot, built on Microsoft IQ, acts as a cloud‑based personal agent in Teams and Outlook for eligible Copilot users.",
+    "data": "2026-11-18",
+    "tema": "Business",
+    "corpo": "The agent works across Teams and Outlook, runs in the cloud, and has its own identity, persistent memory, workspace and remote computer.\n\nUsers name the agent, assign a role and a goal; the agent can send emails, schedule meetings, draft replies and handle recurring tasks such as weekly summary emails.\n\nExamples include blocking calendar time for travel, removing selected meeting occurrences while preserving series, and preparing 40 draft replies to unanswered Teams conversations.\n\nAutopilot operates under user‑defined approval rules and can be governed through Microsoft Agent 365 and Microsoft’s security capabilities.\n\n## What it means for you\n\nFor AI users, Autopilot offers a hands‑free way to manage routine work within familiar Microsoft 365 tools, reducing manual effort. For those preferring free or locally hosted models, the preview highlights Microsoft’s push toward cloud‑centric, enterprise‑grade agents, underscoring the gap between such services and community‑driven free models.\n\n## Sources\n\n- [Microsoft launches Autopilot, a personal agent for Copilot](https://www.testingcatalog.com/microsoft-launches-autopilot-a-personal-agent-for-copilot/), TestingCatalog, 17 Nov 2026\n- [Autopilot: meet your trusted personal teammate | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/autopilot-meet-your-trusted-personal-teammate/4572611?ref=testingcatalog.com), techcommunity.microsoft.com (official), 17 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-18-microsoft-launches-autopilot-personal-ai-teammate-for-microsoft-365-in).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-17"
+  },
+  "/blog/news-2026-11-18-perplexity-computer-adds-multiagent-effort-level-running-up-to-16-agen.html": {
+   "post": {
+    "slug": "news-2026-11-18-perplexity-computer-adds-multiagent-effort-level-running-up-to-16-agen",
+    "titolo": "Perplexity Computer adds Multiagent effort level, running up to 16 agents on Claude, GPT and Gemini",
+    "descr": "Perplexity launches Multiagent, a new effort level above Ultra that lets a lead agent coordinate up to 16 parallel agents across frontier models.",
+    "data": "2026-11-18",
+    "tema": "Software",
+    "corpo": "Perplexity announced a new Multiagent effort level for its Computer platform, positioned above the existing Ultra setting.\n\nAgents work in parallel, share findings, question each other's assumptions and flag discrepancies before the lead compiles a single response.\n\nMultiagent is aimed at complex, multi‑part assignments such as financial forecasting, data‑room diligence, tax planning and deep analysis.\n\n## What it means for you\n\nFor users, Multiagent offers higher‑density problem solving without manually managing multiple models, speeding up tasks that need parallel analysis. The rollout does not affect free or locally hosted models, which remain separate from Perplexity’s subscription‑based, cloud‑only service.\n\n## Sources\n\n- [Perplexity Computer Adds Multiagent: Up to 16 AI Agents That Cross-Check Work](https://www.marktechpost.com/2026/11/17/perplexity-computer-multiagent-effort-level/), MarkTechPost, 17 Nov 2026\n- [Introducing Computer’s Multiagent effort level](https://www.perplexity.ai/hub/blog/introducing-computer-multiagent), perplexity.ai (official), 17 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-18-perplexity-computer-adds-multiagent-effort-level-running-up-to-16-agen).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-17"
   }
  },
  "ricostruzione": {

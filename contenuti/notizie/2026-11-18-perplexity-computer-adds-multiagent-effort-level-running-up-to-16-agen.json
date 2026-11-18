@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-18-perplexity-computer-adds-multiagent-effort-level-running-up-to-16-agen",
+ "titolo": "Perplexity Computer adds Multiagent effort level, running up to 16 agents on Claude, GPT and Gemini",
+ "descr": "Perplexity launches Multiagent, a new effort level above Ultra that lets a lead agent coordinate up to 16 parallel agents across frontier models.",
+ "tema": "Software",
+ "paragrafi": [
+  "Perplexity announced a new Multiagent effort level for its Computer platform, positioned above the existing Ultra setting.",
+  "Agents work in parallel, share findings, question each other's assumptions and flag discrepancies before the lead compiles a single response.",
+  "Multiagent is aimed at complex, multi‑part assignments such as financial forecasting, data‑room diligence, tax planning and deep analysis."
+ ],
+ "perche": [
+  "For users, Multiagent offers higher‑density problem solving without manually managing multiple models, speeding up tasks that need parallel analysis. The rollout does not affect free or locally hosted models, which remain separate from Perplexity’s subscription‑based, cloud‑only service."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "Perplexity Computer Adds Multiagent: Up to 16 AI Agents That Cross-Check Work",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/17/perplexity-computer-multiagent-effort-level/",
+   "titolo": "Perplexity Computer Adds Multiagent: Up to 16 AI Agents That Cross-Check Work",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  },
+  {
+   "nome": "perplexity.ai",
+   "url": "https://www.perplexity.ai/hub/blog/introducing-computer-multiagent",
+   "titolo": "Introducing Computer’s Multiagent effort level",
+   "ufficiale": true,
+   "data": "2026-11-17"
+  }
+ ],
+ "frasiTolte": 2
+}
