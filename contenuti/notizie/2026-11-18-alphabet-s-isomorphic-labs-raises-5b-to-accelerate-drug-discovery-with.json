@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with",
+ "titolo": "Alphabet’s Isomorphic Labs raises $5B to accelerate drug discovery with AI",
+ "descr": "Alphabet‑backed Isomorphic Labs raised $5 billion, led by Greenoaks and Sequoia, to push its AI drug‑design engine toward clinical trials.",
+ "tema": "Business",
+ "paragrafi": [
+  "Isomorphic Labs announced a $5 billion Series C round on 17 November 2026. The investment was led by Greenoaks and Sequoia Capital and included new backer Andreessen Horowitz alongside existing investors such as Alphabet’s GV and CapitalG, Thrive Capital, MGX, Temasek and the U.K. Sovereign AI Fund.",
+  "The funding follows a $2.1 billion Series B round in May and will be used to further develop the Isomorphic Labs Drug Design Engine (IsoDDE) and move its drug candidates into clinical trials.",
+  "IsoDDE builds on DeepMind’s AlphaFold protein‑folding model and employs simulation AI to identify binding pockets, generate compounds, and replace hardware‑intensive free‑energy‑perturbation (FEP) steps in drug design.",
+  "The company reports positive pre‑clinical results in oncology and immunology and has partnership deals with Eli Lilly, Novartis and Johnson & Johnson.",
+  "Founder and CEO Demis Hassabis, who left DeepMind to focus on the venture, said the new capital will accelerate foundational biology models and drive therapeutic programs toward trials."
+ ],
+ "perche": [
+  "The sizable funding underscores the growing confidence in AI‑powered biotech, suggesting faster drug‑discovery pipelines for pharma partners. For AI users, the progress of IsoDDE highlights the value of specialized, high‑compute models that remain largely inaccessible to free or local deployments, reinforcing the need for cloud‑based services for cutting‑edge research."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "Alphabet’s Isomorphic Labs raises $5B to accelerate drug discovery with AI",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/17/alphabets-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with-ai/",
+   "titolo": "Alphabet’s Isomorphic Labs raises $5B to accelerate drug discovery with AI",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/17/isomorphic-labs-raises-5b-as-it-looks-to-take-drug-candidates-to-clinical-trials/",
+   "titolo": "Isomorphic Labs raises $5B as it looks to take drug candidates to clinical trials",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  }
+ ],
+ "frasiTolte": 1
+}

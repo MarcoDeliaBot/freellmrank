@@ -23868,6 +23868,42 @@
     "tipo": "News"
    },
    "data": "2026-11-17"
+  },
+  "/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with.html": {
+   "post": {
+    "slug": "news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with",
+    "titolo": "Alphabet’s Isomorphic Labs raises $5B to accelerate drug discovery with AI",
+    "descr": "Alphabet‑backed Isomorphic Labs raised $5 billion, led by Greenoaks and Sequoia, to push its AI drug‑design engine toward clinical trials.",
+    "data": "2026-11-18",
+    "tema": "Business",
+    "corpo": "Isomorphic Labs announced a $5 billion Series C round on 17 November 2026. The investment was led by Greenoaks and Sequoia Capital and included new backer Andreessen Horowitz alongside existing investors such as Alphabet’s GV and CapitalG, Thrive Capital, MGX, Temasek and the U.K. Sovereign AI Fund.\n\nThe funding follows a $2.1 billion Series B round in May and will be used to further develop the Isomorphic Labs Drug Design Engine (IsoDDE) and move its drug candidates into clinical trials.\n\nIsoDDE builds on DeepMind’s AlphaFold protein‑folding model and employs simulation AI to identify binding pockets, generate compounds, and replace hardware‑intensive free‑energy‑perturbation (FEP) steps in drug design.\n\nThe company reports positive pre‑clinical results in oncology and immunology and has partnership deals with Eli Lilly, Novartis and Johnson & Johnson.\n\nFounder and CEO Demis Hassabis, who left DeepMind to focus on the venture, said the new capital will accelerate foundational biology models and drive therapeutic programs toward trials.\n\n## What it means for you\n\nThe sizable funding underscores the growing confidence in AI‑powered biotech, suggesting faster drug‑discovery pipelines for pharma partners. For AI users, the progress of IsoDDE highlights the value of specialized, high‑compute models that remain largely inaccessible to free or local deployments, reinforcing the need for cloud‑based services for cutting‑edge research.\n\n## Sources\n\n- [Alphabet’s Isomorphic Labs raises $5B to accelerate drug discovery with AI](https://siliconangle.com/2026/11/17/alphabets-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with-ai/), SiliconANGLE, 17 Nov 2026\n- [Isomorphic Labs raises $5B as it looks to take drug candidates to clinical trials](https://techcrunch.com/2026/11/17/isomorphic-labs-raises-5b-as-it-looks-to-take-drug-candidates-to-clinical-trials/), TechCrunch, 17 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-17"
+  },
+  "/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite.html": {
+   "post": {
+    "slug": "news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite",
+    "titolo": "Microsoft launches MAI Cyber 2 Flash security model at Ignite",
+    "descr": "The new specialist AI model claims top performance on vulnerability discovery while costing less than 2% of GPT‑6 Astra per task.",
+    "data": "2026-11-18",
+    "tema": "Business",
+    "corpo": "Microsoft announced MAI Cyber 2 Flash at its Ignite event on 17 Nov 2026. The model is built for security teams to find vulnerabilities, recommend fixes and investigate threats continuously.\n\nOn the CyberGym‑E2E benchmark, MAI Cyber 2 Flash solved 92.3% of tasks, edging out GPT‑6 Astra’s 91.5% while using half the reasoning budget and under 2% of the cost per task.\n\nThe figure reflects offline evaluation cost.\n\nMicrosoft says the model draws on decades of proprietary security data and is calibrated by industry experts. Larger models are reserved for the hardest cases in the MDASH workflow.\n\n## What it means for you\n\nFor security teams, the claim of comparable or better detection at a fraction of the cost could lower operational expenses and enable continuous AI‑assisted monitoring. Users of free or locally hosted models will still need to rely on open‑source tools, as MAI Cyber 2 Flash is exclusive to Microsoft’s security products and not available for independent deployment.\n\n## Sources\n\n- [Microsoft launches MAI Cyber 2 Flash security model](https://www.testingcatalog.com/microsoft-launches-mai-cyber-2-flash-security-model/), TestingCatalog, 17 Nov 2026\n- [MAI Cyber 2 Flash | Microsoft AI](https://microsoft.ai/models/mai-cyber-2-flash/?ref=testingcatalog.com), microsoft.ai (official), 6 May 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-17"
+  },
+  "/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models.html": {
+   "post": {
+    "slug": "news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models",
+    "titolo": "Microsoft unveils Copilot Workspaces and launches seven new MAI models at Ignite 2026",
+    "descr": "At Ignite 2026 Microsoft announced Copilot Workspaces, Autopilot agent and seven cost‑effective MAI models covering code, security, image, voice and routing.",
+    "data": "2026-11-18",
+    "tema": "Business",
+    "corpo": "During the Ignite 2026 keynote Satya Nadella introduced Copilot Workspaces, a collaborative surface that lets agents draft, edit and respond to user comments in shared documents.\n\nMicrosoft also unveiled Autopilot, a personal agent that can monitor Teams channels, follow up on emails and manage projects without a prompt, running on the existing identity and compliance framework.\n\nThe company announced a suite of seven MAI models, including MAI Code 2, Code 2 Flash, MAI Cyber 2 Flash, MAI‑Image‑2.7, MAI‑Image‑2.7‑Flash, MAI Realtime 1 and Microsoft‑Decision‑1.1, all aimed at enterprise workloads with lower price‑performance trade‑offs.\n\nImage models are priced at $34.82 per 1,000 images for the full version and $10.24 for the Flash variant.\n\nNew tools Agent 365 Business Analytics and Cost Management were also introduced to give admins visibility into AI spend, linking cost to work completed rather than token usage.\n\n## What it means for you\n\nEnterprises gain cheaper, continuously running AI models for coding, security and media tasks, while the new observability tools help control budgets. For users of free or locally hosted models, the focus on low‑cost frontier performance highlights the price gap with open alternatives such as Kimi K3 or Gemini 4 Carbon, underscoring the need to evaluate cost versus capability when choosing between cloud‑only services and free models.\n\n## On FreeLLMArena\n\nFrom our rankings on 17 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [Microsoft unveiled Copilot Workspaces at Ignite 2026, plus more AI workplace updates](https://www.zdnet.com/innovation/microsoft-copilot-workspaces-ignite-2026/), ZDNet, 17 Nov 2026\n- [Microsoft launches seven MAI models at Ignite 2026](https://www.testingcatalog.com/microsoft-launches-seven-mai-models-at-ignite-2026/), TestingCatalog, 17 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-17"
   }
  },
  "ricostruzione": {

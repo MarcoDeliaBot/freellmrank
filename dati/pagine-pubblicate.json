@@ -5616,6 +5616,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "en",
@@ -15993,6 +16041,54 @@
  },
  {
   "url": "/de/blog/news-2026-11-17-openai-releases-gpt-6-2-astra-and-sol-for-chatgpt-work-codex-and-api.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models.html",
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-17",
@@ -34458,6 +34554,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "es",
@@ -52909,6 +53053,54 @@
  },
  {
   "url": "/fr/blog/news-2026-11-17-openai-releases-gpt-6-2-astra-and-sol-for-chatgpt-work-codex-and-api.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models.html",
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-17",
@@ -71374,6 +71566,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "it",
@@ -89825,6 +90065,54 @@
  },
  {
   "url": "/ja/blog/news-2026-11-17-openai-releases-gpt-6-2-astra-and-sol-for-chatgpt-work-codex-and-api.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models.html",
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-17",
@@ -116357,6 +116645,54 @@
  },
  {
   "url": "/pt/blog/news-2026-11-17-openai-releases-gpt-6-2-astra-and-sol-for-chatgpt-work-codex-and-api.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-18-alphabet-s-isomorphic-labs-raises-5b-to-accelerate-drug-discovery-with.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-17",
+  "ultimaVista": "2026-11-17",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models.html",
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-17",

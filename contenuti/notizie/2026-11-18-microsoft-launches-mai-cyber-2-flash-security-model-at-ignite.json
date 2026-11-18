@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-18-microsoft-launches-mai-cyber-2-flash-security-model-at-ignite",
+ "titolo": "Microsoft launches MAI Cyber 2 Flash security model at Ignite",
+ "descr": "The new specialist AI model claims top performance on vulnerability discovery while costing less than 2% of GPT‑6 Astra per task.",
+ "tema": "Business",
+ "paragrafi": [
+  "Microsoft announced MAI Cyber 2 Flash at its Ignite event on 17 Nov 2026. The model is built for security teams to find vulnerabilities, recommend fixes and investigate threats continuously.",
+  "On the CyberGym‑E2E benchmark, MAI Cyber 2 Flash solved 92.3% of tasks, edging out GPT‑6 Astra’s 91.5% while using half the reasoning budget and under 2% of the cost per task.",
+  "The figure reflects offline evaluation cost.",
+  "Microsoft says the model draws on decades of proprietary security data and is calibrated by industry experts. Larger models are reserved for the hardest cases in the MDASH workflow."
+ ],
+ "perche": [
+  "For security teams, the claim of comparable or better detection at a fraction of the cost could lower operational expenses and enable continuous AI‑assisted monitoring. Users of free or locally hosted models will still need to rely on open‑source tools, as MAI Cyber 2 Flash is exclusive to Microsoft’s security products and not available for independent deployment."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "Microsoft launches MAI Cyber 2 Flash security model",
+ "fonti": [
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/microsoft-launches-mai-cyber-2-flash-security-model/",
+   "titolo": "Microsoft launches MAI Cyber 2 Flash security model",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  },
+  {
+   "nome": "microsoft.ai",
+   "url": "https://microsoft.ai/models/mai-cyber-2-flash/?ref=testingcatalog.com",
+   "titolo": "MAI Cyber 2 Flash | Microsoft AI",
+   "ufficiale": true,
+   "data": "2026-05-06"
+  }
+ ],
+ "frasiTolte": 2
+}

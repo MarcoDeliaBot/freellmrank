@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-18-microsoft-unveils-copilot-workspaces-and-launches-seven-new-mai-models",
+ "titolo": "Microsoft unveils Copilot Workspaces and launches seven new MAI models at Ignite 2026",
+ "descr": "At Ignite 2026 Microsoft announced Copilot Workspaces, Autopilot agent and seven cost‑effective MAI models covering code, security, image, voice and routing.",
+ "tema": "Business",
+ "paragrafi": [
+  "During the Ignite 2026 keynote Satya Nadella introduced Copilot Workspaces, a collaborative surface that lets agents draft, edit and respond to user comments in shared documents.",
+  "Microsoft also unveiled Autopilot, a personal agent that can monitor Teams channels, follow up on emails and manage projects without a prompt, running on the existing identity and compliance framework.",
+  "The company announced a suite of seven MAI models, including MAI Code 2, Code 2 Flash, MAI Cyber 2 Flash, MAI‑Image‑2.7, MAI‑Image‑2.7‑Flash, MAI Realtime 1 and Microsoft‑Decision‑1.1, all aimed at enterprise workloads with lower price‑performance trade‑offs.",
+  "Image models are priced at $34.82 per 1,000 images for the full version and $10.24 for the Flash variant.",
+  "New tools Agent 365 Business Analytics and Cost Management were also introduced to give admins visibility into AI spend, linking cost to work completed rather than token usage."
+ ],
+ "perche": [
+  "Enterprises gain cheaper, continuously running AI models for coding, security and media tasks, while the new observability tools help control budgets. For users of free or locally hosted models, the focus on low‑cost frontier performance highlights the price gap with open alternatives such as Kimi K3 or Gemini 4 Carbon, underscoring the need to evaluate cost versus capability when choosing between cloud‑only services and free models."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "Microsoft unveiled Copilot Workspaces at Ignite 2026, plus more AI workplace updates",
+ "fonti": [
+  {
+   "nome": "ZDNet",
+   "url": "https://www.zdnet.com/innovation/microsoft-copilot-workspaces-ignite-2026/",
+   "titolo": "Microsoft unveiled Copilot Workspaces at Ignite 2026, plus more AI workplace updates",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  },
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/microsoft-launches-seven-mai-models-at-ignite-2026/",
+   "titolo": "Microsoft launches seven MAI models at Ignite 2026",
+   "ufficiale": false,
+   "data": "2026-11-17"
+  }
+ ],
+ "frasiTolte": 1
+}
