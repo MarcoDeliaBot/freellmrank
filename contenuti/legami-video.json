@@ -523,5 +523,13 @@
  "news-2026-11-17-openai-partners-with-chile-to-promote-responsible-ai-adoption": {
   "lungo": "notizia-openai-partners-with-chile-to-promote-responsible-ai-ado",
   "breve": "breve-openai-partners-with-chile-to-promote-responsible-ai-ado"
+ },
+ "news-2026-11-17-openai-releases-gpt-6-2-astra-and-sol-for-chatgpt-work-codex-and-api": {
+  "lungo": "notizia-openai-releases-gpt-6-2-astra-and-sol-for-chatgpt-work-c",
+  "breve": "breve-openai-releases-gpt-6-2-astra-and-sol-for-chatgpt-work-c"
+ },
+ "news-2026-11-18-perplexity-computer-adds-multiagent-effort-level-running-up-to-16-agen": {
+  "lungo": "notizia-perplexity-computer-adds-multiagent-effort-level-running",
+  "breve": "breve-perplexity-computer-adds-multiagent-effort-level-running"
  }
 }
