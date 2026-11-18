@@ -2154,5 +2154,16 @@
   "contestoMax": 262144,
   "moe": false,
   "attivi": 2274069824
+ },
+ "allenai/Molmo2-4B": {
+  "strati": 36,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 36,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 36864,
+  "moe": false,
+  "attivi": 4850869200
  }
 }
