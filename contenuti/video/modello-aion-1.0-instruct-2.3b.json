@@ -1,0 +1,155 @@
+{
+ "nome": "modello-aion-1.0-instruct-2.3b",
+ "titolo": "Aion-1.0-Instruct-2.3B: How to Run It Free",
+ "descrizione": "Aion-1.0-Instruct-2.3B is a free, on-device 2.3 B parameter model with a 32 K token context. Learn its capabilities, benchmarks, and who can benefit from running it at home.\n\nSize: 2.3B parameters · context 32K · memory at 4-bit about 4 GB.\nRTX 3060 12 GB + 32 GB RAM: about 135 tokens/s\nRTX 4090 + 64 GB RAM: about 303 tokens/s\nRTX 5090 + 64 GB RAM: about 436 tokens/s\nMac M4 Max 128 GB: about 129 tokens/s\nNVIDIA DGX Spark 128 GB: about 106 tokens/s\nRyzen AI Max+ 395 128 GB: about 100 tokens/s\nMac Studio M3 Ultra 512 GB: about 158 tokens/s\nModel card: https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Aion-1.0-Instruct-2.3B",
+  "Microsoft"
+ ],
+ "condividi": "Aion-1.0-Instruct-2.3B by Microsoft: 2.3B parameters, about 4 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "Aion-1.0-Instruct-2.3B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Aion-1.0-Instruct-2.3B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Aion-1.0-Instruct-2.3B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Aion-1.0-Instruct-2.3B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Aion-1.0-Instruct-2.3B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Aion-1.0-Instruct-2.3B",
+    "gb": 4,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "Aion-1.0-Instruct-2.3B",
+    "vel": 135,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Aion-1.0-Instruct-2.3B",
+    "vel": 303,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Aion-1.0-Instruct-2.3B",
+    "vel": 436,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Aion-1.0-Instruct-2.3B",
+    "vel": 129,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Aion-1.0-Instruct-2.3B",
+    "vel": 106,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Aion-1.0-Instruct-2.3B",
+    "vel": 100,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Aion-1.0-Instruct-2.3B",
+    "vel": 158,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "Microsoft released a 2.3 billion-parameter model that runs on-device. It can handle a 32 K token context, enough for multi-page documents.",
+  "Aion-1.0-Instruct-2.3B is Microsoft’s small language model for the Windows ecosystem. The model runs in PyTorch, ONNX and GGUF formats and is released under the MIT license on Hugging Face. It supports English, German, Spanish, Portuguese, Italian, French, Chinese and Japanese, and is built for on-device text generation tasks like summarization, rewriting and chat.",
+  "According to the model card, Aion is the foundational Small Language Model for Windows, optimized for responsive, private AI without constant cloud calls. Positional encoding combines RoPE with YaRN scaling, enabling the long 32 K context. Microsoft released the unquantized version first, promising later quantized releases.",
+  "The model card lists several benchmark scores. On the MMLU knowledge test the model scored 55.15 percent, while on the multilingual MMMLU it reached 45.51 percent. In math, GSM8K gave 74.91 percent and GSMPlus 49.56 percent. Instruction following measured by IFEval was 83.90 percent, and translation quality (chrF++) was 43.18 percent. These numbers reflect a small model’s performance compared with larger systems.",
+  "Because it is only 2.3 B parameters, Aion loads quickly and fits on modest hardware, a RTX 4060 can hold it fully in GPU memory. Token throughput ranges from 135 tokens per second on an RTX 3060 up to 436 tokens per second on an RTX 5090. The model excels at short-form generation and on-device privacy. However, the card warns that small models often miss fine details, struggle with multi-step reasoning and can generate inaccurate statements. Safety alignment is present but not as robust as larger models.",
+  "Aion-1.0-Instruct-2.3B is aimed at people who run AI at home and want a free, open model that works offline. Its long context makes it useful for document summarization, email thread analysis and other multi-page tasks. If you need a model that respects privacy and runs on a mid-range GPU, this is a solid choice. Keep in mind its reasoning limits and verify outputs for critical applications.",
+  "What do you need to run it at home? At 4-bit it takes about 4 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 135 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 303 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the MIT license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare Aion 1.0 Instruct 2.3B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-aion-1.0-instruct-2.3b",
+ "pubblicato": "2026-11-18"
+}
