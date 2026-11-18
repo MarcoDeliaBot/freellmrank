@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-18-openai-models-add-a-year-of-chip-optimization-to-amd-s-flagship-gpu",
+ "titolo": "OpenAI models add a year of chip optimization to AMD's flagship GPU",
+ "descr": "OpenAI’s AI models improved power, performance and area by up to 14% on AMD’s top GPU IP in under five months.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "OpenAI collaborated with AMD to apply its AI models to the company’s flagship GPU IP.",
+  "The effort yielded up to a 14 percent improvement in power, performance and chip area (PPA) within five months.",
+  "AMD says the gain equals roughly a year’s worth of engineering progress on top of its existing optimizations.",
+  "Some of the AI‑driven changes have already been incorporated into a design that is now in manufacturing.",
+  "The same AI‑assisted approach helped develop OpenAI’s custom inference chip, Jalapeño, and improved RISC‑V core designs."
+ ],
+ "perche": [
+  "The improvements show how AI can accelerate hardware design cycles, offering faster performance gains without longer engineering timelines. For users of free or locally run models, the faster‑evolving hardware may eventually enable more capable inference on affordable devices."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "OpenAI says its models delivered a year's worth of chip optimization on top of AMD's own engineering",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/openai-says-its-models-delivered-a-years-worth-of-chip-optimization-on-top-of-amds-own-engineering/",
+   "titolo": "OpenAI says its models delivered a year's worth of chip optimization on top of AMD's own engineering",
+   "ufficiale": false,
+   "data": "2026-11-18"
+  },
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/advancing-chip-design-with-our-models",
+   "titolo": "Advancing chip design with OpenAI models",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 0
+}

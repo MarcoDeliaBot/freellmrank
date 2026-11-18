@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-18-mistral-releases-vibe-desktop-app-for-macos-and-windows",
+ "titolo": "Mistral releases Vibe desktop app for macOS and Windows",
+ "descr": "Mistral launches Vibe desktop, letting users run agents locally or in the cloud with a three‑month free Pro trial for EU developers.",
+ "tema": "Software",
+ "paragrafi": [
+  "Mistral AI announced a native Vibe desktop application for macOS and Windows, moving its coding and long‑running work agents from the browser to a desktop environment.",
+  "The app enables users to assign multiple tasks to agents, watch them operate side‑by‑side, and review diffs and pull requests within a single window.",
+  "Developers can run agents locally on their machine or remotely in the cloud, and start tasks from the CLI or through integrations with VS Code, JetBrains, and Zed.",
+  "Mistral offers a Vibe Pro plan at $14.99 per month (pre‑tax). EU developers can use promo code LECHONK for a free three‑month Pro trial, first‑come, first‑served."
+ ],
+ "perche": [
+  "The desktop app gives developers a unified interface for managing multiple AI agents, reducing reliance on browser‑based tools. For users seeking free or locally run models, the three‑month free Pro period and ability to run agents on personal hardware provide a low‑cost entry point, while open‑weight models like Le Chonk keep options available beyond commercial closed models."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "ICYMI: Mistral launches Vibe desktop for macOS and Windows",
+ "fonti": [
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/icymi-mistral-launches-vibe-desktop-for-macos-and-windows/",
+   "titolo": "ICYMI: Mistral launches Vibe desktop for macOS and Windows",
+   "ufficiale": false,
+   "data": "2026-11-18"
+  },
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/mistral-plays-catch-up-with-vibe-desktop-as-rivals-already-command-full-operating-systems/",
+   "titolo": "Mistral plays catch-up with Vibe Desktop as rivals already command full operating systems",
+   "ufficiale": false,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 1
+}

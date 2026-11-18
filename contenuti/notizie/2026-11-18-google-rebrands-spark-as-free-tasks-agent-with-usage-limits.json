@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-18-google-rebrands-spark-as-free-tasks-agent-with-usage-limits",
+ "titolo": "Google rebrands Spark as free Tasks agent with usage limits",
+ "descr": "Google's Gemini agent, now called Tasks, is free in several regions but limited to a few hours of use per month.",
+ "tema": "Business",
+ "paragrafi": [
+  "Google has renamed its Spark AI agent to Tasks and made it available at no cost.",
+  "The free offering runs on the Gemini 4 Hydrogen model and is limited to a few hours of usage per month.",
+  "Meta's Muse agent and OpenAI's Dot and Anthropic's Claude Duet also have free tiers but with similar limits."
+ ],
+ "perche": [
+  "Free Tasks gives casual users a way to try AI personal assistance without paying, but the usage caps may push power users toward paid plans or other agents."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "You can use Google’s Spark AI agent, renamed Tasks, for free now – with limits",
+ "fonti": [
+  {
+   "nome": "ZDNet",
+   "url": "https://www.zdnet.com/innovation/gemini-spark-tasks-free-personal-agent/",
+   "titolo": "You can use Google’s Spark AI agent, renamed Tasks, for free now – with limits",
+   "ufficiale": false,
+   "data": "2026-11-18"
+  },
+  {
+   "nome": "blog.google",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+   "titolo": "How to use Tasks in Gemini for personal assistance",
+   "ufficiale": true,
+   "data": "2026-11-17"
+  }
+ ],
+ "frasiTolte": 3
+}
