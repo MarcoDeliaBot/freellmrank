@@ -2165,5 +2165,16 @@
   "contestoMax": 36864,
   "moe": false,
   "attivi": 4850869200
+ },
+ "microsoft/Aion-1.0-Instruct-2.3B": {
+  "strati": 28,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 7,
+  "finestra": 21,
+  "larghezzaFinestra": 2048,
+  "contestoMax": 32768,
+  "moe": false,
+  "attivi": 2288831488
  }
 }

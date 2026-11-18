@@ -21284,6 +21284,22 @@
   "fuoriDal": "2026-10-31"
  },
  {
+  "url": "/de/model/aion-1-0-instruct-2-3b",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/aion-1-0-instruct-2-3b.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/model/alpaca-13b",
   "tipo": "modello",
   "lingua": "de",
@@ -28987,7 +29003,8 @@
   "lingua": "de",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/de/model/userlm-2-0.html",
@@ -28995,7 +29012,8 @@
   "lingua": "de",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/de/model/userrepgen-4b",
@@ -40000,6 +40018,22 @@
   "fuoriDal": "2026-10-31"
  },
  {
+  "url": "/es/model/aion-1-0-instruct-2-3b",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/aion-1-0-instruct-2-3b.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/model/alpaca-13b",
   "tipo": "modello",
   "lingua": "es",
@@ -47703,7 +47737,8 @@
   "lingua": "es",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/es/model/userlm-2-0.html",
@@ -47711,7 +47746,8 @@
   "lingua": "es",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/es/model/userrepgen-4b",
@@ -58716,6 +58752,22 @@
   "fuoriDal": "2026-10-31"
  },
  {
+  "url": "/fr/model/aion-1-0-instruct-2-3b",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/aion-1-0-instruct-2-3b.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/model/alpaca-13b",
   "tipo": "modello",
   "lingua": "fr",
@@ -66419,7 +66471,8 @@
   "lingua": "fr",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/fr/model/userlm-2-0.html",
@@ -66427,7 +66480,8 @@
   "lingua": "fr",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/fr/model/userrepgen-4b",
@@ -77432,6 +77486,22 @@
   "fuoriDal": "2026-10-31"
  },
  {
+  "url": "/it/model/aion-1-0-instruct-2-3b",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/aion-1-0-instruct-2-3b.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/model/alpaca-13b",
   "tipo": "modello",
   "lingua": "it",
@@ -85135,7 +85205,8 @@
   "lingua": "it",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/it/model/userlm-2-0.html",
@@ -85143,7 +85214,8 @@
   "lingua": "it",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/it/model/userrepgen-4b",
@@ -96148,6 +96220,22 @@
   "fuoriDal": "2026-10-31"
  },
  {
+  "url": "/ja/model/aion-1-0-instruct-2-3b",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/aion-1-0-instruct-2-3b.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/model/alpaca-13b",
   "tipo": "modello",
   "lingua": "ja",
@@ -103851,7 +103939,8 @@
   "lingua": "ja",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/ja/model/userlm-2-0.html",
@@ -103859,7 +103948,8 @@
   "lingua": "ja",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/ja/model/userrepgen-4b",
@@ -104238,6 +104328,22 @@
   "ultimaVista": "2026-10-31",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-10-31"
+ },
+ {
+  "url": "/model/aion-1-0-instruct-2-3b",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/aion-1-0-instruct-2-3b.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
  },
  {
   "url": "/model/alpaca-13b",
@@ -111943,7 +112049,8 @@
   "lingua": "en",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/model/userlm-2-0.html",
@@ -111951,7 +112058,8 @@
   "lingua": "en",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/model/userrepgen-4b",
@@ -122956,6 +123064,22 @@
   "fuoriDal": "2026-10-31"
  },
  {
+  "url": "/pt/model/aion-1-0-instruct-2-3b",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/aion-1-0-instruct-2-3b.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/model/alpaca-13b",
   "tipo": "modello",
   "lingua": "pt",
@@ -130659,7 +130783,8 @@
   "lingua": "pt",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/pt/model/userlm-2-0.html",
@@ -130667,7 +130792,8 @@
   "lingua": "pt",
   "primaVista": "2026-11-06",
   "ultimaVista": "2026-11-18",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-18"
  },
  {
   "url": "/pt/model/userrepgen-4b",

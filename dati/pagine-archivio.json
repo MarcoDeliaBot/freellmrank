@@ -17434,6 +17434,39 @@
     "categoriaMigliore": null
    },
    "data": "2026-11-18"
+  },
+  "/model/aion-1-0-instruct-2-3b.html": {
+   "modello": {
+    "chiave": "microsoft/Aion-1.0-Instruct-2.3B",
+    "nome": "Aion-1.0-Instruct-2.3B",
+    "org": "microsoft",
+    "licenza": "",
+    "aperto": true,
+    "or": null,
+    "hf": {
+     "repo": "microsoft/Aion-1.0-Instruct-2.3B",
+     "b": 2.3,
+     "att": 2.3,
+     "kv": 4096,
+     "pf": 7,
+     "fw": 21,
+     "w": 2048,
+     "ctx": 32768
+    },
+    "cat": {},
+    "nomi": {},
+    "senzaVoti": true,
+    "nuovo": true,
+    "download": 0,
+    "catPiccoli": [
+     "chat"
+    ],
+    "primo": "2026-11-18",
+    "slug": "aion-1-0-instruct-2-3b",
+    "href": "/model/aion-1-0-instruct-2-3b.html",
+    "categoriaMigliore": null
+   },
+   "data": "2026-11-18"
   }
  },
  "confronti": {
