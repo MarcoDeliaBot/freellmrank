@@ -1,33 +1,26 @@
 {
+  "versione": 2,
   "coppia": [
     "Gemini 3.6 Flash (High)",
     "Gemini 3.8 Flash (High)"
   ],
-  "angolo": "Gemini 3.8 leads by 14 points and ranks top 10",
-  "descr": "Gemini 3.6 Flash (High) vs Gemini 3.8 Flash (High), see which model scores higher in Arena, how they compare by category, and how to access them for free.",
-  "intro": "Gemini 3.8 Flash (High) is the clear winner in the Arena comparison. It has a higher overall chat score, a better rank, and beats the 3.6 version in every tested category. The 3.6 model trails across the board and offers no advantage in the metrics provided.",
-  "sezioni": [
-    {
-      "titolo": "Blind vote results",
-      "testo": "The Arena chat score for Gemini 3.8 Flash (High) is 1497 while Gemini 3.6 Flash (High) scores 1483. That 14-point gap translates to about 52 % of blind voters preferring the 3.8 model. Gemini 3.8 also ranks 9th of 421 models compared with 26th for the 3.6 version. The vote count shows 62 675 votes for the 3.8 model versus 35 362 for the 3.6 model, reinforcing the lead."
-    },
-    {
-      "titolo": "Category strengths",
-      "testo": "Across all four Arena categories the newer model stays ahead. In coding it scores 1583 against 1538, in vision 1293 versus 1280, and in documents 1469 compared with 1454. The chat category, which determines the overall rank, also favours Gemini 3.8 with 1497 points over 1483. No category gives the 3.6 model an edge."
-    },
-    {
-      "titolo": "Running at home",
-      "testo": "Both Gemini Flash variants require online access only. The estimated generation speed table lists them as \"online only\" for every hardware option, from RTX 3090 up to Ryzen AI Max+. Neither model can be downloaded or run on a typical home machine.\n\nBecause the size is not public and the weights are proprietary, there is no way to host them locally."
-    },
-    {
-      "titolo": "Free access",
-      "testo": "Google offers a free tier of the Gemini API for both models. The licence is proprietary and the models cannot be tried directly on FreeLLMArena. Users can sign up for the free API tier and call the models through Google’s cloud endpoint."
-    }
-  ],
-  "verdetto": "Pick Gemini 3.8 Flash (High) if you want the higher Arena score, better rank, and stronger performance in chat, coding, vision and documents. Pick Gemini 3.6 Flash (High) only if you have a specific need for the older version, though the data shows no advantage.",
+  "descr": "Gemini 3.8 Flash leads Gemini 3.6 Flash in Arena scores and votes.",
+  "risposta": "Gemini 3.8 Flash is the better model. In the blind Arena vote it received a higher chat score of 1497 versus 1483 for Gemini 3.6 Flash. The margin represents about 52% preference among voters. The lead is considered real according to the Arena call.",
+  "dimensioni": "Both Gemini 3.6 Flash and Gemini 3.8 Flash do not disclose their model size. The size field is listed as not public for each.",
+  "velocita": "Neither model can run on typical home hardware. All listed GPUs and CPUs are marked as online only, meaning they require cloud access through the Google API.",
+  "gratisA": "Gemini 3.6 Flash can be accessed for free via Google’s Gemini API free tier. The model is proprietary and does not have open weights.",
+  "gratisB": "Gemini 3.8 Flash is also available through the free tier of Google’s Gemini API. Like its predecessor, it is proprietary and lacks open weights.",
+  "sceglieA": "Pick Gemini 3.6 Flash if you need a capable Google model at a lower rank and are comfortable with a slightly lower performance across categories. It still scores well in coding and document tasks. Use it when the newest version is not required.",
+  "sceglieB": "Choose Gemini 3.8 Flash when you want the top-ranked Google model in the Arena. It leads in chat, coding, vision, and document categories. The higher scores make it the preferred option for most applications.",
+  "categorie": {
+    "Chat": "In the Chat category Gemini 3.8 Flash scores 1497, ahead of Gemini 3.6 Flash’s 1483. The vote margin shows a clear preference for the newer model.",
+    "Coding": "Gemini 3.8 Flash leads with a coding score of 1583 versus 1538 for Gemini 3.6 Flash. It is the stronger choice for programming assistance.",
+    "Vision": "For Vision tasks Gemini 3.8 Flash records 1293 points, outpacing Gemini 3.6 Flash’s 1280. The advantage is modest but consistent.",
+    "Documents": "Document handling sees Gemini 3.8 Flash at 1469, a few points above Gemini 3.6 Flash’s 1454. The newer model maintains the edge across all categories."
+  },
   "scritto": "2026-11-17",
-  "aggiornato": "2026-11-17",
-  "scrittore": "groq",
+  "aggiornato": "2026-11-18",
+  "scrittore": "workers",
   "fatti": {
     "leader": "Gemini 3.8 Flash (High)",
     "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",

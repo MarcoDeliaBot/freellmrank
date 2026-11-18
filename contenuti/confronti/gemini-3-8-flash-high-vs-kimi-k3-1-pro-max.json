@@ -1,33 +1,24 @@
 {
+  "versione": 2,
   "coppia": [
     "Gemini 3.8 Flash (High)",
     "Kimi K3.1 Pro (Max)"
   ],
-  "angolo": "Gemini Wins by 12 Points, Kimi Offers Open Weights",
-  "descr": "Gemini 3.8 Flash (High) edges Kimi K3.1 Pro (Max) in Arena chat votes. See scores, strengths, hardware fit and free use options.",
-  "intro": "Gemini 3.8 Flash (High) leads in the Arena blind chat test. It scores 1497 points while Kimi K3.1 Pro (Max) scores 1485. The 12-point gap means about 52 % of voters prefer Gemini.",
-  "sezioni": [
-    {
-      "titolo": "Blind Vote Result",
-      "testo": "Arena scores are based on blind human votes. Two anonymous answers compete and voters pick the better one. Gemini 3.8 Flash (High) earned a chat score of 1497. Kimi K3.1 Pro (Max) earned 1485. The 12-point gap translates to roughly 52 % of voters choosing Gemini."
-    },
-    {
-      "titolo": "Category Strengths",
-      "testo": "In the chat category Gemini stays ahead with 1497 points. Kimi trails with 1485 points. In coding, Kimi K3.1 Pro (Max) takes the lead with 1686 points against Gemini's 1583. Each model shines in a different area.\n\nThe scores show that Gemini is stronger for general conversation. Kimi excels when coding assistance is needed."
-    },
-    {
-      "titolo": "Running at Home",
-      "testo": "Kimi K3.1 Pro (Max) lists a size of 2780.1 B and an active portion of 104.8 B. A 4-bit download is about 1686 GB. The model has open weights and can be run locally. However, it does not fit the listed RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, or Ryzen AI Max+ 395 128 GB hardware.\n\nGemini 3.8 Flash (High) does not publish its size. The model is marked online only for all listed hardware. It cannot be run at home on those machines."
-    },
-    {
-      "titolo": "Free Access",
-      "testo": "Gemini 3.8 Flash (High) can be accessed through Google’s free API tier. The license is proprietary. It cannot be tried on FreeLLMArena's Try & compare page.\n\nKimi K3.1 Pro (Max) is available as a download. Users can run it at home under the Kimi K3.1 Pro License. It also cannot be tried on FreeLLMArena's Try & compare page."
-    }
-  ],
-  "verdetto": "Pick Gemini 3.8 Flash (High) if you want the higher chat preference and a ready-to-use free API. Pick Kimi K3.1 Pro (Max) if you need open weights and are willing to manage a large download for local use.",
+  "descr": "Gemini 3.8 Flash leads Kimi K3.1 Pro in Arena chat votes, while Kimi K3.1 Pro scores higher in coding.",
+  "risposta": "Gemini 3.8 Flash is ahead in the overall Arena ranking, scoring 1497 points compared to Kimi K3.1 Pro’s 1485. The chat score gives Gemini a clear lead, while Kimi beats Gemini in coding. Overall, Gemini 3.8 Flash is the better chat model, but Kimi K3.1 Pro excels at code generation.",
+  "dimensioni": "Gemini 3.8 Flash does not disclose its model size. Kimi K3.1 Pro is 2780.1 B total, with 104.8 B active, and requires about 1686 GB to download in 4-bit format.",
+  "velocita": "Both models need online access only; none fit on any listed home GPU or workstation configuration. Gemini 3.8 Flash and Kimi K3.1 Pro are unavailable for local off-load on RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, or Ryzen AI Max+ 395 128 GB.",
+  "gratisA": "Gemini 3.8 Flash can be accessed for free through Google’s Gemini API free tier. The API uses a proprietary license and does not require a local download.",
+  "gratisB": "Kimi K3.1 Pro is free to use by downloading the open weights and running the model at home under the Kimi K3.1 Pro License.",
+  "sceglieA": "Pick Gemini 3.8 Flash when you need the strongest chat performance according to Arena votes. It is ideal if you prefer a cloud-based solution with a free API and do not want to manage large model files.",
+  "sceglieB": "Choose Kimi K3.1 Pro if coding tasks are your priority, as it leads in the coding category. It also suits users who want full control by running the model locally and who can handle the large download size.",
+  "categorie": {
+    "Chat": "Gemini 3.8 Flash scores 1497 in the chat category, outpacing Kimi K3.1 Pro’s 1485. It is the better option for general conversation.",
+    "Coding": "Kimi K3.1 Pro leads coding with 1686 points versus Gemini 3.8 Flash’s 1583. It is the stronger choice for programming assistance."
+  },
   "scritto": "2026-11-17",
-  "aggiornato": "2026-11-17",
-  "scrittore": "groq",
+  "aggiornato": "2026-11-18",
+  "scrittore": "workers",
   "fatti": {
     "leader": "Gemini 3.8 Flash (High)",
     "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",
