@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-18-nvidia-cosmos-data-factory-speeds-ai-dataset-creation-up-to-60",
+ "titolo": "NVIDIA Cosmos Data Factory speeds AI dataset creation up to 60×",
+ "descr": "NVIDIA's Cosmos Data Factory, using eight RTX PRO 6000 GPUs, offers five blueprints and six skills that cut dataset build time by up to 60× and cost by 45×.",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA announced its Cosmos Data Factory, an open platform that bundles five cloud‑native blueprints and six composable skills for curating and synthesizing physical AI data.",
+  "The system runs on a cloud server equipped with eight NVIDIA RTX PRO 6000 Blackwell Series GPUs. NVIDIA reports \"up to 60× faster dataset assembly\" and a 45× reduction in cost for autonomous‑vehicle scenario generation compared with traditional pipelines.",
+  "The five reference blueprints cover generating driving scenarios, augmenting image attributes, weather‑and‑lighting video augmentation, creating rare event videos, and producing defect images for visual inspection.",
+  "The platform is powered by NVIDIA Nemotron and aims to simplify prompt‑to‑data pipelines for autonomous vehicles, robotics and vision AI agents.",
+  "NVIDIA invites developers to explore the blueprints and watch a livestream on building training‑ready datasets with only two prompts."
+ ],
+ "perche": [],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "Build Training-Ready Physical AI Datasets with Two Prompts in NVIDIA Cosmos",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/build-training-ready-physical-ai-datasets-with-two-prompts-in-nvidia-cosmos/",
+   "titolo": "Build Training-Ready Physical AI Datasets with Two Prompts in NVIDIA Cosmos",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 3
+}

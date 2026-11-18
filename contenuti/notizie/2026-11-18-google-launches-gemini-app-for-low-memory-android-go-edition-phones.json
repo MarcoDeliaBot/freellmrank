@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-18-google-launches-gemini-app-for-low-memory-android-go-edition-phones",
+ "titolo": "Google launches Gemini app for low‑memory Android (Go edition) phones",
+ "descr": "The Gemini personal AI assistant is now available on eligible Android Go devices, expanding access to hundreds of millions of users.",
+ "tema": "Software",
+ "paragrafi": [
+  "Google announced that the Gemini app now runs on lower‑memory Android (Go edition) phones.",
+  "Users can speak to Gemini in over 45 languages, use Gemini Live for interview practice, point the camera at notes to translate, or generate custom images with Nano Banana.",
+  "The app can be downloaded from Google Play, accessed by holding the power button on supported phones, or found pre‑installed on upcoming devices from partners such as Transsion.",
+  "This rollout follows Google’s broader effort to bring AI features to a wider audience, complementing other Gemini updates like regional voices and Google Wallet integration."
+ ],
+ "perche": [
+  "Bringing Gemini to Android Go devices puts a powerful personal AI assistant in the hands of users who previously could only run basic voice commands. For those preferring free or locally hosted models, the expansion highlights the growing gap between cloud AI services and open‑source alternatives, underscoring the appeal of high‑performing paid models like Gemini 4 Carbon."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "The Gemini app is now available on lower-memory Android devices.",
+ "fonti": [
+  {
+   "nome": "Google",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
+   "titolo": "The Gemini app is now available on lower-memory Android devices.",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 1
+}

@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-18-openai-s-dean-ball-warns-of-societal-impact-as-ai-capabilities-grow",
+ "titolo": "OpenAI's Dean Ball warns of societal impact as AI capabilities grow",
+ "descr": "Dean Ball, OpenAI’s head of strategic futures, outlines how more capable AI could reshape society and how institutions might stay in human hands.",
+ "tema": "Policy",
+ "paragrafi": [
+  "OpenAI released a new analysis called The Silent Consensus.",
+  "Dean Ball, head of strategic futures at OpenAI, wrote the piece.",
+  "\"More capable AI will reshape society,\" he said.",
+  "The analysis looks at how advancing AI could change social structures and how people can retain control of institutions.",
+  "It appears while the AI model market expands, free chat models like Kimi K3 rank highest and Gemini 4 Carbon leads paid rankings."
+ ],
+ "perche": [
+  "The paper signals that users should consider governance when picking AI tools. Free models such as Kimi K3 let users run software locally, while paid options like Gemini 4 Carbon may offer more capability but keep control with providers."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "The Silent Consensus",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/the-silent-consensus",
+   "titolo": "The Silent Consensus",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 0
+}
