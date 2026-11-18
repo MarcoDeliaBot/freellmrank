@@ -531,5 +531,13 @@
  "news-2026-11-18-perplexity-computer-adds-multiagent-effort-level-running-up-to-16-agen": {
   "lungo": "notizia-perplexity-computer-adds-multiagent-effort-level-running",
   "breve": "breve-perplexity-computer-adds-multiagent-effort-level-running"
+ },
+ "news-2026-11-17-google-extends-gemini-chat-retention-to-two-months-and-adds-separate-h": {
+  "lungo": "notizia-google-extends-gemini-chat-retention-to-two-months-and-a",
+  "breve": "breve-google-extends-gemini-chat-retention-to-two-months-and-a"
+ },
+ "news-2026-11-17-microsoft-unveils-mai-code-2-and-code-2-flash-claiming-near-claude-per": {
+  "lungo": "notizia-microsoft-unveils-mai-code-2-and-code-2-flash-claiming-n",
+  "breve": "breve-microsoft-unveils-mai-code-2-and-code-2-flash-claiming-n"
  }
 }
