@@ -1,0 +1,74 @@
+{
+ "nome": "gpu-rx7900xtx-2026-11-18",
+ "titolo": "The best free AI for the RX 7900 XTX #Shorts",
+ "descrizione": "The best free AI models on the RX 7900 XTX (24 GB, 960 GB/s) with 32 GB of DDR5 RAM, at 4-bit with 8K context:\n1. Gemma 4 31B: about 34 tokens/s (Arena 1452, fully on the GPU)\n2. Gemma 4 26B A4B: about 148 tokens/s (Arena 1437, fully on the GPU)\n3. Qwen3.8-27B: about 41 tokens/s (Arena 1434, fully on the GPU)\nEstimates from our simulator. Try your own card: https://freellmarena.com/home",
+ "tag": [
+  "free AI",
+  "local LLM",
+  "RX 7900 XTX",
+  "GPU for AI"
+ ],
+ "condividi": "On the RX 7900 XTX with 32 GB of RAM, the best free model is Gemma 4 31B, at about 34 tokens/s. https://freellmarena.com/home",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "La miglior AI gratis per RX 7900 XTX #Shorts",
+   "descrizione": "I migliori modelli AI gratis su RX 7900 XTX (24 GB, 960 GB/s) con 32 GB di RAM DDR5, a 4 bit con 8K di contesto:\n1. Gemma 4 31B: ~34 tok/s (Arena 1452, tutto sulla GPU)\n2. Gemma 4 26B A4B: ~148 tok/s (Arena 1437, tutto sulla GPU)\n3. Qwen3.8-27B: ~41 tok/s (Arena 1434, tutto sulla GPU)\nStime del nostro simulatore. Prova la tua scheda: https://freellmarena.com/it/home"
+  },
+  "es": {
+   "titolo": "La mejor IA gratis para la RX 7900 XTX #Shorts",
+   "descrizione": "Los mejores modelos de IA gratis en la RX 7900 XTX (24 GB, 960 GB/s) con 32 GB de RAM DDR5, a 4 bits con 8K de contexto:\n1. Gemma 4 31B: ~34 tok/s (Arena 1452, todo en la GPU)\n2. Gemma 4 26B A4B: ~148 tok/s (Arena 1437, todo en la GPU)\n3. Qwen3.8-27B: ~41 tok/s (Arena 1434, todo en la GPU)\nEstimaciones de nuestro simulador. Prueba tu tarjeta: https://freellmarena.com/es/home"
+  },
+  "de": {
+   "titolo": "Die beste kostenlose KI für die RX 7900 XTX #Shorts",
+   "descrizione": "Die besten kostenlosen KI-Modelle auf der RX 7900 XTX (24 GB, 960 GB/s) mit 32 GB DDR5-RAM, in 4 Bit mit 8K Kontext:\n1. Gemma 4 31B: ~34 tok/s (Arena 1452, komplett auf der GPU)\n2. Gemma 4 26B A4B: ~148 tok/s (Arena 1437, komplett auf der GPU)\n3. Qwen3.8-27B: ~41 tok/s (Arena 1434, komplett auf der GPU)\nSchätzungen unseres Simulators. Teste deine Karte: https://freellmarena.com/de/home"
+  },
+  "fr": {
+   "titolo": "La meilleure IA gratuite pour la RX 7900 XTX #Shorts",
+   "descrizione": "Les meilleurs modèles d'IA gratuits sur la RX 7900 XTX (24 Go, 960 Go/s) avec 32 Go de RAM DDR5, en 4 bits avec 8K de contexte :\n1. Gemma 4 31B: ~34 tok/s (Arena 1452, entièrement sur le GPU)\n2. Gemma 4 26B A4B: ~148 tok/s (Arena 1437, entièrement sur le GPU)\n3. Qwen3.8-27B: ~41 tok/s (Arena 1434, entièrement sur le GPU)\nEstimations de notre simulateur. Testez votre carte : https://freellmarena.com/fr/home"
+  },
+  "pt": {
+   "titolo": "A melhor IA grátis para a RX 7900 XTX #Shorts",
+   "descrizione": "Os melhores modelos de IA grátis na RX 7900 XTX (24 GB, 960 GB/s) com 32 GB de RAM DDR5, em 4 bits com 8K de contexto:\n1. Gemma 4 31B: ~34 tok/s (Arena 1452, tudo na GPU)\n2. Gemma 4 26B A4B: ~148 tok/s (Arena 1437, tudo na GPU)\n3. Qwen3.8-27B: ~41 tok/s (Arena 1434, tudo na GPU)\nEstimativas do nosso simulador. Teste sua placa: https://freellmarena.com/pt/home"
+  }
+ },
+ "hardware": {
+  "schede": [
+   {
+    "id": "rx7900xtx",
+    "nome": "RX 7900 XTX",
+    "gb": 24,
+    "tiene": true
+   }
+  ],
+  "modelli": [
+   {
+    "nome": "Gemma 4 31B",
+    "gb": 22,
+    "vel": 34,
+    "dove": "gpu"
+   },
+   {
+    "nome": "Gemma 4 26B A4B",
+    "gb": 18,
+    "vel": 148,
+    "dove": "gpu"
+   },
+   {
+    "nome": "Qwen3.8-27B",
+    "gb": 20,
+    "vel": 41,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "What's the best free AI for an RX 7900 XTX?",
+  "It has 24 gigabytes of memory.",
+  "With 32 gigabytes of RAM, the best one is from Google, at about 34 tokens per second.",
+  "Try your own card in our free simulator.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-gpu-rx7900xtx-2026-11-18",
+ "pubblicato": "2026-11-18"
+}
