@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-18-nvidia-daviator-library-boosts-vasp-plane-wave-dft-up-to-22-on-gpus",
+ "titolo": "NVIDIA Daviator library boosts VASP plane‑wave DFT up to 22× on GPUs",
+ "descr": "New Daviator kernels and mixed‑precision mode cut VASP time‑to‑solution dramatically, lowering cost versus CPU runs.",
+ "tema": "Research",
+ "paragrafi": [
+  "NVIDIA announced Daviator, a library of GPU kernels that replaces VASP's sequential k‑point processing with batched operations.",
+  "The batched Davidson eigensolver reduces kernel launches and improves SM occupancy, addressing the small‑system GPU bottleneck in plane‑wave DFT.",
+  "Benchmarks on a projected OMat24 dataset show Daviator‑enabled VASP can be up to 22 times faster than CPU execution, with cost reductions of up to 75 percent, depending on hardware and configuration."
+ ],
+ "perche": [
+  "Researchers generating massive DFT datasets for machine‑learning interatomic potentials can now run smaller unit‑cell calculations faster and cheaper on modern GPUs. For users of free or locally hosted AI models, the reduced cost of generating high‑quality training data may lower barriers to developing open‑source models."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "Tackling GPU Bottlenecks in Plane-Wave DFT with K-Point Batching and Mixed Precision",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/tackling-gpu-bottlenecks-in-plane-wave-dft-with-k-point-batching-and-mixed-precision/",
+   "titolo": "Tackling GPU Bottlenecks in Plane-Wave DFT with K-Point Batching and Mixed Precision",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 2
+}

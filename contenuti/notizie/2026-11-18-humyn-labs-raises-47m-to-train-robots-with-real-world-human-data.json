@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-18-humyn-labs-raises-47m-to-train-robots-with-real-world-human-data",
+ "titolo": "Humyn Labs raises $47M to train robots with real‑world human data",
+ "descr": "Humyn Labs secured $47 million in Series A funding to expand its global video corpus for physical AI training.",
+ "tema": "Business",
+ "paragrafi": [
+  "Humyn Labs announced a $47 million early‑stage financing round led by Accel, which contributed $26 million in equity.",
+  "Founded in early 2026, the Bengaluru‑based startup collects head‑mounted video of people performing everyday tasks, building a corpus of up to 200,000 hours of motion data plus facial and speech datasets across more than 20 countries.",
+  "Humyn Labs says its data supports 12 paying customers, mainly U.S. AI and robotics firms, and generated $10 million in revenue from April to October, with $20 million in signed contracts and another $20 million in pending deals."
+ ],
+ "perche": [
+  "The funding gives Humyn Labs resources to scale diverse, high‑quality training data, which could improve robot reliability in real homes and factories. For users of AI, richer physical data may lead to safer, more capable robots, while developers of free or local models may see new benchmarks and datasets that could be leveraged for open‑source research."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "Humyn Labs raises $47M to bridge the gap between AI training and real-world robotics",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/18/humyn-labs-raises-47m-to-bridge-the-gap-between-ai-training-and-real-world-robotics/",
+   "titolo": "Humyn Labs raises $47M to bridge the gap between AI training and real-world robotics",
+   "ufficiale": false,
+   "data": "2026-11-18"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/",
+   "titolo": "India’s Humyn Labs raises $47M to feed U.S. robotics companies the data they need",
+   "ufficiale": false,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 2
+}

@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-18-le-figaro-teams-up-with-openai-to-embed-its-journalism-in-chatgpt",
+ "titolo": "Le Figaro teams up with OpenAI to embed its journalism in ChatGPT",
+ "descr": "Le Groupe Figaro will provide summaries, excerpts and links to its articles within ChatGPT, expanding the news source for users.",
+ "tema": "Business",
+ "paragrafi": [
+  "OpenAI announced a partnership with Le Groupe Figaro on 2026-11-18.",
+  "The collaboration will integrate Le Figaro's journalism into ChatGPT as summaries and excerpts.",
+  "Each excerpt will include a link to the original story, allowing users to access full articles.",
+  "The move aims to broaden the range of news content available through the AI chat service.",
+  "Both organisations highlighted the benefit of delivering reliable journalism directly within the chat experience."
+ ],
+ "perche": [
+  "For those seeking free or locally hosted models, the partnership underscores how large AI platforms can enrich their offerings with licensed media, a feature less common in open-source alternatives."
+ ],
+ "pubblicato": "2026-11-18",
+ "titoloFonte": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+   "titolo": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 1
+}
