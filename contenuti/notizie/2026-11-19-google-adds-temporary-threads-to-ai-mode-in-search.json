@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-19-google-adds-temporary-threads-to-ai-mode-in-search",
+ "titolo": "Google adds temporary threads to AI Mode in Search",
+ "descr": "Google rolls out temporary chat threads in AI Mode, letting users run one‑off queries without saving history or affecting personalization.",
+ "tema": "Software",
+ "paragrafi": [
+  "Google announced a new option for its AI Mode in Search called temporary threads.",
+  "When activated, the chat session is detached from the user's account, so responses are not saved to history, do not influence future personalization, and are not informed by past preferences.",
+  "Users can start a temporary thread by clicking an icon in the upper‑right corner of AI Mode; no settings changes are required.",
+  "The feature launches globally on desktop and mobile browsers and supports all languages available in AI Mode.",
+  "Temporary threads mirror the one‑off chat capability already offered in the Gemini chatbot, extending it to the conversational search experience."
+ ],
+ "perche": [
+  "For users, temporary threads provide privacy for sensitive queries and prevent AI‑driven personalization from shaping future results. For those exploring free or local models, the feature highlights Google's integrated AI approach, while free alternatives like Kimi K3 or GLM‑5.3 remain viable for users who prefer self‑hosted or non‑Google solutions."
+ ],
+ "pubblicato": "2026-11-19",
+ "titoloFonte": "Google's AI feature in Search gets its own incognito mode",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/18/googles-ai-feature-in-search-gets-its-own-incognito-mode/",
+   "titolo": "Google's AI feature in Search gets its own incognito mode",
+   "ufficiale": false,
+   "data": "2026-11-18"
+  },
+  {
+   "nome": "blog.google",
+   "url": "https://blog.google/products-and-platforms/products/search/temporary-threads-ai-mode/",
+   "titolo": "Temporary threads now in AI Mode in Search",
+   "ufficiale": true,
+   "data": "2026-11-17"
+  }
+ ],
+ "frasiTolte": 0
+}
