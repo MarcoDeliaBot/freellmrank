@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-19-nvidia-and-microsoft-extend-accelerated-ai-from-azure-to-windows-pcs",
+ "titolo": "NVIDIA and Microsoft Extend Accelerated AI from Azure to Windows PCs",
+ "descr": "Azure’s Vera Rubin preview runs on NVL72 hardware, scaling to 10,240 GPUs for DeepSeek‑V3 training and delivering top inference performance on DeepSeek‑R1, acco",
+ "tema": "Business",
+ "paragrafi": [
+  "Azure’s Vera Rubin preview runs on NVL72 hardware, scaling to 10,240 GPUs for DeepSeek‑V3 training and delivering top inference performance on DeepSeek‑R1, according to recent MLPerf results.",
+  "The companies also expanded Microsoft Foundry, offering serverless Programmed Training and Managed Compute for customizing NVIDIA Nemotron 3.5 models, with EY reporting a 55% accuracy gain and 15× cost reduction for a purchasing‑record classifier.",
+  "Local deployment options now include Azure Local support for RTX PRO 6000 Blackwell GPUs, Jetson Thor/Orin edge platforms, and RTX Spark‑based Windows PCs that can run large language models directly on the device.",
+  "A limited preview of Direct Stream for GPU‑accelerated Windows 365 Cloud PCs will enable up to two 4K streams at 60 fps, with a public preview slated for early 2027."
+ ],
+ "perche": [
+  "Enterprises gain more flexibility to run high‑performance AI close to their data, reducing latency and reliance on cloud bandwidth. For users of free or locally hosted models, the RTX Spark rollout offers a path to experiment with large language models on consumer hardware, complementing the top‑ranked free chat models such as Kimi K3 and GLM‑5.3 listed on FreeLLMArena."
+ ],
+ "pubblicato": "2026-11-19",
+ "titoloFonte": "NVIDIA and Microsoft Expand Accelerated Computing From Azure to Windows PCs",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/microsoft-ignite-accelerated-computing-azure-windows-pcs/",
+   "titolo": "NVIDIA and Microsoft Expand Accelerated Computing From Azure to Windows PCs",
+   "ufficiale": true,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 2
+}

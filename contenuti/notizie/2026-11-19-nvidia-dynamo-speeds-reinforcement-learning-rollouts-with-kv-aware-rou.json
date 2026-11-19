@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-19-nvidia-dynamo-speeds-reinforcement-learning-rollouts-with-kv-aware-rou",
+ "titolo": "NVIDIA Dynamo speeds reinforcement‑learning rollouts with KV‑aware routing and ModelExpress",
+ "descr": "Dynamo adds a serving layer that balances cache reuse, distributes weight updates efficiently, and recovers from worker failures to cut RL training delays.",
+ "tema": "Research",
+ "paragrafi": [
+  "NVIDIA announced Dynamo, a serving layer designed to coordinate distributed rollout generation for reinforcement‑learning (RL) training.",
+  "The system uses KV‑aware routing to send prompts to workers that already hold the cached context, reducing redundant computation while keeping worker load balanced.",
+  "Open‑source integrations connect Dynamo to existing RL stacks such as verl, NeMo RL, Slime, and prime‑rl, enabling teams to scale inference for RL training."
+ ],
+ "perche": [
+  "For AI practitioners, Dynamo promises faster RL iterations by cutting rollout latency and weight‑update overhead, which can lower overall compute costs. Users of free or locally hosted models may see limited benefit, as Dynamo relies on distributed GPU clusters and does not run on single‑machine setups."
+ ],
+ "pubblicato": "2026-11-19",
+ "titoloFonte": "Reducing Rollout Bottlenecks in Reinforcement Learning with NVIDIA Dynamo",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/reducing-rollout-bottlenecks-in-reinforcement-learning-with-nvidia-dynamo/",
+   "titolo": "Reducing Rollout Bottlenecks in Reinforcement Learning with NVIDIA Dynamo",
+   "ufficiale": true,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 2
+}

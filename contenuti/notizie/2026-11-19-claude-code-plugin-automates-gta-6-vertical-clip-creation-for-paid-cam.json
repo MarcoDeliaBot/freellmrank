@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-19-claude-code-plugin-automates-gta-6-vertical-clip-creation-for-paid-cam",
+ "titolo": "Claude Code plugin automates GTA 6 vertical clip creation for paid campaigns",
+ "descr": "The open‑source plugin watches GTA 6 streams, extracts highlighted moments and formats 9:16 clips with hooks, captions and credits for monetization.",
+ "tema": "Guides",
+ "paragrafi": [
+  "Bodila51 released gtavi-claudecode, a Claude Code plugin that turns live GTA 6 streams into short vertical clips ready for posting.",
+  "The tool installs ffmpeg, yt‑dlp and faster‑whisper, then finds trending videos, live streams and the best 15‑40 second moments using chat spikes and loudness cues.",
+  "It cuts 1080×1920 clips, adds word‑by‑word captions, a hook box and optional multilingual captions, then checks each clip against campaign rules such as length, format and banned content.",
+  "Creators can join paid clipping campaigns that pay per 1,000 views, with rates shown live on Whop Content Rewards; the plugin also supports building a faceless GTA 6 page for longer‑term earnings.",
+  "All operations run on Windows, macOS or Linux with Python 3.10+, and an NVIDIA GPU speeds up transcription, though the CPU can handle a 12‑minute video in about five minutes."
+ ],
+ "perche": [
+  "For AI enthusiasts, the plugin demonstrates how large‑language‑model assistants can orchestrate video processing, transcription and content curation without manual scripting."
+ ],
+ "pubblicato": "2026-11-19",
+ "titoloFonte": "Bodila51/gtavi-claudecode: Claude Code plugin that turns GTA 6 streams into paid vertical clips: live campaigns, trending videos, best moments, 9:16 cuts with hooks, captions and credits.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/Bodila51/gtavi-claudecode",
+   "titolo": "Bodila51/gtavi-claudecode: Claude Code plugin that turns GTA 6 streams into paid vertical clips: live campaigns, trending videos, best moments, 9:16 cuts with hooks, captions and credits.",
+   "ufficiale": false,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 1
+}
