@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-18",
+ "aggiornato": "2026-11-19",
  "licenze": {
   "mit": {
    "nome": "MIT",
@@ -28,7 +28,7 @@
    "da": "Image",
    "licenza": "mit",
    "demo": "microsoft/TRELLIS",
-   "download": 2739873,
+   "download": 2705272,
    "like": 723,
    "creato": "2024-12-02",
    "b": null
@@ -40,8 +40,8 @@
    "da": "Image",
    "licenza": "mit",
    "demo": "microsoft/TRELLIS.2",
-   "download": 2409317,
-   "like": 1517,
+   "download": 2438605,
+   "like": 1524,
    "creato": "2025-12-01",
    "b": null
   },
@@ -52,7 +52,7 @@
    "da": "Image",
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2",
-   "download": 348862,
+   "download": 349465,
    "like": 1886,
    "creato": "2025-01-20",
    "b": null
@@ -64,7 +64,7 @@
    "da": "Image",
    "licenza": "mit",
    "demo": "stabilityai/TripoSR",
-   "download": 193696,
+   "download": 206795,
    "like": 692,
    "creato": "2024-02-29",
    "b": null
@@ -76,21 +76,9 @@
    "da": "Image",
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2.1",
-   "download": 119028,
-   "like": 1402,
+   "download": 120020,
+   "like": 1404,
    "creato": "2025-06-13",
-   "b": null
-  },
-  {
-   "repo": "tencent/Hunyuan3D-2mini",
-   "nome": "Hunyuan3D 2 mini",
-   "lab": "Tencent",
-   "da": "Image",
-   "licenza": "tencent",
-   "demo": "tencent/Hunyuan3D-2mini-Turbo",
-   "download": 100325,
-   "like": 159,
-   "creato": "2025-03-12",
    "b": null
   },
   {
@@ -100,9 +88,21 @@
    "da": "Image",
    "licenza": "apache",
    "demo": "TencentARC/InstantMesh",
-   "download": 73097,
+   "download": 102870,
    "like": 348,
    "creato": "2024-04-10",
+   "b": null
+  },
+  {
+   "repo": "tencent/Hunyuan3D-2mini",
+   "nome": "Hunyuan3D 2 mini",
+   "lab": "Tencent",
+   "da": "Image",
+   "licenza": "tencent",
+   "demo": "tencent/Hunyuan3D-2mini-Turbo",
+   "download": 100720,
+   "like": 159,
+   "creato": "2025-03-12",
    "b": null
   },
   {
@@ -112,7 +112,7 @@
    "da": "Several photos",
    "licenza": "tencent",
    "demo": "tencent/Hunyuan3D-2mv",
-   "download": 27416,
+   "download": 27711,
    "like": 442,
    "creato": "2025-03-12",
    "b": null
@@ -124,8 +124,8 @@
    "da": "Image",
    "licenza": "stability",
    "demo": "stabilityai/stable-fast-3d",
-   "download": 25683,
-   "like": 1561,
+   "download": 26118,
+   "like": 1565,
    "creato": "2024-07-17",
    "b": 1
   },
@@ -136,7 +136,7 @@
    "da": "Text",
    "licenza": "mit",
    "demo": null,
-   "download": 15274,
+   "download": 15156,
    "like": 92,
    "creato": "2025-03-24",
    "b": null
@@ -148,22 +148,10 @@
    "da": "Image",
    "licenza": "mit",
    "demo": "VAST-AI/TripoSG",
-   "download": 12810,
+   "download": 12924,
    "like": 152,
    "creato": "2025-03-24",
    "b": 1.4
-  },
-  {
-   "repo": "stabilityai/stable-point-aware-3d",
-   "nome": "Stable Point Aware 3D",
-   "lab": "Stability AI",
-   "da": "Image",
-   "licenza": "stability",
-   "demo": "stabilityai/stable-point-aware-3d",
-   "download": 4637,
-   "like": 459,
-   "creato": "2024-12-28",
-   "b": 2
   },
   {
    "repo": "openai/shap-e",
@@ -172,10 +160,22 @@
    "da": "Text or image",
    "licenza": "mit",
    "demo": null,
-   "download": 4593,
-   "like": 299,
+   "download": 4656,
+   "like": 300,
    "creato": "2023-07-04",
    "b": null
+  },
+  {
+   "repo": "stabilityai/stable-point-aware-3d",
+   "nome": "Stable Point Aware 3D",
+   "lab": "Stability AI",
+   "da": "Image",
+   "licenza": "stability",
+   "demo": "stabilityai/stable-point-aware-3d",
+   "download": 4600,
+   "like": 459,
+   "creato": "2024-12-28",
+   "b": 2
   }
  ]
 }
