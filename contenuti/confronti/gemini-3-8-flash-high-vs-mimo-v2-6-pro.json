@@ -1,33 +1,25 @@
 {
+  "versione": 2,
   "coppia": [
     "Gemini 3.8 Flash (High)",
     "MiMo-V2.6-Pro"
   ],
-  "angolo": "Gemini Wins Chat, MiMo Leads Coding",
-  "descr": "Gemini 3.8 Flash (High) beats MiMo-V2.6-Pro in chat votes, while MiMo shines in coding. See scores, hardware fit, and free usage options.",
-  "intro": "Gemini 3.8 Flash (High) is ahead in blind chat votes, scoring 1497 points versus 1480 for MiMo-V2.6-Pro. The lead is about 52% of the time. MiMo-V2.6-Pro, however, outperforms Gemini in coding tasks.",
-  "sezioni": [
-    {
-      "titolo": "Blind vote result",
-      "testo": "Arena scores come from blind human votes where two anonymous answers are compared. Gemini 3.8 Flash (High) earned 1497 points, 17 points higher than MiMo-V2.6-Pro. With 62,675 votes for Gemini and 4,064 for MiMo, the community prefers Gemini about 52% of the time. The Call line confirms Gemini is ahead."
-    },
-    {
-      "titolo": "Strengths by category",
-      "testo": "In the chat category Gemini leads with 1497 points while MiMo scores 1480. Coding tells a different story: MiMo-V2.6-Pro reaches 1624 points, beating Gemini's 1583. Vision favors Gemini again, 1293 to 1247. Each model excels where its architecture shines."
-    },
-    {
-      "titolo": "Running at home",
-      "testo": "Gemini 3.8 Flash (High) has no public size and does not fit any listed home hardware. It is listed as online-only for RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, and Ryzen AI Max+ 395 128 GB. MiMo-V2.6-Pro is 1 024.2 B (43.9 B active) and requires about 622 GB to download in 4-bit form. It also does not fit the same home hardware, so neither model runs locally on the tested rigs.\n\nBoth models are therefore accessed remotely for most users."
-    },
-    {
-      "titolo": "Free access",
-      "testo": "Gemini 3.8 Flash (High) can be tried free via the Gemini API free tier, under a proprietary license. It cannot be run locally because weights are not public. MiMo-V2.6-Pro offers open weights, a MIT license, and can be downloaded and run at home, though hardware limits apply."
-    }
-  ],
-  "verdetto": "Pick Gemini 3.8 Flash (High) if you prioritize chat quality and vision and are comfortable using a free online API. Pick MiMo-V2.6-Pro if coding performance and open-weight, locally runnable models matter more to you.",
+  "descr": "Gemini 3.8 Flash leads MiMo-V2.6-Pro in Arena chat scores.",
+  "risposta": "Gemini 3.8 Flash is the better model in the head-to-head comparison. It earned a higher chat score on the Arena and won about 52 % of blind votes. The margin is 17 points, which the Arena treats as a real lead. MiMo-V2.6-Pro trails in overall chat performance.",
+  "dimensioni": "Gemini 3.8 Flash does not disclose its model size, so download details are unavailable. MiMo-V2.6-Pro is listed at 1024.2 B total size with 43.9 B active parameters and requires about a 622 GB download when using 4-bit quantisation.",
+  "velocita": "Both models run only through an online service on common consumer GPUs. Gemini 3.8 Flash is marked as online-only for RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, and Ryzen AI Max+ 395 128 GB. MiMo-V2.6-Pro does not fit any of those home machines either, so neither can be run locally at full speed.",
+  "gratisA": "Gemini 3.8 Flash can be accessed for free via Google’s Gemini API free tier. The service uses a proprietary license but does not require any local installation.",
+  "gratisB": "MiMo-V2.6-Pro is released under an MIT license with open weights. Users can download the model and run it at home without any cost, provided they have sufficient hardware to host the 622 GB download.",
+  "sceglieA": "Pick Gemini 3.8 Flash when you need the strongest chat performance and vision capabilities. It also benefits from Google’s reliable online API, which removes the need for local hardware. The model is ideal for users who prefer a managed service.",
+  "sceglieB": "Choose MiMo-V2.6-Pro if coding tasks are a priority, as it outperforms Gemini in the coding category. Its open-weight MIT license lets developers modify and integrate the model freely. It suits hobbyists who want full control over the model on their own machines.",
+  "categorie": {
+    "Chat": "Gemini 3.8 Flash scores 1497 in the chat category, ahead of MiMo-V2.6-Pro’s 1480. This makes Gemini the preferred choice for conversational quality.",
+    "Coding": "MiMo-V2.6-Pro leads coding with a score of 1624 compared to Gemini’s 1583. Developers looking for code generation should favor MiMo.",
+    "Vision": "In vision tasks Gemini 3.8 Flash scores 1293, surpassing MiMo-V2.6-Pro’s 1247. For image-related queries, Gemini holds the advantage."
+  },
   "scritto": "2026-11-17",
-  "aggiornato": "2026-11-17",
-  "scrittore": "groq",
+  "aggiornato": "2026-11-19",
+  "scrittore": "workers",
   "fatti": {
     "leader": "Gemini 3.8 Flash (High)",
     "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",
