@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom",
+ "titolo": "AI infrastructure targeted: Microsoft details three AI workload compromises",
+ "descr": "Microsoft reports attacks on LiteLLM, RAGFlow and Kestra workloads, highlighting credential theft and compute monetization.",
+ "tema": "Policy",
+ "paragrafi": [
+  "In each case the intruders aimed to steal credentials, maintain persistence, and monetize compute resources.",
+  "The LiteLLM breach involved Python droppers, secret harvesting and exploitation of CVE‑2026‑42271 and CVE‑2026‑48710.",
+  "RAGFlow attackers performed SSRF‑style reconnaissance, code execution and intercepted LLM provider credentials.",
+  "Kestra attackers executed shell commands, discovered Docker containers, deployed XMRig and leveraged CVE‑2026‑49869.",
+  "Microsoft advises inventorying AI management surfaces, restricting admin access and monitoring gateway activity."
+ ],
+ "perche": [
+  "These incidents show AI gateways and orchestration tools are high‑value targets, so organizations must apply the same security rigor as for core infrastructure. Users of free or local models should ensure their deployment surfaces are hardened and secrets are protected to avoid similar compromises."
+ ],
+ "pubblicato": "2026-11-19",
+ "titoloFonte": "Not If, But How: Responding to Security Incidents in the Age of AI Attackers",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/19/ai-security-incident-response-playbook-2026/",
+   "titolo": "Not If, But How: Responding to Security Incidents in the Age of AI Attackers",
+   "ufficiale": false,
+   "data": "2026-11-19"
+  },
+  {
+   "nome": "microsoft.com",
+   "url": "https://www.microsoft.com/en-us/security/blog/2026/08/26/when-ai-infrastructure-becomes-target-securing-gateways-control-points",
+   "titolo": "When AI infrastructure becomes the target: Securing gateways and control points | Microsoft Security Blog",
+   "ufficiale": true,
+   "data": "2026-08-26"
+  }
+ ],
+ "frasiTolte": 1
+}

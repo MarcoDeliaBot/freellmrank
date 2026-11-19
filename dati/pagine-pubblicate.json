@@ -5840,6 +5840,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
   "tipo": "articolo",
   "lingua": "en",
@@ -5916,6 +5932,38 @@
   "tipo": "articolo",
   "lingua": "en",
   "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-19",
   "ultimaVista": "2026-11-19",
   "stato": "attiva"
  },
@@ -16592,6 +16640,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/de/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
   "tipo": "articolo",
   "lingua": "de",
@@ -16668,6 +16732,38 @@
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-19",
   "ultimaVista": "2026-11-19",
   "stato": "attiva"
  },
@@ -35456,6 +35552,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
   "tipo": "articolo",
   "lingua": "es",
@@ -35532,6 +35644,38 @@
   "tipo": "articolo",
   "lingua": "es",
   "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-19",
   "ultimaVista": "2026-11-19",
   "stato": "attiva"
  },
@@ -54320,6 +54464,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
   "tipo": "articolo",
   "lingua": "fr",
@@ -54396,6 +54556,38 @@
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-19",
   "ultimaVista": "2026-11-19",
   "stato": "attiva"
  },
@@ -73184,6 +73376,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
   "tipo": "articolo",
   "lingua": "it",
@@ -73260,6 +73468,38 @@
   "tipo": "articolo",
   "lingua": "it",
   "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-19",
   "ultimaVista": "2026-11-19",
   "stato": "attiva"
  },
@@ -92048,6 +92288,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
   "tipo": "articolo",
   "lingua": "ja",
@@ -92124,6 +92380,38 @@
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-19",
   "ultimaVista": "2026-11-19",
   "stato": "attiva"
  },
@@ -119024,6 +119312,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/pt/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
   "tipo": "articolo",
   "lingua": "pt",
@@ -119100,6 +119404,38 @@
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-19",
   "ultimaVista": "2026-11-19",
   "stato": "attiva"
  },

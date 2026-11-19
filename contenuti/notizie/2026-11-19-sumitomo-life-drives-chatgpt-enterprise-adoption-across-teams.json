@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams",
+ "titolo": "Sumitomo Life drives ChatGPT Enterprise adoption across teams",
+ "descr": "Executives at Sumitomo Life used ChatGPT Enterprise for research, proposals, and code, spurring wider company use.",
+ "tema": "Business",
+ "paragrafi": [
+  "Sumitomo Life has begun using ChatGPT Enterprise for internal tasks.",
+  "The platform helps staff research insurers, prepare client proposals, and draft code for investment analysis.",
+  "Early adoption by senior leaders demonstrated the tool’s value and encouraged broader team uptake.",
+  "The company reports that executive use was a key factor in driving organization‑wide acceptance."
+ ],
+ "perche": [
+  "For AI users, the case shows how leadership endorsement can accelerate enterprise AI rollout. Those seeking free or locally hosted models can note that large‑scale tools like ChatGPT Enterprise still rely on cloud services, highlighting the trade‑off between convenience and the desire for open, self‑hosted alternatives."
+ ],
+ "pubblicato": "2026-11-19",
+ "titoloFonte": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/business/customer-stories/sumitomo-life",
+   "titolo": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 0
+}

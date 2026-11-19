@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents",
+ "titolo": "Superhuman expands Go AI assistant across suite, adds 20+ partner agents",
+ "descr": "Superhuman rolls out a personalized Go assistant that works in Docs, Mail and other tools, adding over 20 new partner agents.",
+ "tema": "Business",
+ "paragrafi": [
+  "Superhuman, formerly Grammarly, announced a major update to its Go platform, introducing a personalized AI assistant that users can name and task with monitoring projects and to‑do lists.",
+  "The new assistant operates across connected tools, suggesting next steps, drafting content in the user’s voice, and managing a team of other AI agents while keeping the user in the loop.",
+  "Superhuman added more than 20 partner agents, including Legora AB for legal intelligence, Databricks Live Metrics, Amplitude Product check, and Blackboard Assignment Coach, accessible through the Go SDK.",
+  "Agents are now native in Docs, allowing users to mention an agent with @ to hand off work, and they can run triggers even when the document is closed. Mail also leverages agents to pull context from Slack, meeting notes or internal docs.",
+  "CEO Shishir Mehrotra said Go has over 1 million active users and aims to solve the “last mile of AI” by embedding assistance directly into the tools people already use."
+ ],
+ "perche": [
+  "The rollout means users get proactive help without switching apps, potentially saving minutes per draft and keeping documents up‑to‑date automatically. For those seeking free or locally hosted models, the move highlights the growing value of integrated, cloud‑based AI assistants, underscoring the challenge of matching such seamless, enterprise‑scale features with open‑source alternatives."
+ ],
+ "pubblicato": "2026-11-19",
+ "titoloFonte": "Superhuman unveils personal AI assistant and expands Go across entire suite",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/19/superhuman-unveils-personal-ai-assistant-and-expands-go-across-entire-suite/",
+   "titolo": "Superhuman unveils personal AI assistant and expands Go across entire suite",
+   "ufficiale": false,
+   "data": "2026-11-19"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/19/superhuman-pushes-its-go-assistant-everywhere/",
+   "titolo": "Superhuman pushes its Go assistant everywhere",
+   "ufficiale": false,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 0
+}

@@ -24215,6 +24215,42 @@
     "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Coding\n\nBiggest moves among the top 30 free models:\n\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html) up 2 to #28 (score 1437)\n- [Kimi K2.5 (Thinking)](/model/kimi-k2-5-thinking.html) down 2 to #30 (score 1436)\n- [MiniMax-M3.1-Flash](/model/minimax-m3-1-flash.html) up 1 to #14 (score 1582)\n\n## Image\n\nBiggest moves among the top 30 free models:\n\n- [HiDream-O1-Image](/model/hidream-o1-image.html) up 1 to #9 (score 1115)\n- [Krea 2 Turbo](/model/krea-2-turbo.html) down 1 to #10 (score 1115)\n\n## Agents\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) up 1 to #7 (score -0.4)\n- [Hy4 preview](/model/hy4-preview.html) down 1 to #8 (score -0.4)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1487 |\n| Coding | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 1684 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1272 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1227 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1456 |\n| Image edit | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1363 |\n| Documents | [Gemma 4 31B](/model/gemma-4-31b.html) | 1452 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1062 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1493 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1378 |\n| Agents | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 3.9 |\n"
    },
    "data": "2026-11-19"
+  },
+  "/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom.html": {
+   "post": {
+    "slug": "news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom",
+    "titolo": "AI infrastructure targeted: Microsoft details three AI workload compromises",
+    "descr": "Microsoft reports attacks on LiteLLM, RAGFlow and Kestra workloads, highlighting credential theft and compute monetization.",
+    "data": "2026-11-19",
+    "tema": "Policy",
+    "corpo": "In each case the intruders aimed to steal credentials, maintain persistence, and monetize compute resources.\n\nThe LiteLLM breach involved Python droppers, secret harvesting and exploitation of CVE‑2026‑42271 and CVE‑2026‑48710.\n\nRAGFlow attackers performed SSRF‑style reconnaissance, code execution and intercepted LLM provider credentials.\n\nKestra attackers executed shell commands, discovered Docker containers, deployed XMRig and leveraged CVE‑2026‑49869.\n\nMicrosoft advises inventorying AI management surfaces, restricting admin access and monitoring gateway activity.\n\n## What it means for you\n\nThese incidents show AI gateways and orchestration tools are high‑value targets, so organizations must apply the same security rigor as for core infrastructure. Users of free or local models should ensure their deployment surfaces are hardened and secrets are protected to avoid similar compromises.\n\n## Sources\n\n- [Not If, But How: Responding to Security Incidents in the Age of AI Attackers](https://www.marktechpost.com/2026/11/19/ai-security-incident-response-playbook-2026/), MarkTechPost, 19 Nov 2026\n- [When AI infrastructure becomes the target: Securing gateways and control points | Microsoft Security Blog](https://www.microsoft.com/en-us/security/blog/2026/08/26/when-ai-infrastructure-becomes-target-securing-gateways-control-points), microsoft.com (official), 26 Aug 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-19-ai-infrastructure-targeted-microsoft-details-three-ai-workload-comprom).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-19"
+  },
+  "/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams.html": {
+   "post": {
+    "slug": "news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams",
+    "titolo": "Sumitomo Life drives ChatGPT Enterprise adoption across teams",
+    "descr": "Executives at Sumitomo Life used ChatGPT Enterprise for research, proposals, and code, spurring wider company use.",
+    "data": "2026-11-19",
+    "tema": "Business",
+    "corpo": "Sumitomo Life has begun using ChatGPT Enterprise for internal tasks.\n\nThe platform helps staff research insurers, prepare client proposals, and draft code for investment analysis.\n\nEarly adoption by senior leaders demonstrated the tool’s value and encouraged broader team uptake.\n\nThe company reports that executive use was a key factor in driving organization‑wide acceptance.\n\n## What it means for you\n\nFor AI users, the case shows how leadership endorsement can accelerate enterprise AI rollout. Those seeking free or locally hosted models can note that large‑scale tools like ChatGPT Enterprise still rely on cloud services, highlighting the trade‑off between convenience and the desire for open, self‑hosted alternatives.\n\n## Sources\n\n- [How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise](https://openai.com/business/customer-stories/sumitomo-life), OpenAI (official), 18 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-19-sumitomo-life-drives-chatgpt-enterprise-adoption-across-teams).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-19"
+  },
+  "/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents.html": {
+   "post": {
+    "slug": "news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents",
+    "titolo": "Superhuman expands Go AI assistant across suite, adds 20+ partner agents",
+    "descr": "Superhuman rolls out a personalized Go assistant that works in Docs, Mail and other tools, adding over 20 new partner agents.",
+    "data": "2026-11-19",
+    "tema": "Business",
+    "corpo": "Superhuman, formerly Grammarly, announced a major update to its Go platform, introducing a personalized AI assistant that users can name and task with monitoring projects and to‑do lists.\n\nThe new assistant operates across connected tools, suggesting next steps, drafting content in the user’s voice, and managing a team of other AI agents while keeping the user in the loop.\n\nSuperhuman added more than 20 partner agents, including Legora AB for legal intelligence, Databricks Live Metrics, Amplitude Product check, and Blackboard Assignment Coach, accessible through the Go SDK.\n\nAgents are now native in Docs, allowing users to mention an agent with @ to hand off work, and they can run triggers even when the document is closed. Mail also leverages agents to pull context from Slack, meeting notes or internal docs.\n\nCEO Shishir Mehrotra said Go has over 1 million active users and aims to solve the “last mile of AI” by embedding assistance directly into the tools people already use.\n\n## What it means for you\n\nThe rollout means users get proactive help without switching apps, potentially saving minutes per draft and keeping documents up‑to‑date automatically. For those seeking free or locally hosted models, the move highlights the growing value of integrated, cloud‑based AI assistants, underscoring the challenge of matching such seamless, enterprise‑scale features with open‑source alternatives.\n\n## Sources\n\n- [Superhuman unveils personal AI assistant and expands Go across entire suite](https://siliconangle.com/2026/11/19/superhuman-unveils-personal-ai-assistant-and-expands-go-across-entire-suite/), SiliconANGLE, 19 Nov 2026\n- [Superhuman pushes its Go assistant everywhere](https://techcrunch.com/2026/11/19/superhuman-pushes-its-go-assistant-everywhere/), TechCrunch, 19 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-19-superhuman-expands-go-ai-assistant-across-suite-adds-20-partner-agents).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-19"
   }
  },
  "ricostruzione": {
