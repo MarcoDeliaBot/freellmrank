@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-19-nvidia-daqiri-enables-real-time-ai-processing-of-500-gbps-electron-mic",
+ "titolo": "NVIDIA DAQIRI Enables Real‑Time AI Processing of 500 Gbps Electron Microscopy Data",
+ "descr": "New DAQIRI release lets a high‑dynamic‑range camera stream over 500 Gbps directly to GPU memory for instant analysis.",
+ "tema": "Research",
+ "paragrafi": [
+  "Lawrence Berkeley National Laboratory’s Molecular Foundry built a high‑dynamic‑range electron microscopy camera that captures strong and faint signals together.",
+  "The camera generates more than 500 gigabits of data per second, over 500 times faster than conventional EELS streams.",
+  "GPU‑native processing enables sub‑micron spatial resolution from 5 µm sensor pixels and lets researchers adjust acquisition parameters in real time."
+ ],
+ "perche": [
+  "For AI practitioners, DAQIRI shows how software‑defined acquisition can keep pace with ultra‑high‑bandwidth sensors, opening new real‑time analysis opportunities. Users of free or local models can explore similar GPU‑native pipelines without relying on proprietary hardware, leveraging open‑source tools to handle massive data streams."
+ ],
+ "pubblicato": "2026-11-19",
+ "titoloFonte": "Enabling Real-Time AI for Scientific Instruments with GPU-Native Data Acquisition",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/enabling-real-time-ai-for-scientific-instruments-with-gpu-native-data-acquisition/",
+   "titolo": "Enabling Real-Time AI for Scientific Instruments with GPU-Native Data Acquisition",
+   "ufficiale": true,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 2
+}

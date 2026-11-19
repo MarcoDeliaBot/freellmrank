@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-19-openai-s-performance-factory-uses-codex-workflows-to-keep-chatgpt-fast",
+ "titolo": "OpenAI’s Performance Factory uses Codex workflows to keep ChatGPT fast",
+ "descr": "OpenAI built a Performance Factory that automatically finds and fixes performance issues, ensuring ChatGPT remains responsive.",
+ "tema": "Software",
+ "paragrafi": [
+  "OpenAI announced a new system called the Performance Factory.",
+  "The factory relies on Codex-powered workflows that scan for performance problems in ChatGPT.",
+  "When an issue is detected, the system automatically applies fixes to improve speed.",
+  "This continuous monitoring helps maintain low latency for users worldwide.",
+  "OpenAI says the approach reduces downtime and keeps the service reliable."
+ ],
+ "perche": [
+  "For end users, the factory means a smoother, faster ChatGPT experience with fewer slowdowns. For developers of free or local models, it highlights the value of automated performance tooling that could be adapted to improve responsiveness without large infrastructure."
+ ],
+ "pubblicato": "2026-11-19",
+ "titoloFonte": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+   "titolo": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+   "ufficiale": true,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 0
+}
