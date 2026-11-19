@@ -547,5 +547,13 @@
  "news-2026-11-18-mistral-releases-vibe-desktop-app-for-macos-and-windows": {
   "lungo": "notizia-mistral-releases-vibe-desktop-app-for-macos-and-windows",
   "breve": "breve-mistral-releases-vibe-desktop-app-for-macos-and-windows"
+ },
+ "news-2026-11-18-google-launches-gemini-app-for-low-memory-android-go-edition-phones": {
+  "lungo": "notizia-google-launches-gemini-app-for-low-memory-android-go-edi",
+  "breve": "breve-google-launches-gemini-app-for-low-memory-android-go-edi"
+ },
+ "news-2026-11-17-nvidia-unveils-nemotron-for-science-and-rubin-hpc-gpu-at-sc26": {
+  "lungo": "notizia-nvidia-unveils-nemotron-for-science-and-rubin-hpc-gpu-at",
+  "breve": "breve-nvidia-unveils-nemotron-for-science-and-rubin-hpc-gpu-at"
  }
 }
