@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-17",
+ "aggiornato": "2026-11-19",
  "suite": {
   "versione": "decision-index-0.3",
   "test": 42,
@@ -151,6 +151,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "knowline-31b-gen2",
+   "nome": "KnowLine 31B Gen2",
+   "org": "PelaAI",
+   "tipo": "LoRA",
+   "b": 31.3,
+   "stimato": false,
+   "repo": "PelaAI/KnowLine-31B-Gen2",
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 72.25,
+   "pubblico": 73,
+   "ms": 205,
+   "p95": 2259.7,
+   "ece": 0.0211,
+   "acc": 0.8162,
+   "aree": {
+    "knowledge": 62.2,
+    "language": 74.1,
+    "retrieval": 74.8,
+    "tools": 88.8,
+    "arts": 65.7
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "copernicus-31b",
    "nome": "Copernicus-31B",
    "org": "Poindexter Labs",
@@ -172,32 +198,6 @@
     "retrieval": 73.2,
     "tools": 85,
     "arts": 59.3
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
-  },
-  {
-   "id": "knowline-31b-gen1.5",
-   "nome": "KnowLine 31B Gen1.5",
-   "org": "PelaAI",
-   "tipo": "LoRA",
-   "b": 31.3,
-   "stimato": false,
-   "repo": "PelaAI/KnowLine-31B-Gen1.5",
-   "base": "google/gemma-4-31B-it",
-   "nota": null,
-   "punti": 71.91,
-   "pubblico": 70.5,
-   "ms": 202.4,
-   "p95": 2633.4,
-   "ece": 0.0325,
-   "acc": 0.7989,
-   "aree": {
-    "knowledge": 59.4,
-    "language": 72.8,
-    "retrieval": 73.2,
-    "tools": 85.4,
-    "arts": 60.5
    },
    "vision": null,
    "licenza": "apache-2.0"
@@ -822,6 +822,32 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "wildcat-d3-ultra-bf16",
+   "nome": "Wildcat (d3-ultra)",
+   "org": "",
+   "tipo": "LoRA",
+   "b": 26.1,
+   "stimato": false,
+   "repo": "BoldingBuilds/Wildcat-d3-ultra-bf16",
+   "base": "vllm-sr/d3-ultra",
+   "nota": null,
+   "punti": 67.68,
+   "pubblico": 70.66,
+   "ms": 189.1,
+   "p95": 623.6,
+   "ece": 0.0363,
+   "acc": 0.7918,
+   "aree": {
+    "knowledge": 58.9,
+    "language": 73.7,
+    "retrieval": 71.9,
+    "tools": 87.2,
+    "arts": 60.7
+   },
+   "vision": null,
+   "licenza": "other"
+  },
+  {
    "id": "pplx-decider-v1.3",
    "nome": "Perplexity Decider v1.3 (27B)",
    "org": "",
@@ -1230,6 +1256,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "diorite-g4-31b-v1.0",
+   "nome": "Diorite G4 31B v1.0",
+   "org": "Leucodiorite",
+   "tipo": "LoRA",
+   "b": 31.3,
+   "stimato": false,
+   "repo": "Leucodiorite/Diorite-G4-31B-v1.0",
+   "base": "google/gemma-4-31B-it",
+   "nota": null,
+   "punti": 65.94,
+   "pubblico": 65.47,
+   "ms": 93,
+   "p95": 1187.8,
+   "ece": 0.0273,
+   "acc": 0.7763,
+   "aree": {
+    "knowledge": 52,
+    "language": 67.7,
+    "retrieval": 69.6,
+    "tools": 80.8,
+    "arts": 58.4
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
    "id": "knowline-35b-a3b-gen1.5",
    "nome": "KnowLine 35B-A3B Gen1.5",
    "org": "PelaAI",
@@ -1496,6 +1548,35 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "nirnaya-turbo-1.0",
+   "nome": "Nirnaya Turbo 1.0",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 26.1,
+   "stimato": false,
+   "repo": "Darkrider/nirnaya-turbo-1.0",
+   "base": "google/gemma-4-26B-A4B-it",
+   "nota": null,
+   "punti": 63.83,
+   "pubblico": 61.78,
+   "ms": 52.6,
+   "p95": 287.9,
+   "ece": 0.064,
+   "acc": 0.7482,
+   "aree": {
+    "knowledge": 51,
+    "language": 63.5,
+    "retrieval": 63.9,
+    "tools": 81.1,
+    "arts": 45.6
+   },
+   "vision": {
+    "punti": 65.5,
+    "ms": 198.1
+   },
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "anyjev-l0-gemma-4-31b",
    "nome": "AnyJev L0 · Gemma-4-31B",
    "org": "",
@@ -1598,6 +1679,32 @@
    },
    "vision": null,
    "licenza": "other"
+  },
+  {
+   "id": "knowline-12b-gen1",
+   "nome": "KnowLine 12B Gen1",
+   "org": "PelaAI",
+   "tipo": "LoRA",
+   "b": 12,
+   "stimato": false,
+   "repo": "PelaAI/KnowLine-12B-Gen1",
+   "base": "google/gemma-4-12B-it",
+   "nota": null,
+   "punti": 62.33,
+   "pubblico": 69.37,
+   "ms": 84.6,
+   "p95": 767,
+   "ece": 0.0143,
+   "acc": 0.801,
+   "aree": {
+    "knowledge": 54.1,
+    "language": 69.9,
+    "retrieval": 74.6,
+    "tools": 87.9,
+    "arts": 63
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
   },
   {
    "id": "decider-chat-gemma4-31b",
@@ -2256,32 +2363,6 @@
    "licenza": "apache-2.0"
   },
   {
-   "id": "knowline-9b-gen1",
-   "nome": "KnowLine 9B Gen1",
-   "org": "PelaAI",
-   "tipo": "LoRA",
-   "b": 9.7,
-   "stimato": false,
-   "repo": "PelaAI/KnowLine-9B-Gen1",
-   "base": "Qwen/Qwen3.5-9B",
-   "nota": null,
-   "punti": 58.44,
-   "pubblico": 65.67,
-   "ms": 128.1,
-   "p95": 747.1,
-   "ece": 0.0283,
-   "acc": 0.7796,
-   "aree": {
-    "knowledge": 47.6,
-    "language": 69.1,
-    "retrieval": 71.9,
-    "tools": 82.7,
-    "arts": 59.8
-   },
-   "vision": null,
-   "licenza": "apache-2.0"
-  },
-  {
    "id": "h2o-lightning-bolt-74b-v1.1",
    "nome": "H2O Lightning Bolt 74B v1.1",
    "org": "H2O.ai",
@@ -2309,6 +2390,32 @@
     "ms": 142.3
    },
    "licenza": "other"
+  },
+  {
+   "id": "knowline-9b-gen2",
+   "nome": "KnowLine 9B Gen2",
+   "org": "PelaAI",
+   "tipo": "LoRA",
+   "b": 9.7,
+   "stimato": false,
+   "repo": "PelaAI/KnowLine-9B-Gen2",
+   "base": "Qwen/Qwen3.5-9B",
+   "nota": null,
+   "punti": 58.36,
+   "pubblico": 69,
+   "ms": 53,
+   "p95": 358.3,
+   "ece": 0.0115,
+   "acc": 0.803,
+   "aree": {
+    "knowledge": 52.3,
+    "language": 69.5,
+    "retrieval": 75.1,
+    "tools": 88.8,
+    "arts": 62.6
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
   },
   {
    "id": "startlux-decision-v1.1-9b-instant",
@@ -2464,6 +2571,35 @@
     "arts": 40.8
    },
    "vision": null,
+   "licenza": null
+  },
+  {
+   "id": "singvl-s1-4b",
+   "nome": "SingVL S1 4B",
+   "org": "inclusionAI",
+   "tipo": "full fine-tune",
+   "b": 4.5,
+   "stimato": false,
+   "repo": "inclusionAI/SingVL_S1_4B",
+   "base": null,
+   "nota": null,
+   "punti": 56.75,
+   "pubblico": 69.76,
+   "ms": 136.7,
+   "p95": 764.3,
+   "ece": 0.0419,
+   "acc": 0.7868,
+   "aree": {
+    "knowledge": 54.9,
+    "language": 73.7,
+    "retrieval": 72.4,
+    "tools": 86.3,
+    "arts": 62.3
+   },
+   "vision": {
+    "punti": 67.4,
+    "ms": 300.3
+   },
    "licenza": null
   },
   {
@@ -2791,6 +2927,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "gs1-9b",
+   "nome": "GS1 9B",
+   "org": "Beijing Institute for General Artificial Intelligence",
+   "tipo": "full fine-tune",
+   "b": 8.8,
+   "stimato": false,
+   "repo": "bigai/GS1-9B",
+   "base": null,
+   "nota": null,
+   "punti": 54.92,
+   "pubblico": 70.45,
+   "ms": 101.7,
+   "p95": 598.1,
+   "ece": 0.0331,
+   "acc": 0.8143,
+   "aree": {
+    "knowledge": 56,
+    "language": 72.6,
+    "retrieval": 75.6,
+    "tools": 87.6,
+    "arts": 60.6
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "startlux-decision-v1.1-4b-instant",
    "nome": "StartLux-Decision v1.1 4B",
    "org": "StartLux",
@@ -3112,6 +3274,35 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "nirnaya-flash-1.0",
+   "nome": "Nirnaya Flash 1.0",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 7.9,
+   "stimato": false,
+   "repo": "Darkrider/nirnaya-flash-1.0",
+   "base": "google/gemma-4-E4B-it",
+   "nota": null,
+   "punti": 52.85,
+   "pubblico": 51.9,
+   "ms": 34.4,
+   "p95": 235.6,
+   "ece": 0.0367,
+   "acc": 0.7109,
+   "aree": {
+    "knowledge": 35,
+    "language": 53.8,
+    "retrieval": 58.4,
+    "tools": 71.7,
+    "arts": 41.8
+   },
+   "vision": {
+    "punti": 53,
+    "ms": 132.7
+   },
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "senova-4b-v4",
    "nome": "Senova-4B v4",
    "org": "",
@@ -3162,6 +3353,32 @@
    },
    "vision": null,
    "licenza": "other"
+  },
+  {
+   "id": "diorite-g4-12b-v1.0",
+   "nome": "Diorite G4 12B v1.0",
+   "org": "Leucodiorite",
+   "tipo": "LoRA",
+   "b": 12,
+   "stimato": false,
+   "repo": "Leucodiorite/Diorite-G4-12B-v1.0",
+   "base": "google/gemma-4-12B-it",
+   "nota": null,
+   "punti": 52.6,
+   "pubblico": 57.37,
+   "ms": 66.6,
+   "p95": 507.9,
+   "ece": 0.0475,
+   "acc": 0.7313,
+   "aree": {
+    "knowledge": 38,
+    "language": 61.4,
+    "retrieval": 64.2,
+    "tools": 75.5,
+    "arts": 50.1
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
   },
   {
    "id": "muria",
@@ -3375,6 +3592,32 @@
    "licenza": null
   },
   {
+   "id": "gs1-4b",
+   "nome": "GS1 4B",
+   "org": "Beijing Institute for General Artificial Intelligence",
+   "tipo": "full fine-tune",
+   "b": 4.7,
+   "stimato": false,
+   "repo": "bigai/GS1-4B",
+   "base": null,
+   "nota": null,
+   "punti": 50.11,
+   "pubblico": 68.97,
+   "ms": 98.8,
+   "p95": 580.7,
+   "ece": 0.0464,
+   "acc": 0.7974,
+   "aree": {
+    "knowledge": 52.4,
+    "language": 71.1,
+    "retrieval": 75.5,
+    "tools": 87.5,
+    "arts": 59.3
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "piccolo-4b",
    "nome": "Piccolo 4B",
    "org": "agentscope-ai",
@@ -3563,6 +3806,32 @@
    "licenza": null
   },
   {
+   "id": "epochecho-decision-4b-preview",
+   "nome": "Decision 4B Preview (EpochEcho)",
+   "org": "",
+   "tipo": "LoRA + head",
+   "b": 4.7,
+   "stimato": false,
+   "repo": "EpochEcho/decision-4b-preview",
+   "base": "Qwen/Qwen3.5-4B",
+   "nota": null,
+   "punti": 49.17,
+   "pubblico": 57.72,
+   "ms": 89.8,
+   "p95": 378.1,
+   "ece": 0.0519,
+   "acc": 0.7345,
+   "aree": {
+    "knowledge": 42.1,
+    "language": 65,
+    "retrieval": 64,
+    "tools": 73.4,
+    "arts": 37.8
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "ajev-lora7",
    "nome": "AJev lora7 (Gemma 4 12B)",
    "org": "",
@@ -3720,6 +3989,35 @@
    },
    "vision": null,
    "licenza": "apache-2.0"
+  },
+  {
+   "id": "meta-encoder-v1",
+   "nome": "MetaEncoder v1",
+   "org": "AI at Meta",
+   "tipo": "",
+   "b": 28.4,
+   "stimato": false,
+   "repo": "facebook/meta-encoder-v1",
+   "base": null,
+   "nota": null,
+   "punti": 47.67,
+   "pubblico": 47.59,
+   "ms": 166.8,
+   "p95": 2560.8,
+   "ece": 0.0242,
+   "acc": 0.6457,
+   "aree": {
+    "knowledge": 36.8,
+    "language": 56.5,
+    "retrieval": 50.4,
+    "tools": 66.5,
+    "arts": 12.2
+   },
+   "vision": {
+    "punti": 54.8,
+    "ms": 485.5
+   },
+   "licenza": null
   },
   {
    "id": "purplemist-flash-1.0",
@@ -3934,6 +4232,35 @@
    },
    "vision": null,
    "licenza": "other"
+  },
+  {
+   "id": "nischay-1",
+   "nome": "Nischay-1",
+   "org": "",
+   "tipo": "full fine-tune",
+   "b": 8.6,
+   "stimato": false,
+   "repo": "Ajeet-001/nischay-1",
+   "base": "google/gemma-4-E4B-it",
+   "nota": null,
+   "punti": 45.78,
+   "pubblico": 50.81,
+   "ms": 43.9,
+   "p95": 332,
+   "ece": 0.0506,
+   "acc": 0.7125,
+   "aree": {
+    "knowledge": 29.2,
+    "language": 61.1,
+    "retrieval": 52.4,
+    "tools": 73.6,
+    "arts": 35.4
+   },
+   "vision": {
+    "punti": 48.5,
+    "ms": 161.3
+   },
+   "licenza": "apache-2.0"
   },
   {
    "id": "hopper-12b-trained",
@@ -4364,6 +4691,32 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "diorite-g4-e4b-v1.0",
+   "nome": "Diorite G4 E4B v1.0",
+   "org": "Leucodiorite",
+   "tipo": "LoRA",
+   "b": 8,
+   "stimato": false,
+   "repo": "Leucodiorite/Diorite-G4-E4B-v1.0",
+   "base": "google/gemma-4-E4B-it",
+   "nota": null,
+   "punti": 42.25,
+   "pubblico": 51.27,
+   "ms": 63,
+   "p95": 218.5,
+   "ece": 0.0593,
+   "acc": 0.7191,
+   "aree": {
+    "knowledge": 28.5,
+    "language": 59,
+    "retrieval": 56.1,
+    "tools": 68.8,
+    "arts": 48.4
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
+  },
+  {
    "id": "jev-9b",
    "nome": "JEV-9B",
    "org": "AutoTrust AI Lab",
@@ -4679,6 +5032,32 @@
    "licenza": "apache-2.0"
   },
   {
+   "id": "gs1-2b",
+   "nome": "GS1 2B",
+   "org": "Beijing Institute for General Artificial Intelligence",
+   "tipo": "full fine-tune",
+   "b": 2.3,
+   "stimato": false,
+   "repo": "bigai/GS1-2B",
+   "base": null,
+   "nota": null,
+   "punti": 39.72,
+   "pubblico": 62.22,
+   "ms": 75.8,
+   "p95": 440.6,
+   "ece": 0.0585,
+   "acc": 0.7555,
+   "aree": {
+    "knowledge": 41.8,
+    "language": 63.7,
+    "retrieval": 71.2,
+    "tools": 83.6,
+    "arts": 54.2
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "jpt-4b",
    "nome": "JPT-4B",
    "org": "",
@@ -4732,6 +5111,32 @@
    },
    "vision": null,
    "licenza": "cc-by-nc-4.0"
+  },
+  {
+   "id": "classone-qwen3.5-9b",
+   "nome": "ClassOne Qwen3.5 9B",
+   "org": "",
+   "tipo": "LoRA + head",
+   "b": 8.4,
+   "stimato": false,
+   "repo": "devops-thiago/classone-qwen3.5-9b",
+   "base": "Qwen/Qwen3.5-9B",
+   "nota": null,
+   "punti": 39.12,
+   "pubblico": 38.43,
+   "ms": 254.3,
+   "p95": 528.6,
+   "ece": 0.1058,
+   "acc": 0.6252,
+   "aree": {
+    "knowledge": 26,
+    "language": 40,
+    "retrieval": 44.9,
+    "tools": 56.8,
+    "arts": 20.1
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
   },
   {
    "id": "intern-decision-4b",
@@ -5356,32 +5761,6 @@
    "licenza": "apache-2.0"
   },
   {
-   "id": "glide-0.4b",
-   "nome": "GLiDE 0.4B",
-   "org": "Fastino",
-   "tipo": "full fine-tune",
-   "b": 0.4,
-   "stimato": false,
-   "repo": "fastino/GLiDE-0.4B",
-   "base": "jhu-clsp/ettin-encoder-400m",
-   "nota": null,
-   "punti": 33.84,
-   "pubblico": 51.1,
-   "ms": 18.3,
-   "p95": 85.1,
-   "ece": 0.0487,
-   "acc": 0.6828,
-   "aree": {
-    "knowledge": 24.8,
-    "language": 57.5,
-    "retrieval": 58.6,
-    "tools": 73.1,
-    "arts": 47.5
-   },
-   "vision": null,
-   "licenza": "other"
-  },
-  {
    "id": "tev1-4b",
    "nome": "Tev1-4B-experimental",
    "org": "Together",
@@ -5406,6 +5785,32 @@
    },
    "vision": null,
    "licenza": null
+  },
+  {
+   "id": "glide-0.4b",
+   "nome": "GLiDE 0.4B",
+   "org": "Fastino",
+   "tipo": "full fine-tune",
+   "b": 0.4,
+   "stimato": false,
+   "repo": "fastino/GLiDE-0.4B",
+   "base": "jhu-clsp/ettin-encoder-400m",
+   "nota": null,
+   "punti": 33.59,
+   "pubblico": 51.1,
+   "ms": 18.3,
+   "p95": 85.1,
+   "ece": 0.0487,
+   "acc": 0.6828,
+   "aree": {
+    "knowledge": 24.8,
+    "language": 57.5,
+    "retrieval": 58.6,
+    "tools": 73.1,
+    "arts": 47.5
+   },
+   "vision": null,
+   "licenza": "other"
   },
   {
    "id": "d1-omni-2b",
@@ -5437,26 +5842,26 @@
    "licenza": "other"
   },
   {
-   "id": "adjudex-0.8b-v5",
-   "nome": "Adjudex-0.8B v5",
+   "id": "adjudex-0.8b-v6",
+   "nome": "Adjudex-0.8B v6",
    "org": "",
    "tipo": "full fine-tune",
    "b": 0.9,
    "stimato": false,
-   "repo": "newsbang/adjudex-0.8b-v5",
+   "repo": "newsbang/adjudex-0.8b-v6",
    "base": "Qwen/Qwen3.5-0.8B",
    "nota": null,
-   "punti": 32.81,
-   "pubblico": 54.69,
-   "ms": 49.9,
-   "p95": 156.9,
-   "ece": 0.0685,
-   "acc": 0.7223,
+   "punti": 33.05,
+   "pubblico": 55.09,
+   "ms": 34.5,
+   "p95": 78.2,
+   "ece": 0.0448,
+   "acc": 0.7242,
    "aree": {
-    "knowledge": 30,
-    "language": 54.5,
-    "retrieval": 66.7,
-    "tools": 79.5,
+    "knowledge": 30.6,
+    "language": 54.4,
+    "retrieval": 66.3,
+    "tools": 81.4,
     "arts": 49.5
    },
    "vision": null,
@@ -5700,6 +6105,32 @@
    "licenza": "cc-by-nc-4.0"
   },
   {
+   "id": "gs1-0.8b",
+   "nome": "GS1 0.8B",
+   "org": "Beijing Institute for General Artificial Intelligence",
+   "tipo": "full fine-tune",
+   "b": 0.9,
+   "stimato": false,
+   "repo": "bigai/GS1-0.8B",
+   "base": null,
+   "nota": null,
+   "punti": 31.09,
+   "pubblico": 56.12,
+   "ms": 75.3,
+   "p95": 434.4,
+   "ece": 0.0501,
+   "acc": 0.7156,
+   "aree": {
+    "knowledge": 33.3,
+    "language": 56.3,
+    "retrieval": 68.6,
+    "tools": 79.3,
+    "arts": 47.5
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
    "id": "pku-kcl-meteor-0.8b",
    "nome": "PKU-KCL-Meteor-0.8B",
    "org": "",
@@ -5802,6 +6233,32 @@
    },
    "vision": null,
    "licenza": null
+  },
+  {
+   "id": "diorite-g4-e2b-v1.0",
+   "nome": "Diorite G4 E2B v1.0",
+   "org": "Leucodiorite",
+   "tipo": "LoRA",
+   "b": 5.1,
+   "stimato": false,
+   "repo": "Leucodiorite/Diorite-G4-E2B-v1.0",
+   "base": "google/gemma-4-E2B-it",
+   "nota": null,
+   "punti": 30.09,
+   "pubblico": 43.17,
+   "ms": 50.2,
+   "p95": 143.9,
+   "ece": 0.0727,
+   "acc": 0.6548,
+   "aree": {
+    "knowledge": 20.1,
+    "language": 49,
+    "retrieval": 50.8,
+    "tools": 63.6,
+    "arts": 35.2
+   },
+   "vision": null,
+   "licenza": "cc-by-nc-4.0"
   },
   {
    "id": "onejev1.6-0.8b",
@@ -6116,6 +6573,32 @@
     "punti": 49.3,
     "ms": 84.3
    },
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "classone-gemma4-e4b",
+   "nome": "ClassOne Gemma 4 E4B",
+   "org": "",
+   "tipo": "LoRA + head",
+   "b": 7.9,
+   "stimato": false,
+   "repo": "devops-thiago/classone-gemma4-e4b",
+   "base": "google/gemma-4-E4B-it",
+   "nota": null,
+   "punti": 27.07,
+   "pubblico": 26.4,
+   "ms": 50,
+   "p95": 207.1,
+   "ece": 0.2291,
+   "acc": 0.5257,
+   "aree": {
+    "knowledge": 13.4,
+    "language": 26,
+    "retrieval": 34,
+    "tools": 45.7,
+    "arts": 10.4
+   },
+   "vision": null,
    "licenza": "apache-2.0"
   },
   {
@@ -7481,6 +7964,32 @@
     "retrieval": 36.2,
     "tools": 15.1,
     "arts": 15.9
+   },
+   "vision": null,
+   "licenza": "apache-2.0"
+  },
+  {
+   "id": "classone-gemma4-e2b",
+   "nome": "ClassOne Gemma 4 E2B",
+   "org": "",
+   "tipo": "LoRA + head",
+   "b": 5.1,
+   "stimato": false,
+   "repo": "devops-thiago/classone-gemma4-e2b",
+   "base": "google/gemma-4-E2B-it",
+   "nota": null,
+   "punti": 13.74,
+   "pubblico": 12.57,
+   "ms": 41.8,
+   "p95": 127.6,
+   "ece": 0.4484,
+   "acc": 0.4189,
+   "aree": {
+    "knowledge": 6,
+    "language": 12.6,
+    "retrieval": 16,
+    "tools": 23.6,
+    "arts": 2.6
    },
    "vision": null,
    "licenza": "apache-2.0"

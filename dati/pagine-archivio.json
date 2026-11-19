@@ -16987,14 +16987,14 @@
   },
   "/model/inkling-2-small.html": {
    "modello": {
-    "chiave": "thinkingmachines/inkling-2-small:free",
+    "chiave": "thinkingmachines/inkling-2-small",
     "nome": "Inkling 2 Small",
     "org": "thinky",
     "licenza": "Apache 2.0",
     "aperto": true,
     "or": {
-     "id": "thinkingmachines/inkling-2-small:free",
-     "gratis": true
+     "id": "thinkingmachines/inkling-2-small",
+     "gratis": false
     },
     "hf": null,
     "cat": {
@@ -17457,7 +17457,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 0,
+    "download": 788,
     "catPiccoli": [
      "chat"
     ],
