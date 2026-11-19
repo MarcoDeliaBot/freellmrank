@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
+ "titolo": "datasette-arrows 0.1a0 adds Arrow IPC streaming export to Datasette",
+ "descr": "The new plugin lets Datasette export tables and queries in Apache Arrow format without loading all rows into memory.",
+ "tema": "Software",
+ "paragrafi": [
+  "On 18 November 2026 Simon Willison released datasette-arrows 0.1a0, a plugin for the Datasette publishing tool.",
+  "The plugin introduces a .arrows streaming export option for tables and queries, using the Apache Arrow IPC format.",
+  "Datasette 1.0a43 already supports streaming CSV and TSV exports, and the new plugin expands this capability to Arrow.",
+  "Installation is done via the command \"datasette install datasette-arrows\", after which the export dialog shows the Arrow option.",
+  "The release notes note that the Arrow format will be grouped with other streaming formats in a future alpha release."
+ ],
+ "perche": [
+  "Arrow streaming lets users extract large datasets from Datasette without high memory use, useful for data analysts and developers. It also demonstrates how community plugins can extend open‑source tools quickly, supporting free and local data workflows."
+ ],
+ "pubblicato": "2026-11-19",
+ "titoloFonte": "datasette-arrows 0.1a0",
+ "fonti": [
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Nov/18/datasette-arrows/",
+   "titolo": "datasette-arrows 0.1a0",
+   "ufficiale": false,
+   "data": "2026-11-18"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/datasette/datasette-arrows/releases/tag/0.1a0",
+   "titolo": "Release 0.1a0 · datasette/datasette-arrows · GitHub",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 0
+}

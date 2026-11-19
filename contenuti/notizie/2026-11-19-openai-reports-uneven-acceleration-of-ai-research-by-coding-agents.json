@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents",
+ "titolo": "OpenAI reports uneven acceleration of AI research by coding agents",
+ "descr": "OpenAI's new study shows coding agents speed up research but performance varies, hinting at limits to recursive self‑improvement.",
+ "tema": "Research",
+ "paragrafi": [
+  "OpenAI released a report titled “Research acceleration: The jagged frontier” on 18 November 2026.",
+  "The study measures how coding agents are speeding up AI research and finds that their performance is uneven across tasks.",
+  "Authors note that the uneven results signal challenges for recursive self‑improvement in AI systems.",
+  "The findings arrive as FreeLLMArena’s latest blind vote ranks Kimi K3 (Max) and Kimi K3.1 Pro (Max) as the top free chat models, with Gemini 4 Carbon (High) leading paid options.",
+  "OpenAI’s analysis suggests that while coding agents can boost progress, gaps remain that may affect future model development."
+ ],
+ "perche": [
+  "For AI users, the report warns that faster research does not guarantee uniform quality, so careful evaluation of new tools is needed. For developers of free or local models, the uneven acceleration highlights opportunities to improve coding agents and close performance gaps."
+ ],
+ "pubblicato": "2026-11-19",
+ "titoloFonte": "Research acceleration: The jagged frontier",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/research-acceleration-jagged-frontier",
+   "titolo": "Research acceleration: The jagged frontier",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 0
+}

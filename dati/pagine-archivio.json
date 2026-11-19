@@ -24167,6 +24167,42 @@
     "tipo": "News"
    },
    "data": "2026-11-18"
+  },
+  "/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette.html": {
+   "post": {
+    "slug": "news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
+    "titolo": "datasette-arrows 0.1a0 adds Arrow IPC streaming export to Datasette",
+    "descr": "The new plugin lets Datasette export tables and queries in Apache Arrow format without loading all rows into memory.",
+    "data": "2026-11-19",
+    "tema": "Software",
+    "corpo": "On 18 November 2026 Simon Willison released datasette-arrows 0.1a0, a plugin for the Datasette publishing tool.\n\nThe plugin introduces a .arrows streaming export option for tables and queries, using the Apache Arrow IPC format.\n\nDatasette 1.0a43 already supports streaming CSV and TSV exports, and the new plugin expands this capability to Arrow.\n\nInstallation is done via the command \"datasette install datasette-arrows\", after which the export dialog shows the Arrow option.\n\nThe release notes note that the Arrow format will be grouped with other streaming formats in a future alpha release.\n\n## What it means for you\n\nArrow streaming lets users extract large datasets from Datasette without high memory use, useful for data analysts and developers. It also demonstrates how community plugins can extend open‑source tools quickly, supporting free and local data workflows.\n\n## Sources\n\n- [datasette-arrows 0.1a0](https://simonwillison.net/2026/Nov/18/datasette-arrows/), Simon Willison, 18 Nov 2026\n- [Release 0.1a0 · datasette/datasette-arrows · GitHub](https://github.com/datasette/datasette-arrows/releases/tag/0.1a0), github.com (official), 18 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-18"
+  },
+  "/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro.html": {
+   "post": {
+    "slug": "news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro",
+    "titolo": "LoRA adapter boosts Qwen3.8 coding pass rates to 65% on SWE‑bench Pro",
+    "descr": "Hugging Face’s Qwen3.8‑27B‑pi‑adapted LoRA raises coding success from 39% to nearly 65% on key benchmarks.",
+    "data": "2026-11-19",
+    "tema": "Research",
+    "corpo": "Hugging Face released a new LoRA adapter named Qwen3.8‑27B‑pi‑adapted on 18 November 2026.\n\nThe adapter is Apache‑2.0 licensed and was trained with reinforcement learning for the pi coding agent.\n\nOn the SWE‑bench Pro hard‑51 benchmark, pass@1 improved from 39.2% to 64.7%.\n\nOn Terminal‑Bench 2.1, the pass rate rose from 39.5% to 55.8%.\n\nThese gains show the adapter’s ability to enhance Qwen3.8’s code‑generation performance without changing the base model.\n\n## What it means for you\n\nDevelopers can obtain higher coding accuracy by applying the free LoRA adapter to an existing Qwen3.8 deployment, avoiding the need for larger paid models.\n\n## Sources\n\n- [New LoRA Adapter Lifts Qwen3.8 Coding Success From 39% to 65%](https://www.marktechpost.com/2026/11/18/hugging-face-qwen3-8-27b-pi-adapted-lora/), MarkTechPost, 18 Nov 2026\n- [harness-hub/Qwen3.8-27B-pi-adapted · Hugging Face](https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted), huggingface.co (official), 18 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-18"
+  },
+  "/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents.html": {
+   "post": {
+    "slug": "news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents",
+    "titolo": "OpenAI reports uneven acceleration of AI research by coding agents",
+    "descr": "OpenAI's new study shows coding agents speed up research but performance varies, hinting at limits to recursive self‑improvement.",
+    "data": "2026-11-19",
+    "tema": "Research",
+    "corpo": "OpenAI released a report titled “Research acceleration: The jagged frontier” on 18 November 2026.\n\nThe study measures how coding agents are speeding up AI research and finds that their performance is uneven across tasks.\n\nAuthors note that the uneven results signal challenges for recursive self‑improvement in AI systems.\n\nThe findings arrive as FreeLLMArena’s latest blind vote ranks Kimi K3 (Max) and Kimi K3.1 Pro (Max) as the top free chat models, with Gemini 4 Carbon (High) leading paid options.\n\nOpenAI’s analysis suggests that while coding agents can boost progress, gaps remain that may affect future model development.\n\n## What it means for you\n\nFor AI users, the report warns that faster research does not guarantee uniform quality, so careful evaluation of new tools is needed. For developers of free or local models, the uneven acceleration highlights opportunities to improve coding agents and close performance gaps.\n\n## On FreeLLMArena\n\nFrom our rankings on 18 Nov 2026, based on Arena's blind votes:\n\n- [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html): #2 among free chat models\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #1 among free chat models\n\n## Sources\n\n- [Research acceleration: The jagged frontier](https://openai.com/index/research-acceleration-jagged-frontier), OpenAI (official), 18 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-18"
   }
  },
  "ricostruzione": {

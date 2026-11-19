@@ -5840,6 +5840,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/news-2026-11-19-google-adds-temporary-threads-to-ai-mode-in-search",
   "tipo": "articolo",
   "lingua": "en",
@@ -5865,6 +5881,38 @@
  },
  {
   "url": "/blog/news-2026-11-19-google-deepmind-launches-genie-4-for-interactive-3d-worlds-to-ai-ultra.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents.html",
   "tipo": "articolo",
   "lingua": "en",
   "primaVista": "2026-11-18",
@@ -16528,6 +16576,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/de/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/blog/news-2026-11-19-google-adds-temporary-threads-to-ai-mode-in-search",
   "tipo": "articolo",
   "lingua": "de",
@@ -16553,6 +16617,38 @@
  },
  {
   "url": "/de/blog/news-2026-11-19-google-deepmind-launches-genie-4-for-interactive-3d-worlds-to-ai-ultra.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents.html",
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-18",
@@ -35326,6 +35422,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/news-2026-11-19-google-adds-temporary-threads-to-ai-mode-in-search",
   "tipo": "articolo",
   "lingua": "es",
@@ -35351,6 +35463,38 @@
  },
  {
   "url": "/es/blog/news-2026-11-19-google-deepmind-launches-genie-4-for-interactive-3d-worlds-to-ai-ultra.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents.html",
   "tipo": "articolo",
   "lingua": "es",
   "primaVista": "2026-11-18",
@@ -54124,6 +54268,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/blog/news-2026-11-19-google-adds-temporary-threads-to-ai-mode-in-search",
   "tipo": "articolo",
   "lingua": "fr",
@@ -54149,6 +54309,38 @@
  },
  {
   "url": "/fr/blog/news-2026-11-19-google-deepmind-launches-genie-4-for-interactive-3d-worlds-to-ai-ultra.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents.html",
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-18",
@@ -72922,6 +73114,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/news-2026-11-19-google-adds-temporary-threads-to-ai-mode-in-search",
   "tipo": "articolo",
   "lingua": "it",
@@ -72947,6 +73155,38 @@
  },
  {
   "url": "/it/blog/news-2026-11-19-google-deepmind-launches-genie-4-for-interactive-3d-worlds-to-ai-ultra.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents.html",
   "tipo": "articolo",
   "lingua": "it",
   "primaVista": "2026-11-18",
@@ -91720,6 +91960,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/blog/news-2026-11-19-google-adds-temporary-threads-to-ai-mode-in-search",
   "tipo": "articolo",
   "lingua": "ja",
@@ -91745,6 +92001,38 @@
  },
  {
   "url": "/ja/blog/news-2026-11-19-google-deepmind-launches-genie-4-for-interactive-3d-worlds-to-ai-ultra.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents.html",
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-18",
@@ -118628,6 +118916,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/pt/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-19-datasette-arrows-0-1a0-adds-arrow-ipc-streaming-export-to-datasette.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/blog/news-2026-11-19-google-adds-temporary-threads-to-ai-mode-in-search",
   "tipo": "articolo",
   "lingua": "pt",
@@ -118653,6 +118957,38 @@
  },
  {
   "url": "/pt/blog/news-2026-11-19-google-deepmind-launches-genie-4-for-interactive-3d-worlds-to-ai-ultra.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-19-lora-adapter-boosts-qwen3-8-coding-pass-rates-to-65-on-swe-bench-pro.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-18",
+  "ultimaVista": "2026-11-18",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-19-openai-reports-uneven-acceleration-of-ai-research-by-coding-agents.html",
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-18",
