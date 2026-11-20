@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection",
+ "titolo": "MedChemBench tests AI models on early‑stage drug candidate selection",
+ "descr": "OpenAI releases MedChemBench to evaluate how AI interprets molecular data and proposes compounds for drug discovery.",
+ "tema": "Research",
+ "paragrafi": [
+  "OpenAI announced MedChemBench, a benchmark focused on early drug discovery tasks.",
+  "The benchmark measures AI ability to read molecular structures, reason from experimental evidence, and rank promising compounds.",
+  "It aims to standardise evaluation of models that assist scientists in identifying drug candidates.",
+  "MedChemBench will be used to compare both free and commercial AI models on chemistry‑focused reasoning.",
+  "The release follows growing interest in AI‑driven drug design across academia and industry."
+ ],
+ "perche": [
+  "Researchers can use MedChemBench to gauge which models help streamline candidate selection, reducing lab workload. For users seeking free or locally run models, the benchmark offers a way to compare performance without relying on paid services."
+ ],
+ "pubblicato": "2026-11-20",
+ "titoloFonte": "Can AI help scientists identify promising drug candidates?",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/introducing-medchembench",
+   "titolo": "Can AI help scientists identify promising drug candidates?",
+   "ufficiale": true,
+   "data": "2026-11-20"
+  }
+ ],
+ "frasiTolte": 0
+}

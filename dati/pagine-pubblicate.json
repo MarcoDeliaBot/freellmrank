@@ -6096,6 +6096,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f",
   "tipo": "articolo",
   "lingua": "en",
@@ -17100,6 +17132,38 @@
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-20",
   "ultimaVista": "2026-11-20",
   "stato": "attiva"
  },
@@ -36228,6 +36292,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f",
   "tipo": "articolo",
   "lingua": "es",
@@ -55348,6 +55444,38 @@
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-20",
   "ultimaVista": "2026-11-20",
   "stato": "attiva"
  },
@@ -74476,6 +74604,38 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f",
   "tipo": "articolo",
   "lingua": "it",
@@ -93596,6 +93756,38 @@
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-20",
   "ultimaVista": "2026-11-20",
   "stato": "attiva"
  },
@@ -120836,6 +121028,38 @@
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-20-medchembench-tests-ai-models-on-early-stage-drug-candidate-selection.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-20",
+  "ultimaVista": "2026-11-20",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-20",
   "ultimaVista": "2026-11-20",
   "stato": "attiva"
  },

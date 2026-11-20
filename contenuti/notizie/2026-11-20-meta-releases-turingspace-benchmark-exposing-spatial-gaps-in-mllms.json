@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms",
+ "titolo": "Meta releases TuringSpace benchmark exposing spatial gaps in MLLMs",
+ "descr": "The new TuringSpace suite of 125 interactive CAPTCHAs shows GPT‑6 Astra at 74.1% accuracy, far below human 94.1%, and highlights gains from fine‑tuning open models.",
+ "tema": "Research",
+ "paragrafi": [
+  "Meta published TuringSpace, a synthetic web environment containing 125 interactive spatial CAPTCHAs that require click‑and‑drag actions.",
+  "The benchmark tests five spatial abilities and measures the loop of reading a 3D scene, acting, and adjusting after feedback.",
+  "GPT‑6 Astra achieved the highest score among evaluated models with 74.1% success, while humans solved 94.1% of the tasks.",
+  "The best open‑weight model, Kimi K3, failed 68.0% of the CAPTCHAs, and Qwen3.5‑9B rose from 1.6% to 33.1% after fine‑tuning on 55 K generated trajectories.",
+  "Fine‑tuning also improved performance on seven out‑of‑distribution benchmarks, adding 9.9 points on real‑world indoor videos from VSI‑Bench."
+ ],
+ "perche": [
+  "The results reveal that current MLLMs still struggle with 3D spatial reasoning, especially when actions are required. For users, this means that AI assistants may misinterpret visual layouts in interactive settings. For developers of free or locally run models, the study shows that targeted fine‑tuning on spatial interaction data can substantially close the gap, offering a path to improve open models without relying on proprietary systems."
+ ],
+ "pubblicato": "2026-11-20",
+ "titoloFonte": "Meta paper: TuringSpace: Grounding Spatial Intelligence in Action with Interactive CAPTCHAs",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2611.25387",
+   "titolo": "Meta paper: TuringSpace: Grounding Spatial Intelligence in Action with Interactive CAPTCHAs",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 0
+}
