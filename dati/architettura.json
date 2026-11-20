@@ -2176,5 +2176,16 @@
   "contestoMax": 32768,
   "moe": false,
   "attivi": 2288831488
+ },
+ "tencent/WeMM-Video-35BA3B": {
+  "strati": 40,
+  "tipo": "GQA",
+  "kvPerStrato": 2048,
+  "pieni": 10,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": true,
+  "attivi": 4463383416
  }
 }

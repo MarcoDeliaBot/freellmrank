@@ -17467,6 +17467,40 @@
     "categoriaMigliore": null
    },
    "data": "2026-11-20"
+  },
+  "/model/wemm-video-35ba3b.html": {
+   "modello": {
+    "chiave": "tencent/WeMM-Video-35BA3B",
+    "nome": "WeMM-Video-35BA3B",
+    "org": "tencent",
+    "licenza": "",
+    "aperto": true,
+    "or": null,
+    "hf": {
+     "repo": "tencent/WeMM-Video-35BA3B",
+     "b": 36.2,
+     "att": 4.5,
+     "kv": 2048,
+     "pf": 10,
+     "fw": 0,
+     "w": null,
+     "ctx": 262144
+    },
+    "cat": {},
+    "nomi": {},
+    "senzaVoti": true,
+    "nuovo": true,
+    "download": 5,
+    "catPiccoli": [
+     "chat",
+     "vision"
+    ],
+    "primo": "2026-11-17",
+    "slug": "wemm-video-35ba3b",
+    "href": "/model/wemm-video-35ba3b.html",
+    "categoriaMigliore": null
+   },
+   "data": "2026-11-20"
   }
  },
  "confronti": {
