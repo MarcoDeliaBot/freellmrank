@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac",
+ "titolo": "PostgreSQL 19 released with read‑your‑writes standby support and REPACK command",
+ "descr": "The new version adds WAIT FOR LSN for consistency, REPACK (CONCURRENTLY) for table maintenance, and several developer and replication enhancements.",
+ "tema": "Software",
+ "paragrafi": [
+  "The PostgreSQL Global Development Group announced PostgreSQL 19 on 19 November 2026, two months later than the usual September schedule due to a surge of issues tied to AI‑reported vulnerabilities.",
+  "Key new features include the WAIT FOR LSN command, which lets applications on standby servers wait for a specific WAL position before reading, ensuring read‑your‑writes consistency.",
+  "The release also introduces the REPACK (CONCURRENTLY) command, allowing tables to be reclaimed and reordered without blocking reads or writes, replacing VACUUM FULL and CLUSTER for most use cases.",
+  "Developers gain INSERT … ON CONFLICT DO SELECT for \"get or create\" patterns, the pg_plan_advice extension for stabilising query plans, and logical replication improvements such as automatic WAL level elevation and sequence replication.",
+  "Autovacuum now supports parallel index vacuuming, new monitoring views (pg_stat_lock, pg_stat_recovery, pg_stat_autovacuum_scores) were added, and COPY can output JSON data."
+ ],
+ "perche": [
+  "These enhancements make PostgreSQL more reliable for AI‑driven workloads that require low‑latency reads from replicas. Free‑software users benefit from the ability to maintain large tables without downtime, while developers can simplify common patterns and improve query performance without proprietary tools."
+ ],
+ "pubblicato": "2026-11-20",
+ "titoloFonte": "PostgreSQL 19 Released",
+ "fonti": [
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Nov/19/postgresql-19/",
+   "titolo": "PostgreSQL 19 Released",
+   "ufficiale": false,
+   "data": "2026-11-19"
+  },
+  {
+   "nome": "postgresql.org",
+   "url": "https://www.postgresql.org/about/news/postgresql-19-released-3449/",
+   "titolo": "PostgreSQL: PostgreSQL 19 Released!",
+   "ufficiale": true,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 0
+}

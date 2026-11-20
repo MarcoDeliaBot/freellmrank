@@ -24347,6 +24347,42 @@
     "tipo": "News"
    },
    "data": "2026-11-19"
+  },
+  "/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f.html": {
+   "post": {
+    "slug": "news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f",
+    "titolo": "NVIDIA releases Rust tool‑calling parsers for Nemotron and other LLM families",
+    "descr": "A new NVIDIA blog details reusable Rust components that turn LLM output into structured tool‑call events, supporting recovery from malformed streams.",
+    "data": "2026-11-20",
+    "tema": "Guides",
+    "corpo": "NVIDIA’s technical blog published on 19 November 2026 explains how to build tool‑calling parsers in Rust using the frontend‑crates library.\n\nThe parsers convert token IDs or decoded text from large language models into ordered reasoning, visible text, and tool‑call events for applications.\n\nDevelopers can create new parsers by adapting UNIFIED.* test cases, implementing grammar for the target model, and validating results with a local conformance report.\n\n## What it means for you\n\nThese parsers give developers a consistent way to extract tool calls from any LLM, reducing the need for custom, model‑specific code.\n\n## Sources\n\n- [Build Tool-Calling Parsers in Rust with AI Agents](https://developer.nvidia.com/blog/build-tool-calling-parsers-in-rust-with-ai-agents/), NVIDIA Developer (official), 19 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-19"
+  },
+  "/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac.html": {
+   "post": {
+    "slug": "news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac",
+    "titolo": "PostgreSQL 19 released with read‑your‑writes standby support and REPACK command",
+    "descr": "The new version adds WAIT FOR LSN for consistency, REPACK (CONCURRENTLY) for table maintenance, and several developer and replication enhancements.",
+    "data": "2026-11-20",
+    "tema": "Software",
+    "corpo": "The PostgreSQL Global Development Group announced PostgreSQL 19 on 19 November 2026, two months later than the usual September schedule due to a surge of issues tied to AI‑reported vulnerabilities.\n\nKey new features include the WAIT FOR LSN command, which lets applications on standby servers wait for a specific WAL position before reading, ensuring read‑your‑writes consistency.\n\nThe release also introduces the REPACK (CONCURRENTLY) command, allowing tables to be reclaimed and reordered without blocking reads or writes, replacing VACUUM FULL and CLUSTER for most use cases.\n\nDevelopers gain INSERT … ON CONFLICT DO SELECT for \"get or create\" patterns, the pg_plan_advice extension for stabilising query plans, and logical replication improvements such as automatic WAL level elevation and sequence replication.\n\nAutovacuum now supports parallel index vacuuming, new monitoring views (pg_stat_lock, pg_stat_recovery, pg_stat_autovacuum_scores) were added, and COPY can output JSON data.\n\n## What it means for you\n\nThese enhancements make PostgreSQL more reliable for AI‑driven workloads that require low‑latency reads from replicas. Free‑software users benefit from the ability to maintain large tables without downtime, while developers can simplify common patterns and improve query performance without proprietary tools.\n\n## Sources\n\n- [PostgreSQL 19 Released](https://simonwillison.net/2026/Nov/19/postgresql-19/), Simon Willison, 19 Nov 2026\n- [PostgreSQL: PostgreSQL 19 Released!](https://www.postgresql.org/about/news/postgresql-19-released-3449/), postgresql.org (official), 19 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-19"
+  },
+  "/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden.html": {
+   "post": {
+    "slug": "news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden",
+    "titolo": "Resolve AI launches SRE-1, a 27B model for automated production incident root‑cause analysis",
+    "descr": "The new SRE-1 model and Primary On‑call service claim up to 95% root‑cause accuracy and handle 80% of alerts without human escalation.",
+    "data": "2026-11-20",
+    "tema": "Research",
+    "corpo": "The model, created with Snowflake’s Cortex Training service, improves single‑investigation pass rate from 6.9% to 38.8% and matches frontier models at lower cost in tests on 49 live production cases.\n\nPrimary On‑call, the accompanying service, runs the model on every production alert, investigating telemetry, infrastructure, code and operational knowledge, and can close, mitigate or escalate alerts.\n\nResolve AI reports that up to 80% of paged alerts are resolved without escalation, mean time to resolution improves tenfold, and root‑cause accuracy reaches up to 95% according to early customers like Salesforce.\n\nThe system is currently available only through Resolve AI’s platform; the company has raised over $190 million, including a $40 million Series A extension that valued it at $1.5 billion.\n\n## What it means for you\n\nFor organizations, the model promises faster, more accurate incident handling, reducing on‑call fatigue and operational downtime. For users of free or locally run models, the launch highlights the growing gap between specialized, high‑cost production AI and community‑available models, underscoring the need for continued investment in open‑weight research to narrow that divide.\n\n## Sources\n\n- [Resolve AI's SRE-1 model finds root causes of production alerts as AI agents go on call](https://siliconangle.com/2026/11/19/resolve-ais-sre-1-model-finds-root-causes-of-production-alerts-as-ai-agents-go-on-call/), SiliconANGLE, 19 Nov 2026\n- [Agents on the critical path is the only viable way forward to keep up with software change](https://resolve.ai/blog/introducing-sre-1), resolve.ai (official), 18 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-19"
   }
  },
  "ricostruzione": {

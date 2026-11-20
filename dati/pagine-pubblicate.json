@@ -6096,6 +6096,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "en",
@@ -17017,6 +17065,54 @@
  },
  {
   "url": "/de/blog/news-2026-11-20-linear-hits-100m-arr-with-ai-driven-agent-platform-and-no-sdrs.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden.html",
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-19",
@@ -36064,6 +36160,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "es",
@@ -55097,6 +55241,54 @@
  },
  {
   "url": "/fr/blog/news-2026-11-20-linear-hits-100m-arr-with-ai-driven-agent-platform-and-no-sdrs.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden.html",
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-19",
@@ -74144,6 +74336,54 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "it",
@@ -93177,6 +93417,54 @@
  },
  {
   "url": "/ja/blog/news-2026-11-20-linear-hits-100m-arr-with-ai-driven-agent-platform-and-no-sdrs.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden.html",
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-19",
@@ -120329,6 +120617,54 @@
  },
  {
   "url": "/pt/blog/news-2026-11-20-linear-hits-100m-arr-with-ai-driven-agent-platform-and-no-sdrs.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-20-postgresql-19-released-with-read-your-writes-standby-support-and-repac.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-19",
+  "ultimaVista": "2026-11-19",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden.html",
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-19",

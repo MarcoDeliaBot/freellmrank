@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-20-resolve-ai-launches-sre-1-a-27b-model-for-automated-production-inciden",
+ "titolo": "Resolve AI launches SRE-1, a 27B model for automated production incident root‑cause analysis",
+ "descr": "The new SRE-1 model and Primary On‑call service claim up to 95% root‑cause accuracy and handle 80% of alerts without human escalation.",
+ "tema": "Research",
+ "paragrafi": [
+  "The model, created with Snowflake’s Cortex Training service, improves single‑investigation pass rate from 6.9% to 38.8% and matches frontier models at lower cost in tests on 49 live production cases.",
+  "Primary On‑call, the accompanying service, runs the model on every production alert, investigating telemetry, infrastructure, code and operational knowledge, and can close, mitigate or escalate alerts.",
+  "Resolve AI reports that up to 80% of paged alerts are resolved without escalation, mean time to resolution improves tenfold, and root‑cause accuracy reaches up to 95% according to early customers like Salesforce.",
+  "The system is currently available only through Resolve AI’s platform; the company has raised over $190 million, including a $40 million Series A extension that valued it at $1.5 billion."
+ ],
+ "perche": [
+  "For organizations, the model promises faster, more accurate incident handling, reducing on‑call fatigue and operational downtime. For users of free or locally run models, the launch highlights the growing gap between specialized, high‑cost production AI and community‑available models, underscoring the need for continued investment in open‑weight research to narrow that divide."
+ ],
+ "pubblicato": "2026-11-20",
+ "titoloFonte": "Resolve AI's SRE-1 model finds root causes of production alerts as AI agents go on call",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/19/resolve-ais-sre-1-model-finds-root-causes-of-production-alerts-as-ai-agents-go-on-call/",
+   "titolo": "Resolve AI's SRE-1 model finds root causes of production alerts as AI agents go on call",
+   "ufficiale": false,
+   "data": "2026-11-19"
+  },
+  {
+   "nome": "resolve.ai",
+   "url": "https://resolve.ai/blog/introducing-sre-1",
+   "titolo": "Agents on the critical path is the only viable way forward to keep up with software change",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 1
+}

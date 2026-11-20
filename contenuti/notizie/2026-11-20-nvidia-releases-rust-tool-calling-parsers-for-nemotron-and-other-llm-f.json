@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f",
+ "titolo": "NVIDIA releases Rust tool‑calling parsers for Nemotron and other LLM families",
+ "descr": "A new NVIDIA blog details reusable Rust components that turn LLM output into structured tool‑call events, supporting recovery from malformed streams.",
+ "tema": "Guides",
+ "paragrafi": [
+  "NVIDIA’s technical blog published on 19 November 2026 explains how to build tool‑calling parsers in Rust using the frontend‑crates library.",
+  "The parsers convert token IDs or decoded text from large language models into ordered reasoning, visible text, and tool‑call events for applications.",
+  "Developers can create new parsers by adapting UNIFIED.* test cases, implementing grammar for the target model, and validating results with a local conformance report."
+ ],
+ "perche": [
+  "These parsers give developers a consistent way to extract tool calls from any LLM, reducing the need for custom, model‑specific code."
+ ],
+ "pubblicato": "2026-11-20",
+ "titoloFonte": "Build Tool-Calling Parsers in Rust with AI Agents",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/build-tool-calling-parsers-in-rust-with-ai-agents/",
+   "titolo": "Build Tool-Calling Parsers in Rust with AI Agents",
+   "ufficiale": true,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 3
+}
