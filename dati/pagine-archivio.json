@@ -24383,6 +24383,30 @@
     "tipo": "News"
    },
    "data": "2026-11-20"
+  },
+  "/blog/news-2026-11-20-signal-blocks-gemini-and-siri-ai-from-reading-on-screen-content.html": {
+   "post": {
+    "slug": "news-2026-11-20-signal-blocks-gemini-and-siri-ai-from-reading-on-screen-content",
+    "titolo": "Signal blocks Gemini and Siri AI from reading on‑screen content",
+    "descr": "Signal adds screenshot blocking on iOS 27 and Android to stop AI assistants from capturing messages.",
+    "data": "2026-11-20",
+    "tema": "Policy",
+    "corpo": "Signal announced new privacy measures that prevent screenshots in the app on iOS 27 and Android devices.\n\nThe feature aims to stop built‑in AI assistants such as Google Gemini and Apple Siri from scanning on‑screen content.\n\nUsers can re‑enable screenshots in the app settings, but Signal warns this may expose messages to AI agents.\n\nThe company says the remedy is incomplete because AI could still access data via the file system.\n\nSignal calls on Apple, Google and Microsoft to provide documented tools that let developers block AI data access.\n\n## What it means for you\n\nThe change highlights how OS‑level AI agents can undermine app‑level privacy, prompting developers to seek stronger controls. Users of free or locally hosted models may benefit from clearer boundaries that keep sensitive data out of third‑party AI services.\n\n## Sources\n\n- [Signal is blocking Gemini and Siri AI from reading your screen](https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app), The Verge, 20 Nov 2026\n- [Signal >> Blog >> Signal is Serious About Protecting Your Privacy](https://signal.org/blog/protecting-your-privacy/), signal.org (official), 20 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-20-signal-blocks-gemini-and-siri-ai-from-reading-on-screen-content).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-20"
+  },
+  "/blog/news-2026-11-20-tencent-releases-wemm-video-technical-report-on-open-source-omni-modal.html": {
+   "post": {
+    "slug": "news-2026-11-20-tencent-releases-wemm-video-technical-report-on-open-source-omni-modal",
+    "titolo": "Tencent releases WeMM-Video technical report on open-source omni-modal video understanding",
+    "descr": "The WeMM-Video family advances open-source video models with omni-modal capabilities, according to a new Tencent technical report.",
+    "data": "2026-11-20",
+    "tema": "Research",
+    "corpo": "The report introduces the WeMM-Video family, a set of models designed for omni-modal video understanding, combining visual and textual information.\n\nAuthors include Changli Tang, Jie Yang, Tianyi Wang, Lei Li, Daoze Zhang, Zijie Xin, Zhan Liu, and Li Li, among others.\n\nThe paper is hosted on Hugging Face and is linked to an interactive ResearchStudio Reel that provides a visual poster, video, and editable blog files.\n\nThe release highlights Tencent's commitment to open-source AI research and aims to foster community development around video understanding technologies.\n\n## What it means for you\n\nThe WeMM-Video report gives developers free access to advanced video models, supporting projects that need omni-modal capabilities without licensing costs. For users seeking local or free AI solutions, the open-source nature of WeMM-Video offers a new resource to build and experiment with video understanding applications.\n\n## Sources\n\n- [Tencent paper: WeMM-Video: Pushing the Frontiers of Open-Source Omni-Modal Video Understanding](https://huggingface.co/papers/2611.26409), Hugging Face Papers (official), 18 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-20-tencent-releases-wemm-video-technical-report-on-open-source-omni-modal).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-20"
   }
  },
  "ricostruzione": {

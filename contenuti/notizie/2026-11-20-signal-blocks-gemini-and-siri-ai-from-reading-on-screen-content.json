@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-20-signal-blocks-gemini-and-siri-ai-from-reading-on-screen-content",
+ "titolo": "Signal blocks Gemini and Siri AI from reading on‑screen content",
+ "descr": "Signal adds screenshot blocking on iOS 27 and Android to stop AI assistants from capturing messages.",
+ "tema": "Policy",
+ "paragrafi": [
+  "Signal announced new privacy measures that prevent screenshots in the app on iOS 27 and Android devices.",
+  "The feature aims to stop built‑in AI assistants such as Google Gemini and Apple Siri from scanning on‑screen content.",
+  "Users can re‑enable screenshots in the app settings, but Signal warns this may expose messages to AI agents.",
+  "The company says the remedy is incomplete because AI could still access data via the file system.",
+  "Signal calls on Apple, Google and Microsoft to provide documented tools that let developers block AI data access."
+ ],
+ "perche": [
+  "The change highlights how OS‑level AI agents can undermine app‑level privacy, prompting developers to seek stronger controls. Users of free or locally hosted models may benefit from clearer boundaries that keep sensitive data out of third‑party AI services."
+ ],
+ "pubblicato": "2026-11-20",
+ "titoloFonte": "Signal is blocking Gemini and Siri AI from reading your screen",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app",
+   "titolo": "Signal is blocking Gemini and Siri AI from reading your screen",
+   "ufficiale": false,
+   "data": "2026-11-20"
+  },
+  {
+   "nome": "signal.org",
+   "url": "https://signal.org/blog/protecting-your-privacy/",
+   "titolo": "Signal >> Blog >> Signal is Serious About Protecting Your Privacy",
+   "ufficiale": true,
+   "data": "2026-11-20"
+  }
+ ],
+ "frasiTolte": 0
+}

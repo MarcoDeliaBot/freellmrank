@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-20-tencent-releases-wemm-video-technical-report-on-open-source-omni-modal",
+ "titolo": "Tencent releases WeMM-Video technical report on open-source omni-modal video understanding",
+ "descr": "The WeMM-Video family advances open-source video models with omni-modal capabilities, according to a new Tencent technical report.",
+ "tema": "Research",
+ "paragrafi": [
+  "The report introduces the WeMM-Video family, a set of models designed for omni-modal video understanding, combining visual and textual information.",
+  "Authors include Changli Tang, Jie Yang, Tianyi Wang, Lei Li, Daoze Zhang, Zijie Xin, Zhan Liu, and Li Li, among others.",
+  "The paper is hosted on Hugging Face and is linked to an interactive ResearchStudio Reel that provides a visual poster, video, and editable blog files.",
+  "The release highlights Tencent's commitment to open-source AI research and aims to foster community development around video understanding technologies."
+ ],
+ "perche": [
+  "The WeMM-Video report gives developers free access to advanced video models, supporting projects that need omni-modal capabilities without licensing costs. For users seeking local or free AI solutions, the open-source nature of WeMM-Video offers a new resource to build and experiment with video understanding applications."
+ ],
+ "pubblicato": "2026-11-20",
+ "titoloFonte": "Tencent paper: WeMM-Video: Pushing the Frontiers of Open-Source Omni-Modal Video Understanding",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2611.26409",
+   "titolo": "Tencent paper: WeMM-Video: Pushing the Frontiers of Open-Source Omni-Modal Video Understanding",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 1
+}
