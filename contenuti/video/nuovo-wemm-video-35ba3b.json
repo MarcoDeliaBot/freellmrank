@@ -1,0 +1,79 @@
+{
+ "nome": "nuovo-wemm-video-35ba3b",
+ "titolo": "WeMM-Video-35BA3B: 36B parameters, free to download #Shorts",
+ "descrizione": "WeMM-Video-35BA3B by Tencent came out on 17 Nov 2026, with open weights on Hugging Face. At 4-bit it needs about 25 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "WeMM-Video-35BA3B"
+ ],
+ "condividi": "WeMM-Video-35BA3B is out: 36B parameters and open weights. At 4-bit it needs about 25 GB, so the smallest card that holds it fully is the RTX 5090. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "WeMM-Video-35BA3B: 36 miliardi di parametri, gratis #Shorts",
+   "descrizione": "WeMM-Video-35BA3B di Tencent è uscito il 17 novembre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 25 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "WeMM-Video-35BA3B: 36 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "WeMM-Video-35BA3B de Tencent salió el 17 de noviembre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 25 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "WeMM-Video-35BA3B: 36 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "WeMM-Video-35BA3B von Tencent ist am 17. November 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 25 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "WeMM-Video-35BA3B : 36 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "WeMM-Video-35BA3B de Tencent est sorti le 17 novembre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 25 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "WeMM-Video-35BA3B: 36 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "WeMM-Video-35BA3B da Tencent saiu em 17 de novembro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 25 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "WeMM-Video-35BA3B",
+    "gb": 25,
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    }
+   }
+  ],
+  "schede": [
+   {
+    "id": "rtx4090",
+    "nome": "RTX 4090",
+    "gb": 24,
+    "tiene": false
+   },
+   {
+    "id": "rx7900xtx",
+    "nome": "RX 7900 XTX",
+    "gb": 24,
+    "tiene": false
+   },
+   {
+    "id": "rtx5090",
+    "nome": "RTX 5090",
+    "gb": 32,
+    "tiene": true
+   }
+  ]
+ },
+ "voce": [
+  "A new free AI model with 36 billion parameters.",
+  "It comes from Tencent, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 25 gigabytes. You need at least an RTX 50 90.",
+  "It reads up to 256 thousand tokens at once.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-wemm-video-35ba3b",
+ "pubblicato": "2026-11-20"
+}

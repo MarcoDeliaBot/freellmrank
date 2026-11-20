@@ -1,0 +1,155 @@
+{
+ "nome": "modello-wemm-video-35ba3b",
+ "titolo": "WeMM-Video-35BA3B: Hardware Needed and How to Run It Free",
+ "descrizione": "WeMM-Video-35B-A3B is an open-source Chinese-English model for joint video, audio, image, and text understanding. Learn its capabilities, performance, and who can benefit from it.\n\nSize: 36.2B parameters (4.5B active) · context 256K · memory at 4-bit about 25 GB.\nRTX 3060 12 GB + 32 GB RAM: about 39 tokens/s\nRTX 4090 + 64 GB RAM: about 154 tokens/s\nRTX 5090 + 64 GB RAM: about 205 tokens/s\nMac M4 Max 128 GB: about 75 tokens/s\nNVIDIA DGX Spark 128 GB: about 61 tokens/s\nRyzen AI Max+ 395 128 GB: about 58 tokens/s\nMac Studio M3 Ultra 512 GB: about 91 tokens/s\nModel card: https://huggingface.co/tencent/WeMM-Video-35BA3B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "WeMM-Video-35BA3B",
+  "Tencent"
+ ],
+ "condividi": "WeMM-Video-35BA3B by Tencent: 36.2B parameters, about 25 GB at 4-bit; smallest home machine that holds it: RTX 5090. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "WeMM-Video-35BA3B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "WeMM-Video-35BA3B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "WeMM-Video-35BA3B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "WeMM-Video-35BA3B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "WeMM-Video-35BA3B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "WeMM-Video-35BA3B",
+    "gb": 25,
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "WeMM-Video-35BA3B",
+    "vel": 39,
+    "dove": "ram"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "WeMM-Video-35BA3B",
+    "vel": 154,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "WeMM-Video-35BA3B",
+    "vel": 205,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeMM-Video-35BA3B",
+    "vel": 75,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeMM-Video-35BA3B",
+    "vel": 61,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeMM-Video-35BA3B",
+    "vel": 58,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeMM-Video-35BA3B",
+    "vel": 91,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "Tencent claims this model is the new open-source state of the art for audio-visual understanding. It can watch a video, listen to its soundtrack, and answer in Chinese or English.",
+  "WeMM-Video-35B-A3B is a mixture-of-experts checkpoint that totals 35 billion parameters, with three billion experts active for each token, according to the model card. It belongs to the WeMM-Video family, designed for joint audio-visual understanding and reasoning. The model accepts four modalities: plain text, still images, audio clips, and video files with or without sound. After processing the media, it produces a textual answer in either Chinese or English. The weights are stored as BF16 safetensors and occupy 67.39 GiB. A multilingual approach lets it serve creators who need both languages, and its token-based architecture lets it reason across time-stamped video frames and their accompanying audio.",
+  "The new aspect of this model is its mixture-of-experts architecture, which keeps only a few experts active per token, reducing compute while preserving capacity. It uniquely combines video frames with the original soundtrack, allowing it to describe events, transcribe speech, and reason about what is heard and seen together. It also works with silent video, treating visual information alone, and can process standalone audio files. Responses are generated in either Chinese or English, making the model truly bilingual. This flexibility sets it apart from earlier multimodal models that handled only images or text, and it opens up richer interactive applications that need both visual and auditory context.",
+  "According to the model card, WeMM-Video-35B-A3B establishes a new open-source state of the art for multimodal tasks. It outperforms proprietary models such as Qwen3.5-Omni-Flash and Seed2.0-Mini-0428, and it narrows the performance gap with Gemini-3.0-Flash. These claims come from the evaluation section, where the authors compare the model against several leading competitors. While exact scores are not listed, the statement positions the model at the top of publicly available video-audio reasoning systems. This makes it a compelling free alternative for anyone needing high-quality multimodal inference without paying for a commercial API.",
+  "The model’s biggest strength is its ability to jointly understand and reason over video, audio, images, and text, delivering coherent textual answers in two languages. Performance tests show it can generate about 154 tokens per second on an RTX 4090 and 205 tokens per second on an RTX 5090, when the full weights reside in GPU memory. At 4-bit precision with an 8 K context, it needs roughly 25 GB of memory, which fits on high-end consumer cards. However, the weight files total 67.39 GiB, so loading the full model demands substantial storage and GPU capacity. Also, the model only produces text responses, so it cannot directly generate images or audio as output.",
+  "If you run AI experiments at home and have access to a powerful GPU, this model is a solid choice. Its bilingual capability makes it useful for creators producing content in Chinese and English. Researchers looking for a free, open-source video-audio reasoning system will appreciate the state-of-the-art claims without paying for a proprietary API. The model runs best on machines like an RTX 4090 or RTX 5090, where token throughput is highest, but it also works at lower speeds on older cards if you accept slower generation. Anyone interested in exploring multimodal AI without licensing fees should give WeMM-Video-35B-A3B a try.",
+  "What do you need to run it at home? At 4-bit it takes about 25 gigabytes of memory. The smallest home machine that holds it fully is an RTX 50 90. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 39 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 154 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the Apache 2.0 license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare WeMM Video 35BA3B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-wemm-video-35ba3b",
+ "pubblicato": "2026-11-20"
+}
