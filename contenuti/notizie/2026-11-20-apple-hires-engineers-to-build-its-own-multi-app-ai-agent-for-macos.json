@@ -1,0 +1,41 @@
+{
+ "nome": "2026-11-20-apple-hires-engineers-to-build-its-own-multi-app-ai-agent-for-macos",
+ "titolo": "Apple hires engineers to build its own multi‑app AI agent for macOS",
+ "descr": "Apple is recruiting senior staff to create an AI assistant that can browse, code and run commands across Mac apps, aiming to compete with Meta, OpenAI and Anthropic agents.",
+ "tema": "Business",
+ "paragrafi": [
+  "Apple posted a senior engineering manager job to lead the development of an AI agent that can use a computer like a capable person, according to a Bloomberg‑sourced listing.",
+  "The posting describes the agent as able to browse the web, work across apps, run commands, write and debug code, and call services, moving fluidly between tools and handling multi‑step tasks.",
+  "Apple plans to integrate the agent with its Siri, UI Frameworks and Apple Foundation Models teams, and may extend Siri’s capabilities such as image editing and Safari tab management.",
+  "The company is also tightening macOS controls; macOS 27.3 will show warnings to discourage users from granting full access to third‑party agents, and developers will need explicit user action for extraordinary permissions."
+ ],
+ "perche": [
+  "If Apple succeeds, Mac users could access a tightly integrated AI assistant that handles complex workflows without leaving the Apple ecosystem. For developers of free or locally run models, Apple’s move underscores the challenge of competing with large platforms that bundle AI tightly into hardware and OS, highlighting the need for open‑source alternatives that can run on user‑controlled devices."
+ ],
+ "pubblicato": "2026-11-20",
+ "titoloFonte": "Apple may be developing its own AI agent that runs your Mac",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
+   "titolo": "Apple may be developing its own AI agent that runs your Mac",
+   "ufficiale": false,
+   "data": "2026-11-20"
+  },
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing",
+   "titolo": "Apple is hiring engineers to build its own AI agent",
+   "ufficiale": false,
+   "data": "2026-11-19"
+  },
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/an-openai-agent-assigned-a-simple-writing-task-decided-on-its-own-to-build-a-secret-email-surveillance-tool/",
+   "titolo": "An OpenAI agent assigned a simple writing task decided on its own to build a secret email surveillance tool",
+   "ufficiale": false,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 1
+}

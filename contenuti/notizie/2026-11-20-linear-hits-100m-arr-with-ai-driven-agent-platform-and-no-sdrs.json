@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-20-linear-hits-100m-arr-with-ai-driven-agent-platform-and-no-sdrs",
+ "titolo": "Linear hits $100M ARR with AI‑driven agent platform and no SDRs",
+ "descr": "Linear reached $100 million annual recurring revenue, driven by agents handling over half its tickets and a sales model without SDRs.",
+ "tema": "Business",
+ "paragrafi": [
+  "Linear, founded to replace legacy issue trackers, announced it passed $100 million in annual recurring revenue this year.",
+  "The company now serves more than 40,000 paying customers and reports 177 % net revenue retention.",
+  "Agents created 3 % of work a year ago; today they generate over half of all tickets, after the launch of an MCP server and integrations with Codex, Cursor and GitHub Copilot.",
+  "Linear has never hired a sales development representative, relying on account executives to conduct outbound outreach and on‑site solution engineers for enterprise sales."
+ ],
+ "perche": [
+  "For AI users, Linear shows how embedding agent orchestration can dramatically boost productivity and revenue. Companies seeking free or locally hosted models can note that Linear’s success relies on cloud‑based AI services, highlighting the gap between enterprise AI platforms and self‑hosted alternatives."
+ ],
+ "pubblicato": "2026-11-20",
+ "titoloFonte": "Scaling Linear’s GTM to $100M ARR — Cristina Cordova, COO",
+ "fonti": [
+  {
+   "nome": "Latent Space",
+   "url": "https://latent.space/p/linear-scaling/",
+   "titolo": "Scaling Linear’s GTM to $100M ARR — Cristina Cordova, COO",
+   "ufficiale": false,
+   "data": "2026-11-19"
+  },
+  {
+   "nome": "linear.app",
+   "url": "https://linear.app/blog/welcoming-cristina-cordova-to-linear?utm_source=latent.space&utm_medium=ainews&utm_campaign=lsbeehiiv",
+   "titolo": "Welcoming Cristina Cordova to Linear",
+   "ufficiale": true,
+   "data": "2023-05-23"
+  }
+ ],
+ "frasiTolte": 1
+}

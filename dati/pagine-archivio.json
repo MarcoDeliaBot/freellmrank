@@ -24323,6 +24323,30 @@
     "tipo": "News"
    },
    "data": "2026-11-19"
+  },
+  "/blog/news-2026-11-20-apple-hires-engineers-to-build-its-own-multi-app-ai-agent-for-macos.html": {
+   "post": {
+    "slug": "news-2026-11-20-apple-hires-engineers-to-build-its-own-multi-app-ai-agent-for-macos",
+    "titolo": "Apple hires engineers to build its own multi‑app AI agent for macOS",
+    "descr": "Apple is recruiting senior staff to create an AI assistant that can browse, code and run commands across Mac apps, aiming to compete with Meta, OpenAI and Anthropic agents.",
+    "data": "2026-11-20",
+    "tema": "Business",
+    "corpo": "Apple posted a senior engineering manager job to lead the development of an AI agent that can use a computer like a capable person, according to a Bloomberg‑sourced listing.\n\nThe posting describes the agent as able to browse the web, work across apps, run commands, write and debug code, and call services, moving fluidly between tools and handling multi‑step tasks.\n\nApple plans to integrate the agent with its Siri, UI Frameworks and Apple Foundation Models teams, and may extend Siri’s capabilities such as image editing and Safari tab management.\n\nThe company is also tightening macOS controls; macOS 27.3 will show warnings to discourage users from granting full access to third‑party agents, and developers will need explicit user action for extraordinary permissions.\n\n## What it means for you\n\nIf Apple succeeds, Mac users could access a tightly integrated AI assistant that handles complex workflows without leaving the Apple ecosystem. For developers of free or locally run models, Apple’s move underscores the challenge of competing with large platforms that bundle AI tightly into hardware and OS, highlighting the need for open‑source alternatives that can run on user‑controlled devices.\n\n## Sources\n\n- [Apple may be developing its own AI agent that runs your Mac](https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/), TechCrunch, 20 Nov 2026\n- [Apple is hiring engineers to build its own AI agent](https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing), The Verge, 19 Nov 2026\n- [An OpenAI agent assigned a simple writing task decided on its own to build a secret email surveillance tool](https://the-decoder.com/an-openai-agent-assigned-a-simple-writing-task-decided-on-its-own-to-build-a-secret-email-surveillance-tool/), The Decoder, 19 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-20-apple-hires-engineers-to-build-its-own-multi-app-ai-agent-for-macos).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-19"
+  },
+  "/blog/news-2026-11-20-linear-hits-100m-arr-with-ai-driven-agent-platform-and-no-sdrs.html": {
+   "post": {
+    "slug": "news-2026-11-20-linear-hits-100m-arr-with-ai-driven-agent-platform-and-no-sdrs",
+    "titolo": "Linear hits $100M ARR with AI‑driven agent platform and no SDRs",
+    "descr": "Linear reached $100 million annual recurring revenue, driven by agents handling over half its tickets and a sales model without SDRs.",
+    "data": "2026-11-20",
+    "tema": "Business",
+    "corpo": "Linear, founded to replace legacy issue trackers, announced it passed $100 million in annual recurring revenue this year.\n\nThe company now serves more than 40,000 paying customers and reports 177 % net revenue retention.\n\nAgents created 3 % of work a year ago; today they generate over half of all tickets, after the launch of an MCP server and integrations with Codex, Cursor and GitHub Copilot.\n\nLinear has never hired a sales development representative, relying on account executives to conduct outbound outreach and on‑site solution engineers for enterprise sales.\n\n## What it means for you\n\nFor AI users, Linear shows how embedding agent orchestration can dramatically boost productivity and revenue. Companies seeking free or locally hosted models can note that Linear’s success relies on cloud‑based AI services, highlighting the gap between enterprise AI platforms and self‑hosted alternatives.\n\n## Sources\n\n- [Scaling Linear’s GTM to $100M ARR — Cristina Cordova, COO](https://latent.space/p/linear-scaling/), Latent Space, 19 Nov 2026\n- [Welcoming Cristina Cordova to Linear](https://linear.app/blog/welcoming-cristina-cordova-to-linear?utm_source=latent.space&utm_medium=ainews&utm_campaign=lsbeehiiv), linear.app (official), 23 May 2023\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-20-linear-hits-100m-arr-with-ai-driven-agent-platform-and-no-sdrs).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-19"
   }
  },
  "ricostruzione": {
