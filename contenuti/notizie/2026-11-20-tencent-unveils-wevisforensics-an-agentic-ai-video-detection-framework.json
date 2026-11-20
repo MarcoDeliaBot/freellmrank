@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-20-tencent-unveils-wevisforensics-an-agentic-ai-video-detection-framework",
+ "titolo": "Tencent unveils WeVisForensics, an agentic AI video detection framework",
+ "descr": "Tencent's WeVisForensics uses a main investigator agent and evolving forensic sub‑agents to detect AI‑generated videos, with code on GitHub and a Hugging Face model.",
+ "tema": "Research",
+ "paragrafi": [
+  "The system features a main investigator agent that orchestrates a library of forensic inspector sub‑agents, each capable of analyzing visual and audio cues.",
+  "All source code is available on GitHub, the model can be downloaded from Hugging Face, and a project page provides additional documentation.",
+  "ResearchStudio generated an interactive Reel for the paper, offering a visual poster, video, and editable blog files for download.",
+  "The release comes as concerns grow about deepfake videos and the need for reliable detection tools in the AI ecosystem."
+ ],
+ "perche": [
+  "The open‑source detector gives developers and end‑users a free way to verify video authenticity, complementing the growing pool of free chat models such as Kimi K3 and GLM‑5.3. For those who prefer local or cost‑free AI solutions, WeVisForensics adds a valuable security layer without requiring paid services."
+ ],
+ "pubblicato": "2026-11-20",
+ "titoloFonte": "Tencent paper: WeVisForensics: Self-Evolving Agent for Omni AI-Generated Video Detection",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2611.21373",
+   "titolo": "Tencent paper: WeVisForensics: Self-Evolving Agent for Omni AI-Generated Video Detection",
+   "ufficiale": true,
+   "data": "2026-11-15"
+  }
+ ],
+ "frasiTolte": 1
+}

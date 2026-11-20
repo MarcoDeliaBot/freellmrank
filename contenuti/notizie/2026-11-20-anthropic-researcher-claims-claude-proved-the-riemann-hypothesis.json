@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-20-anthropic-researcher-claims-claude-proved-the-riemann-hypothesis",
+ "titolo": "Anthropic researcher claims Claude proved the Riemann hypothesis",
+ "descr": "Levent Alpöge announced a Claude‑generated proof of the Riemann hypothesis, but it remains unverified and pending formal review.",
+ "tema": "Research",
+ "paragrafi": [
+  "On November 20, 2026, Anthropic researcher Levent Alpöge posted a four‑page statement on his personal website claiming to have proved the Riemann hypothesis with the help of Claude.",
+  "Anthropic had floated on the Nasdaq a day earlier, raising over $93 billion in its public offering, but the company has not issued an official comment on Alpöge’s announcement.",
+  "The Riemann hypothesis, first proposed in 1859, is one of seven Millennium Prize problems and underlies many results in number theory and the distribution of prime numbers."
+ ],
+ "perche": [
+  "If the proof holds, it would demonstrate that large language models can assist in solving deep mathematical problems, a capability far beyond current free or locally hosted models. Until the proof is independently validated, researchers and developers should treat the claim as a promising experiment rather than a confirmed breakthrough."
+ ],
+ "pubblicato": "2026-11-20",
+ "titoloFonte": "Anthropic researcher claims to have proven Riemann hypothesis using Claude",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/20/anthropic-researcher-claims-to-have-proven-riemann-hypothesis-using-claude/",
+   "titolo": "Anthropic researcher claims to have proven Riemann hypothesis using Claude",
+   "ufficiale": false,
+   "data": "2026-11-20"
+  },
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
+   "titolo": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
+   "ufficiale": false,
+   "data": "2026-11-20"
+  }
+ ],
+ "frasiTolte": 2
+}
