@@ -555,5 +555,13 @@
  "news-2026-11-17-nvidia-unveils-nemotron-for-science-and-rubin-hpc-gpu-at-sc26": {
   "lungo": "notizia-nvidia-unveils-nemotron-for-science-and-rubin-hpc-gpu-at",
   "breve": "breve-nvidia-unveils-nemotron-for-science-and-rubin-hpc-gpu-at"
+ },
+ "news-2026-11-20-nvidia-releases-rust-tool-calling-parsers-for-nemotron-and-other-llm-f": {
+  "lungo": "notizia-nvidia-releases-rust-tool-calling-parsers-for-nemotron-a",
+  "breve": "breve-nvidia-releases-rust-tool-calling-parsers-for-nemotron-a"
+ },
+ "news-2026-11-20-apple-hires-engineers-to-build-its-own-multi-app-ai-agent-for-macos": {
+  "lungo": "notizia-apple-hires-engineers-to-build-its-own-multi-app-ai-agen",
+  "breve": "breve-apple-hires-engineers-to-build-its-own-multi-app-ai-agen"
  }
 }
