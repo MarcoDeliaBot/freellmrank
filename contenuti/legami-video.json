@@ -579,5 +579,13 @@
  "news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms": {
   "lungo": "notizia-meta-releases-turingspace-benchmark-exposing-spatial-gap",
   "breve": "breve-meta-releases-turingspace-benchmark-exposing-spatial-gap"
+ },
+ "news-2026-11-21-openai-launches-gpt-live-1-1-voice-model-with-cheaper-standby-billing": {
+  "lungo": "notizia-openai-launches-gpt-live-1-1-voice-model-with-cheaper-st",
+  "breve": "breve-openai-launches-gpt-live-1-1-voice-model-with-cheaper-st"
+ },
+ "news-2026-11-20-tencent-unveils-wevisforensics-an-agentic-ai-video-detection-framework": {
+  "lungo": "notizia-tencent-unveils-wevisforensics-an-agentic-ai-video-detec",
+  "breve": "breve-tencent-unveils-wevisforensics-an-agentic-ai-video-detec"
  }
 }
