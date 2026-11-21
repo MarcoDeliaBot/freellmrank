@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-21-combatting-adversarial-distillation",
+ "titolo": "Combatting adversarial distillation",
+ "descr": "Updated defenses in GPT‑6.2 models cut attack success on protected reasoning extraction dramatically.",
+ "tema": "Research",
+ "paragrafi": [
+  "OpenAI announced new measures to combat adversarial distillation, a technique where bad actors copy frontier model capabilities without safeguards.",
+  "The company added adversarial testing, model training, classifiers and API‑level protections, focusing on preventing extraction of protected reasoning traces.",
+  "In internal red‑team tests, the success rate of attacks that recover reasoning dropped from 54.0% on GPT‑6 Astra to 0.2% on GPT‑6.2 Astra after the updates.",
+  "OpenAI notes that protecting chain‑of‑thought traces limits the transfer of cyber capabilities to student models, even when tasks are allowed under usage policies.",
+  "Defenses operate at request level, limiting trace extraction, and at campaign level, detecting coordinated extraction attempts."
+ ],
+ "perche": [
+  "For AI users, stronger safeguards mean reduced risk of models being repurposed for harmful cyber or biological tasks. For developers of free or local models, the focus on protecting reasoning traces highlights a safety approach that may be harder to implement without large‑scale infrastructure."
+ ],
+ "pubblicato": "2026-11-21",
+ "titoloFonte": "Combatting adversarial distillation",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/combatting-adversarial-distillation",
+   "titolo": "Combatting adversarial distillation",
+   "ufficiale": true,
+   "data": "2026-11-20"
+  }
+ ],
+ "frasiTolte": 1
+}

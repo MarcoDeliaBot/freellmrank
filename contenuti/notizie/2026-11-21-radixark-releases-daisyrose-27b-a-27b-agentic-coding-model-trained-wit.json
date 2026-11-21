@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-21-radixark-releases-daisyrose-27b-a-27b-agentic-coding-model-trained-wit",
+ "titolo": "RadixArk releases DaisyRose-27B, a 27B agentic coding model trained with RL only",
+ "descr": "DaisyRose-27B doubles Terminal Bench 4.1 pass@1 score, runs on a single GPU and is available under Apache 2.0.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "RadixArk announced DaisyRose-27B, its first open-weight model built on the Qwen3.8-27B architecture and post‑trained solely with reinforcement learning.",
+  "The model contains 27.8 B dense parameters, a 262,144‑token context and supports text and image input. It can run on one GPU using 52 GB in BF16, 29 GB in FP8 or 23 GB in NVFP4 on Blackwell GPUs.",
+  "Benchmark results show Terminal Bench 4.1 pass@1 rising from 5.6 to 12.0, a more than two‑fold increase, while other scores improve modestly, e.g., DeepSWE +4.0 and IFBench +2.9.",
+  "Training used RadixArk's Miles RL framework on 144 H200 GPUs for 18 days, consuming about 63,000 GPU‑hours and processing roughly 944,000 sandboxes.",
+  "Weights are hosted on Hugging Face in multiple formats; deployment recommendations include SGLang with DSpark speculative decoding or vLLM."
+ ],
+ "perche": [
+  "DaisyRose-27B offers a high‑performing, open‑weight alternative for developers who need agentic coding capabilities without proprietary licenses. Its single‑GPU footprint makes it attractive for local or on‑premise setups, complementing the free chat models that dominate community rankings."
+ ],
+ "pubblicato": "2026-11-21",
+ "titoloFonte": "RadixArk Ships DaisyRose-27B, a 27B Agentic Coding Model Trained With Reinforcement Learning Only",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model/",
+   "titolo": "RadixArk Ships DaisyRose-27B, a 27B Agentic Coding Model Trained With Reinforcement Learning Only",
+   "ufficiale": false,
+   "data": "2026-11-20"
+  },
+  {
+   "nome": "huggingface.co",
+   "url": "https://huggingface.co/RadixArk/DaisyRose-27B",
+   "titolo": "RadixArk/DaisyRose-27B · Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-20"
+  }
+ ],
+ "frasiTolte": 0
+}
