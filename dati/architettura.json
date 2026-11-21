@@ -2187,5 +2187,27 @@
   "contestoMax": 262144,
   "moe": true,
   "attivi": 4463383416
+ },
+ "tencent/Hy4": {
+  "strati": 78,
+  "tipo": "MLA",
+  "kvPerStrato": 1152,
+  "pieni": 78,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 1048576,
+  "moe": true,
+  "attivi": 52841747678
+ },
+ "Qwen/Qwen3-4B-Instruct-2507": {
+  "strati": 36,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 36,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": false,
+  "attivi": 4022468096
  }
 }

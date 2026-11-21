@@ -803,5 +803,10 @@
   "repo": "moonshotai/Kimi-K3.1-Pro",
   "parametri": 2780110363392,
   "fonte": "hf-auto"
+ },
+ "Hy4 preview": {
+  "repo": "tencent/Hy4",
+  "parametri": 774434002142,
+  "fonte": "hf-auto"
  }
 }
