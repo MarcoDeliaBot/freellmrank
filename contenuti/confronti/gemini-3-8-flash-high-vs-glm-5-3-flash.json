@@ -1,0 +1,31 @@
+{
+  "versione": 2,
+  "coppia": [
+    "Gemini 3.8 Flash (High)",
+    "GLM-5.3-Flash"
+  ],
+  "descr": "Gemini 3.8 Flash leads GLM-5.3-Flash in Arena votes with a 22-point chat score advantage.",
+  "risposta": "Gemini 3.8 Flash is ahead of GLM-5.3-Flash in the Arena head-to-head test. The chat score difference is 22 points, which translates to a real lead. People preferred Gemini 3.8 Flash in about 53 % of blind votes.",
+  "dimensioni": "Gemini 3.8 Flash does not disclose its model size. GLM-5.3-Flash is 321.3 B total, with 24.7 B active parameters, and requires roughly 196 GB for a 4-bit download.",
+  "velocita": "Both models need online access for generation on typical home GPUs. Gemini 3.8 Flash runs only through its online API on RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max, and Ryzen AI Max+. GLM-5.3-Flash does not fit on any of those consumer cards, so it also requires online inference.",
+  "gratisA": "Gemini 3.8 Flash can be accessed for free via Google’s Gemini API free tier. The license is proprietary, and the model cannot be tried directly on FreeLLMArena.",
+  "gratisB": "GLM-5.3-Flash is available under an MIT license. You can download the weights and run the model at home, and it can also be tried for free on the FreeLLMArena Try & Compare page.",
+  "sceglieA": "Pick Gemini 3.8 Flash when you need a high-scoring chat experience and prefer a managed API service. It also leads in the Vision category, making it a good choice for image-related tasks. The model is suitable if you do not want to handle large downloads or local hardware constraints.",
+  "sceglieB": "Choose GLM-5.3-Flash if you value open weights and want to run the model locally under an MIT license. It has the highest coding score of the two, so it suits programming assistance. The model is also the only one you can try directly on FreeLLMArena.",
+  "categorie": {
+    "Chat": "Gemini 3.8 Flash scores 1497 in the Chat category, ahead of GLM-5.3-Flash’s 1475. This confirms its overall advantage in conversational quality.",
+    "Coding": "GLM-5.3-Flash leads the Coding category with a score of 1610 versus Gemini 3.8 Flash’s 1584. It is the better option for code generation tasks.",
+    "Vision": "Gemini 3.8 Flash scores 1293 in Vision, surpassing GLM-5.3-Flash’s 1274. It remains the stronger model for image-related queries."
+  },
+  "scritto": "2026-11-21",
+  "aggiornato": "2026-11-21",
+  "scrittore": "workers",
+  "fatti": {
+    "leader": "Gemini 3.8 Flash (High)",
+    "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",
+    "gratisB": "download and run at home · MIT license",
+    "puntiA": 1497,
+    "puntiB": 1475,
+    "dataArena": "2026-11-19"
+  }
+}

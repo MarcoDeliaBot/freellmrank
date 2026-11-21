@@ -1,0 +1,30 @@
+{
+  "versione": 2,
+  "coppia": [
+    "Kimi K3 (Max)",
+    "Qwen3.8-Max"
+  ],
+  "descr": "Qwen3.8-Max vs Kimi K3: a close Arena tie, with similar chat scores and distinct free options.",
+  "risposta": "The two models are about even in the Arena blind vote. Kimi K3 scores 1488, Qwen3.8-Max scores 1484. The difference is too small to declare a clear winner.",
+  "dimensioni": "Kimi K3 weighs 2779.9 B with 104.6 B active parameters. A 4-bit download requires about 1686 GB. Qwen3.8-Max does not publish its size, so the file footprint is unknown. Both models are listed in the Arena database and have been evaluated by thousands of voters.",
+  "velocita": "At home hardware, Kimi K3 does not fit the RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, or Ryzen AI Max+ 395 128 GB configurations. Qwen3.8-Max also does not fit those same GPUs. The data only shows these GPUs cannot hold the models; it does not state that no other home machine could run them.",
+  "gratisA": "Kimi K3 can be used for free by downloading the open-weight files and running the model locally. The license permits free use at home. The model cannot be tried directly on the FreeLLMArena try-and-compare page.",
+  "gratisB": "Qwen3.8-Max offers a free trial quota on Alibaba Cloud for 90 days. The trial runs under a proprietary license. Like Kimi K3, it is not available for direct testing on the FreeLLMArena try-and-compare page.",
+  "sceglieA": "Pick Kimi K3 if you need an open-weight model you can run on your own hardware. Its chat score is slightly higher than Qwen3.8-Max. The model is suitable for experiments that require full control over the weights.",
+  "sceglieB": "Pick Qwen3.8-Max if coding performance matters most. It leads Kimi K3 in the coding category with a score of 1675 versus 1658. The free cloud trial makes it easy to test without setting up a local environment.",
+  "categorie": {
+    "Chat": "In the chat category Kimi K3 scores 1488 and Qwen3.8-Max scores 1484. The Arena judges consider the results about even.",
+    "Coding": "Qwen3.8-Max leads the coding category with a score of 1675, while Kimi K3 scores 1658."
+  },
+  "scritto": "2026-11-21",
+  "aggiornato": "2026-11-21",
+  "scrittore": "groq",
+  "fatti": {
+    "leader": "even",
+    "gratisA": "download and run at home · Kimi K3 license",
+    "gratisB": "free trial quota on Alibaba Cloud (90 days) · Proprietary license",
+    "puntiA": 1488,
+    "puntiB": 1484,
+    "dataArena": "2026-11-19"
+  }
+}
