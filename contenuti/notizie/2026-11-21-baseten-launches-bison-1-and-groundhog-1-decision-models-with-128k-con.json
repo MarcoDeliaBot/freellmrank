@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-21-baseten-launches-bison-1-and-groundhog-1-decision-models-with-128k-con",
+ "titolo": "Baseten launches Bison-1 and Groundhog-1 decision models with 128k context",
+ "descr": "Baseten adds two open‑weight decision models built on Gemma 4, offering calibrated probabilities over 128k tokens.",
+ "tema": "Business",
+ "paragrafi": [
+  "Both models are based on Google's Gemma 4 architecture and return calibrated probabilities instead of text.",
+  "Groundhog-1 is a 26‑billion‑parameter mixture‑of‑experts model with about 4 billion active parameters per token, but it has not yet received an official index score.",
+  "Both models support a context window of 128 k tokens (131,072) and can accept image inputs. Their BF16 weights are available on Hugging Face, sized at roughly 62 GB for Bison-1 and 52 GB for Groundhog-1.",
+  "Pricing is $0.10 per 1 M input tokens for Bison-1 and $0.035 per 1 M tokens for Groundhog-1.",
+  "No inference GPU or quantized builds are listed, and the models are open‑weight under MIT + Apache 2.0 licenses."
+ ],
+ "perche": [
+  "These models give developers ready‑to‑use decision‑making services that handle long contexts and images, reducing the need to build custom pipelines."
+ ],
+ "pubblicato": "2026-11-21",
+ "titoloFonte": "Baseten Releases Bison-1 and Groundhog-1, Topping Decision Model Index",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models/",
+   "titolo": "Baseten Releases Bison-1 and Groundhog-1, Topping Decision Model Index",
+   "ufficiale": false,
+   "data": "2026-11-21"
+  },
+  {
+   "nome": "huggingface.co",
+   "url": "https://huggingface.co/baselabs/groundhog-1",
+   "titolo": "baselabs/groundhog-1 · Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-21"
+  }
+ ],
+ "frasiTolte": 5
+}

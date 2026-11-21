@@ -24541,6 +24541,30 @@
     "tipo": "News"
    },
    "data": "2026-11-20"
+  },
+  "/blog/news-2026-11-21-baseten-launches-bison-1-and-groundhog-1-decision-models-with-128k-con.html": {
+   "post": {
+    "slug": "news-2026-11-21-baseten-launches-bison-1-and-groundhog-1-decision-models-with-128k-con",
+    "titolo": "Baseten launches Bison-1 and Groundhog-1 decision models with 128k context",
+    "descr": "Baseten adds two open‑weight decision models built on Gemma 4, offering calibrated probabilities over 128k tokens.",
+    "data": "2026-11-21",
+    "tema": "Business",
+    "corpo": "Both models are based on Google's Gemma 4 architecture and return calibrated probabilities instead of text.\n\nGroundhog-1 is a 26‑billion‑parameter mixture‑of‑experts model with about 4 billion active parameters per token, but it has not yet received an official index score.\n\nBoth models support a context window of 128 k tokens (131,072) and can accept image inputs. Their BF16 weights are available on Hugging Face, sized at roughly 62 GB for Bison-1 and 52 GB for Groundhog-1.\n\nPricing is $0.10 per 1 M input tokens for Bison-1 and $0.035 per 1 M tokens for Groundhog-1.\n\nNo inference GPU or quantized builds are listed, and the models are open‑weight under MIT + Apache 2.0 licenses.\n\n## What it means for you\n\nThese models give developers ready‑to‑use decision‑making services that handle long contexts and images, reducing the need to build custom pipelines.\n\n## Sources\n\n- [Baseten Releases Bison-1 and Groundhog-1, Topping Decision Model Index](https://www.marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models/), MarkTechPost, 21 Nov 2026\n- [baselabs/groundhog-1 · Hugging Face](https://huggingface.co/baselabs/groundhog-1), huggingface.co (official), 21 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-21-baseten-launches-bison-1-and-groundhog-1-decision-models-with-128k-con).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-20"
+  },
+  "/blog/news-2026-11-21-hebbia-reports-gpt-6-astra-outperforms-rivals-in-financial-research-te.html": {
+   "post": {
+    "slug": "news-2026-11-21-hebbia-reports-gpt-6-astra-outperforms-rivals-in-financial-research-te",
+    "titolo": "Hebbia reports GPT‑6 Astra outperforms rivals in financial research tests",
+    "descr": "In Hebbia’s evaluation, GPT‑6 Astra led alternatives by 13.6 points on source citation and 14.4 points on presentation quality.",
+    "data": "2026-11-21",
+    "tema": "Research",
+    "corpo": "The model was judged on two tasks: locating source documents for banker queries and generating PowerPoint decks that follow a brief.\n\nGPT‑6 Astra scored 13.6 percentage points higher than the next best model on citing required source types, with 99.5% of its citations relevant.\n\nOn presentation requirements it met 97.9% of criteria, a 14.4‑point lead over the best alternative.\n\nKavita Anand of Hebbia said the model’s precise outputs and adherence to branding could cut deck‑creation time from hours to minutes.\n\n## What it means for you\n\nFor finance professionals, the gains in citation accuracy and slide quality mean faster, more reliable deal‑room analysis. Users of free or locally hosted models may see a larger performance gap, highlighting the advantage of premium offerings like GPT‑6 Astra for high‑stakes research.\n\n## Sources\n\n- [Hebbia sees improvements in financial research with GPT-6 Astra](https://openai.com/business/customer-stories/hebbia), OpenAI (official), 20 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-21-hebbia-reports-gpt-6-astra-outperforms-rivals-in-financial-research-te).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-20"
   }
  },
  "ricostruzione": {

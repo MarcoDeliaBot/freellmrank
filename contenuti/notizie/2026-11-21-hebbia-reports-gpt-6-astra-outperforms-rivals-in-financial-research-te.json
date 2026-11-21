@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-21-hebbia-reports-gpt-6-astra-outperforms-rivals-in-financial-research-te",
+ "titolo": "Hebbia reports GPT‑6 Astra outperforms rivals in financial research tests",
+ "descr": "In Hebbia’s evaluation, GPT‑6 Astra led alternatives by 13.6 points on source citation and 14.4 points on presentation quality.",
+ "tema": "Research",
+ "paragrafi": [
+  "The model was judged on two tasks: locating source documents for banker queries and generating PowerPoint decks that follow a brief.",
+  "GPT‑6 Astra scored 13.6 percentage points higher than the next best model on citing required source types, with 99.5% of its citations relevant.",
+  "On presentation requirements it met 97.9% of criteria, a 14.4‑point lead over the best alternative.",
+  "Kavita Anand of Hebbia said the model’s precise outputs and adherence to branding could cut deck‑creation time from hours to minutes."
+ ],
+ "perche": [
+  "For finance professionals, the gains in citation accuracy and slide quality mean faster, more reliable deal‑room analysis. Users of free or locally hosted models may see a larger performance gap, highlighting the advantage of premium offerings like GPT‑6 Astra for high‑stakes research."
+ ],
+ "pubblicato": "2026-11-21",
+ "titoloFonte": "Hebbia sees improvements in financial research with GPT-6 Astra",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/business/customer-stories/hebbia",
+   "titolo": "Hebbia sees improvements in financial research with GPT-6 Astra",
+   "ufficiale": true,
+   "data": "2026-11-20"
+  }
+ ],
+ "frasiTolte": 1
+}
