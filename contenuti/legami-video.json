@@ -571,5 +571,13 @@
  "news-2026-11-20-linear-hits-100m-arr-with-ai-driven-agent-platform-and-no-sdrs": {
   "lungo": "notizia-linear-hits-100m-arr-with-ai-driven-agent-platform-and-n",
   "breve": "breve-linear-hits-100m-arr-with-ai-driven-agent-platform-and-n"
+ },
+ "news-2026-11-20-anthropic-researcher-claims-claude-proved-the-riemann-hypothesis": {
+  "lungo": "notizia-anthropic-researcher-claims-claude-proved-the-riemann-hy",
+  "breve": "breve-anthropic-researcher-claims-claude-proved-the-riemann-hy"
+ },
+ "news-2026-11-20-meta-releases-turingspace-benchmark-exposing-spatial-gaps-in-mllms": {
+  "lungo": "notizia-meta-releases-turingspace-benchmark-exposing-spatial-gap",
+  "breve": "breve-meta-releases-turingspace-benchmark-exposing-spatial-gap"
  }
 }
