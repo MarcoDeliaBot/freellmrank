@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-21-openai-launches-gpt-live-1-1-voice-model-with-cheaper-standby-billing",
+ "titolo": "OpenAI launches GPT‑Live‑1.1 voice model with cheaper standby billing",
+ "descr": "GPT‑Live‑1.1 adds full‑duplex multilingual speech, standby mode at $0.02/min, and runs only on OpenAI’s cloud.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "The model supports full‑duplex audio, allowing it to listen and speak in a single stream.",
+  "Live sessions use a default 128,000‑token context window and connect via WebRTC or WebSocket. No open weights or quantized versions are available.",
+  "The release introduces a standby billing state that pauses inference during silence. Standby costs $0.02 per minute, compared with $0.05 per minute for active sessions.",
+  "GPT‑Live‑1.1 improves accent naturalness, transcription accuracy, handling of letters and numbers, and task completion reliability, according to OpenAI’s self‑reported claims.",
+  "The model remains API‑only, runs on OpenAI’s cloud, and does not support image, video, or structured outputs. Backend tool usage is billed separately."
+ ],
+ "perche": [
+  "The lower standby rate reduces cost for voice agents that spend time waiting for user input, making continuous‑listening applications more affordable. Because the model is cloud‑only and closed‑source, users seeking free or locally hosted alternatives must look to other open models rather than GPT‑Live‑1.1."
+ ],
+ "pubblicato": "2026-11-21",
+ "titoloFonte": "OpenAI Ships GPT-Live-1.1 for Voice Agents, Cuts Idle Cost to $0.02/Min",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/21/openai-gpt-live-1-1-api-standby-mode/",
+   "titolo": "OpenAI Ships GPT-Live-1.1 for Voice Agents, Cuts Idle Cost to $0.02/Min",
+   "ufficiale": false,
+   "data": "2026-11-21"
+  },
+  {
+   "nome": "developers.openai.com",
+   "url": "https://developers.openai.com/api/docs/guides/live-conversations",
+   "titolo": "Managing GPT-Live sessions | OpenAI API",
+   "ufficiale": true,
+   "data": "2026-11-21"
+  }
+ ],
+ "frasiTolte": 1
+}

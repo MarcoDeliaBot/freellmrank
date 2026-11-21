@@ -24605,6 +24605,30 @@
     "tipo": "News"
    },
    "data": "2026-11-21"
+  },
+  "/blog/news-2026-11-21-apple-releases-depth-pro-2-for-sharp-consistent-metric-monocular-depth.html": {
+   "post": {
+    "slug": "news-2026-11-21-apple-releases-depth-pro-2-for-sharp-consistent-metric-monocular-depth",
+    "titolo": "Apple releases Depth Pro 2 for sharp, consistent metric monocular depth",
+    "descr": "Depth Pro 2 estimates per‑pixel depth in meters from ordinary camera input, handling photos, video or live feed at full resolution.",
+    "data": "2026-11-21",
+    "tema": "Research",
+    "corpo": "The model predicts depth for every pixel in meters using a single network that works on a single photo, an entire video, or a live camera stream.\n\nDepth estimation runs at the input’s full resolution, delivering sharp edges and stable depth across frames.\n\nThe work was authored by Peiyun Hu, Marko Mihajlovic, Lyndon Duong, Lahav Lipson, Wei Dong, Amaël Delaunoy, Stephan R. Richter and Vladlen Koltun.\n\nThe paper appears on Hugging Face Papers and includes a video demonstration of the method.\n\n## What it means for you\n\nFor developers, Depth Pro 2 offers a ready‑to‑use solution for metric depth from standard cameras, useful in AR, robotics and video editing. Free‑model enthusiasts can explore the paper and code on Hugging Face without needing specialized hardware, aligning with the growing interest in accessible AI research.\n\n## Sources\n\n- [Apple paper: Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth](https://huggingface.co/papers/2611.26603), Hugging Face Papers (official), 18 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-21-apple-releases-depth-pro-2-for-sharp-consistent-metric-monocular-depth).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-21"
+  },
+  "/blog/news-2026-11-21-openai-launches-gpt-live-1-1-voice-model-with-cheaper-standby-billing.html": {
+   "post": {
+    "slug": "news-2026-11-21-openai-launches-gpt-live-1-1-voice-model-with-cheaper-standby-billing",
+    "titolo": "OpenAI launches GPT‑Live‑1.1 voice model with cheaper standby billing",
+    "descr": "GPT‑Live‑1.1 adds full‑duplex multilingual speech, standby mode at $0.02/min, and runs only on OpenAI’s cloud.",
+    "data": "2026-11-21",
+    "tema": "LLMs",
+    "corpo": "The model supports full‑duplex audio, allowing it to listen and speak in a single stream.\n\nLive sessions use a default 128,000‑token context window and connect via WebRTC or WebSocket. No open weights or quantized versions are available.\n\nThe release introduces a standby billing state that pauses inference during silence. Standby costs $0.02 per minute, compared with $0.05 per minute for active sessions.\n\nGPT‑Live‑1.1 improves accent naturalness, transcription accuracy, handling of letters and numbers, and task completion reliability, according to OpenAI’s self‑reported claims.\n\nThe model remains API‑only, runs on OpenAI’s cloud, and does not support image, video, or structured outputs. Backend tool usage is billed separately.\n\n## What it means for you\n\nThe lower standby rate reduces cost for voice agents that spend time waiting for user input, making continuous‑listening applications more affordable. Because the model is cloud‑only and closed‑source, users seeking free or locally hosted alternatives must look to other open models rather than GPT‑Live‑1.1.\n\n## Sources\n\n- [OpenAI Ships GPT-Live-1.1 for Voice Agents, Cuts Idle Cost to $0.02/Min](https://www.marktechpost.com/2026/11/21/openai-gpt-live-1-1-api-standby-mode/), MarkTechPost, 21 Nov 2026\n- [Managing GPT-Live sessions | OpenAI API](https://developers.openai.com/api/docs/guides/live-conversations), developers.openai.com (official), 21 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-21-openai-launches-gpt-live-1-1-voice-model-with-cheaper-standby-billing).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-21"
   }
  },
  "ricostruzione": {

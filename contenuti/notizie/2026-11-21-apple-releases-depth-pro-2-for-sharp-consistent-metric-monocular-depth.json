@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-21-apple-releases-depth-pro-2-for-sharp-consistent-metric-monocular-depth",
+ "titolo": "Apple releases Depth Pro 2 for sharp, consistent metric monocular depth",
+ "descr": "Depth Pro 2 estimates per‑pixel depth in meters from ordinary camera input, handling photos, video or live feed at full resolution.",
+ "tema": "Research",
+ "paragrafi": [
+  "The model predicts depth for every pixel in meters using a single network that works on a single photo, an entire video, or a live camera stream.",
+  "Depth estimation runs at the input’s full resolution, delivering sharp edges and stable depth across frames.",
+  "The work was authored by Peiyun Hu, Marko Mihajlovic, Lyndon Duong, Lahav Lipson, Wei Dong, Amaël Delaunoy, Stephan R. Richter and Vladlen Koltun.",
+  "The paper appears on Hugging Face Papers and includes a video demonstration of the method."
+ ],
+ "perche": [
+  "For developers, Depth Pro 2 offers a ready‑to‑use solution for metric depth from standard cameras, useful in AR, robotics and video editing. Free‑model enthusiasts can explore the paper and code on Hugging Face without needing specialized hardware, aligning with the growing interest in accessible AI research."
+ ],
+ "pubblicato": "2026-11-21",
+ "titoloFonte": "Apple paper: Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2611.26603",
+   "titolo": "Apple paper: Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth",
+   "ufficiale": true,
+   "data": "2026-11-18"
+  }
+ ],
+ "frasiTolte": 1
+}
