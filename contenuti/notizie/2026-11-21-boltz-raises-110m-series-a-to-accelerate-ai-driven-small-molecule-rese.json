@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-21-boltz-raises-110m-series-a-to-accelerate-ai-driven-small-molecule-rese",
+ "titolo": "Boltz raises $110M Series A to accelerate AI‑driven small‑molecule research",
+ "descr": "The medical AI startup Boltz secured $110 million led by Bessemer, expanding compute and hiring to boost its BoltzMol‑1 and BoltzProt‑1 models.",
+ "tema": "Business",
+ "paragrafi": [
+  "Boltz PBC announced a $110 million Series A round on 19 November 2026, with Bessemer Venture Partners as lead investor.",
+  "Boltz’s AI models, BoltzMol‑1 and BoltzProt‑1, generate binding‑affinity data and protein designs, reducing the number of molecules researchers must test.",
+  "Since their launch in June, token usage for the models has grown 50‑fold, and six of the world’s 20 largest pharma companies are customers, including Pfizer, GSK, Takeda and BMS.",
+  "The new funding will support additional compute infrastructure, data acquisition, and team expansion, aiming to keep pace with AI leaders such as Anthropic and OpenAI."
+ ],
+ "perche": [
+  "The investment signals growing confidence in AI tools that cut drug‑discovery cycles, offering faster, cheaper insights for pharmaceutical research. For AI users, especially those seeking free or local models, Boltz’s token‑based API shows how specialized AI services can scale quickly, highlighting the importance of compute resources and data in advancing domain‑specific models."
+ ],
+ "pubblicato": "2026-11-21",
+ "titoloFonte": "Medical AI startup Boltz raises $110M to speed up small molecule research",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/19/medical-ai-startup-boltz-raises-110m-to-speed-up-small-molecule-research/",
+   "titolo": "Medical AI startup Boltz raises $110M to speed up small molecule research",
+   "ufficiale": false,
+   "data": "2026-11-19"
+  },
+  {
+   "nome": "boltz.com",
+   "url": "https://boltz.com/series-a",
+   "titolo": "Announcing our Series A",
+   "ufficiale": true,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 1
+}
