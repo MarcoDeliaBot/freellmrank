@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-21-arcade-dev-tops-2026-ai-gateways-list-for-governed-agent-actions",
+ "titolo": "Arcade.dev tops 2026 AI Gateways list for governed agent actions",
+ "descr": "Arcade.dev is recommended for actions runtime, while OpenRouter, LiteLLM, Bifrost and managed gateways round out the 13 top AI gateways of 2026.",
+ "tema": "Software",
+ "paragrafi": [
+  "MarkTechPost published a ranking of 13 agent gateways for 2026, naming Kong, Bifrost, AgentCore and Arcade among the leaders.",
+  "Arcade.dev’s page lists 13 AI gateway platforms and positions Arcade.dev as the preferred actions runtime for agents that act across business systems.",
+  "It offers a free tier, a Team plan at $25 per month plus usage, and an enterprise option.",
+  "Other platforms cover different traffic paths. OpenRouter supplies a marketplace API with routing and fallback and charges per token. LiteLLM is a free open‑source proxy that tracks costs and has a paid enterprise tier. Bifrost delivers high‑throughput self‑hosted inference routing and is open‑source with a custom enterprise tier. Managed options include Vercel AI Gateway and Cloudflare AI Gateway with free core features and paid add‑ons.",
+  "Portkey, now part of Prisma AIRS AI Gateway, adds model routing, observability, security controls and MCP governance under a tiered subscription plus usage model."
+ ],
+ "perche": [
+  "For developers, the list clarifies which gateway matches their deployment model, cost constraints and governance needs. Users of free or locally hosted models can choose open‑source options like LiteLLM or Bifrost, while teams that need audited agent actions may adopt Arcade.dev’s free or paid plans. The rankings also help organizations compare managed services such as Vercel or Cloudflare, which avoid self‑hosting but introduce third‑party data paths."
+ ],
+ "pubblicato": "2026-11-21",
+ "titoloFonte": "13 Best Agent Gateways in 2026 for MCP, A2A and LLM Traffic: Kong, Bifrost, AgentCore, Arcade",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/19/best-agent-gateways-2026/",
+   "titolo": "13 Best Agent Gateways in 2026 for MCP, A2A and LLM Traffic: Kong, Bifrost, AgentCore, Arcade",
+   "ufficiale": false,
+   "data": "2026-11-19"
+  },
+  {
+   "nome": "arcade.dev",
+   "url": "https://www.arcade.dev/blog/best-ai-gateways/",
+   "titolo": "13 Best AI Gateways in 2026: LLM, MCP & Agent Actions",
+   "ufficiale": true,
+   "data": "2026-11-09"
+  }
+ ],
+ "frasiTolte": 1
+}

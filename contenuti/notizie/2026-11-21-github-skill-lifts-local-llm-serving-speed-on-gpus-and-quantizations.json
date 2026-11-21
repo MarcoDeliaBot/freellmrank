@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-21-github-skill-lifts-local-llm-serving-speed-on-gpus-and-quantizations",
+ "titolo": "GitHub skill lifts local LLM serving speed on GPUs and quantizations",
+ "descr": "The new inference‑optimisation skill automates performance tuning and shows notable token‑per‑second gains on Intel and NVIDIA hardware.",
+ "tema": "Software",
+ "paragrafi": [
+  "The repository sybil-solutions/inference-optimisation-skill appeared in GitHub trending on 2026-11-16.",
+  "The skill first computes a theoretical ceiling, then adjusts one lever at a time, measures against interleaved controls, and logs every result. It only publishes a build that passes six acceptance gates and a long‑context stability check.",
+  "On an Intel Arc B390 iGPU the Ornith‑1.5‑35B‑A3B model improved decode from 43.6 to 53 tok/s for one user and from 84.7 to 103 tok/s for four users. Prefill at 32 K rose from 1,037 to 1,660 tok/s, and at 256 K from 297 to 628 tok/s (2.1×). Startup time fell from 113 to 43 seconds.",
+  "An Intel Arc Pro B70 running Qwen3.8‑27B reached 91.2 tok/s for a single user and 365 tok/s for sixteen users with EXL3 and custom XPU kernels. The same card with llama.cpp Q4_K_M recorded 25.0 tok/s decode. RTX 3090 tests showed 96.2 tok/s prose decode for Qwen3.8‑27B and 251.7 / 357.9 tok/s for Qwen3.6‑35B‑A3B, while Flash‑Next raised prefill from 45.5 to 65.6 tok/s.",
+  "The H200 NVL GPU delivered 229.1 tok/s decode and 17,546 tok/s prefill for DeepSeek‑V4.1‑Flash, though it crashed under load."
+ ],
+ "perche": [
+  "Faster local serving reduces latency and hardware costs for anyone running free models such as Kimi K3 or GLM‑5.3."
+ ],
+ "pubblicato": "2026-11-21",
+ "titoloFonte": "sybil-solutions/inference-optimisation-skill: Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+   "titolo": "sybil-solutions/inference-optimisation-skill: Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+   "ufficiale": false,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 2
+}
