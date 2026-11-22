@@ -24689,6 +24689,30 @@
     "tipo": "News"
    },
    "data": "2026-11-21"
+  },
+  "/blog/news-2026-11-22-perplexity-launches-orchestrator-api-unifying-access-to-major-llm-prov.html": {
+   "post": {
+    "slug": "news-2026-11-22-perplexity-launches-orchestrator-api-unifying-access-to-major-llm-prov",
+    "titolo": "Perplexity launches Orchestrator API unifying access to major LLM providers",
+    "descr": "Perplexity's new Orchestrator API routes requests to OpenAI, Anthropic, Google, xAI and open-weight models through a single endpoint with failover and unified billing.",
+    "data": "2026-11-22",
+    "tema": "Software",
+    "corpo": "Perplexity announced an Orchestrator API that lets developers call models from OpenAI, Anthropic, Google, xAI and open-weight providers via one API key.\n\nThe API supports OpenAI Chat Completions, OpenAI Responses and Anthropic Messages formats, and automatically selects a healthy deployment, retrying on failure.\n\nAccess to Google, xAI and open-weight models is available at all usage tiers, while OpenAI and Anthropic models require Tier 1 or Tier 2.\n\nThe service is stateless; each request must include the full conversation, and authentication is handled via a bearer token.\n\n## What it means for you\n\nThe Orchestrator API simplifies integration for users who need to switch between providers without managing multiple keys or endpoints. It also offers a fallback mechanism, which can improve reliability for applications that rely on external LLM services, while keeping costs under a single credit balance.\n\n## Sources\n\n- [Perplexity Launches Orchestrator API for Failover and Model Routing](https://www.marktechpost.com/2026/11/19/perplexity-orchestrator-api-failover-model-routing/), MarkTechPost, 19 Nov 2026\n- [Perplexity Orchestrator API - Perplexity](https://docs.perplexity.ai/docs/orchestrator/quickstart), docs.perplexity.ai (official), 19 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-22-perplexity-launches-orchestrator-api-unifying-access-to-major-llm-prov).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-21"
+  },
+  "/blog/news-2026-11-22-tiny-voca-4-5m-parameter-english-tts-model-runs-on-cpu-and-browsers.html": {
+   "post": {
+    "slug": "news-2026-11-22-tiny-voca-4-5m-parameter-english-tts-model-runs-on-cpu-and-browsers",
+    "titolo": "tiny-voca: 4.5M‑parameter English TTS model runs on CPU and browsers",
+    "descr": "Open‑source tiny‑voca offers two American English voices, fast CPU inference and Web demo, with full code and weights on GitHub.",
+    "data": "2026-11-22",
+    "tema": "Software",
+    "corpo": "The tiny‑voca repository on GitHub provides a small English text‑to‑speech model with 4,537,291 parameters (about 18 MB).\n\nIt includes two fixed voices, F2 (female) and M2 (male), both at 24 kHz, and can run on a CPU, ONNX Runtime, or directly in a web browser via ONNX Runtime Web.\n\nInference runs at roughly 70× real‑time on four CPU threads, and the model outputs WAV files that never exceed 0.99 peak amplitude, avoiding clipping.\n\nThe project supplies a Python CLI, an ONNX export, and a browser‑based demo that streams each sentence as it is generated.\n\n## What it means for you\n\ntiny‑voca lets developers add lightweight English TTS to local apps or web pages without GPU hardware. Its open licence and small size make it suitable for projects that prefer free, on‑device speech synthesis over cloud services.\n\n## Sources\n\n- [n4ze3m/tiny-voca: A 4.5M-parameter two-voice English text-to-speech model, trained from scratch](https://github.com/n4ze3m/tiny-voca), GitHub trending, 14 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-22-tiny-voca-4-5m-parameter-english-tts-model-runs-on-cpu-and-browsers).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-21"
   }
  },
  "ricostruzione": {

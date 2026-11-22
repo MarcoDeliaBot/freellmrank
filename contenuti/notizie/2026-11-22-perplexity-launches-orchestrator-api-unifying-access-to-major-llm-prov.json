@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-22-perplexity-launches-orchestrator-api-unifying-access-to-major-llm-prov",
+ "titolo": "Perplexity launches Orchestrator API unifying access to major LLM providers",
+ "descr": "Perplexity's new Orchestrator API routes requests to OpenAI, Anthropic, Google, xAI and open-weight models through a single endpoint with failover and unified billing.",
+ "tema": "Software",
+ "paragrafi": [
+  "Perplexity announced an Orchestrator API that lets developers call models from OpenAI, Anthropic, Google, xAI and open-weight providers via one API key.",
+  "The API supports OpenAI Chat Completions, OpenAI Responses and Anthropic Messages formats, and automatically selects a healthy deployment, retrying on failure.",
+  "Access to Google, xAI and open-weight models is available at all usage tiers, while OpenAI and Anthropic models require Tier 1 or Tier 2.",
+  "The service is stateless; each request must include the full conversation, and authentication is handled via a bearer token."
+ ],
+ "perche": [
+  "The Orchestrator API simplifies integration for users who need to switch between providers without managing multiple keys or endpoints. It also offers a fallback mechanism, which can improve reliability for applications that rely on external LLM services, while keeping costs under a single credit balance."
+ ],
+ "pubblicato": "2026-11-22",
+ "titoloFonte": "Perplexity Launches Orchestrator API for Failover and Model Routing",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/19/perplexity-orchestrator-api-failover-model-routing/",
+   "titolo": "Perplexity Launches Orchestrator API for Failover and Model Routing",
+   "ufficiale": false,
+   "data": "2026-11-19"
+  },
+  {
+   "nome": "docs.perplexity.ai",
+   "url": "https://docs.perplexity.ai/docs/orchestrator/quickstart",
+   "titolo": "Perplexity Orchestrator API - Perplexity",
+   "ufficiale": true,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 1
+}

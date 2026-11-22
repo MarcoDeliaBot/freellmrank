@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-22-tiny-voca-4-5m-parameter-english-tts-model-runs-on-cpu-and-browsers",
+ "titolo": "tiny-voca: 4.5M‑parameter English TTS model runs on CPU and browsers",
+ "descr": "Open‑source tiny‑voca offers two American English voices, fast CPU inference and Web demo, with full code and weights on GitHub.",
+ "tema": "Software",
+ "paragrafi": [
+  "The tiny‑voca repository on GitHub provides a small English text‑to‑speech model with 4,537,291 parameters (about 18 MB).",
+  "It includes two fixed voices, F2 (female) and M2 (male), both at 24 kHz, and can run on a CPU, ONNX Runtime, or directly in a web browser via ONNX Runtime Web.",
+  "Inference runs at roughly 70× real‑time on four CPU threads, and the model outputs WAV files that never exceed 0.99 peak amplitude, avoiding clipping.",
+  "The project supplies a Python CLI, an ONNX export, and a browser‑based demo that streams each sentence as it is generated."
+ ],
+ "perche": [
+  "tiny‑voca lets developers add lightweight English TTS to local apps or web pages without GPU hardware. Its open licence and small size make it suitable for projects that prefer free, on‑device speech synthesis over cloud services."
+ ],
+ "pubblicato": "2026-11-22",
+ "titoloFonte": "n4ze3m/tiny-voca: A 4.5M-parameter two-voice English text-to-speech model, trained from scratch",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/n4ze3m/tiny-voca",
+   "titolo": "n4ze3m/tiny-voca: A 4.5M-parameter two-voice English text-to-speech model, trained from scratch",
+   "ufficiale": false,
+   "data": "2026-11-14"
+  }
+ ],
+ "frasiTolte": 0
+}
