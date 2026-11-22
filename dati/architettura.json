@@ -2209,5 +2209,16 @@
   "contestoMax": 262144,
   "moe": false,
   "attivi": 4022468096
+ },
+ "inclusionAI/SingVL_S1_4B": {
+  "strati": 32,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 8,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": false,
+  "attivi": 4539265536
  }
 }
