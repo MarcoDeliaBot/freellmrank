@@ -1,0 +1,30 @@
+{
+  "versione": 2,
+  "coppia": [
+    "Gemini 3.6 Flash (High)",
+    "Kimi K3 (Max)"
+  ],
+  "descr": "Gemini 3.6 Flash vs Kimi K3: about even performance with Kimi slightly ahead in coding.",
+  "risposta": "The two models are essentially tied. Their chat scores differ by only five points, which is too close to call. Kimi K3 has a small edge in coding, but overall they perform about the same.",
+  "dimensioni": "Gemini 3.6 Flash does not disclose its model size, so the download size is unknown. Kimi K3 weighs 2779.9 B in total, with 104.6 B active, and requires about 1686 GB to download in 4-bit format.",
+  "velocita": "Both models need to run online; none of the listed home GPUs can fit the model weights. RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, and Ryzen AI Max+ 395 128 GB all report \"online only\" for Gemini 3.6 Flash and \"does not fit\" for Kimi K3.",
+  "gratisA": "Gemini 3.6 Flash can be accessed for free through Google’s Gemini API free tier. The model is under a proprietary license and does not have open weights.",
+  "gratisB": "Kimi K3 is available for free download and can be run at home under the Kimi K3 license. Its weights are open, allowing local execution.",
+  "sceglieA": "Pick Gemini 3.6 Flash if you prefer a cloud-based solution with a simple free API and do not need to host the model yourself. It is suitable for users who want quick access without managing large files.",
+  "sceglieB": "Pick Kimi K3 when you want open weights and the ability to run the model locally. It is a good fit for hobbyists who can allocate the required storage and prefer full control over the model.",
+  "categorie": {
+    "Chat": "In the Chat category the scores are 1483 for Gemini 3.6 Flash and 1488 for Kimi K3, making the results about even.",
+    "Coding": "For Coding, Kimi K3 scores 1659 while Gemini 3.6 Flash scores 1538, giving Kimi a clear advantage."
+  },
+  "scritto": "2026-11-22",
+  "aggiornato": "2026-11-22",
+  "scrittore": "workers",
+  "fatti": {
+    "leader": "even",
+    "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",
+    "gratisB": "download and run at home · Kimi K3 license",
+    "puntiA": 1483,
+    "puntiB": 1488,
+    "dataArena": "2026-11-19"
+  }
+}

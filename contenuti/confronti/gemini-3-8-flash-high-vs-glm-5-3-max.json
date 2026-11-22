@@ -1,0 +1,30 @@
+{
+  "versione": 2,
+  "coppia": [
+    "Gemini 3.8 Flash (High)",
+    "GLM-5.3 (Max)"
+  ],
+  "descr": "Gemini 3.8 Flash leads in chat while GLM-5.3 outperforms it in coding.",
+  "risposta": "Gemini 3.8 Flash is ahead in the overall Arena ranking with a chat score of 1497 versus 1482 for GLM-5.3. The blind vote favours Gemini about 52% of the time. However, GLM-5.3 wins the coding category, so the better choice depends on the task.",
+  "dimensioni": "Gemini 3.8 Flash does not disclose its model size or download size. GLM-5.3 is 753.3 B total, with 50.2 B active parameters, and requires roughly 458 GB to download in 4-bit format.",
+  "velocita": "Both models need an online connection for generation; none of the listed home GPUs or CPUs can fit the models in memory. The speed estimate therefore lists them as online-only for all hardware.",
+  "gratisA": "Gemini 3.8 Flash can be accessed for free through Google’s Gemini API free tier. The model is proprietary, so only the API is available at no cost.",
+  "gratisB": "GLM-5.3 is released under an MIT license with open weights. You can download the model and run it on your own hardware without any charge.",
+  "sceglieA": "Pick Gemini 3.8 Flash when you need strong conversational abilities and prefer a cloud-based service. Its higher chat score indicates better performance in general dialogue. The free API makes it easy to integrate into apps.",
+  "sceglieB": "Choose GLM-5.3 for programming-related tasks, as it leads the coding category with a score of 1623. The open-weight release lets you run it locally if you have sufficient storage. Its MIT license also permits unrestricted use.",
+  "categorie": {
+    "Chat": "In the Chat arena Gemini 3.8 Flash scores 1497, edging out GLM-5.3’s 1482. The margin of 15 points translates to a clear lead in conversational quality according to blind human votes.",
+    "Coding": "For coding tasks GLM-5.3 achieves a higher score of 1623 compared to Gemini 3.8 Flash’s 1584. This suggests GLM-5.3 provides more accurate or useful code generation in the Arena evaluation."
+  },
+  "scritto": "2026-11-22",
+  "aggiornato": "2026-11-22",
+  "scrittore": "workers",
+  "fatti": {
+    "leader": "Gemini 3.8 Flash (High)",
+    "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",
+    "gratisB": "download and run at home · MIT license",
+    "puntiA": 1497,
+    "puntiB": 1482,
+    "dataArena": "2026-11-19"
+  }
+}
