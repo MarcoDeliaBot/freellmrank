@@ -15,6 +15,7 @@ import os from 'node:os';
 import { RADICE } from './sito/comune.mjs';
 import { chiediModello, REGOLE_SCRITTURA } from './bozze.mjs';
 import { numeri } from './video-post.mjs';
+import { gratis as gratisRegola } from './gratis.mjs';
 
 const FONTI = [
   { nome: 'OpenAI', url: 'https://openai.com/news/rss.xml', ufficiale: true },
@@ -485,7 +486,7 @@ async function main() {
   for (const s of scelte) console.log(`  scelta (${punti(s)} punti): ${s.voci.map((v) => `${v.fonte}: ${v.titolo}`).join(' | ')}${creator(s).length ? ` [creator: ${creator(s).join(', ')}]` : ''}`);
 
   const dati = JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', 'data.json'), 'utf8'));
-  const gratis = dati.categorie.find((c) => c.id === 'chat')?.modelli.filter((m) => m.aperto || m.or?.gratis).slice(0, 5) || [];
+  const gratis = dati.categorie.find((c) => c.id === 'chat')?.modelli.filter(gratisRegola).slice(0, 5) || [];
   const pagato = dati.categorie.find((c) => c.id === 'chat')?.modelli.find((m) => !m.aperto && !m.or?.gratis);
   const contesto = `FreeLLMArena data (Arena blind votes, ${dati.aggiornato}): best free chat models: ${gratis.map((m, i) => `#${i + 1} ${m.nome} (${m.punti})`).join(', ')}. Best paid chat model: ${pagato?.nome} (${pagato?.punti}).`;
 

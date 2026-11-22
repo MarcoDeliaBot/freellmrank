@@ -12,7 +12,7 @@ const TOKEN = () => process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
 export const MODELLO = 'gpt-oss-120b (Workers AI)';
 
 export const leggiDati = () => JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', 'data.json'), 'utf8'));
-export const gratis = (m) => m.aperto || m.or?.gratis;
+export { gratis } from './gratis.mjs';
 
 // Regole di scrittura prese dalle skill «social» e «copywriting» (coreyhaines31/marketingskills): niente frasi da IA.
 export const REGOLE_SCRITTURA = `Writing rules (strict):

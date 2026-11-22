@@ -40,7 +40,7 @@ const perNome = new Map();
 for (const m of modelli) for (const n of Object.values(m.nomi)) perNome.set(n, m);
 const pubblicate = preparaPubblicate({ modelli, coppie, blog: preparaBlog(dati, storia, modelli), date: dati.aggiornato });
 const blog = pubblicate.blog;
-const usabileGratis = (m) => m.aperto || m.or?.gratis;
+import { gratis as usabileGratis, tipoGratis, SPIEGA } from './gratis.mjs';
 // riferimento per la colonna velocità: RTX 4090, 4 bit, 8K di contesto, 64 GB di DDR5
 const RIF = daScheda(dati.schede.schede.find((x) => x.id === 'rtx4090'), { n: 1, ram: 64, bandaRam: 96, ctx: 8192 });
 const Q4 = QUANTI.find((q) => q.id === 'Q4_K_M');
@@ -51,6 +51,9 @@ function cellaGratis(m) {
   const t = [];
   if (m.or?.gratis) t.push(`<a class="tag free" href="/compare.html#${encodeURIComponent(m.or.id)}">Free API · try it</a>`);
   if (m.aperto && CHAT_WEB[m.org]) t.push(`<a class="tag web" href="${CHAT_WEB[m.org]}" rel="noopener">Lab chat</a>`);
+  // 22/11/2026: API gratis del laboratorio (Google) e prove (Alibaba) contano come gratis, ma non sono per sempre
+  if (!m.aperto && !m.or?.gratis && tipoGratis(m) === 'api') t.push(`<a class="tag free" href="${hrefDi(m.nome)}" title="${esc(SPIEGA.api)}">Free API · daily limits</a>`);
+  if (tipoGratis(m) === 'prova') t.push(`<a class="tag quota" href="${hrefDi(m.nome)}" title="${esc(SPIEGA.prova)}">Free trial · 90 days</a>`);
   return t.join('') || '<span class="muted small">—</span>';
 }
 const hrefDi = (nome) => perNome.get(nome)?.href || '/models.html';
@@ -73,7 +76,7 @@ const sezioniTutte = dati.categorie.map((c, i) => {
     const perdita = m.hf && !soloPesi ? perditaQualita(Q4, m.hf.b) : null;
     const dove = !sim ? '—' : sim.dove === 'gpu' ? `<span class="tag home">${soloPesi ? 'fits' : fmtVel(sim.vel) + ' tok/s · fits'}</span>` : sim.dove === 'ram' ? `${soloPesi ? 'with RAM' : fmtVel(sim.vel) + ' tok/s'}<div class="org">GPU + RAM</div>` : '<span class="muted">does not fit</span>';
     const segni = `${m === eroe ? '<span class="segno-casa">Best on one 4090</span>' : ''}${m === veloce && m !== eroe ? '<span class="segno-casa veloce">Fastest on one 4090</span>' : ''}`;
-    return `<tr data-api="${m.or?.gratis ? 1 : 0}" data-open="${m.aperto ? 1 : 0}" data-lab="${chiaveLab(m.org)}"${sim?.dove === 'gpu' ? ' class="casa"' : ''}>
+    return `<tr data-api="${m.or?.gratis || (!m.aperto && tipoGratis(m) === 'api') ? 1 : 0}" data-open="${m.aperto ? 1 : 0}" data-lab="${chiaveLab(m.org)}"${sim?.dove === 'gpu' ? ' class="casa"' : ''}>
 <td class="n">${j + 1}</td>
 <td class="m"><a class="nome-modello" href="${hrefDi(m.nome)}">${esc(m.nome)}</a>${segni}<div class="org"><i class="lab-punto" style="--c:${coloreLab(m.org)}"></i>${esc(nomeLab(m.org))}</div></td>
 <td class="n">${m.punti}${barra(m.punti)}<div class="org">#${m.pos} of ${c.totale}</div></td>
@@ -218,7 +221,7 @@ ${inAttesa.map((m) => `<tr><td class="n">${m.primo ? fmtData(m.primo) : 'free AP
 
 const FAQ = [
   ['What about brand-new models?', 'Arena takes a few days or weeks to collect enough votes. Meanwhile, new models from the labs’ official pages appear in “New, waiting for Arena votes”, with their size, memory needs and speed. When Arena votes, they move into the ranking automatically.'],
-  ['What counts as a free model?', 'A model with open weights that you can download and run yourself, or a model you can call through a free API today (we check OpenRouter every night). Paid-only models are left out of the rankings, but we show the best paid score as a reference line.'],
+  ['What counts as a free model?', `Three kinds of free, from the most solid to the most fragile. ${SPIEGA.aperto} ${SPIEGA.api} ${SPIEGA.prova} Every model in the rankings is labelled with its kind. Paid-only models are left out, but we show the best paid score as a reference line.`],
   ['Where do the scores come from?', 'From Arena (formerly LMSYS Chatbot Arena), where people compare two anonymous answers and vote for the better one. Arena publishes its leaderboard as an open dataset under the CC BY 4.0 license; we filter it to free models. We are not affiliated with Arena.'],
   ['How often is it updated?', 'Every night. A scheduled job downloads the latest Arena data, the free model list from OpenRouter and model sizes from Hugging Face, then rebuilds the whole site, including the weekly report on the blog.'],
   ['Can I run these models on my computer?', 'Open models, yes, if they fit in your GPU memory. The Run at home page estimates memory and speed for your exact card, from one to ten cards, using each model\'s real architecture.'],
@@ -244,11 +247,12 @@ pagina({
 <h1>Free AI Leaderboard, Ranked by Real Votes</h1>
 <p class="lead">Only models you can use without paying: free online, or downloaded to your own GPU. Scores come from millions of blind human votes on Arena, updated every night.</p>
 <p class="su-pagina-in small"><a href="/free-llm.html">Best free LLMs</a> · <a href="/best-free-ai.html">Best free AI for every task</a> · <a href="/free-ai.html">Free AI chats</a></p>
-<p class="su-pagina-in small"><b>On this page:</b> <a href="#glance">3 charts</a> · <a href="#rankings">Rankings</a> · <a href="#new">New models</a> · <a href="#faq">FAQ</a></p>
+<p class="su-pagina-in small"><b>On this page:</b> <a href="#glance">3 charts</a> · <a href="#free-kinds">What free means</a> · <a href="#rankings">Rankings</a> · <a href="#new">New models</a> · <a href="#faq">FAQ</a></p>
 </div>
 ${ultimi.length ? `<div class="nuovi"><p class="nuovi-testa"><span>New on the free leaderboard</span><i class="punto-vivo" aria-hidden="true"></i></p>${ultimi.map((x) => `<a href="${hrefDi(x.m.nome)}"><b>${esc(x.m.nome)}</b><span>#${x.m.pos} in ${esc(x.c.nome)} · ${fmtData(x.d)}</span></a>`).join('')}</div>` : ''}
 </div>
 ${riassunto}
+<div class="panel" id="free-kinds"><h2>What “free” means here</h2><ul class="tipi-gratis">${[['Open weights', SPIEGA.aperto], ['Free API', SPIEGA.api], ['Free trial', SPIEGA.prova]].map(([n, t]) => `<li><b>${n}:</b> ${esc(t.replace(/^[^:]+: (.)/, (x, c) => c.toUpperCase()))}</li>`).join('')}</ul></div>
 <div class="panel" id="rankings">
 <div class="tabs" role="group" aria-label="Category">${dati.categorie.map((c, i) => `<button type="button" data-cat="${c.id}" aria-pressed="${i === 0}">${esc(c.nome)}</button>`).join('')}</div>
 <div class="row">

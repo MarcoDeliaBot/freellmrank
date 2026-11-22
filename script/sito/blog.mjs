@@ -6,6 +6,7 @@ import path from 'node:path';
 import { marked } from 'marked';
 import { RADICE, SITO, REPO, esc, fmtData, pagina, NOME_PIENO, URL_SITO, linkAmazon } from './comune.mjs';
 import { cercaAmazon } from './gpus.mjs';
+import { gratis as gratisRegola } from '../gratis.mjs';
 
 const DIR = path.join(RADICE, 'contenuti', 'blog');
 const DIR_VIDEO = path.join(RADICE, 'contenuti', 'video');
@@ -80,7 +81,7 @@ function leggiNotizie(perNome, dati) {
   // i modelli citati che sono nelle nostre classifiche: posizione e pagina vengono dai dati del sito, non dal testo scritto
   const posizioni = new Map();
   for (const c of dati.categorie) {
-    const gratis = c.modelli.filter((m) => m.aperto || m.or?.gratis);
+    const gratis = c.modelli.filter(gratisRegola);
     for (const m of c.modelli) if (!posizioni.has(m.nome)) {
       const i = gratis.indexOf(m);
       posizioni.set(m.nome, i >= 0 ? `#${i + 1} among free ${c.nome.toLowerCase()} models` : `#${m.pos} of ${c.totale} in ${c.nome}, paid`);
@@ -186,11 +187,11 @@ export function preparaBlog(dati, storia, modelli) {
   for (const m of modelli) for (const n of [m.nome, ...Object.values(m.nomi || {})]) if (!perNomeTutti.has(n)) perNomeTutti.set(n, m.href);
   const miglioreGratis = (cat) => {
     const c = dati.categorie.find((x) => x.id === cat);
-    return c?.modelli.find((m) => m.aperto || m.or?.gratis);
+    return c?.modelli.find(gratisRegola);
   };
   const ctx = {
     migliore: (cat) => { const m = miglioreGratis(cat); return m ? `[${m.nome}](${hrefPerNome(m.nome) || '/'}) (score ${m.punti}, #${m.pos} of ${dati.categorie.find((x) => x.id === cat).totale})` : '—'; },
-    conta: (cat) => dati.categorie.find((x) => x.id === cat)?.modelli.filter((m) => m.aperto || m.or?.gratis).length ?? '—',
+    conta: (cat) => dati.categorie.find((x) => x.id === cat)?.modelli.filter(gratisRegola).length ?? '—',
     totale: (cat) => dati.categorie.find((x) => x.id === cat)?.totale ?? '—',
     apigratis: () => dati.openrouterGratis.length,
     piccoli: () => (dati.piccoli || []).length,
@@ -211,7 +212,7 @@ export function preparaBlog(dati, storia, modelli) {
 const ICONA_INFO = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="16" y2="12"/><line x1="12" x2="12.01" y1="8" y2="8"/></svg>';
 const ancora = (s) => s.replace(/<[^>]+>/g, '').toLowerCase().replace(/&[a-z]+;|&#\d+;/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
 function riquadroFinale(p, dati) {
-  const primo = dati.categorie.find((c) => c.id === 'chat')?.modelli.find((m) => m.aperto || m.or?.gratis);
+  const primo = dati.categorie.find((c) => c.id === 'chat')?.modelli.find(gratisRegola);
   if (p.tipo === 'Video') return ['Free leaderboard', 'Every free AI model, ranked', 'Sizes, memory, speed on your GPU and where to use each model for free. Updated every night.', '/', 'Open the leaderboard →'];
   if (p.tipo === 'News') return ['Free leaderboard', 'Which AI can you use for free today?', 'Every free AI model, ranked by blind human votes, with the memory and speed it needs on your own GPU.', '/', 'Open the leaderboard →'];
   if (p.tipo !== 'Guide') return ['Free Arena', 'Which free model would you pick?', 'Ask one question to two free models, without seeing their names, and vote. Your votes build our own free ranking.', '/arena.html', 'Vote in Free Arena →'];
@@ -271,7 +272,7 @@ ${abbellisci(marked.parse(p.corpo), p, dati)}
   // elenco nello stile del disegno Stitch (blog, 20/10/2026): filtri, guida in evidenza con i primi in classifica,
   // schede delle guide, poi i resoconti automatici della settimana con il numero di modelli nuovi
   const lettura = (p) => Math.max(1, Math.round(p.corpo.split(/\s+/).length / 220));
-  const primo = (cat) => dati.categorie.find((x) => x.id === cat)?.modelli.find((m) => m.aperto || m.or?.gratis);
+  const primo = (cat) => dati.categorie.find((x) => x.id === cat)?.modelli.find(gratisRegola);
   const guide = post.filter((p) => p.tipo === 'Guide');
   const resoconti = post.filter((p) => p.tipo === 'Weekly report');
   const notizie = post.filter((p) => p.tipo === 'News').slice(0, 30);

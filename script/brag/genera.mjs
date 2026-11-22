@@ -22,7 +22,7 @@ fs.mkdirSync(OUT, { recursive: true });
 const dati = JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', 'data.json'), 'utf8'));
 const css = fs.readFileSync(path.join(RADICE, 'sorgente', 'style.css'), 'utf8');
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const gratis = (m) => m.aperto || m.or?.gratis;
+import { gratis } from '../gratis.mjs';
 // 22/10/2026, deciso da Marco: i video escono solo in inglese (come i canali che segue); YouTube traduce titoli, sottotitoli e audio.
 // Titoli e descrizioni in 5 lingue vanno nel .json («localizzazioni»). BRAG_LINGUE=en,it rifà anche la versione italiana.
 export const LINGUE_VIDEO = (process.env.BRAG_LINGUE || 'en').split(',');
