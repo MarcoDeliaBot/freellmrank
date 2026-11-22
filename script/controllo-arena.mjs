@@ -9,7 +9,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
-const CATEGORIE = { chat: 'text_style_control', code: 'webdev', vision: 'vision_style_control', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit', document: 'document_style_control', search: 'search_style_control', i2v: 'image_to_video', vedit: 'video_edit', agent: 'agent' };
+const CATEGORIE = { chat: 'text_style_control', code: 'webdev', vision: 'vision_style_control', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit', document: 'document_style_control', search: 'search_style_control', i2v: 'image_to_video', vedit: 'video_edit', agent: 'agent', agentcode: 'agent_capability' };
 
 export function confronta(commit, nostre, oggi) {
   const ultima = {};

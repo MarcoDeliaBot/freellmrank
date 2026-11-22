@@ -11,9 +11,12 @@ const DIR = path.join(RADICE, 'dati', 'arena-storia');
 fs.mkdirSync(DIR, { recursive: true });
 const OFFLINE = process.argv.includes('--offline');
 const GIORNI = 182; // andamento degli ultimi sei mesi
-const CATEGORIE = { chat: 'text_style_control', code: 'webdev', vision: 'vision_style_control', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit', document: 'document_style_control', search: 'search_style_control', i2v: 'image_to_video', vedit: 'video_edit', agent: 'agent' };
+const CATEGORIE = { chat: 'text_style_control', code: 'webdev', vision: 'vision_style_control', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit', document: 'document_style_control', search: 'search_style_control', i2v: 'image_to_video', vedit: 'video_edit', agent: 'agent', agentcode: 'agent_capability' };
+// categoria dentro il file (agent_capability ha overall, chat, code, work) e colonna del punteggio
+const SOTTO = { agentcode: 'code' };
+const COLONNA = { agent: 'score', agent_capability: 'index_score' };
 
-async function righe(config) {
+async function righe(config, sotto = 'overall') {
   const file = path.join(DIR, `${config}.parquet`);
   if (!OFFLINE) {
     const r = await fetch(`https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/main/${config}/full-00000-of-00001.parquet`);
@@ -21,14 +24,14 @@ async function righe(config) {
     fs.writeFileSync(file, Buffer.from(await r.arrayBuffer()));
   }
   const b = fs.readFileSync(file);
-  const tutte = await parquetReadObjects({ file: b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength), columns: config === 'agent' ? ['model_name', 'license', 'score', 'category', 'leaderboard_publish_date'] : ['model_name', 'license', 'rating', 'category', 'leaderboard_publish_date'] });
+  const tutte = await parquetReadObjects({ file: b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength), columns: ['model_name', 'license', COLONNA[config] || 'rating', 'category', 'leaderboard_publish_date'] });
   // gli agenti hanno score da 0 a 1: ×100 con un decimale, come in costruisci-dati.mjs
-  return tutte.filter((x) => x.category === 'overall').map((x) => (config === 'agent' ? { ...x, rating: Number(x.score) * 100 } : x));
+  return tutte.filter((x) => x.category === sotto).map((x) => (config === 'agent' ? { ...x, rating: Number(x.score) * 100 } : config === 'agent_capability' ? { ...x, rating: Number(x.index_score) } : x));
 }
 
 const uscita = { aggiornato: new Date().toISOString().slice(0, 10), categorie: {} };
 for (const [id, config] of Object.entries(CATEGORIE)) {
-  const ov = await righe(config);
+  const ov = await righe(config, SOTTO[id]);
   const date = [...new Set(ov.map((x) => x.leaderboard_publish_date))].sort();
   const ultima = date.at(-1);
   const soglia = new Date(Date.parse(ultima) - GIORNI * 864e5).toISOString().slice(0, 10);
@@ -49,6 +52,9 @@ for (const [id, config] of Object.entries(CATEGORIE)) {
     if (x.license === 'Proprietary') { if (pagato[i] == null || v > pagato[i]) pagato[i] = v; continue; }
     (serie[n] ||= recenti.map(() => null))[i] = v;
   }
+  // una classifica aggiunta da poco (Agent coding, 22/11/2026: il dataset parte dal 18/11) non sa quando sono arrivati i modelli
+  // della sua prima data: senza questo, tutti sembrerebbero «nuovi» in home, nel blog e nei video
+  if (SOTTO[id]) for (const n of Object.keys(primo)) if (primo[n] === date[0]) delete primo[n];
   uscita.categorie[id] = { date: recenti, primo, serie, pagato };
   console.log(`${id}: ${date.length} aggiornamenti in tutto, ${recenti.length} negli ultimi ${GIORNI} giorni, ${Object.keys(serie).length} modelli aperti con andamento`);
 }

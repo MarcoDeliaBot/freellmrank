@@ -16,7 +16,9 @@ const OFFLINE = process.argv.includes('--offline');
 // Arena config -> categoria del sito
 const CATEGORIE = [
   { id: 'chat', arena: 'text_style_control', nome: 'Chat' }, // 25/10/2026: la classifica che arena.ai mostra di default è quella con il controllo dello stile (verificato: stessi punteggi)
-  { id: 'code', arena: 'webdev', nome: 'Coding' },
+  // 22/11/2026 (Marco: «fai tutte e due»): la classifica «webdev» di Arena misura app e siti fatti in un colpo solo, non il
+  // lavoro di un agente sul codice: si chiama col suo nome. L'id resta «code» (indirizzi pubblicati, storico, confronti).
+  { id: 'code', arena: 'webdev', nome: 'WebDev (coding)' },
   { id: 'vision', arena: 'vision_style_control', nome: 'Vision' },
   { id: 'image', arena: 'text_to_image', nome: 'Image' },
   { id: 'video', arena: 'text_to_video', nome: 'Video' },
@@ -28,6 +30,9 @@ const CATEGORIE = [
   { id: 'vedit', arena: 'video_edit', nome: 'Video edit' },
   // gli agenti hanno un'altra misura: un punteggio da 0 a 1 (score), non i punti Elo; lo mostriamo ×100
   { id: 'agent', arena: 'agent', nome: 'Agents', scala: 'agent' },
+  // 22/11/2026: «Coding Index» degli agenti, la scheda arena.ai/leaderboard/agent/code (dataset agent_capability, categoria
+  // «code»; verificato: Claude Fable 5.2 1.487 sul sito, 1.489 nel dataset del 18/11). Indice da sessioni vere, non voti alla cieca.
+  { id: 'agentcode', arena: 'agent_capability', sotto: 'code', nome: 'Agent coding', scala: 'indice' },
 ];
 
 async function scaricaArena(config) {
@@ -97,7 +102,7 @@ const uscita = { aggiornato: new Date().toISOString().slice(0, 10), fonte: 'Aren
 const nonCollegati = [];
 
 for (const c of CATEGORIE) {
-  const righe = (await scaricaArena(c.arena)).filter((r) => r.category === 'overall')
+  const righe = (await scaricaArena(c.arena)).filter((r) => r.category === (c.sotto || 'overall'))
     .sort((a, b) => Number(a.rank) - Number(b.rank));
   const modelli = righe.map((r) => {
     const or = indiceOR.get(norma(r.model_name)) || indiceOR.get(norma(senzaTaglia(r.model_name)));
@@ -109,8 +114,8 @@ for (const c of CATEGORIE) {
       licenza: r.license,
       aperto,
       pos: Number(r.rank),
-      punti: c.scala === 'agent' ? Math.round(Number(r.score) * 1000) / 10 : Math.round(r.rating),
-      voti: Number(c.scala === 'agent' ? r.session_count : r.vote_count),
+      punti: c.scala === 'agent' ? Math.round(Number(r.score) * 1000) / 10 : c.scala === 'indice' ? Math.round(Number(r.index_score)) : Math.round(r.rating),
+      voti: Number(c.scala ? r.session_count : r.vote_count),
       or: or ? { id: or.id, gratis: libero(or) } : null,
       // 22/11/2026: API gratis del laboratorio (Free Tier di Google) o prova (Alibaba): conta come gratis, spiegato (script/gratis.mjs)
       api: aperto ? null : apiGratisPer(r.model_name),

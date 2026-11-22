@@ -11,7 +11,6 @@ const RADICE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const leggi = (f) => JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', f), 'utf8'));
 const dati = leggi('data.json');
 const storia = leggi('history.json');
-const ID_STORIA = { Chat: 'chat', Coding: 'code', Vision: 'vision', Image: 'image', Video: 'video', 'Image edit': 'edit', Documents: 'document', Search: 'search', 'Image to video': 'i2v', 'Video edit': 'vedit', Agents: 'agent' };
 const NOMI_LAB = { moonshot: 'Moonshot AI', minimax: 'MiniMax', deepseek: 'DeepSeek', alibaba: 'Alibaba Qwen', cohere: 'Cohere', nvidia: 'NVIDIA', xiaomi: 'Xiaomi MiMo', tencent: 'Tencent Hunyuan', google: 'Google', bfl: 'Black Forest Labs', thinky: 'Thinking Machines Lab', zai: 'Z.ai', mistral: 'Mistral AI' };
 import { gratis as usabileGratis } from './gratis.mjs';
 const chiave = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -34,7 +33,7 @@ for (const org of orgs) {
     gratis.forEach((m, i) => {
       if ((m.org || '').toLowerCase() !== org) return;
       // variazione del punteggio sui 30 giorni, se lo storico ha il modello
-      const s = storia.categorie[ID_STORIA[c.nome]];
+      const s = storia.categorie[c.id];
       let delta = null;
       if (s) {
         // dal 20/10/2026 Arena scrive i nomi in un altro modo ("mimo-v2.6-pro" -> "MiMo-V2.6-Pro"):
