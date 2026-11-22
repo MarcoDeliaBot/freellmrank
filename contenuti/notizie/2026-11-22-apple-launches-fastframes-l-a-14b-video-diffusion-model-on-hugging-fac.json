@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-22-apple-launches-fastframes-l-a-14b-video-diffusion-model-on-hugging-fac",
+ "titolo": "Apple launches FastFrames-L, a 14B video diffusion model on Hugging Face",
+ "descr": "Apple's FastFrames-L generates 480p video at interactive latency, with source code and weights released publicly.",
+ "tema": "Research",
+ "paragrafi": [
+  "Apple has published FastFrames-L on Hugging Face, expanding its FastFrames family that includes the 1.3B FastFrames-S model.",
+  "FastFrames-L is a 14‑billion‑parameter autoregressive, two‑step video diffusion model that produces 480p video at interactive latency, matching the paper's reported 36 ms per frame.",
+  "The repository provides Linux x86‑64 installation instructions, a latency profiling guide, and demo scripts that run on a system with an NVIDIA GPU and CUDA 12.8 driver.",
+  "Apple also released an optimized LingBot 1.3B model that runs 16× faster than the original, enabling fluid camera‑conditioned control.",
+  "All checkpoints, including the causal teacher, consistency‑distilled, DMD‑distilled, and final generator components, are available under Apple Sample Code License, while LingBot‑World v2 follows a CC BY‑NC‑SA 4.0 license."
+ ],
+ "perche": [
+  "The release gives developers free access to a high‑capacity video generation model that can run on a single modern GPU, lowering barriers for experimental and creative projects. For users seeking free or locally hosted AI tools, FastFrames-L offers a state‑of‑the‑art video synthesis option without requiring cloud inference services."
+ ],
+ "pubblicato": "2026-11-22",
+ "titoloFonte": "apple releases FastFrames-L on Hugging Face",
+ "fonti": [
+  {
+   "nome": "Hugging Face trending",
+   "url": "https://huggingface.co/apple/FastFrames-L",
+   "titolo": "apple releases FastFrames-L on Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 0
+}

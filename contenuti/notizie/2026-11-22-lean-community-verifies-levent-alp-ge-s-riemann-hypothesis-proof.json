@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-22-lean-community-verifies-levent-alp-ge-s-riemann-hypothesis-proof",
+ "titolo": "Lean community verifies Levent Alpöge's Riemann hypothesis proof",
+ "descr": "Alpöge's 17‑million‑line Lean code proof of the Riemann hypothesis was confirmed correct by the Lean and Mathlib community on Nov 22 2026.",
+ "tema": "Research",
+ "paragrafi": [
+  "On 20 November 2026, Stanford mathematician Levent Alpöge released a proof of the Riemann hypothesis written in the Lean proof assistant.",
+  "The proof consists of 17 million lines of Lean code that checks the argument automatically for errors.",
+  "The Lean and Mathlib community ran independent checks and reported the same result, stating they have full confidence in the proof’s correctness.",
+  "Verification tools used in Lean are designed so they cannot accept a flawed proof, and MIT mathematician Andrew Sutherland listed the independent checks on his website.",
+  "The result arrived earlier than forecasts; Metaculus had expected a solution by May 2035, and Terence Tao had predicted a human‑AI collaboration around 2050."
+ ],
+ "perche": [
+  "The verification shows how formal proof assistants can provide absolute certainty for complex mathematical results, reducing reliance on peer review alone. For AI users, it demonstrates a powerful use case for large language models like Claude in assisting formal mathematics, while free‑model enthusiasts can see the value of open tools that enable reproducible, community‑verified research."
+ ],
+ "pubblicato": "2026-11-22",
+ "titoloFonte": "Lean and Mathlib community officially confirms Levent Alpöge's proof of the Riemann hypothesis is correct",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/lean-and-mathlib-community-officially-confirms-levent-alpoges-proof-of-the-riemann-hypothesis-is-correct/",
+   "titolo": "Lean and Mathlib community officially confirms Levent Alpöge's proof of the Riemann hypothesis is correct",
+   "ufficiale": false,
+   "data": "2026-11-22"
+  },
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Nov/20/levent-alpoge/",
+   "titolo": "Quoting Levent Alpöge",
+   "ufficiale": false,
+   "data": "2026-11-20"
+  }
+ ],
+ "frasiTolte": 0
+}

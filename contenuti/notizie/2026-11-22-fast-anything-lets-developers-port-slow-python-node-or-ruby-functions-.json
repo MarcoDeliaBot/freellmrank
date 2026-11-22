@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-22-fast-anything-lets-developers-port-slow-python-node-or-ruby-functions-",
+ "titolo": "fast-anything lets developers port slow Python, Node or Ruby functions to Rust with a single command",
+ "descr": "The open‑source tool profiles apps, creates one‑function Rust crates and swaps them in, achieving up to 116× speedups on real workloads.",
+ "tema": "Software",
+ "paragrafi": [
+  "fast-anything is a GitHub project that targets the 5 % of code that dominates runtime in Python, Node, Ruby and other languages.",
+  "It profiles the application, ranks functions by time and portability, records up to 500 real calls, and generates a one‑function Rust crate for each hot spot.",
+  "The generated crate is compiled with the user's Rust toolchain and verified against the recorded calls; only when all cases match does the tool enable the Rust version.",
+  "Benchmarks on an i5‑10500 show speedups such as 116× for a Python fuzzy‑dedupe of 700 names, 55× for a Go version, and 20× for a TypeScript implementation.",
+  "The tool works with Python 3.10+, Node 22+, Ruby 3.3+, Java 22+, Go 1.22+, PHP 8.1+, C/C++, and .NET 8+, using language‑specific bindings."
+ ],
+ "perche": [
+  "Developers can accelerate critical sections without rewriting entire applications, keeping the original codebase intact. For users of free or locally hosted models, faster preprocessing and inference pipelines lower hardware costs and improve responsiveness."
+ ],
+ "pubblicato": "2026-11-22",
+ "titoloFonte": "EL4CTEO/fast-anything: Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/EL4CTEO/fast-anything",
+   "titolo": "EL4CTEO/fast-anything: Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+   "ufficiale": false,
+   "data": "2026-11-21"
+  }
+ ],
+ "frasiTolte": 0
+}
