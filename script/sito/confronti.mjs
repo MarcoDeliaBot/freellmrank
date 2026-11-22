@@ -52,6 +52,10 @@ const GRUPPI_HW = [
 ];
 
 // Tutti i fatti di una coppia, una volta sola: le tabelle della pagina e il testo scritto dal modello leggono questi.
+// 22/11/2026: «Coding» è diventata «WebDev (coding)»: i testi scritti prima hanno ancora la chiave vecchia
+const NOMI_VECCHI = { code: 'Coding' };
+const testoCat = (t, c) => t?.categorie?.[c.nome] || t?.categorie?.[NOMI_VECCHI[c.id]] || '';
+
 export function fattiCoppia(dati, a, b) {
   const A = nomeCorto(a), B = nomeCorto(b);
   const corto = (m) => (m === a ? A : B);
@@ -60,7 +64,9 @@ export function fattiCoppia(dati, a, b) {
   const pa = vince(a.cat.chat.punti, b.cat.chat.punti);
   const [primo, secondo, p] = pa >= 0.5 ? [a, b, pa] : [b, a, 1 - pa];
   const vicino = Math.abs(a.cat.chat.punti - b.cat.chat.punti) < 10;
-  const cats = Object.keys(a.cat).filter((c) => b.cat[c] && c !== 'agent'); // gli agenti hanno un'altra scala: fuori dal confronto a punti
+  // gli agenti (Agents e Agent coding) hanno un'altra scala: fuori dal confronto a punti
+  const conScala = new Set(dati.categorie.filter((c) => c.scala).map((c) => c.id));
+  const cats = Object.keys(a.cat).filter((c) => b.cat[c] && !conScala.has(c) && c !== 'agent');
   const categorie = cats.map((c) => {
     const x = a.cat[c].punti, y = b.cat[c].punti;
     return { id: c, nome: nomiCat[c] || c, a: x, b: y, avanti: Math.abs(x - y) < 10 ? 'about even' : corto(x > y ? a : b) };
@@ -201,7 +207,7 @@ ${t ? paragrafi(t.risposta) : `<p>${esc(f.verdetto)}</p>`}
 <section class="panel confronto"><h2>${esc(A)} vs ${esc(B)} on Arena blind votes</h2>
 <p>Arena scores come from blind human votes: people see two anonymous answers and pick the better one. A gap under 10 points is too small to call.</p>
 <div class="tw"><table><thead><tr><th>Category</th><th>${esc(A)}</th><th>${esc(B)}</th><th>Ahead</th></tr></thead><tbody>${righeCat}</tbody></table></div>
-${f.categorie.map((c) => `<h3>${esc(c.nome)}</h3>\n${t?.categorie?.[c.nome] ? paragrafi(t.categorie[c.nome]) : fraseCat(c)}`).join('\n')}
+${f.categorie.map((c) => `<h3>${esc(c.nome)}</h3>\n${testoCat(t, c) ? paragrafi(testoCat(t, c)) : fraseCat(c)}`).join('\n')}
 </section>
 <section class="panel confronto"><h2>Running ${esc(A)} and ${esc(B)} at home</h2>
 <h3>Size and download</h3>
