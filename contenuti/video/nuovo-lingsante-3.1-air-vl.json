@@ -1,0 +1,79 @@
+{
+ "nome": "nuovo-lingsante-3.1-air-vl",
+ "titolo": "LingSante-3.1-air-VL: 125B parameters, free to download #Shorts",
+ "descrizione": "LingSante-3.1-air-VL by InclusionAI came out on 19 Nov 2026, with open weights on Hugging Face. At 4-bit it needs about 78 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "LingSante-3.1-air-VL"
+ ],
+ "condividi": "LingSante-3.1-air-VL is out: 125B parameters and open weights. At 4-bit it needs about 78 GB, so the smallest card that holds it fully is the RTX PRO 6000 Blackwell. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "LingSante-3.1-air-VL: 125 miliardi di parametri, gratis #Shorts",
+   "descrizione": "LingSante-3.1-air-VL di InclusionAI è uscito il 19 novembre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 78 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "LingSante-3.1-air-VL: 125 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "LingSante-3.1-air-VL de InclusionAI salió el 19 de noviembre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 78 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "LingSante-3.1-air-VL: 125 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "LingSante-3.1-air-VL von InclusionAI ist am 19. November 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 78 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "LingSante-3.1-air-VL : 125 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "LingSante-3.1-air-VL de InclusionAI est sorti le 19 novembre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 78 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "LingSante-3.1-air-VL: 125 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "LingSante-3.1-air-VL da InclusionAI saiu em 19 de novembro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 78 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "LingSante-3.1-air-VL",
+    "gb": 78,
+    "scheda": {
+     "id": "rtxpro6000",
+     "nome": "RTX PRO 6000 Blackwell",
+     "gb": 96,
+     "tiene": true
+    }
+   }
+  ],
+  "schede": [
+   {
+    "id": "rtx6000ada",
+    "nome": "RTX 6000 Ada",
+    "gb": 48,
+    "tiene": false
+   },
+   {
+    "id": "m4pro-64",
+    "nome": "Mac mini M4 Pro 64 GB",
+    "gb": 64,
+    "tiene": false
+   },
+   {
+    "id": "rtxpro6000",
+    "nome": "RTX PRO 6000 Blackwell",
+    "gb": 96,
+    "tiene": true
+   }
+  ]
+ },
+ "voce": [
+  "A new free AI model with 125 billion parameters.",
+  "It comes from InclusionAI, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 78 gigabytes. You need at least an RTX PRO 6000 Blackwell.",
+  "It reads up to 128 thousand tokens at once.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-lingsante-3.1-air-vl",
+ "pubblicato": "2026-11-22"
+}

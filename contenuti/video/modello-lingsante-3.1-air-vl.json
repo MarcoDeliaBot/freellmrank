@@ -1,0 +1,130 @@
+{
+ "nome": "modello-lingsante-3.1-air-vl",
+ "titolo": "LingSante-3.1-air-VL: Hardware Needed and How to Run It Free",
+ "descrizione": "We explore LingSante-3.1-air-VL, the first open-source large multimodal model for healthcare, and its capabilities and limits. Find out if this research model fits your home AI projects.\n\nSize: 124.8B parameters (5.5B active) · context 128K · memory at 4-bit about 78 GB.\nRTX 5090 + 64 GB RAM: about 34 tokens/s\nMac M4 Max 128 GB: about 66 tokens/s\nNVIDIA DGX Spark 128 GB: about 49 tokens/s\nRyzen AI Max+ 395 128 GB: about 47 tokens/s\nMac Studio M3 Ultra 512 GB: about 81 tokens/s\nModel card: https://huggingface.co/inclusionAI/LingSante-3.1-air-VL\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "LingSante-3.1-air-VL",
+  "InclusionAI"
+ ],
+ "condividi": "LingSante-3.1-air-VL by InclusionAI: 124.8B parameters, about 78 GB at 4-bit; smallest home machine that holds it: RTX PRO 6000 Blackwell. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "LingSante-3.1-air-VL: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "LingSante-3.1-air-VL: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "LingSante-3.1-air-VL: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "LingSante-3.1-air-VL : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "LingSante-3.1-air-VL: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "LingSante-3.1-air-VL",
+    "gb": 78,
+    "scheda": {
+     "id": "rtxpro6000",
+     "nome": "RTX PRO 6000 Blackwell",
+     "gb": 96,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "LingSante-3.1-air-VL",
+    "vel": 34,
+    "dove": "ram"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "LingSante-3.1-air-VL",
+    "vel": 66,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "LingSante-3.1-air-VL",
+    "vel": 49,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "LingSante-3.1-air-VL",
+    "vel": 47,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "LingSante-3.1-air-VL",
+    "vel": 81,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "LingSante-3.1-air-VL can read and reason over multiple medical images in one pass, spotting up to nine different findings on a complex chest X-ray. It's the first open-source, large multimodal medical model from Ant Group's healthcare team.",
+  "According to InclusionAI, LingSante-3.1-air-VL is a lightweight mixture-of-experts model built on Ling-3.0-flash-VL. It contains 124 billion parameters overall, but only 5.5 billion are active for each token thanks to the expert routing. The model accepts both text and image inputs and can keep a context of up to 256 K tokens, which is useful for long clinical records or multi-image reports. It is released under an MIT license and the weights are publicly available on Hugging Face. The model is positioned as a research-grade tool, not a certified medical device, so any output should be reviewed by qualified professionals.",
+  "The model card says LingSante-3.1-air-VL introduces a native multimodal mixture-of-experts architecture, allowing a small number of experts to be active per token while keeping the total parameter count high. This is the first large-scale medical model that Ant Group's healthcare team has released as open source. It expands the context window to 256 K tokens, enabling the model to process extensive patient histories and multiple imaging studies in a single prompt. Training combines medical data with replayed general multimodal data, preserving capabilities like OCR, document understanding, and tool use alongside specialized clinical reasoning.",
+  "The model card highlights several strengths. It can interpret several images together, identifying eight to nine types of positive findings on a complex chest X-ray, and it covers more than 120 skin conditions with follow-up questioning. It also supports image-to-image search, evidence synthesis, and GUI-based workflows such as appointment scheduling or medication ordering. However, the limitations are equally clear. The outputs may be incomplete, inaccurate, or outdated, and the model must not be used for independent diagnosis, prescribing, or triage. All high-risk actions need human review and compliance with privacy and safety regulations. Benchmarks in simulated environments do not establish clinical effectiveness, so real-world performance can vary.",
+  "According to the intended-use section, LingSante-3.1-air-VL is aimed at researchers working on multimodal healthcare applications, developers who want to prototype medical assistants, and educators demonstrating state-of-the-art multimodal reasoning. Because the model is released as research software, anyone who is comfortable reviewing and validating its outputs can experiment with it at home. It is especially suitable for projects that need long-context medical records, multi-image analysis, or integration with tool-calling workflows, provided that qualified professionals oversee any clinical conclusions.",
+  "What do you need to run it at home? At 4-bit it takes about 78 gigabytes of memory. The smallest home machine that holds it fully is an RTX PRO 6000 Blackwell. On an RTX 50 90 with 64 gigabytes of RAM it writes about 34 tokens per second. On the Mac M4 Max 128 GB it writes about 66 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the MIT license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare LingSante 3.1 air VL with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-lingsante-3.1-air-vl",
+ "pubblicato": "2026-11-22"
+}
