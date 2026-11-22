@@ -54,13 +54,22 @@
       "voti": 53011,
       "nomeArena": "MiMo-V2.6-Pro",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1124,
+      "pos": 33,
+      "totale": 68,
+      "voti": 15898,
+      "nomeArena": "MiMo-V2.6-Pro",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "MiMo-V2.6-Pro",
      "code": "MiMo-V2.6-Pro",
      "vision": "MiMo-V2.6-Pro",
-     "agent": "MiMo-V2.6-Pro"
+     "agent": "MiMo-V2.6-Pro",
+     "agentcode": "MiMo-V2.6-Pro"
     },
     "api": null,
     "primo": "2026-09-24",
@@ -115,12 +124,21 @@
       "voti": 160339,
       "nomeArena": "Kimi K3 (Max)",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1090,
+      "pos": 43,
+      "totale": 68,
+      "voti": 36493,
+      "nomeArena": "Kimi K3 (Max)",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "Kimi K3 (Max)",
      "code": "Kimi K3 (Max)",
-     "agent": "Kimi K3 (Max)"
+     "agent": "Kimi K3 (Max)",
+     "agentcode": "Kimi K3 (Max)"
     },
     "api": null,
     "primo": "2026-07-26",
@@ -175,12 +193,21 @@
       "voti": 95055,
       "nomeArena": "GLM-5.3 (Max)",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1101,
+      "pos": 38,
+      "totale": 68,
+      "voti": 24044,
+      "nomeArena": "GLM-5.3 (Max)",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "GLM-5.3 (Max)",
      "code": "GLM-5.3 (Max)",
-     "agent": "GLM-5.3 (Max)"
+     "agent": "GLM-5.3 (Max)",
+     "agentcode": "GLM-5.3 (Max)"
     },
     "api": null,
     "primo": "2026-08-19",
@@ -243,13 +270,22 @@
       "voti": 95827,
       "nomeArena": "GLM-5.3-Flash",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1061,
+      "pos": 49,
+      "totale": 68,
+      "voti": 27913,
+      "nomeArena": "GLM-5.3-Flash",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "GLM-5.3-Flash",
      "code": "GLM-5.3-Flash",
      "vision": "GLM-5.3-Flash",
-     "agent": "GLM-5.3-Flash"
+     "agent": "GLM-5.3-Flash",
+     "agentcode": "GLM-5.3-Flash"
     },
     "api": null,
     "primo": "2026-08-27",
@@ -304,12 +340,21 @@
       "voti": 99249,
       "nomeArena": "GLM-5.2 (Max)",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1115,
+      "pos": 35,
+      "totale": 68,
+      "voti": 19421,
+      "nomeArena": "GLM-5.2 (Max)",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "GLM-5.2 (Max)",
      "code": "GLM-5.2 (Max)",
-     "agent": "GLM-5.2 (Max)"
+     "agent": "GLM-5.2 (Max)",
+     "agentcode": "GLM-5.2 (Max)"
     },
     "api": null,
     "primo": "2026-06-16",
@@ -612,13 +657,22 @@
       "voti": 37071,
       "nomeArena": "MiMo-V2.6-Flash",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1099,
+      "pos": 40,
+      "totale": 68,
+      "voti": 10483,
+      "nomeArena": "MiMo-V2.6-Flash",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "MiMo-V2.6-Flash",
      "code": "MiMo-V2.6-Flash",
      "vision": "MiMo-V2.6-Flash",
-     "agent": "MiMo-V2.6-Flash"
+     "agent": "MiMo-V2.6-Flash",
+     "agentcode": "MiMo-V2.6-Flash"
     },
     "api": null,
     "primo": "2026-09-25",
@@ -1015,12 +1069,21 @@
       "voti": 43733,
       "nomeArena": "Inkling",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 872,
+      "pos": 65,
+      "totale": 68,
+      "voti": 7812,
+      "nomeArena": "Inkling",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "Inkling",
      "code": "Inkling",
-     "agent": "Inkling"
+     "agent": "Inkling",
+     "agentcode": "Inkling"
     },
     "api": null,
     "primo": "2026-07-16",
@@ -1083,13 +1146,22 @@
       "voti": 63880,
       "nomeArena": "Qwen3.8-27B",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1041,
+      "pos": 50,
+      "totale": 68,
+      "voti": 17223,
+      "nomeArena": "Qwen3.8-27B",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "Qwen3.8-27B",
      "code": "Qwen3.8-27B",
      "vision": "Qwen3.8-27B",
-     "agent": "Qwen3.8-27B"
+     "agent": "Qwen3.8-27B",
+     "agentcode": "Qwen3.8-27B"
     },
     "api": null,
     "primo": "2026-08-21",
@@ -1195,12 +1267,21 @@
       "voti": 32871,
       "nomeArena": "Hy3",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1016,
+      "pos": 54,
+      "totale": 68,
+      "voti": 6318,
+      "nomeArena": "Hy3",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "Hy3",
      "code": "Hy3",
-     "agent": "Hy3"
+     "agent": "Hy3",
+     "agentcode": "Hy3"
     },
     "api": null,
     "primo": "2026-07-21",
@@ -1442,6 +1523,14 @@
       "voti": 44442,
       "nomeArena": "MiniMax-M3",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 976,
+      "pos": 58,
+      "totale": 68,
+      "voti": 8820,
+      "nomeArena": "MiniMax-M3",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
@@ -1449,7 +1538,8 @@
      "code": "MiniMax-M3",
      "vision": "MiniMax-M3",
      "document": "MiniMax-M3",
-     "agent": "MiniMax-M3"
+     "agent": "MiniMax-M3",
+     "agentcode": "MiniMax-M3"
     },
     "api": null,
     "primo": "2026-06-03",
@@ -1899,13 +1989,22 @@
       "voti": 13863,
       "nomeArena": "Mistral Medium 3.5",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 917,
+      "pos": 63,
+      "totale": 68,
+      "voti": 3202,
+      "nomeArena": "Mistral Medium 3.5",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "Mistral Medium 3.5",
      "code": "Mistral Medium 3.5",
      "vision": "Mistral Medium 3.5",
-     "agent": "Mistral Medium 3.5"
+     "agent": "Mistral Medium 3.5",
+     "agentcode": "Mistral Medium 3.5"
     },
     "api": null,
     "primo": "2026-06-03",
@@ -2403,13 +2502,22 @@
       "voti": 14689,
       "nomeArena": "Inkling-Small",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 839,
+      "pos": 67,
+      "totale": 68,
+      "voti": 3186,
+      "nomeArena": "Inkling-Small",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "Inkling-Small",
      "code": "Inkling-Small",
      "vision": "Inkling-Small",
-     "agent": "Inkling-Small"
+     "agent": "Inkling-Small",
+     "agentcode": "Inkling-Small"
     },
     "api": null,
     "primo": "2026-08-18",
@@ -2520,13 +2628,22 @@
       "voti": 40807,
       "nomeArena": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 911,
+      "pos": 64,
+      "totale": 68,
+      "voti": 13388,
+      "nomeArena": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)",
      "code": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)",
      "vision": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)",
-     "agent": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)"
+     "agent": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)",
+     "agentcode": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)"
     },
     "api": null,
     "primo": "2026-10-15",
@@ -8423,11 +8540,20 @@
       "voti": 104712,
       "nomeArena": "Hy4 preview",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1115,
+      "pos": 36,
+      "totale": 68,
+      "voti": 24654,
+      "nomeArena": "Hy4 preview",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "code": "Hy4 preview",
-     "agent": "Hy4 preview"
+     "agent": "Hy4 preview",
+     "agentcode": "Hy4 preview"
     },
     "api": null,
     "primo": "2026-08-30",
@@ -8474,11 +8600,20 @@
       "voti": 111029,
       "nomeArena": "Qwen3.8-Flash-Next",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1064,
+      "pos": 47,
+      "totale": 68,
+      "voti": 26709,
+      "nomeArena": "Qwen3.8-Flash-Next",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "code": "Qwen3.8-Flash-Next",
-     "agent": "Qwen3.8-Flash-Next"
+     "agent": "Qwen3.8-Flash-Next",
+     "agentcode": "Qwen3.8-Flash-Next"
     },
     "api": null,
     "primo": "2026-08-30",
@@ -8599,12 +8734,21 @@
       "voti": 12256,
       "nomeArena": "Beam 1.0 501B A23B",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1010,
+      "pos": 55,
+      "totale": 68,
+      "voti": 3504,
+      "nomeArena": "Beam 1.0 501B A23B",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "Beam 1.0 501B A23B",
      "code": "Beam 1.0 501B A23B",
-     "agent": "Beam 1.0 501B A23B"
+     "agent": "Beam 1.0 501B A23B",
+     "agentcode": "Beam 1.0 501B A23B"
     },
     "api": null,
     "primo": "2026-10-16",
@@ -13833,11 +13977,20 @@
       "voti": 98592,
       "nomeArena": "DeepSeek-V4.1-Flash-20261017 (Max)",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1128,
+      "pos": 29,
+      "totale": 68,
+      "voti": 30575,
+      "nomeArena": "DeepSeek-V4.1-Flash-20261017 (Max)",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "code": "DeepSeek-V4.1-Flash-20261017 (Max)",
-     "agent": "DeepSeek-V4.1-Flash-20261017 (Max)"
+     "agent": "DeepSeek-V4.1-Flash-20261017 (Max)",
+     "agentcode": "DeepSeek-V4.1-Flash-20261017 (Max)"
     },
     "api": null,
     "primo": "2026-10-18",
@@ -13969,11 +14122,20 @@
       "voti": 14765,
       "nomeArena": "MiniMax-M3.1-Flash",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1093,
+      "pos": 42,
+      "totale": 68,
+      "voti": 4486,
+      "nomeArena": "MiniMax-M3.1-Flash",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "code": "MiniMax-M3.1-Flash",
-     "agent": "MiniMax-M3.1-Flash"
+     "agent": "MiniMax-M3.1-Flash",
+     "agentcode": "MiniMax-M3.1-Flash"
     },
     "api": null,
     "primo": "2026-10-19",
@@ -14258,10 +14420,19 @@
       "voti": 13818,
       "nomeArena": "Nemotron 3 Ultra",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 861,
+      "pos": 66,
+      "totale": 68,
+      "voti": 1325,
+      "nomeArena": "Nemotron 3 Ultra",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
-     "agent": "Nemotron 3 Ultra"
+     "agent": "Nemotron 3 Ultra",
+     "agentcode": "Nemotron 3 Ultra"
     },
     "api": null,
     "primo": "2026-06-12",
@@ -15561,6 +15732,14 @@
       "voti": 52549,
       "nomeArena": "Gemini 3.8 Flash (High)",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1080,
+      "pos": 45,
+      "totale": 68,
+      "voti": 13442,
+      "nomeArena": "Gemini 3.8 Flash (High)",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
@@ -15568,7 +15747,8 @@
      "code": "Gemini 3.8 Flash (High)",
      "vision": "Gemini 3.8 Flash (High)",
      "document": "Gemini 3.8 Flash (High)",
-     "agent": "Gemini 3.8 Flash (High)"
+     "agent": "Gemini 3.8 Flash (High)",
+     "agentcode": "Gemini 3.8 Flash (High)"
     },
     "api": {
      "fornitore": "gemini",
@@ -15634,6 +15814,14 @@
       "voti": 81929,
       "nomeArena": "Qwen3.8-Max",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1095,
+      "pos": 41,
+      "totale": 68,
+      "voti": 22553,
+      "nomeArena": "Qwen3.8-Max",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
@@ -15641,7 +15829,8 @@
      "code": "Qwen3.8-Max (0902)",
      "vision": "Qwen3.8-Max",
      "search": "Qwen3.8-Max",
-     "agent": "Qwen3.8-Max"
+     "agent": "Qwen3.8-Max",
+     "agentcode": "Qwen3.8-Max"
     },
     "api": {
      "fornitore": "qwen",
@@ -15891,13 +16080,22 @@
       "voti": 24745,
       "nomeArena": "Qwen3.7-Plus",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 955,
+      "pos": 62,
+      "totale": 68,
+      "voti": 5053,
+      "nomeArena": "Qwen3.7-Plus",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "Qwen3.7-Plus",
      "vision": "Qwen3.7-Plus",
      "document": "Qwen3.7-Plus",
-     "agent": "Qwen3.7-Plus"
+     "agent": "Qwen3.7-Plus",
+     "agentcode": "Qwen3.7-Plus"
     },
     "api": {
      "fornitore": "qwen",
@@ -16730,12 +16928,21 @@
       "voti": 22130,
       "nomeArena": "Kimi K3.1 Pro (Max)",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1169,
+      "pos": 24,
+      "totale": 68,
+      "voti": 6903,
+      "nomeArena": "Kimi K3.1 Pro (Max)",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "Kimi K3.1 Pro (Max)",
      "code": "Kimi K3.1 Pro (Max)",
-     "agent": "Kimi K3.1 Pro (Max)"
+     "agent": "Kimi K3.1 Pro (Max)",
+     "agentcode": "Kimi K3.1 Pro (Max)"
     },
     "api": null,
     "primo": "2026-10-23",
@@ -16786,13 +16993,22 @@
       "voti": 5843,
       "nomeArena": "Mistral Large 4",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1028,
+      "pos": 53,
+      "totale": 68,
+      "voti": 1683,
+      "nomeArena": "Mistral Large 4",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "Mistral Large 4",
      "code": "Mistral Large 4",
      "vision": "Mistral Large 4",
-     "agent": "Mistral Large 4"
+     "agent": "Mistral Large 4",
+     "agentcode": "Mistral Large 4"
     },
     "api": null,
     "primo": "2026-10-08",
@@ -17030,12 +17246,21 @@
       "voti": 22258,
       "nomeArena": "Inkling 2 Small",
       "data": "2026-11-18"
+     },
+     "agentcode": {
+      "punti": 1149,
+      "pos": 26,
+      "totale": 68,
+      "voti": 6423,
+      "nomeArena": "Inkling 2 Small",
+      "data": "2026-11-18"
      }
     },
     "nomi": {
      "chat": "Inkling 2 Small",
      "code": "Inkling 2 Small",
-     "agent": "Inkling 2 Small"
+     "agent": "Inkling 2 Small",
+     "agentcode": "Inkling 2 Small"
     },
     "api": null,
     "primo": "2026-11-06",
@@ -18921,7 +19146,7 @@
     "nuovi": 9,
     "titolo": "Free AI models this week: 12 Oct 2026 – 18 Oct 2026",
     "descr": "9 new free models on Arena and the best free model in each category, for the week ending 18 Oct 2026.",
-    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nNew free models this week:\n\n- [NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)](/model/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4.html): score 1416, #45 among free models\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) up 1 to #2 (score 1479)\n- [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html) down 1 to #3 (score 1479)\n- deepseek-v4.1-flash-max up 1 to #5 (score 1475)\n\n## Coding\n\nNew free models this week:\n\n- [DeepSeek-V4.1-Flash-20261017 (Max)](/model/deepseek-v4-1-flash-20261017-max.html): score 1670, #1 among free models\n- [DeepSeek-V4.1-Flash-20260910 (Max)](/model/deepseek-v4-1-flash-20260910-max.html): score 1619, #8 among free models\n- [Muse Spark Open (Max)](/model/muse-spark-open-max.html): score 1524, #14 among free models\n- DeepSeek-V4-Pro Preview (High): score 1465, #21 among free models\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html): score 1437, #25 among free models\n- [DeepSeek-V4-Flash Preview (High)](/model/deepseek-v4-flash-preview-high.html): score 1431, #28 among free models\n\nBiggest moves among the top 30 free models:\n\n- [GLM-4.7](/model/glm-4-7.html) down 4 to #27 (score 1435)\n- [Inkling](/model/inkling.html) down 3 to #29 (score 1414)\n- [Inkling-Small](/model/inkling-small.html) down 3 to #30 (score 1410)\n\n## Agents\n\nNew free models this week:\n\n- [DeepSeek-V4-Pro (High, 20260813)](/model/deepseek-v4-pro-high-20260813.html): score 0.2, #8 among free models\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html): score -3.7, #12 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html) down 5 to #6 (score 1.9)\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html) up 4 to #4 (score 2.6)\n- [Inkling-Small](/model/inkling-small.html) down 4 to #19 (score -15.1)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1487 |\n| Coding | [DeepSeek-V4.1-Flash-20261017 (Max)](/model/deepseek-v4-1-flash-20261017-max.html) | 1670 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1273 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1223 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1460 |\n| Image edit | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1369 |\n| Documents | [Kimi K2.6](/model/kimi-k2-6.html) | 1450 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1063 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1495 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1392 |\n| Agents | [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html) | 4 |\n"
+    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nNew free models this week:\n\n- [NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)](/model/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4.html): score 1416, #45 among free models\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) up 1 to #2 (score 1479)\n- [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html) down 1 to #3 (score 1479)\n- deepseek-v4.1-flash-max up 1 to #5 (score 1475)\n\n## WebDev (coding)\n\nNew free models this week:\n\n- [DeepSeek-V4.1-Flash-20261017 (Max)](/model/deepseek-v4-1-flash-20261017-max.html): score 1670, #1 among free models\n- [DeepSeek-V4.1-Flash-20260910 (Max)](/model/deepseek-v4-1-flash-20260910-max.html): score 1619, #8 among free models\n- [Muse Spark Open (Max)](/model/muse-spark-open-max.html): score 1524, #14 among free models\n- DeepSeek-V4-Pro Preview (High): score 1465, #21 among free models\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html): score 1437, #25 among free models\n- [DeepSeek-V4-Flash Preview (High)](/model/deepseek-v4-flash-preview-high.html): score 1431, #28 among free models\n\nBiggest moves among the top 30 free models:\n\n- [GLM-4.7](/model/glm-4-7.html) down 4 to #27 (score 1435)\n- [Inkling](/model/inkling.html) down 3 to #29 (score 1414)\n- [Inkling-Small](/model/inkling-small.html) down 3 to #30 (score 1410)\n\n## Agents\n\nNew free models this week:\n\n- [DeepSeek-V4-Pro (High, 20260813)](/model/deepseek-v4-pro-high-20260813.html): score 0.2, #8 among free models\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html): score -3.7, #12 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Kimi K3 (Max)](/model/kimi-k3-max.html) down 5 to #6 (score 1.9)\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html) up 4 to #4 (score 2.6)\n- [Inkling-Small](/model/inkling-small.html) down 4 to #19 (score -15.1)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1487 |\n| WebDev (coding) | [DeepSeek-V4.1-Flash-20261017 (Max)](/model/deepseek-v4-1-flash-20261017-max.html) | 1670 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1273 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1223 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1460 |\n| Image edit | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1369 |\n| Documents | [Kimi K2.6](/model/kimi-k2-6.html) | 1450 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1063 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1495 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1392 |\n| Agents | [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html) | 4 |\n"
    },
    "data": "2026-11-22"
   },
@@ -18933,7 +19158,7 @@
     "nuovi": 3,
     "titolo": "Free AI models this week: 5 Oct 2026 – 11 Oct 2026",
     "descr": "3 new free models on Arena and the best free model in each category, for the week ending 11 Oct 2026.",
-    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3-Flash](/model/glm-5-3-flash.html) up 1 to #5 (score 1475)\n- deepseek-v4.1-flash-max down 1 to #6 (score 1475)\n- [DeepSeek-V4-Pro (High, 20260813)](/model/deepseek-v4-pro-high-20260813.html) up 1 to #8 (score 1465)\n\n## Coding\n\nNew free models this week:\n\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html): score 1637, #2 among free models\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) down 2 to #6 (score 1622)\n- DeepSeek-V4.1-Flash (Max) down 2 to #7 (score 1619)\n- [DeepSeek-V4-Pro (High, 20260813)](/model/deepseek-v4-pro-high-20260813.html) down 2 to #12 (score 1582)\n\n## Vision\n\nNew free models this week:\n\n- deepseek-v4.1-flash-max: score 1260, #4 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Qwen3.5-397B-A17B](/model/qwen3-5-397b-a17b.html) down 2 to #7 (score 1246)\n- [Mistral Large 3](/model/mistral-large-3.html) down 2 to #19 (score 1200)\n- [Kimi K2.5 (Thinking)](/model/kimi-k2-5-thinking.html) down 1 to #5 (score 1252)\n\n## Agents\n\nNew free models this week:\n\n- [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html): score 3.5, #4 among free models\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3-Flash](/model/glm-5-3-flash.html) down 2 to #10 (score -1)\n- DeepSeek-V4.1-Flash (Max) up 1 to #2 (score 3.8)\n- [Hy4 preview](/model/hy4-preview.html) down 1 to #3 (score 3.6)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1488 |\n| Coding | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1654 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1273 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1223 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1460 |\n| Image edit | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1369 |\n| Documents | [Kimi K2.6](/model/kimi-k2-6.html) | 1450 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1062 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1495 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1392 |\n| Agents | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 3.8 |\n"
+    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3-Flash](/model/glm-5-3-flash.html) up 1 to #5 (score 1475)\n- deepseek-v4.1-flash-max down 1 to #6 (score 1475)\n- [DeepSeek-V4-Pro (High, 20260813)](/model/deepseek-v4-pro-high-20260813.html) up 1 to #8 (score 1465)\n\n## WebDev (coding)\n\nNew free models this week:\n\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html): score 1637, #2 among free models\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) down 2 to #6 (score 1622)\n- DeepSeek-V4.1-Flash (Max) down 2 to #7 (score 1619)\n- [DeepSeek-V4-Pro (High, 20260813)](/model/deepseek-v4-pro-high-20260813.html) down 2 to #12 (score 1582)\n\n## Vision\n\nNew free models this week:\n\n- deepseek-v4.1-flash-max: score 1260, #4 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Qwen3.5-397B-A17B](/model/qwen3-5-397b-a17b.html) down 2 to #7 (score 1246)\n- [Mistral Large 3](/model/mistral-large-3.html) down 2 to #19 (score 1200)\n- [Kimi K2.5 (Thinking)](/model/kimi-k2-5-thinking.html) down 1 to #5 (score 1252)\n\n## Agents\n\nNew free models this week:\n\n- [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html): score 3.5, #4 among free models\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3-Flash](/model/glm-5-3-flash.html) down 2 to #10 (score -1)\n- DeepSeek-V4.1-Flash (Max) up 1 to #2 (score 3.8)\n- [Hy4 preview](/model/hy4-preview.html) down 1 to #3 (score 3.6)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1488 |\n| WebDev (coding) | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1654 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1273 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1223 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1460 |\n| Image edit | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1369 |\n| Documents | [Kimi K2.6](/model/kimi-k2-6.html) | 1450 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1062 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1495 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1392 |\n| Agents | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 3.8 |\n"
    },
    "data": "2026-11-22"
   },
@@ -18945,7 +19170,7 @@
     "nuovi": 4,
     "titolo": "Free AI models this week: 28 Sept 2026 – 4 Oct 2026",
     "descr": "4 new free models on Arena and the best free model in each category, for the week ending 4 Oct 2026.",
-    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nBiggest moves among the top 30 free models:\n\n- [NVIDIA-Nemotron-3-Ultra-550B-A55B (NVFP4)](/model/nvidia-nemotron-3-ultra-550b-a55b-nvfp4.html) up 2 to #30 (score 1426)\n- [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html) up 1 to #2 (score 1480)\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) down 1 to #3 (score 1478)\n\n## Coding\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) up 1 to #4 (score 1623)\n- DeepSeek-V4.1-Flash (Max) down 1 to #5 (score 1620)\n- [GLM-5.1](/model/glm-5-1.html) up 1 to #13 (score 1508)\n\n## Vision\n\nNew free models this week:\n\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html): score 1247, #6 among free models\n- [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html): score 1245, #7 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Qwen3.8-27B](/model/qwen3-8-27b.html) down 2 to #8 (score 1243)\n- [Gemma 4 26B A4B](/model/gemma-4-26b-a4b.html) down 2 to #9 (score 1242)\n- Kimi K2.5 (Instant) down 2 to #10 (score 1237)\n\n## Image edit\n\nBiggest moves among the top 30 free models:\n\n- [FLUX.2 [klein] 9B](/model/flux-2-klein-9b.html) up 1 to #5 (score 1225)\n- [FLUX.2 [dev]](/model/flux-2-dev.html) down 1 to #6 (score 1225)\n\n## Agents\n\nNew free models this week:\n\n- mimo-v2-6-pro-public: score 3.3, #5 among free models\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html): score -0.6, #9 among free models\n\nBiggest moves among the top 30 free models:\n\n- DeepSeek V4 Pro (High) (0813) down 2 to #7 (score 1.2)\n- [Qwen3.8-Flash-Next](/model/qwen3-8-flash-next.html) down 2 to #10 (score -0.7)\n- [MiMo-V2.5-Pro](/model/mimo-v2-5-pro.html) down 2 to #14 (score -7.5)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1488 |\n| Coding | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1658 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1278 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1228 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1460 |\n| Image edit | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1366 |\n| Documents | [Kimi K2.6](/model/kimi-k2-6.html) | 1450 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1062 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1495 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1392 |\n| Agents | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 4.2 |\n"
+    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nBiggest moves among the top 30 free models:\n\n- [NVIDIA-Nemotron-3-Ultra-550B-A55B (NVFP4)](/model/nvidia-nemotron-3-ultra-550b-a55b-nvfp4.html) up 2 to #30 (score 1426)\n- [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html) up 1 to #2 (score 1480)\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) down 1 to #3 (score 1478)\n\n## WebDev (coding)\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) up 1 to #4 (score 1623)\n- DeepSeek-V4.1-Flash (Max) down 1 to #5 (score 1620)\n- [GLM-5.1](/model/glm-5-1.html) up 1 to #13 (score 1508)\n\n## Vision\n\nNew free models this week:\n\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html): score 1247, #6 among free models\n- [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html): score 1245, #7 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Qwen3.8-27B](/model/qwen3-8-27b.html) down 2 to #8 (score 1243)\n- [Gemma 4 26B A4B](/model/gemma-4-26b-a4b.html) down 2 to #9 (score 1242)\n- Kimi K2.5 (Instant) down 2 to #10 (score 1237)\n\n## Image edit\n\nBiggest moves among the top 30 free models:\n\n- [FLUX.2 [klein] 9B](/model/flux-2-klein-9b.html) up 1 to #5 (score 1225)\n- [FLUX.2 [dev]](/model/flux-2-dev.html) down 1 to #6 (score 1225)\n\n## Agents\n\nNew free models this week:\n\n- mimo-v2-6-pro-public: score 3.3, #5 among free models\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html): score -0.6, #9 among free models\n\nBiggest moves among the top 30 free models:\n\n- DeepSeek V4 Pro (High) (0813) down 2 to #7 (score 1.2)\n- [Qwen3.8-Flash-Next](/model/qwen3-8-flash-next.html) down 2 to #10 (score -0.7)\n- [MiMo-V2.5-Pro](/model/mimo-v2-5-pro.html) down 2 to #14 (score -7.5)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1488 |\n| WebDev (coding) | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1658 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1278 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1228 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1460 |\n| Image edit | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1366 |\n| Documents | [Kimi K2.6](/model/kimi-k2-6.html) | 1450 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1062 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1495 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1392 |\n| Agents | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 4.2 |\n"
    },
    "data": "2026-11-22"
   },
@@ -19019,7 +19244,7 @@
     "nuovi": 19,
     "titolo": "Free AI models this week: 19 Oct 2026 – 25 Oct 2026",
     "descr": "19 new free models on Arena and the best free model in each category, for the week ending 25 Oct 2026.",
-    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nNew free models this week:\n\n- [DeepSeek-V4.1-Flash-20260910 (Max)](/model/deepseek-v4-1-flash-20260910-max.html): score 1476, #5 among free models\n- DeepSeek-V4-Pro Preview (High): score 1455, #13 among free models\n- [DeepSeek-V4-Flash Preview (High)](/model/deepseek-v4-flash-preview-high.html): score 1439, #22 among free models\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html): score 1436, #26 among free models\n- [Kimi K2 Preview (0905)](/model/kimi-k2-preview-0905.html): score 1419, #40 among free models\n- [Kimi K2 Preview (0711)](/model/kimi-k2-preview-0711.html): score 1418, #41 among free models\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3-Flash](/model/glm-5-3-flash.html) up 2 to #4 (score 1476)\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) down 2 to #6 (score 1475)\n- [Inkling](/model/inkling.html) up 2 to #19 (score 1442)\n\n## Coding\n\nNew free models this week:\n\n- [MiniMax-M3.1-Flash](/model/minimax-m3-1-flash.html): score 1589, #12 among free models\n- [NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)](/model/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4.html): score 1398, #35 among free models\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5](/model/glm-5.html) down 2 to #28 (score 1435)\n- [DeepSeek-V4-Flash (High)](/model/deepseek-v4-flash-preview-high.html) down 1 to #13 (score 1582)\n- [DeepSeek-V4-Pro (High, 20260813)](/model/deepseek-v4-pro-high-20260813.html) down 1 to #14 (score 1582)\n\n## Vision\n\nNew free models this week:\n\n- [DeepSeek-V4.1-Flash-20260910 (Max)](/model/deepseek-v4-1-flash-20260910-max.html): score 1261, #4 among free models\n- [NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)](/model/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4.html): score 1204, #18 among free models\n- [Mistral Small 3.2 (2506)](/model/mistral-small-3-2-2506.html): score 1140, #27 among free models\n- [Llama 3.2 90B Vision Instruct](/model/llama-3-2-90b-vision-instruct.html): score 1032, #36 among free models\n- [Aya Vision 32B](/model/aya-vision-32b.html): score 1000, #40 among free models\n- [Llama 3.2 11B Vision Instruct](/model/llama-3-2-11b-vision-instruct.html): score 993, #42 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Mistral Small 3.1 24B Instruct (2503)](/model/mistral-small-3-1-24b-instruct-2503.html) down 2 to #29 (score 1127)\n- [Qwen3.5-397B-A17B](/model/qwen3-5-397b-a17b.html) up 1 to #6 (score 1246)\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html) down 1 to #7 (score 1245)\n\n## Image edit\n\nNew free models this week:\n\n- Krea 3 Ultra: score 1411, #1 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Qwen-Image-2.1](/model/qwen-image-2-1.html) down 1 to #2 (score 1362)\n- [HunyuanImage 3.0 Instruct](/model/hunyuanimage-3-0.html) down 1 to #3 (score 1302)\n- [Qwen-Image-Edit](/model/qwen-image-edit.html) down 1 to #4 (score 1241)\n\n## Agents\n\nNew free models this week:\n\n- [DeepSeek-V4.1-Flash-20261017 (Max)](/model/deepseek-v4-1-flash-20261017-max.html): score 4.4, #1 among free models\n- [DeepSeek-V4.1-Flash-20260910 (Max)](/model/deepseek-v4-1-flash-20260910-max.html): score 2.3, #3 among free models\n- [MiniMax-M3.1-Flash](/model/minimax-m3-1-flash.html): score -2.3, #11 among free models\n- [NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)](/model/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4.html): score -13.6, #19 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Nemotron 3 Ultra](/model/nemotron-3-ultra.html) down 4 to #20 (score -14.7)\n- [Hy4 preview](/model/hy4-preview.html) down 3 to #5 (score 2)\n- [Qwen3.8-Flash-Next](/model/qwen3-8-flash-next.html) down 3 to #13 (score -3.3)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1487 |\n| Coding | [DeepSeek-V4.1-Flash-20261017 (Max)](/model/deepseek-v4-1-flash-20261017-max.html) | 1665 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1271 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1223 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1460 |\n| Image edit | Krea 3 Ultra | 1411 |\n| Documents | [Kimi K2.6](/model/kimi-k2-6.html) | 1450 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1063 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1495 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1392 |\n| Agents | [DeepSeek-V4.1-Flash-20261017 (Max)](/model/deepseek-v4-1-flash-20261017-max.html) | 4.4 |\n"
+    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nNew free models this week:\n\n- [DeepSeek-V4.1-Flash-20260910 (Max)](/model/deepseek-v4-1-flash-20260910-max.html): score 1476, #5 among free models\n- DeepSeek-V4-Pro Preview (High): score 1455, #13 among free models\n- [DeepSeek-V4-Flash Preview (High)](/model/deepseek-v4-flash-preview-high.html): score 1439, #22 among free models\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html): score 1436, #26 among free models\n- [Kimi K2 Preview (0905)](/model/kimi-k2-preview-0905.html): score 1419, #40 among free models\n- [Kimi K2 Preview (0711)](/model/kimi-k2-preview-0711.html): score 1418, #41 among free models\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3-Flash](/model/glm-5-3-flash.html) up 2 to #4 (score 1476)\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) down 2 to #6 (score 1475)\n- [Inkling](/model/inkling.html) up 2 to #19 (score 1442)\n\n## WebDev (coding)\n\nNew free models this week:\n\n- [MiniMax-M3.1-Flash](/model/minimax-m3-1-flash.html): score 1589, #12 among free models\n- [NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)](/model/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4.html): score 1398, #35 among free models\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5](/model/glm-5.html) down 2 to #28 (score 1435)\n- [DeepSeek-V4-Flash (High)](/model/deepseek-v4-flash-preview-high.html) down 1 to #13 (score 1582)\n- [DeepSeek-V4-Pro (High, 20260813)](/model/deepseek-v4-pro-high-20260813.html) down 1 to #14 (score 1582)\n\n## Vision\n\nNew free models this week:\n\n- [DeepSeek-V4.1-Flash-20260910 (Max)](/model/deepseek-v4-1-flash-20260910-max.html): score 1261, #4 among free models\n- [NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)](/model/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4.html): score 1204, #18 among free models\n- [Mistral Small 3.2 (2506)](/model/mistral-small-3-2-2506.html): score 1140, #27 among free models\n- [Llama 3.2 90B Vision Instruct](/model/llama-3-2-90b-vision-instruct.html): score 1032, #36 among free models\n- [Aya Vision 32B](/model/aya-vision-32b.html): score 1000, #40 among free models\n- [Llama 3.2 11B Vision Instruct](/model/llama-3-2-11b-vision-instruct.html): score 993, #42 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Mistral Small 3.1 24B Instruct (2503)](/model/mistral-small-3-1-24b-instruct-2503.html) down 2 to #29 (score 1127)\n- [Qwen3.5-397B-A17B](/model/qwen3-5-397b-a17b.html) up 1 to #6 (score 1246)\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html) down 1 to #7 (score 1245)\n\n## Image edit\n\nNew free models this week:\n\n- Krea 3 Ultra: score 1411, #1 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Qwen-Image-2.1](/model/qwen-image-2-1.html) down 1 to #2 (score 1362)\n- [HunyuanImage 3.0 Instruct](/model/hunyuanimage-3-0.html) down 1 to #3 (score 1302)\n- [Qwen-Image-Edit](/model/qwen-image-edit.html) down 1 to #4 (score 1241)\n\n## Agents\n\nNew free models this week:\n\n- [DeepSeek-V4.1-Flash-20261017 (Max)](/model/deepseek-v4-1-flash-20261017-max.html): score 4.4, #1 among free models\n- [DeepSeek-V4.1-Flash-20260910 (Max)](/model/deepseek-v4-1-flash-20260910-max.html): score 2.3, #3 among free models\n- [MiniMax-M3.1-Flash](/model/minimax-m3-1-flash.html): score -2.3, #11 among free models\n- [NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)](/model/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4.html): score -13.6, #19 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Nemotron 3 Ultra](/model/nemotron-3-ultra.html) down 4 to #20 (score -14.7)\n- [Hy4 preview](/model/hy4-preview.html) down 3 to #5 (score 2)\n- [Qwen3.8-Flash-Next](/model/qwen3-8-flash-next.html) down 3 to #13 (score -3.3)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1487 |\n| WebDev (coding) | [DeepSeek-V4.1-Flash-20261017 (Max)](/model/deepseek-v4-1-flash-20261017-max.html) | 1665 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1271 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1223 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1460 |\n| Image edit | Krea 3 Ultra | 1411 |\n| Documents | [Kimi K2.6](/model/kimi-k2-6.html) | 1450 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1063 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1495 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1392 |\n| Agents | [DeepSeek-V4.1-Flash-20261017 (Max)](/model/deepseek-v4-1-flash-20261017-max.html) | 4.4 |\n"
    },
    "data": "2026-11-22"
   },
@@ -20703,7 +20928,7 @@
     "nuovi": 1,
     "titolo": "Free AI models this week: 26 Oct 2026 – 1 Nov 2026",
     "descr": "1 new free model on Arena and the best free model in each category, for the week ending 1 Nov 2026.",
-    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nBiggest moves among the top 30 free models:\n\n- [Inkling](/model/inkling.html) up 1 to #18 (score 1442)\n- [Qwen3.5-397B-A17B](/model/qwen3-5-397b-a17b.html) down 1 to #19 (score 1441)\n- DeepSeek-V4-Flash up 1 to #24 (score 1436)\n\n## Coding\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5](/model/glm-5.html) up 3 to #25 (score 1436)\n- [MiniMax-M3.1-Flash](/model/minimax-m3-1-flash.html) down 2 to #14 (score 1582)\n- [DeepSeek-V4-Flash (High)](/model/deepseek-v4-flash-preview-high.html) up 1 to #12 (score 1582)\n\n## Image\n\nNew free models this week:\n\n- [Stable Diffusion 3.5 Large](/model/stable-diffusion-3-5-large.html): score 938, #18 among free models\n\nBiggest moves among the top 30 free models:\n\n- [HunyuanImage 3.0](/model/hunyuanimage-3-0.html) up 1 to #4 (score 1151)\n- [Cosmos3-Super-Text2Image](/model/cosmos3-super-text2image.html) down 1 to #5 (score 1151)\n\n## Agents\n\nBiggest moves among the top 30 free models:\n\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html) down 3 to #7 (score 1)\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) up 2 to #4 (score 1.3)\n- [Qwen3.8-Flash-Next](/model/qwen3-8-flash-next.html) up 2 to #11 (score -4)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1488 |\n| Coding | [DeepSeek-V4.1-Flash-20261017 (Max)](/model/deepseek-v4-1-flash-20261017-max.html) | 1665 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1271 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1225 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1460 |\n| Image edit | Krea 3 Ultra | 1411 |\n| Documents | [Kimi K2.6](/model/kimi-k2-6.html) | 1450 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1063 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1495 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1392 |\n| Agents | [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html) | 2.8 |\n"
+    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nBiggest moves among the top 30 free models:\n\n- [Inkling](/model/inkling.html) up 1 to #18 (score 1442)\n- [Qwen3.5-397B-A17B](/model/qwen3-5-397b-a17b.html) down 1 to #19 (score 1441)\n- DeepSeek-V4-Flash up 1 to #24 (score 1436)\n\n## WebDev (coding)\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5](/model/glm-5.html) up 3 to #25 (score 1436)\n- [MiniMax-M3.1-Flash](/model/minimax-m3-1-flash.html) down 2 to #14 (score 1582)\n- [DeepSeek-V4-Flash (High)](/model/deepseek-v4-flash-preview-high.html) up 1 to #12 (score 1582)\n\n## Image\n\nNew free models this week:\n\n- [Stable Diffusion 3.5 Large](/model/stable-diffusion-3-5-large.html): score 938, #18 among free models\n\nBiggest moves among the top 30 free models:\n\n- [HunyuanImage 3.0](/model/hunyuanimage-3-0.html) up 1 to #4 (score 1151)\n- [Cosmos3-Super-Text2Image](/model/cosmos3-super-text2image.html) down 1 to #5 (score 1151)\n\n## Agents\n\nBiggest moves among the top 30 free models:\n\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html) down 3 to #7 (score 1)\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) up 2 to #4 (score 1.3)\n- [Qwen3.8-Flash-Next](/model/qwen3-8-flash-next.html) up 2 to #11 (score -4)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1488 |\n| WebDev (coding) | [DeepSeek-V4.1-Flash-20261017 (Max)](/model/deepseek-v4-1-flash-20261017-max.html) | 1665 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1271 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1225 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1460 |\n| Image edit | Krea 3 Ultra | 1411 |\n| Documents | [Kimi K2.6](/model/kimi-k2-6.html) | 1450 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1063 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1495 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1392 |\n| Agents | [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html) | 2.8 |\n"
    },
    "data": "2026-11-22"
   },
@@ -21945,7 +22170,7 @@
     "descr": "Tencent announced Hy4, its newest large language model, on 4 November 2026.",
     "data": "2026-11-04",
     "tema": "LLMs",
-    "corpo": "<div class=\"video-post\"><iframe src=\"https://www.youtube-nocookie.com/embed/KHBcTGDPbM4\" title=\"Tencent launches Hy4, a 770‑billion‑parameter LLM with visual and computer‑use abilities\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; picture-in-picture\" allowfullscreen></iframe></div>\n\n[Watch on YouTube](https://youtu.be/KHBcTGDPbM4) · [Watch the Short](https://youtube.com/shorts/IRsJ7Y5dT0o)\n\nTencent announced Hy4, its newest large language model, on 4 November 2026. The model contains 770 billion total parameters and 49 billion active parameters, and offers a 1 million‑token context window.\n\nHy4 introduces visual understanding, fine‑grained image processing, chart analysis and mathematical visual reasoning, plus the ability to interact with command‑line and graphical user interfaces for real‑world tasks.\n\nThe model shows a 19.1 % gain on the GameDev benchmark and a 9.8 % gain on the GameLogic benchmark over the earlier Hy4 Preview, while also achieving the highest score among open‑source models in a financial‑task evaluation of 579 tasks.\n\nTencent makes Hy4 available via Tencent Cloud services such as TokenHub, WorkBuddy, CodeBuddy and WeCom’s AI Assistant, and through third‑party platforms like OpenRouter and Hermes.\n\n## What it means for you\n\nFor AI users, Hy4 provides a high‑parameter model that can handle visual inputs and automate software tasks without higher costs. For developers of free or locally hosted models, the upcoming open‑source release offers a new benchmark to compare against, while the pricing details show that large‑scale capabilities can remain affordable.\n\n## On FreeLLMArena\n\nFrom our rankings on 22 Nov 2026, based on Arena's blind votes:\n\n- [Hy4 preview](/model/hy4-preview.html): #8 among free coding models\n\n## Sources\n\n- [Tencent releases Hy4, a powerful frontier AI model introducing visual understanding and computer use](https://siliconangle.com/2026/11/04/tencent-releases-hy4-powerful-frontier-llm-introducing-visual-understanding-and-computer-use/), SiliconANGLE, 4 Nov 2026\n- [Tencent Launches Hy4, Joining the Ranks of the World's Leading Open-Source AI Models - Tencent](https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/), tencent.com (official), 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-04-tencent-launches-hy4-a-770-billion-parameter-llm-with-visual-and-compu).</small>\n",
+    "corpo": "<div class=\"video-post\"><iframe src=\"https://www.youtube-nocookie.com/embed/KHBcTGDPbM4\" title=\"Tencent launches Hy4, a 770‑billion‑parameter LLM with visual and computer‑use abilities\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; picture-in-picture\" allowfullscreen></iframe></div>\n\n[Watch on YouTube](https://youtu.be/KHBcTGDPbM4) · [Watch the Short](https://youtube.com/shorts/IRsJ7Y5dT0o)\n\nTencent announced Hy4, its newest large language model, on 4 November 2026. The model contains 770 billion total parameters and 49 billion active parameters, and offers a 1 million‑token context window.\n\nHy4 introduces visual understanding, fine‑grained image processing, chart analysis and mathematical visual reasoning, plus the ability to interact with command‑line and graphical user interfaces for real‑world tasks.\n\nThe model shows a 19.1 % gain on the GameDev benchmark and a 9.8 % gain on the GameLogic benchmark over the earlier Hy4 Preview, while also achieving the highest score among open‑source models in a financial‑task evaluation of 579 tasks.\n\nTencent makes Hy4 available via Tencent Cloud services such as TokenHub, WorkBuddy, CodeBuddy and WeCom’s AI Assistant, and through third‑party platforms like OpenRouter and Hermes.\n\n## What it means for you\n\nFor AI users, Hy4 provides a high‑parameter model that can handle visual inputs and automate software tasks without higher costs. For developers of free or locally hosted models, the upcoming open‑source release offers a new benchmark to compare against, while the pricing details show that large‑scale capabilities can remain affordable.\n\n## On FreeLLMArena\n\nFrom our rankings on 22 Nov 2026, based on Arena's blind votes:\n\n- [Hy4 preview](/model/hy4-preview.html): #8 among free webdev (coding) models\n\n## Sources\n\n- [Tencent releases Hy4, a powerful frontier AI model introducing visual understanding and computer use](https://siliconangle.com/2026/11/04/tencent-releases-hy4-powerful-frontier-llm-introducing-visual-understanding-and-computer-use/), SiliconANGLE, 4 Nov 2026\n- [Tencent Launches Hy4, Joining the Ranks of the World's Leading Open-Source AI Models - Tencent](https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/), tencent.com (official), 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-04-tencent-launches-hy4-a-770-billion-parameter-llm-with-visual-and-compu).</small>\n",
     "tipo": "News"
    },
    "data": "2026-11-22"
@@ -21993,7 +22218,7 @@
     "descr": "Meta acquires Conductor, whose Mac app runs multiple coding agents, with cloud services ending in November and a new interface planned for early 2027.",
     "data": "2026-11-05",
     "tema": "Business",
-    "corpo": "Meta Platforms announced on November 4, 2026 that it has acquired Conductor, an AI coding startup founded in 2024. The deal was first reported by Axios and confirmed by Meta, though the financial terms were not disclosed.\n\nConductor’s software lets developers run several coding agents in parallel, each in an isolated copy of a codebase. Users pay for the agents with their own subscriptions and API keys.\n\nThe desktop app runs on Macs, while Conductor Cloud places agents in sandboxed virtual machines that can operate for hours. Users can monitor cloud workspaces from an iPhone app. The cloud service will become read‑only on November 13 and shut down on November 20, after which user data will be deleted.\n\nMore than 100,000 people use Conductor. The startup raised a $22 million Series A round in March from Spark Capital, Matrix, Y Combinator and other backers. Local copies of the Mac app will continue to work until early 2027, when a new, undisclosed interface is expected.\n\nMeta’s acquisition follows its recent AI releases, including Muse Spark Open on October 15 and the closed‑source Muse Wonder models. The same day, OpenAI announced plans to acquire developer‑tools startup Pierre Computer.\n\n## What it means for you\n\nExisting Conductor users must export their cloud work or move it to local machines before November 20, and they will lose new updates after early 2027. Developers looking for free or locally hosted alternatives can consider top free chat models such as Kimi K3, GLM‑5.3 or DeepSeek‑V4.1‑Flash, while Meta’s own Muse coding agents may become a new option for those staying within the Meta ecosystem.\n\n## On FreeLLMArena\n\nFrom our rankings on 22 Nov 2026, based on Arena's blind votes:\n\n- [Muse Spark Open (Max)](/model/muse-spark-open-max.html): #22 among free coding models\n\n## Sources\n\n- [Meta acquires AI coding startup Conductor, whose app runs several coding agents at once](https://siliconangle.com/2026/11/04/meta-acquires-ai-coding-startup-conductor-whose-app-runs-several-coding-agents-at-once/), SiliconANGLE, 4 Nov 2026\n- [Meta acquires AI coding startup Conductor](https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/), TechCrunch, 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-05-meta-buys-ai-coding-startup-conductor-expands-its-coding-agent-platfor).</small>\n",
+    "corpo": "Meta Platforms announced on November 4, 2026 that it has acquired Conductor, an AI coding startup founded in 2024. The deal was first reported by Axios and confirmed by Meta, though the financial terms were not disclosed.\n\nConductor’s software lets developers run several coding agents in parallel, each in an isolated copy of a codebase. Users pay for the agents with their own subscriptions and API keys.\n\nThe desktop app runs on Macs, while Conductor Cloud places agents in sandboxed virtual machines that can operate for hours. Users can monitor cloud workspaces from an iPhone app. The cloud service will become read‑only on November 13 and shut down on November 20, after which user data will be deleted.\n\nMore than 100,000 people use Conductor. The startup raised a $22 million Series A round in March from Spark Capital, Matrix, Y Combinator and other backers. Local copies of the Mac app will continue to work until early 2027, when a new, undisclosed interface is expected.\n\nMeta’s acquisition follows its recent AI releases, including Muse Spark Open on October 15 and the closed‑source Muse Wonder models. The same day, OpenAI announced plans to acquire developer‑tools startup Pierre Computer.\n\n## What it means for you\n\nExisting Conductor users must export their cloud work or move it to local machines before November 20, and they will lose new updates after early 2027. Developers looking for free or locally hosted alternatives can consider top free chat models such as Kimi K3, GLM‑5.3 or DeepSeek‑V4.1‑Flash, while Meta’s own Muse coding agents may become a new option for those staying within the Meta ecosystem.\n\n## On FreeLLMArena\n\nFrom our rankings on 22 Nov 2026, based on Arena's blind votes:\n\n- [Muse Spark Open (Max)](/model/muse-spark-open-max.html): #22 among free webdev (coding) models\n\n## Sources\n\n- [Meta acquires AI coding startup Conductor, whose app runs several coding agents at once](https://siliconangle.com/2026/11/04/meta-acquires-ai-coding-startup-conductor-whose-app-runs-several-coding-agents-at-once/), SiliconANGLE, 4 Nov 2026\n- [Meta acquires AI coding startup Conductor](https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/), TechCrunch, 4 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-05-meta-buys-ai-coding-startup-conductor-expands-its-coding-agent-platfor).</small>\n",
     "tipo": "News"
    },
    "data": "2026-11-22"
@@ -22161,7 +22386,7 @@
     "descr": "The 65‑billion‑parameter Ripple‑65B Preview scores 80.5 on Terminal‑Bench 2.1, cost $32 M to train and is released under Apache 2.0 on several platforms.",
     "data": "2026-11-05",
     "tema": "LLMs",
-    "corpo": "On November 4 2026 Ricursive Intelligence announced Ripple‑65B Preview, a dense 65 billion‑parameter language model.\n\nThe model was pretrained on 12 trillion tokens, supports up to 1 million context length and uses a thin‑and‑deep transformer with a d_model of 5120 across 80 layers.\n\nRipple‑65B achieved an 80.5 score on Terminal‑Bench 2.1, the highest reported by any U.S. open‑weight model, surpassing larger mixture‑of‑experts rivals such as Reflection Beam (501 B, 80.1) and Meta Muse Spark Open (816 B, 76.4). It also posted 79.1 on SWE‑bench Pro Hard and strong math results.\n\nRicursive reports the full research and development cost at $32 million, about one‑tenth of the expense of the previous open‑weight leader. Training used simple sharding, no custom kernels and no quantization, achieving a 16 times compute‑efficiency gain at 4 B scale.\n\nWeights are hosted on Hugging Face and the model is listed on Together AI, GMI Cloud, OpenRouter and Fireworks. On datacenter GPUs it runs at 250 tokens per second on two B200 cards, and an experimental NVFP4 build targets NVIDIA DGX Spark.\n\n## What it means for you\n\nThe release provides a high‑performing open‑weight model at a fraction of typical training cost, widening research access. However, the 65 B size still requires datacenter‑class hardware, so local or low‑resource users will continue to rely on smaller free models.\n\n## On FreeLLMArena\n\nFrom our rankings on 22 Nov 2026, based on Arena's blind votes:\n\n- [Muse Spark Open (Max)](/model/muse-spark-open-max.html): #22 among free coding models\n\n## Sources\n\n- [Ricursive AI Releases Ripple-65B Preview: A 65B Dense Open-Weight Model Scoring 80.5 on Terminal-Bench 2.1](https://www.marktechpost.com/2026/11/04/ricursive-ripple-65b-preview-open-weight-model/), MarkTechPost, 4 Nov 2026\n- [Recursive Self-Improvement via AI for Chip Design & Chip Design for AI - Ricursive Intelligence](https://www.ricursive.com/ripple), ricursive.com (official), 5 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-05-ricursive-ai-launches-65b-open-weight-model-ripple-preview-with-top-us).</small>\n",
+    "corpo": "On November 4 2026 Ricursive Intelligence announced Ripple‑65B Preview, a dense 65 billion‑parameter language model.\n\nThe model was pretrained on 12 trillion tokens, supports up to 1 million context length and uses a thin‑and‑deep transformer with a d_model of 5120 across 80 layers.\n\nRipple‑65B achieved an 80.5 score on Terminal‑Bench 2.1, the highest reported by any U.S. open‑weight model, surpassing larger mixture‑of‑experts rivals such as Reflection Beam (501 B, 80.1) and Meta Muse Spark Open (816 B, 76.4). It also posted 79.1 on SWE‑bench Pro Hard and strong math results.\n\nRicursive reports the full research and development cost at $32 million, about one‑tenth of the expense of the previous open‑weight leader. Training used simple sharding, no custom kernels and no quantization, achieving a 16 times compute‑efficiency gain at 4 B scale.\n\nWeights are hosted on Hugging Face and the model is listed on Together AI, GMI Cloud, OpenRouter and Fireworks. On datacenter GPUs it runs at 250 tokens per second on two B200 cards, and an experimental NVFP4 build targets NVIDIA DGX Spark.\n\n## What it means for you\n\nThe release provides a high‑performing open‑weight model at a fraction of typical training cost, widening research access. However, the 65 B size still requires datacenter‑class hardware, so local or low‑resource users will continue to rely on smaller free models.\n\n## On FreeLLMArena\n\nFrom our rankings on 22 Nov 2026, based on Arena's blind votes:\n\n- [Muse Spark Open (Max)](/model/muse-spark-open-max.html): #22 among free webdev (coding) models\n\n## Sources\n\n- [Ricursive AI Releases Ripple-65B Preview: A 65B Dense Open-Weight Model Scoring 80.5 on Terminal-Bench 2.1](https://www.marktechpost.com/2026/11/04/ricursive-ripple-65b-preview-open-weight-model/), MarkTechPost, 4 Nov 2026\n- [Recursive Self-Improvement via AI for Chip Design & Chip Design for AI - Ricursive Intelligence](https://www.ricursive.com/ripple), ricursive.com (official), 5 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-05-ricursive-ai-launches-65b-open-weight-model-ripple-preview-with-top-us).</small>\n",
     "tipo": "News"
    },
    "data": "2026-11-22"
@@ -22426,7 +22651,7 @@
     "nuovi": 5,
     "titolo": "Free AI models this week: 2 Nov 2026 – 8 Nov 2026",
     "descr": "5 new free models on Arena and the best free model in each category, for the week ending 8 Nov 2026.",
-    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nBiggest moves among the top 30 free models:\n\n- [MiniMax-M3](/model/minimax-m3.html) down 3 to #24 (score 1436)\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) up 2 to #4 (score 1475)\n- [Qwen3.8-27B](/model/qwen3-8-27b.html) down 2 to #27 (score 1433)\n\n## Coding\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5](/model/glm-5.html) down 5 to #30 (score 1435)\n- [DeepSeek-V4-Pro (High, 20260813)](/model/deepseek-v4-pro-high-20260813.html) down 2 to #15 (score 1581)\n- [Muse Spark Open (Max)](/model/muse-spark-open-max.html) down 2 to #17 (score 1528)\n\n## Vision\n\nBiggest moves among the top 30 free models:\n\n- [Qwen3.5-397B-A17B](/model/qwen3-5-397b-a17b.html) down 2 to #8 (score 1246)\n- [Inkling-Small](/model/inkling-small.html) down 2 to #19 (score 1208)\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html) up 1 to #6 (score 1248)\n\n## Image\n\nBiggest moves among the top 30 free models:\n\n- [Krea 2 Turbo](/model/krea-2-turbo.html) up 1 to #8 (score 1116)\n- [HiDream-O1-Image](/model/hidream-o1-image.html) down 1 to #9 (score 1115)\n\n## Video\n\nNew free models this week:\n\n- [Kandinsky 5.0 Video Pro](/model/kandinsky-5-0-video-pro.html): score 1175, #2 among free models\n- [Wan 2.2 A14B](/model/wan-2-2-a14b.html): score 1132, #5 among free models\n- [Kandinsky 5.0 Video Lite](/model/kandinsky-5-0-video-lite.html): score 1113, #6 among free models\n- [Mochi 1](/model/mochi-1.html): score 1007, #7 among free models\n\n## Documents\n\nBiggest moves among the top 30 free models:\n\n- [Gemma 4 31B](/model/gemma-4-31b.html) up 1 to #1 (score 1452)\n- [Kimi K2.6](/model/kimi-k2-6.html) down 1 to #2 (score 1450)\n\n## Image to video\n\nNew free models this week:\n\n- [Wan 2.2 A14B](/model/wan-2-2-a14b.html): score 1171, #3 among free models\n\n## Agents\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) up 4 to #4 (score 1)\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) down 2 to #6 (score 0.4)\n- [Hy4 preview](/model/hy4-preview.html) down 2 to #7 (score 0.4)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1487 |\n| Coding | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 1687 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1272 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1227 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1456 |\n| Image edit | Krea 3 Ultra | 1411 |\n| Documents | [Gemma 4 31B](/model/gemma-4-31b.html) | 1452 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1062 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1493 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1383 |\n| Agents | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 5.2 |\n"
+    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nBiggest moves among the top 30 free models:\n\n- [MiniMax-M3](/model/minimax-m3.html) down 3 to #24 (score 1436)\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) up 2 to #4 (score 1475)\n- [Qwen3.8-27B](/model/qwen3-8-27b.html) down 2 to #27 (score 1433)\n\n## WebDev (coding)\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5](/model/glm-5.html) down 5 to #30 (score 1435)\n- [DeepSeek-V4-Pro (High, 20260813)](/model/deepseek-v4-pro-high-20260813.html) down 2 to #15 (score 1581)\n- [Muse Spark Open (Max)](/model/muse-spark-open-max.html) down 2 to #17 (score 1528)\n\n## Vision\n\nBiggest moves among the top 30 free models:\n\n- [Qwen3.5-397B-A17B](/model/qwen3-5-397b-a17b.html) down 2 to #8 (score 1246)\n- [Inkling-Small](/model/inkling-small.html) down 2 to #19 (score 1208)\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html) up 1 to #6 (score 1248)\n\n## Image\n\nBiggest moves among the top 30 free models:\n\n- [Krea 2 Turbo](/model/krea-2-turbo.html) up 1 to #8 (score 1116)\n- [HiDream-O1-Image](/model/hidream-o1-image.html) down 1 to #9 (score 1115)\n\n## Video\n\nNew free models this week:\n\n- [Kandinsky 5.0 Video Pro](/model/kandinsky-5-0-video-pro.html): score 1175, #2 among free models\n- [Wan 2.2 A14B](/model/wan-2-2-a14b.html): score 1132, #5 among free models\n- [Kandinsky 5.0 Video Lite](/model/kandinsky-5-0-video-lite.html): score 1113, #6 among free models\n- [Mochi 1](/model/mochi-1.html): score 1007, #7 among free models\n\n## Documents\n\nBiggest moves among the top 30 free models:\n\n- [Gemma 4 31B](/model/gemma-4-31b.html) up 1 to #1 (score 1452)\n- [Kimi K2.6](/model/kimi-k2-6.html) down 1 to #2 (score 1450)\n\n## Image to video\n\nNew free models this week:\n\n- [Wan 2.2 A14B](/model/wan-2-2-a14b.html): score 1171, #3 among free models\n\n## Agents\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) up 4 to #4 (score 1)\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) down 2 to #6 (score 0.4)\n- [Hy4 preview](/model/hy4-preview.html) down 2 to #7 (score 0.4)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1487 |\n| WebDev (coding) | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 1687 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1272 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1227 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1456 |\n| Image edit | Krea 3 Ultra | 1411 |\n| Documents | [Gemma 4 31B](/model/gemma-4-31b.html) | 1452 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1062 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1493 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1383 |\n| Agents | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 5.2 |\n"
    },
    "data": "2026-11-22"
   },
@@ -22990,7 +23215,7 @@
     "nuovi": 3,
     "titolo": "Free AI models this week: 9 Nov 2026 – 15 Nov 2026",
     "descr": "3 new free models on Arena and the best free model in each category, for the week ending 15 Nov 2026.",
-    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nNew free models this week:\n\n- [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html): score 1485, #2 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html) down 3 to #28 (score 1434)\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) down 1 to #3 (score 1482)\n- [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html) down 1 to #4 (score 1480)\n\n## Coding\n\nBiggest moves among the top 30 free models:\n\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html) down 3 to #30 (score 1436)\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html) down 1 to #5 (score 1639)\n- [Hy4 preview](/model/hy4-preview.html) down 1 to #6 (score 1632)\n\n## Vision\n\nBiggest moves among the top 30 free models:\n\n- [Mistral Large 3](/model/mistral-large-3.html) up 1 to #20 (score 1200)\n- [Mistral Medium 3.5](/model/mistral-medium-3-5.html) down 1 to #21 (score 1199)\n\n## Image\n\nNew free models this week:\n\n- [MiniMax H3-Image](/model/minimax-h3-image.html): score 1197, #3 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Cosmos3-Super-Text2Image (Agentic)](/model/cosmos3-super-text2image-agentic.html) down 1 to #4 (score 1164)\n- [HunyuanImage 3.0](/model/hunyuanimage-3-0.html) down 1 to #5 (score 1152)\n- [Cosmos3-Super-Text2Image](/model/cosmos3-super-text2image.html) down 1 to #6 (score 1150)\n\n## Image edit\n\nNew free models this week:\n\n- [MiniMax H3-Image](/model/minimax-h3-image.html): score 1359, #2 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Qwen-Image-2.1](/model/qwen-image-2-1.html) up 1 to #1 (score 1363)\n\n## Agents\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) down 2 to #8 (score -0.5)\n- [GLM-5.3-Flash](/model/glm-5-3-flash.html) down 2 to #11 (score -3.7)\n- [Qwen3.8-27B](/model/qwen3-8-27b.html) down 2 to #13 (score -5.6)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1487 |\n| Coding | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 1686 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1272 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1227 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1456 |\n| Image edit | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1363 |\n| Documents | [Gemma 4 31B](/model/gemma-4-31b.html) | 1452 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1062 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1493 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1378 |\n| Agents | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 3.9 |\n"
+    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nNew free models this week:\n\n- [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html): score 1485, #2 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html) down 3 to #28 (score 1434)\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) down 1 to #3 (score 1482)\n- [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html) down 1 to #4 (score 1480)\n\n## WebDev (coding)\n\nBiggest moves among the top 30 free models:\n\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html) down 3 to #30 (score 1436)\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html) down 1 to #5 (score 1639)\n- [Hy4 preview](/model/hy4-preview.html) down 1 to #6 (score 1632)\n\n## Vision\n\nBiggest moves among the top 30 free models:\n\n- [Mistral Large 3](/model/mistral-large-3.html) up 1 to #20 (score 1200)\n- [Mistral Medium 3.5](/model/mistral-medium-3-5.html) down 1 to #21 (score 1199)\n\n## Image\n\nNew free models this week:\n\n- [MiniMax H3-Image](/model/minimax-h3-image.html): score 1197, #3 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Cosmos3-Super-Text2Image (Agentic)](/model/cosmos3-super-text2image-agentic.html) down 1 to #4 (score 1164)\n- [HunyuanImage 3.0](/model/hunyuanimage-3-0.html) down 1 to #5 (score 1152)\n- [Cosmos3-Super-Text2Image](/model/cosmos3-super-text2image.html) down 1 to #6 (score 1150)\n\n## Image edit\n\nNew free models this week:\n\n- [MiniMax H3-Image](/model/minimax-h3-image.html): score 1359, #2 among free models\n\nBiggest moves among the top 30 free models:\n\n- [Qwen-Image-2.1](/model/qwen-image-2-1.html) up 1 to #1 (score 1363)\n\n## Agents\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) down 2 to #8 (score -0.5)\n- [GLM-5.3-Flash](/model/glm-5-3-flash.html) down 2 to #11 (score -3.7)\n- [Qwen3.8-27B](/model/qwen3-8-27b.html) down 2 to #13 (score -5.6)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1487 |\n| WebDev (coding) | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 1686 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1272 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1227 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1456 |\n| Image edit | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1363 |\n| Documents | [Gemma 4 31B](/model/gemma-4-31b.html) | 1452 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1062 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1493 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1378 |\n| Agents | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 3.9 |\n"
    },
    "data": "2026-11-22"
   },
@@ -24387,7 +24612,7 @@
     "nuovi": 0,
     "titolo": "Free AI models this week: 16 Nov 2026 – 22 Nov 2026",
     "descr": "Rank changes among free models and the best free model in each category, for the week ending 22 Nov 2026.",
-    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nBiggest moves among the top 30 free models:\n\n- [Qwen3.8-27B](/model/qwen3-8-27b.html) up 2 to #25 (score 1435)\n- [MiniMax-M3](/model/minimax-m3.html) down 2 to #27 (score 1434)\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) up 1 to #2 (score 1482)\n\n## Coding\n\nBiggest moves among the top 30 free models:\n\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html) up 2 to #28 (score 1437)\n- [Kimi K2.5 (Thinking)](/model/kimi-k2-5-thinking.html) down 2 to #30 (score 1436)\n- [Kimi K3 (Max)](/model/kimi-k3-max.html) up 1 to #2 (score 1659)\n\n## Vision\n\nBiggest moves among the top 30 free models:\n\n- [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html) up 1 to #6 (score 1247)\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html) down 1 to #7 (score 1246)\n- [Mistral Large 4](/model/mistral-large-4.html) up 1 to #13 (score 1233)\n\n## Agents\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) up 1 to #7 (score -0.4)\n- [Hy4 preview](/model/hy4-preview.html) down 1 to #8 (score -0.4)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1488 |\n| Coding | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 1683 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1274 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1227 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1456 |\n| Image edit | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1363 |\n| Documents | [Gemma 4 31B](/model/gemma-4-31b.html) | 1452 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1062 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1493 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1378 |\n| Agents | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 3.9 |\n"
+    "corpo": "This report is generated automatically from the public Arena leaderboard history. It covers open-weight models only.\n\n## Chat\n\nBiggest moves among the top 30 free models:\n\n- [Qwen3.8-27B](/model/qwen3-8-27b.html) up 2 to #25 (score 1435)\n- [MiniMax-M3](/model/minimax-m3.html) down 2 to #27 (score 1434)\n- [GLM-5.3 (Max)](/model/glm-5-3-max.html) up 1 to #2 (score 1482)\n\n## WebDev (coding)\n\nBiggest moves among the top 30 free models:\n\n- [Beam 1.0 501B A23B](/model/beam-1-0-501b-a23b.html) up 2 to #28 (score 1437)\n- [Kimi K2.5 (Thinking)](/model/kimi-k2-5-thinking.html) down 2 to #30 (score 1436)\n- [Kimi K3 (Max)](/model/kimi-k3-max.html) up 1 to #2 (score 1659)\n\n## Vision\n\nBiggest moves among the top 30 free models:\n\n- [MiMo-V2.6-Pro](/model/mimo-v2-6-pro.html) up 1 to #6 (score 1247)\n- [MiMo-V2.6-Flash](/model/mimo-v2-6-flash.html) down 1 to #7 (score 1246)\n- [Mistral Large 4](/model/mistral-large-4.html) up 1 to #13 (score 1233)\n\n## Agents\n\nBiggest moves among the top 30 free models:\n\n- [GLM-5.2 (Max)](/model/glm-5-2-max.html) up 1 to #7 (score -0.4)\n- [Hy4 preview](/model/hy4-preview.html) down 1 to #8 (score -0.4)\n\n## Best free model in each category\n\n| Category | Model | Score |\n|---|---|---|\n| Chat | [Kimi K3 (Max)](/model/kimi-k3-max.html) | 1488 |\n| WebDev (coding) | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 1683 |\n| Vision | [GLM-5.3-Flash](/model/glm-5-3-flash.html) | 1274 |\n| Image | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1227 |\n| Video | [MiniMax H3](/model/minimax-h3.html) | 1456 |\n| Image edit | [Qwen-Image-2.1](/model/qwen-image-2-1.html) | 1363 |\n| Documents | [Gemma 4 31B](/model/gemma-4-31b.html) | 1452 |\n| Search | [Diffbot-Small-XL](/model/diffbot-small-xl.html) | 1062 |\n| Image to video | [MiniMax H3](/model/minimax-h3.html) | 1493 |\n| Video edit | [MiniMax H3](/model/minimax-h3.html) | 1378 |\n| Agents | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 3.9 |\n| Agent coding | [Kimi K3.1 Pro (Max)](/model/kimi-k3-1-pro-max.html) | 1169 |\n"
    },
    "data": "2026-11-22"
   },
@@ -24988,7 +25213,7 @@
     "descr": "LingSante-3.1-flash is an open-weight Mixture-of-Experts model with a million-token context window and strong medical reasoning. We break down its…",
     "data": "2026-11-22",
     "tema": "Model review",
-    "corpo": "<div class=\"video-post\"><video controls preload=\"none\" playsinline poster=\"/video/modello-lingsante-3.1-flash.jpg\" src=\"https://github.com/MarcoDeliaBot/freellmrank/releases/download/video-modello-lingsante-3.1-flash/modello-lingsante-3.1-flash.mp4\"></video></div>\n\n## What the video says\n\nLingSante-3.1-flash can process up to a million tokens in one go, giving it an unprecedented view of long medical records. It activates 25 billion parameters per token, blending massive expertise with efficiency.\n\nAccording to InclusionAI, LingSante-3.1-flash is an open-weight Mixture-of-Experts model. The model card lists 560 billion total parameters, but only 25 billion are activated for each token. This selective activation lets the model keep the cost of inference manageable while still drawing on a huge knowledge base. The architecture retains the same hybrid-linear MoE design as its predecessor Ling-3.1-flash. A standout feature is the 1 million token context window, which allows the model to read and reason over extremely long medical documents in a single pass. In short, it combines scale, flexibility, and a context length that few open models can match.\n\nThe model card says the training pipeline mixes general data with dedicated medical corpora at every stage: pre-training, mid-training, and supervised fine-tuning. After that, InclusionAI runs reinforcement learning that focuses on medical reasoning, tool use, search, and professional behavior. They also apply a multi-teacher on-policy distillation step, which merges strengths from several specialist teachers into a single model. Finally, a professional behavior alignment framework forces the model to answer in a way that matches real clinical standards. All of these steps are designed to give the model a deeper, more reliable grasp of medical tasks while keeping its broader language abilities intact.\n\nThe evaluation section of the model card reports that LingSante-3.1-flash delivers leading performance among open-source models on complex medical reasoning tasks. On the professional behavior benchmark, the card says it ranks second overall, with only GPT-6 Astra ahead. Internal evaluations also show strong results on diagnostic understanding, safety, and evidence-based reasoning. Beyond question answering, the model performs well on benchmarks that require search, verification, and tool use, indicating it can handle realistic, multi-step medical workflows. These numbers suggest the model is not just knowledgeable but also able to act consistently in long-horizon, tool-rich environments.\n\nAccording to the card, LingSante-3.1-flash shines in complex medical reasoning, professional behavior, and long-horizon task execution. Its large context window lets it keep track of evolving patient information, and the alignment framework makes its answers sound like a qualified clinician. However, the model is explicitly labeled as a research tool, not a medical device. It must not be used for independent diagnosis, prescription, or treatment decisions. The limitations note that outputs can be incorrect, incomplete, outdated, or unsupported by cited evidence. Users are reminded to verify any consequential claim against authoritative sources and to keep a qualified professional in the loop.\n\nThe intended-use list points to medical and healthcare research, literature analysis, and clinical document processing, all under qualified human review. That makes it a strong candidate for academic labs testing new diagnostic algorithms or evidence synthesis pipelines. Hobbyists who enjoy pushing the limits of home hardware will also find it interesting, especially because the weights are MIT-licensed and can be downloaded freely. Developers building retrieval-augmented or tool-using agents can benefit from the model's built-in alignment to professional behavior. In short, if you are comfortable working with open weights, need a model that can handle very long medical texts, and accept that you must verify its outputs, LingSante-3.1-flash is worth a look.\n\nWhat do you need to run it at home? At 4-bit it takes about 349 gigabytes of memory. The smallest home machine that holds it fully is the Mac Studio M3 Ultra 512 GB. On the Mac Studio M3 Ultra 512 GB it writes about 26 tokens per second.\n\nThere is no free API for it yet. The weights are open: you can download them from Hugging Face under the MIT license. Arena has not ranked it yet: we add the score as soon as the votes arrive.\n\nCompare LingSante 3.1 flash with every free model, and check what your own GPU can run, on FreeLLMArena.\n\n## The data\n\n- Size: 572.1B parameters (32.4B active) · context 256K · memory at 4-bit about 349 GB.\n- Mac Studio M3 Ultra 512 GB: about 26 tokens/s\n- Model card: https://huggingface.co/inclusionAI/LingSante-3.1-flash\n- Every free model, compared: https://freellmarena.com\n\n## Hardware\n\nMemory at 4-bit with an 8K context, from our simulator. To check your own setup, use the [Run at home simulator](/home.html).\n\n- LingSante-3.1-flash: about 349 GB at 4-bit · smallest home machine that holds it: <a href=\"/gpu/m3ultra-512.html\">Mac Studio M3 Ultra 512 GB</a> · <a class=\"tag free amazon\" data-q=\"Mac Studio M3 Ultra\" href=\"https://www.amazon.it/s?k=Mac%20Studio%20M3%20Ultra&amp;tag=comecosa-21\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Amazon ↗</a>\n- <a href=\"/gpu/m3ultra-512.html\">Mac Studio M3 Ultra 512 GB</a>: LingSante-3.1-flash, about 26 tokens/s (fully on the GPU) · <a class=\"tag free amazon\" data-q=\"Mac Studio M3 Ultra\" href=\"https://www.amazon.it/s?k=Mac%20Studio%20M3%20Ultra&amp;tag=comecosa-21\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Amazon ↗</a>\n\n<small>As an Amazon Associate, FreeLLMArena earns from qualifying purchases; the links do not change the numbers.</small>\n\nEvery number in this post comes from the FreeLLMArena data on 22 Nov 2026: Arena votes, Hugging Face sizes and our speed simulator. [Download the video and its subtitles](https://github.com/MarcoDeliaBot/freellmrank/releases/tag/video-modello-lingsante-3.1-flash).\n",
+    "corpo": "<div class=\"video-post\"><iframe src=\"https://www.youtube-nocookie.com/embed/JfHONa2yWp0\" title=\"LingSante-3.1-flash: Hardware Needed and How to Run It Free\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; picture-in-picture\" allowfullscreen></iframe></div>\n\n## What the video says\n\nLingSante-3.1-flash can process up to a million tokens in one go, giving it an unprecedented view of long medical records. It activates 25 billion parameters per token, blending massive expertise with efficiency.\n\nAccording to InclusionAI, LingSante-3.1-flash is an open-weight Mixture-of-Experts model. The model card lists 560 billion total parameters, but only 25 billion are activated for each token. This selective activation lets the model keep the cost of inference manageable while still drawing on a huge knowledge base. The architecture retains the same hybrid-linear MoE design as its predecessor Ling-3.1-flash. A standout feature is the 1 million token context window, which allows the model to read and reason over extremely long medical documents in a single pass. In short, it combines scale, flexibility, and a context length that few open models can match.\n\nThe model card says the training pipeline mixes general data with dedicated medical corpora at every stage: pre-training, mid-training, and supervised fine-tuning. After that, InclusionAI runs reinforcement learning that focuses on medical reasoning, tool use, search, and professional behavior. They also apply a multi-teacher on-policy distillation step, which merges strengths from several specialist teachers into a single model. Finally, a professional behavior alignment framework forces the model to answer in a way that matches real clinical standards. All of these steps are designed to give the model a deeper, more reliable grasp of medical tasks while keeping its broader language abilities intact.\n\nThe evaluation section of the model card reports that LingSante-3.1-flash delivers leading performance among open-source models on complex medical reasoning tasks. On the professional behavior benchmark, the card says it ranks second overall, with only GPT-6 Astra ahead. Internal evaluations also show strong results on diagnostic understanding, safety, and evidence-based reasoning. Beyond question answering, the model performs well on benchmarks that require search, verification, and tool use, indicating it can handle realistic, multi-step medical workflows. These numbers suggest the model is not just knowledgeable but also able to act consistently in long-horizon, tool-rich environments.\n\nAccording to the card, LingSante-3.1-flash shines in complex medical reasoning, professional behavior, and long-horizon task execution. Its large context window lets it keep track of evolving patient information, and the alignment framework makes its answers sound like a qualified clinician. However, the model is explicitly labeled as a research tool, not a medical device. It must not be used for independent diagnosis, prescription, or treatment decisions. The limitations note that outputs can be incorrect, incomplete, outdated, or unsupported by cited evidence. Users are reminded to verify any consequential claim against authoritative sources and to keep a qualified professional in the loop.\n\nThe intended-use list points to medical and healthcare research, literature analysis, and clinical document processing, all under qualified human review. That makes it a strong candidate for academic labs testing new diagnostic algorithms or evidence synthesis pipelines. Hobbyists who enjoy pushing the limits of home hardware will also find it interesting, especially because the weights are MIT-licensed and can be downloaded freely. Developers building retrieval-augmented or tool-using agents can benefit from the model's built-in alignment to professional behavior. In short, if you are comfortable working with open weights, need a model that can handle very long medical texts, and accept that you must verify its outputs, LingSante-3.1-flash is worth a look.\n\nWhat do you need to run it at home? At 4-bit it takes about 349 gigabytes of memory. The smallest home machine that holds it fully is the Mac Studio M3 Ultra 512 GB. On the Mac Studio M3 Ultra 512 GB it writes about 26 tokens per second.\n\nThere is no free API for it yet. The weights are open: you can download them from Hugging Face under the MIT license. Arena has not ranked it yet: we add the score as soon as the votes arrive.\n\nCompare LingSante 3.1 flash with every free model, and check what your own GPU can run, on FreeLLMArena.\n\n## The data\n\n- Size: 572.1B parameters (32.4B active) · context 256K · memory at 4-bit about 349 GB.\n- Mac Studio M3 Ultra 512 GB: about 26 tokens/s\n- Model card: https://huggingface.co/inclusionAI/LingSante-3.1-flash\n- Every free model, compared: https://freellmarena.com\n\n## Hardware\n\nMemory at 4-bit with an 8K context, from our simulator. To check your own setup, use the [Run at home simulator](/home.html).\n\n- LingSante-3.1-flash: about 349 GB at 4-bit · smallest home machine that holds it: <a href=\"/gpu/m3ultra-512.html\">Mac Studio M3 Ultra 512 GB</a> · <a class=\"tag free amazon\" data-q=\"Mac Studio M3 Ultra\" href=\"https://www.amazon.it/s?k=Mac%20Studio%20M3%20Ultra&amp;tag=comecosa-21\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Amazon ↗</a>\n- <a href=\"/gpu/m3ultra-512.html\">Mac Studio M3 Ultra 512 GB</a>: LingSante-3.1-flash, about 26 tokens/s (fully on the GPU) · <a class=\"tag free amazon\" data-q=\"Mac Studio M3 Ultra\" href=\"https://www.amazon.it/s?k=Mac%20Studio%20M3%20Ultra&amp;tag=comecosa-21\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Amazon ↗</a>\n\n<small>As an Amazon Associate, FreeLLMArena earns from qualifying purchases; the links do not change the numbers.</small>\n\nEvery number in this post comes from the FreeLLMArena data on 22 Nov 2026: Arena votes, Hugging Face sizes and our speed simulator. [Download the video and its subtitles](https://github.com/MarcoDeliaBot/freellmrank/releases/tag/video-modello-lingsante-3.1-flash).\n",
     "tipo": "Video",
     "amazon": true,
     "copertina": "/video/modello-lingsante-3.1-flash.jpg"
