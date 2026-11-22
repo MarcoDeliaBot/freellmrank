@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-22-peakcut-launches-open-source-ai-video-clipping-for-long-streams",
+ "titolo": "PeakCut launches open‑source AI video clipping for long streams",
+ "descr": "PeakCut lets users self‑host a tool that trims long videos into captioned vertical clips using any OpenAI‑compatible model.",
+ "tema": "Software",
+ "paragrafi": [
+  "PeakCut, a GitHub project by haziqahmedqasmi, offers AI‑driven clipping for long videos and live streams.",
+  "The tool runs on a personal computer or server and requires Python 3.10+ and ffmpeg; it downloads a 480 MB speech model on first start.",
+  "Users can paste YouTube, Twitch or Kick links, or upload files; the system transcribes audio, queries an AI model for highlight moments, and outputs 9:16 clips with word‑by‑word captions.",
+  "PeakCut supports Gemini, OpenAI, Grok, Groq, OpenRouter, Claude, or a local Ollama model, and can operate without an API key by relying on loudness detection.",
+  "Clips can be posted automatically to connected YouTube, Instagram and TikTok accounts, with optional daily caps and activity logs for each creator."
+ ],
+ "perche": [
+  "For creators who prefer free or self‑hosted solutions, PeakCut eliminates reliance on cloud clipping services and lets them use any compatible model, including local ones via Ollama. This aligns with the growing demand for open‑source AI tools that keep data on‑premise and avoid recurring API costs."
+ ],
+ "pubblicato": "2026-11-22",
+ "titoloFonte": "haziqahmedqasmi/PeakCut: AI clipping for long videos and live streams. Self-hosted, bring your own AI key.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/haziqahmedqasmi/PeakCut",
+   "titolo": "haziqahmedqasmi/PeakCut: AI clipping for long videos and live streams. Self-hosted, bring your own AI key.",
+   "ufficiale": false,
+   "data": "2026-11-14"
+  }
+ ],
+ "frasiTolte": 0
+}
