@@ -18,7 +18,7 @@ const dati = JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', 'data.json'), 
 const storia = JSON.parse(fs.readFileSync(path.join(RADICE, 'sito', 'history.json'), 'utf8'));
 const css = fs.readFileSync(path.join(RADICE, 'sorgente', 'style.css'), 'utf8');
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const gratis = (m) => m.aperto || m.or?.gratis;
+import { gratis, etichetta, SPIEGA_BREVE } from '../gratis.mjs';
 const fmtVel = (v) => (v >= 10 ? Math.round(v) : v.toFixed(1));
 const giorno = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 // per la voce: trattini e trattini bassi diventano spazi, «RTX 4090» si legge «forty ninety»
@@ -77,7 +77,9 @@ const scene = [
   { min: 14, voce: `Here are the ten best free chat models, ranked by blind human votes on Arena. In first place, ${voceNome(top10[0].nome)} from ${nomeLab(top10[0].org)}, with ${top10[0].punti} points. Then ${voceNome(top10[1].nome)}, and ${voceNome(top10[2].nome)}. The dashed line is the best paid model.`,
     corpo: `<p class="titolo riga" data-in="0">Top 10 free chat models</p><div class="grafico-v" data-luce="4">${grafico}</div>` },
   { min: 14, voce: `From fourth to tenth: ${top10.slice(3).map((m) => `${voceNome(m.nome)}, ${m.punti}`).join('; ')}.`,
-    corpo: `<p class="titolo riga" data-in="0">Places 4 to 10</p><div class="griglia quattro">${top10.slice(3, 10).map((m, i) => carta(`#${i + 4} · ${esc(nomeLab(m.org))}`, m.nome, `${m.punti} points${m.aperto ? ' · open weights' : ' · free API'}`, i)).join('')}</div>` },
+    corpo: `<p class="titolo riga" data-in="0">Places 4 to 10</p><div class="griglia quattro">${top10.slice(3, 10).map((m, i) => carta(`#${i + 4} · ${esc(nomeLab(m.org))}`, m.nome, `${m.punti} points · ${etichetta(m)}`, i)).join('')}</div>` },
+  { min: 14, voce: 'A quick note on what free means here. Open weights models you download and run on your own computer, free forever. A free API works online with daily limits, and the provider can change or end it at any time. A free trial gives new accounts credit for a few months, then you pay.',
+    corpo: `<p class="titolo riga" data-in="0">What free means</p><div class="griglia">${carta('Open weights', 'On your computer', 'free forever · your hardware is the limit', 0)}${carta('Free API', 'Online', 'daily limits · can change or end any time', 1)}${carta('Free trial', 'New accounts', 'free credit for a few months, then paid', 2)}</div>` },
   { min: 9, voce: `Of the top 50 chat models on Arena, paid ones included, ${gratis50} can be used for free, and ${aperti50} have open weights you can download.`,
     corpo: `<p class="titolo riga" data-in="0">Of the top 50 chat models</p><div class="griglia due"><div class="carta riga" data-in="0.5"><small>Free to use</small><b class="verde" style="font-size:96px"><span data-conta="${gratis50}" data-da="0.6">0</span></b><span>free API or open weights</span></div><div class="carta riga" data-in="0.8"><small>Open weights</small><b class="verde" style="font-size:96px"><span data-conta="${aperti50}" data-da="0.9">0</span></b><span>download and run them yourself</span></div></div>` },
   mosse.length ? { min: 9, voce: `The biggest move this week: ${voceNome(mosse[0].m.nome)} ${mosse[0].d > 0 ? 'went up' : 'went down'} ${Math.abs(mosse[0].d)} points.${mosse[1] ? ` ${voceNome(mosse[1].m.nome)} ${mosse[1].d > 0 ? 'gained' : 'lost'} ${Math.abs(mosse[1].d)}.` : ''}`,
@@ -111,7 +113,7 @@ const info = {
     `Best FREE AI Models This Week (${giorno(dati.aggiornato)}): Top 10 and What Runs at Home`,
     `Best FREE AI Models This Week (${giorno(dati.aggiornato)}): Top 10`,
   ]),
-  descrizione: `The free AI report for the week of ${giorno(dati.aggiornato)}, from blind human votes on Arena.\n\nTop 10 free chat models:\n${top10.map((m, i) => `${i + 1}. ${m.nome} (${nomeLab(m.org)}): ${m.punti}`).join('\n')}\nBest paid model: ${pagato.nome} (${pagato.punti}).\n\nBest free model per category: ${capi.map((x) => `${x.c.nome}: ${x.m.nome}`).join('; ')}.\n\nEvery free model, with sizes, speeds and where to use it free: https://freellmarena.com`,
+  descrizione: `The free AI report for the week of ${giorno(dati.aggiornato)}, from blind human votes on Arena.\n\nTop 10 free chat models:\n${top10.map((m, i) => `${i + 1}. ${m.nome} (${nomeLab(m.org)}): ${m.punti}`).join('\n')}\nBest paid model: ${pagato.nome} (${pagato.punti}).\n\nBest free model per category: ${capi.map((x) => `${x.c.nome}: ${x.m.nome}`).join('; ')}.\n\n${SPIEGA_BREVE}\n\nEvery free model, with sizes, speeds and where to use it free: https://freellmarena.com`,
   tag: ['free AI', 'open source AI', 'AI leaderboard', 'local LLM', 'best AI models'],
   condividi: `Free AI this week: ${top10[0].nome} leads the free models at ${top10[0].punti}, ${distacco} points behind ${pagato.nome}. Full report: https://freellmarena.com`,
   lingua: 'en', formato: { w: 1920, h: 1080 }, fps: 24,
@@ -131,7 +133,8 @@ const voceDi = (inizio) => scene.find((s) => s.voce.startsWith(inizio))?.voce;
 const piano = [
   { stampo: 'numero', etichetta: 'Weekly report', voce: scene[0].voce, dati: { valore: String(distacco), unita: '', etichetta: 'points behind', dettaglio: 'the best paid model', fonte: corto(`Week of ${giorno(dati.aggiornato)}`, 28) } },
   { stampo: 'barre', etichetta: 'Top 10', voce: scene[1].voce, dati: { titolo: 'Top 10 free chat models', sotto: 'Blind human votes on Arena', voci: top10.map((m) => ({ nome: corto(m.nome, 28), valore: m.punti, testo: String(m.punti), nota: corto(nomeLab(m.org), 34) })), riferimento: { nome: corto(pagato.nome, 28), valore: pagato.punti, testo: String(pagato.punti) }, scala: { da: 1400 }, evidenza: 0, quando: { riferimento: 'dashed' } } },
-  { stampo: 'barre', etichetta: 'Places 4 to 10', voce: scene[2].voce, dati: { titolo: 'Places 4 to 10', voci: top10.slice(3).map((m) => ({ nome: corto(m.nome, 28), valore: m.punti, testo: String(m.punti), nota: corto(`${nomeLab(m.org)} · ${m.aperto ? 'open weights' : 'free API'}`, 34) })), scala: { da: 1400 } } },
+  { stampo: 'barre', etichetta: 'Places 4 to 10', voce: scene[2].voce, dati: { titolo: 'Places 4 to 10', voci: top10.slice(3).map((m) => ({ nome: corto(m.nome, 28), valore: m.punti, testo: String(m.punti), nota: corto(`${nomeLab(m.org)} · ${etichetta(m)}`, 34) })), scala: { da: 1400 } } },
+  { stampo: 'punti', etichetta: 'What free means', voce: voceDi('A quick note on what free means'), dati: { titolo: 'What free means', punti: ['Open weights: on your computer, free forever', 'Free API: online, daily limits, can end', 'Free trial: credit for months, then you pay'] } },
   { stampo: 'numeri', etichetta: 'Top 50', voce: scene[3].voce, dati: { titolo: 'Of the top 50 chat models', voci: [{ valore: String(gratis50), unita: '', etichetta: 'free to use', grafico: 'nessuno' }, { valore: String(aperti50), unita: '', etichetta: 'open weights', grafico: 'nessuno' }] } },
   ...(mosse.length ? [{ stampo: 'punti', etichetta: 'Who moved', voce: voceDi('The biggest move'), dati: { titolo: 'Who moved this week', punti: mosse.slice(0, 4).map((x) => corto(`${visto(x.m.nome)} ${x.d > 0 ? '+' : ''}${x.d}, now ${x.m.punti}`, 60)) } }] : []),
   ...(entrati.length >= 2 ? [{ stampo: 'punti', etichetta: 'New on the board', voce: voceDi(entrati.length === 1 ? 'One free model' : `${entrati.length} free models`), dati: { titolo: `${entrati.length} new on the leaderboard`, punti: entrati.slice(0, 4).map((m) => corto(`${visto(m.nome)}: ${m.punti} points, #${m.pos} overall`, 60)) } }] : []),

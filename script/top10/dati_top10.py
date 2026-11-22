@@ -1,7 +1,7 @@
 """Top 10 gratuita della classifica chat di Arena, presa da data.json di FreeLLMArena.
 
 Stessa regola del sito (classifica-llm-gratis/script/costruisci-sito.mjs, riga 42):
-un modello è gratis se m.aperto || m.or.gratis. «Lab chat» è solo l'etichetta che il sito
+un modello è gratis come in script/gratis.mjs (pesi aperti, API gratis, prova). «Lab chat» è solo l'etichetta che il sito
 mette ai modelli aperti il cui laboratorio ha una chat web (CHAT_WEB in script/sito/comune.mjs).
 Nomi dei laboratori come nomeLab() di script/sito/laboratori.mjs.
 
@@ -37,8 +37,22 @@ def nome_lab(org: str) -> str:
     return org[:1].upper() + org[1:] if org else "Other"
 
 
+def tipo_gratis(m: dict) -> str | None:
+    """Come tipoGratis() di script/gratis.mjs (22/11/2026, Marco: contare anche API gratis e prove, spiegandolo)."""
+    if m.get("aperto"):
+        return "aperto"
+    if (m.get("or") or {}).get("gratis"):
+        return "api"
+    tipo = (m.get("api") or {}).get("tipo")
+    if tipo == "free tier":
+        return "api"
+    if tipo == "trial":
+        return "prova"
+    return None
+
+
 def gratis(m: dict) -> bool:
-    return bool(m.get("aperto")) or bool((m.get("or") or {}).get("gratis"))
+    return tipo_gratis(m) is not None
 
 
 def etichetta(m: dict) -> str:
@@ -50,6 +64,11 @@ def etichetta(m: dict) -> str:
             parti.append(m["licenza"])
     if (m.get("or") or {}).get("gratis"):
         parti.append("Free API")
+    tipo = (m.get("api") or {}).get("tipo")
+    if not m.get("aperto") and tipo == "free tier":
+        parti.append("Free API · daily limits")
+    if not m.get("aperto") and tipo == "trial":
+        parti.append("Free trial · 90 days")
     if m.get("aperto") and CHAT_WEB.get(m.get("org", "")):
         parti.append("Lab chat")
     return " · ".join(parti)
@@ -93,7 +112,7 @@ def calcola(data_json: Path) -> dict:
         "total_models": chat["totale"],
         "free_models": len(lista),
         "best_paid": {"name": pagato["nome"], "score": pagato["punti"], "arena_pos": pagato["pos"]},
-        "rule": "aperto || or.gratis (script/costruisci-sito.mjs riga 42)",
+        "rule": "aperto || API gratis || prova (script/gratis.mjs)",
         "top10": top,
     }
 

@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { SITO, RADICE, URL_SITO, NOME_PIENO, CHAT_WEB } from './comune.mjs';
 
-const usabileGratis = (m) => m.aperto || m.or?.gratis;
+import { gratis as usabileGratis } from '../gratis.mjs';
 const gb4 = (b) => (b * 0.606 + 1.2).toFixed(b >= 10 ? 0 : 1);
 const cella = (s) => String(s ?? '').replace(/\|/g, '/').replace(/\n/g, ' ');
 

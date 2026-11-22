@@ -13,7 +13,7 @@ const dati = leggi('data.json');
 const storia = leggi('history.json');
 const ID_STORIA = { Chat: 'chat', Coding: 'code', Vision: 'vision', Image: 'image', Video: 'video', 'Image edit': 'edit', Documents: 'document', Search: 'search', 'Image to video': 'i2v', 'Video edit': 'vedit', Agents: 'agent' };
 const NOMI_LAB = { moonshot: 'Moonshot AI', minimax: 'MiniMax', deepseek: 'DeepSeek', alibaba: 'Alibaba Qwen', cohere: 'Cohere', nvidia: 'NVIDIA', xiaomi: 'Xiaomi MiMo', tencent: 'Tencent Hunyuan', google: 'Google', bfl: 'Black Forest Labs', thinky: 'Thinking Machines Lab', zai: 'Z.ai', mistral: 'Mistral AI' };
-const usabileGratis = (m) => m.aperto || m.or?.gratis;
+import { gratis as usabileGratis } from './gratis.mjs';
 const chiave = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g, '');
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 

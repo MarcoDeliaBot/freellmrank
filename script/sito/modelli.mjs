@@ -7,7 +7,7 @@ import { simula, daScheda, kvGB, QUANTI, perditaQualita, giudizio, slug } from '
 
 const SOLO_PESI = new Set(['image', 'video', 'edit', 'i2v', 'vedit']);
 // 24/10/2026: anche i modelli chiusi con API gratis del laboratorio (Gemini) o quota gratis di prova (Qwen su Model Studio)
-const usabileGratis = (m) => m.aperto || m.or?.gratis || !!apiGratisPer(m.nome);
+import { gratis as usabileGratis } from '../gratis.mjs';
 // nome più leggibile fra quelli usati nelle varie classifiche
 const piuBello = (a, b) => ((/[A-Z ]/.test(b) && !/[A-Z ]/.test(a)) ? b : a);
 

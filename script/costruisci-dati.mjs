@@ -2,6 +2,7 @@
 // li collega per nome e scrive sito/data.json.
 // Uso: node script/costruisci-dati.mjs [--offline]
 import { apertiCoerenti } from './aperti-coerenti.mjs';
+import { apiGratisPer } from './cf-modelli.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -111,6 +112,8 @@ for (const c of CATEGORIE) {
       punti: c.scala === 'agent' ? Math.round(Number(r.score) * 1000) / 10 : Math.round(r.rating),
       voti: Number(c.scala === 'agent' ? r.session_count : r.vote_count),
       or: or ? { id: or.id, gratis: libero(or) } : null,
+      // 22/11/2026: API gratis del laboratorio (Free Tier di Google) o prova (Alibaba): conta come gratis, spiegato (script/gratis.mjs)
+      api: aperto ? null : apiGratisPer(r.model_name),
       hf: aperto ? infoHf(r.model_name) : null,
     };
   });

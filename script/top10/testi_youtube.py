@@ -35,7 +35,7 @@ def descrizione(dati: dict) -> str:
         "",
         *righe,
         "",
-        f"\"Free\" means open weights you can download or a free API, as defined on FreeLLMArena: {dati['free_models']} of the {dati['total_models']} models in Arena's chat ranking qualify. \"Lab chat\" = the lab runs its own chat website, linked on freellmarena.com.",
+        f"\"Free\" means one of three things, as defined on FreeLLMArena: {dati['free_models']} of the {dati['total_models']} models in Arena's chat ranking qualify. \"Open weights\": you download the model and run it on your own computer, free forever. \"Free API\": you use it online with daily limits, and the provider can change or end the free tier at any time. \"Free trial\": new accounts get free credit for a few months (about 1 million tokens for 90 days on Alibaba Cloud), then you pay. \"Lab chat\" = the lab runs its own chat website, linked on freellmarena.com.",
         "",
         f"Full free ranking: {SITO}",
         "",
