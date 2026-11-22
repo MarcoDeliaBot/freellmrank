@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-22-sensenova-launches-sensenova-loop-9b-on-hugging-face",
+ "titolo": "sensenova launches SenseNova-Loop-9B on Hugging Face",
+ "descr": "The new 9‑billion‑parameter model is now available for download on Hugging Face.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "The model contains 9 billion parameters and uses a custom chat template with support for image and video placeholders.",
+  "Its configuration includes a pad token set to \"<|endoftext|>\" and no unknown token defined.",
+  "The release adds another open‑source large language model to the Hugging Face ecosystem, expanding options for developers and researchers.",
+  "No information was provided about the model's hardware requirements or performance benchmarks."
+ ],
+ "perche": [
+  "For users seeking free or locally runnable models, SenseNova-Loop-9B offers an additional open‑source option, though its size may limit deployment on modest hardware. Its availability on Hugging Face aligns with the growing community of free chat models such as Gemini 3.8 Flash and Kimi K3, providing more choices for those avoiding paid services."
+ ],
+ "pubblicato": "2026-11-22",
+ "titoloFonte": "sensenova releases SenseNova-Loop-9B on Hugging Face",
+ "fonti": [
+  {
+   "nome": "Hugging Face trending",
+   "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B",
+   "titolo": "sensenova releases SenseNova-Loop-9B on Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-17"
+  }
+ ],
+ "frasiTolte": 1
+}

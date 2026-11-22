@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-22-nvidia-launches-alpamayo-2-edge-a-2-billion-parameter-vla-for-drive-ag",
+ "titolo": "NVIDIA launches Alpamayo 2 Edge, a 2 billion‑parameter VLA for DRIVE AGX Thor",
+ "descr": "Alpamayo 2 Edge delivers vision‑language‑action reasoning for autonomous driving with 160‑190 ms pixel‑to‑trajectory latency on NVIDIA’s DRIVE AGX Thor platform.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "NVIDIA announced Alpamayo 2 Edge, a new vision‑language‑action model designed for autonomous‑driving tasks.",
+  "The model contains roughly 2 billion parameters and can plan driving trajectories while providing explanations for its decisions.",
+  "Alpamayo 2 Edge runs on NVIDIA’s DRIVE AGX Thor hardware, achieving a pixel‑to‑trajectory latency between 160 ms and 190 ms.",
+  "The release was reported on 22 November 2026 by both MarkTechPost and the official Hugging Face model page.",
+  "The model is available through the nvidia/Alpamayo2-Edge repository on Hugging Face."
+ ],
+ "perche": [
+  "For developers of autonomous‑driving systems, Alpamayo 2 Edge offers a ready‑to‑use reasoning VLA that fits the performance envelope of existing DRIVE Thor hardware. Users seeking free or locally hosted models will still rely on community‑driven alternatives, as Alpamayo 2 Edge is tied to NVIDIA’s proprietary platform."
+ ],
+ "pubblicato": "2026-11-22",
+ "titoloFonte": "NVIDIA Releases Alpamayo 2 Edge: A 2B Reasoning VLA for DRIVE Thor",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/22/nvidia-alpamayo-2-edge-2b-reasoning-vla-drive-thor/",
+   "titolo": "NVIDIA Releases Alpamayo 2 Edge: A 2B Reasoning VLA for DRIVE Thor",
+   "ufficiale": false,
+   "data": "2026-11-22"
+  },
+  {
+   "nome": "huggingface.co",
+   "url": "https://huggingface.co/nvidia/Alpamayo2-Edge",
+   "titolo": "nvidia/Alpamayo2-Edge · Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-22"
+  }
+ ],
+ "frasiTolte": 0
+}

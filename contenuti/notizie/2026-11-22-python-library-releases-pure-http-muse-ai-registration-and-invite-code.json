@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-22-python-library-releases-pure-http-muse-ai-registration-and-invite-code",
+ "titolo": "Python library releases pure‑HTTP muse.ai registration and invite‑code redemption protocol",
+ "descr": "The musepy repo on GitHub details a step‑by‑step HTTP implementation for creating muse.ai accounts and redeeming invitation codes without a browser.",
+ "tema": "Guides",
+ "paragrafi": [
+  "The open‑source project duwqijlk/muse-protocol, titled musepy, provides a pure HTTP Python client for the muse.ai sign‑up and invite‑code flow.",
+  "The repository includes client modules for registration, OTP polling, multi‑account batch scheduling, and optional telemetry reporting, along with example scripts and a configuration template.",
+  "Key protocol steps are documented, from initial cookie acquisition to CSRF token handling, OTP sending, confirmation, TOS acceptance, and final invite‑code redemption, with required request bodies and headers.",
+  "The README notes several pitfalls, such as the need for a specific \"supports_muse_link_transparency\" flag, correct name field semantics, mandatory vm/wake calls, and dynamic TOS content retrieved from the server."
+ ],
+ "perche": [
+  "The library lets developers automate muse.ai account creation and code redemption without browser automation, useful for research or bulk testing. It also illustrates how to reverse‑engineer web protocols, a skill relevant for those building or evaluating free and local AI tools."
+ ],
+ "pubblicato": "2026-11-22",
+ "titoloFonte": "duwqijlk/muse-protocol: muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/duwqijlk/muse-protocol",
+   "titolo": "duwqijlk/muse-protocol: muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+   "ufficiale": false,
+   "data": "2026-11-14"
+  }
+ ],
+ "frasiTolte": 1
+}

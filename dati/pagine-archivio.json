@@ -24966,6 +24966,42 @@
     "tipo": "News"
    },
    "data": "2026-11-22"
+  },
+  "/blog/news-2026-11-22-nvidia-launches-alpamayo-2-edge-a-2-billion-parameter-vla-for-drive-ag.html": {
+   "post": {
+    "slug": "news-2026-11-22-nvidia-launches-alpamayo-2-edge-a-2-billion-parameter-vla-for-drive-ag",
+    "titolo": "NVIDIA launches Alpamayo 2 Edge, a 2 billion‑parameter VLA for DRIVE AGX Thor",
+    "descr": "Alpamayo 2 Edge delivers vision‑language‑action reasoning for autonomous driving with 160‑190 ms pixel‑to‑trajectory latency on NVIDIA’s DRIVE AGX Thor platform.",
+    "data": "2026-11-22",
+    "tema": "Hardware",
+    "corpo": "NVIDIA announced Alpamayo 2 Edge, a new vision‑language‑action model designed for autonomous‑driving tasks.\n\nThe model contains roughly 2 billion parameters and can plan driving trajectories while providing explanations for its decisions.\n\nAlpamayo 2 Edge runs on NVIDIA’s DRIVE AGX Thor hardware, achieving a pixel‑to‑trajectory latency between 160 ms and 190 ms.\n\nThe release was reported on 22 November 2026 by both MarkTechPost and the official Hugging Face model page.\n\nThe model is available through the nvidia/Alpamayo2-Edge repository on Hugging Face.\n\n## What it means for you\n\nFor developers of autonomous‑driving systems, Alpamayo 2 Edge offers a ready‑to‑use reasoning VLA that fits the performance envelope of existing DRIVE Thor hardware. Users seeking free or locally hosted models will still rely on community‑driven alternatives, as Alpamayo 2 Edge is tied to NVIDIA’s proprietary platform.\n\n## Sources\n\n- [NVIDIA Releases Alpamayo 2 Edge: A 2B Reasoning VLA for DRIVE Thor](https://www.marktechpost.com/2026/11/22/nvidia-alpamayo-2-edge-2b-reasoning-vla-drive-thor/), MarkTechPost, 22 Nov 2026\n- [nvidia/Alpamayo2-Edge · Hugging Face](https://huggingface.co/nvidia/Alpamayo2-Edge), huggingface.co (official), 22 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-22-nvidia-launches-alpamayo-2-edge-a-2-billion-parameter-vla-for-drive-ag).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-22"
+  },
+  "/blog/news-2026-11-22-python-library-releases-pure-http-muse-ai-registration-and-invite-code.html": {
+   "post": {
+    "slug": "news-2026-11-22-python-library-releases-pure-http-muse-ai-registration-and-invite-code",
+    "titolo": "Python library releases pure‑HTTP muse.ai registration and invite‑code redemption protocol",
+    "descr": "The musepy repo on GitHub details a step‑by‑step HTTP implementation for creating muse.ai accounts and redeeming invitation codes without a browser.",
+    "data": "2026-11-22",
+    "tema": "Guides",
+    "corpo": "The open‑source project duwqijlk/muse-protocol, titled musepy, provides a pure HTTP Python client for the muse.ai sign‑up and invite‑code flow.\n\nThe repository includes client modules for registration, OTP polling, multi‑account batch scheduling, and optional telemetry reporting, along with example scripts and a configuration template.\n\nKey protocol steps are documented, from initial cookie acquisition to CSRF token handling, OTP sending, confirmation, TOS acceptance, and final invite‑code redemption, with required request bodies and headers.\n\nThe README notes several pitfalls, such as the need for a specific \"supports_muse_link_transparency\" flag, correct name field semantics, mandatory vm/wake calls, and dynamic TOS content retrieved from the server.\n\n## What it means for you\n\nThe library lets developers automate muse.ai account creation and code redemption without browser automation, useful for research or bulk testing. It also illustrates how to reverse‑engineer web protocols, a skill relevant for those building or evaluating free and local AI tools.\n\n## Sources\n\n- [duwqijlk/muse-protocol: muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）](https://github.com/duwqijlk/muse-protocol), GitHub trending, 14 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-22-python-library-releases-pure-http-muse-ai-registration-and-invite-code).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-22"
+  },
+  "/blog/news-2026-11-22-sensenova-launches-sensenova-loop-9b-on-hugging-face.html": {
+   "post": {
+    "slug": "news-2026-11-22-sensenova-launches-sensenova-loop-9b-on-hugging-face",
+    "titolo": "sensenova launches SenseNova-Loop-9B on Hugging Face",
+    "descr": "The new 9‑billion‑parameter model is now available for download on Hugging Face.",
+    "data": "2026-11-22",
+    "tema": "LLMs",
+    "corpo": "The model contains 9 billion parameters and uses a custom chat template with support for image and video placeholders.\n\nIts configuration includes a pad token set to \"<|endoftext|>\" and no unknown token defined.\n\nThe release adds another open‑source large language model to the Hugging Face ecosystem, expanding options for developers and researchers.\n\nNo information was provided about the model's hardware requirements or performance benchmarks.\n\n## What it means for you\n\nFor users seeking free or locally runnable models, SenseNova-Loop-9B offers an additional open‑source option, though its size may limit deployment on modest hardware. Its availability on Hugging Face aligns with the growing community of free chat models such as Gemini 3.8 Flash and Kimi K3, providing more choices for those avoiding paid services.\n\n## On FreeLLMArena\n\nFrom our rankings on 22 Nov 2026, based on Arena's blind votes:\n\n- [Gemini 3.8 Flash (High)](/model/gemini-3-8-flash-high.html): #1 among free chat models\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #2 among free chat models\n\n## Sources\n\n- [sensenova releases SenseNova-Loop-9B on Hugging Face](https://huggingface.co/sensenova/SenseNova-Loop-9B), Hugging Face trending (official), 17 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-22-sensenova-launches-sensenova-loop-9b-on-hugging-face).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-22"
   }
  },
  "ricostruzione": {
