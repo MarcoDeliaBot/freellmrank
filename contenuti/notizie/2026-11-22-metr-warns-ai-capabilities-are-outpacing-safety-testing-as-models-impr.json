@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-22-metr-warns-ai-capabilities-are-outpacing-safety-testing-as-models-impr",
+ "titolo": "METR warns AI capabilities are outpacing safety testing as models improve rapidly",
+ "descr": "METR reports AI models now match skilled humans on many tasks and double task length handling every 3.6 months, raising safety concerns.",
+ "tema": "Research",
+ "paragrafi": [
+  "The AI research group METR released a November 20, 2026 update showing rapid gains in model capabilities relevant to AI R&D.",
+  "Models now usually match or beat skilled humans on coding and optimization tasks, and they handle tasks twice as long every 3.6 months.",
+  "On longer, 200‑hour tasks, a naive extrapolation predicts a 50% success rate by July 2027, suggesting a possible acceleration in AI research.",
+  "METR notes that models still struggle with open‑ended questions lacking immediate feedback and with judgment‑heavy tasks.",
+  "The organization warns that current public data cannot rule out a drastic acceleration that could leave humans unable to assess catastrophic risks."
+ ],
+ "perche": [
+  "For users, the faster progress means AI tools may become more capable but also less predictable, increasing the need for robust safety checks. Free‑model enthusiasts should note that while top free chat models like Kimi K3 (Max) rank highly, they may still lag behind frontier systems in safety testing and judgment tasks."
+ ],
+ "pubblicato": "2026-11-22",
+ "titoloFonte": "AI is getting better faster than experts can reliably test whether new systems are safe, METR warns",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/",
+   "titolo": "AI is getting better faster than experts can reliably test whether new systems are safe, METR warns",
+   "ufficiale": false,
+   "data": "2026-11-22"
+  },
+  {
+   "nome": "metr.org",
+   "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
+   "titolo": "AI R&D-relevant model capabilities are improving rapidly and are getting harder to measure - METR",
+   "ufficiale": true,
+   "data": "2026-11-20"
+  }
+ ],
+ "frasiTolte": 0
+}

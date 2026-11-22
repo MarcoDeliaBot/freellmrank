@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-22-google-launches-preview-of-tool-retrieval-in-gemini-api-to-cut-token-u",
+ "titolo": "Google launches preview of Tool Retrieval in Gemini API to cut token usage",
+ "descr": "The new preview lets agents keep large tool libraries on standby and load parameter schemas only when needed, reducing latency and input tokens.",
+ "tema": "Software",
+ "paragrafi": [
+  "Google announced a preview of Tool Retrieval for the Gemini Interactions API on Nov 19, 2026.",
+  "The feature lets an agent keep a full tool library on standby and load each tool's parameter schema only when the model requests it within a single API call.",
+  "Google says the approach reduces input token counts, latency, and improves tool‑selection accuracy as the number of available tools grows."
+ ],
+ "perche": [
+  "For AI developers, the preview reduces the token overhead and latency of agents that need to access dozens or hundreds of tools, making large‑scale agent deployments more efficient. Users of free or locally hosted models may see slower adoption of such features, as the preview is tied to Gemini’s cloud API."
+ ],
+ "pubblicato": "2026-11-22",
+ "titoloFonte": "Google AI Previews Tool Retrieval in the Gemini API for Large Tool Libraries",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/22/google-gemini-api-tool-retrieval/",
+   "titolo": "Google AI Previews Tool Retrieval in the Gemini API for Large Tool Libraries",
+   "ufficiale": false,
+   "data": "2026-11-22"
+  },
+  {
+   "nome": "blog.google",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+   "titolo": "Gemini API tool retrieval for efficient agent scaling",
+   "ufficiale": true,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 2
+}

@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-22-openai-tracks-perplexity-drops-below-0-8-cites-emerging-ai-capabilitie",
+ "titolo": "OpenAI tracks perplexity drops below 0.8, cites emerging AI capabilities",
+ "descr": "OpenAI publishes internal perplexity metrics, noting new thresholds correlate with breakthroughs in math and cybersecurity, while free chat models rank top in community votes.",
+ "tema": "Research",
+ "paragrafi": [
+  "OpenAI released a blog post on November 22, 2026 outlining how it measures progress with perplexity, the cross‑entropy loss of a model on a held‑out dataset.",
+  "The post records GPT‑3.5 at a log‑perplexity of about 0.99, GPT‑4 at ~0.91, and a newer model that reached ~0.76, after which the authors observed “groundbreaking results” in mathematics.",
+  "OpenAI argues that reaching perplexity below 0.8 has already produced transformative abilities in cybersecurity and mathematics, and suggests further drops could trigger more emergent capabilities.",
+  "The company also notes that algorithmic research on pretraining may accelerate as AI contributes to its own development, potentially leading to rapid advances by 2027.",
+  "In a separate community ranking published the same day, the top free chat model is Kimi K3 (Max) with 1488 votes, followed by Kimi K3.1 Pro (Max) and GLM‑5.3 (Max) tied at 1482 votes. The highest‑scoring paid model is Gemini 4 Carbon (High) with 1527 votes."
+ ],
+ "perche": [
+  "For AI users, lower perplexity signals models that can handle complex reasoning tasks, which may improve productivity in fields like security and research. For advocates of free or locally run models, the community rankings highlight strong alternatives that can be accessed without cost, though they may not yet match the emergent capabilities reported at the lowest perplexity levels."
+ ],
+ "pubblicato": "2026-11-22",
+ "titoloFonte": "Perplexity and Intelligence",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/perplexity-and-intelligence",
+   "titolo": "Perplexity and Intelligence",
+   "ufficiale": true,
+   "data": "2026-11-22"
+  }
+ ],
+ "frasiTolte": 0
+}
