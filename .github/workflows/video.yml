@@ -1,7 +1,7 @@
 # Dopo ogni aggiornamento dei dati: video verticali (stile /brag, approvato da Marco il 20/10/2026), solo in inglese
 # (deciso da Marco il 22/10/2026: YouTube traduce titoli, sottotitoli e audio, come fanno i canali che segue):
 # il modello nuovo più recente ogni volta, il report settimanale la domenica, la scheda video della settimana il mercoledì,
-# e la domenica anche il video lungo orizzontale della settimana (script/brag/lungo.mjs).
+# e la domenica anche il video lungo orizzontale della settimana (script/brag/lungo.mjs); il giovedì il video lungo del codice (script/brag/codice.mjs).
 # Con voce (Piper, gratis, gira qui), sottotitoli e chiusura «link in bio».
 # Si pubblica come release di GitHub "video-<nome>" con <nome>.mp4, <nome>.jpg, <nome>.srt (sottotitoli col testo esatto
 # della voce) e <nome>.json (titolo, descrizione, tag, testo da condividere e «localizzazioni»: titolo e descrizione
@@ -32,6 +32,10 @@ on:
         default: false
       lungo:
         description: 'Fai anche il video lungo della settimana (orizzontale, 2-3 minuti)'
+        type: boolean
+        default: false
+      codice:
+        description: 'Fai anche il video lungo del codice della settimana (classifiche Coding e Agents)'
         type: boolean
         default: false
       lunghi:
@@ -106,10 +110,13 @@ jobs:
         run: |
           node script/brag/genera.mjs
           node script/brag/lungo.mjs
+          # 22/11/2026 (Marco: «gli smanettoni lo usano per il codice… fanne uno dedicato a settimana»): il giovedì
+          node script/brag/codice.mjs
           tipi=""
           if [ "$(date -u +%u)" = "7" ] || [ "${{ inputs.settimana }}" = "true" ]; then tipi="$tipi settimana"; fi
           if [ "$(date -u +%u)" = "3" ] || [ "${{ inputs.gpu }}" = "true" ]; then tipi="$tipi gpu"; fi
           if [ "$(date -u +%u)" = "7" ] || [ "${{ inputs.lungo }}" = "true" ]; then tipi="$tipi lungo"; fi
+          if [ "$(date -u +%u)" = "4" ] || [ "${{ inputs.codice }}" = "true" ]; then tipi="$tipi codice"; fi
           for tipo in $tipi; do
             for lingua in ""; do
               v="$tipo$lingua"
