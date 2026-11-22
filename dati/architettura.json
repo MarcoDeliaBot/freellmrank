@@ -2220,5 +2220,27 @@
   "contestoMax": 262144,
   "moe": false,
   "attivi": 4539265536
+ },
+ "inclusionAI/LingSante-3.1-air-VL": {
+  "strati": 42,
+  "tipo": "MLA",
+  "kvPerStrato": 1152,
+  "pieni": 42,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 131072,
+  "moe": true,
+  "attivi": 5537551056
+ },
+ "inclusionAI/LingSante-3.1-flash": {
+  "strati": 72,
+  "tipo": "MLA",
+  "kvPerStrato": 1152,
+  "pieni": 72,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": true,
+  "attivi": 32424905024
  }
 }

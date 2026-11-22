@@ -26761,7 +26761,8 @@
   "lingua": "de",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/de/model/ling-3-0-flash-sante.html",
@@ -26769,7 +26770,8 @@
   "lingua": "de",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/de/model/ling-3-0-tiny",
@@ -26834,6 +26836,38 @@
   "tipo": "modello",
   "lingua": "de",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/lingsante-3-1-air-vl",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/lingsante-3-1-air-vl.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/lingsante-3-1-flash",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/lingsante-3-1-flash.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-22",
   "ultimaVista": "2026-11-22",
   "stato": "attiva"
  },
@@ -31153,7 +31187,8 @@
   "lingua": "de",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/de/model/zwz2-27b.html",
@@ -31161,7 +31196,8 @@
   "lingua": "de",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/de/model/zwz2-9b",
@@ -46439,7 +46475,8 @@
   "lingua": "es",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/es/model/ling-3-0-flash-sante.html",
@@ -46447,7 +46484,8 @@
   "lingua": "es",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/es/model/ling-3-0-tiny",
@@ -46512,6 +46550,38 @@
   "tipo": "modello",
   "lingua": "es",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/lingsante-3-1-air-vl",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/lingsante-3-1-air-vl.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/lingsante-3-1-flash",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/lingsante-3-1-flash.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-22",
   "ultimaVista": "2026-11-22",
   "stato": "attiva"
  },
@@ -50831,7 +50901,8 @@
   "lingua": "es",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/es/model/zwz2-27b.html",
@@ -50839,7 +50910,8 @@
   "lingua": "es",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/es/model/zwz2-9b",
@@ -66117,7 +66189,8 @@
   "lingua": "fr",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/fr/model/ling-3-0-flash-sante.html",
@@ -66125,7 +66198,8 @@
   "lingua": "fr",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/fr/model/ling-3-0-tiny",
@@ -66190,6 +66264,38 @@
   "tipo": "modello",
   "lingua": "fr",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/lingsante-3-1-air-vl",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/lingsante-3-1-air-vl.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/lingsante-3-1-flash",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/lingsante-3-1-flash.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-22",
   "ultimaVista": "2026-11-22",
   "stato": "attiva"
  },
@@ -70509,7 +70615,8 @@
   "lingua": "fr",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/fr/model/zwz2-27b.html",
@@ -70517,7 +70624,8 @@
   "lingua": "fr",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/fr/model/zwz2-9b",
@@ -85795,7 +85903,8 @@
   "lingua": "it",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/it/model/ling-3-0-flash-sante.html",
@@ -85803,7 +85912,8 @@
   "lingua": "it",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/it/model/ling-3-0-tiny",
@@ -85868,6 +85978,38 @@
   "tipo": "modello",
   "lingua": "it",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/lingsante-3-1-air-vl",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/lingsante-3-1-air-vl.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/lingsante-3-1-flash",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/lingsante-3-1-flash.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-22",
   "ultimaVista": "2026-11-22",
   "stato": "attiva"
  },
@@ -90187,7 +90329,8 @@
   "lingua": "it",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/it/model/zwz2-27b.html",
@@ -90195,7 +90338,8 @@
   "lingua": "it",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/it/model/zwz2-9b",
@@ -105473,7 +105617,8 @@
   "lingua": "ja",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/ja/model/ling-3-0-flash-sante.html",
@@ -105481,7 +105626,8 @@
   "lingua": "ja",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/ja/model/ling-3-0-tiny",
@@ -105546,6 +105692,38 @@
   "tipo": "modello",
   "lingua": "ja",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/lingsante-3-1-air-vl",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/lingsante-3-1-air-vl.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/lingsante-3-1-flash",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/lingsante-3-1-flash.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-22",
   "ultimaVista": "2026-11-22",
   "stato": "attiva"
  },
@@ -109865,7 +110043,8 @@
   "lingua": "ja",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/ja/model/zwz2-27b.html",
@@ -109873,7 +110052,8 @@
   "lingua": "ja",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/ja/model/zwz2-9b",
@@ -113647,7 +113827,8 @@
   "lingua": "en",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/model/ling-3-0-flash-sante.html",
@@ -113655,7 +113836,8 @@
   "lingua": "en",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/model/ling-3-0-tiny",
@@ -113720,6 +113902,38 @@
   "tipo": "modello",
   "lingua": "en",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/lingsante-3-1-air-vl",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/lingsante-3-1-air-vl.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/lingsante-3-1-flash",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/lingsante-3-1-flash.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-22",
   "ultimaVista": "2026-11-22",
   "stato": "attiva"
  },
@@ -118039,7 +118253,8 @@
   "lingua": "en",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/model/zwz2-27b.html",
@@ -118047,7 +118262,8 @@
   "lingua": "en",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/model/zwz2-9b",
@@ -133325,7 +133541,8 @@
   "lingua": "pt",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/pt/model/ling-3-0-flash-sante.html",
@@ -133333,7 +133550,8 @@
   "lingua": "pt",
   "primaVista": "2026-10-22",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/pt/model/ling-3-0-tiny",
@@ -133398,6 +133616,38 @@
   "tipo": "modello",
   "lingua": "pt",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/lingsante-3-1-air-vl",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/lingsante-3-1-air-vl.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/lingsante-3-1-flash",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-22",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/lingsante-3-1-flash.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-22",
   "ultimaVista": "2026-11-22",
   "stato": "attiva"
  },
@@ -137717,7 +137967,8 @@
   "lingua": "pt",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/pt/model/zwz2-27b.html",
@@ -137725,7 +137976,8 @@
   "lingua": "pt",
   "primaVista": "2026-11-07",
   "ultimaVista": "2026-11-22",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-22"
  },
  {
   "url": "/pt/model/zwz2-9b",
