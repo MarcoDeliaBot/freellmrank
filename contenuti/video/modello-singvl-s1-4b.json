@@ -1,0 +1,155 @@
+{
+ "nome": "modello-singvl-s1-4b",
+ "titolo": "SingVL_S1_4B: Hardware Needed and How to Run It Free",
+ "descrizione": "SingVL_S1_4B is a free multimodal decision model that handles text, JSON and up to four images. It scores 73.75 on the public Vision benchmark and 69.76 on the public Text benchmark.\n\nSize: 4.5B parameters · context 256K · memory at 4-bit about 5 GB.\nRTX 3060 12 GB + 32 GB RAM: about 86 tokens/s\nRTX 4090 + 64 GB RAM: about 208 tokens/s\nRTX 5090 + 64 GB RAM: about 318 tokens/s\nMac M4 Max 128 GB: about 95 tokens/s\nNVIDIA DGX Spark 128 GB: about 66 tokens/s\nRyzen AI Max+ 395 128 GB: about 62 tokens/s\nMac Studio M3 Ultra 512 GB: about 122 tokens/s\nModel card: https://huggingface.co/inclusionAI/SingVL_S1_4B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "SingVL_S1_4B",
+  "InclusionAI"
+ ],
+ "condividi": "SingVL_S1_4B by InclusionAI: 4.5B parameters, about 5 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "SingVL_S1_4B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "SingVL_S1_4B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "SingVL_S1_4B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "SingVL_S1_4B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "SingVL_S1_4B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "SingVL_S1_4B",
+    "gb": 5,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "SingVL_S1_4B",
+    "vel": 86,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "SingVL_S1_4B",
+    "vel": 208,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "SingVL_S1_4B",
+    "vel": 318,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "SingVL_S1_4B",
+    "vel": 95,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "SingVL_S1_4B",
+    "vel": 66,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "SingVL_S1_4B",
+    "vel": 62,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "SingVL_S1_4B",
+    "vel": 122,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "SingVL_S1_4B can answer named questions over text, JSON and up to four images. It achieved a public Vision score of 73.75 on the official benchmark.",
+  "SingVL_S1_4B is a multimodal decision model created by InclusionAI. The model is built on the Qwen3.5 architecture and can process plain text, JSON payloads, and as many as four images in a single request. Each question is turned into a complete prompt, and the engine can batch prompts together as long as the total length stays within a 65,536 padded token budget per forward pass. The model has 4.5 billion parameters and a context window of 256 K tokens. It is released under the license listed in the model card, and the weights are freely downloadable from Hugging Face. So far, 2,058 people have downloaded the model.",
+  "What sets SingVL_S1_4B apart is the way it treats each question as a complete prompt, which lets the system keep the full context for decision making. The model provides three specialized answer types: Choice, which returns a probability for each candidate; Noul, which gives the probability that a yes-no statement is true; and Score, which returns a probability distribution over 2 to 10 ordered levels and also computes an expected level from those probabilities. The batch engine groups prompts by length, staying within the 65,536 token limit, and all vision requests share a hard cap of 1,638,400 pixels per image set. These design choices make the model flexible for both text-only and multimodal tasks.",
+  "According to the model card, the public Decision Index for SingVL_S1_4B is 0.3. On the complete public suites the batch engine recorded a Text score of 69.75 from 140,178 requests and a Vision score of 73.74949871316771 from 12,210 requests. In the published table the rounded Text index is 69.76 and the Vision index is 73.75. Looking at individual datasets, the model achieved a non-skill accuracy of 96.31 on InfographicVQA, the highest vision figure listed, while on the text side it hit a perfect 100.00 on the Home appliance simulator benchmark. These numbers place SingVL_S1_4B ahead of several contemporaries in both text and vision decision tasks.",
+  "The benchmark tables show that SingVL_S1_4B delivers strong vision performance, with scores above 90 on several datasets and a public Vision index of 73.75. Its text capabilities are also solid, achieving a public Text index of 69.76 and hitting perfect scores on at least one benchmark. On the downside, each request can include no more than four images, and the batch engine cannot exceed 65,536 padded tokens, which may limit extremely long prompt sequences. Users should also be aware that the model’s decision outputs are limited to the Choice, Noul, and Score formats, so tasks requiring free-form generation may need a different approach.",
+  "SingVL_S1_4B is a good fit for anyone running AI at home who wants a free multimodal decision model. Because the 4-bit version fits in about 5 GB of memory, it can run on a modest RTX 4060 or even a Mac with a powerful GPU, making it accessible to hobbyists. Researchers looking for an open-weight model that can handle both text and image inputs without paying for an API will also find it useful. The model’s Python-based inference code and simple FastAPI server mean that users who are comfortable setting up a Python environment can get it running quickly. If your project needs decision-style outputs rather than free-form generation, this model matches those requirements well.",
+  "What do you need to run it at home? At 4-bit it takes about 5 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 86 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 208 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face, under the license written in its model card. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare SingVL S1 4B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-singvl-s1-4b",
+ "pubblicato": "2026-11-22"
+}
