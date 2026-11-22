@@ -11,7 +11,7 @@ const DIR = path.join(RADICE, 'dati', 'arena-storia');
 fs.mkdirSync(DIR, { recursive: true });
 const OFFLINE = process.argv.includes('--offline');
 const GIORNI = 182; // andamento degli ultimi sei mesi
-const CATEGORIE = { chat: 'text_style_control', code: 'webdev', vision: 'vision_style_control', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit', document: 'document_style_control', search: 'search_style_control', i2v: 'image_to_video', vedit: 'video_edit', agent: 'agent', agentcode: 'agent_capability' };
+const CATEGORIE = { chat: 'text_style_control', code: 'webdev', vision: 'vision_style_control', image: 'text_to_image', video: 'text_to_video', edit: 'image_edit', document: 'document_style_control', search: 'search_style_control', i2v: 'image_to_video', vedit: 'video_edit', agent: 'agent_capability', agentcode: 'agent_capability' };
 // categoria dentro il file (agent_capability ha overall, chat, code, work) e colonna del punteggio
 const SOTTO = { agentcode: 'code' };
 const COLONNA = { agent: 'score', agent_capability: 'index_score' };
@@ -54,7 +54,14 @@ for (const [id, config] of Object.entries(CATEGORIE)) {
   }
   // una classifica aggiunta da poco (Agent coding, 22/11/2026: il dataset parte dal 18/11) non sa quando sono arrivati i modelli
   // della sua prima data: senza questo, tutti sembrerebbero «nuovi» in home, nel blog e nei video
-  if (SOTTO[id]) for (const n of Object.keys(primo)) if (primo[n] === date[0]) delete primo[n];
+  if (config === 'agent_capability') for (const n of Object.keys(primo)) if (primo[n] === date[0]) delete primo[n];
+  // Agents dal 22/11/2026 usa agent_capability (storico corto): le date di arrivo vengono dal vecchio dataset «agent», che ha tutto
+  if (id === 'agent') {
+    for (const x of await righe('agent')) {
+      const n = nomeAttuale.get(chiave(x.model_name))?.n || x.model_name, d = x.leaderboard_publish_date;
+      if (!primo[n] || d < primo[n]) primo[n] = d;
+    }
+  }
   uscita.categorie[id] = { date: recenti, primo, serie, pagato };
   console.log(`${id}: ${date.length} aggiornamenti in tutto, ${recenti.length} negli ultimi ${GIORNI} giorni, ${Object.keys(serie).length} modelli aperti con andamento`);
 }

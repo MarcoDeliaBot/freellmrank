@@ -28,8 +28,10 @@ const CATEGORIE = [
   { id: 'search', arena: 'search_style_control', nome: 'Search' },
   { id: 'i2v', arena: 'image_to_video', nome: 'Image to video' },
   { id: 'vedit', arena: 'video_edit', nome: 'Video edit' },
-  // gli agenti hanno un'altra misura: un punteggio da 0 a 1 (score), non i punti Elo; lo mostriamo ×100
-  { id: 'agent', arena: 'agent', nome: 'Agents', scala: 'agent' },
+  // gli agenti hanno un'altra misura. Dal 22/11/2026 (Marco: «Sì, allinealo») l'«Agent Arena Index» che arena.ai mostra in
+  // cima a /leaderboard/agent (dataset agent_capability, categoria overall; Fable 5.2 1.449 sul sito), non più lo score
+  // da 0 a 1 del dataset «agent» che mostravamo ×100.
+  { id: 'agent', arena: 'agent_capability', nome: 'Agents', scala: 'indice' },
   // 22/11/2026: «Coding Index» degli agenti, la scheda arena.ai/leaderboard/agent/code (dataset agent_capability, categoria
   // «code»; verificato: Claude Fable 5.2 1.487 sul sito, 1.489 nel dataset del 18/11). Indice da sessioni vere, non voti alla cieca.
   { id: 'agentcode', arena: 'agent_capability', sotto: 'code', nome: 'Agent coding', scala: 'indice' },
