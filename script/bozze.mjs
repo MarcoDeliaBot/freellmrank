@@ -165,6 +165,21 @@ export async function apriIssue(titolo, corpo, etichette = ['bozza']) {
   return i;
 }
 
+// chiude con un commento le issue «bozza» aperte che nominano il testo dato (es. il ramo «bozza/<slug>»)
+export async function chiudiIssue(contiene, commento) {
+  const aperte = await gh('GET', '/issues?state=open&labels=bozza&per_page=100');
+  for (const i of aperte.filter((x) => String(x.body || '').includes(contiene))) {
+    await gh('POST', `/issues/${i.number}/comments`, { body: commento });
+    await gh('PATCH', `/issues/${i.number}`, { state: 'closed' });
+    console.log('Chiusa:', i.html_url);
+  }
+}
+
+export async function cancellaRamo(ramo) {
+  try { await gh('DELETE', `/git/refs/heads/${ramo}`); console.log('Ramo cancellato:', ramo); }
+  catch (e) { console.log('Ramo non cancellato:', ramo, e.message); }
+}
+
 // post per X e Reddit, con le regole delle skill «social» (X) e «reddit-posts» (Reddit)
 export async function postSocial({ argomento, dati, link }) {
   const p = await chiediModello([
