@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-23-openai-and-cisco-launch-shirudo-an-open-source-ebpf-runtime-for-live-l",
+ "titolo": "OpenAI and Cisco launch Shirudo, an open‑source eBPF runtime for live Linux protection",
+ "descr": "Shirudo lets security teams add temporary shields to running Linux services without restarts, using AI‑generated eBPF programs.",
+ "tema": "Software",
+ "paragrafi": [
+  "OpenAI and Cisco announced Shirudo, an open‑source runtime that protects Linux systems while patches are prepared.",
+  "Shirudo uses eBPF to insert small programs at kernel points, allowing observation of suspicious activity and targeted blocking of vulnerable code paths.",
+  "In a test, a Codex‑generated shield stopped a Java4Shell exploit against Elasticsearch without needing a restart.",
+  "Shields are cryptographically signed, verified by the eBPF verifier and Linux kernel, and recorded via a TPM for hardware‑backed attestation.",
+  "The project is released under BSD 2‑Clause with dual‑licensing for BPF programs, and developers can contribute via the provided quickstart and labs."
+ ],
+ "perche": [
+  "Shirudo offers a way to keep services running while waiting for patches, reducing downtime for operators. For users of free or locally hosted models, the open‑source nature lets them inspect and adapt shields without vendor lock‑in."
+ ],
+ "pubblicato": "2026-11-23",
+ "titoloFonte": "OpenAI and Cisco introduce Shirudo",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/introducing-shirudo",
+   "titolo": "OpenAI and Cisco introduce Shirudo",
+   "ufficiale": true,
+   "data": "2026-11-23"
+  }
+ ],
+ "frasiTolte": 0
+}

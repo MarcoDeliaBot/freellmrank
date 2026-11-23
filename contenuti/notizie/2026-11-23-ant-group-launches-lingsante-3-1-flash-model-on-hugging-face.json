@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-23-ant-group-launches-lingsante-3-1-flash-model-on-hugging-face",
+ "titolo": "Ant Group launches LingSante-3.1-flash model on Hugging Face",
+ "descr": "On 19 November 2026 Ant Group announced the release of LingSante-3.1-flash on Hugging Face.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "On 19 November 2026 Ant Group announced the release of LingSante-3.1-flash on Hugging Face.",
+  "The model is listed under the repository inclusionAI/LingSante-3.1-flash and is tagged for text-generation, conversational use, and safetensors format.",
+  "Since its publication, the model has been downloaded 397 times and received 111 likes from the community.",
+  "LingSante-3.1-flash is offered as a public, non‑gated model without inference providers, allowing anyone to download and run it locally."
+ ],
+ "perche": [
+  "For users seeking free or locally runnable AI, LingSante-3.1-flash provides another open‑source conversational option with a modest download footprint."
+ ],
+ "pubblicato": "2026-11-23",
+ "titoloFonte": "Ant Group releases LingSante-3.1-flash on Hugging Face",
+ "fonti": [
+  {
+   "nome": "Hugging Face trending",
+   "url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash",
+   "titolo": "Ant Group releases LingSante-3.1-flash on Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 3
+}
