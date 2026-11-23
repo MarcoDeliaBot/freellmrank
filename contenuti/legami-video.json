@@ -611,5 +611,13 @@
  "news-2026-11-22-metr-warns-ai-capabilities-are-outpacing-safety-testing-as-models-impr": {
   "lungo": "notizia-metr-warns-ai-capabilities-are-outpacing-safety-testing",
   "breve": "breve-metr-warns-ai-capabilities-are-outpacing-safety-testing"
+ },
+ "news-2026-11-22-nvidia-launches-alpamayo-2-edge-a-2-billion-parameter-vla-for-drive-ag": {
+  "lungo": "notizia-nvidia-launches-alpamayo-2-edge-a-2-billion-parameter-vl",
+  "breve": "breve-nvidia-launches-alpamayo-2-edge-a-2-billion-parameter-vl"
+ },
+ "news-2026-11-21-arcade-dev-tops-2026-ai-gateways-list-for-governed-agent-actions": {
+  "lungo": "notizia-arcade-dev-tops-2026-ai-gateways-list-for-governed-agent",
+  "breve": "breve-arcade-dev-tops-2026-ai-gateways-list-for-governed-agent"
  }
 }
