@@ -2242,5 +2242,16 @@
   "contestoMax": 262144,
   "moe": true,
   "attivi": 32424905024
+ },
+ "nvidia/Llama-3.1-Nemotron-Nano-8B-v1": {
+  "strati": 32,
+  "tipo": "GQA",
+  "kvPerStrato": 4096,
+  "pieni": 32,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 131072,
+  "moe": false,
+  "attivi": 8030261248
  }
 }
