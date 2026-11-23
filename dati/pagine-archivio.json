@@ -25283,6 +25283,18 @@
     "tipo": "News"
    },
    "data": "2026-11-22"
+  },
+  "/blog/news-2026-11-23-github-project-runs-20-claude-agents-on-free-runners-to-test-mobile-ap.html": {
+   "post": {
+    "slug": "news-2026-11-23-github-project-runs-20-claude-agents-on-free-runners-to-test-mobile-ap",
+    "titolo": "GitHub project runs 20 Claude agents on free runners to test mobile apps",
+    "descr": "The mobile‑agent‑testers repo lets Claude Code agents test iOS simulators and Android emulators in parallel on GitHub’s free CI.",
+    "data": "2026-11-23",
+    "tema": "Software",
+    "corpo": "The open‑source repository pierridotite/mobile-agent-testers launches 20 Claude agents, each on its own iOS simulator or Android emulator, using GitHub Actions’ free runners.\n\nRuns on real apps have uncovered dozens of issues; LocalSend (Flutter, 100k stars) yielded 46 bugs in 69 minutes for $4.62, while AnkiDroid (Kotlin, 12k stars) produced 43 issues in under 10 minutes for $4.69.\n\nModel costs depend on the Claude pricing tier, ranging from about $0.15 to $0.55 per phone per run, and cheaper Anthropic‑compatible models can be used.\n\n## What it means for you\n\nDevelopers can automate extensive mobile UI testing without writing scripts, leveraging free CI resources and only paying for the language model. This lowers the barrier for thorough accessibility and localization checks, especially for teams that prefer open‑source tools over paid services.\n\n## Sources\n\n- [pierridotite/mobile-agent-testers: 20 AI testers on 20 different phones, in parallel, on GitHub's free runners: Claude Code agents on iOS Simulators and Android emulators that find broken flows, trans](https://github.com/pierridotite/mobile-agent-testers), GitHub trending, 16 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-23-github-project-runs-20-claude-agents-on-free-runners-to-test-mobile-ap).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-22"
   }
  },
  "ricostruzione": {
