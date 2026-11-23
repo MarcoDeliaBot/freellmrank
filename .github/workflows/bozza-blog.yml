@@ -1,11 +1,17 @@
-# Ogni lunedì un articolo del blog in bozza (script/bozza-blog.mjs): ramo «bozza/<slug>» e issue «bozza» da approvare.
-# Il testo lo scrive Workers AI attraverso /api/scrivi (segreto BOZZE_KEY), sulla quota gratis del sito. Niente si pubblica senza Marco.
+# Ogni lunedì un articolo del blog (script/bozza-blog.mjs). Dal 23/11/2026 si pubblica da solo se i numeri sono nei dati
+# del sito e il sito si costruisce; se no resta sul ramo «bozza/<slug>» con l'issue che dice perché.
+# Il testo lo scrive Workers AI attraverso /api/scrivi (segreto BOZZE_KEY), sulla quota gratis del sito.
 name: Bozza blog
 
 on:
   schedule:
     - cron: '0 6 * * 1'
   workflow_dispatch:
+    inputs:
+      rifai_bozze:
+        description: 'Riscrivi e pubblica le bozze rimaste in attesa col vecchio sistema'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -18,7 +24,7 @@ concurrency:
 jobs:
   bozza:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
@@ -26,7 +32,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-      - run: node script/bozza-blog.mjs
+      - run: npm ci
+      - run: node script/bozza-blog.mjs ${{ inputs.rifai_bozze && '--rifai-bozze' || '' }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
           BOZZE_KEY: ${{ secrets.BOZZE_KEY }}
