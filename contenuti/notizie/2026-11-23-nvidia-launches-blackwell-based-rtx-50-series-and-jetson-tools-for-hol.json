@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol",
+ "titolo": "NVIDIA launches Blackwell‑based RTX 50 Series and Jetson tools for holiday creators",
+ "descr": "NVIDIA announced its holiday lineup featuring GeForce RTX 50 Series laptops and desktops built on the Blackwell architecture.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "NVIDIA announced its holiday lineup featuring GeForce RTX 50 Series laptops and desktops built on the Blackwell architecture.",
+  "The RTX 50 devices include fifth‑generation Tensor Cores and fourth‑generation RT Cores, supporting DLSS 5, DLSS 3D‑Guided Neural Rendering, Reflex and G‑SYNC for smoother, higher‑frame‑rate gaming.",
+  "NVIDIA RTX Spark PCs combine the same RTX graphics with the full‑stack AI platform on a single superchip, offering all‑day battery life and the ability to run creation, gaming and local AI workloads on Windows.",
+  "GeForce NOW cloud gaming remains available on laptops, TVs and handhelds, giving access to more than 4,500 titles."
+ ],
+ "perche": [
+  "These products let gamers experience higher visual fidelity without upgrading their entire PC, while creators gain faster video‑editing and 3D rendering through AI acceleration. Makers can prototype robots with on‑device AI, avoiding reliance on cloud services and keeping projects local and responsive."
+ ],
+ "pubblicato": "2026-11-23",
+ "titoloFonte": "Merry Making: Play, Build and Create With NVIDIA Technologies This Holiday Season",
+ "fonti": [
+  {
+   "nome": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/nvidia-technologies-holidays-2026/",
+   "titolo": "Merry Making: Play, Build and Create With NVIDIA Technologies This Holiday Season",
+   "ufficiale": true,
+   "data": "2026-11-23"
+  }
+ ],
+ "frasiTolte": 2
+}

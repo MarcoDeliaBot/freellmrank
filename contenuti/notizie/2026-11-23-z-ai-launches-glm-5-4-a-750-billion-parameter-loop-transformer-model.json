@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model",
+ "titolo": "Z.ai launches GLM-5.4, a 750‑billion‑parameter Loop Transformer model",
+ "descr": "Z.ai’s new GLM-5.4 runs 28 layers twice, adds vision and coding abilities, and is now available to GLM Coding Plan users.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Z.ai announced GLM-5.4, its flagship 750‑billion‑parameter model built on a Loop Transformer architecture. The model runs a block of 28 layers twice, deepening reasoning without extra parameters.",
+  "GLM-5.4 is accessible through the GLM Coding Plan, ZCode, and Z.ai Chat. API access will follow a safety evaluation, and open weights are planned after further safety hardening.",
+  "A 30‑billion‑parameter test model showed notable gains on math, scientific reasoning and long‑context benchmarks.",
+  "Z.ai describes the release as the start of “Generalized Coding,” showcasing demos such as a self‑narrated music video, a 6‑axis robot arm in FreeCAD, a complete game, and a 3D bird‑watching scene."
+ ],
+ "perche": [
+  "For developers, GLM-5.4 offers deeper reasoning and vision‑enabled coding within existing Z.ai tools, though the model may enter long “marathon thinking” loops. Users seeking free or local models still lack an open‑weight alternative, as Z.ai plans to release weights only after safety testing."
+ ],
+ "pubblicato": "2026-11-23",
+ "titoloFonte": "Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model/",
+   "titolo": "Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
+   "ufficiale": false,
+   "data": "2026-11-23"
+  },
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/z-ai-launches-glm-5-4-its-first-loop-transformer-model/",
+   "titolo": "Z.ai launches GLM-5.4, its first Loop Transformer model",
+   "ufficiale": false,
+   "data": "2026-11-23"
+  }
+ ],
+ "frasiTolte": 2
+}

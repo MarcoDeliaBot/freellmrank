@@ -1,5 +1,21 @@
 [
  {
+  "url": "/blog/ai-models-on-your-phone",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/ai-models-on-your-phone.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/best-free-ai-models",
   "tipo": "articolo",
   "lingua": "en",
@@ -80,6 +96,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/free-ai-coding-agents",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/free-ai-coding-agents.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/free-ai-for-forecasting-timestral-vs-timesfm",
   "tipo": "articolo",
   "lingua": "en",
@@ -92,6 +124,22 @@
   "tipo": "articolo",
   "lingua": "en",
   "primaVista": "2026-10-24",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/free-speech-to-text-and-text-to-speech",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/free-speech-to-text-and-text-to-speech.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -188,6 +236,22 @@
   "tipo": "articolo",
   "lingua": "en",
   "primaVista": "2026-10-25",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/new-open-models-this-month",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/new-open-models-this-month.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -6640,6 +6704,70 @@
   "stato": "attiva"
  },
  {
+  "url": "/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/run-ai-models-on-a-mac",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/blog/run-ai-models-on-a-mac.html",
+  "tipo": "articolo",
+  "lingua": "en",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/blog/search-files-by-meaning-with-ollama",
   "tipo": "articolo",
   "lingua": "en",
@@ -11632,6 +11760,22 @@
   "stato": "fuori-classifica"
  },
  {
+  "url": "/de/blog/ai-models-on-your-phone",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/ai-models-on-your-phone.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/blog/best-free-ai-models",
   "tipo": "articolo",
   "lingua": "de",
@@ -11712,6 +11856,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/de/blog/free-ai-coding-agents",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/free-ai-coding-agents.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/de/blog/free-ai-for-forecasting-timestral-vs-timesfm",
   "tipo": "articolo",
   "lingua": "de",
@@ -11724,6 +11884,22 @@
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-10-24",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/free-speech-to-text-and-text-to-speech",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/free-speech-to-text-and-text-to-speech.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -11820,6 +11996,22 @@
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-10-25",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/new-open-models-this-month",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/new-open-models-this-month.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -18268,6 +18460,70 @@
   "tipo": "articolo",
   "lingua": "de",
   "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/run-ai-models-on-a-mac",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/blog/run-ai-models-on-a-mac.html",
+  "tipo": "articolo",
+  "lingua": "de",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -31504,6 +31760,22 @@
   "fuoriDal": "2026-11-22"
  },
  {
+  "url": "/es/blog/ai-models-on-your-phone",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/ai-models-on-your-phone.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/best-free-ai-models",
   "tipo": "articolo",
   "lingua": "es",
@@ -31584,6 +31856,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/es/blog/free-ai-coding-agents",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/free-ai-coding-agents.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/es/blog/free-ai-for-forecasting-timestral-vs-timesfm",
   "tipo": "articolo",
   "lingua": "es",
@@ -31596,6 +31884,22 @@
   "tipo": "articolo",
   "lingua": "es",
   "primaVista": "2026-10-24",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/free-speech-to-text-and-text-to-speech",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/free-speech-to-text-and-text-to-speech.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -31692,6 +31996,22 @@
   "tipo": "articolo",
   "lingua": "es",
   "primaVista": "2026-10-25",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/new-open-models-this-month",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/new-open-models-this-month.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -38140,6 +38460,70 @@
   "tipo": "articolo",
   "lingua": "es",
   "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/run-ai-models-on-a-mac",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/blog/run-ai-models-on-a-mac.html",
+  "tipo": "articolo",
+  "lingua": "es",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -51376,6 +51760,22 @@
   "fuoriDal": "2026-11-22"
  },
  {
+  "url": "/fr/blog/ai-models-on-your-phone",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/ai-models-on-your-phone.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/blog/best-free-ai-models",
   "tipo": "articolo",
   "lingua": "fr",
@@ -51456,6 +51856,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/fr/blog/free-ai-coding-agents",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/free-ai-coding-agents.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/fr/blog/free-ai-for-forecasting-timestral-vs-timesfm",
   "tipo": "articolo",
   "lingua": "fr",
@@ -51468,6 +51884,22 @@
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-10-24",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/free-speech-to-text-and-text-to-speech",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/free-speech-to-text-and-text-to-speech.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -51564,6 +51996,22 @@
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-10-25",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/new-open-models-this-month",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/new-open-models-this-month.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -58012,6 +58460,70 @@
   "tipo": "articolo",
   "lingua": "fr",
   "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/run-ai-models-on-a-mac",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/blog/run-ai-models-on-a-mac.html",
+  "tipo": "articolo",
+  "lingua": "fr",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -71248,6 +71760,22 @@
   "fuoriDal": "2026-11-22"
  },
  {
+  "url": "/it/blog/ai-models-on-your-phone",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/ai-models-on-your-phone.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/best-free-ai-models",
   "tipo": "articolo",
   "lingua": "it",
@@ -71328,6 +71856,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/it/blog/free-ai-coding-agents",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/free-ai-coding-agents.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/it/blog/free-ai-for-forecasting-timestral-vs-timesfm",
   "tipo": "articolo",
   "lingua": "it",
@@ -71340,6 +71884,22 @@
   "tipo": "articolo",
   "lingua": "it",
   "primaVista": "2026-10-24",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/free-speech-to-text-and-text-to-speech",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/free-speech-to-text-and-text-to-speech.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -71436,6 +71996,22 @@
   "tipo": "articolo",
   "lingua": "it",
   "primaVista": "2026-10-25",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/new-open-models-this-month",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/new-open-models-this-month.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -77884,6 +78460,70 @@
   "tipo": "articolo",
   "lingua": "it",
   "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/run-ai-models-on-a-mac",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/blog/run-ai-models-on-a-mac.html",
+  "tipo": "articolo",
+  "lingua": "it",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -91120,6 +91760,22 @@
   "fuoriDal": "2026-11-22"
  },
  {
+  "url": "/ja/blog/ai-models-on-your-phone",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/ai-models-on-your-phone.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/blog/best-free-ai-models",
   "tipo": "articolo",
   "lingua": "ja",
@@ -91200,6 +91856,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/ja/blog/free-ai-coding-agents",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/free-ai-coding-agents.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/blog/free-ai-for-forecasting-timestral-vs-timesfm",
   "tipo": "articolo",
   "lingua": "ja",
@@ -91212,6 +91884,22 @@
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-10-24",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/free-speech-to-text-and-text-to-speech",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/free-speech-to-text-and-text-to-speech.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -91308,6 +91996,22 @@
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-10-25",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/new-open-models-this-month",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/new-open-models-this-month.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -97756,6 +98460,70 @@
   "tipo": "articolo",
   "lingua": "ja",
   "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/run-ai-models-on-a-mac",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/blog/run-ai-models-on-a-mac.html",
+  "tipo": "articolo",
+  "lingua": "ja",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -119232,6 +120000,22 @@
   "fuoriDal": "2026-11-22"
  },
  {
+  "url": "/pt/blog/ai-models-on-your-phone",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/ai-models-on-your-phone.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/blog/best-free-ai-models",
   "tipo": "articolo",
   "lingua": "pt",
@@ -119312,6 +120096,22 @@
   "stato": "attiva"
  },
  {
+  "url": "/pt/blog/free-ai-coding-agents",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/free-ai-coding-agents.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
   "url": "/pt/blog/free-ai-for-forecasting-timestral-vs-timesfm",
   "tipo": "articolo",
   "lingua": "pt",
@@ -119324,6 +120124,22 @@
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-10-24",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/free-speech-to-text-and-text-to-speech",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/free-speech-to-text-and-text-to-speech.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -119420,6 +120236,22 @@
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-10-25",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/new-open-models-this-month",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/new-open-models-this-month.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },
@@ -125868,6 +126700,70 @@
   "tipo": "articolo",
   "lingua": "pt",
   "primaVista": "2026-11-22",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-23-nvidia-launches-blackwell-based-rtx-50-series-and-jetson-tools-for-hol.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/run-ai-models-on-a-mac",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
+  "ultimaVista": "2026-11-23",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/blog/run-ai-models-on-a-mac.html",
+  "tipo": "articolo",
+  "lingua": "pt",
+  "primaVista": "2026-11-23",
   "ultimaVista": "2026-11-23",
   "stato": "attiva"
  },

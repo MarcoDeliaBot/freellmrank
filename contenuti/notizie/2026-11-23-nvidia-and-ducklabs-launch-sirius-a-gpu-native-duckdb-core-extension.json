@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-23-nvidia-and-ducklabs-launch-sirius-a-gpu-native-duckdb-core-extension",
+ "titolo": "NVIDIA and DuckLabs launch Sirius, a GPU‑native DuckDB core extension",
+ "descr": "NVIDIA and DuckLabs released Sirius as a core extension for DuckDB, allowing developers to run supported analytical SQL queries on NVIDIA GPUs with just two com",
+ "tema": "Software",
+ "paragrafi": [
+  "NVIDIA and DuckLabs released Sirius as a core extension for DuckDB, allowing developers to run supported analytical SQL queries on NVIDIA GPUs with just two commands: INSTALL sirius and LOAD sirius.",
+  "Sirius can be installed directly from DuckDB, requires DuckDB 2.0 and a compatible NVIDIA GPU driver, and is roughly 700 MB in size.",
+  "The extension is open‑source, developed with the University of Wisconsin–Madison, and the project provides a GitHub repository and a Slack community for users."
+ ],
+ "perche": [
+  "GPU‑accelerated analytics let data scientists and developers explore larger datasets faster and at lower cost, which is valuable for both cloud‑based and on‑premise workflows. For users of free or locally hosted AI tools, Sirius demonstrates how open‑source extensions can bring high‑performance computing to familiar SQL environments without needing to rewrite code."
+ ],
+ "pubblicato": "2026-11-23",
+ "titoloFonte": "Get Started with GPU-Accelerated DuckDB Analytics Using the Sirius Core Extension",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/get-started-with-gpu-accelerated-duckdb-analytics-using-the-sirius-core-extension/",
+   "titolo": "Get Started with GPU-Accelerated DuckDB Analytics Using the Sirius Core Extension",
+   "ufficiale": true,
+   "data": "2026-11-23"
+  }
+ ],
+ "frasiTolte": 3
+}
