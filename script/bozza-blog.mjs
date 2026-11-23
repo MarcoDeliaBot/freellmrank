@@ -146,17 +146,21 @@ ${testo}`, ['bozza', 'blog']);
 }
 
 // ---------- le bozze del vecchio sistema (rami in attesa di approvazione) ----------
+let daRiscrivere = 0;
 if (RIFAI && !PROVA) {
   for (const ramo of ramiBozza()) {
     const slug = ramo.replace(/^bozza\//, '');
     const gia = fs.existsSync(fileDi(slug));
     await chiudiIssue(`bozza/${slug}`, gia ? 'L’articolo è già pubblicato sul sito: chiudo la bozza.' : 'Bozza scartata: l’articolo si riscrive coi dati di oggi e si pubblica in automatico se passa i controlli (23/11/2026).');
     await cancellaRamo(ramo);
+    if (!gia) daRiscrivere++;
     console.log(gia ? `Già pubblicato: ${slug}` : `Da riscrivere: ${slug}`);
   }
 }
 
-const quanti = Number(arg('--quanti')) || (RIFAI ? 10 : 1);
+// 23/11/2026: con --rifai-bozze si riscrivono SOLO le bozze scartate (la prima corsa ne pubblicò 5 invece di 3,
+// consumando le idee dei lunedì successivi)
+const quanti = Number(arg('--quanti')) || (RIFAI ? daRiscrivere : 1);
 for (let n = 0; n < quanti; n++) {
   const rami = ramiBozza();
   const idea = coda.find((i) => !fs.existsSync(fileDi(i.slug)) && !rami.includes(`bozza/${i.slug}`));
