@@ -603,5 +603,13 @@
  "news-2026-11-22-tensorlean-formally-verifies-gpu-kernels-finds-bugs-in-flashattention-": {
   "lungo": "notizia-tensorlean-formally-verifies-gpu-kernels-finds-bugs-in-f",
   "breve": "breve-tensorlean-formally-verifies-gpu-kernels-finds-bugs-in-f"
+ },
+ "news-2026-11-22-google-launches-preview-of-tool-retrieval-in-gemini-api-to-cut-token-u": {
+  "lungo": "notizia-google-launches-preview-of-tool-retrieval-in-gemini-api",
+  "breve": "breve-google-launches-preview-of-tool-retrieval-in-gemini-api"
+ },
+ "news-2026-11-22-metr-warns-ai-capabilities-are-outpacing-safety-testing-as-models-impr": {
+  "lungo": "notizia-metr-warns-ai-capabilities-are-outpacing-safety-testing",
+  "breve": "breve-metr-warns-ai-capabilities-are-outpacing-safety-testing"
  }
 }
