@@ -1,0 +1,30 @@
+{
+  "versione": 2,
+  "coppia": [
+    "GLM-5.3 (Max)",
+    "Kimi K3 (Max)"
+  ],
+  "descr": "GLM-5.3 vs Kimi K3: compare scores, size, speed, and free use options.",
+  "risposta": "The two models are about even in the Arena chat test. Their scores differ by only six points, which is too close to call. Both models perform similarly for general conversation. GLM-5.3 sits at rank 30 of 426, while Kimi K3 is at rank 22 of 426.",
+  "dimensioni": "GLM-5.3 downloads to about 458 GB in 4-bit mode, while Kimi K3 needs roughly 1686 GB. The active parameter counts are 50.2 B and 104.6 B respectively. GLM-5.3’s total size is 753.3 B, compared with Kimi K3’s 2779.9 B.",
+  "velocita": "Neither GLM-5.3 nor Kimi K3 fit within the offload limits of any listed home GPU or CPU. They cannot run on RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, or Ryzen AI Max+ 395 128 GB. The estimate assumes 4-bit mode, an 8K context, and 64 GB of system RAM for offload.",
+  "gratisA": "GLM-5.3 is released under an MIT license. You can download the weights and run the model locally for free.",
+  "gratisB": "Kimi K3 is released under its own Kimi K3 license. You can download the weights and run the model locally for free.",
+  "sceglieA": "Pick GLM-5.3 if you prefer a smaller download footprint and do not need the top coding score. Its size is less than a third of Kimi K3’s. It ranks lower overall but remains close to Kimi K3 in chat performance.",
+  "sceglieB": "Pick Kimi K3 when coding performance matters. It leads the WebDev (coding) category on Arena. Its higher overall rank also reflects broader appeal in the Arena.",
+  "categorie": {
+    "Chat": "In the Chat arena both models score almost the same, with GLM-5.3 at 1482 and Kimi K3 at 1488. Both received tens of thousands of votes, with GLM-5.3 getting 34 708 and Kimi K3 44 364.",
+    "WebDev (coding)": "For WebDev (coding) Kimi K3 scores 1659, ahead of GLM-5.3’s 1623. GLM-5.3 earned 1623 points, while Kimi K3 earned 1659."
+  },
+  "scritto": "2026-11-23",
+  "aggiornato": "2026-11-23",
+  "scrittore": "groq",
+  "fatti": {
+    "leader": "even",
+    "gratisA": "download and run at home · MIT license",
+    "gratisB": "download and run at home · Kimi K3 license",
+    "puntiA": 1482,
+    "puntiB": 1488,
+    "dataArena": "2026-11-19"
+  }
+}

@@ -4,27 +4,27 @@
     "Gemini 3.8 Flash (High)",
     "Kimi K3 (Max)"
   ],
-  "descr": "Gemini 3.8 Flash leads in chat while Kimi K3 scores higher in coding.",
-  "risposta": "Gemini 3.8 Flash is ahead in the overall Arena comparison. It has a higher chat score (1497 vs 1487) and wins the blind vote about 51% of the time. Kimi K3 scores better in coding, but the chat advantage makes Gemini the stronger all-round choice.",
-  "dimensioni": "Gemini 3.8 Flash does not disclose its model size, so download information is unavailable. Kimi K3 is 2779.9 B total (104.6 B active) and requires roughly 1686 GB for a 4-bit download.",
-  "velocita": "Both models run only via online services on current consumer hardware. Gemini 3.8 Flash is listed as online-only for RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, and Ryzen AI Max+ 395 128 GB. Kimi K3 does not fit any of these home machines either.",
-  "gratisA": "Gemini 3.8 Flash can be accessed for free through Google’s Gemini API free tier. The model is proprietary and not available for local download.",
-  "gratisB": "Kimi K3 is free to download and run at home under the Kimi K3 license. Open weights let you host the model yourself without a cloud service.",
-  "sceglieA": "Pick Gemini 3.8 Flash when you need the best chat performance in the Arena. Its higher chat score indicates stronger conversational abilities. It is also convenient if you prefer a managed API over local setup.",
-  "sceglieB": "Choose Kimi K3 if coding tasks are your priority, as it leads in the coding category. The open-weight release lets you run the model locally, provided you can store the large download. It is also a good fit for developers who want full control over the model.",
+  "descr": "Gemini 3.8 Flash and Kimi K3 are nearly tied in Arena scores, making the choice depend on your needs.",
+  "risposta": "The two models are about even in overall Arena performance. Gemini 3.8 Flash scores 1497 while Kimi K3 scores 1488. The difference is small enough that neither model clearly dominates the other.",
+  "dimensioni": "Gemini 3.8 Flash does not disclose its size. Kimi K3 is 2779.9 B total, with 104.6 B active, and requires about 1686 GB to download in 4-bit format.",
+  "velocita": "Both models need more memory than any listed home GPU can hold. They are marked as online-only for RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, and Ryzen AI Max+ 395 128 GB, meaning they cannot run fully on those machines.",
+  "gratisA": "Gemini 3.8 Flash can be accessed for free through Google’s Gemini API free tier. The model is proprietary and does not have open weights, so it cannot be downloaded for local use.",
+  "gratisB": "Kimi K3 is available for free download and can be run at home under the Kimi K3 license. Its weights are open, allowing local execution without a cloud service.",
+  "sceglieA": "Pick Gemini 3.8 Flash if you prefer a cloud-based solution with a free API and do not need to host the model yourself. It is suitable for users who want quick access without managing large files.",
+  "sceglieB": "Choose Kimi K3 when you want full control over the model and are able to store the large download. It is ideal for hobbyists who like to run models locally and experiment with open weights.",
   "categorie": {
-    "Chat": "Gemini 3.8 Flash wins the chat category with a score of 1497, while Kimi K3 scores 1487. The chat lead makes Gemini the preferred option for conversational use.",
-    "Coding": "Kimi K3 outperforms Gemini 3.8 Flash in coding, scoring 1658 against 1585. For programming assistance, Kimi K3 is the stronger candidate."
+    "Chat": "In the Chat category Gemini 3.8 Flash scores 1497 and Kimi K3 scores 1488, indicating they are about even for conversational tasks.",
+    "WebDev (coding)": "For coding assistance Kimi K3 leads with a score of 1659 against Gemini 3.8 Flash’s 1584, making Kimi K3 the stronger choice in this category."
   },
   "scritto": "2026-11-17",
-  "aggiornato": "2026-11-20",
+  "aggiornato": "2026-11-23",
   "scrittore": "workers",
   "fatti": {
-    "leader": "Gemini 3.8 Flash (High)",
+    "leader": "even",
     "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",
     "gratisB": "download and run at home · Kimi K3 license",
     "puntiA": 1497,
-    "puntiB": 1487,
-    "dataArena": "2026-11-18"
+    "puntiB": 1488,
+    "dataArena": "2026-11-19"
   }
 }
