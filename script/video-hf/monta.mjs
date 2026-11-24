@@ -12,12 +12,15 @@ import { composizione as bitCheParla } from './bit.mjs';
 import { aperture } from './bocca.mjs';
 import { C, formatoDi } from './base.mjs';
 import { fitWindow } from './tempo.mjs';
+import { conIscrizione, filtroShort } from './iscrizione.mjs';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
 const CODA = 0.45; // secondi di respiro dopo la voce di ogni scena
 const ANTICIPO = 0.12; // un elemento compare un attimo prima che la voce lo nomini
 
 export async function monta(piano, dir) {
+  // 24/11/2026: nei video lunghi la scena che chiede l'iscrizione, dopo il risultato della prova (iscrizione.mjs)
+  piano = conIscrizione(piano);
   const formato = piano.formato === 'verticale' ? 'verticale' : 'orizzontale';
   const F = formatoDi(formato);
   const d = (...p) => path.join(dir, ...p);
@@ -146,6 +149,14 @@ export async function monta(piano, dir) {
   if (/[1-9]\d* error\(s\)/.test(controllo)) throw new Error(`Il controllo HyperFrames ha trovato errori:\n${controllo.slice(-3000)}`);
   hf(['render', '-o', 'video.mp4', '--fps', '30', '--quality', 'delivery', '--quiet'], { cwd: dir, timeout: 1800000 });
   if (!fs.existsSync(d('video.mp4'))) throw new Error('Montaggio non riuscito: video.mp4 mancante');
+  // 24/11/2026: negli Short la scritta «Full test on the channel. Subscribe» negli ultimi 2 secondi (iscrizione.mjs)
+  if (formato === 'verticale' && !piano.senzaIscrizione) {
+    fs.copyFileSync(path.join(QUI, 'fonti', 'JetBrains_Mono.ttf'), d('iscrizione.ttf'));
+    const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-i', 'video.mp4', '-vf', filtroShort(totale), '-c:v', 'libx264', '-crf', '18', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-c:a', 'copy', '-movflags', '+faststart', 'video-iscrizione.mp4'], { cwd: dir });
+    if (r.status !== 0) throw new Error(`Scritta dell'iscrizione non aggiunta: ${r.stderr}`);
+    fs.renameSync(d('video-iscrizione.mp4'), d('video.mp4'));
+    fs.rmSync(d('iscrizione.ttf'), { force: true });
+  }
 
   // 5. copertina: la scena scelta dal piano, quando è completa
   const sc = scene[Math.min(scene.length - 1, Math.max(0, piano.copertina ?? 0))];
