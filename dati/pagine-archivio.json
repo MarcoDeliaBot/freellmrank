@@ -25508,6 +25508,30 @@
     "tipo": "News"
    },
    "data": "2026-11-24"
+  },
+  "/blog/news-2026-11-24-google-adds-wallet-and-drive-to-personal-intelligence-in-search.html": {
+   "post": {
+    "slug": "news-2026-11-24-google-adds-wallet-and-drive-to-personal-intelligence-in-search",
+    "titolo": "Google adds Wallet and Drive to Personal Intelligence in Search",
+    "descr": "Search can now use Google Wallet and Drive data for personalized answers when users opt in.",
+    "data": "2026-11-24",
+    "tema": "Software",
+    "corpo": "Google announced that Personal Intelligence in Search will let users connect Google Wallet and Google Drive.\n\nThe rollout begins today with Wallet, while Drive and the Gemini app will follow in the coming weeks.\n\nWhen opted in, Search can reference spending habits, credit‑card rewards, and documents to tailor responses.\n\nConnections are managed in Search Personalization settings and can be turned off at any time.\n\nAI Mode can read Wallet data but cannot move, manage, or invest money.\n\nThe Gemini app will soon share context with Search, allowing ideas explored there to inform future queries.\n\n## What it means for you\n\nUsers gain more relevant answers without manually providing data, streamlining tasks like budgeting or project planning. Free model enthusiasts can compare this deep integration with open‑source options that run locally, noting the trade‑off between convenience and data control.\n\n## Sources\n\n- [A more tailored Google Search that’s uniquely yours](https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/), Google (official), 23 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-24-google-adds-wallet-and-drive-to-personal-intelligence-in-search).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-24"
+  },
+  "/blog/news-2026-11-24-trump-backs-jensen-huang-s-reinstatement-as-nvidia-ceo-cites-no-securi.html": {
+   "post": {
+    "slug": "news-2026-11-24-trump-backs-jensen-huang-s-reinstatement-as-nvidia-ceo-cites-no-securi",
+    "titolo": "Trump backs Jensen Huang's reinstatement as Nvidia CEO, cites no security risk",
+    "descr": "President Trump praised Nvidia's board decision to reinstate founder Jensen Huang, claiming U.S. authorities found no evidence of wrongdoing.",
+    "data": "2026-11-24",
+    "tema": "Policy",
+    "corpo": "On November 23, 2026, Nvidia's board voted unanimously to restore Jensen Huang as CEO, president, and board director after his resignation amid allegations of an affair with an alleged Chinese spy.\n\nTrump said he had spoken directly and indirectly with the board and that Vice President JD Vance acted as a liaison, while White House communications director Steven Cheung confirmed the president’s involvement.\n\nThe board’s statement noted consultations with senior U.S. officials and concluded that Huang’s reinstatement was not a security threat, though investigations remain ongoing.\n\nThe announcement triggered volatility in Nasdaq‑100 futures, prompting a circuit‑breaker halt, and sparked political debate ahead of a Democratic‑majority Congress.\n\n## What it means for you\n\nThe endorsement underscores how political influence can affect corporate leadership in the AI sector, potentially shaping Nvidia’s strategic direction and chip supply. For users of free or locally run models, heightened scrutiny of large AI firms may encourage interest in open‑source alternatives that are less tied to geopolitical concerns.\n\n## Sources\n\n- [Trump engineered a risky comeback for Jensen Huang](https://www.theverge.com/ai-artificial-intelligence/1040652/jensen-huang-nvidia-trump-reinstated), The Verge, 23 Nov 2026\n- [Trump endorses Jensen Huang's return to Nvidia, says US has no evidence of wrongdoing](https://techcrunch.com/2026/11/23/trump-endorses-jensen-huangs-return-to-nvidia-says-us-has-no-evidence-of-wrongdoing/), TechCrunch, 23 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-24-trump-backs-jensen-huang-s-reinstatement-as-nvidia-ceo-cites-no-securi).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-24"
   }
  },
  "ricostruzione": {

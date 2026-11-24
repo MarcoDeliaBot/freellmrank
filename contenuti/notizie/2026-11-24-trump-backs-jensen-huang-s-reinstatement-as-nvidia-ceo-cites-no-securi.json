@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-24-trump-backs-jensen-huang-s-reinstatement-as-nvidia-ceo-cites-no-securi",
+ "titolo": "Trump backs Jensen Huang's reinstatement as Nvidia CEO, cites no security risk",
+ "descr": "President Trump praised Nvidia's board decision to reinstate founder Jensen Huang, claiming U.S. authorities found no evidence of wrongdoing.",
+ "tema": "Policy",
+ "paragrafi": [
+  "On November 23, 2026, Nvidia's board voted unanimously to restore Jensen Huang as CEO, president, and board director after his resignation amid allegations of an affair with an alleged Chinese spy.",
+  "Trump said he had spoken directly and indirectly with the board and that Vice President JD Vance acted as a liaison, while White House communications director Steven Cheung confirmed the president’s involvement.",
+  "The board’s statement noted consultations with senior U.S. officials and concluded that Huang’s reinstatement was not a security threat, though investigations remain ongoing.",
+  "The announcement triggered volatility in Nasdaq‑100 futures, prompting a circuit‑breaker halt, and sparked political debate ahead of a Democratic‑majority Congress."
+ ],
+ "perche": [
+  "The endorsement underscores how political influence can affect corporate leadership in the AI sector, potentially shaping Nvidia’s strategic direction and chip supply. For users of free or locally run models, heightened scrutiny of large AI firms may encourage interest in open‑source alternatives that are less tied to geopolitical concerns."
+ ],
+ "pubblicato": "2026-11-24",
+ "titoloFonte": "Trump engineered a risky comeback for Jensen Huang",
+ "fonti": [
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1040652/jensen-huang-nvidia-trump-reinstated",
+   "titolo": "Trump engineered a risky comeback for Jensen Huang",
+   "ufficiale": false,
+   "data": "2026-11-23"
+  },
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/23/trump-endorses-jensen-huangs-return-to-nvidia-says-us-has-no-evidence-of-wrongdoing/",
+   "titolo": "Trump endorses Jensen Huang's return to Nvidia, says US has no evidence of wrongdoing",
+   "ufficiale": false,
+   "data": "2026-11-23"
+  }
+ ],
+ "frasiTolte": 1
+}
