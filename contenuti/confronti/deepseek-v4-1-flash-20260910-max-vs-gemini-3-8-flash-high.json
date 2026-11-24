@@ -1,0 +1,31 @@
+{
+  "versione": 2,
+  "coppia": [
+    "DeepSeek-V4.1-Flash-20260910 (Max)",
+    "Gemini 3.8 Flash (High)"
+  ],
+  "descr": "Gemini 3.8 Flash vs DeepSeek-V4.1-Flash-20260910: Gemini 3.8 Flash leads by 24 chat points.",
+  "risposta": "Gemini 3.8 Flash is the better model overall. In blind Arena voting it scores 1498 against DeepSeek-V4.1-Flash-20260910’s 1474, a 24-point advantage. The lead reflects a clear preference among the 76 031 votes counted. Therefore Gemini 3.8 Flash takes the edge.",
+  "dimensioni": "Both models keep their size confidential; the exact file weight is not published for either DeepSeek-V4.1-Flash-20260910 or Gemini 3.8 Flash.",
+  "velocita": "Neither model can be run locally on common home GPUs. All listed hardware, RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, and Ryzen AI Max+ 395 128 GB, requires online access only, so generation speed on a personal machine is not applicable.",
+  "gratisA": "DeepSeek-V4.1-Flash-20260910 is released under an MIT license, allowing free use in your own projects. It does not appear on the FreeLLMArena try-and-compare page, so you must obtain the model elsewhere under the license terms.",
+  "gratisB": "Gemini 3.8 Flash can be accessed through Google’s free Gemini API tier. The service runs under a proprietary license but offers a no-cost entry point for developers and hobbyists.",
+  "sceglieA": "Pick DeepSeek-V4.1-Flash-20260910 if coding assistance is your priority. It outperforms Gemini 3.8 Flash in the WebDev (coding) category with a score of 1621 versus 1584. The model is suited for tasks that need stronger programming suggestions.",
+  "sceglieB": "Choose Gemini 3.8 Flash for general chat and visual tasks. It leads in both the Chat (1498 vs 1474) and Vision (1293 vs 1262) categories, making it the stronger all-round conversational and image-related assistant.",
+  "categorie": {
+    "Chat": "In the Chat arena Gemini 3.8 Flash scores 1498, beating DeepSeek-V4.1-Flash-20260910’s 1474. The margin shows a clear preference for Gemini in conversational quality.",
+    "WebDev (coding)": "DeepSeek-V4.1-Flash-20260910 earns 1621 points, surpassing Gemini 3.8 Flash’s 1584. For developers seeking code generation, DeepSeek holds the edge.",
+    "Vision": "Gemini 3.8 Flash leads with 1293 points over DeepSeek-V4.1-Flash-20260910’s 1262, indicating better performance on image-related queries."
+  },
+  "scritto": "2026-11-24",
+  "aggiornato": "2026-11-24",
+  "scrittore": "workers",
+  "fatti": {
+    "leader": "Gemini 3.8 Flash (High)",
+    "gratisA": "MIT license",
+    "gratisB": "free API from Google (Gemini API free tier) · Proprietary license",
+    "puntiA": 1474,
+    "puntiB": 1498,
+    "dataArena": "2026-11-22"
+  }
+}

@@ -4,27 +4,27 @@
     "Gemini 3.8 Flash (High)",
     "Kimi K3 (Max)"
   ],
-  "descr": "Gemini 3.8 Flash and Kimi K3 are nearly tied in Arena scores, making the choice depend on your needs.",
-  "risposta": "The two models are about even in overall Arena performance. Gemini 3.8 Flash scores 1497 while Kimi K3 scores 1488. The difference is small enough that neither model clearly dominates the other.",
-  "dimensioni": "Gemini 3.8 Flash does not disclose its size. Kimi K3 is 2779.9 B total, with 104.6 B active, and requires about 1686 GB to download in 4-bit format.",
-  "velocita": "Both models need more memory than any listed home GPU can hold. They are marked as online-only for RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, and Ryzen AI Max+ 395 128 GB, meaning they cannot run fully on those machines.",
-  "gratisA": "Gemini 3.8 Flash can be accessed for free through Google’s Gemini API free tier. The model is proprietary and does not have open weights, so it cannot be downloaded for local use.",
-  "gratisB": "Kimi K3 is available for free download and can be run at home under the Kimi K3 license. Its weights are open, allowing local execution without a cloud service.",
-  "sceglieA": "Pick Gemini 3.8 Flash if you prefer a cloud-based solution with a free API and do not need to host the model yourself. It is suitable for users who want quick access without managing large files.",
-  "sceglieB": "Choose Kimi K3 when you want full control over the model and are able to store the large download. It is ideal for hobbyists who like to run models locally and experiment with open weights.",
+  "descr": "Gemini 3.8 Flash leads the blind vote over Kimi K3 with a small score edge.",
+  "risposta": "Gemini 3.8 Flash is ahead of Kimi K3 in the Arena chat score. The difference is 10 points, which translates to about 51% preference in blind votes. Kimi K3 trails by that margin but still scores strongly. The lead counts as a real advantage for Gemini 3.8 Flash.",
+  "dimensioni": "Gemini 3.8 Flash does not disclose its model size, and its weights are not open. Kimi K3 is 2779.9 B total, with 104.6 B active, and requires about 1686 GB to download in 4-bit format.",
+  "velocita": "Gemini 3.8 Flash can only be accessed via an online API; it does not fit on any listed home GPU or system. Kimi K3 also does not fit on any of the listed home hardware, meaning both models must be used through a cloud service for generation.",
+  "gratisA": "Gemini 3.8 Flash can be used for free through Google’s Gemini API free tier. The model is proprietary and cannot be downloaded for local execution.",
+  "gratisB": "Kimi K3 is available for free download and can be run at home under its own license. No cloud API is required for free use.",
+  "sceglieA": "Pick Gemini 3.8 Flash if you prefer a model that already leads in general chat quality and you are comfortable using an online API. It is suitable for users who want quick access without handling large model files.",
+  "sceglieB": "Choose Kimi K3 when you need a model that excels in coding tasks, as it leads in the WebDev category. It is also the option for those who want full control by running the model locally.",
   "categorie": {
-    "Chat": "In the Chat category Gemini 3.8 Flash scores 1497 and Kimi K3 scores 1488, indicating they are about even for conversational tasks.",
-    "WebDev (coding)": "For coding assistance Kimi K3 leads with a score of 1659 against Gemini 3.8 Flash’s 1584, making Kimi K3 the stronger choice in this category."
+    "Chat": "In the Chat category Gemini 3.8 Flash scores 1498 versus 1488 for Kimi K3, giving Gemini the edge.",
+    "WebDev (coding)": "Kimi K3 scores higher in coding, with 1659 points against Gemini 3.8 Flash’s 1584, making Kimi the better choice for development assistance."
   },
   "scritto": "2026-11-17",
-  "aggiornato": "2026-11-23",
+  "aggiornato": "2026-11-24",
   "scrittore": "workers",
   "fatti": {
-    "leader": "even",
+    "leader": "Gemini 3.8 Flash (High)",
     "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",
     "gratisB": "download and run at home · Kimi K3 license",
-    "puntiA": 1497,
+    "puntiA": 1498,
     "puntiB": 1488,
-    "dataArena": "2026-11-19"
+    "dataArena": "2026-11-22"
   }
 }
