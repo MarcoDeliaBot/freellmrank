@@ -1,6 +1,6 @@
 ---
-titolo: Open-weight models and GPU memory requirements
-descr: Models span 2.3 B, 1.8 T parameters. 4-bit memory uses 4 GB, 1 TB. Fit on RTX 4060, RTX PRO 6000, Mac Studio M3 Ultra; larger models need bigger GPUs.
+titolo: New open-weight AI models this month: sizes and memory needs
+descr: New open models from inclusionAI, Microsoft, ByteDance and others, from 1.9 B to 1,779.8 B parameters, with 4-bit memory and the GPU each one fits.
 data: 2026-11-23
 ---
 
