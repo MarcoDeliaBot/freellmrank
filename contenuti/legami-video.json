@@ -627,5 +627,13 @@
  "news-2026-11-23-ant-group-launches-lingsante-3-1-flash-model-on-hugging-face": {
   "lungo": "notizia-ant-group-launches-lingsante-3-1-flash-model-on-hugging",
   "breve": "breve-ant-group-launches-lingsante-3-1-flash-model-on-hugging"
+ },
+ "news-2026-11-24-tencent-releases-wemm-ecom-35b-a3b-beating-larger-open-source-e-commer": {
+  "lungo": "notizia-tencent-releases-wemm-ecom-35b-a3b-beating-larger-open-s",
+  "breve": "breve-tencent-releases-wemm-ecom-35b-a3b-beating-larger-open-s"
+ },
+ "news-2026-11-23-openai-and-cisco-launch-shirudo-an-open-source-ebpf-runtime-for-live-l": {
+  "lungo": "notizia-openai-and-cisco-launch-shirudo-an-open-source-ebpf-runt",
+  "breve": "breve-openai-and-cisco-launch-shirudo-an-open-source-ebpf-runt"
  }
 }
