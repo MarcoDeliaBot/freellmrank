@@ -16,6 +16,7 @@ import { nomiDi, LABORATORI, LANCIO } from '../notizie.mjs';
 import { metaYoutube, RICHIESTA_YT } from './titoli-yt.mjs';
 import { titoloYT } from './controllo-yt.mjs';
 import { leggiFissi, trovaVietate } from '../video-hf/fissi.mjs';
+import { diventaVideo } from './notizia-filtro.mjs';
 
 const QUI = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
 const RADICE = path.join(QUI, '..', '..');
@@ -41,8 +42,10 @@ const giaModello = (n) => [...fatti].filter((f) => f.startsWith('video-modello-'
 // BRAG_FILE=<json>: una guida (contenuti/video-guide/*.json: i campi di una notizia più «tipo»: «guida» e «url»), dal 24/10/2026
 const n = process.env.BRAG_FILE ? JSON.parse(fs.readFileSync(process.env.BRAG_FILE, 'utf8')) : process.env.BRAG_NOTIZIA
   ? tutte.find((x) => x.nome === process.env.BRAG_NOTIZIA.replace(/\.json$/, ''))
-  : tutte.filter((x) => recente(x) && x.paragrafi.length >= 3 && !fatti.has(`video-${nomeVideo(x)}`) && !giaModello(x)).sort((a, b) => peso(b) - peso(a) || b.pubblicato.localeCompare(a.pubblicato))[0];
+  // 24/11/2026: le notizie sulle aziende senza un modello o uno strumento gratis restano solo sul sito (notizia-filtro.mjs)
+  : tutte.filter((x) => recente(x) && x.paragrafi.length >= 3 && diventaVideo(x) && !fatti.has(`video-${nomeVideo(x)}`) && !giaModello(x)).sort((a, b) => peso(b) - peso(a) || b.pubblicato.localeCompare(a.pubblicato))[0];
 if (!n) { console.log('Nessuna notizia nuova da raccontare'); process.exit(0); }
+if (!process.env.BRAG_FILE && !diventaVideo(n)) { console.log(`Notizia sulle aziende senza modello o strumento gratis: resta sul sito, niente video (${n.nome})`); process.exit(0); }
 const url = n.url || `https://freellmarena.com/blog/news-${n.nome}`;
 const GUIDA = n.tipo === 'guida';
 const ETICHETTA = GUIDA ? 'Guide' : 'AI news';
