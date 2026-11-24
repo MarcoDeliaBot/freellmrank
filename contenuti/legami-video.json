@@ -619,5 +619,13 @@
  "news-2026-11-21-arcade-dev-tops-2026-ai-gateways-list-for-governed-agent-actions": {
   "lungo": "notizia-arcade-dev-tops-2026-ai-gateways-list-for-governed-agent",
   "breve": "breve-arcade-dev-tops-2026-ai-gateways-list-for-governed-agent"
+ },
+ "news-2026-11-23-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-transformer-model": {
+  "lungo": "notizia-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-trans",
+  "breve": "breve-z-ai-launches-glm-5-4-a-750-billion-parameter-loop-trans"
+ },
+ "news-2026-11-23-ant-group-launches-lingsante-3-1-flash-model-on-hugging-face": {
+  "lungo": "notizia-ant-group-launches-lingsante-3-1-flash-model-on-hugging",
+  "breve": "breve-ant-group-launches-lingsante-3-1-flash-model-on-hugging"
  }
 }
