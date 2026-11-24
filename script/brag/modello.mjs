@@ -29,11 +29,13 @@ const voceNome = (n) => String(n).replace(/[-_]?\b20\d{6}\b/g, '').replace(/[-_]
 
 // ---------- 1. quale modello: il più recente con dimensioni note non ancora fatto ----------
 const fatti = process.env.BRAG_FATTI && fs.existsSync(process.env.BRAG_FATTI) ? new Set(fs.readFileSync(process.env.BRAG_FATTI, 'utf8').split(/\s+/).filter(Boolean)) : new Set();
+// 24/11/2026 (Marco): nella scelta automatica solo modelli usciti da non più di 30 giorni (i video «Hardware Needed» vanno in cima alla coda di YouTube)
+const TRENTA_GIORNI_FA = new Date(Date.parse(dati.aggiornato + 'T12:00:00Z') - 30 * 864e5).toISOString().slice(0, 10);
 const candidati = [...dati.nuovi].filter((m) => m.hf && !m.gated).sort((a, b) => (b.creato || '').localeCompare(a.creato || ''));
 const nomeVideo = (m) => `modello-${slug(m.nome)}`;
 // chiesto un modello preciso (BRAG_MODELLO=<repo>) che non è fra i candidati (es. gated): niente video, non un altro al suo posto
 if (process.env.BRAG_MODELLO && !candidati.some((x) => x.hf.repo === process.env.BRAG_MODELLO)) { console.log(`Modello non disponibile: ${process.env.BRAG_MODELLO}`); process.exit(0); }
-const m = (process.env.BRAG_MODELLO && candidati.find((x) => x.hf.repo === process.env.BRAG_MODELLO)) || candidati.slice(0, 10).find((x) => !fatti.has(`video-${nomeVideo(x)}`));
+const m = (process.env.BRAG_MODELLO && candidati.find((x) => x.hf.repo === process.env.BRAG_MODELLO)) || candidati.filter((x) => (x.creato || '') >= TRENTA_GIORNI_FA).slice(0, 10).find((x) => !fatti.has(`video-${nomeVideo(x)}`));
 if (!m) { console.log('Nessun modello nuovo da raccontare'); process.exit(0); }
 
 // ---------- 2. la scheda del modello su Hugging Face ----------
