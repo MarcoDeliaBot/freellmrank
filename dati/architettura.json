@@ -2253,5 +2253,27 @@
   "contestoMax": 131072,
   "moe": false,
   "attivi": 8030261248
+ },
+ "baidu/ERNIE-5.5-Flash-Preview-BF16": {
+  "strati": 43,
+  "tipo": "MLA",
+  "kvPerStrato": 1152,
+  "pieni": 43,
+  "finestra": 0,
+  "larghezzaFinestra": 128,
+  "contestoMax": 1048576,
+  "moe": true,
+  "attivi": 33436862022
+ },
+ "tencent/WeMM-Ecom-35B-A3B": {
+  "strati": 40,
+  "tipo": "GQA",
+  "kvPerStrato": 2048,
+  "pieni": 10,
+  "finestra": 0,
+  "larghezzaFinestra": null,
+  "contestoMax": 262144,
+  "moe": true,
+  "attivi": 3000000000
  }
 }

@@ -24077,7 +24077,10 @@
   "lingua": "de",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/de/model/ernie-5-5-flash-preview-bf16",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/de/model/baidu-ernie-5-5-flash-preview.html",
@@ -24085,7 +24088,10 @@
   "lingua": "de",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/de/model/ernie-5-5-flash-preview-bf16.html",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/de/model/beam-1-0-501b-a23b",
@@ -24515,7 +24521,8 @@
   "lingua": "de",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/de/model/d1-3b.html",
@@ -24523,7 +24530,8 @@
   "lingua": "de",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/de/model/d1-omni-600m",
@@ -25228,6 +25236,22 @@
   "tipo": "modello",
   "lingua": "de",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/ernie-5-5-flash-preview-bf16",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/ernie-5-5-flash-preview-bf16.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-24",
   "ultimaVista": "2026-11-24",
   "stato": "attiva"
  },
@@ -31748,6 +31772,22 @@
   "ultimaVista": "2026-11-04",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-11-06"
+ },
+ {
+  "url": "/de/model/wemm-ecom-35b-a3b",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/de/model/wemm-ecom-35b-a3b.html",
+  "tipo": "modello",
+  "lingua": "de",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
  },
  {
   "url": "/de/model/wemm-video-35ba3b",
@@ -44205,7 +44245,10 @@
   "lingua": "es",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/es/model/ernie-5-5-flash-preview-bf16",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/es/model/baidu-ernie-5-5-flash-preview.html",
@@ -44213,7 +44256,10 @@
   "lingua": "es",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/es/model/ernie-5-5-flash-preview-bf16.html",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/es/model/beam-1-0-501b-a23b",
@@ -44643,7 +44689,8 @@
   "lingua": "es",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/es/model/d1-3b.html",
@@ -44651,7 +44698,8 @@
   "lingua": "es",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/es/model/d1-omni-600m",
@@ -45356,6 +45404,22 @@
   "tipo": "modello",
   "lingua": "es",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/ernie-5-5-flash-preview-bf16",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/ernie-5-5-flash-preview-bf16.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-24",
   "ultimaVista": "2026-11-24",
   "stato": "attiva"
  },
@@ -51876,6 +51940,22 @@
   "ultimaVista": "2026-11-04",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-11-06"
+ },
+ {
+  "url": "/es/model/wemm-ecom-35b-a3b",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/es/model/wemm-ecom-35b-a3b.html",
+  "tipo": "modello",
+  "lingua": "es",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
  },
  {
   "url": "/es/model/wemm-video-35ba3b",
@@ -64333,7 +64413,10 @@
   "lingua": "fr",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/fr/model/ernie-5-5-flash-preview-bf16",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/fr/model/baidu-ernie-5-5-flash-preview.html",
@@ -64341,7 +64424,10 @@
   "lingua": "fr",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/fr/model/ernie-5-5-flash-preview-bf16.html",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/fr/model/beam-1-0-501b-a23b",
@@ -64771,7 +64857,8 @@
   "lingua": "fr",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/fr/model/d1-3b.html",
@@ -64779,7 +64866,8 @@
   "lingua": "fr",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/fr/model/d1-omni-600m",
@@ -65484,6 +65572,22 @@
   "tipo": "modello",
   "lingua": "fr",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/ernie-5-5-flash-preview-bf16",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/ernie-5-5-flash-preview-bf16.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-24",
   "ultimaVista": "2026-11-24",
   "stato": "attiva"
  },
@@ -72004,6 +72108,22 @@
   "ultimaVista": "2026-11-04",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-11-06"
+ },
+ {
+  "url": "/fr/model/wemm-ecom-35b-a3b",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/fr/model/wemm-ecom-35b-a3b.html",
+  "tipo": "modello",
+  "lingua": "fr",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
  },
  {
   "url": "/fr/model/wemm-video-35ba3b",
@@ -84461,7 +84581,10 @@
   "lingua": "it",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/it/model/ernie-5-5-flash-preview-bf16",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/it/model/baidu-ernie-5-5-flash-preview.html",
@@ -84469,7 +84592,10 @@
   "lingua": "it",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/it/model/ernie-5-5-flash-preview-bf16.html",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/it/model/beam-1-0-501b-a23b",
@@ -84899,7 +85025,8 @@
   "lingua": "it",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/it/model/d1-3b.html",
@@ -84907,7 +85034,8 @@
   "lingua": "it",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/it/model/d1-omni-600m",
@@ -85612,6 +85740,22 @@
   "tipo": "modello",
   "lingua": "it",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/ernie-5-5-flash-preview-bf16",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/ernie-5-5-flash-preview-bf16.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-24",
   "ultimaVista": "2026-11-24",
   "stato": "attiva"
  },
@@ -92132,6 +92276,22 @@
   "ultimaVista": "2026-11-04",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-11-06"
+ },
+ {
+  "url": "/it/model/wemm-ecom-35b-a3b",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/it/model/wemm-ecom-35b-a3b.html",
+  "tipo": "modello",
+  "lingua": "it",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
  },
  {
   "url": "/it/model/wemm-video-35ba3b",
@@ -104589,7 +104749,10 @@
   "lingua": "ja",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/ja/model/ernie-5-5-flash-preview-bf16",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/ja/model/baidu-ernie-5-5-flash-preview.html",
@@ -104597,7 +104760,10 @@
   "lingua": "ja",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/ja/model/ernie-5-5-flash-preview-bf16.html",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/ja/model/beam-1-0-501b-a23b",
@@ -105027,7 +105193,8 @@
   "lingua": "ja",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/ja/model/d1-3b.html",
@@ -105035,7 +105202,8 @@
   "lingua": "ja",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/ja/model/d1-omni-600m",
@@ -105740,6 +105908,22 @@
   "tipo": "modello",
   "lingua": "ja",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/ernie-5-5-flash-preview-bf16",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/ernie-5-5-flash-preview-bf16.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-24",
   "ultimaVista": "2026-11-24",
   "stato": "attiva"
  },
@@ -112262,6 +112446,22 @@
   "fuoriDal": "2026-11-06"
  },
  {
+  "url": "/ja/model/wemm-ecom-35b-a3b",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/ja/model/wemm-ecom-35b-a3b.html",
+  "tipo": "modello",
+  "lingua": "ja",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
   "url": "/ja/model/wemm-video-35ba3b",
   "tipo": "modello",
   "lingua": "ja",
@@ -112829,7 +113029,10 @@
   "lingua": "en",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/model/ernie-5-5-flash-preview-bf16",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/model/baidu-ernie-5-5-flash-preview.html",
@@ -112837,7 +113040,10 @@
   "lingua": "en",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/model/ernie-5-5-flash-preview-bf16.html",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/model/beam-1-0-501b-a23b",
@@ -113267,7 +113473,8 @@
   "lingua": "en",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/model/d1-3b.html",
@@ -113275,7 +113482,8 @@
   "lingua": "en",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/model/d1-omni-600m",
@@ -113980,6 +114188,22 @@
   "tipo": "modello",
   "lingua": "en",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/ernie-5-5-flash-preview-bf16",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/ernie-5-5-flash-preview-bf16.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-24",
   "ultimaVista": "2026-11-24",
   "stato": "attiva"
  },
@@ -120500,6 +120724,22 @@
   "ultimaVista": "2026-11-04",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-11-06"
+ },
+ {
+  "url": "/model/wemm-ecom-35b-a3b",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/model/wemm-ecom-35b-a3b.html",
+  "tipo": "modello",
+  "lingua": "en",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
  },
  {
   "url": "/model/wemm-video-35ba3b",
@@ -132957,7 +133197,10 @@
   "lingua": "pt",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/pt/model/ernie-5-5-flash-preview-bf16",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/pt/model/baidu-ernie-5-5-flash-preview.html",
@@ -132965,7 +133208,10 @@
   "lingua": "pt",
   "primaVista": "2026-11-11",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "rinominata",
+  "fuoriDal": "2026-11-24",
+  "nuovoURL": "/pt/model/ernie-5-5-flash-preview-bf16.html",
+  "prova": "openrouter:baidu/ernie-5.5-flash-preview:free"
  },
  {
   "url": "/pt/model/beam-1-0-501b-a23b",
@@ -133395,7 +133641,8 @@
   "lingua": "pt",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/pt/model/d1-3b.html",
@@ -133403,7 +133650,8 @@
   "lingua": "pt",
   "primaVista": "2026-10-18",
   "ultimaVista": "2026-11-24",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-24"
  },
  {
   "url": "/pt/model/d1-omni-600m",
@@ -134108,6 +134356,22 @@
   "tipo": "modello",
   "lingua": "pt",
   "primaVista": "2026-10-18",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/ernie-5-5-flash-preview-bf16",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/ernie-5-5-flash-preview-bf16.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-24",
   "ultimaVista": "2026-11-24",
   "stato": "attiva"
  },
@@ -140628,6 +140892,22 @@
   "ultimaVista": "2026-11-04",
   "stato": "fuori-classifica",
   "fuoriDal": "2026-11-06"
+ },
+ {
+  "url": "/pt/model/wemm-ecom-35b-a3b",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
+ },
+ {
+  "url": "/pt/model/wemm-ecom-35b-a3b.html",
+  "tipo": "modello",
+  "lingua": "pt",
+  "primaVista": "2026-11-24",
+  "ultimaVista": "2026-11-24",
+  "stato": "attiva"
  },
  {
   "url": "/pt/model/wemm-video-35ba3b",

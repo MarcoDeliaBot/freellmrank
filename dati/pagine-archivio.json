@@ -35,9 +35,9 @@
       "punti": 1622,
       "pos": 35,
       "totale": 162,
-      "voti": 10441,
+      "voti": 10521,
       "nomeArena": "MiMo-V2.6-Pro",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1247,
@@ -110,12 +110,12 @@
       "data": "2026-11-22"
      },
      "code": {
-      "punti": 1659,
-      "pos": 22,
+      "punti": 1658,
+      "pos": 23,
       "totale": 162,
-      "voti": 23497,
+      "voti": 23561,
       "nomeArena": "Kimi K3 (Max)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 1094,
@@ -182,9 +182,9 @@
       "punti": 1623,
       "pos": 34,
       "totale": 162,
-      "voti": 13904,
+      "voti": 13948,
       "nomeArena": "GLM-5.3 (Max)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 1098,
@@ -251,9 +251,9 @@
       "punti": 1611,
       "pos": 40,
       "totale": 162,
-      "voti": 24928,
+      "voti": 25005,
       "nomeArena": "GLM-5.3-Flash",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1274,
@@ -329,9 +329,9 @@
       "punti": 1607,
       "pos": 43,
       "totale": 162,
-      "voti": 17823,
+      "voti": 17818,
       "nomeArena": "GLM-5.2 (Max)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 1091,
@@ -395,9 +395,9 @@
       "punti": 1479,
       "pos": 83,
       "totale": 162,
-      "voti": 21911,
+      "voti": 21915,
       "nomeArena": "MiMo-V2.5-Pro",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": -9,
@@ -517,7 +517,7 @@
       "totale": 162,
       "voti": 10497,
       "nomeArena": "GLM-5.1",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -566,9 +566,9 @@
       "punti": 1509,
       "pos": 73,
       "totale": 162,
-      "voti": 9988,
+      "voti": 9993,
       "nomeArena": "Kimi K2.6",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1265,
@@ -635,9 +635,9 @@
       "punti": 1637,
       "pos": 30,
       "totale": 162,
-      "voti": 10152,
+      "voti": 10215,
       "nomeArena": "MiMo-V2.6-Flash",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1246,
@@ -715,7 +715,7 @@
       "totale": 162,
       "voti": 4592,
       "nomeArena": "DeepSeek-V4-Pro (High, 20260813)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": -0.3,
@@ -775,7 +775,7 @@
       "totale": 162,
       "voti": 7429,
       "nomeArena": "GLM-5",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -854,9 +854,9 @@
       "punti": 1436,
       "pos": 97,
       "totale": 162,
-      "voti": 19758,
+      "voti": 19769,
       "nomeArena": "Kimi K2.5 (Thinking)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1253,
@@ -995,9 +995,9 @@
       "punti": 1371,
       "pos": 123,
       "totale": 162,
-      "voti": 16527,
+      "voti": 16532,
       "nomeArena": "Gemma 4 31B",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1265,
@@ -1055,9 +1055,9 @@
       "punti": 1414,
       "pos": 105,
       "totale": 162,
-      "voti": 17053,
+      "voti": 17046,
       "nomeArena": "Inkling",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 870,
@@ -1124,9 +1124,9 @@
       "punti": 1590,
       "pos": 45,
       "totale": 162,
-      "voti": 22304,
+      "voti": 22378,
       "nomeArena": "Qwen3.8-27B",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1244,
@@ -1204,7 +1204,7 @@
       "totale": 162,
       "voti": 6718,
       "nomeArena": "GLM-4.6",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -1253,9 +1253,9 @@
       "punti": 1506,
       "pos": 75,
       "totale": 162,
-      "voti": 7657,
+      "voti": 7680,
       "nomeArena": "Hy3",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 999,
@@ -1322,9 +1322,9 @@
       "punti": 1400,
       "pos": 110,
       "totale": 162,
-      "voti": 20785,
+      "voti": 20805,
       "nomeArena": "Qwen3.5-397B-A17B",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1245,
@@ -1384,7 +1384,7 @@
       "totale": 162,
       "voti": 3988,
       "nomeArena": "GLM-4.7",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -1435,7 +1435,7 @@
       "totale": 162,
       "voti": 1487,
       "nomeArena": "Gemma 4 26B A4B",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1241,
@@ -1493,9 +1493,9 @@
       "punti": 1484,
       "pos": 81,
       "totale": 162,
-      "voti": 20920,
+      "voti": 20926,
       "nomeArena": "MiniMax-M3",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1231,
@@ -1663,7 +1663,7 @@
       "totale": 162,
       "voti": 822,
       "nomeArena": "Mistral Large 3",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1200,
@@ -1721,9 +1721,9 @@
       "punti": 1438,
       "pos": 95,
       "totale": 162,
-      "voti": 14564,
+      "voti": 14575,
       "nomeArena": "MiMo-V2.5",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1234,
@@ -1816,7 +1816,7 @@
       "totale": 162,
       "voti": 3936,
       "nomeArena": "DeepSeek-V3.2-Exp",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -1967,9 +1967,9 @@
       "punti": 1263,
       "pos": 146,
       "totale": 162,
-      "voti": 2270,
+      "voti": 2274,
       "nomeArena": "Mistral Medium 3.5",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1199,
@@ -2252,9 +2252,9 @@
       "punti": 1360,
       "pos": 126,
       "totale": 162,
-      "voti": 8186,
+      "voti": 8195,
       "nomeArena": "Qwen3.5-122B-A10B",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1226,
@@ -2440,7 +2440,7 @@
       "totale": 162,
       "voti": 12989,
       "nomeArena": "Kimi K2 Thinking Turbo",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -2477,12 +2477,12 @@
       "data": "2026-11-22"
      },
      "code": {
-      "punti": 1408,
+      "punti": 1407,
       "pos": 106,
       "totale": 162,
-      "voti": 5195,
+      "voti": 5193,
       "nomeArena": "Inkling-Small",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1208,
@@ -2555,9 +2555,9 @@
       "punti": 1332,
       "pos": 137,
       "totale": 162,
-      "voti": 5644,
+      "voti": 5646,
       "nomeArena": "MiMo-V2-Flash (Non-Thinking)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -2604,11 +2604,11 @@
      },
      "code": {
       "punti": 1400,
-      "pos": 111,
+      "pos": 109,
       "totale": 162,
-      "voti": 6420,
+      "voti": 6477,
       "nomeArena": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1211,
@@ -2684,9 +2684,9 @@
       "punti": 1357,
       "pos": 130,
       "totale": 162,
-      "voti": 7733,
+      "voti": 7745,
       "nomeArena": "Qwen3.5-27B",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1215,
@@ -2742,11 +2742,11 @@
      },
      "code": {
       "punti": 1398,
-      "pos": 112,
+      "pos": 113,
       "totale": 162,
-      "voti": 15665,
+      "voti": 15670,
       "nomeArena": "MiniMax-M2.7",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -2914,7 +2914,7 @@
       "totale": 162,
       "voti": 1610,
       "nomeArena": "Qwen3.5-35B-A3B",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -3029,9 +3029,9 @@
       "punti": 1384,
       "pos": 120,
       "totale": 162,
-      "voti": 7595,
+      "voti": 7596,
       "nomeArena": "MiniMax-M2.1 Preview",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -3070,7 +3070,7 @@
       "totale": 162,
       "voti": 1622,
       "nomeArena": "Muse Glimmer",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -3611,9 +3611,9 @@
       "punti": 1386,
       "pos": 117,
       "totale": 162,
-      "voti": 7580,
+      "voti": 7588,
       "nomeArena": "MiniMax-M2.5",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -3703,7 +3703,7 @@
       "totale": 162,
       "voti": 12630,
       "nomeArena": "Qwen3-Coder-480B-A35B-Instruct",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -3932,9 +3932,9 @@
       "punti": 1237,
       "pos": 153,
       "totale": 162,
-      "voti": 1345,
+      "voti": 1346,
       "nomeArena": "Trinity Large Thinking",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -4024,7 +4024,7 @@
       "totale": 162,
       "voti": 6654,
       "nomeArena": "MiniMax-M2",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -4814,9 +4814,9 @@
       "punti": 1193,
       "pos": 158,
       "totale": 162,
-      "voti": 1745,
+      "voti": 1759,
       "nomeArena": "Granite 4.1 8B",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -8526,9 +8526,9 @@
       "punti": 1631,
       "pos": 31,
       "totale": 162,
-      "voti": 4564,
+      "voti": 4562,
       "nomeArena": "Hy4 preview",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 1094,
@@ -8584,11 +8584,11 @@
     "cat": {
      "code": {
       "punti": 1626,
-      "pos": 33,
+      "pos": 32,
       "totale": 162,
-      "voti": 12616,
+      "voti": 12662,
       "nomeArena": "Qwen3.8-Flash-Next",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 1043,
@@ -8634,12 +8634,12 @@
     "hf": null,
     "cat": {
      "code": {
-      "punti": 1528,
+      "punti": 1527,
       "pos": 66,
       "totale": 162,
-      "voti": 2028,
+      "voti": 2038,
       "nomeArena": "Muse Spark Open (Max)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -8679,9 +8679,9 @@
       "punti": 1475,
       "pos": 84,
       "totale": 162,
-      "voti": 4869,
+      "voti": 4868,
       "nomeArena": "Kimi K2.7 Code",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -8717,12 +8717,12 @@
       "data": "2026-11-22"
      },
      "code": {
-      "punti": 1438,
+      "punti": 1437,
       "pos": 96,
       "totale": 162,
-      "voti": 2485,
+      "voti": 2482,
       "nomeArena": "Beam 1.0 501B A23B",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 998,
@@ -8940,9 +8940,9 @@
       "punti": 1350,
       "pos": 132,
       "totale": 162,
-      "voti": 5289,
+      "voti": 5292,
       "nomeArena": "Laguna M.1",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -9029,9 +9029,9 @@
       "punti": 1363,
       "pos": 125,
       "totale": 162,
-      "voti": 6869,
+      "voti": 6870,
       "nomeArena": "DeepSeek-V3.2 (Thinking)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -9060,9 +9060,9 @@
       "punti": 1304,
       "pos": 141,
       "totale": 162,
-      "voti": 4153,
+      "voti": 4152,
       "nomeArena": "Laguna XS.2",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -9125,7 +9125,7 @@
       "totale": 162,
       "voti": 1176,
       "nomeArena": "Devstral 2",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -10852,7 +10852,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 14877773,
+    "download": 14676443,
     "catPiccoli": [
      "chat"
     ],
@@ -10914,7 +10914,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 6014711,
+    "download": 5977222,
     "catPiccoli": [
      "chat"
     ],
@@ -10945,7 +10945,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 13479677,
+    "download": 13419327,
     "catPiccoli": [
      "chat"
     ],
@@ -11008,7 +11008,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 6302942,
+    "download": 6155972,
     "catPiccoli": [
      "chat",
      "vision"
@@ -11040,7 +11040,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 191673,
+    "download": 193838,
     "catPiccoli": [
      "chat"
     ],
@@ -11071,7 +11071,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 225065,
+    "download": 229091,
     "catPiccoli": [
      "chat"
     ],
@@ -11102,7 +11102,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 1759913,
+    "download": 1772466,
     "catPiccoli": [
      "chat",
      "vision"
@@ -11134,7 +11134,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 909190,
+    "download": 916112,
     "catPiccoli": [
      "chat"
     ],
@@ -11165,7 +11165,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 425435,
+    "download": 432370,
     "catPiccoli": [
      "chat"
     ],
@@ -11196,7 +11196,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 122536,
+    "download": 126871,
     "catPiccoli": [
      "chat"
     ],
@@ -11227,7 +11227,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 356234,
+    "download": 343383,
     "catPiccoli": [
      "chat"
     ],
@@ -11252,7 +11252,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 9159,
+    "download": 9106,
     "catPiccoli": [
      "chat",
      "vision"
@@ -11284,7 +11284,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 65595,
+    "download": 66466,
     "catPiccoli": [
      "chat"
     ],
@@ -11315,7 +11315,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 591189,
+    "download": 594267,
     "catPiccoli": [
      "chat"
     ],
@@ -11346,7 +11346,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 94524,
+    "download": 90551,
     "catPiccoli": [
      "chat"
     ],
@@ -11377,7 +11377,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 129292,
+    "download": 132407,
     "catPiccoli": [
      "chat"
     ],
@@ -11408,7 +11408,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 292386,
+    "download": 295496,
     "catPiccoli": [
      "chat"
     ],
@@ -11439,7 +11439,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 308860,
+    "download": 305832,
     "catPiccoli": [
      "chat"
     ],
@@ -11470,7 +11470,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 224770,
+    "download": 224388,
     "catPiccoli": [
      "chat"
     ],
@@ -11532,7 +11532,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 75316,
+    "download": 75028,
     "catPiccoli": [
      "chat"
     ],
@@ -11563,7 +11563,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 212559,
+    "download": 221639,
     "catPiccoli": [
      "chat"
     ],
@@ -11594,7 +11594,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 195351,
+    "download": 196580,
     "catPiccoli": [
      "chat",
      "vision"
@@ -11626,7 +11626,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 65080,
+    "download": 60548,
     "catPiccoli": [
      "chat",
      "vision"
@@ -11658,7 +11658,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 74473,
+    "download": 75731,
     "catPiccoli": [
      "chat"
     ],
@@ -11689,7 +11689,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 36836,
+    "download": 36810,
     "catPiccoli": [
      "chat",
      "vision"
@@ -11747,7 +11747,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 194328,
+    "download": 194827,
     "catPiccoli": [
      "chat",
      "vision"
@@ -11779,7 +11779,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 88388,
+    "download": 79817,
     "catPiccoli": [
      "chat"
     ],
@@ -11810,7 +11810,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 27122,
+    "download": 25779,
     "catPiccoli": [
      "chat"
     ],
@@ -11841,7 +11841,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 233504,
+    "download": 212568,
     "catPiccoli": [
      "chat",
      "vision"
@@ -11873,7 +11873,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 112882,
+    "download": 120424,
     "catPiccoli": [
      "chat"
     ],
@@ -11904,7 +11904,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 63532,
+    "download": 65835,
     "catPiccoli": [
      "chat",
      "vision"
@@ -11968,7 +11968,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 97453,
+    "download": 98484,
     "catPiccoli": [
      "chat"
     ],
@@ -11999,7 +11999,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 68383,
+    "download": 70550,
     "catPiccoli": [
      "chat",
      "vision"
@@ -12031,7 +12031,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 172922,
+    "download": 181383,
     "catPiccoli": [
      "chat",
      "vision"
@@ -12095,7 +12095,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 62832,
+    "download": 64038,
     "catPiccoli": [
      "chat"
     ],
@@ -12159,7 +12159,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 16548,
+    "download": 16851,
     "catPiccoli": [
      "chat",
      "vision"
@@ -12223,7 +12223,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 63998,
+    "download": 66774,
     "catPiccoli": [
      "chat"
     ],
@@ -12254,7 +12254,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 30265,
+    "download": 30590,
     "catPiccoli": [
      "chat",
      "vision"
@@ -12286,7 +12286,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 32884,
+    "download": 33571,
     "catPiccoli": [
      "chat"
     ],
@@ -12348,7 +12348,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 31850,
+    "download": 32096,
     "catPiccoli": [
      "chat"
     ],
@@ -12379,7 +12379,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 28544,
+    "download": 28572,
     "catPiccoli": [
      "chat"
     ],
@@ -12476,7 +12476,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 69839,
+    "download": 77646,
     "catPiccoli": [
      "chat",
      "vision"
@@ -12508,7 +12508,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 40916,
+    "download": 41219,
     "catPiccoli": [
      "chat",
      "vision"
@@ -12540,7 +12540,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 27577,
+    "download": 26717,
     "catPiccoli": [
      "chat"
     ],
@@ -12603,7 +12603,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 7295,
+    "download": 7374,
     "catPiccoli": [
      "chat"
     ],
@@ -12634,7 +12634,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 5614,
+    "download": 5851,
     "catPiccoli": [
      "chat",
      "vision"
@@ -12666,7 +12666,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 5550,
+    "download": 5523,
     "catPiccoli": [
      "chat"
     ],
@@ -12697,7 +12697,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 23733,
+    "download": 23896,
     "catPiccoli": [
      "chat"
     ],
@@ -12728,7 +12728,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 3161,
+    "download": 3135,
     "catPiccoli": [
      "chat"
     ],
@@ -12759,7 +12759,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 12247,
+    "download": 11857,
     "catPiccoli": [
      "chat"
     ],
@@ -12784,7 +12784,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 35893,
+    "download": 34171,
     "catPiccoli": [
      "chat"
     ],
@@ -12847,7 +12847,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 3942,
+    "download": 3968,
     "catPiccoli": [
      "chat"
     ],
@@ -12880,7 +12880,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 524232,
+    "download": 536179,
     "catPiccoli": [
      "chat",
      "vision"
@@ -12914,7 +12914,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 13397,
+    "download": 13467,
     "catPiccoli": [
      "chat"
     ],
@@ -12980,7 +12980,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 5367,
+    "download": 5394,
     "catPiccoli": [
      "chat"
     ],
@@ -13013,7 +13013,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 4390,
+    "download": 4423,
     "catPiccoli": [
      "chat"
     ],
@@ -13046,7 +13046,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 27484,
+    "download": 26039,
     "catPiccoli": [
      "image"
     ],
@@ -13106,7 +13106,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 127334,
+    "download": 127367,
     "catPiccoli": [
      "edit"
     ],
@@ -13280,7 +13280,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 855254,
+    "download": 839784,
     "catPiccoli": [
      "chat",
      "vision"
@@ -13312,7 +13312,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 467789,
+    "download": 465429,
     "catPiccoli": [
      "chat",
      "vision"
@@ -13960,12 +13960,12 @@
     "hf": null,
     "cat": {
      "code": {
-      "punti": 1658,
-      "pos": 23,
+      "punti": 1659,
+      "pos": 22,
       "totale": 162,
-      "voti": 18418,
+      "voti": 18638,
       "nomeArena": "DeepSeek-V4.1-Flash-20261017 (Max)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 1108,
@@ -14019,9 +14019,9 @@
       "punti": 1621,
       "pos": 36,
       "totale": 162,
-      "voti": 3358,
+      "voti": 3359,
       "nomeArena": "DeepSeek-V4.1-Flash-20260910 (Max)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1262,
@@ -14108,9 +14108,9 @@
       "punti": 1582,
       "pos": 49,
       "totale": 162,
-      "voti": 6113,
+      "voti": 6187,
       "nomeArena": "MiniMax-M3.1-Flash",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 1047,
@@ -14461,7 +14461,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 1781,
+    "download": 1729,
     "catPiccoli": [
      "chat"
     ],
@@ -15381,7 +15381,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 2850,
+    "download": 2831,
     "catPiccoli": [
      "chat"
     ],
@@ -15436,7 +15436,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 2962,
+    "download": 3019,
     "catPiccoli": [
      "edit"
     ],
@@ -15463,7 +15463,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 1716,
+    "download": 1663,
     "catPiccoli": [
      "image"
     ],
@@ -15566,7 +15566,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 61593,
+    "download": 61974,
     "catPiccoli": [
      "chat"
     ],
@@ -15633,7 +15633,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 35960,
+    "download": 34973,
     "catPiccoli": [
      "chat",
      "vision"
@@ -15665,7 +15665,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 18453,
+    "download": 17627,
     "catPiccoli": [
      "chat",
      "vision"
@@ -15702,9 +15702,9 @@
       "punti": 1584,
       "pos": 47,
       "totale": 162,
-      "voti": 15288,
+      "voti": 15356,
       "nomeArena": "Gemini 3.8 Flash (High)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1293,
@@ -15784,9 +15784,9 @@
       "punti": 1673,
       "pos": 20,
       "totale": 162,
-      "voti": 25851,
+      "voti": 26061,
       "nomeArena": "Qwen3.8-Max (0902)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1294,
@@ -15866,9 +15866,9 @@
       "punti": 1538,
       "pos": 62,
       "totale": 162,
-      "voti": 8459,
+      "voti": 8454,
       "nomeArena": "Gemini 3.6 Flash (High)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1280,
@@ -15930,9 +15930,9 @@
       "punti": 1440,
       "pos": 94,
       "totale": 162,
-      "voti": 10793,
+      "voti": 10796,
       "nomeArena": "Gemini 3 Flash",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1272,
@@ -15991,12 +15991,12 @@
       "data": "2026-11-22"
      },
      "code": {
-      "punti": 1227,
+      "punti": 1226,
       "pos": 155,
       "totale": 162,
       "voti": 2705,
       "nomeArena": "Gemini 2.5 Pro",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1247,
@@ -16133,7 +16133,7 @@
       "totale": 162,
       "voti": 231,
       "nomeArena": "Gemini 3.5 Flash-Lite",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1266,
@@ -16229,9 +16229,9 @@
       "punti": 1256,
       "pos": 148,
       "totale": 162,
-      "voti": 14215,
+      "voti": 14229,
       "nomeArena": "Gemini 3.1 Flash-Lite Preview",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1234,
@@ -16293,9 +16293,9 @@
       "punti": 1582,
       "pos": 48,
       "totale": 162,
-      "voti": 4800,
+      "voti": 4798,
       "nomeArena": "DeepSeek-V4-Flash (High)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      }
     },
     "nomi": {
@@ -16330,7 +16330,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 5096,
+    "download": 4989,
     "catPiccoli": [
      "chat"
     ],
@@ -16439,7 +16439,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 5432237,
+    "download": 5180459,
     "catPiccoli": [
      "chat",
      "vision"
@@ -16471,7 +16471,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 5512,
+    "download": 5255,
     "catPiccoli": [
      "chat",
      "vision"
@@ -16505,7 +16505,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 5767,
+    "download": 5919,
     "catPiccoli": [
      "chat"
     ],
@@ -16521,9 +16521,8 @@
     "chiave": "LiquidAI/d1-2B",
     "nome": "d1-2B",
     "org": "LiquidAI",
-    "licenza": "",
+    "licenza": "open",
     "aperto": true,
-    "or": null,
     "hf": {
      "repo": "LiquidAI/d1-2B",
      "b": 1.9,
@@ -16537,8 +16536,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "nuovo": true,
-    "download": 17986,
+    "download": 18587,
     "catPiccoli": [
      "chat",
      "vision"
@@ -16570,7 +16568,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 146872,
+    "download": 148845,
     "catPiccoli": [
      "chat"
     ],
@@ -16639,7 +16637,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 6128,
+    "download": 6313,
     "catPiccoli": [
      "chat",
      "vision"
@@ -16914,9 +16912,9 @@
       "punti": 1683,
       "pos": 17,
       "totale": 162,
-      "voti": 6154,
+      "voti": 6207,
       "nomeArena": "Kimi K3.1 Pro (Max)",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 1146,
@@ -16968,12 +16966,12 @@
       "data": "2026-11-22"
      },
      "code": {
-      "punti": 1573,
+      "punti": 1572,
       "pos": 52,
       "totale": 162,
-      "voti": 2863,
+      "voti": 2950,
       "nomeArena": "Mistral Large 4",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "vision": {
       "punti": 1233,
@@ -17068,7 +17066,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 47376,
+    "download": 46710,
     "catPiccoli": [
      "chat"
     ],
@@ -17196,7 +17194,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 3684,
+    "download": 3662,
     "catPiccoli": [
      "chat"
     ],
@@ -17229,12 +17227,12 @@
       "data": "2026-11-22"
      },
      "code": {
-      "punti": 1641,
+      "punti": 1642,
       "pos": 28,
       "totale": 162,
-      "voti": 1209,
+      "voti": 1214,
       "nomeArena": "Inkling 2 Small",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 1117,
@@ -17289,7 +17287,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 3303,
+    "download": 3538,
     "catPiccoli": [
      "chat",
      "vision"
@@ -17321,7 +17319,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 3634,
+    "download": 3638,
     "catPiccoli": [
      "chat"
     ],
@@ -17348,7 +17346,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 2176,
+    "download": 2317,
     "catPiccoli": [
      "chat"
     ],
@@ -17406,7 +17404,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 7783,
+    "download": 7938,
     "catPiccoli": [
      "chat"
     ],
@@ -17437,7 +17435,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 32300,
+    "download": 33302,
     "catPiccoli": [
      "chat",
      "vision"
@@ -17591,7 +17589,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 2431,
+    "download": 2358,
     "catPiccoli": [
      "chat"
     ],
@@ -17654,7 +17652,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 47121,
+    "download": 52971,
     "catPiccoli": [
      "chat",
      "vision"
@@ -17688,7 +17686,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 4747,
+    "download": 5476,
     "catPiccoli": [
      "chat"
     ],
@@ -17753,7 +17751,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 9603541,
+    "download": 11385854,
     "catPiccoli": [
      "chat"
     ],
@@ -17786,7 +17784,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 2231,
+    "download": 2386,
     "catPiccoli": [
      "chat",
      "vision"
@@ -17820,7 +17818,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 206,
+    "download": 719,
     "catPiccoli": [
      "chat",
      "vision"
@@ -17854,7 +17852,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 397,
+    "download": 1070,
     "catPiccoli": [
      "chat"
     ],
@@ -17887,12 +17885,12 @@
       "data": "2026-11-22"
      },
      "code": {
-      "punti": 1557,
-      "pos": 55,
+      "punti": 1560,
+      "pos": 54,
       "totale": 162,
-      "voti": 1239,
+      "voti": 1312,
       "nomeArena": "Inkling 2 Mini",
-      "data": "2026-11-22"
+      "data": "2026-11-23"
      },
      "agent": {
       "punti": 996,
@@ -17945,13 +17943,83 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 38489,
+    "download": 48918,
     "catPiccoli": [
      "chat"
     ],
     "primo": "2025-03-16",
     "slug": "llama-3-1-nemotron-nano-8b-v1",
     "href": "/model/llama-3-1-nemotron-nano-8b-v1.html",
+    "categoriaMigliore": null
+   },
+   "data": "2026-11-24"
+  },
+  "/model/ernie-5-5-flash-preview-bf16.html": {
+   "modello": {
+    "chiave": "baidu/ERNIE-5.5-Flash-Preview-BF16",
+    "nome": "ERNIE-5.5-Flash-Preview-BF16",
+    "org": "baidu",
+    "licenza": "",
+    "aperto": true,
+    "or": {
+     "id": "baidu/ernie-5.5-flash-preview:free",
+     "gratis": true
+    },
+    "hf": {
+     "repo": "baidu/ERNIE-5.5-Flash-Preview-BF16",
+     "b": 299.6,
+     "att": 33.4,
+     "kv": 1152,
+     "pf": 43,
+     "fw": 0,
+     "w": 128,
+     "ctx": 1048576
+    },
+    "cat": {},
+    "nomi": {},
+    "senzaVoti": true,
+    "nuovo": true,
+    "download": 27,
+    "catPiccoli": [
+     "chat"
+    ],
+    "primo": "2026-11-23",
+    "slug": "ernie-5-5-flash-preview-bf16",
+    "href": "/model/ernie-5-5-flash-preview-bf16.html",
+    "categoriaMigliore": null
+   },
+   "data": "2026-11-24"
+  },
+  "/model/wemm-ecom-35b-a3b.html": {
+   "modello": {
+    "chiave": "tencent/WeMM-Ecom-35B-A3B",
+    "nome": "WeMM-Ecom-35B-A3B",
+    "org": "tencent",
+    "licenza": "",
+    "aperto": true,
+    "or": null,
+    "hf": {
+     "repo": "tencent/WeMM-Ecom-35B-A3B",
+     "b": 35.1,
+     "att": 3,
+     "kv": 2048,
+     "pf": 10,
+     "fw": 0,
+     "w": null,
+     "ctx": 262144
+    },
+    "cat": {},
+    "nomi": {},
+    "senzaVoti": true,
+    "nuovo": true,
+    "download": 490,
+    "catPiccoli": [
+     "chat",
+     "vision"
+    ],
+    "primo": "2026-11-18",
+    "slug": "wemm-ecom-35b-a3b",
+    "href": "/model/wemm-ecom-35b-a3b.html",
     "categoriaMigliore": null
    },
    "data": "2026-11-24"
@@ -25492,7 +25560,7 @@
     "descr": "On 19 November 2026 Ant Group announced the release of LingSante-3.1-flash on Hugging Face.",
     "data": "2026-11-23",
     "tema": "LLMs",
-    "corpo": "<div class=\"video-post\"><video controls preload=\"none\" playsinline poster=\"https://github.com/MarcoDeliaBot/freellmrank/releases/download/video-notizia-ant-group-launches-lingsante-3-1-flash-model-on-hugging/notizia-ant-group-launches-lingsante-3-1-flash-model-on-hugging.jpg\" src=\"https://github.com/MarcoDeliaBot/freellmrank/releases/download/video-notizia-ant-group-launches-lingsante-3-1-flash-model-on-hugging/notizia-ant-group-launches-lingsante-3-1-flash-model-on-hugging.mp4\"></video></div>\n\n[Watch on YouTube](https://www.youtube.com/@FreeLLMArena)\n\nOn 19 November 2026 Ant Group announced the release of LingSante-3.1-flash on Hugging Face.\n\nThe model is listed under the repository inclusionAI/LingSante-3.1-flash and is tagged for text-generation, conversational use, and safetensors format.\n\nSince its publication, the model has been downloaded 397 times and received 111 likes from the community.\n\nLingSante-3.1-flash is offered as a public, non‑gated model without inference providers, allowing anyone to download and run it locally.\n\n## What it means for you\n\nFor users seeking free or locally runnable AI, LingSante-3.1-flash provides another open‑source conversational option with a modest download footprint.\n\n## On FreeLLMArena\n\nFrom our rankings on 24 Nov 2026, based on Arena's blind votes:\n\n- [LingSante-3.1-flash](/model/lingsante-3-1-flash.html): on our model list\n\n## Sources\n\n- [Ant Group releases LingSante-3.1-flash on Hugging Face](https://huggingface.co/inclusionAI/LingSante-3.1-flash), Hugging Face trending (official), 19 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-23-ant-group-launches-lingsante-3-1-flash-model-on-hugging-face).</small>\n",
+    "corpo": "<div class=\"video-post\"><iframe src=\"https://www.youtube-nocookie.com/embed/9N0e6b2MAO4\" title=\"Ant Group launches LingSante-3.1-flash model on Hugging Face\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; picture-in-picture\" allowfullscreen></iframe></div>\n\n[Watch on YouTube](https://youtu.be/9N0e6b2MAO4) · [Watch the Short](https://youtube.com/shorts/PUt8znIoXWk)\n\nOn 19 November 2026 Ant Group announced the release of LingSante-3.1-flash on Hugging Face.\n\nThe model is listed under the repository inclusionAI/LingSante-3.1-flash and is tagged for text-generation, conversational use, and safetensors format.\n\nSince its publication, the model has been downloaded 397 times and received 111 likes from the community.\n\nLingSante-3.1-flash is offered as a public, non‑gated model without inference providers, allowing anyone to download and run it locally.\n\n## What it means for you\n\nFor users seeking free or locally runnable AI, LingSante-3.1-flash provides another open‑source conversational option with a modest download footprint.\n\n## On FreeLLMArena\n\nFrom our rankings on 24 Nov 2026, based on Arena's blind votes:\n\n- [LingSante-3.1-flash](/model/lingsante-3-1-flash.html): on our model list\n\n## Sources\n\n- [Ant Group releases LingSante-3.1-flash on Hugging Face](https://huggingface.co/inclusionAI/LingSante-3.1-flash), Hugging Face trending (official), 19 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-23-ant-group-launches-lingsante-3-1-flash-model-on-hugging-face).</small>\n",
     "tipo": "News"
    },
    "data": "2026-11-24"
