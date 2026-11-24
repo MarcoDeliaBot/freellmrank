@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-24-tencent-releases-wemm-ecom-35b-a3b-beating-larger-open-source-e-commer",
+ "titolo": "Tencent releases WeMM-Ecom 35B-A3B, beating larger open-source e‑commerce models",
+ "descr": "The 35‑billion‑parameter WeMM‑Ecom model outperforms flagship open models on e‑commerce benchmarks while matching state‑of‑the‑art general‑purpose performance.",
+ "tema": "Research",
+ "paragrafi": [
+  "Tencent's WeChat Vision team announced the WeMM‑Ecom family, a set of multimodal large language models ranging from 0.8 B to a 35 B mixture‑of‑experts model with 3 B active parameters.",
+  "The top model, WeMM‑Ecom‑35B‑A3B, surpasses open‑source models that have hundreds of billions of parameters on a suite of 28 e‑commerce benchmarks covering eight business scenarios.",
+  "On a broader set of 64 public general‑purpose benchmarks, every WeMM‑Ecom model exceeds its similarly sized Qwen 3.5 counterpart, and the 2 B variant outperforms lightweight competitors such as MiniCPM‑V‑4.7‑1B and LFM3‑VL‑2B.",
+  "The models are trained with a two‑stage continued pre‑training that increases e‑commerce data proportion, followed by hybrid‑thinking post‑training that blends on‑policy distillation and reinforcement learning for both non‑thinking and thinking modes.",
+  "Tencent has released the model weights and code on GitHub, and the models already power hundreds of production use cases in WeChat, handling billions of requests per day."
+ ],
+ "perche": [
+  "The release gives researchers and developers free access to a high‑performing e‑commerce‑focused multimodal model, expanding options beyond large proprietary systems. For users seeking local or free models, WeMM‑Ecom offers strong domain performance without the need for massive hardware, though the 35 B version still requires substantial resources."
+ ],
+ "pubblicato": "2026-11-24",
+ "titoloFonte": "Tencent paper: WeMM-Ecom: Advancing Multimodal Content Understanding for WeChat E-Commerce",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2611.30662",
+   "titolo": "Tencent paper: WeMM-Ecom: Advancing Multimodal Content Understanding for WeChat E-Commerce",
+   "ufficiale": true,
+   "data": "2026-11-22"
+  }
+ ],
+ "frasiTolte": 0
+}

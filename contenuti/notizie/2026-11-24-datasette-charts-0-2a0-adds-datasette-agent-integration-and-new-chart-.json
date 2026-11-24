@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-24-datasette-charts-0-2a0-adds-datasette-agent-integration-and-new-chart-",
+ "titolo": "datasette-charts 0.2a0 adds Datasette Agent integration and new chart features",
+ "descr": "The pre‑release adds chat‑driven chart creation, a decade time unit, and improved line chart rendering.",
+ "tema": "Software",
+ "paragrafi": [
+  "Simon Willison announced the 0.2a0 pre‑release of the datasette-charts plugin on 24 November 2026.",
+  "The update integrates the plugin with Datasette Agent, letting users request charts via chat and open them in the chart builder panel.",
+  "The release also introduces a new decade time unit for columns spanning centuries and changes line charts to connect points across skipped buckets.",
+  "The GitHub release notes confirm seven commits since the previous tag and note the verified GPG signature of the commit."
+ ],
+ "perche": [
+  "For AI users, the integration means faster, conversational data visualisation without manual chart setup. Developers of free or locally hosted tools gain a ready‑made plugin that works with existing Datasette Agent setups, expanding functionality without additional code."
+ ],
+ "pubblicato": "2026-11-24",
+ "titoloFonte": "datasette-charts 0.2a0",
+ "fonti": [
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Nov/24/datasette-charts/",
+   "titolo": "datasette-charts 0.2a0",
+   "ufficiale": false,
+   "data": "2026-11-24"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/datasette/datasette-charts/releases/tag/0.2a0",
+   "titolo": "Release 0.2a0 · datasette/datasette-charts · GitHub",
+   "ufficiale": true,
+   "data": "2026-11-24"
+  }
+ ],
+ "frasiTolte": 1
+}
