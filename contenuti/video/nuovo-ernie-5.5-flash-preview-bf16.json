@@ -1,0 +1,79 @@
+{
+ "nome": "nuovo-ernie-5.5-flash-preview-bf16",
+ "titolo": "ERNIE-5.5-Flash-Preview-BF16: 300B parameters, free to download #Shorts",
+ "descrizione": "ERNIE-5.5-Flash-Preview-BF16 by Baidu came out on 23 Nov 2026, with open weights on Hugging Face. At 4-bit it needs about 184 GB of memory.\nCompare it with every free model: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "ERNIE-5.5-Flash-Preview-BF16"
+ ],
+ "condividi": "ERNIE-5.5-Flash-Preview-BF16 is out: 300B parameters and open weights. At 4-bit it needs about 184 GB, so the smallest card that holds it fully is the Mac Studio M3 Ultra 512 GB. https://freellmarena.com",
+ "lingua": "en",
+ "localizzazioni": {
+  "it": {
+   "titolo": "ERNIE-5.5-Flash-Preview-BF16: 300 miliardi di parametri, gratis #Shorts",
+   "descrizione": "ERNIE-5.5-Flash-Preview-BF16 di Baidu è uscito il 23 novembre 2026, con i pesi aperti su Hugging Face. A 4 bit servono circa 184 GB di memoria.\nConfrontalo con tutti i modelli gratis: https://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "ERNIE-5.5-Flash-Preview-BF16: 300 mil millones de parámetros, gratis #Shorts",
+   "descrizione": "ERNIE-5.5-Flash-Preview-BF16 de Baidu salió el 23 de noviembre de 2026, con pesos abiertos en Hugging Face. A 4 bits necesita unos 184 GB de memoria.\nCompáralo con todos los modelos gratis: https://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "ERNIE-5.5-Flash-Preview-BF16: 300 Mrd. Parameter, kostenlos #Shorts",
+   "descrizione": "ERNIE-5.5-Flash-Preview-BF16 von Baidu ist am 23. November 2026 erschienen, mit offenen Gewichten auf Hugging Face. Mit 4 Bit braucht es etwa 184 GB Speicher.\nVergleiche es mit allen kostenlosen Modellen: https://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "ERNIE-5.5-Flash-Preview-BF16 : 300 milliards de paramètres, gratuit #Shorts",
+   "descrizione": "ERNIE-5.5-Flash-Preview-BF16 de Baidu est sorti le 23 novembre 2026, avec des poids ouverts sur Hugging Face. En 4 bits, il faut environ 184 Go de mémoire.\nComparez-le à tous les modèles gratuits : https://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "ERNIE-5.5-Flash-Preview-BF16: 300 bilhões de parâmetros, grátis #Shorts",
+   "descrizione": "ERNIE-5.5-Flash-Preview-BF16 da Baidu saiu em 23 de novembro de 2026, com pesos abertos no Hugging Face. Em 4 bits precisa de cerca de 184 GB de memória.\nCompare com todos os modelos grátis: https://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "ERNIE-5.5-Flash-Preview-BF16",
+    "gb": 184,
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    }
+   }
+  ],
+  "schede": [
+   {
+    "id": "strixhalo-128",
+    "nome": "Ryzen AI Max+ 395 128 GB",
+    "gb": 128,
+    "tiene": false
+   },
+   {
+    "id": "dgxspark",
+    "nome": "NVIDIA DGX Spark 128 GB",
+    "gb": 128,
+    "tiene": false
+   },
+   {
+    "id": "m3ultra-512",
+    "nome": "Mac Studio M3 Ultra 512 GB",
+    "gb": 512,
+    "tiene": true
+   }
+  ]
+ },
+ "voce": [
+  "A new free AI model with 300 billion parameters.",
+  "It comes from Baidu, with open weights.",
+  "Can your PC run it? At 4-bit it needs about 184 gigabytes. You need at least an Mac Studio M3 Ultra.",
+  "It reads up to 1 million tokens at once.",
+  "Compare it with every free model.",
+  "Find it all on FreeLLMArena. Link in bio."
+ ],
+ "release": "video-nuovo-ernie-5.5-flash-preview-bf16",
+ "pubblicato": "2026-11-24"
+}

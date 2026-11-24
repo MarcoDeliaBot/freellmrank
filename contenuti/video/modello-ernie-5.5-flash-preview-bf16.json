@@ -1,0 +1,83 @@
+{
+ "nome": "modello-ernie-5.5-flash-preview-bf16",
+ "titolo": "ERNIE-5.5-Flash-Preview-BF16: How to Run It Free",
+ "descrizione": "ERNIE 5.5 Flash Preview-BF16 is a 299.6 B parameter mixture-of-experts model with a 1 M token context. Learn its architecture, new features, benchmark results, and who can benefit from this free, open-source LLM.\n\nSize: 299.6B parameters (33.4B active) · context 1 million · memory at 4-bit about 184 GB.\nMac Studio M3 Ultra 512 GB: about 26 tokens/s\nModel card: https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview-BF16\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "ERNIE-5.5-Flash-Preview-BF16",
+  "Baidu"
+ ],
+ "condividi": "ERNIE-5.5-Flash-Preview-BF16 by Baidu: 299.6B parameters, about 184 GB at 4-bit; smallest home machine that holds it: Mac Studio M3 Ultra 512 GB. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "ERNIE-5.5-Flash-Preview-BF16: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "ERNIE-5.5-Flash-Preview-BF16: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "ERNIE-5.5-Flash-Preview-BF16: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "ERNIE-5.5-Flash-Preview-BF16 : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "ERNIE-5.5-Flash-Preview-BF16: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "ERNIE-5.5-Flash-Preview-BF16",
+    "gb": 184,
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "ERNIE-5.5-Flash-Preview-BF16",
+    "vel": 26,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "ERNIE 5.5 Flash Preview-BF16 can look at up to one million tokens in a single prompt. It activates 33.4 billion parameters for every token it generates.",
+  "According to Baidu, the BF16 checkpoint of ERNIE 5.5 Flash Preview contains 299.6 billion parameters in total, but only 33.4 billion of them are routed for each token thanks to its mixture-of-experts design. The model accepts a context length of one million tokens, far larger than typical LLMs. It works purely with text input and output, and shares its tokenizer and overall architecture with the earlier ERNIE 5.5 Flash Base. The weights are released under the Apache 2.0 license and can be downloaded from Hugging Face or ModelScope.",
+  "The preview adds several upgrades over the base model. Mid-training stretched the context window from 128 K tokens to a full 1 M tokens, allowing much longer documents to be processed at once. A DSpark draft head is included for speculative decoding, which proposes multiple tokens in parallel and speeds up generation. While the default repository contains FP4-quantized expert weights, a BF16 version is provided for hardware without FP4 kernels. Baidu notes that the architecture, quantization-aware training, and tuned serving kernels all combine to keep inference inexpensive and responsive.",
+  "The model card lists scores from twenty benchmarks. In the Agentic Coding suite, ERNIE 5.5 Flash Preview achieved 46.5 on Terminal-Bench 4.0, close to the leading Claude Opus 5.5 score of 66.4. It reached 88.2 on CookieBench, matching the top-tier performance of other leading models. For general agent tasks, it scored 84.9 on DRACO and 87.4 on BrowseComp, demonstrating solid ability to use tools and browse information. Across knowledge-work benchmarks it posted 61.9 on AutomationBench and 67.9 on OfficeQA Pro V2, indicating competitive but not leading results.",
+  "According to the documentation, ERNIE 5.5 Flash Preview excels at coding tasks, including long-form development and game creation, and can generate scripts for Blender and CAD tools. The DSpark speculative head makes long-running agent tasks faster with little loss in accuracy. However, Baidu describes the model as an intermediate checkpoint; some capabilities may still fall short because post-training is not finished. Running the full model needs substantial memory, the BF16 version occupies around 184 GB at 4-bit precision with an 8 K context, and a Mac Studio M3 Ultra with 512 GB RAM is the smallest home machine that can hold it entirely.",
+  "If you have a workstation capable of loading a 184-GB model, ERNIE 5.5 Flash Preview-BF16 offers a free, high-capacity LLM for experiments. It is particularly useful for developers who need to process very long documents, such as legal contracts or codebases, and for creators building agents that write code, design 3D assets, or assemble videos. Researchers interested in fine-tuning mixture-of-experts models can start from the BF16 repository. Because the model is still an intermediate release, users should expect to encounter occasional gaps in capability, but the open-source nature and generous free API on OpenRouter make it a valuable option for anyone exploring large-scale language models at home.",
+  "What do you need to run it at home? At 4-bit it takes about 184 gigabytes of memory. The smallest home machine that holds it fully is the Mac Studio M3 Ultra 512 GB. On the Mac Studio M3 Ultra 512 GB it writes about 26 tokens per second.",
+  "You can try it for free through OpenRouter, without a GPU. The weights are open: you can download them from Hugging Face under the Apache 2.0 license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare ERNIE 5.5 Flash Preview BF16 with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-ernie-5.5-flash-preview-bf16",
+ "pubblicato": "2026-11-24"
+}

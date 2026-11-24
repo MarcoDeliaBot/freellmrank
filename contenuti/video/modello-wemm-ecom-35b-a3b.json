@@ -1,0 +1,155 @@
+{
+ "nome": "modello-wemm-ecom-35b-a3b",
+ "titolo": "WeMM-Ecom-35B-A3B: Hardware Needed and How to Run It Free",
+ "descrizione": "WeMM-Ecom-35B-A3B brings Tencent’s e-commerce expertise to open-source multimodal AI, outperforming comparable 35-billion-parameter models. Download it for free and start building visual-language applications on your own hardware.\n\nSize: 35.1B parameters (3B active) · context 256K · memory at 4-bit about 24 GB.\nRTX 3060 12 GB + 32 GB RAM: about 56 tokens/s\nRTX 4090 + 64 GB RAM: about 188 tokens/s\nRTX 5090 + 64 GB RAM: about 237 tokens/s\nMac M4 Max 128 GB: about 90 tokens/s\nNVIDIA DGX Spark 128 GB: about 82 tokens/s\nRyzen AI Max+ 395 128 GB: about 78 tokens/s\nMac Studio M3 Ultra 512 GB: about 104 tokens/s\nModel card: https://huggingface.co/tencent/WeMM-Ecom-35B-A3B\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "WeMM-Ecom-35B-A3B",
+  "Tencent"
+ ],
+ "condividi": "WeMM-Ecom-35B-A3B by Tencent: 35.1B parameters, about 24 GB at 4-bit; smallest home machine that holds it: RTX 3090. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "WeMM-Ecom-35B-A3B: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "WeMM-Ecom-35B-A3B: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "WeMM-Ecom-35B-A3B: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "WeMM-Ecom-35B-A3B : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "WeMM-Ecom-35B-A3B: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "WeMM-Ecom-35B-A3B",
+    "gb": 24,
+    "scheda": {
+     "id": "rtx3090",
+     "nome": "RTX 3090",
+     "gb": 24,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "WeMM-Ecom-35B-A3B",
+    "vel": 56,
+    "dove": "ram"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "WeMM-Ecom-35B-A3B",
+    "vel": 188,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "WeMM-Ecom-35B-A3B",
+    "vel": 237,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeMM-Ecom-35B-A3B",
+    "vel": 90,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeMM-Ecom-35B-A3B",
+    "vel": 82,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeMM-Ecom-35B-A3B",
+    "vel": 78,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "WeMM-Ecom-35B-A3B",
+    "vel": 104,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "Tencent’s new WeMM-Ecom-35B-A3B blends e-commerce smarts with broad visual-language abilities. It outperforms several 35-billion-parameter rivals on both niche and general benchmarks.",
+  "WeMM-Ecom-35B-A3B is a mixture-of-experts model built by WeChat Vision at Tencent. It holds 35 billion parameters, but only about 3 billion are active for each token, keeping inference efficient. The weights are released under Apache-2.0, so you can download and run them freely from Hugging Face.",
+  "The model introduces a hybrid thinking capability that can reason before answering, called Thinking Mode. It accepts plain text, single images, multiple images, and even video clips, making it versatile for e-commerce scenarios like product demos. Tencent also ships the checkpoint in BF16, FP8, GPTQ, and GGUF formats, so you can pick the size that fits your hardware.",
+  "According to the model card, WeMM-Ecom-35B-A3B beats Qwen3.5-35B-A3B by 3.92 points on average across 28 e-commerce benchmarks covering attributes, OCR, retrieval, grounding, and reasoning. On the broader 64 general-capability benchmarks, it edges Qwen3.5-35B-A3B by 0.17 points, showing it retains strong performance beyond retail tasks. The scores use a 0-100 scale, higher meaning better.",
+  "The model shines when you need fine-grained product understanding, multi-modal reasoning, or long context handling. However, to run at full speed you need a top-tier GPU; on an RTX 4090 it reaches about 188 tokens per second, while a 3060 drops to roughly 56 tokens per second because part of the model lives in system RAM.",
+  "If you are building a shopping chatbot, a product recommendation engine, or any tool that must read images, videos, and text together, this model gives you a solid free foundation. Researchers interested in multimodal reasoning will appreciate the hybrid thinking mode and the large benchmark suite. Hobbyists with a RTX 3090 or a comparable GPU can load the full model and experiment without paying for cloud APIs.",
+  "What do you need to run it at home? At 4-bit it takes about 24 gigabytes of memory. The smallest home machine that holds it fully is an RTX 30 90. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 56 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 188 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the Apache 2.0 license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare WeMM Ecom 35B A3B with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-wemm-ecom-35b-a3b",
+ "pubblicato": "2026-11-24"
+}
