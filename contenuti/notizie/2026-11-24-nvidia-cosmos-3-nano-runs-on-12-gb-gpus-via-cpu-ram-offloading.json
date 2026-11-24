@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-24-nvidia-cosmos-3-nano-runs-on-12-gb-gpus-via-cpu-ram-offloading",
+ "titolo": "NVIDIA Cosmos 3 Nano runs on 12 GB GPUs via CPU‑RAM offloading",
+ "descr": "A new offloading package lets the video‑generation model Cosmos 3 Nano operate on consumer GPUs with as little as 12 GB VRAM.",
+ "tema": "Guides",
+ "paragrafi": [
+  "NVIDIA released a tutorial showing how to run its Cosmos 3 Nano foundation model on GPUs with only 12 GB of VRAM using the Hugging Face Diffusers library.",
+  "The Cosmos‑Framework offloading package stores most model weights in system RAM and streams them to the GPU as needed, cutting peak GPU memory while keeping computation on CUDA.",
+  "An FP8 checkpoint with native mixed precision further reduces GPU memory usage, while BF16 scaled dot‑product attention is retained for attention layers.",
+  "The guide requires a Linux system, Python 3.12, a CUDA‑enabled PyTorch build, and about 128 GB of system RAM for the tested setup."
+ ],
+ "perche": [
+  "Running Cosmos 3 Nano locally becomes feasible for developers with mid‑range GPUs, expanding access to high‑quality video generation without cloud services. The approach also demonstrates a path for other large models to run on limited hardware, benefiting users seeking free or on‑premise AI solutions."
+ ],
+ "pubblicato": "2026-11-24",
+ "titoloFonte": "How to Run NVIDIA Cosmos 3 on Local AI Devices Using Hugging Face Diffusers",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/how-to-run-nvidia-cosmos-3-on-local-ai-devices-using-hugging-face-diffusers/",
+   "titolo": "How to Run NVIDIA Cosmos 3 on Local AI Devices Using Hugging Face Diffusers",
+   "ufficiale": true,
+   "data": "2026-11-24"
+  }
+ ],
+ "frasiTolte": 1
+}

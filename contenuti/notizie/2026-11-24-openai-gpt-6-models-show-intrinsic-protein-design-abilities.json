@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-24-openai-gpt-6-models-show-intrinsic-protein-design-abilities",
+ "titolo": "OpenAI GPT‑6 models show intrinsic protein‑design abilities",
+ "descr": "GPT‑6 can design protein structures and sequences using reasoning and code, matching specialized models on many tasks.",
+ "tema": "Research",
+ "paragrafi": [
+  "OpenAI released a paper showing that its GPT‑6 family can create new protein shapes and amino‑acid sequences without relying on dedicated biology models.",
+  "The models reason about chemistry, physics, math and biology, then write code to explore design options.",
+  "In laboratory tests with partner Onava, proteins based on GPT‑6.2 designs showed binding evidence for each of five targets.",
+  "Redesigned antibodies and minibinders also retained binding after the GPT‑6.2 generated new sequences, with specialized models used only to supply sequences and pick candidates.",
+  "Across 14 protein tasks, the latest GPT‑6 models performed comparably to or better than specialized models, though full protein structure prediction remains a weakness."
+ ],
+ "perche": [
+  "For researchers, GPT‑6 offers a single model that can handle many protein‑design steps, reducing the need for multiple specialized tools. Users seeking free or locally run models may still rely on top‑ranked chat models such as Gemini 3.8 Flash or Kimi K3, while GPT‑6 remains a paid, cloud‑based research resource."
+ ],
+ "pubblicato": "2026-11-24",
+ "titoloFonte": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+   "titolo": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+   "ufficiale": true,
+   "data": "2026-11-24"
+  }
+ ],
+ "frasiTolte": 0
+}
