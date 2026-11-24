@@ -8,6 +8,14 @@
     { "slug": "best-free-vision-models", "idea": "Free AI models that understand images: the best open vision models on Arena", "dati": ["categoria:vision", "categoria:document"], "link": ["/", "/models"] },
     { "slug": "free-ai-coding-agents", "idea": "Free AI coding agents and editors: which apps cost nothing and what their free plans include", "dati": ["app", "categoria:code"], "link": ["/apps"] },
     { "slug": "ai-models-on-your-phone", "idea": "AI models small enough to run on a phone, and how much RAM they need", "dati": ["telefono"], "link": ["/phone"] },
-    { "slug": "new-open-models-this-month", "idea": "The new open-weight AI models released recently, with size and memory needs", "dati": ["nuovi", "schede"], "link": ["/#new", "/gpus"] }
+    { "slug": "new-open-models-this-month", "idea": "The new open-weight AI models released recently, with size and memory needs", "dati": ["nuovi", "schede"], "link": ["/#new", "/gpus"] },
+    { "slug": "best-free-ai-image-generators", "idea": "The best free AI image generators and image editors on Arena, and which ones you can run at home", "dati": ["categoria:image", "categoria:edit"], "link": ["/", "/models", "/gpus"]},
+    { "slug": "best-free-ai-agents", "idea": "The best free AI agents on Arena, for everyday tasks and for coding, and the apps to use them", "dati": ["categoria:agent", "categoria:agentcode", "app"], "link": ["/", "/apps"]},
+    { "slug": "best-free-chat-models", "idea": "The best free AI chat models right now, by blind human votes on Arena", "dati": ["categoria:chat"], "link": ["/", "/models"]},
+    { "slug": "best-free-ai-video-generators", "idea": "The best free AI video generators: text to video and image to video on Arena", "dati": ["categoria:video", "categoria:i2v"], "link": ["/", "/models"]},
+    { "slug": "free-ai-models-for-an-8gb-gpu", "idea": "The best free AI models that run on a GPU with 8 GB of memory, and how fast they are", "dati": ["schede", "velocita", "categoria:chat"], "link": ["/gpus", "/models"]},
+    { "slug": "best-free-ai-for-web-search", "idea": "Free AI models that search the web: the best ones on Arena's search leaderboard", "dati": ["categoria:search"], "link": ["/", "/models"]},
+    { "slug": "best-free-ai-for-documents", "idea": "Free AI models for reading documents and PDFs: the best ones on Arena", "dati": ["categoria:document"], "link": ["/", "/models"]},
+    { "slug": "how-fast-do-local-ai-models-run", "idea": "How fast AI models run at home: tokens per second on real GPUs and Macs", "dati": ["velocita", "schede"], "link": ["/gpus"]}
   ]
 }

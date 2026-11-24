@@ -1,6 +1,6 @@
 ---
-titolo: Open Models with Highest Hugging Face Downloads, No Mobile Fit Data
-descr: List of top-downloaded open models on Hugging Face; none have a “fits fully on” entry, so mobile suitability is unverified.
+titolo: Most downloaded small open AI models: Qwen3, Gemma 3, MiniCPM
+descr: The small open models with the most monthly downloads on Hugging Face, from Qwen3-0.6B to MiniCPM, and what to check before running one on a phone.
 data: 2026-11-23
 ---
 
