@@ -25532,6 +25532,30 @@
     "tipo": "News"
    },
    "data": "2026-11-24"
+  },
+  "/blog/news-2026-11-24-deepmind-uses-gemini-4-agents-to-cut-quantum-algorithm-costs-up-to-290.html": {
+   "post": {
+    "slug": "news-2026-11-24-deepmind-uses-gemini-4-agents-to-cut-quantum-algorithm-costs-up-to-290",
+    "titolo": "DeepMind uses Gemini 4 agents to cut quantum algorithm costs up to 290×",
+    "descr": "Agent teams verified with Lean reduced qubit and operation requirements for fusion, drug and Grover simulations.",
+    "data": "2026-11-24",
+    "tema": "Research",
+    "corpo": "Google DeepMind released a paper describing how Gemini 4 agent teams improved several quantum algorithms.\n\nThe agents created quantum circuits that were mathematically verified with the Lean theorem prover and open‑sourced on GitHub.\n\nFor an inertial confinement fusion calculation, the required computing cost dropped 11.8× and memory fell from 5,650 to 4,338 error‑corrected qubits.\n\nSimulating a light‑sensitive molecule became 8× cheaper, while a Cytochrome P450 enzyme model saw a 2.5× reduction and memory cut from 481 to 333 qubits.\n\nA specific Grover implementation gained a 2.57× speedup and an arcsin routine achieved a 290× improvement.\n\n## What it means for you\n\nThese gains show that AI‑driven search can accelerate quantum algorithm design, potentially shortening the path to useful error‑corrected quantum computers. For developers of free or local AI models, the open‑source Lean library offers a new benchmark for formal verification of algorithmic advances.\n\n## Sources\n\n- [Finding faster quantum algorithms with agents and formal verification](https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/), Google DeepMind (official), 23 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-24-deepmind-uses-gemini-4-agents-to-cut-quantum-algorithm-costs-up-to-290).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-24"
+  },
+  "/blog/news-2026-11-24-openai-showcases-ai-tools-for-in-house-legal-teams.html": {
+   "post": {
+    "slug": "news-2026-11-24-openai-showcases-ai-tools-for-in-house-legal-teams",
+    "titolo": "OpenAI showcases AI tools for in‑house legal teams",
+    "descr": "OpenAI demoed how generative AI can link business context, streamline workflows and enhance collaboration with outside counsel for corporate legal departments.",
+    "data": "2026-11-24",
+    "tema": "Business",
+    "corpo": "The discussion focused on using AI to connect business context with legal work, create reusable workflows and improve interactions with outside counsel.\n\nParticipants highlighted how generative models can automate routine tasks and provide more relevant information to legal teams.\n\nThe event illustrated OpenAI’s push to embed AI deeper into corporate legal operations.\n\nNo specific product names or release dates were announced during the session.\n\n## What it means for you\n\nFor AI users, the demo shows practical ways to boost efficiency in legal departments using generative models. Those seeking free or locally hosted alternatives can compare OpenAI’s approach with top free chat models such as Gemini 3.8 Flash or Kimi K3, which rank highly in recent blind votes.\n\n## On FreeLLMArena\n\nFrom our rankings on 24 Nov 2026, based on Arena's blind votes:\n\n- [Gemini 3.8 Flash (High)](/model/gemini-3-8-flash-high.html): #1 among free chat models\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #2 among free chat models\n\n## Sources\n\n- [Connected intelligence for in-house legal](https://openai.com/business/learn/connected-intelligence-for-in-house-legal), OpenAI (official), 23 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-24-openai-showcases-ai-tools-for-in-house-legal-teams).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-24"
   }
  },
  "ricostruzione": {

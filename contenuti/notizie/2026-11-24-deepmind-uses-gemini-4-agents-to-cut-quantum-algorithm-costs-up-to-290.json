@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-24-deepmind-uses-gemini-4-agents-to-cut-quantum-algorithm-costs-up-to-290",
+ "titolo": "DeepMind uses Gemini 4 agents to cut quantum algorithm costs up to 290×",
+ "descr": "Agent teams verified with Lean reduced qubit and operation requirements for fusion, drug and Grover simulations.",
+ "tema": "Research",
+ "paragrafi": [
+  "Google DeepMind released a paper describing how Gemini 4 agent teams improved several quantum algorithms.",
+  "The agents created quantum circuits that were mathematically verified with the Lean theorem prover and open‑sourced on GitHub.",
+  "For an inertial confinement fusion calculation, the required computing cost dropped 11.8× and memory fell from 5,650 to 4,338 error‑corrected qubits.",
+  "Simulating a light‑sensitive molecule became 8× cheaper, while a Cytochrome P450 enzyme model saw a 2.5× reduction and memory cut from 481 to 333 qubits.",
+  "A specific Grover implementation gained a 2.57× speedup and an arcsin routine achieved a 290× improvement."
+ ],
+ "perche": [
+  "These gains show that AI‑driven search can accelerate quantum algorithm design, potentially shortening the path to useful error‑corrected quantum computers. For developers of free or local AI models, the open‑source Lean library offers a new benchmark for formal verification of algorithmic advances."
+ ],
+ "pubblicato": "2026-11-24",
+ "titoloFonte": "Finding faster quantum algorithms with agents and formal verification",
+ "fonti": [
+  {
+   "nome": "Google DeepMind",
+   "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+   "titolo": "Finding faster quantum algorithms with agents and formal verification",
+   "ufficiale": true,
+   "data": "2026-11-23"
+  }
+ ],
+ "frasiTolte": 0
+}

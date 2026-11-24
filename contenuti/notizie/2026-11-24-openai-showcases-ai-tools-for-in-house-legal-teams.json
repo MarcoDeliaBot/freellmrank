@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-24-openai-showcases-ai-tools-for-in-house-legal-teams",
+ "titolo": "OpenAI showcases AI tools for in‑house legal teams",
+ "descr": "OpenAI demoed how generative AI can link business context, streamline workflows and enhance collaboration with outside counsel for corporate legal departments.",
+ "tema": "Business",
+ "paragrafi": [
+  "The discussion focused on using AI to connect business context with legal work, create reusable workflows and improve interactions with outside counsel.",
+  "Participants highlighted how generative models can automate routine tasks and provide more relevant information to legal teams.",
+  "The event illustrated OpenAI’s push to embed AI deeper into corporate legal operations.",
+  "No specific product names or release dates were announced during the session."
+ ],
+ "perche": [
+  "For AI users, the demo shows practical ways to boost efficiency in legal departments using generative models. Those seeking free or locally hosted alternatives can compare OpenAI’s approach with top free chat models such as Gemini 3.8 Flash or Kimi K3, which rank highly in recent blind votes."
+ ],
+ "pubblicato": "2026-11-24",
+ "titoloFonte": "Connected intelligence for in-house legal",
+ "fonti": [
+  {
+   "nome": "OpenAI",
+   "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+   "titolo": "Connected intelligence for in-house legal",
+   "ufficiale": true,
+   "data": "2026-11-23"
+  }
+ ],
+ "frasiTolte": 1
+}
