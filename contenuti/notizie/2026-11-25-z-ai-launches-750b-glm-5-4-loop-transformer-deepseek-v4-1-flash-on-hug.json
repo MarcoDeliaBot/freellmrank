@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-25-z-ai-launches-750b-glm-5-4-loop-transformer-deepseek-v4-1-flash-on-hug",
+ "titolo": "Z AI launches 750B GLM-5.4 Loop Transformer; DeepSeek-V4.1-Flash on Hugging Face",
+ "descr": "Z AI unveiled the 750‑billion‑parameter GLM‑5.4 Loop Transformer and DeepSeek‑V4.1‑Flash is now hosted on Hugging Face, while free chat model rankings highlight top options.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "Z AI announced the release of GLM‑5.4, its first Loop Transformer flagship model.",
+  "The model operates at a 750 billion‑parameter scale and runs 28 GLM‑5 layers twice for deeper reasoning. API access is available and open weights are planned after safety work.",
+  "DeepSeek‑V4.1‑Flash is listed on Hugging Face under the repository deepseek‑ai/DeepSeek‑V4.1‑Flash.",
+  "FreeLLMArena’s recent blind vote placed Gemini 3.8 Flash (High) at #1 with a score of 1498, followed by Kimi K3 (Max) at #2 with 1488, Qwen3.8‑Max at #3 with 1484, Kimi K3.1 Pro at #4 with 1483, and Gemini 3.6 Flash (High) at #5 with 1482. The top paid chat model is Gemini 4 Carbon (High) scoring 1527.",
+  "These releases and rankings illustrate a rapidly expanding LLM ecosystem, offering both cutting‑edge research models and high‑scoring free alternatives."
+ ],
+ "perche": [
+  "Users gain immediate API access to a 750 B parameter model, though open weights will arrive later, while DeepSeek‑V4.1‑Flash can be downloaded directly from Hugging Face. The free model rankings show strong, high‑scoring options for those who prefer open or locally run models, and a clear premium offering for paid users."
+ ],
+ "pubblicato": "2026-11-25",
+ "titoloFonte": "Z AI Releases GLM-5.4: A 750B Loop Transformer That Runs 28 Layers Twice",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/23/zai-glm-5-4-loop-transformer/",
+   "titolo": "Z AI Releases GLM-5.4: A 750B Loop Transformer That Runs 28 Layers Twice",
+   "ufficiale": false,
+   "data": "2026-11-23"
+  },
+  {
+   "nome": "huggingface.co",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+   "titolo": "deepseek-ai/DeepSeek-V4.1-Flash · Hugging Face",
+   "ufficiale": true,
+   "data": "2026-11-23"
+  }
+ ],
+ "frasiTolte": 0
+}

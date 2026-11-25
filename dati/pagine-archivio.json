@@ -25871,6 +25871,30 @@
     "tipo": "News"
    },
    "data": "2026-11-25"
+  },
+  "/blog/news-2026-11-25-github-s-skill-distill-tool-lets-open-weight-models-replicate-claude-c.html": {
+   "post": {
+    "slug": "news-2026-11-25-github-s-skill-distill-tool-lets-open-weight-models-replicate-claude-c",
+    "titolo": "GitHub’s skill-distill tool lets open-weight models replicate Claude Code sessions",
+    "descr": "The new skill-distill repo converts successful Claude Code or Codex sessions into reusable instructions for open-weight models like DeepSeek-V4.1-Flash.",
+    "data": "2026-11-25",
+    "tema": "Software",
+    "corpo": "It targets Claude Code and Codex sessions.\n\nThe tool reads a well‑performed session, then writes a skill that a student model can follow to reproduce the result. \"The teacher loops\" through trials until the output matches the reference.\n\nTo run it you need tmux, git, Python 3.10+ and a student harness. The readme also asks for pip install playwright pillow and playwright install chromium.\n\nThe repo supports several harnesses, including omp, pi, Codex, Claude Code and opencode. An example uses omp with DeepSeek-V4.1-Flash on a local server.\n\nThe project is released under an MIT license. It has gathered 806 stars and 65 forks, showing strong community interest.\n\n## What it means for you\n\nFor users of free or locally hosted models, skill-distill offers a way to capture expert Claude or Codex workflows without paying for proprietary services. It can help the top free chat models such as Gemini 3.8 Flash or Kimi K3 to perform complex tasks by following distilled skills.\n\n## On FreeLLMArena\n\nFrom our rankings on 25 Nov 2026, based on Arena's blind votes:\n\n- [Gemini 3.8 Flash (High)](/model/gemini-3-8-flash-high.html): #1 among free chat models\n- [Kimi K3 (Max)](/model/kimi-k3-max.html): #2 among free chat models\n\n## Sources\n\n- [sybil-solutions/skill-distill: Distill a good Claude Code / Codex session into a skill an open-weight model can follow to reproduce the task](https://github.com/sybil-solutions/skill-distill), GitHub trending, 21 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-25-github-s-skill-distill-tool-lets-open-weight-models-replicate-claude-c).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-25"
+  },
+  "/blog/news-2026-11-25-z-ai-launches-750b-glm-5-4-loop-transformer-deepseek-v4-1-flash-on-hug.html": {
+   "post": {
+    "slug": "news-2026-11-25-z-ai-launches-750b-glm-5-4-loop-transformer-deepseek-v4-1-flash-on-hug",
+    "titolo": "Z AI launches 750B GLM-5.4 Loop Transformer; DeepSeek-V4.1-Flash on Hugging Face",
+    "descr": "Z AI unveiled the 750‑billion‑parameter GLM‑5.4 Loop Transformer and DeepSeek‑V4.1‑Flash is now hosted on Hugging Face, while free chat model rankings highlight top options.",
+    "data": "2026-11-25",
+    "tema": "LLMs",
+    "corpo": "Z AI announced the release of GLM‑5.4, its first Loop Transformer flagship model.\n\nThe model operates at a 750 billion‑parameter scale and runs 28 GLM‑5 layers twice for deeper reasoning. API access is available and open weights are planned after safety work.\n\nDeepSeek‑V4.1‑Flash is listed on Hugging Face under the repository deepseek‑ai/DeepSeek‑V4.1‑Flash.\n\nFreeLLMArena’s recent blind vote placed Gemini 3.8 Flash (High) at #1 with a score of 1498, followed by Kimi K3 (Max) at #2 with 1488, Qwen3.8‑Max at #3 with 1484, Kimi K3.1 Pro at #4 with 1483, and Gemini 3.6 Flash (High) at #5 with 1482. The top paid chat model is Gemini 4 Carbon (High) scoring 1527.\n\nThese releases and rankings illustrate a rapidly expanding LLM ecosystem, offering both cutting‑edge research models and high‑scoring free alternatives.\n\n## What it means for you\n\nUsers gain immediate API access to a 750 B parameter model, though open weights will arrive later, while DeepSeek‑V4.1‑Flash can be downloaded directly from Hugging Face. The free model rankings show strong, high‑scoring options for those who prefer open or locally run models, and a clear premium offering for paid users.\n\n## Sources\n\n- [Z AI Releases GLM-5.4: A 750B Loop Transformer That Runs 28 Layers Twice](https://www.marktechpost.com/2026/11/23/zai-glm-5-4-loop-transformer/), MarkTechPost, 23 Nov 2026\n- [deepseek-ai/DeepSeek-V4.1-Flash · Hugging Face](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash), huggingface.co (official), 23 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-25-z-ai-launches-750b-glm-5-4-loop-transformer-deepseek-v4-1-flash-on-hug).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-25"
   }
  },
  "ricostruzione": {

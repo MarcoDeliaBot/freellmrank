@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-25-github-s-skill-distill-tool-lets-open-weight-models-replicate-claude-c",
+ "titolo": "GitHub’s skill-distill tool lets open-weight models replicate Claude Code sessions",
+ "descr": "The new skill-distill repo converts successful Claude Code or Codex sessions into reusable instructions for open-weight models like DeepSeek-V4.1-Flash.",
+ "tema": "Software",
+ "paragrafi": [
+  "It targets Claude Code and Codex sessions.",
+  "The tool reads a well‑performed session, then writes a skill that a student model can follow to reproduce the result. \"The teacher loops\" through trials until the output matches the reference.",
+  "To run it you need tmux, git, Python 3.10+ and a student harness. The readme also asks for pip install playwright pillow and playwright install chromium.",
+  "The repo supports several harnesses, including omp, pi, Codex, Claude Code and opencode. An example uses omp with DeepSeek-V4.1-Flash on a local server.",
+  "The project is released under an MIT license. It has gathered 806 stars and 65 forks, showing strong community interest."
+ ],
+ "perche": [
+  "For users of free or locally hosted models, skill-distill offers a way to capture expert Claude or Codex workflows without paying for proprietary services. It can help the top free chat models such as Gemini 3.8 Flash or Kimi K3 to perform complex tasks by following distilled skills."
+ ],
+ "pubblicato": "2026-11-25",
+ "titoloFonte": "sybil-solutions/skill-distill: Distill a good Claude Code / Codex session into a skill an open-weight model can follow to reproduce the task",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/sybil-solutions/skill-distill",
+   "titolo": "sybil-solutions/skill-distill: Distill a good Claude Code / Codex session into a skill an open-weight model can follow to reproduce the task",
+   "ufficiale": false,
+   "data": "2026-11-21"
+  }
+ ],
+ "frasiTolte": 1
+}
