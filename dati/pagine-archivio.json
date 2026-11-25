@@ -25823,6 +25823,30 @@
     "tipo": "News"
    },
    "data": "2026-11-25"
+  },
+  "/blog/news-2026-11-25-boring-marketing-skills-adds-32-free-mit-licensed-ai-marketing-tools-f.html": {
+   "post": {
+    "slug": "news-2026-11-25-boring-marketing-skills-adds-32-free-mit-licensed-ai-marketing-tools-f",
+    "titolo": "Boring Marketing Skills adds 32 free, MIT‑licensed AI marketing tools for Claude, Codex and Cursor",
+    "descr": "The GitHub repo offers 32 ready‑to‑use marketing skills, from SEO to ad copy, that run on popular AI agents without paid services.",
+    "data": "2026-11-25",
+    "tema": "Guides",
+    "corpo": "They are designed to work with Claude Code, Codex, Cursor and other agents, and can be installed via simple commands such as npx skills add boringmarketer/boring-marketing-skills.\n\nEach skill performs a specific task, for example ‘start‑here’ reads a business site and creates brand files, ‘google‑business‑profile’ checks local map rankings, and ‘paid‑ads’ writes Google and Meta ad copy.\n\nThe repo includes a system guide, tools list and tests, and points users to boringmarketing.com for more details and to boringfunnels.com for client acquisition.\n\n## What it means for you\n\nThese skills let marketers and freelancers automate many routine tasks without buying additional tools, lowering the cost of AI‑driven campaigns. For users who prefer free or locally hosted models, the pack works with open‑source agents that can run on personal hardware, extending AI utility beyond paid platforms.\n\n## Sources\n\n- [boringmarketer/boring-marketing-skills: 32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.](https://github.com/boringmarketer/boring-marketing-skills), GitHub trending, 16 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-25-boring-marketing-skills-adds-32-free-mit-licensed-ai-marketing-tools-f).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-25"
+  },
+  "/blog/news-2026-11-25-ibm-research-releases-multilingual-indic-voice-agent-using-cuga-harnes.html": {
+   "post": {
+    "slug": "news-2026-11-25-ibm-research-releases-multilingual-indic-voice-agent-using-cuga-harnes",
+    "titolo": "IBM Research releases multilingual Indic voice agent using CUGA harness",
+    "descr": "A web‑based farm assistant converts spoken Hindi, Tamil, Telugu and other Indian languages to text, searches an English handbook and replies in the original language.",
+    "data": "2026-11-25",
+    "tema": "Research",
+    "corpo": "IBM Research published a prototype voice agent on Hugging Face Spaces on November 25, 2026.\n\nThe agent listens to a farmer’s question in a regional language, runs speech‑to‑text, searches a 154‑page English agricultural handbook and returns a spoken answer in the same language.\n\nCUGA (ConfigUrable Generalist Agent) provides the agent loop, allowing a single model to be swapped between watsonx and OpenAI with one setting.\n\nMultilingual retrieval works after replacing CUGA’s default English‑only embedding model with intfloat/multilingual‑e5‑large, enabling Hindi or Tamil queries to find correct English passages.\n\n## What it means for you\n\nThe demo shows how open‑source tooling can bring voice‑first AI services to users who prefer speaking in regional Indian languages. It also illustrates a path for developers to build secure, locally hosted assistants without relying on large English‑only models.\n\n## Sources\n\n- [An Indic Voice Agent with CUGA](https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga), Hugging Face (official), 25 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-25-ibm-research-releases-multilingual-indic-voice-agent-using-cuga-harnes).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-25"
   }
  },
  "ricostruzione": {

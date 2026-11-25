@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-25-boring-marketing-skills-adds-32-free-mit-licensed-ai-marketing-tools-f",
+ "titolo": "Boring Marketing Skills adds 32 free, MIT‑licensed AI marketing tools for Claude, Codex and Cursor",
+ "descr": "The GitHub repo offers 32 ready‑to‑use marketing skills, from SEO to ad copy, that run on popular AI agents without paid services.",
+ "tema": "Guides",
+ "paragrafi": [
+  "They are designed to work with Claude Code, Codex, Cursor and other agents, and can be installed via simple commands such as npx skills add boringmarketer/boring-marketing-skills.",
+  "Each skill performs a specific task, for example ‘start‑here’ reads a business site and creates brand files, ‘google‑business‑profile’ checks local map rankings, and ‘paid‑ads’ writes Google and Meta ad copy.",
+  "The repo includes a system guide, tools list and tests, and points users to boringmarketing.com for more details and to boringfunnels.com for client acquisition."
+ ],
+ "perche": [
+  "These skills let marketers and freelancers automate many routine tasks without buying additional tools, lowering the cost of AI‑driven campaigns. For users who prefer free or locally hosted models, the pack works with open‑source agents that can run on personal hardware, extending AI utility beyond paid platforms."
+ ],
+ "pubblicato": "2026-11-25",
+ "titoloFonte": "boringmarketer/boring-marketing-skills: 32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/boringmarketer/boring-marketing-skills",
+   "titolo": "boringmarketer/boring-marketing-skills: 32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+   "ufficiale": false,
+   "data": "2026-11-16"
+  }
+ ],
+ "frasiTolte": 2
+}

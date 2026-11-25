@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-25-ibm-research-releases-multilingual-indic-voice-agent-using-cuga-harnes",
+ "titolo": "IBM Research releases multilingual Indic voice agent using CUGA harness",
+ "descr": "A web‑based farm assistant converts spoken Hindi, Tamil, Telugu and other Indian languages to text, searches an English handbook and replies in the original language.",
+ "tema": "Research",
+ "paragrafi": [
+  "IBM Research published a prototype voice agent on Hugging Face Spaces on November 25, 2026.",
+  "The agent listens to a farmer’s question in a regional language, runs speech‑to‑text, searches a 154‑page English agricultural handbook and returns a spoken answer in the same language.",
+  "CUGA (ConfigUrable Generalist Agent) provides the agent loop, allowing a single model to be swapped between watsonx and OpenAI with one setting.",
+  "Multilingual retrieval works after replacing CUGA’s default English‑only embedding model with intfloat/multilingual‑e5‑large, enabling Hindi or Tamil queries to find correct English passages."
+ ],
+ "perche": [
+  "The demo shows how open‑source tooling can bring voice‑first AI services to users who prefer speaking in regional Indian languages. It also illustrates a path for developers to build secure, locally hosted assistants without relying on large English‑only models."
+ ],
+ "pubblicato": "2026-11-25",
+ "titoloFonte": "An Indic Voice Agent with CUGA",
+ "fonti": [
+  {
+   "nome": "Hugging Face",
+   "url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+   "titolo": "An Indic Voice Agent with CUGA",
+   "ufficiale": true,
+   "data": "2026-11-25"
+  }
+ ],
+ "frasiTolte": 1
+}
