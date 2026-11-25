@@ -1,0 +1,23 @@
+{
+  "_nota": "Fornitori gratuiti, tutti con API compatibile OpenAI. Un fornitore senza chiave si salta. 'preferiti' sono espressioni sugli id che il fornitore elenca in /models: si prendono in quest'ordine, al massimo 'quanti'. GitHub Models è chiuso dal 30/07/2026. Cloudflare resta fuori: la sua quota gratis è già tutta divisa (script/cf-modelli.mjs).",
+  "fornitori": [
+    { "nome": "groq", "base": "https://api.groq.com/openai/v1", "chiave": "GROQ_KEY", "quanti": 5,
+      "preferiti": ["kimi", "gpt-oss-120b", "qwen", "llama-4", "llama-3.3-70b", "gpt-oss-20b"],
+      "escludi": ["whisper", "guard", "tts", "orpheus", "playai", "compound", "prompt"] },
+    { "nome": "gemini", "base": "https://generativelanguage.googleapis.com/v1beta/openai", "chiave": "GEMINI_KEY", "quanti": 3,
+      "preferiti": ["gemini-.*pro", "gemini-.*flash$", "gemini-.*flash-lite", "gemma"],
+      "escludi": ["embedding", "tts", "image", "audio", "live", "preview-.*-tts", "aqa"] },
+    { "nome": "mistral", "base": "https://api.mistral.ai/v1", "chiave": "MISTRAL_KEY", "quanti": 3,
+      "preferiti": ["mistral-large-latest", "devstral", "codestral-latest", "mistral-medium-latest", "mistral-small-latest"],
+      "escludi": ["embed", "moderation", "ocr"] },
+    { "nome": "openrouter", "base": "https://openrouter.ai/api/v1", "chiave": "OPENROUTER_KEY", "quanti": 4,
+      "preferiti": [":free$"],
+      "escludi": ["vision", "-vl"] },
+    { "nome": "cerebras", "base": "https://api.cerebras.ai/v1", "chiave": "CEREBRAS_KEY", "quanti": 3,
+      "preferiti": ["qwen", "gpt-oss", "llama", "glm"],
+      "escludi": [] }
+  ],
+  "prezzi": {
+    "_nota": "Dollari per milione di token (entrata, uscita) del listino a pagamento dello stesso modello, solo se letti su una pagina ufficiale con la data. Senza prezzo il costo è 'n.d.', mai stimato."
+  }
+}

@@ -1,0 +1,44 @@
+# Sfida fra LLM (25/11/2026): la stessa richiesta ai modelli gratuiti, poi ogni risultato aperto in un browser vero.
+# Solo a mano per ora: risultati, fotografie e video restano come artefatto della corsa, niente commit e niente pubblicazione.
+# Un fornitore senza segreto si salta (dati/sfide/modelli.json).
+name: Sfida LLM
+
+on:
+  workflow_dispatch:
+    inputs:
+      sfida:
+        description: 'Nome del file in dati/sfide senza .json'
+        type: string
+        default: 'ettagono'
+
+permissions:
+  contents: read
+
+jobs:
+  sfida:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Browser
+        run: npm i --no-save playwright@1.57.0 && npx playwright install --with-deps chromium
+      - name: Sfida
+        env:
+          GROQ_KEY: ${{ secrets.GROQ_KEY }}
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          MISTRAL_KEY: ${{ secrets.MISTRAL_KEY }}
+          OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
+          CEREBRAS_KEY: ${{ secrets.CEREBRAS_KEY }}
+        run: node script/sfida.mjs "${{ inputs.sfida }}" --uscita uscita-sfida
+      - name: Riassunto
+        if: always()
+        run: cat uscita-sfida/RISULTATI.md >> "$GITHUB_STEP_SUMMARY" || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sfida-${{ inputs.sfida }}
+          path: uscita-sfida/
+          retention-days: 30
