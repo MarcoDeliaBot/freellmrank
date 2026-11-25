@@ -643,5 +643,13 @@
  "news-2026-11-24-datasette-charts-0-2a0-adds-datasette-agent-integration-and-new-chart-": {
   "lungo": "notizia-datasette-charts-0-2a0-adds-datasette-agent-integration",
   "breve": "breve-datasette-charts-0-2a0-adds-datasette-agent-integration"
+ },
+ "news-2026-11-25-everstone-studio-integrates-nvidia-dlss-5-into-where-winds-meet": {
+  "lungo": "notizia-everstone-studio-integrates-nvidia-dlss-5-into-where-win",
+  "breve": "breve-everstone-studio-integrates-nvidia-dlss-5-into-where-win"
+ },
+ "news-2026-11-25-ibm-research-releases-multilingual-indic-voice-agent-using-cuga-harnes": {
+  "lungo": "notizia-ibm-research-releases-multilingual-indic-voice-agent-usi",
+  "breve": "breve-ibm-research-releases-multilingual-indic-voice-agent-usi"
  }
 }
