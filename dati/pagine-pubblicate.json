@@ -31344,18 +31344,16 @@
   "tipo": "modello",
   "lingua": "de",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/de/model/qwen3-5-2b.html",
   "tipo": "modello",
   "lingua": "de",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/de/model/qwen3-5-35b-a3b",
@@ -31605,7 +31603,8 @@
   "lingua": "de",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/de/model/qwen3-vl-8b-instruct.html",
@@ -31613,7 +31612,8 @@
   "lingua": "de",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/de/model/qwq-32b",
@@ -51738,18 +51738,16 @@
   "tipo": "modello",
   "lingua": "es",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/es/model/qwen3-5-2b.html",
   "tipo": "modello",
   "lingua": "es",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/es/model/qwen3-5-35b-a3b",
@@ -51999,7 +51997,8 @@
   "lingua": "es",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/es/model/qwen3-vl-8b-instruct.html",
@@ -52007,7 +52006,8 @@
   "lingua": "es",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/es/model/qwq-32b",
@@ -72132,18 +72132,16 @@
   "tipo": "modello",
   "lingua": "fr",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/fr/model/qwen3-5-2b.html",
   "tipo": "modello",
   "lingua": "fr",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/fr/model/qwen3-5-35b-a3b",
@@ -72393,7 +72391,8 @@
   "lingua": "fr",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/fr/model/qwen3-vl-8b-instruct.html",
@@ -72401,7 +72400,8 @@
   "lingua": "fr",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/fr/model/qwq-32b",
@@ -92526,18 +92526,16 @@
   "tipo": "modello",
   "lingua": "it",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/it/model/qwen3-5-2b.html",
   "tipo": "modello",
   "lingua": "it",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/it/model/qwen3-5-35b-a3b",
@@ -92787,7 +92785,8 @@
   "lingua": "it",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/it/model/qwen3-vl-8b-instruct.html",
@@ -92795,7 +92794,8 @@
   "lingua": "it",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/it/model/qwq-32b",
@@ -112920,18 +112920,16 @@
   "tipo": "modello",
   "lingua": "ja",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/ja/model/qwen3-5-2b.html",
   "tipo": "modello",
   "lingua": "ja",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/ja/model/qwen3-5-35b-a3b",
@@ -113181,7 +113179,8 @@
   "lingua": "ja",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/ja/model/qwen3-vl-8b-instruct.html",
@@ -113189,7 +113188,8 @@
   "lingua": "ja",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/ja/model/qwq-32b",
@@ -121202,18 +121202,16 @@
   "tipo": "modello",
   "lingua": "en",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/model/qwen3-5-2b.html",
   "tipo": "modello",
   "lingua": "en",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/model/qwen3-5-35b-a3b",
@@ -121463,7 +121461,8 @@
   "lingua": "en",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/model/qwen3-vl-8b-instruct.html",
@@ -121471,7 +121470,8 @@
   "lingua": "en",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/model/qwq-32b",
@@ -141596,18 +141596,16 @@
   "tipo": "modello",
   "lingua": "pt",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/pt/model/qwen3-5-2b.html",
   "tipo": "modello",
   "lingua": "pt",
   "primaVista": "2026-11-17",
-  "ultimaVista": "2026-11-20",
-  "stato": "fuori-classifica",
-  "fuoriDal": "2026-11-21"
+  "ultimaVista": "2026-11-25",
+  "stato": "attiva"
  },
  {
   "url": "/pt/model/qwen3-5-35b-a3b",
@@ -141857,7 +141855,8 @@
   "lingua": "pt",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/pt/model/qwen3-vl-8b-instruct.html",
@@ -141865,7 +141864,8 @@
   "lingua": "pt",
   "primaVista": "2026-10-27",
   "ultimaVista": "2026-11-25",
-  "stato": "attiva"
+  "stato": "fuori-classifica",
+  "fuoriDal": "2026-11-25"
  },
  {
   "url": "/pt/model/qwq-32b",
