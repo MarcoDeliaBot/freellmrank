@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-25-anthropic-launches-claude-ship-to-automate-code-review-and-approvals",
+ "titolo": "Anthropic launches Claude Ship to automate code review and approvals",
+ "descr": "Claude Ship, now in beta, adds PR Steward and Claude Approvals to Anthropic's Code Review, letting AI automatically approve GitHub pull requests for Team and Enterprise users.",
+ "tema": "Software",
+ "paragrafi": [
+  "Anthropic announced Claude Ship on November 23‑24, 2026. The beta suite extends Claude Code by automating the final stage of the software development pipeline.",
+  "Claude Ship combines the already‑available Code Review tool with two new beta agents: PR Steward, which handles failing CI checks, merge conflicts and feedback, and Claude Approvals, which applies a policy file to automatically approve changes.",
+  "The service is offered to Claude Team and Enterprise subscribers and works with GitHub repositories. It is rolled out through Claude Code, the CLI and the desktop app, and usage is billed on tokens.",
+  "Claude Approvals must be run in observe‑only mode first, and Anthropic advises customers to start with a single repository and set monthly spending limits. The feature is unavailable for organizations using Zero Data Retention, HIPAA configurations, or customer‑managed encryption keys.",
+  "\"AI‑generated code increasingly needs AI‑operated DevOps,\" said Constellation Research analyst Holger Mueller."
+ ],
+ "perche": [
+  "For developers, Claude Ship can cut the manual review bottleneck and let teams ship code at the speed AI writes it, though early adopters should monitor spend and policy accuracy. Because the feature is limited to paid Team and Enterprise plans, users who rely on free or locally hosted models will need other tools for automated approvals, keeping demand for open‑source alternatives alive."
+ ],
+ "pubblicato": "2026-11-25",
+ "titoloFonte": "Anthropic's Claude Ship automates the final stage of the software development pipeline",
+ "fonti": [
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/23/anthropics-claude-ship-automates-the-final-stage-of-the-software-development-pipeline/",
+   "titolo": "Anthropic's Claude Ship automates the final stage of the software development pipeline",
+   "ufficiale": false,
+   "data": "2026-11-24"
+  },
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/anthropic-launches-claude-ship-to-review-and-approve-prs/",
+   "titolo": "Anthropic launches Claude Ship to review and approve PRs",
+   "ufficiale": false,
+   "data": "2026-11-23"
+  }
+ ],
+ "frasiTolte": 0
+}

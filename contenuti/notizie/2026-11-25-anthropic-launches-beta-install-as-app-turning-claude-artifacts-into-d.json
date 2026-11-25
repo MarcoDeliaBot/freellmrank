@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-25-anthropic-launches-beta-install-as-app-turning-claude-artifacts-into-d",
+ "titolo": "Anthropic launches beta 'Install as App' turning Claude artifacts into desktop apps",
+ "descr": "Claude artifacts can now be installed as standalone Mac and Windows apps, with permission controls and online requirements, in beta across all plans.",
+ "tema": "Software",
+ "paragrafi": [
+  "Anthropic announced a beta feature called Install as App that converts Claude artifacts into standalone desktop applications for macOS and Windows.",
+  "Users ask Claude to build an artifact and then choose Install as app from a menu; the app receives its own icon and appears in the Start menu, desktop shortcut, or Claude Apps folder.",
+  "The apps run under the user’s Claude account, require Claude Desktop version 6.28899.0 or later, need an internet connection and a signed‑in Claude session, and any calls to Claude count toward the plan’s usage limits.",
+  "Permissions are set per app; by default they match browser capabilities, but apps can request notifications, global shortcuts, always‑on‑top windows, or full computer access for file and program operations, limited to user‑made apps or those from the same organization on Team and Enterprise plans.",
+  "The feature is in beta for all plans – Free, Pro, Max, Ultra, Team, and Enterprise – enabled by default on Team, while Enterprise admins must turn it on. HIPAA‑ready organizations and hybrid deployments cannot use it, and the apps are unavailable on Linux, the web, or mobile devices.",
+  "Anthropic showcased internal examples such as the image editor Linnet, the cinematic file manager Phosphor, and the Claude‑integrated terminal Tern."
+ ],
+ "perche": [],
+ "pubblicato": "2026-11-25",
+ "titoloFonte": "Anthropic now allows installing artifacts as desktop apps",
+ "fonti": [
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/anthropic-now-allows-installing-artifacts-as-desktop-apps/",
+   "titolo": "Anthropic now allows installing artifacts as desktop apps",
+   "ufficiale": false,
+   "data": "2026-11-25"
+  },
+  {
+   "nome": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/11/24/anthropic-is-trying-to-kill-traditional-desktop-apps-with-claude-generated-desktop-apps/",
+   "titolo": "Anthropic is trying to kill traditional desktop apps with Claude-generated desktop apps",
+   "ufficiale": false,
+   "data": "2026-11-25"
+  }
+ ],
+ "frasiTolte": 1
+}
