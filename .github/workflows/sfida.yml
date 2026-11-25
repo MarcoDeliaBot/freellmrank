@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   sfida:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # Playwright 1.57 non installa chromium su ubuntu 26.04 (corsa 45562382058)
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
