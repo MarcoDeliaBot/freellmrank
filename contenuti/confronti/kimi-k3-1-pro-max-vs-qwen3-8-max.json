@@ -1,0 +1,30 @@
+{
+  "versione": 2,
+  "coppia": [
+    "Kimi K3.1 Pro (Max)",
+    "Qwen3.8-Max"
+  ],
+  "descr": "Qwen3.8-Max vs Kimi K3.1 Pro: they are about even in Arena scores, with no clear winner.",
+  "risposta": "The blind vote shows the two models are almost tied. Their chat scores differ by only one point. Neither model clearly outperforms the other in the overall Arena test.",
+  "dimensioni": "Kimi K3.1 Pro is 2780.1 B in total size, with 104.8 B active, and its 4-bit version downloads to roughly 1686 GB. Qwen3.8-Max does not publish its model size, so no download estimate is available.",
+  "velocita": "Both models exceed the capacity of the listed home hardware. They do not fit on RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, or Ryzen AI Max+ systems. Running them requires an online service.",
+  "gratisA": "Kimi K3.1 Pro can be used for free by downloading the open weights and running the model locally under the Kimi K3.1 Pro License. The site does not host a free trial page for this model.",
+  "gratisB": "Qwen3.8-Max offers a free trial quota on Alibaba Cloud for 90 days. Access is provided under a proprietary license and does not involve a downloadable weight file.",
+  "sceglieA": "Choose Kimi K3.1 Pro if you need a model that can be run locally and prefer open weights. It also scores higher in the WebDev coding category, making it attractive for development tasks. The model’s size may require ample storage space.",
+  "sceglieB": "Pick Qwen3.8-Max when you want a cloud-based option with a short free trial period. Its chat score is marginally higher, which might matter for conversational use. The model is proprietary and not downloadable.",
+  "categorie": {
+    "Chat": "In the Chat arena Kimi K3.1 Pro earned 1483 points while Qwen3.8-Max earned 1484 points, making the result about even. Both models received thousands of votes, indicating strong community interest.",
+    "WebDev (coding)": "Kimi K3.1 Pro achieved 1683 points, outscoring Qwen3.8-Max's 1673 points in the coding category. For developers focusing on code generation, Kimi holds a modest lead."
+  },
+  "scritto": "2026-11-25",
+  "aggiornato": "2026-11-25",
+  "scrittore": "groq",
+  "fatti": {
+    "leader": "even",
+    "gratisA": "download and run at home · Kimi K3.1 Pro License",
+    "gratisB": "free trial quota on Alibaba Cloud (90 days) · Proprietary license",
+    "puntiA": 1483,
+    "puntiB": 1484,
+    "dataArena": "2026-11-22"
+  }
+}

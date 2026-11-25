@@ -1,0 +1,30 @@
+{
+  "versione": 2,
+  "coppia": [
+    "Gemini 3.8 Flash (High)",
+    "GLM-5.2 (Max)"
+  ],
+  "descr": "GLM-5.2 vs Gemini 3.8 Flash: Gemini 3.8 Flash leads in chat scores but GLM-5.2 is faster for coding.",
+  "risposta": "Gemini 3.8 Flash is ahead in the overall Arena ranking, scoring 1498 points against 1475 for GLM-5.2. The margin of 23 points represents a clear lead in blind human votes. However, GLM-5.2 outperforms Gemini 3.8 Flash in the WebDev (coding) category. Choose the model that matches your primary use case.",
+  "dimensioni": "Gemini 3.8 Flash does not disclose its model size, so a download estimate is unavailable. GLM-5.2 weighs 753.3 B in total, with 50.3 B active parameters, and requires about 458 GB to download in a 4-bit format.",
+  "velocita": "Both models run only via online services on current consumer hardware. Gemini 3.8 Flash is listed as online-only for all tested GPUs and CPUs. GLM-5.2 also does not fit on any of the listed home machines, so it cannot be run locally at speed on typical rigs.",
+  "gratisA": "Gemini 3.8 Flash can be accessed for free through Google’s Gemini API free tier, which operates under a proprietary license. No local download is provided.",
+  "gratisB": "GLM-5.2 is released under an MIT license and can be downloaded and run at home without cost. The open weights allow full offline use after the 458 GB download.",
+  "sceglieA": "Pick Gemini 3.8 Flash when you need the strongest general-purpose chat performance as judged by the Arena. It is ideal for conversational tasks where overall quality matters more than coding specifics. The free API makes integration easy without handling large files.",
+  "sceglieB": "Pick GLM-5.2 for coding-focused work, as it leads the WebDev (coding) category. The open-weight model lets you customize or fine-tune for development tasks. If you prefer a completely free, offline solution, GLM-5.2 is the only option that can be run locally.",
+  "categorie": {
+    "Chat": "Gemini 3.8 Flash scores 1498 in the Chat category, placing it well above GLM-5.2. This reflects stronger performance in general conversational ability.",
+    "WebDev (coding)": "GLM-5.2 scores 1607, edging out Gemini 3.8 Flash's 1584 in coding tasks. It is the better choice for developers seeking code generation help."
+  },
+  "scritto": "2026-11-25",
+  "aggiornato": "2026-11-25",
+  "scrittore": "workers",
+  "fatti": {
+    "leader": "Gemini 3.8 Flash (High)",
+    "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",
+    "gratisB": "download and run at home · MIT license",
+    "puntiA": 1498,
+    "puntiB": 1475,
+    "dataArena": "2026-11-22"
+  }
+}

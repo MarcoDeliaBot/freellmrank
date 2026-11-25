@@ -1,0 +1,30 @@
+{
+  "versione": 2,
+  "coppia": [
+    "Kimi K3 (Max)",
+    "MiMo-V2.6-Pro"
+  ],
+  "descr": "Kimi K3 and MiMo-V2.6-Pro are about even in Arena scores, with a 7-point gap.",
+  "risposta": "The two models are essentially tied. Their chat scores differ by only seven points, which the Arena calls too close to call. Neither model shows a clear advantage in the blind vote results.",
+  "dimensioni": "Kimi K3 weighs in at 2779.9 B total, with 104.6 B active, and needs about 1686 GB to download in 4-bit mode. MiMo-V2.6-Pro is smaller at 1024.2 B total, 43.9 B active, and requires roughly 622 GB for a 4-bit download.",
+  "velocita": "Both models exceed the capacity of all listed home hardware configurations, including RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, and Ryzen AI Max+ 395 128 GB. Neither can run on a typical consumer rig at 8K context with 64 GB RAM.",
+  "gratisA": "Kimi K3 can be used for free by downloading the open weights and running the model locally under its license. The site does not offer an online trial, so users must set it up on their own hardware.",
+  "gratisB": "MiMo-V2.6-Pro is also free to download and run at home under an MIT license. Like Kimi K3, it has no free online demo on FreeLLMArena, so local installation is required.",
+  "sceglieA": "Choose Kimi K3 if you prefer a larger model that may capture more nuance in chat interactions, despite its higher download size. It also scores slightly higher in the WebDev coding category, which could benefit coding-focused tasks.",
+  "sceglieB": "Pick MiMo-V2.6-Pro when storage or bandwidth is limited, as its download size is less than half of Kimi K3’s. It still holds its own in chat quality while being more lightweight.",
+  "categorie": {
+    "Chat": "Kimi K3 scores 1488 and MiMo-V2.6-Pro 1481, a difference the Arena deems about even. Both provide comparable conversational ability.",
+    "WebDev (coding)": "Kimi K3 leads with 1658 versus MiMo-V2.6-Pro’s 1622, making it the stronger option for coding assistance."
+  },
+  "scritto": "2026-11-25",
+  "aggiornato": "2026-11-25",
+  "scrittore": "workers",
+  "fatti": {
+    "leader": "even",
+    "gratisA": "download and run at home · Kimi K3 license",
+    "gratisB": "download and run at home · MIT license",
+    "puntiA": 1488,
+    "puntiB": 1481,
+    "dataArena": "2026-11-22"
+  }
+}
