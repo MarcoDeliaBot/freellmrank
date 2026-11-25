@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-25-everstone-studio-integrates-nvidia-dlss-5-into-where-winds-meet",
+ "titolo": "Everstone Studio integrates NVIDIA DLSS 5 into Where Winds Meet",
+ "descr": "Everstone adds neural rendering via DLSS 5, enhancing lighting and materials while offering player controls.",
+ "tema": "Software",
+ "paragrafi": [
+  "Everstone Studio announced that its upcoming title Where Winds Meet will use NVIDIA DLSS 5.",
+  "The studio leveraged its existing NVIDIA Streamline integration to adopt DLSS 5, using model selection and structural and tonal strength controls.",
+  "Artists reported deeper lighting, softened harsh highlights, richer shadows and more detailed wood and roof‑tile textures.",
+  "Internal testing showed that DLSS 5 adds performance overhead, so Everstone plans to let players enable or disable the feature and choose the model that fits their aesthetic.",
+  "The team emphasized balancing visual gains with the game’s original art direction and character recognizability."
+ ],
+ "perche": [
+  "For creators, early integration with Streamline can smooth adoption. For gamers, optional controls let them weigh image quality against performance, a useful model for future titles using AI‑enhanced graphics."
+ ],
+ "pubblicato": "2026-11-25",
+ "titoloFonte": "Q&A: How Everstone Brings Where Winds Meet to Life with NVIDIA DLSS 5",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/qa-how-everstone-brings-where-winds-meet-to-life-with-nvidia-dlss-5/",
+   "titolo": "Q&A: How Everstone Brings Where Winds Meet to Life with NVIDIA DLSS 5",
+   "ufficiale": true,
+   "data": "2026-11-24"
+  }
+ ],
+ "frasiTolte": 1
+}

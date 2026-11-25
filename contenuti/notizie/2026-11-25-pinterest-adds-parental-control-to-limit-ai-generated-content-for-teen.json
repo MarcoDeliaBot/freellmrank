@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-25-pinterest-adds-parental-control-to-limit-ai-generated-content-for-teen",
+ "titolo": "Pinterest adds parental control to limit AI‑generated content for teen users",
+ "descr": "New settings let parents adjust how much AI‑created material appears in teens' Pinterest feeds and recommendations.",
+ "tema": "Policy",
+ "paragrafi": [
+  "Pinterest announced expanded parental controls on November 23, 2026, adding a setting that lets caregivers limit AI‑generated content in teen recommendations.",
+  "The feature appears on a redesigned Parental Controls page that also bundles existing tools such as private‑by‑default profiles, ad‑personalization limits, and video autoplay controls.",
+  "Parents can set the AI‑content level, adjust notification volume, and lock all settings with a Parental Passcode, requiring teen permission to change restrictions.",
+  "Bill Ready, CEO of Pinterest, said the platform was built to be “positive, age‑appropriate” from the start and that the new controls give families a simple way to customize the experience.",
+  "The move follows similar efforts by Snap, Meta and WhatsApp to restrict AI features for minors, and comes after advocacy groups urged platforms to curb AI content for younger audiences."
+ ],
+ "perche": [
+  "For users, the controls provide a clearer way to manage exposure to AI‑generated media on a visual discovery platform. For those seeking free or local AI models, the shift highlights growing platform pressure to limit AI content, potentially increasing demand for open‑source alternatives that can be run without platform controls."
+ ],
+ "pubblicato": "2026-11-25",
+ "titoloFonte": "Pinterest will now let parents limit the AI-generated content their teens see",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/24/pinterest-will-now-let-parents-limit-the-ai-generated-content-their-teens-see/",
+   "titolo": "Pinterest will now let parents limit the AI-generated content their teens see",
+   "ufficiale": false,
+   "data": "2026-11-24"
+  },
+  {
+   "nome": "newsroom.pinterest.com",
+   "url": "https://newsroom.pinterest.com/news/helping-families-navigate-controls-for-teens-on-pinterest/",
+   "titolo": "Parental Controls for Teens | Pinterest Newsroom",
+   "ufficiale": true,
+   "data": "2026-11-23"
+  }
+ ],
+ "frasiTolte": 0
+}
