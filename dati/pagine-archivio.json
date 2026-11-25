@@ -25761,6 +25761,20 @@
     "tipo": "News"
    },
    "data": "2026-11-25"
+  },
+  "/blog/video-gpu-rtx5090-2026-11-25.html": {
+   "post": {
+    "slug": "video-gpu-rtx5090-2026-11-25",
+    "titolo": "The best free AI for the RTX 5090",
+    "descr": "The best free AI models on the RTX 5090 (32 GB, 1792 GB/s) with 32 GB of DDR5 RAM, at 4-bit with 8K context.",
+    "data": "2026-11-25",
+    "tema": "GPU of the week",
+    "corpo": "<div class=\"video-post verticale\"><video controls preload=\"none\" playsinline poster=\"/video/gpu-rtx5090-2026-11-25.jpg\" src=\"https://github.com/MarcoDeliaBot/freellmrank/releases/download/video-gpu-rtx5090-2026-11-25/gpu-rtx5090-2026-11-25.mp4\"></video></div>\n\n## What the video says\n\nWhat's the best free AI for an RTX 5090?\n\nIt has 32 gigabytes of memory.\n\nWith 32 gigabytes of RAM, the best one is from Google, at about 62 tokens per second.\n\nTry your own card in our free simulator.\n\nFind it all on FreeLLMArena.\n\n## The data\n\n1. [Gemma 4 31B](/model/gemma-4-31b.html): about 62 tokens/s (Arena 1452, fully on the GPU)\n2. [Gemma 4 26B A4B](/model/gemma-4-26b-a4b.html): about 203 tokens/s (Arena 1438, fully on the GPU)\n3. [Qwen3.8-27B](/model/qwen3-8-27b.html): about 74 tokens/s (Arena 1435, fully on the GPU)\n- Estimates from our simulator. Try your own card: https://freellmarena.com/home\n\n## Hardware\n\nMemory at 4-bit with an 8K context, from our simulator. To check your own setup, use the [Run at home simulator](/home.html).\n\n- <a href=\"/gpu/rtx5090.html\">RTX 5090</a> (32 GB): holds it fully in memory · <a class=\"tag free amazon\" data-q=\"RTX 5090 graphics card\" href=\"https://www.amazon.it/s?k=RTX%205090%20graphics%20card&amp;tag=comecosa-21\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Amazon ↗</a>\n- [Gemma 4 31B](/model/gemma-4-31b.html): about 62 tokens/s, about 22 GB at 4-bit (fully on the GPU)\n- [Gemma 4 26B A4B](/model/gemma-4-26b-a4b.html): about 203 tokens/s, about 18 GB at 4-bit (fully on the GPU)\n- [Qwen3.8-27B](/model/qwen3-8-27b.html): about 74 tokens/s, about 20 GB at 4-bit (fully on the GPU)\n\n<small>As an Amazon Associate, FreeLLMArena earns from qualifying purchases; the links do not change the numbers.</small>\n\nEvery number in this post comes from the FreeLLMArena data on 25 Nov 2026: Arena votes, Hugging Face sizes and our speed simulator. [Download the video and its subtitles](https://github.com/MarcoDeliaBot/freellmrank/releases/tag/video-gpu-rtx5090-2026-11-25).\n",
+    "tipo": "Video",
+    "amazon": true,
+    "copertina": "/video/gpu-rtx5090-2026-11-25.jpg"
+   },
+   "data": "2026-11-25"
   }
  },
  "ricostruzione": {
