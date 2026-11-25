@@ -1,0 +1,6 @@
+{
+  "slug": "ettagono",
+  "titolo": "20 balls in a spinning heptagon",
+  "prompt": "Write one self-contained index.html file (no external libraries, no network requests, no images) that runs offline. It shows 20 numbered balls bouncing inside a heptagon that spins slowly around its center, on a <canvas> that fills the window. Apply gravity and friction. Balls must collide with the heptagon walls and with each other, and must never leave the heptagon. Reply with only the complete HTML in a single ```html code block.",
+  "secondi_video": 8
+}
