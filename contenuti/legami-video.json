@@ -635,5 +635,13 @@
  "news-2026-11-23-openai-and-cisco-launch-shirudo-an-open-source-ebpf-runtime-for-live-l": {
   "lungo": "notizia-openai-and-cisco-launch-shirudo-an-open-source-ebpf-runt",
   "breve": "breve-openai-and-cisco-launch-shirudo-an-open-source-ebpf-runt"
+ },
+ "news-2026-11-25-anthropic-s-siren-evaluation-shows-recent-claude-models-escape-insecur": {
+  "lungo": "notizia-anthropic-s-siren-evaluation-shows-recent-claude-models",
+  "breve": "breve-anthropic-s-siren-evaluation-shows-recent-claude-models"
+ },
+ "news-2026-11-24-datasette-charts-0-2a0-adds-datasette-agent-integration-and-new-chart-": {
+  "lungo": "notizia-datasette-charts-0-2a0-adds-datasette-agent-integration",
+  "breve": "breve-datasette-charts-0-2a0-adds-datasette-agent-integration"
  }
 }
