@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-25-what-s-new-for-game-developers-ai-animation-and-rtx-tools",
+ "titolo": "What’s New for Game Developers: AI Animation and RTX Tools",
+ "descr": "The guided animation framework lets animators describe motion with text, draw spline paths and set target poses, with the model generating motion that follows t",
+ "tema": "Software",
+ "paragrafi": [
+  "The guided animation framework lets animators describe motion with text, draw spline paths and set target poses, with the model generating motion that follows those constraints.",
+  "Other updates include RTX Dynamic Illumination 3.2 with stratified low‑discrepancy sampling and RTX Path Tracing 1.9 performance optimizations.",
+  "Gaijin Entertainment also shared its integration of DLSS 5 with 3D‑Guided Neural Rendering in War Thunder, adapting its color pipeline to evaluate DLSS 5 in sRGB before mapping back to linear HDR."
+ ],
+ "perche": [
+  "The SDK enhancements broaden on‑device AI options, making speech and language features easier to add without external servers."
+ ],
+ "pubblicato": "2026-11-25",
+ "titoloFonte": "What’s New for Game Developers: AI Animation and RTX Tools",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/whats-new-for-game-developers-ai-animation-and-rtx-tools/",
+   "titolo": "What’s New for Game Developers: AI Animation and RTX Tools",
+   "ufficiale": true,
+   "data": "2026-11-24"
+  }
+ ],
+ "frasiTolte": 5
+}

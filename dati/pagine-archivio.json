@@ -25775,6 +25775,30 @@
     "copertina": "/video/gpu-rtx5090-2026-11-25.jpg"
    },
    "data": "2026-11-25"
+  },
+  "/blog/news-2026-11-25-maple-raises-5-3m-to-launch-privacy-first-ai-agent-for-desktop-and-clo.html": {
+   "post": {
+    "slug": "news-2026-11-25-maple-raises-5-3m-to-launch-privacy-first-ai-agent-for-desktop-and-clo",
+    "titolo": "Maple raises $5.3M to launch privacy‑first AI agent for desktop and cloud",
+    "descr": "Maple secured $5.3 million seed funding to expand its encrypted AI assistant, now available on Mac, Windows and Linux.",
+    "data": "2026-11-25",
+    "tema": "Business",
+    "corpo": "The startup’s desktop app, Maple Work, lets the AI agent access files, apps and browsers while keeping all user data encrypted inside a trusted execution environment (TEE).\n\nMaple runs a variety of open models—including DeepSeek, Kimi, GLM, Inkling, Google’s Gemma and OpenAI’s GPT OSS—inside the TEE, and the data is encrypted on the user’s device with a password only the user knows.\n\nFuture plans include a cloud‑based agent that can operate when the computer is offline, and an enterprise pilot offering zero‑data‑retention, with SOC 2 compliance in progress.\n\n## What it means for you\n\nFor users, Maple promises AI productivity without exposing personal files to the service provider, appealing to privacy‑conscious individuals and businesses.\n\n## On FreeLLMArena\n\nFrom our rankings on 25 Nov 2026, based on Arena's blind votes:\n\n- [Inkling](/model/inkling.html): #27 among free chat models\n\n## Sources\n\n- [Maple raises $5.3M to build AI products that protect your data, even from itself](https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/), TechCrunch, 24 Nov 2026\n- [Maple Work: Private AI Agent for Mac, Windows, Linux](https://maple.ai/work), maple.ai (official), 24 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-25-maple-raises-5-3m-to-launch-privacy-first-ai-agent-for-desktop-and-clo).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-25"
+  },
+  "/blog/news-2026-11-25-what-s-new-for-game-developers-ai-animation-and-rtx-tools.html": {
+   "post": {
+    "slug": "news-2026-11-25-what-s-new-for-game-developers-ai-animation-and-rtx-tools",
+    "titolo": "What’s New for Game Developers: AI Animation and RTX Tools",
+    "descr": "The guided animation framework lets animators describe motion with text, draw spline paths and set target poses, with the model generating motion that follows t",
+    "data": "2026-11-25",
+    "tema": "Software",
+    "corpo": "The guided animation framework lets animators describe motion with text, draw spline paths and set target poses, with the model generating motion that follows those constraints.\n\nOther updates include RTX Dynamic Illumination 3.2 with stratified low‑discrepancy sampling and RTX Path Tracing 1.9 performance optimizations.\n\nGaijin Entertainment also shared its integration of DLSS 5 with 3D‑Guided Neural Rendering in War Thunder, adapting its color pipeline to evaluate DLSS 5 in sRGB before mapping back to linear HDR.\n\n## What it means for you\n\nThe SDK enhancements broaden on‑device AI options, making speech and language features easier to add without external servers.\n\n## Sources\n\n- [What’s New for Game Developers: AI Animation and RTX Tools](https://developer.nvidia.com/blog/whats-new-for-game-developers-ai-animation-and-rtx-tools/), NVIDIA Developer (official), 24 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-25-what-s-new-for-game-developers-ai-animation-and-rtx-tools).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-25"
   }
  },
  "ricostruzione": {

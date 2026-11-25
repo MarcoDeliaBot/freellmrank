@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-25-maple-raises-5-3m-to-launch-privacy-first-ai-agent-for-desktop-and-clo",
+ "titolo": "Maple raises $5.3M to launch privacy‑first AI agent for desktop and cloud",
+ "descr": "Maple secured $5.3 million seed funding to expand its encrypted AI assistant, now available on Mac, Windows and Linux.",
+ "tema": "Business",
+ "paragrafi": [
+  "The startup’s desktop app, Maple Work, lets the AI agent access files, apps and browsers while keeping all user data encrypted inside a trusted execution environment (TEE).",
+  "Maple runs a variety of open models—including DeepSeek, Kimi, GLM, Inkling, Google’s Gemma and OpenAI’s GPT OSS—inside the TEE, and the data is encrypted on the user’s device with a password only the user knows.",
+  "Future plans include a cloud‑based agent that can operate when the computer is offline, and an enterprise pilot offering zero‑data‑retention, with SOC 2 compliance in progress."
+ ],
+ "perche": [
+  "For users, Maple promises AI productivity without exposing personal files to the service provider, appealing to privacy‑conscious individuals and businesses."
+ ],
+ "pubblicato": "2026-11-25",
+ "titoloFonte": "Maple raises $5.3M to build AI products that protect your data, even from itself",
+ "fonti": [
+  {
+   "nome": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/",
+   "titolo": "Maple raises $5.3M to build AI products that protect your data, even from itself",
+   "ufficiale": false,
+   "data": "2026-11-24"
+  },
+  {
+   "nome": "maple.ai",
+   "url": "https://maple.ai/work",
+   "titolo": "Maple Work: Private AI Agent for Mac, Windows, Linux",
+   "ufficiale": true,
+   "data": "2026-11-24"
+  }
+ ],
+ "frasiTolte": 3
+}
