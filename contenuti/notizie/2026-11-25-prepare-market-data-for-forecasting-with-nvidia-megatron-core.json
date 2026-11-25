@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-25-prepare-market-data-for-forecasting-with-nvidia-megatron-core",
+ "titolo": "Prepare Market Data for Forecasting with NVIDIA Megatron Core",
+ "descr": "NVIDIA releases an open‑source preprocessing and training workflow for transformer models that forecast returns and volume from intraday market‑bar data.",
+ "tema": "Research",
+ "paragrafi": [
+  "NVIDIA announced that its Megatron Core library now includes GPU‑optimized components for training transformer models on large financial time‑series datasets.",
+  "The accompanying Megatron‑LM repository provides pre‑configured scripts that convert intraday market‑bar Parquet files into tensors, grouping bars into patches and sliding fixed‑length context windows.",
+  "Temporal safeguards split data by date with embargo periods to prevent leakage and compute target statistics only from the training split, avoiding forward‑looking bias."
+ ],
+ "perche": [
+  "The workflow lets quantitative analysts build and train large transformer models without writing custom data pipelines, accelerating research on market prediction."
+ ],
+ "pubblicato": "2026-11-25",
+ "titoloFonte": "Prepare Market Data for Forecasting with NVIDIA Megatron Core",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/prepare-market-data-for-forecasting-with-nvidia-megatron-core/",
+   "titolo": "Prepare Market Data for Forecasting with NVIDIA Megatron Core",
+   "ufficiale": true,
+   "data": "2026-11-24"
+  }
+ ],
+ "frasiTolte": 4
+}
