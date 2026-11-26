@@ -25919,6 +25919,18 @@
     "tipo": "News"
    },
    "data": "2026-11-25"
+  },
+  "/blog/news-2026-11-26-bytedance-unveils-mixture-of-loops-transformer-achieving-1-7-token-eff.html": {
+   "post": {
+    "slug": "news-2026-11-26-bytedance-unveils-mixture-of-loops-transformer-achieving-1-7-token-eff",
+    "titolo": "ByteDance unveils Mixture-of-Loops Transformer achieving 1.7× token efficiency",
+    "descr": "The new MoLT model uses KV memory across loops, boosting pre‑training efficiency and matching OLMo3 latency.",
+    "data": "2026-11-26",
+    "tema": "Research",
+    "corpo": "ByteDance researchers introduced the Mixture-of-Loops Transformer (MoLT), a looped Transformer that reuses keys and values as memory across depths and loops.\n\nMoLT features Mixture-of-Loops Attention (MoLA) and two variants: MoLT‑R, which keeps the residual stream, and MoLT‑KV, which restarts from embeddings and reads current‑loop KV together with prior‑loop memory for efficiency.\n\nIn 400 B‑token pre‑training, U‑MoLT delivered 1.7× validation cross‑entropy token efficiency for 700 M models and lowered perplexity and task accuracy gaps for 3 B MoE models.\n\nDuring inference, U‑MoLT with MoL‑Hybrid‑2 matched non‑looped OLMo3 latency at 996.6 ms versus 1,000.6 ms on S‑size (~113 M) models. The code is released on GitHub.\n\n## What it means for you\n\nFor AI practitioners, MoLT offers a path to faster, more efficient training without sacrificing accuracy, which can lower compute costs. For users of free or locally‑run models, the open‑source release may enable smaller deployments to benefit from looped‑Transformer efficiencies.\n\n## Sources\n\n- [ByteDance paper: Mixture-of-Loops Transformer](https://huggingface.co/papers/2611.34923), Hugging Face Papers (official), 24 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-26-bytedance-unveils-mixture-of-loops-transformer-achieving-1-7-token-eff).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-25"
   }
  },
  "ricostruzione": {
