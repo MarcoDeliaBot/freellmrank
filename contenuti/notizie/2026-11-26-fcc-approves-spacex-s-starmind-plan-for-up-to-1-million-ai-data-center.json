@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-26-fcc-approves-spacex-s-starmind-plan-for-up-to-1-million-ai-data-center",
+ "titolo": "FCC approves SpaceX’s Starmind plan for up to 1 million AI data‑center satellites",
+ "descr": "SpaceX can launch up to 1 million chip‑equipped satellites by 2040, with the first satellite required by 2033.",
+ "tema": "Policy",
+ "paragrafi": [
+  "The approval obliges SpaceX to launch at least one satellite by 2033 and to reach the 1 million‑satellite milestone by 2040.",
+  "Starmind satellites will carry AI chips, draw solar power in space, and send data to Earth via high‑speed lasers linked to the Starlink network.",
+  "The FCC also approved radio links for monitoring and control if optical connections fail, but it delayed the request to place de‑orbiting satellites in graveyard orbits above 600 km.",
+  "SpaceX joins Google’s Project Suncatcher and Blue Origin’s planned heavy‑lift launch for similar space‑based compute efforts."
+ ],
+ "perche": [
+  "The approval could expand global AI compute capacity, potentially lowering latency for AI services. For users of free or locally run models, the move may increase competition and drive down costs, but it also raises questions about satellite debris and the environmental impact of large constellations."
+ ],
+ "pubblicato": "2026-11-26",
+ "titoloFonte": "FCC clears SpaceX to deploy up to 1 million Starmind satellites for orbital AI data centers by 2040",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/fcc-clears-spacex-to-deploy-up-to-1-million-starmind-satellites-for-orbital-ai-data-centers-by-2040/",
+   "titolo": "FCC clears SpaceX to deploy up to 1 million Starmind satellites for orbital AI data centers by 2040",
+   "ufficiale": false,
+   "data": "2026-11-26"
+  },
+  {
+   "nome": "The Verge",
+   "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
+   "titolo": "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space",
+   "ufficiale": false,
+   "data": "2026-11-25"
+  }
+ ],
+ "frasiTolte": 2
+}
