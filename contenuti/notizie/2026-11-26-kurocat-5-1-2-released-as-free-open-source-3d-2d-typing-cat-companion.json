@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-26-kurocat-5-1-2-released-as-free-open-source-3d-2d-typing-cat-companion",
+ "titolo": "KuroCat 5.1.2 released as free open‑source 3D/2D typing cat companion",
+ "descr": "The latest KuroCat version adds AI integration, OBS transparent source and multi‑platform installers for Windows, macOS, Linux and Android.",
+ "tema": "Software",
+ "paragrafi": [
+  "The qianyiai/kurocat project posted version 5.1.2 on GitHub, offering a lightweight desktop typing cat pet for Windows, macOS, Linux and Android.",
+  "Built with Tauri v2 and Rust, the app runs as a single transparent, always‑on‑top window and includes six hand‑crafted cat skins plus a whale‑girl character.",
+  "Version 5.1.2 adds native OBS transparent browser source, a built‑in MCP server for AI‑generated cats, and one‑click integration with Claude, Codex, DeepSeek, WorkBuddy and other models.",
+  "Installers are provided as a 2.15 MB EXE for Windows 10/11, a 5.93 MB universal DMG for macOS 10.15+, and .deb/AppImage packages for x86_64 and ARM64 Linux distributions.",
+  "The release also introduces password‑privacy guard that automatically closes the cat’s eyes when typing passwords, and cross‑platform single‑instance protection."
+ ],
+ "perche": [
+  "Its AI‑driven MCP service lets hobbyists experiment with custom pet avatars, while the OBS source makes it useful for streamers looking for low‑overhead visual overlays."
+ ],
+ "pubblicato": "2026-11-26",
+ "titoloFonte": "qianyiai/kurocat: KuroCat — Free open-source 3D/2D desktop typing cat & AI coding companion (Bongo Cat alternative · Tauri v2 + Rust + MCP · Claude/Codex/DeepSeek/OBS · Win/Mac/Linux/Android)｜开源3D桌面打字",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/qianyiai/kurocat",
+   "titolo": "qianyiai/kurocat: KuroCat — Free open-source 3D/2D desktop typing cat & AI coding companion (Bongo Cat alternative · Tauri v2 + Rust + MCP · Claude/Codex/DeepSeek/OBS · Win/Mac/Linux/Android)｜开源3D桌面打字",
+   "ufficiale": false,
+   "data": "2026-11-21"
+  }
+ ],
+ "frasiTolte": 1
+}

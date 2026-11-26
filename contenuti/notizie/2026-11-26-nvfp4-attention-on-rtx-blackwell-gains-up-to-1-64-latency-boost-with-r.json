@@ -1,0 +1,26 @@
+{
+ "nome": "2026-11-26-nvfp4-attention-on-rtx-blackwell-gains-up-to-1-64-latency-boost-with-r",
+ "titolo": "NVFP4 attention on RTX Blackwell gains up to 1.64× latency boost with register recycling",
+ "descr": "Optimized SageAttention3 kernel cuts attention latency by up to 1.64× on RTX PRO 6000 Blackwell, trimming end‑to‑end inference by 15.34% for several workloads.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "NVIDIA published a technical blog on 25 Nov 2026 describing how to accelerate NVFP4‑based attention on RTX Blackwell GPUs.",
+  "This register‑recycling schedule reduces Tensor Core idle time and improves NVFP4 attention latency by up to 1.64× on the RTX PRO 6000 Blackwell (SM120).",
+  "The core changes have been merged into FlashInfer’s main branch, enabling broader adoption of the NVFP4 attention API on supported RTX Blackwell devices."
+ ],
+ "perche": [
+  "Developers targeting real‑time video, robotics or other latency‑sensitive AI services can now extract more performance from RTX Blackwell GPUs without adding extra memory buffers. For users of free or locally hosted models, the improvement narrows the gap between high‑throughput data‑center GPUs and consumer‑grade hardware, making advanced foundation models more accessible."
+ ],
+ "pubblicato": "2026-11-26",
+ "titoloFonte": "How to Optimize NVFP4 Attention on NVIDIA RTX Blackwell Through Register Recycling",
+ "fonti": [
+  {
+   "nome": "NVIDIA Developer",
+   "url": "https://developer.nvidia.com/blog/how-to-optimize-nvfp4-attention-on-nvidia-rtx-blackwell-through-register-recycling/",
+   "titolo": "How to Optimize NVFP4 Attention on NVIDIA RTX Blackwell Through Register Recycling",
+   "ufficiale": true,
+   "data": "2026-11-25"
+  }
+ ],
+ "frasiTolte": 2
+}

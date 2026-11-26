@@ -25895,6 +25895,30 @@
     "tipo": "News"
    },
    "data": "2026-11-25"
+  },
+  "/blog/news-2026-11-26-kurocat-5-1-2-released-as-free-open-source-3d-2d-typing-cat-companion.html": {
+   "post": {
+    "slug": "news-2026-11-26-kurocat-5-1-2-released-as-free-open-source-3d-2d-typing-cat-companion",
+    "titolo": "KuroCat 5.1.2 released as free open‑source 3D/2D typing cat companion",
+    "descr": "The latest KuroCat version adds AI integration, OBS transparent source and multi‑platform installers for Windows, macOS, Linux and Android.",
+    "data": "2026-11-26",
+    "tema": "Software",
+    "corpo": "The qianyiai/kurocat project posted version 5.1.2 on GitHub, offering a lightweight desktop typing cat pet for Windows, macOS, Linux and Android.\n\nBuilt with Tauri v2 and Rust, the app runs as a single transparent, always‑on‑top window and includes six hand‑crafted cat skins plus a whale‑girl character.\n\nVersion 5.1.2 adds native OBS transparent browser source, a built‑in MCP server for AI‑generated cats, and one‑click integration with Claude, Codex, DeepSeek, WorkBuddy and other models.\n\nInstallers are provided as a 2.15 MB EXE for Windows 10/11, a 5.93 MB universal DMG for macOS 10.15+, and .deb/AppImage packages for x86_64 and ARM64 Linux distributions.\n\nThe release also introduces password‑privacy guard that automatically closes the cat’s eyes when typing passwords, and cross‑platform single‑instance protection.\n\n## What it means for you\n\nIts AI‑driven MCP service lets hobbyists experiment with custom pet avatars, while the OBS source makes it useful for streamers looking for low‑overhead visual overlays.\n\n## Sources\n\n- [qianyiai/kurocat: KuroCat — Free open-source 3D/2D desktop typing cat & AI coding companion (Bongo Cat alternative · Tauri v2 + Rust + MCP · Claude/Codex/DeepSeek/OBS · Win/Mac/Linux/Android)｜开源3D桌面打字](https://github.com/qianyiai/kurocat), GitHub trending, 21 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-26-kurocat-5-1-2-released-as-free-open-source-3d-2d-typing-cat-companion).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-25"
+  },
+  "/blog/news-2026-11-26-nvfp4-attention-on-rtx-blackwell-gains-up-to-1-64-latency-boost-with-r.html": {
+   "post": {
+    "slug": "news-2026-11-26-nvfp4-attention-on-rtx-blackwell-gains-up-to-1-64-latency-boost-with-r",
+    "titolo": "NVFP4 attention on RTX Blackwell gains up to 1.64× latency boost with register recycling",
+    "descr": "Optimized SageAttention3 kernel cuts attention latency by up to 1.64× on RTX PRO 6000 Blackwell, trimming end‑to‑end inference by 15.34% for several workloads.",
+    "data": "2026-11-26",
+    "tema": "Hardware",
+    "corpo": "NVIDIA published a technical blog on 25 Nov 2026 describing how to accelerate NVFP4‑based attention on RTX Blackwell GPUs.\n\nThis register‑recycling schedule reduces Tensor Core idle time and improves NVFP4 attention latency by up to 1.64× on the RTX PRO 6000 Blackwell (SM120).\n\nThe core changes have been merged into FlashInfer’s main branch, enabling broader adoption of the NVFP4 attention API on supported RTX Blackwell devices.\n\n## What it means for you\n\nDevelopers targeting real‑time video, robotics or other latency‑sensitive AI services can now extract more performance from RTX Blackwell GPUs without adding extra memory buffers. For users of free or locally hosted models, the improvement narrows the gap between high‑throughput data‑center GPUs and consumer‑grade hardware, making advanced foundation models more accessible.\n\n## Sources\n\n- [How to Optimize NVFP4 Attention on NVIDIA RTX Blackwell Through Register Recycling](https://developer.nvidia.com/blog/how-to-optimize-nvfp4-attention-on-nvidia-rtx-blackwell-through-register-recycling/), NVIDIA Developer (official), 25 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-26-nvfp4-attention-on-rtx-blackwell-gains-up-to-1-64-latency-boost-with-r).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-25"
   }
  },
  "ricostruzione": {
