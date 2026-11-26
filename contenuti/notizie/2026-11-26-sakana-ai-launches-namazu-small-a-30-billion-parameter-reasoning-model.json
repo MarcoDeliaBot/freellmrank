@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-26-sakana-ai-launches-namazu-small-a-30-billion-parameter-reasoning-model",
+ "titolo": "Sakana AI launches Namazu Small, a 30‑billion‑parameter reasoning model built on Nemotron 3 Nano",
+ "descr": "Namazu Small scores 60.1 average on 25 benchmarks, surpassing NVIDIA’s 120B Nemotron 3 Super.",
+ "tema": "LLMs",
+ "paragrafi": [
+  "The company performed continued pre‑training and post‑training in‑house, targeting everyday conversation, web‑search‑based research, and long‑document understanding.",
+  "In tests against the same‑size Nemotron 3 Nano and the four‑times larger Nemotron 3 Super (120 B), Namazu Small achieved an average score of 60.1 across 25 benchmarks, higher than Nemotron 3 Super’s 56.2.",
+  "The model is positioned as a reasoning model, designed to organize information and step‑by‑step infer answers for complex tasks.",
+  "Sakana plans to make Namazu Small available for on‑premises deployment, with details expected in early‑to‑mid December 2026."
+ ],
+ "perche": [
+  "The release offers a high‑performing, 30 B model that can run on local hardware, giving enterprises a viable alternative to larger cloud‑only solutions. For users seeking free or self‑hosted AI, Namazu Small demonstrates that strong benchmark results are achievable without massive parameter counts."
+ ],
+ "pubblicato": "2026-11-26",
+ "titoloFonte": "Sakana AI Releases Namazu Small, a 30B Model Built on Nemotron 3 Nano",
+ "fonti": [
+  {
+   "nome": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/11/26/sakana-ai-namazu-small-30b-nemotron-3-nano/",
+   "titolo": "Sakana AI Releases Namazu Small, a 30B Model Built on Nemotron 3 Nano",
+   "ufficiale": false,
+   "data": "2026-11-26"
+  },
+  {
+   "nome": "sakana.ai",
+   "url": "https://sakana.ai/namazu-small/",
+   "titolo": "Sakana Namazu Small",
+   "ufficiale": true,
+   "data": "2026-11-25"
+  }
+ ],
+ "frasiTolte": 1
+}

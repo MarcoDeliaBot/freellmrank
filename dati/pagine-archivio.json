@@ -26093,6 +26093,18 @@
     "tipo": "News"
    },
    "data": "2026-11-26"
+  },
+  "/blog/news-2026-11-26-sakana-ai-launches-namazu-small-a-30-billion-parameter-reasoning-model.html": {
+   "post": {
+    "slug": "news-2026-11-26-sakana-ai-launches-namazu-small-a-30-billion-parameter-reasoning-model",
+    "titolo": "Sakana AI launches Namazu Small, a 30‑billion‑parameter reasoning model built on Nemotron 3 Nano",
+    "descr": "Namazu Small scores 60.1 average on 25 benchmarks, surpassing NVIDIA’s 120B Nemotron 3 Super.",
+    "data": "2026-11-26",
+    "tema": "LLMs",
+    "corpo": "The company performed continued pre‑training and post‑training in‑house, targeting everyday conversation, web‑search‑based research, and long‑document understanding.\n\nIn tests against the same‑size Nemotron 3 Nano and the four‑times larger Nemotron 3 Super (120 B), Namazu Small achieved an average score of 60.1 across 25 benchmarks, higher than Nemotron 3 Super’s 56.2.\n\nThe model is positioned as a reasoning model, designed to organize information and step‑by‑step infer answers for complex tasks.\n\nSakana plans to make Namazu Small available for on‑premises deployment, with details expected in early‑to‑mid December 2026.\n\n## What it means for you\n\nThe release offers a high‑performing, 30 B model that can run on local hardware, giving enterprises a viable alternative to larger cloud‑only solutions. For users seeking free or self‑hosted AI, Namazu Small demonstrates that strong benchmark results are achievable without massive parameter counts.\n\n## Sources\n\n- [Sakana AI Releases Namazu Small, a 30B Model Built on Nemotron 3 Nano](https://www.marktechpost.com/2026/11/26/sakana-ai-namazu-small-30b-nemotron-3-nano/), MarkTechPost, 26 Nov 2026\n- [Sakana Namazu Small](https://sakana.ai/namazu-small/), sakana.ai (official), 25 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-26-sakana-ai-launches-namazu-small-a-30-billion-parameter-reasoning-model).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-26"
   }
  },
  "ricostruzione": {
