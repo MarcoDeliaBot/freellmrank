@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-26-introducing-the-llama-cpp-benchmark-dashboard-for-amd-ryzen-and-radeon",
+ "titolo": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+ "descr": "The new dashboard lets developers compare prompt processing and text generation speeds of llama.cpp models on Radeon 8060S and AI Pro R9700S.",
+ "tema": "Hardware",
+ "paragrafi": [
+  "Hugging Face released a llama.cpp benchmark dashboard on November 26, 2026.",
+  "The tool tracks token‑per‑second performance for prompt processing (PP512) and text generation (TG128) across different llama.cpp builds, models and quantizations.",
+  "Users can select a model, build and quantization in a sidebar.",
+  "Benchmarks run weekly using llama‑bench with Flash Attention on and off, ten repetitions per configuration, and results are stored publicly on Hugging Face.",
+  "Supported models include Inkling 2 Mini, Qwen, Gemma, gpt‑oss and LFM, with GGUF formats such as Q4_K_M, Q8_0, BF16 and F16."
+ ],
+ "perche": [
+  "The open data also supports the free‑model community by providing reference numbers for running models locally without cloud services."
+ ],
+ "pubblicato": "2026-11-26",
+ "titoloFonte": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+ "fonti": [
+  {
+   "nome": "Hugging Face",
+   "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+   "titolo": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+   "ufficiale": true,
+   "data": "2026-11-26"
+  }
+ ],
+ "frasiTolte": 3
+}

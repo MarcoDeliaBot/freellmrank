@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-26-alesha-pro-llm-asm-qwen3-0-6b-inference-12-kb-bare-metal-bootable-os-2",
+ "titolo": "alesha-pro/llm.asm: Qwen3-0.6B inference (12 KB), bare-metal bootable OS (22 KB), and from-scratch Mini-GPT tr",
+ "descr": "Alesha‑pro released three x86‑64 NASM‑only projects, including a 14 KB Qwen3‑0.6B inference binary and a bootable OS.",
+ "tema": "Software",
+ "paragrafi": [
+  "The GitHub repo llm.asm by alesha‑pro contains three complete LLM projects written entirely in x86‑64 NASM assembly, with no C, C++, Rust, or libc dependencies.",
+  "The first project, 01‑qwen3‑inference, compiles a 14,712‑byte static ELF that runs Qwen3‑0.6B (Q8_0) inference, achieving 126.8 tokens per second on a 40‑thread AMD EPYC 7642 and matching PyTorch FP32 output.",
+  "The second project, 02‑baremetal‑os, builds a 24,252‑byte bootable OS that loads the same model directly on hardware, booting in 74–94 ms and delivering up to 134.9 tokens per second on KVM‑emulated EPYC hardware.",
+  "The third project, 03‑minigpt‑train, provides a from‑scratch Mini‑GPT trainer of 32,944 bytes, training TinyShakespeare to a validation loss of 1.51 in four minutes."
+ ],
+ "perche": [
+  "These ultra‑compact binaries enable running modern LLM inference on minimal resources, appealing to developers who need local, dependency‑free AI without a full OS. For the free‑model community, the projects illustrate that high‑quality inference can be achieved with tiny footprints, expanding options for edge and research deployments."
+ ],
+ "pubblicato": "2026-11-26",
+ "titoloFonte": "alesha-pro/llm.asm: Qwen3-0.6B inference (12 KB), bare-metal bootable OS (22 KB), and from-scratch Mini-GPT trainer with live Braille TUI (32 KB) in 100% pure x86-64 NASM assembly. Zero C, zero libc, ",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/alesha-pro/llm.asm",
+   "titolo": "alesha-pro/llm.asm: Qwen3-0.6B inference (12 KB), bare-metal bootable OS (22 KB), and from-scratch Mini-GPT trainer with live Braille TUI (32 KB) in 100% pure x86-64 NASM assembly. Zero C, zero libc, ",
+   "ufficiale": false,
+   "data": "2026-11-25"
+  }
+ ],
+ "frasiTolte": 2
+}
