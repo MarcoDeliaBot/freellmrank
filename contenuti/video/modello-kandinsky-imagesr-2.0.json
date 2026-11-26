@@ -1,0 +1,155 @@
+{
+ "nome": "modello-kandinsky-imagesr-2.0",
+ "titolo": "Kandinsky-ImageSR-2.0: How to Run It Free",
+ "descrizione": "Kandinsky-ImageSR 2.0 offers free, open-source 2× and 4× super-resolution with a single transformer. Learn its speed, hardware needs, and who can benefit.\n\nSize: 4.5B parameters · context 0K · memory at 4-bit about 5 GB.\nRTX 3060 12 GB + 32 GB RAM: about 89 tokens/s\nRTX 4090 + 64 GB RAM: about 215 tokens/s\nRTX 5090 + 64 GB RAM: about 327 tokens/s\nMac M4 Max 128 GB: about 98 tokens/s\nNVIDIA DGX Spark 128 GB: about 69 tokens/s\nRyzen AI Max+ 395 128 GB: about 65 tokens/s\nMac Studio M3 Ultra 512 GB: about 125 tokens/s\nModel card: https://huggingface.co/kandinskylab/Kandinsky-ImageSR-2.0\nEvery free model, compared: https://freellmarena.com",
+ "tag": [
+  "free AI",
+  "open source AI",
+  "local LLM",
+  "Kandinsky-ImageSR-2.0",
+  "Kandinskylab"
+ ],
+ "condividi": "Kandinsky-ImageSR-2.0 by Kandinskylab: 4.5B parameters, about 5 GB at 4-bit; smallest home machine that holds it: RTX 4060. https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "copertina": 0,
+ "localizzazioni": {
+  "it": {
+   "titolo": "Kandinsky-ImageSR-2.0: novità, hardware necessario, come usarlo gratis",
+   "descrizione": "Il nuovo modello aperto spiegato: cosa fa, quanta memoria serve, dove provarlo gratis.\nhttps://freellmarena.com/it"
+  },
+  "es": {
+   "titolo": "Kandinsky-ImageSR-2.0: novedades, hardware necesario, cómo usarlo gratis",
+   "descrizione": "El nuevo modelo abierto explicado: qué hace, cuánta memoria necesita, dónde probarlo gratis.\nhttps://freellmarena.com/es"
+  },
+  "de": {
+   "titolo": "Kandinsky-ImageSR-2.0: Neuerungen, nötige Hardware, kostenlos nutzen",
+   "descrizione": "Das neue offene Modell erklärt: was es kann, wie viel Speicher es braucht, wo man es kostenlos testet.\nhttps://freellmarena.com/de"
+  },
+  "fr": {
+   "titolo": "Kandinsky-ImageSR-2.0 : nouveautés, matériel nécessaire, l’utiliser gratuitement",
+   "descrizione": "Le nouveau modèle ouvert expliqué : ce qu’il fait, la mémoire nécessaire, où l’essayer gratuitement.\nhttps://freellmarena.com/fr"
+  },
+  "pt": {
+   "titolo": "Kandinsky-ImageSR-2.0: novidades, hardware necessário, como usar grátis",
+   "descrizione": "O novo modelo aberto explicado: o que faz, quanta memória precisa, onde testar grátis.\nhttps://freellmarena.com/pt"
+  }
+ },
+ "hardware": {
+  "modelli": [
+   {
+    "nome": "Kandinsky-ImageSR-2.0",
+    "gb": 5,
+    "scheda": {
+     "id": "rtx4060",
+     "nome": "RTX 4060",
+     "gb": 8,
+     "tiene": true
+    }
+   }
+  ],
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "Kandinsky-ImageSR-2.0",
+    "vel": 89,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Kandinsky-ImageSR-2.0",
+    "vel": 215,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "rtx5090",
+     "nome": "RTX 5090",
+     "gb": 32,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Kandinsky-ImageSR-2.0",
+    "vel": 327,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Kandinsky-ImageSR-2.0",
+    "vel": 98,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "dgxspark",
+     "nome": "NVIDIA DGX Spark 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Kandinsky-ImageSR-2.0",
+    "vel": 69,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "strixhalo-128",
+     "nome": "Ryzen AI Max+ 395 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Kandinsky-ImageSR-2.0",
+    "vel": 65,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m3ultra-512",
+     "nome": "Mac Studio M3 Ultra 512 GB",
+     "gb": 512,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Kandinsky-ImageSR-2.0",
+    "vel": 125,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "voce": [
+  "Kandinsky-ImageSR 2.0 does super-resolution with a single transformer for both 2× and 4× upscales. It runs on a modest RTX 4060 when quantized to 4-bit.",
+  "Kandinsky-ImageSR 2.0 is a diffusion-based super-resolution model released as a Diffusers bundle. According to the model card, it contains a 4.5 billion-parameter transformer and uses the Kandinsky 5 architecture. The code and the transformer are released under the MIT license, while the VAE component comes from an Apache-2.0 source.",
+  "The new version replaces the text tower and all 50 cross-attention layers with small per-timestep Safetensors tables, a technique the authors call zero-text conditioning. That means a single set of weights can handle both 2× and 4× upscaling, simplifying deployment.",
+  "The model card provides median inference times measured on an NVIDIA H100 80 GB. Upscaling a 1024-by-1024 image by 2× takes 2.78 seconds, while the same input upscaled by 4× takes 7.80 seconds. A larger 2048-by-2048 image upscaled to 8K runs in about 37.5 seconds. All timings use bfloat16 and a tile batch size of one.",
+  "Running at 4-bit, the model fits into about 5 GB, so a RTX 4060 can hold it entirely. On a RTX 3060 with 12 GB it processes roughly 89 tokens per second, while a RTX 4090 reaches about 215 tokens per second. The UI exposes a calibrated creativity level from 0 to 8; values outside that range are not supported, which may limit experimental control.",
+  "If you run AI models at home and have a GPU like an RTX 4060 or better, Kandinsky-ImageSR 2.0 is a practical choice for upscaling images. Its open weights are free to download from Hugging Face, and the modest memory footprint means you don’t need a high-end workstation. Artists looking for a quick 2× or 4× boost without paying for a cloud API will find it especially useful.",
+  "What do you need to run it at home? At 4-bit it takes about 5 gigabytes of memory. The smallest home machine that holds it fully is an RTX 40 60. On an RTX 30 60 12 GB with 32 gigabytes of RAM it writes about 89 tokens per second. On an RTX 40 90 with 64 gigabytes of RAM it writes about 215 tokens per second.",
+  "There is no free API for it yet. The weights are open: you can download them from Hugging Face under the MIT license. Arena has not ranked it yet: we add the score as soon as the votes arrive.",
+  "Compare Kandinsky ImageSR 2.0 with every free model, and check what your own GPU can run, on FreeLLMArena. The link is in the description."
+ ],
+ "release": "video-modello-kandinsky-imagesr-2.0",
+ "pubblicato": "2026-11-26"
+}

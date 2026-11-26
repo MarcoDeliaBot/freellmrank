@@ -1,0 +1,84 @@
+{
+ "nome": "codice-2026-11-26",
+ "titolo": "Best FREE AI for Coding This Week (26 November 2026): Top 10",
+ "descrizione": "The free AI coding report for the week of 26 November 2026, from Arena: blind votes on the WebDev leaderboard (apps and websites built from one prompt) and the Agent coding index (real coding sessions of agents).\n\nTop 10 free coding models:\n1. Kimi K3.1 Pro (Max) (Kimi (Moonshot)): 1683\n2. Qwen3.8-Max (0902) (Qwen (Alibaba)): 1673\n3. Qwen3.8-Max (Qwen (Alibaba)): 1671\n4. DeepSeek-V4.1-Flash-20261017 (Max) (DeepSeek): 1659\n5. Kimi K3 (Max) (Kimi (Moonshot)): 1658\n6. Inkling 2 Small (Thinky): 1642\n7. MiMo-V2.6-Flash (Xiaomi): 1637\n8. Hy4 preview (Tencent): 1631\n9. Qwen3.8-Flash-Next (Qwen (Alibaba)): 1626\n10. GLM-5.3 (Max) (GLM (Z.ai)): 1623\nBest paid coding model: Claude Fable 5.2 (xHigh) (1822).\n\nBest free coding agents (Arena Agent coding): Kimi K3.1 Pro (Max) (#24 of 69), Inkling 2 Small (#27 of 69), DeepSeek-V4.1-Flash-20261017 (Max) (#30 of 69), GLM-5.2 (Max) (#33 of 69), MiMo-V2.6-Pro (#34 of 69).\n\nBest coding model at home: RTX 3060 12 GB + 32 GB RAM: Gemma 4 26B A4B (#128 of 162 in WebDev), about 49 tokens per second; RTX 4090 + 64 GB RAM: Qwen3.8-27B (#45 of 162 in WebDev), about 43 tokens per second; Mac M4 Max 128 GB: Qwen3.8-27B (#45 of 162 in WebDev), about 23 tokens per second.\n\nThree kinds of free: open weights run on your own computer, free forever. Free APIs work online with daily limits and can end at any time. Free trials give new accounts credit for a few months, then you pay.\n\nEvery free model, with sizes, speeds and where to use it free: https://freellmarena.com",
+ "tag": [
+  "free AI for coding",
+  "best free coding model",
+  "AI coding",
+  "local LLM for coding",
+  "open source AI",
+  "coding agent"
+ ],
+ "condividi": "Free AI for coding this week: Kimi K3.1 Pro (Max) leads the free models at 1683, 139 points behind Claude Fable 5.2 (xHigh). Full report: https://freellmarena.com",
+ "lingua": "en",
+ "formato": {
+  "w": 1920,
+  "h": 1080
+ },
+ "fps": 24,
+ "hardware": {
+  "casa": [
+   {
+    "scheda": {
+     "id": "rtx3060-12",
+     "nome": "RTX 3060 12 GB",
+     "gb": 12,
+     "tiene": true
+    },
+    "ram": 32,
+    "modello": "Gemma 4 26B A4B",
+    "vel": 49,
+    "dove": "ram"
+   },
+   {
+    "scheda": {
+     "id": "rtx4090",
+     "nome": "RTX 4090",
+     "gb": 24,
+     "tiene": true
+    },
+    "ram": 64,
+    "modello": "Qwen3.8-27B",
+    "vel": 43,
+    "dove": "gpu"
+   },
+   {
+    "scheda": {
+     "id": "m4max-128",
+     "nome": "Mac M4 Max 128 GB",
+     "gb": 128,
+     "tiene": true
+    },
+    "ram": 0,
+    "modello": "Qwen3.8-27B",
+    "vel": 23,
+    "dove": "gpu"
+   }
+  ]
+ },
+ "titoli": [
+  "Free AI for coding is",
+  "Top 10 free coding models",
+  "Places 4 to 10",
+  "What free means",
+  "Of the top 30 coding models",
+  "1 new on the coding board",
+  "Best free coding agents",
+  "Best coding model at home",
+  "Every free AI model, updated every night"
+ ],
+ "voce": [
+  "This is the free AI coding report for the week of 26 November 2026. The best free model for coding is 139 points behind the best paid one. Let's see which free models write the best code, and which one you can run at home.",
+  "Here are the ten best free models for coding, ranked by blind votes of developers on Arena's WebDev leaderboard: two anonymous models build the same app, and people pick the better one. In first place, Kimi K3.1 Pro Max from Kimi (Moonshot), with 1683 points. Then Qwen3.8 Max 0902, and Qwen3.8 Max. The dashed line is the best paid model.",
+  "From fourth to tenth: DeepSeek V4.1 Flash Max, 1659; Kimi K3 Max, 1658; Inkling 2 Small, 1642; MiMo V2.6 Flash, 1637; Hy4 preview, 1631; Qwen3.8 Flash Next, 1626; GLM 5.3 Max, 1623.",
+  "A quick note on what free means here. Open weights models you download and run on your own computer, free forever. A free API works online with daily limits, and the provider can change or end it at any time. A free trial gives new accounts credit for a few months, then you pay.",
+  "Of the top 30 coding models on Arena, paid ones included, 7 can be used for free, and 5 have open weights you can download.",
+  "One free model entered the coding leaderboard this week. The highest is Inkling 2 Mini, at number 54 overall.",
+  "So far, the WebDev leaderboard: apps built from a single prompt. For coding agents, the ones that plan, edit files and run commands on their own, Arena has a separate coding index. The best free agents there are Kimi K3.1 Pro Max, number 24; Inkling 2 Small, number 27; DeepSeek V4.1 Flash Max, number 30; GLM 5.2 Max, number 33.",
+  "Which coding model can you run at home? On an RTX 30 60 with 32 gigabytes of RAM, the best free coding model is Gemma 4 26B A4B, at about 49 tokens per second. It is number 128 of 162 on the WebDev leaderboard. On an RTX 40 90 with 64 gigabytes of RAM, the best free coding model is Qwen3.8 27B, at about 43 tokens per second. It is number 45 of 162 on the WebDev leaderboard. On a Mac M4 Max, the best free coding model is Qwen3.8 27B, at about 23 tokens per second.",
+  "Every free model, with its coding score, size and speed, is on FreeLLMArena, updated every night. The link is in the description. See you next week."
+ ],
+ "release": "video-codice-2026-11-26",
+ "pubblicato": "2026-11-26"
+}
