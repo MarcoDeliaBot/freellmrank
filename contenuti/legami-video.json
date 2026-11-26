@@ -651,5 +651,13 @@
  "news-2026-11-25-ibm-research-releases-multilingual-indic-voice-agent-using-cuga-harnes": {
   "lungo": "notizia-ibm-research-releases-multilingual-indic-voice-agent-usi",
   "breve": "breve-ibm-research-releases-multilingual-indic-voice-agent-usi"
+ },
+ "news-2026-11-25-z-ai-launches-750b-glm-5-4-loop-transformer-deepseek-v4-1-flash-on-hug": {
+  "lungo": "notizia-z-ai-launches-750b-glm-5-4-loop-transformer-deepseek-v4",
+  "breve": "breve-z-ai-launches-750b-glm-5-4-loop-transformer-deepseek-v4"
+ },
+ "news-2026-11-25-anthropic-launches-beta-install-as-app-turning-claude-artifacts-into-d": {
+  "lungo": "notizia-anthropic-launches-beta-install-as-app-turning-claude-ar",
+  "breve": "breve-anthropic-launches-beta-install-as-app-turning-claude-ar"
  }
 }
