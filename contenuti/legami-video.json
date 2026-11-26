@@ -659,5 +659,13 @@
  "news-2026-11-25-anthropic-launches-beta-install-as-app-turning-claude-artifacts-into-d": {
   "lungo": "notizia-anthropic-launches-beta-install-as-app-turning-claude-ar",
   "breve": "breve-anthropic-launches-beta-install-as-app-turning-claude-ar"
+ },
+ "news-2026-11-25-anthropic-launches-claude-ship-to-automate-code-review-and-approvals": {
+  "lungo": "notizia-anthropic-launches-claude-ship-to-automate-code-review-a",
+  "breve": "breve-anthropic-launches-claude-ship-to-automate-code-review-a"
+ },
+ "news-2026-11-26-bytedance-unveils-mixture-of-loops-transformer-achieving-1-7-token-eff": {
+  "lungo": "notizia-bytedance-unveils-mixture-of-loops-transformer-achieving",
+  "breve": "breve-bytedance-unveils-mixture-of-loops-transformer-achieving"
  }
 }
