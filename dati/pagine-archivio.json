@@ -26141,6 +26141,18 @@
     "tipo": "News"
    },
    "data": "2026-11-27"
+  },
+  "/blog/news-2026-11-27-microsoft-warns-that-state-backed-hackers-use-artex-ai-framework-for-a.html": {
+   "post": {
+    "slug": "news-2026-11-27-microsoft-warns-that-state-backed-hackers-use-artex-ai-framework-for-a",
+    "titolo": "Microsoft warns that state-backed hackers use ARTEX AI framework for automated cyberattacks",
+    "descr": "Since its July 2026 release, ARTEX has been adopted by nation-state groups and cybercriminals to run machine‑speed attacks using existing tools.",
+    "data": "2026-11-27",
+    "tema": "Policy",
+    "corpo": "Microsoft’s analysis shows that the AI‑powered penetration‑testing framework ARTEX is being used by state‑backed hackers and financially motivated groups to automate full attack chains.\n\nThe framework, released in July 2026, distributes tasks across specialized agents, switches between language models on failure, and operates at machine speed, leaving defenders with only minutes to respond.\n\nAttackers connect any large language model, including unguarded variants, and leverage tools such as Nmap, Sqlmap, Metasploit and headless browsers without human oversight.\n\nTo counter these adaptive agents, Microsoft recommends deception tactics like honeypots, honeytokens, artificial delay loops and fake success signals that cause the AI to abort the attack.\n\n## What it means for you\n\nUsers of AI tools should be aware that the same technology can be repurposed for offensive use, highlighting the need for robust security controls when deploying large language models.\n\n## Sources\n\n- [Microsoft details how state-backed hackers use the ARTEX AI framework to automate cyberattacks](https://the-decoder.com/microsoft-details-how-state-backed-hackers-use-the-artex-ai-framework-to-automate-cyberattacks/), The Decoder, 26 Nov 2026\n- [What defenders need to know about ARTEX, the agentic AI framework threat actors abuse | Microsoft Security Blog](https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/), microsoft.com (official), 25 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-27-microsoft-warns-that-state-backed-hackers-use-artex-ai-framework-for-a).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-27"
   }
  },
  "ricostruzione": {
