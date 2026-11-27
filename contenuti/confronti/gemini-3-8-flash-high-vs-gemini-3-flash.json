@@ -1,0 +1,32 @@
+{
+  "versione": 2,
+  "coppia": [
+    "Gemini 3.8 Flash (High)",
+    "Gemini 3 Flash"
+  ],
+  "descr": "Gemini 3.8 Flash beats Gemini 3 Flash in Arena scores and category tests.",
+  "risposta": "Gemini 3.8 Flash is the better model. In the blind Arena vote it scores 1498 versus 1473 for Gemini 3 Flash, a 25-point advantage. The lead appears in every category tested. Users should choose Gemini 3.8 Flash for overall performance.",
+  "dimensioni": "Both Gemini 3.8 Flash and Gemini 3 Flash keep their model sizes private. Neither provides open weights, so the files cannot be downloaded for local use.",
+  "velocita": "Neither model runs locally on typical home hardware. All listed GPUs and CPUs can only access them through an online API, so speed depends on the provider’s servers rather than your own machine.",
+  "gratisA": "Gemini 3.8 Flash can be accessed for free via Google’s Gemini API free tier. The API follows a proprietary license and does not allow local execution.",
+  "gratisB": "Gemini 3 Flash is also reachable through the free tier of Google’s Gemini API. Like its newer sibling, it uses a proprietary license and requires online calls.",
+  "sceglieA": "Pick Gemini 3.8 Flash when you need the highest overall scores across chat, coding, vision, and document tasks. It also leads in every specific Arena category, making it the safer bet for general-purpose AI work.",
+  "sceglieB": "Choose Gemini 3 Flash if you prefer a slightly older model with similar licensing and API access but can tolerate a modest drop in performance. It may be suitable for projects where the newest model is not required.",
+  "categorie": {
+    "Chat": "Gemini 3.8 Flash scores 1498 while Gemini 3 Flash scores 1473, giving the newer model the edge in conversational quality.",
+    "WebDev (coding)": "In coding tasks Gemini 3.8 Flash reaches 1584 against 1440 for Gemini 3 Flash, a clear advantage for developers.",
+    "Vision": "Vision benchmarks show Gemini 3.8 Flash at 1292 versus 1272 for Gemini 3 Flash, keeping it ahead in image-related tasks.",
+    "Documents": "For document processing Gemini 3.8 Flash scores 1469, slightly higher than Gemini 3 Flash’s 1440, confirming its lead across all categories."
+  },
+  "scritto": "2026-11-27",
+  "aggiornato": "2026-11-27",
+  "scrittore": "workers",
+  "fatti": {
+    "leader": "Gemini 3.8 Flash (High)",
+    "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",
+    "gratisB": "free API from Google (Gemini API free tier) · Proprietary license",
+    "puntiA": 1498,
+    "puntiB": 1473,
+    "dataArena": "2026-11-22"
+  }
+}
