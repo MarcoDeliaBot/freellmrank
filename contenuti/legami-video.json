@@ -667,5 +667,13 @@
  "news-2026-11-26-bytedance-unveils-mixture-of-loops-transformer-achieving-1-7-token-eff": {
   "lungo": "notizia-bytedance-unveils-mixture-of-loops-transformer-achieving",
   "breve": "breve-bytedance-unveils-mixture-of-loops-transformer-achieving"
+ },
+ "news-2026-11-26-sakana-ai-launches-namazu-small-a-30-billion-parameter-reasoning-model": {
+  "lungo": "notizia-sakana-ai-launches-namazu-small-a-30-billion-parameter-r",
+  "breve": "breve-sakana-ai-launches-namazu-small-a-30-billion-parameter-r"
+ },
+ "news-2026-11-27-tencent-releases-proxygenbench-to-evaluate-proxy-guided-video-generati": {
+  "lungo": "notizia-tencent-releases-proxygenbench-to-evaluate-proxy-guided",
+  "breve": "breve-tencent-releases-proxygenbench-to-evaluate-proxy-guided"
  }
 }
