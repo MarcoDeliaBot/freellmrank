@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-27-tencent-releases-proxygenbench-to-evaluate-proxy-guided-video-generati",
+ "titolo": "Tencent releases ProxyGenBench to evaluate proxy‑guided video generation",
+ "descr": "The new benchmark tests five video generators on 312 cases across 60 scenes, focusing on structure, content completion and multimodal binding.",
+ "tema": "Research",
+ "paragrafi": [
+  "Tencent researchers published ProxyGenBench, a benchmark designed for proxy‑guided video generation.",
+  "The suite contains 312 evaluation cases drawn from 60 scenes and three distinct scene tasks, varying proxy fidelity, text detail and multimodal inputs.",
+  "Five recent video generators were assessed using case‑specific checklists that measure preservation of intended structure, completion of missing content, correction of proxy artifacts, and correct binding of text, image and audio conditions.",
+  "Results show that structural proxies improve spatiotemporal control, but higher proxy detail can reduce content completion, and strong structural adherence does not guarantee correct multimodal binding.",
+  "The benchmark and its code are available on a project page and GitHub repository for further research."
+ ],
+ "perche": [
+  "For developers, ProxyGenBench offers a standardized way to measure how well video models follow coarse structural cues while filling in details. Researchers can use it to identify trade‑offs between proxy detail and content quality, guiding the design of more reliable video generation pipelines."
+ ],
+ "pubblicato": "2026-11-27",
+ "titoloFonte": "Tencent paper: ProxyGenBench: Benchmarking Proxy-Guided Video Generation",
+ "fonti": [
+  {
+   "nome": "Hugging Face Papers",
+   "url": "https://huggingface.co/papers/2611.34457",
+   "titolo": "Tencent paper: ProxyGenBench: Benchmarking Proxy-Guided Video Generation",
+   "ufficiale": true,
+   "data": "2026-11-24"
+  }
+ ],
+ "frasiTolte": 0
+}

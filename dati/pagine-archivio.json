@@ -26105,6 +26105,18 @@
     "tipo": "News"
    },
    "data": "2026-11-26"
+  },
+  "/blog/news-2026-11-27-tencent-releases-proxygenbench-to-evaluate-proxy-guided-video-generati.html": {
+   "post": {
+    "slug": "news-2026-11-27-tencent-releases-proxygenbench-to-evaluate-proxy-guided-video-generati",
+    "titolo": "Tencent releases ProxyGenBench to evaluate proxy‑guided video generation",
+    "descr": "The new benchmark tests five video generators on 312 cases across 60 scenes, focusing on structure, content completion and multimodal binding.",
+    "data": "2026-11-27",
+    "tema": "Research",
+    "corpo": "Tencent researchers published ProxyGenBench, a benchmark designed for proxy‑guided video generation.\n\nThe suite contains 312 evaluation cases drawn from 60 scenes and three distinct scene tasks, varying proxy fidelity, text detail and multimodal inputs.\n\nFive recent video generators were assessed using case‑specific checklists that measure preservation of intended structure, completion of missing content, correction of proxy artifacts, and correct binding of text, image and audio conditions.\n\nResults show that structural proxies improve spatiotemporal control, but higher proxy detail can reduce content completion, and strong structural adherence does not guarantee correct multimodal binding.\n\nThe benchmark and its code are available on a project page and GitHub repository for further research.\n\n## What it means for you\n\nFor developers, ProxyGenBench offers a standardized way to measure how well video models follow coarse structural cues while filling in details. Researchers can use it to identify trade‑offs between proxy detail and content quality, guiding the design of more reliable video generation pipelines.\n\n## Sources\n\n- [Tencent paper: ProxyGenBench: Benchmarking Proxy-Guided Video Generation](https://huggingface.co/papers/2611.34457), Hugging Face Papers (official), 24 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-27-tencent-releases-proxygenbench-to-evaluate-proxy-guided-video-generati).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-26"
   }
  },
  "ricostruzione": {
