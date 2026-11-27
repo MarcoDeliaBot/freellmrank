@@ -675,5 +675,13 @@
  "news-2026-11-27-tencent-releases-proxygenbench-to-evaluate-proxy-guided-video-generati": {
   "lungo": "notizia-tencent-releases-proxygenbench-to-evaluate-proxy-guided",
   "breve": "breve-tencent-releases-proxygenbench-to-evaluate-proxy-guided"
+ },
+ "news-2026-11-26-introducing-the-llama-cpp-benchmark-dashboard-for-amd-ryzen-and-radeon": {
+  "lungo": "notizia-introducing-the-llama-cpp-benchmark-dashboard-for-amd-ry",
+  "breve": "breve-introducing-the-llama-cpp-benchmark-dashboard-for-amd-ry"
+ },
+ "news-2026-11-26-alesha-pro-llm-asm-qwen3-0-6b-inference-12-kb-bare-metal-bootable-os-2": {
+  "lungo": "notizia-alesha-pro-llm-asm-qwen3-0-6b-inference-12-kb-bare-metal",
+  "breve": "breve-alesha-pro-llm-asm-qwen3-0-6b-inference-12-kb-bare-metal"
  }
 }
