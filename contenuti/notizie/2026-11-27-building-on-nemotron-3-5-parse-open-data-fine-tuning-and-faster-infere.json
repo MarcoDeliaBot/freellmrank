@@ -1,0 +1,27 @@
+{
+ "nome": "2026-11-27-building-on-nemotron-3-5-parse-open-data-fine-tuning-and-faster-infere",
+ "titolo": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+ "descr": "Nemotron 3.5 Parse adds synthetic chart and table datasets, RLVR fine‑tuning, and DFlash2 speculator that boosts H200 throughput up to 20.44 pages/s.",
+ "tema": "Research",
+ "paragrafi": [
+  "NVIDIA announced Nemotron 3.5 Parse, a compact model that converts page images into structured data for retrieval‑augmented generation and agents.",
+  "Three synthetic datasets were open‑sourced: Synthetic Charts V1 with 9.98 M examples, Synthetic Tables V1 with 1 M examples, and OCR Synthetic Multilingual v2 with 7.9 M examples.",
+  "At concurrency 512 the model processes 20.44 pages per second with DFlash2, versus 13.48 pages/s without speculation, while loop‑flagged outputs drop from 126 to 29 pages (about 77 % fewer).",
+  "FreeLLMArena’s latest blind vote still ranks Gemini 3.8 Flash as the top free chat model and Gemini 4 Carbon as the leading paid option."
+ ],
+ "perche": [
+  "The faster inference and open synthetic data let developers build custom document‑understanding pipelines with lower latency. Users of free or locally hosted models can fine‑tune similar capabilities without relying on proprietary services."
+ ],
+ "pubblicato": "2026-11-27",
+ "titoloFonte": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+ "fonti": [
+  {
+   "nome": "Hugging Face",
+   "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+   "titolo": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+   "ufficiale": true,
+   "data": "2026-11-26"
+  }
+ ],
+ "frasiTolte": 4
+}

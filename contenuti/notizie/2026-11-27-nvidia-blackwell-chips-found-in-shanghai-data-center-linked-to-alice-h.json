@@ -1,0 +1,33 @@
+{
+ "nome": "2026-11-27-nvidia-blackwell-chips-found-in-shanghai-data-center-linked-to-alice-h",
+ "titolo": "Nvidia Blackwell chips found in Shanghai data center linked to Alice Huang",
+ "descr": "Two Shanghai firms used banned Nvidia Blackwell hardware as loan collateral, raising US export rule concerns.",
+ "tema": "Policy",
+ "paragrafi": [
+  "Bloomberg reports that two Chinese companies installed Nvidia's Blackwell semiconductors in a Shanghai data centre tied to Alice Huang.",
+  "Shanghai Shuoyao is closely linked to Singapore‑based Megaspeed, which the Trump administration added to a US trade blacklist over suspected chip smuggling.",
+  "The case highlights how recent US export restrictions and anti‑diffusion measures are creating challenges for Chinese AI startups."
+ ],
+ "perche": [
+  "The incident shows that Chinese AI developers may lose access to Nvidia's top‑end hardware, pushing them toward alternative platforms or less powerful local solutions. For users of free or locally run models, tighter export controls could increase demand for open‑source options that run on more accessible hardware."
+ ],
+ "pubblicato": "2026-11-27",
+ "titoloFonte": "Banned Nvidia Blackwell chips turn up in a Shanghai data center linked to Alice Huang, Bloomberg reports",
+ "fonti": [
+  {
+   "nome": "The Decoder",
+   "url": "https://the-decoder.com/banned-nvidia-blackwell-chips-turn-up-in-a-shanghai-data-center-linked-to-alice-huang-bloomberg-reports/",
+   "titolo": "Banned Nvidia Blackwell chips turn up in a Shanghai data center linked to Alice Huang, Bloomberg reports",
+   "ufficiale": false,
+   "data": "2026-11-27"
+  },
+  {
+   "nome": "bloomberg.com",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-27/nvidia-blackwell-chips-turn-up-at-china-site-tied-to-alice-huang?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc5NTc4ODgyMywiZXhwIjoxNzk2MzkzNjIzLCJhcnRpY2xlSWQiOiJUUDFVMFJUOU5KTFMwMCIsImJjb25uZWN0SWQiOiI3QTcxRTEyQjY2RTM0RkI3ODlCQTA5NEZBQzVGMkE0OSJ9.tcyYBUyKr7A_4Qyf4S69z95uT1ZiyuOyOOZi73bhQ7Q&leadSource=article-gifting",
+   "titolo": "Nvidia Blackwell Tech Used at China Site Tied to Alice Huang - Bloomberg",
+   "ufficiale": true,
+   "data": "2026-11-27"
+  }
+ ],
+ "frasiTolte": 3
+}

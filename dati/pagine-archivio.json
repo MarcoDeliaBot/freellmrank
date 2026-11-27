@@ -26150,6 +26150,30 @@
     "tipo": "News"
    },
    "data": "2026-11-27"
+  },
+  "/blog/news-2026-11-27-building-on-nemotron-3-5-parse-open-data-fine-tuning-and-faster-infere.html": {
+   "post": {
+    "slug": "news-2026-11-27-building-on-nemotron-3-5-parse-open-data-fine-tuning-and-faster-infere",
+    "titolo": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+    "descr": "Nemotron 3.5 Parse adds synthetic chart and table datasets, RLVR fine‑tuning, and DFlash2 speculator that boosts H200 throughput up to 20.44 pages/s.",
+    "data": "2026-11-27",
+    "tema": "Research",
+    "corpo": "NVIDIA announced Nemotron 3.5 Parse, a compact model that converts page images into structured data for retrieval‑augmented generation and agents.\n\nThree synthetic datasets were open‑sourced: Synthetic Charts V1 with 9.98 M examples, Synthetic Tables V1 with 1 M examples, and OCR Synthetic Multilingual v2 with 7.9 M examples.\n\nAt concurrency 512 the model processes 20.44 pages per second with DFlash2, versus 13.48 pages/s without speculation, while loop‑flagged outputs drop from 126 to 29 pages (about 77 % fewer).\n\nFreeLLMArena’s latest blind vote still ranks Gemini 3.8 Flash as the top free chat model and Gemini 4 Carbon as the leading paid option.\n\n## What it means for you\n\nThe faster inference and open synthetic data let developers build custom document‑understanding pipelines with lower latency. Users of free or locally hosted models can fine‑tune similar capabilities without relying on proprietary services.\n\n## On FreeLLMArena\n\nFrom our rankings on 27 Nov 2026, based on Arena's blind votes:\n\n- [Gemini 3.8 Flash (High)](/model/gemini-3-8-flash-high.html): #1 among free chat models\n\n## Sources\n\n- [Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference](https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin), Hugging Face (official), 26 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-27-building-on-nemotron-3-5-parse-open-data-fine-tuning-and-faster-infere).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-27"
+  },
+  "/blog/news-2026-11-27-nvidia-blackwell-chips-found-in-shanghai-data-center-linked-to-alice-h.html": {
+   "post": {
+    "slug": "news-2026-11-27-nvidia-blackwell-chips-found-in-shanghai-data-center-linked-to-alice-h",
+    "titolo": "Nvidia Blackwell chips found in Shanghai data center linked to Alice Huang",
+    "descr": "Two Shanghai firms used banned Nvidia Blackwell hardware as loan collateral, raising US export rule concerns.",
+    "data": "2026-11-27",
+    "tema": "Policy",
+    "corpo": "Bloomberg reports that two Chinese companies installed Nvidia's Blackwell semiconductors in a Shanghai data centre tied to Alice Huang.\n\nShanghai Shuoyao is closely linked to Singapore‑based Megaspeed, which the Trump administration added to a US trade blacklist over suspected chip smuggling.\n\nThe case highlights how recent US export restrictions and anti‑diffusion measures are creating challenges for Chinese AI startups.\n\n## What it means for you\n\nThe incident shows that Chinese AI developers may lose access to Nvidia's top‑end hardware, pushing them toward alternative platforms or less powerful local solutions. For users of free or locally run models, tighter export controls could increase demand for open‑source options that run on more accessible hardware.\n\n## Sources\n\n- [Banned Nvidia Blackwell chips turn up in a Shanghai data center linked to Alice Huang, Bloomberg reports](https://the-decoder.com/banned-nvidia-blackwell-chips-turn-up-in-a-shanghai-data-center-linked-to-alice-huang-bloomberg-reports/), The Decoder, 27 Nov 2026\n- [Nvidia Blackwell Tech Used at China Site Tied to Alice Huang - Bloomberg](https://www.bloomberg.com/news/articles/2026-11-27/nvidia-blackwell-chips-turn-up-at-china-site-tied-to-alice-huang?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc5NTc4ODgyMywiZXhwIjoxNzk2MzkzNjIzLCJhcnRpY2xlSWQiOiJUUDFVMFJUOU5KTFMwMCIsImJjb25uZWN0SWQiOiI3QTcxRTEyQjY2RTM0RkI3ODlCQTA5NEZBQzVGMkE0OSJ9.tcyYBUyKr7A_4Qyf4S69z95uT1ZiyuOyOOZi73bhQ7Q&leadSource=article-gifting), bloomberg.com (official), 27 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-27-nvidia-blackwell-chips-found-in-shanghai-data-center-linked-to-alice-h).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-27"
   }
  },
  "ricostruzione": {
