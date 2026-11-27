@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-27-anthropic-adds-google-drive-file-browser-to-claude-for-pro-and-max-use",
+ "titolo": "Anthropic adds Google Drive file browser to Claude for Pro and Max users",
+ "descr": "Claude now lets users browse, search and manage Drive files from a sidebar, expanding its workspace capabilities.",
+ "tema": "Software",
+ "paragrafi": [
+  "Anthropic is testing a Google Drive integration that adds a file‑browser to Claude’s navigation sidebar.",
+  "The interface shows Docs, Sheets and Slides, allowing users to search, filter, move files between folders and attach them to projects.",
+  "The feature is currently in beta for select Pro and Max users in cloud sessions and will roll out to all Claude users soon.",
+  "Claude already supports Google Drive through connectors that let users add files to chats, edit Docs live and save generated files.",
+  "The new browser mirrors similar Drive management tools seen in OpenAI’s ChatGPT Spaces, suggesting a move toward a more unified workspace."
+ ],
+ "perche": [
+  "For AI users, the integration reduces context‑switching by keeping Drive actions inside Claude, improving productivity. Free‑model users still lack comparable built‑in file management, highlighting a functional gap between paid AI services and open alternatives."
+ ],
+ "pubblicato": "2026-11-27",
+ "titoloFonte": "Anthropic prepares Google Drive file browser for Claude",
+ "fonti": [
+  {
+   "nome": "TestingCatalog",
+   "url": "https://www.testingcatalog.com/anthropic-prepares-google-drive-file-browser-for-claude/",
+   "titolo": "Anthropic prepares Google Drive file browser for Claude",
+   "ufficiale": false,
+   "data": "2026-11-26"
+  },
+  {
+   "nome": "support.claude.com",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors?ref=testingcatalog.com",
+   "titolo": "Use Google Workspace connectors | Claude Help Center",
+   "ufficiale": true,
+   "data": "2026-11-19"
+  }
+ ],
+ "frasiTolte": 0
+}

@@ -1,0 +1,34 @@
+{
+ "nome": "2026-11-27-clay-raises-115-m-in-series-d-valuing-the-ai-gtm-platform-at-7-1-b",
+ "titolo": "Clay raises $115 M in Series D, valuing the AI GTM platform at $7.1 B",
+ "descr": "Clay’s funding round fuels growth of its agent‑based go‑to‑market platform used by over 17 k customers.",
+ "tema": "Business",
+ "paragrafi": [
+  "Clay announced a $115 million Series D round that brings its valuation to $7.1 billion.",
+  "Clay’s platform lets users build and run GTM agents that score leads, run workflows, and launch campaigns, with a global agent now in open beta.",
+  "Recent product updates include an auto‑mode router that picks the best model for each task, cutting cost by 47 % compared with frontier models.",
+  "Clay’s internal stack relies on BullMQ, Postgres, ClickHouse and Snowflake, and the firm plans to continue expanding its agent infrastructure."
+ ],
+ "perche": [
+  "The new capital will accelerate Clay’s rollout of AI‑driven GTM tools, giving sales and marketing teams faster access to lead‑scoring and workflow automation. For users seeking free or locally hosted models, Clay’s focus on agent orchestration highlights the growing value of plug‑and‑play AI services that can complement open‑source alternatives."
+ ],
+ "pubblicato": "2026-11-27",
+ "titoloFonte": "How Clay Builds GTM Agents — Jeff Barg, Head of AI",
+ "fonti": [
+  {
+   "nome": "Latent Space",
+   "url": "https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/",
+   "titolo": "How Clay Builds GTM Agents — Jeff Barg, Head of AI",
+   "ufficiale": false,
+   "data": "2026-11-26"
+  },
+  {
+   "nome": "clay.com",
+   "url": "https://clay.com/blog/avenue?utm_source=latent.space&utm_medium=ainews&utm_campaign=lsbeehiiv",
+   "titolo": "Clay acquires Avenue to help growth teams act on intent signals - The GTM with Clay Blog",
+   "ufficiale": true,
+   "data": "2025-01-21"
+  }
+ ],
+ "frasiTolte": 1
+}

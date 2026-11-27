@@ -26117,6 +26117,30 @@
     "tipo": "News"
    },
    "data": "2026-11-26"
+  },
+  "/blog/news-2026-11-27-anthropic-adds-google-drive-file-browser-to-claude-for-pro-and-max-use.html": {
+   "post": {
+    "slug": "news-2026-11-27-anthropic-adds-google-drive-file-browser-to-claude-for-pro-and-max-use",
+    "titolo": "Anthropic adds Google Drive file browser to Claude for Pro and Max users",
+    "descr": "Claude now lets users browse, search and manage Drive files from a sidebar, expanding its workspace capabilities.",
+    "data": "2026-11-27",
+    "tema": "Software",
+    "corpo": "Anthropic is testing a Google Drive integration that adds a file‑browser to Claude’s navigation sidebar.\n\nThe interface shows Docs, Sheets and Slides, allowing users to search, filter, move files between folders and attach them to projects.\n\nThe feature is currently in beta for select Pro and Max users in cloud sessions and will roll out to all Claude users soon.\n\nClaude already supports Google Drive through connectors that let users add files to chats, edit Docs live and save generated files.\n\nThe new browser mirrors similar Drive management tools seen in OpenAI’s ChatGPT Spaces, suggesting a move toward a more unified workspace.\n\n## What it means for you\n\nFor AI users, the integration reduces context‑switching by keeping Drive actions inside Claude, improving productivity. Free‑model users still lack comparable built‑in file management, highlighting a functional gap between paid AI services and open alternatives.\n\n## Sources\n\n- [Anthropic prepares Google Drive file browser for Claude](https://www.testingcatalog.com/anthropic-prepares-google-drive-file-browser-for-claude/), TestingCatalog, 26 Nov 2026\n- [Use Google Workspace connectors | Claude Help Center](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors?ref=testingcatalog.com), support.claude.com (official), 19 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-27-anthropic-adds-google-drive-file-browser-to-claude-for-pro-and-max-use).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-26"
+  },
+  "/blog/news-2026-11-27-clay-raises-115-m-in-series-d-valuing-the-ai-gtm-platform-at-7-1-b.html": {
+   "post": {
+    "slug": "news-2026-11-27-clay-raises-115-m-in-series-d-valuing-the-ai-gtm-platform-at-7-1-b",
+    "titolo": "Clay raises $115 M in Series D, valuing the AI GTM platform at $7.1 B",
+    "descr": "Clay’s funding round fuels growth of its agent‑based go‑to‑market platform used by over 17 k customers.",
+    "data": "2026-11-27",
+    "tema": "Business",
+    "corpo": "Clay announced a $115 million Series D round that brings its valuation to $7.1 billion.\n\nClay’s platform lets users build and run GTM agents that score leads, run workflows, and launch campaigns, with a global agent now in open beta.\n\nRecent product updates include an auto‑mode router that picks the best model for each task, cutting cost by 47 % compared with frontier models.\n\nClay’s internal stack relies on BullMQ, Postgres, ClickHouse and Snowflake, and the firm plans to continue expanding its agent infrastructure.\n\n## What it means for you\n\nThe new capital will accelerate Clay’s rollout of AI‑driven GTM tools, giving sales and marketing teams faster access to lead‑scoring and workflow automation. For users seeking free or locally hosted models, Clay’s focus on agent orchestration highlights the growing value of plug‑and‑play AI services that can complement open‑source alternatives.\n\n## Sources\n\n- [How Clay Builds GTM Agents — Jeff Barg, Head of AI](https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/), Latent Space, 26 Nov 2026\n- [Clay acquires Avenue to help growth teams act on intent signals - The GTM with Clay Blog](https://clay.com/blog/avenue?utm_source=latent.space&utm_medium=ainews&utm_campaign=lsbeehiiv), clay.com (official), 21 Jan 2025\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-27-clay-raises-115-m-in-series-d-valuing-the-ai-gtm-platform-at-7-1-b).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-26"
   }
  },
  "ricostruzione": {
