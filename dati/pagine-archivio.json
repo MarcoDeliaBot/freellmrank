@@ -2382,15 +2382,12 @@
   },
   "/model/qwen3-235b-a22b-thinking-2507.html": {
    "modello": {
-    "chiave": "qwen/qwen3-235b-a22b-thinking-2507",
+    "chiave": "qwen3-235b-a22b-thinking-2507",
     "nome": "Qwen3-235B-A22B-Thinking (2507)",
     "org": "alibaba",
     "licenza": "Apache 2.0",
     "aperto": true,
-    "or": {
-     "id": "qwen/qwen3-235b-a22b-thinking-2507",
-     "gratis": false
-    },
+    "or": null,
     "hf": null,
     "cat": {
      "chat": {
@@ -16502,7 +16499,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 6041,
+    "download": 5442,
     "catPiccoli": [
      "chat"
     ],
@@ -16533,7 +16530,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 19781,
+    "download": 19565,
     "catPiccoli": [
      "chat",
      "vision"
@@ -16565,7 +16562,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 151534,
+    "download": 148890,
     "catPiccoli": [
      "chat"
     ],
@@ -16634,7 +16631,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 6551,
+    "download": 6919,
     "catPiccoli": [
      "chat",
      "vision"
@@ -17293,7 +17290,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 3722,
+    "download": 4032,
     "catPiccoli": [
      "chat",
      "vision"
@@ -17352,7 +17349,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 2429,
+    "download": 2593,
     "catPiccoli": [
      "chat"
     ],
@@ -17410,7 +17407,7 @@
     "cat": {},
     "nomi": {},
     "senzaVoti": true,
-    "download": 8153,
+    "download": 8742,
     "catPiccoli": [
      "chat"
     ],
@@ -17692,7 +17689,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 6005,
+    "download": 7054,
     "catPiccoli": [
      "chat"
     ],
@@ -17790,7 +17787,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 2496,
+    "download": 2621,
     "catPiccoli": [
      "chat",
      "vision"
@@ -17824,7 +17821,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 4635,
+    "download": 5457,
     "catPiccoli": [
      "chat",
      "vision"
@@ -17858,7 +17855,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 1487,
+    "download": 2351,
     "catPiccoli": [
      "chat"
     ],
@@ -17994,7 +17991,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 388,
+    "download": 825,
     "catPiccoli": [
      "chat"
     ],
@@ -18027,7 +18024,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 935,
+    "download": 1771,
     "catPiccoli": [
      "chat",
      "vision"
@@ -18055,7 +18052,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 4,
+    "download": 582,
     "catPiccoli": [
      "edit"
     ],
@@ -18082,7 +18079,7 @@
     "nomi": {},
     "senzaVoti": true,
     "nuovo": true,
-    "download": 119,
+    "download": 182,
     "catPiccoli": [
      "video"
     ],
