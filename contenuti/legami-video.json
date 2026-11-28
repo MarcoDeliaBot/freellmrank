@@ -683,5 +683,13 @@
  "news-2026-11-26-alesha-pro-llm-asm-qwen3-0-6b-inference-12-kb-bare-metal-bootable-os-2": {
   "lungo": "notizia-alesha-pro-llm-asm-qwen3-0-6b-inference-12-kb-bare-metal",
   "breve": "breve-alesha-pro-llm-asm-qwen3-0-6b-inference-12-kb-bare-metal"
+ },
+ "news-2026-11-28-datasette-charts-0-4a0-released-with-plugin-hook-improvements-and-new-": {
+  "lungo": "notizia-datasette-charts-0-4a0-released-with-plugin-hook-improve",
+  "breve": "breve-datasette-charts-0-4a0-released-with-plugin-hook-improve"
+ },
+ "news-2026-11-27-anthropic-adds-google-drive-file-browser-to-claude-for-pro-and-max-use": {
+  "lungo": "notizia-anthropic-adds-google-drive-file-browser-to-claude-for-p",
+  "breve": "breve-anthropic-adds-google-drive-file-browser-to-claude-for-p"
  }
 }
