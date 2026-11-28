@@ -26174,6 +26174,30 @@
     "tipo": "News"
    },
    "data": "2026-11-27"
+  },
+  "/blog/news-2026-11-28-datasette-charts-0-4a0-released-with-plugin-hook-improvements-and-new-.html": {
+   "post": {
+    "slug": "news-2026-11-28-datasette-charts-0-4a0-released-with-plugin-hook-improvements-and-new-",
+    "titolo": "datasette-charts 0.4a0 released with plugin hook improvements and new website",
+    "descr": "The latest pre‑release adds utilities for chart‑type plugins, documentation, and a site at charts.datasette.io.",
+    "data": "2026-11-28",
+    "tema": "Software",
+    "corpo": "Simon Willison announced the datasette-charts 0.4a0 pre‑release on 27 November 2026.\n\nThe update introduces a dedicated plugin hook that lets other plugins define new chart types, addressing earlier friction points.\n\nA tutorial for building a lollipop chart plugin and detailed documentation for Python classes, SQL rules, and the JavaScript renderer API are now part of the release.\n\nThe plugin also gains a website at charts.datasette.io, featuring a tutorial for authors and a gallery of core charts linked to interactive demos on Datasette Lite.\n\nAdditional utilities include theming helpers, number formatting, axis labels, time buckets, and annotation layout functions.\n\n## What it means for you\n\nDevelopers can now create custom chart plugins more easily, expanding visualisation options for Datasette users. The new site and documentation lower the barrier for extending the tool, benefiting both free and paid model users who need richer data exploration capabilities.\n\n## Sources\n\n- [datasette-charts 0.4a0](https://simonwillison.net/2026/Nov/27/datasette-charts/), Simon Willison, 27 Nov 2026\n- [Release 0.4a0 · datasette/datasette-charts · GitHub](https://github.com/datasette/datasette-charts/releases/tag/0.4a0), github.com (official), 27 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-28-datasette-charts-0-4a0-released-with-plugin-hook-improvements-and-new-).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-27"
+  },
+  "/blog/news-2026-11-28-swarms-flocks-gangs-how-to-build-train-and-evaluate-multi-agent-system.html": {
+   "post": {
+    "slug": "news-2026-11-28-swarms-flocks-gangs-how-to-build-train-and-evaluate-multi-agent-system",
+    "titolo": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+    "descr": "The new blog series explores building, training and evaluating small, affordable agent swarms on Hugging Face Jobs.",
+    "data": "2026-11-28",
+    "tema": "Research",
+    "corpo": "Hugging Face released the first post of a series on multi‑agent systems, focusing on swarms, flocks and gangs.\n\nRunning the demo costs roughly $50, showing that modest hardware can support small‑scale swarms.\n\nThe post discusses the challenges of multi‑agent reinforcement learning, including credit assignment and communication as part of the policy.\n\nIt compares independent versus communicating agents under equal token budgets, asking whether cooperation truly improves performance or merely adds compute cost.\n\n## What it means for you\n\nThe series offers a reproducible way for researchers and hobbyists to experiment with swarms without large clusters.\n\n## Sources\n\n- [Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems](https://huggingface.co/blog/training-swarms), Hugging Face (official), 26 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-28-swarms-flocks-gangs-how-to-build-train-and-evaluate-multi-agent-system).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-27"
   }
  },
  "ricostruzione": {

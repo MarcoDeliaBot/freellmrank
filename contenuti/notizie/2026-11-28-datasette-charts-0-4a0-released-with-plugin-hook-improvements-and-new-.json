@@ -1,0 +1,35 @@
+{
+ "nome": "2026-11-28-datasette-charts-0-4a0-released-with-plugin-hook-improvements-and-new-",
+ "titolo": "datasette-charts 0.4a0 released with plugin hook improvements and new website",
+ "descr": "The latest pre‑release adds utilities for chart‑type plugins, documentation, and a site at charts.datasette.io.",
+ "tema": "Software",
+ "paragrafi": [
+  "Simon Willison announced the datasette-charts 0.4a0 pre‑release on 27 November 2026.",
+  "The update introduces a dedicated plugin hook that lets other plugins define new chart types, addressing earlier friction points.",
+  "A tutorial for building a lollipop chart plugin and detailed documentation for Python classes, SQL rules, and the JavaScript renderer API are now part of the release.",
+  "The plugin also gains a website at charts.datasette.io, featuring a tutorial for authors and a gallery of core charts linked to interactive demos on Datasette Lite.",
+  "Additional utilities include theming helpers, number formatting, axis labels, time buckets, and annotation layout functions."
+ ],
+ "perche": [
+  "Developers can now create custom chart plugins more easily, expanding visualisation options for Datasette users. The new site and documentation lower the barrier for extending the tool, benefiting both free and paid model users who need richer data exploration capabilities."
+ ],
+ "pubblicato": "2026-11-28",
+ "titoloFonte": "datasette-charts 0.4a0",
+ "fonti": [
+  {
+   "nome": "Simon Willison",
+   "url": "https://simonwillison.net/2026/Nov/27/datasette-charts/",
+   "titolo": "datasette-charts 0.4a0",
+   "ufficiale": false,
+   "data": "2026-11-27"
+  },
+  {
+   "nome": "github.com",
+   "url": "https://github.com/datasette/datasette-charts/releases/tag/0.4a0",
+   "titolo": "Release 0.4a0 · datasette/datasette-charts · GitHub",
+   "ufficiale": true,
+   "data": "2026-11-27"
+  }
+ ],
+ "frasiTolte": 0
+}
