@@ -26198,6 +26198,30 @@
     "tipo": "News"
    },
    "data": "2026-11-27"
+  },
+  "/blog/news-2026-11-28-scientists-call-for-trust-safeguards-as-ai-agents-enter-research-workf.html": {
+   "post": {
+    "slug": "news-2026-11-28-scientists-call-for-trust-safeguards-as-ai-agents-enter-research-workf",
+    "titolo": "Scientists call for trust safeguards as AI agents enter research workflows",
+    "descr": "Researchers highlight validation, privacy, objectivity, accountability and transparency as essential for AI‑assisted science.",
+    "data": "2026-11-28",
+    "tema": "Research",
+    "corpo": "A Hugging Face report published on November 25, 2026 surveyed 17 scientists across natural, applied and social disciplines about the use of AI agents in research.\n\nInterviewees said AI can speed up literature reviews, code writing, data analysis and routine lab tasks, but they stressed the need to verify the system’s outputs.\n\nScientists argued that agents must disclose sources, methods and data access, and that institutions should provide clear guidelines for verification and disclosure of AI‑assisted work.\n\nThe report also noted a split among participants between excitement for AI‑driven progress and concern over the future role of human scientists, recommending training and enforceable standards.\n\nFreeLLMArena’s latest blind vote (November 27, 2026) ranked Gemini 3.8 Flash as the top free chat model, while Gemini 4 Carbon led the paid category.\n\n## What it means for you\n\nFor AI users, the findings underline that adopting agentic tools will require robust checks and transparent reporting to maintain scientific integrity. For those seeking free or locally hosted models, the emphasis on verification may drive demand for open‑source solutions that allow users to inspect code, data flows and source citations.\n\n## On FreeLLMArena\n\nFrom our rankings on 27 Nov 2026, based on Arena's blind votes:\n\n- [Gemini 3.8 Flash (High)](/model/gemini-3-8-flash-high.html): #1 among free chat models\n\n## Sources\n\n- [Where scientists draw the line on AI agents](https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents), Hugging Face (official), 25 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-28-scientists-call-for-trust-safeguards-as-ai-agents-enter-research-workf).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-27"
+  },
+  "/blog/news-2026-11-28-waifu2x-ai-image-upscaler-for-windows-releases-version-4-1-5-with-vulk.html": {
+   "post": {
+    "slug": "news-2026-11-28-waifu2x-ai-image-upscaler-for-windows-releases-version-4-1-5-with-vulk",
+    "titolo": "Waifu2x AI Image Upscaler for Windows releases version 4.1.5 with Vulkan GPU support",
+    "descr": "The open‑source Windows tool adds GPU‑accelerated image upscaling and denoising using Vulkan and ncnn, without needing CUDA or complex dependencies.",
+    "data": "2026-11-28",
+    "tema": "Software",
+    "corpo": "Red2076-arch released Waifu2x AI Image Upscaler for Windows version 4.1.5 on GitHub, offering a free, portable application for image enhancement.\n\nThe tool uses Vulkan GPU acceleration and the ncnn inference framework, supporting Intel, AMD and NVIDIA graphics cards for faster processing.\n\nFeatures include 2x and 4x upscaling, configurable denoising levels, batch processing, and support for JPG, PNG and WebP formats.\n\nIt runs as a standalone Windows executable with libvlc.dll, requiring no CUDA, Caffe or additional runtime installations.\n\nAdvanced users can invoke the underlying waifu2x‑ncnn‑vulkan.exe via command‑line options for automation and scripting.\n\n## What it means for you\n\nThe application lets Windows users upscale anime, illustrations and photos without expensive hardware or proprietary software, aligning with the free‑software ethos. It also provides a local, GPU‑accelerated alternative for those who prefer on‑device processing over cloud‑based AI services.\n\n## Sources\n\n- [Red2076-arch/waifu2x-image-upscaler-windows: Free AI image upscaler and photo denoiser for Windows powered by Vulkan GPU acceleration and ncnn neural networks.](https://github.com/Red2076-arch/waifu2x-image-upscaler-windows), GitHub trending, 27 Nov 2026\n\n<small>Written automatically from the sources above, then checked by our code: every number and name must appear in them, and no sentence may copy a source. Spotted a mistake? [Report it](/report?from=/blog/news-2026-11-28-waifu2x-ai-image-upscaler-for-windows-releases-version-4-1-5-with-vulk).</small>\n",
+    "tipo": "News"
+   },
+   "data": "2026-11-27"
   }
  },
  "ricostruzione": {

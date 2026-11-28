@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-28-scientists-call-for-trust-safeguards-as-ai-agents-enter-research-workf",
+ "titolo": "Scientists call for trust safeguards as AI agents enter research workflows",
+ "descr": "Researchers highlight validation, privacy, objectivity, accountability and transparency as essential for AI‑assisted science.",
+ "tema": "Research",
+ "paragrafi": [
+  "A Hugging Face report published on November 25, 2026 surveyed 17 scientists across natural, applied and social disciplines about the use of AI agents in research.",
+  "Interviewees said AI can speed up literature reviews, code writing, data analysis and routine lab tasks, but they stressed the need to verify the system’s outputs.",
+  "Scientists argued that agents must disclose sources, methods and data access, and that institutions should provide clear guidelines for verification and disclosure of AI‑assisted work.",
+  "The report also noted a split among participants between excitement for AI‑driven progress and concern over the future role of human scientists, recommending training and enforceable standards.",
+  "FreeLLMArena’s latest blind vote (November 27, 2026) ranked Gemini 3.8 Flash as the top free chat model, while Gemini 4 Carbon led the paid category."
+ ],
+ "perche": [
+  "For AI users, the findings underline that adopting agentic tools will require robust checks and transparent reporting to maintain scientific integrity. For those seeking free or locally hosted models, the emphasis on verification may drive demand for open‑source solutions that allow users to inspect code, data flows and source citations."
+ ],
+ "pubblicato": "2026-11-28",
+ "titoloFonte": "Where scientists draw the line on AI agents",
+ "fonti": [
+  {
+   "nome": "Hugging Face",
+   "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+   "titolo": "Where scientists draw the line on AI agents",
+   "ufficiale": true,
+   "data": "2026-11-25"
+  }
+ ],
+ "frasiTolte": 1
+}

@@ -1,0 +1,28 @@
+{
+ "nome": "2026-11-28-waifu2x-ai-image-upscaler-for-windows-releases-version-4-1-5-with-vulk",
+ "titolo": "Waifu2x AI Image Upscaler for Windows releases version 4.1.5 with Vulkan GPU support",
+ "descr": "The open‑source Windows tool adds GPU‑accelerated image upscaling and denoising using Vulkan and ncnn, without needing CUDA or complex dependencies.",
+ "tema": "Software",
+ "paragrafi": [
+  "Red2076-arch released Waifu2x AI Image Upscaler for Windows version 4.1.5 on GitHub, offering a free, portable application for image enhancement.",
+  "The tool uses Vulkan GPU acceleration and the ncnn inference framework, supporting Intel, AMD and NVIDIA graphics cards for faster processing.",
+  "Features include 2x and 4x upscaling, configurable denoising levels, batch processing, and support for JPG, PNG and WebP formats.",
+  "It runs as a standalone Windows executable with libvlc.dll, requiring no CUDA, Caffe or additional runtime installations.",
+  "Advanced users can invoke the underlying waifu2x‑ncnn‑vulkan.exe via command‑line options for automation and scripting."
+ ],
+ "perche": [
+  "The application lets Windows users upscale anime, illustrations and photos without expensive hardware or proprietary software, aligning with the free‑software ethos. It also provides a local, GPU‑accelerated alternative for those who prefer on‑device processing over cloud‑based AI services."
+ ],
+ "pubblicato": "2026-11-28",
+ "titoloFonte": "Red2076-arch/waifu2x-image-upscaler-windows: Free AI image upscaler and photo denoiser for Windows powered by Vulkan GPU acceleration and ncnn neural networks.",
+ "fonti": [
+  {
+   "nome": "GitHub trending",
+   "url": "https://github.com/Red2076-arch/waifu2x-image-upscaler-windows",
+   "titolo": "Red2076-arch/waifu2x-image-upscaler-windows: Free AI image upscaler and photo denoiser for Windows powered by Vulkan GPU acceleration and ncnn neural networks.",
+   "ufficiale": false,
+   "data": "2026-11-27"
+  }
+ ],
+ "frasiTolte": 0
+}
