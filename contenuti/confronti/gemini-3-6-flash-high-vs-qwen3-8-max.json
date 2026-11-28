@@ -1,0 +1,31 @@
+{
+  "versione": 2,
+  "coppia": [
+    "Gemini 3.6 Flash (High)",
+    "Qwen3.8-Max"
+  ],
+  "descr": "Gemini 3.6 Flash vs Qwen3.8-Max: scores are about even in the Arena ranking.",
+  "risposta": "The blind vote shows the two models are essentially tied. Gemini 3.6 Flash scores 1482 while Qwen3.8-Max scores 1484. The two-point difference is considered too close to call. Neither model has a clear overall advantage.",
+  "dimensioni": "Both Gemini 3.6 Flash and Qwen3.8-Max keep their model size private. The data sheet does not list a download size for either. As a result, users cannot compare storage requirements directly.",
+  "velocita": "Neither model can be run locally on common home GPUs. All listed hardware, RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, and Ryzen AI Max+ 395 128 GB, reports the models as online-only. Therefore speed estimates on personal machines are unavailable.",
+  "gratisA": "Gemini 3.6 Flash is accessible through Google’s free Gemini API tier. The free tier provides limited usage without charge and operates under a proprietary license. No open weights are available.",
+  "gratisB": "Qwen3.8-Max can be tried with a free trial quota on Alibaba Cloud for 90 days. The trial offers limited generation before payment is required and also uses a proprietary license. No open weights are released.",
+  "sceglieA": "Choose Gemini 3.6 Flash if you prefer Google’s ecosystem and need a model that performs on par with the competition in pure chat scenarios. Its score is only two points behind the rival, making it a safe general-purpose option. The free API tier lets you experiment without upfront cost.",
+  "sceglieB": "Pick Qwen3.8-Max when coding assistance or image-related tasks are a priority. It outperforms Gemini 3.6 Flash in both the WebDev (coding) and Vision categories. The Alibaba Cloud trial gives a short window to evaluate its stronger specialized abilities.",
+  "categorie": {
+    "Chat": "In the core chat category Gemini 3.6 Flash scores 1482 and Qwen3.8-Max scores 1484. The gap is only two points, so their conversational quality is essentially comparable.",
+    "WebDev (coding)": "Qwen3.8-Max leads with a score of 1673 against Gemini 3.6 Flash’s 1538. For developers seeking code generation or debugging help, the Alibaba model shows a clear edge.",
+    "Vision": "Vision tasks also favor Qwen3.8-Max, which records 1295 versus Gemini 3.6 Flash’s 1280. If image analysis or multimodal prompts are important, the Qwen model is the stronger choice."
+  },
+  "scritto": "2026-11-28",
+  "aggiornato": "2026-11-28",
+  "scrittore": "workers",
+  "fatti": {
+    "leader": "even",
+    "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",
+    "gratisB": "free trial quota on Alibaba Cloud (90 days) · Proprietary license",
+    "puntiA": 1482,
+    "puntiB": 1484,
+    "dataArena": "2026-11-22"
+  }
+}

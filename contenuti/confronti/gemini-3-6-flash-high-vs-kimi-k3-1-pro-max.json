@@ -1,0 +1,30 @@
+{
+  "versione": 2,
+  "coppia": [
+    "Gemini 3.6 Flash (High)",
+    "Kimi K3.1 Pro (Max)"
+  ],
+  "descr": "Gemini 3.6 Flash vs Kimi K3.1 Pro: scores, size, speed, and free use details.",
+  "risposta": "The chat scores differ by only one point, so the two models are about even in the Arena. Neither model shows a clear advantage overall. Both sit near the top of the 427-model list.",
+  "dimensioni": "Gemini 3.6 Flash does not publish its model size, so no download estimate is available. Kimi K3.1 Pro totals 2780.1 B parameters, of which 104.8 B are active, and its 4-bit version requires about 1686 GB to download.",
+  "velocita": "Both models require online inference only. On a RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, or Ryzen AI Max+ 395 128 GB they do not fit, so they cannot be run fully on typical home hardware. They are listed as online-only in the speed estimate.",
+  "gratisA": "Gemini 3.6 Flash can be accessed for free through Google’s Gemini API free tier. The model uses a proprietary license. It cannot be tried directly on FreeLLMArena’s Try & compare page.",
+  "gratisB": "Kimi K3.1 Pro is released as open weights. You can download the model and run it at home under the Kimi K3.1 Pro License. It also cannot be tried on FreeLLMArena’s Try & compare page.",
+  "sceglieA": "Pick Gemini 3.6 Flash if you prefer a cloud API and want to avoid handling a large model file. The free tier lets you test the model without local storage. It sits at rank 28 of 427 in the Arena ranking.",
+  "sceglieB": "Pick Kimi K3.1 Pro when you need open weights and are ready to store a multi-terabyte model. Running it locally removes dependence on an online service. It holds rank 27 of 427 in the Arena ranking.",
+  "categorie": {
+    "Chat": "In the Chat category Gemini 3.6 Flash scored 1482 while Kimi K3.1 Pro scored 1483, making them about even.",
+    "WebDev (coding)": "In WebDev (coding) Kimi K3.1 Pro leads with 1683 points against Gemini 3.6 Flash’s 1538."
+  },
+  "scritto": "2026-11-28",
+  "aggiornato": "2026-11-28",
+  "scrittore": "groq",
+  "fatti": {
+    "leader": "even",
+    "gratisA": "free API from Google (Gemini API free tier) · Proprietary license",
+    "gratisB": "download and run at home · Kimi K3.1 Pro License",
+    "puntiA": 1482,
+    "puntiB": 1483,
+    "dataArena": "2026-11-22"
+  }
+}

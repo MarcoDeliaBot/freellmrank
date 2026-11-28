@@ -1,0 +1,31 @@
+{
+  "versione": 2,
+  "coppia": [
+    "MiMo-V2.6-Pro",
+    "Qwen3.8-Max"
+  ],
+  "descr": "MiMo-V2.6-Pro vs Qwen3.8-Max: about even performance in Arena chat scores.",
+  "risposta": "The two models are about even in the Arena blind vote. Their chat scores differ by only three points, which the data treats as too close to call. Neither model shows a clear overall advantage.",
+  "dimensioni": "MiMo-V2.6-Pro weighs 1024.2 B in total, with 43.9 B active parameters, and requires about 622 GB to download in 4-bit form. Qwen3.8-Max does not publish its size, so a download estimate is unavailable.",
+  "velocita": "MiMo-V2.6-Pro does not fit on any of the listed home GPUs or high-RAM systems, meaning it cannot run locally at 4-bit with 8K context. Qwen3.8-Max also does not fit on any of those machines and is only available online.",
+  "gratisA": "MiMo-V2.6-Pro can be used for free by downloading the open-weight files and running the model at home under an MIT license. It cannot be tried directly on FreeLLMArena.",
+  "gratisB": "Qwen3.8-Max offers a free trial quota on Alibaba Cloud for 90 days, provided under a proprietary license. It also cannot be tried directly on FreeLLMArena.",
+  "sceglieA": "Choose MiMo-V2.6-Pro if you need an open-weight model you can host yourself and you have the storage to handle a 622 GB download. It is suitable for users who prefer the MIT license and want full control over the model.",
+  "sceglieB": "Pick Qwen3.8-Max when you want a model that performs slightly better on coding and vision tasks, according to Arena scores. It is a good option if you can use Alibaba Cloud’s free trial and do not need open weights.",
+  "categorie": {
+    "Chat": "Both models score similarly in the Chat category, with 1481 for MiMo-V2.6-Pro and 1484 for Qwen3.8-Max, making them about even for conversational use.",
+    "WebDev (coding)": "Qwen3.8-Max leads in coding, scoring 1673 versus MiMo-V2.6-Pro’s 1622. It is the stronger choice for programming assistance.",
+    "Vision": "In vision tasks Qwen3.8-Max also outperforms MiMo-V2.6-Pro, posting 1295 against 1247. It is the preferable model for image-related queries."
+  },
+  "scritto": "2026-11-28",
+  "aggiornato": "2026-11-28",
+  "scrittore": "workers",
+  "fatti": {
+    "leader": "even",
+    "gratisA": "download and run at home · MIT license",
+    "gratisB": "free trial quota on Alibaba Cloud (90 days) · Proprietary license",
+    "puntiA": 1481,
+    "puntiB": 1484,
+    "dataArena": "2026-11-22"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "versione": 2,
+  "coppia": [
+    "GLM-5.3 (Max)",
+    "Qwen3.8-Max"
+  ],
+  "descr": "Qwen3.8-Max vs GLM-5.3: the two models are about even in blind Arena voting.",
+  "risposta": "The blind Arena votes show the two models are essentially tied. GLM-5.3 scored 1481 while Qwen3.8-Max scored 1484, a difference of only three points. That gap is considered too close to call, so neither model clearly outperforms the other overall.",
+  "dimensioni": "GLM-5.3 weighs in at 753.3 B total, with 50.2 B active parameters, and its 4-bit version requires about 458 GB to download. Qwen3.8-Max does not publish its size, so no download estimate is available.",
+  "velocita": "Both models exceed the memory limits of typical high-end consumer GPUs. GLM-5.3 does not fit on RTX 3090, RTX 4090, RTX 5090, RX 7900 XTX, Mac M4 Max 128 GB, or Ryzen AI Max+ 395 128 GB. Qwen3.8-Max also cannot fit on any of those machines, meaning both are only usable through online services.",
+  "gratisA": "GLM-5.3 can be used for free by downloading the open-weight checkpoint and running it at home under an MIT license. The model is not available for a free trial on FreeLLMArena.",
+  "gratisB": "Qwen3.8-Max offers a free trial quota on Alibaba Cloud for 90 days, but the weights are proprietary and it cannot be downloaded for local use. It also cannot be tried on FreeLLMArena.",
+  "sceglieA": "Pick GLM-5.3 if you need an open-weight model that you can run locally under a permissive MIT license. It is suitable for users who can provision the large storage needed for the 4-bit download.",
+  "sceglieB": "Pick Qwen3.8-Max if you prefer a proprietary model with a short-term free cloud trial and do not plan to run the model on personal hardware. It may be attractive for developers who want quick access without handling massive files.",
+  "categorie": {
+    "Chat": "In the Chat category GLM-5.3 scored 1481 and Qwen3.8-Max scored 1484, a difference of three points that the Arena judges as about even. Both models perform similarly for conversational tasks.",
+    "WebDev (coding)": "For coding assistance Qwen3.8-Max leads with a score of 1673 against GLM-5.3’s 1623. The gap suggests Qwen3.8-Max is the stronger choice for programming-related queries."
+  },
+  "scritto": "2026-11-28",
+  "aggiornato": "2026-11-28",
+  "scrittore": "workers",
+  "fatti": {
+    "leader": "even",
+    "gratisA": "download and run at home · MIT license",
+    "gratisB": "free trial quota on Alibaba Cloud (90 days) · Proprietary license",
+    "puntiA": 1481,
+    "puntiB": 1484,
+    "dataArena": "2026-11-22"
+  }
+}
